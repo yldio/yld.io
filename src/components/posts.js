@@ -16,7 +16,7 @@ const POSTS = graphql`
   }
 `
 
-export default ({ data }) => (
+const Posts = ({ data }) => (
   <StaticQuery
     query={POSTS}
     render={({ allMediumPost }) => (
@@ -38,3 +38,5 @@ export default ({ data }) => (
     )}
   />
 )
+
+export default Posts

@@ -19,7 +19,7 @@ const POSTS = graphql`
   }
 `
 
-export default ({ data }) => (
+const Jobs = ({ data }) => (
   <StaticQuery
     query={POSTS}
     render={({ allLever }) => {
@@ -54,3 +54,5 @@ export default ({ data }) => (
     }}
   />
 )
+
+export default Jobs
