@@ -31,7 +31,6 @@ export default ({ data }) => (
 
         return acc
       }, {})
-      console.log(jobs)
       return Object.keys(jobs).map(key => (
         <>
           <h3>{key}</h3>
