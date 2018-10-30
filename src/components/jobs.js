@@ -6,6 +6,7 @@ const POSTS = graphql`
     allLever(limit: 40) {
       edges {
         node {
+          id
           categories {
             location
             commitment
@@ -25,30 +26,30 @@ export default ({ data }) => (
       const jobs = allLever.edges.reduce((acc, current) => {
         if (!acc[current.node.categories.location]) {
           acc[current.node.categories.location] = [current.node]
+        } else {
+          acc[current.node.categories.location].push(current.node)
         }
-
-        acc[current.node.categories.location].push(current.node)
 
         return acc
       }, {})
       return Object.keys(jobs).map(key => (
-        <>
+        <article key={`${key}-${jobs[key].length}-main`}>
           <h3>{key}</h3>
           <ul>
             {jobs[key].map(job => (
-              <li>
+              <li key={`${job.id}`}>
                 <a
                   rel="noopener noreferrer"
                   href={job.hostedUrl}
                   target="_blank"
                 >
-                  {job.text}
+                  {job.text} -
                 </a>
                 {job.categories.commitment}
               </li>
             ))}
           </ul>
-        </>
+        </article>
       ))
     }}
   />
