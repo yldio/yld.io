@@ -17,30 +17,13 @@ export default createGlobalStyle`
   }
 
   a {
-    font-size: 18px;
-    line-height: 1.67;
-    color: ${props => props.theme.colors.text};
+    color: inherit;
     text-decoration: none;
     position: relative;
 
 
     &:hover {
       color: ${props => lighten(0.2, props.theme.colors.text)};
-
-      &:after {
-        background: ${props => lighten(0.2, props.theme.colors.text)}
-      }
-    }
-
-    &:after {
-      content: '';
-      height: ${remcalc(2)};
-      width: 100%;
-      background: ${props => props.theme.colors.text};
-      margin-top: ${remcalc(3)};
-      position: absolute;
-      top: 100%;
-      left: 0;
     }
   }
 `

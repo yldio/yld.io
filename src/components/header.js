@@ -1,27 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Flex from 'styled-flex-component'
+import { Padding } from 'styled-components-spacing'
 import logo from '../images/yld.svg'
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">
-          <img src={logo} alt="yld" />
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <Padding top={2} bottom={4} horizontal={2}>
+    <Flex justifyBetween>
+      <Link to="/">
+        <img src={logo} alt="yld" />
+      </Link>
+      <Flex>
+        <Padding right={2}>
+          <Link to="/engineering">Engineering</Link>
+        </Padding>
+        <Padding right={2}>
+          <Link to="/design">Design</Link>
+        </Padding>
+        <Link to="/contacts">Contacts</Link>
+      </Flex>
+    </Flex>
+  </Padding>
 )
 
 export default Header

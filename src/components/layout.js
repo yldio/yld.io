@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import { Padding } from 'styled-components-spacing'
+import { Grid } from 'react-styled-flexboxgrid'
 import Header from './header'
 import './layout.css'
 import theme from '../utils/theme'
@@ -34,15 +34,7 @@ const Layout = ({ children }) => (
           </Helmet>
 
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: '0 auto',
-              maxWidth: 960,
-              paddingTop: 0
-            }}
-          >
-            <Padding all={2}>{children}</Padding>
-          </div>
+          <Grid>{children}</Grid>
           <GlobalStyle />
         </Fragment>
       </ThemeProvider>

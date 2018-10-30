@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
 export default styled.h3`
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.textLight};
   font-weight: 500;
   font-size: ${remcalc(20)};
   line-height: ${remcalc(24)};
