@@ -3,8 +3,33 @@ import { Link } from 'gatsby'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
-import { H2, Paragraph, H3, H6 } from '../components/Typography'
+import { H2, H4, Paragraph, H3, H6 } from '../components/Typography'
 import Layout from '../components/layout'
+import Jobs from '../components/jobs'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+
+const Li = styled.li`
+  position: relative;
+  padding-bottom: ${remcalc(30)};
+  margin-bottom: ${remcalc(30)};
+  line-height: ${remcalc(24)};
+
+  &:after {
+    content: '';
+    width: ${remcalc(60)};
+    height: ${remcalc(1)};
+    background: ${props => props.theme.colors.greyBg};
+    bottom: 0;
+    display: block;
+    position: absolute;
+  }
+
+  & span {
+    display: block;
+    color: ${props => props.theme.colors.lightGray};
+  }
+`
 
 const IndexPage = () => (
   <Layout>
@@ -75,6 +100,46 @@ const IndexPage = () => (
         <Padding bottom={2} />
         CARD
       </Col>
+      <Padding top={4}>
+        <Row>
+          <Col xs={12}>
+            <H2>Join Our Team</H2>
+          </Col>
+        </Row>
+        <Padding top={3}>
+          <Row>
+            <Jobs>
+              {jobs =>
+                Object.keys(jobs).map(key => (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${key}-${jobs[key].length}-main`}
+                  >
+                    <H4>{key}</H4>
+
+                    <ul>
+                      {jobs[key].map(job => (
+                        <Li key={`${job.id}`}>
+                          <a
+                            rel="noopener noreferrer"
+                            href={job.hostedUrl}
+                            target="_blank"
+                          >
+                            {job.text.split(' - ')[0]}
+                          </a>
+                          <span>{job.categories.commitment}</span>
+                        </Li>
+                      ))}
+                    </ul>
+                  </Col>
+                ))
+              }
+            </Jobs>
+          </Row>
+        </Padding>
+      </Padding>
     </Row>
 
     {/* <Link to="/page-2/">Go to page 2</Link> */}

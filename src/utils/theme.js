@@ -38,6 +38,8 @@ export default {
     textLight: '#828282',
     link: '#757575',
     dark: '#232323',
-    black: '#1d1d1d'
+    black: '#1d1d1d',
+    lightGray: '#949494',
+    greyBg: '#e6e6e6'
   }
 }

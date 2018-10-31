@@ -19,7 +19,7 @@ const POSTS = graphql`
   }
 `
 
-const Jobs = ({ data }) => (
+const Jobs = ({ data, children }) => (
   <StaticQuery
     query={POSTS}
     render={({ allLever }) => {
@@ -32,25 +32,7 @@ const Jobs = ({ data }) => (
 
         return acc
       }, {})
-      return Object.keys(jobs).map(key => (
-        <article key={`${key}-${jobs[key].length}-main`}>
-          <h3>{key}</h3>
-          <ul>
-            {jobs[key].map(job => (
-              <li key={`${job.id}`}>
-                <a
-                  rel="noopener noreferrer"
-                  href={job.hostedUrl}
-                  target="_blank"
-                >
-                  {job.text} -
-                </a>
-                {job.categories.commitment}
-              </li>
-            ))}
-          </ul>
-        </article>
-      ))
+      return children(jobs)
     }}
   />
 )

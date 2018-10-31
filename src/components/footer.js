@@ -38,7 +38,7 @@ const Footer = () => {
               <Locations>
                 {data =>
                   data.map(location => (
-                    <Col key={location.node.id} xs={3}>
+                    <Col key={location.node.id} xs={12} sm={6} md={3}>
                       <H4 reverse>{location.node.name}</H4>
                       <Paragraph>
                         <Node>{location.node.streetAddress.streetAddress}</Node>
