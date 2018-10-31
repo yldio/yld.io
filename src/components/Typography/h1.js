@@ -14,7 +14,7 @@ export default styled.h1`
     color: ${props => props.theme.colors.white};
   `};
 
-  ${breakpoint('phone')`
+  ${breakpoint('tablet')`
     font-size: ${remcalc(60)};
     padding: ${remcalc(21)} 0;
     line-height: ${remcalc(60)};

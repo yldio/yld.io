@@ -9,7 +9,7 @@ const breakpoints = {
 }
 
 export default {
-  ...breakpoints,
+  breakpoints,
   flexboxgrid: {
     gridSize: 12,
     gutterWidth: calc(39.3),
@@ -20,7 +20,7 @@ export default {
       md: calc(1048),
       lg: calc(1048)
     },
-    ...breakpoints
+    breakpoints
   },
   spacing: {
     0: '0',
