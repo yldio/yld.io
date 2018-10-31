@@ -1,6 +1,7 @@
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 
 export default styled.h1`
   color: ${props => props.theme.colors.text};
@@ -8,6 +9,10 @@ export default styled.h1`
   font-size: ${remcalc(30)};
   line-height: ${remcalc(30)};
   padding: ${remcalc(29)} 0 ${remcalc(25)} 0;
+
+  ${is('reverse')`
+    color: ${props => props.theme.colors.white};
+  `};
 
   ${breakpoint('phone')`
     font-size: ${remcalc(60)};

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 
 export default styled.h6`
   color: ${props => props.theme.colors.link};
@@ -9,4 +10,8 @@ export default styled.h6`
   line-height: ${remcalc(24)};
   font-weight: 400;
   text-decoration: underline;
+
+  ${is('reverse')`
+    color: ${props => props.theme.colors.white};
+  `};
 `
