@@ -3,7 +3,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import styled from 'styled-components'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../components/locations'
-import { H2, H4, Paragraph } from '../components/typography'
+import { H2, H4, Paragraph } from '../components/Typography'
 
 const FooterStyled = styled.footer`
   background: ${props => props.theme.colors.dark};
