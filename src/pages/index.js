@@ -6,6 +6,7 @@ import { Padding } from 'styled-components-spacing'
 import { H2, H4, Paragraph, H3, H6 } from '../components/Typography'
 import Layout from '../components/layout'
 import Jobs from '../components/jobs'
+import StyledLink from '../components/styledLink'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 
@@ -141,13 +142,13 @@ const IndexPage = () => (
           <Row>
             <Col xs={12}>
               <Padding top={2}>
-                <a
+                <StyledLink
                   href="https://jobs.lever.co/yld"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  View all
-                </a>
+                  View all openings
+                </StyledLink>
               </Padding>
             </Col>
           </Row>
