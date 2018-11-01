@@ -5,6 +5,13 @@ import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../components/locations'
 import { H2, H4, Paragraph } from '../components/Typography'
 
+import behance from '../images/behance-icon.svg'
+import dribbble from '../images/dribbble-icon.svg'
+import github from '../images/github-icon.svg'
+import medium from '../images/medium-icon.svg'
+import twitter from '../images/twiter-icon.svg'
+import youtube from '../images/youtube-icon.svg'
+
 const FooterStyled = styled.footer`
   background: ${props => props.theme.colors.dark};
   color: ${props => props.theme.colors.white};
@@ -12,8 +19,7 @@ const FooterStyled = styled.footer`
 
 const FollowUs = styled.section`
   background: ${props => props.theme.colors.black};
-  display: flex;
-  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 `
 
 const Node = styled.span`
@@ -23,6 +29,14 @@ const Node = styled.span`
   margin-bottom: 6px;
 `
 
+const Social = styled.ul`
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 24px;
+  }
+`
+
 const Footer = () => {
   return (
     <Margin top={5}>
@@ -30,7 +44,7 @@ const Footer = () => {
         <Padding top={4} bottom={5}>
           <Grid>
             <Row>
-              <Col xs={22}>
+              <Col xs={12}>
                 <H2 reverse>Find us</H2>
               </Col>
             </Row>
@@ -62,7 +76,40 @@ const Footer = () => {
           <Padding vertical={3}>
             <Grid>
               <Row>
-                <Col xs={12}>things</Col>
+                <Col xs={12}>
+                  <Social>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://twitter.com/yldio"
+                      >
+                        <img src={twitter} alt="social" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://github.com/yldio"
+                      >
+                        <img src={github} alt="social" />
+                      </a>
+                    </li>
+                    <li>
+                      <img src={youtube} alt="social" />
+                    </li>
+                    <li>
+                      <img src={medium} alt="social" />
+                    </li>
+                    <li>
+                      <img src={dribbble} alt="social" />
+                    </li>
+                    <li>
+                      <img src={behance} alt="social" />
+                    </li>
+                  </Social>
+                </Col>
               </Row>
             </Grid>
           </Padding>
