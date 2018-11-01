@@ -11,6 +11,10 @@ export default styled.h6`
   font-weight: 400;
   text-decoration: underline;
 
+  ${is('muted')`
+    opacity: 50%;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

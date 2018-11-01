@@ -9,6 +9,10 @@ export default styled.h5`
   line-height: ${remcalc(24)};
   font-weight: 400;
 
+  ${is('muted')`
+    opacity: 50%;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

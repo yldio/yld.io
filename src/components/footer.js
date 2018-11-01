@@ -105,7 +105,13 @@ const Footer = () => {
                       <img src={youtube} alt="social" />
                     </li>
                     <li>
-                      <img src={medium} alt="social" />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://medium.com/yld-engineering-blog"
+                      >
+                        <img src={medium} alt="social" />
+                      </a>
                     </li>
                     <li>
                       <img src={dribbble} alt="social" />

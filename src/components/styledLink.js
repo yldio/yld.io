@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 // eslint-disable-next-line no-unused-vars
 import styled, { withComponent } from 'styled-components'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 
 const Anchor = styled(Link)`
   margin-top: ${remcalc(12)};
@@ -14,6 +15,10 @@ const Anchor = styled(Link)`
   position: relative;
   display: inline-block;
 
+  ${is('reverse')`
+    color: ${props => props.theme.colors.white};
+  `};
+
   &:after {
     content: '';
     display: block;
@@ -21,6 +26,10 @@ const Anchor = styled(Link)`
     width: 100%;
     margin-top: ${remcalc(6)};
     background: ${props => props.theme.colors.text};
+
+    ${is('reverse')`
+      background: ${props => props.theme.colors.white};
+  `};
   }
 `
 

@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { format } from 'date-fns'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { H2, H4, Paragraph, H3, H6 } from '../components/Typography'
 import Layout from '../components/layout'
 import Jobs from '../components/jobs'
+import Posts from '../components/posts'
 import StyledLink from '../components/styledLink'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -46,7 +48,24 @@ const WrapperRow = styled(Row)`
   align-items: center;
 `
 
-const IndexPage = ({ data: { contentfulHomepage: content } }) => (
+const EventTitle = styled(H3)`
+  font-size: ${remcalc(30)};
+  padding: ${remcalc(12)} 0 0 0;
+`
+
+const EventWrapper = styled.header`
+  padding-top: ${remcalc(24)};
+  padding-left: ${remcalc(36)};
+
+  span {
+    color: ${props => props.theme.colors.lightGray};
+    display: block;
+  }
+`
+
+const IndexPage = ({
+  data: { contentfulHomepage: content, allContentfulMeetupEvent: events }
+}) => (
   <Layout>
     <WrapperRow>
       <Col xs={5}>
@@ -130,61 +149,124 @@ const IndexPage = ({ data: { contentfulHomepage: content } }) => (
         <Padding bottom={2} />
         CARD
       </Col>
-      <Padding top={4}>
+    </Row>
+    <Padding top={5} />
+    <Row>
+      <Col md={4} xs={12}>
+        <H2>Upcoming Events</H2>
+        <ul>
+          {events.edges
+            .splice(0, 3)
+            .filter(n => !n.node.homepageFeatured)
+            .map(({ node }) => (
+              <Li key={`${node.id}`}>
+                <H4>{node.eventTitle}</H4>
+                {format(new Date(node.date), 'MMMM DD[,] dddd')}
+              </Li>
+            ))}
+        </ul>
+      </Col>
+      <Col md={8} xs={12}>
+        {events.edges.filter(n => n.node.homepageFeatured).map(({ node }) => (
+          <Flex
+            key={node.id}
+            alignStart
+            justifyBetween
+            full
+            column
+            style={{ background: `#${node.color}` }}
+          >
+            <EventWrapper>
+              <span>Featured</span>
+              <EventTitle reverse>{node.eventTitle}</EventTitle>
+              <span>{node.blurb.blurb}</span>
+              <StyledLink reverse href={node.linkToEvent}>
+                Buy Tickets
+              </StyledLink>
+            </EventWrapper>
+            <img alt={node.eventName} src={node.posterImage.file.url} />
+          </Flex>
+        ))}
+      </Col>
+    </Row>
+    <Padding top={5} bottom={4} />
+    <Row>
+      <Col md={6} xs={12}>
+        <H2>From the blog</H2>
+      </Col>
+      <Col md={6} xs={12}>
+        <Posts>
+          {posts => (
+            <ul>
+              {posts.splice(0, 3).map(({ node }) => (
+                <Li key={`${node.id}`}>
+                  <H4>{node.title}</H4>
+                  {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
+                </Li>
+              ))}
+            </ul>
+          )}
+        </Posts>
+        <Padding top={3}>
+          <StyledLink href="https://medium.com/yld-engineering-blog">
+            More Articles
+          </StyledLink>
+        </Padding>
+      </Col>
+    </Row>
+    <Padding top={4}>
+      <Row>
+        <Col xs={12}>
+          <H2>Join Our Team</H2>
+        </Col>
+      </Row>
+      <Padding top={3}>
+        <Row>
+          <Jobs>
+            {jobs =>
+              Object.keys(jobs).map(key => (
+                <Col
+                  md={4}
+                  sm={6}
+                  xs={12}
+                  key={`${key}-${jobs[key].length}-main`}
+                >
+                  <H4>{key}</H4>
+
+                  <ul>
+                    {jobs[key].splice(0, 3).map(job => (
+                      <Li key={`${job.id}`}>
+                        <a
+                          rel="noopener noreferrer"
+                          href={job.hostedUrl}
+                          target="_blank"
+                        >
+                          {job.text.split(' - ')[0]}
+                        </a>
+                        <span>{job.categories.commitment}</span>
+                      </Li>
+                    ))}
+                  </ul>
+                </Col>
+              ))
+            }
+          </Jobs>
+        </Row>
         <Row>
           <Col xs={12}>
-            <H2>Join Our Team</H2>
+            <Padding top={2}>
+              <StyledLink
+                href="https://jobs.lever.co/yld"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View all openings
+              </StyledLink>
+            </Padding>
           </Col>
         </Row>
-        <Padding top={3}>
-          <Row>
-            <Jobs>
-              {jobs =>
-                Object.keys(jobs).map(key => (
-                  <Col
-                    md={4}
-                    sm={6}
-                    xs={12}
-                    key={`${key}-${jobs[key].length}-main`}
-                  >
-                    <H4>{key}</H4>
-
-                    <ul>
-                      {jobs[key].splice(0, 3).map(job => (
-                        <Li key={`${job.id}`}>
-                          <a
-                            rel="noopener noreferrer"
-                            href={job.hostedUrl}
-                            target="_blank"
-                          >
-                            {job.text.split(' - ')[0]}
-                          </a>
-                          <span>{job.categories.commitment}</span>
-                        </Li>
-                      ))}
-                    </ul>
-                  </Col>
-                ))
-              }
-            </Jobs>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Padding top={2}>
-                <StyledLink
-                  href="https://jobs.lever.co/yld"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  View all openings
-                </StyledLink>
-              </Padding>
-            </Col>
-          </Row>
-        </Padding>
       </Padding>
-    </Row>
-
+    </Padding>
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
@@ -233,6 +315,26 @@ export const query = graphql`
         file {
           url
           fileName
+        }
+      }
+    }
+    allContentfulMeetupEvent {
+      edges {
+        node {
+          color
+          posterImage {
+            file {
+              url
+            }
+          }
+          homepageFeatured
+          id
+          eventTitle
+          date
+          linkToEvent
+          blurb {
+            blurb
+          }
         }
       }
     }

@@ -14,6 +14,10 @@ export default styled.h1`
     color: ${props => props.theme.colors.white};
   `};
 
+  ${is('muted')`
+    opacity: 50%;
+  `};
+
   ${breakpoint('tablet')`
     font-size: ${remcalc(60)};
     padding: ${remcalc(21)} 0;
