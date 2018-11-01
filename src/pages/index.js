@@ -32,21 +32,46 @@ const Li = styled.li`
   }
 `
 
+const ImageWrapper = styled(Col)`
+  position: absolute;
+  right: 0;
+  margin-right: ${remcalc(-20)};
+  height: ${remcalc(540)};
+  width: ${remcalc(540)};
+  padding: 0;
+`
+
+const WrapperRow = styled(Row)`
+  min-height: ${remcalc(540)};
+  align-items: center;
+`
+
 const IndexPage = ({ data: { contentfulHomepage: content } }) => (
   <Layout>
-    <Row>
+    <WrapperRow>
       <Col xs={5}>
-        <H2>Moving Trainline beyond legacy</H2>
+        <H2>{content.pIckedCaseStudy.title}</H2>
         <Paragraph>
-          YLD wrapped the platforms in an efficient and scalable Node.js layer
-          contributing to an enhanced user experience.
+          {content.pIckedCaseStudy.body.content[0].content[0].value}
         </Paragraph>
-        <Link to={'/'}>Learn More</Link>
+        <StyledLink to={`/${content.pIckedCaseStudy.slug}`}>
+          Learn More
+        </StyledLink>
       </Col>
-      <Col xs={6} xsOffset={1}>
-        <Flex center full style={{ background: '#03112d' }} />
-      </Col>
-    </Row>
+      <ImageWrapper xs={7}>
+        <Flex
+          justifyEnd
+          alignCenter
+          full
+          style={{ background: `#${content.pIckedCaseStudy.posterColor}` }}
+        >
+          <img
+            alt={content.pIckedCaseStudy.title}
+            src={content.pIckedCaseStudy.posterImage.file.url}
+          />
+        </Flex>
+      </ImageWrapper>
+    </WrapperRow>
     <Padding bottom={6} />
     <Padding bottom={4} />
     <Row>
@@ -167,6 +192,24 @@ const IndexPage = ({ data: { contentfulHomepage: content } }) => (
 export const query = graphql`
   query {
     contentfulHomepage {
+      pIckedCaseStudy {
+        title
+        slug
+        posterImage {
+          file {
+            url
+          }
+        }
+        posterColor
+        body {
+          content {
+            content {
+              value
+              nodeType
+            }
+          }
+        }
+      }
       seoText {
         content {
           content {
