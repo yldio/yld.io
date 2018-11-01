@@ -54,7 +54,7 @@ const IndexPage = ({ data: { contentfulHomepage: content } }) => (
         <Paragraph>
           {content.pIckedCaseStudy.body.content[0].content[0].value}
         </Paragraph>
-        <StyledLink to={`/${content.pIckedCaseStudy.slug}`}>
+        <StyledLink to={`/case-study/${content.pIckedCaseStudy.slug}`}>
           Learn More
         </StyledLink>
       </Col>
