@@ -16,6 +16,7 @@
     "gatsby-source-lever": "^2.0.1",
     "gatsby-source-medium": "^2.0.1",
     "lodash": "^4.17.11",
+    "netlify-lambda": "^1.0.2",
     "polished": "^2.3.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -41,7 +42,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint . --cache --fix",
-    "pretest": "npm run lint"
+    "start:lambda": "netlify-lambda serve functions/"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -49,14 +50,25 @@
     "@storybook/addon-links": "^4.0.0",
     "@storybook/addons": "^4.0.0",
     "@storybook/react": "^4.0.0",
+    "apr": "^2.0.2",
+    "apr-intercept": "^3.0.3",
+    "apr-main": "^4.0.3",
+    "apr-map": "^3.0.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.8.0",
+    "contentful": "^6.1.1",
+    "contentful-management": "^5.1.4",
+    "dotenv": "^6.0.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
-    "prettier": "^1.14.3"
+    "jest": "^23.2.0",
+    "lodash.find": "^4.6.0",
+    "meetup-api": "^1.4.32",
+    "prettier": "^1.14.3",
+    "striptags": "^3.1.1"
   }
 }
