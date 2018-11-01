@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
@@ -32,7 +32,7 @@ const Li = styled.li`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data: { contentfulHomepage: content } }) => (
   <Layout>
     <Row>
       <Col xs={5}>
@@ -51,17 +51,21 @@ const IndexPage = () => (
     <Padding bottom={4} />
     <Row>
       <Col xs={10}>
-        <H3>
-          We help our clients move from a culture of delivery to a culture of
-          learning through our expertise in{' '}
-          <Link to={'/'}>software engineering</Link>,{' '}
-          <Link to={'/'}>design</Link>, <Link to={'/'}>training</Link> and{' '}
-          <Link to={'/'}>open-source</Link>.
-        </H3>
+        <H3>{content.seoText.content[0].content[0].value}</H3>
       </Col>
     </Row>
     <Padding bottom={4} />
-    <Row>Clients</Row>
+    <Row>
+      {content.companies.map(company => (
+        <Col
+          xs={3}
+          key={company.id}
+          style={{ height: 108, display: 'flex', alignItems: 'center' }}
+        >
+          <img src={company.file.url} alt={company.file.fileName} />
+        </Col>
+      ))}
+    </Row>
     <Padding bottom={5} />
     <Row>
       <Col xs={6}>
@@ -159,5 +163,37 @@ const IndexPage = () => (
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    contentfulHomepage {
+      seoText {
+        content {
+          content {
+            value
+            nodeType
+          }
+        }
+      }
+      services {
+        title
+        introSentence {
+          introSentence
+        }
+        homePageSpecialities {
+          title
+          slug
+        }
+      }
+      companies {
+        id
+        file {
+          url
+          fileName
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

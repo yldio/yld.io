@@ -14,8 +14,6 @@ const LOCATIONS = graphql`
           }
           telephone
           email
-          postCode
-          floor
           streetAddress {
             id
             streetAddress

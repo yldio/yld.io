@@ -55,15 +55,20 @@ const Footer = () => {
                     <Col key={location.node.id} xs={12} sm={6} md={3}>
                       <H4 reverse>{location.node.name}</H4>
                       <Paragraph>
-                        <Node>{location.node.streetAddress.streetAddress}</Node>
-                        <Node>{location.node.floor}</Node>
-                        <Node>{location.node.postCode}</Node>
+                        {location.node.streetAddress.streetAddress
+                          .split('\n')
+                          .map(address => (
+                            <Node key={address}>{address}</Node>
+                          ))}
+
                         <Node>{location.node.telephone}</Node>
-                        <Node>
-                          <a href={`mailto:${location.node.email}`}>
-                            {location.node.email}
-                          </a>
-                        </Node>
+                        {location.node.email ? (
+                          <Node>
+                            <a href={`mailto:${location.node.email}`}>
+                              {location.node.email}
+                            </a>
+                          </Node>
+                        ) : null}
                       </Paragraph>
                     </Col>
                   ))
