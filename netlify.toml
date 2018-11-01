@@ -1,2 +1,2 @@
 [build]
-  Functions = "src/functions"
+  Functions = "functions"

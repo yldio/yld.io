@@ -41,7 +41,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:lambda": "netlify-lambda build src/functions",
     "build": "run-p build:**",
     "lint": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda serve functions/"
