@@ -15,7 +15,7 @@ export default styled.h1`
   `};
 
   ${is('muted')`
-    opacity: 50%;
+    opacity: .5;
   `};
 
   ${breakpoint('tablet')`

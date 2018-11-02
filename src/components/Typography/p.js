@@ -8,7 +8,11 @@ export default styled.p`
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: 1.33;
 
+  ${is('reverse')`
+    color: ${props => props.theme.colors.white};
+  `};
+
   ${is('muted')`
-    opacity: 50%;
+    opacity: .5;
   `};
 `

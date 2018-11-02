@@ -12,7 +12,7 @@ export default styled.h6`
   text-decoration: underline;
 
   ${is('muted')`
-    opacity: 50%;
+    opacity: .5;
   `};
 
   ${is('reverse')`

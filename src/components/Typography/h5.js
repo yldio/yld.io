@@ -10,7 +10,7 @@ export default styled.h5`
   font-weight: 400;
 
   ${is('muted')`
-    opacity: 50%;
+    opacity: .5;
   `};
 
   ${is('reverse')`

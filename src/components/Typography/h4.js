@@ -7,6 +7,7 @@ export default styled.h4`
   color: ${props => props.theme.colors.text};
   font-weight: 700;
   line-height: ${remcalc(24)};
+  font-size: ${remcalc(18)};
   padding: ${remcalc(11)} 0 ${remcalc(13)} 0;
 
   ${is('reverse')`
@@ -14,12 +15,20 @@ export default styled.h4`
   `};
 
   ${is('muted')`
-    opacity: 50%;
+    opacity: .5;
   `};
 
   ${breakpoint('tablet')`
-    font-size: ${remcalc(18)};
-    padding: ${remcalc(12)} 0 ${remcalc(12)} 0;
-    line-height: ${remcalc(24)};
+    font-size: ${remcalc(30)};
+    padding: ${remcalc(14)} 0 ${remcalc(10)} 0;
+    line-height: ${remcalc(36)};
+
+    ${is('noMargin')`
+        padding: 0;
+    `};
+  `};
+
+  ${is('noMargin')`
+      padding: 0;
   `};
 `
