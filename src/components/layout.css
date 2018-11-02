@@ -25,3 +25,7 @@ ol li {
 ul li {
   padding-left: 0;
 }
+
+a[title="Report errors in the road map or imagery to Google"], a[title="Click to see this area on Google Maps"], button.gm-control-active.gm-fullscreen-control, .gmnoprint {
+  display: none !important;
+}
