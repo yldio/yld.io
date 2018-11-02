@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'YLD'
+    title: 'YLD',
+    siteUrl: `https://yld.io`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

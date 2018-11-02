@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const Specialty = ({ data }) => {
-  console.log(data)
   const specialty = data.allContentfulSpeciality.edges[0].node
 
   return (
