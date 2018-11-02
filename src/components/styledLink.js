@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 // eslint-disable-next-line no-unused-vars
-import styled, { withComponent } from 'styled-components'
+import styled, { withComponent, css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 
-const Anchor = styled(Link)`
+export const StyledLinkCss = css`
   margin-top: ${remcalc(12)};
   margin-bottom: ${remcalc(22)};
   line-height: ${remcalc(24)};
@@ -31,6 +31,10 @@ const Anchor = styled(Link)`
       background: ${props => props.theme.colors.white};
   `};
   }
+`
+
+const Anchor = styled(Link)`
+  ${StyledLinkCss};
 `
 
 const StyledAnchor = Anchor.withComponent('a')

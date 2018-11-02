@@ -95,7 +95,24 @@ const IndexPage = ({
     <Padding bottom={4} />
     <Row>
       <Col xs={10}>
-        <H3>{content.seoText.content[0].content[0].value}</H3>
+        <H3>
+          {content.seoText.content[0].content.map(content => {
+            if (content.nodeType === 'text') return content.value
+
+            if (content.nodeType === 'hyperlink') {
+              return (
+                <StyledLink
+                  style={{ marginBottom: 0 }}
+                  to={`/${content.data.uri}`}
+                >
+                  {content.content[0].value}
+                </StyledLink>
+              )
+            }
+
+            return ''
+          })}
+        </H3>
       </Col>
     </Row>
     <Padding bottom={4} />
@@ -296,7 +313,14 @@ export const query = graphql`
       seoText {
         content {
           content {
+            data {
+              uri
+            }
             value
+            content {
+              value
+              nodeType
+            }
             nodeType
           }
         }
