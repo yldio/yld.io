@@ -102,7 +102,8 @@ const IndexPage = ({
     <Row>
       {content.companies.map(company => (
         <Col
-          xs={3}
+          sm={6}
+          md={3}
           key={company.id}
           style={{ height: 108, display: 'flex', alignItems: 'center' }}
         >

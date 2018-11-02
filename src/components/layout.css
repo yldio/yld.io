@@ -1,3 +1,8 @@
+body, html {
+  width: 100%;
+  overflow-x: scroll;
+}
+
 h1 {
   color: inherit;
   font-weight: bold;

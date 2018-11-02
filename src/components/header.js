@@ -1,26 +1,75 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
+import is from 'styled-is'
 import Flex from 'styled-flex-component'
+import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 import logo from '../images/yld.svg'
+import menu from '../images/menu.svg'
 
-const Header = ({ siteTitle }) => (
-  <Padding top={2} bottom={4} horizontal={2}>
-    <Flex justifyBetween>
-      <Link to="/">
-        <img src={logo} alt="yld" />
-      </Link>
-      <Flex>
-        <Padding right={2}>
-          <Link to="/engineering">Engineering</Link>
-        </Padding>
-        <Padding right={2}>
-          <Link to="/design">Design</Link>
-        </Padding>
-        <Link to="/contacts">Contacts</Link>
-      </Flex>
-    </Flex>
-  </Padding>
-)
+const MobileMenu = styled(Flex)`
+  display: flex;
+
+  ${breakpoint('tablet')`
+  display: none;
+  `};
+`
+
+const DesktopMenu = styled(Flex)`
+  display: none;
+
+  ${breakpoint('tablet')`
+    display: flex;
+  `};
+
+  ${is('open')`
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: ${remcalc(24)};
+
+    > div, > a {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+      margin-bottom:  ${remcalc(12)};
+      font-weight: bold;
+    }
+  `};
+`
+
+class Header extends Component {
+  state = { menuOpen: false }
+
+  toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }))
+
+  render () {
+    return (
+      <Padding top={2} bottom={4} horizontal={2}>
+        <Flex wrap justifyBetween>
+          <Link to="/">
+            <img role="button" tab-index="0" src={logo} alt="yld" />
+          </Link>
+          <MobileMenu>
+            <img onClick={this.toggleMenu} src={menu} alt="open menu" />
+          </MobileMenu>
+          <DesktopMenu open={this.state.menuOpen}>
+            <Padding right={2}>
+              <Link to="/engineering">Engineering</Link>
+            </Padding>
+            <Padding right={2}>
+              <Link to="/design">Design</Link>
+            </Padding>
+            <Link to="/contacts">Contacts</Link>
+          </DesktopMenu>
+        </Flex>
+      </Padding>
+    )
+  }
+}
 
 export default Header
