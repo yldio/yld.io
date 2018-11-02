@@ -17,6 +17,17 @@ exports.createPages = ({ graphql, actions }) => {
               node {
                 id
                 slug
+                body {
+                  nodeType
+                }
+              }
+            }
+          }
+          allContentfulService {
+            edges {
+              node {
+                id
+                slug
               }
             }
           }
@@ -37,6 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
       const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
+      const serviceTemplate = path.resolve(`./src/templates/service.js`)
 
       _.each(result.data.allContentfulCaseStudy.edges, edge => {
         createPage({
@@ -49,9 +61,21 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       _.each(result.data.allContentfulSpeciality.edges, edge => {
+        if (edge.node.body) {
+          createPage({
+            path: `/speciality/${edge.node.slug}/`,
+            component: slash(specialityTemplate),
+            context: {
+              id: edge.node.id
+            }
+          })
+        }
+      })
+
+      _.each(result.data.allContentfulService.edges, edge => {
         createPage({
-          path: `/speciality/${edge.node.slug}/`,
-          component: slash(specialityTemplate),
+          path: `/${edge.node.slug}/`,
+          component: slash(serviceTemplate),
           context: {
             id: edge.node.id
           }

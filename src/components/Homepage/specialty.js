@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Row, Col } from 'react-styled-flexboxgrid'
@@ -31,11 +32,22 @@ const Specialty = ({ services }) => (
         <Row>
           <Col xs={7}>
             <H6>
-              {service.homePageSpecialities.map(s => s.title).join(' / ')}
+              {service.homePageSpecialities.map((s, i) => {
+                const last = i + 1 === service.homePageSpecialities.length
+                if (s.body) {
+                  return (
+                    <Link to={`/specialty/${s.slug}`}>
+                      {s.title} ${last ? '' : '/'}
+                    </Link>
+                  )
+                }
+
+                return `${s.title} ${last ? '' : '/'} `
+              })}
             </H6>
           </Col>
         </Row>
-        <StyledLink to={`speciality/${service.slug}`}>Learn More</StyledLink>
+        <StyledLink to={`/${service.slug}`}>Learn More</StyledLink>
         <Padding bottom={2} />
         <CardHeader
           style={{

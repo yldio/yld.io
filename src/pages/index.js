@@ -84,7 +84,12 @@ export const query = graphql`
           introSentence
         }
         homePageSpecialities {
+          id
+          slug
           title
+          body {
+            nodeType
+          }
         }
       }
       companies {
