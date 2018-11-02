@@ -11,6 +11,8 @@ import github from '../images/github-icon.svg'
 import medium from '../images/medium-icon.svg'
 import twitter from '../images/twiter-icon.svg'
 import youtube from '../images/youtube-icon.svg'
+import instagram from '../images/instagram-icon.svg'
+import linkedin from '../images/linkedin-icon.svg'
 
 const FooterStyled = styled.footer`
   background: ${props => props.theme.colors.dark};
@@ -102,7 +104,13 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <img src={youtube} alt="social" />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA"
+                      >
+                        <img src={youtube} alt="social" />
+                      </a>
                     </li>
                     <li>
                       <a
@@ -114,10 +122,40 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <img src={dribbble} alt="social" />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/yld.io/"
+                      >
+                        <img src={instagram} alt="social" />
+                      </a>
                     </li>
                     <li>
-                      <img src={behance} alt="social" />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.linkedin.com/company/yld/"
+                      >
+                        <img src={linkedin} alt="social" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://dribbble.com/makeusproud"
+                      >
+                        <img src={dribbble} alt="social" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.behance.net/MakeUsProud"
+                      >
+                        <img src={behance} alt="social" />
+                      </a>
                     </li>
                   </Social>
                 </Col>
