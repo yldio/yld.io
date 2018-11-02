@@ -36,7 +36,7 @@ const Specialty = ({ services }) => (
                 const last = i + 1 === service.homePageSpecialities.length
                 if (s.body) {
                   return (
-                    <Link to={`/specialty/${s.slug}`}>
+                    <Link key={s.id} to={`/specialty/${s.slug}`}>
                       {s.title} ${last ? '' : '/'}
                     </Link>
                   )

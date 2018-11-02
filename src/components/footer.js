@@ -3,7 +3,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import styled from 'styled-components'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../components/locations'
-import { H2, H4, Paragraph } from '../components/Typography'
+import { H2, H5, Paragraph } from '../components/Typography'
 
 import behance from '../images/behance-icon.svg'
 import dribbble from '../images/dribbble-icon.svg'
@@ -55,7 +55,9 @@ const Footer = () => {
                 {data =>
                   data.map(location => (
                     <Col key={location.node.id} xs={12} sm={6} md={3}>
-                      <H4 reverse>{location.node.name}</H4>
+                      <H5 bold reverse>
+                        {location.node.name}
+                      </H5>
                       <Paragraph>
                         {location.node.streetAddress.streetAddress
                           .split('\n')

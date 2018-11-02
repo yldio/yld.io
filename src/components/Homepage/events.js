@@ -4,7 +4,7 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { H2, H4, H3 } from '../Typography'
+import { H2, H5, H3 } from '../Typography'
 import Flex from 'styled-flex-component'
 import Li from '../listItem'
 
@@ -23,17 +23,17 @@ const EventWrapper = styled.header`
   }
 `
 
-const Blog = ({ events }) => (
+const Events = ({ events }) => (
   <Row>
     <Col md={4} xs={12}>
       <H2>Upcoming Events</H2>
       <ul>
         {events
-          .splice(0, 3)
           .filter(n => !n.node.homepageFeatured)
+          .splice(0, 3)
           .map(({ node }) => (
             <Li key={`${node.id}`}>
-              <H4>{node.eventTitle}</H4>
+              <H5 bold>{node.eventTitle}</H5>
               {format(new Date(node.date), 'MMMM DD[,] dddd')}
             </Li>
           ))}
@@ -64,4 +64,4 @@ const Blog = ({ events }) => (
   </Row>
 )
 
-export default Blog
+export default Events

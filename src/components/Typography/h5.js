@@ -13,6 +13,10 @@ export default styled.h5`
     opacity: .5;
   `};
 
+  ${is('bold')`
+    font-weight: 700;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

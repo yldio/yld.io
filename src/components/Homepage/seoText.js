@@ -13,6 +13,7 @@ const SEOText = ({ text }) => (
           if (content.nodeType === 'hyperlink') {
             return (
               <StyledLink
+                key={content.data.uri}
                 style={{ marginBottom: 0 }}
                 to={`/${content.data.uri}`}
               >
