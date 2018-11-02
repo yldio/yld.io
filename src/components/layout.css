@@ -1,55 +1,7 @@
 body, html {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
-
-h1 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 2.25rem;
-  line-height: 1.1;
-}
-
-h2 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 1.62671rem;
-  line-height: 1.1;
-}
-
-h3 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 1.38316rem;
-  line-height: 1.1;
-}
-
-h4 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.1;
-}
-
-h5 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 0.85028rem;
-  line-height: 1.1;
-}
-
-h6 {
-  color: inherit;
-  font-weight: bold;
-  font-size: 0.78405rem;
-  line-height: 1.1;
-}
-
-figure {}
-
-noscript {}
-
-iframe {}
 
 hr {
   margin-bottom: calc(1.45rem - 1px);
@@ -72,21 +24,4 @@ ol li {
 
 ul li {
   padding-left: 0;
-}
-
-blockquote *:last-child {
-  margin-bottom: 0;
-}
-
-li *:last-child {
-  margin-bottom: 0;
-}
-
-p *:last-child {
-  margin-bottom: 0;
-}
-
-code {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
 }
