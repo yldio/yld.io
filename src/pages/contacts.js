@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
-import NetlifyForm from 'react-netlify-form'
+import { Formik } from 'formik'
 // eslint-disable-next-line
 import styled, { withComponent } from 'styled-components'
 import Layout from '../components/layout'
@@ -46,7 +46,11 @@ const mapProps = center => ({
     })
   }
 })
-
+function encode (data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 class ContactUs extends Component {
   componentDidMount () {
     if (!window.google) {
@@ -78,48 +82,76 @@ class ContactUs extends Component {
         <Row>
           <Col xs={12}>
             <Margin top={2}>
-              <NetlifyForm name="contact">
-                {({ loading, error, success }) => (
-                  <div>
-                    {loading && <div>Loading...</div>}
-                    {error && (
-                      <div>
-                        Your information was not sent. Please try again later.
-                      </div>
-                    )}
-                    {success && <div>Thank you for contacting us!</div>}
-                    {!loading &&
-                      !success && (
-                      <Fragment>
-                        <input
-                          type="hidden"
-                          name="form-name"
-                          value="contact"
-                        />
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                          id="name"
-                          type="text"
-                          name="Name"
-                          placeholder="John Doe"
-                          required
-                        />
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          name="email"
-                          placeholder="example@example.com"
-                          required
-                        />
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea id="message" name="Message" required />
-                        <Button type="submit">Submit</Button>
-                      </Fragment>
-                    )}
-                  </div>
-                )}
-              </NetlifyForm>
+              <Formik
+                onSubmit={values => {
+                  fetch('/', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: encode({
+                      'form-name': 'contact',
+                      ...values
+                    })
+                  }).catch(error => alert(error))
+                }}
+                initialValues={{ email: '', name: '', message: '' }}
+              >
+                {props => {
+                  const {
+                    values,
+                    handleSubmit,
+                    isSubmitting,
+                    handleChange,
+                    handleBlur
+                  } = props
+                  return (
+                    <form
+                      name="contact"
+                      method="post"
+                      data-netlify="true"
+                      data-netlify-honeypot="bot-field"
+                      onSubmit={handleSubmit}
+                    >
+                      <input type="hidden" name="form-name" value="contact" />
+                      <Label htmlFor="name">Name</Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="John Doe"
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        required
+                      />
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="example@example.com"
+                        required
+                      />
+                      <Label
+                        htmlFor="message"
+                        value={values.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      >
+                        Message
+                      </Label>
+                      <Textarea id="message" name="Message" required />
+                      <Button type="submit" disabled={isSubmitting}>
+                        Submit
+                      </Button>
+                    </form>
+                  )
+                }}
+              </Formik>
             </Margin>
           </Col>
         </Row>
