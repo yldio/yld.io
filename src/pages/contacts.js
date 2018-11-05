@@ -91,6 +91,11 @@ class ContactUs extends Component {
                     {!loading &&
                       !success && (
                       <Fragment>
+                        <input
+                          type="hidden"
+                          name="Contact Form"
+                          value="contact"
+                        />
                         <Label htmlFor="name">Name</Label>
                         <Input
                           id="name"
