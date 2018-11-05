@@ -16,8 +16,8 @@ export default {
     outerMargin: calc(48),
     mediaQuery: 'only screen',
     container: {
-      sm: calc(1048),
-      md: calc(1048),
+      sm: 55.5,
+      md: 55.5,
       lg: calc(1048)
     },
     breakpoints

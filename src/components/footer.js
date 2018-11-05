@@ -33,10 +33,21 @@ const Node = styled.span`
 
 const Social = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 500px) {
+    li {
+      margin-bottom: 24px;
+    }
+  }
 
   li:not(:last-child) {
     margin-right: 24px;
   }
+`
+
+const Office = styled(Row)`
+  overflow: hidden;
 `
 
 const Footer = () => {
@@ -50,7 +61,7 @@ const Footer = () => {
                 <H2 reverse>Find us</H2>
               </Col>
             </Row>
-            <Row>
+            <Office>
               <Locations>
                 {data =>
                   data.map(location => (
@@ -78,7 +89,7 @@ const Footer = () => {
                   ))
                 }
               </Locations>
-            </Row>
+            </Office>
           </Grid>
         </Padding>
         <FollowUs>

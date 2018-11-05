@@ -1,15 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
+import { Padding } from 'styled-components-spacing'
+import NetlifyForm from 'react-netlify-form'
+// eslint-disable-next-line
+import styled, { withComponent } from 'styled-components'
 import Layout from '../components/layout'
-import styled from 'styled-components'
 import { H1, Paragraph, H5 } from '../components/Typography'
 import Map from '../components/map'
 import Locations from '../components/Locations'
-import { Padding } from 'styled-components-spacing'
+import { Margin } from 'styled-components-spacing/dist/cjs/Margin'
 
 const Node = styled.span`
   display: block;
   margin-bottom: 6px;
+`
+
+const Input = styled.input`
+  padding: 12px 6px;
+  width: 70%;
+  margin-bottom: 24px;
+`
+
+const Label = Node.withComponent('label')
+const Textarea = styled(Input)``
+
+const Button = styled.button`
+  border: 0;
+  display: block;
+  padding: 12px;
+  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.text};
 `
 
 const mapProps = center => ({
@@ -53,6 +73,49 @@ class ContactUs extends Component {
               Get in touch at <a href="mailto:hello@yld.io">hello@yld.io</a> or
               using the form below{' '}
             </Paragraph>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <Margin top={2}>
+              <NetlifyForm name="Contact Form">
+                {({ loading, error, success }) => (
+                  <div>
+                    {loading && <div>Loading...</div>}
+                    {error && (
+                      <div>
+                        Your information was not sent. Please try again later.
+                      </div>
+                    )}
+                    {success && <div>Thank you for contacting us!</div>}
+                    {!loading &&
+                      !success && (
+                      <Fragment>
+                        <Label htmlFor="name">Name</Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          name="Name"
+                          placeholder="John Doe"
+                          required
+                        />
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          name="email"
+                          placeholder="example@example.com"
+                          required
+                        />
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea id="message" name="Message" required />
+                        <Button>Submit</Button>
+                      </Fragment>
+                    )}
+                  </div>
+                )}
+              </NetlifyForm>
+            </Margin>
           </Col>
         </Row>
         <Padding bottom={5} />

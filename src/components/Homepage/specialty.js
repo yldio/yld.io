@@ -69,7 +69,8 @@ const Specialty = ({ services }) => (
           style={{
             background: `#${service.caseStudies[0].posterColor}`,
             width: 475,
-            height: 473
+            height: 473,
+            maxWidth: '100%'
           }}
         >
           <img

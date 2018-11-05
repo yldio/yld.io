@@ -3,6 +3,10 @@ body, html {
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+}
+
 hr {
   margin-bottom: calc(1.45rem - 1px);
   background: hsla(0, 0%, 0%, 0.2);
