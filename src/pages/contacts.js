@@ -83,6 +83,7 @@ class ContactUs extends Component {
           <Col xs={12}>
             <Margin top={2}>
               <Formik
+                handleSubmit={e => e.preventDefault()}
                 onSubmit={values => {
                   fetch('/', {
                     method: 'POST',
