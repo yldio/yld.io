@@ -7,7 +7,7 @@ import styled, { withComponent } from 'styled-components'
 import Layout from '../components/layout'
 import { H1, Paragraph, H5 } from '../components/Typography'
 import Map from '../components/map'
-import Locations from '../components/Locations'
+import Locations from '../components/locations'
 import { Margin } from 'styled-components-spacing/dist/cjs/Margin'
 
 const Node = styled.span`
