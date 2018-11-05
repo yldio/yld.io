@@ -78,7 +78,7 @@ class ContactUs extends Component {
         <Row>
           <Col xs={12}>
             <Margin top={2}>
-              <NetlifyForm name="Contact Form">
+              <NetlifyForm name="contact">
                 {({ loading, error, success }) => (
                   <div>
                     {loading && <div>Loading...</div>}
@@ -93,7 +93,7 @@ class ContactUs extends Component {
                       <Fragment>
                         <input
                           type="hidden"
-                          name="Contact Form"
+                          name="form-name"
                           value="contact"
                         />
                         <Label htmlFor="name">Name</Label>
