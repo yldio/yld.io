@@ -114,7 +114,7 @@ class ContactUs extends Component {
                         />
                         <Label htmlFor="message">Message</Label>
                         <Textarea id="message" name="Message" required />
-                        <Button>Submit</Button>
+                        <Button type="submit">Submit</Button>
                       </Fragment>
                     )}
                   </div>
