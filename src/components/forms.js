@@ -24,10 +24,11 @@ export const Checkbox = styled.input`
 
 export const Input = styled.input`
   border: solid 2px ${props => props.theme.colors.text};
-  padding: ${remcalc(18)} ${remcalc(24)};
+  padding: ${remcalc(16)} ${remcalc(24)};
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  line-height: ${remcalc(24)};
   font-size: ${remcalc(18)};
   background: ${props => props.theme.colors.greyBg};
   box-sizing: border-box;
@@ -49,6 +50,8 @@ export const Button = styled.button`
   background: ${props => props.theme.colors.text};
   font-weight: bold;
   font-size: ${remcalc(18)};
+  line-height: ${remcalc(24)};
+  box-sizing: border-box;
 
   :disabled {
     opacity: 0.5;
