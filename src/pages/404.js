@@ -39,7 +39,7 @@ const NotFoundPage = ({ data: { site } }) => (
           <H1>Oops, nothing to see here</H1>
           <Paragraph>
             The link is broken or the page has been removed. You might find what
-            you are looking for from our home page
+            you are looking for from our home page.
           </Paragraph>
           <Margin top={1}>
             <HomePageLink to={'/'}>Home</HomePageLink>
