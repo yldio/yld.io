@@ -120,7 +120,9 @@ class ContactUs extends Component {
                     onSubmit={this.handleSubmit}
                   >
                     <input type="hidden" name="form-name" value="contact" />
-                    <Label>What are you interested in?</Label>
+                    <Margin bottom={1}>
+                      <Label>What are you interested in?</Label>
+                    </Margin>
                     <Fieldset>
                       {checkboxes.map(c => (
                         <section key={c.name}>
