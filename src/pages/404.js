@@ -1,7 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Margin } from 'styled-components-spacing'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 // eslint-disable-next-line
 import styled, { withComponent } from 'styled-components'
 import remcalc from 'remcalc'
@@ -18,8 +19,20 @@ const HomePageLink = styled(LinkStyled)`
   justify-content: center;
 `
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ data: { site } }) => (
   <Layout>
+    <Helmet
+      title={`${site.siteMetadata.title} - Not Found
+      } `}
+      meta={[
+        {
+          name: 'description',
+          content: 'YLD - Engineering - Digital, NodeJS, React, AWS'
+        }
+      ]}
+    >
+      <html lang="en" />
+    </Helmet>
     <Margin top={6} bottom={7}>
       <Row>
         <Col xs={12} sm={8} md={6}>
@@ -38,3 +51,13 @@ const NotFoundPage = () => (
 )
 
 export default NotFoundPage
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

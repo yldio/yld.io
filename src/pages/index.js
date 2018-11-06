@@ -17,13 +17,10 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title} - ${content.seoPageTitle} - ${
-        content.seoPageTitle
+      title={`${site.siteMetadata.title} - ${content.seoTitle} - ${
+        content.seoTitle
       } `}
-      meta={[
-        { name: 'description', content: content.seoMetaDescription },
-        { name: 'keywords', content: content.seoMetaKeywords }
-      ]}
+      meta={[{ name: 'description', content: content.seoMetaDescription }]}
     >
       <html lang="en" />
     </Helmet>
@@ -52,9 +49,8 @@ export const query = graphql`
     }
 
     contentfulHomepage {
-      seoPageTitle
+      seoTitle
       seoMetaDescription
-      seoMetaKeywords
       pIckedCaseStudy {
         title
         slug
