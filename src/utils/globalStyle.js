@@ -14,6 +14,11 @@ export default createGlobalStyle`
     font-weight: normal;
     line-height: 1.33;
     color: ${props => props.theme.colors.text};
+
+
+    * {
+      box-sizing: border-box;
+    }
   }
 
   a {
@@ -28,21 +33,15 @@ export default createGlobalStyle`
   }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: #949494;
+      color: ${props => props.theme.colors.lightGray};
       font-style: italic;
     }
     ::-moz-placeholder { /* Firefox 19+ */
-      color: #949494;
+      color: ${props => props.theme.colors.lightGray};
       font-style: italic;
     }
     :-ms-input-placeholder { /* IE 10+ */
-      color: #949494;
+      color: ${props => props.theme.colors.lightGray};
       font-style: italic;
     }
-    :-moz-placeholder { /* Firefox 18- */
-      color: #949494;
-      font-style: italic;
-    }
-
-
 `

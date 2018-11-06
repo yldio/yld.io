@@ -33,7 +33,7 @@ function encode (data) {
 const GreyOverlay = styled.div`
   position: absolute;
   width: 100vw;
-  height: 180vh;
+  height: calc(70vh + 100%);
   background: ${props => props.theme.colors.greyBg};
   z-index: -1;
   left: 0;
