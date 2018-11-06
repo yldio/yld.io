@@ -1,74 +1,27 @@
 import React, { Component, Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
-import { Padding } from 'styled-components-spacing'
-// eslint-disable-next-line
-import styled, { withComponent } from 'styled-components'
+import { Padding, Margin } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import { H1, Paragraph } from '../components/Typography'
-import { Margin } from 'styled-components-spacing/dist/cjs/Margin'
+import {
+  Checkbox,
+  Input,
+  Label,
+  Textarea,
+  Button,
+  Fieldset
+} from '../components/forms'
 
-const Input = styled.input`
-  border: solid 2px ${props => props.theme.colors.text};
-  padding: 18px 24px;
-  margin-bottom: 36px;
-  display: block;
-  width: 100%;
-  font-size: 18px;
-`
-
-const Checkbox = styled.input`
-  appearance: none;
-  width: 24px;
-  height: 24px;
-  border: solid 2px ${props => props.theme.colors.text};
-  margin-right: 12px;
-  position: relative;
-
-  &:checked:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: ${props => props.theme.colors.text};
-    width: 12px;
-    height: 12px;
-    transform: translateX(-50%) translateY(-50%);
-  }
-`
-
-const Label = styled('label')`
-  font-weight: bold;
-  padding-bottom: 12px;
-  display: block;
-`
-
-const Textarea = Input.withComponent('textarea')
-
-const Button = styled.button`
-  border: 0;
-  display: block;
-  padding: 18px 24px;
-  color: ${props => props.theme.colors.white};
-  background: ${props => props.theme.colors.text};
-  font-weight: bold;
-  font-size: 18px;
-
-  :disabled {
-    opacity: 0.5;
-  }
-`
-
-const Fieldset = styled.section`
-  display: grid;
-  margin-bottom: 36px;
-  grid-template-columns: 1fr 1fr;
-
-  > section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 36px;
-  }
-`
+const checkboxes = [
+  { name: 'join', label: 'Join Our Team' },
+  { name: 'training', label: 'Training Services' },
+  { name: 'engineering', label: 'Engineering services' },
+  { name: 'design', label: 'Design services' },
+  { name: 'sponsor', label: 'Sponsor an Event' },
+  { name: 'speak', label: 'Speak at an Event' },
+  { name: 'issue', label: 'Report an issue' },
+  { name: 'none', label: 'None of these' }
+]
 
 function encode (data) {
   return Object.keys(data)
@@ -102,7 +55,6 @@ class ContactUs extends Component {
     e.preventDefault()
     this.setState({ submitting: true })
 
-    // eslint-disable-next-line
     fetch('/', {
       method: 'POST',
       headers: {
@@ -157,86 +109,24 @@ class ContactUs extends Component {
                     <input type="hidden" name="form-name" value="contact" />
                     <Label>What are you interested in?</Label>
                     <Fieldset>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="join"
-                          name="join"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="join">Join Our Team</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="training"
-                          name="training"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="training">Training Services</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="engineering"
-                          name="engineering"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="engineering">
-                          Engineering services
-                        </label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="design"
-                          name="design"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="design">Design services</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="sponsor"
-                          name="sponsor"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="sponsor">Sponsor an Event</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="speak"
-                          name="speak"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="speak">Speak at an Event</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="issue"
-                          name="issue"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="issue">Report an issue</label>
-                      </section>
-                      <section>
-                        <Checkbox
-                          type="checkbox"
-                          id="none"
-                          name="none"
-                          onChange={this.handleChangeCheckbox}
-                        />
-                        <label htmlFor="none">None of these</label>
-                      </section>
+                      {checkboxes.map(c => (
+                        <section key={c.name}>
+                          <Checkbox
+                            type="checkbox"
+                            id={c.name}
+                            name={c.name}
+                            onChange={this.handleChangeCheckbox}
+                          />
+                          <label htmlFor={c.name}>{c.label}</label>
+                        </section>
+                      ))}
                     </Fieldset>
                     <Label htmlFor="message">Tell us a bit more</Label>
                     <Textarea
                       rows="4"
                       value={message}
                       onChange={this.handleChange}
+                      placeholder="A brief description of what you’re looking for"
                       id="message"
                       name="message"
                       required
