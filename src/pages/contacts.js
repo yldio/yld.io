@@ -48,7 +48,6 @@ function encode (data) {
 
 class ContactUs extends Component {
   state = {
-    lookingFor: {},
     name: '',
     email: '',
     message: '',
@@ -58,10 +57,8 @@ class ContactUs extends Component {
   handleChangeCheckbox = e => {
     const target = e.target
     this.setState(prevState => ({
-      lookingFor: {
-        ...prevState.lookingFor,
-        [target.name]: target.checked
-      }
+      ...prevState,
+      [target.name]: target.checked
     }))
   }
 
