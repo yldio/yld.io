@@ -9,7 +9,6 @@ import { H2, Paragraph } from '../Typography'
 const ImageWrapper = styled(Col)`
   position: absolute;
   right: 0;
-  margin-right: ${remcalc(-20)};
   height: ${remcalc(540)};
   width: ${remcalc(540)};
   padding: 0;
