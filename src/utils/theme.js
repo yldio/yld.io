@@ -40,6 +40,6 @@ export default {
     dark: '#232323',
     black: '#1d1d1d',
     lightGray: '#949494',
-    greyBg: '#e6e6e6'
+    greyBg: '#f9f9f9'
   }
 }

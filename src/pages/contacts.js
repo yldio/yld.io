@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding, Margin } from 'styled-components-spacing'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 import { H1, Paragraph } from '../components/Typography'
 import {
@@ -28,6 +29,16 @@ function encode (data) {
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
+
+const GreyOverlay = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 70vw;
+  background: ${props => props.theme.colors.greyBg};
+  z-index: -1;
+  left: 0;
+  margin-top: 50px;
+`
 
 class ContactUs extends Component {
   state = {
@@ -78,6 +89,7 @@ class ContactUs extends Component {
           <Fragment>
             <Row>
               <Col xs={12} md={7} sm={8}>
+                <GreyOverlay />
                 <H1>Get in Touch</H1>
               </Col>
             </Row>
@@ -93,6 +105,7 @@ class ContactUs extends Component {
           <Fragment>
             <Row>
               <Col xs={12} md={7} sm={8}>
+                <GreyOverlay />
                 <H1>Get in Touch</H1>
               </Col>
             </Row>
