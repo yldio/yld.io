@@ -1,68 +1,94 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
-import { Formik } from 'formik'
 // eslint-disable-next-line
 import styled, { withComponent } from 'styled-components'
 import Layout from '../components/layout'
-import { H1, Paragraph, H5 } from '../components/Typography'
-import Map from '../components/map'
-import Locations from '../components/locations'
+import { H1 } from '../components/Typography'
 import { Margin } from 'styled-components-spacing/dist/cjs/Margin'
 
-const Node = styled.span`
-  display: block;
-  margin-bottom: 6px;
-`
-
 const Input = styled.input`
-  padding: 12px 6px;
-  width: 70%;
-  margin-bottom: 24px;
+  border: solid 2px ${props => props.theme.colors.text};
+  padding: 18px 24px;
+  margin-bottom: 36px;
+  display: block;
+  width: 100%;
+  font-size: 18px;
 `
 
-const Label = Node.withComponent('label')
-const Textarea = styled(Input)``
+const Label = styled('label')`
+  font-weight: bold;
+  padding-bottom: 12px;
+  display: block;
+`
+
+const Textarea = Input.withComponent('textarea')
 
 const Button = styled.button`
   border: 0;
   display: block;
-  padding: 12px;
+  padding: 18px 24px;
   color: ${props => props.theme.colors.white};
   background: ${props => props.theme.colors.text};
+  font-weight: bold;
+  font-size: 18px;
 `
 
-const mapProps = center => ({
-  options: {
-    center,
-    zoom: 17
-  },
-  onMount: map => {
-    // eslint-disable-next-line
-    new window.google.maps.Marker({
-      position: center,
-      map,
-      title: 'Europe'
-    })
-  }
-})
+const Fieldset = styled.section`
+  display: grid;
+  margin-bottom: 70px;
+  grid-template-columns: 1fr 1fr;
+`
+
 function encode (data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
+
 class ContactUs extends Component {
-  componentDidMount () {
-    if (!window.google) {
-      const script = document.createElement('script')
-      script.type = 'text/javascript'
-      script.src = `https://maps.google.com/maps/api/js?key=AIzaSyDMpDkPdvwEG9mxQ3sA6vaKrq64V7trj_4`
-      const headScript = document.getElementsByTagName('script')[0]
-      headScript.parentNode.insertBefore(script, headScript)
-    }
+  state = {
+    lookingFor: {},
+    name: '',
+    email: '',
+    message: '',
+    isSubmitting: false
+  }
+
+  handleChangeCheckbox = e => {
+    const target = e.target
+    this.setState(prevState => ({
+      lookingFor: {
+        ...prevState.lookingFor,
+        [target.name]: target.checked
+      }
+    }))
+  }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+
+    // eslint-disable-next-line
+    fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: encode({
+        'form-name': 'contact',
+        ...this.state
+      })
+    }).then(() => this.setState({ success: true }))
   }
 
   render () {
+    const { name, email, message, isSubmitting } = this.state
     return (
       <Layout>
         <Row>
@@ -71,123 +97,127 @@ class ContactUs extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={9}>
-            <Paragraph>
-              Do you have a project that you think we can help with? <br />
-              Get in touch at <a href="mailto:hello@yld.io">hello@yld.io</a> or
-              using the form below{' '}
-            </Paragraph>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12}>
+          <Col xs={12} md={12} sm={8}>
             <Margin top={2}>
-              <Formik
-                handleSubmit={e => e.preventDefault()}
-                onSubmit={values => {
-                  fetch('/', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: encode({
-                      'form-name': 'contact',
-                      ...values
-                    })
-                  }).catch(error => alert(error))
-                }}
-                initialValues={{ email: '', name: '', message: '' }}
+              <form
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={this.handleSubmit}
               >
-                {props => {
-                  const {
-                    values,
-                    handleSubmit,
-                    isSubmitting,
-                    handleChange,
-                    handleBlur
-                  } = props
-                  return (
-                    <form
-                      name="contact"
-                      method="post"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                      onSubmit={handleSubmit}
-                    >
-                      <input type="hidden" name="form-name" value="contact" />
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        name="name"
-                        placeholder="John Doe"
-                        value={values.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        required
-                      />
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        placeholder="example@example.com"
-                        required
-                      />
-                      <Label
-                        htmlFor="message"
-                        value={values.message}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      >
-                        Message
-                      </Label>
-                      <Textarea id="message" name="Message" required />
-                      <Button type="submit" disabled={isSubmitting}>
-                        Submit
-                      </Button>
-                    </form>
-                  )
-                }}
-              </Formik>
+                <input type="hidden" name="form-name" value="contact" />
+                <Label>What are you interested in?</Label>
+                <Fieldset>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="join"
+                      name="join"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="join">Join Our Team</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="training"
+                      name="training"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="training">Training Services</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="engineering"
+                      name="engineering"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="engineering">Engineering services</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="design"
+                      name="design"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="design">Design services</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="sponsor"
+                      name="sponsor"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="sponsor">Sponsor an Event</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="speak"
+                      name="speak"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="speak">Speak at an Event</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="issue"
+                      name="issue"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="issue">Report an issue</label>
+                  </section>
+                  <section>
+                    <input
+                      type="checkbox"
+                      id="none"
+                      name="none"
+                      onChange={this.handleChangeCheckbox}
+                    />
+                    <label htmlFor="none">None of these</label>
+                  </section>
+                </Fieldset>
+                <Label htmlFor="message">Tell us a bit more</Label>
+                <Textarea
+                  value={message}
+                  onChange={this.handleChange}
+                  id="message"
+                  name="message"
+                  required
+                />
+                <Label htmlFor="name">Your Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mr Fridge Tomatoes"
+                  value={name}
+                  onChange={this.handleChange}
+                  required
+                />
+                <Label htmlFor="email">Your Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  placeholder="mrfridgetomatoes@gmail.com"
+                  required
+                />
+                <Button type="submit" disabled={isSubmitting}>
+                  Submit
+                </Button>
+              </form>
             </Margin>
           </Col>
         </Row>
         <Padding bottom={5} />
-        <Row>
-          <Locations>
-            {locations =>
-              locations.map(location => (
-                <Col sm={12} md={6} key={location.node.id}>
-                  <Padding bottom={3}>
-                    <H5 bold>{location.node.name}</H5>
-                    <Paragraph style={{ minHeight: 87 }}>
-                      {location.node.streetAddress.streetAddress
-                        .split('\n')
-                        .map(address => (
-                          <Node key={address}>{address}</Node>
-                        ))}
-
-                      <Node>{location.node.telephone}</Node>
-                    </Paragraph>
-                    <Padding top={1}>
-                      <Map
-                        id={location.node.id}
-                        {...mapProps({
-                          lat: location.node.mapLocation.lat,
-                          lng: location.node.mapLocation.lon
-                        })}
-                      />
-                    </Padding>
-                  </Padding>
-                </Col>
-              ))
-            }
-          </Locations>
-        </Row>
       </Layout>
     )
   }
