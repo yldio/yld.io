@@ -13,15 +13,13 @@ import CaseStudy from '../components/Homepage/caseStudy'
 import Specialty from '../components/Homepage/specialty'
 
 const IndexPage = ({
-  data: {
-    contentfulHomepage: content,
-    allContentfulMeetupEvent: events,
-    site
-  }
+  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title} - ${content.seoTitle} - ${content.seoPageTitle} `}
+      title={`${site.siteMetadata.title} - ${content.seoPageTitle} - ${
+        content.seoPageTitle
+      } `}
       meta={[
         { name: 'description', content: content.seoMetaDescription },
         { name: 'keywords', content: content.seoMetaKeywords }
@@ -54,7 +52,6 @@ export const query = graphql`
     }
 
     contentfulHomepage {
-      seoTitle
       seoPageTitle
       seoMetaDescription
       seoMetaKeywords
