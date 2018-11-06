@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 
@@ -12,9 +13,22 @@ import CaseStudy from '../components/Homepage/caseStudy'
 import Specialty from '../components/Homepage/specialty'
 
 const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events }
+  data: {
+    contentfulHomepage: content,
+    allContentfulMeetupEvent: events,
+    site
+  }
 }) => (
   <Layout>
+    <Helmet
+      title={`${site.siteMetadata.title} - ${content.seoTitle} - ${content.seoPageTitle} `}
+      meta={[
+        { name: 'description', content: content.seoMetaDescription },
+        { name: 'keywords', content: content.seoMetaKeywords }
+      ]}
+    >
+      <html lang="en" />
+    </Helmet>
     <CaseStudy caseStudy={content.pIckedCaseStudy} />
     <Padding bottom={6} />
     <Padding bottom={4} />
@@ -33,7 +47,17 @@ const IndexPage = ({
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
     contentfulHomepage {
+      seoTitle
+      seoPageTitle
+      seoMetaDescription
+      seoMetaKeywords
       pIckedCaseStudy {
         title
         slug
