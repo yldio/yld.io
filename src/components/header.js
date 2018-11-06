@@ -64,7 +64,7 @@ class Header extends Component {
             <Padding right={2}>
               <Link to="/design">Design</Link>
             </Padding>
-            <Link to="/contacts">Contacts</Link>
+            <Link to="/contact">Contact</Link>
           </DesktopMenu>
         </Flex>
       </Padding>

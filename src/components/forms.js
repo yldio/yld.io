@@ -29,6 +29,7 @@ export const Input = styled.input`
   display: block;
   width: 100%;
   font-size: ${remcalc(18)};
+  background: ${props => props.theme.colors.greyBg};
 `
 
 export const Label = styled('label')`

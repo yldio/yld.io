@@ -14,12 +14,12 @@ import {
 } from '../components/forms'
 
 const checkboxes = [
-  { name: 'join', label: 'Join Our Team' },
-  { name: 'training', label: 'Training Services' },
+  { name: 'join', label: 'Join our team' },
+  { name: 'training', label: 'Training services' },
   { name: 'engineering', label: 'Engineering services' },
   { name: 'design', label: 'Design services' },
-  { name: 'sponsor', label: 'Sponsor an Event' },
-  { name: 'speak', label: 'Speak at an Event' },
+  { name: 'sponsor', label: 'Sponsor an event' },
+  { name: 'speak', label: 'Speak at an event' },
   { name: 'issue', label: 'Report an issue' },
   { name: 'none', label: 'None of these' }
 ]
@@ -33,7 +33,7 @@ function encode (data) {
 const GreyOverlay = styled.div`
   position: absolute;
   width: 100vw;
-  height: 70vw;
+  height: 180vh;
   background: ${props => props.theme.colors.greyBg};
   z-index: -1;
   left: 0;
@@ -90,7 +90,7 @@ class ContactUs extends Component {
             <Row>
               <Col xs={12} md={7} sm={8}>
                 <GreyOverlay />
-                <H1>Get in Touch</H1>
+                <H1>We will be in touch</H1>
               </Col>
             </Row>
             <Row>
@@ -106,7 +106,7 @@ class ContactUs extends Component {
             <Row>
               <Col xs={12} md={7} sm={8}>
                 <GreyOverlay />
-                <H1>Get in Touch</H1>
+                <H1>Get in touch</H1>
               </Col>
             </Row>
             <Row>
