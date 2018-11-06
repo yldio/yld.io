@@ -26,4 +26,23 @@ export default createGlobalStyle`
       color: ${props => lighten(0.2, props.theme.colors.text)};
     }
   }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #949494;
+      font-style: italic;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #949494;
+      font-style: italic;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #949494;
+      font-style: italic;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #949494;
+      font-style: italic;
+    }
+
+
 `

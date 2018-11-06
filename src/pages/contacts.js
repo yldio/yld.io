@@ -77,12 +77,12 @@ class ContactUs extends Component {
         {success ? (
           <Fragment>
             <Row>
-              <Col xs={12} md={6} sm={8}>
+              <Col xs={12} md={7} sm={8}>
                 <H1>Get in Touch</H1>
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={6} sm={8}>
+              <Col xs={12} md={7} sm={8}>
                 <Paragraph>
                   Thanks for reaching out. We will be in contact shortly
                 </Paragraph>
@@ -92,12 +92,12 @@ class ContactUs extends Component {
         ) : (
           <Fragment>
             <Row>
-              <Col xs={12} md={6} sm={8}>
+              <Col xs={12} md={7} sm={8}>
                 <H1>Get in Touch</H1>
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={6} sm={8}>
+              <Col xs={12} md={7} sm={8}>
                 <Margin top={2}>
                   <form
                     name="contact"
@@ -136,7 +136,6 @@ class ContactUs extends Component {
                       id="name"
                       type="text"
                       name="name"
-                      placeholder="Mr Fridge Tomatoes"
                       value={name}
                       onChange={this.handleChange}
                       required
@@ -148,11 +147,10 @@ class ContactUs extends Component {
                       name="email"
                       value={email}
                       onChange={this.handleChange}
-                      placeholder="mrfridgetomatoes@gmail.com"
                       required
                     />
                     <Button type="submit" disabled={submitting}>
-                      Submit
+                      {submitting ? 'Submitting' : 'Submit'}
                     </Button>
                   </form>
                 </Margin>
