@@ -8,11 +8,6 @@ import StyledLink from '../styledLink'
 import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
-  position: absolute;
-  right: 0;
-  height: ${remcalc(540)};
-  width: ${remcalc(540)};
-  padding: 0;
   margin-top: ${remcalc(-5)};
 `
 
@@ -34,7 +29,7 @@ const CaseStudy = ({ caseStudy }) => (
       <P>{caseStudy.body.content[0].content[0].value}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
-    <ImageWrapper xs={7}>
+    <ImageWrapper xs={6}>
       <Flex justifyEnd alignCenter>
         <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
       </Flex>
