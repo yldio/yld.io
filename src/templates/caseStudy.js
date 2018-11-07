@@ -75,8 +75,8 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
         </Col>
       </Row>
       <Margin bottom={4} top={3}>
-        <Row center="xs">
-          <Col xs={10}>
+        <Row center="md">
+          <Col xs={12} md={10}>
             {caseStudy.body.content
               .filter(
                 c =>
