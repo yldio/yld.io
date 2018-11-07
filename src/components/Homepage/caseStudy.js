@@ -24,7 +24,7 @@ const CaseStudy = ({ caseStudy }) => (
     <Col xs={6}>
       <H2>{caseStudy.title}</H2>
       <Paragraph>{caseStudy.body.content[0].content[0].value}</Paragraph>
-      <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn More</StyledLink>
+      <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={7}>
       <Flex

@@ -34,9 +34,10 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
               <H5 small bold>
                 Technology used
               </H5>
-              {caseStudy.technologyUsed.map(tech => (
-                <H6 key={tech.id}>{tech.title}</H6>
-              ))}
+              {caseStudy.technologyUsed &&
+                caseStudy.technologyUsed.map(tech => (
+                  <H6 key={tech.id}>{tech.title}</H6>
+                ))}
             </Flex>
             <Flex column>
               <H5 small bold>
@@ -46,25 +47,30 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
             </Flex>
           </Flex>
         </Col>
-        <ImageWrapper xs={6}>
-          <Flex
-            justifyEnd
-            alignCenter
-            full
-            style={{ background: `#${caseStudy.posterColor}` }}
-          >
-            <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
-          </Flex>
-        </ImageWrapper>
+        {caseStudy.posterImage && (
+          <ImageWrapper xs={6}>
+            <Flex
+              justifyEnd
+              alignCenter
+              full
+              style={{ background: `#${caseStudy.posterColor}` }}
+            >
+              <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+            </Flex>
+          </ImageWrapper>
+        )}
       </Row>
       <Margin bottom={4} />
       <Row>
         <Col xs={12} sm={9} md={7}>
-          {caseStudy.body.content.slice(0, 2).map((c, i) => (
-            <Paragraph padded key={i}>
-              {c.content[0].value}
-            </Paragraph>
-          ))}
+          {caseStudy.body.content.slice(0, 2).map(
+            (c, i) =>
+              c.content[0] && (
+                <Paragraph padded key={i}>
+                  {c.content[0].value}
+                </Paragraph>
+              )
+          )}
         </Col>
       </Row>
       <Margin bottom={4} top={3}>
@@ -76,19 +82,23 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
       </Margin>
       <Row>
         <Col xs={12} sm={9} md={7}>
-          {caseStudy.body.content.slice(2).map((c, i) => (
-            <Paragraph padded key={i}>
-              {c.content[0].value}
-            </Paragraph>
-          ))}
+          {caseStudy.body.content.slice(2).map(
+            (c, i) =>
+              c.content[0] && (
+                <Paragraph padded key={i}>
+                  {c.content[0].value}
+                </Paragraph>
+              )
+          )}
         </Col>
         <Col md={3} sm={12} mdOffset={1}>
-          {caseStudy.stats.map(stat => (
-            <Fragment key={stat.id}>
-              <Stat>{stat.value}</Stat>
-              <H5 bold>{stat.label}</H5>
-            </Fragment>
-          ))}
+          {caseStudy.stats &&
+            caseStudy.stats.map(stat => (
+              <Fragment key={stat.id}>
+                <Stat>{stat.value}</Stat>
+                <H5 bold>{stat.label}</H5>
+              </Fragment>
+            ))}
         </Col>
       </Row>
     </Layout>

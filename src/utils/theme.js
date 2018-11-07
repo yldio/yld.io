@@ -12,7 +12,7 @@ export default {
   breakpoints,
   flexboxgrid: {
     gridSize: 12,
-    gutterWidth: calc(39.3),
+    gutterWidth: calc(48),
     outerMargin: calc(48),
     mediaQuery: 'only screen',
     container: {
