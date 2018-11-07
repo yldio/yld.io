@@ -35,12 +35,7 @@ const CaseStudy = ({ caseStudy }) => (
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={7}>
-      <Flex
-        justifyEnd
-        alignCenter
-        full
-        style={{ background: `#${caseStudy.posterColor}` }}
-      >
+      <Flex justifyEnd alignCenter>
         <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
       </Flex>
     </ImageWrapper>

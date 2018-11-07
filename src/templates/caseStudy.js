@@ -49,12 +49,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
         </Col>
         {caseStudy.posterImage && (
           <ImageWrapper xs={6}>
-            <Flex
-              justifyEnd
-              alignCenter
-              full
-              style={{ background: `#${caseStudy.posterColor}` }}
-            >
+            <Flex justifyEnd alignCenter>
               <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
             </Flex>
           </ImageWrapper>
