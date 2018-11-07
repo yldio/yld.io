@@ -88,6 +88,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
                 (c, i) =>
                   c.content[0] && (
                     <div
+                      className="video-container"
                       dangerouslySetInnerHTML={{ __html: c.content[0].value }}
                     />
                   )
