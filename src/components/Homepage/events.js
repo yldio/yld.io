@@ -4,12 +4,11 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { H2, H5, H3 } from '../Typography'
+import { H2, H5, H4 } from '../Typography'
 import Flex from 'styled-flex-component'
 import Li from '../listItem'
 
-const EventTitle = styled(H3)`
-  font-size: ${remcalc(30)};
+const EventTitle = styled(H4)`
   padding: ${remcalc(12)} 0 0 0;
 `
 

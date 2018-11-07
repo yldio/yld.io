@@ -17,6 +17,11 @@ const CardHeader = styled.header`
     max-width: ${remcalc(310)};
   }
 `
+
+const Title = styled(H4)`
+  font-weight: 500;
+`
+
 function isEven (value) {
   if (value % 2 === 0) return true
   else return false
@@ -56,11 +61,11 @@ const Specialty = ({ services }) => (
         >
           <div>
             <Paragraph reverse muted>
-              Case Study
+              Case study
             </Paragraph>
-            <H4 noMargin reverse>
+            <Title noMargin reverse>
               {service.caseStudies[0].title}
-            </H4>
+            </Title>
           </div>
         </CardHeader>
         <Flex
