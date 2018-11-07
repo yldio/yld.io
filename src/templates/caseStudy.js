@@ -28,8 +28,8 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   return (
     <Layout>
       <Helmet
-        title={`${site.siteMetadata.title} - ${caseStudy.title} - ${
-          caseStudy.seoTitle
+        title={`${site.siteMetadata.title}  ${caseStudy.title ? '- ' + caseStudy.title : ''} ${
+          caseStudy.seoTitle ? '- ' + caseStudy.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: caseStudy.seoMetaDescription }]}
       >
@@ -176,6 +176,8 @@ export const pageQuery = graphql`
               url
             }
           }
+          seoTitle
+          seoMetaDescription
         }
       }
     }

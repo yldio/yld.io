@@ -9,14 +9,14 @@ const Service = ({ data }) => {
 
   return (
     <Layout>
-      {/* <Helmet
-        title={`${site.siteMetadata.title} - ${service.title} - ${
-          service.seoTitle
+      <Helmet
+        title={`${site.siteMetadata.title}  ${service.title ? '-' + service.title : ''} - ${
+          service.seoTitle ? '-' + service.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: service.seoMetaDescription }]}
       >
         <html lang="en" />
-      </Helmet> */}
+      </Helmet>
       <h1>{service.title}</h1>
     </Layout>
   )
@@ -36,6 +36,8 @@ export const pageQuery = graphql`
         node {
           slug
           title
+          seoTitle
+          seoMetaDescription
         }
       }
     }
