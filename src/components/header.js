@@ -49,7 +49,7 @@ class Header extends Component {
 
   render () {
     return (
-      <Padding top={2} bottom={4} horizontal={30}>
+      <Padding top={2} bottom={3} horizontal={30}>
         <Flex alignCenter wrap justifyBetween>
           <Link to="/">
             <img role="button" tab-index="0" src={logo} alt="yld" />
