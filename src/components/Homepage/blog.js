@@ -3,7 +3,7 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { H2, H4 } from '../Typography'
+import { H2, H5 } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
@@ -12,13 +12,13 @@ const Blog = () => (
     <Col md={6} xs={12}>
       <H2>From the blog</H2>
     </Col>
-    <Col md={6} xs={12}>
+    <Col md={4} xs={12}>
       <Posts>
         {posts => (
           <ul>
             {posts.splice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H4>{node.title}</H4>
+                <H5 bold>{node.title}</H5>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}
