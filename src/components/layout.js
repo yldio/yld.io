@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
@@ -23,7 +24,13 @@ const Layout = ({ children }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <Fragment>
-          <Header/>
+          <Helmet
+            title={`${data.site.siteMetadata.title}`}
+            meta={[{ name: 'description', content: '' }]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Header />
           <Grid>{children}</Grid>
           <Footer />
           <GlobalStyle />

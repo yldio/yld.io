@@ -9,14 +9,14 @@ const CaseStudy = ({ data }) => {
 
   return (
     <Layout>
-      {/* <Helmet
-        title={`${site.siteMetadata.title} - ${caseStudy.title} - ${
-          caseStudy.seoTitle
+      <Helmet
+        title={`${site.siteMetadata.title}  ${caseStudy.title ? '-' + caseStudy.title : ''} - ${
+          caseStudy.seoTitle ? '-' + caseStudy.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: caseStudy.seoMetaDescription }]}
       >
         <html lang="en" />
-      </Helmet> */}
+      </Helmet>
       <h1>{caseStudy.title}</h1>
     </Layout>
   )
@@ -36,6 +36,8 @@ export const pageQuery = graphql`
         node {
           slug
           title
+          seoTitle
+          seoMetaDescription
         }
       }
     }
