@@ -26,7 +26,7 @@ const IndexPage = ({
     >
       <html lang="en" />
     </Helmet>
-    <CaseStudy caseStudy={content.pickedCaseStudy} />
+    <CaseStudy caseStudy={content.featuredCaseStudy} />
     <Padding bottom={6} />
     <Padding bottom={4} />
     <SEOText text={content.seoText.content[0].content} />
@@ -54,7 +54,7 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
-      pickedCaseStudy {
+      featuredCaseStudy {
         title
         slug
         posterImage {
