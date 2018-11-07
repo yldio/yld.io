@@ -50,7 +50,7 @@ class Header extends Component {
 
   render () {
     return (
-      <Grid>
+      <Grid style={{ width: remcalc(1280), maxWidth: '100%' }}>
         <Row>
           <Col xs={12}>
             <Padding top={2} bottom={3}>
