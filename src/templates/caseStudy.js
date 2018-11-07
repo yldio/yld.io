@@ -28,7 +28,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
     <Layout>
       <Row style={{ minHeight: remcalc(540) }}>
         <Col xs={12} sm={9} md={7}>
-          <H1>{caseStudy.title}</H1>
+          <H1 noTop>{caseStudy.title}</H1>
           <Flex justifyBetween>
             <Flex column>
               <H5 small bold>
@@ -63,33 +63,59 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
       <Margin bottom={4} />
       <Row>
         <Col xs={12} sm={9} md={7}>
-          {caseStudy.body.content.slice(0, 2).map(
-            (c, i) =>
-              c.content[0] && (
-                <Paragraph padded key={i}>
-                  {c.content[0].value}
-                </Paragraph>
-              )
-          )}
+          {caseStudy.body.content
+            .filter(
+              c =>
+                c.content[0] && c.content[0].marks && !c.content[0].marks.length
+            )
+            .slice(0, 2)
+            .map(
+              (c, i) =>
+                c.content[0] && (
+                  <Paragraph padded key={i}>
+                    {c.content[0].value}
+                  </Paragraph>
+                )
+            )}
         </Col>
       </Row>
       <Margin bottom={4} top={3}>
         <Row center="xs">
-          <Col xs={10} style={{ background: 'blue' }}>
-            VIDEO
+          <Col xs={10}>
+            {caseStudy.body.content
+              .filter(
+                c =>
+                  c.content[0] &&
+                  c.content[0].marks &&
+                  c.content[0].marks.length
+              )
+              .map(
+                (c, i) =>
+                  c.content[0] && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: c.content[0].value }}
+                    />
+                  )
+              )}
           </Col>
         </Row>
       </Margin>
       <Row>
         <Col xs={12} sm={9} md={7}>
-          {caseStudy.body.content.slice(2).map(
-            (c, i) =>
-              c.content[0] && (
-                <Paragraph padded key={i}>
-                  {c.content[0].value}
-                </Paragraph>
-              )
-          )}
+          {caseStudy.body.content
+            .filter(
+              c =>
+                c.content[0] && c.content[0].marks && !c.content[0].marks.length
+            )
+            .slice(2)
+            .map(
+              (c, i) =>
+                c.content[0] && (
+                  <Paragraph padded key={i}>
+                    {c.content[0].value}
+                  </Paragraph>
+                )
+            )}
         </Col>
         <Col md={3} sm={12} mdOffset={1}>
           {caseStudy.stats &&
@@ -129,6 +155,9 @@ export const pageQuery = graphql`
               nodeType
               content {
                 value
+                marks {
+                  type
+                }
               }
             }
           }
