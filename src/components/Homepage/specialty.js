@@ -26,6 +26,18 @@ const Title = styled(H4)`
   font-weight: 500;
 `
 
+const AnimatedLink = styled(Link)`
+  > section {
+    transition: all 250ms ease;
+  }
+
+  &:hover {
+    section {
+      transform: scale(0.97);
+    }
+  }
+`
+
 function isEven (value) {
   if (value % 2 === 0) return true
   else return false
@@ -64,37 +76,39 @@ const Specialty = ({ services }) => (
         </Row>
         <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
         <Padding bottom={1.5} />
-        <Link to={`/case-study/${service.caseStudies[0].slug}`}>
-          <CardHeader
+        <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
+          <section
             style={{
               background: `#${service.caseStudies[0].posterColor}`
             }}
           >
-            <div>
-              <Paragraph reverse muted>
-                Case study
-              </Paragraph>
-              <Title noMargin reverse>
-                {service.caseStudies[0].title}
-              </Title>
-            </div>
-          </CardHeader>
-          <Flex
-            justifyCenter
-            alignCenter
-            style={{
-              background: `#${service.caseStudies[0].posterColor}`,
-              width: 475,
-              height: 473,
-              maxWidth: '100%'
-            }}
-          >
-            <img
-              alt={service.caseStudies[0].posterColor.title}
-              src={service.caseStudies[0].posterImage.file.url}
-            />
-          </Flex>
-        </Link>
+            <CardHeader>
+              <div>
+                <Paragraph reverse muted>
+                  Case study
+                </Paragraph>
+                <Title noMargin reverse>
+                  {service.caseStudies[0].title}
+                </Title>
+              </div>
+            </CardHeader>
+            <Flex
+              justifyCenter
+              alignCenter
+              style={{
+                background: `#${service.caseStudies[0].posterColor}`,
+                width: 475,
+                height: 473,
+                maxWidth: '100%'
+              }}
+            >
+              <img
+                alt={service.caseStudies[0].posterColor.title}
+                src={service.caseStudies[0].posterImage.file.url}
+              />
+            </Flex>
+          </section>
+        </AnimatedLink>
       </Col>
     ))}
   </Row>

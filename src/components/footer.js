@@ -21,7 +21,6 @@ const FooterStyled = styled.footer`
 
 const FollowUs = styled.section`
   background: ${props => props.theme.colors.black};
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 `
 
 const Node = styled.span`
