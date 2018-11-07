@@ -19,4 +19,8 @@ export default styled.p`
   ${is('muted')`
     opacity: .5;
   `};
+
+  ${is('noMargin')`
+      padding: 0;
+  `};
 `

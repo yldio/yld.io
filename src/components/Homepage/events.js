@@ -4,22 +4,17 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { H2, H5, H4 } from '../Typography'
+import { H2, H5, H4, Paragraph } from '../Typography'
 import Flex from 'styled-flex-component'
 import Li from '../listItem'
 
 const EventTitle = styled(H4)`
-  padding: ${remcalc(12)} 0 0 0;
+  padding-top: ${remcalc(2)} !important;
 `
 
 const EventWrapper = styled.header`
   padding-top: ${remcalc(24)};
   padding-left: ${remcalc(36)};
-
-  span {
-    color: ${props => props.theme.colors.lightGray};
-    display: block;
-  }
 `
 
 const Events = ({ events }) => (
@@ -49,11 +44,15 @@ const Events = ({ events }) => (
           style={{ background: `#${node.color}` }}
         >
           <EventWrapper>
-            <span>Featured</span>
+            <Paragraph muted reverse noMargin>
+              Featured
+            </Paragraph>
             <EventTitle reverse>{node.eventTitle}</EventTitle>
-            <span>{node.blurb.blurb}</span>
+            <Paragraph muted reverse style={{ maxWidth: remcalc(380) }}>
+              {node.blurb.blurb}
+            </Paragraph>
             <StyledLink reverse href={node.linkToEvent}>
-              Buy Tickets
+              Get tickets
             </StyledLink>
           </EventWrapper>
           <img alt={node.eventName} src={node.posterImage.file.url} />
