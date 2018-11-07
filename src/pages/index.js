@@ -17,20 +17,14 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title}  ${content.title ? '-' + content.title : ''} - ${
-        content.seoTitle ? '-' + content.seoTitle : ''
-      } `}
+      title={`${site.siteMetadata.title} - ${content.title} - ${content.seoTitle} `}
       meta={[
         { name: 'description', content: content.seoMetaDescription }
       ]}
     >
       <html lang="en" />
     </Helmet>
-<<<<<<< HEAD
     <CaseStudy caseStudy={content.featuredCaseStudy} />
-=======
-    <CaseStudy caseStudy={content.pickedCaseStudy} />
->>>>>>> Title and SEO updates for service, speacialty and caseStudy
     <Padding bottom={6} />
     <Padding bottom={4} />
     <SEOText text={content.seoText.content[0].content} />
@@ -58,11 +52,7 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
-<<<<<<< HEAD
       featuredCaseStudy {
-=======
-      pickedCaseStudy {
->>>>>>> Title and SEO updates for service, speacialty and caseStudy
         title
         slug
         posterImage {
