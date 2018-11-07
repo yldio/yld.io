@@ -1,3 +1,10 @@
+require('dotenv').config()
+
+const {
+  CONTENTFUL_TOKEN,
+  CONTENTFUL_SPACE
+} = process.env
+
 module.exports = {
   siteMetadata: {
     title: 'YLD',
@@ -11,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `22g1lenhck4z`,
-        accessToken: `be809388a1328a8177a6f37c660631902bea868511fa52a5246a73d64416d90b`
+        spaceId: CONTENTFUL_SPACE,
+        accessToken: CONTENTFUL_TOKEN
       }
     },
     {
