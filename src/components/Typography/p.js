@@ -8,6 +8,10 @@ export default styled.p`
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: 1.33;
 
+  ${is('padded')`
+    padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

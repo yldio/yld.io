@@ -17,6 +17,10 @@ export default styled.h5`
     font-weight: 700;
   `};
 
+  ${is('small')`
+    font-size: ${remcalc(15)};
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

@@ -21,7 +21,7 @@ const WrapperRow = styled(Row)`
 
 const CaseStudy = ({ caseStudy }) => (
   <WrapperRow>
-    <Col xs={5}>
+    <Col xs={6}>
       <H2>{caseStudy.title}</H2>
       <Paragraph>{caseStudy.body.content[0].content[0].value}</Paragraph>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn More</StyledLink>
