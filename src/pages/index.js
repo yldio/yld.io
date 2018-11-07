@@ -90,6 +90,7 @@ export const query = graphql`
         slug
         caseStudies {
           title
+          slug
           posterColor
           posterImage {
             file {

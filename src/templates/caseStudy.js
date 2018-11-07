@@ -26,7 +26,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
 
   return (
     <Layout>
-      <Row style={{ minHeight: remcalc(540) }}>
+      <Row>
         <Col xs={12} sm={9} md={7}>
           <H1 noTop>{caseStudy.title}</H1>
           <Flex justifyBetween>
@@ -55,7 +55,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy } }) => {
           </ImageWrapper>
         )}
       </Row>
-      <Margin bottom={4} />
+      <Margin bottom={7} />
       <Row>
         <Col xs={12} sm={9} md={7}>
           {caseStudy.body.content
