@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 export default styled.li`
   position: relative;
   padding-bottom: ${remcalc(30)};
-  margin-bottom: ${remcalc(30)};
+  margin-bottom: ${remcalc(20)};
   line-height: ${remcalc(24)};
 
   &:after {

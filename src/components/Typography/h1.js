@@ -18,9 +18,17 @@ export default styled.h1`
     opacity: .5;
   `};
 
+  ${is('noTop')`
+      padding-top: 0;
+  `};
+
   ${breakpoint('tablet')`
     font-size: ${remcalc(60)};
     padding: ${remcalc(21)} 0;
     line-height: ${remcalc(60)};
+
+      ${is('noTop')`
+      padding-top: 0;
+  `};
   `};
 `

@@ -58,7 +58,9 @@ const Footer = () => {
           <Grid>
             <Row>
               <Col xs={12}>
-                <H2 reverse>Find us</H2>
+                <Margin bottom={2}>
+                  <H2 reverse>Find us</H2>
+                </Margin>
               </Col>
             </Row>
             <Office>
@@ -66,9 +68,11 @@ const Footer = () => {
                 {data =>
                   data.map(location => (
                     <Col key={location.node.id} xs={12} sm={6} md={3}>
-                      <H5 bold reverse>
-                        {location.node.name}
-                      </H5>
+                      <Margin bottom={1}>
+                        <H5 bold reverse>
+                          {location.node.name}
+                        </H5>
+                      </Margin>
                       <Paragraph>
                         {location.node.streetAddress.streetAddress
                           .split('\n')

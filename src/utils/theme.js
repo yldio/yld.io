@@ -24,13 +24,16 @@ export default {
   },
   spacing: {
     0: '0',
+    0.5: remcalc(6),
     1: remcalc(12),
+    1.5: remcalc(18),
     2: remcalc(24),
     3: remcalc(36),
     4: remcalc(72),
     5: remcalc(108),
     6: remcalc(144),
-    7: remcalc(288)
+    7: remcalc(288),
+    30: remcalc(30)
   },
   colors: {
     white: '#fff',

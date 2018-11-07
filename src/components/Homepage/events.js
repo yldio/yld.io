@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
+import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import { H2, H5, H4, Paragraph } from '../Typography'
 import Flex from 'styled-flex-component'
@@ -20,7 +21,7 @@ const EventWrapper = styled.header`
 const Events = ({ events }) => (
   <Row>
     <Col md={4} xs={12}>
-      <H2>Upcoming Events</H2>
+      <H2 noTop>Upcoming events</H2>
       <ul>
         {events
           .filter(n => !n.node.homepageFeatured)
@@ -48,9 +49,15 @@ const Events = ({ events }) => (
               Featured
             </Paragraph>
             <EventTitle reverse>{node.eventTitle}</EventTitle>
-            <Paragraph muted reverse style={{ maxWidth: remcalc(380) }}>
-              {node.blurb.blurb}
-            </Paragraph>
+            <Padding top={0.5}>
+              <Paragraph
+                muted
+                reverse
+                style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
+              >
+                {node.blurb.blurb}
+              </Paragraph>
+            </Padding>
             <StyledLink reverse href={node.linkToEvent}>
               Get tickets
             </StyledLink>

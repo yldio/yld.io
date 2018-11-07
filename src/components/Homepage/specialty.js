@@ -18,6 +18,10 @@ const CardHeader = styled.header`
   }
 `
 
+const Span = styled.span`
+  text-decoration: none;
+`
+
 const Title = styled(H4)`
   font-weight: 500;
 `
@@ -33,7 +37,9 @@ const Specialty = ({ services }) => (
       <Col key={service.id} xs={12} sm={6}>
         {!isEven(index) ? <Padding top={7} /> : null}
         <H2>{service.title}</H2>
-        <Paragraph>{service.introSentence.introSentence}</Paragraph>
+        <Padding bottom={0.5}>
+          <Paragraph>{service.introSentence.introSentence}</Paragraph>
+        </Padding>
         <Row>
           <Col xs={7}>
             <H6>
@@ -42,18 +48,22 @@ const Specialty = ({ services }) => (
                 if (s.body) {
                   return (
                     <Link key={s.id} to={`/speciality/${s.slug}`}>
-                      {s.title} {last ? '' : '/'}
+                      {s.title} <Span>{last ? '' : '/'} </Span>
                     </Link>
                   )
                 }
 
-                return `${s.title} ${last ? '' : '/'} `
+                return (
+                  <span key={s.id}>
+                    {s.title} <Span key={s.id}>{last ? '' : ' / '} </Span>
+                  </span>
+                )
               })}
             </H6>
           </Col>
         </Row>
-        <StyledLink to={`/${service.slug}`}>Learn More</StyledLink>
-        <Padding bottom={2} />
+        <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
+        <Padding bottom={1.5} />
         <CardHeader
           style={{
             background: `#${service.caseStudies[0].posterColor}`

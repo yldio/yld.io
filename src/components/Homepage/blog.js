@@ -27,7 +27,7 @@ const Blog = () => (
       </Posts>
       <Padding top={3}>
         <StyledLink href="https://medium.com/yld-engineering-blog">
-          More Articles
+          More articles
         </StyledLink>
       </Padding>
     </Col>
