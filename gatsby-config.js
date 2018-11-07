@@ -2,7 +2,8 @@ require('dotenv').config()
 
 const {
   CONTENTFUL_TOKEN,
-  CONTENTFUL_SPACE
+  CONTENTFUL_SPACE,
+  GA_TRACKING_ID
 } = process.env
 
 module.exports = {
@@ -38,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID'
+        trackingId: GA_TRACKING_ID
       }
     }
   ]
