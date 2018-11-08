@@ -185,10 +185,11 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
             </Padding>
           </Col>
         </Row>
-        <Row />
-        <Padding bottom={5}>
-          <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
-        </Padding>
+        {caseStudy.relatedCaseStud ? (
+          <Padding bottom={5}>
+            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+          </Padding>
+        ) : null}
       </Grid>
     </Layout>
   )
