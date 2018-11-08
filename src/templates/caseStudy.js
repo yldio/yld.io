@@ -5,8 +5,9 @@ import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
-import { Margin } from 'styled-components-spacing'
+import { Margin, Padding } from 'styled-components-spacing'
 import { H1, Paragraph, H5, H6 } from '../components/Typography'
+import CaseStudyBottom from '../components/Homepage/caseStudy'
 import Layout from '../components/layout'
 
 const Stat = styled(H1)`
@@ -18,6 +19,13 @@ const ImageWrapper = styled(Col)`
   height: ${remcalc(540)};
   width: ${remcalc(540)};
 `
+
+const Comma = styled.span`
+  margin-right: ${remcalc(6)};
+  margin-left: ${remcalc(3)};
+`
+
+const last = (i, a) => i + 1 === a.length
 
 const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
@@ -39,19 +47,38 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
               <H1 noTop>{caseStudy.title}</H1>
               <Flex justifyBetween>
                 <Flex column>
-                  <H5 small bold>
+                  <H5 small bold noMargin>
                     Technology used
                   </H5>
-                  {caseStudy.technologyUsed &&
-                    caseStudy.technologyUsed.map(tech => (
-                      <H6 key={tech.id}>{tech.title}</H6>
-                    ))}
+                  <Flex alignCenter wrap>
+                    {caseStudy.technologyUsed &&
+                      caseStudy.technologyUsed.map((tech, i) => (
+                        <Fragment key={tech.id}>
+                          <H6 noMargin>{tech.title}</H6>
+                          {last(i, caseStudy.technologyUsed) ? (
+                            ''
+                          ) : (
+                            <Comma>, </Comma>
+                          )}
+                        </Fragment>
+                      ))}
+                  </Flex>
                 </Flex>
                 <Flex column>
-                  <H5 small bold>
+                  <H5 small bold noMargin>
                     Services provided
                   </H5>
-                  <H6>Consulting, Dedicated teams</H6>
+                  <Flex alignCenter wrap>
+                    {caseStudy.services &&
+                      caseStudy.services.map((service, i) => (
+                        <Fragment key={service.id}>
+                          <H6 noMargin noUnderline>
+                            {service.title}
+                          </H6>
+                          {last(i, caseStudy.services) ? '' : <Comma>,</Comma>}
+                        </Fragment>
+                      ))}
+                  </Flex>
                 </Flex>
               </Flex>
             </Flex>
@@ -67,7 +94,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
             </ImageWrapper>
           )}
         </Row>
-        <Margin bottom={7} />
+        <Margin bottom={4} />
         <Row>
           <Col xs={12} sm={9} md={7}>
             {caseStudy.body.content
@@ -139,6 +166,18 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
               ))}
           </Col>
         </Row>
+        <Padding bottom={5} />
+        <Row>
+          <Col xs={12}>
+            <Padding top={4} bottom={2}>
+              <Paragraph>More of our work</Paragraph>
+            </Padding>
+          </Col>
+        </Row>
+        <Row />
+        <Padding bottom={5}>
+          <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+        </Padding>
       </Grid>
     </Layout>
   )
@@ -158,7 +197,29 @@ export const pageQuery = graphql`
         node {
           slug
           title
+          relatedCaseStudy {
+            title
+            slug
+            posterImage {
+              file {
+                url
+              }
+            }
+            posterColor
+            body {
+              content {
+                content {
+                  value
+                  nodeType
+                }
+              }
+            }
+          }
           technologyUsed {
+            title
+            id
+          }
+          services {
             title
             id
           }

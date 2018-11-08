@@ -21,6 +21,14 @@ export default styled.h5`
     font-size: ${remcalc(15)};
   `};
 
+  ${is('noTop')`
+      padding-top: 0;
+  `};
+
+  ${is('noMargin')`
+      padding: 0;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};
