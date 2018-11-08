@@ -15,6 +15,18 @@ export default styled.h6`
     opacity: .5;
   `};
 
+  ${is('noUnderline')`
+    text-decoration: none;
+  `};
+
+  ${is('noTop')`
+      padding-top: 0;
+  `};
+
+  ${is('noMargin')`
+      padding: 0;
+  `};
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

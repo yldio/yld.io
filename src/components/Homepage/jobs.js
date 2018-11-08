@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
@@ -7,7 +7,7 @@ import Jobs from '../jobs'
 import Li from '../listItem'
 
 const JobsComponent = () => (
-  <Padding top={4}>
+  <Fragment>
     <Row>
       <Col xs={12}>
         <H2>Join our team</H2>
@@ -59,7 +59,7 @@ const JobsComponent = () => (
         </Col>
       </Row>
     </Padding>
-  </Padding>
+  </Fragment>
 )
 
 export default JobsComponent

@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import { Grid } from 'react-styled-flexboxgrid'
 import Header from './header'
 import './layout.css'
 import theme from '../utils/theme'
@@ -31,7 +30,7 @@ const Layout = ({ children }) => (
             <html lang="en" />
           </Helmet>
           <Header />
-          <Grid>{children}</Grid>
+          {children}
           <Footer />
           <GlobalStyle />
         </Fragment>
