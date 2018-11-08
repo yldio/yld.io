@@ -22,18 +22,28 @@ const P = styled(Paragraph)`
 
 const CaseStudy = ({ caseStudy }) => (
   <WrapperRow>
-    <Col xs={6}>
+    <Col sm={12} xs={12} md={false}>
+      <Margin bottom={1}>
+        <H2>{caseStudy.title}</H2>
+      </Margin>
+    </Col>
+    <Col xs={false} sm={false} md={6}>
       <Margin bottom={1}>
         <H2>{caseStudy.title}</H2>
       </Margin>
       <P>{caseStudy.body.content[0].content[0].value}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
-    <ImageWrapper xs={6}>
-      <Flex justifyEnd alignCenter>
+    <ImageWrapper sm={12} md={6}>
+      <Flex>
         <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
       </Flex>
     </ImageWrapper>
+    <Col xs={12} sm={12} md={false}>
+      <Margin top={2} />
+      <P>{caseStudy.body.content[0].content[0].value}</P>
+      <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
+    </Col>
   </WrapperRow>
 )
 
