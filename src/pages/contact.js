@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
+import Helmet from 'react-helmet'
 import { Row, Col } from 'react-styled-flexboxgrid'
+import { StaticQuery, graphql } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import styled from 'styled-components'
 import Layout from '../components/layout'
@@ -70,7 +72,7 @@ class ContactUs extends Component {
     fetch('/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: encode({
         'form-name': 'contact',
@@ -84,8 +86,18 @@ class ContactUs extends Component {
 
   render () {
     const { name, email, message, submitting, success } = this.state
+    const site = this.props.data.site
+    const page = this.props.data.allContentfulPage.edges[0].node
     return (
       <Layout>
+        <Helmet
+          title={`${site.siteMetadata.title}  ${
+            page.title ? '- ' + page.title : ''
+          } ${page.seoTitle ? '- ' + page.seoTitle : ''} `}
+          meta={[{ name: 'description', content: page.seoMetaDescription }]}
+        >
+          <html lang="en" />
+        </Helmet>
         {success ? (
           <Fragment>
             <Row>
@@ -179,4 +191,30 @@ class ContactUs extends Component {
     )
   }
 }
-export default ContactUs
+
+const Contact = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        allContentfulPage(filter: { slug: { eq: "contact" } }) {
+          edges {
+            node {
+              slug
+              title
+              seoTitle
+              seoMetaDescription
+            }
+          }
+        }
+      }
+    `}
+    render={data => <ContactUs data={data} {...props} />}
+  />
+)
+
+export default Contact
