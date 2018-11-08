@@ -7,7 +7,7 @@ import is from 'styled-is'
 import Flex from 'styled-flex-component'
 import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
-import logo from '../images/yld.svg'
+import logo from '../images/logo_animated.gif'
 import menu from '../images/menu.svg'
 
 const MobileMenu = styled(Flex)`
@@ -56,7 +56,13 @@ class Header extends Component {
             <Padding top={2} bottom={3}>
               <Flex alignCenter wrap justifyBetween>
                 <Link to="/">
-                  <img role="button" tab-index="0" src={logo} alt="yld" />
+                  <img
+                    role="button"
+                    tab-index="0"
+                    height="48"
+                    src={logo}
+                    alt="yld"
+                  />
                 </Link>
                 <MobileMenu>
                   <img onClick={this.toggleMenu} src={menu} alt="open menu" />
