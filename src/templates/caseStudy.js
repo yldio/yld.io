@@ -185,7 +185,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
             </Padding>
           </Col>
         </Row>
-        {caseStudy.relatedCaseStud ? (
+        {caseStudy.relatedCaseStudy ? (
           <Padding bottom={5}>
             <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
