@@ -25,7 +25,7 @@ export default function PagePaths (props) {
     render={data => {
       cachedPathsById = {}
       data.allSitePage.edges.forEach(edge => (
-        cachedPathsById[edge.node.context.id] = edge.node.path
+        edge.node.context && (cachedPathsById[edge.node.context.id] = edge.node.path)
       ))
       return props.render(cachedPathsById)
     }}

@@ -15,7 +15,7 @@ const ItemSpan = styled.span`
 export default function SeoLinks ({ items }) {
   return <PagePaths render={(pathsById) => (
     <Fragment>
-      {items.map((item, i) => {
+      {(items || []).map((item, i) => {
         const last = i + 1 === items.length
         const path = pathsById[item.id]
         if (path) {

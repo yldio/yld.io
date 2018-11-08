@@ -13,7 +13,6 @@ import Jobs from '../components/Homepage/jobs'
 import CaseStudy from '../components/Homepage/caseStudy'
 import Specialty from '../components/Homepage/specialty'
 import GrayBackground from '../components/GrayBG'
-import PagePath from '../components/pagePath'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }
