@@ -9,6 +9,7 @@ import { Margin, Padding } from 'styled-components-spacing'
 import { H1, Paragraph, H5, H6 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import Layout from '../components/layout'
+import breakpoint from 'styled-components-breakpoint'
 
 const Stat = styled(H1)`
   font-size: ${remcalc(72)};
@@ -16,7 +17,7 @@ const Stat = styled(H1)`
 `
 
 const ImageWrapper = styled(Col)`
-  height: ${remcalc(540)};
+  max-height: ${remcalc(540)};
   width: ${remcalc(540)};
 `
 
@@ -25,7 +26,50 @@ const Comma = styled.span`
   margin-left: ${remcalc(3)};
 `
 
+const NoMobile = styled.section`
+  display: none;
+
+  ${breakpoint('tablet')`
+    display: block;
+  `};
+`
+
 const last = (i, a) => i + 1 === a.length
+
+const MetaData = ({ caseStudy }) => (
+  <Flex justifyBetween>
+    <Flex column>
+      <H5 small bold noMargin>
+        Technology used
+      </H5>
+      <Flex alignCenter wrap>
+        {caseStudy.technologyUsed &&
+          caseStudy.technologyUsed.map((tech, i) => (
+            <Fragment key={tech.id}>
+              <H6 noMargin>{tech.title}</H6>
+              {last(i, caseStudy.technologyUsed) ? '' : <Comma>, </Comma>}
+            </Fragment>
+          ))}
+      </Flex>
+    </Flex>
+    <Flex column>
+      <H5 small bold noMargin>
+        Services provided
+      </H5>
+      <Flex alignCenter wrap>
+        {caseStudy.services &&
+          caseStudy.services.map((service, i) => (
+            <Fragment key={service.id}>
+              <H6 noMargin noUnderline>
+                {service.title}
+              </H6>
+              {last(i, caseStudy.services) ? '' : <Comma>,</Comma>}
+            </Fragment>
+          ))}
+      </Flex>
+    </Flex>
+  </Flex>
+)
 
 const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
@@ -42,57 +86,24 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
       </Helmet>
       <Grid>
         <Row>
-          <Col xs={12} sm={8} md={6}>
+          <Col xs={12} sm={6}>
             <Flex full column justifyCenter>
               <H1 noTop>{caseStudy.title}</H1>
-              <Flex justifyBetween>
-                <Flex column>
-                  <H5 small bold noMargin>
-                    Technology used
-                  </H5>
-                  <Flex alignCenter wrap>
-                    {caseStudy.technologyUsed &&
-                      caseStudy.technologyUsed.map((tech, i) => (
-                        <Fragment key={tech.id}>
-                          <H6 noMargin>{tech.title}</H6>
-                          {last(i, caseStudy.technologyUsed) ? (
-                            ''
-                          ) : (
-                            <Comma>, </Comma>
-                          )}
-                        </Fragment>
-                      ))}
-                  </Flex>
-                </Flex>
-                <Flex column>
-                  <H5 small bold noMargin>
-                    Services provided
-                  </H5>
-                  <Flex alignCenter wrap>
-                    {caseStudy.services &&
-                      caseStudy.services.map((service, i) => (
-                        <Fragment key={service.id}>
-                          <H6 noMargin noUnderline>
-                            {service.title}
-                          </H6>
-                          {last(i, caseStudy.services) ? '' : <Comma>,</Comma>}
-                        </Fragment>
-                      ))}
-                  </Flex>
-                </Flex>
-              </Flex>
+              <NoMobile>
+                <MetaData caseStudy={caseStudy} />
+              </NoMobile>
             </Flex>
           </Col>
           {caseStudy.posterImage && (
-            <ImageWrapper xs={6}>
-              <Flex justifyEnd alignCenter>
-                <img
-                  alt={caseStudy.title}
-                  src={caseStudy.posterImage.file.url}
-                />
-              </Flex>
+            <ImageWrapper sm={6} xs={12}>
+              <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
             </ImageWrapper>
           )}
+          <Col xs={12} sm={false}>
+            <Padding top={2}>
+              <MetaData caseStudy={caseStudy} />
+            </Padding>
+          </Col>
         </Row>
         <Margin bottom={4} />
         <Row>

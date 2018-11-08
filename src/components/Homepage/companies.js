@@ -7,8 +7,9 @@ const Companies = ({ companies }) => (
       <Col
         sm={6}
         md={3}
+        xs={6}
         key={company.id}
-        style={{ height: 108, display: 'flex', alignItems: 'center' }}
+        style={{ maxHeight: 108, display: 'flex', alignItems: 'center' }}
       >
         <img src={company.file.url} alt={company.file.fileName} />
       </Col>

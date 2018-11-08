@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Margin } from 'styled-components-spacing'
-import Flex from 'styled-flex-component'
+import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { H2, Paragraph } from '../Typography'
 
@@ -12,8 +12,10 @@ const ImageWrapper = styled(Col)`
 `
 
 const WrapperRow = styled(Row)`
-  min-height: ${remcalc(540)};
-  align-items: center;
+  ${breakpoint('tablet')`
+    min-height: ${remcalc(540)};
+    align-items: center;
+  `};
 `
 
 const P = styled(Paragraph)`
@@ -34,10 +36,8 @@ const CaseStudy = ({ caseStudy }) => (
       <P>{caseStudy.body.content[0].content[0].value}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
-    <ImageWrapper sm={12} md={6}>
-      <Flex>
-        <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
-      </Flex>
+    <ImageWrapper xs={12} sm={12} md={6}>
+      <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
       <Margin top={2} />
