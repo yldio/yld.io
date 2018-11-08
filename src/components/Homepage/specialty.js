@@ -6,7 +6,8 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
-import { H2, H6, H4, Paragraph } from '../Typography'
+import SeoLinks from '../Common/seoLinks'
+import { H2, H4, H6, Paragraph } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -16,10 +17,6 @@ const CardHeader = styled.header`
   > div {
     max-width: ${remcalc(310)};
   }
-`
-
-const Span = styled.span`
-  text-decoration: none;
 `
 
 const Title = styled(H4)`
@@ -54,24 +51,7 @@ const Specialty = ({ services }) => (
         </Padding>
         <Row>
           <Col xs={7}>
-            <H6>
-              {service.homePageSpecialities.map((s, i) => {
-                const last = i + 1 === service.homePageSpecialities.length
-                if (s.body) {
-                  return (
-                    <Link key={s.id} to={`/speciality/${s.slug}`}>
-                      {s.title} <Span>{last ? '' : '/'} </Span>
-                    </Link>
-                  )
-                }
-
-                return (
-                  <span key={s.id}>
-                    {s.title} <Span key={s.id}>{last ? '' : ' / '} </Span>
-                  </span>
-                )
-              })}
-            </H6>
+            <H6><SeoLinks items={service.homePageSpecialities} /></H6>
           </Col>
         </Row>
         <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>

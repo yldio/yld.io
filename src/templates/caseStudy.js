@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
@@ -9,7 +10,7 @@ import { Margin, Padding } from 'styled-components-spacing'
 import { H1, Paragraph, H5, H6 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import Layout from '../components/layout'
-import breakpoint from 'styled-components-breakpoint'
+import SeoLinks from '../components/Common/seoLinks'
 
 const Stat = styled(H1)`
   font-size: ${remcalc(72)};
@@ -43,13 +44,9 @@ const MetaData = ({ caseStudy }) => (
         Technology used
       </H5>
       <Flex alignCenter wrap>
-        {caseStudy.technologyUsed &&
-          caseStudy.technologyUsed.map((tech, i) => (
-            <Fragment key={tech.id}>
-              <H6 noMargin>{tech.title}</H6>
-              {last(i, caseStudy.technologyUsed) ? '' : <Comma>, </Comma>}
-            </Fragment>
-          ))}
+        <H6 noMargin>
+          <SeoLinks items={caseStudy.specialities} />
+        </H6>
       </Flex>
     </Flex>
     <Flex column>
@@ -57,15 +54,9 @@ const MetaData = ({ caseStudy }) => (
         Services provided
       </H5>
       <Flex alignCenter wrap>
-        {caseStudy.services &&
-          caseStudy.services.map((service, i) => (
-            <Fragment key={service.id}>
-              <H6 noMargin noUnderline>
-                {service.title}
-              </H6>
-              {last(i, caseStudy.services) ? '' : <Comma>,</Comma>}
-            </Fragment>
-          ))}
+        <H6 noMargin>
+          <SeoLinks items={caseStudy.services} />
+        </H6>
       </Flex>
     </Flex>
   </Flex>
@@ -227,7 +218,7 @@ export const pageQuery = graphql`
               }
             }
           }
-          technologyUsed {
+          specialities {
             title
             id
           }

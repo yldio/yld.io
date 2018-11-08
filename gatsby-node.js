@@ -51,17 +51,19 @@ exports.createPages = ({ graphql, actions }) => {
       const serviceTemplate = path.resolve(`./src/templates/service.js`)
 
       _.each(result.data.allContentfulCaseStudy.edges, edge => {
-        createPage({
-          path: `/case-study/${edge.node.slug}/`,
-          component: slash(caseStudyTemplate),
-          context: {
-            id: edge.node.id
-          }
-        })
+        if (edge.node.slug) {
+          createPage({
+            path: `/case-study/${edge.node.slug}/`,
+            component: slash(caseStudyTemplate),
+            context: {
+              id: edge.node.id
+            }
+          })
+        }
       })
 
       _.each(result.data.allContentfulSpeciality.edges, edge => {
-        if (edge.node.body) {
+        if (edge.node.body && edge.node.slug) {
           createPage({
             path: `/speciality/${edge.node.slug}/`,
             component: slash(specialityTemplate),
@@ -73,13 +75,15 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       _.each(result.data.allContentfulService.edges, edge => {
-        createPage({
-          path: `/${edge.node.slug}/`,
-          component: slash(serviceTemplate),
-          context: {
-            id: edge.node.id
-          }
-        })
+        if (edge.node.slug) {
+          createPage({
+            path: `/${edge.node.slug}/`,
+            component: slash(serviceTemplate),
+            context: {
+              id: edge.node.id
+            }
+          })
+        }
       })
       resolve()
     })
