@@ -9,8 +9,8 @@ const Specialty = ({ data }) => {
   return (
     <Layout>
       <Helmet
-        title={`${site.siteMetadata.title}  ${specialty.title ? '-' + specialty.title : ''} - ${
-          specialty.seoTitle ? '-' + specialty.seoTitle : ''
+        title={`${site.siteMetadata.title}  ${specialty.title ? '- ' + specialty.title : ''} ${
+          specialty.seoTitle ? '- ' + specialty.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: specialty.seoMetaDescription }]}
       >
