@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Margin } from 'styled-components-spacing'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
@@ -33,20 +33,22 @@ const NotFoundPage = ({ data: { site } }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Margin top={6} bottom={7}>
-      <Row>
-        <Col xs={12} sm={8} md={6}>
-          <H1>Oops, nothing to see here</H1>
-          <Paragraph>
-            The link is broken or the page has been removed. You might find what
-            you are looking for from our home page.
-          </Paragraph>
-          <Margin top={1}>
-            <HomePageLink to={'/'}>Home</HomePageLink>
-          </Margin>
-        </Col>
-      </Row>
-    </Margin>
+    <Grid>
+      <Margin top={6} bottom={7}>
+        <Row>
+          <Col xs={12} sm={8} md={6}>
+            <H1>Oops, nothing to see here</H1>
+            <Paragraph>
+              The link is broken or the page has been removed. You might find
+              what you are looking for from our home page.
+            </Paragraph>
+            <Margin top={1}>
+              <HomePageLink to={'/'}>Home</HomePageLink>
+            </Margin>
+          </Col>
+        </Row>
+      </Margin>
+    </Grid>
   </Layout>
 )
 

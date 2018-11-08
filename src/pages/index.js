@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import { Grid } from 'react-styled-flexboxgrid'
 
 import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
@@ -11,34 +12,57 @@ import Events from '../components/Homepage/events'
 import Jobs from '../components/Homepage/jobs'
 import CaseStudy from '../components/Homepage/caseStudy'
 import Specialty from '../components/Homepage/specialty'
+import GrayBackground from '../components/GrayBG'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title}  ${content.title ? '- ' + content.title : ''} ${
-        content.seoTitle ? '- ' + content.seoTitle : ''
-      } `}
-      meta={[
-        { name: 'description', content: content.seoMetaDescription }
-      ]}
+      title={`${site.siteMetadata.title}  ${
+        content.title ? '- ' + content.title : ''
+      } ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
+      meta={[{ name: 'description', content: content.seoMetaDescription }]}
     >
       <html lang="en" />
     </Helmet>
-    <CaseStudy caseStudy={content.featuredCaseStudy} />
-    <Padding bottom={6} />
-    <Padding bottom={4} />
-    <SEOText text={content.seoText.content[0].content} />
-    <Padding bottom={4} />
-    <Companies companies={content.companies} />
-    <Padding bottom={5} />
-    <Specialty services={content.services} />
-    <Padding top={5} />
-    <Events events={events.edges} />
-    <Padding top={5} bottom={4} />
-    <Blog />
-    <Jobs />
+    <Grid>
+      <Padding bottom={6}>
+        <CaseStudy caseStudy={content.featuredCaseStudy} />
+      </Padding>
+    </Grid>
+    <GrayBackground>
+      <Grid>
+        <Padding top={6} bottom={5}>
+          <SEOText text={content.seoText.content[0].content} />
+          <Padding bottom={4} />
+          <Companies companies={content.companies} />
+        </Padding>
+      </Grid>
+    </GrayBackground>
+    <Grid>
+      <Padding vertical={5}>
+        <Specialty services={content.services} />
+      </Padding>
+    </Grid>
+    <GrayBackground>
+      <Grid>
+        <Padding bottom={5}>
+          <Events events={events.edges} />
+        </Padding>
+      </Grid>
+    </GrayBackground>
+    <Grid>
+      <Padding vertical={4}>
+        <Blog />
+      </Padding>
+    </Grid>
+    <GrayBackground>
+      <Grid>
+        <Jobs />
+        <Padding bottom={5} />
+      </Grid>
+    </GrayBackground>
   </Layout>
 )
 

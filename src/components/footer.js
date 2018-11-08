@@ -51,136 +51,134 @@ const Office = styled(Row)`
 
 const Footer = () => {
   return (
-    <Margin top={5}>
-      <FooterStyled>
-        <Padding top={4} bottom={5}>
+    <FooterStyled>
+      <Padding top={4} bottom={5}>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Margin bottom={2}>
+                <H2 reverse>Find us</H2>
+              </Margin>
+            </Col>
+          </Row>
+          <Office>
+            <Locations>
+              {data =>
+                data.map(location => (
+                  <Col key={location.node.id} xs={12} sm={6} md={3}>
+                    <Margin bottom={1}>
+                      <H5 bold reverse>
+                        {location.node.name}
+                      </H5>
+                    </Margin>
+                    <Paragraph>
+                      {location.node.streetAddress.streetAddress
+                        .split('\n')
+                        .map(address => (
+                          <Node key={address}>{address}</Node>
+                        ))}
+
+                      <Node>{location.node.telephone}</Node>
+                      {location.node.email ? (
+                        <Node>
+                          <a href={`mailto:${location.node.email}`}>
+                            {location.node.email}
+                          </a>
+                        </Node>
+                      ) : null}
+                    </Paragraph>
+                  </Col>
+                ))
+              }
+            </Locations>
+          </Office>
+        </Grid>
+      </Padding>
+      <FollowUs>
+        <Padding vertical={3}>
           <Grid>
             <Row>
               <Col xs={12}>
-                <Margin bottom={2}>
-                  <H2 reverse>Find us</H2>
-                </Margin>
+                <Social>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="http://twitter.com/yldio"
+                    >
+                      <img src={twitter} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="http://github.com/yldio"
+                    >
+                      <img src={github} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA"
+                    >
+                      <img src={youtube} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://medium.com/yld-engineering-blog"
+                    >
+                      <img src={medium} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.instagram.com/yld.io/"
+                    >
+                      <img src={instagram} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.linkedin.com/company/yld/"
+                    >
+                      <img src={linkedin} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://dribbble.com/makeusproud"
+                    >
+                      <img src={dribbble} alt="social" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.behance.net/MakeUsProud"
+                    >
+                      <img src={behance} alt="social" />
+                    </a>
+                  </li>
+                </Social>
               </Col>
             </Row>
-            <Office>
-              <Locations>
-                {data =>
-                  data.map(location => (
-                    <Col key={location.node.id} xs={12} sm={6} md={3}>
-                      <Margin bottom={1}>
-                        <H5 bold reverse>
-                          {location.node.name}
-                        </H5>
-                      </Margin>
-                      <Paragraph>
-                        {location.node.streetAddress.streetAddress
-                          .split('\n')
-                          .map(address => (
-                            <Node key={address}>{address}</Node>
-                          ))}
-
-                        <Node>{location.node.telephone}</Node>
-                        {location.node.email ? (
-                          <Node>
-                            <a href={`mailto:${location.node.email}`}>
-                              {location.node.email}
-                            </a>
-                          </Node>
-                        ) : null}
-                      </Paragraph>
-                    </Col>
-                  ))
-                }
-              </Locations>
-            </Office>
           </Grid>
         </Padding>
-        <FollowUs>
-          <Padding vertical={3}>
-            <Grid>
-              <Row>
-                <Col xs={12}>
-                  <Social>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://twitter.com/yldio"
-                      >
-                        <img src={twitter} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://github.com/yldio"
-                      >
-                        <img src={github} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA"
-                      >
-                        <img src={youtube} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://medium.com/yld-engineering-blog"
-                      >
-                        <img src={medium} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.instagram.com/yld.io/"
-                      >
-                        <img src={instagram} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.linkedin.com/company/yld/"
-                      >
-                        <img src={linkedin} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://dribbble.com/makeusproud"
-                      >
-                        <img src={dribbble} alt="social" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.behance.net/MakeUsProud"
-                      >
-                        <img src={behance} alt="social" />
-                      </a>
-                    </li>
-                  </Social>
-                </Col>
-              </Row>
-            </Grid>
-          </Padding>
-        </FollowUs>
-      </FooterStyled>
-    </Margin>
+      </FollowUs>
+    </FooterStyled>
   )
 }
 
