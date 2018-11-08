@@ -10,8 +10,8 @@ const CaseStudy = ({ data }) => {
   return (
     <Layout>
       <Helmet
-        title={`${site.siteMetadata.title}  ${caseStudy.title ? '-' + caseStudy.title : ''} - ${
-          caseStudy.seoTitle ? '-' + caseStudy.seoTitle : ''
+        title={`${site.siteMetadata.title}  ${caseStudy.title ? '- ' + caseStudy.title : ''} ${
+          caseStudy.seoTitle ? '- ' + caseStudy.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: caseStudy.seoMetaDescription }]}
       >

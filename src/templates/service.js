@@ -10,8 +10,8 @@ const Service = ({ data }) => {
   return (
     <Layout>
       <Helmet
-        title={`${site.siteMetadata.title}  ${service.title ? '-' + service.title : ''} - ${
-          service.seoTitle ? '-' + service.seoTitle : ''
+        title={`${site.siteMetadata.title}  ${service.title ? '- ' + service.title : ''} ${
+          service.seoTitle ? '- ' + service.seoTitle : ''
         } `}
         meta={[{ name: 'description', content: service.seoMetaDescription }]}
       >

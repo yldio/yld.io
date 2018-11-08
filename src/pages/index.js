@@ -17,8 +17,8 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title}  ${content.title ? '-' + content.title : ''} - ${
-        content.seoTitle ? '-' + content.seoTitle : ''
+      title={`${site.siteMetadata.title}  ${content.title ? '- ' + content.title : ''} ${
+        content.seoTitle ? '- ' + content.seoTitle : ''
       } `}
       meta={[
         { name: 'description', content: content.seoMetaDescription }
