@@ -37,7 +37,7 @@ export default {
   },
   colors: {
     white: '#fff',
-    text: '#333333',
+    text: '#757575',
     textLight: '#828282',
     link: '#757575',
     dark: '#232323',

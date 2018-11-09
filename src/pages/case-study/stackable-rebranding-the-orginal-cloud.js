@@ -131,7 +131,7 @@ const IndexPage = ({
               padding: 40,
               display: 'flex',
               justifyContent: 'center',
-              background: '#333333'
+              background: '#757575'
             }}
           >
             <img
