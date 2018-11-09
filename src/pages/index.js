@@ -117,12 +117,24 @@ export const query = graphql`
         title
         slug
         caseStudies {
-          title
-          slug
-          posterColor
-          posterImage {
-            file {
-              url
+          ... on ContentfulGenericCaseStudy {
+            title
+            slug
+            posterColor
+            posterImage {
+              file {
+                url
+              }
+            }
+          }
+          ... on ContentfulCaseStudy {
+            title
+            slug
+            posterColor
+            posterImage {
+              file {
+                url
+              }
             }
           }
         }
