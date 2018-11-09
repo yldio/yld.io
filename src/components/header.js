@@ -76,11 +76,11 @@ const DesktopMenu = styled(Flex)`
       font-size: ${remcalc(42)};
       font-weight: 500;
       line-height: 1.14;
-      margin-bottom: ${remcalc(12)};
+      margin-bottom: ${remcalc(18)};
       transition: all 200ms ease;
       color: ${props => props.theme.colors.white};
       display: block;
-      top: ${remcalc(-36)};
+      top: ${remcalc(-48)};
 
       &:hover, &.active {
         color: ${props => props.theme.colors.white};
