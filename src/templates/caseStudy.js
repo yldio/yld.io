@@ -34,7 +34,7 @@ const MetaData = ({ caseStudy }) => (
   <Flex justifyBetween>
     <Flex column>
       <H5 small bold noMargin>
-        Technology used
+        { (caseStudy.specialities.length > 1) ? 'Technologies' : 'Technology' } used
       </H5>
       <Flex alignCenter wrap>
         <H6 noMargin>
@@ -44,7 +44,7 @@ const MetaData = ({ caseStudy }) => (
     </Flex>
     <Flex column>
       <H5 small bold noMargin>
-        Services provided
+        { (caseStudy.services.length > 1) ? 'Services' : 'Service' } provided
       </H5>
       <Flex alignCenter wrap>
         <H6 noMargin>
