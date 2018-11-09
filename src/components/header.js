@@ -80,7 +80,7 @@ const DesktopMenu = styled(Flex)`
       transition: all 200ms ease;
       color: ${props => props.theme.colors.white};
       display: block;
-      top: ${remcalc(-48)};
+      top: ${remcalc(-60)};
 
       &:hover, &.active {
         color: ${props => props.theme.colors.white};
