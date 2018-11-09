@@ -105,7 +105,7 @@ const IndexPage = ({
         </Row>
       </Grid>
       <GrayBackground>
-        <Grid>
+        <Grid className="grid">
           <Padding top={6}>
             <Row>
               <Col xs={12} sm={12} md={6}>
@@ -211,7 +211,7 @@ const IndexPage = ({
         </Padding>
       </Grid>
       <GrayBackground noTop>
-        <Grid>
+        <Grid className="grid">
           <Padding vertical={60}>
             <Row>
               <Col xs={12} sm={12} md={6}>
@@ -236,7 +236,7 @@ const IndexPage = ({
         </Grid>
       </GrayBackground>
       <Padding vertical={60}>
-        <Grid>
+        <Grid className="grid">
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>Product vision</H2>
