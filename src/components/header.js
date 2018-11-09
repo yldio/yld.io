@@ -40,6 +40,11 @@ const Close = styled.button`
   color: ${props => props.theme.colors.white};
   border: none;
   font-size: ${remcalc(40)};
+
+  @media screen and (max-width: 768px) and (min-width: 600px) {
+    top: ${remcalc(26)};
+    right: ${remcalc(36)};
+  }
 `
 
 const DesktopMenu = styled(Flex)`
@@ -85,6 +90,32 @@ const DesktopMenu = styled(Flex)`
       &:hover, &.active {
         color: ${props => props.theme.colors.white};
         opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 768px) and (min-width: 600px) {
+      width: ${remcalc(295)};
+      justify-content: flex-start;
+      left: auto;
+      right: 0;
+      padding: ${remcalc(36)};
+      z-index: 10;
+
+      &:after {
+          background-color: rgba(51, 51, 51, 0.2);
+          content: '';
+          display: block;
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          transform: translateX(-100%);
+      }
+
+      a {
+        top: ${remcalc(0)};
       }
     }
   `};
