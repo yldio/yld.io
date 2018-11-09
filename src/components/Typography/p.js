@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import is from 'styled-is'
 
 export default styled.p`
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.p};
   font-size: ${remcalc(18)};
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: 1.33;
