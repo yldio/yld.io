@@ -3,11 +3,11 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import Header from './header'
+import Header from './Header'
 import './layout.css'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
-import Footer from '../components/footer'
+import Footer from './Footer'
 
 const Layout = ({ children }) => (
   <StaticQuery

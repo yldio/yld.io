@@ -22,11 +22,6 @@ const ImageWrapper = styled(Col)`
   width: ${remcalc(540)};
 `
 
-const Comma = styled.span`
-  margin-right: ${remcalc(6)};
-  margin-left: ${remcalc(3)};
-`
-
 const NoMobile = styled.section`
   display: none;
 
@@ -34,8 +29,6 @@ const NoMobile = styled.section`
     display: block;
   `};
 `
-
-const last = (i, a) => i + 1 === a.length
 
 const MetaData = ({ caseStudy }) => (
   <Flex justifyBetween>
