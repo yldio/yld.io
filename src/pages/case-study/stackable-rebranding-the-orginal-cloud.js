@@ -19,6 +19,16 @@ import light from './assets/Light-Colour-Swatch.png'
 import layout from './assets/Marketing-Page-Mockups.png'
 import mockup from './assets/VPC-Mockup.png'
 import iconsDesktop from './assets/Icon-Graphic.png'
+import iconsMobile from './assets/Mobile-Icon-Graphic.png'
+import { NoMobile, NoDesktop } from '../../components/Common/visibility'
+
+const imgWrapper = {
+  flexGrow: 1,
+  padding: 40,
+  display: 'flex',
+  alignItems: 'flex-start',
+  justifyContent: 'center'
+}
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site }
@@ -126,36 +136,27 @@ const IndexPage = ({
         <Flex>
           <div
             style={{
-              flexGrow: 1,
-
-              padding: 40,
-              display: 'flex',
-              justifyContent: 'center',
+              ...imgWrapper,
               background: '#333333'
             }}
           >
             <img
               src={type1}
               style={{
-                width: 475,
-                height: 248
+                width: 475
               }}
             />
           </div>
           <div
             style={{
-              flexGrow: 1,
-              padding: 40,
-              display: 'flex',
-              justifyContent: 'center',
+              ...imgWrapper,
               background: '#f9f9f9'
             }}
           >
             <img
               src={type2}
               style={{
-                width: 475,
-                height: 240
+                width: 475
               }}
             />
           </div>
@@ -178,7 +179,12 @@ const IndexPage = ({
           <Margin top={3}>
             <Row>
               <Col xs={12}>
-                <img src={iconsDesktop} alt="icons" />
+                <NoMobile>
+                  <img src={iconsDesktop} alt="icons" />
+                </NoMobile>
+                <NoDesktop>
+                  <img src={iconsMobile} alt="icons" />
+                </NoDesktop>
               </Col>
             </Row>
           </Margin>
