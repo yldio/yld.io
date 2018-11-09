@@ -32,11 +32,13 @@ export default {
     5: remcalc(108),
     6: remcalc(144),
     7: remcalc(288),
-    30: remcalc(30)
+    30: remcalc(30),
+    60: remcalc(60)
   },
   colors: {
     white: '#fff',
     text: '#333333',
+    p: '#757575',
     textLight: '#828282',
     link: '#757575',
     dark: '#232323',

@@ -4,9 +4,9 @@ import is from 'styled-is'
 
 export default styled.p`
   color: ${props => props.theme.colors.text};
-  font-size: ${remcalc(18)};
+  font-size: ${remcalc(17)};
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
-  line-height: 1.33;
+  line-height: ${remcalc(24)};
 
   ${is('padded')`
     padding: ${remcalc(0)} 0 ${remcalc(24)} 0;

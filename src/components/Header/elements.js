@@ -78,6 +78,7 @@ export const DesktopMenu = styled(Flex)`
   width: 0;
   transform: translateX(100%);
   transition: transform 300ms ease-out;
+  overflow: hidden;
 
   ${breakpoint('tablet')`
     display: flex;

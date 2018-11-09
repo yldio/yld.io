@@ -2,58 +2,18 @@ import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
-import { H1, Paragraph, H5, H6 } from '../components/Typography'
+import { H1, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
+import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
-import SeoLinks from '../components/Common/seoLinks'
 
 const Stat = styled(H1)`
   font-size: ${remcalc(72)};
   padding-bottom: 0 !important; /* sorry */
 `
-
-const ImageWrapper = styled(Col)`
-  max-height: ${remcalc(540)};
-  width: ${remcalc(540)};
-`
-
-const NoMobile = styled.section`
-  display: none;
-
-  ${breakpoint('tablet')`
-    display: block;
-  `};
-`
-
-const MetaData = ({ caseStudy }) => (
-  <Flex justifyBetween>
-    <Flex column>
-      <H5 small bold noMargin>
-        { (caseStudy.specialities.length > 1) ? 'Technologies' : 'Technology' } used
-      </H5>
-      <Flex alignCenter wrap>
-        <H6 noMargin>
-          <SeoLinks items={caseStudy.specialities} />
-        </H6>
-      </Flex>
-    </Flex>
-    <Flex column>
-      <H5 small bold noMargin>
-        { (caseStudy.services.length > 1) ? 'Services' : 'Service' } provided
-      </H5>
-      <Flex alignCenter wrap>
-        <H6 noMargin>
-          <SeoLinks items={caseStudy.services} />
-        </H6>
-      </Flex>
-    </Flex>
-  </Flex>
-)
 
 const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
@@ -69,26 +29,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <Row>
-          <Col xs={12} sm={6}>
-            <Flex full column justifyCenter>
-              <H1 noTop>{caseStudy.title}</H1>
-              <NoMobile>
-                <MetaData caseStudy={caseStudy} />
-              </NoMobile>
-            </Flex>
-          </Col>
-          {caseStudy.posterImage && (
-            <ImageWrapper sm={6} xs={12}>
-              <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
-            </ImageWrapper>
-          )}
-          <Col xs={12} sm={false}>
-            <Padding top={2}>
-              <MetaData caseStudy={caseStudy} />
-            </Padding>
-          </Col>
-        </Row>
+        <CaseStudyTop caseStudy={caseStudy} />
         <Margin bottom={4} />
         <Row>
           <Col xs={12} sm={9} md={7}>
