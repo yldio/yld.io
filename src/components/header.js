@@ -58,6 +58,36 @@ const DesktopMenu = styled(Flex)`
     width: auto;
     opacity: 1;
     transform: translateX(0%);
+
+    a {
+      transition: all 300ms ease-out;
+      opacity: 0.8;
+      padding: ${remcalc(6)};
+
+      &:not(:last-child) {
+        margin-right: ${remcalc(18)};
+      }
+
+      &:active {
+        background: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.white};
+      }
+
+      &:hover {
+        background: ${props => props.theme.colors.greyBg};
+        color: ${props => props.theme.colors.text};
+      }
+
+      &:focus {
+        background: transparent;
+        outline: ${remcalc(4)} solid #6be9c1;
+        color: ${props => props.theme.colors.text};
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
   `};
 
   ${is('open')`
@@ -151,16 +181,12 @@ class Header extends Component {
                       Home
                     </Link>
                   </HomeLink>
-                  <Padding right={30}>
-                    <Link activeClassName="active" to="/engineering/">
-                      Engineering
-                    </Link>
-                  </Padding>
-                  <Padding right={30}>
-                    <Link activeClassName="active" to="/design/">
-                      Design
-                    </Link>
-                  </Padding>
+                  <Link activeClassName="active" to="/engineering/">
+                    Engineering
+                  </Link>
+                  <Link activeClassName="active" to="/design/">
+                    Design
+                  </Link>
                   <Link activeClassName="active" to="/contact/">
                     Contact
                   </Link>
