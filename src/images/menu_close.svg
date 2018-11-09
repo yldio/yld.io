@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>button / menu close</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Prototype" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Mobile-Menu-1" transform="translate(-276.000000, -23.000000)" fill="#FFFFFF">
-            <g id="button-/-menu-close" transform="translate(276.000000, 23.000000)">
-                <polygon id="line-1" transform="translate(10.000000, 10.000000) rotate(45.000000) translate(-10.000000, -10.000000) " points="-2 9 22 9 22 11 -2 11"></polygon>
-                <polygon id="line-2" transform="translate(10.192388, 10.192388) rotate(-45.000000) translate(-10.192388, -10.192388) " points="-1.80761184 9.19238816 22.1923882 9.19238816 22.1923882 11.1923882 -1.80761184 11.1923882"></polygon>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M2.222.808l16.97 16.97-1.414 1.414L.808 2.222z"/><path d="M1 17.97L17.97 1l1.415 1.414-16.97 16.97z"/></g></svg>
