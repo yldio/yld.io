@@ -34,7 +34,7 @@ const HomeLink = styled(Padding)`
 
 const Close = styled.button`
   position: absolute;
-  top: ${remcalc(16)};
+  top: ${remcalc(18)};
   right: ${remcalc(24)};
   background: transparent;
   color: ${props => props.theme.colors.white};
