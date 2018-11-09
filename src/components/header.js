@@ -69,6 +69,7 @@ const DesktopMenu = styled(Flex)`
     padding: ${remcalc(24)};
     z-index: 999;
     transform: translateX(0%);
+    justify-content: center;
 
     a {
       opacity: 0.5;
