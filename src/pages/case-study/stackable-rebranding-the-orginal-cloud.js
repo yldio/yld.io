@@ -20,7 +20,7 @@ import light from './assets/Light-Colour-Swatch.png'
 import layout from './assets/Marketing-Page-Mockups.png'
 import mockup from './assets/VPC-Mockup.png'
 import iconsDesktop from './assets/Icon-Graphic.png'
-import { command1, command2 } from './assets/text'
+import { command1, command2 } from '../../utils/text'
 import iconsMobile from './assets/Mobile-Icon-Graphic.png'
 import { NoMobile, NoDesktop } from '../../components/Common/visibility'
 
