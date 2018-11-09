@@ -48,6 +48,10 @@ export default createGlobalStyle`
       font-style: italic;
     }
 
+.grid {
+  max-width: 100%;
+}
+
   .video-container {
     position: relative;
     padding-bottom: 56.25%;

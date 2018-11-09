@@ -18,7 +18,7 @@ const Specialty = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid>
+      <Grid className="grid">
         <Row>
           <Col xs={12}>
             <H1>{specialty.title}</H1>

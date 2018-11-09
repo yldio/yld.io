@@ -75,7 +75,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid>
+      <Grid className="grid">
         <Row>
           <Col xs={12} sm={6}>
             <Flex full column justifyCenter>

@@ -97,7 +97,7 @@ class Header extends Component {
 
   render () {
     return (
-      <Grid>
+      <Grid className="grid">
         <Row>
           <Col xs={12}>
             <Padding top={2} bottom={3}>

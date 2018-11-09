@@ -33,7 +33,7 @@ const NotFoundPage = ({ data: { site } }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Grid>
+    <Grid className="grid">
       <Margin top={6} bottom={7}>
         <Row>
           <Col xs={12} sm={8} md={6}>

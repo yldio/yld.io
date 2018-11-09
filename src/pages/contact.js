@@ -88,7 +88,7 @@ class ContactUs extends Component {
           >
             <html lang="en" />
           </Helmet>
-          <Grid>
+          <Grid className="grid">
             {success ? (
               <Fragment>
                 <Row>

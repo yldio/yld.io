@@ -19,7 +19,7 @@ const Service = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid>
+      <Grid className="grid">
         <Row>
           <Col xs={12}>
             <H1>{service.title}</H1>

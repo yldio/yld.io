@@ -53,7 +53,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       <Padding top={4} bottom={5}>
-        <Grid>
+        <Grid className="grid">
           <Row>
             <Col xs={12}>
               <Margin bottom={2}>
@@ -96,7 +96,7 @@ const Footer = () => {
       </Padding>
       <FollowUs>
         <Padding vertical={3}>
-          <Grid>
+          <Grid className="grid">
             <Row>
               <Col xs={12}>
                 <Social>

@@ -14,7 +14,6 @@ export default {
     gridSize: 12,
     gutterWidth: calc(48),
     outerMargin: calc(30),
-    mediaQuery: 'only screen',
     container: {
       sm: 55.5,
       md: 55.5,
