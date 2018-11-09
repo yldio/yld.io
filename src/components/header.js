@@ -9,36 +9,81 @@ import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 import logo from '../images/logo_animated.gif'
 import menu from '../images/menu.svg'
+import close from '../images/menu_close.svg'
 
 const MobileMenu = styled(Flex)`
   display: flex;
+  position: absolute;
+  right: ${remcalc(30)};
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 
   ${breakpoint('tablet')`
-  display: none;
+    display: none;
   `};
 `
 
+const HomeLink = styled(Padding)`
+  display: block;
+
+  ${breakpoint('tablet')`
+    display: none;
+  `};
+`
+
+const Close = styled.button`
+  position: absolute;
+  top: ${remcalc(16)};
+  right: ${remcalc(24)};
+  background: transparent;
+  color: ${props => props.theme.colors.white};
+  border: none;
+  font-size: ${remcalc(40)};
+`
+
 const DesktopMenu = styled(Flex)`
-  display: none;
+  opacity: 0;
+  width: 0;
+  transform: translateX(100%);
+  transition: transform 300ms ease-out;
 
   ${breakpoint('tablet')`
     display: flex;
+    width: auto;
+    opacity: 1;
+    transform: translateX(0%);
   `};
 
   ${is('open')`
+    width: auto;
+    opacity: 1;
+    position: fixed;
+    background: ${props => props.theme.colors.black};
     display: flex;
+    height: 100vh;
     width: 100vw;
+    left: 0;
+    top: 0;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: ${remcalc(24)};
+    padding: ${remcalc(24)};
+    z-index: 999;
+    transform: translateX(0%);
 
-    > div, > a {
-      width: 100%;
-      text-align: center;
-      padding: 0;
-      margin-bottom:  ${remcalc(12)};
-      font-weight: bold;
+    a {
+      opacity: 0.5;
+      font-size: ${remcalc(42)};
+      font-weight: 500;
+      line-height: 1.14;
+      margin-bottom: ${remcalc(12)};
+      transition: all 200ms ease;
+      color: ${props => props.theme.colors.white};
+      display: block;
+
+      &:hover, &.active {
+        color: ${props => props.theme.colors.white};
+        opacity: 1;
+      }
     }
   `};
 `
@@ -68,13 +113,27 @@ class Header extends Component {
                   <img onClick={this.toggleMenu} src={menu} alt="open menu" />
                 </MobileMenu>
                 <DesktopMenu open={this.state.menuOpen}>
+                  <HomeLink right={30}>
+                    <Link activeClassName="active" to="/">
+                      Home
+                    </Link>
+                  </HomeLink>
                   <Padding right={30}>
-                    <Link to="/engineering">Engineering</Link>
+                    <Link activeClassName="active" to="/engineering/">
+                      Engineering
+                    </Link>
                   </Padding>
                   <Padding right={30}>
-                    <Link to="/design">Design</Link>
+                    <Link activeClassName="active" to="/design/">
+                      Design
+                    </Link>
                   </Padding>
-                  <Link to="/contact">Contact</Link>
+                  <Link activeClassName="active" to="/contact/">
+                    Contact
+                  </Link>
+                  <Close onClick={this.toggleMenu}>
+                    <img src={close} alt="Close menu" />
+                  </Close>
                 </DesktopMenu>
               </Flex>
             </Padding>
