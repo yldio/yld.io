@@ -14,6 +14,7 @@ export default createGlobalStyle`
     font-weight: normal;
     line-height: 1.33;
     color: ${props => props.theme.colors.text};
+    overflow-x: hidden;
 
 
     * {
