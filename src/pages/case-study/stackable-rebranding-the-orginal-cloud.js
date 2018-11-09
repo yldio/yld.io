@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
@@ -19,6 +20,7 @@ import light from './assets/Light-Colour-Swatch.png'
 import layout from './assets/Marketing-Page-Mockups.png'
 import mockup from './assets/VPC-Mockup.png'
 import iconsDesktop from './assets/Icon-Graphic.png'
+import { command1, command2 } from './assets/text'
 import iconsMobile from './assets/Mobile-Icon-Graphic.png'
 import { NoMobile, NoDesktop } from '../../components/Common/visibility'
 
@@ -29,6 +31,23 @@ const imgWrapper = {
   alignItems: 'flex-start',
   justifyContent: 'center'
 }
+
+const Node = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  display: block;
+  color: ${props => props.theme.colors.white};
+  white-space: pre-wrap;
+`
+
+const Code = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${props => props.theme.colors.text};
+  font-family: 'Stackable Mono';
+`
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site }
@@ -162,6 +181,24 @@ const IndexPage = ({
           </div>
         </Flex>
       </GrayBackground>
+      <Code>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Padding vertical={4}>
+                {command1.split('/n').map((p, i) => (
+                  <Node key={i}>{p}</Node>
+                ))}
+                <Margin top={1}>
+                  {command2.split('/n').map((p, i) => (
+                    <Node key={i}>{p}</Node>
+                  ))}
+                </Margin>
+              </Padding>
+            </Col>
+          </Row>
+        </Grid>
+      </Code>
       <Grid className="grid">
         <Padding vertical={60}>
           <Row>
