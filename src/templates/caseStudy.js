@@ -117,14 +117,7 @@ export const pageQuery = graphql`
               }
             }
             posterColor
-            body {
-              content {
-                content {
-                  value
-                  nodeType
-                }
-              }
-            }
+            introSentence
           }
           specialities {
             title

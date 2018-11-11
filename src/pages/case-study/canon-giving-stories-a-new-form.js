@@ -6,7 +6,7 @@ import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
-
+import CaseStudyBottom from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
 import landscape from './assets/at_the_heart_of_a_story.svg'
@@ -150,6 +150,20 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <Padding top={4} bottom={2}>
+              <Paragraph>More of our work</Paragraph>
+            </Padding>
+          </Col>
+        </Row>
+        {caseStudy.relatedCaseStudy ? (
+          <Padding bottom={5}>
+            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+          </Padding>
+        ) : null}
+      </Grid>
     </Layout>
   )
 }
@@ -166,6 +180,19 @@ export const query = graphql`
     ) {
       edges {
         node {
+          relatedCaseStudy {
+            title
+            slug
+            introSentence {
+              introSentence
+            }
+            posterImage {
+              file {
+                url
+              }
+            }
+            posterColor
+          }
           slug
           title
           posterImage {

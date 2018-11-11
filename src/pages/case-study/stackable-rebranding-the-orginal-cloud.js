@@ -7,6 +7,7 @@ import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { H2, Paragraph, H6 } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
+import CaseStudyBottom from '../../components/Homepage/caseStudy'
 
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
@@ -295,6 +296,20 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <Padding top={4} bottom={2}>
+              <Paragraph>More of our work</Paragraph>
+            </Padding>
+          </Col>
+        </Row>
+        {caseStudy.relatedCaseStudy ? (
+          <Padding bottom={5}>
+            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+          </Padding>
+        ) : null}
+      </Grid>
     </Layout>
   )
 }
@@ -356,6 +371,19 @@ export const query = graphql`
           posterColor
           seoTitle
           seoMetaDescription
+          relatedCaseStudy {
+            title
+            slug
+            introSentence {
+              introSentence
+            }
+            posterImage {
+              file {
+                url
+              }
+            }
+            posterColor
+          }
         }
       }
     }

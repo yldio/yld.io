@@ -88,14 +88,7 @@ export const query = graphql`
           }
         }
         posterColor
-        body {
-          content {
-            content {
-              value
-              nodeType
-            }
-          }
-        }
+        introSentence
       }
       seoText {
         content {
