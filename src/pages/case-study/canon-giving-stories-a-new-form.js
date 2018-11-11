@@ -1,33 +1,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
-import { H2, Paragraph, H6 } from '../../components/Typography'
+import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
 import landscape from './assets/at_the_heart_of_a_story.svg'
 import travel from './assets/beyond_photography.png'
-
-const Node = styled.span`
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  display: block;
-  color: ${props => props.theme.colors.white};
-  white-space: pre-wrap;
-`
-
-const Code = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${props => props.theme.colors.text};
-  font-family: 'Stackable Mono';
-`
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site }

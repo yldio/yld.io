@@ -9,6 +9,7 @@ import { H1, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
+import generateCaseStudy from '../utils/generateCaseStudy'
 
 const Stat = styled(H1)`
   font-size: ${remcalc(72)};
@@ -17,6 +18,7 @@ const Stat = styled(H1)`
 
 const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
+  const body = generateCaseStudy(caseStudy)
 
   return (
     <Layout>
@@ -33,64 +35,33 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <Margin bottom={4} />
         <Row>
           <Col xs={12} sm={9} md={7}>
-            {caseStudy.body.content
-              .filter(
-                c =>
-                  c.content[0] &&
-                  c.content[0].marks &&
-                  !c.content[0].marks.length
-              )
-              .slice(0, 2)
-              .map(
-                (c, i) =>
-                  c.content[0] && (
-                    <Paragraph padded key={i}>
-                      {c.content[0].value}
-                    </Paragraph>
-                  )
-              )}
+            {body[0].map((text, i) => (
+              <Paragraph padded key={i}>
+                {text}
+              </Paragraph>
+            ))}
           </Col>
         </Row>
         <Margin bottom={4} top={3}>
           <Row center="md">
             <Col xs={12} md={10}>
-              {caseStudy.body.content
-                .filter(
-                  c =>
-                    c.content[0] &&
-                    c.content[0].marks &&
-                    c.content[0].marks.length
-                )
-                .map(
-                  (c, i) =>
-                    c.content[0] && (
-                      <div
-                        className="video-container"
-                        dangerouslySetInnerHTML={{ __html: c.content[0].value }}
-                      />
-                    )
-                )}
+              {body[1].map((text, i) => (
+                <div
+                  key={i}
+                  className="video-container"
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
+              ))}
             </Col>
           </Row>
         </Margin>
         <Row>
           <Col xs={12} sm={9} md={7}>
-            {caseStudy.body.content
-              .filter(
-                c =>
-                  c.content[0] &&
-                  c.content[0].marks &&
-                  !c.content[0].marks.length
-              )
-              .slice(2)
-              .map(
-                (c, i) =>
-                  c.content[0] && (
-                    <Paragraph padded key={i}>
-                      {c.content[0].value}
-                    </Paragraph>
-                  )
-              )}
+            {body[2].map((text, i) => (
+              <Paragraph padded key={i}>
+                {text}
+              </Paragraph>
+            ))}
           </Col>
           <Col md={3} sm={12} mdOffset={1}>
             {caseStudy.stats &&
