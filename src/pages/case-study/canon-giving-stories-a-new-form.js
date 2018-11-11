@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import { H2, Paragraph } from '../../components/Typography'
@@ -10,6 +11,8 @@ import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
 import landscape from './assets/at_the_heart_of_a_story.svg'
 import travel from './assets/beyond_photography.png'
+
+const makeText = content => content.split('\n').filter(c => c.length)
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site }
@@ -38,7 +41,7 @@ const IndexPage = ({
         </Margin>
       </Grid>
       <GrayBackground>
-        <Padding vertical={6}>
+        <Padding top={6} bottom={30}>
           <Grid className="grid">
             <Row>
               <Col xs={12} sm={12} md={5}>
@@ -46,20 +49,22 @@ const IndexPage = ({
               </Col>
             </Row>
             <Row>
-              <Col xs={12} sm={12} md={5} mdOffset={4}>
-                <img src={landscape} alt="landscape" />
+              <Col xs={12} sm={12} md={8} mdOffset={2}>
+                <Margin top={3}>
+                  <Flex justifyCenter alignCenter>
+                    <img src={landscape} alt="landscape" />
+                  </Flex>
+                </Margin>
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={5} mdOffset={8}>
+              <Col xs={12} md={6} mdOffset={6}>
                 <Margin top={3}>
-                  {caseStudy.genericText1.genericText1
-                    .split('\n')
-                    .map((p, i) => (
-                      <Paragraph padded key={i}>
-                        {p}
-                      </Paragraph>
-                    ))}
+                  {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
+                    <Paragraph padded key={i}>
+                      {p}
+                    </Paragraph>
+                  ))}
                 </Margin>
               </Col>
             </Row>
@@ -72,20 +77,22 @@ const IndexPage = ({
       >
         <Row>
           <Col xs={12} sm={12} md={6} mdOffset={3}>
-            <Margin top={2}>
+            <Margin top={2} bottom={1}>
               <H2 reverse>Beyond photography</H2>
             </Margin>
-            {caseStudy.genericText2.genericText2.split('\n').map((p, i) => (
+            {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
               <Paragraph muted reverse padded key={i}>
                 {p}
               </Paragraph>
             ))}
           </Col>
         </Row>
-        <Margin bottom={3} />
+        <Margin bottom={2} />
         <Row>
           <Col xs={12} sm={12} md={6} mdOffset={3}>
-            <img src={travel} alt="Beyond photography" />
+            <Flex justifyCenter alignCenter>
+              <img src={travel} alt="Beyond photography" />
+            </Flex>
           </Col>
         </Row>
       </Grid>
@@ -97,7 +104,7 @@ const IndexPage = ({
               <H2 noTop>Exploring the story</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              {caseStudy.genericText3.genericText3.split('\n').map((p, i) => (
+              {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
                 </Paragraph>
@@ -133,7 +140,7 @@ const IndexPage = ({
                 <H2 noTop>Out in the wild</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
-                {caseStudy.genericText4.genericText4.split('\n').map((p, i) => (
+                {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
                   </Paragraph>

@@ -17,7 +17,7 @@ export default {
     container: {
       sm: 55.5,
       md: 55.5,
-      lg: calc(1108)
+      lg: calc(1000)
     },
     breakpoints
   },
