@@ -2,7 +2,6 @@
   if you are wondering what this is this is a hack.
 
   What happens is that contentful does not have emebededs so we need to upload videos as code and in here I create three different arrays to separate what is code and not because of mainly layout reasons.
-
 */
 
 const generateCaseStudy = caseStudy => {

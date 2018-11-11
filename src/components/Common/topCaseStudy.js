@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
-import { Padding } from 'styled-components-spacing'
+import { Padding, Margin } from 'styled-components-spacing'
 import { H1, H5, H6 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 
@@ -22,18 +22,20 @@ const NoMobile = styled.section`
 `
 
 const MetaData = ({ caseStudy }) => (
-  <Flex justifyBetween>
+  <Flex>
     {caseStudy.specialities ? (
-      <Flex column>
-        <H5 small bold noMargin>
-          Technology used
-        </H5>
-        <Flex alignCenter wrap>
-          <H6 noMargin>
-            <SeoLinks items={caseStudy.specialities} />
-          </H6>
+      <Margin right={2}>
+        <Flex column>
+          <H5 small bold noMargin>
+            Technology used
+          </H5>
+          <Flex alignCenter wrap>
+            <H6 noMargin>
+              <SeoLinks items={caseStudy.specialities} />
+            </H6>
+          </Flex>
         </Flex>
-      </Flex>
+      </Margin>
     ) : null}
     {caseStudy.services ? (
       <Flex column>

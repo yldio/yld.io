@@ -1,17 +1,17 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
-import { H1, Paragraph, H5 } from '../components/Typography'
+import { H2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 
-const Stat = styled(H1)`
+const Stat = styled(H2)`
   font-size: ${remcalc(72)};
   padding-bottom: 0 !important; /* sorry */
 `
@@ -31,7 +31,9 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <CaseStudyTop caseStudy={caseStudy} />
+        <Padding bottom={0.5}>
+          <CaseStudyTop caseStudy={caseStudy} />
+        </Padding>
         <Margin bottom={4} />
         <Row>
           <Col xs={12} sm={9} md={7}>
@@ -42,7 +44,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
             ))}
           </Col>
         </Row>
-        <Margin bottom={4} top={3}>
+        <Margin bottom={4} top={4}>
           <Row center="md">
             <Col xs={12} md={10}>
               {body[1].map((text, i) => (
@@ -55,6 +57,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
             </Col>
           </Row>
         </Margin>
+        <Margin top={1} />
         <Row>
           <Col xs={12} sm={9} md={7}>
             {body[2].map((text, i) => (
@@ -66,10 +69,10 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           <Col md={3} sm={12} mdOffset={1}>
             {caseStudy.stats &&
               caseStudy.stats.map(stat => (
-                <Fragment key={stat.id}>
-                  <Stat>{stat.value}</Stat>
+                <Margin bottom={1} key={stat.id}>
+                  <Stat noTop>{stat.value}</Stat>
                   <H5 bold>{stat.label}</H5>
-                </Fragment>
+                </Margin>
               ))}
           </Col>
         </Row>

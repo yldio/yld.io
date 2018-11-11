@@ -48,9 +48,9 @@ export default createGlobalStyle`
       font-style: italic;
     }
 
-.grid {
-  max-width: 100%;
-}
+    .grid {
+      max-width: 100%;
+    }
 
   .video-container {
     position: relative;
@@ -62,6 +62,8 @@ export default createGlobalStyle`
   iframe,
   object,
   embed {
+    max-width: 854px;
+    max-height: 480px;
     position: absolute;
     top: 0;
     left: 0;

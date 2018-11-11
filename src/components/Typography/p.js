@@ -9,7 +9,7 @@ export default styled.p`
   line-height: ${remcalc(24)};
 
   ${is('padded')`
-    padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
+    padding: ${remcalc(0)} 0 ${remcalc(48)} 0;
   `};
 
   ${is('reverse')`
