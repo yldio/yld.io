@@ -54,7 +54,7 @@ export default createGlobalStyle`
 
   .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: calc(50% - 30px);
     padding-top: 30px;
     height: 0;
     overflow: hidden;

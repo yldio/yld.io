@@ -89,7 +89,7 @@ const IndexPage = ({
         </Row>
         <Margin bottom={2} />
         <Row>
-          <Col xs={12} sm={12} md={6} mdOffset={3}>
+          <Col xs={12} sm={12} md={8} mdOffset={2}>
             <Flex justifyCenter alignCenter>
               <img src={travel} alt="Beyond photography" />
             </Flex>
@@ -98,12 +98,12 @@ const IndexPage = ({
       </Grid>
       <Margin bottom={6} />
       <Grid className="grid">
-        <Padding top={60}>
+        <Padding top={2}>
           <Row>
-            <Col xs={12} sm={12} md={6}>
+            <Col xs={12} sm={12} md={5}>
               <H2 noTop>Exploring the story</H2>
             </Col>
-            <Col xs={12} sm={12} md={6}>
+            <Col xs={12} sm={12} md={7}>
               {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
@@ -113,7 +113,7 @@ const IndexPage = ({
           </Row>
         </Padding>
       </Grid>
-      <Margin vertical={5}>
+      <Margin top={4} bottom={3}>
         <Grid className="grid">
           <Row>
             <Col xs={12}>
@@ -136,10 +136,10 @@ const IndexPage = ({
         <Grid className="grid">
           <Padding top={6}>
             <Row>
-              <Col xs={12} sm={12} md={6}>
+              <Col xs={12} sm={12} md={5}>
                 <H2 noTop>Out in the wild</H2>
               </Col>
-              <Col xs={12} sm={12} md={6}>
+              <Col xs={12} sm={12} md={7}>
                 {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
