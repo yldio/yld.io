@@ -8,6 +8,12 @@ const breakpoints = {
   desktop: 1096
 }
 
+const flexboxbGridBreakPoints = {
+  xs: calc(breakpoints.phone),
+  sm: calc(breakpoints.tablet),
+  md: calc(breakpoints.desktop)
+}
+
 export default {
   breakpoints,
   flexboxgrid: {
@@ -19,7 +25,7 @@ export default {
       md: 55.5,
       lg: calc(1000)
     },
-    breakpoints
+    breakpoints: flexboxbGridBreakPoints
   },
   spacing: {
     0: '0',

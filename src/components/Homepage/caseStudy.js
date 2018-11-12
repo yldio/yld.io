@@ -9,6 +9,12 @@ import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
+
+  ${breakpoint('desktop')`
+    position: absolute;
+    left: 51.5%;
+    padding-right: 0px;
+    `}
 `
 
 const WrapperRow = styled(Row)`
