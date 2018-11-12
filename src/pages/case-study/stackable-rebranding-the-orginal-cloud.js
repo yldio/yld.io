@@ -167,8 +167,8 @@ const IndexPage = ({
             <img
               src={type1}
               style={{
-                width: 413,
-                height: 179
+                maxWidth: '90%',
+                maxHeight: 276
               }}
             />
           </div>
@@ -182,8 +182,8 @@ const IndexPage = ({
             <img
               src={type2}
               style={{
-                width: 404,
-                height: 206
+                maxWidth: '90%',
+                maxHeight: 270
               }}
             />
           </div>
@@ -236,7 +236,7 @@ const IndexPage = ({
         </Padding>
       </Grid>
       <Grid className="grid">
-        <Padding bottom={60}>
+        <Padding bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>Colour approach</H2>
@@ -263,7 +263,7 @@ const IndexPage = ({
       </Grid>
       <GrayBackground noTop>
         <Grid className="grid">
-          <Padding vertical={60}>
+          <Padding top={60} bottom={5}>
             <Row>
               <Col xs={12} sm={12} md={6}>
                 <H2 noTop>Putting it all together</H2>
@@ -286,11 +286,13 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
-      <Padding vertical={60}>
+      <Padding top={4} bottom={60}>
         <Grid className="grid">
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>Product vision</H2>
+              <Margin bottom={1}>
+                <H2 noTop>Product vision</H2>
+              </Margin>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
