@@ -6,7 +6,7 @@ import remcalc from 'remcalc'
 import is from 'styled-is'
 
 export const StyledLinkCss = css`
-  padding: ${remcalc(6)};
+  padding: ${remcalc(8)} ${remcalc(6)};
   margin-top: ${remcalc(3)};
   margin-bottom: ${remcalc(24)};
   line-height: ${remcalc(24)};
@@ -28,7 +28,8 @@ export const StyledLinkCss = css`
   }
 
   &:active {
-    background: ${props => props.theme.colors.text};
+    outline: none;
+    background: #00edbf;
     color: ${props => props.theme.colors.white};
 
     &:after {
@@ -51,7 +52,8 @@ export const StyledLinkCss = css`
     }
 
     &:active {
-      background: ${props => props.theme.colors.white};
+      outline: none;
+      background: #00edbf;
       color: ${props => props.theme.colors.text};
 
       &:after {

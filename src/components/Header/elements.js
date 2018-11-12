@@ -9,15 +9,10 @@ const linkStyles = css`
   a {
     transition: all 300ms ease-out;
     opacity: 0.8;
-    padding: ${remcalc(6)};
+    padding: ${remcalc(12)} ${remcalc(6)};
 
     &:not(:last-child) {
       margin-right: ${remcalc(18)};
-    }
-
-    &:active {
-      background: ${props => props.theme.colors.text};
-      color: ${props => props.theme.colors.white};
     }
 
     &:hover {
@@ -29,6 +24,12 @@ const linkStyles = css`
       background: transparent;
       outline: ${remcalc(4)} solid #6be9c1;
       color: ${props => props.theme.colors.text};
+    }
+
+    &:active {
+      background: ${props => props.theme.colors.text};
+      color: ${props => props.theme.colors.white};
+      outline: none;
     }
 
     &.active {
@@ -92,7 +93,6 @@ export const DesktopMenu = styled(Flex)`
   width: 0;
   transform: translateX(100%);
   transition: transform 300ms ease-out;
-  overflow: hidden;
 
   ${breakpoint('tablet')`
     display: flex;
