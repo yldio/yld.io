@@ -10,14 +10,34 @@ const linkStyles = css`
     transition: all 300ms ease-out;
     opacity: 0.8;
     padding: ${remcalc(12)} ${remcalc(6)};
+    background: linear-gradient(to right, #616161 0%, transparent 0);
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 48px;
+      transition: all 300ms ease-out;
+      width: 0;
+      opacity: 0;
+      background: ${props => props.theme.colors.greyBg};
+      z-index: -1;
+    }
 
     &:not(:last-child) {
       margin-right: ${remcalc(18)};
     }
 
     &:hover {
-      background: ${props => props.theme.colors.greyBg};
       color: ${props => props.theme.colors.text};
+      &:after {
+        width: 100%;
+        opacity: 1;
+        transition: all 300ms ease-out;
+      }
     }
 
     &:focus {
