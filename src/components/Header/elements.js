@@ -49,6 +49,13 @@ export const MobileMenu = styled(Flex)`
   button {
     border: none;
     background: transparent;
+    padding: ${remcalc(8)} ${remcalc(6)};
+
+    &:focus {
+      background: transparent;
+      outline: ${remcalc(4)} solid #6be9c1;
+      color: ${props => props.theme.colors.text};
+    }
   }
 
   ${breakpoint('tablet')`
@@ -71,19 +78,27 @@ export const HomeLink = styled(Padding)`
 
 export const Close = styled.button`
   position: absolute;
-  top: ${remcalc(18)};
+  top: ${remcalc(60)};
   right: ${remcalc(24)};
   background: transparent;
   color: ${props => props.theme.colors.white};
   border: none;
   font-size: ${remcalc(40)};
+  height: ${remcalc(32)};
+  display: flex;
+
+  &:focus {
+    background: transparent;
+    outline: ${remcalc(4)} solid #6be9c1;
+    color: ${props => props.theme.colors.text};
+  }
 
   ${breakpoint('tablet')`
     display: none;
   `};
 
   @media screen and (max-width: 768px) and (min-width: 600px) {
-    top: ${remcalc(26)};
+    top: ${remcalc(40)};
     right: ${remcalc(36)};
   }
 `
@@ -92,7 +107,7 @@ export const DesktopMenu = styled(Flex)`
   opacity: 0;
   width: 0;
   transform: translateX(100%);
-  transition: transform 300ms ease-out;
+  transition: transform 200ms ease-out;
 
   ${breakpoint('tablet')`
     display: flex;
