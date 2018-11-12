@@ -51,7 +51,9 @@ const Specialty = ({ services }) => (
         </Padding>
         <Row>
           <Col xs={7}>
-            <H6><SeoLinks items={service.homePageSpecialities} /></H6>
+            <H6>
+              <SeoLinks items={service.homePageSpecialities} />
+            </H6>
           </Col>
         </Row>
         <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
@@ -83,7 +85,7 @@ const Specialty = ({ services }) => (
               }}
             >
               <img
-                alt={service.caseStudies[0].posterColor.title}
+                alt={service.caseStudies[0].title}
                 src={service.caseStudies[0].posterImage.file.url}
               />
             </Flex>

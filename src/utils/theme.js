@@ -43,7 +43,7 @@ export default {
     link: '#757575',
     dark: '#232323',
     black: '#1d1d1d',
-    lightGray: '#949494',
+    lightGray: '#737272',
     greyBg: '#f9f9f9',
     grey: '#e6e6e6'
   }

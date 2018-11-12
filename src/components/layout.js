@@ -55,7 +55,7 @@ const Layout = ({ children }) => (
             `}</script>
           </Helmet>
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
           <GlobalStyle />
         </Fragment>
