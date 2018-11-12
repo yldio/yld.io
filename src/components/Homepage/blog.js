@@ -1,16 +1,21 @@
 import React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
+import styled from 'styled-components'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
 import { H2, H5 } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
+const BlogTitle = styled(H2)`
+  padding-top: 0.5rem !important;
+`
+
 const Blog = () => (
   <Row>
     <Col md={6} xs={12}>
-      <H2>From the blog</H2>
+      <BlogTitle>From the blog</BlogTitle>
     </Col>
     <Col md={4} xs={12}>
       <Posts>
