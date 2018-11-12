@@ -30,7 +30,9 @@ class Header extends Component {
                   />
                 </Link>
                 <MobileMenu>
-                  <img onClick={this.toggleMenu} src={menu} alt="open menu" />
+                  <button onClick={this.toggleMenu}>
+                    <img src={menu} alt="open menu" />
+                  </button>
                 </MobileMenu>
                 <DesktopMenu open={this.state.menuOpen}>
                   <HomeLink right={30}>

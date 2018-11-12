@@ -45,8 +45,18 @@ export const MobileMenu = styled(Flex)`
   padding: 0;
   margin: 0;
 
+  button {
+    border: none;
+    background: transparent;
+  }
+
   ${breakpoint('tablet')`
     display: none;
+
+
+    button {
+      display: none;
+    }
   `};
 `
 
@@ -66,6 +76,10 @@ export const Close = styled.button`
   color: ${props => props.theme.colors.white};
   border: none;
   font-size: ${remcalc(40)};
+
+  ${breakpoint('tablet')`
+    display: none;
+  `};
 
   @media screen and (max-width: 768px) and (min-width: 600px) {
     top: ${remcalc(26)};
