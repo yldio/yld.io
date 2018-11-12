@@ -27,9 +27,10 @@ const IndexPage = ({
       <html lang="en" />
     </Helmet>
     <Grid className="grid">
-      <Padding bottom={5}>
+      <Padding bottom={2}>
         <CaseStudy caseStudy={content.featuredCaseStudy} />
       </Padding>
+      <Padding bottom={2} />
     </Grid>
     <GrayBackground>
       <Grid className="grid">
@@ -63,7 +64,7 @@ const IndexPage = ({
     <GrayBackground>
       <Grid className="grid">
         <Jobs />
-        <Padding bottom={5} />
+        <Padding bottom={3} />
       </Grid>
     </GrayBackground>
   </Layout>
