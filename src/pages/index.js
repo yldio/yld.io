@@ -48,7 +48,7 @@ const IndexPage = ({
     </Grid>
     <GrayBackground topSize={-30}>
       <Grid className="grid">
-        <Padding bottom={5}>
+        <Padding bottom={4}>
           <Events events={events.edges} />
         </Padding>
       </Grid>
