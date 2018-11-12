@@ -78,7 +78,7 @@ export const HomeLink = styled(Padding)`
 
 export const Close = styled.button`
   position: absolute;
-  top: ${remcalc(60)};
+  top: ${remcalc(40)};
   right: ${remcalc(24)};
   background: transparent;
   color: ${props => props.theme.colors.white};
@@ -104,9 +104,17 @@ export const Close = styled.button`
 `
 
 export const DesktopMenu = styled(Flex)`
-  opacity: 0;
-  width: 0;
-  transform: translateX(100%);
+  position: fixed;
+  background: ${props => props.theme.colors.black};
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  padding: ${remcalc(24)};
+  z-index: 999;
+  transform: translateX(200%);
   transition: transform 200ms ease-out;
 
   ${breakpoint('tablet')`
@@ -114,25 +122,18 @@ export const DesktopMenu = styled(Flex)`
     width: auto;
     opacity: 1;
     transform: translateX(0%);
+    height: auto;
+    flex-direction: row;
+    background: transparent;
+    position: relative;
 
     ${linkStyles}
   `};
 
   ${is('open')`
-    width: auto;
-    opacity: 1;
-    position: fixed;
-    background: ${props => props.theme.colors.black};
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-    flex-direction: column;
-    padding: ${remcalc(24)};
-    z-index: 999;
     transform: translateX(0%);
     justify-content: center;
+    transition: all 200ms ease-out;
 
     a {
       opacity: 0.5;
@@ -140,7 +141,6 @@ export const DesktopMenu = styled(Flex)`
       font-weight: 500;
       line-height: 1.14;
       margin-bottom: ${remcalc(18)};
-      transition: all 200ms ease;
       color: ${props => props.theme.colors.white};
       display: block;
       top: ${remcalc(-60)};
