@@ -30,10 +30,10 @@ export const StyledLinkCss = css`
   &:active {
     outline: none;
     background: #00edbf;
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.text};
 
     &:after {
-      background: ${props => props.theme.colors.white};
+      background: ${props => props.theme.colors.text};
     }
   }
 
