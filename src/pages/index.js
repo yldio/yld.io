@@ -54,7 +54,8 @@ const IndexPage = ({
       </Grid>
     </GrayBackground>
     <Grid className="grid">
-      <Padding vertical={4}>
+      <Padding top={2} />
+      <Padding top={3} bottom={4}>
         <Blog />
       </Padding>
     </Grid>
