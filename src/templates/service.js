@@ -37,7 +37,6 @@ const WorkStage = ({ workStage }) => {
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
   const site = data.site
-  console.log('DATA:', data)
   return (
     <Layout>
       <Helmet
