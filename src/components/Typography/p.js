@@ -7,6 +7,7 @@ export default styled.p`
   font-size: ${remcalc(17)};
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
+  max-width: ${remcalc(600)};
 
   ${is('padded')`
     padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
