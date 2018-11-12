@@ -41,7 +41,8 @@ const IndexPage = ({
       </Grid>
     </GrayBackground>
     <Grid className="grid">
-      <Padding top={4} bottom={5}>
+      <Padding top={2} />
+      <Padding top={3} bottom={5}>
         <Specialty services={content.services} />
       </Padding>
     </Grid>
