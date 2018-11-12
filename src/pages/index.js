@@ -33,7 +33,7 @@ const IndexPage = ({
     </Grid>
     <GrayBackground>
       <Grid className="grid">
-        <Padding top={6} bottom={4}>
+        <Padding top={6} bottom={2}>
           <SEOText text={content.seoText.content[0].content} />
           <Padding bottom={4} />
           <Companies companies={content.companies} />
