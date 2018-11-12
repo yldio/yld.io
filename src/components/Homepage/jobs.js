@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
+import remCalc from 'remcalc'
+import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H2, H5 } from '../Typography'
 import Jobs from '../jobs'
 import Li from '../listItem'
+
+const JobContainer = styled.ul`
+  margin-top: ${remCalc(12)};
+`
 
 const JobsComponent = () => (
   <Fragment>
@@ -26,7 +32,7 @@ const JobsComponent = () => (
               >
                 <H5 bold>{key}</H5>
 
-                <ul>
+                <JobContainer>
                   {jobs[key].splice(0, 3).map(job => (
                     <Li key={`${job.id}`}>
                       <a
@@ -39,7 +45,7 @@ const JobsComponent = () => (
                       <span>{job.categories.commitment}</span>
                     </Li>
                   ))}
-                </ul>
+                </JobContainer>
               </Col>
             ))
           }
