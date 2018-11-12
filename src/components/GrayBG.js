@@ -11,7 +11,7 @@ export default styled.section`
   `}
 
   > * {
-    top: ${remcalc(-50)};
+    top: ${props => remcalc(props.topSize || -50)};
     position: relative;
 
     ${is('noTop')`

@@ -46,7 +46,7 @@ const IndexPage = ({
         <Specialty services={content.services} />
       </Padding>
     </Grid>
-    <GrayBackground>
+    <GrayBackground topSize={-30}>
       <Grid className="grid">
         <Padding bottom={5}>
           <Events events={events.edges} />
