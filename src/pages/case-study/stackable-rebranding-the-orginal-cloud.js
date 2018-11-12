@@ -14,8 +14,8 @@ import GrayBackground from '../../components/GrayBG'
 import iterations from './assets/Logo-Iterations.png'
 import meaning from './assets/Logo-Meaning@2x.png'
 import logoImage from './assets/Logo-on-image.jpg'
-import type1 from './assets/Type-Display-1.png'
-import type2 from './assets/Type-Display-2.png'
+import type1 from './assets/f1.png'
+import type2 from './assets/gt.png'
 import dark from './assets/Dark-Colour-Swatch.png'
 import light from './assets/Light-Colour-Swatch.png'
 import layout from './assets/Marketing-Page-Mockups.png'
@@ -25,12 +25,14 @@ import { command1, command2 } from '../../utils/text'
 import iconsMobile from './assets/Mobile-Icon-Graphic.png'
 import { NoMobile, NoDesktop } from '../../components/Common/visibility'
 
+const makeText = content => content.split('\n').filter(c => c.length)
+
 const imgWrapper = {
   flexGrow: 1,
   padding: 40,
   display: 'flex',
   alignItems: 'flex-start',
-  justifyContent: 'center'
+  justifyContent: 'flex-start'
 }
 
 const Node = styled.span`
@@ -77,14 +79,14 @@ const IndexPage = ({
         </Margin>
       </Grid>
       <GrayBackground>
-        <Padding vertical={6}>
+        <Padding top={6} vertical={3}>
           <Grid className="grid">
             <Row>
               <Col xs={12} sm={12} md={6}>
                 <H2 noTop>Building from the logo upwards</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
-                {caseStudy.genericText1.genericText1.split('\n').map((p, i) => (
+                {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
                   </Paragraph>
@@ -112,13 +114,13 @@ const IndexPage = ({
         </Grid>
       </div>
       <Grid className="grid">
-        <Padding vertical={60}>
+        <Padding top={60} bottom={3}>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>Cutting the wordmark</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              {caseStudy.genericText2.genericText2.split('\n').map((p, i) => (
+              {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
                 </Paragraph>
@@ -142,7 +144,7 @@ const IndexPage = ({
                 <H2 noTop>Custom typeface</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
-                {caseStudy.genericText3.genericText3.split('\n').map((p, i) => (
+                {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
                   </Paragraph>
@@ -157,26 +159,31 @@ const IndexPage = ({
           <div
             style={{
               ...imgWrapper,
-              background: '#333333'
+              justifyContent: 'flex-end',
+              paddingRight: 60,
+              background: '#f9f9f9'
             }}
           >
             <img
               src={type1}
               style={{
-                width: 475
+                width: 413,
+                height: 179
               }}
             />
           </div>
           <div
             style={{
               ...imgWrapper,
-              background: '#f9f9f9'
+              paddingLeft: 60,
+              background: '#333333'
             }}
           >
             <img
               src={type2}
               style={{
-                width: 475
+                width: 404,
+                height: 206
               }}
             />
           </div>
@@ -201,13 +208,13 @@ const IndexPage = ({
         </Grid>
       </Code>
       <Grid className="grid">
-        <Padding vertical={60}>
+        <Padding top={60} bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>New icon system</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              {caseStudy.genericText4.genericText4.split('\n').map((p, i) => (
+              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
                 </Paragraph>
@@ -229,13 +236,13 @@ const IndexPage = ({
         </Padding>
       </Grid>
       <Grid className="grid">
-        <Padding vertical={60}>
+        <Padding bottom={60}>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>Colour approach</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
-              {caseStudy.genericText5.genericText5.split('\n').map((p, i) => (
+              {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
                 </Paragraph>
@@ -262,7 +269,7 @@ const IndexPage = ({
                 <H2 noTop>Putting it all together</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
-                {caseStudy.genericText6.genericText6.split('\n').map((p, i) => (
+                {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
                   </Paragraph>
@@ -284,7 +291,7 @@ const IndexPage = ({
           <Row>
             <Col xs={12} sm={12} md={6}>
               <H2 noTop>Product vision</H2>
-              {caseStudy.genericText7.genericText7.split('\n').map((p, i) => (
+              {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
                 <Paragraph padded key={i}>
                   {p}
                 </Paragraph>

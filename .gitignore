@@ -8,4 +8,4 @@ yarn-error.log
 .DS_Store
 .eslintcache
 .env
-functions
+hint-report
