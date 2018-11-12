@@ -53,7 +53,7 @@ const JobsComponent = () => (
       </Row>
       <Row>
         <Col xs={12}>
-          <Padding top={2}>
+          <Padding top={4}>
             <StyledLink
               href="https://jobs.lever.co/yld"
               rel="noopener noreferrer"
