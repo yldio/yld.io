@@ -2,13 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H6, H3 } from '../components/Typography'
+import { H2, H6, H3, H5, Paragraph } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/workStage'
 import GrayBackground from '../components/GrayBG'
+
+const Title = H3.withComponent('h1')
 
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
@@ -27,40 +29,88 @@ const Service = ({ data }) => {
         <Row>
           <Col xs={12}>
             <CaseStudy caseStudy={service.caseStudies[0]} />
-            <GrayBackground>
-              <Grid className="grid">
-                <Padding top={6} bottom={4}>
-                  <H3>{service.mainPageIntroSentence.mainPageIntroSentence}</H3>
-                  <Padding bottom={4} />
-                </Padding>
-              </Grid>
-            </GrayBackground>
-            <p>{}</p>
-            <WorkStages
-              title={service.workStagesTitle}
-              workStages={service.workStages}
-            />
-            <div>
-              <H1>We work with</H1>
-              <H6>{service.specialityAreaTitle1}</H6>
-              <H6>
-                <SeoLinks items={service.specialityAreaItems1} />
-              </H6>
-              <H6>{service.specialityAreaTitle2}</H6>
-              <H6>
-                <SeoLinks items={service.specialityAreaItems2} />
-              </H6>
-              <H6>{service.specialityAreaTitle3}</H6>
-              <H6>
-                <SeoLinks items={service.specialityAreaItems3} />
-              </H6>
-              <H6>{service.specialityAreaTitle4}</H6>
-              <H6>
-                <SeoLinks items={service.specialityAreaItems4} />
-              </H6>
-            </div>
           </Col>
         </Row>
+      </Grid>
+
+      <GrayBackground>
+        <Grid className="grid">
+          <Padding top={6} bottom={4}>
+            <Title>{service.mainPageIntroSentence.mainPageIntroSentence}</Title>
+            <Padding bottom={4} />
+          </Padding>
+        </Grid>
+      </GrayBackground>
+      <GrayBackground noTop style={{ background: '#090329' }}>
+        <Padding top={4} bottom={5}>
+          <Grid className="grid">
+            <Row>
+              <Col xs={12}>
+                <WorkStages
+                  title={service.workStagesTitle}
+                  workStages={service.workStages}
+                />
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
+      </GrayBackground>
+      <Grid className="grid">
+        <Padding top={4}>
+          <Row>
+            <Col xs={12} sm={12} md={4}>
+              <H2 noTop>We work with</H2>
+            </Col>
+            <Col xs={12} sm={12} md={6} mdOffset={2}>
+              <Padding bottom={4}>
+                <H5 noTop bold>
+                  {service.specialityAreaTitle1}
+                </H5>
+                <H6>
+                  <SeoLinks items={service.specialityAreaItems1} />
+                </H6>
+              </Padding>
+              <Padding bottom={4}>
+                <H5 noTop bold>
+                  {service.specialityAreaTitle2}
+                </H5>
+                <H6>
+                  <SeoLinks items={service.specialityAreaItems2} />
+                </H6>
+              </Padding>
+              <Padding bottom={4}>
+                <H5 noTop bold>
+                  {service.specialityAreaTitle3}
+                </H5>
+                <H6>
+                  <SeoLinks items={service.specialityAreaItems3} />
+                </H6>
+              </Padding>
+              <Padding bottom={4}>
+                <H5 noTop bold>
+                  {service.specialityAreaTitle4}
+                </H5>
+                <H6>
+                  <SeoLinks items={service.specialityAreaItems4} />
+                </H6>
+              </Padding>
+            </Col>
+          </Row>
+        </Padding>
+      </Grid>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <Padding top={4} bottom={2}>
+              <Paragraph>More of our work</Paragraph>
+            </Padding>
+          </Col>
+        </Row>
+        {service.bottomCaseStudy ? (
+          <Padding bottom={5}>
+            <CaseStudy caseStudy={service.bottomCaseStudy} />
+          </Padding>
+        ) : null}
       </Grid>
     </Layout>
   )
@@ -84,6 +134,17 @@ export const pageQuery = graphql`
           seoMetaDescription
           mainPageIntroSentence {
             mainPageIntroSentence
+          }
+          bottomCaseStudy {
+            title
+            slug
+            introSentence
+            posterImage {
+              file {
+                url
+              }
+            }
+            posterColor
           }
           caseStudies {
             ... on ContentfulCaseStudy {

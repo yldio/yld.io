@@ -1,5 +1,5 @@
 import React from 'react'
-import { H1 } from '../Typography'
+import { H2, Paragraph } from '../Typography'
 
 const WorkStage = ({ workStage }) => {
   const sections = Array(5)
@@ -17,11 +17,11 @@ const WorkStage = ({ workStage }) => {
     .filter(({ sectionTitle }) => sectionTitle)
   return (
     <div>
-      <H1>{workStage.title}</H1>
+      <H2 reverse>{workStage.title}</H2>
       {sections.map(({ sectionTitle, sectionBody }) => (
         <div key={sectionTitle}>
-          <p>{sectionTitle}</p>
-          <p>{sectionBody}</p>
+          <Paragraph reverse>{sectionTitle}</Paragraph>
+          <Paragraph reverse>{sectionBody}</Paragraph>
         </div>
       ))}
     </div>
@@ -29,7 +29,7 @@ const WorkStage = ({ workStage }) => {
 }
 const WorkStages = ({ title, workStages }) => (
   <div>
-    <H1>{title}</H1>
+    <H2 reverse>{title}</H2>
     {workStages.map(workStage => (
       <WorkStage key={workStage.id} workStage={workStage} />
     ))}
