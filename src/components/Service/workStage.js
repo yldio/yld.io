@@ -60,7 +60,6 @@ const WorkStage = ({ workStage }) => {
       })
     }))
     .filter(({ sectionTitle }) => sectionTitle)
-  console.log(workStage)
 
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   return (

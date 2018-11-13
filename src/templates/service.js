@@ -103,11 +103,11 @@ const Service = ({ data }) => {
             </Padding>
           </Col>
         </Row>
-        {service.bottomCaseStudy ? (
+        {/* {service.bottomCaseStudy ? (
           <Padding bottom={5}>
             <CaseStudy caseStudy={service.bottomCaseStudy} />
           </Padding>
-        ) : null}
+        ) : null} */}
       </Grid>
     </Layout>
   )
@@ -137,19 +137,19 @@ export const pageQuery = graphql`
               url
             }
           }
-          bottomCaseStudy {
-            title
-            slug
-            introSentence {
-              introSentence
-            }
-            posterImage {
-              file {
-                url
-              }
-            }
-            posterColor
-          }
+          # bottomCaseStudy {
+          #   title
+          #   slug
+          #   introSentence {
+          #     introSentence
+          #   }
+          #   posterImage {
+          #     file {
+          #       url
+          #     }
+          #   }
+          #   posterColor
+          # }
           caseStudies {
             ... on ContentfulCaseStudy {
               title
