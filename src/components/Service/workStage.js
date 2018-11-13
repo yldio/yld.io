@@ -1,4 +1,5 @@
 import React from 'react'
+import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { H2, Paragraph } from '../Typography'
 
 const WorkStage = ({ workStage }) => {
@@ -8,23 +9,28 @@ const WorkStage = ({ workStage }) => {
       sectionTitle: workStage[`sectionTitle${index + 1}`],
       ...(workStage[`sectionBody${index + 1}`] && {
         sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
+          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`],
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`]
-      })
+        sectionIcon: workStage[`sectionIcon${index + 1}`],
+      }),
     }))
     .filter(({ sectionTitle }) => sectionTitle)
+    console.log(workStage)
   return (
-    <div>
-      <H2 reverse>{workStage.title}</H2>
-      {sections.map(({ sectionTitle, sectionBody }) => (
-        <div key={sectionTitle}>
-          <Paragraph reverse>{sectionTitle}</Paragraph>
-          <Paragraph reverse>{sectionBody}</Paragraph>
-        </div>
-      ))}
-    </div>
+    <Row>
+      <Col xs={workStage.displayType !== 'List' ? 12 : 6}>
+        <H2 reverse>{workStage.title}</H2>
+      </Col>
+      <Col xs={6}>
+        {sections.map(({ sectionTitle, sectionBody }) => (
+          <div key={sectionTitle}>
+            <Paragraph reverse>{sectionTitle}</Paragraph>
+            <Paragraph reverse>{sectionBody}</Paragraph>
+          </div>
+        ))}
+      </Col>
+    </Row>
   )
 }
 const WorkStages = ({ title, workStages }) => (

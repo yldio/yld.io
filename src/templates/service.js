@@ -140,7 +140,7 @@ export const pageQuery = graphql`
           bottomCaseStudy {
             title
             slug
-            introSentence
+            introSentence { introSentence }
             posterImage {
               file {
                 url
@@ -180,6 +180,7 @@ export const pageQuery = graphql`
           workStages {
             id
             title
+            displayType
             sectionTitle1
             sectionTitle2
             sectionTitle3
