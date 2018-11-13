@@ -11,7 +11,8 @@ import {
   Label,
   Textarea,
   Button,
-  Fieldset
+  Fieldset,
+  Field
 } from '../components/forms'
 import GrayBG from '../components/GrayBG'
 
@@ -166,6 +167,20 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
+                        <Field>
+                          <section key="privacy">
+                            <Checkbox
+                              required
+                              type="checkbox"
+                              id="privacy"
+                              name="privacy"
+                              onChange={this.handleChangeCheckbox}
+                            />
+                            <label htmlFor="privacy">
+                              I agree to the terms of YLD’s privacy policy
+                            </label>
+                          </section>
+                        </Field>
                         <Button type="submit" disabled={submitting}>
                           {submitting ? 'Submitting' : 'Submit'}
                         </Button>
