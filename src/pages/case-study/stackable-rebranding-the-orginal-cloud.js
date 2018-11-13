@@ -129,14 +129,15 @@ const IndexPage = ({
           </Row>
         </Padding>
       </Grid>
-      <Grid className="grid">
-        <Row>
-          <Col xs={12}>
-            <img src={logoImage} alt="Logo Iterations" />
-          </Col>
-        </Row>
-      </Grid>
-      <GrayBackground>
+
+      <GrayBackground topOffset={-232}>
+        <Grid className="grid">
+          <Row>
+            <Col xs={12}>
+              <img src={logoImage} alt="Logo Iterations" />
+            </Col>
+          </Row>
+        </Grid>
         <Grid className="grid">
           <Padding top={6}>
             <Row>
@@ -189,24 +190,26 @@ const IndexPage = ({
           </div>
         </Flex>
       </GrayBackground>
-      <Code>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <Padding vertical={4}>
-                {command1.split('/n').map((p, i) => (
-                  <Node key={i}>{p}</Node>
-                ))}
-                <Margin top={1}>
-                  {command2.split('/n').map((p, i) => (
+      <div style={{ backgroundColor: 'white' }}>
+        <Code>
+          <Grid>
+            <Row>
+              <Col xs={12}>
+                <Padding vertical={4}>
+                  {command1.split('/n').map((p, i) => (
                     <Node key={i}>{p}</Node>
                   ))}
-                </Margin>
-              </Padding>
-            </Col>
-          </Row>
-        </Grid>
-      </Code>
+                  <Margin top={1}>
+                    {command2.split('/n').map((p, i) => (
+                      <Node key={i}>{p}</Node>
+                    ))}
+                  </Margin>
+                </Padding>
+              </Col>
+            </Row>
+          </Grid>
+        </Code>
+      </div>
       <Grid className="grid">
         <Padding top={60} bottom={4}>
           <Row>
