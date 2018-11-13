@@ -55,49 +55,51 @@ const Service = ({ data }) => {
           </Grid>
         </Padding>
       </GrayBackground>
-      <Grid className="grid">
-        <Padding top={4}>
-          <Row>
-            <Col xs={12} sm={12} md={4}>
-              <H2 noTop>We work with</H2>
-            </Col>
-            <Col xs={12} sm={12} md={6} mdOffset={2}>
-              <Padding bottom={4}>
-                <H5 noTop bold>
-                  {service.specialityAreaTitle1}
-                </H5>
-                <H6>
-                  <SeoLinks items={service.specialityAreaItems1} />
-                </H6>
-              </Padding>
-              <Padding bottom={4}>
-                <H5 noTop bold>
-                  {service.specialityAreaTitle2}
-                </H5>
-                <H6>
-                  <SeoLinks items={service.specialityAreaItems2} />
-                </H6>
-              </Padding>
-              <Padding bottom={4}>
-                <H5 noTop bold>
-                  {service.specialityAreaTitle3}
-                </H5>
-                <H6>
-                  <SeoLinks items={service.specialityAreaItems3} />
-                </H6>
-              </Padding>
-              <Padding bottom={4}>
-                <H5 noTop bold>
-                  {service.specialityAreaTitle4}
-                </H5>
-                <H6>
-                  <SeoLinks items={service.specialityAreaItems4} />
-                </H6>
-              </Padding>
-            </Col>
-          </Row>
-        </Padding>
-      </Grid>
+      <GrayBackground noTop>
+        <Grid className="grid">
+          <Padding top={4}>
+            <Row>
+              <Col xs={12} sm={12} md={4}>
+                <H2 noTop>We work with</H2>
+              </Col>
+              <Col xs={12} sm={12} md={6} mdOffset={2}>
+                <Padding bottom={4}>
+                  <H5 noTop bold>
+                    {service.specialityAreaTitle1}
+                  </H5>
+                  <H6>
+                    <SeoLinks items={service.specialityAreaItems1} />
+                  </H6>
+                </Padding>
+                <Padding bottom={4}>
+                  <H5 noTop bold>
+                    {service.specialityAreaTitle2}
+                  </H5>
+                  <H6>
+                    <SeoLinks items={service.specialityAreaItems2} />
+                  </H6>
+                </Padding>
+                <Padding bottom={4}>
+                  <H5 noTop bold>
+                    {service.specialityAreaTitle3}
+                  </H5>
+                  <H6>
+                    <SeoLinks items={service.specialityAreaItems3} />
+                  </H6>
+                </Padding>
+                <Padding bottom={4}>
+                  <H5 noTop bold>
+                    {service.specialityAreaTitle4}
+                  </H5>
+                  <H6>
+                    <SeoLinks items={service.specialityAreaItems4} />
+                  </H6>
+                </Padding>
+              </Col>
+            </Row>
+          </Padding>
+        </Grid>
+      </GrayBackground>
       <Grid>
         <Row>
           <Col xs={12}>
