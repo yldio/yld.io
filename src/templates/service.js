@@ -2,42 +2,17 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H6 } from '../components/Typography'
+import { H1, H6, H3 } from '../components/Typography'
+import { Padding } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
-
-const WorkStage = ({ workStage }) => {
-  const sections = Array(5)
-    .fill({})
-    .map((element, index) => ({
-      sectionTitle: workStage[`sectionTitle${index + 1}`],
-      ...(workStage[`sectionBody${index + 1}`] && {
-        sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
-      }),
-      ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`]
-      })
-    }))
-    .filter(({ sectionTitle }) => sectionTitle)
-  return (
-    <div>
-      <H1>{workStage.title}</H1>
-      {sections.map(({ sectionTitle, sectionBody }) => (
-        <div key={sectionTitle}>
-          <p>{sectionTitle}</p>
-          <p>{sectionBody}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
+import WorkStages from '../components/Service/workStage'
+import GrayBackground from '../components/GrayBG'
 
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
   const site = data.site
-  console.log('DATA:', data)
   return (
     <Layout>
       <Helmet
@@ -52,13 +27,19 @@ const Service = ({ data }) => {
         <Row>
           <Col xs={12}>
             <CaseStudy caseStudy={service.caseStudies[0]} />
-            <p>{service.mainPageIntroSentence.mainPageIntroSentence}</p>
-            <div>
-              <H1>{service.workStagesTitle}</H1>
-              {service.workStages.map(workStage => (
-                <WorkStage key={workStage.id} workStage={workStage} />
-              ))}
-            </div>
+            <GrayBackground>
+              <Grid className="grid">
+                <Padding top={6} bottom={4}>
+                  <H3>{service.mainPageIntroSentence.mainPageIntroSentence}</H3>
+                  <Padding bottom={4} />
+                </Padding>
+              </Grid>
+            </GrayBackground>
+            <p>{}</p>
+            <WorkStages
+              title={service.workStagesTitle}
+              workStages={service.workStages}
+            />
             <div>
               <H1>We work with</H1>
               <H6>{service.specialityAreaTitle1}</H6>
