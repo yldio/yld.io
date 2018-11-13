@@ -188,6 +188,57 @@ export const pageQuery = graphql`
             id
             title
             displayType
+            alternativeTitle
+            alternativeWorkStages{
+              alternativeTitle
+              sectionTitle1
+            sectionTitle2
+            sectionTitle3
+            sectionTitle4
+            sectionTitle5
+            sectionIcon1 {
+              file {
+                url
+              }
+            }
+            sectionIcon2 {
+              file {
+                url
+              }
+            }
+            sectionIcon3 {
+              file {
+                url
+              }
+            }
+            sectionIcon4 {
+              file {
+                url
+              }
+            }
+            sectionIcon5 {
+              file {
+                url
+              }
+            }
+            sectionBody1 {
+              sectionBody1
+            }
+            sectionBody2 {
+              sectionBody2
+            }
+            sectionBody3 {
+              sectionBody3
+            }
+
+            sectionBody4 {
+              sectionBody4
+            }
+
+            sectionBody5 {
+              sectionBody5
+            }
+            }
             sectionTitle1
             sectionTitle2
             sectionTitle3

@@ -3,6 +3,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
+import StyledLink from '../styledLink'
 import { H2, Paragraph } from '../Typography'
 
 const Item = styled.li`
@@ -46,21 +47,61 @@ const WorkStageContent = ({ sectionTitle, sectionBody }) => (
   </Fragment>
 )
 
-const WorkStage = ({ workStage }) => {
+class WorkStageAlternatives extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { selectedAlternative: this.props.workStage }
+    this.handleClick = this.handleClick.bind(this)
+    this.alternatives = this.props.workStage.alternativeTitle
+      ? [
+          this.props.workStage.alternativeTitle,
+          ...this.props.workStage.alternativeWorkStages.map(
+            ({ alternativeTitle }) => alternativeTitle
+          ),
+        ]
+      : null
+  }
+  findAlternative (selected) {
+    let workStage = this.props.workStage
+    if (workStage.alternativeTitle === selected) {
+      this.setState({ selectedAlternative: workStage })
+    } 
+    else {
+      this.setState({ selectedAlternative: workStage.alternativeWorkStages.filter(
+        ({ alternativeTitle }) =>
+          alternativeTitle === selected
+      )[0] })
+    }
+  }
+  handleClick (e) {
+    this.findAlternative(e)
+  }
+
+  render () {
+    return (
+      <WorkStage
+        handleClick={this.handleClick}
+        alternatives={this.alternatives}
+        workStage = {this.state.selectedAlternative}
+      />
+    )
+  }
+}
+
+const WorkStage = ({ workStage, handleClick, alternatives }) => {
   const sections = Array(5)
     .fill({})
     .map((element, index) => ({
       sectionTitle: workStage[`sectionTitle${index + 1}`],
       ...(workStage[`sectionBody${index + 1}`] && {
         sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
+          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`],
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url
-      })
+        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url,
+      }),
     }))
     .filter(({ sectionTitle }) => sectionTitle)
-
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   return (
     <Grid className="grid">
@@ -71,29 +112,41 @@ const WorkStage = ({ workStage }) => {
               {workStage.title}
             </H2>
           </Padding>
+          {alternatives &&
+            alternatives.map((alternative) => (
+              <StyledLink
+                onClick={()=>handleClick(alternative)}
+                key={alternative}
+                reverse
+                muted
+              >
+                {alternative}
+              </StyledLink>
+            ))}
         </Col>
         <Tag xs={12} md={6}>
-          {sections.map(({ sectionTitle, sectionBody, sectionIcon }) =>
-            workStage.displayType !== 'List' ? (
-              <Col xs={12} md={6}>
-                <Padding bottom={4}>
-                  <Padding bottom={1}>
-                    <img src={`https://${sectionIcon}`} />
+          {sections.map(
+            ({ sectionTitle, sectionBody, sectionIcon }) =>
+              workStage.displayType !== 'List' ? (
+                <Col xs={12} md={6}>
+                  <Padding bottom={4}>
+                    <Padding bottom={1}>
+                      <img src={`https://${sectionIcon}`} />
+                    </Padding>
+                    <WorkStageContent
+                      sectionTitle={sectionTitle}
+                      sectionBody={sectionBody}
+                    />
                   </Padding>
+                </Col>
+              ) : (
+                <Padding bottom={1}>
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
                   />
                 </Padding>
-              </Col>
-            ) : (
-              <Padding bottom={1}>
-                <WorkStageContent
-                  sectionTitle={sectionTitle}
-                  sectionBody={sectionBody}
-                />
-              </Padding>
-            )
+              )
           )}
         </Tag>
       </Row>
@@ -117,7 +170,7 @@ const WorkStages = ({ title, workStages, image }) => (
     </Grid>
     {workStages.map(workStage => (
       <Padding top={6} bottom={5} key={workStage.id}>
-        <WorkStage workStage={workStage} />
+        <WorkStageAlternatives workStage={workStage} />
       </Padding>
     ))}
   </Fragment>
