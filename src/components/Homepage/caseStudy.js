@@ -9,6 +9,12 @@ import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
+
+  ${breakpoint('desktop')`
+    position: absolute;
+    left: 51.5%;
+    padding-right: 0px;
+    `}
 `
 
 const WrapperRow = styled(Row)`
@@ -33,7 +39,11 @@ const CaseStudy = ({ caseStudy }) => (
       <Margin bottom={1}>
         <H2>{caseStudy.title}</H2>
       </Margin>
-      <P>{caseStudy.body.content[0].content[0].value}</P>
+      <P>
+        {typeof caseStudy.introSentence === 'string'
+          ? caseStudy.introSentence
+          : caseStudy.introSentence.introSentence}
+      </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
@@ -41,7 +51,11 @@ const CaseStudy = ({ caseStudy }) => (
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
       <Margin top={2} />
-      <P>{caseStudy.body.content[0].content[0].value}</P>
+      <P>
+        {typeof caseStudy.introSentence === 'string'
+          ? caseStudy.introSentence
+          : caseStudy.introSentence.introSentence}
+      </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
   </WrapperRow>

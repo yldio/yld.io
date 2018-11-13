@@ -1,91 +1,82 @@
 const _ = require(`lodash`)
-const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
 
-//  /case-study/blah
-// /speciality/react
-
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return new Promise((resolve, reject) => {
-    graphql(
-      `
-        query {
-          allContentfulSpeciality {
-            edges {
-              node {
-                id
-                slug
-                body {
-                  nodeType
-                }
-              }
-            }
-          }
-          allContentfulService {
-            edges {
-              node {
-                id
-                slug
-              }
-            }
-          }
-          allContentfulCaseStudy {
-            edges {
-              node {
-                id
-                slug
-              }
+  const result = await graphql(`
+    query {
+      allContentfulSpeciality {
+        edges {
+          node {
+            id
+            slug
+            body {
+              nodeType
             }
           }
         }
-      `
-    ).then(result => {
-      if (result.errors) {
-        reject(result.errors)
       }
+      allContentfulService {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+      allContentfulCaseStudy {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-      const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
-      const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
-      const serviceTemplate = path.resolve(`./src/templates/service.js`)
+  if (result.errors) {
+    throw result.errors
+  }
 
-      _.each(result.data.allContentfulCaseStudy.edges, edge => {
-        if (edge.node.slug) {
-          createPage({
-            path: `/case-study/${edge.node.slug}/`,
-            component: slash(caseStudyTemplate),
-            context: {
-              id: edge.node.id
-            }
-          })
+  const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
+  const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
+  const serviceTemplate = path.resolve(`./src/templates/service.js`)
+
+  _.each(result.data.allContentfulCaseStudy.edges, edge => {
+    if (edge.node.slug) {
+      createPage({
+        path: `/case-study/${edge.node.slug}/`,
+        component: slash(caseStudyTemplate),
+        context: {
+          id: edge.node.id
         }
       })
+    }
+  })
 
-      _.each(result.data.allContentfulSpeciality.edges, edge => {
-        if (edge.node.body && edge.node.slug) {
-          createPage({
-            path: `/speciality/${edge.node.slug}/`,
-            component: slash(specialityTemplate),
-            context: {
-              id: edge.node.id
-            }
-          })
+  _.each(result.data.allContentfulSpeciality.edges, edge => {
+    if (edge.node.body && edge.node.slug) {
+      createPage({
+        path: `/speciality/${edge.node.slug}/`,
+        component: slash(specialityTemplate),
+        context: {
+          id: edge.node.id
         }
       })
+    }
+  })
 
-      _.each(result.data.allContentfulService.edges, edge => {
-        if (edge.node.slug) {
-          createPage({
-            path: `/${edge.node.slug}/`,
-            component: slash(serviceTemplate),
-            context: {
-              id: edge.node.id
-            }
-          })
+  _.each(result.data.allContentfulService.edges, edge => {
+    if (edge.node.slug) {
+      createPage({
+        path: `/${edge.node.slug}/`,
+        component: slash(serviceTemplate),
+        context: {
+          id: edge.node.id
         }
       })
-      resolve()
-    })
+    }
   })
 }

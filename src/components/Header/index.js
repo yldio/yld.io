@@ -18,41 +18,45 @@ class Header extends Component {
       <Grid className="grid">
         <Row>
           <Col xs={12}>
-            <Padding top={2} bottom={3}>
-              <Flex alignCenter wrap justifyBetween>
-                <Link to="/">
-                  <img
-                    role="button"
-                    tab-index="0"
-                    height="48"
-                    src={logo}
-                    alt="yld"
-                  />
-                </Link>
-                <MobileMenu>
-                  <img onClick={this.toggleMenu} src={menu} alt="open menu" />
-                </MobileMenu>
-                <DesktopMenu open={this.state.menuOpen}>
-                  <HomeLink right={30}>
-                    <Link activeClassName="active" to="/">
-                      Home
+            <header>
+              <Padding top={2} bottom={3}>
+                <Flex alignCenter wrap justifyBetween>
+                  <Link to="/">
+                    <img
+                      role="button"
+                      tab-index="0"
+                      height="48"
+                      src={logo}
+                      alt="yld"
+                    />
+                  </Link>
+                  <MobileMenu>
+                    <button onClick={this.toggleMenu}>
+                      <img src={menu} alt="open menu" />
+                    </button>
+                  </MobileMenu>
+                  <DesktopMenu open={this.state.menuOpen}>
+                    <HomeLink right={30}>
+                      <Link activeClassName="active" to="/">
+                        Home
+                      </Link>
+                    </HomeLink>
+                    <Link activeClassName="active" to="/engineering/">
+                      Engineering
                     </Link>
-                  </HomeLink>
-                  <Link activeClassName="active" to="/engineering/">
-                    Engineering
-                  </Link>
-                  <Link activeClassName="active" to="/design/">
-                    Design
-                  </Link>
-                  <Link activeClassName="active" to="/contact/">
-                    Contact
-                  </Link>
-                  <Close onClick={this.toggleMenu}>
-                    <img src={close} alt="Close menu" />
-                  </Close>
-                </DesktopMenu>
-              </Flex>
-            </Padding>
+                    <Link activeClassName="active" to="/design/">
+                      Design
+                    </Link>
+                    <Link activeClassName="active" to="/contact/">
+                      Contact
+                    </Link>
+                    <Close onClick={this.toggleMenu}>
+                      <img src={close} alt="Close menu" />
+                    </Close>
+                  </DesktopMenu>
+                </Flex>
+              </Padding>
+            </header>
           </Col>
         </Row>
       </Grid>

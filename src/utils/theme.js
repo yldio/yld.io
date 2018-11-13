@@ -8,6 +8,12 @@ const breakpoints = {
   desktop: 1096
 }
 
+const flexboxbGridBreakPoints = {
+  xs: calc(breakpoints.phone),
+  sm: calc(breakpoints.tablet),
+  md: calc(breakpoints.desktop)
+}
+
 export default {
   breakpoints,
   flexboxgrid: {
@@ -17,9 +23,9 @@ export default {
     container: {
       sm: 55.5,
       md: 55.5,
-      lg: calc(1108)
+      lg: calc(1000)
     },
-    breakpoints
+    breakpoints: flexboxbGridBreakPoints
   },
   spacing: {
     0: '0',
@@ -32,16 +38,18 @@ export default {
     5: remcalc(108),
     6: remcalc(144),
     7: remcalc(288),
-    30: remcalc(30)
+    30: remcalc(30),
+    60: remcalc(60)
   },
   colors: {
     white: '#fff',
     text: '#333333',
+    p: '#757575',
     textLight: '#828282',
     link: '#757575',
     dark: '#232323',
     black: '#1d1d1d',
-    lightGray: '#949494',
+    lightGray: '#737272',
     greyBg: '#f9f9f9',
     grey: '#e6e6e6'
   }

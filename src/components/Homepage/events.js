@@ -35,36 +35,38 @@ const Events = ({ events }) => (
       </ul>
     </Col>
     <Col md={8} xs={12}>
-      {events.filter(n => n.node.homepageFeatured).map(({ node }) => (
-        <Flex
-          key={node.id}
-          alignStart
-          justifyBetween
-          full
-          column
-          style={{ background: `#${node.color}` }}
-        >
-          <EventWrapper>
-            <Paragraph muted reverse noMargin>
-              Featured
-            </Paragraph>
-            <EventTitle reverse>{node.eventTitle}</EventTitle>
-            <Padding top={0.5}>
-              <Paragraph
-                muted
-                reverse
-                style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
-              >
-                {node.blurb.blurb}
+      {events
+        .filter(n => n.node.homepageFeatured)
+        .map(({ node }) => (
+          <Flex
+            key={node.id}
+            alignStart
+            justifyBetween
+            full
+            column
+            style={{ background: `#${node.color}` }}
+          >
+            <EventWrapper>
+              <Paragraph muted reverse noMargin>
+                Featured
               </Paragraph>
-            </Padding>
-            <StyledLink reverse href={node.linkToEvent}>
-              Get tickets
-            </StyledLink>
-          </EventWrapper>
-          <img alt={node.eventName} src={node.posterImage.file.url} />
-        </Flex>
-      ))}
+              <EventTitle reverse>{node.eventTitle}</EventTitle>
+              <Padding top={0.5}>
+                <Paragraph
+                  muted
+                  reverse
+                  style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
+                >
+                  {node.blurb.blurb}
+                </Paragraph>
+              </Padding>
+              <StyledLink reverse href={node.linkToEvent}>
+                Get tickets
+              </StyledLink>
+            </EventWrapper>
+            <img alt={node.eventTitle} src={node.posterImage.file.url} />
+          </Flex>
+        ))}
     </Col>
   </Row>
 )

@@ -48,13 +48,13 @@ export default createGlobalStyle`
       font-style: italic;
     }
 
-.grid {
-  max-width: 100%;
-}
+    .grid {
+      max-width: 100%;
+    }
 
   .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: calc(50% - 30px);
     padding-top: 30px;
     height: 0;
     overflow: hidden;
@@ -62,6 +62,8 @@ export default createGlobalStyle`
   iframe,
   object,
   embed {
+    max-width: 854px;
+    max-height: 480px;
     position: absolute;
     top: 0;
     left: 0;

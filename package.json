@@ -38,11 +38,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build:app": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build src/functions",
     "build": "run-p build:**",
     "lint": "eslint . --cache --fix",
@@ -50,6 +50,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
     "@storybook/addon-actions": "^4.0.4",
     "@storybook/addon-links": "^4.0.0",
     "@storybook/addons": "^4.0.4",

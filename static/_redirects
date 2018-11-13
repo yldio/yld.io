@@ -1,0 +1,8 @@
+# See https://www.netlify.com/docs/redirects/
+/about.html     /
+/contact.html   /contact/       301
+/newsroom.html  https://medium.com/yld-engineering-blog
+/our-work.html  /engineering/
+/resources.html /
+/team/          /
+/what-we-do.html /engineering/

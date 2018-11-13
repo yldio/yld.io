@@ -1,62 +1,24 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
-import { H1, Paragraph, H5, H6 } from '../components/Typography'
+import { H2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
+import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
-import SeoLinks from '../components/Common/seoLinks'
+import generateCaseStudy from '../utils/generateCaseStudy'
 
-const Stat = styled(H1)`
+const Stat = styled(H2)`
   font-size: ${remcalc(72)};
   padding-bottom: 0 !important; /* sorry */
 `
 
-const ImageWrapper = styled(Col)`
-  max-height: ${remcalc(540)};
-  width: ${remcalc(540)};
-`
-
-const NoMobile = styled.section`
-  display: none;
-
-  ${breakpoint('tablet')`
-    display: block;
-  `};
-`
-
-const MetaData = ({ caseStudy }) => (
-  <Flex justifyBetween>
-    <Flex column>
-      <H5 small bold noMargin>
-        Technology used
-      </H5>
-      <Flex alignCenter wrap>
-        <H6 noMargin>
-          <SeoLinks items={caseStudy.specialities} />
-        </H6>
-      </Flex>
-    </Flex>
-    <Flex column>
-      <H5 small bold noMargin>
-        Services provided
-      </H5>
-      <Flex alignCenter wrap>
-        <H6 noMargin>
-          <SeoLinks items={caseStudy.services} />
-        </H6>
-      </Flex>
-    </Flex>
-  </Flex>
-)
-
 const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
+  const body = generateCaseStudy(caseStudy)
 
   return (
     <Layout>
@@ -69,95 +31,48 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <Row>
-          <Col xs={12} sm={6}>
-            <Flex full column justifyCenter>
-              <H1 noTop>{caseStudy.title}</H1>
-              <NoMobile>
-                <MetaData caseStudy={caseStudy} />
-              </NoMobile>
-            </Flex>
-          </Col>
-          {caseStudy.posterImage && (
-            <ImageWrapper sm={6} xs={12}>
-              <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
-            </ImageWrapper>
-          )}
-          <Col xs={12} sm={false}>
-            <Padding top={2}>
-              <MetaData caseStudy={caseStudy} />
-            </Padding>
-          </Col>
-        </Row>
+        <Padding bottom={0.5}>
+          <CaseStudyTop caseStudy={caseStudy} />
+        </Padding>
         <Margin bottom={4} />
         <Row>
           <Col xs={12} sm={9} md={7}>
-            {caseStudy.body.content
-              .filter(
-                c =>
-                  c.content[0] &&
-                  c.content[0].marks &&
-                  !c.content[0].marks.length
-              )
-              .slice(0, 2)
-              .map(
-                (c, i) =>
-                  c.content[0] && (
-                    <Paragraph padded key={i}>
-                      {c.content[0].value}
-                    </Paragraph>
-                  )
-              )}
+            {body[0].map((text, i) => (
+              <Paragraph padded key={i}>
+                {text}
+              </Paragraph>
+            ))}
           </Col>
         </Row>
-        <Margin bottom={4} top={3}>
+        <Margin bottom={4} top={4}>
           <Row center="md">
             <Col xs={12} md={10}>
-              {caseStudy.body.content
-                .filter(
-                  c =>
-                    c.content[0] &&
-                    c.content[0].marks &&
-                    c.content[0].marks.length
-                )
-                .map(
-                  (c, i) =>
-                    c.content[0] && (
-                      <div
-                        className="video-container"
-                        dangerouslySetInnerHTML={{ __html: c.content[0].value }}
-                      />
-                    )
-                )}
+              {body[1].map((text, i) => (
+                <div
+                  key={i}
+                  className="video-container"
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
+              ))}
             </Col>
           </Row>
         </Margin>
+        <Margin top={1} />
         <Row>
           <Col xs={12} sm={9} md={7}>
-            {caseStudy.body.content
-              .filter(
-                c =>
-                  c.content[0] &&
-                  c.content[0].marks &&
-                  !c.content[0].marks.length
-              )
-              .slice(2)
-              .map(
-                (c, i) =>
-                  c.content[0] && (
-                    <Paragraph padded key={i}>
-                      {c.content[0].value}
-                    </Paragraph>
-                  )
-              )}
+            {body[2].map((text, i) => (
+              <Paragraph padded key={i}>
+                {text}
+              </Paragraph>
+            ))}
           </Col>
           <Col md={3} sm={12} mdOffset={1}>
             {caseStudy.stats &&
               caseStudy.stats.map(stat => (
-                <Fragment key={stat.id}>
-                  <Stat>{stat.value}</Stat>
+                <Margin bottom={1} key={stat.id}>
+                  <Stat noTop>{stat.value}</Stat>
                   <H5 bold>{stat.label}</H5>
-                </Fragment>
+                </Margin>
               ))}
           </Col>
         </Row>
@@ -202,14 +117,7 @@ export const pageQuery = graphql`
               }
             }
             posterColor
-            body {
-              content {
-                content {
-                  value
-                  nodeType
-                }
-              }
-            }
+            introSentence
           }
           specialities {
             title
