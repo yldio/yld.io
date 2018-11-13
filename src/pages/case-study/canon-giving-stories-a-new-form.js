@@ -39,9 +39,10 @@ const IndexPage = ({
             </Col>
           </Row>
         </Margin>
+        <Padding bottom={2} />
       </Grid>
-      <GrayBackground>
-        <Padding top={6} bottom={30}>
+      <GrayBackground topOffset={-783} offsetBottom>
+        <Padding top={5} bottom={30}>
           <Grid className="grid">
             <Row>
               <Col xs={12} sm={12} md={5}>
@@ -113,28 +114,29 @@ const IndexPage = ({
           </Row>
         </Padding>
       </Grid>
-      <Margin top={4} bottom={3}>
+
+      <GrayBackground topOffset={-300}>
+        <Padding top={5} bottom={2}>
+          <Grid className="grid">
+            <Row>
+              <Col xs={12}>
+                <div className="video-container">
+                  <iframe
+                    src="https://player.vimeo.com/video/203746618"
+                    width="640"
+                    height="360"
+                    frameBorder="0"
+                    webkitallowfullscreen
+                    mozallowfullscreen
+                    allowFullScreen
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
         <Grid className="grid">
-          <Row>
-            <Col xs={12}>
-              <div className="video-container">
-                <iframe
-                  src="https://player.vimeo.com/video/203746618"
-                  width="640"
-                  height="360"
-                  frameBorder="0"
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allowFullScreen
-                />
-              </div>
-            </Col>
-          </Row>
-        </Grid>
-      </Margin>
-      <GrayBackground>
-        <Grid className="grid">
-          <Padding top={6}>
+          <Padding top={5} bottom={3}>
             <Row>
               <Col xs={12} sm={12} md={5}>
                 <H2 noTop>Out in the wild</H2>
