@@ -42,19 +42,21 @@ const CaseStudy = ({ caseStudy }) => (
       <P>
         {typeof caseStudy.introSentence === 'string'
           ? caseStudy.introSentence
-          : caseStudy.introSentence.introSentence}
+          : (caseStudy.introSentence || {}).introSentence}
       </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
-      <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+      {caseStudy.posterImage ? (
+        <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+      ) : null}
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
       <Margin top={2} />
       <P>
         {typeof caseStudy.introSentence === 'string'
           ? caseStudy.introSentence
-          : caseStudy.introSentence.introSentence}
+          : (caseStudy.introSentence || {}).introSentence}
       </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
