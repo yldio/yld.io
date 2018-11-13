@@ -1,10 +1,6 @@
 require('dotenv').config()
 
-const {
-  CONTENTFUL_TOKEN,
-  CONTENTFUL_SPACE,
-  GA_TRACKING_ID
-} = process.env
+const { CONTENTFUL_TOKEN, CONTENTFUL_SPACE, GA_TRACKING_ID } = process.env
 
 module.exports = {
   siteMetadata: {
@@ -40,6 +36,14 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: GA_TRACKING_ID
+      }
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/images/favicon.png',
+        appName: 'YLD',
+        background: '#fff'
       }
     }
   ]
