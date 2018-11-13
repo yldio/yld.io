@@ -129,14 +129,15 @@ const IndexPage = ({
           </Row>
         </Padding>
       </Grid>
-      <Grid className="grid">
-        <Row>
-          <Col xs={12}>
-            <img src={logoImage} alt="Logo Iterations" />
-          </Col>
-        </Row>
-      </Grid>
-      <GrayBackground>
+
+      <GrayBackground topOffset={-232}>
+        <Grid className="grid">
+          <Row>
+            <Col xs={12}>
+              <img src={logoImage} alt="Logo Iterations" />
+            </Col>
+          </Row>
+        </Grid>
         <Grid className="grid">
           <Padding top={6}>
             <Row>
