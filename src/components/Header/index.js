@@ -33,7 +33,7 @@ class Header extends Component {
               <Padding top={2} bottom={3}>
                 <Flex alignCenter wrap justifyBetween>
                   <Link to="/">
-                    {isClient &&
+                    {isClient() &&
                     !window.location.pathname.includes('engineering') &&
                     !window.location.pathname.includes('design') ? (
                         <img
@@ -45,7 +45,7 @@ class Header extends Component {
                         />
                       ) : null}
 
-                    {isClient &&
+                    {isClient() &&
                     window.location.pathname.includes('engineering') ? (
                         <Fragment>
                           <HiddenText>engineering</HiddenText>
@@ -58,18 +58,19 @@ class Header extends Component {
                           />
                         </Fragment>
                       ) : null}
-                    {isClient && window.location.pathname.includes('design') ? (
-                      <Fragment>
-                        <HiddenText>Design</HiddenText>
-                        <img
-                          role="button"
-                          tab-index="0"
-                          height="48"
-                          src={logoDesign}
-                          alt="yld"
-                        />
-                      </Fragment>
-                    ) : null}
+                    {isClient() &&
+                    window.location.pathname.includes('design') ? (
+                        <Fragment>
+                          <HiddenText>Design</HiddenText>
+                          <img
+                            role="button"
+                            tab-index="0"
+                            height="48"
+                            src={logoDesign}
+                            alt="yld"
+                          />
+                        </Fragment>
+                      ) : null}
                   </Link>
                   <MobileMenu>
                     <button onClick={this.toggleMenu}>
