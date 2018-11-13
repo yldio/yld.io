@@ -58,6 +58,16 @@ export const Button = styled.button`
   }
 `
 
+export const Field = styled.section`
+  margin-bottom: ${remcalc(36)};
+
+  > section {
+    display: flex;
+    align-items: center;
+    margin-bottom: ${remcalc(24)};
+  }
+`
+
 export const Fieldset = styled.section`
   display: grid;
   margin-bottom: ${remcalc(36)};
