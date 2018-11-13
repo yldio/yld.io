@@ -40,23 +40,31 @@ const CaseStudy = ({ caseStudy }) => (
         <H2>{caseStudy.title}</H2>
       </Margin>
       <P>
-        {typeof caseStudy.introSentence === 'string'
-          ? caseStudy.introSentence
-          : (caseStudy.introSentence || {}).introSentence}
+        {caseStudy.intro
+          ? (caseStudy.intro || {}).introSentence
+          : typeof caseStudy.introSentence === 'string'
+            ? caseStudy.introSentence
+            : (caseStudy.introSentence || {}).introSentence}
       </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
       {caseStudy.posterImage ? (
-        <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+        <img
+          style={{ maxWidth: 549 }}
+          alt={caseStudy.title}
+          src={caseStudy.posterImage.file.url}
+        />
       ) : null}
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
       <Margin top={2} />
       <P>
-        {typeof caseStudy.introSentence === 'string'
-          ? caseStudy.introSentence
-          : (caseStudy.introSentence || {}).introSentence}
+        {caseStudy.intro
+          ? (caseStudy.intro || {}).introSentence
+          : typeof caseStudy.introSentence === 'string'
+            ? caseStudy.introSentence
+            : (caseStudy.introSentence || {}).introSentence}
       </P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>

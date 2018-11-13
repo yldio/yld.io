@@ -155,13 +155,18 @@ export const pageQuery = graphql`
               title
               slug
               introSentence
-              body {
-                content {
-                  content {
-                    value
-                    nodeType
-                  }
+              posterColor
+              posterImage {
+                file {
+                  url
                 }
+              }
+            }
+            ... on ContentfulGenericCaseStudy {
+              title
+              slug
+              intro: introSentence {
+                introSentence
               }
               posterColor
               posterImage {
