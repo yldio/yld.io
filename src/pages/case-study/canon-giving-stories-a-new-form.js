@@ -152,20 +152,22 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            <Padding top={4} bottom={2}>
-              <Paragraph>More of our work</Paragraph>
+      <div style={{ backgroundColor: 'white' }}>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Padding top={4} bottom={2}>
+                <Paragraph>More of our work</Paragraph>
+              </Padding>
+            </Col>
+          </Row>
+          {caseStudy.relatedCaseStudy ? (
+            <Padding bottom={5}>
+              <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
             </Padding>
-          </Col>
-        </Row>
-        {caseStudy.relatedCaseStudy ? (
-          <Padding bottom={5}>
-            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
-          </Padding>
-        ) : null}
-      </Grid>
+          ) : null}
+        </Grid>
+      </div>
     </Layout>
   )
 }
