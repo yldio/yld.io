@@ -2,9 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1 } from '../components/Typography'
+import { H1, H6 } from '../components/Typography'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
+import SeoLinks from '../components/Common/seoLinks'
 
 const WorkStage = ({ workStage }) => {
   const sections = Array(5)
@@ -12,7 +13,8 @@ const WorkStage = ({ workStage }) => {
     .map((element, index) => ({
       sectionTitle: workStage[`sectionTitle${index + 1}`],
       ...(workStage[`sectionBody${index + 1}`] && {
-        sectionBody: workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
+        sectionBody:
+          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
         sectionIcon: workStage[`sectionIcon${index + 1}`]
@@ -35,6 +37,7 @@ const WorkStage = ({ workStage }) => {
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
   const site = data.site
+  console.log('DATA:', data)
   return (
     <Layout>
       <Helmet
@@ -48,13 +51,32 @@ const Service = ({ data }) => {
       <Grid className="grid">
         <Row>
           <Col xs={12}>
-            <CaseStudy caseStudy={service.case_study[0]} />
+            <CaseStudy caseStudy={service.caseStudies[0]} />
             <p>{service.mainPageIntroSentence.mainPageIntroSentence}</p>
             <div>
               <H1>{service.workStagesTitle}</H1>
               {service.workStages.map(workStage => (
                 <WorkStage key={workStage.id} workStage={workStage} />
               ))}
+            </div>
+            <div>
+              <H1>We work with</H1>
+              <H6>{service.specialityAreaTitle1}</H6>
+              <H6>
+                <SeoLinks items={service.specialityAreaItems1} />
+              </H6>
+              <H6>{service.specialityAreaTitle2}</H6>
+              <H6>
+                <SeoLinks items={service.specialityAreaItems2} />
+              </H6>
+              <H6>{service.specialityAreaTitle3}</H6>
+              <H6>
+                <SeoLinks items={service.specialityAreaItems3} />
+              </H6>
+              <H6>{service.specialityAreaTitle4}</H6>
+              <H6>
+                <SeoLinks items={service.specialityAreaItems4} />
+              </H6>
             </div>
           </Col>
         </Row>
@@ -82,26 +104,34 @@ export const pageQuery = graphql`
           mainPageIntroSentence {
             mainPageIntroSentence
           }
-          case_study {
-            id
-            title
-            slug
-            posterImage {
-              file {
-                url
-              }
-            }
-            posterColor
-            body {
-              content {
+          caseStudies {
+            ... on ContentfulCaseStudy {
+              title
+              slug
+              body {
                 content {
-                  value
-                  nodeType
+                  content {
+                    value
+                    nodeType
+                  }
+                }
+              }
+              posterColor
+              posterImage {
+                file {
+                  url
                 }
               }
             }
           }
           workStagesTitle
+          workStagesImage {
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
           workStages {
             id
             title
@@ -151,6 +181,42 @@ export const pageQuery = graphql`
 
             sectionBody5 {
               sectionBody5
+            }
+          }
+          specialityAreaTitle1
+          specialityAreaItems1 {
+            id
+            slug
+            title
+            body {
+              nodeType
+            }
+          }
+          specialityAreaTitle2
+          specialityAreaItems2 {
+            id
+            slug
+            title
+            body {
+              nodeType
+            }
+          }
+          specialityAreaTitle3
+          specialityAreaItems3 {
+            id
+            slug
+            title
+            body {
+              nodeType
+            }
+          }
+          specialityAreaTitle4
+          specialityAreaItems4 {
+            id
+            slug
+            title
+            body {
+              nodeType
             }
           }
         }
