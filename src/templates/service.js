@@ -89,6 +89,7 @@ export const pageQuery = graphql`
             ... on ContentfulCaseStudy {
               title
               slug
+              introSentence
               body {
                 content {
                   content {
