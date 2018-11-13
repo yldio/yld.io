@@ -16,21 +16,23 @@ const WorkStage = ({ workStage }) => {
       }),
     }))
     .filter(({ sectionTitle }) => sectionTitle)
-    console.log(workStage)
+  console.log(workStage)
   return (
-    <Row>
-      <Col xs={workStage.displayType !== 'List' ? 12 : 6}>
-        <H2 reverse>{workStage.title}</H2>
-      </Col>
-      <Col xs={6}>
+    <Grid className="grid">
+      <Row>
+        <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
+          <H2 reverse>{workStage.title}</H2>
+        </Col>
         {sections.map(({ sectionTitle, sectionBody }) => (
-          <div key={sectionTitle}>
+          <Col xs={12} md={6} key={sectionTitle}>
             <Paragraph reverse>{sectionTitle}</Paragraph>
-            <Paragraph reverse>{sectionBody}</Paragraph>
-          </div>
+            <Paragraph muted reverse>
+              {sectionBody}
+            </Paragraph>
+          </Col>
         ))}
-      </Col>
-    </Row>
+      </Row>
+    </Grid>
   )
 }
 const WorkStages = ({ title, workStages }) => (
