@@ -43,16 +43,10 @@ const Service = ({ data }) => {
       </GrayBackground>
       <GrayBackground noTop style={{ background: '#090329' }}>
         <Padding top={4} bottom={5}>
-          <Grid className="grid">
-            <Row>
-              <Col xs={12}>
-                <WorkStages
-                  title={service.workStagesTitle}
-                  workStages={service.workStages}
-                />
-              </Col>
-            </Row>
-          </Grid>
+          <WorkStages
+            title={service.workStagesTitle}
+            workStages={service.workStages}
+          />
         </Padding>
       </GrayBackground>
       <GrayBackground noTop>
@@ -140,7 +134,7 @@ export const pageQuery = graphql`
           bottomCaseStudy {
             title
             slug
-            introSentence { introSentence }
+            introSentence
             posterImage {
               file {
                 url
