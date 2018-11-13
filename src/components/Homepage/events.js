@@ -28,7 +28,15 @@ const Events = ({ events }) => (
           .splice(0, 3)
           .map(({ node }) => (
             <Li key={`${node.id}`}>
-              <H5 bold>{node.eventTitle}</H5>
+              <H5 bold>
+                <a
+                  href={node.linkToEvent}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {node.eventTitle}
+                </a>
+              </H5>
               {format(new Date(node.date), 'MMMM DD[,] dddd')}
             </Li>
           ))}
@@ -60,7 +68,12 @@ const Events = ({ events }) => (
                   {node.blurb.blurb}
                 </Paragraph>
               </Padding>
-              <StyledLink reverse href={node.linkToEvent}>
+              <StyledLink
+                reverse
+                href={node.linkToEvent}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get tickets
               </StyledLink>
             </EventWrapper>
