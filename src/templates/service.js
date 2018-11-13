@@ -46,6 +46,7 @@ const Service = ({ data }) => {
           <WorkStages
             title={service.workStagesTitle}
             workStages={service.workStages}
+            image={service.graphic.file.url}
           />
         </Padding>
       </GrayBackground>
@@ -131,10 +132,17 @@ export const pageQuery = graphql`
           mainPageIntroSentence {
             mainPageIntroSentence
           }
+          graphic {
+            file {
+              url
+            }
+          }
           bottomCaseStudy {
             title
             slug
-            introSentence
+            introSentence {
+              introSentence
+            }
             posterImage {
               file {
                 url

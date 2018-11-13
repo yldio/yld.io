@@ -29,6 +29,7 @@ export default createGlobalStyle`
     background: ${props => props.theme.colors.white};;
     margin: 0;
     border: none;
+    height: ${remcalc(1)};
   }
 
   a {

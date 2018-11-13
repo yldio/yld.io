@@ -14,6 +14,19 @@ const Item = styled.li`
   margin-left: ${remcalc(24)};
 `
 
+const Graphic = styled.img`
+  position: absolute;
+  top: ${remcalc(-72)};
+  height: ${remcalc(331)};
+  left: 50%;
+  transform: translateX(-50%);
+`
+
+const How = styled(H2)`
+  position: relative;
+  top: ${remcalc(-60)};
+`
+
 const WorkStageContent = ({ sectionTitle, sectionBody }) => (
   <Fragment key={sectionTitle}>
     <Paragraph reverse bold>
@@ -55,7 +68,9 @@ const WorkStage = ({ workStage }) => {
       <Row>
         <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
           <Padding bottom={2}>
-            <H2 reverse>{workStage.title}</H2>
+            <H2 reverse noTop>
+              {workStage.title}
+            </H2>
           </Padding>
         </Col>
         <Tag xs={12} md={6}>
@@ -64,7 +79,6 @@ const WorkStage = ({ workStage }) => {
               <Col xs={12} md={6}>
                 <Padding bottom={4}>
                   <Padding bottom={1}>
-                    {' '}
                     <img src={`https://${sectionIcon}`} />
                   </Padding>
                   <WorkStageContent
@@ -88,21 +102,22 @@ const WorkStage = ({ workStage }) => {
     </Grid>
   )
 }
-const WorkStages = ({ title, workStages }) => (
+const WorkStages = ({ title, workStages, image }) => (
   <Fragment>
     <Grid className="grid">
-      <Row>
+      <Row style={{ position: 'relative' }}>
         <Col xs={12}>
           <Padding top={4} bottom={6}>
-            <H2 reverse center>
+            <Graphic src={`https://${image}`} />
+            <How reverse center noTop>
               {title}
-            </H2>
+            </How>
           </Padding>
         </Col>
       </Row>
     </Grid>
     {workStages.map(workStage => (
-      <Padding bottom={5} key={workStage.id}>
+      <Padding top={6} bottom={5} key={workStage.id}>
         <WorkStage workStage={workStage} />
       </Padding>
     ))}
