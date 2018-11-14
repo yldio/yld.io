@@ -17,12 +17,12 @@ import {
 import GrayBG from '../components/GrayBG'
 
 const checkboxes = [
-  { name: 'training', label: 'Training services' },
   { name: 'engineering', label: 'Engineering services' },
   { name: 'design', label: 'Design services' },
-  { name: 'sponsor', label: 'Sponsor an event' },
-  { name: 'speak', label: 'Speak at an event' },
-  { name: 'join', label: 'Join our team' },
+  { name: 'training', label: 'Training services' },
+  { name: 'join', label: 'Joining our team' },
+  { name: 'speak', label: 'Speaking at an event' },
+  { name: 'sponsor', label: 'Sponsoring an event' },
   { name: 'none', label: 'None of these' }
 ]
 
