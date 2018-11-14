@@ -36,8 +36,13 @@ const Service = ({ data }) => {
       <GrayBackground>
         <Grid className="grid">
           <Padding top={6} bottom={4}>
-            <Title>{service.mainPageIntroSentence.mainPageIntroSentence}</Title>
-            <Padding bottom={4} />
+            <Row>
+              <Col xs={11}>
+                <Title>
+                  {service.mainPageIntroSentence.mainPageIntroSentence}
+                </Title>
+              </Col>
+            </Row>
           </Padding>
         </Grid>
       </GrayBackground>
@@ -189,56 +194,56 @@ export const pageQuery = graphql`
             title
             displayType
             alternativeTitle
-            alternativeWorkStages{
+            alternativeWorkStages {
               title
               alternativeTitle
               sectionTitle1
-            sectionTitle2
-            sectionTitle3
-            sectionTitle4
-            sectionTitle5
-            sectionIcon1 {
-              file {
-                url
+              sectionTitle2
+              sectionTitle3
+              sectionTitle4
+              sectionTitle5
+              sectionIcon1 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon2 {
-              file {
-                url
+              sectionIcon2 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon3 {
-              file {
-                url
+              sectionIcon3 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon4 {
-              file {
-                url
+              sectionIcon4 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon5 {
-              file {
-                url
+              sectionIcon5 {
+                file {
+                  url
+                }
               }
-            }
-            sectionBody1 {
-              sectionBody1
-            }
-            sectionBody2 {
-              sectionBody2
-            }
-            sectionBody3 {
-              sectionBody3
-            }
+              sectionBody1 {
+                sectionBody1
+              }
+              sectionBody2 {
+                sectionBody2
+              }
+              sectionBody3 {
+                sectionBody3
+              }
 
-            sectionBody4 {
-              sectionBody4
-            }
+              sectionBody4 {
+                sectionBody4
+              }
 
-            sectionBody5 {
-              sectionBody5
-            }
+              sectionBody5 {
+                sectionBody5
+              }
             }
             sectionTitle1
             sectionTitle2

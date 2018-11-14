@@ -164,6 +164,7 @@ const WorkStages = ({ title, workStages, image }) => (
         <Col xs={12}>
           <Padding top={4} bottom={6}>
             <Graphic src={`https://${image}`} />
+            <Padding top={1}></Padding>
             <How reverse center noTop>
               {title}
             </How>
