@@ -29,8 +29,8 @@ const How = styled(H2)`
   top: ${remcalc(-60)};
 `
 const SwitchLink = styled(StyledLink)`
-  padding-right: ${remcalc(72)};
-  padding-bottom: ${remcalc(72)};
+  margin-right: ${remcalc(72)};
+  margin-bottom: ${remcalc(72)};
   opacity: ${props => (props.muted ? 0.5 : 1)};
   ${props => (props.muted ? 'border: none;' : '')} &:after {
     display: ${props => (props.muted ? 'none' : 'box')};
