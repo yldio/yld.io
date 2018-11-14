@@ -3,8 +3,8 @@ import remcalc from 'remcalc'
 const calc = v => remcalc(v).split('rem')[0]
 
 const breakpoints = {
-  phone: 340,
-  tablet: 767,
+  phone: 0,
+  tablet: 600,
   desktop: 1096
 }
 
