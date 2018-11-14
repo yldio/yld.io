@@ -176,7 +176,8 @@ class ContactUs extends Component {
                               onChange={this.handleChangeCheckbox}
                             />
                             <label htmlFor="privacy">
-                              I agree to the terms of YLD’s privacy policy
+                              I’m happy for you to store my contact details so
+                              you can get back to me.
                             </label>
                           </section>
                         </Field>
