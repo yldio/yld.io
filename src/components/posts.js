@@ -10,6 +10,7 @@ const POSTS = graphql`
           title
           createdAt
           uniqueSlug
+          webCanonicalUrl
         }
       }
     }

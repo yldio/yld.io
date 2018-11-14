@@ -23,7 +23,7 @@ const Blog = () => (
           <ul>
             {posts.splice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H5 bold>{node.title}</H5>
+                <H5 bold><a href={node.webCanonicalUrl}>{node.title}</a></H5>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}
