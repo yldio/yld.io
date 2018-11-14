@@ -29,7 +29,7 @@ const Footer = () => {
                   return <Col key={location.node.id} xs={12} sm={6} md={3} itemScope itemType="http://schema.org/LocalBusiness">
                     <Margin bottom={1}>
                       <span itemProp="name" style={{ display: 'none' }}>YLD</span>
-                      <H5 bold reverse itemProp="location">
+                      <H5 bold reverse itemProp="location" itemType="http://schema.org/Text">
                         {location.node.name}
                       </H5>
                     </Margin>
