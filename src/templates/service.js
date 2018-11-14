@@ -35,7 +35,7 @@ const Service = ({ data }) => {
 
       <GrayBackground>
         <Grid className="grid">
-          <Padding top={6} bottom={4}>
+          <Padding top={5} bottom={4}>
             <Row>
               <Col xs={11}>
                 <Title>
