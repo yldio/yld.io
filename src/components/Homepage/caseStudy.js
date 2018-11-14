@@ -34,6 +34,12 @@ const SubHeading = styled(Paragraph)`
   opacity: 0.7;
 `
 
+const Img = styled.img`
+  max-width: 100%;
+  ${breakpoint('tablet')`
+  max-width: ${remcalc(549)};
+`};
+`
 const CaseStudy = ({ caseStudy }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
@@ -58,11 +64,7 @@ const CaseStudy = ({ caseStudy }) => (
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
       {caseStudy.posterImage ? (
-        <img
-          style={{ maxWidth: 549 }}
-          alt={caseStudy.title}
-          src={caseStudy.posterImage.file.url}
-        />
+        <Img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
       ) : null}
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
