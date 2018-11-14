@@ -79,22 +79,26 @@ const Service = ({ data }) => {
                     <SeoLinks items={service.specialityAreaItems2} />
                   </H6>
                 </Padding>
-                <Padding bottom={5}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle3}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems3} />
-                  </H6>
-                </Padding>
-                <Padding bottom={6}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle4}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems4} />
-                  </H6>
-                </Padding>
+                {service.specialityAreaTitle3 && (
+                  <Padding bottom={5}>
+                    <H5 noTop bold>
+                      {service.specialityAreaTitle3}
+                    </H5>
+                    <H6>
+                      <SeoLinks items={service.specialityAreaItems3} />
+                    </H6>
+                  </Padding>
+                )}
+                {service.specialityAreaTitle4 && (
+                  <Padding bottom={6}>
+                    <H5 noTop bold>
+                      {service.specialityAreaTitle4}
+                    </H5>
+                    <H6>
+                      <SeoLinks items={service.specialityAreaItems4} />
+                    </H6>
+                  </Padding>
+                )}
               </Col>
             </Row>
           </Padding>
