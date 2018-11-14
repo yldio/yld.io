@@ -54,27 +54,24 @@ class WorkStageAlternatives extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.alternatives = this.props.workStage.alternativeTitle
       ? [
-          this.props.workStage.alternativeTitle,
-          ...this.props.workStage.alternativeWorkStages.map(
-            ({ alternativeTitle }) => alternativeTitle
-          ),
-        ]
+        this.props.workStage.alternativeTitle,
+        ...this.props.workStage.alternativeWorkStages.map(
+          ({ alternativeTitle }) => alternativeTitle
+        )
+      ]
       : null
   }
-  findAlternative (selected) {
+  handleClick (selected) {
     let workStage = this.props.workStage
     if (workStage.alternativeTitle === selected) {
       this.setState({ selectedAlternative: workStage })
-    } 
-    else {
-      this.setState({ selectedAlternative: workStage.alternativeWorkStages.filter(
-        ({ alternativeTitle }) =>
-          alternativeTitle === selected
-      )[0] })
+    } else {
+      this.setState({
+        selectedAlternative: workStage.alternativeWorkStages.filter(
+          ({ alternativeTitle }) => alternativeTitle === selected
+        )[0]
+      })
     }
-  }
-  handleClick (e) {
-    this.findAlternative(e)
   }
 
   render () {
@@ -82,7 +79,7 @@ class WorkStageAlternatives extends React.Component {
       <WorkStage
         handleClick={this.handleClick}
         alternatives={this.alternatives}
-        workStage = {this.state.selectedAlternative}
+        workStage={this.state.selectedAlternative}
       />
     )
   }
@@ -95,11 +92,11 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
       sectionTitle: workStage[`sectionTitle${index + 1}`],
       ...(workStage[`sectionBody${index + 1}`] && {
         sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`],
+          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url,
-      }),
+        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url
+      })
     }))
     .filter(({ sectionTitle }) => sectionTitle)
   const Tag = workStage.displayType === 'List' ? Col : Fragment
@@ -113,9 +110,9 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             </H2>
           </Padding>
           {alternatives &&
-            alternatives.map((alternative) => (
+            alternatives.map(alternative => (
               <StyledLink
-                onClick={()=>handleClick(alternative)}
+                onClick={() => handleClick(alternative)}
                 key={alternative}
                 reverse
                 muted
