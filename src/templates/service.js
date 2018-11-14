@@ -35,14 +35,19 @@ const Service = ({ data }) => {
 
       <GrayBackground>
         <Grid className="grid">
-          <Padding top={6} bottom={4}>
-            <Title>{service.mainPageIntroSentence.mainPageIntroSentence}</Title>
-            <Padding bottom={4} />
+          <Padding top={5} bottom={4}>
+            <Row>
+              <Col xs={11}>
+                <Title>
+                  {service.mainPageIntroSentence.mainPageIntroSentence}
+                </Title>
+              </Col>
+            </Row>
           </Padding>
         </Grid>
       </GrayBackground>
       <GrayBackground noTop style={{ background: '#090329' }}>
-        <Padding top={4} bottom={5}>
+        <Padding top={4} bottom={0}>
           <WorkStages
             title={service.workStagesTitle}
             workStages={service.workStages}
@@ -52,13 +57,13 @@ const Service = ({ data }) => {
       </GrayBackground>
       <GrayBackground noTop>
         <Grid className="grid">
-          <Padding top={4}>
+          <Padding top={5}>
             <Row>
               <Col xs={12} sm={12} md={4}>
                 <H2 noTop>We work with</H2>
               </Col>
               <Col xs={12} sm={12} md={6} mdOffset={2}>
-                <Padding bottom={4}>
+                <Padding bottom={5}>
                   <H5 noTop bold>
                     {service.specialityAreaTitle1}
                   </H5>
@@ -66,7 +71,7 @@ const Service = ({ data }) => {
                     <SeoLinks items={service.specialityAreaItems1} />
                   </H6>
                 </Padding>
-                <Padding bottom={4}>
+                <Padding bottom={5}>
                   <H5 noTop bold>
                     {service.specialityAreaTitle2}
                   </H5>
@@ -74,22 +79,26 @@ const Service = ({ data }) => {
                     <SeoLinks items={service.specialityAreaItems2} />
                   </H6>
                 </Padding>
-                <Padding bottom={4}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle3}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems3} />
-                  </H6>
-                </Padding>
-                <Padding bottom={4}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle4}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems4} />
-                  </H6>
-                </Padding>
+                {service.specialityAreaTitle3 && (
+                  <Padding bottom={5}>
+                    <H5 noTop bold>
+                      {service.specialityAreaTitle3}
+                    </H5>
+                    <H6>
+                      <SeoLinks items={service.specialityAreaItems3} />
+                    </H6>
+                  </Padding>
+                )}
+                {service.specialityAreaTitle4 && (
+                  <Padding bottom={6}>
+                    <H5 noTop bold>
+                      {service.specialityAreaTitle4}
+                    </H5>
+                    <H6>
+                      <SeoLinks items={service.specialityAreaItems4} />
+                    </H6>
+                  </Padding>
+                )}
               </Col>
             </Row>
           </Padding>
@@ -103,11 +112,11 @@ const Service = ({ data }) => {
             </Padding>
           </Col>
         </Row>
-        {/* {service.bottomCaseStudy ? (
+        {service.bottomCaseStudy ? (
           <Padding bottom={5}>
             <CaseStudy caseStudy={service.bottomCaseStudy} />
           </Padding>
-        ) : null} */}
+        ) : null}
       </Grid>
     </Layout>
   )
@@ -137,19 +146,17 @@ export const pageQuery = graphql`
               url
             }
           }
-          # bottomCaseStudy {
-          #   title
-          #   slug
-          #   introSentence {
-          #     introSentence
-          #   }
-          #   posterImage {
-          #     file {
-          #       url
-          #     }
-          #   }
-          #   posterColor
-          # }
+          bottomCaseStudy {
+            title
+            slug
+            introSentence
+            posterImage {
+              file {
+                url
+              }
+            }
+            posterColor
+          }
           caseStudies {
             ... on ContentfulCaseStudy {
               title
@@ -189,55 +196,56 @@ export const pageQuery = graphql`
             title
             displayType
             alternativeTitle
-            alternativeWorkStages{
+            alternativeWorkStages {
+              title
               alternativeTitle
               sectionTitle1
-            sectionTitle2
-            sectionTitle3
-            sectionTitle4
-            sectionTitle5
-            sectionIcon1 {
-              file {
-                url
+              sectionTitle2
+              sectionTitle3
+              sectionTitle4
+              sectionTitle5
+              sectionIcon1 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon2 {
-              file {
-                url
+              sectionIcon2 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon3 {
-              file {
-                url
+              sectionIcon3 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon4 {
-              file {
-                url
+              sectionIcon4 {
+                file {
+                  url
+                }
               }
-            }
-            sectionIcon5 {
-              file {
-                url
+              sectionIcon5 {
+                file {
+                  url
+                }
               }
-            }
-            sectionBody1 {
-              sectionBody1
-            }
-            sectionBody2 {
-              sectionBody2
-            }
-            sectionBody3 {
-              sectionBody3
-            }
+              sectionBody1 {
+                sectionBody1
+              }
+              sectionBody2 {
+                sectionBody2
+              }
+              sectionBody3 {
+                sectionBody3
+              }
 
-            sectionBody4 {
-              sectionBody4
-            }
+              sectionBody4 {
+                sectionBody4
+              }
 
-            sectionBody5 {
-              sectionBody5
-            }
+              sectionBody5 {
+                sectionBody5
+              }
             }
             sectionTitle1
             sectionTitle2
