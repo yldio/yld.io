@@ -3,6 +3,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { H2, Paragraph } from '../Typography'
 
@@ -34,6 +35,26 @@ const SwitchLink = styled(StyledLink)`
     display: ${props => (props.muted ? 'none' : 'box')};
   }
 `
+
+// there's an odd number, give only last no padding
+// there's an even number, give last 2 no padding
+// if it's mobile / tablet, give only the last no padding
+// index={index} last={arr.length - 1} secondLast={arr.length - 2} evenNumber
+const WorkStageGridPadding = styled.div`
+  padding-bottom: ${props => (props.index === props.last ? 0 : remcalc(72))};
+
+  ${breakpoint('desktop')`
+    padding-bottom: ${props => {
+    if (props.index === props.last) {
+      return 0
+    } else if (props.evenNumber && props.index === props.secondLast) {
+      return 0
+    } else {
+      return remcalc(72)
+    }
+  }}`}
+`
+
 const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => (
   <Fragment key={sectionTitle}>
     <Paragraph reverse bold noMargin={!isList}>
@@ -128,32 +149,37 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ))}
         </Col>
         <Tag xs={12} md={6}>
-          {sections.map(({ sectionTitle, sectionBody, sectionIcon }) =>
-            workStage.displayType !== 'List' ? (
-              <Col xs={12} md={6}>
-                <Padding bottom={4}>
-                  <Padding bottom={1}>
-                    <img src={`https://${sectionIcon}`} />
-                  </Padding>
+          {sections.map(
+            ({ sectionTitle, sectionBody, sectionIcon }, index, arr) =>
+              workStage.displayType !== 'List' ? (
+                <Col xs={12} md={6}>
+                  <WorkStageGridPadding
+                    index={index}
+                    last={arr.length - 1}
+                    secondLast={arr.length - 2}
+                    evenNumber={arr.length % 2 === 0}
+                  >
+                    <Padding bottom={1}>
+                      <img src={`https://${sectionIcon}`} />
+                    </Padding>
+                    <WorkStageContent
+                      isList
+                      sectionTitle={sectionTitle}
+                      sectionBody={sectionBody}
+                    />
+                  </WorkStageGridPadding>
+                </Col>
+              ) : (
+                <Padding bottom={1}>
                   <WorkStageContent
-                    isList
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
                   />
                 </Padding>
-              </Col>
-            ) : (
-              <Padding bottom={1}>
-                <WorkStageContent
-                  sectionTitle={sectionTitle}
-                  sectionBody={sectionBody}
-                />
-              </Padding>
-            )
+              )
           )}
         </Tag>
       </Row>
-      {workStage.displayType !== 'List' ? <hr /> : null}
     </Grid>
   )
 }
@@ -172,12 +198,17 @@ const WorkStages = ({ title, workStages, image }) => (
         </Col>
       </Row>
     </Grid>
-    {workStages.map((workStage, index) => (
+    {workStages.map((workStage, index, arr) => (
       <Fragment key={workStage.id}>
         {index === 0 ? <Padding top={1.5} /> : null}
         <Padding top={index === 0 ? 5 : 6} bottom={5}>
           <WorkStageAlternatives workStage={workStage} />
         </Padding>
+        {index !== arr.length - 1 && (
+          <Grid className="grid">
+            <hr />
+          </Grid>
+        )}
       </Fragment>
     ))}
   </Fragment>
