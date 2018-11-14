@@ -28,7 +28,7 @@ const IndexPage = ({
     </Helmet>
     <Grid className="grid">
       <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }}>
-        <CaseStudy caseStudy={content.featuredCaseStudy} />
+        <CaseStudy caseStudy={content.featuredCaseStudy} subHeading="Featured work" />
       </Padding>
       <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }} />
     </Grid>

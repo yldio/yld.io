@@ -40,16 +40,16 @@ const Img = styled.img`
   max-width: ${remcalc(549)};
 `};
 `
-const CaseStudy = ({ caseStudy }) => (
+const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
-      <SubHeading>Featured work</SubHeading>
+      <SubHeading>{ subHeading }</SubHeading>
       <Padding bottom={{ mobile: 0, tablet: 3, desktop: 1 }}>
         <H2 noTop>{caseStudy.title}</H2>
       </Padding>
     </Col>
     <Col xs={false} sm={false} md={6}>
-      <SubHeading>Featured work</SubHeading>
+      <SubHeading>{ subHeading }</SubHeading>
       <Margin bottom={1}>
         <H2 noTop>{caseStudy.title}</H2>
       </Margin>
