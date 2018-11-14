@@ -27,14 +27,15 @@ const IndexPage = ({
       <html lang="en" />
     </Helmet>
     <Grid className="grid">
-      <Padding bottom={2}>
+      <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }}>
         <CaseStudy caseStudy={content.featuredCaseStudy} />
       </Padding>
-      <Padding bottom={2} />
+      <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid className="grid">
-        <Padding top={6} bottom={2}>
+        <Padding top={{ mobile: 2 }} />
+        <Padding top={{ mobile: 4, tablet: 5, desktop: 6 }} bottom={2}>
           <SEOText text={content.seoText.content[0].content} />
           <Padding bottom={4} />
           <Companies companies={content.companies} />

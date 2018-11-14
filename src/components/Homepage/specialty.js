@@ -45,7 +45,7 @@ const Specialty = ({ services }) => (
     {services.map((service, index) => (
       <Col key={service.id} xs={12} sm={12} md={6}>
         {!isEven(index) ? (
-          <Padding top={{ mobile: 0, tablet: 0, desktop: 7 }} />
+          <Padding top={{ mobile: 0, tablet: 5, desktop: 7 }} />
         ) : null}
         <H2>{service.title}</H2>
         <Padding bottom={0.5}>
