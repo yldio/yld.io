@@ -27,7 +27,13 @@ const How = styled(H2)`
   position: relative;
   top: ${remcalc(-60)};
 `
-
+const SwitchLink = styled(StyledLink)`
+  opacity: ${props => props.muted ? 0.5 : 1};
+  ${props => props.muted ? 'border: none;' : ''}
+  &:after {
+      display: ${props => props.muted ? 'none' : 'box'};
+    }
+`
 const WorkStageContent = ({ sectionTitle, sectionBody }) => (
   <Fragment key={sectionTitle}>
     <Paragraph reverse bold>
@@ -111,14 +117,14 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
           </Padding>
           {alternatives &&
             alternatives.map(alternative => (
-              <StyledLink
+              <SwitchLink
                 onClick={() => handleClick(alternative)}
                 key={alternative}
                 reverse
-                muted
+                muted={alternative !== workStage.alternativeTitle}
               >
                 {alternative}
-              </StyledLink>
+              </SwitchLink>
             ))}
         </Col>
         <Tag xs={12} md={6}>
