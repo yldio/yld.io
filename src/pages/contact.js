@@ -23,7 +23,6 @@ const checkboxes = [
   { name: 'design', label: 'Design services' },
   { name: 'sponsor', label: 'Sponsor an event' },
   { name: 'speak', label: 'Speak at an event' },
-  { name: 'issue', label: 'Report an issue' },
   { name: 'none', label: 'None of these' }
 ]
 
