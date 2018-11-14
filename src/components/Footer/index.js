@@ -7,6 +7,8 @@ import { FooterStyled, FollowUs, Node, Social, Office } from './elements.js'
 
 import social from './links'
 
+const addressItemProps = ['streetAddress', 'addressLocality']
+
 const Footer = () => {
   return (
     <FooterStyled>
@@ -22,31 +24,36 @@ const Footer = () => {
           <Office>
             <Locations>
               {data =>
-                data.map(location => (
-                  <Col key={location.node.id} xs={12} sm={6} md={3}>
+                data.map(location => {
+                  const streetAddress = location.node.streetAddress.streetAddress.split('\n')
+                  return <Col key={location.node.id} xs={12} sm={6} md={3} itemScope itemType="http://schema.org/LocalBusiness">
                     <Margin bottom={1}>
-                      <H5 bold reverse>
+                      <span itemProp="name" style={{ display: 'none' }}>YLD</span>
+                      <H5 bold reverse itemProp="location">
                         {location.node.name}
                       </H5>
                     </Margin>
                     <Paragraph>
-                      {location.node.streetAddress.streetAddress
-                        .split('\n')
-                        .map(address => (
-                          <Node key={address}>{address}</Node>
-                        ))}
-
-                      <Node>{location.node.telephone}</Node>
+                      <span itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+                        {
+                          streetAddress
+                            .map((address, i) => {
+                              let schemaType = ((i === (streetAddress.length - 1)) ? 'postalCode' : addressItemProps[i]) || addressItemProps[0]
+                              return <Node key={address} itemProp={schemaType}>{address}</Node>
+                            })
+                        }
+                      </span>
+                      <Node itemProp="telephone">{location.node.telephone}</Node>
                       {location.node.email ? (
                         <Node>
-                          <a href={`mailto:${location.node.email}`}>
+                          <a href={`mailto:${location.node.email}`} itemProp="email">
                             {location.node.email}
                           </a>
                         </Node>
                       ) : null}
                     </Paragraph>
                   </Col>
-                ))
+                })
               }
             </Locations>
           </Office>
