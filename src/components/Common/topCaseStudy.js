@@ -26,7 +26,7 @@ const MetaData = ({ caseStudy }) => (
     {caseStudy.specialities ? (
       <Margin right={2}>
         <Flex column>
-          <H5 small bold noMargin>
+          <H5 small bold noMargin noWrap>
             Technology used
           </H5>
           <Flex alignCenter wrap>
@@ -39,7 +39,7 @@ const MetaData = ({ caseStudy }) => (
     ) : null}
     {caseStudy.services ? (
       <Flex column>
-        <H5 small bold noMargin>
+        <H5 small bold noMargin noWrap>
           Services provided
         </H5>
         <Flex alignCenter wrap>

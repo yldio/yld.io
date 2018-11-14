@@ -8,7 +8,10 @@ export default styled.h5`
   padding: ${remcalc(12)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
   font-weight: 400;
-  white-space: nowrap;
+
+  ${is('noWrap')`
+    white-space: nowrap;
+  `}
 
   ${is('muted')`
     opacity: .5;
