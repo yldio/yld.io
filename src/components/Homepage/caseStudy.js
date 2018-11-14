@@ -28,16 +28,30 @@ const P = styled(Paragraph)`
   margin-bottom: ${remcalc(9)};
 `
 
+const SubHeading = styled(Paragraph)`
+  color: #757575;
+  padding-bottom: ${remcalc(15)};
+  opacity: 0.7;
+`
+
+const Img = styled.img`
+  max-width: 100%;
+  ${breakpoint('tablet')`
+  max-width: ${remcalc(549)};
+`};
+`
 const CaseStudy = ({ caseStudy }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
+      <SubHeading>Featured work</SubHeading>
       <Padding bottom={{ mobile: 0, tablet: 3, desktop: 1 }}>
-        <H2>{caseStudy.title}</H2>
+        <H2 noTop>{caseStudy.title}</H2>
       </Padding>
     </Col>
     <Col xs={false} sm={false} md={6}>
+      <SubHeading>Featured work</SubHeading>
       <Margin bottom={1}>
-        <H2>{caseStudy.title}</H2>
+        <H2 noTop>{caseStudy.title}</H2>
       </Margin>
       <P>
         {caseStudy.intro
@@ -50,11 +64,7 @@ const CaseStudy = ({ caseStudy }) => (
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
       {caseStudy.posterImage ? (
-        <img
-          style={{ maxWidth: 549 }}
-          alt={caseStudy.title}
-          src={caseStudy.posterImage.file.url}
-        />
+        <Img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
       ) : null}
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
