@@ -190,6 +190,7 @@ export const pageQuery = graphql`
             displayType
             alternativeTitle
             alternativeWorkStages{
+              title
               alternativeTitle
               sectionTitle1
             sectionTitle2
