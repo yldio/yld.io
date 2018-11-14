@@ -24,4 +24,8 @@ export default styled.p`
   ${is('noMargin')`
       padding: 0;
   `};
+
+  ${is('bold')`
+      font-weight: bold;
+  `};
 `

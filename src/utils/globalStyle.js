@@ -8,7 +8,7 @@ export default createGlobalStyle`
   ${reset}
 
   body {
-    font-size: ${remcalc(18)};
+    font-size: ${remcalc(17)};
     font-family: 'Roboto', sans-serif;
     background: ${props => props.theme.colors.white};
     font-weight: normal;
@@ -22,6 +22,14 @@ export default createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       box-sizing: border-box;
     }
+  }
+
+  hr {
+    opacity: 0.2;
+    background: ${props => props.theme.colors.white};;
+    margin: 0;
+    border: none;
+    height: ${remcalc(1)};
   }
 
   a {

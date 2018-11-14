@@ -18,6 +18,10 @@ export default styled.h1`
     opacity: .5;
   `};
 
+  ${is('center')`
+    text-align:center
+  `};
+
   ${is('noTop')`
       padding-top: 0;
   `};
