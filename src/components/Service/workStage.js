@@ -28,21 +28,21 @@ const How = styled(H2)`
   top: ${remcalc(-60)};
 `
 const SwitchLink = styled(StyledLink)`
-  opacity: ${props => props.muted ? 0.5 : 1};
-  ${props => props.muted ? 'border: none;' : ''}
+  opacity: ${props => (props.muted ? 0.5 : 1)};
+  ${props => (props.muted ? 'border: none;' : '')}
   &:after {
-      display: ${props => props.muted ? 'none' : 'box'};
-    }
+    display: ${props => (props.muted ? 'none' : 'box')};
+  }
 `
-const WorkStageContent = ({ sectionTitle, sectionBody }) => (
+const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => (
   <Fragment key={sectionTitle}>
-    <Paragraph reverse bold>
+    <Paragraph reverse bold noMargin={!isList}>
       {sectionTitle}
     </Paragraph>
     <Paragraph muted reverse>
       {sectionBody.split('- ')[0]}
     </Paragraph>
-    <Padding top={3}>
+    <Padding top={1.5}>
       {sectionBody
         .split('- ')
         .slice(1)
@@ -128,28 +128,28 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ))}
         </Col>
         <Tag xs={12} md={6}>
-          {sections.map(
-            ({ sectionTitle, sectionBody, sectionIcon }) =>
-              workStage.displayType !== 'List' ? (
-                <Col xs={12} md={6}>
-                  <Padding bottom={4}>
-                    <Padding bottom={1}>
-                      <img src={`https://${sectionIcon}`} />
-                    </Padding>
-                    <WorkStageContent
-                      sectionTitle={sectionTitle}
-                      sectionBody={sectionBody}
-                    />
+          {sections.map(({ sectionTitle, sectionBody, sectionIcon }) =>
+            workStage.displayType !== 'List' ? (
+              <Col xs={12} md={6}>
+                <Padding bottom={4}>
+                  <Padding bottom={1}>
+                    <img src={`https://${sectionIcon}`} />
                   </Padding>
-                </Col>
-              ) : (
-                <Padding bottom={1}>
                   <WorkStageContent
+                    isList
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
                   />
                 </Padding>
-              )
+              </Col>
+            ) : (
+              <Padding bottom={1}>
+                <WorkStageContent
+                  sectionTitle={sectionTitle}
+                  sectionBody={sectionBody}
+                />
+              </Padding>
+            )
           )}
         </Tag>
       </Row>
@@ -164,7 +164,7 @@ const WorkStages = ({ title, workStages, image }) => (
         <Col xs={12}>
           <Padding top={4} bottom={6}>
             <Graphic src={`https://${image}`} />
-            <Padding top={1}></Padding>
+            <Padding top={1} />
             <How reverse center noTop>
               {title}
             </How>
@@ -172,10 +172,13 @@ const WorkStages = ({ title, workStages, image }) => (
         </Col>
       </Row>
     </Grid>
-    {workStages.map(workStage => (
-      <Padding top={6} bottom={5} key={workStage.id}>
-        <WorkStageAlternatives workStage={workStage} />
-      </Padding>
+    {workStages.map((workStage, index) => (
+      <Fragment key={workStage.id}>
+        {index === 0 ? <Padding top={1.5} /> : null}
+        <Padding top={index === 0 ? 5 : 6} bottom={5}>
+          <WorkStageAlternatives workStage={workStage} />
+        </Padding>
+      </Fragment>
     ))}
   </Fragment>
 )
