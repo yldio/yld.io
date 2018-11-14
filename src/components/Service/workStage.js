@@ -29,9 +29,10 @@ const How = styled(H2)`
   top: ${remcalc(-60)};
 `
 const SwitchLink = styled(StyledLink)`
+  padding-right: ${remcalc(72)};
+  padding-bottom: ${remcalc(72)};
   opacity: ${props => (props.muted ? 0.5 : 1)};
-  ${props => (props.muted ? 'border: none;' : '')}
-  &:after {
+  ${props => (props.muted ? 'border: none;' : '')} &:after {
     display: ${props => (props.muted ? 'none' : 'box')};
   }
 `
@@ -45,14 +46,14 @@ const WorkStageGridPadding = styled.div`
 
   ${breakpoint('desktop')`
     padding-bottom: ${props => {
-    if (props.index === props.last) {
-      return 0
-    } else if (props.evenNumber && props.index === props.secondLast) {
-      return 0
-    } else {
-      return remcalc(72)
-    }
-  }}`}
+      if (props.index === props.last) {
+        return 0
+      } else if (props.evenNumber && props.index === props.secondLast) {
+        return 0
+      } else {
+        return remcalc(72)
+      }
+    }}`};
 `
 
 const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => (
@@ -75,20 +76,20 @@ const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => (
 )
 
 class WorkStageAlternatives extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { selectedAlternative: this.props.workStage }
     this.handleClick = this.handleClick.bind(this)
     this.alternatives = this.props.workStage.alternativeTitle
       ? [
-        this.props.workStage.alternativeTitle,
-        ...this.props.workStage.alternativeWorkStages.map(
-          ({ alternativeTitle }) => alternativeTitle
-        )
-      ]
+          this.props.workStage.alternativeTitle,
+          ...this.props.workStage.alternativeWorkStages.map(
+            ({ alternativeTitle }) => alternativeTitle
+          ),
+        ]
       : null
   }
-  handleClick (selected) {
+  handleClick(selected) {
     let workStage = this.props.workStage
     if (workStage.alternativeTitle === selected) {
       this.setState({ selectedAlternative: workStage })
@@ -96,12 +97,12 @@ class WorkStageAlternatives extends React.Component {
       this.setState({
         selectedAlternative: workStage.alternativeWorkStages.filter(
           ({ alternativeTitle }) => alternativeTitle === selected
-        )[0]
+        )[0],
       })
     }
   }
 
-  render () {
+  render() {
     return (
       <WorkStage
         handleClick={this.handleClick}
@@ -119,11 +120,11 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
       sectionTitle: workStage[`sectionTitle${index + 1}`],
       ...(workStage[`sectionBody${index + 1}`] && {
         sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
+          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`],
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url
-      })
+        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url,
+      }),
     }))
     .filter(({ sectionTitle }) => sectionTitle)
   const Tag = workStage.displayType === 'List' ? Col : Fragment
@@ -159,7 +160,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                     secondLast={arr.length - 2}
                     evenNumber={arr.length % 2 === 0}
                   >
-                    <Padding bottom={1}>
+                    <Padding bottom={1.5}>
                       <img src={`https://${sectionIcon}`} />
                     </Padding>
                     <WorkStageContent
