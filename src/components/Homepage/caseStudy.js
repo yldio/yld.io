@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Row, Col } from 'react-styled-flexboxgrid'
-import { Margin } from 'styled-components-spacing'
+import { Margin, Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { H2, Paragraph } from '../Typography'
@@ -31,9 +31,9 @@ const P = styled(Paragraph)`
 const CaseStudy = ({ caseStudy }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
-      <Margin bottom={1}>
+      <Padding bottom={{ mobile: 0, tablet: 3, desktop: 1 }}>
         <H2>{caseStudy.title}</H2>
-      </Margin>
+      </Padding>
     </Col>
     <Col xs={false} sm={false} md={6}>
       <Margin bottom={1}>
