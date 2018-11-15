@@ -61,10 +61,10 @@ const IndexPage = ({
     </GrayBackground>
     <Grid className="grid">
       <Padding top={2} />
-      <Padding top={3} bottom={4}>
+      <Padding top={3} bottom={{ mobile: 3, tablet: 4, desktop: 4 }}>
         <Blog />
       </Padding>
-      <Padding bottom={2} />
+      <Padding bottom={{ mobile: 0, tablet: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid className="grid">
