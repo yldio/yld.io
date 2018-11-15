@@ -4,6 +4,7 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { H2, H5, H4, Paragraph } from '../Typography'
 import Flex from 'styled-flex-component'
@@ -14,14 +15,24 @@ const EventTitle = styled(H4)`
 `
 
 const EventWrapper = styled.header`
-  padding-top: ${remcalc(24)};
-  padding-left: ${remcalc(36)};
+  padding: ${remcalc(18)} ${remcalc(24)} 0;
+
+  ${breakpoint('tablet')`
+    padding: ${remcalc(24)} ${remcalc(36)} 0;
+  `}
+
+  ${breakpoint('desktop')`
+    padding-top: ${remcalc(24)};
+    padding-left: ${remcalc(36)};
+  `}
 `
 
 const Events = ({ events }) => (
   <Row>
     <Col md={4} xs={12}>
-      <H2 noTop>Upcoming events</H2>
+      <Col xs={8} style={{ paddingLeft: 0 }}>
+        <H2 noTop>Upcoming events</H2>
+      </Col>
       <ul>
         {events
           .filter(n => !n.node.homepageFeatured)
