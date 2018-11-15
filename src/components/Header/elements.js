@@ -33,10 +33,13 @@ const linkStyles = css`
 
     &:hover {
       color: ${props => props.theme.colors.text};
-      &:after {
-        width: 100%;
-        opacity: 1;
-        transition: all 300ms ease-out;
+
+      @media (pointer: fine) {
+        &:after {
+          width: 100%;
+          opacity: 1;
+          transition: all 300ms ease-out;
+        }
       }
     }
 
