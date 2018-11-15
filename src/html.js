@@ -30,8 +30,10 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script type="text/javascript">
-            {`
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
                 _linkedin_partner_id = "559250";
                 window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
                 window._linkedin_data_partner_ids.push(_linkedin_partner_id);
@@ -41,8 +43,10 @@ export default class HTML extends React.Component {
                 b.type = "text/javascript";b.async = true;
                 b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
                 s.parentNode.insertBefore(b, s);})();
-            `}
-          </script>
+              `
+            }}
+          />
+
           <noscript>
             <img
               height="1"
