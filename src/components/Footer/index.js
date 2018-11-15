@@ -12,12 +12,17 @@ const addressItemProps = ['streetAddress', 'addressLocality']
 const Footer = () => {
   return (
     <FooterStyled>
-      <Padding top={4} bottom={5}>
+      <Padding
+        top={{ phone: 3.5, tablet: 4 }}
+        bottom={{ phone: 3.5, tablet: 4 }}
+      >
         <Grid className="grid">
           <Row>
             <Col xs={12}>
-              <Margin bottom={2}>
-                <H2 reverse>Find us</H2>
+              <Margin bottom={{ phone: 0.5, tablet: 2 }}>
+                <H2 reverse noTop>
+                  Find us
+                </H2>
               </Margin>
             </Col>
           </Row>
@@ -25,34 +30,64 @@ const Footer = () => {
             <Locations>
               {data =>
                 data.map(location => {
-                  const streetAddress = location.node.streetAddress.streetAddress.split('\n')
-                  return <Col key={location.node.id} xs={12} sm={6} md={3} itemScope itemType="http://schema.org/LocalBusiness">
-                    <Margin bottom={1}>
-                      <span itemProp="name" style={{ display: 'none' }}>YLD</span>
-                      <H5 bold reverse itemProp="location" itemType="http://schema.org/Text">
-                        {location.node.name}
-                      </H5>
-                    </Margin>
-                    <Paragraph>
-                      <span itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-                        {
-                          streetAddress
-                            .map((address, i) => {
-                              let schemaType = ((i === (streetAddress.length - 1)) ? 'postalCode' : addressItemProps[i]) || addressItemProps[0]
-                              return <Node key={address} itemProp={schemaType}>{address}</Node>
-                            })
-                        }
-                      </span>
-                      <Node itemProp="telephone">{location.node.telephone}</Node>
-                      {location.node.email ? (
-                        <Node>
-                          <a href={`mailto:${location.node.email}`} itemProp="email">
-                            {location.node.email}
-                          </a>
+                  const streetAddress = location.node.streetAddress.streetAddress.split(
+                    '\n'
+                  )
+                  return (
+                    <Col
+                      key={location.node.id}
+                      xs={12}
+                      md={3}
+                      itemScope
+                      itemType="http://schema.org/LocalBusiness"
+                    >
+                      <Margin bottom={1}>
+                        <span itemProp="name" style={{ display: 'none' }}>
+                          YLD
+                        </span>
+                        <H5
+                          bold
+                          reverse
+                          itemProp="location"
+                          itemType="http://schema.org/Text"
+                        >
+                          {location.node.name}
+                        </H5>
+                      </Margin>
+                      <Paragraph>
+                        <span
+                          itemProp="address"
+                          itemScope
+                          itemType="http://schema.org/PostalAddress"
+                        >
+                          {streetAddress.map((address, i) => {
+                            let schemaType =
+                              (i === streetAddress.length - 1
+                                ? 'postalCode'
+                                : addressItemProps[i]) || addressItemProps[0]
+                            return (
+                              <Node key={address} itemProp={schemaType}>
+                                {address}
+                              </Node>
+                            )
+                          })}
+                        </span>
+                        <Node itemProp="telephone">
+                          {location.node.telephone}
                         </Node>
-                      ) : null}
-                    </Paragraph>
-                  </Col>
+                        {location.node.email ? (
+                          <Node>
+                            <a
+                              href={`mailto:${location.node.email}`}
+                              itemProp="email"
+                            >
+                              {location.node.email}
+                            </a>
+                          </Node>
+                        ) : null}
+                      </Paragraph>
+                    </Col>
+                  )
                 })
               }
             </Locations>
@@ -60,7 +95,7 @@ const Footer = () => {
         </Grid>
       </Padding>
       <FollowUs>
-        <Padding vertical={3}>
+        <Padding top={3} bottom={{ phone: 1, tablet: 3 }}>
           <Grid className="grid">
             <Row>
               <Col xs={12}>

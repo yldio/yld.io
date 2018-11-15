@@ -1,15 +1,14 @@
 import React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
+// eslint-disable-next-line
 import StyledLink from '../styledLink'
 import { H3 } from '../Typography'
-// eslint-disable-next-line
-import { withComponent } from 'styled-components'
 
 const Text = H3.withComponent('h1')
 
 const SEOText = ({ text }) => (
   <Row>
-    <Col xs={10}>
+    <Col xs={11} md={10}>
       <Text>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value
@@ -18,7 +17,8 @@ const SEOText = ({ text }) => (
             return (
               <StyledLink
                 key={content.data.uri}
-                style={{ marginBottom: 0 }}
+                style={{ marginBottom: 0, marginLeft: 0, padding: 0 }}
+                noAfter
                 to={`/${content.data.uri}`}
               >
                 {content.content[0].value}

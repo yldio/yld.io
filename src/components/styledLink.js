@@ -71,7 +71,9 @@ export const StyledLinkCss = css`
     margin-top: ${remcalc(6)};
     background: ${props => props.theme.colors.text};
     box-sizing: border-box;
-
+    ${is('noAfter')`
+      content: none;
+    `}
     ${is('reverse')`
       background: ${props => props.theme.colors.white};
   `};

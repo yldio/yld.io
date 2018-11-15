@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
-import remCalc from 'remcalc'
+import remcalc from 'remcalc'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H2, H5 } from '../Typography'
@@ -9,7 +9,11 @@ import Jobs from '../jobs'
 import Li from '../listItem'
 
 const JobContainer = styled.ul`
-  margin-top: ${remCalc(12)};
+  margin-top: ${remcalc(12)};
+`
+
+const JobCommitment = styled.span`
+  padding-top: ${remcalc(4)};
 `
 
 const JobsComponent = () => (
@@ -42,7 +46,7 @@ const JobsComponent = () => (
                       >
                         {job.text.split(' - ')[0]}
                       </a>
-                      <span>{job.categories.commitment}</span>
+                      <JobCommitment>{job.categories.commitment}</JobCommitment>
                     </Li>
                   ))}
                 </JobContainer>
