@@ -6,6 +6,8 @@ export const Checkbox = styled.input`
   appearance: none;
   width: ${remcalc(24)};
   height: ${remcalc(24)};
+  min-width: ${remcalc(24)};
+  min-height: ${remcalc(24)};
   border: solid 2px ${props => props.theme.colors.text};
   margin-right: ${remcalc(12)};
   position: relative;
