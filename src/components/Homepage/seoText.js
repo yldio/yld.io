@@ -8,7 +8,7 @@ const Text = H3.withComponent('h1')
 
 const SEOText = ({ text }) => (
   <Row>
-    <Col xs={11} sm={10}>
+    <Col xs={11} md={10}>
       <Text>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value
