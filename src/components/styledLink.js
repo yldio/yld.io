@@ -9,6 +9,7 @@ export const StyledLinkCss = css`
   padding: ${remcalc(8)} ${remcalc(6)};
   margin-top: ${remcalc(3)};
   margin-bottom: ${remcalc(24)};
+  margin-left: ${remcalc(-6)};
   line-height: ${remcalc(24)};
   color: ${props => props.theme.colors.text};
   font-weight: 700;
