@@ -19,33 +19,39 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title} ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
+      title={`${site.siteMetadata.title} ${
+        content.seoTitle ? '- ' + content.seoTitle : ''
+      } `}
       meta={[{ name: 'description', content: content.seoMetaDescription }]}
     >
       <html lang="en" />
     </Helmet>
     <Grid className="grid">
       <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }}>
-        <CaseStudy caseStudy={content.featuredCaseStudy} subHeading="Featured work" />
+        <CaseStudy
+          caseStudy={content.featuredCaseStudy}
+          subHeading="Featured work"
+        />
       </Padding>
       <Padding bottom={{ mobile: 0, tablet: 2, desktop: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid className="grid">
         <Padding top={{ mobile: 2 }} />
-        <Padding top={{ mobile: 4, tablet: 5, desktop: 6 }} bottom={2}>
+        <Padding top={{ mobile: 4, tablet: 5, desktop: 6 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
-          <Padding bottom={4} />
+          <Padding bottom={{ mobile: 2, tablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
         </Padding>
       </Grid>
     </GrayBackground>
-    <Grid className="grid">
-      <Padding top={2} />
-      <Padding top={3} bottom={5}>
-        <Specialty services={content.services} />
-      </Padding>
-    </Grid>
+    <div style={{ backgroundColor: 'white' }}>
+      <Grid className="grid">
+        <Padding top={3} bottom={{ mobile: 3.5, tablet: 5, desktop: 5 }}>
+          <Specialty services={content.services} />
+        </Padding>
+      </Grid>
+    </div>
     <GrayBackground topOffset={-30}>
       <Grid className="grid">
         <Padding bottom={4}>

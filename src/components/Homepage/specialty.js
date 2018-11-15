@@ -5,6 +5,7 @@ import remcalc from 'remcalc'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
 import { H2, H4, H6, Paragraph } from '../Typography'
@@ -35,6 +36,19 @@ const AnimatedLink = styled(Link)`
   }
 `
 
+const PosterImage = styled(Flex)`
+  background: #${props => props.color};
+
+  max-width: 100%;
+
+  ${breakpoint('tablet')`
+    height: 528px;
+  `}
+  ${breakpoint('desktop')`
+    width: 475px;
+    height: 473px;
+  `}
+`
 function isEven (value) {
   if (value % 2 === 0) return true
   else return false
@@ -45,14 +59,14 @@ const Specialty = ({ services }) => (
     {services.map((service, index) => (
       <Col key={service.id} xs={12} sm={12} md={6}>
         {!isEven(index) ? (
-          <Padding top={{ mobile: 0, tablet: 5, desktop: 7 }} />
+          <Padding top={{ mobile: 0, tablet: 5, desktop: 7 }} bottom={2} />
         ) : null}
         <H2>{service.title}</H2>
         <Padding bottom={0.5}>
           <Paragraph>{service.introSentence.introSentence}</Paragraph>
         </Padding>
         <Row>
-          <Col xs={7}>
+          <Col xs={11} sm={7}>
             <H6>
               <SeoLinks items={service.homePageSpecialities} />
             </H6>
@@ -76,21 +90,16 @@ const Specialty = ({ services }) => (
                 </Title>
               </div>
             </CardHeader>
-            <Flex
+            <PosterImage
               justifyCenter
               alignCenter
-              style={{
-                background: `#${service.caseStudies[0].posterColor}`,
-                width: 475,
-                height: 473,
-                maxWidth: '100%'
-              }}
+              color={service.caseStudies[0].posterColor}
             >
               <img
                 alt={service.caseStudies[0].title}
                 src={service.caseStudies[0].posterImage.file.url}
               />
-            </Flex>
+            </PosterImage>
           </section>
         </AnimatedLink>
       </Col>
