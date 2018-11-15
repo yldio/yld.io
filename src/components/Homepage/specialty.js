@@ -98,6 +98,7 @@ const Specialty = ({ services }) => (
               <img
                 alt={service.caseStudies[0].title}
                 src={service.caseStudies[0].posterImage.file.url}
+                style={{ maxHeight: '100%' }}
               />
             </PosterImage>
           </section>
