@@ -28,7 +28,7 @@ const Service = ({ data }) => {
       <Grid className="grid">
         <Row>
           <Col xs={12}>
-            <CaseStudy caseStudy={service.caseStudies[0]} />
+            <CaseStudy caseStudy={service.caseStudies[0]} subHeading="Featured work"/>
           </Col>
         </Row>
       </Grid>
