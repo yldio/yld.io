@@ -44,7 +44,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
       <SubHeading>{ subHeading }</SubHeading>
-      <Padding bottom={{ mobile: 0, tablet: 3, desktop: 1 }}>
+      <Padding bottom={{ phone: 0, tablet: 3, desktop: 1 }}>
         <H2 noTop>{caseStudy.title}</H2>
       </Padding>
     </Col>
