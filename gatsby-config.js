@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const { CONTENTFUL_TOKEN, CONTENTFUL_SPACE, GA_TRACKING_ID } = process.env
+const { CONTENTFUL_TOKEN, CONTENTFUL_SPACE, GA_TRACKING_ID, GTM_AUTH } = process.env
 
 module.exports = {
   siteMetadata: {
@@ -44,6 +44,15 @@ module.exports = {
         logo: './src/images/favicon.png',
         appName: 'YLD',
         background: '#fff'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-TNNW9LP',
+        includeInDevelopment: false,
+        gtmAuth: GTM_AUTH,
+        gtmPreview: 'env-2'
       }
     }
   ]
