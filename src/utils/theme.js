@@ -40,6 +40,8 @@ export default {
     5: remcalc(108),
     6: remcalc(144),
     7: remcalc(288),
+    10: remcalc(400),
+    15: remcalc(600),
     30: remcalc(30),
     60: remcalc(60)
   },
