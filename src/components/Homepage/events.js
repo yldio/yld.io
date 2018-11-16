@@ -19,17 +19,15 @@ const EventWrapper = styled.header`
 
   ${breakpoint('tablet')`
     padding: ${remcalc(24)} ${remcalc(36)} 0;
-  `}
-
-  ${breakpoint('desktop')`
+  `} ${breakpoint('desktop')`
     padding-top: ${remcalc(24)};
     padding-left: ${remcalc(36)};
-  `}
+  `};
 `
 
 const Events = ({ events }) => (
   <Row>
-    <Col md={4} xs={12}>
+    <Col md={4} sm={false} xs={false}>
       <Col xs={8} style={{ paddingLeft: 0 }}>
         <H2 noTop>Upcoming events</H2>
       </Col>
@@ -53,44 +51,71 @@ const Events = ({ events }) => (
           ))}
       </ul>
     </Col>
+    <Col md={false} sm={12} xs={12}>
+      <Col xs={8} style={{ paddingLeft: 0 }}>
+        <H2 noTop>Upcoming events</H2>
+      </Col>
+    </Col>
+
     <Col md={8} xs={12}>
-      {events
-        .filter(n => n.node.homepageFeatured)
-        .map(({ node }) => (
-          <Flex
-            key={node.id}
-            alignStart
-            justifyBetween
-            full
-            column
-            style={{ background: `#${node.color}` }}
-          >
-            <EventWrapper>
-              <Paragraph muted reverse noMargin>
-                Featured
-              </Paragraph>
-              <EventTitle reverse>{node.eventTitle}</EventTitle>
-              <Padding top={0.5}>
-                <Paragraph
-                  muted
-                  reverse
-                  style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
-                >
-                  {node.blurb.blurb}
-                </Paragraph>
-              </Padding>
-              <StyledLink
+      {events.filter(n => n.node.homepageFeatured).map(({ node }) => (
+        <Flex
+          key={node.id}
+          alignStart
+          justifyBetween
+          full
+          column
+          style={{ background: `#${node.color}` }}
+        >
+          <EventWrapper>
+            <Paragraph muted reverse noMargin>
+              Featured
+            </Paragraph>
+            <EventTitle reverse>{node.eventTitle}</EventTitle>
+            <Padding top={0.5}>
+              <Paragraph
+                muted
                 reverse
-                href={node.linkToEvent}
-                target="_blank"
-                rel="noopener noreferrer"
+                style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
               >
-                Get tickets
-              </StyledLink>
-            </EventWrapper>
-            <img alt={node.eventTitle} src={node.posterImage.file.url} />
-          </Flex>
-        ))}
+                {node.blurb.blurb}
+              </Paragraph>
+            </Padding>
+            <StyledLink
+              reverse
+              href={node.linkToEvent}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get tickets
+            </StyledLink>
+          </EventWrapper>
+          <img alt={node.eventTitle} src={node.posterImage.file.url} />
+        </Flex>
+      ))}
+    </Col>
+    <Col md={false} sm={12} xs={12}>
+      <Padding top={3}>
+        <ul>
+          {events
+            .filter(n => !n.node.homepageFeatured)
+            .splice(0, 3)
+            .map(({ node }) => (
+              <Li key={`${node.id}`}>
+                <H5 bold>
+                  <a
+                    href={node.linkToEvent}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {node.eventTitle}
+                  </a>
+                </H5>
+                {format(new Date(node.date), 'MMMM DD[,] dddd')}
+              </Li>
+            ))}
+        </ul>
+      </Padding>
     </Col>
   </Row>
 )
