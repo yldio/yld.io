@@ -10,7 +10,12 @@ import SeoLinks from '../../components/Common/seoLinks'
 
 const ImageWrapper = styled(Col)`
   max-height: ${remcalc(540)};
-  width: ${remcalc(540)};
+  width: ${remcalc(529)};
+  ${breakpoint('desktop')`
+      position: absolute;
+      left: 58%;
+      padding: 0;
+  `}
 `
 
 const NoMobile = styled.section`
@@ -64,7 +69,11 @@ const CaseStudyTop = ({ caseStudy }) => (
     </Col>
     {caseStudy.posterImage && (
       <ImageWrapper sm={6} xs={12}>
-        <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+        <img
+          alt={caseStudy.title}
+          src={caseStudy.posterImage.file.url}
+          style={{ width: '100%' }}
+        />
       </ImageWrapper>
     )}
     <Col xs={12} sm={false}>
