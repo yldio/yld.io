@@ -67,16 +67,7 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <CaseStudyTop caseStudy={caseStudy} />
-        <Margin vertical={4}>
-          <Row>
-            <Col xs={12} sm={9} md={7}>
-              <Paragraph padded>
-                {caseStudy.introSentence.introSentence}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Margin>
+        <CaseStudyTop caseStudy={caseStudy} introSentence={caseStudy.introSentence.introSentence} />
       </Grid>
       <GrayBackground>
         <Padding top={6} vertical={3}>

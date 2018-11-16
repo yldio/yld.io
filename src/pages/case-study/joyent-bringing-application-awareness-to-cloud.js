@@ -24,20 +24,15 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <CaseStudyTop caseStudy={caseStudy} />
-
-        <Padding top={7} bottom={4}>
-          <Row>
-            <Col xs={12} sm={9} md={7}>
-              <Paragraph padded>
-                {caseStudy.introSentence.introSentence}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Padding>
-        <Padding bottom={2} />
+        <CaseStudyTop
+          caseStudy={caseStudy}
+          introSentence={caseStudy.introSentence.introSentence}
+        />
       </Grid>
-      <span>hi mum</span>
+      <Grid>
+        <span>hi mum</span>
+      </Grid>
+
       <div style={{ backgroundColor: 'white' }}>
         <Grid>
           <Row>

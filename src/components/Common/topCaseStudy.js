@@ -5,7 +5,7 @@ import Flex from 'styled-flex-component'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
-import { H1, H5, H6 } from '../../components/Typography'
+import { H1, H5, H6, Paragraph } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 
 const ImageWrapper = styled(Col)`
@@ -57,7 +57,7 @@ const MetaData = ({ caseStudy }) => (
   </Flex>
 )
 
-const CaseStudyTop = ({ caseStudy }) => (
+const CaseStudyTop = ({ caseStudy, introSentence }) => (
   <Row>
     <Col xs={12} sm={6}>
       <Flex full column justifyCenter>
@@ -81,6 +81,14 @@ const CaseStudyTop = ({ caseStudy }) => (
         <MetaData caseStudy={caseStudy} />
       </Padding>
     </Col>
+    {introSentence && (
+      // change padding 4 tablet + mobile
+      <Col xs={12} sm={9} md={7}>
+        <Padding top={7} bottom={4.5}>
+          <Paragraph>{introSentence}</Paragraph>
+        </Padding>
+      </Col>
+    )}
   </Row>
 )
 

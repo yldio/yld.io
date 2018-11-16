@@ -29,17 +29,10 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid className="grid">
-        <CaseStudyTop caseStudy={caseStudy} />
-        <Margin vertical={4}>
-          <Row>
-            <Col xs={12} sm={9} md={7}>
-              <Paragraph padded>
-                {caseStudy.introSentence.introSentence}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Margin>
-        <Padding bottom={2} />
+        <CaseStudyTop
+          caseStudy={caseStudy}
+          introSentence={caseStudy.introSentence.introSentence}
+        />
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>

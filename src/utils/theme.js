@@ -36,6 +36,7 @@ export default {
     3: remcalc(36),
     3.5: remcalc(54),
     4: remcalc(72),
+    4.5: remcalc(96),
     5: remcalc(108),
     6: remcalc(144),
     7: remcalc(288),
