@@ -3,6 +3,7 @@
   "@type": "Local Business",
   "name": "YLD",
   "url": "http://www.yld.io",
+  "email": "hello@yld.io",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 51.5208762,
