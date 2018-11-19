@@ -2,6 +2,7 @@
   "@context": "http://schema.org",
   "@type": "LocalBusiness",
   "name": "YLD",
+  "telephone": "+440 203 514 4678",
   "url": "http://www.yld.io",
   "email": "hello@yld.io",
   "geo": {
@@ -9,6 +10,7 @@
     "latitude": 51.5208762,
     "longitude": -0.0999571
   },
+  "image": "https://lever-client-logos.s3.amazonaws.com/099a8144-f34d-4957-a4d5-68af13f336fe-1525101850820.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "124 Aldersgate Street",
