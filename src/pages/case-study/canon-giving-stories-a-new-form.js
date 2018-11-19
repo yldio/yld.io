@@ -15,7 +15,7 @@ import travel from './assets/beyond_photography.png'
 const makeText = content => content.split('\n').filter(c => c.length)
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site },
+  data: { allContentfulGenericCaseStudy: content, site }
 }) => {
   const caseStudy = content.edges[0].node
   return (
@@ -122,12 +122,11 @@ const IndexPage = ({
               <Col xs={12}>
                 <div className="video-container">
                   <iframe
-                    src="https://player.vimeo.com/video/203746618"
-                    width="640"
-                    height="360"
+                    width="844"
+                    height="480"
+                    src="https://www.youtube.com/embed/MPPk-BkImsc"
                     frameBorder="0"
-                    webkitallowfullscreen
-                    mozallowfullscreen
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 </div>
