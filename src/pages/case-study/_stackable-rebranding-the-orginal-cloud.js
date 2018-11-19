@@ -5,12 +5,12 @@ import styled from 'styled-components'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
-import { H2, Paragraph, H6 } from '../../components/Typography'
-import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudyBottom from '../../components/Homepage/caseStudy'
+import { H2, Paragraph, H6 } from '../../../components/Typography'
+import CaseStudyTop from '../../../components/Common/topCaseStudy'
+import CaseStudyBottom from '../../../components/Homepage/caseStudy'
 
-import Layout from '../../components/layout'
-import GrayBackground from '../../components/GrayBG'
+import Layout from '../../../components/layout'
+import GrayBackground from '../../../components/GrayBG'
 import iterations from './assets/Logo-Iterations.png'
 import meaning from './assets/Logo-Meaning@2x.png'
 import logoImage from './assets/Logo-on-image.jpg'
@@ -21,9 +21,9 @@ import light from './assets/Light-Colour-Swatch.png'
 import layout from './assets/Marketing-Page-Mockups.png'
 import mockup from './assets/VPC-Mockup.png'
 import iconsDesktop from './assets/Icon-Graphic.png'
-import { command1, command2 } from '../../utils/text'
+import { command1, command2 } from '../../../utils/text'
 import iconsMobile from './assets/Mobile-Icon-Graphic.png'
-import { NoMobile, NoDesktop } from '../../components/Common/visibility'
+import { NoMobile, NoDesktop } from '../../../components/Common/visibility'
 
 const makeText = content => content.split('\n').filter(c => c.length)
 
@@ -368,8 +368,10 @@ export const query = graphql`
             genericText7
           }
           services {
-            title
-            id
+            ... on ContentfulService {
+              title
+              id
+            }
           }
           posterColor
           seoTitle
@@ -377,7 +379,9 @@ export const query = graphql`
           relatedCaseStudy {
             title
             slug
-            introSentence
+            introSentence {
+              introSentence
+            }
             posterImage {
               file {
                 url

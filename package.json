@@ -45,14 +45,15 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/functions",
+    "build:lambda": "netlify-lambda  -c webpack.functions.js  build src/functions",
     "build": "run-p build:**",
     "lint": "eslint . --cache --fix",
-    "start:lambda": "netlify-lambda serve functions/"
+    "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
   },
   "devDependencies": {
     "@babel/core": "7.1.5",
     "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/plugin-syntax-async-generators": "^7.0.0",
     "@babel/plugin-transform-object-assign": "7.0.0",
     "@babel/plugin-transform-regenerator": "7.0.0",
     "@storybook/addon-actions": "4.0.4",

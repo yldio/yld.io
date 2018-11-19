@@ -166,7 +166,7 @@ const IndexPage = ({
 }
 
 export const query = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -180,7 +180,9 @@ export const query = graphql`
           relatedCaseStudy {
             title
             slug
-            introSentence
+            introSentence {
+              introSentence
+            }
             posterImage {
               file {
                 url
@@ -215,8 +217,10 @@ export const query = graphql`
             genericText4
           }
           services {
-            title
-            id
+            ... on ContentfulService {
+              title
+              id
+            }
           }
           posterColor
           seoTitle
