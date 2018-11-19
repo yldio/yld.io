@@ -1,0 +1,43 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Local Business",
+  "name": "YLD",
+  "url": "http://www.yld.io",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.5208762,
+    "longitude": -0.0999571
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "124 Aldersgate Street",
+    "addressLocality": "London",
+    "addressRegion": "London",
+    "postalCode": "EC1A 4JQ",
+    "addressCountry": "UK"
+  },
+  "sameAs": [
+    "http://twitter.com/yldio",
+    "http://github.com/yldio",
+    "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
+    "https://www.instagram.com/yld.io/",
+    "https://www.linkedin.com/company/yld/",
+    "https://dribbble.com/makeusproud",
+    "https://www.behance.net/MakeUsProud"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+440 203 514 4678",
+      "contactType": "customer service"
+    }
+  ]
+}

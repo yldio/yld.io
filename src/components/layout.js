@@ -8,6 +8,7 @@ import './layout.css'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
+import google from '../utils/google-json.json'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -27,6 +28,9 @@ const Layout = ({ children, location }) => (
             title={`${data.site.siteMetadata.title}`}
             meta={[{ name: 'description', content: '' }]}
           >
+            <script type="application/ld+json">{`
+                ${JSON.stringify(google)}
+            `}</script>
             <html lang="en" />
           </Helmet>
           <Header />
