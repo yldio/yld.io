@@ -34,42 +34,19 @@ const Footer = () => {
                     '\n'
                   )
                   return (
-                    <Col
-                      key={location.node.id}
-                      xs={12}
-                      md={3}
-                      itemScope
-                      itemType="http://schema.org/LocalBusiness"
-                    >
+                    <Col key={location.node.id} xs={12} md={3}>
                       <Margin bottom={1}>
                         <span itemProp="name" style={{ display: 'none' }}>
                           YLD
                         </span>
-                        <H5
-                          bold
-                          reverse
-                          itemProp="location"
-                          itemType="http://schema.org/Text"
-                        >
+                        <H5 bold reverse>
                           {location.node.name}
                         </H5>
                       </Margin>
                       <Paragraph>
-                        <span
-                          itemProp="address"
-                          itemScope
-                          itemType="http://schema.org/PostalAddress"
-                        >
+                        <span>
                           {streetAddress.map((address, i) => {
-                            let schemaType =
-                              (i === streetAddress.length - 1
-                                ? 'postalCode'
-                                : addressItemProps[i]) || addressItemProps[0]
-                            return (
-                              <Node key={address} itemProp={schemaType}>
-                                {address}
-                              </Node>
-                            )
+                            return <Node key={address}>{address}</Node>
                           })}
                         </span>
                         <Node itemProp="telephone">
@@ -77,10 +54,7 @@ const Footer = () => {
                         </Node>
                         {location.node.email ? (
                           <Node>
-                            <a
-                              href={`mailto:${location.node.email}`}
-                              itemProp="email"
-                            >
+                            <a href={`mailto:${location.node.email}`}>
                               {location.node.email}
                             </a>
                           </Node>
