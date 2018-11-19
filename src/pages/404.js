@@ -22,8 +22,7 @@ const HomePageLink = styled(LinkStyled)`
 const NotFoundPage = ({ data: { site } }) => (
   <Layout>
     <Helmet
-      title={`${site.siteMetadata.title} - Not Found
-      } `}
+      title={`${site.siteMetadata.title} - Not Found`}
       meta={[
         {
           name: 'description',
