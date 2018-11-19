@@ -1,8 +1,6 @@
-# YLD Website yay
+# YLD Website
 
-## Staging
-
-https://yldio.netlify.com/
+## [Link](https://yldio.io/)
 
 ## How to run
 
@@ -13,4 +11,22 @@ https://yldio.netlify.com/
   yarn develop
 ```
 
-Website uses Gatsby and you can check their docs here https://www.gatsbyjs.org/docs/
+## Tech Used
+
+- [Yarn](https://yarnpkg.com)
+- [Gatsby](https://www.gatsbyjs.org/docs/)
+- [React](https://reactjs.org)
+- [Styled Components](https://styled-components.com)
+- [Storybook](https://storybook.js.org/)
+
+## Content in
+
+- [Contentful](https://contentful.com)
+
+## Deployed Using
+
+- [Netlify](https://netlify.com/)
+
+## License
+
+MPL-2.0
