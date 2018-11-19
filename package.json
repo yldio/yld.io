@@ -45,7 +45,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/functions",
+    "build:lambda": "netlify-lambda  -c webpack.functions.js  build src/functions",
     "build": "run-p build:**",
     "lint": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
