@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
 import { H2 } from '../../Typography'
-import { SwitchLink, WorkStageGridPadding } from './elements'
+import { SwitchLink, WorkStageGridElement, MasonryContainer } from './elements'
 import WorkStageContent from './content'
 
 const WorkStage = ({ workStage, handleClick, alternatives }) => {
@@ -42,34 +42,40 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ))}
         </Col>
         <Tag xs={12} md={6}>
-          {sections.map(
-            ({ sectionTitle, sectionBody, sectionIcon }, index, arr) =>
-              workStage.displayType !== 'List' ? (
-                <Col xs={12} md={6}>
-                  <WorkStageGridPadding
+          {workStage.displayType !== 'List' ? (
+            <MasonryContainer length={sections.length}>
+              {sections.map(
+                ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
+                  <WorkStageGridElement
                     index={index}
                     last={arr.length - 1}
-                    secondLast={arr.length - 2}
+                    halfway={Math.floor(arr.length / 2)}
                     evenNumber={arr.length % 2 === 0}
+                    xs={12}
+                    key={index}
                   >
                     <Padding bottom={1.5}>
                       <img src={`https://${sectionIcon}`} />
                     </Padding>
+
                     <WorkStageContent
                       isList
                       sectionTitle={sectionTitle}
                       sectionBody={sectionBody}
                     />
-                  </WorkStageGridPadding>
-                </Col>
-              ) : (
-                <Padding bottom={1}>
-                  <WorkStageContent
-                    sectionTitle={sectionTitle}
-                    sectionBody={sectionBody}
-                  />
-                </Padding>
-              )
+                  </WorkStageGridElement>
+                )
+              )}
+            </MasonryContainer>
+          ) : (
+            sections.map(({ sectionTitle, sectionBody }, index) => (
+              <Padding bottom={1} key={index}>
+                <WorkStageContent
+                  sectionTitle={sectionTitle}
+                  sectionBody={sectionBody}
+                />
+              </Padding>
+            ))
           )}
         </Tag>
       </Row>
