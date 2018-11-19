@@ -1,6 +1,6 @@
 {
   "@context": "http://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   "name": "YLD",
   "url": "http://www.yld.io",
   "email": "hello@yld.io",
@@ -37,7 +37,7 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-
+      "telephone": "+440 203 514 4678",
       "contactType": "customer service"
     }
   ]
