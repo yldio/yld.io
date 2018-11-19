@@ -15,7 +15,7 @@ import travel from './assets/beyond_photography.png'
 const makeText = content => content.split('\n').filter(c => c.length)
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site }
+  data: { allContentfulGenericCaseStudy: content, site },
 }) => {
   const caseStudy = content.edges[0].node
   return (
@@ -153,9 +153,9 @@ const IndexPage = ({
         </Grid>
       </GrayBackground>
       <div style={{ backgroundColor: 'white' }}>
-        <Grid>
+        <Grid className="grid">
           <Row>
-            <Col xs={12}>
+            <Col xs={12} sm={6}>
               <Padding top={4} bottom={2}>
                 <Paragraph>More of our work</Paragraph>
               </Padding>

@@ -9,11 +9,13 @@ import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
-
+  width:100%;
+  height: auto;
   ${breakpoint('desktop')`
     position: absolute;
     left: 51.5%;
     padding-right: 0px;
+    
     `}
 `
 
@@ -35,7 +37,7 @@ const SubHeading = styled(Paragraph)`
 `
 
 const Img = styled.img`
-  max-width: 100%;
+  width: 100%;
   ${breakpoint('tablet')`
   max-width: ${remcalc(549)};
 `};

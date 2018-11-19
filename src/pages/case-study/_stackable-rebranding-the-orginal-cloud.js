@@ -192,7 +192,7 @@ const IndexPage = ({
       </GrayBackground>
       <div style={{ backgroundColor: 'white' }}>
         <Code>
-          <Grid>
+          <Grid className="grid">
             <Row>
               <Col xs={12}>
                 <Padding vertical={4}>
@@ -308,7 +308,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <Grid>
+      <Grid className="grid">
         <Row>
           <Col xs={12}>
             <Padding top={4} bottom={2}>
