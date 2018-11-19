@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
-import WorkStages from '../components/Service/workStage'
+import WorkStages from '../components/Service/work-stage/index'
 import GrayBackground from '../components/GrayBG'
 
 const Title = H3.withComponent('h1')
@@ -28,7 +28,10 @@ const Service = ({ data }) => {
       <Grid className="grid">
         <Row>
           <Col xs={12}>
-            <CaseStudy caseStudy={service.caseStudies[0]} subHeading="Featured work"/>
+            <CaseStudy
+              caseStudy={service.caseStudies[0]}
+              subHeading="Featured work"
+            />
           </Col>
         </Row>
       </Grid>
