@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../../styledLink'
+import { Col } from 'react-styled-flexboxgrid'
 import { H2 } from '../../Typography'
 
 export const Item = styled.li`
@@ -45,21 +46,34 @@ export const SwitchLink = styled(StyledLink)`
   }
 `
 
-// there's an odd number, give only last no padding
-// there's an even number, give last 2 no padding
-// if it's mobile / tablet, give only the last no padding
-// index={index} last={arr.length - 1} secondLast={arr.length - 2} evenNumber
-export const WorkStageGridPadding = styled.div`
+export const MasonryContainer = styled.div`
+  ${breakpoint('desktop')`
+    column-count: 2;
+    column-gap: 0;
+    column-fill: auto;
+    height: ${props =>
+    props.length % 2 !== 0 // when there's an odd number of elements we have to manually set the height because css
+      ? remcalc(Math.ceil(props.length / 2) * 500)
+      : 'auto'} 
+    padding-bottom: ${remcalc(72)}
+  `}
+`
+
+export const WorkStageGridElement = styled(Col)`
   padding-bottom: ${props => (props.index === props.last ? 0 : remcalc(72))};
+  break-inside: avoid;
 
   ${breakpoint('desktop')`
-    padding-bottom: ${props => {
-    if (props.index === props.last) {
-      return 0
-    } else if (props.evenNumber && props.index === props.secondLast) {
-      return 0
-    } else {
-      return remcalc(72)
-    }
-  }}`};
+    padding-bottom: ${props =>
+    props.index === props.last ||
+      (!props.evenNumber && props.index === props.halfway) ||
+      (props.evenNumber && props.index + 1 === props.halfway)
+      ? 0
+      : remcalc(72)}}`};
+`
+
+export const WorkStageContentList = styled.div`
+  ${breakpoint('desktop')`
+    width: 60%
+  `}
 `
