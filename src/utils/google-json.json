@@ -1,6 +1,6 @@
 {
   "@context": "http://schema.org",
-  "@type": "Local Business",
+  "@type": "LocalBusiness",
   "name": "YLD",
   "url": "http://www.yld.io",
   "email": "hello@yld.io",
