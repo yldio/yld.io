@@ -1,6 +1,6 @@
 {
   "@context": "http://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Organization",
   "name": "YLD",
   "telephone": "+440 203 514 4678",
   "url": "http://www.yld.io",
