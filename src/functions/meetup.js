@@ -7,7 +7,11 @@ const find = require('lodash.find')
 const striptags = require('striptags')
 
 // Set up dot-env variables
-const { CONTENTFUL_TOKEN, CONTENTFUL_SPACE, MEETUP_KEY } = process.env
+const {
+  CONTENTFUL_MANAGEMENT_TOKEN,
+  CONTENTFUL_SPACE,
+  MEETUP_KEY
+} = process.env
 
 // Import helper functions
 const generateContentfulEvent = ({
@@ -116,7 +120,7 @@ const meetup = require('meetup-api')({
 })
 
 const client = createClient({
-  accessToken: CONTENTFUL_TOKEN
+  accessToken: CONTENTFUL_MANAGEMENT_TOKEN
 })
 
 // ----- Query Meetup
