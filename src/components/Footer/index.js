@@ -4,7 +4,7 @@ import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
 import { H2 } from '../../components/Typography'
 import { FooterStyled, FollowUs, Social, OfficeStyled } from './elements.js'
-import Office from './Office'
+import Office from './office'
 
 import social from './links'
 
