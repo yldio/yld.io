@@ -31,6 +31,12 @@ export default styled.section`
     z-index: -1;
   }
 
+  ${is('offsetBottom')`
+    &:after {
+      content: none;
+    }
+  `}
+
   ${is('noTop')`
     margin-top: ${remcalc(0)};
   `}
