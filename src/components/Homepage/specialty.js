@@ -50,7 +50,7 @@ const PosterImage = styled.div`
     height: 473px;
   `}
 `
-function isEven (value) {
+function isEven(value) {
   if (value % 2 === 0) return true
   else return false
 }
@@ -79,7 +79,7 @@ const Specialty = ({ services }) => (
         <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
           <section
             style={{
-              background: `#${service.caseStudies[0].posterColor}`
+              background: `#${service.caseStudies[0].posterColor}`,
             }}
           >
             <CardHeader>

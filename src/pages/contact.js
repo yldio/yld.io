@@ -12,7 +12,7 @@ import {
   Textarea,
   Button,
   Fieldset,
-  Field
+  Field,
 } from '../components/forms'
 import GrayBG from '../components/GrayBG'
 
@@ -23,10 +23,10 @@ const checkboxes = [
   { name: 'join', label: 'Joining our team' },
   { name: 'speak', label: 'Speaking at an event' },
   { name: 'sponsor', label: 'Sponsoring an event' },
-  { name: 'none', label: 'None of these' }
+  { name: 'none', label: 'None of these' },
 ]
 
-function encode (data) {
+function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -37,20 +37,20 @@ class ContactUs extends Component {
     name: '',
     email: '',
     message: '',
-    submitting: false
+    submitting: false,
   }
 
   handleChangeCheckbox = e => {
     const target = e.target
     this.setState(prevState => ({
       ...prevState,
-      [target.name]: target.checked
+      [target.name]: target.checked,
     }))
   }
 
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -61,19 +61,19 @@ class ContactUs extends Component {
     fetch('/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: encode({
         'form-name': 'contact',
-        ...this.state
-      })
+        ...this.state,
+      }),
     }).then(() => {
       this.setState({ success: true, submitting: false })
       window.scrollTo(0, 0)
     })
   }
 
-  render () {
+  render() {
     const { name, email, message, submitting, success } = this.state
     const site = this.props.data.site
     const page = this.props.data.allContentfulPage.edges[0].node

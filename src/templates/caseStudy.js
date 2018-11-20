@@ -56,7 +56,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
                     key={i}
                     className="video-container"
                     dangerouslySetInnerHTML={{
-                      __html: `<iframe width="844" height="480" src="${text}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                      __html: `<iframe width="844" height="480" src="${text}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
                     }}
                   />
                 ))}

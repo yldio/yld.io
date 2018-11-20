@@ -15,7 +15,7 @@ import Specialty from '../components/Homepage/specialty'
 import GrayBackground from '../components/GrayBG'
 
 const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }
+  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site },
 }) => (
   <Layout>
     <Helmet

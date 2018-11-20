@@ -11,41 +11,41 @@ export default [
   {
     label: 'Twitter',
     link: 'http://twitter.com/yldio',
-    img: twitter
+    img: twitter,
   },
   {
     label: 'Github',
     link: 'http://github.com/yldio',
-    img: github
+    img: github,
   },
   {
     label: 'Youtube',
     link: 'https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA',
-    img: youtube
+    img: youtube,
   },
   {
     label: 'Medium',
     link: 'https://medium.com/yld-engineering-blog',
-    img: medium
+    img: medium,
   },
   {
     label: 'Instagram',
     link: 'https://www.instagram.com/yld.io/',
-    img: instagram
+    img: instagram,
   },
   {
     label: 'Linkedin',
     link: 'https://www.linkedin.com/company/yld/',
-    img: linkedin
+    img: linkedin,
   },
   {
     label: 'Dribbble',
     link: 'https://dribbble.com/makeusproud',
-    img: dribbble
+    img: dribbble,
   },
   {
     label: 'Behance',
     link: 'https://www.behance.net/MakeUsProud',
-    img: behance
-  }
+    img: behance,
+  },
 ]

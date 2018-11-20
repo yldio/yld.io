@@ -10,7 +10,7 @@ const striptags = require('striptags')
 const {
   CONTENTFUL_MANAGEMENT_TOKEN,
   CONTENTFUL_SPACE,
-  MEETUP_KEY
+  MEETUP_KEY,
 } = process.env
 
 // Import helper functions
@@ -23,42 +23,42 @@ const generateContentfulEvent = ({
   time,
   duration,
   eventName,
-  description
+  description,
 }) => ({
   fields: {
     thisMeetupCode: {
-      'en-US': `${urlname}-${nextEvent}`
+      'en-US': `${urlname}-${nextEvent}`,
     },
     meetupUrlName: {
-      'en-US': urlname
+      'en-US': urlname,
     },
     linkToEvent: {
-      'en-US': link
+      'en-US': link,
     },
     date: {
-      'en-US': date
+      'en-US': date,
     },
     startTime: {
-      'en-US': new Date(time)
+      'en-US': new Date(time),
     },
     endTime: {
-      'en-US': new Date(time + duration)
+      'en-US': new Date(time + duration),
     },
     address: {
       'en-US':
         venue !== 'Venue To Be Confirmed'
           ? `${venue.name}&&${venue.address1}&&${
-            venue.adress2 ? venue.adress2 : ''
-          }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
-          : 'Venue To Be Confirmed'
+              venue.adress2 ? venue.adress2 : ''
+            }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
+          : 'Venue To Be Confirmed',
     },
     eventTitle: {
-      'en-US': eventName
+      'en-US': eventName,
     },
     blurb: {
-      'en-US': description
-    }
-  }
+      'en-US': description,
+    },
+  },
 })
 const processMeetupData = arrayOfMeetups => {
   let outputArray = []
@@ -69,7 +69,7 @@ const processMeetupData = arrayOfMeetups => {
       name: meetup.name,
       url: meetup.link,
       urlname: meetup.urlname,
-      nextEvent: meetup.next_event ? meetup.next_event.id : 0
+      nextEvent: meetup.next_event ? meetup.next_event.id : 0,
     }
 
     outputArray.push(thisMeetup)
@@ -88,27 +88,27 @@ const processMeetupEvent = eventObject => {
     date: eventObject.local_date,
     venue: eventObject.hasOwnProperty('venue')
       ? {
-        name: eventObject.venue.name,
-        address1: eventObject.venue.address_1,
-        address2: eventObject.venue.address_2
-          ? eventObject.venue.address_2
-          : 0,
-        address3: eventObject.venue.address_3
-          ? eventObject.venue.address_3
-          : 0,
-        city: eventObject.venue.city
-      }
+          name: eventObject.venue.name,
+          address1: eventObject.venue.address_1,
+          address2: eventObject.venue.address_2
+            ? eventObject.venue.address_2
+            : 0,
+          address3: eventObject.venue.address_3
+            ? eventObject.venue.address_3
+            : 0,
+          city: eventObject.venue.city,
+        }
       : 'Venue To Be Confirmed',
     link: eventObject.link,
     description:
       eventObject.description.includes('EVENT SUMMARY') &&
       eventObject.description.includes('EVENT DETAILS')
         ? striptags(
-          eventObject.description
-            .split('EVENT SUMMARY:')[1]
-            .split('EVENT DETAILS')[0]
-        ).trim()
-        : 'For more information, please visit the Meetup page'
+            eventObject.description
+              .split('EVENT SUMMARY:')[1]
+              .split('EVENT DETAILS')[0]
+          ).trim()
+        : 'For more information, please visit the Meetup page',
   }
 
   return outputObject
@@ -116,11 +116,11 @@ const processMeetupEvent = eventObject => {
 
 // Link API keys dot-env variables to instances
 const meetup = require('meetup-api')({
-  key: MEETUP_KEY
+  key: MEETUP_KEY,
 })
 
 const client = createClient({
-  accessToken: CONTENTFUL_MANAGEMENT_TOKEN
+  accessToken: CONTENTFUL_MANAGEMENT_TOKEN,
 })
 
 // ----- Query Meetup
@@ -139,7 +139,7 @@ exports.handler = async (event, context, callback) => {
   // filter to return published entries that belong to a specific content model.
   const { items: events } = await environment.getEntries({
     limit: 1000,
-    content_type: 'meetupEven'
+    content_type: 'meetupEven',
   })
 
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
@@ -153,7 +153,7 @@ exports.handler = async (event, context, callback) => {
     const meetup = processMeetupEvent(
       await getEvent({
         id: nextEvent,
-        urlname
+        urlname,
       })
     )
 

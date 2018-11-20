@@ -5,13 +5,13 @@ const calc = v => remcalc(v).split('rem')[0]
 const breakpoints = {
   phone: 0,
   tablet: 600,
-  desktop: 1096
+  desktop: 1096,
 }
 
 const flexboxbGridBreakPoints = {
   xs: calc(breakpoints.phone),
   sm: calc(breakpoints.tablet),
-  md: calc(breakpoints.desktop)
+  md: calc(breakpoints.desktop),
 }
 
 export default {
@@ -23,9 +23,9 @@ export default {
     container: {
       sm: 55.5,
       md: 55.5,
-      lg: calc(1000)
+      lg: calc(1000),
     },
-    breakpoints: flexboxbGridBreakPoints
+    breakpoints: flexboxbGridBreakPoints,
   },
   spacing: {
     0: '0',
@@ -40,7 +40,7 @@ export default {
     6: remcalc(144),
     7: remcalc(288),
     30: remcalc(30),
-    60: remcalc(60)
+    60: remcalc(60),
   },
   colors: {
     white: '#fff',
@@ -52,6 +52,6 @@ export default {
     black: '#1d1d1d',
     lightGray: '#737272',
     greyBg: '#f9f9f9',
-    grey: '#e6e6e6'
-  }
+    grey: '#e6e6e6',
+  },
 }
