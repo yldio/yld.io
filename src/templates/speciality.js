@@ -8,7 +8,7 @@ import StyledLink from '../components/styledLink'
 import {
   AnimatedLink,
   CardHeader,
-  PosterImage,
+  PosterImage
 } from '../components/Common/animatedLink'
 import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
@@ -184,11 +184,11 @@ export const pageQuery = graphql`
           title
           seoTitle
           seoMetaDescription
-          seoText {
+          seoText{
             nodeType
-            content {
+            content{
               nodeType
-              content {
+              content{
                 nodeType
                 value
               }
