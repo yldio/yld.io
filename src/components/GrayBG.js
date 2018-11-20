@@ -17,6 +17,25 @@ export default styled.section`
   padding-top: ${props =>
     props.offsetBottom ? remcalc(props.topOffset * -1) : 0};
   margin-bottom: ${props => remcalc(props.topOffset || -50)};
+  z-index: -2;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    width: 100%;
+    height: ${props => remcalc(props.topOffset ? props.topOffset * -1 : 50)};
+    bottom: 0;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+
+  ${is('offsetBottom')`
+    &:after {
+      content: none;
+    }
+  `}
 
   ${is('noTop')`
     margin-top: ${remcalc(0)};
