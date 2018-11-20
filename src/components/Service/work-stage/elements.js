@@ -10,8 +10,7 @@ export const Item = styled.li`
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
   opacity: 0.5;
-  text-indent: ${remcalc(-24)};
-  margin-left: ${remcalc(24)};
+
 `
 
 export const Graphic = styled.img`
@@ -73,6 +72,7 @@ export const WorkStageGridElement = styled(Col)`
 `
 
 export const WorkStageContentList = styled.div`
+  list-style-position:inside;
   ${breakpoint('desktop')`
     width: 60%
   `}
