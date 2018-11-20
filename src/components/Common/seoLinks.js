@@ -18,6 +18,7 @@ export default function SeoLinks ({ items }) {
       {(items || []).map((item, i) => {
         const last = i + 1 === items.length
         const path = pathsById[item.id]
+        console.log(items)
         if (path) {
           return (
             <ItemSpan>
