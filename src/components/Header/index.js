@@ -92,12 +92,7 @@ class Header extends Component {
                     <Link activeClassName="active" to="/contact/">
                       Contact
                     </Link>
-                    <a
-                      activeClassName="active"
-                      href="https://medium.com/yld-engineering-blog/"
-                    >
-                      Blog
-                    </a>
+                    <a href="https://medium.com/yld-engineering-blog/">Blog</a>
                     <Close onClick={this.toggleMenu}>
                       <img src={close} alt="Close menu" />
                     </Close>
