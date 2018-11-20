@@ -45,13 +45,11 @@ const IndexPage = ({
         </Padding>
       </Grid>
     </GrayBackground>
-    <div style={{ backgroundColor: 'white' }}>
-      <Grid className="grid">
-        <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 5 }}>
-          <Specialty services={content.services} />
-        </Padding>
-      </Grid>
-    </div>
+    <Grid className="grid">
+      <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 5 }}>
+        <Specialty services={content.services} />
+      </Padding>
+    </Grid>
     <GrayBackground topOffset={-30}>
       <Grid className="grid">
         <Padding bottom={4}>
