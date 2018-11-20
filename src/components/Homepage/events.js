@@ -25,12 +25,21 @@ const EventWrapper = styled.header`
   `};
 `
 
+const P = styled(Paragraph)`
+  max-width: ${remcalc(380)};
+  margin-bottom: ${remcalc(3)};
+`
+
+const EventsColumn = styled(Col)`
+  padding-left: 0;
+`
+
 const Events = ({ events }) => (
   <Row>
     <Col md={4} sm={false} xs={false}>
-      <Col xs={8} style={{ paddingLeft: 0 }}>
+      <EventsColumn xs={8}>
         <H2 noTop>Upcoming events</H2>
-      </Col>
+      </EventsColumn>
       <ul>
         {events
           .filter(n => !n.node.homepageFeatured)
@@ -52,9 +61,9 @@ const Events = ({ events }) => (
       </ul>
     </Col>
     <Col md={false} sm={12} xs={12}>
-      <Col xs={8} style={{ paddingLeft: 0 }}>
+      <EventsColumn xs={8}>
         <H2 noTop>Upcoming events</H2>
-      </Col>
+      </EventsColumn>
     </Col>
 
     <Col md={8} xs={12}>
@@ -68,13 +77,9 @@ const Events = ({ events }) => (
               </Paragraph>
               <EventTitle reverse>{node.eventTitle}</EventTitle>
               <Padding top={0.5}>
-                <Paragraph
-                  muted
-                  reverse
-                  style={{ maxWidth: remcalc(380), marginBottom: remcalc(3) }}
-                >
+                <P muted reverse>
                   {node.blurb.blurb}
-                </Paragraph>
+                </P>
               </Padding>
               <StyledLink
                 reverse

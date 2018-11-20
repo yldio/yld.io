@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
@@ -13,6 +14,15 @@ import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 
 const makeText = content => content.split('\n').filter(c => c.length)
+
+const ImageWrapper = styled.div`
+  max-width: 540px;
+  margin: auto;
+`
+
+const GradientGrid = styled(Grid)`
+  background-image: linear-gradient(to top, #0c1835, #050a18);
+`
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site, travel }
@@ -72,10 +82,7 @@ const IndexPage = ({
           </Grid>
         </Padding>
       </GrayBackground>
-      <Grid
-        className="grid"
-        style={{ backgroundImage: 'linear-gradient(to top, #0c1835, #050a18)' }}
-      >
+      <GradientGrid className="grid">
         <Row>
           <Col xs={12} sm={12} md={6} mdOffset={3}>
             <Margin top={2} bottom={1}>
@@ -91,15 +98,15 @@ const IndexPage = ({
         <Margin bottom={2} />
         <Row>
           <Col xs={12} sm={12} md={8} mdOffset={2}>
-            <div style={{ maxWidth: 540, margin: 'auto' }}>
+            <ImageWrapper>
               <Image
                 image={travel.childImageSharp}
                 alt="Image of a travel itinerary"
               />
-            </div>
+            </ImageWrapper>
           </Col>
         </Row>
-      </Grid>
+      </GradientGrid>
       <Margin bottom={6} />
       <Grid className="grid">
         <Padding top={2}>

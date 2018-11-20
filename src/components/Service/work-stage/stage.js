@@ -4,22 +4,11 @@ import { Padding } from 'styled-components-spacing'
 import { H2 } from '../../Typography'
 import { SwitchLink, WorkStageGridElement, MasonryContainer } from './elements'
 import WorkStageContent from './content'
+import getSections from './getSections'
 
 const WorkStage = ({ workStage, handleClick, alternatives }) => {
-  const sections = Array(5)
-    .fill({})
-    .map((element, index) => ({
-      sectionTitle: workStage[`sectionTitle${index + 1}`],
-      ...(workStage[`sectionBody${index + 1}`] && {
-        sectionBody:
-          workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
-      }),
-      ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`]
-      })
-    }))
-    .filter(({ sectionTitle }) => sectionTitle)
   const Tag = workStage.displayType === 'List' ? Col : Fragment
+  const sections = getSections(workStage)
   return (
     <Grid className="grid">
       <Row>

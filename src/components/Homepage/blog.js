@@ -9,6 +9,7 @@ import Posts from '../posts'
 import Li from '../listItem'
 
 const BlogTitle = styled(H2)`
+  /* sorry */
   padding-top: 0.5rem !important;
 `
 
@@ -23,7 +24,15 @@ const Blog = () => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H5 bold><a href={`https://medium.com/yld-engineering-blog/${node.uniqueSlug}`}>{node.title}</a></H5>
+                <H5 bold>
+                  <a
+                    href={`https://medium.com/yld-engineering-blog/${
+                      node.uniqueSlug
+                    }`}
+                  >
+                    {node.title}
+                  </a>
+                </H5>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}

@@ -29,4 +29,4 @@
 
 ## License
 
-MPL-2.0
+[MPL-2](/LICENSE)

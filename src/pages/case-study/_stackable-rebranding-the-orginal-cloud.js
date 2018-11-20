@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
@@ -27,13 +28,26 @@ import { NoMobile, NoDesktop } from '../../components/Common/visibility'
 
 const makeText = content => content.split('\n').filter(c => c.length)
 
-const imgWrapper = {
-  flexGrow: 1,
-  padding: 40,
-  display: 'flex',
-  alignItems: 'flex-start',
-  justifyContent: 'flex-start'
-}
+const wrapperStyles = css`
+  flex-grow: 1;
+  padding: ${remcalc(40)};
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+`
+
+const Type1Wrapper = styled.div`
+  ${wrapperStyles};
+  justify-content: 'flex-end';
+  padding-right: ${remcalc(60)};
+  background: ${props => props.theme.colors.greyBg};
+`
+
+const Type2Wrapper = styled.div`
+  ${wrapperStyles};
+  padding-light: ${remcalc(60)};
+  background: ${props => props.theme.colors.text};
+`
 
 const Node = styled.span`
   font-size: 16px;
@@ -50,6 +64,16 @@ const Code = styled.section`
   justify-content: center;
   background: ${props => props.theme.colors.text};
   font-family: 'Stackable Mono';
+`
+
+const Type1 = styled.img`
+  max-width: 90%;
+  max-height: ${remcalc(276)};
+`
+
+const Type2 = styled.img`
+  max-width: 90%;
+  max-height: ${remcalc(270)};
 `
 
 const IndexPage = ({
@@ -157,39 +181,12 @@ const IndexPage = ({
       </GrayBackground>
       <GrayBackground noTop>
         <Flex>
-          <div
-            style={{
-              ...imgWrapper,
-              justifyContent: 'flex-end',
-              paddingRight: 60,
-              background: '#f9f9f9'
-            }}
-          >
-            <img
-              src={type1}
-              alt="Example of type"
-              style={{
-                maxWidth: '90%',
-                maxHeight: 276
-              }}
-            />
-          </div>
-          <div
-            style={{
-              ...imgWrapper,
-              paddingLeft: 60,
-              background: '#333333'
-            }}
-          >
-            <img
-              src={type2}
-              alt="Example of type"
-              style={{
-                maxWidth: '90%',
-                maxHeight: 270
-              }}
-            />
-          </div>
+          <Type1Wrapper>
+            <Type1 src={type1} alt="Example of type" />
+          </Type1Wrapper>
+          <Type2Wrapper>
+            <Type2 src={type2} alt="Example of type" />
+          </Type2Wrapper>
         </Flex>
       </GrayBackground>
 

@@ -73,8 +73,9 @@ const Specialty = ({ services }) => (
             </H6>
           </Col>
         </Row>
-        <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
-        <Padding bottom={1.5} />
+        <Padding bottom={1.5}>
+          <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
+        </Padding>
         <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
           <section
             style={{
@@ -82,14 +83,14 @@ const Specialty = ({ services }) => (
             }}
           >
             <CardHeader>
-              <div>
+              <section>
                 <Paragraph reverse muted>
                   Case study
                 </Paragraph>
                 <Title noMargin reverse>
                   {service.caseStudies[0].title}
                 </Title>
-              </div>
+              </section>
             </CardHeader>
             <PosterImage color={service.caseStudies[0].posterColor}>
               <Image image={service.caseStudies[0].posterImage} />

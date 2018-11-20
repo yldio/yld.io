@@ -27,9 +27,9 @@ const LOCATIONS = graphql`
 const Locations = ({ data, children }) => (
   <StaticQuery
     query={LOCATIONS}
-    render={({ allContentfulLocation }) => {
-      return children(allContentfulLocation.edges)
-    }}
+    render={({ allContentfulLocation }) =>
+      children(allContentfulLocation.edges)
+    }
   />
 )
 

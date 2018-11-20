@@ -1,6 +1,5 @@
 import remcalc from 'remcalc'
-// eslint-disable-next-line
-import styled, { withComponent } from 'styled-components'
+import styled from 'styled-components'
 
 export const Checkbox = styled.input`
   appearance: none;
