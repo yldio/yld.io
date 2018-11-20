@@ -21,7 +21,7 @@ const Blog = () => (
       <Posts>
         {posts => (
           <ul>
-            {posts.splice(0, 3).map(({ node }) => (
+            {posts.slice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
                 <H5 bold><a href={`https://medium.com/yld-engineering-blog/${node.uniqueSlug}`}>{node.title}</a></H5>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}

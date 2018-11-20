@@ -34,7 +34,7 @@ const Events = ({ events }) => (
       <ul>
         {events
           .filter(n => !n.node.homepageFeatured)
-          .splice(0, 3)
+          .slice(0, 3)
           .map(({ node }) => (
             <Li key={`${node.id}`}>
               <H5 bold>
@@ -101,7 +101,7 @@ const Events = ({ events }) => (
         <ul>
           {events
             .filter(n => !n.node.homepageFeatured)
-            .splice(0, 3)
+            .slice(0, 3)
             .map(({ node }) => (
               <Li key={`${node.id}`}>
                 <H5 bold>
