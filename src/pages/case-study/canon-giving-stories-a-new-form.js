@@ -9,13 +9,13 @@ import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
-import landscape from './assets/at_the_heart_of_a_story.svg'
-import travel from './assets/beyond_photography.png'
+import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
+import Image from '../../components/Common/Image'
 
 const makeText = content => content.split('\n').filter(c => c.length)
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site }
+  data: { allContentfulGenericCaseStudy: content, site, travel }
 }) => {
   const caseStudy = content.edges[0].node
   return (
@@ -91,9 +91,12 @@ const IndexPage = ({
         <Margin bottom={2} />
         <Row>
           <Col xs={12} sm={12} md={8} mdOffset={2}>
-            <Flex justifyCenter alignCenter>
-              <img src={travel} alt="Image of a travel itinerary" />
-            </Flex>
+            <div style={{ maxWidth: 540, margin: 'auto' }}>
+              <Image
+                image={travel.childImageSharp}
+                alt="Image of a travel itinerary"
+              />
+            </div>
           </Col>
         </Row>
       </Grid>
@@ -172,6 +175,14 @@ const IndexPage = ({
 
 export const query = graphql`
   {
+    travel: file(relativePath: { eq: "case-study/beyond_photography.png" }) {
+      publicURL
+      childImageSharp {
+        fluid(maxWidth: 540) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     site {
       siteMetadata {
         title
@@ -189,6 +200,9 @@ export const query = graphql`
               introSentence
             }
             posterImage {
+              fluid(maxWidth: 550) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
               title
               file {
                 url
@@ -199,6 +213,9 @@ export const query = graphql`
           slug
           title
           posterImage {
+            fluid(maxWidth: 550) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
             title
             file {
               url

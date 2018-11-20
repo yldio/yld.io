@@ -121,6 +121,9 @@ export const pageQuery = graphql`
             title
             slug
             posterImage {
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
               title
               file {
                 url
@@ -155,6 +158,9 @@ export const pageQuery = graphql`
             }
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
             title
             file {
               url

@@ -5,18 +5,21 @@ import { Row, Col } from 'react-styled-flexboxgrid'
 import { Margin, Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
+import Image from '../Common/Image'
 import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
   width: 100%;
+  max-width: ${remcalc(549)};
   height: auto;
+
   ${breakpoint('desktop')`
+    max-width: ${remcalc(549)};
     position: absolute;
     left: 51.5%;
     padding-right: 0px;
-
-    `}
+  `}
 `
 
 const WrapperRow = styled(Row)`
@@ -36,12 +39,6 @@ const SubHeading = styled(Paragraph)`
   opacity: 0.7;
 `
 
-const Img = styled.img`
-  width: 100%;
-  ${breakpoint('tablet')`
-  max-width: ${remcalc(549)};
-`};
-`
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
@@ -66,9 +63,9 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
       {caseStudy.posterImage ? (
-        <Img
+        <Image
           alt={caseStudy.posterImage.title}
-          src={caseStudy.posterImage.file.url}
+          image={caseStudy.posterImage}
         />
       ) : null}
     </ImageWrapper>
@@ -81,7 +78,12 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
             ? caseStudy.introSentence
             : (caseStudy.introSentence || {}).introSentence}
       </P>
-      <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
+      <StyledLink
+        aria-label={`Learn more about ${caseStudy.title}`}
+        to={`/case-study/${caseStudy.slug}`}
+      >
+        Learn more
+      </StyledLink>
     </Col>
   </WrapperRow>
 )

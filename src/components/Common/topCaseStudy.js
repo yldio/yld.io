@@ -7,6 +7,7 @@ import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
 import { H1, H5, H6 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
+import Image from '../../components/Common/Image'
 
 const ImageWrapper = styled(Col)`
   max-height: ${remcalc(540)};
@@ -64,9 +65,9 @@ const CaseStudyTop = ({ caseStudy }) => (
     </Col>
     {caseStudy.posterImage && (
       <ImageWrapper sm={6} xs={12}>
-        <img
+        <Image
           alt={caseStudy.posterImage.title}
-          src={caseStudy.posterImage.file.url}
+          image={caseStudy.posterImage}
         />
       </ImageWrapper>
     )}

@@ -16,7 +16,6 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     overflow-x: hidden;
 
-
     * {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

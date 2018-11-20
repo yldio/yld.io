@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
 import { Graphic, How } from './elements'
+import Image from '../../Common/Image'
 import WorkStageAlternatives from './alternatives'
 
 const WorkStages = ({ title, workStages, image }) => (
@@ -10,7 +11,9 @@ const WorkStages = ({ title, workStages, image }) => (
       <Row style={{ position: 'relative' }}>
         <Col xs={12}>
           <Padding top={4} bottom={6}>
-            <Graphic src={`https://${image.file.url}`} alt={image.title} />
+            <Graphic>
+              <Image image={image} />
+            </Graphic>
             <Padding top={1} />
             <How reverse center noTop>
               {title}

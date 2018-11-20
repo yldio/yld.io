@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Row, Col } from 'react-styled-flexboxgrid'
-import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
+import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
 import { H2, H4, H6, Paragraph } from '../Typography'
@@ -36,7 +36,7 @@ const AnimatedLink = styled(Link)`
   }
 `
 
-const PosterImage = styled(Flex)`
+const PosterImage = styled.div`
   background: #${props => props.color};
 
   max-width: 100%;
@@ -44,6 +44,7 @@ const PosterImage = styled(Flex)`
   ${breakpoint('tablet')`
     height: 528px;
   `}
+
   ${breakpoint('desktop')`
     width: 475px;
     height: 473px;
@@ -90,16 +91,8 @@ const Specialty = ({ services }) => (
                 </Title>
               </div>
             </CardHeader>
-            <PosterImage
-              justifyCenter
-              alignCenter
-              color={service.caseStudies[0].posterColor}
-            >
-              <img
-                alt={service.caseStudies[0].posterImage.title}
-                src={service.caseStudies[0].posterImage.file.url}
-                style={{ maxHeight: '100%' }}
-              />
+            <PosterImage color={service.caseStudies[0].posterColor}>
+              <Image image={service.caseStudies[0].posterImage} />
             </PosterImage>
           </section>
         </AnimatedLink>

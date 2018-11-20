@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
+
 import StyledLink from '../../styledLink'
 import { Col } from 'react-styled-flexboxgrid'
 import { H2 } from '../../Typography'
@@ -10,13 +11,14 @@ export const Item = styled.li`
   padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
   opacity: 0.5;
-
 `
 
-export const Graphic = styled.img`
+export const Graphic = styled.div`
   position: absolute;
   top: ${remcalc(-72)};
   height: ${remcalc(331)};
+  width: ${remcalc(680)};
+  max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
 `
@@ -53,7 +55,7 @@ export const MasonryContainer = styled.div`
     height: ${props =>
     props.length % 2 !== 0 // when there's an odd number of elements we have to manually set the height because css
       ? remcalc(Math.ceil(props.length / 2) * 500)
-      : 'auto'} 
+      : 'auto'}
     padding-bottom: ${remcalc(72)}
   `}
 `
@@ -72,7 +74,7 @@ export const WorkStageGridElement = styled(Col)`
 `
 
 export const WorkStageContentList = styled.div`
-  list-style-position:inside;
+  list-style-position: inside;
   ${breakpoint('desktop')`
     width: 60%
   `}
