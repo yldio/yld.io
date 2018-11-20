@@ -15,7 +15,9 @@ const BlogTitle = styled(H2)`
 const Blog = () => (
   <Row>
     <Col md={6} xs={12}>
-      <BlogTitle>From the blog</BlogTitle>
+      <BlogTitle>
+        <a href="https://medium.com/yld-engineering-blog/">From the blog</a>
+      </BlogTitle>
     </Col>
     <Col md={4} xs={12}>
       <Posts>
@@ -23,7 +25,15 @@ const Blog = () => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H5 bold><a href={`https://medium.com/yld-engineering-blog/${node.uniqueSlug}`}>{node.title}</a></H5>
+                <H5 bold>
+                  <a
+                    href={`https://medium.com/yld-engineering-blog/${
+                      node.uniqueSlug
+                    }`}
+                  >
+                    {node.title}
+                  </a>
+                </H5>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}
