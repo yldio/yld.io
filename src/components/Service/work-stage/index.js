@@ -10,7 +10,7 @@ const WorkStages = ({ title, workStages, image }) => (
       <Row style={{ position: 'relative' }}>
         <Col xs={12}>
           <Padding top={4} bottom={6}>
-            <Graphic src={`https://${image}`} />
+            <Graphic src={`https://${image.file.url}`} alt={image.title} />
             <Padding top={1} />
             <How reverse center noTop>
               {title}

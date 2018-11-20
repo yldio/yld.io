@@ -108,7 +108,7 @@ const IndexPage = ({
         <Grid className="grid">
           <Row>
             <Col xs={12}>
-              <img src={meaning} alt="Logo Iterations" />
+              <img src={meaning} alt="Logo Meaning" />
             </Col>
           </Row>
         </Grid>
@@ -134,7 +134,7 @@ const IndexPage = ({
         <Grid className="grid">
           <Row>
             <Col xs={12}>
-              <img src={logoImage} alt="Logo Iterations" />
+              <img src={logoImage} alt="Stackable Logo" />
             </Col>
           </Row>
         </Grid>
@@ -167,6 +167,7 @@ const IndexPage = ({
           >
             <img
               src={type1}
+              alt="Example of type"
               style={{
                 maxWidth: '90%',
                 maxHeight: 276
@@ -182,6 +183,7 @@ const IndexPage = ({
           >
             <img
               src={type2}
+              alt="Example of type"
               style={{
                 maxWidth: '90%',
                 maxHeight: 270
@@ -228,10 +230,10 @@ const IndexPage = ({
             <Row>
               <Col xs={12}>
                 <NoMobile>
-                  <img src={iconsDesktop} alt="icons" />
+                  <img src={iconsDesktop} alt="desktop icons" />
                 </NoMobile>
                 <NoDesktop>
-                  <img src={iconsMobile} alt="icons" />
+                  <img src={iconsMobile} alt="mobile icons" />
                 </NoDesktop>
               </Col>
             </Row>
@@ -282,7 +284,7 @@ const IndexPage = ({
             <Margin top={3}>
               <Row>
                 <Col xs={12}>
-                  <img src={layout} alt="layout" />
+                  <img src={layout} alt="stackable layout" />
                 </Col>
               </Row>
             </Margin>
@@ -303,7 +305,7 @@ const IndexPage = ({
               ))}
             </Col>
             <Col xs={12} sm={12} md={6}>
-              <img src={mockup} alt="mockup" />
+              <img src={mockup} alt="stackable mockup" />
             </Col>
           </Row>
         </Grid>

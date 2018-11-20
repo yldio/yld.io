@@ -54,7 +54,7 @@ const Service = ({ data }) => {
           <WorkStages
             title={service.workStagesTitle}
             workStages={service.workStages}
-            image={service.graphic.file.url}
+            image={service.graphic}
           />
         </Padding>
       </GrayBackground>
@@ -145,6 +145,7 @@ export const pageQuery = graphql`
             mainPageIntroSentence
           }
           graphic {
+            title
             file {
               url
             }
@@ -154,6 +155,7 @@ export const pageQuery = graphql`
             slug
             introSentence
             posterImage {
+              title
               file {
                 url
               }
@@ -167,6 +169,7 @@ export const pageQuery = graphql`
               introSentence
               posterColor
               posterImage {
+                title
                 file {
                   url
                 }
@@ -180,6 +183,7 @@ export const pageQuery = graphql`
               }
               posterColor
               posterImage {
+                title
                 file {
                   url
                 }
@@ -188,6 +192,7 @@ export const pageQuery = graphql`
           }
           workStagesTitle
           workStagesImage {
+            title
             file {
               url
               fileName
@@ -208,26 +213,31 @@ export const pageQuery = graphql`
               sectionTitle4
               sectionTitle5
               sectionIcon1 {
+                title
                 file {
                   url
                 }
               }
               sectionIcon2 {
+                title
                 file {
                   url
                 }
               }
               sectionIcon3 {
+                title
                 file {
                   url
                 }
               }
               sectionIcon4 {
+                title
                 file {
                   url
                 }
               }
               sectionIcon5 {
+                title
                 file {
                   url
                 }
@@ -256,26 +266,31 @@ export const pageQuery = graphql`
             sectionTitle4
             sectionTitle5
             sectionIcon1 {
+              title
               file {
                 url
               }
             }
             sectionIcon2 {
+              title
               file {
                 url
               }
             }
             sectionIcon3 {
+              title
               file {
                 url
               }
             }
             sectionIcon4 {
+              title
               file {
                 url
               }
             }
             sectionIcon5 {
+              title
               file {
                 url
               }

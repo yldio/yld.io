@@ -41,7 +41,7 @@ class Header extends Component {
                           tab-index="0"
                           height="48"
                           src={logo}
-                          alt="yld"
+                          alt="yld logo"
                         />
                       ) : null}
 
@@ -54,7 +54,7 @@ class Header extends Component {
                             tab-index="0"
                             height="48"
                             src={logoEng}
-                            alt="yld"
+                            alt="yld engineering logo"
                           />
                         </Fragment>
                       ) : null}
@@ -67,7 +67,7 @@ class Header extends Component {
                             tab-index="0"
                             height="48"
                             src={logoDesign}
-                            alt="yld"
+                            alt="yld design logo"
                           />
                         </Fragment>
                       ) : null}

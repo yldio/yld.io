@@ -53,7 +53,7 @@ const IndexPage = ({
               <Col xs={12} sm={12} md={8} mdOffset={2}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
-                    <img src={landscape} alt="landscape" />
+                    <img src={landscape} alt="image representing travel" />
                   </Flex>
                 </Margin>
               </Col>
@@ -92,7 +92,7 @@ const IndexPage = ({
         <Row>
           <Col xs={12} sm={12} md={8} mdOffset={2}>
             <Flex justifyCenter alignCenter>
-              <img src={travel} alt="Beyond photography" />
+              <img src={travel} alt="Image of a travel itinerary" />
             </Flex>
           </Col>
         </Row>
@@ -151,22 +151,23 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
-      <div style={{ backgroundColor: 'white' }}>
-        <Grid className="grid">
-          <Row>
-            <Col xs={12} sm={6}>
-              <Padding top={4} bottom={2}>
-                <Paragraph>More of our work</Paragraph>
-              </Padding>
-            </Col>
-          </Row>
-          {caseStudy.relatedCaseStudy ? (
+      {caseStudy.relatedCaseStudy ? (
+        <div style={{ backgroundColor: 'white' }}>
+          <Grid className="grid">
+            <Row>
+              <Col xs={12} sm={6}>
+                <Padding top={4} bottom={2}>
+                  <Paragraph>More of our work</Paragraph>
+                </Padding>
+              </Col>
+            </Row>
+
             <Padding bottom={5}>
               <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
             </Padding>
-          ) : null}
-        </Grid>
-      </div>
+          </Grid>
+        </div>
+      ) : null}
     </Layout>
   )
 }
@@ -190,6 +191,7 @@ export const query = graphql`
               introSentence
             }
             posterImage {
+              title
               file {
                 url
               }
@@ -199,6 +201,7 @@ export const query = graphql`
           slug
           title
           posterImage {
+            title
             file {
               url
             }

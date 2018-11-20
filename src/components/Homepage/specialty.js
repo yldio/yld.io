@@ -96,7 +96,7 @@ const Specialty = ({ services }) => (
               color={service.caseStudies[0].posterColor}
             >
               <img
-                alt={service.caseStudies[0].title}
+                alt={service.caseStudies[0].posterImage.title}
                 src={service.caseStudies[0].posterImage.file.url}
                 style={{ maxHeight: '100%' }}
               />

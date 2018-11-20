@@ -12,7 +12,7 @@ const Companies = ({ companies }) => (
           key={company.id}
           style={{ maxHeight: 108, display: 'flex', alignItems: 'center' }}
         >
-          <img src={company.file.url} alt={company.file.fileName} />
+          <img src={company.file.url} alt={company.title} />
         </Col>
       ))}
     </Row>

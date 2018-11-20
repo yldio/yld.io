@@ -92,7 +92,7 @@ const Events = ({ events }) => (
                 Get tickets
               </StyledLink>
             </EventWrapper>
-            <img alt={node.eventTitle} src={node.posterImage.file.url} />
+            <img alt={node.posterImage.title} src={node.posterImage.file.url} />
           </Flex>
         ))}
     </Col>

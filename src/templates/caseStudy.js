@@ -123,6 +123,7 @@ export const pageQuery = graphql`
             title
             slug
             posterImage {
+              title
               file {
                 url
               }
@@ -156,6 +157,7 @@ export const pageQuery = graphql`
             }
           }
           posterImage {
+            title
             file {
               url
             }
