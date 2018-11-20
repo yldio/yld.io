@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
-  // const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
+  const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
 
   _.each(result.data.allContentfulCaseStudy.edges, edge => {
@@ -56,17 +56,17 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  // _.each(result.data.allContentfulSpeciality.edges, edge => {
-  //   if (edge.node.body && edge.node.slug) {
-  //     createPage({
-  //       path: `/speciality/${edge.node.slug}/`,
-  //       component: slash(specialityTemplate),
-  //       context: {
-  //         id: edge.node.id
-  //       }
-  //     })
-  //   }
-  // })
+  _.each(result.data.allContentfulSpeciality.edges, edge => {
+    if (edge.node.slug) {
+      createPage({
+        path: `/speciality/${edge.node.slug}/`,
+        component: slash(specialityTemplate),
+        context: {
+          id: edge.node.id
+        }
+      })
+    }
+  })
 
   _.each(result.data.allContentfulService.edges, edge => {
     if (edge.node.slug) {
