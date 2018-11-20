@@ -50,6 +50,72 @@ export const pageQuery = graphql`
           title
           seoTitle
           seoMetaDescription
+          seoText{
+            nodeType
+            content{
+              nodeType
+              content{
+                nodeType
+                value
+              }
+            }
+          }
+          introTextTitle1
+          introTextBody1{
+            nodeType
+            content{
+              nodeType
+              content{
+                nodeType
+                value
+              }
+            }
+          }
+          introTextTitle2
+          introTextBody2{
+            nodeType
+            content{
+              nodeType
+              content{
+                nodeType
+                value
+              }
+            }
+          }
+          introTextTitle3
+          introTextBody3{
+            nodeType
+            content{
+              nodeType
+              content{
+                nodeType
+                value
+              }
+            }
+          }
+          relatedProjects{
+          ... on ContentfulCaseStudy {
+            title
+            slug
+            posterColor
+            posterImage {
+              title
+              file {
+                url
+              }
+            }
+          }
+        }
+          trainingIntroText{
+            nodeType
+            content{
+              nodeType
+              content{
+                nodeType
+                value
+              }
+            }
+          }
         }
       }
     }
