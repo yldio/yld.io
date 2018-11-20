@@ -46,3 +46,9 @@ jobs:
       - run:
           name: Lighthouse
           command: npm run lh
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - lighthouse
