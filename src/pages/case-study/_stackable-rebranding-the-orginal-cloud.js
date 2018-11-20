@@ -45,7 +45,7 @@ const Type1Wrapper = styled.div`
 
 const Type2Wrapper = styled.div`
   ${wrapperStyles};
-  padding-light: ${remcalc(60)};
+  padding-left: ${remcalc(60)};
   background: ${props => props.theme.colors.text};
 `
 
@@ -63,7 +63,7 @@ const Code = styled.section`
   align-items: center;
   justify-content: center;
   background: ${props => props.theme.colors.text};
-  font-family: 'Stackable Mono';
+  font-family: 'Stackable Mono', monospace;
 `
 
 const Type1 = styled.img`

@@ -25,7 +25,7 @@ const GradientGrid = styled(Grid)`
 `
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site, travel },
+  data: { allContentfulGenericCaseStudy: content, site, travel }
 }) => {
   const caseStudy = content.edges[0].node
   return (

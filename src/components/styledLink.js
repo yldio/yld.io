@@ -16,6 +16,22 @@ export const StyledLinkCss = css`
   display: inline-block;
   transition: all 200ms ease-out;
 
+  &:after {
+    content: '';
+    display: block;
+    height: ${remcalc(2)};
+    width: 100%;
+    margin-top: ${remcalc(6)};
+    background: ${props => props.theme.colors.text};
+    box-sizing: border-box;
+    ${is('noAfter')`
+      content: none;
+    `}
+    ${is('reverse')`
+      background: ${props => props.theme.colors.white};
+  `};
+  }
+
   &:hover {
     background: ${props => props.theme.colors.greyBg};
     color: ${props => props.theme.colors.text};
@@ -61,22 +77,6 @@ export const StyledLinkCss = css`
       }
     }
   `};
-
-  &:after {
-    content: '';
-    display: block;
-    height: ${remcalc(2)};
-    width: 100%;
-    margin-top: ${remcalc(6)};
-    background: ${props => props.theme.colors.text};
-    box-sizing: border-box;
-    ${is('noAfter')`
-      content: none;
-    `}
-    ${is('reverse')`
-      background: ${props => props.theme.colors.white};
-  `};
-  }
 `
 
 const Anchor = styled(Link)`

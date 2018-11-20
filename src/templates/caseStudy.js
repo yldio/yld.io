@@ -27,7 +27,12 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         title={`${site.siteMetadata.title}  ${
           caseStudy.title ? '- ' + caseStudy.title : ''
         } ${caseStudy.seoTitle ? '- ' + caseStudy.seoTitle : ''} `}
-        meta={[{ name: 'description', content: caseStudy.seoMetaDescription }]}
+        meta={[
+          {
+            name: 'description',
+            content: caseStudy.seoMetaDescription
+          }
+        ]}
       >
         <html lang="en" />
       </Helmet>
@@ -56,7 +61,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
                     key={i}
                     className="video-container"
                     dangerouslySetInnerHTML={{
-                      __html: `<iframe width="844" height="480" src="${text}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+                      __html: `<iframe width="844" height="480" src="${text}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                     }}
                   />
                 ))}

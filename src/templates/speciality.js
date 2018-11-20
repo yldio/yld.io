@@ -14,7 +14,12 @@ const Specialty = ({ data }) => {
         title={`${site.siteMetadata.title}  ${
           specialty.title ? '- ' + specialty.title : ''
         } ${specialty.seoTitle ? '- ' + specialty.seoTitle : ''} `}
-        meta={[{ name: 'description', content: specialty.seoMetaDescription }]}
+        meta={[
+          {
+            name: 'description',
+            content: specialty.seoMetaDescription
+          }
+        ]}
       >
         <html lang="en" />
       </Helmet>

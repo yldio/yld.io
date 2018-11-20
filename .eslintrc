@@ -1,8 +1,22 @@
 {
   "parser": "babel-eslint",
-  "extends": ["standard", "plugin:react/recommended"],
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "space-before-function-paren": 0,
+    "indent": 0
   },
-  "globals": { "fetch": true, "jest": true, "test": true, "expect": true }
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.0"
+    }
+  }
 }
