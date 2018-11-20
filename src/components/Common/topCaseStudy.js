@@ -64,7 +64,10 @@ const CaseStudyTop = ({ caseStudy }) => (
     </Col>
     {caseStudy.posterImage && (
       <ImageWrapper sm={6} xs={12}>
-        <img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+        <img
+          alt={caseStudy.posterImage.title}
+          src={caseStudy.posterImage.file.url}
+        />
       </ImageWrapper>
     )}
     <Col xs={12} sm={false}>

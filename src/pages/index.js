@@ -92,6 +92,7 @@ export const query = graphql`
         title
         slug
         posterImage {
+          title
           file {
             url
           }
@@ -124,6 +125,7 @@ export const query = graphql`
             slug
             posterColor
             posterImage {
+              title
               file {
                 url
               }
@@ -134,6 +136,7 @@ export const query = graphql`
             slug
             posterColor
             posterImage {
+              title
               file {
                 url
               }
@@ -154,6 +157,7 @@ export const query = graphql`
       }
       companies {
         id
+        title
         file {
           url
           fileName
@@ -165,6 +169,7 @@ export const query = graphql`
         node {
           color
           posterImage {
+            title
             file {
               url
             }

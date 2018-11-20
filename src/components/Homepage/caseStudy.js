@@ -9,13 +9,13 @@ import { H2, Paragraph } from '../Typography'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
-  width:100%;
+  width: 100%;
   height: auto;
   ${breakpoint('desktop')`
     position: absolute;
     left: 51.5%;
     padding-right: 0px;
-    
+
     `}
 `
 
@@ -45,13 +45,13 @@ const Img = styled.img`
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
     <Col sm={12} xs={12} md={false}>
-      <SubHeading>{ subHeading }</SubHeading>
+      <SubHeading>{subHeading}</SubHeading>
       <Padding bottom={{ phone: 0, tablet: 3, desktop: 1 }}>
         <H2 noTop>{caseStudy.title}</H2>
       </Padding>
     </Col>
     <Col xs={false} sm={false} md={6}>
-      <SubHeading>{ subHeading }</SubHeading>
+      <SubHeading>{subHeading}</SubHeading>
       <Margin bottom={1}>
         <H2 noTop>{caseStudy.title}</H2>
       </Margin>
@@ -66,7 +66,10 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
       {caseStudy.posterImage ? (
-        <Img alt={caseStudy.title} src={caseStudy.posterImage.file.url} />
+        <Img
+          alt={caseStudy.posterImage.title}
+          src={caseStudy.posterImage.file.url}
+        />
       ) : null}
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>

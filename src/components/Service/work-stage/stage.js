@@ -15,7 +15,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
           workStage[`sectionBody${index + 1}`][`sectionBody${index + 1}`]
       }),
       ...(workStage[`sectionIcon${index + 1}`] && {
-        sectionIcon: workStage[`sectionIcon${index + 1}`].file.url
+        sectionIcon: workStage[`sectionIcon${index + 1}`]
       })
     }))
     .filter(({ sectionTitle }) => sectionTitle)
@@ -55,7 +55,10 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                     key={index}
                   >
                     <Padding bottom={1.5}>
-                      <img src={`https://${sectionIcon}`} />
+                      <img
+                        src={`https://${sectionIcon.file.url}`}
+                        alt={sectionIcon.title}
+                      />
                     </Padding>
 
                     <WorkStageContent
