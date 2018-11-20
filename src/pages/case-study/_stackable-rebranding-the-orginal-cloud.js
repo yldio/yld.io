@@ -192,26 +192,26 @@ const IndexPage = ({
           </div>
         </Flex>
       </GrayBackground>
-      <div style={{ backgroundColor: 'white' }}>
-        <Code>
-          <Grid className="grid">
-            <Row>
-              <Col xs={12}>
-                <Padding vertical={4}>
-                  {command1.split('/n').map((p, i) => (
+
+      <Code>
+        <Grid className="grid">
+          <Row>
+            <Col xs={12}>
+              <Padding vertical={4}>
+                {command1.split('/n').map((p, i) => (
+                  <Node key={i}>{p}</Node>
+                ))}
+                <Margin top={1}>
+                  {command2.split('/n').map((p, i) => (
                     <Node key={i}>{p}</Node>
                   ))}
-                  <Margin top={1}>
-                    {command2.split('/n').map((p, i) => (
-                      <Node key={i}>{p}</Node>
-                    ))}
-                  </Margin>
-                </Padding>
-              </Col>
-            </Row>
-          </Grid>
-        </Code>
-      </div>
+                </Margin>
+              </Padding>
+            </Col>
+          </Row>
+        </Grid>
+      </Code>
+
       <Grid className="grid">
         <Padding top={60} bottom={4}>
           <Row>

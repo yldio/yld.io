@@ -85,22 +85,20 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           <Padding bottom={5} />
         </Grid>
       </GrayBackgroud>
-      <div style={{ backgroundColor: 'white' }}>
-        <Grid className="grid">
-          <Row>
-            <Col xs={12}>
-              <Padding top={4} bottom={2}>
-                <Paragraph>More of our work</Paragraph>
-              </Padding>
-            </Col>
-          </Row>
-          {caseStudy.relatedCaseStudy ? (
-            <Padding bottom={5}>
-              <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+      <Grid className="grid">
+        <Row>
+          <Col xs={12}>
+            <Padding top={4} bottom={2}>
+              <Paragraph>More of our work</Paragraph>
             </Padding>
-          ) : null}
-        </Grid>
-      </div>
+          </Col>
+        </Row>
+        {caseStudy.relatedCaseStudy ? (
+          <Padding bottom={5}>
+            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+          </Padding>
+        ) : null}
+      </Grid>
     </Layout>
   )
 }
