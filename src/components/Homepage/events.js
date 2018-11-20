@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { H2, H5, H4, Paragraph } from '../Typography'
-import Flex from 'styled-flex-component'
+import Image from '../Common/Image'
 import Li from '../listItem'
 
 const EventTitle = styled(H4)`
@@ -61,14 +61,7 @@ const Events = ({ events }) => (
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
-          <Flex
-            key={node.id}
-            alignStart
-            justifyBetween
-            full
-            column
-            style={{ background: `#${node.color}` }}
-          >
+          <div key={node.id} style={{ background: `#${node.color}` }}>
             <EventWrapper>
               <Paragraph muted reverse noMargin>
                 Featured
@@ -92,8 +85,8 @@ const Events = ({ events }) => (
                 Get tickets
               </StyledLink>
             </EventWrapper>
-            <img alt={node.posterImage.title} src={node.posterImage.file.url} />
-          </Flex>
+            <Image image={node.posterImage} />
+          </div>
         ))}
     </Col>
     <Col md={false} sm={12} xs={12}>

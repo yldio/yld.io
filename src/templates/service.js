@@ -145,6 +145,9 @@ export const pageQuery = graphql`
             mainPageIntroSentence
           }
           graphic {
+            fluid(maxWidth: 680) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
             title
             file {
               url
@@ -156,6 +159,9 @@ export const pageQuery = graphql`
             introSentence
             posterImage {
               title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
               file {
                 url
               }
@@ -169,6 +175,9 @@ export const pageQuery = graphql`
               introSentence
               posterColor
               posterImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
                 title
                 file {
                   url
@@ -183,6 +192,9 @@ export const pageQuery = graphql`
               }
               posterColor
               posterImage {
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
                 title
                 file {
                   url
@@ -193,6 +205,9 @@ export const pageQuery = graphql`
           workStagesTitle
           workStagesImage {
             title
+            fluid(maxWidth: 680) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
             file {
               url
               fileName
