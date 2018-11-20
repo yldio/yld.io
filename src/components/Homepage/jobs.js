@@ -37,7 +37,7 @@ const JobsComponent = () => (
                 <H5 bold>{key}</H5>
 
                 <JobContainer>
-                  {jobs[key].splice(0, 3).map(job => (
+                  {jobs[key].slice(0, 3).map(job => (
                     <Li key={`${job.id}`}>
                       <a
                         rel="noopener noreferrer"
