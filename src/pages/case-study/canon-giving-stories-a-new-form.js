@@ -92,7 +92,6 @@ const IndexPage = ({
         <Row>
           <Col xs={12} sm={12} md={8} mdOffset={2}>
             <div style={{ maxWidth: 540, margin: 'auto' }}>
-              {console.log(travel.childImageSharp.fluid)}
               <Image
                 image={travel.childImageSharp}
                 alt="Image of a travel itinerary"
