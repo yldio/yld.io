@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Typography Large Body 1`] = `
+<h3
+  className="sc-bwzfXH dlysrk"
+>
+  Large Body
+</h3>
+`;
+
+exports[`Storyshots Typography Large title 1`] = `
+<h1
+  className="sc-bdVaJa doXIcO"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Small Title 1 1`] = `
+<h4
+  className="sc-htpNat DenZM"
+>
+  Small Title
+</h4>
+`;
+
+exports[`Storyshots Typography Small Title 2 1`] = `
+<h5
+  className="sc-bxivhb iSTkIm"
+>
+  Small Title
+</h5>
+`;
+
+exports[`Storyshots Typography Small Title 3 1`] = `
+<h6
+  className="sc-ifAKCX vqIOk"
+>
+  Small Title
+</h6>
+`;

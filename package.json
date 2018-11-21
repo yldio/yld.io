@@ -34,12 +34,6 @@
     "styled-reset": "1.6.0"
   },
   "license": "MIT",
-  "jest": {
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/.cache/"
-    ]
-  },
   "scripts": {
     "test": "run-p format lint",
     "serve": "gatsby serve",
@@ -57,18 +51,28 @@
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "4.0.8",
-    "@storybook/addon-links": "4.0.8",
-    "@storybook/addons": "4.0.8",
-    "@storybook/react": "4.0.8",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/plugin-syntax-async-generators": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "7.0.0",
+    "@babel/plugin-transform-regenerator": "7.0.0",
+    "@storybook/addon-actions": "4.0.4",
+    "@storybook/addon-links": "4.0.0",
+    "@storybook/addon-storyshots": "^4.0.7",
+    "@storybook/addons": "4.0.4",
+    "@storybook/react": "4.0.4",
     "apr": "2.0.2",
     "apr-intercept": "3.0.3",
     "apr-main": "4.0.3",
     "apr-map": "3.0.3",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "8.0.4",
+    "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "1.8.0",
     "chrome-launcher": "^0.10.5",
+    "babel-preset-gatsby": "^0.1.4",
     "contentful": "7.0.5",
     "contentful-management": "5.4.0",
     "dotenv": "6.1.0",
@@ -86,6 +90,7 @@
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
     "husky": "^1.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "lodash.find": "4.6.0",
@@ -97,7 +102,8 @@
     "stylelint": "^9.8.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.5.1"
+    "stylelint-processor-styled-components": "^1.5.1",
+    "react-test-renderer": "^16.6.3"
   },
   "husky": {
     "hooks": {
