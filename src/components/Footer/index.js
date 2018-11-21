@@ -2,12 +2,11 @@ import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
-import { H2, H5, Paragraph } from '../../components/Typography'
-import { FooterStyled, FollowUs, Node, Social, Office } from './elements.js'
+import { H2 } from '../../components/Typography'
+import { FooterStyled, FollowUs, Social, OfficeStyled } from './elements.js'
+import Office from './office'
 
 import social from './links'
-
-const addressItemProps = ['streetAddress', 'addressLocality']
 
 const Footer = () => {
   return (
@@ -26,46 +25,25 @@ const Footer = () => {
               </Margin>
             </Col>
           </Row>
-          <Office>
+          <OfficeStyled>
             <Locations>
               {data =>
                 data.map(location => {
                   const streetAddress = location.node.streetAddress.streetAddress.split(
                     '\n'
                   )
+
                   return (
-                    <Col key={location.node.id} xs={12} md={3}>
-                      <Margin bottom={1}>
-                        <span itemProp="name" style={{ display: 'none' }}>
-                          YLD
-                        </span>
-                        <H5 bold reverse>
-                          {location.node.name}
-                        </H5>
-                      </Margin>
-                      <Paragraph>
-                        <span>
-                          {streetAddress.map((address, i) => {
-                            return <Node key={address}>{address}</Node>
-                          })}
-                        </span>
-                        <Node itemProp="telephone">
-                          {location.node.telephone}
-                        </Node>
-                        {location.node.email ? (
-                          <Node>
-                            <a href={`mailto:${location.node.email}`}>
-                              {location.node.email}
-                            </a>
-                          </Node>
-                        ) : null}
-                      </Paragraph>
-                    </Col>
+                    <Office
+                      key={location.node.id}
+                      {...location.node}
+                      streetAddress={streetAddress}
+                    />
                   )
                 })
               }
             </Locations>
-          </Office>
+          </OfficeStyled>
         </Grid>
       </Padding>
       <FollowUs>

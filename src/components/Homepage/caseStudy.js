@@ -7,6 +7,7 @@ import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import { H2, Paragraph } from '../Typography'
+import getIntroSentence from '../../utils/getIntroSentence'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
@@ -52,32 +53,15 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       <Margin bottom={1}>
         <H2 noTop>{caseStudy.title}</H2>
       </Margin>
-      <P>
-        {caseStudy.intro
-          ? (caseStudy.intro || {}).introSentence
-          : typeof caseStudy.introSentence === 'string'
-            ? caseStudy.introSentence
-            : (caseStudy.introSentence || {}).introSentence}
-      </P>
+      <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
     <ImageWrapper xs={12} sm={12} md={6}>
-      {caseStudy.posterImage ? (
-        <Image
-          alt={caseStudy.posterImage.title}
-          image={caseStudy.posterImage}
-        />
-      ) : null}
+      <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
     <Col xs={12} sm={12} md={false}>
       <Margin top={2} />
-      <P>
-        {caseStudy.intro
-          ? (caseStudy.intro || {}).introSentence
-          : typeof caseStudy.introSentence === 'string'
-            ? caseStudy.introSentence
-            : (caseStudy.introSentence || {}).introSentence}
-      </P>
+      <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink
         aria-label={`Learn more about ${caseStudy.title}`}
         to={`/case-study/${caseStudy.slug}`}

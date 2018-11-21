@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-// eslint-disable-next-line no-unused-vars
-import styled, { withComponent, css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 

@@ -32,6 +32,6 @@ export const Social = styled.ul`
   }
 `
 
-export const Office = styled(Row)`
+export const OfficeStyled = styled(Row)`
   overflow: hidden;
 `

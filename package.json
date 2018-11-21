@@ -49,6 +49,7 @@
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda  -c webpack.functions.js  build src/functions",
     "build": "run-p build:**",
+    "test": "run-p lint format",
     "lint": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
   },

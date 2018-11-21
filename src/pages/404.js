@@ -3,8 +3,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Margin } from 'styled-components-spacing'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-// eslint-disable-next-line
-import styled, { withComponent } from 'styled-components'
+import styled from 'styled-components'
 import remcalc from 'remcalc'
 
 import { H1, Paragraph } from '../components/Typography'

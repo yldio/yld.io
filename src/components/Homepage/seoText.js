@@ -1,8 +1,14 @@
 import React from 'react'
 import { Row, Col } from 'react-styled-flexboxgrid'
-// eslint-disable-next-line
+import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H3 } from '../Typography'
+
+const Link = styled(StyledLink)`
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0;
+`
 
 const Text = H3.withComponent('h1')
 
@@ -15,17 +21,11 @@ const SEOText = ({ text }) => (
 
           if (content.nodeType === 'hyperlink') {
             return (
-              <StyledLink
-                key={content.data.uri}
-                style={{ marginBottom: 0, marginLeft: 0, padding: 0 }}
-                noAfter
-                to={`/${content.data.uri}`}
-              >
+              <Link key={content.data.uri} noAfter to={`/${content.data.uri}`}>
                 {content.content[0].value}
-              </StyledLink>
+              </Link>
             )
           }
-
           return ''
         })}
       </Text>
