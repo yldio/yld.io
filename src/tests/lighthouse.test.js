@@ -3,23 +3,22 @@ const serve = require('./createServer.js')
 jest.setTimeout(60000)
 
 const auditTest = (audits, name, type, number) => {
-  if (type === 'value') {
-    return expect(audits[name].rawValue).toBeTruthy()
+  switch (type) {
+    case 'value':
+      expect(audits[name].rawValue).toBeTruthy()
+      break
+    case 'smaller':
+      expect(audits[name].rawValue).toBeLessThanOrEqual(number)
+      break
+    case 'bigger':
+      expect(audits[name].rawValue).toBeGreaterThanOrEqual(number)
+      break
+    case 'size':
+      expect(audits[name].details.items.length).toBeLessThanOrEqual(number)
+      break
+    default:
+      expect(audits[name].details.items).toEqual([])
   }
-
-  if (type === 'smaller') {
-    return expect(audits[name].rawValue).toBeLessThanOrEqual(number)
-  }
-
-  if (type === 'bigger') {
-    return expect(audits[name].rawValue).toBeGreaterThanOrEqual(number)
-  }
-
-  if (type === 'size') {
-    return expect(audits[name].details.items.length).toBeLessThanOrEqual(number)
-  }
-
-  return expect(audits[name].details.items).toEqual([])
 }
 
 test('Mobile Homepage', () => {
