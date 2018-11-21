@@ -3,6 +3,11 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { H1, H2, H4, Paragraph } from '../components/Typography'
+import {
+  AnimatedLink,
+  CardHeader,
+  PosterImage,
+} from '../components/Common/animatedLink'
 import Layout from '../components/layout'
 
 const Specialty = ({ data }) => {
@@ -51,10 +56,80 @@ const Specialty = ({ data }) => {
         </Row>
       </Grid>
       <Grid className="grid">
-        <Col md={6} sm={12} xs={12}>
-          <H1>{specialty.title}</H1>
-          <H1 muted>related projects</H1>
-        </Col>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H1 noMargin>{specialty.title}</H1>
+            <H1 noMargin muted>
+              related projects
+            </H1>
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <AnimatedLink
+              to={`/case-study/${specialty.relatedProjects[1].slug}`}
+            >
+              <section
+                style={{
+                  background: `#${specialty.relatedProjects[1].posterColor}`,
+                }}
+              >
+                <CardHeader>
+                  <div>
+                    <Paragraph reverse muted>
+                      Case study
+                    </Paragraph>
+                    <H1 noMargin reverse>
+                      {specialty.relatedProjects[1].title}
+                    </H1>
+                  </div>
+                </CardHeader>
+                <PosterImage
+                  justifyCenter
+                  alignCenter
+                  color={specialty.relatedProjects[1].posterColor}
+                >
+                  <img
+                    alt={specialty.relatedProjects[1].posterImage.title}
+                    src={specialty.relatedProjects[1].posterImage.file.url}
+                    style={{ maxHeight: '100%' }}
+                  />
+                </PosterImage>
+              </section>
+            </AnimatedLink>
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <AnimatedLink
+              to={`/case-study/${specialty.relatedProjects[0].slug}`}
+            >
+              <section
+                style={{
+                  background: `#${specialty.relatedProjects[0].posterColor}`,
+                }}
+              >
+                <CardHeader>
+                  <div>
+                    <Paragraph reverse muted>
+                      Case study
+                    </Paragraph>
+                    <H1 noMargin reverse>
+                      {specialty.relatedProjects[0].title}
+                    </H1>
+                  </div>
+                </CardHeader>
+                <PosterImage
+                  justifyCenter
+                  alignCenter
+                  color={specialty.relatedProjects[0].posterColor}
+                >
+                  <img
+                    alt={specialty.relatedProjects[0].posterImage.title}
+                    src={specialty.relatedProjects[0].posterImage.file.url}
+                    style={{ maxHeight: '100%' }}
+                  />
+                </PosterImage>
+              </section>
+            </AnimatedLink>
+          </Col>
+        </Row>
       </Grid>
     </Layout>
   )
