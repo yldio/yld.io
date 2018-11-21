@@ -1,0 +1,2407 @@
+{
+    "is-on-https": {
+        "id": "is-on-https",
+        "title": "Does not use HTTPS",
+        "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/https).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "rawValue": false,
+        "displayValue": "6 insecure requests found",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "url",
+                    "itemType": "url",
+                    "text": "Insecure URL"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg"
+                },
+                {
+                    "url": "http://static.ads-twitter.com/uwt.js"
+                },
+                {
+                    "url": "http://rum-static.pingdom.net/pa-5bed88307e84eb001600049c.js"
+                },
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50"
+                },
+                {
+                    "url": "http://t.co/i/adsct?p_id=Twitter&p_user_id=0&txn_id=o0i7n&events=%5B%5B%22pageview%22%2Cnull%5D%5D&tw_sale_amount=0&tw_order_quantity=0&tw_iframe_status=0"
+                },
+                {
+                    "url": "http://rum-collector-2.pingdom.net/img/beacon.gif?id=5bed88307e84eb001600049c&sAW=412&sAH=732&bIW=412&bIH=732&pD=24&dPR=3&or=portrait-primary&nT=0&rC=0&nS=0&cS=1&cE=1&dLE=1&dLS=1&fS=1&hS=-1&rE=-1&rS=-1&reS=2&resS=10&resE=13&uEE=-1&uES=-1&dL=21&dI=265&dCLES=268&dCLEE=268&dC=1184&lES=1184&lEE=1196&s=nt&title=YLD%20-%20Consulting%20in%20software%20engineering%2C%20design%2C%20training%20and%20open%20source&path=http%3A%2F%2Flocalhost%3A8000%2F&ref=&sId=uwbiwqeu&sST=1542795212&sIS=1&rV=0&v=1.4.0"
+                }
+            ]
+        }
+    },
+    "viewport": {
+        "id": "viewport",
+        "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
+        "description": "Add a viewport meta tag to optimize your app for mobile screens. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "warnings": []
+    },
+    "first-contentful-paint": {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).",
+        "score": 0.56,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 3735,
+        "displayValue": "3.7 s"
+    },
+    "first-meaningful-paint": {
+        "id": "first-meaningful-paint",
+        "title": "First Meaningful Paint",
+        "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).",
+        "score": 0.53,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 3885,
+        "displayValue": "3.9 s"
+    },
+    "speed-index": {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index).",
+        "score": 0.71,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 4582.34360016791,
+        "displayValue": "4.6 s"
+    },
+    "estimated-input-latency": {
+        "id": "estimated-input-latency",
+        "title": "Estimated Input Latency",
+        "description": "The score above is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).",
+        "score": 0.02,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 240,
+        "displayValue": "240 ms"
+    },
+    "errors-in-console": {
+        "id": "errors-in-console",
+        "title": "No browser errors logged to the console",
+        "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns.",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": 0,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "time-to-first-byte": {
+        "id": "time-to-first-byte",
+        "title": "Server response times are low (TTFB)",
+        "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": 7.733999999999999,
+        "displayValue": "Root document took 10 ms",
+        "details": {
+            "type": "opportunity",
+            "overallSavingsMs": -592.266,
+            "headings": [],
+            "items": []
+        }
+    },
+    "first-cpu-idle": {
+        "id": "first-cpu-idle",
+        "title": "First CPU Idle",
+        "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-interactive).",
+        "score": 0.44,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 6978,
+        "displayValue": "7.0 s"
+    },
+    "interactive": {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "description": "Interactive marks the time at which the page is fully interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).",
+        "score": 0.45,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 7788,
+        "displayValue": "7.8 s"
+    },
+    "user-timings": {
+        "id": "user-timings",
+        "title": "User Timing marks and measures",
+        "description": "Consider instrumenting your app with the User Timing API to measure your app's real-world performance during key user experiences. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/user-timing).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "critical-request-chains": {
+        "id": "critical-request-chains",
+        "title": "Minimize Critical Requests Depth",
+        "description": "The Critical Request Chains below show you what resources are loaded with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true,
+        "displayValue": "",
+        "details": {
+            "type": "criticalrequestchain",
+            "chains": {
+                "C47C49B3DAE175C420E4C1C228893C31": {
+                    "request": {
+                        "url": "http://localhost:8000/",
+                        "startTime": 440058.52142,
+                        "endTime": 440058.533108,
+                        "responseReceivedTime": 440058.530242,
+                        "transferSize": 133440
+                    },
+                    "children": {}
+                }
+            },
+            "longestChain": {
+                "duration": 11.687999998684973,
+                "length": 1,
+                "transferSize": 133440
+            }
+        }
+    },
+    "redirects": {
+        "id": "redirects",
+        "title": "Avoid multiple page redirects",
+        "description": "Redirects introduce additional delays before the page can be loaded. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/redirects).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0
+        }
+    },
+    "image-aspect-ratio": {
+        "id": "image-aspect-ratio",
+        "title": "Displays images with correct aspect ratio",
+        "description": "Image display dimensions should match natural aspect ratio. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "warnings": [],
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "deprecations": {
+        "id": "deprecations",
+        "title": "Avoids deprecated APIs",
+        "description": "Deprecated APIs will eventually be removed from the browser. [Learn more](https://www.chromestatus.com/features#deprecated).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "displayValue": "",
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "mainthread-work-breakdown": {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work",
+        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this.",
+        "score": 0.61,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 3455.639999999999,
+        "displayValue": "3.5 s",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "groupLabel",
+                    "itemType": "text",
+                    "text": "Category"
+                },
+                {
+                    "key": "duration",
+                    "itemType": "ms",
+                    "granularity": 1,
+                    "text": "Time Spent"
+                }
+            ],
+            "items": [
+                {
+                    "group": "scriptEvaluation",
+                    "groupLabel": "Script Evaluation",
+                    "duration": 1518.879999999999
+                },
+                {
+                    "group": "other",
+                    "groupLabel": "Other",
+                    "duration": 812.9479999999998
+                },
+                {
+                    "group": "styleLayout",
+                    "groupLabel": "Style & Layout",
+                    "duration": 756.8280000000002
+                },
+                {
+                    "group": "paintCompositeRender",
+                    "groupLabel": "Rendering",
+                    "duration": 165.8
+                },
+                {
+                    "group": "scriptParseCompile",
+                    "groupLabel": "Script Parsing & Compilation",
+                    "duration": 100.53200000000001
+                },
+                {
+                    "group": "parseHTML",
+                    "groupLabel": "Parse HTML & CSS",
+                    "duration": 84.63200000000002
+                },
+                {
+                    "group": "garbageCollection",
+                    "groupLabel": "Garbage Collection",
+                    "duration": 16.02
+                }
+            ]
+        }
+    },
+    "bootup-time": {
+        "id": "bootup-time",
+        "title": "Reduce JavaScript execution time",
+        "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/bootup).",
+        "score": 0.89,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 1333.024,
+        "displayValue": "1.3 s",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "url",
+                    "itemType": "url",
+                    "text": "URL"
+                },
+                {
+                    "key": "total",
+                    "granularity": 1,
+                    "itemType": "ms",
+                    "text": "Total"
+                },
+                {
+                    "key": "scripting",
+                    "granularity": 1,
+                    "itemType": "ms",
+                    "text": "Script Evaluation"
+                },
+                {
+                    "key": "scriptParseCompile",
+                    "granularity": 1,
+                    "itemType": "ms",
+                    "text": "Script Parse"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://localhost:8000/app-7efbd30e882385fdd532.js",
+                    "total": 1144.128,
+                    "scripting": 1022.2519999999998,
+                    "scriptParseCompile": 59.116
+                },
+                {
+                    "url": "https://www.google-analytics.com/analytics.js",
+                    "total": 102.312,
+                    "scripting": 99.652,
+                    "scriptParseCompile": 2.66
+                },
+                {
+                    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TNNW9LP",
+                    "total": 86.58399999999997,
+                    "scripting": 82.67999999999998,
+                    "scriptParseCompile": 3.324
+                }
+            ],
+            "summary": {
+                "wastedMs": 1333.024
+            }
+        }
+    },
+    "uses-rel-preload": {
+        "id": "uses-rel-preload",
+        "title": "Preload key requests",
+        "description": "Consider using <link rel=preload> to prioritize fetching resources that are currently requested later in page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/preload).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0
+        }
+    },
+    "uses-rel-preconnect": {
+        "id": "uses-rel-preconnect",
+        "title": "Preconnect to required origins",
+        "description": "Consider adding preconnect or dns-prefetch resource hints to establish early connections to important third-party origins. [Learn more](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect).",
+        "score": 0.73,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 339.008,
+        "displayValue": "Potential savings of 340 ms",
+        "details": {
+            "type": "opportunity",
+            "headings": [
+                {
+                    "key": "url",
+                    "valueType": "url",
+                    "label": "URL"
+                },
+                {
+                    "key": "wastedMs",
+                    "valueType": "timespanMs",
+                    "label": "Potential Savings (ms)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "https://api1.websuccess-data.com",
+                    "wastedMs": 339.008
+                },
+                {
+                    "url": "https://fonts.googleapis.com",
+                    "wastedMs": 336.48199999999997
+                },
+                {
+                    "url": "https://7ixtke6ehh.execute-api.us-east-1.amazonaws.com",
+                    "wastedMs": 335.654
+                },
+                {
+                    "url": "https://www.linkedin.com",
+                    "wastedMs": 333.642
+                },
+                {
+                    "url": "https://analytics.twitter.com",
+                    "wastedMs": 319.764
+                },
+                {
+                    "url": "https://px.ads.linkedin.com",
+                    "wastedMs": 316.884
+                },
+                {
+                    "url": "https://snap.licdn.com",
+                    "wastedMs": 300
+                },
+                {
+                    "url": "https://www.google-analytics.com",
+                    "wastedMs": 251.19500000858307
+                },
+                {
+                    "url": "http://rum-collector-2.pingdom.net",
+                    "wastedMs": 178.55700000000002
+                },
+                {
+                    "url": "http://static.ads-twitter.com",
+                    "wastedMs": 170.8
+                },
+                {
+                    "url": "http://rum-static.pingdom.net",
+                    "wastedMs": 151.452
+                }
+            ],
+            "overallSavingsMs": 339.008
+        }
+    },
+    "font-display": {
+        "id": "font-display",
+        "title": "All text remains visible during webfont loads",
+        "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://developers.google.com/web/updates/2016/02/font-display).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "network-requests": {
+        "id": "network-requests",
+        "title": "Network Requests",
+        "description": "Lists the network requests that were made during page load.",
+        "score": null,
+        "scoreDisplayMode": "informative",
+        "rawValue": 58,
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "url",
+                    "itemType": "url",
+                    "text": "URL"
+                },
+                {
+                    "key": "startTime",
+                    "itemType": "ms",
+                    "granularity": 1,
+                    "text": "Start Time"
+                },
+                {
+                    "key": "endTime",
+                    "itemType": "ms",
+                    "granularity": 1,
+                    "text": "End Time"
+                },
+                {
+                    "key": "transferSize",
+                    "itemType": "bytes",
+                    "displayUnit": "kb",
+                    "granularity": 1,
+                    "text": "Transfer Size"
+                },
+                {
+                    "key": "statusCode",
+                    "itemType": "text",
+                    "text": "Status Code"
+                },
+                {
+                    "key": "mimeType",
+                    "itemType": "text",
+                    "text": "MIME Type"
+                },
+                {
+                    "key": "resourceType",
+                    "itemType": "text",
+                    "text": "Resource Type"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://localhost:8000/",
+                    "startTime": 0,
+                    "endTime": 11.687999998684973,
+                    "transferSize": 133440,
+                    "statusCode": 200,
+                    "mimeType": "text/html",
+                    "resourceType": "Document"
+                },
+                {
+                    "url": "http://localhost:8000/component---src-pages-index-js-b95dcc8b2b361094166a.js",
+                    "startTime": 36.44300001906231,
+                    "endTime": 45.97999999532476,
+                    "transferSize": 22174,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/app-7efbd30e882385fdd532.js",
+                    "startTime": 36.96699999272823,
+                    "endTime": 49.1770000080578,
+                    "transferSize": 175739,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/1-3337e834587ad279fd1d.js",
+                    "startTime": 37.3929999768734,
+                    "endTime": 50.6469999672845,
+                    "transferSize": 46940,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/10-0226f3a7db26ec810a61.js",
+                    "startTime": 37.62800002004951,
+                    "endTime": 51.11100000794977,
+                    "transferSize": 37618,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/0-dd5c570035702380176b.js",
+                    "startTime": 38.21299999253824,
+                    "endTime": 52.542999968864024,
+                    "transferSize": 96352,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/webpack-runtime-3722589d72cd21972bb1.js",
+                    "startTime": 38.440999982412905,
+                    "endTime": 52.96399997314438,
+                    "transferSize": 4344,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/static/d/200/path---index-6a9-rG9rZmBWiHbPLJeb4JLPFQCrjw.json",
+                    "startTime": 39.09699997166172,
+                    "endTime": 54.675000021234155,
+                    "transferSize": 36648,
+                    "statusCode": 200,
+                    "mimeType": "application/json",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg",
+                    "startTime": 41.96299996692687,
+                    "endTime": 124.91399998543784,
+                    "transferSize": 7069,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TNNW9LP",
+                    "startTime": 56.94500001845881,
+                    "endTime": 261.4060000050813,
+                    "transferSize": 25527,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 62.96399998245761,
+                    "endTime": 63.000000023748726,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 64.05500002438203,
+                    "endTime": 64.0889999922365,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 4",
+                    "startTime": 65.29900000896305,
+                    "endTime": 65.35300001269206,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 66.4579999865964,
+                    "endTime": 66.49399996967986,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='204' viewBox='0 0 4",
+                    "startTime": 67.52699997741729,
+                    "endTime": 67.56300001870841,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 68.5749999829568,
+                    "endTime": 68.61000001663342,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 69.673000019975,
+                    "endTime": 69.71599999815226,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 70.7350000157021,
+                    "endTime": 70.77200000640005,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 72.05399998929352,
+                    "endTime": 72.10799999302253,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 74.4890000205487,
+                    "endTime": 74.55099996877834,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='203' viewBox='0 0 4",
+                    "startTime": 76.29300002008677,
+                    "endTime": 76.34099997812882,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='399' viewBox='0 0 4",
+                    "startTime": 77.69499998539686,
+                    "endTime": 77.75699999183416,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='400' height='251' viewBox='0 0 4",
+                    "startTime": 79.14200000232086,
+                    "endTime": 79.1919999755919,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 80.47599997371435,
+                    "endTime": 80.51699999487028,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 82.07000000402331,
+                    "endTime": 82.12400000775233,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 84.14799999445677,
+                    "endTime": 84.20099999057129,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 85.97899996675551,
+                    "endTime": 86.035999993328,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyBhcmlhLWxhYmVsbGVkYnk9InNpbXBsZWljb25zLWluc3RhZ3JhbS1pY29uIiB3aWR0aD",
+                    "startTime": 87.32099999906495,
+                    "endTime": 87.38199999788776,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 90.40699998149648,
+                    "endTime": 90.4609999852255,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 93.14399998402223,
+                    "endTime": 93.21299998555332,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMD",
+                    "startTime": 259.85600001877174,
+                    "endTime": 259.91600000998005,
+                    "transferSize": 0,
+                    "statusCode": 200,
+                    "mimeType": "image/svg+xml",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "https://www.google-analytics.com/analytics.js",
+                    "startTime": 262.35400000587106,
+                    "endTime": 427.1500000031665,
+                    "transferSize": 17694,
+                    "statusCode": 200,
+                    "mimeType": "text/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "https://fonts.googleapis.com/css?family=PT+Mono|Roboto:400,500,700",
+                    "startTime": 424.14399998961017,
+                    "endTime": 547.917999967467,
+                    "transferSize": 1052,
+                    "statusCode": 200,
+                    "mimeType": "text/css",
+                    "resourceType": "XHR"
+                },
+                {
+                    "url": "http://localhost:8000/11-369923428968ba9dab03.js",
+                    "startTime": 481.8949999753386,
+                    "endTime": 485.60600000200793,
+                    "transferSize": 3036,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://static.ads-twitter.com/uwt.js",
+                    "startTime": 496.1829999811016,
+                    "endTime": 585.6730000232346,
+                    "transferSize": 2514,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://rum-static.pingdom.net/pa-5bed88307e84eb001600049c.js",
+                    "startTime": 498.8610000000335,
+                    "endTime": 597.829999984242,
+                    "transferSize": 3334,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+                    "startTime": 500.7270000060089,
+                    "endTime": 569.8010000050999,
+                    "transferSize": 4419,
+                    "statusCode": 200,
+                    "mimeType": "application/x-javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "https://api1.websuccess-data.com/tracker.js",
+                    "startTime": 501.93600001512095,
+                    "endTime": 656.4939999952912,
+                    "transferSize": 1464,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/static/logo_animated-2d8dca94f1374090f0bbb9757d1c1b7c.gif",
+                    "startTime": 615.3160000103526,
+                    "endTime": 619.5600000210106,
+                    "transferSize": 26987,
+                    "statusCode": 200,
+                    "mimeType": "image/gif",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "https://www.google-analytics.com/r/collect?v=1&_v=j72&a=666772124&t=pageview&_s=1&dl=http%3A%2F%2Flocalhost%2F&dp=%2F&ul=en-gb&de=UTF-8&dt=YLD%20-%20Consulting%20in%20software%20engineering%2C%20design%2C%20training%20and%20open%20source&sd=24-bit&sr=412x732&vp=412x732&je=0&_u=YEBAAEAB~&jid=1820921915&gjid=121541502&cid=345765037.1542795212&tid=UA...&_gid=1602239504.1542795212&_r=1&z=873441314",
+                    "startTime": 663.0529999965802,
+                    "endTime": 701.080999977421,
+                    "transferSize": 199,
+                    "statusCode": 200,
+                    "mimeType": "image/gif",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50",
+                    "startTime": 679.3959999922663,
+                    "endTime": 716.6439999709837,
+                    "transferSize": 30070,
+                    "statusCode": 200,
+                    "mimeType": "image/png",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "http://localhost:8000/static/d/200/path---index-6a9-rG9rZmBWiHbPLJeb4JLPFQCrjw.json",
+                    "startTime": 680.3770000115037,
+                    "endTime": 685.514000011608,
+                    "transferSize": 220,
+                    "statusCode": 304,
+                    "mimeType": "application/json",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://localhost:8000/component---src-pages-index-js-b95dcc8b2b361094166a.js",
+                    "startTime": 680.7580000022426,
+                    "endTime": 686.2030000193045,
+                    "transferSize": 220,
+                    "statusCode": 304,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://localhost:8000/static/d/337/path---case-study-future-proofing-trainline-cc-0-a90-AyHM9T7jZ1ZRHiQCNIyqHHy8yqc.json",
+                    "startTime": 681.9499999983236,
+                    "endTime": 687.4149999930523,
+                    "transferSize": 9852,
+                    "statusCode": 200,
+                    "mimeType": "application/json",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://localhost:8000/component---src-templates-case-study-js-5019889b48b13eb8f5ab.js",
+                    "startTime": 683.3829999668524,
+                    "endTime": 688.6539999977686,
+                    "transferSize": 19233,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "https://7ixtke6ehh.execute-api.us-east-1.amazonaws.com/prod",
+                    "startTime": 749.4709999882616,
+                    "endTime": 994.7999999858439,
+                    "transferSize": 420,
+                    "statusCode": 200,
+                    "mimeType": "application/json",
+                    "resourceType": "XHR"
+                },
+                {
+                    "url": "http://t.co/i/adsct?p_id=Twitter&p_user_id=0&txn_id=o0i7n&events=%5B%5B%22pageview%22%2Cnull%5D%5D&tw_sale_amount=0&tw_order_quantity=0&tw_iframe_status=0",
+                    "startTime": 772.0449999906123,
+                    "endTime": 972.726000007242,
+                    "transferSize": 347,
+                    "statusCode": 301,
+                    "mimeType": ""
+                },
+                {
+                    "url": "https://t.co/i/adsct?p_id=Twitter&p_user_id=0&txn_id=o0i7n&events=%5B%5B%22pageview%22%2Cnull%5D%5D&tw_sale_amount=0&tw_order_quantity=0&tw_iframe_status=0",
+                    "startTime": 972.9289999813773,
+                    "endTime": 1181.0289999702945,
+                    "transferSize": 486,
+                    "statusCode": 200,
+                    "mimeType": "image/gif",
+                    "resourceType": "Image"
+                },
+                {
+                    "url": "https://7ixtke6ehh.execute-api.us-east-1.amazonaws.com/prod",
+                    "startTime": 996.2309999973513,
+                    "endTime": 1671.211000008043,
+                    "transferSize": 623,
+                    "statusCode": 200,
+                    "mimeType": "application/json",
+                    "resourceType": "XHR"
+                },
+                {
+                    "url": "https://px.ads.linkedin.com/collect/?time=1542795212708&pid=559250&url=http%3A%2F%2Flocalhost%3A8000%2F&pageUrl=http%3A%2F%2Flocalhost%3A8000%2F&ref=&fmt=js&s=1",
+                    "startTime": 1190.06300001638,
+                    "endTime": 1404.873999999836,
+                    "transferSize": 551,
+                    "statusCode": 302,
+                    "mimeType": ""
+                },
+                {
+                    "url": "https://analytics.twitter.com/i/adsct?p_id=Twitter&p_user_id=0&txn_id=o0i7n&events=%5B%5B%22pageview%22%2Cnull%5D%5D&tw_sale_amount=0&tw_order_quantity=0&tw_iframe_status=0&tpx_cb=twttr.conversion.loadPixels&tw_document_href=http%3A%2F%2Flocalhost%3A8000%2F",
+                    "startTime": 1195.3849999699742,
+                    "endTime": 1432.9969999962486,
+                    "transferSize": 659,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                },
+                {
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon-32x32.png",
+                    "startTime": 1201.2049999902956,
+                    "endTime": 1207.2000000043772,
+                    "transferSize": 962,
+                    "statusCode": 200,
+                    "mimeType": "image/png",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon-16x16.png",
+                    "startTime": 1211.3740000058897,
+                    "endTime": 1214.336999983061,
+                    "transferSize": 626,
+                    "statusCode": 200,
+                    "mimeType": "image/png",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon.ico",
+                    "startTime": 1216.2029999890365,
+                    "endTime": 1218.7269999994896,
+                    "transferSize": 33571,
+                    "statusCode": 200,
+                    "mimeType": "image/x-icon",
+                    "resourceType": "Other"
+                },
+                {
+                    "url": "http://rum-collector-2.pingdom.net/img/beacon.gif?id=5bed88307e84eb001600049c&sAW=412&sAH=732&bIW=412&bIH=732&pD=24&dPR=3&or=portrait-primary&nT=0&rC=0&nS=0&cS=1&cE=1&dLE=1&dLS=1&fS=1&hS=-1&rE=-1&rS=-1&reS=2&resS=10&resE=13&uEE=-1&uES=-1&dL=21&dI=265&dCLES=268&dCLEE=268&dC=1184&lES=1184&lEE=1196&s=nt&title=YLD%20-%20Consulting%20in%20software%20engineering%2C%20design%2C%20training%20and%20open%20source&path=http%3A%2F%2Flocalhost%3A8000%2F&ref=&sId=uwbiwqeu&sST=1542795212&sIS=1&rV=0&v=1.4.0",
+                    "startTime": 1224.090999981854,
+                    "endTime": 1331.7430000170134,
+                    "transferSize": 254,
+                    "statusCode": 200,
+                    "mimeType": "text/plain",
+                    "resourceType": "XHR"
+                },
+                {
+                    "url": "https://px.ads.linkedin.com/collect/?time=1542795212708&pid=559250&url=http%3A%2F%2Flocalhost%3A8000%2F&pageUrl=http%3A%2F%2Flocalhost%3A8000%2F&ref=&fmt=js&s=1&cookiesTest=true",
+                    "startTime": 1405.166000011377,
+                    "endTime": 1673.8209999748506,
+                    "transferSize": 432,
+                    "statusCode": 302,
+                    "mimeType": ""
+                },
+                {
+                    "url": "https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%2F%3Ftime%3D1542795212708%26pid%3D559250%26url%3Dhttp%253A%252F%252Flocalhost%253A8000%252F%26pageUrl%3Dhttp%253A%252F%252Flocalhost%253A8000%252F%26ref%3D%26fmt%3Djs%26s%3D1%26cookiesTest%3Dtrue%26liSync%3Dtrue",
+                    "startTime": 1673.9850000012666,
+                    "endTime": 1944.5249999989755,
+                    "transferSize": 1408,
+                    "statusCode": 302,
+                    "mimeType": ""
+                },
+                {
+                    "url": "https://px.ads.linkedin.com/collect/?time=1542795212708&pid=559250&url=http%3A%2F%2Flocalhost%3A8000%2F&pageUrl=http%3A%2F%2Flocalhost%3A8000%2F&ref=&fmt=js&s=1&cookiesTest=true&liSync=true",
+                    "startTime": 1944.671000004746,
+                    "endTime": 2071.9040000112727,
+                    "transferSize": 111,
+                    "statusCode": 200,
+                    "mimeType": "application/javascript",
+                    "resourceType": "Script"
+                }
+            ]
+        }
+    },
+    "metrics": {
+        "id": "metrics",
+        "title": "Metrics",
+        "description": "Collects all available metrics.",
+        "score": null,
+        "scoreDisplayMode": "informative",
+        "rawValue": 7788,
+        "details": {
+            "items": [
+                {
+                    "firstContentfulPaint": 3735,
+                    "firstMeaningfulPaint": 3885,
+                    "firstCPUIdle": 6978,
+                    "interactive": 7788,
+                    "speedIndex": 4582,
+                    "estimatedInputLatency": 240,
+                    "observedNavigationStart": 0,
+                    "observedNavigationStartTs": 440058520434,
+                    "observedFirstPaint": 266,
+                    "observedFirstPaintTs": 440058786580,
+                    "observedFirstContentfulPaint": 266,
+                    "observedFirstContentfulPaintTs": 440058786584,
+                    "observedFirstMeaningfulPaint": 266,
+                    "observedFirstMeaningfulPaintTs": 440058786587,
+                    "observedTraceEnd": 2500,
+                    "observedTraceEndTs": 440061020104,
+                    "observedLoad": 1196,
+                    "observedLoadTs": 440059716516,
+                    "observedDomContentLoaded": 268,
+                    "observedDomContentLoadedTs": 440058787937,
+                    "observedFirstVisualChange": 271,
+                    "observedFirstVisualChangeTs": 440058791434,
+                    "observedLastVisualChange": 1771,
+                    "observedLastVisualChangeTs": 440060291434,
+                    "observedSpeedIndex": 1079,
+                    "observedSpeedIndexTs": 440059599145
+                }
+            ]
+        }
+    },
+    "accesskeys": {
+        "id": "accesskeys",
+        "title": "`[accesskey]` values are unique",
+        "description": "Access keys let users quickly focus a part of the page. For proper navigation, each access key must be unique. [Learn more](https://dequeuniversity.com/rules/axe/2.2/accesskeys?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "aria-allowed-attr": {
+        "id": "aria-allowed-attr",
+        "title": "`[aria-*]` attributes match their roles",
+        "description": "Each ARIA `role` supports a specific subset of `aria-*` attributes. Mismatching these invalidates the `aria-*` attributes. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-allowed-attr?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-required-attr": {
+        "id": "aria-required-attr",
+        "title": "`[role]`s have all required `[aria-*]` attributes",
+        "description": "Some ARIA roles have required attributes that describe the state of the element to screen readers. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-required-attr?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-required-children": {
+        "id": "aria-required-children",
+        "title": "Elements with `[role]` that require specific children `[role]`s, are present",
+        "description": "Some ARIA parent roles must contain specific child roles to perform their intended accessibility functions. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-required-children?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-required-parent": {
+        "id": "aria-required-parent",
+        "title": "`[role]`s are contained by their required parent element",
+        "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-required-parent?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-roles": {
+        "id": "aria-roles",
+        "title": "`[role]` values are valid",
+        "description": "ARIA roles must have valid values in order to perform their intended accessibility functions. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-roles?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-valid-attr-value": {
+        "id": "aria-valid-attr-value",
+        "title": "`[aria-*]` attributes have valid values",
+        "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid values. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr-value?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "aria-valid-attr": {
+        "id": "aria-valid-attr",
+        "title": "`[aria-*]` attributes are valid and not misspelled",
+        "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid names. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "audio-caption": {
+        "id": "audio-caption",
+        "title": "`<audio>` elements contain a `<track>` element with `[kind=\"captions\"]`",
+        "description": "Captions make audio elements usable for deaf or hearing-impaired users, providing critical information such as who is talking, what they're saying, and other non-speech information. [Learn more](https://dequeuniversity.com/rules/axe/2.2/audio-caption?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "button-name": {
+        "id": "button-name",
+        "title": "Buttons have an accessible name",
+        "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://dequeuniversity.com/rules/axe/2.2/button-name?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "bypass": {
+        "id": "bypass",
+        "title": "The page contains a heading, skip link, or landmark region",
+        "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more](https://dequeuniversity.com/rules/axe/2.2/bypass?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "color-contrast": {
+        "id": "color-contrast",
+        "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+        "description": "Low-contrast text is difficult or impossible for many users to read. [Learn more](https://dequeuniversity.com/rules/axe/2.2/color-contrast?application=lighthouse).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "rawValue": false,
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "node",
+                    "itemType": "node",
+                    "text": "Failing Elements"
+                }
+            ],
+            "items": [
+                {
+                    "node": {
+                        "type": "node",
+                        "selector": ".kUnqAh.sc-htpNat:nth-child(1) > .caseStudy__SubHeading-dyffn9-3.dIupAz",
+                        "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,0,DIV,0,DIV,0,DIV,0,DIV,0,P",
+                        "snippet": "<p class=\"caseStudy__SubHeading-dyffn9-3 dIupAz\">Featured work</p>",
+                        "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.66 (foreground color: #9e9e9e, background color: #ffffff, font size: 12.8pt, font weight: normal). Expected contrast ratio of 4.5:1"
+                    }
+                },
+                {
+                    "node": {
+                        "type": "node",
+                        "selector": "h1",
+                        "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,1,SECTION,0,DIV,1,DIV,0,DIV,0,DIV,0,H1",
+                        "snippet": "<h1 class=\"h3-sc-1yb0g2a-0-h1 jXqyMY\">",
+                        "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.65 (foreground color: #828282, background color: #f9f9f9, font size: 15.0pt, font weight: normal). Expected contrast ratio of 4.5:1"
+                    }
+                },
+                {
+                    "node": {
+                        "type": "node",
+                        "selector": ".kWQRhs.sc-htpNat:nth-child(1) > .specialty__AnimatedLink-sc-1ice2p8-2.grOGIx > section > .specialty__CardHeader-sc-1ice2p8-0.hLKWDo > div > .hoyhVC.p-hwc9dc-0[muted=\"\"]",
+                        "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,2,DIV,0,DIV,0,DIV,0,DIV,5,A,0,SECTION,0,HEADER,0,DIV,0,P",
+                        "snippet": "<p muted=\"\" class=\"p-hwc9dc-0 hoyhVC\">Case study</p>",
+                        "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #f0958d, background color: #e02a1b, font size: 12.8pt, font weight: normal). Expected contrast ratio of 4.5:1"
+                    }
+                }
+            ],
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ]
+        }
+    },
+    "definition-list": {
+        "id": "definition-list",
+        "title": "`<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>` or `<template>` elements.",
+        "description": "When definition lists are not properly marked up, screen readers may produce confusing or inaccurate output. [Learn more](https://dequeuniversity.com/rules/axe/2.2/definition-list?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "dlitem": {
+        "id": "dlitem",
+        "title": "Definition list items are wrapped in `<dl>` elements",
+        "description": "Definition list items (`<dt>` and `<dd>`) must be wrapped in a parent `<dl>` element to ensure that screen readers can properly announce them. [Learn more](https://dequeuniversity.com/rules/axe/2.2/dlitem?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "document-title": {
+        "id": "document-title",
+        "title": "Document has a `<title>` element",
+        "description": "The title gives screen reader users an overview of the page, and search engine users rely on it heavily to determine if a page is relevant to their search. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/title).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "duplicate-id": {
+        "id": "duplicate-id",
+        "title": "`[id]` attributes on the page are unique",
+        "description": "The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more](https://dequeuniversity.com/rules/axe/2.2/duplicate-id?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "frame-title": {
+        "id": "frame-title",
+        "title": "`<frame>` or `<iframe>` elements have a title",
+        "description": "Screen reader users rely on frame titles to describe the contents of frames. [Learn more](https://dequeuniversity.com/rules/axe/2.2/frame-title?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "html-has-lang": {
+        "id": "html-has-lang",
+        "title": "`<html>` element has a `[lang]` attribute",
+        "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more](https://dequeuniversity.com/rules/axe/2.2/html-lang?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "html-lang-valid": {
+        "id": "html-lang-valid",
+        "title": "`<html>` element has a valid value for its `[lang]` attribute",
+        "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more](https://dequeuniversity.com/rules/axe/2.2/valid-lang?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "image-alt": {
+        "id": "image-alt",
+        "title": "Image elements have `[alt]` attributes",
+        "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://dequeuniversity.com/rules/axe/2.2/image-alt?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "input-image-alt": {
+        "id": "input-image-alt",
+        "title": "`<input type=\"image\">` elements have `[alt]` text",
+        "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn more](https://dequeuniversity.com/rules/axe/2.2/input-image-alt?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "label": {
+        "id": "label",
+        "title": "Form elements have associated labels",
+        "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more](https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "layout-table": {
+        "id": "layout-table",
+        "title": "Presentational `<table>` elements avoid using `<th>`, `<caption>` or the `[summary]` attribute.",
+        "description": "A table being used for layout purposes should not include data elements, such as the th or caption elements or the summary attribute, because this can create a confusing experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/layout-table?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "link-name": {
+        "id": "link-name",
+        "title": "Links have a discernible name",
+        "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "list": {
+        "id": "list",
+        "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
+        "description": "Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. [Learn more](https://dequeuniversity.com/rules/axe/2.2/list?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "listitem": {
+        "id": "listitem",
+        "title": "List items (`<li>`) are contained within `<ul>` or `<ol>` parent elements",
+        "description": "Screen readers require list items (`<li>`) to be contained within a parent `<ul>` or `<ol>` to be announced properly. [Learn more](https://dequeuniversity.com/rules/axe/2.2/listitem?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "meta-refresh": {
+        "id": "meta-refresh",
+        "title": "The document does not use `<meta http-equiv=\"refresh\">`",
+        "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more](https://dequeuniversity.com/rules/axe/2.2/meta-refresh?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "meta-viewport": {
+        "id": "meta-viewport",
+        "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
+        "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more](https://dequeuniversity.com/rules/axe/2.2/meta-viewport?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "object-alt": {
+        "id": "object-alt",
+        "title": "`<object>` elements have `[alt]` text",
+        "description": "Screen readers cannot translate non-text content. Adding alt text to `<object>` elements helps screen readers convey meaning to users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/object-alt?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "tabindex": {
+        "id": "tabindex",
+        "title": "No element has a `[tabindex]` value greater than 0",
+        "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more](https://dequeuniversity.com/rules/axe/2.2/tabindex?application=lighthouse).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "td-headers-attr": {
+        "id": "td-headers-attr",
+        "title": "Cells in a `<table>` element that use the `[headers]` attribute only refer to other cells of that same table.",
+        "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/td-headers-attr?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "th-has-data-cells": {
+        "id": "th-has-data-cells",
+        "title": "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` have data cells they describe.",
+        "description": "Screen readers have features to make navigating tables easier. Ensuring table headers always refer to some set of cells may improve the experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/th-has-data-cells?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "valid-lang": {
+        "id": "valid-lang",
+        "title": "`[lang]` attributes have a valid value",
+        "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more](https://dequeuniversity.com/rules/axe/2.2/valid-lang?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "video-caption": {
+        "id": "video-caption",
+        "title": "`<video>` elements contain a `<track>` element with `[kind=\"captions\"]`",
+        "description": "When a video provides a caption it is easier for deaf and hearing impaired users to access its information. [Learn more](https://dequeuniversity.com/rules/axe/2.2/video-caption?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "video-description": {
+        "id": "video-description",
+        "title": "`<video>` elements contain a `<track>` element with `[kind=\"description\"]`",
+        "description": "Audio descriptions provide relevant information for videos that dialogue cannot, such as facial expressions and scenes. [Learn more](https://dequeuniversity.com/rules/axe/2.2/video-description?application=lighthouse).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "custom-controls-labels": {
+        "id": "custom-controls-labels",
+        "title": "Custom controls have associated labels",
+        "description": "Custom interactive controls have associated labels, provided by aria-label or aria-labelledby. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "custom-controls-roles": {
+        "id": "custom-controls-roles",
+        "title": "Custom controls have ARIA roles",
+        "description": "Custom interactive controls have appropriate ARIA roles. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "focus-traps": {
+        "id": "focus-traps",
+        "title": "User focus is not accidentally trapped in a region",
+        "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "focusable-controls": {
+        "id": "focusable-controls",
+        "title": "Interactive controls are keyboard focusable",
+        "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "heading-levels": {
+        "id": "heading-levels",
+        "title": "Headings don't skip levels",
+        "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#take_advantage_of_headings_and_landmarks).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "interactive-element-affordance": {
+        "id": "interactive-element-affordance",
+        "title": "Interactive elements indicate their purpose and state",
+        "description": "Interactive elements, such as links and buttons, should indicate their state and be distinguishable from non-interactive elements. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#interactive_elements_like_links_and_buttons_should_indicate_their_purpose_and_state).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "logical-tab-order": {
+        "id": "logical-tab-order",
+        "title": "The page has a logical tab order",
+        "description": "Tabbing through the page follows the visual layout. Users cannot focus elements that are offscreen. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "managed-focus": {
+        "id": "managed-focus",
+        "title": "The user's focus is directed to new content added to the page",
+        "description": "If new content, such as a dialog, is added to the page, the user's focus is directed to it. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "offscreen-content-hidden": {
+        "id": "offscreen-content-hidden",
+        "title": "Offscreen content is hidden from assistive technology",
+        "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "use-landmarks": {
+        "id": "use-landmarks",
+        "title": "HTML5 landmark elements are used to improve navigation",
+        "description": "Landmark elements (<main>, <nav>, etc.) are used to improve the keyboard navigation of the page for assistive technology. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#take_advantage_of_headings_and_landmarks).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "visual-order-follows-dom": {
+        "id": "visual-order-follows-dom",
+        "title": "Visual order on the page follows DOM order",
+        "description": "DOM order matches the visual order, improving navigation for assistive technology. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).",
+        "score": null,
+        "scoreDisplayMode": "manual",
+        "rawValue": false
+    },
+    "total-byte-weight": {
+        "id": "total-byte-weight",
+        "title": "Avoids enormous network payloads",
+        "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/network-payloads).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 746595,
+        "displayValue": "Total size was 729 KB",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "url",
+                    "itemType": "url",
+                    "text": "URL"
+                },
+                {
+                    "key": "totalBytes",
+                    "itemType": "bytes",
+                    "text": "Size (KB)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://localhost:8000/app-7efbd30e882385fdd532.js",
+                    "totalBytes": 175739,
+                    "totalMs": 25.468097850644142
+                },
+                {
+                    "url": "http://localhost:8000/",
+                    "totalBytes": 133440,
+                    "totalMs": 19.33812629632554
+                },
+                {
+                    "url": "http://localhost:8000/0-dd5c570035702380176b.js",
+                    "totalBytes": 96352,
+                    "totalMs": 13.963332920440337
+                },
+                {
+                    "url": "http://localhost:8000/1-3337e834587ad279fd1d.js",
+                    "totalBytes": 46940,
+                    "totalMs": 6.802545326360319
+                },
+                {
+                    "url": "http://localhost:8000/10-0226f3a7db26ec810a61.js",
+                    "totalBytes": 37618,
+                    "totalMs": 5.451600981828343
+                },
+                {
+                    "url": "http://localhost:8000/static/d/200/path---index-6a9-rG9rZmBWiHbPLJeb4JLPFQCrjw.json",
+                    "totalBytes": 36648,
+                    "totalMs": 5.311028570951278
+                },
+                {
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon.ico",
+                    "totalBytes": 33571,
+                    "totalMs": 4.865109696447428
+                },
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50",
+                    "totalBytes": 30070,
+                    "totalMs": 4.357744737189066
+                },
+                {
+                    "url": "http://localhost:8000/static/logo_animated-2d8dca94f1374090f0bbb9757d1c1b7c.gif",
+                    "totalBytes": 26987,
+                    "totalMs": 3.910956342617936
+                },
+                {
+                    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TNNW9LP",
+                    "totalBytes": 25527,
+                    "totalMs": 3.699373126246269
+                }
+            ]
+        }
+    },
+    "offscreen-images": {
+        "id": "offscreen-images",
+        "title": "Defer offscreen images",
+        "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "Potential savings of 7 KB",
+        "warnings": [],
+        "details": {
+            "type": "opportunity",
+            "headings": [
+                {
+                    "key": "url",
+                    "valueType": "thumbnail",
+                    "label": ""
+                },
+                {
+                    "key": "url",
+                    "valueType": "url",
+                    "label": "URL"
+                },
+                {
+                    "key": "totalBytes",
+                    "valueType": "bytes",
+                    "label": "Size (KB)"
+                },
+                {
+                    "key": "wastedBytes",
+                    "valueType": "bytes",
+                    "label": "Potential Savings (KB)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg",
+                    "requestStartTime": 440058.563383,
+                    "totalBytes": 7069,
+                    "wastedBytes": 7069,
+                    "wastedPercent": 100
+                }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 7069
+        }
+    },
+    "render-blocking-resources": {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0
+        }
+    },
+    "unminified-css": {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "description": "Minifying CSS files can reduce network payload sizes. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/minify-css).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 0
+        }
+    },
+    "unminified-javascript": {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn more](https://developers.google.com/speed/docs/insights/MinifyResources).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "warnings": [],
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 0
+        }
+    },
+    "unused-css-rules": {
+        "id": "unused-css-rules",
+        "title": "Defer unused CSS",
+        "description": "Remove unused rules from stylesheets to reduce unnecessary bytes consumed by network activity. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/unused-css).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "Potential savings of 13 KB",
+        "details": {
+            "type": "opportunity",
+            "headings": [
+                {
+                    "key": "url",
+                    "valueType": "url",
+                    "label": "URL"
+                },
+                {
+                    "key": "totalBytes",
+                    "valueType": "bytes",
+                    "label": "Size (KB)"
+                },
+                {
+                    "key": "wastedBytes",
+                    "valueType": "bytes",
+                    "label": "Potential Savings (KB)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "@font-face{font-family:Stackable Mono;src:url(data:font/woff2;base64,d09GMgABAAAAACasABIAAAAAUGwAACZ...",
+                    "wastedBytes": 13461,
+                    "wastedPercent": 99.5037037037037,
+                    "totalBytes": 13528
+                }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 13461
+        }
+    },
+    "uses-webp-images": {
+        "id": "uses-webp-images",
+        "title": "Serve images in next-gen formats",
+        "description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/webp).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "Potential savings of 18 KB",
+        "warnings": [],
+        "details": {
+            "type": "opportunity",
+            "headings": [
+                {
+                    "key": "url",
+                    "valueType": "thumbnail",
+                    "label": ""
+                },
+                {
+                    "key": "url",
+                    "valueType": "url",
+                    "label": "URL"
+                },
+                {
+                    "key": "totalBytes",
+                    "valueType": "bytes",
+                    "label": "Size (KB)"
+                },
+                {
+                    "key": "wastedBytes",
+                    "valueType": "bytes",
+                    "label": "Potential Savings (KB)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50",
+                    "fromProtocol": true,
+                    "isCrossOrigin": true,
+                    "totalBytes": 29607,
+                    "wastedBytes": 18917
+                }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 18917
+        }
+    },
+    "uses-optimized-images": {
+        "id": "uses-optimized-images",
+        "title": "Efficiently encode images",
+        "description": "Optimized images load faster and consume less cellular data. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/optimize-images).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "warnings": [],
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 0
+        }
+    },
+    "uses-text-compression": {
+        "id": "uses-text-compression",
+        "title": "Enable text compression",
+        "description": "Text-based resources should be served with compression (gzip, deflate or brotli) to minimize total network bytes. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/text-compression).",
+        "score": 0.27,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 2700,
+        "displayValue": "Potential savings of 351 KB",
+        "details": {
+            "type": "opportunity",
+            "headings": [
+                {
+                    "key": "url",
+                    "valueType": "url",
+                    "label": "URL"
+                },
+                {
+                    "key": "totalBytes",
+                    "valueType": "bytes",
+                    "label": "Size (KB)"
+                },
+                {
+                    "key": "wastedBytes",
+                    "valueType": "bytes",
+                    "label": "Potential Savings (KB)"
+                }
+            ],
+            "items": [
+                {
+                    "url": "http://localhost:8000/app-7efbd30e882385fdd532.js",
+                    "totalBytes": 175451,
+                    "wastedBytes": 120244
+                },
+                {
+                    "url": "http://localhost:8000/",
+                    "totalBytes": 133165,
+                    "wastedBytes": 95112
+                },
+                {
+                    "url": "http://localhost:8000/0-dd5c570035702380176b.js",
+                    "totalBytes": 96065,
+                    "wastedBytes": 65419
+                },
+                {
+                    "url": "http://localhost:8000/1-3337e834587ad279fd1d.js",
+                    "totalBytes": 46654,
+                    "wastedBytes": 30855
+                },
+                {
+                    "url": "http://localhost:8000/10-0226f3a7db26ec810a61.js",
+                    "totalBytes": 37332,
+                    "wastedBytes": 28410
+                },
+                {
+                    "url": "http://localhost:8000/component---src-pages-index-js-b95dcc8b2b361094166a.js",
+                    "totalBytes": 21888,
+                    "wastedBytes": 15529
+                },
+                {
+                    "url": "http://localhost:8000/webpack-runtime-3722589d72cd21972bb1.js",
+                    "totalBytes": 4060,
+                    "wastedBytes": 2311
+                },
+                {
+                    "url": "http://localhost:8000/11-369923428968ba9dab03.js",
+                    "totalBytes": 2752,
+                    "wastedBytes": 1816
+                }
+            ],
+            "overallSavingsMs": 2700,
+            "overallSavingsBytes": 359696
+        }
+    },
+    "uses-responsive-images": {
+        "id": "uses-responsive-images",
+        "title": "Properly size images",
+        "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/oversized-images).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "warnings": [],
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 0
+        }
+    },
+    "efficient-animated-content": {
+        "id": "efficient-animated-content",
+        "title": "Use video formats for animated content",
+        "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/)",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 0,
+        "displayValue": "",
+        "details": {
+            "type": "opportunity",
+            "headings": [],
+            "items": [],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 0
+        }
+    },
+    "appcache-manifest": {
+        "id": "appcache-manifest",
+        "title": "Avoids Application Cache",
+        "description": "Application Cache is deprecated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/appcache).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "displayValue": ""
+    },
+    "doctype": {
+        "id": "doctype",
+        "title": "Page has the HTML doctype",
+        "description": "Specifying a doctype prevents the browser from switching to quirks-mode.Read more on the [MDN Web Docs page](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true
+    },
+    "dom-size": {
+        "id": "dom-size",
+        "title": "Avoids an excessive DOM size",
+        "description": "Browser engineers recommend pages contain fewer than ~1,500 DOM nodes. The sweet spot is a tree depth < 32 elements and fewer than 60 children/parent element. A large DOM can increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://developers.google.com/web/tools/lighthouse/audits/dom-size).",
+        "score": 1,
+        "scoreDisplayMode": "numeric",
+        "rawValue": 431,
+        "displayValue": "431 nodes",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "statistic",
+                    "itemType": "text",
+                    "text": "Statistic"
+                },
+                {
+                    "key": "element",
+                    "itemType": "code",
+                    "text": "Element"
+                },
+                {
+                    "key": "value",
+                    "itemType": "text",
+                    "text": "Value"
+                }
+            ],
+            "items": [
+                {
+                    "statistic": "Total DOM Nodes",
+                    "element": "",
+                    "value": "431"
+                },
+                {
+                    "statistic": "Maximum DOM Depth",
+                    "element": {
+                        "type": "code",
+                        "value": "<a href=\"https://www.meetup.com/ReactJS-Girls-London/events/256005758/\" target=\"_blank\" rel=\"noopener noreferrer\">"
+                    },
+                    "value": "15"
+                },
+                {
+                    "statistic": "Maximum Child Elements",
+                    "element": {
+                        "type": "code",
+                        "value": "<head>"
+                    },
+                    "value": "58"
+                }
+            ]
+        }
+    },
+    "external-anchors-use-rel-noopener": {
+        "id": "external-anchors-use-rel-noopener",
+        "title": "Links to cross-origin destinations are unsafe",
+        "description": "Add `rel=\"noopener\"` or `rel=\"noreferrer\"` to any external links to improve performance and prevent security vulnerabilities. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/noopener).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "rawValue": false,
+        "warnings": [],
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "href",
+                    "itemType": "url",
+                    "text": "URL"
+                },
+                {
+                    "key": "target",
+                    "itemType": "text",
+                    "text": "Target"
+                },
+                {
+                    "key": "rel",
+                    "itemType": "text",
+                    "text": "Rel"
+                }
+            ],
+            "items": [
+                {
+                    "href": "https://a1webstats.com/",
+                    "target": "_blank",
+                    "rel": "",
+                    "outerHTML": "<a title=\"A1 Webstats\" target=\"_blank\" href=\"https://a1webstats.com\">"
+                }
+            ]
+        }
+    },
+    "geolocation-on-start": {
+        "id": "geolocation-on-start",
+        "title": "Avoids requesting the geolocation permission on page load",
+        "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to user gestures instead. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/geolocation-on-load).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "no-document-write": {
+        "id": "no-document-write",
+        "title": "Avoids `document.write()`",
+        "description": "For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/document-write).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "no-vulnerable-libraries": {
+        "id": "no-vulnerable-libraries",
+        "title": "Avoids front-end JavaScript libraries with known security vulnerabilities",
+        "description": "Some third-party scripts may contain known security vulnerabilities that are easily identified and exploited by attackers. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/vulnerabilities).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "displayValue": "",
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": [],
+            "summary": {}
+        }
+    },
+    "js-libraries": {
+        "id": "js-libraries",
+        "title": "Detected JavaScript libraries",
+        "description": "All front-end JavaScript libraries detected on the page.",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "name",
+                    "itemType": "text",
+                    "text": "Name"
+                },
+                {
+                    "key": "version",
+                    "itemType": "text",
+                    "text": "Version"
+                }
+            ],
+            "items": [
+                {
+                    "name": "React",
+                    "version": null,
+                    "npm": "react"
+                }
+            ],
+            "summary": {}
+        }
+    },
+    "no-websql": {
+        "id": "no-websql",
+        "title": "Avoids WebSQL DB",
+        "description": "Web SQL is deprecated. Consider using IndexedDB instead. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/web-sql).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "displayValue": ""
+    },
+    "notification-on-start": {
+        "id": "notification-on-start",
+        "title": "Avoids requesting the notification permission on page load",
+        "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/notifications-on-load).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "password-inputs-can-be-pasted-into": {
+        "id": "password-inputs-can-be-pasted-into",
+        "title": "Allows users to paste into password fields",
+        "description": "Preventing password pasting undermines good security policy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/password-pasting).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "uses-http2": {
+        "id": "uses-http2",
+        "title": "Does not use HTTP/2 for all of its resources",
+        "description": "HTTP/2 offers many benefits over HTTP/1.1, including binary headers, multiplexing, and server push. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/http2).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "rawValue": false,
+        "displayValue": "15 requests not served via HTTP/2",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "url",
+                    "itemType": "url",
+                    "text": "URL"
+                },
+                {
+                    "key": "protocol",
+                    "itemType": "text",
+                    "text": "Protocol"
+                }
+            ],
+            "items": [
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/component---src-pages-index-js-b95dcc8b2b361094166a.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/app-7efbd30e882385fdd532.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/1-3337e834587ad279fd1d.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/10-0226f3a7db26ec810a61.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/0-dd5c570035702380176b.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/webpack-runtime-3722589d72cd21972bb1.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/static/d/200/path---index-6a9-rG9rZmBWiHbPLJeb4JLPFQCrjw.json"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/11-369923428968ba9dab03.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/static/logo_animated-2d8dca94f1374090f0bbb9757d1c1b7c.gif"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/static/d/337/path---case-study-future-proofing-trainline-cc-0-a90-AyHM9T7jZ1ZRHiQCNIyqHHy8yqc.json"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/component---src-templates-case-study-js-5019889b48b13eb8f5ab.js"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon-32x32.png"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon-16x16.png"
+                },
+                {
+                    "protocol": "http/1.1",
+                    "url": "http://localhost:8000/icons-5bb933626a770cd658340d14a6ad5b4b/favicon.ico"
+                }
+            ]
+        }
+    },
+    "uses-passive-event-listeners": {
+        "id": "uses-passive-event-listeners",
+        "title": "Uses passive listeners to improve scrolling performance",
+        "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/passive-event-listeners).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "meta-description": {
+        "id": "meta-description",
+        "title": "Document has a meta description",
+        "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/description).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true
+    },
+    "http-status-code": {
+        "id": "http-status-code",
+        "title": "Page has successful HTTP status code",
+        "description": "Pages with unsuccessful HTTP status codes may not be indexed properly. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/successful-http-code).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true
+    },
+    "font-size": {
+        "id": "font-size",
+        "title": "Document uses legible font sizes",
+        "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/font-sizes).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "displayValue": [
+            "%.1d% legible text",
+            100
+        ],
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "source",
+                    "itemType": "url",
+                    "text": "Source"
+                },
+                {
+                    "key": "selector",
+                    "itemType": "code",
+                    "text": "Selector"
+                },
+                {
+                    "key": "coverage",
+                    "itemType": "text",
+                    "text": "% of Page Text"
+                },
+                {
+                    "key": "fontSize",
+                    "itemType": "text",
+                    "text": "Font Size"
+                }
+            ],
+            "items": [
+                {
+                    "source": "Legible text",
+                    "selector": "",
+                    "coverage": "100.00%",
+                    "fontSize": "≥ 12px"
+                }
+            ]
+        }
+    },
+    "link-text": {
+        "id": "link-text",
+        "title": "Links do not have descriptive text",
+        "description": "Descriptive link text helps search engines understand your content. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "rawValue": false,
+        "displayValue": "4 links found",
+        "details": {
+            "type": "table",
+            "headings": [
+                {
+                    "key": "href",
+                    "itemType": "url",
+                    "text": "Link destination"
+                },
+                {
+                    "key": "text",
+                    "itemType": "text",
+                    "text": "Link Text"
+                }
+            ],
+            "items": [
+                {
+                    "href": "http://localhost:8000/case-study/future-proofing-trainline",
+                    "text": "Learn more"
+                },
+                {
+                    "href": "http://localhost:8000/case-study/future-proofing-trainline",
+                    "text": "Learn more"
+                },
+                {
+                    "href": "http://localhost:8000/engineering",
+                    "text": "Learn more"
+                },
+                {
+                    "href": "http://localhost:8000/design",
+                    "text": "Learn more"
+                }
+            ],
+            "summary": {}
+        }
+    },
+    "is-crawlable": {
+        "id": "is-crawlable",
+        "title": "Page isn’t blocked from indexing",
+        "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/indexing).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "robots-txt": {
+        "id": "robots-txt",
+        "title": "robots.txt is valid",
+        "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed.",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    },
+    "hreflang": {
+        "id": "hreflang",
+        "title": "Document has a valid `hreflang`",
+        "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/hreflang).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "plugins": {
+        "id": "plugins",
+        "title": "Document avoids plugins",
+        "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/plugins).",
+        "score": 1,
+        "scoreDisplayMode": "binary",
+        "rawValue": true,
+        "details": {
+            "type": "table",
+            "headings": [],
+            "items": []
+        }
+    },
+    "canonical": {
+        "id": "canonical",
+        "title": "Document has a valid `rel=canonical`",
+        "description": "Canonical links suggest which URL to show in search results. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/canonical).",
+        "score": null,
+        "scoreDisplayMode": "not-applicable",
+        "rawValue": true
+    }
+}
