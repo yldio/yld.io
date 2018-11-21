@@ -164,6 +164,12 @@ const Specialty = ({ data }) => {
           </Col>
         </Row>
       </Grid>
+      <Grid className="grid">
+        <Col md={6} sm={12} xs={12}>
+          <H1>{specialty.title}</H1>
+          <H1 muted>related projects</H1>
+        </Col>
+      </Grid>
     </Layout>
   )
 }
@@ -184,11 +190,11 @@ export const pageQuery = graphql`
           title
           seoTitle
           seoMetaDescription
-          seoText{
+          seoText {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
