@@ -1,0 +1,781 @@
+{
+  "viewport": {
+    "id": "viewport",
+    "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
+    "description": "Add a viewport meta tag to optimize your app for mobile screens. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "warnings": []
+  },
+  "first-contentful-paint": {
+    "id": "first-contentful-paint",
+    "title": "First Contentful Paint",
+    "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).",
+    "score": 0.56,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 3735,
+    "displayValue": "3.7 s"
+  },
+  "first-meaningful-paint": {
+    "id": "first-meaningful-paint",
+    "title": "First Meaningful Paint",
+    "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).",
+    "score": 0.53,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 3885,
+    "displayValue": "3.9 s"
+  },
+  "speed-index": {
+    "id": "speed-index",
+    "title": "Speed Index",
+    "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/speed-index).",
+    "score": 0.71,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 4582.34360016791,
+    "displayValue": "4.6 s"
+  },
+  "interactive": {
+    "id": "interactive",
+    "title": "Time to Interactive",
+    "description": "Interactive marks the time at which the page is fully interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).",
+    "score": 0.45,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 7788,
+    "displayValue": "7.8 s"
+  },
+  "redirects": {
+    "id": "redirects",
+    "title": "Avoid multiple page redirects",
+    "description": "Redirects introduce additional delays before the page can be loaded. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/redirects).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0
+    }
+  },
+  "image-aspect-ratio": {
+    "id": "image-aspect-ratio",
+    "title": "Displays images with correct aspect ratio",
+    "description": "Image display dimensions should match natural aspect ratio. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "warnings": [],
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "deprecations": {
+    "id": "deprecations",
+    "title": "Avoids deprecated APIs",
+    "description": "Deprecated APIs will eventually be removed from the browser. [Learn more](https://www.chromestatus.com/features#deprecated).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "bootup-time": {
+    "id": "bootup-time",
+    "title": "Reduce JavaScript execution time",
+    "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/bootup).",
+    "score": 0.89,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 1333.024,
+    "displayValue": "1.3 s",
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "url": "http://localhost:8000/app-7efbd30e882385fdd532.js",
+          "total": 1144.128,
+          "scripting": 1022.2519999999998,
+          "scriptParseCompile": 59.116
+        },
+        {
+          "url": "https://www.google-analytics.com/analytics.js",
+          "total": 102.312,
+          "scripting": 99.652,
+          "scriptParseCompile": 2.66
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TNNW9LP",
+          "total": 86.58399999999997,
+          "scripting": 82.67999999999998,
+          "scriptParseCompile": 3.324
+        }
+      ],
+      "summary": {
+        "wastedMs": 1333.024
+      }
+    }
+  },
+  "uses-rel-preload": {
+    "id": "uses-rel-preload",
+    "title": "Preload key requests",
+    "description": "Consider using <link rel=preload> to prioritize fetching resources that are currently requested later in page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/preload).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0
+    }
+  },
+  "font-display": {
+    "id": "font-display",
+    "title": "All text remains visible during webfont loads",
+    "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://developers.google.com/web/updates/2016/02/font-display).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "network-requests": {
+    "id": "network-requests",
+    "title": "Network Requests",
+    "description": "Lists the network requests that were made during page load.",
+    "score": null,
+    "scoreDisplayMode": "informative",
+    "rawValue": 58
+  },
+  "metrics": {
+    "id": "metrics",
+    "title": "Metrics",
+    "description": "Collects all available metrics.",
+    "score": null,
+    "scoreDisplayMode": "informative",
+    "rawValue": 7788,
+    "details": {
+      "items": [
+        {
+          "firstContentfulPaint": 3735,
+          "firstMeaningfulPaint": 3885,
+          "firstCPUIdle": 6978,
+          "interactive": 7788,
+          "speedIndex": 4582,
+          "estimatedInputLatency": 240,
+          "observedNavigationStart": 0,
+          "observedNavigationStartTs": 440058520434,
+          "observedFirstPaint": 266,
+          "observedFirstPaintTs": 440058786580,
+          "observedFirstContentfulPaint": 266,
+          "observedFirstContentfulPaintTs": 440058786584,
+          "observedFirstMeaningfulPaint": 266,
+          "observedFirstMeaningfulPaintTs": 440058786587,
+          "observedTraceEnd": 2500,
+          "observedTraceEndTs": 440061020104,
+          "observedLoad": 1196,
+          "observedLoadTs": 440059716516,
+          "observedDomContentLoaded": 268,
+          "observedDomContentLoadedTs": 440058787937,
+          "observedFirstVisualChange": 271,
+          "observedFirstVisualChangeTs": 440058791434,
+          "observedLastVisualChange": 1771,
+          "observedLastVisualChangeTs": 440060291434,
+          "observedSpeedIndex": 1079,
+          "observedSpeedIndexTs": 440059599145
+        }
+      ]
+    }
+  },
+  "aria-allowed-attr": {
+    "id": "aria-allowed-attr",
+    "title": "`[aria-*]` attributes match their roles",
+    "description": "Each ARIA `role` supports a specific subset of `aria-*` attributes. Mismatching these invalidates the `aria-*` attributes. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-allowed-attr?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "aria-roles": {
+    "id": "aria-roles",
+    "title": "`[role]` values are valid",
+    "description": "ARIA roles must have valid values in order to perform their intended accessibility functions. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-roles?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "aria-valid-attr-value": {
+    "id": "aria-valid-attr-value",
+    "title": "`[aria-*]` attributes have valid values",
+    "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid values. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr-value?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "aria-valid-attr": {
+    "id": "aria-valid-attr",
+    "title": "`[aria-*]` attributes are valid and not misspelled",
+    "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid names. [Learn more](https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "button-name": {
+    "id": "button-name",
+    "title": "Buttons have an accessible name",
+    "description": "When a button doesn't have an accessible name, screen readers announce it as \"button\", making it unusable for users who rely on screen readers. [Learn more](https://dequeuniversity.com/rules/axe/2.2/button-name?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "bypass": {
+    "id": "bypass",
+    "title": "The page contains a heading, skip link, or landmark region",
+    "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more](https://dequeuniversity.com/rules/axe/2.2/bypass?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "color-contrast": {
+    "id": "color-contrast",
+    "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "description": "Low-contrast text is difficult or impossible for many users to read. [Learn more](https://dequeuniversity.com/rules/axe/2.2/color-contrast?application=lighthouse).",
+    "score": 0,
+    "scoreDisplayMode": "binary",
+    "rawValue": false,
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "selector": ".kUnqAh.sc-htpNat:nth-child(1) > .caseStudy__SubHeading-dyffn9-3.dIupAz",
+            "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,0,DIV,0,DIV,0,DIV,0,DIV,0,P",
+            "snippet": "<p class=\"caseStudy__SubHeading-dyffn9-3 dIupAz\">Featured work</p>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.66 (foreground color: #9e9e9e, background color: #ffffff, font size: 12.8pt, font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "selector": "h1",
+            "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,1,SECTION,0,DIV,1,DIV,0,DIV,0,DIV,0,H1",
+            "snippet": "<h1 class=\"h3-sc-1yb0g2a-0-h1 jXqyMY\">",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.65 (foreground color: #828282, background color: #f9f9f9, font size: 15.0pt, font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "selector": ".kWQRhs.sc-htpNat:nth-child(1) > .specialty__AnimatedLink-sc-1ice2p8-2.grOGIx > section > .specialty__CardHeader-sc-1ice2p8-0.hLKWDo > div > .hoyhVC.p-hwc9dc-0[muted=\"\"]",
+            "path": "1,HTML,1,BODY,1,DIV,0,DIV,1,MAIN,2,DIV,0,DIV,0,DIV,0,DIV,5,A,0,SECTION,0,HEADER,0,DIV,0,P",
+            "snippet": "<p muted=\"\" class=\"p-hwc9dc-0 hoyhVC\">Case study</p>",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #f0958d, background color: #e02a1b, font size: 12.8pt, font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        }
+      ],
+      "impact": "serious",
+      "tags": ["cat.color", "wcag2aa", "wcag143"]
+    }
+  },
+  "document-title": {
+    "id": "document-title",
+    "title": "Document has a `<title>` element",
+    "description": "The title gives screen reader users an overview of the page, and search engine users rely on it heavily to determine if a page is relevant to their search. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/title).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "html-has-lang": {
+    "id": "html-has-lang",
+    "title": "`<html>` element has a `[lang]` attribute",
+    "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more](https://dequeuniversity.com/rules/axe/2.2/html-lang?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "html-lang-valid": {
+    "id": "html-lang-valid",
+    "title": "`<html>` element has a valid value for its `[lang]` attribute",
+    "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more](https://dequeuniversity.com/rules/axe/2.2/valid-lang?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "image-alt": {
+    "id": "image-alt",
+    "title": "Image elements have `[alt]` attributes",
+    "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://dequeuniversity.com/rules/axe/2.2/image-alt?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "input-image-alt": {
+    "id": "input-image-alt",
+    "title": "`<input type=\"image\">` elements have `[alt]` text",
+    "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn more](https://dequeuniversity.com/rules/axe/2.2/input-image-alt?application=lighthouse).",
+    "score": null,
+    "scoreDisplayMode": "not-applicable",
+    "rawValue": true
+  },
+  "label": {
+    "id": "label",
+    "title": "Form elements have associated labels",
+    "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more](https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse).",
+    "score": null,
+    "scoreDisplayMode": "not-applicable",
+    "rawValue": true
+  },
+  "link-name": {
+    "id": "link-name",
+    "title": "Links have a discernible name",
+    "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "list": {
+    "id": "list",
+    "title": "Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
+    "description": "Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. [Learn more](https://dequeuniversity.com/rules/axe/2.2/list?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+
+  "meta-viewport": {
+    "id": "meta-viewport",
+    "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
+    "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more](https://dequeuniversity.com/rules/axe/2.2/meta-viewport?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "tabindex": {
+    "id": "tabindex",
+    "title": "No element has a `[tabindex]` value greater than 0",
+    "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more](https://dequeuniversity.com/rules/axe/2.2/tabindex?application=lighthouse).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "focus-traps": {
+    "id": "focus-traps",
+    "title": "User focus is not accidentally trapped in a region",
+    "description": "A user can tab into and out of any control or region without accidentally trapping their focus. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+    "score": null,
+    "scoreDisplayMode": "manual",
+    "rawValue": false
+  },
+  "focusable-controls": {
+    "id": "focusable-controls",
+    "title": "Interactive controls are keyboard focusable",
+    "description": "Custom interactive controls are keyboard focusable and display a focus indicator. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+    "score": null,
+    "scoreDisplayMode": "manual",
+    "rawValue": false
+  },
+  "heading-levels": {
+    "id": "heading-levels",
+    "title": "Headings don't skip levels",
+    "description": "Headings are used to create an outline for the page and heading levels are not skipped. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#take_advantage_of_headings_and_landmarks).",
+    "score": null,
+    "scoreDisplayMode": "manual",
+    "rawValue": false
+  },
+  "logical-tab-order": {
+    "id": "logical-tab-order",
+    "title": "The page has a logical tab order",
+    "description": "Tabbing through the page follows the visual layout. Users cannot focus elements that are offscreen. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard).",
+    "score": null,
+    "scoreDisplayMode": "manual",
+    "rawValue": false
+  },
+  "offscreen-content-hidden": {
+    "id": "offscreen-content-hidden",
+    "title": "Offscreen content is hidden from assistive technology",
+    "description": "Offscreen content is hidden with display: none or aria-hidden=true. [Learn more](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).",
+    "score": null,
+    "scoreDisplayMode": "manual",
+    "rawValue": false
+  },
+  "offscreen-images": {
+    "id": "offscreen-images",
+    "title": "Defer offscreen images",
+    "description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "Potential savings of 7 KB",
+    "warnings": [],
+    "details": {
+      "type": "opportunity",
+      "items": [
+        {
+          "url": "http://images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg",
+          "requestStartTime": 440058.563383,
+          "totalBytes": 7069,
+          "wastedBytes": 7069,
+          "wastedPercent": 100
+        }
+      ],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 7069
+    }
+  },
+  "render-blocking-resources": {
+    "id": "render-blocking-resources",
+    "title": "Eliminate render-blocking resources",
+    "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0
+    }
+  },
+  "unminified-css": {
+    "id": "unminified-css",
+    "title": "Minify CSS",
+    "description": "Minifying CSS files can reduce network payload sizes. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/minify-css).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 0
+    }
+  },
+  "unminified-javascript": {
+    "id": "unminified-javascript",
+    "title": "Minify JavaScript",
+    "description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn more](https://developers.google.com/speed/docs/insights/MinifyResources).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "warnings": [],
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 0
+    }
+  },
+  "unused-css-rules": {
+    "id": "unused-css-rules",
+    "title": "Defer unused CSS",
+    "description": "Remove unused rules from stylesheets to reduce unnecessary bytes consumed by network activity. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/unused-css).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "Potential savings of 13 KB",
+    "details": {
+      "type": "opportunity",
+      "items": [
+        {
+          "url": "@font-face{font-family:Stackable Mono;src:url(data:font/woff2;base64,d09GMgABAAAAACasABIAAAAAUGwAACZ...",
+          "wastedBytes": 13461,
+          "wastedPercent": 99.5037037037037,
+          "totalBytes": 13528
+        }
+      ],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 13461
+    }
+  },
+  "uses-optimized-images": {
+    "id": "uses-optimized-images",
+    "title": "Efficiently encode images",
+    "description": "Optimized images load faster and consume less cellular data. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/optimize-images).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "warnings": [],
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 0
+    }
+  },
+  "uses-responsive-images": {
+    "id": "uses-responsive-images",
+    "title": "Properly size images",
+    "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/oversized-images).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 0,
+    "displayValue": "",
+    "warnings": [],
+    "details": {
+      "type": "opportunity",
+      "headings": [],
+      "items": [],
+      "overallSavingsMs": 0,
+      "overallSavingsBytes": 0
+    }
+  },
+  "dom-size": {
+    "id": "dom-size",
+    "title": "Avoids an excessive DOM size",
+    "description": "Browser engineers recommend pages contain fewer than ~1,500 DOM nodes. The sweet spot is a tree depth < 32 elements and fewer than 60 children/parent element. A large DOM can increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://developers.google.com/web/tools/lighthouse/audits/dom-size).",
+    "score": 1,
+    "scoreDisplayMode": "numeric",
+    "rawValue": 431,
+    "displayValue": "431 nodes",
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "statistic": "Total DOM Nodes",
+          "element": "",
+          "value": "431"
+        },
+        {
+          "statistic": "Maximum DOM Depth",
+          "element": {
+            "type": "code",
+            "value": "<a href=\"https://www.meetup.com/ReactJS-Girls-London/events/256005758/\" target=\"_blank\" rel=\"noopener noreferrer\">"
+          },
+          "value": "15"
+        },
+        {
+          "statistic": "Maximum Child Elements",
+          "element": {
+            "type": "code",
+            "value": "<head>"
+          },
+          "value": "58"
+        }
+      ]
+    }
+  },
+  "external-anchors-use-rel-noopener": {
+    "id": "external-anchors-use-rel-noopener",
+    "title": "Links to cross-origin destinations are unsafe",
+    "description": "Add `rel=\"noopener\"` or `rel=\"noreferrer\"` to any external links to improve performance and prevent security vulnerabilities. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/noopener).",
+    "score": 0,
+    "scoreDisplayMode": "binary",
+    "rawValue": false,
+    "warnings": [],
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "href": "https://a1webstats.com/",
+          "target": "_blank",
+          "rel": "",
+          "outerHTML": "<a title=\"A1 Webstats\" target=\"_blank\" href=\"https://a1webstats.com\">"
+        }
+      ]
+    }
+  },
+  "no-vulnerable-libraries": {
+    "id": "no-vulnerable-libraries",
+    "title": "Avoids front-end JavaScript libraries with known security vulnerabilities",
+    "description": "Some third-party scripts may contain known security vulnerabilities that are easily identified and exploited by attackers. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/vulnerabilities).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "displayValue": "",
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": [],
+      "summary": {}
+    }
+  },
+  "meta-description": {
+    "id": "meta-description",
+    "title": "Document has a meta description",
+    "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/description).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true
+  },
+  "http-status-code": {
+    "id": "http-status-code",
+    "title": "Page has successful HTTP status code",
+    "description": "Pages with unsuccessful HTTP status codes may not be indexed properly. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/successful-http-code).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true
+  },
+  "font-size": {
+    "id": "font-size",
+    "title": "Document uses legible font sizes",
+    "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/font-sizes).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "displayValue": ["%.1d% legible text", 100],
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "source": "Legible text",
+          "selector": "",
+          "coverage": "100.00%",
+          "fontSize": "≥ 12px"
+        }
+      ]
+    }
+  },
+  "link-text": {
+    "id": "link-text",
+    "title": "Links do not have descriptive text",
+    "description": "Descriptive link text helps search engines understand your content. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text).",
+    "score": 0,
+    "scoreDisplayMode": "binary",
+    "rawValue": false,
+    "displayValue": "4 links found",
+    "details": {
+      "type": "table",
+      "items": [
+        {
+          "href": "http://localhost:8000/case-study/future-proofing-trainline",
+          "text": "Learn more"
+        },
+        {
+          "href": "http://localhost:8000/case-study/future-proofing-trainline",
+          "text": "Learn more"
+        },
+        {
+          "href": "http://localhost:8000/engineering",
+          "text": "Learn more"
+        },
+        {
+          "href": "http://localhost:8000/design",
+          "text": "Learn more"
+        }
+      ],
+      "summary": {}
+    }
+  },
+  "is-crawlable": {
+    "id": "is-crawlable",
+    "title": "Page isn’t blocked from indexing",
+    "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/indexing).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  },
+  "robots-txt": {
+    "id": "robots-txt",
+    "title": "robots.txt is valid",
+    "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed.",
+    "score": null,
+    "scoreDisplayMode": "not-applicable",
+    "rawValue": true
+  },
+  "hreflang": {
+    "id": "hreflang",
+    "title": "Document has a valid `hreflang`",
+    "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/hreflang).",
+    "score": 1,
+    "scoreDisplayMode": "binary",
+    "rawValue": true,
+    "details": {
+      "type": "table",
+      "headings": [],
+      "items": []
+    }
+  }
+}

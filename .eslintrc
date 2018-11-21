@@ -4,5 +4,5 @@
   "rules": {
     "react/prop-types": 0
   },
-  "globals": { "fetch": true }
+  "globals": { "fetch": true, "jest": true, "test": true, "expect": true }
 }
