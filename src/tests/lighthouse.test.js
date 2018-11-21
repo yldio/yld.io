@@ -49,7 +49,7 @@ test('Security', () => {
 test('Performance', () => {
   return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'dom-size', 'smaller', 500)
-    auditTest(audits, 'network-requests', 'smaller', 58)
+    auditTest(audits, 'network-requests', 'smaller', 65)
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
