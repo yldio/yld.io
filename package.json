@@ -40,11 +40,16 @@
     "gatsby"
   ],
   "license": "MIT",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.cache/"
+    ]
+  },
   "scripts": {
     "test": "run-p lint format",
-    "build": "gatsby build",
     "serve": "gatsby serve",
-    "lighthouse": "jest",
+    "lighthouse": "jest ",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",

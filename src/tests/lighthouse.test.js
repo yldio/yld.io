@@ -4,7 +4,6 @@ jest.setTimeout(60000)
 
 test('Mobile', () => {
   return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
-    console.log(audits)
     expect(audits['viewport'].rawValue).toBeTruthy()
     expect(audits['font-size'].rawValue).toBeTruthy()
   })
