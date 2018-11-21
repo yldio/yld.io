@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
-<<<<<<< HEAD
-=======
 import Image from '../Common/Image'
->>>>>>> related projects
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
