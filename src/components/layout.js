@@ -33,7 +33,7 @@ const Layout = ({ children, location }) => (
             <html lang="en" />
           </Helmet>
           <Header />
-          <main>{children}</main>
+          {children}
           <Footer />
           <GlobalStyle />
         </Fragment>
