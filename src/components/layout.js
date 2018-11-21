@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
@@ -42,9 +41,5 @@ const Layout = ({ children, location }) => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
