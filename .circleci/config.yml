@@ -42,7 +42,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: Start
-          command: npm start
+          command: npm build
       - run:
           name: Lighthouse
           command: npm run lh
