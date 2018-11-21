@@ -98,7 +98,6 @@ const Specialty = ({ data }) => {
             </H1>
           </Col>
           <Col md={6} sm={12} xs={12}>
-<<<<<<< HEAD
             <PosterLinks project={specialty.relatedProjects[1]} />
           </Col>
           <Col md={6} sm={12} xs={12}>
@@ -170,74 +169,6 @@ const Specialty = ({ data }) => {
           <H1>{specialty.title}</H1>
           <H1 muted>related projects</H1>
         </Col>
-=======
-            <AnimatedLink
-              to={`/case-study/${specialty.relatedProjects[1].slug}`}
-            >
-              <section
-                style={{
-                  background: `#${specialty.relatedProjects[1].posterColor}`,
-                }}
-              >
-                <CardHeader>
-                  <div>
-                    <Paragraph reverse muted>
-                      Case study
-                    </Paragraph>
-                    <H1 noMargin reverse>
-                      {specialty.relatedProjects[1].title}
-                    </H1>
-                  </div>
-                </CardHeader>
-                <PosterImage
-                  justifyCenter
-                  alignCenter
-                  color={specialty.relatedProjects[1].posterColor}
-                >
-                  <img
-                    alt={specialty.relatedProjects[1].posterImage.title}
-                    src={specialty.relatedProjects[1].posterImage.file.url}
-                    style={{ maxHeight: '100%' }}
-                  />
-                </PosterImage>
-              </section>
-            </AnimatedLink>
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <AnimatedLink
-              to={`/case-study/${specialty.relatedProjects[0].slug}`}
-            >
-              <section
-                style={{
-                  background: `#${specialty.relatedProjects[0].posterColor}`,
-                }}
-              >
-                <CardHeader>
-                  <div>
-                    <Paragraph reverse muted>
-                      Case study
-                    </Paragraph>
-                    <H1 noMargin reverse>
-                      {specialty.relatedProjects[0].title}
-                    </H1>
-                  </div>
-                </CardHeader>
-                <PosterImage
-                  justifyCenter
-                  alignCenter
-                  color={specialty.relatedProjects[0].posterColor}
-                >
-                  <img
-                    alt={specialty.relatedProjects[0].posterImage.title}
-                    src={specialty.relatedProjects[0].posterImage.file.url}
-                    style={{ maxHeight: '100%' }}
-                  />
-                </PosterImage>
-              </section>
-            </AnimatedLink>
-          </Col>
-        </Row>
->>>>>>> related projects
       </Grid>
     </Layout>
   )
@@ -383,19 +314,6 @@ export const pageQuery = graphql`
               }
             }
           }
-<<<<<<< HEAD
-=======
-          communityText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
->>>>>>> adding content to the page
           communityLogo {
             id
             title
