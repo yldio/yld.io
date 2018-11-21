@@ -15,6 +15,10 @@ const auditTest = (audits, name, type, number) => {
     return expect(audits[name].rawValue).toBeGreaterThanOrEqual(number)
   }
 
+  if (type === 'size') {
+    return expect(audits[name].details.items.length).toBeLessThanOrEqual(number)
+  }
+
   return expect(audits[name].details.items).toEqual([])
 }
 
@@ -41,8 +45,12 @@ test('SEO', () => {
 
 test('Security', () => {
   return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
-    // https://developers.google.com/web/tools/lighthouse/audits/vulnerabilitie
+    // https://developers.google.com/web/tools/lighthouse/audits/vulnerabilities
     auditTest(audits, 'no-vulnerable-libraries')
+    // (https://www.chromestatus.com/features#deprecated
+    auditTest(audits, 'deprecations')
+    // https://developers.google.com/web/tools/lighthouse/audits/noopener
+    auditTest(audits, 'external-anchors-use-rel-noopener', 'size', 1)
   })
 })
 
@@ -50,6 +58,12 @@ test('Performance', () => {
   return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'dom-size', 'smaller', 500)
     auditTest(audits, 'network-requests', 'smaller', 65)
+    auditTest(audits, 'network-requests', 'smaller', 65)
+    auditTest(audits, 'bootup-time', 'smaller', 1333) //  0.89
+    auditTest(audits, 'interactive', 'smaller', 7788) //  0.45
+    auditTest(audits, 'speed-index', 'smaller', 4582) //  0.71
+    auditTest(audits, 'first-contentful-paint', 'smaller', 3735) //  0.56
+    auditTest(audits, 'first-meaningful-paint', 'smaller', 3885) //  0.53
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
@@ -62,6 +76,16 @@ test('Performance', () => {
     auditTest(audits, 'uses-optimized-images')
     // https://developers.google.com/web/tools/lighthouse/audits/oversized-images
     auditTest(audits, 'uses-responsive-images')
+    // https://developers.google.com/web/updates/2016/02/font-display
+    auditTest(audits, 'font-display')
+    // https://developers.google.com/web/tools/lighthouse/audits/redirects
+    auditTest(audits, 'redirects')
+    // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio
+    auditTest(audits, 'image-aspect-ratio')
+    // https://developers.google.com/web/tools/lighthouse/audits/offscreen-images
+    auditTest(audits, 'offscreen-images', 'size', 1)
+    // https://developers.google.com/web/tools/lighthouse/audits/unused-css-rules
+    auditTest(audits, 'unused-css-rules', 'size', 1)
   })
 })
 
@@ -98,16 +122,6 @@ test('A11y Homepage', () => {
     // https://dequeuniversity.com/rules/axe/2.2/aria-allowed-attr?application=lighthouse
     auditTest(audits, 'aria-allowed-attr')
 
-    // https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard
-    // auditTest(audits, 'focus-traps', 'value')
-    // https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard
-    // auditTest(audits, 'focusable-controls', 'value')
-    // https://developers.google.com/web/fundamentals/accessibility/how-to-review#take_advantage_of_headings_and_landmarks
-    // auditTest(audits, 'heading-levels', 'value')
-    // https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard
-    // auditTest(audits, 'logical-tab-order', 'value')
-    // https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader
-    // auditTest(audits, 'offscreen-content-hidden', 'value')
     // https://dequeuniversity.com/rules/axe/2.2/color-contrast?application=lighthouse
     // auditTest(audits,'color-contrast')
   })

@@ -35,43 +35,6 @@
     "rawValue": 4582.34360016791,
     "displayValue": "4.6 s"
   },
-  "estimated-input-latency": {
-    "id": "estimated-input-latency",
-    "title": "Estimated Input Latency",
-    "description": "The score above is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).",
-    "score": 0.02,
-    "scoreDisplayMode": "numeric",
-    "rawValue": 240,
-    "displayValue": "240 ms"
-  },
-  "errors-in-console": {
-    "id": "errors-in-console",
-    "title": "No browser errors logged to the console",
-    "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns.",
-    "score": 1,
-    "scoreDisplayMode": "binary",
-    "rawValue": 0,
-    "details": {
-      "type": "table",
-      "headings": [],
-      "items": []
-    }
-  },
-  "time-to-first-byte": {
-    "id": "time-to-first-byte",
-    "title": "Server response times are low (TTFB)",
-    "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).",
-    "score": 1,
-    "scoreDisplayMode": "binary",
-    "rawValue": 7.733999999999999,
-    "displayValue": "Root document took 10 ms",
-    "details": {
-      "type": "opportunity",
-      "overallSavingsMs": -592.266,
-      "headings": [],
-      "items": []
-    }
-  },
   "interactive": {
     "id": "interactive",
     "title": "Time to Interactive",
@@ -80,19 +43,6 @@
     "scoreDisplayMode": "numeric",
     "rawValue": 7788,
     "displayValue": "7.8 s"
-  },
-  "user-timings": {
-    "id": "user-timings",
-    "title": "User Timing marks and measures",
-    "description": "Consider instrumenting your app with the User Timing API to measure your app's real-world performance during key user experiences. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/user-timing).",
-    "score": null,
-    "scoreDisplayMode": "not-applicable",
-    "rawValue": true,
-    "details": {
-      "type": "table",
-      "headings": [],
-      "items": []
-    }
   },
   "redirects": {
     "id": "redirects",
@@ -621,30 +571,6 @@
       ],
       "overallSavingsMs": 0,
       "overallSavingsBytes": 13461
-    }
-  },
-  "uses-webp-images": {
-    "id": "uses-webp-images",
-    "title": "Serve images in next-gen formats",
-    "description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/webp).",
-    "score": 1,
-    "scoreDisplayMode": "numeric",
-    "rawValue": 0,
-    "displayValue": "Potential savings of 18 KB",
-    "warnings": [],
-    "details": {
-      "type": "opportunity",
-      "items": [
-        {
-          "url": "http://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50",
-          "fromProtocol": true,
-          "isCrossOrigin": true,
-          "totalBytes": 29607,
-          "wastedBytes": 18917
-        }
-      ],
-      "overallSavingsMs": 0,
-      "overallSavingsBytes": 18917
     }
   },
   "uses-optimized-images": {
