@@ -105,8 +105,9 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
       "prettier --write",
+      "eslint --fix",
+      "jest --bail --findRelatedTests",
       "git add"
     ]
   }
