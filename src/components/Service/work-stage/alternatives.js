@@ -11,7 +11,7 @@ class WorkStageAlternatives extends React.Component {
           this.props.workStage.alternativeTitle,
           ...this.props.workStage.alternativeWorkStages.map(
             ({ alternativeTitle }) => alternativeTitle
-          ),
+          )
         ]
       : null
   }
@@ -23,7 +23,7 @@ class WorkStageAlternatives extends React.Component {
       this.setState({
         selectedAlternative: workStage.alternativeWorkStages.filter(
           ({ alternativeTitle }) => alternativeTitle === selected
-        )[0],
+        )[0]
       })
     }
   }

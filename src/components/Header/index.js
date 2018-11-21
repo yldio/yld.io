@@ -24,7 +24,7 @@ class Header extends Component {
 
   toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }))
 
-  render () {
+  render() {
     return (
       <Grid className="grid">
         <Row>
@@ -36,41 +36,41 @@ class Header extends Component {
                     {isClient() &&
                     !window.location.pathname.includes('engineering') &&
                     !window.location.pathname.includes('design') ? (
+                      <img
+                        role="button"
+                        tab-index="0"
+                        height="48"
+                        src={logo}
+                        alt="yld logo"
+                      />
+                    ) : null}
+
+                    {isClient() &&
+                    window.location.pathname.includes('engineering') ? (
+                      <Fragment>
+                        <HiddenText>engineering</HiddenText>
                         <img
                           role="button"
                           tab-index="0"
                           height="48"
-                          src={logo}
-                          alt="yld logo"
+                          src={logoEng}
+                          alt="yld engineering logo"
                         />
-                      ) : null}
-
-                    {isClient() &&
-                    window.location.pathname.includes('engineering') ? (
-                        <Fragment>
-                          <HiddenText>engineering</HiddenText>
-                          <img
-                            role="button"
-                            tab-index="0"
-                            height="48"
-                            src={logoEng}
-                            alt="yld engineering logo"
-                          />
-                        </Fragment>
-                      ) : null}
+                      </Fragment>
+                    ) : null}
                     {isClient() &&
                     window.location.pathname.includes('design') ? (
-                        <Fragment>
-                          <HiddenText>Design</HiddenText>
-                          <img
-                            role="button"
-                            tab-index="0"
-                            height="48"
-                            src={logoDesign}
-                            alt="yld design logo"
-                          />
-                        </Fragment>
-                      ) : null}
+                      <Fragment>
+                        <HiddenText>Design</HiddenText>
+                        <img
+                          role="button"
+                          tab-index="0"
+                          height="48"
+                          src={logoDesign}
+                          alt="yld design logo"
+                        />
+                      </Fragment>
+                    ) : null}
                   </Link>
                   <MobileMenu>
                     <button onClick={this.toggleMenu}>

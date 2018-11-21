@@ -16,7 +16,7 @@ const Anchor = styled(Link)`
   text-decoration: underline;
 `
 
-export default function SeoLinks ({ items }) {
+export default function SeoLinks({ items }) {
   return (
     <PagePaths
       render={pathsById => (

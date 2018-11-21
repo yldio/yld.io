@@ -79,7 +79,7 @@ const Specialty = ({ services }) => (
         <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
           <section
             style={{
-              background: `#${service.caseStudies[0].posterColor}`,
+              background: `#${service.caseStudies[0].posterColor}`
             }}
           >
             <CardHeader>

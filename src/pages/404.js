@@ -25,8 +25,8 @@ const NotFoundPage = ({ data: { site } }) => (
       meta={[
         {
           name: 'description',
-          content: 'YLD - Engineering - Digital, NodeJS, React, AWS',
-        },
+          content: 'YLD - Engineering - Digital, NodeJS, React, AWS'
+        }
       ]}
     >
       <html lang="en" />
