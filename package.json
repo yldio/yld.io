@@ -42,7 +42,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-p lint format",
-    "start": "gatsby build",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "lighthouse": "jest",
     "develop": "gatsby develop",
