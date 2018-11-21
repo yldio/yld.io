@@ -27,7 +27,7 @@ jobs:
       - run: yarn test
   lighthouse:
     docker:
-      - image: circleci/node:9.11.2
+      - image: circleci/node:9.8.0-browsers
 
     working_directory: ~/repo
 
