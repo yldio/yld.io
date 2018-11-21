@@ -164,6 +164,12 @@ const Specialty = ({ data }) => {
           </Col>
         </Row>
       </Grid>
+      <Grid className="grid">
+        <Col md={6} sm={12} xs={12}>
+          <H1>{specialty.title}</H1>
+          <H1 muted>related projects</H1>
+        </Col>
+      </Grid>
     </Layout>
   )
 }
@@ -184,72 +190,143 @@ export const pageQuery = graphql`
           title
           seoTitle
           seoMetaDescription
-          seoText{
+          seoText {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
             }
           }
+          introTitle
           introTextTitle1
-          introTextBody1{
+          introTextBody1 {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
             }
           }
           introTextTitle2
-          introTextBody2{
+          introTextBody2 {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
             }
           }
           introTextTitle3
-          introTextBody3{
+          introTextBody3 {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
             }
           }
-          relatedProjects{
-          ... on ContentfulCaseStudy {
-            title
-            slug
-            posterColor
-            posterImage {
+          relatedProjects {
+            ... on ContentfulCaseStudy {
               title
-              file {
-                url
+              slug
+              posterColor
+              posterImage {
+                title
+                file {
+                  url
+                }
               }
             }
           }
-        }
-          trainingIntroText{
+          trainingIntroText {
             nodeType
-            content{
+            content {
               nodeType
-              content{
+              content {
                 nodeType
                 value
               }
             }
           }
+          trainingTextIcon1 {
+            id
+            title
+            file {
+              url
+              fileName
+            }
+          }
+          trainingTextTitle1
+          trainingTextBody1 {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+          trainingTextIcon2 {
+            id
+            title
+            file {
+              url
+              fileName
+            }
+          }
+          trainingTextTitle2
+          trainingTextBody2 {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+          trainingTextIcon3 {
+            id
+            title
+            file {
+              url
+              fileName
+            }
+          }
+          trainingTextTitle3
+          trainingTextBody3 {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+<<<<<<< HEAD
+=======
+          communityText {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+>>>>>>> adding content to the page
           communityLogo {
             id
             title
