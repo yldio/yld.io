@@ -1,14 +1,43 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import { Padding } from 'styled-components-spacing'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H2, H4, Paragraph } from '../components/Typography'
+import { H1, H2, H4, H3, Paragraph } from '../components/Typography'
+import StyledLink from '../components/styledLink'
 import {
   AnimatedLink,
   CardHeader,
   PosterImage,
 } from '../components/Common/animatedLink'
+import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
+
+const PosterLinks = ({ project }) => (
+  <AnimatedLink to={`/case-study/${project.slug}`}>
+    <section
+      style={{
+        background: `#${project.posterColor}`,
+      }}
+    >
+      <CardHeader>
+        <H3 noMargin reverse>
+          {project.title}
+        </H3>
+        <Paragraph reverse muted>
+          {project.introSentence}
+        </Paragraph>
+      </CardHeader>
+      <PosterImage justifyCenter alignCenter color={project.posterColor}>
+        <img
+          alt={project.posterImage.title}
+          src={project.posterImage.file.url}
+          style={{ maxHeight: '100%' }}
+        />
+      </PosterImage>
+    </section>
+  </AnimatedLink>
+)
 
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
@@ -69,70 +98,69 @@ const Specialty = ({ data }) => {
             </H1>
           </Col>
           <Col md={6} sm={12} xs={12}>
-            <AnimatedLink
-              to={`/case-study/${specialty.relatedProjects[1].slug}`}
-            >
-              <section
-                style={{
-                  background: `#${specialty.relatedProjects[1].posterColor}`,
-                }}
-              >
-                <CardHeader>
-                  <div>
-                    <Paragraph reverse muted>
-                      Case study
-                    </Paragraph>
-                    <H1 noMargin reverse>
-                      {specialty.relatedProjects[1].title}
-                    </H1>
-                  </div>
-                </CardHeader>
-                <PosterImage
-                  justifyCenter
-                  alignCenter
-                  color={specialty.relatedProjects[1].posterColor}
-                >
-                  <img
-                    alt={specialty.relatedProjects[1].posterImage.title}
-                    src={specialty.relatedProjects[1].posterImage.file.url}
-                    style={{ maxHeight: '100%' }}
-                  />
-                </PosterImage>
-              </section>
-            </AnimatedLink>
+            <PosterLinks project={specialty.relatedProjects[1]} />
           </Col>
           <Col md={6} sm={12} xs={12}>
-            <AnimatedLink
-              to={`/case-study/${specialty.relatedProjects[0].slug}`}
-            >
-              <section
-                style={{
-                  background: `#${specialty.relatedProjects[0].posterColor}`,
-                }}
-              >
-                <CardHeader>
-                  <div>
-                    <Paragraph reverse muted>
-                      Case study
-                    </Paragraph>
-                    <H1 noMargin reverse>
-                      {specialty.relatedProjects[0].title}
-                    </H1>
-                  </div>
-                </CardHeader>
-                <PosterImage
-                  justifyCenter
-                  alignCenter
-                  color={specialty.relatedProjects[0].posterColor}
-                >
-                  <img
-                    alt={specialty.relatedProjects[0].posterImage.title}
-                    src={specialty.relatedProjects[0].posterImage.file.url}
-                    style={{ maxHeight: '100%' }}
-                  />
-                </PosterImage>
-              </section>
-            </AnimatedLink>
+            <PosterLinks project={specialty.relatedProjects[0]} />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H4>Other Clients we helped</H4>
+          </Col>
+          <Companies companies={specialty.clients} />
+        </Row>
+      </Grid>
+      <Grid className="grid">
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H1>{`${specialty.title} training`}</H1>
+            <Paragraph>
+              {specialty.trainingIntroText.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={4} sm={12} xs={12}>
+            <Padding bottom={1.5}>
+              <img
+                src={`https://${specialty.trainingTextIcon1.file.url}`}
+                alt={specialty.trainingTextIcon1.title}
+              />
+            </Padding>
+            <H4>{specialty.trainingTextTitle1}</H4>
+            <Paragraph>
+              {specialty.trainingTextBody1.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+          <Col md={4} sm={12} xs={12}>
+            <Padding bottom={1.5}>
+              <img
+                src={`https://${specialty.trainingTextIcon2.file.url}`}
+                alt={specialty.trainingTextIcon2.title}
+              />
+            </Padding>
+            <H4>{specialty.trainingTextTitle2}</H4>
+            <Paragraph>
+              {specialty.trainingTextBody2.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+          <Col md={4} sm={12} xs={12}>
+            <Padding bottom={1.5}>
+              <img
+                src={`https://${specialty.trainingTextIcon3.file.url}`}
+                alt={specialty.trainingTextIcon3.title}
+              />
+            </Padding>
+            <H4>{specialty.trainingTextTitle3}</H4>
+            <Paragraph>
+              {specialty.trainingTextBody3.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+          <StyledLink>Learn more</StyledLink>
           </Col>
         </Row>
       </Grid>
@@ -204,6 +232,7 @@ export const pageQuery = graphql`
             ... on ContentfulCaseStudy {
               title
               slug
+              introSentence
               posterColor
               posterImage {
                 title
@@ -211,6 +240,14 @@ export const pageQuery = graphql`
                   url
                 }
               }
+            }
+          }
+          clients {
+            id
+            title
+            file {
+              url
+              fileName
             }
           }
           trainingIntroText {
