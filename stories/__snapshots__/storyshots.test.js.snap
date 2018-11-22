@@ -1,5 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Form Button 1`] = `
+<button
+  className="sc-iwsKbI ggqLQX"
+>
+  Click Me
+</button>
+`;
+
+exports[`Storyshots Form Checkbox 1`] = `
+<section
+  className="sc-gqjmRU bjIXBQ"
+>
+  <input
+    className="sc-bZQynM eECAzN"
+    id="checkbox"
+    name="checkbox"
+    type="checkbox"
+  />
+  <label
+    htmlFor="checkbox"
+  >
+    Label
+  </label>
+</section>
+`;
+
+exports[`Storyshots Form Field 1`] = `
+<section
+  className="sc-gZMcBi eKVSBX"
+>
+  <input
+    className="sc-gzVnrw eoVqIU"
+    placeholder="test"
+    type="text"
+  />
+</section>
+`;
+
+exports[`Storyshots Form Fieldset 1`] = `
+<section
+  className="sc-gqjmRU bjIXBQ"
+>
+  <input
+    className="sc-gzVnrw eoVqIU"
+    placeholder="test"
+    type="text"
+  />
+</section>
+`;
+
+exports[`Storyshots Form Input 1`] = `
+<input
+  className="sc-gzVnrw eoVqIU"
+  placeholder="test"
+  type="text"
+/>
+`;
+
+exports[`Storyshots Form Label 1`] = `
+<label
+  className="sc-htoDjs bJKUOL"
+>
+  Label
+</label>
+`;
+
+exports[`Storyshots Form Textarea 1`] = `
+<textarea
+  className="sc-dnqmqq dKskfo"
+  placeholder="test"
+/>
+`;
+
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
   className="sc-bwzfXH dlysrk"
