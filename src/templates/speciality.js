@@ -8,7 +8,7 @@ import StyledLink from '../components/styledLink'
 import {
   AnimatedLink,
   CardHeader,
-  PosterImage,
+  PosterImage
 } from '../components/Common/animatedLink'
 import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
@@ -17,7 +17,7 @@ const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
     <section
       style={{
-        background: `#${project.posterColor}`,
+        background: `#${project.posterColor}`
       }}
     >
       <CardHeader>
@@ -160,7 +160,7 @@ const Specialty = ({ data }) => {
         </Row>
         <Row>
           <Col md={6} sm={12} xs={12}>
-          <StyledLink>Learn more</StyledLink>
+            <StyledLink>Learn more</StyledLink>
           </Col>
         </Row>
       </Grid>
@@ -238,6 +238,10 @@ export const pageQuery = graphql`
             ... on ContentfulCaseStudy {
               title
               slug
+<<<<<<< HEAD
+=======
+              introSentence
+>>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
               posterColor
               posterImage {
                 title
@@ -247,6 +251,17 @@ export const pageQuery = graphql`
               }
             }
           }
+<<<<<<< HEAD
+=======
+          clients {
+            id
+            title
+            file {
+              url
+              fileName
+            }
+          }
+>>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
           trainingIntroText {
             nodeType
             content {
@@ -314,6 +329,19 @@ export const pageQuery = graphql`
               }
             }
           }
+<<<<<<< HEAD
+=======
+          communityText {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+>>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
           communityLogo {
             id
             title
