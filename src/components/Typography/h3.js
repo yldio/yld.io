@@ -18,7 +18,7 @@ export default styled.h3`
     opacity: .5;
   `};
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     font-size: ${remcalc(32)};
     padding: ${remcalc(13)} 0 ${remcalc(11)} 0;
     line-height: ${remcalc(36)};

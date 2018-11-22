@@ -18,7 +18,7 @@ export default styled.h4`
     opacity: .5;
   `};
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     font-size: ${remcalc(26)};
     padding: ${remcalc(12)} 0;
     line-height: ${remcalc(30)};

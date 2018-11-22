@@ -26,7 +26,7 @@ export default styled.h1`
       padding-top: 0;
   `};
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     font-size: ${remcalc(42)};
     padding: ${remcalc(10)} 0 ${remcalc(8)};
     line-height: ${remcalc(48)};
