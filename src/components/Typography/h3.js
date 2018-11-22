@@ -6,9 +6,9 @@ import is from 'styled-is'
 export default styled.h3`
   color: ${props => props.theme.colors.textLight};
   font-weight: 500;
-  font-size: ${remcalc(20)};
-  line-height: ${remcalc(24)};
-  padding: ${remcalc(11)} 0 ${remcalc(13)} 0;
+  font-size: ${remcalc(26)};
+  line-height: ${remcalc(30)};
+  padding: ${remcalc(12)} 0 ${remcalc(12)} 0;
 
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
@@ -18,9 +18,9 @@ export default styled.h3`
     opacity: .5;
   `};
 
-  ${breakpoint('tablet')`
-    font-size: ${remcalc(40)};
-    padding: ${remcalc(22)} 0 ${remcalc(20)} 0;
-    line-height: ${remcalc(48)};
+  ${breakpoint('smallTablet')`
+    font-size: ${remcalc(32)};
+    padding: ${remcalc(13)} 0 ${remcalc(11)} 0;
+    line-height: ${remcalc(36)};
   `};
 `

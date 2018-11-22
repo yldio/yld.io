@@ -5,9 +5,9 @@ import is from 'styled-is'
 
 export default styled.h4`
   color: ${props => props.theme.colors.text};
-  font-weight: 700;
+  font-weight: 500;
   line-height: ${remcalc(24)};
-  font-size: ${remcalc(18)};
+  font-size: ${remcalc(21)};
   padding: ${remcalc(11)} 0 ${remcalc(13)} 0;
 
   ${is('reverse')`
@@ -18,14 +18,10 @@ export default styled.h4`
     opacity: .5;
   `};
 
-  ${is('normal')`
-    font-weight: 500;
-  `};
-
-  ${breakpoint('tablet')`
-    font-size: ${remcalc(30)};
-    padding: ${remcalc(14)} 0 ${remcalc(10)} 0;
-    line-height: ${remcalc(36)};
+  ${breakpoint('smallTablet')`
+    font-size: ${remcalc(26)};
+    padding: ${remcalc(12)} 0;
+    line-height: ${remcalc(30)};
 
     ${is('noMargin')`
         padding: 0;

@@ -7,9 +7,7 @@ import { Node } from './elements.js'
 const Office = ({ name, telephone, email, streetAddress }) => (
   <Col xs={12} md={3}>
     <Margin bottom={1}>
-      <H5 bold reverse>
-        {name}
-      </H5>
+      <H5 reverse>{name}</H5>
     </Margin>
     <Paragraph>
       <span>

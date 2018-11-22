@@ -4,10 +4,10 @@ import is from 'styled-is'
 
 export default styled.h5`
   color: ${props => props.theme.colors.text};
-  font-size: ${remcalc(18)};
+  font-size: ${remcalc(17)};
   padding: ${remcalc(12)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
-  font-weight: 400;
+  font-weight: 700;
 
   ${is('noWrap')`
     white-space: nowrap;
@@ -15,14 +15,6 @@ export default styled.h5`
 
   ${is('muted')`
     opacity: .5;
-  `};
-
-  ${is('bold')`
-    font-weight: 700;
-  `};
-
-  ${is('small')`
-    font-size: ${remcalc(15)};
   `};
 
   ${is('noTop')`
