@@ -60,32 +60,41 @@ const Specialty = ({ data }) => {
       </Helmet>
       <Grid className="grid">
         <Row>
-          <Col xs={12}>
+          <Col xs={12} sm={12} md={6}>
             <H1>{specialty.title}</H1>
             <Paragraph>
               {specialty.seoText.content[0].content[0].value}
             </Paragraph>
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <img
+              alt={specialty.introGraphic.title}
+              src={specialty.introGraphic.file.url}
+              style={{ maxHeight: '100%' }}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} sm={12} xs={12}>
             <H2>{specialty.introTitle}</H2>
-            <Row>
-              <Col md={4} sm={12} xs={12}>
-                <H4>{specialty.introTextTitle1}</H4>
-                <Paragraph>
-                  {specialty.introTextBody1.content[0].content[0].value}
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={12} xs={12}>
-                <H4>{specialty.introTextTitle2}</H4>
-                <Paragraph>
-                  {specialty.introTextBody2.content[0].content[0].value}
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={12} xs={12}>
-                <H4>{specialty.introTextTitle3}</H4>
-                <Paragraph>
-                  {specialty.introTextBody3.content[0].content[0].value}
-                </Paragraph>
-              </Col>
-            </Row>
+          </Col>
+          <Col md={4} sm={12} xs={12}>
+            <H4>{specialty.introTextTitle1}</H4>
+            <Paragraph>
+              {specialty.introTextBody1.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+          <Col md={4} sm={12} xs={12}>
+            <H4>{specialty.introTextTitle2}</H4>
+            <Paragraph>
+              {specialty.introTextBody2.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+          <Col md={4} sm={12} xs={12}>
+            <H4>{specialty.introTextTitle3}</H4>
+            <Paragraph>
+              {specialty.introTextBody3.content[0].content[0].value}
+            </Paragraph>
           </Col>
         </Row>
       </Grid>
@@ -165,10 +174,21 @@ const Specialty = ({ data }) => {
         </Row>
       </Grid>
       <Grid className="grid">
-        <Col md={6} sm={12} xs={12}>
-          <H1>{specialty.title}</H1>
-          <H1 muted>related projects</H1>
-        </Col>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <img
+              alt={specialty.communityLogo.title}
+              src={specialty.communityLogo.file.url}
+              style={{ maxHeight: '100%' }}
+            />
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <H1>{`${specialty.title} community`}</H1>
+            <Paragraph>
+              {specialty.communityText.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+        </Row>
       </Grid>
     </Layout>
   )
@@ -198,6 +218,14 @@ export const pageQuery = graphql`
                 nodeType
                 value
               }
+            }
+          }
+          introGraphic {
+            id
+            title
+            file {
+              fileName
+              url
             }
           }
           introTitle
@@ -238,10 +266,7 @@ export const pageQuery = graphql`
             ... on ContentfulCaseStudy {
               title
               slug
-<<<<<<< HEAD
-=======
               introSentence
->>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
               posterColor
               posterImage {
                 title
@@ -251,8 +276,6 @@ export const pageQuery = graphql`
               }
             }
           }
-<<<<<<< HEAD
-=======
           clients {
             id
             title
@@ -261,7 +284,6 @@ export const pageQuery = graphql`
               fileName
             }
           }
->>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
           trainingIntroText {
             nodeType
             content {
@@ -329,8 +351,6 @@ export const pageQuery = graphql`
               }
             }
           }
-<<<<<<< HEAD
-=======
           communityText {
             nodeType
             content {
@@ -341,7 +361,6 @@ export const pageQuery = graphql`
               }
             }
           }
->>>>>>> d3dd864608c21339021c78754a7f2596cb907c5a
           communityLogo {
             id
             title
