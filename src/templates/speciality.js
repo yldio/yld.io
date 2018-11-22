@@ -12,6 +12,7 @@ import {
 } from '../components/Common/animatedLink'
 import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
+import GrayBackground from '../components/GrayBG'
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -120,59 +121,63 @@ const Specialty = ({ data }) => {
           <Companies companies={specialty.clients} />
         </Row>
       </Grid>
-      <Grid className="grid">
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <H1>{`${specialty.title} training`}</H1>
-            <Paragraph>
-              {specialty.trainingIntroText.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={4} sm={12} xs={12}>
-            <Padding bottom={1.5}>
-              <img
-                src={`https://${specialty.trainingTextIcon1.file.url}`}
-                alt={specialty.trainingTextIcon1.title}
-              />
-            </Padding>
-            <H4>{specialty.trainingTextTitle1}</H4>
-            <Paragraph>
-              {specialty.trainingTextBody1.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <Padding bottom={1.5}>
-              <img
-                src={`https://${specialty.trainingTextIcon2.file.url}`}
-                alt={specialty.trainingTextIcon2.title}
-              />
-            </Padding>
-            <H4>{specialty.trainingTextTitle2}</H4>
-            <Paragraph>
-              {specialty.trainingTextBody2.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <Padding bottom={1.5}>
-              <img
-                src={`https://${specialty.trainingTextIcon3.file.url}`}
-                alt={specialty.trainingTextIcon3.title}
-              />
-            </Padding>
-            <H4>{specialty.trainingTextTitle3}</H4>
-            <Paragraph>
-              {specialty.trainingTextBody3.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <StyledLink>Learn more</StyledLink>
-          </Col>
-        </Row>
-      </Grid>
+      <GrayBackground>
+        <Padding top={5} bottom={3}>
+          <Grid className="grid">
+            <Row>
+              <Col md={6} sm={12} xs={12}>
+                <H1>{`${specialty.title} training`}</H1>
+                <Paragraph>
+                  {specialty.trainingIntroText.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={4} sm={12} xs={12}>
+                <Padding bottom={1.5}>
+                  <img
+                    src={`https://${specialty.trainingTextIcon1.file.url}`}
+                    alt={specialty.trainingTextIcon1.title}
+                  />
+                </Padding>
+                <H4>{specialty.trainingTextTitle1}</H4>
+                <Paragraph>
+                  {specialty.trainingTextBody1.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+              <Col md={4} sm={12} xs={12}>
+                <Padding bottom={1.5}>
+                  <img
+                    src={`https://${specialty.trainingTextIcon2.file.url}`}
+                    alt={specialty.trainingTextIcon2.title}
+                  />
+                </Padding>
+                <H4>{specialty.trainingTextTitle2}</H4>
+                <Paragraph>
+                  {specialty.trainingTextBody2.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+              <Col md={4} sm={12} xs={12}>
+                <Padding bottom={1.5}>
+                  <img
+                    src={`https://${specialty.trainingTextIcon3.file.url}`}
+                    alt={specialty.trainingTextIcon3.title}
+                  />
+                </Padding>
+                <H4>{specialty.trainingTextTitle3}</H4>
+                <Paragraph>
+                  {specialty.trainingTextBody3.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={6} sm={12} xs={12}>
+                <StyledLink>Learn more</StyledLink>
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
+      </GrayBackground>
       <Grid className="grid">
         <Row>
           <Col md={6} sm={12} xs={12}>
@@ -189,6 +194,22 @@ const Specialty = ({ data }) => {
             </Paragraph>
           </Col>
         </Row>
+      </Grid>
+      <Grid className="grid">
+        <Padding top={4} bottom={4}>
+          <Row>
+            <Col md={6} sm={12} xs={12}>
+              <H1>{`Upcoming ${specialty.title} events`}</H1>
+            </Col>
+            <Col md={6} sm={12} xs={12}>
+              {specialty.events
+                .filter(({ startTime }) => new Date(startTime) > new Date())
+                .map(event => (
+                  <div key={event.id}>{event.eventTitle}</div>
+                ))}
+            </Col>
+          </Row>
+        </Padding>
       </Grid>
     </Layout>
   )
@@ -367,6 +388,16 @@ export const pageQuery = graphql`
             file {
               fileName
               url
+            }
+          }
+          events {
+            id
+            eventTitle
+            date
+            startTime
+            linkToEvent
+            blurb {
+              blurb
             }
           }
         }
