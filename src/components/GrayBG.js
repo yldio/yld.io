@@ -17,6 +17,8 @@ export default styled.section`
   padding-top: ${props =>
     props.offsetBottom ? remcalc(props.topOffset * -1) : 0};
   margin-bottom: ${props => remcalc(props.topOffset || -50)};
+  z-index: 1;
+  position: relative;
 
   &:after {
     content: ' ';
@@ -26,7 +28,7 @@ export default styled.section`
     background-color: white;
     display: block;
     position: absolute;
-    z-index: -1;
+    z-index: 2;
   }
 
   ${is('offsetBottom')`
