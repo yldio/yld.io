@@ -37,7 +37,8 @@
   "scripts": {
     "test": "run-p format lint",
     "serve": "gatsby serve",
-    "lighthouse": "jest ",
+    "lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
+    "snapshots": "jest --testPathPattern=\"storyshots.test.js\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
