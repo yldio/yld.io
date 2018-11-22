@@ -12,6 +12,7 @@ import {
 } from '../components/Common/animatedLink'
 import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
+import GrayBackground from '../components/GrayBG'
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -190,6 +191,22 @@ const Specialty = ({ data }) => {
           </Col>
         </Row>
       </Grid>
+      <Grid className="grid">
+        <Padding top={4} bottom={4}>
+          <Row>
+            <Col md={6} sm={12} xs={12}>
+              <H1>{`Upcoming ${specialty.title} events`}</H1>
+            </Col>
+            <Col md={6} sm={12} xs={12}>
+              {specialty.events
+                .filter(({ startTime }) => new Date(startTime) > new Date())
+                .map(event => (
+                  <div key={event.id}>{event.eventTitle}</div>
+                ))}
+            </Col>
+          </Row>
+        </Padding>
+      </Grid>
     </Layout>
   )
 }
@@ -348,6 +365,16 @@ export const pageQuery = graphql`
             file {
               fileName
               url
+            }
+          }
+          events {
+            id
+            eventTitle
+            date
+            startTime
+            linkToEvent
+            blurb {
+              blurb
             }
           }
         }
