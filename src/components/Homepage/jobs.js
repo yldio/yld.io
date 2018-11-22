@@ -34,7 +34,7 @@ const JobsComponent = () => (
                 xs={12}
                 key={`${key}-${jobs[key].length}-main`}
               >
-                <H5 bold>{key}</H5>
+                <H5>{key}</H5>
 
                 <JobContainer>
                   {jobs[key].slice(0, 3).map(job => (
