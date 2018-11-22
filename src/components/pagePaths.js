@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 let cachedPathsById = null
 
-export default function PagePaths(props) {
+export default function PagePaths (props) {
   if (cachedPathsById) {
     return props.render(cachedPathsById)
   }
