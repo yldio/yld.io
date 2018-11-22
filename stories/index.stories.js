@@ -6,6 +6,15 @@ import theme from '../src/utils/theme'
 import GlobalStyle from '../src/utils/globalStyle'
 
 import { H1, H3, H4, H5, H6 } from '../src/components/Typography'
+import {
+  Checkbox,
+  Input,
+  Label,
+  Textarea,
+  Button,
+  Field,
+  Fieldset
+} from '../src/components/forms'
 
 const Theme = storyFn => (
   <ThemeProvider theme={theme}>
@@ -24,3 +33,25 @@ storiesOf('Typography', module)
   .add('Small Title 1', () => <H4>Small Title</H4>)
   .add('Small Title 2', () => <H5>Small Title</H5>)
   .add('Small Title 3', () => <H6>Small Title</H6>)
+
+storiesOf('Form', module)
+  .add('Checkbox', () => (
+    <Fieldset>
+      <Checkbox type="checkbox" id={'checkbox'} name={'checkbox'} />
+      <label htmlFor={'checkbox'}>Label</label>
+    </Fieldset>
+  ))
+  .add('Input', () => <Input type="text" placeholder="test" />)
+  .add('Textarea', () => <Textarea placeholder="test" />)
+  .add('Button', () => <Button>Click Me</Button>)
+  .add('Label', () => <Label>Label</Label>)
+  .add('Field', () => (
+    <Field>
+      <Input type="text" placeholder="test" />
+    </Field>
+  ))
+  .add('Fieldset', () => (
+    <Fieldset>
+      <Input type="text" placeholder="test" />
+    </Fieldset>
+  ))
