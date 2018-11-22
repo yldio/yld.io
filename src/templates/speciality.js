@@ -2,8 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import { format } from 'date-fns'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H2, H4, H3, Paragraph } from '../components/Typography'
+import { H1, H2, H4, H3, H5, Paragraph } from '../components/Typography'
 import StyledLink from '../components/styledLink'
 import {
   AnimatedLink,
@@ -205,8 +206,24 @@ const Specialty = ({ data }) => {
               {specialty.events
                 .filter(({ startTime }) => new Date(startTime) > new Date())
                 .map(event => (
-                  <div key={event.id}>{event.eventTitle}</div>
+                  <div key={`${event.id}`}>
+                    <img
+                      src={`https://${specialty.eventIcon.file.url}`}
+                      alt={specialty.eventIcon.title}
+                    />
+                    <H5 bold>
+                      <a
+                        href={event.linkToEvent}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {event.eventTitle}
+                      </a>
+                    </H5>
+                    {format(new Date(event.date), 'MMMM DD[,] dddd')}
+                  </div>
                 ))}
+              <StyledLink>More events</StyledLink>
             </Col>
           </Row>
         </Padding>
@@ -383,6 +400,14 @@ export const pageQuery = graphql`
             }
           }
           communityLogo {
+            id
+            title
+            file {
+              fileName
+              url
+            }
+          }
+          eventIcon {
             id
             title
             file {
