@@ -24,7 +24,7 @@ const Blog = () => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H5 bold>
+                <H5>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
                       node.uniqueSlug
