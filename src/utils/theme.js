@@ -5,7 +5,7 @@ const calc = v => remcalc(v).split('rem')[0]
 const breakpoints = {
   phone: 0,
   tablet: 600,
-  smallTablet: 899,
+  smallTablet: 899, // sharon
   desktop: 1096
 }
 
