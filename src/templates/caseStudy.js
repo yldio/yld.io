@@ -82,7 +82,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
                     <Stat noTop>{stat.value}</Stat>
-                    <H5 bold>{stat.label}</H5>
+                    <H5>{stat.label}</H5>
                   </Margin>
                 ))}
             </Col>

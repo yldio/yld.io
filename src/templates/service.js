@@ -67,26 +67,20 @@ const Service = ({ data }) => {
               </Col>
               <Col xs={12} sm={12} md={6} mdOffset={2}>
                 <Padding bottom={5}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle1}
-                  </H5>
+                  <H5 noTop>{service.specialityAreaTitle1}</H5>
                   <H6>
                     <SeoLinks items={service.specialityAreaItems1} />
                   </H6>
                 </Padding>
                 <Padding bottom={5}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle2}
-                  </H5>
+                  <H5 noTop>{service.specialityAreaTitle2}</H5>
                   <H6>
                     <SeoLinks items={service.specialityAreaItems2} />
                   </H6>
                 </Padding>
                 {service.specialityAreaTitle3 && (
                   <Padding bottom={5}>
-                    <H5 noTop bold>
-                      {service.specialityAreaTitle3}
-                    </H5>
+                    <H5 noTop>{service.specialityAreaTitle3}</H5>
                     <H6>
                       <SeoLinks items={service.specialityAreaItems3} />
                     </H6>
@@ -94,9 +88,7 @@ const Service = ({ data }) => {
                 )}
                 {service.specialityAreaTitle4 && (
                   <Padding bottom={6}>
-                    <H5 noTop bold>
-                      {service.specialityAreaTitle4}
-                    </H5>
+                    <H5 noTop>{service.specialityAreaTitle4}</H5>
                     <H6>
                       <SeoLinks items={service.specialityAreaItems4} />
                     </H6>

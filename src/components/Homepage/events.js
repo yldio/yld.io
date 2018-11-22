@@ -46,7 +46,7 @@ const Events = ({ events }) => (
           .slice(0, 3)
           .map(({ node }) => (
             <Li key={`${node.id}`}>
-              <H5 bold>
+              <H5>
                 <a
                   href={node.linkToEvent}
                   target="_blank"
@@ -102,7 +102,7 @@ const Events = ({ events }) => (
             .slice(0, 3)
             .map(({ node }) => (
               <Li key={`${node.id}`}>
-                <H5 bold>
+                <H5>
                   <a
                     href={node.linkToEvent}
                     target="_blank"
