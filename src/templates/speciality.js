@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H2, H4, H3, H5, Paragraph } from '../components/Typography'
+import { H1, H4, H3, H5, Paragraph } from '../components/Typography'
 import StyledLink from '../components/styledLink'
 import {
   AnimatedLink,
@@ -14,6 +14,7 @@ import {
 import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
 import GrayBackground from '../components/GrayBG'
+import BlueBackground from '../components/BlueBG'
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -46,7 +47,7 @@ const Specialty = ({ data }) => {
   const site = data.site
   console.log(specialty)
   return (
-    <Layout>
+    <Layout blue>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           specialty.title ? '- ' + specialty.title : ''
@@ -60,46 +61,55 @@ const Specialty = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
-        <Row>
-          <Col xs={12} sm={12} md={6}>
-            <H1>{specialty.title}</H1>
-            <Paragraph>
-              {specialty.seoText.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <img
-              alt={specialty.introGraphic.title}
-              src={specialty.introGraphic.file.url}
-              style={{ maxHeight: '100%' }}
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} sm={12} xs={12}>
-            <H2>{specialty.introTitle}</H2>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <H4>{specialty.introTextTitle1}</H4>
-            <Paragraph>
-              {specialty.introTextBody1.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <H4>{specialty.introTextTitle2}</H4>
-            <Paragraph>
-              {specialty.introTextBody2.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-          <Col md={4} sm={12} xs={12}>
-            <H4>{specialty.introTextTitle3}</H4>
-            <Paragraph>
-              {specialty.introTextBody3.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-        </Row>
-      </Grid>
+      <BlueBackground>
+        <Padding top={2} />
+        <Grid className="grid">
+          <Row>
+            <Col xs={12} sm={12} md={6}>
+              <H1 reverse>{specialty.title}</H1>
+              <Paragraph reverse muted>
+                {specialty.seoText.content[0].content[0].value}
+              </Paragraph>
+            </Col>
+            <Col md={6} sm={12} xs={12}>
+              <img
+                alt={specialty.introGraphic.title}
+                src={specialty.introGraphic.file.url}
+                style={{ maxHeight: '100%' }}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} sm={12} xs={12}>
+              <H4 reverse>{specialty.introTitle}</H4>
+            </Col>
+            <Col md={4} sm={12} xs={12}>
+              <Paragraph bold reverse>
+                {specialty.introTextTitle1}
+              </Paragraph>
+              <Paragraph muted reverse>
+                {specialty.introTextBody1.content[0].content[0].value}
+              </Paragraph>
+            </Col>
+            <Col md={4} sm={12} xs={12}>
+              <Paragraph bold reverse>
+                {specialty.introTextTitle2}
+              </Paragraph>
+              <Paragraph muted reverse>
+                {specialty.introTextBody2.content[0].content[0].value}
+              </Paragraph>
+            </Col>
+            <Col md={4} sm={12} xs={12}>
+              <Paragraph bold reverse>
+                {specialty.introTextTitle3}
+              </Paragraph>
+              <Paragraph muted reverse>
+                {specialty.introTextBody3.content[0].content[0].value}
+              </Paragraph>
+            </Col>
+          </Row>
+        </Grid>
+      </BlueBackground>
       <Grid className="grid">
         <Row>
           <Col md={6} sm={12} xs={12}>
@@ -122,8 +132,8 @@ const Specialty = ({ data }) => {
           <Companies companies={specialty.clients} />
         </Row>
       </Grid>
-      <GrayBackground>
-        <Padding top={5} bottom={3}>
+      <GrayBackground noTop>
+        <Padding top={4} bottom={3}>
           <Grid className="grid">
             <Row>
               <Col md={6} sm={12} xs={12}>
@@ -179,25 +189,29 @@ const Specialty = ({ data }) => {
           </Grid>
         </Padding>
       </GrayBackground>
+      <BlueBackground>
+        <Grid className="grid">
+          <Padding top={6} bottom={6}>
+            <Row>
+              <Col md={6} sm={12} xs={12}>
+                <img
+                  alt={specialty.communityLogo.title}
+                  src={specialty.communityLogo.file.url}
+                  style={{ maxHeight: '100%' }}
+                />
+              </Col>
+              <Col md={6} sm={12} xs={12}>
+                <H1 reverse>{`${specialty.title} community`}</H1>
+                <Paragraph reverse muted>
+                  {specialty.communityText.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+            </Row>
+          </Padding>
+        </Grid>
+      </BlueBackground>
       <Grid className="grid">
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <img
-              alt={specialty.communityLogo.title}
-              src={specialty.communityLogo.file.url}
-              style={{ maxHeight: '100%' }}
-            />
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <H1>{`${specialty.title} community`}</H1>
-            <Paragraph>
-              {specialty.communityText.content[0].content[0].value}
-            </Paragraph>
-          </Col>
-        </Row>
-      </Grid>
-      <Grid className="grid">
-        <Padding top={4} bottom={4}>
+        <Padding top={6} bottom={6}>
           <Row>
             <Col md={6} sm={12} xs={12}>
               <H1>{`Upcoming ${specialty.title} events`}</H1>
@@ -223,7 +237,6 @@ const Specialty = ({ data }) => {
                     {format(new Date(event.date), 'MMMM DD[,] dddd')}
                   </div>
                 ))}
-              <StyledLink>More events</StyledLink>
             </Col>
           </Row>
         </Padding>

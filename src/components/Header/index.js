@@ -83,7 +83,7 @@ class Header extends Component {
                         Home
                       </Link>
                     </HomeLink>
-                    <Link activeClassName="active" to="/engineering/">
+                    <Link reverse activeClassName="active" to="/engineering/">
                       Engineering
                     </Link>
                     <Link activeClassName="active" to="/design/">

@@ -7,9 +7,10 @@ import './layout.css'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
+import BlueBackground from './BlueBG'
 import google from '../utils/google-json.json'
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, blue }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -32,7 +33,12 @@ const Layout = ({ children, location }) => (
             `}</script>
             <html lang="en" />
           </Helmet>
-          <Header />
+          {blue && (
+            <BlueBackground>
+              <Header blue />
+            </BlueBackground>
+          )}
+          {!blue && <Header />}
           {children}
           <Footer />
           <GlobalStyle />
