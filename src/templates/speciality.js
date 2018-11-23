@@ -111,26 +111,28 @@ const Specialty = ({ data }) => {
         </Grid>
       </BlueBackground>
       <Grid className="grid">
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <H1 noMargin>{specialty.title}</H1>
-            <H1 noMargin muted>
-              related projects
-            </H1>
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <PosterLinks project={specialty.relatedProjects[1]} />
-          </Col>
-          <Col md={6} sm={12} xs={12}>
-            <PosterLinks project={specialty.relatedProjects[0]} />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6} sm={12} xs={12}>
-            <H4>Other Clients we helped</H4>
-          </Col>
-          <Companies companies={specialty.clients} />
-        </Row>
+        <Padding top={5} bottom={5}>
+          <Row>
+            <Col md={6} sm={12} xs={12}>
+              <H1 noMargin>{specialty.title}</H1>
+              <H1 noMargin muted>
+                related projects
+              </H1>
+            </Col>
+            <Col md={6} sm={12} xs={12}>
+              <PosterLinks project={specialty.relatedProjects[1]} />
+            </Col>
+            <Col md={6} sm={12} xs={12}>
+              <PosterLinks project={specialty.relatedProjects[0]} />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6} sm={12} xs={12}>
+              <H4>Other Clients we helped</H4>
+            </Col>
+            <Companies companies={specialty.clients} />
+          </Row>
+        </Padding>
       </Grid>
       <Grid className="grid">
         <Row>
