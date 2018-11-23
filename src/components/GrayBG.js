@@ -36,10 +36,6 @@ export default styled.section`
     &:after {
       content: none;
     }
-    + * {
-    z-index: 2;
-    position: relative;
-    }
   `}
 
   ${is('noTop')`
@@ -53,5 +49,10 @@ export default styled.section`
     ${is('noTop')`
       top: ${remcalc(0)};
     `};
+  }
+
+  + * {
+    z-index: 2;
+    position: relative;
   }
 `
