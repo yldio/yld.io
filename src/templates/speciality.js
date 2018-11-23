@@ -62,53 +62,54 @@ const Specialty = ({ data }) => {
         <html lang="en" />
       </Helmet>
       <BlueBackground>
-        <Padding top={2} />
-        <Grid className="grid">
-          <Row>
-            <Col xs={12} sm={12} md={6}>
-              <H1 reverse>{specialty.title}</H1>
-              <Paragraph reverse muted>
-                {specialty.seoText.content[0].content[0].value}
-              </Paragraph>
-            </Col>
-            <Col md={6} sm={12} xs={12}>
-              <img
-                alt={specialty.introGraphic.title}
-                src={specialty.introGraphic.file.url}
-                style={{ maxHeight: '100%' }}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12} sm={12} xs={12}>
-              <H4 reverse>{specialty.introTitle}</H4>
-            </Col>
-            <Col md={4} sm={12} xs={12}>
-              <Paragraph bold reverse>
-                {specialty.introTextTitle1}
-              </Paragraph>
-              <Paragraph muted reverse>
-                {specialty.introTextBody1.content[0].content[0].value}
-              </Paragraph>
-            </Col>
-            <Col md={4} sm={12} xs={12}>
-              <Paragraph bold reverse>
-                {specialty.introTextTitle2}
-              </Paragraph>
-              <Paragraph muted reverse>
-                {specialty.introTextBody2.content[0].content[0].value}
-              </Paragraph>
-            </Col>
-            <Col md={4} sm={12} xs={12}>
-              <Paragraph bold reverse>
-                {specialty.introTextTitle3}
-              </Paragraph>
-              <Paragraph muted reverse>
-                {specialty.introTextBody3.content[0].content[0].value}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Grid>
+        <Padding top={2} bottom={5}>
+          <Grid className="grid">
+            <Row>
+              <Col xs={12} sm={12} md={6}>
+                <H1 reverse>{specialty.title}</H1>
+                <Paragraph reverse muted>
+                  {specialty.seoText.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+              <Col md={6} sm={12} xs={12}>
+                <img
+                  alt={specialty.introGraphic.title}
+                  src={specialty.introGraphic.file.url}
+                  style={{ maxHeight: '100%' }}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col md={12} sm={12} xs={12}>
+                <H4 reverse>{specialty.introTitle}</H4>
+              </Col>
+              <Col md={4} sm={12} xs={12}>
+                <Paragraph bold reverse>
+                  {specialty.introTextTitle1}
+                </Paragraph>
+                <Paragraph muted reverse>
+                  {specialty.introTextBody1.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+              <Col md={4} sm={12} xs={12}>
+                <Paragraph bold reverse>
+                  {specialty.introTextTitle2}
+                </Paragraph>
+                <Paragraph muted reverse>
+                  {specialty.introTextBody2.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+              <Col md={4} sm={12} xs={12}>
+                <Paragraph bold reverse>
+                  {specialty.introTextTitle3}
+                </Paragraph>
+                <Paragraph muted reverse>
+                  {specialty.introTextBody3.content[0].content[0].value}
+                </Paragraph>
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
       </BlueBackground>
       <Grid className="grid">
         <Padding top={5} bottom={5}>
@@ -128,7 +129,9 @@ const Specialty = ({ data }) => {
           </Row>
           <Row>
             <Col md={6} sm={12} xs={12}>
-              <H4>Other Clients we helped</H4>
+              <Padding top={5} bottom={3}>
+                <H5 bold>Other Clients we helped</H5>
+              </Padding>
             </Col>
             <Companies companies={specialty.clients} />
           </Row>
