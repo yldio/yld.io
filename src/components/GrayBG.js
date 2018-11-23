@@ -32,8 +32,13 @@ export default styled.section`
   }
 
   ${is('offsetBottom')`
+    z-index: auto;
     &:after {
       content: none;
+    }
+    + * {
+    z-index: 2;
+    position: relative;
     }
   `}
 
@@ -47,6 +52,6 @@ export default styled.section`
 
     ${is('noTop')`
       top: ${remcalc(0)};
-    `}
+    `};
   }
 `
