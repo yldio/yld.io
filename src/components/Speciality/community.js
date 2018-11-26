@@ -22,8 +22,8 @@ const CommunitySection = ({ specialty }) => (
   <BlueBackground>
     <Trimmer className="grid">
       <TrimmedImage
-        alt={specialty.introGraphic.title}
-        src={specialty.introGraphic.file.url}
+        alt={specialty.communityBackground.title}
+        src={specialty.communityBackground.file.url}
       />
       <Padding top={6} bottom={6}>
         <Row>

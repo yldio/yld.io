@@ -220,6 +220,14 @@ export const pageQuery = graphql`
               url
             }
           }
+          communityBackground {
+            id
+            title
+            file {
+              fileName
+              url
+            }
+          }
           eventIcon {
             id
             title
