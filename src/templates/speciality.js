@@ -34,6 +34,161 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   </IntroBorder>
 )
 
+const IntroSection = ({ specialty }) => (
+  <BlueBackground>
+    <Padding top={2} bottom={5}>
+      <Grid className="grid">
+        <Row>
+          <Col xs={12} sm={12} md={6}>
+            <Flex full column justifyCenter>
+              <H1 reverse>{specialty.title}</H1>
+              <Paragraph reverse muted>
+                {specialty.seoText.content[0].content[0].value}
+              </Paragraph>
+            </Flex>
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <img
+              alt={specialty.introGraphic.title}
+              src={specialty.introGraphic.file.url}
+              style={{ maxHeight: '100%' }}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} sm={12} xs={12}>
+            <Padding top={2} bottom={2}>
+              <H4 reverse>{specialty.introTitle}</H4>
+            </Padding>
+          </Col>
+          <IntroRectangle
+            introTextTitle={specialty.introTextTitle1}
+            introTextBody={specialty.introTextBody1}
+          />
+          <IntroRectangle
+            introTextTitle={specialty.introTextTitle2}
+            introTextBody={specialty.introTextBody2}
+          />
+          <IntroRectangle
+            introTextTitle={specialty.introTextTitle3}
+            introTextBody={specialty.introTextBody3}
+          />
+        </Row>
+      </Grid>
+    </Padding>
+  </BlueBackground>
+)
+
+const TrainingStage = ({ title, body, icon }) => (
+  <Col md={4} sm={12} xs={12}>
+    <Padding top={4} bottom={4}>
+      <Padding bottom={1.5}>
+        <img src={`https://${icon.file.url}`} alt={icon.title} />
+      </Padding>
+      <H5 bold>{title}</H5>
+      <Paragraph>{body.content[0].content[0].value}</Paragraph>
+    </Padding>
+  </Col>
+)
+
+const TrainingSection = ({ specialty }) => (
+  <GrayBackground noTop>
+    <Padding top={4} bottom={6}>
+      <Grid className="grid">
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H1>{`${specialty.title} training`}</H1>
+            <Paragraph>
+              {specialty.trainingIntroText.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+        </Row>
+        <Row>
+          <TrainingStage
+            title={specialty.trainingTextTitle1}
+            body={specialty.trainingTextBody1}
+            icon={specialty.trainingTextIcon1}
+          />
+          <TrainingStage
+            title={specialty.trainingTextTitle2}
+            body={specialty.trainingTextBody2}
+            icon={specialty.trainingTextIcon2}
+          />
+          <TrainingStage
+            title={specialty.trainingTextTitle3}
+            body={specialty.trainingTextBody3}
+            icon={specialty.trainingTextIcon3}
+          />
+        </Row>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <StyledLink>{`Request ${specialty.title} training`}</StyledLink>
+          </Col>
+        </Row>
+      </Grid>
+    </Padding>
+  </GrayBackground>
+)
+
+const ProjectsSection = ({ specialty }) => (
+  <Grid className="grid">
+    <Padding top={5} bottom={5}>
+      <Row>
+        <Col md={6} sm={false} xs={false}>
+          <Padding top={7} bottom={5}>
+            <H1 noMargin>{specialty.title}</H1>
+            <H1 noMargin muted>
+              related projects
+            </H1>
+          </Padding>
+          <PosterLinks project={specialty.relatedProjects[0]} />
+        </Col>
+        <Col md={false} sm={12} xs={12}>
+          <H1 noMargin>{specialty.title}</H1>
+          <H1 noMargin muted>
+            related projects
+          </H1>
+        </Col>
+        <Col md={6} sm={12} xs={12}>
+          <PosterLinks project={specialty.relatedProjects[1]} />
+        </Col>
+        <Col md={6} sm={12} xs={12} />
+      </Row>
+      <Row>
+        <Col md={6} sm={12} xs={12}>
+          <Padding top={5} bottom={3}>
+            <H5 bold>Other Clients we helped</H5>
+          </Padding>
+        </Col>
+        <Companies companies={specialty.clients} />
+      </Row>
+    </Padding>
+  </Grid>
+)
+const CommunitySection = ({ specialty }) => (
+  <BlueBackground>
+    <Grid className="grid">
+      <Padding top={6} bottom={6}>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <img
+              alt={specialty.communityLogo.title}
+              src={specialty.communityLogo.file.url}
+              style={{ maxHeight: '100%' }}
+            />
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            <H1 reverse>{`${specialty.title} community`}</H1>
+            <Paragraph reverse muted>
+              {specialty.communityText.content[0].content[0].value}
+            </Paragraph>
+          </Col>
+        </Row>
+      </Padding>
+    </Grid>
+  </BlueBackground>
+)
+
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
     <section
