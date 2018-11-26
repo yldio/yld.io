@@ -1,5 +1,6 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
+import { Grid } from '../components/grid'
 import { Margin } from 'styled-components-spacing'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
@@ -31,7 +32,7 @@ const NotFoundPage = ({ data: { site } }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Grid className="grid">
+    <Grid>
       <Margin top={6} bottom={7}>
         <Row>
           <Col xs={12} sm={8} md={6}>

@@ -1,9 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
 import { H2, H6, H3, H5, Paragraph } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
+import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
@@ -25,7 +26,7 @@ const Service = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col xs={12}>
             <CaseStudy
@@ -37,7 +38,7 @@ const Service = ({ data }) => {
       </Grid>
 
       <GrayBackground>
-        <Grid className="grid">
+        <Grid>
           <Padding top={5} bottom={4}>
             <Row>
               <Col xs={11}>
@@ -59,7 +60,7 @@ const Service = ({ data }) => {
         </Padding>
       </GrayBackground>
       <GrayBackground noTop>
-        <Grid className="grid">
+        <Grid>
           <Padding top={5}>
             <Row>
               <Col xs={12} sm={12} md={4}>
@@ -99,7 +100,7 @@ const Service = ({ data }) => {
           </Padding>
         </Grid>
       </GrayBackground>
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col xs={12}>
             <Padding top={4} bottom={2}>

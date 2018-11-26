@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
+import { Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
@@ -26,7 +27,7 @@ class Header extends Component {
 
   render() {
     return (
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col xs={12}>
             <header>

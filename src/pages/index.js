@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
-import { Grid } from 'react-styled-flexboxgrid'
+import { Grid } from '../components/grid'
 
 import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
@@ -26,7 +26,7 @@ const IndexPage = ({
     >
       <html lang="en" />
     </Helmet>
-    <Grid className="grid">
+    <Grid>
       <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }}>
         <CaseStudy
           caseStudy={content.featuredCaseStudy}
@@ -36,7 +36,7 @@ const IndexPage = ({
       <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }} />
     </Grid>
     <GrayBackground>
-      <Grid className="grid">
+      <Grid>
         <Padding top={{ phone: 2 }} />
         <Padding top={{ phone: 4, tablet: 5, desktop: 6 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
@@ -45,19 +45,19 @@ const IndexPage = ({
         </Padding>
       </Grid>
     </GrayBackground>
-    <Grid className="grid">
+    <Grid>
       <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 5 }}>
         <Specialty services={content.services} />
       </Padding>
     </Grid>
     <GrayBackground topOffset={-30}>
-      <Grid className="grid">
+      <Grid>
         <Padding bottom={4}>
           <Events events={events.edges} />
         </Padding>
       </Grid>
     </GrayBackground>
-    <Grid className="grid">
+    <Grid>
       <Padding top={2} />
       <Padding top={{ phone: 3, tablet: 4 }} bottom={{ phone: 3, tablet: 4 }}>
         <Blog />
@@ -65,7 +65,7 @@ const IndexPage = ({
       <Padding bottom={{ phone: 0, tablet: 2 }} />
     </Grid>
     <GrayBackground>
-      <Grid className="grid">
+      <Grid>
         <Jobs />
         <Padding bottom={3} />
       </Grid>

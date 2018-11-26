@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
+import { Grid } from '../../grid'
 import { Padding } from 'styled-components-spacing'
 import { Graphic, How } from './elements'
 import Image from '../../Common/Image'
@@ -7,7 +8,7 @@ import WorkStageAlternatives from './alternatives'
 
 const WorkStages = ({ title, workStages, image }) => (
   <Fragment>
-    <Grid className="grid">
+    <Grid>
       <Row style={{ position: 'relative' }}>
         <Col xs={12}>
           <Padding top={4} bottom={6}>
@@ -29,7 +30,7 @@ const WorkStages = ({ title, workStages, image }) => (
           <WorkStageAlternatives workStage={workStage} />
         </Padding>
         {index !== arr.length - 1 && (
-          <Grid className="grid">
+          <Grid>
             <hr />
           </Grid>
         )}

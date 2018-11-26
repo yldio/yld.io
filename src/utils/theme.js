@@ -3,10 +3,12 @@ import remcalc from 'remcalc'
 const calc = v => remcalc(v).split('rem')[0]
 
 const breakpoints = {
-  phone: 0,
-  tablet: 600,
+  smallPhone: 0,
+  phone: 471,
+  largePhone: 553,
   smallTablet: 899, // sharon
-  desktop: 1096
+  tablet: 900,
+  desktop: 1197
 }
 
 const flexboxbGridBreakPoints = {

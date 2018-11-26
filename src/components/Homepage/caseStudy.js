@@ -17,8 +17,6 @@ const ImageWrapper = styled(Col)`
 
   ${breakpoint('desktop')`
     max-width: ${remcalc(549)};
-    position: absolute;
-    left: 51.5%;
     padding-right: 0px;
   `}
 `

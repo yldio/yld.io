@@ -2,9 +2,10 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
+import { Grid } from '../components/grid'
 import { H2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
@@ -36,7 +37,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <Padding bottom={0.5}>
           <CaseStudyTop caseStudy={caseStudy} />
         </Padding>
@@ -52,7 +53,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         </Row>
       </Grid>
       <GrayBackgroud topOffset={-250}>
-        <Grid className="grid">
+        <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
               <Col xs={12} md={10}>
@@ -90,7 +91,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           <Padding bottom={5} />
         </Grid>
       </GrayBackgroud>
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col xs={12}>
             <Padding top={4} bottom={2}>

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col } from 'react-styled-flexboxgrid'
+import { Grid } from '../../grid'
 import { Padding } from 'styled-components-spacing'
 import { H2 } from '../../Typography'
 import { SwitchLink, WorkStageGridElement, MasonryContainer } from './elements'
@@ -10,7 +11,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   const sections = getSections(workStage)
   return (
-    <Grid className="grid">
+    <Grid>
       <Row>
         <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
           <Padding bottom={2}>
