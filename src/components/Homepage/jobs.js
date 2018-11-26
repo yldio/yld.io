@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
 import styled from 'styled-components'

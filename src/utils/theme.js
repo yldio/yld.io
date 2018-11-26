@@ -1,6 +1,22 @@
 import remcalc from 'remcalc'
 
-const calc = v => remcalc(v).split('rem')[0]
+const space = {
+  0: '0',
+  0.5: remcalc(6),
+  1: remcalc(12),
+  1.5: remcalc(18),
+  2: remcalc(24),
+  3: remcalc(36),
+  3.5: remcalc(54),
+  4: remcalc(72),
+  5: remcalc(108),
+  6: remcalc(144),
+  7: remcalc(288),
+  30: remcalc(30),
+  60: remcalc(60),
+  42: remcalc(42),
+  48: remcalc(48)
+}
 
 const breakpoints = {
   smallPhone: 0,
@@ -11,40 +27,10 @@ const breakpoints = {
   desktop: 1197
 }
 
-const flexboxbGridBreakPoints = {
-  xs: calc(breakpoints.phone),
-  sm: calc(breakpoints.tablet),
-  md: calc(breakpoints.desktop)
-}
-
 export default {
   breakpoints,
-  flexboxgrid: {
-    gridSize: 12,
-    gutterWidth: calc(48),
-    outerMargin: calc(30),
-    container: {
-      sm: 55.5,
-      md: 55.5,
-      lg: calc(1000)
-    },
-    breakpoints: flexboxbGridBreakPoints
-  },
-  spacing: {
-    0: '0',
-    0.5: remcalc(6),
-    1: remcalc(12),
-    1.5: remcalc(18),
-    2: remcalc(24),
-    3: remcalc(36),
-    3.5: remcalc(54),
-    4: remcalc(72),
-    5: remcalc(108),
-    6: remcalc(144),
-    7: remcalc(288),
-    30: remcalc(30),
-    60: remcalc(60)
-  },
+  spacing: space,
+  space,
   colors: {
     white: '#fff',
     text: '#333333',

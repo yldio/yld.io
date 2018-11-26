@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'

@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
-import { Row, Col } from 'react-styled-flexboxgrid'
 import { StaticQuery, graphql } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import { H1, Paragraph } from '../components/Typography'
 import {

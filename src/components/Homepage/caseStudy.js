@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Margin, Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby'
-import { Row, Col } from 'react-styled-flexboxgrid'
-import { Grid } from '../grid'
+import { Grid, Row, Col } from '../grid'
 import Flex from 'styled-flex-component'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'

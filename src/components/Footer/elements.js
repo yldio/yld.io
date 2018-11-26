@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Row } from 'react-styled-flexboxgrid'
+import { Row } from '../../components/grid'
 
 export const FooterStyled = styled.footer`
   background: ${props => props.theme.colors.dark};

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H3 } from '../Typography'

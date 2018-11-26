@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
-import { Grid } from '../../components/grid'
+import { Grid, Row, Col } from '../../components/grid'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
 import { H2 } from '../../components/Typography'

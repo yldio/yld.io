@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { Row, Col } from 'react-styled-flexboxgrid'
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import { H1 } from '../components/Typography'
 import Layout from '../components/layout'
 

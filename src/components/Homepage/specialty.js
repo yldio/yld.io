@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
@@ -50,7 +50,7 @@ const PosterImage = styled.div`
     height: 473px;
   `}
 `
-function isEven (value) {
+function isEven(value) {
   if (value % 2 === 0) return true
   else return false
 }

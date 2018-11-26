@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import { Margin } from 'styled-components-spacing'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
