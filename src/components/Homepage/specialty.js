@@ -51,8 +51,16 @@ const PosterImage = styled.div`
   `}
 `
 
-const MasonryContainer = styled(Col)`
+const MasonryContainer = styled.div`
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+
   ${breakpoint('desktop')`
+    display: block;
     column-count: 2;
     column-gap: 0;
     column-fill: auto;
@@ -60,21 +68,32 @@ const MasonryContainer = styled(Col)`
   `}
 `
 
+const orderMap = {
+  0: 1,
+  1: 3,
+  2: 2,
+  3: 4
+}
+
 const MasonryElement = styled.div`
   break-inside: avoid;
+  order: ${({ index }) => orderMap[index]};
+
+  ${breakpoint('desktop')`
+    order: initial;
+  `};
 `
 
 const Specialty = ({ services }) => (
   <Row>
     <MasonryContainer xs={12}>
-      {services.map((service, index) => {
-        console.log({ services })
-
+      {services.map((service, index, arr) => {
         return (
           service.introSentence && (
-            <MasonryElement key={service.id}>
-              {index === 2 ? (
-                <Padding top={{ phone: 0, tablet: 5, desktop: 7 }} bottom={2} />
+            <MasonryElement key={service.id} index={index}>
+              {(arr.length === 2 && index === 1) ||
+              (arr.length !== 2 && index === 2) ? (
+                <Padding top={{ phone: 0, tablet: 0, desktop: 7 }} bottom={2} />
               ) : null}
               <H2>{service.title}</H2>
               <Padding bottom={0.5}>
