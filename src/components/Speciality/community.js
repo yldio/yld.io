@@ -3,10 +3,28 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { H1, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
+import styled from 'styled-components'
 
+const TrimmedImage = styled.img`
+  position: absolute;
+  height: 125%;
+  object-fit: cover;
+  left: -30%;
+  top: -15%;
+  opacity: 0.6;
+  z-index: -1;
+`
+const Trimmer = styled(Grid)`
+  position: relative;
+  overflow: hidden;
+`
 const CommunitySection = ({ specialty }) => (
   <BlueBackground>
-    <Grid className="grid">
+    <Trimmer className="grid">
+      <TrimmedImage
+        alt={specialty.introGraphic.title}
+        src={specialty.introGraphic.file.url}
+      />
       <Padding top={6} bottom={6}>
         <Row>
           <Col md={6} sm={12} xs={12}>
@@ -24,7 +42,7 @@ const CommunitySection = ({ specialty }) => (
           </Col>
         </Row>
       </Padding>
-    </Grid>
+    </Trimmer>
   </BlueBackground>
 )
 export default CommunitySection
