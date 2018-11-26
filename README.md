@@ -11,6 +11,12 @@
   yarn develop
 ```
 
+In order to access the development branch on contentful during development set the environment variable `ENV` to `'dev'`
+
+```bash
+ENV=dev yarn develop
+```
+
 ## Tech Used
 
 - [Yarn](https://yarnpkg.com)
