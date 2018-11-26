@@ -1,9 +1,9 @@
 import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, Paragraph } from '../components/Typography'
+import { H1, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GrayBackground from '../components/BlueBG'
-import StyledLink from '../components/styledLink'
+import GrayBackground from '../GrayBG'
+import StyledLink from '../styledLink'
 
 const TalkToUsSection = ({ title, contactText }) => (
   <GrayBackground noTop>

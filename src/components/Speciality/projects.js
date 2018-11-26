@@ -1,13 +1,9 @@
 import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H3, H5, Paragraph } from '../components/Typography'
+import { H1, H3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import {
-  AnimatedLink,
-  CardHeader,
-  PosterImage
-} from '../components/Common/animatedLink'
-import Companies from '../components/Homepage/companies'
+import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
+import Companies from '../Homepage/companies'
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>

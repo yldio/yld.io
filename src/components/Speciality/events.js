@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H5, Paragraph } from '../components/Typography'
+import { H1, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 

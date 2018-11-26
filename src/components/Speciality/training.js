@@ -1,9 +1,9 @@
 import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H5, Paragraph } from '../components/Typography'
+import { H1, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GrayBackground from '../components/GrayBG'
-import StyledLink from '../components/styledLink'
+import GrayBackground from '../GrayBG'
+import StyledLink from '../styledLink'
 
 const TrainingStage = ({ title, body, icon }) => (
   <Col md={4} sm={12} xs={12}>

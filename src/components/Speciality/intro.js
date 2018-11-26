@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H4, Paragraph } from '../components/Typography'
+import { H1, H4, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import BlueBackground from '../components/BlueBG'
+import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
 const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
