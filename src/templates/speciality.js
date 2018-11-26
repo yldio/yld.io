@@ -1,7 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import Flex from 'styled-flex-component'
 import { format } from 'date-fns'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { H1, H4, H3, H5, Paragraph } from '../components/Typography'
@@ -15,6 +17,22 @@ import Companies from '../components/Homepage/companies'
 import Layout from '../components/layout'
 import GrayBackground from '../components/GrayBG'
 import BlueBackground from '../components/BlueBG'
+
+const IntroBorder = styled(Col)`
+  border: 1px solid rgba(255, 255, 255, 0.3);
+`
+const IntroRectangle = ({ introTextTitle, introTextBody }) => (
+  <IntroBorder md={4} sm={12} xs={12}>
+    <Padding top={2} bottom={2}>
+      <Paragraph bold reverse>
+        {introTextTitle}
+      </Paragraph>
+      <Paragraph muted reverse>
+        {introTextBody.content[0].content[0].value}
+      </Paragraph>
+    </Padding>
+  </IntroBorder>
+)
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -66,10 +84,12 @@ const Specialty = ({ data }) => {
           <Grid className="grid">
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H1 reverse>{specialty.title}</H1>
-                <Paragraph reverse muted>
-                  {specialty.seoText.content[0].content[0].value}
-                </Paragraph>
+                <Flex full column justifyCenter>
+                  <H1 reverse>{specialty.title}</H1>
+                  <Paragraph reverse muted>
+                    {specialty.seoText.content[0].content[0].value}
+                  </Paragraph>
+                </Flex>
               </Col>
               <Col md={6} sm={12} xs={12}>
                 <img
@@ -81,32 +101,22 @@ const Specialty = ({ data }) => {
             </Row>
             <Row>
               <Col md={12} sm={12} xs={12}>
-                <H4 reverse>{specialty.introTitle}</H4>
+                <Padding top={2} bottom={2}>
+                  <H4 reverse>{specialty.introTitle}</H4>
+                </Padding>
               </Col>
-              <Col md={4} sm={12} xs={12}>
-                <Paragraph bold reverse>
-                  {specialty.introTextTitle1}
-                </Paragraph>
-                <Paragraph muted reverse>
-                  {specialty.introTextBody1.content[0].content[0].value}
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={12} xs={12}>
-                <Paragraph bold reverse>
-                  {specialty.introTextTitle2}
-                </Paragraph>
-                <Paragraph muted reverse>
-                  {specialty.introTextBody2.content[0].content[0].value}
-                </Paragraph>
-              </Col>
-              <Col md={4} sm={12} xs={12}>
-                <Paragraph bold reverse>
-                  {specialty.introTextTitle3}
-                </Paragraph>
-                <Paragraph muted reverse>
-                  {specialty.introTextBody3.content[0].content[0].value}
-                </Paragraph>
-              </Col>
+              <IntroRectangle
+                introTextTitle={specialty.introTextTitle1}
+                introTextBody={specialty.introTextBody1}
+              />
+              <IntroRectangle
+                introTextTitle={specialty.introTextTitle2}
+                introTextBody={specialty.introTextBody2}
+              />
+              <IntroRectangle
+                introTextTitle={specialty.introTextTitle3}
+                introTextBody={specialty.introTextBody3}
+              />
             </Row>
           </Grid>
         </Padding>
