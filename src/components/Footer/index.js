@@ -17,7 +17,7 @@ const Footer = () => {
       >
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={1}>
               <Margin bottom={{ phone: 0.5, tablet: 2 }}>
                 <H2 reverse noTop>
                   Find us
@@ -50,7 +50,7 @@ const Footer = () => {
         <Padding top={3} bottom={{ phone: 1, tablet: 3 }}>
           <Grid>
             <Row>
-              <Col xs={12}>
+              <Col width={1}>
                 <Social>
                   {social.map(s => (
                     <li key={s.label}>

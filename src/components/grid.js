@@ -1,63 +1,58 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
-import breakpoint from 'styled-components-breakpoint'
+
+const breakpoints = {
+  smallPhone: 0,
+  phone: 471,
+  largePhone: 553,
+  smallTablet: 899, // sharon
+  tablet: 900,
+  desktop: 1197
+}
 
 const GridStyled = styled(Box)`
-  ${breakpoint('phone')`
+  @media (min-width: ${breakpoints.phone}px) {
     max-width: 408px;
 
     p {
-      max-width: 390px
+      max-width: 390px;
     }
-  `}
-    ${breakpoint('largePhone')`
+  }
+  @media (min-width: ${breakpoints.largePhone}px) {
     max-width: 480px;
     p {
-      max-width: 390px
+      max-width: 390px;
     }
-  `}
-    ${breakpoint('smallTablet')`
+  }
+  @media (min-width: ${breakpoints.smallTablet}px) {
     max-width: 683px;
-  `}
-    ${breakpoint('tablet')`
+  }
+  @media (min-width: ${breakpoints.tablet}px) {
     max-width: 982px;
-  `}
-  ${breakpoint('desktop')`
+  }
+  @media (min-width: ${breakpoints.desktop}px) {
     max-width: 1100px;
-  `}
+  }
 
- max-width: 272px;
+  max-width: 272px;
 `
-
-// phone
-// largePhone
-// smallTablet
-// tablet
-// desktop
-
-// const space = {
-//   0: '0',
-//   0.5: remcalc(6),
-//   1: remcalc(12),
-//   1.5: remcalc(18),
-//   2: remcalc(24),
-//   3: remcalc(36),
-//   3.5: remcalc(54),
-//   4: remcalc(72),
-//   5: remcalc(108),
-//   6: remcalc(144),
-//   7: remcalc(288),
-//   30: remcalc(30),
-//   60: remcalc(60)
-// }
 
 export const Grid = props => <GridStyled {...props} mx="auto" />
 
 export const Row = props => (
-  <Flex {...props} mx={[-2, -3, -60, -42, -48, -48]} />
+  <Flex
+    {...props}
+    css={{ flexWrap: 'wrap' }}
+    mx={[-2, -3, -60, -42, -48, -48]}
+  />
 )
 
 export const Col = props => (
-  <Box {...props} px={[2, 3, 60, 42, 48, 48]} flex="1 1 auto" />
+  <Box
+    {...props}
+    css={{ flexWrap: 'wrap' }}
+    px={[2, 3, 60, 42, 48, 48]}
+    flex="1 1 auto"
+  />
 )

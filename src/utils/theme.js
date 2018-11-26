@@ -18,14 +18,14 @@ const space = {
   48: remcalc(48)
 }
 
-const breakpoints = {
-  smallPhone: 0,
-  phone: 471,
-  largePhone: 553,
-  smallTablet: 899, // sharon
-  tablet: 900,
-  desktop: 1197
-}
+const breakpoints = [
+  remcalc(0),
+  remcalc(471),
+  remcalc(553),
+  remcalc(899), // sharon
+  remcalc(900),
+  remcalc(1197)
+]
 
 export default {
   breakpoints,

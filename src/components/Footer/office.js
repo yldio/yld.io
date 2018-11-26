@@ -5,7 +5,7 @@ import { H5, Paragraph } from '../../components/Typography'
 import { Node } from './elements.js'
 
 const Office = ({ name, telephone, email, streetAddress }) => (
-  <Col xs={12} md={3}>
+  <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]}>
     <Margin bottom={1}>
       <H5 reverse>{name}</H5>
     </Margin>
