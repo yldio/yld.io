@@ -116,7 +116,12 @@ const Specialty = ({ services }) => (
                     </section>
                   </CardHeader>
                   <PosterImage color={service.caseStudies[0].posterColor}>
-                    <Image image={service.caseStudies[0].posterImage} />
+                    <Image
+                      image={{
+                        ...service.caseStudies[0].posterImage,
+                        fluid: true
+                      }}
+                    />
                   </PosterImage>
                 </section>
               </AnimatedLink>
