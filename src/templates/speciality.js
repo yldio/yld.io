@@ -2,10 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 // import styled from 'styled-components'
-// import { Padding } from 'styled-components-spacing'
-// import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-// import { H1, H5, Paragraph } from '../components/Typography'
+import { Padding } from 'styled-components-spacing'
+import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { H1, H5, Paragraph } from '../components/Typography'
 import Layout from '../components/layout'
+import { format } from 'date-fns'
+import StyledLink from '../components/styledLink'
+import Posts from '../components/posts'
+import Li from '../components/listItem'
+
 import IntroSection from '../components/Speciality/intro'
 import ProjectsSection from '../components/Speciality/projects'
 import TrainingSection from '../components/Speciality/training'
@@ -37,6 +42,43 @@ const Specialty = ({ data }) => {
       <TrainingSection specialty={specialty} />
       <CommunitySection specialty={specialty} />
       <EventSection specialty={specialty} />
+      <Grid className="grid">
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H1>{`From the blog`}</H1>
+            <Paragraph>{`${
+              specialty.title
+            } articles created by members of YLD for the community.`}</Paragraph>
+          </Col>
+          <Col md={4} xs={12}>
+            <Posts>
+              {posts => (
+                <ul>
+                  {posts.slice(0, 3).map(({ node }) => (
+                    <Li key={`${node.id}`}>
+                      <H5 bold>
+                        <a
+                          href={`https://medium.com/yld-engineering-blog/${
+                            node.uniqueSlug
+                          }`}
+                        >
+                          {node.title}
+                        </a>
+                      </H5>
+                      {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
+                    </Li>
+                  ))}
+                </ul>
+              )}
+            </Posts>
+            <Padding top={3}>
+              <StyledLink href="https://medium.com/yld-engineering-blog">
+                More articles
+              </StyledLink>
+            </Padding>
+          </Col>
+        </Row>
+      </Grid>
       <TalkToUsSection
         title={specialty.title}
         contactText={specialty.contactText}
