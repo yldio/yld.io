@@ -1,6 +1,6 @@
 import remcalc from 'remcalc'
 
-const space = {
+export const spacing = {
   0: '0',
   0.5: remcalc(6),
   1: remcalc(12),
@@ -18,19 +18,18 @@ const space = {
   48: remcalc(48)
 }
 
-const breakpoints = [
-  remcalc(0),
-  remcalc(471),
-  remcalc(553),
-  remcalc(899), // sharon
-  remcalc(900),
-  remcalc(1197)
-]
+export const breakpoints = {
+  smallPhone: 0,
+  phone: 471,
+  largePhone: 553,
+  smallTablet: 899, // sharon
+  tablet: 900,
+  desktop: 1197
+}
 
 export default {
   breakpoints,
-  spacing: space,
-  space,
+  spacing,
   colors: {
     white: '#fff',
     text: '#333333',
