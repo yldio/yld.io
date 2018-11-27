@@ -9,7 +9,7 @@ const WorkStages = ({ title, workStages, image }) => (
   <Fragment>
     <Grid>
       <Row style={{ position: 'relative' }}>
-        <Col xs={12}>
+        <Col width={[1]}>
           <Padding top={4} bottom={6}>
             <Graphic>
               <Image image={image} />

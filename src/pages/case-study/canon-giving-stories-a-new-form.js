@@ -129,7 +129,7 @@ const IndexPage = ({
         <Padding top={5} bottom={2}>
           <Grid>
             <Row>
-              <Col xs={12}>
+              <Col width={[1]}>
                 <div className="video-container">
                   <iframe
                     width="844"

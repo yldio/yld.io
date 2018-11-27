@@ -27,7 +27,7 @@ const Service = ({ data }) => {
       </Helmet>
       <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <CaseStudy
               caseStudy={service.caseStudies[0]}
               subHeading="Featured work"
@@ -101,7 +101,7 @@ const Service = ({ data }) => {
       </GrayBackground>
       <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <Padding top={4} bottom={2}>
               <Paragraph>More of our work</Paragraph>
             </Padding>

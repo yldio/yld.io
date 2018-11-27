@@ -12,13 +12,13 @@ const Footer = () => {
   return (
     <FooterStyled>
       <Padding
-        top={{ phone: 3.5, tablet: 4 }}
-        bottom={{ phone: 3.5, tablet: 4 }}
+        top={{ smallPhone: 3.5, tablet: 4 }}
+        bottom={{ smallPhone: 3.5, tablet: 4 }}
       >
         <Grid>
           <Row>
             <Col width={1}>
-              <Margin bottom={{ phone: 0.5, tablet: 2 }}>
+              <Margin bottom={{ smallPhone: 0.5, tablet: 2 }}>
                 <H2 reverse noTop>
                   Find us
                 </H2>
@@ -47,7 +47,7 @@ const Footer = () => {
         </Grid>
       </Padding>
       <FollowUs>
-        <Padding top={3} bottom={{ phone: 1, tablet: 3 }}>
+        <Padding top={3} bottom={{ smallPhone: 1, tablet: 3 }}>
           <Grid>
             <Row>
               <Col width={1}>

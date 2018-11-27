@@ -131,7 +131,7 @@ const IndexPage = ({
       <div style={{ background: '#191933' }}>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <img src={meaning} alt="Logo Meaning" />
             </Col>
           </Row>
@@ -157,7 +157,7 @@ const IndexPage = ({
       <GrayBackground topOffset={-232}>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <img src={logoImage} alt="Stackable Logo" />
             </Col>
           </Row>
@@ -193,7 +193,7 @@ const IndexPage = ({
       <Code>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <Padding vertical={4}>
                 {command1.split('/n').map((p, i) => (
                   <Node key={i}>{p}</Node>
@@ -225,7 +225,7 @@ const IndexPage = ({
           </Row>
           <Margin top={3}>
             <Row>
-              <Col xs={12}>
+              <Col width={[1]}>
                 <NoMobile>
                   <img src={iconsDesktop} alt="desktop icons" />
                 </NoMobile>
@@ -280,7 +280,7 @@ const IndexPage = ({
             </Row>
             <Margin top={3}>
               <Row>
-                <Col xs={12}>
+                <Col width={[1]}>
                   <img src={layout} alt="stackable layout" />
                 </Col>
               </Row>
@@ -309,7 +309,7 @@ const IndexPage = ({
       </Padding>
       <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <Padding top={4} bottom={2}>
               <Paragraph>More of our work</Paragraph>
             </Padding>

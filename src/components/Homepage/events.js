@@ -60,13 +60,13 @@ const Events = ({ events }) => (
           ))}
       </ul>
     </Col>
-    <Col md={false} sm={12} xs={12}>
+    <Col md={false} width={[1]}>
       <EventsColumn xs={8}>
         <H2 noTop>Upcoming events</H2>
       </EventsColumn>
     </Col>
 
-    <Col md={8} xs={12}>
+    <Col md={8} width={[1]}>
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
@@ -94,7 +94,7 @@ const Events = ({ events }) => (
           </div>
         ))}
     </Col>
-    <Col md={false} sm={12} xs={12}>
+    <Col md={false} sm={12} width={[1]}>
       <Padding top={3}>
         <ul>
           {events

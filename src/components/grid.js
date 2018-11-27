@@ -117,13 +117,15 @@ const GridStyled = styled.div`
   `}
 
   max-width: 272px;
+  position: relative;
 
   ${props => css(props)}
 `
 
 const Flex = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
+  position: relative;
   ${props => css(props)};
   /* ${props => console.log(css(props))} */
 `

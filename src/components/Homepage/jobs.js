@@ -19,7 +19,7 @@ const JobCommitment = styled.span`
 const JobsComponent = () => (
   <Fragment>
     <Row>
-      <Col xs={12}>
+      <Col width={[1]}>
         <H2>Join our team</H2>
       </Col>
     </Row>
@@ -56,7 +56,7 @@ const JobsComponent = () => (
         </Jobs>
       </Row>
       <Row>
-        <Col xs={12}>
+        <Col width={[1]}>
           <Padding top={4}>
             <StyledLink
               href="https://jobs.lever.co/yld"

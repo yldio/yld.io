@@ -25,7 +25,7 @@ const Specialty = ({ data }) => {
       </Helmet>
       <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <H1>{specialty.title}</H1>
           </Col>
         </Row>

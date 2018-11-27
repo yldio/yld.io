@@ -27,26 +27,26 @@ const IndexPage = ({
       <html lang="en" />
     </Helmet>
     <Grid>
-      <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }}>
+      <Padding bottom={{ smallPhone: 0, tablet: 2, desktop: 2 }}>
         <CaseStudy
           caseStudy={content.featuredCaseStudy}
           subHeading="Featured work"
         />
       </Padding>
-      <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }} />
+      <Padding bottom={{ smallPhone: 0, tablet: 2, desktop: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid>
-        <Padding top={{ phone: 2 }} />
-        <Padding top={{ phone: 4, tablet: 5, desktop: 6 }} bottom={3}>
+        <Padding top={{ smallPhone: 2 }} />
+        <Padding top={{ smallPhone: 4, tablet: 5, desktop: 6 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
-          <Padding bottom={{ phone: 2, tablet: 4, desktop: 4 }} />
+          <Padding bottom={{ smallPhone: 2, tablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
         </Padding>
       </Grid>
     </GrayBackground>
     <Grid>
-      <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 5 }}>
+      <Padding top={3} bottom={{ smallPhone: 3.5, tablet: 5, desktop: 5 }}>
         <Specialty services={content.services} />
       </Padding>
     </Grid>
@@ -59,10 +59,13 @@ const IndexPage = ({
     </GrayBackground>
     <Grid>
       <Padding top={2} />
-      <Padding top={{ phone: 3, tablet: 4 }} bottom={{ phone: 3, tablet: 4 }}>
+      <Padding
+        top={{ smallPhone: 3, tablet: 4 }}
+        bottom={{ smallPhone: 3, tablet: 4 }}
+      >
         <Blog />
       </Padding>
-      <Padding bottom={{ phone: 0, tablet: 2 }} />
+      <Padding bottom={{ smallPhone: 0, tablet: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid>

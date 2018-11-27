@@ -28,78 +28,75 @@ class Header extends Component {
     return (
       <Grid>
         <Row>
-          <Col xs={12}>
-            <header>
-              <Padding top={2} bottom={3}>
-                <Flex alignCenter wrap justifyBetween>
-                  <Link to="/">
-                    {isClient() &&
-                    !window.location.pathname.includes('engineering') &&
-                    !window.location.pathname.includes('design') ? (
+          <Col width={[1]}>
+            <Padding top={2} bottom={3}>
+              <Flex alignCenter wrap justifyBetween>
+                <Link to="/">
+                  {isClient() &&
+                  !window.location.pathname.includes('engineering') &&
+                  !window.location.pathname.includes('design') ? (
+                    <img
+                      role="button"
+                      tab-index="0"
+                      height="48"
+                      src={logo}
+                      alt="yld logo"
+                    />
+                  ) : null}
+
+                  {isClient() &&
+                  window.location.pathname.includes('engineering') ? (
+                    <Fragment>
+                      <HiddenText>engineering</HiddenText>
                       <img
                         role="button"
                         tab-index="0"
                         height="48"
-                        src={logo}
-                        alt="yld logo"
+                        src={logoEng}
+                        alt="yld engineering logo"
                       />
-                    ) : null}
-
-                    {isClient() &&
-                    window.location.pathname.includes('engineering') ? (
-                      <Fragment>
-                        <HiddenText>engineering</HiddenText>
-                        <img
-                          role="button"
-                          tab-index="0"
-                          height="48"
-                          src={logoEng}
-                          alt="yld engineering logo"
-                        />
-                      </Fragment>
-                    ) : null}
-                    {isClient() &&
-                    window.location.pathname.includes('design') ? (
-                      <Fragment>
-                        <HiddenText>Design</HiddenText>
-                        <img
-                          role="button"
-                          tab-index="0"
-                          height="48"
-                          src={logoDesign}
-                          alt="yld design logo"
-                        />
-                      </Fragment>
-                    ) : null}
+                    </Fragment>
+                  ) : null}
+                  {isClient() && window.location.pathname.includes('design') ? (
+                    <Fragment>
+                      <HiddenText>Design</HiddenText>
+                      <img
+                        role="button"
+                        tab-index="0"
+                        height="48"
+                        src={logoDesign}
+                        alt="yld design logo"
+                      />
+                    </Fragment>
+                  ) : null}
+                </Link>
+                <MobileMenu>
+                  <button onClick={this.toggleMenu}>
+                    <img src={menu} alt="open menu" />
+                  </button>
+                </MobileMenu>
+                <DesktopMenu open={this.state.menuOpen}>
+                  <HomeLink right={30}>
+                    <Link activeClassName="active" to="/">
+                      Home
+                    </Link>
+                  </HomeLink>
+                  <Link activeClassName="active" to="/engineering/">
+                    Engineering
                   </Link>
-                  <MobileMenu>
-                    <button onClick={this.toggleMenu}>
-                      <img src={menu} alt="open menu" />
-                    </button>
-                  </MobileMenu>
-                  <DesktopMenu open={this.state.menuOpen}>
-                    <HomeLink right={30}>
-                      <Link activeClassName="active" to="/">
-                        Home
-                      </Link>
-                    </HomeLink>
-                    <Link activeClassName="active" to="/engineering/">
-                      Engineering
-                    </Link>
-                    <Link activeClassName="active" to="/design/">
-                      Design
-                    </Link>
-                    <Link activeClassName="active" to="/contact/">
-                      Contact
-                    </Link>
-                    <a href="https://medium.com/yld-engineering-blog/">Blog</a>
-                    <Close onClick={this.toggleMenu}>
-                      <img src={close} alt="Close menu" />
-                    </Close>
-                  </DesktopMenu>
-                </Flex>
-              </Padding>
-            </header>
+                  <Link activeClassName="active" to="/design/">
+                    Design
+                  </Link>
+                  <Link activeClassName="active" to="/contact/">
+                    Contact
+                  </Link>
+                  <a href="https://medium.com/yld-engineering-blog/">Blog</a>
+                  <Close onClick={this.toggleMenu}>
+                    <img src={close} alt="Close menu" />
+                  </Close>
+                </DesktopMenu>
+              </Flex>
+            </Padding>
           </Col>
         </Row>
       </Grid>
