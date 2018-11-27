@@ -94,7 +94,7 @@ const stylers = () => ({
 
 const GridStyled = styled.div`
   ${breakpoint('phone')`
-    max-width: 408px;
+    max-width: calc(100% - 62px);
 
     p {
       max-width: 390px;
@@ -107,16 +107,16 @@ const GridStyled = styled.div`
     }
   `}
    ${breakpoint('smallTablet')`
-    max-width: 683px;
+    max-width: calc(100% - 84px);
  `}
    ${breakpoint('tablet')`
-    max-width: 982px;
+    max-width: calc(100% - 92px);
  `}
    ${breakpoint('desktop')`
     max-width: 1100px;
   `}
 
-  max-width: 272px;
+    max-width: calc(100% - 48px);
   position: relative;
 
   ${props => css(props)}
