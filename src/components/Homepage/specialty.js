@@ -11,7 +11,7 @@ import { H2, H4, H6, Paragraph } from '../Typography'
 const Title = styled(H4)`
   font-weight: 500;
 `
-function isEven (value) {
+function isEven(value) {
   if (value % 2 === 0) return true
   else return false
 }
@@ -40,7 +40,7 @@ const Specialty = ({ services }) => (
         <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
           <section
             style={{
-              background: `#${service.caseStudies[0].posterColor}`,
+              background: `#${service.caseStudies[0].posterColor}`
             }}
           >
             <CardHeader>

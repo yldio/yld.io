@@ -26,7 +26,7 @@ const checkboxes = [
   { name: 'none', label: 'None of these' }
 ]
 
-function encode (data) {
+function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -73,7 +73,7 @@ class ContactUs extends Component {
     })
   }
 
-  render () {
+  render() {
     const { name, email, message, submitting, success } = this.state
     const site = this.props.data.site
     const page = this.props.data.allContentfulPage.edges[0].node
