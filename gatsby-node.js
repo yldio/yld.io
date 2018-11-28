@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             slug
+            generate
             body {
               nodeType
             }
@@ -57,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   _.each(result.data.allContentfulSpeciality.edges, edge => {
-    if (edge.node.slug) {
+    if (edge.node.slug && edge.node.generate) {
       createPage({
         path: `/speciality/${edge.node.slug}/`,
         component: slash(specialityTemplate),
