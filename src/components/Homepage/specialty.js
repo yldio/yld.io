@@ -138,7 +138,7 @@ const Specialty = ({ services }) => (
                     <Image
                       image={{
                         ...service.caseStudies[0].posterImage,
-                        fluid: true
+                        fluid: {}
                       }}
                     />
                   </PosterImage>
