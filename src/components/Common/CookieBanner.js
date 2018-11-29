@@ -51,14 +51,14 @@ const Button = styled.button`
     `};
 `
 
-const Cookie = () => (
+const Cookie = ({ onClick }) => (
   <Box>
     <Text>
       By continuing to use our site you agree to our use of cookies
       {/* By continuing to use our site you agree to the use of cookies in
       accordance with our Cookie and Privacy policies. */}
     </Text>
-    <Button onClick={() => {}}>I agree</Button>
+    <Button onClick={onClick}>I agree</Button>
   </Box>
 )
 
