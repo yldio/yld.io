@@ -12,6 +12,8 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 24px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 
   ${breakpoint('tablet')`
     flex-direction: row;
@@ -22,15 +24,16 @@ const Box = styled.div`
     margin: 0 auto;
     border-radius: 6px;
     border: 1px solid #ffcd7c;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     padding: 18px 24px;
   `}
 `
 
 const Text = styled.p`
   font-size: 17px;
+  margin-bottom: 30px;
   ${breakpoint('tablet')`
         display: inline;
+        margin: 0;
     `}
 `
 
@@ -40,13 +43,12 @@ const Button = styled.button`
   font-weight: bold;
   text-align: center;
   font-size: 17px;
-
+  height: 60px;
+  width: 100%;
   ${breakpoint('tablet')`
-  margin-left: auto;
-
+        margin-left: auto;
         width: 150px;
-        height: 60px;
-    `}
+    `};
 `
 
 const Cookie = () => (
