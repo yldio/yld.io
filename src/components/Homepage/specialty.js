@@ -50,55 +50,106 @@ const PosterImage = styled.div`
     height: 473px;
   `}
 `
-function isEven (value) {
-  if (value % 2 === 0) return true
-  else return false
+
+const MasonryContainer = styled.div`
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+
+  ${breakpoint('desktop')`
+    display: block;
+    column-count: 2;
+    column-gap: 0;
+    column-fill: auto;
+    column-gap: 49px;
+  `}
+`
+
+const orderMap = {
+  0: 1,
+  1: 3,
+  2: 2,
+  3: 4
 }
+
+const MasonryElement = styled.div`
+  break-inside: avoid;
+  order: ${({ index }) => orderMap[index]};
+
+  ${breakpoint('desktop')`
+    order: initial;
+  `};
+`
 
 const Specialty = ({ services }) => (
   <Row>
-    {services.map((service, index) => (
-      <Col key={service.id} xs={12} sm={12} md={6}>
-        {!isEven(index) ? (
-          <Padding top={{ phone: 0, tablet: 5, desktop: 7 }} bottom={2} />
-        ) : null}
-        <H2>{service.title}</H2>
-        <Padding bottom={0.5}>
-          <Paragraph>{service.introSentence.introSentence}</Paragraph>
-        </Padding>
-        <Row>
-          <Col xs={11} sm={7}>
-            <H6>
-              <SeoLinks items={service.homePageSpecialities} />
-            </H6>
-          </Col>
-        </Row>
-        <Padding bottom={1.5}>
-          <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
-        </Padding>
-        <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
-          <section
-            style={{
-              background: `#${service.caseStudies[0].posterColor}`
-            }}
-          >
-            <CardHeader>
-              <section>
-                <Paragraph reverse muted>
-                  Case study
-                </Paragraph>
-                <Title noMargin reverse>
-                  {service.caseStudies[0].title}
-                </Title>
-              </section>
-            </CardHeader>
-            <PosterImage color={service.caseStudies[0].posterColor}>
-              <Image image={service.caseStudies[0].posterImage} />
-            </PosterImage>
-          </section>
-        </AnimatedLink>
-      </Col>
-    ))}
+    <MasonryContainer xs={12}>
+      {services.map((service, index, arr) => {
+        return (
+          service.introSentence && (
+            <MasonryElement key={service.id} index={index}>
+              {(arr.length === 2 && index === 1) ||
+              (arr.length !== 2 && index === 2) ? (
+                <Padding top={{ phone: 0, tablet: 0, desktop: 7 }} bottom={2} />
+              ) : null}
+              <H2>{service.title}</H2>
+              <Padding bottom={0.5}>
+                <Paragraph>{service.introSentence.introSentence}</Paragraph>
+              </Padding>
+              {service.homePageSpecialities &&
+                service.homePageSpecialities.length && (
+                  <Row>
+                    <Col xs={11} sm={7}>
+                      <H6>
+                        <SeoLinks items={service.homePageSpecialities} />
+                      </H6>
+                    </Col>
+                  </Row>
+                )}
+
+              {service.pageReady ? (
+                <Padding bottom={1.5}>
+                  <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
+                </Padding>
+              ) : (
+                <Padding bottom={1.5} />
+              )}
+
+              <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
+                <section
+                  style={{
+                    background: `#${service.caseStudies[0].posterColor}`
+                  }}
+                >
+                  <CardHeader>
+                    <section>
+                      <Paragraph reverse muted>
+                        Case study
+                      </Paragraph>
+                      <Title noMargin reverse>
+                        {service.caseStudies[0].title}
+                      </Title>
+                    </section>
+                  </CardHeader>
+                  <PosterImage color={service.caseStudies[0].posterColor}>
+                    <Image
+                      image={{
+                        ...service.caseStudies[0].posterImage,
+                        fluid: {}
+                      }}
+                    />
+                  </PosterImage>
+                </section>
+              </AnimatedLink>
+              <Padding bottom={5} />
+            </MasonryElement>
+          )
+        )
+      })}
+    </MasonryContainer>
   </Row>
 )
 

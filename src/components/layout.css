@@ -1,16 +1,19 @@
 @font-face {
   font-family: 'Stackable Mono';
-  src: url('../images/StackableMono-Medium.woff2') format('woff2'), url('../images/StackableMono-Medium.woff') format('woff');
+  src: url('../images/StackableMono-Medium.woff2') format('woff2'),
+    url('../images/StackableMono-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
-body, html {
+body,
+html {
   width: 100%;
 }
 
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 
 b {
@@ -27,4 +30,9 @@ ol li {
 
 ul li {
   padding-left: 0;
+}
+
+.gatsby-image-wrapper {
+  max-width: 100%;
+  max-height: 100%;
 }

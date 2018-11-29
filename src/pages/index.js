@@ -46,7 +46,7 @@ const IndexPage = ({
       </Grid>
     </GrayBackground>
     <Grid className="grid">
-      <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 5 }}>
+      <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 0 }}>
         <Specialty services={content.services} />
       </Padding>
     </Grid>
@@ -120,6 +120,7 @@ export const query = graphql`
         id
         title
         slug
+        pageReady
         caseStudies {
           ... on ContentfulGenericCaseStudy {
             title
