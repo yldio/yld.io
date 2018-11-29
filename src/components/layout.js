@@ -7,6 +7,8 @@ import './layout.css'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
+import Cookie from './Common/CookieBanner'
+
 import google from '../utils/google-json.json'
 
 const Layout = ({ children, location }) => (
@@ -36,6 +38,7 @@ const Layout = ({ children, location }) => (
           {children}
           <Footer />
           <GlobalStyle />
+          <Cookie />
         </Fragment>
       </ThemeProvider>
     )}
