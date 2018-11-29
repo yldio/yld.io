@@ -82,7 +82,7 @@ test('Performance', () => {
     // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio
     auditTest(audits, 'image-aspect-ratio')
     // https://developers.google.com/web/tools/lighthouse/audits/offscreen-images
-    auditTest(audits, 'offscreen-images', 'size', 2) // prev 1
+    auditTest(audits, 'offscreen-images', 'size', 3) // prev 1
     // https://developers.google.com/web/tools/lighthouse/audits/unused-css-rules
     auditTest(audits, 'unused-css-rules', 'size', 1)
   })
