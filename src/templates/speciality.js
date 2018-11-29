@@ -17,6 +17,8 @@ import TrainingSection from '../components/Speciality/training'
 import CommunitySection from '../components/Speciality/community'
 import EventSection from '../components/Speciality/events'
 import TalkToUsSection from '../components/Speciality/talkToUs'
+import TutorialsSection from '../components/Speciality/tutorials'
+import BooksSection from '../components/Speciality/books'
 
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
@@ -83,6 +85,8 @@ const Specialty = ({ data }) => {
         title={specialty.title}
         contactText={specialty.contactText}
       />
+      <TutorialsSection specialty={specialty} />
+      <BooksSection specialty={specialty} />
     </Layout>
   )
 }
@@ -243,6 +247,23 @@ export const pageQuery = graphql`
                 value
               }
             }
+          }
+          tutorialsIntroText {
+            nodeType
+            content {
+              nodeType
+              content {
+                nodeType
+                value
+              }
+            }
+          }
+          externalResources {
+            type
+            title
+            link
+            additionalInfo
+            id
           }
           communityText {
             nodeType
