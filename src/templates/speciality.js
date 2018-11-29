@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-// import styled from 'styled-components'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { H1, H5, Paragraph } from '../components/Typography'
@@ -17,6 +18,14 @@ import TrainingSection from '../components/Speciality/training'
 import CommunitySection from '../components/Speciality/community'
 import EventSection from '../components/Speciality/events'
 import TalkToUsSection from '../components/Speciality/talkToUs'
+import BlueBackground from '../components/BlueBG'
+
+const Video = styled.iframe`
+  width: ${remcalc(854)};
+  height: ${remcalc(480)};
+  margin: auto;
+  box-shadow: 5px 10px ${props => props.theme.colors.white};
+`
 
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
@@ -42,6 +51,21 @@ const Specialty = ({ data }) => {
       <TrainingSection specialty={specialty} />
       <CommunitySection specialty={specialty} />
       <EventSection specialty={specialty} />
+      <BlueBackground>
+        <Grid className="grid">
+          <Row>
+            <Col md={12}>
+              <H1 reverse>{`Talks`}</H1>
+              <Video
+                src="https://www.youtube.com/embed/yToHjxhCeYM"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </Col>
+          </Row>
+        </Grid>
+      </BlueBackground>
       <Grid className="grid">
         <Row>
           <Col md={6} sm={12} xs={12}>
