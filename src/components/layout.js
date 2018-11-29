@@ -11,7 +11,7 @@ import Cookie from './Common/CookieBanner'
 import google from '../utils/google-json.json'
 
 class Layout extends React.Component {
-  state = { cookiesAllowed: false }
+  state = { cookiesAllowed: true }
 
   componentDidMount() {
     this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) })
