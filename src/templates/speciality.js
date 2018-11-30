@@ -264,6 +264,7 @@ export const pageQuery = graphql`
             link
             additionalInfo
             id
+            colorCode
           }
           communityText {
             nodeType
