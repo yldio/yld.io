@@ -28,4 +28,9 @@ export default styled.p`
   ${is('bold')`
       font-weight: bold;
   `};
+
+  ${is('center')`
+    text-align:center;
+    max-width: ${remcalc(900)};
+  `}
 `
