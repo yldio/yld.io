@@ -62,13 +62,15 @@ const TalksSection = ({ specialty }) => {
             <Row>
               {talks.map(({ title, link, additionalInfo, id }) => (
                 <Col md={4} sm={12} xs={12} key={id}>
-                  <PlayIcon
-                    src={`https://${specialty.videoIcon.file.url}`}
-                    alt={specialty.videoIcon.title}
-                  />
-                  <Paragraph reverse muted style={{ display: 'inline' }}>
-                    {title}
-                  </Paragraph>
+                  <a href={link}>
+                    <PlayIcon
+                      src={`https://${specialty.videoIcon.file.url}`}
+                      alt={specialty.videoIcon.title}
+                    />
+                    <Paragraph reverse muted style={{ display: 'inline' }}>
+                      {title}
+                    </Paragraph>
+                  </a>
                 </Col>
               ))}
             </Row>
