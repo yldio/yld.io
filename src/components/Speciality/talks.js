@@ -34,7 +34,6 @@ const TalksSection = ({ specialty }) => {
   const cta = specialty.externalResources.filter(
     ({ type, additionalInfo }) => type === 'Talk' && additionalInfo === 'CTA'
   )[0]
-  console.log(talks)
   return (
     <BlueBackground>
       <Grid className="grid">

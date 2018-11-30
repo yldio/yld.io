@@ -25,6 +25,7 @@ class Header extends Component {
   toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }))
 
   render() {
+    console.log(this.props)
     return (
       <Grid className="grid">
         <Row>
@@ -35,6 +36,7 @@ class Header extends Component {
                   <Link to="/">
                     {isClient() &&
                     !window.location.pathname.includes('engineering') &&
+                    !this.props.blue &&
                     !window.location.pathname.includes('design') ? (
                       <img
                         role="button"
@@ -45,8 +47,9 @@ class Header extends Component {
                       />
                     ) : null}
 
-                    {isClient() &&
-                    window.location.pathname.includes('engineering') ? (
+                    {(isClient() &&
+                      window.location.pathname.includes('engineering')) ||
+                    this.props.blue ? (
                       <Fragment>
                         <HiddenText>engineering</HiddenText>
                         <img

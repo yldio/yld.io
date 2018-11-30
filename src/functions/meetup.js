@@ -78,8 +78,8 @@ const processMeetupData = arrayOfMeetups => {
   return outputArray
 }
 const processMeetupEvent = eventObject => {
-  console.log(eventObject.hasOwnProperty('venue'))
-  console.log(eventObject.venue)
+  // console.log(eventObject.hasOwnProperty('venue'))
+  // console.log(eventObject.venue)
   let outputObject = {
     eventName: eventObject.name,
     duration: eventObject.duration,
@@ -157,7 +157,7 @@ exports.handler = async (event, context, callback) => {
       })
     )
 
-    console.log(JSON.stringify(events))
+    // console.log(JSON.stringify(events))
 
     const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
     const entry = generateContentfulEvent({ ...meetup, ...group })
@@ -165,20 +165,20 @@ exports.handler = async (event, context, callback) => {
     if (ev) {
       // update
       ev.fields = Object.assign(ev.fields, entry.fields)
-      console.log(`Updating entry ${meetup.eventName}`)
+      // console.log(`Updating entry ${meetup.eventName}`)
       const id = await ev.update()
       const updatedEntry = await environment.getEntry(id.sys.id)
 
-      console.log(`Publishing updated entry ${meetup.eventName}`)
+      // console.log(`Publishing updated entry ${meetup.eventName}`)
       return updatedEntry.publish()
     }
 
     // create
-    console.log(`Creating entry ${meetup.eventName}`)
+    // console.log(`Creating entry ${meetup.eventName}`)
     const id = await environment.createEntry('meetupEven', entry)
     const newEntry = await environment.getEntry(id.sys.id)
 
-    console.log(`Publishing creted entry ${meetup.eventName}`)
+    // console.log(`Publishing creted entry ${meetup.eventName}`)
     return newEntry.publish()
   })
 }

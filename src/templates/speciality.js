@@ -23,7 +23,6 @@ import BooksSection from '../components/Speciality/books'
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
   const site = data.site
-  console.log(specialty)
   return (
     <Layout blue>
       <Helmet
