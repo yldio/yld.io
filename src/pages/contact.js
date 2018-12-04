@@ -97,12 +97,12 @@ class ContactUs extends Component {
             {success ? (
               <Fragment>
                 <Row>
-                  <Col xs={12} md={7} sm={8}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <H1>We will be in touch</H1>
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={12} md={7} sm={8}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Paragraph>
                       Thanks for reaching out. We will be in contact shortly
                     </Paragraph>
@@ -111,13 +111,9 @@ class ContactUs extends Component {
               </Fragment>
             ) : (
               <Fragment>
-                <Row>
-                  <Col xs={12} md={7} sm={8}>
-                    <H1>Get in touch</H1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12} md={7} sm={8}>
+                <H1 style={{ transform: 'translateY(20%)' }}>Get in touch</H1>
+                <Row mt={2}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Margin top={2}>
                       <form
                         name="contact"

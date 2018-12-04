@@ -12,7 +12,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
   return (
     <Grid>
       <Row>
-        <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
+        <Col width={[1, 1, 1, workStage.displayType !== 'List' ? 1 : 1 / 2]}>
           <Padding bottom={2}>
             <H2 reverse noTop>
               {workStage.title}
@@ -30,7 +30,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
               </SwitchLink>
             ))}
         </Col>
-        <Tag xs={12} md={6}>
+        <Tag width={[1, 1, 1, 1 / 2]}>
           {workStage.displayType !== 'List' ? (
             <MasonryContainer length={sections.length}>
               {sections.map(
