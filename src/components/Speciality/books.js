@@ -68,7 +68,7 @@ const BooksSection = ({ specialty }) => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Padding top={2} left={2}>
+                  <Padding top={2} left={2} right={2}>
                     <H4
                       normal
                       style={{
