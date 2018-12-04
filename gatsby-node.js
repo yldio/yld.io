@@ -33,6 +33,14 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulPolicy {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -43,6 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
   // const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
+  const policyTemplate = path.resolve(`./src/templates/policy.js`)
 
   _.each(result.data.allContentfulCaseStudy.edges, edge => {
     if (edge.node.slug) {
@@ -73,6 +82,18 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: `/${edge.node.slug}/`,
         component: slash(serviceTemplate),
+        context: {
+          id: edge.node.id
+        }
+      })
+    }
+  })
+
+  _.each(result.data.allContentfulPolicy.edges, edge => {
+    if (edge.node.slug) {
+      createPage({
+        path: `/${edge.node.slug}/`,
+        component: slash(policyTemplate),
         context: {
           id: edge.node.id
         }
