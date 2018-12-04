@@ -10,15 +10,12 @@ const WorkStages = ({ title, workStages, image }) => (
     <Grid>
       <Row style={{ position: 'relative' }}>
         <Col width={[1]}>
-          <Padding top={4} bottom={6}>
-            <Graphic>
-              <Image image={image} />
-            </Graphic>
-            <Padding top={1} />
-            <How reverse center noTop>
-              {title}
-            </How>
-          </Padding>
+          <Graphic>
+            <Image image={image} />
+          </Graphic>
+          <How reverse center noTop>
+            {title}
+          </How>
         </Col>
       </Row>
     </Grid>

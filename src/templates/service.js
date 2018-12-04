@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { H2, H6, H3, H5, Paragraph } from '../components/Typography'
@@ -38,66 +38,70 @@ const Service = ({ data }) => {
 
       <GrayBackground>
         <Grid>
-          <Padding top={5} bottom={4}>
-            <Row>
-              <Col xs={11}>
+          <Row>
+            <Col width={[9 / 12]}>
+              <Padding top={5} bottom={4}>
                 <Title>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </Title>
-              </Col>
-            </Row>
-          </Padding>
+              </Padding>
+            </Col>
+          </Row>
         </Grid>
       </GrayBackground>
       <GrayBackground noTop style={{ background: '#090329' }}>
-        <Padding top={4} bottom={0}>
-          <WorkStages
-            title={service.workStagesTitle}
-            workStages={service.workStages}
-            image={service.graphic}
-          />
-        </Padding>
+        <WorkStages
+          title={service.workStagesTitle}
+          workStages={service.workStages}
+          image={service.graphic}
+        />
       </GrayBackground>
       <GrayBackground noTop>
-        <Grid>
-          <Padding top={5}>
+        <Padding top={5} bottom={6}>
+          <Grid>
             <Row>
-              <Col xs={12} sm={12} md={4}>
-                <H2 noTop>We work with</H2>
-              </Col>
-              <Col xs={12} sm={12} md={6} mdOffset={2}>
-                <Padding bottom={5}>
-                  <H5 noTop>{service.specialityAreaTitle1}</H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems1} />
-                  </H6>
-                </Padding>
-                <Padding bottom={5}>
-                  <H5 noTop>{service.specialityAreaTitle2}</H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems2} />
-                  </H6>
-                </Padding>
-                {service.specialityAreaTitle3 && (
-                  <Padding bottom={5}>
-                    <H5 noTop>{service.specialityAreaTitle3}</H5>
+              <H2 noTop>We work with</H2>
+              <Row>
+                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
+                  <Fragment>
+                    <H5 noTop>{service.specialityAreaTitle1}</H5>
                     <H6>
-                      <SeoLinks items={service.specialityAreaItems3} />
+                      <SeoLinks items={service.specialityAreaItems1} />
                     </H6>
-                  </Padding>
-                )}
-                {service.specialityAreaTitle4 && (
-                  <Padding bottom={6}>
-                    <H5 noTop>{service.specialityAreaTitle4}</H5>
+                  </Fragment>
+                </Col>
+                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
+                  <Fragment>
+                    <H5 noTop>{service.specialityAreaTitle2}</H5>
                     <H6>
-                      <SeoLinks items={service.specialityAreaItems4} />
+                      <SeoLinks items={service.specialityAreaItems2} />
                     </H6>
-                  </Padding>
-                )}
-              </Col>
+                  </Fragment>
+                </Col>
+                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
+                  {service.specialityAreaTitle3 && (
+                    <Fragment>
+                      <H5 noTop>{service.specialityAreaTitle3}</H5>
+                      <H6>
+                        <SeoLinks items={service.specialityAreaItems3} />
+                      </H6>
+                    </Fragment>
+                  )}
+                </Col>
+                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
+                  {service.specialityAreaTitle4 && (
+                    <Fragment vertical={6}>
+                      <H5 noTop>{service.specialityAreaTitle4}</H5>
+                      <H6>
+                        <SeoLinks items={service.specialityAreaItems4} />
+                      </H6>
+                    </Fragment>
+                  )}
+                </Col>
+              </Row>
             </Row>
-          </Padding>
-        </Grid>
+          </Grid>
+        </Padding>
       </GrayBackground>
       <Grid>
         <Row>
