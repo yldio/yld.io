@@ -250,16 +250,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          tutorialsIntroText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
           externalResources {
             type
             title
