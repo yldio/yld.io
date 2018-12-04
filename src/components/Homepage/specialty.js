@@ -58,7 +58,7 @@ function isEven(value) {
 const Specialty = ({ services }) => (
   <Row>
     {services.map((service, index) => (
-      <Col key={service.id} xs={12} sm={12} md={6}>
+      <Col key={service.id} width={[1, 1, 1, 1 / 2, 1 / 2]}>
         {!isEven(index) ? (
           <Padding top={{ smallPhone: 0, tablet: 5, desktop: 7 }} bottom={2} />
         ) : null}

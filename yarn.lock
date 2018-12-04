@@ -15906,7 +15906,7 @@ stylelint-processor-styled-components@^1.5.1:
     "@babel/traverse" "^7.0.0"
     postcss "^6.0.14"
 
-stylelint@^9.8.0:
+stylelint@^9.9.0:
   version "9.9.0"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-9.9.0.tgz#dde466e9b049e0bd30e912ad280f1a2ecf6efdf8"
   integrity sha512-kIuX0/9/I2mZeHz6EoFt7UpLt7Mz+ic9/PmFwKMdq4BkQHikg3FkcgAElLdAmaI8Au1JEUOS996ZFE+mwXytmA==

@@ -30,6 +30,7 @@ const createRule = (breaks, sx) => (key, val) => {
         const decs = style(key, v)
         const body = `${decs};`
         const rule = media(bp, body)
+
         return rule
       }
 
@@ -46,8 +47,22 @@ const rule = args => args.join(';')
 const media = (bp, body) =>
   bp ? `@media screen and (min-width:${remcalc(bp)}){${body}}` : body
 
-const width = (key, n) => {
-  return dec(['width', !num(n) || n > 1 ? px(n) : n * 100 + '%'])
+const width = scale => (key, n) => {
+  if (n === 0) {
+    return `
+      width: 0;
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    `
+  }
+
+  return `
+    ${dec(['width', !num(n) || n > 1 ? px(n) : n * 100 + '%'])}
+      position: initial;
+      top: 0;
+      left: 0;
+  `
 }
 const px = n => (num(n) ? n + 'px' : n)
 
@@ -80,9 +95,9 @@ const justify = (key, n) => dec(['justify-content', n])
 const order = (key, n) => dec(['order', n])
 
 const stylers = () => ({
-  width,
   m: space(spacing),
   p: space(spacing),
+  width: width(spacing),
   block,
   wrap,
   auto,
@@ -123,11 +138,16 @@ const GridStyled = styled.div`
 `
 
 const Flex = styled.div`
-display: flex;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   position: relative;
+  overflow: hidden;
   ${props => css(props)};
-  /* ${props => console.log(css(props))} */
+  display: flex;
+  ${props =>
+    props.block &&
+    `
+    display: block;
+  `};
 `
 
 export const Grid = props => <GridStyled {...props} mx="auto" />

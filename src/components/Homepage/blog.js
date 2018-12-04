@@ -15,10 +15,10 @@ const BlogTitle = styled(H2)`
 
 const Blog = () => (
   <Row>
-    <Col md={6} width={[1]}>
+    <Col width={[1, 1, 1, 5 / 12, 5 / 12]}>
       <BlogTitle>From the blog</BlogTitle>
     </Col>
-    <Col md={4} width={[1]}>
+    <Col width={[1, 1, 1, 7 / 12, 7 / 12]}>
       <Posts>
         {posts => (
           <ul>

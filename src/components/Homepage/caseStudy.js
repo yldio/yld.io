@@ -43,13 +43,13 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
     <Col sm={12} xs={12} md={false}>
       <SubHeading>{subHeading}</SubHeading>
       <Padding bottom={{ smallPhone: 0, tablet: 3, desktop: 1 }}>
-        <H2 noTop>{caseStudy.title}</H2>
+        <H2>{caseStudy.title}</H2>
       </Padding>
     </Col>
     <Col xs={false} sm={false} md={6}>
       <SubHeading>{subHeading}</SubHeading>
       <Margin bottom={1}>
-        <H2 noTop>{caseStudy.title}</H2>
+        <H2>{caseStudy.title}</H2>
       </Margin>
       <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>

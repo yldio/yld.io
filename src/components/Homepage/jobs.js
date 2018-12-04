@@ -29,9 +29,7 @@ const JobsComponent = () => (
           {jobs =>
             Object.keys(jobs).map(key => (
               <Col
-                md={4}
-                sm={6}
-                xs={12}
+                width={[1, 1, 1 / 2, 1 / 2, 1 / 4]}
                 key={`${key}-${jobs[key].length}-main`}
               >
                 <H5>{key}</H5>
