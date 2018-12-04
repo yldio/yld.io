@@ -6,14 +6,25 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 
 import Layout from '../components/layout'
 import { H1 } from '../components/Typography'
-import { makeText } from '../utils/makeText'
+import { makeTextComponents } from '../utils/makeText'
 
 const Body = styled.article`
-  > p {
-    margin-bottom: 10px;
+  :last-of-type {
+    margin-bottom: 108px;
   }
-  margin-bottom: 108px;
 `
+
+const Paragraph = styled.p`
+  margin-bottom: 10px;
+`
+
+const SectionTitle = styled.h2`
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.5;
+`
+
+const renderContent = makeTextComponents(Paragraph)
 const Policy = ({ data }) => {
   const policy = data.allContentfulPolicy.edges[0].node
   const site = data.site
@@ -41,15 +52,16 @@ const Policy = ({ data }) => {
           </Col>
           <Col xs={12} sm={6}>
             {policy.body && policy.body.body && (
-              <Body>
-                {makeText(policy.body.body).map(content => (
-                  <p key={content}>{content}</p>
-                ))}
-              </Body>
+              <Body>{renderContent(policy.body.body)}</Body>
             )}
             {policy.section &&
               policy.section.length &&
-              policy.section.map(pol => <p key={pol}>{pol}</p>)}
+              policy.section.map(({ title, content: { content } }) => (
+                <Body key={title}>
+                  <SectionTitle>{title}</SectionTitle>
+                  {renderContent(content)}
+                </Body>
+              ))}
           </Col>
         </Row>
       </Grid>
