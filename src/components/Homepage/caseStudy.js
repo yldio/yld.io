@@ -40,13 +40,13 @@ const SubHeading = styled(Paragraph)`
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
-    <Col sm={12} xs={12} md={false}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <SubHeading>{subHeading}</SubHeading>
       <Padding bottom={{ smallPhone: 0, tablet: 3, desktop: 1 }}>
         <H2>{caseStudy.title}</H2>
       </Padding>
     </Col>
-    <Col xs={false} sm={false} md={6}>
+    <Col width={[0, 0, 0, 0, 1 / 2]}>
       <SubHeading>{subHeading}</SubHeading>
       <Margin bottom={1}>
         <H2>{caseStudy.title}</H2>
@@ -54,10 +54,10 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
-    <ImageWrapper xs={12} sm={12} md={6}>
+    <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
-    <Col xs={12} sm={12} md={false}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <Margin top={2} />
       <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink
