@@ -9,6 +9,7 @@
 body,
 html {
   width: 100%;
+  overflow-x: hidden;
 }
 
 img {
