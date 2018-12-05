@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../components/grid'
 import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 
@@ -52,12 +52,14 @@ const Policy = ({ data }) => {
         <html lang="en" />
       </Helmet>
       <Padding top={4} bottom={5}>
-        <Grid className="grid">
+        <Grid>
           <Row>
-            <Col xs={12} sm={6}>
-              <Title>{policy.title}</Title>
+            <Col width={[1, 1, 1, 1 / 2]}>
+              <Padding bottom={{ smallPhone: 2, phone: 2 }}>
+                <Title>{policy.title}</Title>
+              </Padding>
             </Col>
-            <Col xs={12} sm={6}>
+            <Col>
               {policy.body && policy.body.body && (
                 <Body>{renderParagraphs(policy.body.body)}</Body>
               )}
