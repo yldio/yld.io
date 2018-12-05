@@ -55,7 +55,7 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
-    <Col xs={12} sm={6}>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
       <Flex full column justifyCenter>
         <H1 noTop>{caseStudy.title}</H1>
         <NoMobile>
@@ -64,14 +64,14 @@ const CaseStudyTop = ({ caseStudy }) => (
       </Flex>
     </Col>
     {caseStudy.posterImage && (
-      <ImageWrapper sm={6} width={[1]}>
+      <ImageWrapper width={[1, 1, 1 / 2]}>
         <Image
           alt={caseStudy.posterImage.title}
           image={caseStudy.posterImage}
         />
       </ImageWrapper>
     )}
-    <Col xs={12} sm={false}>
+    <Col width={[1, 1, 0]}>
       <Padding top={2}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
