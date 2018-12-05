@@ -48,7 +48,6 @@
     "build": "run-p build:**",
     "lint": "run-p lint:**",
     "lint:js": "eslint . --cache --fix",
-    "lint:css": "stylelint './src/**/*.js'",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
   },
   "devDependencies": {
