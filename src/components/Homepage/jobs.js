@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
@@ -19,7 +19,7 @@ const JobCommitment = styled.span`
 const JobsComponent = () => (
   <Fragment>
     <Row>
-      <Col xs={12}>
+      <Col width={[1]}>
         <H2>Join our team</H2>
       </Col>
     </Row>
@@ -29,9 +29,7 @@ const JobsComponent = () => (
           {jobs =>
             Object.keys(jobs).map(key => (
               <Col
-                md={4}
-                sm={6}
-                xs={12}
+                width={[1, 1, 1 / 2, 1 / 2, 1 / 4]}
                 key={`${key}-${jobs[key].length}-main`}
               >
                 <H5>{key}</H5>
@@ -56,7 +54,7 @@ const JobsComponent = () => (
         </Jobs>
       </Row>
       <Row>
-        <Col xs={12}>
+        <Col width={[1]}>
           <Padding top={4}>
             <StyledLink
               href="https://jobs.lever.co/yld"

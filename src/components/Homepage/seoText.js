@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H3 } from '../Typography'
@@ -14,7 +14,7 @@ const Text = H3.withComponent('h1')
 
 const SEOText = ({ text }) => (
   <Row>
-    <Col xs={11} md={10}>
+    <Col width={[1, 1, 1, 10 / 12, 10 / 12, 8 / 12]}>
       <Text>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value

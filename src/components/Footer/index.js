@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../../components/grid'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
 import { H2 } from '../../components/Typography'
@@ -12,13 +12,13 @@ const Footer = () => {
   return (
     <FooterStyled>
       <Padding
-        top={{ phone: 3.5, tablet: 4 }}
-        bottom={{ phone: 3.5, tablet: 4 }}
+        top={{ smallPhone: 3.5, tablet: 4 }}
+        bottom={{ smallPhone: 3.5, tablet: 4 }}
       >
-        <Grid className="grid">
+        <Grid>
           <Row>
-            <Col xs={12}>
-              <Margin bottom={{ phone: 0.5, tablet: 2 }}>
+            <Col width={1}>
+              <Margin bottom={{ smallPhone: 0.5, tablet: 2 }}>
                 <H2 reverse noTop>
                   Find us
                 </H2>
@@ -47,10 +47,10 @@ const Footer = () => {
         </Grid>
       </Padding>
       <FollowUs>
-        <Padding top={3} bottom={{ phone: 1, tablet: 3 }}>
-          <Grid className="grid">
+        <Padding top={3} bottom={{ smallPhone: 1, tablet: 3 }}>
+          <Grid>
             <Row>
-              <Col xs={12}>
+              <Col width={1}>
                 <Social>
                   {social.map(s => (
                     <li key={s.label}>

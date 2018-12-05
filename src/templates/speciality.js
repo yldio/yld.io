@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import { Grid, Row, Col } from '../components/grid'
 import { Padding } from 'styled-components-spacing'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { SmallerH2, H5, Paragraph } from '../components/Typography'
+>>>>>>> [WIP] New grid (#54)
 import Layout from '../components/layout'
 import { format } from 'date-fns'
 import StyledLink from '../components/styledLink'

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../grid'
 import Flex from 'styled-flex-component'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
@@ -26,26 +26,13 @@ class Header extends Component {
 
   render() {
     return (
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <header>
               <Padding top={2} bottom={3}>
                 <Flex alignCenter wrap justifyBetween>
                   <Link to="/">
-                    {isClient() &&
-                    !window.location.pathname.includes('engineering') &&
-                    !this.props.blue &&
-                    !window.location.pathname.includes('design') ? (
-                      <img
-                        role="link"
-                        tab-index="0"
-                        height="48"
-                        src={logo}
-                        alt="yld logo"
-                      />
-                    ) : null}
-
                     {(isClient() &&
                       window.location.pathname.includes('engineering')) ||
                     this.props.blue ? (
@@ -89,6 +76,15 @@ class Header extends Component {
                       </Link>
                     </HomeLink>
                     <Link reverse activeClassName="active" to="/engineering/">
+                      Engineering
+                    </Link>
+                    <Link activeClassName="active" to="/design/">
+                      Design
+                    </Link>
+                    <Link activeClassName="active" to="/contact/">
+                      Contact
+                    </Link>
+                    <Link activeClassName="active" to="/engineering/">
                       Engineering
                     </Link>
                     <Link activeClassName="active" to="/design/">

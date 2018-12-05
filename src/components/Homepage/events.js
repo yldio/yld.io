@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
@@ -36,7 +36,7 @@ const EventsColumn = styled(Col)`
 
 const Events = ({ events }) => (
   <Row>
-    <Col md={4} sm={false} xs={false}>
+    <Col width={[0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
       <EventsColumn xs={8}>
         <H2 noTop>Upcoming events</H2>
       </EventsColumn>
@@ -60,13 +60,13 @@ const Events = ({ events }) => (
           ))}
       </ul>
     </Col>
-    <Col md={false} sm={12} xs={12}>
+    <Col width={[1, 1, 1, 0, 0, 0]}>
       <EventsColumn xs={8}>
         <H2 noTop>Upcoming events</H2>
       </EventsColumn>
     </Col>
 
-    <Col md={8} xs={12}>
+    <Col width={[1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
@@ -94,7 +94,7 @@ const Events = ({ events }) => (
           </div>
         ))}
     </Col>
-    <Col md={false} sm={12} xs={12}>
+    <Col width={[1, 1, 1, 0, 0, 0]}>
       <Padding top={3}>
         <ul>
           {events

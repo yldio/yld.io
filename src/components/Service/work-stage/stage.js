@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../../grid'
 import { Padding } from 'styled-components-spacing'
 import { H2 } from '../../Typography'
 import { SwitchLink, WorkStageGridElement, MasonryContainer } from './elements'
@@ -10,9 +10,9 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   const sections = getSections(workStage)
   return (
-    <Grid className="grid">
+    <Grid>
       <Row>
-        <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
+        <Col width={[1, 1, 1, workStage.displayType !== 'List' ? 1 : 1 / 2]}>
           <Padding bottom={2}>
             <H2 reverse noTop>
               {workStage.title}
@@ -30,7 +30,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
               </SwitchLink>
             ))}
         </Col>
-        <Tag xs={12} md={6}>
+        <Tag width={[1, 1, 1, 1 / 2]}>
           {workStage.displayType !== 'List' ? (
             <MasonryContainer length={sections.length}>
               {sections.map(

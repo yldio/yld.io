@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
 import StyledLink from '../../styledLink'
-import { Col } from 'react-styled-flexboxgrid'
+import { Col } from '../../grid'
 import { H2 } from '../../Typography'
 
 export const Item = styled.li`
@@ -14,8 +14,8 @@ export const Item = styled.li`
 `
 
 export const Graphic = styled.div`
-  position: absolute;
-  top: ${remcalc(-72)};
+  position: relative;
+  top: ${remcalc(0)};
   height: ${remcalc(331)};
   width: ${remcalc(680)};
   max-width: 80%;
@@ -25,7 +25,7 @@ export const Graphic = styled.div`
 
 export const How = styled(H2)`
   position: relative;
-  top: ${remcalc(-60)};
+  top: ${remcalc(-280)};
 `
 
 export const SwitchLink = styled(StyledLink)`

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../../components/grid'
 import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
 import { H1, H5, H6 } from '../../components/Typography'
@@ -55,7 +55,7 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
-    <Col xs={12} sm={6}>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
       <Flex full column justifyCenter>
         <H1 noTop>{caseStudy.title}</H1>
         <NoMobile>
@@ -64,14 +64,14 @@ const CaseStudyTop = ({ caseStudy }) => (
       </Flex>
     </Col>
     {caseStudy.posterImage && (
-      <ImageWrapper sm={6} xs={12}>
+      <ImageWrapper width={[1, 1, 1 / 2]}>
         <Image
           alt={caseStudy.posterImage.title}
           image={caseStudy.posterImage}
         />
       </ImageWrapper>
     )}
-    <Col xs={12} sm={false}>
+    <Col width={[1, 1, 0]}>
       <Padding top={2}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
