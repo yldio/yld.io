@@ -13,6 +13,7 @@ const ImageWrapper = styled(Col)`
   /* width: 100%; */
   max-width: ${remcalc(549)};
   height: auto;
+  padding-right: 0;
 
   ${breakpoint('tablet')`
     padding-left: 0;
@@ -24,13 +25,15 @@ const ImageWrapper = styled(Col)`
 `
 
 const WrapperRow = styled(Row)`
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     align-items: center;
   `};
 `
 
 const P = styled(Paragraph)`
-  margin-top: ${remcalc(12)};
+  ${breakpoint('tablet')`
+    margin-top: ${remcalc(12)};
+  `}
 `
 
 const SubHeading = styled(Paragraph)`
@@ -54,7 +57,7 @@ const TextWrapper = styled.div`
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
-    <ImageWrapper width={[1, 1, 1, 1 / 2, 1 / 2]}>
+    <ImageWrapper width={[1, 1, 1, 1, 1 / 2, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
     <ImageCol width={[1, 1, 1, 1 / 2, 1 / 2]}>
