@@ -42,7 +42,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         </Padding>
         <Margin bottom={4} />
         <Row>
-          <Col width={[1, 1, 9 / 12, 7 / 12]}>
+          <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
               <Paragraph fullWidth padded key={i}>
                 {text}
@@ -55,7 +55,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
-              <Col width={[1, 1, 1, 10 / 12]}>
+              <Col width={[1, 1, 1, 1, 10 / 12]}>
                 {body[1].map((text, i) => (
                   <div
                     key={i}
@@ -70,7 +70,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           </Padding>
           <Margin top={1} />
           <Row>
-            <Col width={[1, 1, 9 / 12, 7 / 12]}>
+            <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
               {body[2].map((text, i) => (
                 <Paragraph fullWidth padded key={i}>
                   {text}
