@@ -10,19 +10,21 @@ import getIntroSentence from '../../utils/getIntroSentence'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
-  width: 100%;
+  /* width: 100%; */
   max-width: ${remcalc(549)};
   height: auto;
 
+  ${breakpoint('tablet')`
+    padding-left: 0;
+  `}
+
   ${breakpoint('desktop')`
     max-width: ${remcalc(549)};
-    padding-right: 0px;
   `}
 `
 
 const WrapperRow = styled(Row)`
   ${breakpoint('tablet')`
-    min-height: ${remcalc(540)};
     align-items: center;
   `};
 `
@@ -38,8 +40,8 @@ const SubHeading = styled(Paragraph)`
 `
 
 const ImageCol = styled(Col)`
-  ${breakpoint('desktop')`
-    padding: 0;
+  ${breakpoint('tablet')`
+    padding-left: 0;
   `}
 `
 
@@ -52,10 +54,10 @@ const TextWrapper = styled.div`
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
-    <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
+    <ImageWrapper width={[1, 1, 1, 1 / 2, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
-    <ImageCol width={[1, 1, 1, 1, 1 / 2]}>
+    <ImageCol width={[1, 1, 1, 1 / 2, 1 / 2]}>
       <TextWrapper>
         <SubHeading>{subHeading}</SubHeading>
         <H2 noTop>{caseStudy.title}</H2>

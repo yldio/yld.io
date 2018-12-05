@@ -33,7 +33,7 @@ const IndexPage = ({
           subHeading="Featured work"
         />
       </Padding>
-      <Padding bottom={{ smallPhone: 0, tablet: 2, desktop: 2 }} />
+      <Padding bottom={{ smallPhone: 0, desktop: 2 }} />
     </Grid>
     <GrayBackground>
       <Grid>
