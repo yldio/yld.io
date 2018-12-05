@@ -31,11 +31,10 @@ const Section = styled.section`
 `
 
 const renderParagraphs = content =>
-  makeText(content).map(cont => <p key={cont}>{cont}</p>)
+  makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
 const Policy = ({ data }) => {
   const policy = data.allContentfulPolicy.edges[0].node
   const site = data.site
-  console.log({ policy, site })
 
   return (
     <Layout>
