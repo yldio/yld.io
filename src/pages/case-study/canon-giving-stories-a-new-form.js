@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
-import { Grid, Row, Col } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
@@ -37,7 +37,7 @@ const IndexPage = ({
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
         <Margin vertical={4}>
           <Row>
@@ -52,7 +52,7 @@ const IndexPage = ({
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>
-          <Grid className="grid">
+          <Grid>
             <Row>
               <Col xs={12} sm={12} md={5}>
                 <H2 noTop>At the heart of a photo is a story</H2>
@@ -81,7 +81,7 @@ const IndexPage = ({
           </Grid>
         </Padding>
       </GrayBackground>
-      <GradientGrid className="grid">
+      <GradientGrid>
         <Row>
           <Col xs={12} sm={12} md={6} mdOffset={3}>
             <Margin top={2} bottom={1}>
@@ -107,7 +107,7 @@ const IndexPage = ({
         </Row>
       </GradientGrid>
       <Margin bottom={6} />
-      <Grid className="grid">
+      <Grid>
         <Padding top={2}>
           <Row>
             <Col xs={12} sm={12} md={5}>
@@ -126,9 +126,9 @@ const IndexPage = ({
 
       <GrayBackground topOffset={-300}>
         <Padding top={5} bottom={2}>
-          <Grid className="grid">
+          <Grid>
             <Row>
-              <Col xs={12}>
+              <Col width={[1]}>
                 <div className="video-container">
                   <iframe
                     width="844"
@@ -143,7 +143,7 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
-        <Grid className="grid">
+        <Grid>
           <Padding top={5} bottom={3}>
             <Row>
               <Col xs={12} sm={12} md={5}>
@@ -161,7 +161,7 @@ const IndexPage = ({
         </Grid>
       </GrayBackground>
       {caseStudy.relatedCaseStudy ? (
-        <Grid className="grid">
+        <Grid>
           <Row>
             <Col xs={12} sm={6}>
               <Padding top={4} bottom={2}>

@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
-import { Grid } from 'react-styled-flexboxgrid'
+import { Grid } from '../components/grid'
 
 import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
@@ -26,46 +26,49 @@ const IndexPage = ({
     >
       <html lang="en" />
     </Helmet>
-    <Grid className="grid">
-      <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }}>
+    <Grid>
+      <Padding bottom={{ smallPhone: 0, tablet: 2, desktop: 2 }}>
         <CaseStudy
           caseStudy={content.featuredCaseStudy}
           subHeading="Featured work"
         />
       </Padding>
-      <Padding bottom={{ phone: 0, tablet: 2, desktop: 2 }} />
+      <Padding bottom={{ smallPhone: 0, tablet: 2, desktop: 2 }} />
     </Grid>
     <GrayBackground>
-      <Grid className="grid">
-        <Padding top={{ phone: 2 }} />
-        <Padding top={{ phone: 4, tablet: 5, desktop: 6 }} bottom={3}>
+      <Grid>
+        <Padding top={{ smallPhone: 2 }} />
+        <Padding top={{ smallPhone: 4, tablet: 5, desktop: 6 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
-          <Padding bottom={{ phone: 2, tablet: 4, desktop: 4 }} />
+          <Padding bottom={{ smallPhone: 2, tablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
         </Padding>
       </Grid>
     </GrayBackground>
-    <Grid className="grid">
-      <Padding top={3} bottom={{ phone: 3.5, tablet: 5, desktop: 0 }}>
+    <Grid>
+      <Padding top={3} bottom={{ smallPhone: 3.5, tablet: 5, desktop: 5 }}>
         <Specialty services={content.services} />
       </Padding>
     </Grid>
     <GrayBackground topOffset={-30}>
-      <Grid className="grid">
+      <Grid>
         <Padding bottom={4}>
           <Events events={events.edges} />
         </Padding>
       </Grid>
     </GrayBackground>
-    <Grid className="grid">
+    <Grid>
       <Padding top={2} />
-      <Padding top={{ phone: 3, tablet: 4 }} bottom={{ phone: 3, tablet: 4 }}>
+      <Padding
+        top={{ smallPhone: 3, tablet: 4 }}
+        bottom={{ smallPhone: 3, tablet: 4 }}
+      >
         <Blog />
       </Padding>
-      <Padding bottom={{ phone: 0, tablet: 2 }} />
+      <Padding bottom={{ smallPhone: 0, tablet: 2 }} />
     </Grid>
     <GrayBackground>
-      <Grid className="grid">
+      <Grid>
         <Jobs />
         <Padding bottom={3} />
       </Grid>

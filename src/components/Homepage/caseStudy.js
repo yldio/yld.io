@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Margin, Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
@@ -17,8 +17,6 @@ const ImageWrapper = styled(Col)`
 
   ${breakpoint('desktop')`
     max-width: ${remcalc(549)};
-    position: absolute;
-    left: 51.5%;
     padding-right: 0px;
   `}
 `
@@ -42,24 +40,24 @@ const SubHeading = styled(Paragraph)`
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
   <WrapperRow>
-    <Col sm={12} xs={12} md={false}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <SubHeading>{subHeading}</SubHeading>
-      <Padding bottom={{ phone: 0, tablet: 3, desktop: 1 }}>
-        <H2 noTop>{caseStudy.title}</H2>
+      <Padding bottom={{ smallPhone: 0, phone: 0, tablet: 3, desktop: 1 }}>
+        <H2>{caseStudy.title}</H2>
       </Padding>
     </Col>
-    <Col xs={false} sm={false} md={6}>
+    <Col width={[0, 0, 0, 0, 1 / 2]}>
       <SubHeading>{subHeading}</SubHeading>
       <Margin bottom={1}>
-        <H2 noTop>{caseStudy.title}</H2>
+        <H2>{caseStudy.title}</H2>
       </Margin>
       <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
     </Col>
-    <ImageWrapper xs={12} sm={12} md={6}>
+    <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
-    <Col xs={12} sm={12} md={false}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <Margin top={2} />
       <P>{getIntroSentence(caseStudy)}</P>
       <StyledLink

@@ -13909,9 +13909,6 @@ type DotenvConfigOutput = {
             from = __webpack_require__(
               /*! from */ '../../node_modules/from/index.js'
             ),
-            flatmap = __webpack_require__(
-              /*! flatmap-stream */ '../../node_modules/flatmap-stream/index.min.js'
-            ),
             duplex = __webpack_require__(
               /*! duplexer */ '../../node_modules/duplexer/index.js'
             ),
@@ -13932,7 +13929,6 @@ type DotenvConfigOutput = {
           es.Stream = Stream //re-export Stream from core
           es.through = through
           es.from = from
-          es.flatmap = flatmap
           es.duplex = duplex
           es.map = map
           es.pause = pause
@@ -13988,7 +13984,7 @@ type DotenvConfigOutput = {
           // and calls back when 'end' occurs
           // mainly I'm using this to test the other functions
 
-          es.collect = es.writeArray = function(done) {
+          es.writeArray = function(done) {
             if ('function' !== typeof done)
               throw new Error(
                 'function writeArray (done): done must be function'
@@ -14377,94 +14373,6 @@ type DotenvConfigOutput = {
 
             // Return the modified object
             return target
-          }
-
-          /***/
-        },
-
-      /***/ '../../node_modules/flatmap-stream/index.min.js':
-        /*!**********************************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/flatmap-stream/index.min.js ***!
-  \**********************************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports, __webpack_require__) {
-          var Stream = __webpack_require__(/*! stream */ 'stream').Stream
-          module.exports = function(e, n) {
-            var i = new Stream(),
-              a = 0,
-              o = 0,
-              u = !1,
-              f = !1,
-              l = !1,
-              c = 0,
-              s = !1,
-              d = (n = n || {}).failures ? 'failure' : 'error',
-              m = {}
-            function w(r, e) {
-              var t = c + 1
-              if (
-                (e === t
-                  ? (void 0 !== r && i.emit.apply(i, ['data', r]), c++, t++)
-                  : (m[e] = r),
-                m.hasOwnProperty(t))
-              ) {
-                var n = m[t]
-                return delete m[t], w(n, t)
-              }
-              a === ++o && (f && ((f = !1), i.emit('drain')), u && v())
-            }
-            function p(r, e, t) {
-              l ||
-                ((s = !0),
-                (r && !n.failures) || w(e, t),
-                r && i.emit.apply(i, [d, r]),
-                (s = !1))
-            }
-            function b(r, t, n) {
-              return e.call(null, r, function(r, e) {
-                n(r, e, t)
-              })
-            }
-            function v(r) {
-              if (((u = !0), (i.writable = !1), void 0 !== r)) return w(r, a)
-              a == o && ((i.readable = !1), i.emit('end'), i.destroy())
-            }
-            return (
-              (i.writable = !0),
-              (i.readable = !0),
-              (i.write = function(r) {
-                if (u) throw new Error('flatmap stream is not writable')
-                s = !1
-                try {
-                  for (var e in r) {
-                    a++
-                    var t = b(r[e], a, p)
-                    if ((f = !1 === t)) break
-                  }
-                  return !f
-                } catch (r) {
-                  if (s) throw r
-                  return p(r), !f
-                }
-              }),
-              (i.end = function(r) {
-                u || v(r)
-              }),
-              (i.destroy = function() {
-                ;(u = l = !0),
-                  (i.writable = i.readable = f = !1),
-                  process.nextTick(function() {
-                    i.emit('close')
-                  })
-              }),
-              (i.pause = function() {
-                f = !0
-              }),
-              (i.resume = function() {
-                f = !1
-              }),
-              i
-            )
           }
 
           /***/
@@ -33436,13 +33344,34 @@ type DotenvConfigOutput = {
             allowDots: false,
             allowPrototypes: false,
             arrayLimit: 20,
+            charset: 'utf-8',
+            charsetSentinel: false,
             decoder: utils.decode,
             delimiter: '&',
             depth: 5,
+            ignoreQueryPrefix: false,
+            interpretNumericEntities: false,
             parameterLimit: 1000,
+            parseArrays: true,
             plainObjects: false,
             strictNullHandling: false
           }
+
+          var interpretNumericEntities = function(str) {
+            return str.replace(/&#(\d+);/g, function($0, numberStr) {
+              return String.fromCharCode(parseInt(numberStr, 10))
+            })
+          }
+
+          // This is what browsers will submit when the ✓ character occurs in an
+          // application/x-www-form-urlencoded body and the encoding of the page containing
+          // the form is iso-8859-1, or when the submitted form has an accept-charset
+          // attribute of iso-8859-1. Presumably also with other charsets that do not contain
+          // the ✓ character, such as us-ascii.
+          var isoSentinel = 'utf8=%26%2310003%3B' // encodeURIComponent('&#10003;')
+
+          // These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
+          var charsetSentinel = 'utf8=%E2%9C%93' // encodeURIComponent('✓')
 
           var parseValues = function parseQueryStringValues(str, options) {
             var obj = {}
@@ -33454,8 +33383,28 @@ type DotenvConfigOutput = {
                 ? undefined
                 : options.parameterLimit
             var parts = cleanStr.split(options.delimiter, limit)
+            var skipIndex = -1 // Keep track of where the utf8 sentinel was found
+            var i
 
-            for (var i = 0; i < parts.length; ++i) {
+            var charset = options.charset
+            if (options.charsetSentinel) {
+              for (i = 0; i < parts.length; ++i) {
+                if (parts[i].indexOf('utf8=') === 0) {
+                  if (parts[i] === charsetSentinel) {
+                    charset = 'utf-8'
+                  } else if (parts[i] === isoSentinel) {
+                    charset = 'iso-8859-1'
+                  }
+                  skipIndex = i
+                  i = parts.length // The eslint settings do not allow break;
+                }
+              }
+            }
+
+            for (i = 0; i < parts.length; ++i) {
+              if (i === skipIndex) {
+                continue
+              }
               var part = parts[i]
 
               var bracketEqualsPos = part.indexOf(']=')
@@ -33466,14 +33415,30 @@ type DotenvConfigOutput = {
 
               var key, val
               if (pos === -1) {
-                key = options.decoder(part, defaults.decoder)
+                key = options.decoder(part, defaults.decoder, charset)
                 val = options.strictNullHandling ? null : ''
               } else {
-                key = options.decoder(part.slice(0, pos), defaults.decoder)
-                val = options.decoder(part.slice(pos + 1), defaults.decoder)
+                key = options.decoder(
+                  part.slice(0, pos),
+                  defaults.decoder,
+                  charset
+                )
+                val = options.decoder(
+                  part.slice(pos + 1),
+                  defaults.decoder,
+                  charset
+                )
+              }
+
+              if (
+                val &&
+                options.interpretNumericEntities &&
+                charset === 'iso-8859-1'
+              ) {
+                val = interpretNumericEntities(val)
               }
               if (has.call(obj, key)) {
-                obj[key] = [].concat(obj[key]).concat(val)
+                obj[key] = utils.combine(obj[key], val)
               } else {
                 obj[key] = val
               }
@@ -33489,9 +33454,8 @@ type DotenvConfigOutput = {
               var obj
               var root = chain[i]
 
-              if (root === '[]') {
-                obj = []
-                obj = obj.concat(leaf)
+              if (root === '[]' && options.parseArrays) {
+                obj = [].concat(leaf)
               } else {
                 obj = options.plainObjects ? Object.create(null) : {}
                 var cleanRoot =
@@ -33499,7 +33463,9 @@ type DotenvConfigOutput = {
                     ? root.slice(1, -1)
                     : root
                 var index = parseInt(cleanRoot, 10)
-                if (
+                if (!options.parseArrays && cleanRoot === '') {
+                  obj = { 0: leaf }
+                } else if (
                   !isNaN(index) &&
                   root !== cleanRoot &&
                   String(index) === cleanRoot &&
@@ -33547,8 +33513,7 @@ type DotenvConfigOutput = {
 
             var keys = []
             if (parent) {
-              // If we aren't using plain objects, optionally prefix keys
-              // that would overwrite object prototype properties
+              // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
               if (!options.plainObjects && has.call(Object.prototype, parent)) {
                 if (!options.allowPrototypes) {
                   return
@@ -33612,9 +33577,9 @@ type DotenvConfigOutput = {
                 ? options.decoder
                 : defaults.decoder
             options.allowDots =
-              typeof options.allowDots === 'boolean'
-                ? options.allowDots
-                : defaults.allowDots
+              typeof options.allowDots === 'undefined'
+                ? defaults.allowDots
+                : !!options.allowDots
             options.plainObjects =
               typeof options.plainObjects === 'boolean'
                 ? options.plainObjects
@@ -33631,6 +33596,19 @@ type DotenvConfigOutput = {
               typeof options.strictNullHandling === 'boolean'
                 ? options.strictNullHandling
                 : defaults.strictNullHandling
+
+            if (
+              typeof options.charset !== 'undefined' &&
+              options.charset !== 'utf-8' &&
+              options.charset !== 'iso-8859-1'
+            ) {
+              throw new Error(
+                'The charset option must be either utf-8, iso-8859-1, or undefined'
+              )
+            }
+            if (typeof options.charset === 'undefined') {
+              options.charset = defaults.charset
+            }
 
             if (str === '' || str === null || typeof str === 'undefined') {
               return options.plainObjects ? Object.create(null) : {}
@@ -33685,13 +33663,28 @@ type DotenvConfigOutput = {
             }
           }
 
+          var isArray = Array.isArray
+          var push = Array.prototype.push
+          var pushToArray = function(arr, valueOrArray) {
+            push.apply(
+              arr,
+              isArray(valueOrArray) ? valueOrArray : [valueOrArray]
+            )
+          }
+
           var toISO = Date.prototype.toISOString
 
           var defaults = {
+            addQueryPrefix: false,
+            allowDots: false,
+            charset: 'utf-8',
+            charsetSentinel: false,
             delimiter: '&',
             encode: true,
             encoder: utils.encode,
             encodeValuesOnly: false,
+            // deprecated
+            indices: false,
             serializeDate: function serializeDate(date) {
               // eslint-disable-line func-name-matching
               return toISO.call(date)
@@ -33712,17 +33705,20 @@ type DotenvConfigOutput = {
             allowDots,
             serializeDate,
             formatter,
-            encodeValuesOnly
+            encodeValuesOnly,
+            charset
           ) {
             var obj = object
             if (typeof filter === 'function') {
               obj = filter(prefix, obj)
             } else if (obj instanceof Date) {
               obj = serializeDate(obj)
-            } else if (obj === null) {
+            }
+
+            if (obj === null) {
               if (strictNullHandling) {
                 return encoder && !encodeValuesOnly
-                  ? encoder(prefix, defaults.encoder)
+                  ? encoder(prefix, defaults.encoder, charset)
                   : prefix
               }
 
@@ -33738,11 +33734,11 @@ type DotenvConfigOutput = {
               if (encoder) {
                 var keyValue = encodeValuesOnly
                   ? prefix
-                  : encoder(prefix, defaults.encoder)
+                  : encoder(prefix, defaults.encoder, charset)
                 return [
                   formatter(keyValue) +
                     '=' +
-                    formatter(encoder(obj, defaults.encoder))
+                    formatter(encoder(obj, defaults.encoder, charset))
                 ]
               }
               return [formatter(prefix) + '=' + formatter(String(obj))]
@@ -33770,7 +33766,8 @@ type DotenvConfigOutput = {
               }
 
               if (Array.isArray(obj)) {
-                values = values.concat(
+                pushToArray(
+                  values,
                   stringify(
                     obj[key],
                     generateArrayPrefix(prefix, key),
@@ -33783,11 +33780,13 @@ type DotenvConfigOutput = {
                     allowDots,
                     serializeDate,
                     formatter,
-                    encodeValuesOnly
+                    encodeValuesOnly,
+                    charset
                   )
                 )
               } else {
-                values = values.concat(
+                pushToArray(
+                  values,
                   stringify(
                     obj[key],
                     prefix + (allowDots ? '.' + key : '[' + key + ']'),
@@ -33800,7 +33799,8 @@ type DotenvConfigOutput = {
                     allowDots,
                     serializeDate,
                     formatter,
-                    encodeValuesOnly
+                    encodeValuesOnly,
+                    charset
                   )
                 )
               }
@@ -33844,8 +33844,8 @@ type DotenvConfigOutput = {
             var sort = typeof options.sort === 'function' ? options.sort : null
             var allowDots =
               typeof options.allowDots === 'undefined'
-                ? false
-                : options.allowDots
+                ? defaults.allowDots
+                : !!options.allowDots
             var serializeDate =
               typeof options.serializeDate === 'function'
                 ? options.serializeDate
@@ -33854,6 +33854,17 @@ type DotenvConfigOutput = {
               typeof options.encodeValuesOnly === 'boolean'
                 ? options.encodeValuesOnly
                 : defaults.encodeValuesOnly
+            var charset = options.charset || defaults.charset
+            if (
+              typeof options.charset !== 'undefined' &&
+              options.charset !== 'utf-8' &&
+              options.charset !== 'iso-8859-1'
+            ) {
+              throw new Error(
+                'The charset option must be either utf-8, iso-8859-1, or undefined'
+              )
+            }
+
             if (typeof options.format === 'undefined') {
               options.format = formats['default']
             } else if (
@@ -33907,8 +33918,8 @@ type DotenvConfigOutput = {
               if (skipNulls && obj[key] === null) {
                 continue
               }
-
-              keys = keys.concat(
+              pushToArray(
+                keys,
                 stringify(
                   obj[key],
                   key,
@@ -33921,13 +33932,24 @@ type DotenvConfigOutput = {
                   allowDots,
                   serializeDate,
                   formatter,
-                  encodeValuesOnly
+                  encodeValuesOnly,
+                  charset
                 )
               )
             }
 
             var joined = keys.join(delimiter)
             var prefix = options.addQueryPrefix === true ? '?' : ''
+
+            if (options.charsetSentinel) {
+              if (charset === 'iso-8859-1') {
+                // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
+                prefix += 'utf8=%26%2310003%3B&'
+              } else {
+                // encodeURIComponent('✓')
+                prefix += 'utf8=%E2%9C%93&'
+              }
+            }
 
             return joined.length > 0 ? prefix + joined : ''
           }
@@ -33957,11 +33979,9 @@ type DotenvConfigOutput = {
           })()
 
           var compactQueue = function compactQueue(queue) {
-            var obj
-
-            while (queue.length) {
+            while (queue.length > 1) {
               var item = queue.pop()
-              obj = item.obj[item.prop]
+              var obj = item.obj[item.prop]
 
               if (Array.isArray(obj)) {
                 var compacted = []
@@ -33975,8 +33995,6 @@ type DotenvConfigOutput = {
                 item.obj[item.prop] = compacted
               }
             }
-
-            return obj
           }
 
           var arrayToObject = function arrayToObject(source, options) {
@@ -34000,8 +34018,8 @@ type DotenvConfigOutput = {
                 target.push(source)
               } else if (typeof target === 'object') {
                 if (
-                  options.plainObjects ||
-                  options.allowPrototypes ||
+                  (options &&
+                    (options.plainObjects || options.allowPrototypes)) ||
                   !has.call(Object.prototype, source)
                 ) {
                   target[source] = true
@@ -34056,15 +34074,21 @@ type DotenvConfigOutput = {
             }, target)
           }
 
-          var decode = function(str) {
+          var decode = function(str, decoder, charset) {
+            var strWithoutPlus = str.replace(/\+/g, ' ')
+            if (charset === 'iso-8859-1') {
+              // unescape never throws, no try...catch needed:
+              return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape)
+            }
+            // utf-8
             try {
-              return decodeURIComponent(str.replace(/\+/g, ' '))
+              return decodeURIComponent(strWithoutPlus)
             } catch (e) {
-              return str
+              return strWithoutPlus
             }
           }
 
-          var encode = function encode(str) {
+          var encode = function encode(str, defaultEncoder, charset) {
             // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
             // It has been adapted here for stricter adherence to RFC 3986
             if (str.length === 0) {
@@ -34072,6 +34096,12 @@ type DotenvConfigOutput = {
             }
 
             var string = typeof str === 'string' ? str : String(str)
+
+            if (charset === 'iso-8859-1') {
+              return escape(string).replace(/%u[0-9a-f]{4}/gi, function($0) {
+                return '%26%23' + parseInt($0.slice(2), 16) + '%3B'
+              })
+            }
 
             var out = ''
             for (var i = 0; i < string.length; ++i) {
@@ -34147,7 +34177,9 @@ type DotenvConfigOutput = {
               }
             }
 
-            return compactQueue(queue)
+            compactQueue(queue)
+
+            return value
           }
 
           var isRegExp = function isRegExp(obj) {
@@ -34166,9 +34198,14 @@ type DotenvConfigOutput = {
             )
           }
 
+          var combine = function combine(a, b) {
+            return [].concat(a, b)
+          }
+
           module.exports = {
             arrayToObject: arrayToObject,
             assign: assign,
+            combine: combine,
             compact: compact,
             decode: decode,
             encode: encode,
@@ -47210,113 +47247,7 @@ type DotenvConfigOutput = {
   \*******************/
         /*! no static exports found */
         /***/ function(module, exports, __webpack_require__) {
-          function _extends() {
-            _extends =
-              Object.assign ||
-              function(target) {
-                for (var i = 1; i < arguments.length; i++) {
-                  var source = arguments[i]
-                  for (var key in source) {
-                    if (Object.prototype.hasOwnProperty.call(source, key)) {
-                      target[key] = source[key]
-                    }
-                  }
-                }
-                return target
-              }
-            return _extends.apply(this, arguments)
-          }
-
-          function _objectSpread(target) {
-            for (var i = 1; i < arguments.length; i++) {
-              var source = arguments[i] != null ? arguments[i] : {}
-              var ownKeys = Object.keys(source)
-              if (typeof Object.getOwnPropertySymbols === 'function') {
-                ownKeys = ownKeys.concat(
-                  Object.getOwnPropertySymbols(source).filter(function(sym) {
-                    return Object.getOwnPropertyDescriptor(
-                      source,
-                      sym
-                    ).enumerable
-                  })
-                )
-              }
-              ownKeys.forEach(function(key) {
-                _defineProperty(target, key, source[key])
-              })
-            }
-            return target
-          }
-
-          function _defineProperty(obj, key, value) {
-            if (key in obj) {
-              Object.defineProperty(obj, key, {
-                value: value,
-                enumerable: true,
-                configurable: true,
-                writable: true
-              })
-            } else {
-              obj[key] = value
-            }
-            return obj
-          }
-
-          function asyncGeneratorStep(
-            gen,
-            resolve,
-            reject,
-            _next,
-            _throw,
-            key,
-            arg
-          ) {
-            try {
-              var info = gen[key](arg)
-              var value = info.value
-            } catch (error) {
-              reject(error)
-              return
-            }
-            if (info.done) {
-              resolve(value)
-            } else {
-              Promise.resolve(value).then(_next, _throw)
-            }
-          }
-
-          function _asyncToGenerator(fn) {
-            return function() {
-              var self = this,
-                args = arguments
-              return new Promise(function(resolve, reject) {
-                var gen = fn.apply(self, args)
-                function _next(value) {
-                  asyncGeneratorStep(
-                    gen,
-                    resolve,
-                    reject,
-                    _next,
-                    _throw,
-                    'next',
-                    value
-                  )
-                }
-                function _throw(err) {
-                  asyncGeneratorStep(
-                    gen,
-                    resolve,
-                    reject,
-                    _next,
-                    _throw,
-                    'throw',
-                    err
-                  )
-                }
-                _next(undefined)
-              })
-            }
-          }
+          'use strict'
 
           __webpack_require__(
             /*! dotenv */ '../../node_modules/dotenv/lib/main.js'
@@ -47460,80 +47391,50 @@ type DotenvConfigOutput = {
 
           const getEvent = promisify(meetup.getEvent.bind(meetup))
 
-          exports.handler =
-            /*#__PURE__*/
-            (function() {
-              var _ref = _asyncToGenerator(function*(event, context, callback) {
-                // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
-                const space = yield client.getSpace(CONTENTFUL_SPACE)
-                const environment = yield space.getEnvironment('master') // filter to return published entries that belong to a specific content model.
+          exports.handler = async (event, context, callback) => {
+            // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+            const space = await client.getSpace(CONTENTFUL_SPACE)
+            const environment = await space.getEnvironment('master') // filter to return published entries that belong to a specific content model.
 
-                const { items: events } = yield environment.getEntries({
-                  limit: 1000,
-                  content_type: 'meetupEven'
-                }) // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
+            const { items: events } = await environment.getEntries({
+              limit: 1000,
+              content_type: 'meetupEven'
+            }) // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
 
-                yield Map(
-                  processMeetupData(yield getSelfGroups()),
-                  /*#__PURE__*/
-                  (function() {
-                    var _ref2 = _asyncToGenerator(function*(group) {
-                      const { urlname, nextEvent } = group
+            await Map(processMeetupData(await getSelfGroups()), async group => {
+              const { urlname, nextEvent } = group
 
-                      if (!nextEvent) {
-                        return null
-                      }
-
-                      const meetup = processMeetupEvent(
-                        yield getEvent({
-                          id: nextEvent,
-                          urlname
-                        })
-                      )
-                      console.log(JSON.stringify(events))
-                      const ev = find(events, [
-                        'fields.linkToEvent.en-US',
-                        meetup.link
-                      ])
-                      const entry = generateContentfulEvent(
-                        _objectSpread({}, meetup, group)
-                      )
-
-                      if (ev) {
-                        // update
-                        ev.fields = _extends(ev.fields, entry.fields)
-                        console.log(`Updating entry ${meetup.eventName}`)
-                        const id = yield ev.update()
-                        const updatedEntry = yield environment.getEntry(
-                          id.sys.id
-                        )
-                        console.log(
-                          `Publishing updated entry ${meetup.eventName}`
-                        )
-                        return updatedEntry.publish()
-                      } // create
-
-                      console.log(`Creating entry ${meetup.eventName}`)
-                      const id = yield environment.createEntry(
-                        'meetupEven',
-                        entry
-                      )
-                      const newEntry = yield environment.getEntry(id.sys.id)
-                      console.log(`Publishing creted entry ${meetup.eventName}`)
-                      return newEntry.publish()
-                    })
-
-                    return function(_x4) {
-                      return _ref2.apply(this, arguments)
-                    }
-                  })()
-                )
-              })
-
-              return function(_x, _x2, _x3) {
-                return _ref.apply(this, arguments)
+              if (!nextEvent) {
+                return null
               }
-            })()
+
+              const meetup = processMeetupEvent(
+                await getEvent({
+                  id: nextEvent,
+                  urlname
+                })
+              )
+              console.log(JSON.stringify(events))
+              const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
+              const entry = generateContentfulEvent({ ...meetup, ...group })
+
+              if (ev) {
+                // update
+                ev.fields = Object.assign(ev.fields, entry.fields)
+                console.log(`Updating entry ${meetup.eventName}`)
+                const id = await ev.update()
+                const updatedEntry = await environment.getEntry(id.sys.id)
+                console.log(`Publishing updated entry ${meetup.eventName}`)
+                return updatedEntry.publish()
+              } // create
+
+              console.log(`Creating entry ${meetup.eventName}`)
+              const id = await environment.createEntry('meetupEven', entry)
+              const newEntry = await environment.getEntry(id.sys.id)
+              console.log(`Publishing creted entry ${meetup.eventName}`)
+              return newEntry.publish()
+            })
+          }
 
           /***/
         },

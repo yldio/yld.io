@@ -28,4 +28,8 @@ export default styled.p`
   ${is('bold')`
       font-weight: bold;
   `};
+
+  ${is('fullWidth')`
+    max-width: 100% !important;
+  `}
 `

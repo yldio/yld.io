@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../components/grid'
 import { H1 } from '../components/Typography'
 import Layout from '../components/layout'
 
@@ -23,9 +23,9 @@ const Specialty = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <H1>{specialty.title}</H1>
           </Col>
         </Row>

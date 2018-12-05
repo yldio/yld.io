@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
@@ -86,7 +86,7 @@ const MasonryElement = styled.div`
 
 const Specialty = ({ services }) => (
   <Row>
-    <MasonryContainer xs={12}>
+    <MasonryContainer width={[1]}>
       {services.map((service, index, arr) => {
         return (
           service.introSentence && (

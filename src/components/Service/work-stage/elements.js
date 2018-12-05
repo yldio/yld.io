@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
 import StyledLink from '../../styledLink'
-import { Col } from 'react-styled-flexboxgrid'
+import { Col } from '../../grid'
 import { H2 } from '../../Typography'
 
 export const Item = styled.li`
@@ -14,8 +14,8 @@ export const Item = styled.li`
 `
 
 export const Graphic = styled.div`
-  position: absolute;
-  top: ${remcalc(-72)};
+  position: relative;
+  top: ${remcalc(0)};
   height: ${remcalc(331)};
   width: ${remcalc(680)};
   max-width: 80%;
@@ -25,7 +25,7 @@ export const Graphic = styled.div`
 
 export const How = styled(H2)`
   position: relative;
-  top: ${remcalc(-60)};
+  top: ${remcalc(-280)};
 `
 
 export const SwitchLink = styled(StyledLink)`
@@ -53,9 +53,9 @@ export const MasonryContainer = styled.div`
     column-gap: 0;
     column-fill: auto;
     height: ${props =>
-    props.length % 2 !== 0 // when there's an odd number of elements we have to manually set the height because css
-      ? remcalc(Math.ceil(props.length / 2) * 500)
-      : 'auto'}
+      props.length % 2 !== 0 // when there's an odd number of elements we have to manually set the height because css
+        ? remcalc(Math.ceil(props.length / 2) * 500)
+        : 'auto'}
     padding-bottom: ${remcalc(72)}
   `}
 `
@@ -66,11 +66,11 @@ export const WorkStageGridElement = styled(Col)`
 
   ${breakpoint('desktop')`
     padding-bottom: ${props =>
-    props.index === props.last ||
+      props.index === props.last ||
       (!props.evenNumber && props.index === props.halfway) ||
       (props.evenNumber && props.index + 1 === props.halfway)
-      ? 0
-      : remcalc(72)}}`};
+        ? 0
+        : remcalc(72)}}`};
 `
 
 export const WorkStageContentList = styled.div`
