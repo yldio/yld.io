@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 import { H1, Paragraph } from '../components/Typography'
 import {
@@ -26,11 +27,15 @@ const checkboxes = [
   { name: 'none', label: 'None of these' }
 ]
 
-function encode (data) {
+function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
+
+const LinkUnderline = styled(Link)`
+  text-decoration: underline;
+`
 
 class ContactUs extends Component {
   state = {
@@ -73,7 +78,7 @@ class ContactUs extends Component {
     })
   }
 
-  render () {
+  render() {
     const { name, email, message, submitting, success } = this.state
     const site = this.props.data.site
     const page = this.props.data.allContentfulPage.edges[0].node
@@ -181,8 +186,10 @@ class ContactUs extends Component {
                               onChange={this.handleChangeCheckbox}
                             />
                             <label htmlFor="privacy">
-                              I’m happy for you to store my contact details so
-                              you can get back to me.
+                              {"I agree to the terms of YLD's "}
+                              <LinkUnderline to={'/privacy-policy'}>
+                                privacy policy
+                              </LinkUnderline>
                             </label>
                           </section>
                         </Field>

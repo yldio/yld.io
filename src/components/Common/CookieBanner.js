@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import { Link } from 'gatsby'
 
 const Box = styled.div`
   position: fixed;
@@ -51,12 +52,19 @@ const Button = styled.button`
     `};
 `
 
+const LinkUnderline = styled(Link)`
+  text-decoration: underline;
+`
+
 const Cookie = ({ onClick }) => (
   <Box>
     <Text>
-      By continuing to use our site you agree to our use of cookies
-      {/* By continuing to use our site you agree to the use of cookies in
-      accordance with our Cookie and Privacy policies. */}
+      By continuing to use our site you agree to the use of cookies in
+      accordance with our{' '}
+      <LinkUnderline to="/cookie-policy">Cookie</LinkUnderline>,{' '}
+      <LinkUnderline to="/privacy-policy">Privacy</LinkUnderline> and{' '}
+      <LinkUnderline to="/data-retention-policy">Data-retention</LinkUnderline>{' '}
+      policies.
     </Text>
     <Button onClick={onClick}>I agree</Button>
   </Box>
