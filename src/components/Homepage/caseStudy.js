@@ -12,7 +12,6 @@ import getIntroSentence from '../../utils/getIntroSentence'
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
   /* width: 100%; */
-
   height: auto;
 
   img {
@@ -28,12 +27,6 @@ const WrapperRow = styled(Row)`
   ${breakpoint('smallTablet')`
     align-items: center;
   `};
-`
-
-const P = styled(Paragraph)`
-  ${breakpoint('tablet')`
-    margin-top: ${remcalc(12)};
-  `}
 `
 
 const SubHeading = styled(Paragraph)`
@@ -68,7 +61,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
         <TextWrapper>
           <SubHeading>{subHeading}</SubHeading>
           <H2 noTop>{caseStudy.title}</H2>
-          <P>{getIntroSentence(caseStudy)}</P>
+          <Paragraph>{getIntroSentence(caseStudy)}</Paragraph>
           <StyledLink to={`/case-study/${caseStudy.slug}`}>
             Learn more
           </StyledLink>
@@ -76,7 +69,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       </Col>
       <Col width={[1, 1, 1, 1, 0]}>
         <Margin top={3} />
-        <P>{getIntroSentence(caseStudy)}</P>
+        <Paragraph>{getIntroSentence(caseStudy)}</Paragraph>
         <StyledLink
           aria-label={`Learn more about ${caseStudy.title}`}
           to={`/case-study/${caseStudy.slug}`}
