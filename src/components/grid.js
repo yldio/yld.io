@@ -152,7 +152,7 @@ const Flex = styled.div`
 
 export const Grid = props => <GridStyled {...props} mx="auto" />
 
-export const Row = props => <Flex {...props} mx={[-1, -3, -60, -42, -48, 0]} />
+export const Row = props => <Flex {...props} mx={[-1, -3, -60, -42, -48]} />
 
 export const Col = props => (
   <Flex block {...props} px={[2, 3, 60, 42, 48, 48]} />
