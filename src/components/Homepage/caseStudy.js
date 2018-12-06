@@ -12,7 +12,7 @@ import getIntroSentence from '../../utils/getIntroSentence'
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
   /* width: 100%; */
-  max-width: ${remcalc(549)};
+  max-width: ${remcalc(526)};
   height: auto;
   ${breakpoint('smallTablet')`
     padding-right: 0;
@@ -23,7 +23,7 @@ const ImageWrapper = styled(Col)`
   `}
 
   ${breakpoint('desktop')`
-    max-width: ${remcalc(549)};
+    max-width: ${remcalc(526)};
   `}
 `
 

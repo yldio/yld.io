@@ -22,13 +22,9 @@ export default styled.h1`
     text-align:center
   `};
 
-  ${is('noTop')`
-    padding-top: 0;
-  `};
-
   ${breakpoint('tablet')`
     font-size: ${remcalc(42)};
-    padding: ${remcalc(10)} 0 ${remcalc(8)};
+    padding: ${remcalc(10)} 0 ${remcalc(8)} 0;
     line-height: ${remcalc(48)};
 
     ${is('noTop')`

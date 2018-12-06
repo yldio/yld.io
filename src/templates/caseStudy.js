@@ -81,7 +81,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
               {caseStudy.stats &&
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
-                    <Stat noTop>{stat.value}</Stat>
+                    <Stat>{stat.value}</Stat>
                     <H5>{stat.label}</H5>
                   </Margin>
                 ))}

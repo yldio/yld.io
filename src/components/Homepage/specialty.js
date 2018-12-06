@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col } from '../grid'
+import { Row } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
@@ -63,13 +63,9 @@ const Specialty = ({ services }) => (
               </Padding>
               {service.homePageSpecialities &&
                 service.homePageSpecialities.length && (
-                  <Row>
-                    <Col xs={11} sm={7}>
-                      <H6>
-                        <SeoLinks items={service.homePageSpecialities} />
-                      </H6>
-                    </Col>
-                  </Row>
+                  <H6>
+                    <SeoLinks items={service.homePageSpecialities} />
+                  </H6>
                 )}
 
               {service.pageReady ? (
