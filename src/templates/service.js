@@ -60,11 +60,11 @@ const Service = ({ data }) => {
         <Padding top={5} bottom={6}>
           <Grid>
             <Row>
-              <H2 noTop>We work with</H2>
+              <H2>We work with</H2>
               <Row>
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   <Fragment>
-                    <H5 noTop>{service.specialityAreaTitle1}</H5>
+                    <H5>{service.specialityAreaTitle1}</H5>
                     <H6>
                       <SeoLinks items={service.specialityAreaItems1} />
                     </H6>
@@ -72,7 +72,7 @@ const Service = ({ data }) => {
                 </Col>
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   <Fragment>
-                    <H5 noTop>{service.specialityAreaTitle2}</H5>
+                    <H5>{service.specialityAreaTitle2}</H5>
                     <H6>
                       <SeoLinks items={service.specialityAreaItems2} />
                     </H6>
@@ -81,7 +81,7 @@ const Service = ({ data }) => {
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   {service.specialityAreaTitle3 && (
                     <Fragment>
-                      <H5 noTop>{service.specialityAreaTitle3}</H5>
+                      <H5>{service.specialityAreaTitle3}</H5>
                       <H6>
                         <SeoLinks items={service.specialityAreaItems3} />
                       </H6>
@@ -91,7 +91,7 @@ const Service = ({ data }) => {
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   {service.specialityAreaTitle4 && (
                     <Fragment vertical={6}>
-                      <H5 noTop>{service.specialityAreaTitle4}</H5>
+                      <H5>{service.specialityAreaTitle4}</H5>
                       <H6>
                         <SeoLinks items={service.specialityAreaItems4} />
                       </H6>

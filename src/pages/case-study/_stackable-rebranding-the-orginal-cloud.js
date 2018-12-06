@@ -107,7 +107,7 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Building from the logo upwards</H2>
+                <H2>Building from the logo upwards</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
@@ -141,7 +141,7 @@ const IndexPage = ({
         <Padding top={60} bottom={3}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>Cutting the wordmark</H2>
+              <H2>Cutting the wordmark</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
@@ -166,7 +166,7 @@ const IndexPage = ({
           <Padding top={6}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Custom typeface</H2>
+                <H2>Custom typeface</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
@@ -179,7 +179,7 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
-      <GrayBackground noTop>
+      <GrayBackground>
         <Flex>
           <Type1Wrapper>
             <Type1 src={type1} alt="Example of type" />
@@ -213,7 +213,7 @@ const IndexPage = ({
         <Padding top={60} bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>New icon system</H2>
+              <H2>New icon system</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
@@ -241,7 +241,7 @@ const IndexPage = ({
         <Padding bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>Colour approach</H2>
+              <H2>Colour approach</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
@@ -263,12 +263,12 @@ const IndexPage = ({
           </Margin>
         </Padding>
       </Grid>
-      <GrayBackground noTop>
+      <GrayBackground>
         <Grid>
           <Padding top={60} bottom={5}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Putting it all together</H2>
+                <H2>Putting it all together</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
@@ -293,7 +293,7 @@ const IndexPage = ({
           <Row>
             <Col xs={12} sm={12} md={6}>
               <Margin bottom={1}>
-                <H2 noTop>Product vision</H2>
+                <H2>Product vision</H2>
               </Margin>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
                 <Paragraph padded key={i}>

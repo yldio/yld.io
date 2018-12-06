@@ -57,7 +57,7 @@ const CaseStudyTop = ({ caseStudy }) => (
   <Row>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
       <Flex full column justifyCenter>
-        <H1 noTop>{caseStudy.title}</H1>
+        <H1>{caseStudy.title}</H1>
         <NoMobile>
           <MetaData caseStudy={caseStudy} />
         </NoMobile>

@@ -38,7 +38,7 @@ const Events = ({ events }) => (
   <Row>
     <Col width={[0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
       <EventsColumn xs={8}>
-        <H2 noTop>Upcoming events</H2>
+        <H2>Upcoming events</H2>
       </EventsColumn>
       <ul>
         {events
@@ -62,7 +62,7 @@ const Events = ({ events }) => (
     </Col>
     <Col width={[1, 1, 1, 0, 0, 0]}>
       <EventsColumn xs={8}>
-        <H2 noTop>Upcoming events</H2>
+        <H2>Upcoming events</H2>
       </EventsColumn>
     </Col>
 

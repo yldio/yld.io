@@ -19,9 +19,7 @@ const Footer = () => {
           <Row>
             <Col width={1}>
               <Margin bottom={{ smallPhone: 0.5, tablet: 2 }}>
-                <H2 reverse noTop>
-                  Find us
-                </H2>
+                <H2 reverse>Find us</H2>
               </Margin>
             </Col>
           </Row>

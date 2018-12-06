@@ -13,7 +13,7 @@ const WorkStages = ({ title, workStages, image }) => (
           <Graphic>
             <Image image={image} />
           </Graphic>
-          <How reverse center noTop>
+          <How reverse center>
             {title}
           </How>
         </Col>

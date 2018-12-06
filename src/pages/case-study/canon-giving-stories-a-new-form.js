@@ -41,7 +41,7 @@ const IndexPage = ({
         <CaseStudyTop caseStudy={caseStudy} />
         <Margin vertical={4}>
           <Row>
-            <Col xs={12} sm={9} md={7}>
+            <Col width={[1, 1, 1, 1, 7 / 12]}>
               <Paragraph padded>
                 {caseStudy.introSentence.introSentence}
               </Paragraph>
@@ -54,12 +54,12 @@ const IndexPage = ({
         <Padding top={5} bottom={30}>
           <Grid>
             <Row>
-              <Col xs={12} sm={12} md={5}>
-                <H2 noTop>At the heart of a photo is a story</H2>
+              <Col width={[1, 1, 1, 1, 5 / 12]}>
+                <H2>At the heart of a photo is a story</H2>
               </Col>
             </Row>
             <Row>
-              <Col xs={12} sm={12} md={8} mdOffset={2}>
+              <Col width={[1, 1, 1, 1, 8 / 12]} mdOffset={2}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
                     <img src={landscape} alt="image representing travel" />
@@ -111,7 +111,7 @@ const IndexPage = ({
         <Padding top={2}>
           <Row>
             <Col xs={12} sm={12} md={5}>
-              <H2 noTop>Exploring the story</H2>
+              <H2>Exploring the story</H2>
             </Col>
             <Col xs={12} sm={12} md={7}>
               {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
@@ -147,7 +147,7 @@ const IndexPage = ({
           <Padding top={5} bottom={3}>
             <Row>
               <Col xs={12} sm={12} md={5}>
-                <H2 noTop>Out in the wild</H2>
+                <H2>Out in the wild</H2>
               </Col>
               <Col xs={12} sm={12} md={7}>
                 {makeText(caseStudy.genericText4.genericText4).map((p, i) => (

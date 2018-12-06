@@ -14,9 +14,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
       <Row>
         <Col width={[1, 1, 1, workStage.displayType !== 'List' ? 1 : 1 / 2]}>
           <Padding bottom={2}>
-            <H2 reverse noTop>
-              {workStage.title}
-            </H2>
+            <H2 reverse>{workStage.title}</H2>
           </Padding>
           {alternatives &&
             alternatives.map(alternative => (
