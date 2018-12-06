@@ -61,7 +61,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
         <TextWrapper>
           <SubHeading>{subHeading}</SubHeading>
           <H2 noTop>{caseStudy.title}</H2>
-          <Paragraph>{getIntroSentence(caseStudy)}</Paragraph>
+          <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
           <StyledLink to={`/case-study/${caseStudy.slug}`}>
             Learn more
           </StyledLink>
@@ -69,7 +69,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       </Col>
       <Col width={[1, 1, 1, 1, 0]}>
         <Margin top={3} />
-        <Paragraph>{getIntroSentence(caseStudy)}</Paragraph>
+        <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
         <StyledLink
           aria-label={`Learn more about ${caseStudy.title}`}
           to={`/case-study/${caseStudy.slug}`}
