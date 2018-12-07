@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 
 export default styled.li`
   position: relative;
@@ -15,6 +16,9 @@ export default styled.li`
     bottom: 0;
     display: block;
     position: absolute;
+    ${is('fullWidthDivider')`
+      width: 100%;
+    `}
   }
 
   & span {

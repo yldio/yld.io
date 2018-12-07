@@ -9,17 +9,20 @@ const EventBorder = styled(Col)`
   border: 1px solid rgba(51, 51, 51, 0.15);
 `
 
-const EventSection = ({ specialty }) => (
-  <Grid className="grid">
-    <Padding top={6} bottom={6}>
-      <Row>
-        <Col md={6} sm={12} xs={12}>
-          <H1>{`Upcoming ${specialty.title} events`}</H1>
-        </Col>
-        <Col md={6} sm={12} xs={12}>
-          {specialty.events
-            .filter(({ startTime }) => new Date(startTime) > new Date())
-            .map(event => (
+const EventSection = ({ specialty }) => {
+  const futureEvents = specialty.events.filter(
+    ({ startTime }) => new Date(startTime) > new Date()
+  )
+
+  return futureEvents.length > 0 ? (
+    <Grid className="grid">
+      <Padding top={6} bottom={6}>
+        <Row>
+          <Col md={6} sm={12} xs={12}>
+            <H1>{`Upcoming ${specialty.title} events`}</H1>
+          </Col>
+          <Col md={6} sm={12} xs={12}>
+            {futureEvents.map(event => (
               <EventBorder key={`${event.id}`}>
                 <Padding top={2} bottom={2}>
                   <Row>
@@ -47,9 +50,10 @@ const EventSection = ({ specialty }) => (
                 </Padding>
               </EventBorder>
             ))}
-        </Col>
-      </Row>
-    </Padding>
-  </Grid>
-)
+          </Col>
+        </Row>
+      </Padding>
+    </Grid>
+  ) : null
+}
 export default EventSection

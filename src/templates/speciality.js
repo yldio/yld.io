@@ -22,6 +22,7 @@ import BooksSection from '../components/Speciality/books'
 
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
+  console.log({ specialty })
   const site = data.site
   return (
     <Layout blue logoColour={specialty.logoColour}>
@@ -54,26 +55,28 @@ const Specialty = ({ data }) => {
               } articles created by members of YLD for the community.`}</Paragraph>
             </Col>
             <Col md={4} xs={12}>
-              <Posts>
-                {posts => (
-                  <ul>
-                    {posts.slice(0, 3).map(({ node }) => (
-                      <Li key={`${node.id}`}>
-                        <H5 bold>
-                          <a
-                            href={`https://medium.com/yld-engineering-blog/${
-                              node.uniqueSlug
-                            }`}
-                          >
-                            {node.title}
-                          </a>
-                        </H5>
-                        {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
-                      </Li>
-                    ))}
-                  </ul>
-                )}
-              </Posts>
+              <Padding top={1}>
+                <Posts>
+                  {posts => (
+                    <ul>
+                      {posts.slice(0, 3).map(({ node }) => (
+                        <Li key={`${node.id}`} fullWidthDivider>
+                          <H5 bold>
+                            <a
+                              href={`https://medium.com/yld-engineering-blog/${
+                                node.uniqueSlug
+                              }`}
+                            >
+                              {node.title}
+                            </a>
+                          </H5>
+                          {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
+                        </Li>
+                      ))}
+                    </ul>
+                  )}
+                </Posts>
+              </Padding>
               <Padding top={3}>
                 <StyledLink href="https://medium.com/yld-engineering-blog">
                   More articles
