@@ -14,6 +14,10 @@ export default styled.h3`
     color: ${props => props.theme.colors.white};
   `};
 
+  ${is('regular')`
+    font-weight: normal;
+  `};
+
   ${is('muted')`
     opacity: .5;
   `};

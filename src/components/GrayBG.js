@@ -33,6 +33,7 @@ export default styled.section`
 
   ${is('offsetBottom')`
     z-index: auto;
+    margin-bottom: 0;
     &:after {
       content: none;
     }

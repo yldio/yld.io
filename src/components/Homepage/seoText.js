@@ -8,14 +8,17 @@ const Link = styled(StyledLink)`
   margin-bottom: 0;
   margin-left: 0;
   padding: 0;
+  font-weight: normal;
+  text-decoration: underline;
+  display: initial;
 `
 
 const Text = H3.withComponent('h1')
 
 const SEOText = ({ text }) => (
   <Row>
-    <Col width={[1, 1, 1, 10 / 12, 10 / 12, 8 / 12]}>
-      <Text>
+    <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
+      <Text regular>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value
 

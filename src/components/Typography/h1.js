@@ -18,6 +18,10 @@ export default styled.h1`
     opacity: .5;
   `};
 
+  ${is('regular')`
+    font-weight: normal;
+  `};
+
   ${is('center')`
     text-align:center
   `};
