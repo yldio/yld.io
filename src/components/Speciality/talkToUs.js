@@ -14,8 +14,10 @@ const TalkToUsSection = ({ title, contactText }) => (
             <H1>{`Talk to us about ${title}`}</H1>
           </Col>
           <Col md={6} sm={12} xs={12}>
-            <Paragraph>{contactText}</Paragraph>
-            <StyledLink to="/contact/">Get in touch</StyledLink>
+            <Padding top={1}>
+              <Paragraph>{contactText}</Paragraph>
+              <StyledLink to="/contact/">Get in touch</StyledLink>
+            </Padding>
           </Col>
         </Row>
       </Padding>
