@@ -23,13 +23,13 @@ const JobsComponent = () => (
         <H2>Join our team</H2>
       </Col>
     </Row>
-    <Padding top={3}>
+    <Padding top={90}>
       <Row>
         <Jobs>
           {jobs =>
             Object.keys(jobs).map(key => (
               <Col
-                width={[1, 1, 1 / 2, 1 / 2, 1 / 4]}
+                width={[1, 1, 1 / 2, 1 / 2, 3 / 12]}
                 key={`${key}-${jobs[key].length}-main`}
               >
                 <H5>{key}</H5>

@@ -59,7 +59,7 @@ const Specialty = ({ data }) => {
                   {posts => (
                     <ul>
                       {posts.slice(0, 3).map(({ node }) => (
-                        <Li key={`${node.id}`} fullWidthDivider>
+                        <Li key={`${node.id}`} fullWidth>
                           <H5 bold>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${

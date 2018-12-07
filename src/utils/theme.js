@@ -15,7 +15,8 @@ export const spacing = {
   30: remcalc(30),
   60: remcalc(60),
   42: remcalc(42),
-  48: remcalc(48)
+  48: remcalc(48),
+  90: remcalc(90)
 }
 
 export const breakpoints = {

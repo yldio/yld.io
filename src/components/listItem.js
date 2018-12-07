@@ -4,9 +4,14 @@ import is from 'styled-is'
 
 export default styled.li`
   position: relative;
-  padding-bottom: ${remcalc(30)};
-  margin-bottom: ${remcalc(20)};
+  padding-bottom: ${remcalc(47)};
+  margin-bottom: ${remcalc(30)};
   line-height: ${remcalc(24)};
+
+  ${is('symmetrical')`
+    padding-bottom: ${remcalc(30)};
+    margin-bottom: ${remcalc(18)};
+  `};
 
   &:after {
     content: '';
@@ -16,9 +21,11 @@ export default styled.li`
     bottom: 0;
     display: block;
     position: absolute;
-    ${is('fullWidthDivider')`
+    max-width: ${remcalc(335)};
+
+    ${is('fullWidth')`
       width: 100%;
-    `}
+    `};
   }
 
   & span {

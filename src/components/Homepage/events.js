@@ -40,25 +40,27 @@ const Events = ({ events }) => (
       <EventsColumn xs={8}>
         <H2>Upcoming events</H2>
       </EventsColumn>
-      <ul>
-        {events
-          .filter(n => !n.node.homepageFeatured)
-          .slice(0, 3)
-          .map(({ node }) => (
-            <Li key={`${node.id}`}>
-              <H5>
-                <a
-                  href={node.linkToEvent}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {node.eventTitle}
-                </a>
-              </H5>
-              {format(new Date(node.date), 'MMMM DD[,] dddd')}
-            </Li>
-          ))}
-      </ul>
+      <Padding top={42}>
+        <ul>
+          {events
+            .filter(n => !n.node.homepageFeatured)
+            .slice(0, 3)
+            .map(({ node }) => (
+              <Li fullWidth symmetrical key={`${node.id}`}>
+                <H5>
+                  <a
+                    href={node.linkToEvent}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {node.eventTitle}
+                  </a>
+                </H5>
+                {format(new Date(node.date), 'MMMM DD[,] dddd')}
+              </Li>
+            ))}
+        </ul>
+      </Padding>
     </Col>
     <Col width={[1, 1, 1, 0, 0, 0]}>
       <EventsColumn xs={8}>
@@ -95,13 +97,13 @@ const Events = ({ events }) => (
         ))}
     </Col>
     <Col width={[1, 1, 1, 0, 0, 0]}>
-      <Padding top={3}>
+      <Padding top={42}>
         <ul>
           {events
             .filter(n => !n.node.homepageFeatured)
             .slice(0, 3)
             .map(({ node }) => (
-              <Li key={`${node.id}`}>
+              <Li fullWidth symmetrical key={`${node.id}`}>
                 <H5>
                   <a
                     href={node.linkToEvent}

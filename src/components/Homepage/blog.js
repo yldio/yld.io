@@ -23,7 +23,7 @@ const Blog = () => (
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
-              <Li key={`${node.id}`}>
+              <Li fullWidth symmetrical key={`${node.id}`}>
                 <H5>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
