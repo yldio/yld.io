@@ -18,6 +18,12 @@ const Trimmer = styled(Grid)`
   position: relative;
   overflow: hidden;
 `
+
+const ImgContainerCol = styled(Col)`
+  display: flex !important; /* sorry */
+  align-items: center;
+  justify-content: center;
+`
 const CommunitySection = ({ specialty }) => (
   <BlueBackground>
     <Trimmer className="grid">
@@ -25,15 +31,15 @@ const CommunitySection = ({ specialty }) => (
         alt={specialty.communityBackground.title}
         src={specialty.communityBackground.file.url}
       />
-      <Padding top={6} bottom={6}>
+      <Padding top={5} bottom={5}>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <ImgContainerCol md={6} sm={12} xs={12}>
             <img
               alt={specialty.communityLogo.title}
               src={specialty.communityLogo.file.url}
-              style={{ maxHeight: '100%' }}
+              style={{ height: '100px' }}
             />
-          </Col>
+          </ImgContainerCol>
           <Col md={6} sm={12} xs={12}>
             <H1 reverse>{`${specialty.title} community`}</H1>
             <Paragraph reverse muted>
