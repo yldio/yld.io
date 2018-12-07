@@ -1,329 +1,158 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { SmallerH2, H5, Paragraph } from '../components/Typography'
-import Layout from '../components/layout'
-import { format } from 'date-fns'
-import StyledLink from '../components/styledLink'
-import Posts from '../components/posts'
-import Li from '../components/listItem'
+import breakpoint from 'styled-components-breakpoint'
+import Image from '../Common/Image'
+import StyledLink from '../styledLink'
+import SeoLinks from '../Common/seoLinks'
+import { H2, H4, H6, Paragraph } from '../Typography'
 
-import IntroSection from '../components/Speciality/intro'
-import ProjectsSection from '../components/Speciality/projects'
-import TrainingSection from '../components/Speciality/training'
-import CommunitySection from '../components/Speciality/community'
-import EventSection from '../components/Speciality/events'
-import TalksSection from '../components/Speciality/talks'
-import TalkToUsSection from '../components/Speciality/talkToUs'
-import TutorialsSection from '../components/Speciality/tutorials'
-import BooksSection from '../components/Speciality/books'
+const CardHeader = styled.header`
+  padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
+  max-width: ${remcalc(475)};
+  box-sizing: border-box;
 
-const Specialty = ({ data }) => {
-  const specialty = data.allContentfulSpeciality.edges[0].node
-  const site = data.site
-  return (
-    <Layout blue logoColour={specialty.logoColour}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          specialty.title ? '- ' + specialty.title : ''
-        } ${specialty.seoTitle ? '- ' + specialty.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: specialty.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
-      <IntroSection specialty={specialty} />
-      <ProjectsSection specialty={specialty} />
-      <TrainingSection specialty={specialty} />
-      <CommunitySection specialty={specialty} />
-      <EventSection specialty={specialty} />
-      <TalksSection specialty={specialty} />
-      <Grid className="grid">
-        <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
-          <Row>
-            <Col md={6} sm={12} xs={12}>
-              <SmallerH2>{`From the blog`}</SmallerH2>
-              <Paragraph>{`${
-                specialty.title
-              } articles created by members of YLD for the community.`}</Paragraph>
-            </Col>
-            <Col md={4} xs={12}>
-              <Padding top={1}>
-                <Posts>
-                  {posts => (
-                    <ul>
-                      {posts.slice(0, 3).map(({ node }) => (
-                        <Li key={`${node.id}`} fullWidth>
-                          <H5 bold>
-                            <a
-                              href={`https://medium.com/yld-engineering-blog/${
-                                node.uniqueSlug
-                              }`}
-                            >
-                              {node.title}
-                            </a>
-                          </H5>
-                          {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
-                        </Li>
-                      ))}
-                    </ul>
-                  )}
-                </Posts>
-              </Padding>
-              <Padding top={3}>
-                <StyledLink href="https://medium.com/yld-engineering-blog">
-                  More articles
-                </StyledLink>
-              </Padding>
-            </Col>
-          </Row>
-        </Padding>
-      </Grid>
-      <TutorialsSection specialty={specialty} />
-      <BooksSection specialty={specialty} />
-      <TalkToUsSection
-        title={specialty.title}
-        contactText={specialty.contactText}
-      />
-    </Layout>
-  )
-}
+  > div {
+    max-width: ${remcalc(310)};
+  }
+`
 
-export default Specialty
+const Title = styled(H4)`
+  font-weight: 500;
+`
 
-export const pageQuery = graphql`
-  query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulSpeciality(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
-          title
-          seoTitle
-          seoMetaDescription
-          seoText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introGraphic {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          introTitle
-          introTextTitle1
-          introTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle2
-          introTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle3
-          introTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          relatedProjects {
-            ... on ContentfulCaseStudy {
-              title
-              slug
-              introSentence
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-              }
-            }
-          }
-          clients {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingIntroText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon1 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle1
-          trainingTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon2 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle2
-          trainingTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon3 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle3
-          trainingTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          externalResources {
-            type
-            title
-            link
-            additionalInfo
-            id
-            colorCode
-          }
-          communityText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          communityLogo {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          communityBackground {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          eventIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          events {
-            id
-            eventTitle
-            date
-            startTime
-            linkToEvent
-            blurb {
-              blurb
-            }
-          }
-          contactText
-          featuredTalkIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          videoIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          logoColour
-        }
-      }
+const AnimatedLink = styled(Link)`
+  > section {
+    transition: all 250ms ease;
+  }
+
+  &:hover {
+    section {
+      transform: scale(0.97);
     }
   }
 `
+
+const PosterImage = styled.div`
+  background: #${props => props.color};
+
+  max-width: 100%;
+
+  ${breakpoint('tablet')`
+    height: 528px;
+  `}
+
+  ${breakpoint('desktop')`
+    width: 475px;
+    height: 473px;
+  `}
+`
+
+const MasonryContainer = styled(Col)`
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+
+  ${breakpoint('smallTablet')`
+    display: block;
+    column-count: 2;
+    column-gap: 0;
+    column-fill: auto;
+    column-gap: 49px;
+  `}
+`
+
+const orderMap = {
+  0: 1,
+  1: 3,
+  2: 2,
+  3: 4
+}
+
+const MasonryElement = styled.div`
+  break-inside: avoid;
+  order: ${({ index }) => orderMap[index]};
+
+  ${breakpoint('desktop')`
+    order: initial;
+  `};
+`
+
+const Specialty = ({ services }) => (
+  <Row pt={5}>
+    <MasonryContainer width={[1]}>
+      {services.map((service, index, arr) => {
+        return (
+          service.introSentence && (
+            <MasonryElement key={service.id} index={index}>
+              {(arr.length === 2 && index === 1) ||
+              (arr.length !== 2 && index === 2) ? (
+                <Padding
+                  top={{ phone: 0, tablet: 0, desktop: 6.5 }}
+                  bottom={2}
+                />
+              ) : null}
+              <H2>{service.title}</H2>
+              <Padding top={1.5} bottom={0.5}>
+                <Paragraph>{service.introSentence.introSentence}</Paragraph>
+              </Padding>
+              {service.homePageSpecialities &&
+                service.homePageSpecialities.length && (
+                  <Row>
+                    <Col width={[1, 1, 1, 9 / 12]}>
+                      <H6>
+                        <SeoLinks items={service.homePageSpecialities} />
+                      </H6>
+                    </Col>
+                  </Row>
+                )}
+
+              {service.pageReady ? (
+                <Padding bottom={1.5}>
+                  <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
+                </Padding>
+              ) : (
+                <Padding bottom={1.5} />
+              )}
+
+              <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
+                <section
+                  style={{
+                    background: `#${service.caseStudies[0].posterColor}`
+                  }}
+                >
+                  <CardHeader>
+                    <section>
+                      <Paragraph reverse muted>
+                        Case study
+                      </Paragraph>
+                      <Title noMargin reverse>
+                        {service.caseStudies[0].title}
+                      </Title>
+                    </section>
+                  </CardHeader>
+                  <PosterImage color={service.caseStudies[0].posterColor}>
+                    <Image
+                      image={{
+                        ...service.caseStudies[0].posterImage,
+                        fluid: {}
+                      }}
+                    />
+                  </PosterImage>
+                </section>
+              </AnimatedLink>
+              <Padding bottom={5} />
+            </MasonryElement>
+          )
+        )
+      })}
+    </MasonryContainer>
+  </Row>
+)
+
+export default Specialty
