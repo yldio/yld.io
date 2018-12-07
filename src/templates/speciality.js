@@ -24,7 +24,7 @@ const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
   const site = data.site
   return (
-    <Layout blue>
+    <Layout blue logoColour={specialty.logoColour}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           specialty.title ? '- ' + specialty.title : ''
@@ -319,6 +319,7 @@ export const pageQuery = graphql`
               url
             }
           }
+          logoColour
         }
       }
     }

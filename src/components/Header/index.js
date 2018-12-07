@@ -5,8 +5,8 @@ import Flex from 'styled-flex-component'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import logo from '../../images/logo_animated.gif'
-import logoEng from '../../images/eng-logo.svg'
 import logoDesign from '../../images/design-logo.svg'
+import LogoEngComponent from '../../images/eng-logo-component'
 import menu from '../../images/menu.svg'
 import close from '../../images/menu_close.svg'
 import { MobileMenu, HomeLink, Close, DesktopMenu } from './elements.js'
@@ -39,7 +39,7 @@ class Header extends Component {
                     !this.props.blue &&
                     !window.location.pathname.includes('design') ? (
                       <img
-                        role="button"
+                        role="link"
                         tab-index="0"
                         height="48"
                         src={logo}
@@ -52,13 +52,16 @@ class Header extends Component {
                     this.props.blue ? (
                       <Fragment>
                         <HiddenText>engineering</HiddenText>
-                        <img
-                          role="button"
-                          tab-index="0"
-                          height="48"
-                          src={logoEng}
-                          alt="yld engineering logo"
+                        <LogoEngComponent
+                          boxColour={this.props.logoColour}
+                          backgroundBlue={this.props.blue}
                         />
+                      </Fragment>
+                    ) : null}
+
+                    {isClient() && this.props.blue ? (
+                      <Fragment>
+                        <HiddenText>engineering</HiddenText>
                       </Fragment>
                     ) : null}
                     {isClient() &&
@@ -66,7 +69,7 @@ class Header extends Component {
                       <Fragment>
                         <HiddenText>Design</HiddenText>
                         <img
-                          role="button"
+                          role="link"
                           tab-index="0"
                           height="48"
                           src={logoDesign}

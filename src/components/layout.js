@@ -10,7 +10,7 @@ import Footer from './Footer'
 import BlueBackground from './BlueBG'
 import google from '../utils/google-json.json'
 
-const Layout = ({ children, location, blue }) => (
+const Layout = ({ children, location, blue, logoColour }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -35,10 +35,10 @@ const Layout = ({ children, location, blue }) => (
           </Helmet>
           {blue && (
             <BlueBackground>
-              <Header blue />
+              <Header blue logoColour={logoColour} />
             </BlueBackground>
           )}
-          {!blue && <Header />}
+          {!blue && <Header logoColour={logoColour} />}
           {children}
           <Footer />
           <GlobalStyle />
