@@ -5,6 +5,7 @@ import { H1, H4, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
+
 const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
 `
@@ -48,19 +49,24 @@ const IntroSection = ({ specialty }) => (
               <H4 reverse>{specialty.introTitle}</H4>
             </Padding>
           </Col>
-          <IntroRectangle
-            introTextTitle={specialty.introTextTitle1}
-            introTextBody={specialty.introTextBody1}
-          />
-          <IntroRectangle
-            introTextTitle={specialty.introTextTitle2}
-            introTextBody={specialty.introTextBody2}
-          />
-          <IntroRectangle
-            introTextTitle={specialty.introTextTitle3}
-            introTextBody={specialty.introTextBody3}
-          />
         </Row>
+
+        <Col md={12}>
+          <Row>
+            <IntroRectangle
+              introTextTitle={specialty.introTextTitle1}
+              introTextBody={specialty.introTextBody1}
+            />
+            <IntroRectangle
+              introTextTitle={specialty.introTextTitle2}
+              introTextBody={specialty.introTextBody2}
+            />
+            <IntroRectangle
+              introTextTitle={specialty.introTextTitle3}
+              introTextBody={specialty.introTextBody3}
+            />
+          </Row>
+        </Col>
       </Grid>
     </Padding>
   </BlueBackground>

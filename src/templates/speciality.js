@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H5, Paragraph } from '../components/Typography'
+import { H2, H5, Paragraph } from '../components/Typography'
 import Layout from '../components/layout'
 import { format } from 'date-fns'
 import StyledLink from '../components/styledLink'
@@ -48,7 +48,7 @@ const Specialty = ({ data }) => {
         <Padding top={5} bottom={5}>
           <Row>
             <Col md={6} sm={12} xs={12}>
-              <H1>{`From the blog`}</H1>
+              <H2>{`From the blog`}</H2>
               <Paragraph>{`${
                 specialty.title
               } articles created by members of YLD for the community.`}</Paragraph>

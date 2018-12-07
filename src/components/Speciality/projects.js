@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H3, H5, Paragraph } from '../Typography'
+import { H2, H3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
@@ -37,18 +37,20 @@ const ProjectsSection = ({ specialty }) => (
       <Row>
         <Col md={6} sm={false} xs={false}>
           <Padding top={7} bottom={5}>
-            <H1 noMargin>{specialty.title}</H1>
-            <H1 noMargin muted>
+            <H2 noMargin noBottom>
+              {specialty.title}
+            </H2>
+            <H2 noMargin muted noTop>
               related projects
-            </H1>
+            </H2>
           </Padding>
           <PosterLinks project={specialty.relatedProjects[0]} />
         </Col>
         <Col md={false} sm={12} xs={12}>
-          <H1 noMargin>{specialty.title}</H1>
-          <H1 noMargin muted>
+          <H2 noMargin>{specialty.title}</H2>
+          <H2 noMargin muted>
             related projects
-          </H1>
+          </H2>
         </Col>
         <Col md={6} sm={12} xs={12}>
           <PosterLinks project={specialty.relatedProjects[1]} />
