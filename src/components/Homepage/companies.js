@@ -12,7 +12,7 @@ const Companies = ({ companies }) => (
   <Grid>
     <Row>
       {companies.map(company => (
-        <Column width={[1 / 2, 1 / 2, 1 / 3, 1 / 4, 1 / 4]} key={company.id}>
+        <Column width={[1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]} key={company.id}>
           <img
             style={{ minWidth: 100 }}
             alt={company.title}
