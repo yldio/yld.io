@@ -2,7 +2,6 @@ import React from 'react'
 
 const Logo = props => {
   const { boxColour, backgroundBlue = false } = props
-  console.log({ props })
   return (
     <svg
       id="Layer_1"

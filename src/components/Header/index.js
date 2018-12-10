@@ -25,7 +25,6 @@ class Header extends Component {
   toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }))
 
   render() {
-    console.log(this.props)
     return (
       <Grid className="grid">
         <Row>

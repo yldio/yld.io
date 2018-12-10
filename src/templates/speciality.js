@@ -22,7 +22,6 @@ import BooksSection from '../components/Speciality/books'
 
 const Specialty = ({ data }) => {
   const specialty = data.allContentfulSpeciality.edges[0].node
-  console.log({ specialty })
   const site = data.site
   return (
     <Layout blue logoColour={specialty.logoColour}>
