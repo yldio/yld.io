@@ -36,8 +36,8 @@ const EventsColumn = styled(Col)`
 
 const Events = ({ events }) => (
   <Row>
-    <Col width={[0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
-      <EventsColumn xs={8}>
+    <Col width={[0, 0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
+      <EventsColumn>
         <H2>Upcoming events</H2>
       </EventsColumn>
       <Padding top={42}>
@@ -62,13 +62,15 @@ const Events = ({ events }) => (
         </ul>
       </Padding>
     </Col>
-    <Col width={[1, 1, 1, 0, 0, 0]}>
-      <EventsColumn xs={8}>
-        <H2>Upcoming events</H2>
+    <Col width={[1, 1, 1, 1, 0, 0, 0]}>
+      <EventsColumn>
+        <Padding bottom={2}>
+          <H2>Upcoming events</H2>
+        </Padding>
       </EventsColumn>
     </Col>
 
-    <Col width={[1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
+    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
@@ -96,7 +98,7 @@ const Events = ({ events }) => (
           </div>
         ))}
     </Col>
-    <Col width={[1, 1, 1, 0, 0, 0]}>
+    <Col width={[1, 1, 1, 1, 0, 0, 0]}>
       <Padding top={42}>
         <ul>
           {events
