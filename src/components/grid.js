@@ -131,7 +131,7 @@ const GridStyled = styled.div`
     max-width: 1100px;
   `}
 
-    max-width: calc(100% - 48px);
+  max-width: calc(100% - 48px);
   position: relative;
 
   ${props => css(props)}
