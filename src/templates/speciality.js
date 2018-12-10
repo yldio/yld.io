@@ -46,7 +46,7 @@ const Specialty = ({ data }) => {
       <EventSection specialty={specialty} />
       <TalksSection specialty={specialty} />
       <Grid className="grid">
-        <Padding top={5} bottom={5}>
+        <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
           <Row>
             <Col md={6} sm={12} xs={12}>
               <H2>{`From the blog`}</H2>

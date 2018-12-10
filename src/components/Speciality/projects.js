@@ -63,8 +63,8 @@ const ProjectsSection = ({ specialty }) => (
             <H5 bold>Other Clients we helped</H5>
           </Padding>
         </Col>
-        <Companies companies={specialty.clients} />
       </Row>
+      <Companies companies={specialty.clients} />
     </Padding>
   </Grid>
 )

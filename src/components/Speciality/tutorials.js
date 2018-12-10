@@ -14,7 +14,7 @@ const TutorialsGrid = styled(Grid)`
 
 const TutorialsSection = ({ specialty }) => (
   <GrayBackground noTop>
-    <TutorialsGrid>
+    <TutorialsGrid className="grid">
       <Padding top={4} bottom={5}>
         <Row>
           <Col md={6} sm={12} xs={12}>

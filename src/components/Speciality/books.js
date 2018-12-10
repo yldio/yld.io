@@ -31,21 +31,19 @@ const BookCol = styled(Col)`
 
 const BooksBox = styled.a`
   border: 1px solid;
-  width: ${remcalc(301)};
   height: ${remcalc(222)};
-  margin-right: 20px;
   display: inline-block;
 
   ${breakpoint('tablet')`
     height: ${remcalc(360)};
-
   `}
 `
 
 const BooksSection = ({ specialty }) => (
-  <Grid>
-    <Padding top={4} bottom={5}>
+  <Grid className="grid">
+    <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
       <Row>
+        <Padding top={4} />
         <Col md={12} sm={12} xs={12}>
           <H1 center>{`${specialty.title} books`}</H1>
           <Paragraph center>
@@ -98,6 +96,7 @@ const BooksSection = ({ specialty }) => (
             </Flex>
           </Padding>
         </Col>
+        <Padding bottom={5} />
       </Row>
     </Padding>
   </Grid>
