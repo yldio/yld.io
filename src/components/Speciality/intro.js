@@ -29,7 +29,9 @@ const IntroSection = ({ specialty }) => (
         <Row>
           <Col xs={12} sm={12} md={6}>
             <Flex full column justifyCenter>
-              <H1 reverse>{specialty.title}</H1>
+              <H1 style={{ fontSize: '42px' }} reverse>
+                {specialty.title}
+              </H1>
               <Paragraph reverse muted>
                 {specialty.seoText.content[0].content[0].value}
               </Paragraph>

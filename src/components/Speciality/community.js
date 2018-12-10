@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, Paragraph } from '../Typography'
+import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import styled from 'styled-components'
@@ -41,7 +41,9 @@ const CommunitySection = ({ specialty }) => (
             />
           </ImgContainerCol>
           <Col md={6} sm={12} xs={12}>
-            <H1 reverse>{`${specialty.title} community`}</H1>
+            <SmallerH2
+              reverse
+            >{`${specialty.title.trim()} community`}</SmallerH2>
             <Paragraph reverse muted>
               {specialty.communityText.content[0].content[0].value}
             </Paragraph>

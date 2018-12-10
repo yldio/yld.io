@@ -4,7 +4,7 @@ import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GrayBackground from '../GrayBG'
-import { H1, H5, Paragraph } from '../Typography'
+import { SmallerH2, H5, Paragraph } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
 
@@ -18,7 +18,7 @@ const TutorialsSection = ({ specialty }) => (
       <Padding top={4} bottom={5}>
         <Row>
           <Col md={6} sm={12} xs={12}>
-            <H1>Tutorials</H1>
+            <SmallerH2>Tutorials</SmallerH2>
             <Paragraph>
               NodeJS tutorials created by members of YLD for the community.
             </Paragraph>

@@ -6,7 +6,7 @@ import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
-import { H1, H4, Paragraph } from '../Typography'
+import { SmallerH2, H4, Paragraph } from '../Typography'
 import StyledLink from '../styledLink'
 
 const BottomParagraph = styled(Paragraph)`
@@ -45,7 +45,7 @@ const BooksSection = ({ specialty }) => (
       <Row>
         <Padding top={4} />
         <Col md={12} sm={12} xs={12}>
-          <H1 center>{`${specialty.title} books`}</H1>
+          <SmallerH2 center>{`${specialty.title.trim()} books`}</SmallerH2>
           <Paragraph center>
             NodeJS books created by members of YLD for the community.
           </Paragraph>

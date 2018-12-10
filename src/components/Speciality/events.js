@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, H5, Paragraph } from '../Typography'
+import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -19,7 +19,7 @@ const EventSection = ({ specialty }) => {
       <Padding top={6} bottom={6}>
         <Row>
           <Col md={6} sm={12} xs={12}>
-            <H1>{`Upcoming ${specialty.title} events`}</H1>
+            <SmallerH2>{`Upcoming ${specialty.title} events`}</SmallerH2>
           </Col>
           <Col md={6} sm={12} xs={12}>
             {futureEvents.map(event => (

@@ -2,7 +2,7 @@ import React from 'react'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H1, Paragraph } from '../Typography'
+import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import BlueBackground from '../BlueBG'
@@ -40,7 +40,7 @@ const TalksSection = ({ specialty }) => {
         <Padding top={4} bottom={5}>
           <Row>
             <Col md={12} sm={12} xs={12}>
-              <H1 reverse>{`Talks`}</H1>
+              <SmallerH2 reverse>{`Talks`}</SmallerH2>
             </Col>
           </Row>
           <Padding top={3}>
