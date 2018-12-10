@@ -5,7 +5,8 @@ const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
-  GTM_AUTH
+  GTM_AUTH,
+  ENV
 } = process.env
 
 module.exports = {
@@ -31,7 +32,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: CONTENTFUL_SPACE,
-        accessToken: CONTENTFUL_TOKEN
+        accessToken: CONTENTFUL_TOKEN,
+        environment: ENV === 'dev' ? 'development' : 'master'
       }
     },
     {

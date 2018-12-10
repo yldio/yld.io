@@ -12,8 +12,7 @@ import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
-
-const makeText = content => content.split('\n').filter(c => c.length)
+import { makeText } from '../../utils/makeText'
 
 const ImageWrapper = styled.div`
   max-width: 540px;
