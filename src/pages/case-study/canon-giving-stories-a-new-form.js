@@ -39,16 +39,18 @@ const IndexPage = ({
       </Helmet>
       <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
-        <Margin vertical={4}>
-          <Row>
-            <Col width={[1, 1, 1, 1, 7 / 12]}>
-              <Paragraph padded>
-                {caseStudy.introSentence.introSentence}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Margin>
-        <Padding bottom={2} />
+        <Padding top={4} />
+        <Row>
+          <Col
+            width={[1, 1, 1, 1, 1 / 2]}
+            style={{ marginLeft: 'auto', paddingLeft: '0' }}
+          >
+            <Paragraph padded fullWidth>
+              {caseStudy.introSentence.introSentence}
+            </Paragraph>
+          </Col>
+        </Row>
+        <Padding bottom={4.5} />
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>

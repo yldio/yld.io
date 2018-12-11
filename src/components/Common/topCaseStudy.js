@@ -3,16 +3,15 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
 import { Row, Col } from '../../components/grid'
-import remcalc from 'remcalc'
-import { Padding, Margin } from 'styled-components-spacing'
+import { Margin } from 'styled-components-spacing'
 import { H1, H5, H6 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
 
-const ImageWrapper = styled(Col)`
-  max-height: ${remcalc(540)};
-  width: ${remcalc(540)};
-`
+// const ImageWrapper = styled(Col)`
+//   max-height: ${remcalc(540)};
+//   width: ${remcalc(540)};
+// `
 
 const NoMobile = styled.section`
   display: none;
@@ -55,7 +54,15 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
+    {caseStudy.posterImage && (
+      <Col width={[1, 1, 1 / 2]}>
+        <Image
+          alt={caseStudy.posterImage.title}
+          image={caseStudy.posterImage}
+        />
+      </Col>
+    )}
+    <Col width={[1, 1, 1, 1, 5 / 12]} style={{ marginLeft: 'auto' }}>
       <Flex full column justifyCenter>
         <H1>{caseStudy.title}</H1>
         <NoMobile>
@@ -63,19 +70,11 @@ const CaseStudyTop = ({ caseStudy }) => (
         </NoMobile>
       </Flex>
     </Col>
-    {caseStudy.posterImage && (
-      <ImageWrapper width={[1, 1, 1 / 2]}>
-        <Image
-          alt={caseStudy.posterImage.title}
-          image={caseStudy.posterImage}
-        />
-      </ImageWrapper>
-    )}
-    <Col width={[1, 1, 0]}>
+    {/* <Col width={[1, 1, 0]}>
       <Padding top={2}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
-    </Col>
+    </Col> */}
   </Row>
 )
 
