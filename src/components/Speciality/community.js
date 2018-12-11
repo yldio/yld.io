@@ -8,6 +8,7 @@ import styled from 'styled-components'
 const TrimmedImage = styled.img`
   position: absolute;
   height: 125%;
+  max-height: 125%;
   object-fit: cover;
   left: -30%;
   top: -15%;
