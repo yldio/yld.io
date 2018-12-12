@@ -115,19 +115,23 @@ const GridStyled = styled.div`
       max-width: 390px;
     }
   `}
-    ${breakpoint('largePhone')`
+
+  ${breakpoint('largePhone')`
     max-width: 480px;
     p {
       max-width: 390px;
     }
   `}
-   ${breakpoint('smallTablet')`
+
+  ${breakpoint('smallTablet')`
     max-width: calc(100% - 84px);
- `}
-   ${breakpoint('tablet')`
+  `}
+
+  ${breakpoint('tablet')`
     max-width: calc(100% - 92px);
- `}
-   ${breakpoint('desktop')`
+  `}
+
+  ${breakpoint('desktop')`
     max-width: 1100px;
   `}
 
@@ -150,12 +154,12 @@ const Flex = styled.div`
   `};
 `
 
-export const Grid = props => <GridStyled {...props} mx="auto" />
+export const Grid = props => <GridStyled mx="auto" {...props} />
 
 export const Row = props => (
-  <Flex {...props} mx={[-1, -3, -60, -42, -48, -48]} />
+  <Flex mx={[-1, -3, -60, -42, -48, -48]} {...props} />
 )
 
 export const Col = props => (
-  <Flex block {...props} px={[1, 3, 60, 42, 48, 48]} />
+  <Flex block px={[1, 3, 60, 42, 48, 48]} {...props} />
 )

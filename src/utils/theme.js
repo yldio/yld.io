@@ -26,7 +26,7 @@ export const breakpoints = {
   phone: 471,
   largePhone: 553,
   smallTablet: 701, // sharon
-  tablet: 900,
+  tablet: 901,
   desktop: 1197
 }
 

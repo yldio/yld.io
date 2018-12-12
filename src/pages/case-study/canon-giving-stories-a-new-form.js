@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
@@ -15,8 +17,9 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
 const ImageWrapper = styled.div`
-  max-width: 540px;
-  margin: auto;
+  ${breakpoint('desktop')`
+      max-width: 540px;
+  `}
 `
 
 const GradientGrid = styled(Grid)`
@@ -39,18 +42,18 @@ const IndexPage = ({
       </Helmet>
       <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
-        <Padding top={4} />
+        <Padding top={5} />
         <Row>
           <Col
             width={[1, 1, 1, 1, 1 / 2]}
             style={{ marginLeft: 'auto', paddingLeft: '0' }}
           >
-            <Paragraph padded fullWidth>
+            <Paragraph fullWidth>
               {caseStudy.introSentence.introSentence}
             </Paragraph>
           </Col>
         </Row>
-        <Padding bottom={4.5} />
+        <Padding bottom={5} />
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>

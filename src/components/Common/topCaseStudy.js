@@ -5,24 +5,33 @@ import Flex from 'styled-flex-component'
 import remcalc from 'remcalc'
 import { Row, Col } from '../../components/grid'
 import { Margin } from 'styled-components-spacing'
-import { H1, H5, H6 } from '../../components/Typography'
+import { H1, H5 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
 
 const ImageWrapper = styled(Col)`
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
     padding-right: ${remcalc(24)};
+  `}
+`
+
+const ContentWrapper = styled(Col)`
+  margin-left: auto;
+
+  ${breakpoint('smallTablet')`
+    padding-left: 0;
   `}
 `
 
 const NoMobile = styled.section`
   display: none;
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     display: block;
   `};
 `
 
+// @TODPO componentise
 const MetaData = ({ caseStudy }) => (
   <Flex>
     {caseStudy.specialities ? (
@@ -32,9 +41,7 @@ const MetaData = ({ caseStudy }) => (
             Technology used
           </H5>
           <Flex alignCenter wrap>
-            <H6 noMargin>
-              <SeoLinks items={caseStudy.specialities} />
-            </H6>
+            <SeoLinks noMargin items={caseStudy.specialities} />
           </Flex>
         </Flex>
       </Margin>
@@ -45,9 +52,7 @@ const MetaData = ({ caseStudy }) => (
           Services provided
         </H5>
         <Flex alignCenter wrap>
-          <H6 noMargin>
-            <SeoLinks items={caseStudy.services} />
-          </H6>
+          <SeoLinks noMargin items={caseStudy.services} />
         </Flex>
       </Flex>
     ) : null}
@@ -64,14 +69,14 @@ const CaseStudyTop = ({ caseStudy }) => (
         />
       </ImageWrapper>
     )}
-    <Col width={[1, 1, 1, 1, 5 / 12]} style={{ marginLeft: 'auto' }}>
+    <ContentWrapper width={[1, 1, 1, 1 / 2, 1 / 2, 5 / 12]}>
       <Flex full column justifyCenter>
         <H1>{caseStudy.title}</H1>
         <NoMobile>
           <MetaData caseStudy={caseStudy} />
         </NoMobile>
       </Flex>
-    </Col>
+    </ContentWrapper>
     {/* <Col width={[1, 1, 0]}>
       <Padding top={2}>
         <MetaData caseStudy={caseStudy} />

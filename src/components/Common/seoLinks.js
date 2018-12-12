@@ -1,28 +1,31 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { H6 } from '../Typography'
 import { Link } from 'gatsby'
 import PagePaths from '../pagePaths'
 
-const Span = styled.span`
-  text-decoration: none;
-  white-space: pre;
-`
+const List = props => React.createElement(H6.withComponent('ul'), props)
 
-const ItemSpan = styled.span`
+const ListItem = styled.li`
   display: inline-block;
+  :not(:last-of-type) {
+    :after {
+      content: '/';
+      padding: 0 4px;
+    }
+  }
 `
 
-export default function SeoLinks({ items }) {
+export default function SeoLinks({ items, ...props }) {
   return (
     <PagePaths
       render={pathsById => (
-        <Fragment>
+        <List {...props}>
           {(items || []).map((item, i) => {
-            const last = i + 1 === items.length
             const path = pathsById[item.id]
             if (path) {
               return (
-                <ItemSpan>
+                <ListItem>
                   <Link
                     key={item.id}
                     to={path}
@@ -30,18 +33,13 @@ export default function SeoLinks({ items }) {
                   >
                     {item.title}
                   </Link>
-                  <Span>{last ? '' : ' /'} </Span>
-                </ItemSpan>
+                </ListItem>
               )
             }
 
-            return (
-              <ItemSpan key={item.id}>
-                {item.title} <Span key={item.id}>{last ? '' : '/ '}</Span>
-              </ItemSpan>
-            )
+            return <ListItem key={item.id}>{item.title}</ListItem>
           })}
-        </Fragment>
+        </List>
       )}
     />
   )
