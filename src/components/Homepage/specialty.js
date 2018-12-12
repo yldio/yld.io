@@ -92,10 +92,7 @@ const Specialty = ({ services }) => (
             <MasonryElement key={service.id} index={index}>
               {(arr.length === 2 && index === 1) ||
               (arr.length !== 2 && index === 2) ? (
-                <Padding
-                  top={{ phone: 0, tablet: 0, desktop: 6.5 }}
-                  bottom={2}
-                />
+                <Padding top={{ phone: 0, smallTablet: 6.5 }} bottom={2} />
               ) : null}
               <H2>{service.title}</H2>
               <Padding top={1.5} bottom={0.5}>
@@ -104,7 +101,7 @@ const Specialty = ({ services }) => (
               {service.homePageSpecialities &&
                 service.homePageSpecialities.length && (
                   <Row>
-                    <Col width={[1, 1, 1, 9 / 12]}>
+                    <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
                       <H6>
                         <SeoLinks items={service.homePageSpecialities} />
                       </H6>

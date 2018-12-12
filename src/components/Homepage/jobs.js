@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { Row, Col } from '../grid'
+import React from 'react'
+import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
@@ -17,57 +17,55 @@ const JobCommitment = styled.span`
 `
 
 const JobsComponent = () => (
-  <Fragment>
+  <Grid pt={4} pb={3}>
     <Row>
       <Col width={[1]}>
         <H2>Join our team</H2>
       </Col>
     </Row>
-    <Padding top={90}>
-      <Row>
-        <Jobs>
-          {jobs =>
-            Object.keys(jobs).map(key => (
-              <Col
-                width={[1, 1, 1 / 2, 1 / 2, 3 / 12]}
-                key={`${key}-${jobs[key].length}-main`}
-              >
-                <H5>{key}</H5>
-
-                <JobContainer>
-                  {jobs[key].slice(0, 3).map(job => (
-                    <Li key={`${job.id}`}>
-                      <a
-                        rel="noopener noreferrer"
-                        href={job.hostedUrl}
-                        target="_blank"
-                      >
-                        {job.text.split(' - ')[0]}
-                      </a>
-                      <JobCommitment>{job.categories.commitment}</JobCommitment>
-                    </Li>
-                  ))}
-                </JobContainer>
-              </Col>
-            ))
-          }
-        </Jobs>
-      </Row>
-      <Row>
-        <Col width={[1]}>
-          <Padding top={4}>
-            <StyledLink
-              href="https://jobs.lever.co/yld"
-              rel="noopener noreferrer"
-              target="_blank"
+    <Row pt={90}>
+      <Jobs>
+        {jobs =>
+          Object.keys(jobs).map(key => (
+            <Col
+              width={[1, 1, 1, 1, 1 / 2, 3 / 12]}
+              key={`${key}-${jobs[key].length}-main`}
             >
-              View all openings
-            </StyledLink>
-          </Padding>
-        </Col>
-      </Row>
-    </Padding>
-  </Fragment>
+              <H5>{key}</H5>
+
+              <JobContainer>
+                {jobs[key].slice(0, 3).map(job => (
+                  <Li key={`${job.id}`}>
+                    <a
+                      rel="noopener noreferrer"
+                      href={job.hostedUrl}
+                      target="_blank"
+                    >
+                      {job.text.split(' - ')[0]}
+                    </a>
+                    <JobCommitment>{job.categories.commitment}</JobCommitment>
+                  </Li>
+                ))}
+              </JobContainer>
+            </Col>
+          ))
+        }
+      </Jobs>
+    </Row>
+    <Row>
+      <Col width={[1]}>
+        <Padding top={4}>
+          <StyledLink
+            href="https://jobs.lever.co/yld"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            View all openings
+          </StyledLink>
+        </Padding>
+      </Col>
+    </Row>
+  </Grid>
 )
 
 export default JobsComponent

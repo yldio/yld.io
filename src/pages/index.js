@@ -46,9 +46,7 @@ const IndexPage = ({
       </Grid>
     </GrayBackground>
     <Grid>
-      <Padding top={3} bottom={{ smallPhone: 3.5, tablet: 5, desktop: 5 }}>
-        <Specialty services={content.services} />
-      </Padding>
+      <Specialty services={content.services} />
     </Grid>
     <GrayBackground noTop offsetBottom>
       <Grid pt={4} pb={4}>
@@ -66,9 +64,7 @@ const IndexPage = ({
       <Padding bottom={{ smallPhone: 0, tablet: 2 }} />
     </Grid>
     <GrayBackground noTop offsetBottom>
-      <Grid pt={4} pb={3}>
-        <Jobs />
-      </Grid>
+      <Jobs />
     </GrayBackground>
   </Layout>
 )
