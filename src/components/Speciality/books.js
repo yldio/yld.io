@@ -44,7 +44,7 @@ const BooksSection = ({ specialty }) => (
     <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
       <Row>
         <Padding top={4} />
-        <Col md={12} sm={12} xs={12}>
+        <Col width={[1]}>
           <SmallerH2 center>{`${specialty.title.trim()} books`}</SmallerH2>
           <Paragraph center>
             NodeJS books created by members of YLD for the community.
@@ -56,7 +56,10 @@ const BooksSection = ({ specialty }) => (
           .filter(additionalInfo => additionalInfo.type === `Book`)
           .slice(0, 3)
           .map(externalResource => (
-            <BookCol md={4} sm={6} xs={12} key={`${externalResource.id}`}>
+            <BookCol
+              width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 4 / 12]}
+              key={`${externalResource.id}`}
+            >
               <Padding top={4}>
                 <BooksBox
                   style={{
@@ -85,7 +88,7 @@ const BooksSection = ({ specialty }) => (
           ))}
       </Row>
       <Row>
-        <Col md={12} sm={12} xs={12}>
+        <Col width={[1]}>
           <Padding top={4}>
             <Flex justifyCenter alignCenter>
               <FlexItem>

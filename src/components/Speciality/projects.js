@@ -35,7 +35,7 @@ const ProjectsSection = ({ specialty }) => (
   <Grid>
     <Padding top={5} bottom={5}>
       <Row>
-        <Col md={6} sm={false} xs={false}>
+        <Col width={[0, 0, 0, 0, 1 / 2]}>
           <Padding top={7} bottom={5}>
             <H2 noMargin noBottom>
               {specialty.title}
@@ -46,19 +46,19 @@ const ProjectsSection = ({ specialty }) => (
           </Padding>
           <PosterLinks project={specialty.relatedProjects[0]} />
         </Col>
-        <Col md={false} sm={12} xs={12}>
+        <Col width={[1, 1, 1, 1, 0]}>
           <H2 noMargin>{specialty.title}</H2>
           <H2 noMargin muted>
             related projects
           </H2>
         </Col>
-        <Col md={6} sm={12} xs={12}>
+        <Col width={[1, 1, 1, 1, 1 / 2]}>
           <PosterLinks project={specialty.relatedProjects[1]} />
         </Col>
-        <Col md={6} sm={12} xs={12} />
+        <Col width={[1, 1, 1, 1, 1 / 2]} />
       </Row>
       <Row>
-        <Col md={6} sm={12} xs={12}>
+        <Col width={[1, 1, 1, 1, 1 / 2]}>
           <Padding top={5} bottom={3}>
             <H5 bold>Other Clients we helped</H5>
           </Padding>

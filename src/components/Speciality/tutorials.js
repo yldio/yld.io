@@ -17,13 +17,13 @@ const TutorialsSection = ({ specialty }) => (
     <TutorialsGrid>
       <Padding top={4} bottom={5}>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2>Tutorials</SmallerH2>
             <Paragraph>
               NodeJS tutorials created by members of YLD for the community.
             </Paragraph>
           </Col>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <ul>
               {specialty.externalResources
                 .filter(

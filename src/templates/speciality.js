@@ -47,13 +47,13 @@ const Specialty = ({ data }) => {
       <Grid>
         <Padding vertical={{ desktop: 4, smallTablet: 3.5 }}>
           <Row>
-            <Col md={6} sm={12} xs={12}>
+            <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SmallerH2>{`From the blog`}</SmallerH2>
               <Paragraph>{`${
                 specialty.title
               } articles created by members of YLD for the community.`}</Paragraph>
             </Col>
-            <Col md={4} xs={12}>
+            <Col width={[1, 1, 1, 1, 4 / 12]}>
               <Padding top={1}>
                 <Posts>
                   {posts => (

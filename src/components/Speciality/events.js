@@ -18,10 +18,10 @@ const EventSection = ({ specialty }) => {
     <Grid>
       <Padding top={6} bottom={6}>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2>{`Upcoming ${specialty.title} events`}</SmallerH2>
           </Col>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             {futureEvents.map(event => (
               <EventBorder key={`${event.id}`}>
                 <Padding top={2} bottom={2}>
