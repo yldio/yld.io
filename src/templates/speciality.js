@@ -3,12 +3,12 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Grid, Row, Col } from '../components/grid'
 import { Padding } from 'styled-components-spacing'
->>>>>>> [WIP] New grid (#54)
 import Layout from '../components/layout'
 import { format } from 'date-fns'
 import StyledLink from '../components/styledLink'
 import Posts from '../components/posts'
 import Li from '../components/listItem'
+import { SmallerH2, H5, Paragraph } from '../components/Typography'
 
 import IntroSection from '../components/Speciality/intro'
 import ProjectsSection from '../components/Speciality/projects'
