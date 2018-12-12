@@ -18,6 +18,10 @@ export default styled.h4`
     opacity: .5;
   `};
 
+  ${is('normal')`
+    font-weight: 500;
+  `};
+
   ${breakpoint('tablet')`
     font-size: ${remcalc(30)};
     padding: ${remcalc(14)} 0 ${remcalc(10)} 0;

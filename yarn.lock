@@ -4050,9 +4050,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000898, caniuse-lite@^1.0.30000899:
-  version "1.0.30000911"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000911.tgz#5dfb8139ee479722da27000ca92dec47913b9605"
-  integrity sha512-x/E/SNwD80I0bT+fF9Y3Kbwo7Xd1xSafCAmFlpJmaVg3SQoJJOH4Ivb9fi9S0WjfqewQ6Ydt1zEVZpmMVYNeDA==
+  version "1.0.30000912"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000912.tgz#08e650d4090a9c0ab06bfd2b46b7d3ad6dcaea28"
+  integrity sha512-M3zAtV36U+xw5mMROlTXpAHClmPAor6GPKAMD5Yi7glCB5sbMPFtnQ3rGpk4XqPdUrrTIaVYSJZxREZWNy8QJg==
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -6507,6 +6507,19 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+event-stream@3.3.4, event-stream@=3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  integrity sha1-SrTJoPWlTbkzi0w02Gv86PSzVXE=
+  dependencies:
+    duplexer "~0.1.1"
+    from "~0"
+    map-stream "~0.1.0"
+    pause-stream "0.0.11"
+    split "0.3"
+    stream-combiner "~0.0.4"
+    through "~2.3.1"
 
 event-stream@3.3.x:
   version "3.3.5"
@@ -15671,10 +15684,10 @@ string.prototype.padstart@^3.0.0:
     es-abstract "^1.4.3"
     function-bind "^1.0.2"
 
-string_decoder@^1.0.0, string_decoder@^1.1.1, string_decoder@~1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
-  integrity sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
+string_decoder@^1.0.0, string_decoder@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.2.0.tgz#fe86e738b19544afe70469243b2a1ee9240eae8d"
+  integrity sha512-6YqyX6ZWEYguAxgZzHGL7SsCeGx3V2TtOTqZz1xSTSWnqsbWwbptafNyvf/ACquZUXV3DANr5BDIwNYe1mN42w==
   dependencies:
     safe-buffer "~5.1.0"
 
@@ -15682,6 +15695,13 @@ string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
   integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
+
+string_decoder@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
+  integrity sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
+  dependencies:
+    safe-buffer "~5.1.0"
 
 stringify-entities@^1.0.1:
   version "1.3.2"

@@ -7,8 +7,9 @@ import './layout.css'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
-import Cookie from './Common/CookieBanner'
+import BlueBackground from './BlueBG'
 import google from '../utils/google-json.json'
+import Cookie from './Common/CookieBanner'
 
 class Layout extends React.Component {
   state = { cookiesAllowed: true }
@@ -23,7 +24,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, blue, logoColour } = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -47,7 +48,12 @@ class Layout extends React.Component {
             `}</script>
                 <html lang="en" />
               </Helmet>
-              <Header />
+              {blue && (
+                <BlueBackground>
+                  <Header blue logoColour={logoColour} />
+                </BlueBackground>
+              )}
+              {!blue && <Header logoColour={logoColour} />}
               {children}
               <Footer />
               <GlobalStyle />

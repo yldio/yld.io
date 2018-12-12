@@ -23,16 +23,23 @@ export default styled.h1`
   `};
 
   ${is('noTop')`
-      padding-top: 0;
+    padding-top: 0;
   `};
+
+  ${is('noBottom')`
+    padding-bottom: 0;
+  `}
 
   ${breakpoint('tablet')`
     font-size: ${remcalc(60)};
     padding: ${remcalc(21)} 0;
     line-height: ${remcalc(60)};
 
-      ${is('noTop')`
+    ${is('noTop')`
       padding-top: 0;
-  `};
+    `};
+    ${is('noBottom')`
+      padding-bottom: 0;
+    `}
   `};
 `

@@ -29,6 +29,10 @@ export default styled.h5`
       padding-top: 0;
   `};
 
+  ${is('noBottom')`
+      padding-bottom: 0;
+  `};
+
   ${is('noMargin')`
       padding: 0;
   `};

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Form Button 1`] = `
 <button
-  className="sc-iwsKbI ggqLQX"
+  className="sc-gZMcBi gTQthr"
 >
   Click Me
 </button>
@@ -10,10 +10,10 @@ exports[`Storyshots Form Button 1`] = `
 
 exports[`Storyshots Form Checkbox 1`] = `
 <section
-  className="sc-gqjmRU bjIXBQ"
+  className="sc-VigVT iARuFr"
 >
   <input
-    className="sc-bZQynM eECAzN"
+    className="sc-gzVnrw geKrCW"
     id="checkbox"
     name="checkbox"
     type="checkbox"
@@ -28,10 +28,10 @@ exports[`Storyshots Form Checkbox 1`] = `
 
 exports[`Storyshots Form Field 1`] = `
 <section
-  className="sc-gZMcBi eKVSBX"
+  className="sc-gqjmRU gIbBcD"
 >
   <input
-    className="sc-gzVnrw eoVqIU"
+    className="sc-htoDjs eTRoOK"
     placeholder="test"
     type="text"
   />
@@ -40,10 +40,10 @@ exports[`Storyshots Form Field 1`] = `
 
 exports[`Storyshots Form Fieldset 1`] = `
 <section
-  className="sc-gqjmRU bjIXBQ"
+  className="sc-VigVT iARuFr"
 >
   <input
-    className="sc-gzVnrw eoVqIU"
+    className="sc-htoDjs eTRoOK"
     placeholder="test"
     type="text"
   />
@@ -52,7 +52,7 @@ exports[`Storyshots Form Fieldset 1`] = `
 
 exports[`Storyshots Form Input 1`] = `
 <input
-  className="sc-gzVnrw eoVqIU"
+  className="sc-htoDjs eTRoOK"
   placeholder="test"
   type="text"
 />
@@ -60,7 +60,7 @@ exports[`Storyshots Form Input 1`] = `
 
 exports[`Storyshots Form Label 1`] = `
 <label
-  className="sc-htoDjs bJKUOL"
+  className="sc-dnqmqq cntxcn"
 >
   Label
 </label>
@@ -68,14 +68,14 @@ exports[`Storyshots Form Label 1`] = `
 
 exports[`Storyshots Form Textarea 1`] = `
 <textarea
-  className="sc-dnqmqq dKskfo"
+  className="sc-iwsKbI dutvOg"
   placeholder="test"
 />
 `;
 
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
-  className="sc-bwzfXH dlysrk"
+  className="sc-htpNat bhfmzJ"
 >
   Large Body
 </h3>
@@ -83,7 +83,7 @@ exports[`Storyshots Typography Large Body 1`] = `
 
 exports[`Storyshots Typography Large title 1`] = `
 <h1
-  className="sc-bdVaJa doXIcO"
+  className="sc-bdVaJa iLfDqf"
 >
   Large title
 </h1>
@@ -91,7 +91,7 @@ exports[`Storyshots Typography Large title 1`] = `
 
 exports[`Storyshots Typography Small Title 1 1`] = `
 <h4
-  className="sc-htpNat DenZM"
+  className="sc-bxivhb eZMqQs"
 >
   Small Title
 </h4>
@@ -99,7 +99,7 @@ exports[`Storyshots Typography Small Title 1 1`] = `
 
 exports[`Storyshots Typography Small Title 2 1`] = `
 <h5
-  className="sc-bxivhb iSTkIm"
+  className="sc-ifAKCX epUKoN"
 >
   Small Title
 </h5>
@@ -107,7 +107,7 @@ exports[`Storyshots Typography Small Title 2 1`] = `
 
 exports[`Storyshots Typography Small Title 3 1`] = `
 <h6
-  className="sc-ifAKCX vqIOk"
+  className="sc-EHOje kgzdlq"
 >
   Small Title
 </h6>

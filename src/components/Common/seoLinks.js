@@ -12,10 +12,6 @@ const ItemSpan = styled.span`
   display: inline-block;
 `
 
-const Anchor = styled(Link)`
-  text-decoration: underline;
-`
-
 export default function SeoLinks({ items }) {
   return (
     <PagePaths
@@ -27,9 +23,13 @@ export default function SeoLinks({ items }) {
             if (path) {
               return (
                 <ItemSpan>
-                  <Anchor key={item.id} to={path}>
+                  <Link
+                    key={item.id}
+                    to={path}
+                    style={{ textDecoration: 'underline' }}
+                  >
                     {item.title}
-                  </Anchor>
+                  </Link>
                   <Span>{last ? '' : ' /'} </Span>
                 </ItemSpan>
               )

@@ -52,6 +52,7 @@ export default {
     black: '#1d1d1d',
     lightGray: '#737272',
     greyBg: '#f9f9f9',
-    grey: '#e6e6e6'
+    grey: '#e6e6e6',
+    blueBg: '#090329'
   }
 }
