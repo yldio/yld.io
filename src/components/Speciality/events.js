@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
@@ -15,7 +15,7 @@ const EventSection = ({ specialty }) => {
   )
 
   return futureEvents.length > 0 ? (
-    <Grid className="grid">
+    <Grid>
       <Padding top={6} bottom={6}>
         <Row>
           <Col md={6} sm={12} xs={12}>

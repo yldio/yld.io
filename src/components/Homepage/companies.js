@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Row, Col } from '../grid'
 import styled from 'styled-components'
+import Image from '../Common/Image'
 
 const Column = styled(Col)`
   max-height: 108px;
@@ -16,11 +17,7 @@ const Companies = ({ companies }) => (
           width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]}
           key={company.id}
         >
-          <img
-            style={{ minWidth: 100 }}
-            alt={company.title}
-            src={company.fluid.src}
-          />
+          <Image image={company} />
         </Column>
       ))}
     </Row>

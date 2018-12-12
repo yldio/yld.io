@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
@@ -27,7 +27,7 @@ const ImgContainerCol = styled(Col)`
 `
 const CommunitySection = ({ specialty }) => (
   <BlueBackground>
-    <Trimmer className="grid">
+    <Trimmer>
       <TrimmedImage
         alt={specialty.communityBackground.title}
         src={specialty.communityBackground.file.url}

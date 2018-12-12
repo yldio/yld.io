@@ -1,7 +1,7 @@
 import React from 'react'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import breakpoint from 'styled-components-breakpoint'
 import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
@@ -52,7 +52,7 @@ const TalksSection = ({ specialty }) => {
   )[0]
   return (
     <BlueBackground>
-      <Grid className="grid">
+      <Grid>
         <Padding top={4} bottom={5}>
           <Row>
             <Col md={12} sm={12} xs={12}>

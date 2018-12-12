@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { H1, H4, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
@@ -25,7 +25,7 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
 const IntroSection = ({ specialty }) => (
   <BlueBackground>
     <Padding top={2} bottom={5}>
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col xs={12} sm={12} md={6}>
             <Flex full column justifyCenter>

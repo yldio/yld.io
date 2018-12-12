@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { Grid, Row, Col } from '../components/grid'
 import { Padding } from 'styled-components-spacing'
->>>>>>> [WIP] New grid (#54)
+import { Row, Col, Grid } from '../components/grid'
+import { SmallerH2, H5, Paragraph } from '../components/Typography'
 import Layout from '../components/layout'
 import { format } from 'date-fns'
 import StyledLink from '../components/styledLink'
@@ -44,8 +44,8 @@ const Specialty = ({ data }) => {
       <CommunitySection specialty={specialty} />
       <EventSection specialty={specialty} />
       <TalksSection specialty={specialty} />
-      <Grid className="grid">
-        <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
+      <Grid>
+        <Padding vertical={{ desktop: 4, smallTablet: 3.5 }}>
           <Row>
             <Col md={6} sm={12} xs={12}>
               <SmallerH2>{`From the blog`}</SmallerH2>
@@ -59,7 +59,7 @@ const Specialty = ({ data }) => {
                   {posts => (
                     <ul>
                       {posts.slice(0, 3).map(({ node }) => (
-                        <Li key={`${node.id}`} fullWidth>
+                        <Li key={`${node.id}`} fullWidthDivider>
                           <H5 bold>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${

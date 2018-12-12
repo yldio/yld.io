@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { H2, H3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
@@ -32,7 +32,7 @@ const PosterLinks = ({ project }) => (
 )
 
 const ProjectsSection = ({ specialty }) => (
-  <Grid className="grid">
+  <Grid>
     <Padding top={5} bottom={5}>
       <Row>
         <Col md={6} sm={false} xs={false}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GrayBackground from '../GrayBG'
@@ -20,7 +20,7 @@ const TrainingStage = ({ title, body, icon }) => (
 const TrainingSection = ({ specialty }) => (
   <GrayBackground noTop>
     <Padding top={4} bottom={6}>
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col md={6} sm={12} xs={12}>
             <SmallerH2>{`${specialty.title.trim()} training`}</SmallerH2>

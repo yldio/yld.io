@@ -26,7 +26,7 @@ class Header extends Component {
 
   render() {
     return (
-      <Grid className="grid">
+      <Grid>
         <Row>
           <Col width={[1]}>
             <header>

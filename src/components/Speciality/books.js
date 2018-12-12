@@ -1,7 +1,7 @@
 import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
@@ -40,7 +40,7 @@ const BooksBox = styled.a`
 `
 
 const BooksSection = ({ specialty }) => (
-  <Grid className="grid">
+  <Grid>
     <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
       <Row>
         <Padding top={4} />

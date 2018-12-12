@@ -1,6 +1,6 @@
 import React from 'react'
 import remcalc from 'remcalc'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GrayBackground from '../GrayBG'
@@ -14,7 +14,7 @@ const TutorialsGrid = styled(Grid)`
 
 const TutorialsSection = ({ specialty }) => (
   <GrayBackground noTop>
-    <TutorialsGrid className="grid">
+    <TutorialsGrid>
       <Padding top={4} bottom={5}>
         <Row>
           <Col md={6} sm={12} xs={12}>
