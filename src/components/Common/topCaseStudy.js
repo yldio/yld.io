@@ -8,6 +8,8 @@ import { H1, H5, H6 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
 
+// @TODO the width of the image is currently 500px and needs ot be 526 - fix
+
 // const ImageWrapper = styled(Col)`
 //   max-height: ${remcalc(540)};
 //   width: ${remcalc(540)};
