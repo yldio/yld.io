@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
@@ -16,25 +17,33 @@ import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
-const ImageWrapper = styled.div`
-  ${breakpoint('desktop')`
-      max-width: 540px;
+const MobileOnly = styled.div`
+  ${breakpoint('smallTablet')`
+    display: none;
   `}
 `
 
-const GradientGridNoMobile = styled(Grid)`
-  background-image: linear-gradient(to top, #0c1835, #050a18);
+const NoMobile = styled.div`
   display: none;
   ${breakpoint('smallTablet')`
     display: inherit;
   `}
 `
 
-const GradientBackgroundMobileOnly = styled.div`
-  background-image: linear-gradient(to top, #0c1835, #050a18);
-  ${breakpoint('smallTablet')`
-    display: none;
+const ImageWrapper = styled.div`
+  ${breakpoint('desktop')`
+      max-width: 540px;
   `}
+`
+
+const GradientBackground = styled.div`
+  background-image: linear-gradient(to top, #0c1835, #050a18);
+`
+
+const GradientGrid = GradientBackground.withComponent(Grid)
+
+const PaddedParagraph = styled(Paragraph)`
+  padding: ${remcalc(12)} 0;
 `
 
 const IntroSentenceCol = styled(Col)`
@@ -69,6 +78,20 @@ const GradientContent = ({ text, image }) => (
     </Row>
   </Fragment>
 )
+
+const Video = () => (
+  <div className="video-container">
+    <iframe
+      width="844"
+      height="480"
+      src="https://www.youtube.com/embed/MPPk-BkImsc"
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+)
+
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site, travel }
 }) => {
@@ -126,61 +149,59 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
-
-        <GradientGridNoMobile>
-          <GradientContent
-            text={caseStudy.genericText2.genericText2}
-            image={travel.childImageSharp}
-          />
-        </GradientGridNoMobile>
+        <NoMobile>
+          <GradientGrid>
+            <GradientContent
+              text={caseStudy.genericText2.genericText2}
+              image={travel.childImageSharp}
+            />
+          </GradientGrid>
+        </NoMobile>
       </GrayBackground>
+      <MobileOnly>
+        <GradientBackground>
+          <Grid>
+            <GradientContent
+              text={caseStudy.genericText2.genericText2}
+              image={travel.childImageSharp}
+            />
+          </Grid>
+        </GradientBackground>
+      </MobileOnly>
 
-      <GradientBackgroundMobileOnly>
-        <Grid>
-          <GradientContent
-            text={caseStudy.genericText2.genericText2}
-            image={travel.childImageSharp}
-          />
-        </Grid>
-      </GradientBackgroundMobileOnly>
-
-      <Margin bottom={6} />
       <Grid>
-        <Padding top={2}>
+        <Padding top={3.5} bottom={3}>
           <Row>
-            <Col xs={12} sm={12} md={5}>
+            <Col width={[1, 1, 1]}>
               <H2>Exploring the story</H2>
             </Col>
-            <Col xs={12} sm={12} md={7}>
+            <Col width={[1, 1, 1]}>
               {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
-                <Paragraph padded key={i}>
-                  {p}
-                </Paragraph>
+                <PaddedParagraph key={i}>{p}</PaddedParagraph>
               ))}
             </Col>
           </Row>
         </Padding>
       </Grid>
 
-      <GrayBackground topOffset={-300}>
-        <Padding top={5} bottom={2}>
-          <Grid>
-            <Row>
-              <Col width={[1]}>
-                <div className="video-container">
-                  <iframe
-                    width="844"
-                    height="480"
-                    src="https://www.youtube.com/embed/MPPk-BkImsc"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Grid>
+      <MobileOnly>
+        <Padding bottom={4}>
+          <Video />
         </Padding>
+      </MobileOnly>
+
+      <GrayBackground topOffset={-300}>
+        <NoMobile>
+          <Padding top={5} bottom={2}>
+            <Grid>
+              <Row>
+                <Col width={[1]}>
+                  <Video />
+                </Col>
+              </Row>
+            </Grid>
+          </Padding>
+        </NoMobile>
         <Grid>
           <Padding top={5} bottom={3}>
             <Row>
