@@ -18,18 +18,16 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
 const MobileOnly = styled.div`
-  ${props => `
-    ${breakpoint(props.smallTablet ? 'tablet' : 'smallTablet')`
+  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: none;
-    `}`}
+    `}
 `
 
 const NoMobile = styled.div`
   display: none;
-  ${props => `
-    ${breakpoint(props.smallTablet ? 'tablet' : 'smallTablet')`
+  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: inherit;
-    `}`}
+    `}
 `
 
 const ImageWrapper = styled.div`
@@ -38,11 +36,19 @@ const ImageWrapper = styled.div`
   `}
 `
 
+const CenteredCol = styled(Col)`
+  margin: 0 auto;
+`
+
 const GradientBackground = styled.div`
   background-image: linear-gradient(to top, #0c1835, #050a18);
 `
 
-const GradientGrid = GradientBackground.withComponent(Grid)
+const GradientGrid = styled(GradientBackground.withComponent(Grid))`
+  ${breakpoint('tablet')`
+    width: 73.5%;
+  `}
+`
 
 const PaddedParagraph = styled(Paragraph)`
   padding: ${remcalc(12)} 0;
@@ -55,23 +61,33 @@ const IntroSentenceCol = styled(Col)`
   `}
 `
 
-const CenteredCol = styled(Col)`
-  margin: 0 auto;
-`
-
 const RightAlignedCol = styled(Col)`
   ${breakpoint('smallTablet')`
     margin-left: auto;
   `}
 `
+
+const BrAtTablet = styled.br`
+  display: none;
+  ${breakpoint('tablet')`
+    display: initial;
+  `}
+`
+
 const GradientContent = ({ text, image }) => (
   <Fragment>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12]}>
-        <Margin top={3} bottom={3}>
-          <H2 reverse>Beyond photography</H2>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
+        <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
+          <H2 reverse>
+            Beyond <BrAtTablet /> photography
+          </H2>
         </Margin>
-        <Margin bottom={1}>
+      </CenteredCol>
+    </Row>
+    <Row>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
+        <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
           {makeText(text).map((p, i) => (
             <Paragraph muted reverse padded fullWidth key={i}>
               {p}
@@ -81,7 +97,7 @@ const GradientContent = ({ text, image }) => (
       </CenteredCol>
     </Row>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
         <ImageWrapper>
           <Image image={image} alt="Image of a travel itinerary" />
         </ImageWrapper>
@@ -161,7 +177,7 @@ const IndexPage = ({
           </Grid>
         </Padding>
 
-        <NoMobile smallTablet>
+        <NoMobile tablet>
           <GradientGrid>
             <GradientContent
               text={caseStudy.genericText2.genericText2}
@@ -171,7 +187,7 @@ const IndexPage = ({
         </NoMobile>
       </GrayBackground>
 
-      <MobileOnly smallTablet>
+      <MobileOnly tablet>
         <GradientBackground>
           <Grid>
             <GradientContent
@@ -185,10 +201,10 @@ const IndexPage = ({
       <Grid>
         <Padding top={3.5} bottom={3}>
           <Row>
-            <Col width={[1, 1, 1]}>
+            <Col width={[1, 1, 1, 1 / 2]}>
               <H2>Exploring the story</H2>
             </Col>
-            <Col width={[1, 1, 1]}>
+            <Col width={[1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                 <PaddedParagraph key={i}>{p}</PaddedParagraph>
               ))}
@@ -201,9 +217,9 @@ const IndexPage = ({
         <Video />
       </MobileOnly>
 
-      <GrayBackground topOffset={-300}>
+      <GrayBackground topOffset={-150}>
         <NoMobile>
-          <Padding top={5} bottom={2}>
+          <Padding top={{ smallTablet: 0, tablet: 5 }} bottom={2}>
             <Grid>
               <Row>
                 <Col width={[1]}>
@@ -216,10 +232,10 @@ const IndexPage = ({
         <Grid>
           <Padding top={4} bottom={3}>
             <Row>
-              <Col width={[1, 1, 1]}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 <H2>Out in the wild</H2>
               </Col>
-              <Col width={[1, 1, 1]}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}

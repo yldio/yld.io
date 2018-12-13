@@ -29,7 +29,7 @@ export default styled.h1`
   ${breakpoint('tablet')`
     font-size: ${remcalc(42)};
     padding: ${remcalc(10)} 0 ${remcalc(8)} 0;
-1    line-height: ${remcalc(48)};
+    line-height: ${remcalc(48)};
 
     ${is('noTop')`
       padding-top: 0;

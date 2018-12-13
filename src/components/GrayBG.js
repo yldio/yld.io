@@ -38,6 +38,28 @@ export default styled.section`
     }
   `}
 
+    ${breakpoint('tablet')`
+    margin-top: ${props =>
+      props.offsetBottom
+        ? 0
+        : remcalc((props.topOffset && props.topOffset * -2) || 50)};
+    padding-top: ${props =>
+      props.offsetBottom ? remcalc(props.topOffset * -2) : 0};
+    margin-bottom: ${props => remcalc(props.topOffset * 2 || -50)};
+    &:after {
+      content: ' ';
+      width: 100%;
+      height: ${props => remcalc(props.topOffset ? props.topOffset * -2 : 50)};
+      bottom: 0;
+      background-color: white;
+      display: block;
+      position: absolute;
+      z-index: 2;
+    }
+  `}
+
+
+
   ${is('offsetBottom')`
     z-index: auto;
     margin-bottom: 0;
