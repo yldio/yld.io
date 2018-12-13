@@ -18,16 +18,18 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
 const MobileOnly = styled.div`
-  ${breakpoint('smallTablet')`
-    display: none;
-  `}
+  ${props => `
+    ${breakpoint(props.smallTablet ? 'tablet' : 'smallTablet')`
+      display: none;
+    `}`}
 `
 
 const NoMobile = styled.div`
   display: none;
-  ${breakpoint('smallTablet')`
-    display: inherit;
-  `}
+  ${props => `
+    ${breakpoint(props.smallTablet ? 'tablet' : 'smallTablet')`
+      display: inherit;
+    `}`}
 `
 
 const ImageWrapper = styled.div`
@@ -53,28 +55,37 @@ const IntroSentenceCol = styled(Col)`
   `}
 `
 
+const CenteredCol = styled(Col)`
+  margin: 0 auto;
+`
+
+const RightAlignedCol = styled(Col)`
+  ${breakpoint('smallTablet')`
+    margin-left: auto;
+  `}
+`
 const GradientContent = ({ text, image }) => (
   <Fragment>
     <Row>
-      <Col width={[1, 1, 1]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12]}>
         <Margin top={3} bottom={3}>
           <H2 reverse>Beyond photography</H2>
         </Margin>
         <Margin bottom={1}>
           {makeText(text).map((p, i) => (
-            <Paragraph muted reverse padded key={i}>
+            <Paragraph muted reverse padded fullWidth key={i}>
               {p}
             </Paragraph>
           ))}
         </Margin>
-      </Col>
+      </CenteredCol>
     </Row>
     <Row>
-      <Col width={[1, 1, 1]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12]}>
         <ImageWrapper>
           <Image image={image} alt="Image of a travel itinerary" />
         </ImageWrapper>
-      </Col>
+      </CenteredCol>
     </Row>
   </Fragment>
 )
@@ -123,21 +134,21 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
-              <Col width={[1, 1, 1, 1, 5 / 12]}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 <H2>At the heart of a photo is a story</H2>
               </Col>
             </Row>
             <Row>
-              <Col width={[1, 1, 1, 1, 8 / 12]}>
+              <CenteredCol width={[1, 1, 1, 8 / 12]}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
                     <img src={landscape} alt="image representing travel" />
                   </Flex>
                 </Margin>
-              </Col>
+              </CenteredCol>
             </Row>
             <Row>
-              <Col width={[1, 1, 1]}>
+              <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
                     <Paragraph padded key={i}>
@@ -145,11 +156,12 @@ const IndexPage = ({
                     </Paragraph>
                   ))}
                 </Margin>
-              </Col>
+              </RightAlignedCol>
             </Row>
           </Grid>
         </Padding>
-        <NoMobile>
+
+        <NoMobile smallTablet>
           <GradientGrid>
             <GradientContent
               text={caseStudy.genericText2.genericText2}
@@ -158,7 +170,8 @@ const IndexPage = ({
           </GradientGrid>
         </NoMobile>
       </GrayBackground>
-      <MobileOnly>
+
+      <MobileOnly smallTablet>
         <GradientBackground>
           <Grid>
             <GradientContent
