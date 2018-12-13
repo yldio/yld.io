@@ -185,9 +185,7 @@ const IndexPage = ({
       </Grid>
 
       <MobileOnly>
-        <Padding bottom={4}>
-          <Video />
-        </Padding>
+        <Video />
       </MobileOnly>
 
       <GrayBackground topOffset={-300}>
@@ -203,12 +201,12 @@ const IndexPage = ({
           </Padding>
         </NoMobile>
         <Grid>
-          <Padding top={5} bottom={3}>
+          <Padding top={4} bottom={3}>
             <Row>
-              <Col xs={12} sm={12} md={5}>
+              <Col width={[1, 1, 1]}>
                 <H2>Out in the wild</H2>
               </Col>
-              <Col xs={12} sm={12} md={7}>
+              <Col width={[1, 1, 1]}>
                 {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
@@ -222,7 +220,7 @@ const IndexPage = ({
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Row>
-            <Col xs={12} sm={6}>
+            <Col width={[1, 1, 1]}>
               <Padding top={4} bottom={2}>
                 <Paragraph>More of our work</Paragraph>
               </Padding>
