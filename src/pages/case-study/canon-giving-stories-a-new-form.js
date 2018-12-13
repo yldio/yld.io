@@ -42,7 +42,7 @@ const IndexPage = ({
       </Helmet>
       <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
-        <Padding top={5} />
+        <Padding top={{ smallTablet: 3.5, tablet: 5 }} />
         <Row>
           <Col
             width={[1, 1, 1, 1, 1 / 2]}
@@ -53,7 +53,7 @@ const IndexPage = ({
             </Paragraph>
           </Col>
         </Row>
-        <Padding bottom={5} />
+        <Padding bottom={{ smallTablet: 3.5, tablet: 5 }} />
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>

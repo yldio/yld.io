@@ -10,7 +10,7 @@ import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
 
 const ImageWrapper = styled(Col)`
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     padding-right: ${remcalc(24)};
   `}
 `
