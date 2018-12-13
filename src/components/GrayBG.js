@@ -41,6 +41,7 @@ export default styled.section`
 
   ${is('noTop')`
     margin-top: ${remcalc(0)};
+    padding-bottom: ${remcalc(50)};
   `}
 
   > * {

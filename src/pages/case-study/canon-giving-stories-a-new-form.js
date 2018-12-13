@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -22,8 +22,19 @@ const ImageWrapper = styled.div`
   `}
 `
 
-const GradientGrid = styled(Grid)`
+const GradientGridNoMobile = styled(Grid)`
   background-image: linear-gradient(to top, #0c1835, #050a18);
+  display: none;
+  ${breakpoint('smallTablet')`
+    display: inherit;
+  `}
+`
+
+const GradientBackgroundMobileOnly = styled.div`
+  background-image: linear-gradient(to top, #0c1835, #050a18);
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
 `
 
 const IntroSentenceCol = styled(Col)`
@@ -33,6 +44,31 @@ const IntroSentenceCol = styled(Col)`
   `}
 `
 
+const GradientContent = ({ text, image }) => (
+  <Fragment>
+    <Row>
+      <Col width={[1, 1, 1]}>
+        <Margin top={3} bottom={3}>
+          <H2 reverse>Beyond photography</H2>
+        </Margin>
+        <Margin bottom={1}>
+          {makeText(text).map((p, i) => (
+            <Paragraph muted reverse padded key={i}>
+              {p}
+            </Paragraph>
+          ))}
+        </Margin>
+      </Col>
+    </Row>
+    <Row>
+      <Col width={[1, 1, 1]}>
+        <ImageWrapper>
+          <Image image={image} alt="Image of a travel itinerary" />
+        </ImageWrapper>
+      </Col>
+    </Row>
+  </Fragment>
+)
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site, travel }
 }) => {
@@ -59,8 +95,9 @@ const IndexPage = ({
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
-      <GrayBackground topOffset={-783} offsetBottom>
-        <Padding top={5} bottom={30}>
+
+      <GrayBackground noTop>
+        <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 5 / 12]}>
@@ -68,7 +105,7 @@ const IndexPage = ({
               </Col>
             </Row>
             <Row>
-              <Col width={[1, 1, 1, 1, 8 / 12]} mdOffset={2}>
+              <Col width={[1, 1, 1, 1, 8 / 12]}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
                     <img src={landscape} alt="image representing travel" />
@@ -77,7 +114,7 @@ const IndexPage = ({
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={6} mdOffset={6}>
+              <Col width={[1, 1, 1]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
                     <Paragraph padded key={i}>
@@ -89,32 +126,24 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
+
+        <GradientGridNoMobile>
+          <GradientContent
+            text={caseStudy.genericText2.genericText2}
+            image={travel.childImageSharp}
+          />
+        </GradientGridNoMobile>
       </GrayBackground>
-      <GradientGrid>
-        <Row>
-          <Col xs={12} sm={12} md={6} mdOffset={3}>
-            <Margin top={2} bottom={1}>
-              <H2 reverse>Beyond photography</H2>
-            </Margin>
-            {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
-              <Paragraph muted reverse padded key={i}>
-                {p}
-              </Paragraph>
-            ))}
-          </Col>
-        </Row>
-        <Margin bottom={2} />
-        <Row>
-          <Col xs={12} sm={12} md={8} mdOffset={2}>
-            <ImageWrapper>
-              <Image
-                image={travel.childImageSharp}
-                alt="Image of a travel itinerary"
-              />
-            </ImageWrapper>
-          </Col>
-        </Row>
-      </GradientGrid>
+
+      <GradientBackgroundMobileOnly>
+        <Grid>
+          <GradientContent
+            text={caseStudy.genericText2.genericText2}
+            image={travel.childImageSharp}
+          />
+        </Grid>
+      </GradientBackgroundMobileOnly>
+
       <Margin bottom={6} />
       <Grid>
         <Padding top={2}>
