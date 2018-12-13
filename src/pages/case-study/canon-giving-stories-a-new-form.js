@@ -26,6 +26,13 @@ const GradientGrid = styled(Grid)`
   background-image: linear-gradient(to top, #0c1835, #050a18);
 `
 
+const IntroSentenceCol = styled(Col)`
+  margin-left: auto;
+  ${breakpoint('smallTablet')`
+    padding-left: 0;
+  `}
+`
+
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site, travel }
 }) => {
@@ -42,18 +49,15 @@ const IndexPage = ({
       </Helmet>
       <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
-        <Padding top={{ smallTablet: 3.5, tablet: 5 }} />
+        <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
-          <Col
-            width={[1, 1, 1, 1, 1 / 2]}
-            style={{ marginLeft: 'auto', paddingLeft: '0' }}
-          >
+          <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
             <Paragraph fullWidth>
               {caseStudy.introSentence.introSentence}
             </Paragraph>
-          </Col>
+          </IntroSentenceCol>
         </Row>
-        <Padding bottom={{ smallTablet: 3.5, tablet: 5 }} />
+        <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
       <GrayBackground topOffset={-783} offsetBottom>
         <Padding top={5} bottom={30}>

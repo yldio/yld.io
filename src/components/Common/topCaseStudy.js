@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
 import remcalc from 'remcalc'
 import { Row, Col } from '../../components/grid'
-import { Margin } from 'styled-components-spacing'
+import { Margin, Padding } from 'styled-components-spacing'
 import { H1, H5 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
@@ -21,14 +21,6 @@ const ContentWrapper = styled(Col)`
   ${breakpoint('smallTablet')`
     padding-left: 0;
   `}
-`
-
-const NoMobile = styled.section`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-    display: block;
-  `};
 `
 
 // @TODPO componentise
@@ -61,6 +53,11 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
+    <Col width={[1, 1, 1, 0]}>
+      <Padding bottom={3}>
+        <H1>{caseStudy.title}</H1>
+      </Padding>
+    </Col>
     {caseStudy.posterImage && (
       <ImageWrapper width={[1, 1, 1 / 2]}>
         <Image
@@ -69,19 +66,17 @@ const CaseStudyTop = ({ caseStudy }) => (
         />
       </ImageWrapper>
     )}
-    <ContentWrapper width={[1, 1, 1, 1 / 2, 1 / 2, 5 / 12]}>
+    <ContentWrapper width={[0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
       <Flex full column justifyCenter>
         <H1>{caseStudy.title}</H1>
-        <NoMobile>
-          <MetaData caseStudy={caseStudy} />
-        </NoMobile>
+        <MetaData caseStudy={caseStudy} />
       </Flex>
     </ContentWrapper>
-    {/* <Col width={[1, 1, 0]}>
-      <Padding top={2}>
+    <Col width={[1, 1, 1, 0]}>
+      <Padding top={3}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
-    </Col> */}
+    </Col>
   </Row>
 )
 
