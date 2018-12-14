@@ -171,7 +171,7 @@ const IndexPage = ({
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
-                    <Paragraph padded key={i}>
+                    <Paragraph padded fullWidth key={i}>
                       {p}
                     </Paragraph>
                   ))}
@@ -223,7 +223,7 @@ const IndexPage = ({
 
       <GrayBackground topOffset={-150}>
         <NoMobile>
-          <Padding top={{ smallTablet: 0, tablet: 5 }} bottom={2}>
+          <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>
               <Row>
                 <Col width={[1]}>
@@ -234,7 +234,10 @@ const IndexPage = ({
           </Padding>
         </NoMobile>
         <Grid>
-          <Padding top={4} bottom={3}>
+          <Padding
+            top={{ smallPhone: 4, smallTablet: 1 }}
+            bottom={{ smallPhone: 3, smallTablet: 5 }}
+          >
             <Row>
               <Col width={[1, 1, 1, 1 / 2]}>
                 <H2>Out in the wild</H2>

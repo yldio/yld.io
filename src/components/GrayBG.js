@@ -82,6 +82,15 @@ export default styled.section`
         top: ${remcalc(0)};
       `};
     `}
+
+    ${breakpoint('tablet')`
+      top: ${props => remcalc(props.topOffset * 2 || -50)};
+      position: relative;
+
+      ${is('noTop')`
+        top: ${remcalc(0)};
+      `};
+    `}
   }
 
   + * {
