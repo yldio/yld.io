@@ -48,6 +48,10 @@ const GradientGrid = styled(GradientBackground.withComponent(Grid))`
   ${breakpoint('tablet')`
     width: 73.5%;
   `}
+
+  ${breakpoint('desktop')`
+    width: 71%;
+  `}
 `
 
 const PaddedParagraph = styled(Paragraph)`
@@ -77,7 +81,7 @@ const BrAtTablet = styled.br`
 const GradientContent = ({ text, image }) => (
   <Fragment>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
         <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
           <H2 reverse>
             Beyond <BrAtTablet /> photography
@@ -86,7 +90,7 @@ const GradientContent = ({ text, image }) => (
       </CenteredCol>
     </Row>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
         <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
           {makeText(text).map((p, i) => (
             <Paragraph muted reverse padded fullWidth key={i}>
@@ -97,7 +101,7 @@ const GradientContent = ({ text, image }) => (
       </CenteredCol>
     </Row>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
         <ImageWrapper>
           <Image image={image} alt="Image of a travel itinerary" />
         </ImageWrapper>
