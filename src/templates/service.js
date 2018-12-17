@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { H2, H3, H5, Paragraph } from '../components/Typography'
@@ -57,40 +57,42 @@ const Service = ({ data }) => {
         />
       </GrayBackground>
       <GrayBackground noTop>
-        <Padding top={5} bottom={6}>
+        <Padding top={5}>
           <Grid>
             <Row>
-              <H2>We work with</H2>
-              <Row>
-                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
-                  <Fragment>
-                    <H5>{service.specialityAreaTitle1}</H5>
-                    <SeoLinks items={service.specialityAreaItems1} />
-                  </Fragment>
-                </Col>
-                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
-                  <Fragment>
-                    <H5>{service.specialityAreaTitle2}</H5>
-                    <SeoLinks items={service.specialityAreaItems2} />
-                  </Fragment>
-                </Col>
-                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
-                  {service.specialityAreaTitle3 && (
-                    <Fragment>
-                      <H5>{service.specialityAreaTitle3}</H5>
-                      <SeoLinks items={service.specialityAreaItems3} />
-                    </Fragment>
-                  )}
-                </Col>
-                <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
-                  {service.specialityAreaTitle4 && (
-                    <Fragment vertical={6}>
-                      <H5>{service.specialityAreaTitle4}</H5>
-                      <SeoLinks items={service.specialityAreaItems4} />
-                    </Fragment>
-                  )}
-                </Col>
-              </Row>
+              <Col width={[1]}>
+                <H2>We work with</H2>
+              </Col>
+            </Row>
+            <Row>
+              <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
+                <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                  <H5>{service.specialityAreaTitle1}</H5>
+                  <SeoLinks items={service.specialityAreaItems1} />
+                </Padding>
+              </Col>
+              <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
+                <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                  <H5>{service.specialityAreaTitle2}</H5>
+                  <SeoLinks items={service.specialityAreaItems2} />
+                </Padding>
+              </Col>
+              <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
+                {service.specialityAreaTitle3 && (
+                  <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                    <H5>{service.specialityAreaTitle3}</H5>
+                    <SeoLinks items={service.specialityAreaItems3} />
+                  </Padding>
+                )}
+              </Col>
+              <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
+                {service.specialityAreaTitle4 && (
+                  <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                    <H5>{service.specialityAreaTitle4}</H5>
+                    <SeoLinks items={service.specialityAreaItems4} />
+                  </Padding>
+                )}
+              </Col>
             </Row>
           </Grid>
         </Padding>
