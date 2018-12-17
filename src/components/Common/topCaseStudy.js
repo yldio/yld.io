@@ -2,26 +2,28 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
-import { Row, Col } from '../../components/grid'
 import remcalc from 'remcalc'
-import { Padding, Margin } from 'styled-components-spacing'
-import { H1, H5, H6 } from '../../components/Typography'
+import { Row, Col } from '../../components/grid'
+import { Margin, Padding } from 'styled-components-spacing'
+import { H1, H5 } from '../../components/Typography'
 import SeoLinks from '../../components/Common/seoLinks'
 import Image from '../../components/Common/Image'
 
 const ImageWrapper = styled(Col)`
-  max-height: ${remcalc(540)};
-  width: ${remcalc(540)};
+  ${breakpoint('smallTablet')`
+    padding-right: ${remcalc(24)};
+  `}
 `
 
-const NoMobile = styled.section`
-  display: none;
+const ContentWrapper = styled(Col)`
+  margin-left: auto;
 
-  ${breakpoint('tablet')`
-    display: block;
-  `};
+  ${breakpoint('smallTablet')`
+    padding-left: 0;
+  `}
 `
 
+// @TODPO componentise
 const MetaData = ({ caseStudy }) => (
   <Flex>
     {caseStudy.specialities ? (
@@ -31,9 +33,7 @@ const MetaData = ({ caseStudy }) => (
             Technology used
           </H5>
           <Flex alignCenter wrap>
-            <H6 noMargin>
-              <SeoLinks items={caseStudy.specialities} />
-            </H6>
+            <SeoLinks noMargin items={caseStudy.specialities} />
           </Flex>
         </Flex>
       </Margin>
@@ -44,9 +44,7 @@ const MetaData = ({ caseStudy }) => (
           Services provided
         </H5>
         <Flex alignCenter wrap>
-          <H6 noMargin>
-            <SeoLinks items={caseStudy.services} />
-          </H6>
+          <SeoLinks noMargin items={caseStudy.services} />
         </Flex>
       </Flex>
     ) : null}
@@ -55,13 +53,10 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
-      <Flex full column justifyCenter>
+    <Col width={[1, 1, 1, 0]}>
+      <Padding bottom={3}>
         <H1>{caseStudy.title}</H1>
-        <NoMobile>
-          <MetaData caseStudy={caseStudy} />
-        </NoMobile>
-      </Flex>
+      </Padding>
     </Col>
     {caseStudy.posterImage && (
       <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
@@ -71,8 +66,14 @@ const CaseStudyTop = ({ caseStudy }) => (
         />
       </ImageWrapper>
     )}
-    <Col width={[1, 1, 0]}>
-      <Padding top={2}>
+    <ContentWrapper width={[0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
+      <Flex full column justifyCenter>
+        <H1>{caseStudy.title}</H1>
+        <MetaData caseStudy={caseStudy} />
+      </Flex>
+    </ContentWrapper>
+    <Col width={[1, 1, 1, 0]}>
+      <Padding top={3}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
     </Col>

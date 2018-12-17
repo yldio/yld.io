@@ -83,7 +83,7 @@ exports[`Storyshots Typography Large Body 1`] = `
 
 exports[`Storyshots Typography Large title 1`] = `
 <h1
-  className="sc-bdVaJa hRIPYB"
+  className="sc-bdVaJa bcdDQm"
 >
   Large title
 </h1>
@@ -99,7 +99,7 @@ exports[`Storyshots Typography Small Title 1 1`] = `
 
 exports[`Storyshots Typography Small Title 2 1`] = `
 <h5
-  className="sc-ifAKCX kbpTMB"
+  className="sc-ifAKCX cSrcVm"
 >
   Small Title
 </h5>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { H2, H6, H3, H5, Paragraph } from '../components/Typography'
+import { H2, H3, H5, Paragraph } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -65,26 +65,20 @@ const Service = ({ data }) => {
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   <Fragment>
                     <H5>{service.specialityAreaTitle1}</H5>
-                    <H6>
-                      <SeoLinks items={service.specialityAreaItems1} />
-                    </H6>
+                    <SeoLinks items={service.specialityAreaItems1} />
                   </Fragment>
                 </Col>
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   <Fragment>
                     <H5>{service.specialityAreaTitle2}</H5>
-                    <H6>
-                      <SeoLinks items={service.specialityAreaItems2} />
-                    </H6>
+                    <SeoLinks items={service.specialityAreaItems2} />
                   </Fragment>
                 </Col>
                 <Col pt={5} width={[1, 1, 1, 3 / 12, 3 / 12, 3 / 12]}>
                   {service.specialityAreaTitle3 && (
                     <Fragment>
                       <H5>{service.specialityAreaTitle3}</H5>
-                      <H6>
-                        <SeoLinks items={service.specialityAreaItems3} />
-                      </H6>
+                      <SeoLinks items={service.specialityAreaItems3} />
                     </Fragment>
                   )}
                 </Col>
@@ -92,9 +86,7 @@ const Service = ({ data }) => {
                   {service.specialityAreaTitle4 && (
                     <Fragment vertical={6}>
                       <H5>{service.specialityAreaTitle4}</H5>
-                      <H6>
-                        <SeoLinks items={service.specialityAreaItems4} />
-                      </H6>
+                      <SeoLinks items={service.specialityAreaItems4} />
                     </Fragment>
                   )}
                 </Col>

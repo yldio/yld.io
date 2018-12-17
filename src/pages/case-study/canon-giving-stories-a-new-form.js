@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
+
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
@@ -14,14 +17,103 @@ import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
-const ImageWrapper = styled.div`
-  max-width: 540px;
-  margin: auto;
+const MobileOnly = styled.div`
+  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
+      display: none;
+    `}
 `
 
-const GradientGrid = styled(Grid)`
+const NoMobile = styled.div`
+  display: none;
+  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
+      display: inherit;
+    `}
+`
+
+const CenteredCol = styled(Col)`
+  margin: 0 auto;
+`
+
+const GradientBackground = styled.div`
   background-image: linear-gradient(to top, #0c1835, #050a18);
 `
+
+const GradientGrid = styled(GradientBackground.withComponent(Grid))`
+  ${breakpoint('tablet')`
+    width: 73.5%;
+  `}
+
+  ${breakpoint('desktop')`
+    width: 71%;
+  `}
+`
+
+const PaddedParagraph = styled(Paragraph)`
+  padding: ${remcalc(12)} 0;
+`
+
+const IntroSentenceCol = styled(Col)`
+  margin-left: auto;
+  ${breakpoint('smallTablet')`
+    padding-left: 0;
+  `}
+`
+
+const RightAlignedCol = styled(Col)`
+  ${breakpoint('smallTablet')`
+    margin-left: auto;
+  `}
+`
+
+const BrAtTablet = styled.br`
+  display: none;
+  ${breakpoint('tablet')`
+    display: initial;
+  `}
+`
+
+const GradientContent = ({ text, image }) => (
+  <Fragment>
+    <Row>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+        <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
+          <H2 reverse>
+            Beyond <BrAtTablet /> photography
+          </H2>
+        </Margin>
+      </CenteredCol>
+    </Row>
+    <Row>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+        <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
+          {makeText(text).map((p, i) => (
+            <Paragraph muted reverse padded fullWidth key={i}>
+              {p}
+            </Paragraph>
+          ))}
+        </Margin>
+      </CenteredCol>
+    </Row>
+    <Row>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+        <Image image={image} alt="Image of a travel itinerary" />
+      </CenteredCol>
+    </Row>
+  </Fragment>
+)
+
+const Video = () => (
+  <div className="video-container">
+    <iframe
+      width="844"
+      height="480"
+      src="https://www.youtube.com/embed/MPPk-BkImsc"
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+)
 
 const IndexPage = ({
   data: { allContentfulGenericCaseStudy: content, site, travel }
@@ -39,117 +131,110 @@ const IndexPage = ({
       </Helmet>
       <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
-        <Margin vertical={4}>
-          <Row>
-            <Col width={[1, 1, 1, 1, 7 / 12]}>
-              <Paragraph padded>
-                {caseStudy.introSentence.introSentence}
-              </Paragraph>
-            </Col>
-          </Row>
-        </Margin>
-        <Padding bottom={2} />
+        <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
+        <Row>
+          <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
+            <Paragraph fullWidth>
+              {caseStudy.introSentence.introSentence}
+            </Paragraph>
+          </IntroSentenceCol>
+        </Row>
+        <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
-      <GrayBackground topOffset={-783} offsetBottom>
-        <Padding top={5} bottom={30}>
+
+      <GrayBackground noTop>
+        <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
-              <Col width={[1, 1, 1, 1, 5 / 12]}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 <H2>At the heart of a photo is a story</H2>
               </Col>
             </Row>
             <Row>
-              <Col width={[1, 1, 1, 1, 8 / 12]} mdOffset={2}>
+              <CenteredCol width={[1, 1, 1, 8 / 12]}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
                     <img src={landscape} alt="image representing travel" />
                   </Flex>
                 </Margin>
-              </Col>
+              </CenteredCol>
             </Row>
             <Row>
-              <Col xs={12} md={6} mdOffset={6}>
+              <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
-                    <Paragraph padded key={i}>
+                    <Paragraph padded fullWidth key={i}>
                       {p}
                     </Paragraph>
                   ))}
                 </Margin>
-              </Col>
+              </RightAlignedCol>
             </Row>
           </Grid>
         </Padding>
+
+        <NoMobile tablet>
+          <GradientGrid>
+            <GradientContent
+              text={caseStudy.genericText2.genericText2}
+              image={travel.childImageSharp}
+            />
+          </GradientGrid>
+        </NoMobile>
       </GrayBackground>
-      <GradientGrid>
-        <Row>
-          <Col xs={12} sm={12} md={6} mdOffset={3}>
-            <Margin top={2} bottom={1}>
-              <H2 reverse>Beyond photography</H2>
-            </Margin>
-            {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
-              <Paragraph muted reverse padded key={i}>
-                {p}
-              </Paragraph>
-            ))}
-          </Col>
-        </Row>
-        <Margin bottom={2} />
-        <Row>
-          <Col xs={12} sm={12} md={8} mdOffset={2}>
-            <ImageWrapper>
-              <Image
-                image={travel.childImageSharp}
-                alt="Image of a travel itinerary"
-              />
-            </ImageWrapper>
-          </Col>
-        </Row>
-      </GradientGrid>
-      <Margin bottom={6} />
+
+      <MobileOnly tablet>
+        <GradientBackground>
+          <Grid>
+            <GradientContent
+              text={caseStudy.genericText2.genericText2}
+              image={travel.childImageSharp}
+            />
+          </Grid>
+        </GradientBackground>
+      </MobileOnly>
+
       <Grid>
-        <Padding top={2}>
+        <Padding top={3.5} bottom={3}>
           <Row>
-            <Col xs={12} sm={12} md={5}>
+            <Col width={[1, 1, 1, 1 / 2]}>
               <H2>Exploring the story</H2>
             </Col>
-            <Col xs={12} sm={12} md={7}>
+            <Col width={[1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
-                <Paragraph padded key={i}>
-                  {p}
-                </Paragraph>
+                <PaddedParagraph key={i}>{p}</PaddedParagraph>
               ))}
             </Col>
           </Row>
         </Padding>
       </Grid>
 
-      <GrayBackground topOffset={-300}>
-        <Padding top={5} bottom={2}>
-          <Grid>
-            <Row>
-              <Col width={[1]}>
-                <div className="video-container">
-                  <iframe
-                    width="844"
-                    height="480"
-                    src="https://www.youtube.com/embed/MPPk-BkImsc"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Grid>
-        </Padding>
+      <MobileOnly>
+        <Video />
+      </MobileOnly>
+
+      <GrayBackground topOffset={-150}>
+        <NoMobile>
+          <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
+            <Grid>
+              <Row>
+                <Col width={[1]}>
+                  <Video />
+                </Col>
+              </Row>
+            </Grid>
+          </Padding>
+        </NoMobile>
         <Grid>
-          <Padding top={5} bottom={3}>
+          <Padding
+            top={{ smallPhone: 4, smallTablet: 1 }}
+            bottom={{ smallPhone: 3, smallTablet: 5 }}
+          >
             <Row>
-              <Col xs={12} sm={12} md={5}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 <H2>Out in the wild</H2>
               </Col>
-              <Col xs={12} sm={12} md={7}>
+              <Col width={[1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
@@ -163,7 +248,7 @@ const IndexPage = ({
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Row>
-            <Col xs={12} sm={6}>
+            <Col width={[1, 1, 1]}>
               <Padding top={4} bottom={2}>
                 <Paragraph>More of our work</Paragraph>
               </Padding>
@@ -184,7 +269,7 @@ export const query = graphql`
     travel: file(relativePath: { eq: "case-study/beyond_photography.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 540) {
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }
