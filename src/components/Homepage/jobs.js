@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
@@ -10,6 +11,11 @@ import Li from '../listItem'
 
 const JobContainer = styled.ul`
   margin-top: ${remcalc(12)};
+  margin-bottom: ${remcalc(36)};
+
+  ${breakpoint('smallTablet')`
+      margin-bottom: ${remcalc(0)};
+  `}
 `
 
 const JobCommitment = styled.span`
@@ -17,10 +23,12 @@ const JobCommitment = styled.span`
 `
 
 const JobsComponent = () => (
-  <Grid pt={4} pb={3}>
+  <Grid pb={3}>
     <Row>
       <Col width={[1]}>
-        <H2>Join our team</H2>
+        <Padding top={{ smallPhone: 3, smallTablet: 4 }}>
+          <H2>Join our team</H2>
+        </Padding>
       </Col>
     </Row>
     <Row pt={90}>
@@ -54,7 +62,7 @@ const JobsComponent = () => (
     </Row>
     <Row>
       <Col width={[1]}>
-        <Padding top={4}>
+        <Padding top={{ smallPhone: 3, smallTablet: 4 }}>
           <StyledLink
             href="https://jobs.lever.co/yld"
             rel="noopener noreferrer"

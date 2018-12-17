@@ -92,7 +92,7 @@ const Specialty = ({ services }) => (
             <MasonryElement key={service.id} index={index}>
               {(arr.length === 2 && index === 1) ||
               (arr.length !== 2 && index === 2) ? (
-                <Padding top={{ phone: 0, smallTablet: 6.5 }} bottom={2} />
+                <Padding top={{ smallPhone: 0, smallTablet: 6.5 }} bottom={2} />
               ) : null}
               <H2>{service.title}</H2>
               <Padding top={1.5} bottom={0.5}>
@@ -143,7 +143,7 @@ const Specialty = ({ services }) => (
                   </PosterImage>
                 </section>
               </AnimatedLink>
-              <Padding bottom={5} />
+              <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} />
             </MasonryElement>
           )
         )
