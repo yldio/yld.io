@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-
+import is from 'styled-is'
 import StyledLink from '../../styledLink'
 import { Col } from '../../grid'
 import { H2 } from '../../Typography'
@@ -39,17 +39,15 @@ export const SwitchLink = styled(StyledLink)`
   }
 
   &:not(:last-child) {
-    margin-right: ${remcalc(30)};
+    margin-right: ${remcalc(36)};
 
-    ${breakpoint('desktop')`
-      margin-right: ${remcalc(60)};
-  `}
+    }
   }
 `
 
 export const MasonryContainer = styled.div`
   ${breakpoint('desktop')`
-    column-count: 2;
+    column-count: 3;
     column-gap: 0;
     column-fill: auto;
     height: ${props =>
@@ -73,9 +71,16 @@ export const WorkStageGridElement = styled(Col)`
         : remcalc(72)}}`};
 `
 
-export const WorkStageContentList = styled.div`
+export const WorkStageContentList = styled.ul`
   list-style-position: inside;
   ${breakpoint('desktop')`
     width: 60%
+  `}
+`
+
+export const Hr = styled.hr`
+  margin: 18px 0;
+  ${is('short')`
+    width: 25%
   `}
 `

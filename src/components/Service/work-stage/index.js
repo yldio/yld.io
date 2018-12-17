@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
-import { Grid, Row, Col } from '../../grid'
 import { Padding } from 'styled-components-spacing'
-import { Graphic, How } from './elements'
+
+import { Grid, Row, Col } from '../../grid'
+import { Graphic, How, Hr } from './elements'
 import Image from '../../Common/Image'
 import WorkStageAlternatives from './alternatives'
 
@@ -21,13 +22,12 @@ const WorkStages = ({ title, workStages, image }) => (
     </Grid>
     {workStages.map((workStage, index, arr) => (
       <Fragment key={workStage.id}>
-        {index === 0 ? <Padding top={1.5} /> : null}
-        <Padding top={index === 0 ? 5 : 6} bottom={5}>
+        <Padding top={index === 0 ? 3.5 : 4} bottom={index === 0 ? 4 : 5}>
           <WorkStageAlternatives workStage={workStage} />
         </Padding>
         {index !== arr.length - 1 && (
           <Grid>
-            <hr />
+            <Hr />
           </Grid>
         )}
       </Fragment>

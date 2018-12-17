@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import { H2, H3, H5, Paragraph } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
@@ -10,7 +11,9 @@ import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GrayBackground from '../components/GrayBG'
 
-const Title = H3.withComponent('h1')
+const Title = styled(H3.withComponent('h1'))`
+  font-weight: normal;
+`
 
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
@@ -28,19 +31,21 @@ const Service = ({ data }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <CaseStudy
-              caseStudy={service.caseStudies[0]}
-              subHeading="Featured work"
-            />
+            <Padding bottom={3}>
+              <CaseStudy
+                caseStudy={service.caseStudies[0]}
+                subHeading="Featured work"
+              />
+            </Padding>
           </Col>
         </Row>
       </Grid>
 
-      <GrayBackground>
+      <GrayBackground noTop>
         <Grid>
           <Row>
             <Col width={[9 / 12]}>
-              <Padding top={5} bottom={4}>
+              <Padding top={4} bottom={2}>
                 <Title>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </Title>

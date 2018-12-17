@@ -58,8 +58,12 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       <TextWrapper>
         <SubHeading>{subHeading}</SubHeading>
         <H2 noTop>{caseStudy.title}</H2>
-        <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
-        <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
+        <Padding top={0.5}>
+          <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
+          <StyledLink to={`/case-study/${caseStudy.slug}`}>
+            Learn more
+          </StyledLink>
+        </Padding>
       </TextWrapper>
     </Col>
     <Col width={[1, 1, 1, 1, 0]}>
