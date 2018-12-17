@@ -99,7 +99,7 @@ const Events = ({ events }) => (
         ))}
     </Col>
     <Col width={[1, 1, 1, 1, 0, 0, 0]}>
-      <Padding top={42}>
+      <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
         <ul>
           {events
             .filter(n => !n.node.homepageFeatured)

@@ -13889,353 +13889,6 @@ type DotenvConfigOutput = {
           /***/
         },
 
-      /***/ '../../node_modules/event-stream/index.js':
-        /*!****************************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/event-stream/index.js ***!
-  \****************************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports, __webpack_require__) {
-          //filter will reemit the data if cb(err,pass) pass is truthy
-
-          // reduce is more tricky
-          // maybe we want to group the reductions or emit progress updates occasionally
-          // the most basic reduce just emits one 'data' event after it has recieved 'end'
-
-          var Stream = __webpack_require__(/*! stream */ 'stream').Stream,
-            es = exports,
-            through = __webpack_require__(
-              /*! through */ '../../node_modules/through/index.js'
-            ),
-            from = __webpack_require__(
-              /*! from */ '../../node_modules/from/index.js'
-            ),
-            duplex = __webpack_require__(
-              /*! duplexer */ '../../node_modules/duplexer/index.js'
-            ),
-            map = __webpack_require__(
-              /*! map-stream */ '../../node_modules/map-stream/index.js'
-            ),
-            pause = __webpack_require__(
-              /*! pause-stream */ '../../node_modules/pause-stream/index.js'
-            ),
-            split = __webpack_require__(
-              /*! split */ '../../node_modules/split/index.js'
-            ),
-            pipeline = __webpack_require__(
-              /*! stream-combiner */ '../../node_modules/stream-combiner/index.js'
-            ),
-            immediately = global.setImmediate || process.nextTick
-
-          es.Stream = Stream //re-export Stream from core
-          es.through = through
-          es.from = from
-          es.duplex = duplex
-          es.map = map
-          es.pause = pause
-          es.split = split
-          es.pipeline = es.connect = es.pipe = pipeline
-          // merge / concat
-          //
-          // combine multiple streams into a single stream.
-          // will emit end only once
-
-          es.concat = es.merge = function(/*streams...*/) { //actually this should be called concat
-            var toMerge = [].slice.call(arguments)
-            if (toMerge.length === 1 && toMerge[0] instanceof Array) {
-              toMerge = toMerge[0] //handle array as arguments object
-            }
-            var stream = new Stream()
-            stream.setMaxListeners(0) // allow adding more than 11 streams
-            var endCount = 0
-            stream.writable = stream.readable = true
-
-            if (toMerge.length) {
-              toMerge.forEach(function(e) {
-                e.pipe(
-                  stream,
-                  { end: false }
-                )
-                var ended = false
-                e.on('end', function() {
-                  if (ended) return
-                  ended = true
-                  endCount++
-                  if (endCount == toMerge.length) stream.emit('end')
-                })
-              })
-            } else {
-              process.nextTick(function() {
-                stream.emit('end')
-              })
-            }
-
-            stream.write = function(data) {
-              this.emit('data', data)
-            }
-            stream.destroy = function() {
-              toMerge.forEach(function(e) {
-                if (e.destroy) e.destroy()
-              })
-            }
-            return stream
-          }
-
-          // writable stream, collects all events into an array
-          // and calls back when 'end' occurs
-          // mainly I'm using this to test the other functions
-
-          es.writeArray = function(done) {
-            if ('function' !== typeof done)
-              throw new Error(
-                'function writeArray (done): done must be function'
-              )
-
-            var a = new Stream(),
-              array = [],
-              isDone = false
-            a.write = function(l) {
-              array.push(l)
-            }
-            a.end = function() {
-              isDone = true
-              done(null, array)
-            }
-            a.writable = true
-            a.readable = false
-            a.destroy = function() {
-              a.writable = a.readable = false
-              if (isDone) return
-              done(new Error('destroyed before end'), array)
-            }
-            return a
-          }
-
-          //return a Stream that reads the properties of an object
-          //respecting pause() and resume()
-
-          es.readArray = function(array) {
-            var stream = new Stream(),
-              i = 0,
-              paused = false,
-              ended = false
-
-            stream.readable = true
-            stream.writable = false
-
-            if (!Array.isArray(array))
-              throw new Error('event-stream.read expects an array')
-
-            stream.resume = function() {
-              if (ended) return
-              paused = false
-              var l = array.length
-              while (i < l && !paused && !ended) {
-                stream.emit('data', array[i++])
-              }
-              if (i == l && !ended)
-                (ended = true), (stream.readable = false), stream.emit('end')
-            }
-            process.nextTick(stream.resume)
-            stream.pause = function() {
-              paused = true
-            }
-            stream.destroy = function() {
-              ended = true
-              stream.emit('close')
-            }
-            return stream
-          }
-
-          //
-          // readable (asyncFunction)
-          // return a stream that calls an async function while the stream is not paused.
-          //
-          // the function must take: (count, callback) {...
-          //
-
-          es.readable = function(func, continueOnError) {
-            var stream = new Stream(),
-              i = 0,
-              paused = false,
-              ended = false,
-              reading = false
-
-            stream.readable = true
-            stream.writable = false
-
-            if ('function' !== typeof func)
-              throw new Error('event-stream.readable expects async function')
-
-            stream.on('end', function() {
-              ended = true
-            })
-
-            function get(err, data) {
-              if (err) {
-                stream.emit('error', err)
-                if (!continueOnError) stream.emit('end')
-              } else if (arguments.length > 1) stream.emit('data', data)
-
-              immediately(function() {
-                if (ended || paused || reading) return
-                try {
-                  reading = true
-                  func.call(stream, i++, function() {
-                    reading = false
-                    get.apply(null, arguments)
-                  })
-                } catch (err) {
-                  stream.emit('error', err)
-                }
-              })
-            }
-            stream.resume = function() {
-              paused = false
-              get()
-            }
-            process.nextTick(get)
-            stream.pause = function() {
-              paused = true
-            }
-            stream.destroy = function() {
-              stream.emit('end')
-              stream.emit('close')
-              ended = true
-            }
-            return stream
-          }
-
-          //
-          // map sync
-          //
-
-          es.mapSync = function(sync) {
-            return es.through(function write(data) {
-              var mappedData
-              try {
-                mappedData = sync(data)
-              } catch (err) {
-                return this.emit('error', err)
-              }
-              if (mappedData !== undefined) this.emit('data', mappedData)
-            })
-          }
-
-          //
-          // log just print out what is coming through the stream, for debugging
-          //
-
-          es.log = function(name) {
-            return es.through(function(data) {
-              var args = [].slice.call(arguments)
-              if (name) console.error(name, data)
-              else console.error(data)
-              this.emit('data', data)
-            })
-          }
-
-          //
-          // child -- pipe through a child process
-          //
-
-          es.child = function(child) {
-            return es.duplex(child.stdin, child.stdout)
-          }
-
-          //
-          // parse
-          //
-          // must be used after es.split() to ensure that each chunk represents a line
-          // source.pipe(es.split()).pipe(es.parse())
-
-          es.parse = function(options) {
-            var emitError = !!(options ? options.error : false)
-            return es.through(function(data) {
-              var obj
-              try {
-                if (data)
-                  //ignore empty lines
-                  obj = JSON.parse(data.toString())
-              } catch (err) {
-                if (emitError) return this.emit('error', err)
-                return console.error(err, 'attempting to parse:', data)
-              }
-              //ignore lines that where only whitespace.
-              if (obj !== undefined) this.emit('data', obj)
-            })
-          }
-          //
-          // stringify
-          //
-
-          es.stringify = function() {
-            var Buffer = __webpack_require__(/*! buffer */ 'buffer').Buffer
-            return es.mapSync(function(e) {
-              return (
-                JSON.stringify(Buffer.isBuffer(e) ? e.toString() : e) + '\n'
-              )
-            })
-          }
-
-          //
-          // replace a string within a stream.
-          //
-          // warn: just concatenates the string and then does str.split().join().
-          // probably not optimal.
-          // for smallish responses, who cares?
-          // I need this for shadow-npm so it's only relatively small json files.
-
-          es.replace = function(from, to) {
-            return es.pipeline(es.split(from), es.join(to))
-          }
-
-          //
-          // join chunks with a joiner. just like Array#join
-          // also accepts a callback that is passed the chunks appended together
-          // this is still supported for legacy reasons.
-          //
-
-          es.join = function(str) {
-            //legacy api
-            if ('function' === typeof str) return es.wait(str)
-
-            var first = true
-            return es.through(function(data) {
-              if (!first) this.emit('data', str)
-              first = false
-              this.emit('data', data)
-              return true
-            })
-          }
-
-          //
-          // wait. callback when 'end' is emitted, with all chunks appended as string.
-          //
-
-          es.wait = function(callback) {
-            var arr = []
-            return es.through(
-              function(data) {
-                arr.push(data)
-              },
-              function() {
-                var body = Buffer.isBuffer(arr[0])
-                  ? Buffer.concat(arr)
-                  : arr.join('')
-                this.emit('data', body)
-                this.emit('end')
-                if (callback) callback(null, body)
-              }
-            )
-          }
-
-          es.pipeable = function() {
-            throw new Error('[EVENT-STREAM] es.pipeable is deprecated')
-          }
-
-          /***/
-        },
-
       /***/ '../../node_modules/extend/index.js':
         /*!**********************************************************************!*\
   !*** /Users/saravieira/Projects/yld.io/node_modules/extend/index.js ***!
@@ -26147,153 +25800,6 @@ type DotenvConfigOutput = {
           /***/
         },
 
-      /***/ '../../node_modules/map-stream/index.js':
-        /*!**************************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/map-stream/index.js ***!
-  \**************************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports, __webpack_require__) {
-          //filter will reemit the data if cb(err,pass) pass is truthy
-
-          // reduce is more tricky
-          // maybe we want to group the reductions or emit progress updates occasionally
-          // the most basic reduce just emits one 'data' event after it has recieved 'end'
-
-          var Stream = __webpack_require__(/*! stream */ 'stream').Stream
-
-          //create an event stream and apply function to each .write
-          //emitting each response as data
-          //unless it's an empty callback
-
-          module.exports = function(mapper, opts) {
-            var stream = new Stream(),
-              inputs = 0,
-              outputs = 0,
-              ended = false,
-              paused = false,
-              destroyed = false,
-              lastWritten = 0,
-              inNext = false
-
-            opts = opts || {}
-            var errorEventName = opts.failures ? 'failure' : 'error'
-
-            // Items that are not ready to be written yet (because they would come out of
-            // order) get stuck in a queue for later.
-            var writeQueue = {}
-
-            stream.writable = true
-            stream.readable = true
-
-            function queueData(data, number) {
-              var nextToWrite = lastWritten + 1
-
-              if (number === nextToWrite) {
-                // If it's next, and its not undefined write it
-                if (data !== undefined) {
-                  stream.emit.apply(stream, ['data', data])
-                }
-                lastWritten++
-                nextToWrite++
-              } else {
-                // Otherwise queue it for later.
-                writeQueue[number] = data
-              }
-
-              // If the next value is in the queue, write it
-              if (writeQueue.hasOwnProperty(nextToWrite)) {
-                var dataToWrite = writeQueue[nextToWrite]
-                delete writeQueue[nextToWrite]
-                return queueData(dataToWrite, nextToWrite)
-              }
-
-              outputs++
-              if (inputs === outputs) {
-                if (paused) (paused = false), stream.emit('drain') //written all the incoming events
-                if (ended) end()
-              }
-            }
-
-            function next(err, data, number) {
-              if (destroyed) return
-              inNext = true
-
-              if (!err || opts.failures) {
-                queueData(data, number)
-              }
-
-              if (err) {
-                stream.emit.apply(stream, [errorEventName, err])
-              }
-
-              inNext = false
-            }
-
-            // Wrap the mapper function by calling its callback with the order number of
-            // the item in the stream.
-            function wrappedMapper(input, number, callback) {
-              return mapper.call(null, input, function(err, data) {
-                callback(err, data, number)
-              })
-            }
-
-            stream.write = function(data) {
-              if (ended) throw new Error('map stream is not writable')
-              inNext = false
-              inputs++
-
-              try {
-                //catch sync errors and handle them like async errors
-                var written = wrappedMapper(data, inputs, next)
-                paused = written === false
-                return !paused
-              } catch (err) {
-                //if the callback has been called syncronously, and the error
-                //has occured in an listener, throw it again.
-                if (inNext) throw err
-                next(err)
-                return !paused
-              }
-            }
-
-            function end(data) {
-              //if end was called with args, write it,
-              ended = true //write will emit 'end' if ended is true
-              stream.writable = false
-              if (data !== undefined) {
-                return queueData(data, inputs)
-              } else if (inputs == outputs) {
-                //wait for processing
-                ;(stream.readable = false), stream.emit('end'), stream.destroy()
-              }
-            }
-
-            stream.end = function(data) {
-              if (ended) return
-              end(data)
-            }
-
-            stream.destroy = function() {
-              ended = destroyed = true
-              stream.writable = stream.readable = paused = false
-              process.nextTick(function() {
-                stream.emit('close')
-              })
-            }
-            stream.pause = function() {
-              paused = true
-            }
-
-            stream.resume = function() {
-              paused = false
-            }
-
-            return stream
-          }
-
-          /***/
-        },
-
       /***/ '../../node_modules/meetup-api/index.js':
         /*!**************************************************************************!*\
   !*** /Users/saravieira/Projects/yld.io/node_modules/meetup-api/index.js ***!
@@ -26952,7 +26458,7 @@ type DotenvConfigOutput = {
               /*! JSONStream */ '../../node_modules/JSONStream/index.js'
             ),
             evStream = __webpack_require__(
-              /*! event-stream */ '../../node_modules/event-stream/index.js'
+              /*! event-stream */ '../../node_modules/meetup-api/node_modules/event-stream/index.js'
             ),
             URLfn = __webpack_require__(/*! url */ 'url'),
             endpoints = __webpack_require__(
@@ -27558,6 +27064,630 @@ type DotenvConfigOutput = {
               (!cb && ((_loaded.length === 1 && _loaded[0]) || _loaded)) ||
               null
             )
+          }
+
+          /***/
+        },
+
+      /***/ '../../node_modules/meetup-api/node_modules/event-stream/index.js':
+        /*!****************************************************************************************************!*\
+  !*** /Users/saravieira/Projects/yld.io/node_modules/meetup-api/node_modules/event-stream/index.js ***!
+  \****************************************************************************************************/
+        /*! no static exports found */
+        /***/ function(module, exports, __webpack_require__) {
+          //filter will reemit the data if cb(err,pass) pass is truthy
+
+          // reduce is more tricky
+          // maybe we want to group the reductions or emit progress updates occasionally
+          // the most basic reduce just emits one 'data' event after it has recieved 'end'
+
+          var Stream = __webpack_require__(/*! stream */ 'stream').Stream,
+            es = exports,
+            through = __webpack_require__(
+              /*! through */ '../../node_modules/through/index.js'
+            ),
+            from = __webpack_require__(
+              /*! from */ '../../node_modules/from/index.js'
+            ),
+            duplex = __webpack_require__(
+              /*! duplexer */ '../../node_modules/duplexer/index.js'
+            ),
+            map = __webpack_require__(
+              /*! map-stream */ '../../node_modules/meetup-api/node_modules/map-stream/index.js'
+            ),
+            pause = __webpack_require__(
+              /*! pause-stream */ '../../node_modules/pause-stream/index.js'
+            ),
+            split = __webpack_require__(
+              /*! split */ '../../node_modules/meetup-api/node_modules/split/index.js'
+            ),
+            pipeline = __webpack_require__(
+              /*! stream-combiner */ '../../node_modules/meetup-api/node_modules/stream-combiner/index.js'
+            ),
+            immediately = global.setImmediate || process.nextTick
+
+          es.Stream = Stream //re-export Stream from core
+          es.through = through
+          es.from = from
+          es.duplex = duplex
+          es.map = map
+          es.pause = pause
+          es.split = split
+          es.pipeline = es.connect = es.pipe = pipeline
+          // merge / concat
+          //
+          // combine multiple streams into a single stream.
+          // will emit end only once
+
+          es.concat = es.merge = function(/*streams...*/) {
+            //actually this should be called concat
+            var toMerge = [].slice.call(arguments)
+            if (toMerge.length === 1 && toMerge[0] instanceof Array) {
+              toMerge = toMerge[0] //handle array as arguments object
+            }
+            var stream = new Stream()
+            stream.setMaxListeners(0) // allow adding more than 11 streams
+            var endCount = 0
+            stream.writable = stream.readable = true
+
+            if (toMerge.length) {
+              toMerge.forEach(function(e) {
+                e.pipe(
+                  stream,
+                  { end: false }
+                )
+                var ended = false
+                e.on('end', function() {
+                  if (ended) return
+                  ended = true
+                  endCount++
+                  if (endCount == toMerge.length) stream.emit('end')
+                })
+              })
+            } else {
+              process.nextTick(function() {
+                stream.emit('end')
+              })
+            }
+
+            stream.write = function(data) {
+              this.emit('data', data)
+            }
+            stream.destroy = function() {
+              toMerge.forEach(function(e) {
+                if (e.destroy) e.destroy()
+              })
+            }
+            return stream
+          }
+
+          // writable stream, collects all events into an array
+          // and calls back when 'end' occurs
+          // mainly I'm using this to test the other functions
+
+          es.writeArray = function(done) {
+            if ('function' !== typeof done)
+              throw new Error(
+                'function writeArray (done): done must be function'
+              )
+
+            var a = new Stream(),
+              array = [],
+              isDone = false
+            a.write = function(l) {
+              array.push(l)
+            }
+            a.end = function() {
+              isDone = true
+              done(null, array)
+            }
+            a.writable = true
+            a.readable = false
+            a.destroy = function() {
+              a.writable = a.readable = false
+              if (isDone) return
+              done(new Error('destroyed before end'), array)
+            }
+            return a
+          }
+
+          //return a Stream that reads the properties of an object
+          //respecting pause() and resume()
+
+          es.readArray = function(array) {
+            var stream = new Stream(),
+              i = 0,
+              paused = false,
+              ended = false
+
+            stream.readable = true
+            stream.writable = false
+
+            if (!Array.isArray(array))
+              throw new Error('event-stream.read expects an array')
+
+            stream.resume = function() {
+              if (ended) return
+              paused = false
+              var l = array.length
+              while (i < l && !paused && !ended) {
+                stream.emit('data', array[i++])
+              }
+              if (i == l && !ended)
+                (ended = true), (stream.readable = false), stream.emit('end')
+            }
+            process.nextTick(stream.resume)
+            stream.pause = function() {
+              paused = true
+            }
+            stream.destroy = function() {
+              ended = true
+              stream.emit('close')
+            }
+            return stream
+          }
+
+          //
+          // readable (asyncFunction)
+          // return a stream that calls an async function while the stream is not paused.
+          //
+          // the function must take: (count, callback) {...
+          //
+
+          es.readable = function(func, continueOnError) {
+            var stream = new Stream(),
+              i = 0,
+              paused = false,
+              ended = false,
+              reading = false
+
+            stream.readable = true
+            stream.writable = false
+
+            if ('function' !== typeof func)
+              throw new Error('event-stream.readable expects async function')
+
+            stream.on('end', function() {
+              ended = true
+            })
+
+            function get(err, data) {
+              if (err) {
+                stream.emit('error', err)
+                if (!continueOnError) stream.emit('end')
+              } else if (arguments.length > 1) stream.emit('data', data)
+
+              immediately(function() {
+                if (ended || paused || reading) return
+                try {
+                  reading = true
+                  func.call(stream, i++, function() {
+                    reading = false
+                    get.apply(null, arguments)
+                  })
+                } catch (err) {
+                  stream.emit('error', err)
+                }
+              })
+            }
+            stream.resume = function() {
+              paused = false
+              get()
+            }
+            process.nextTick(get)
+            stream.pause = function() {
+              paused = true
+            }
+            stream.destroy = function() {
+              stream.emit('end')
+              stream.emit('close')
+              ended = true
+            }
+            return stream
+          }
+
+          //
+          // map sync
+          //
+
+          es.mapSync = function(sync) {
+            return es.through(function write(data) {
+              var mappedData
+              try {
+                mappedData = sync(data)
+              } catch (err) {
+                return this.emit('error', err)
+              }
+              if (mappedData !== undefined) this.emit('data', mappedData)
+            })
+          }
+
+          //
+          // log just print out what is coming through the stream, for debugging
+          //
+
+          es.log = function(name) {
+            return es.through(function(data) {
+              var args = [].slice.call(arguments)
+              if (name) console.error(name, data)
+              else console.error(data)
+              this.emit('data', data)
+            })
+          }
+
+          //
+          // child -- pipe through a child process
+          //
+
+          es.child = function(child) {
+            return es.duplex(child.stdin, child.stdout)
+          }
+
+          //
+          // parse
+          //
+          // must be used after es.split() to ensure that each chunk represents a line
+          // source.pipe(es.split()).pipe(es.parse())
+
+          es.parse = function(options) {
+            var emitError = !!(options ? options.error : false)
+            return es.through(function(data) {
+              var obj
+              try {
+                if (data)
+                  //ignore empty lines
+                  obj = JSON.parse(data.toString())
+              } catch (err) {
+                if (emitError) return this.emit('error', err)
+                return console.error(err, 'attempting to parse:', data)
+              }
+              //ignore lines that where only whitespace.
+              if (obj !== undefined) this.emit('data', obj)
+            })
+          }
+          //
+          // stringify
+          //
+
+          es.stringify = function() {
+            var Buffer = __webpack_require__(/*! buffer */ 'buffer').Buffer
+            return es.mapSync(function(e) {
+              return (
+                JSON.stringify(Buffer.isBuffer(e) ? e.toString() : e) + '\n'
+              )
+            })
+          }
+
+          //
+          // replace a string within a stream.
+          //
+          // warn: just concatenates the string and then does str.split().join().
+          // probably not optimal.
+          // for smallish responses, who cares?
+          // I need this for shadow-npm so it's only relatively small json files.
+
+          es.replace = function(from, to) {
+            return es.pipeline(es.split(from), es.join(to))
+          }
+
+          //
+          // join chunks with a joiner. just like Array#join
+          // also accepts a callback that is passed the chunks appended together
+          // this is still supported for legacy reasons.
+          //
+
+          es.join = function(str) {
+            //legacy api
+            if ('function' === typeof str) return es.wait(str)
+
+            var first = true
+            return es.through(function(data) {
+              if (!first) this.emit('data', str)
+              first = false
+              this.emit('data', data)
+              return true
+            })
+          }
+
+          //
+          // wait. callback when 'end' is emitted, with all chunks appended as string.
+          //
+
+          es.wait = function(callback) {
+            var arr = []
+            return es.through(
+              function(data) {
+                arr.push(data)
+              },
+              function() {
+                var body = Buffer.isBuffer(arr[0])
+                  ? Buffer.concat(arr)
+                  : arr.join('')
+                this.emit('data', body)
+                this.emit('end')
+                if (callback) callback(null, body)
+              }
+            )
+          }
+
+          es.pipeable = function() {
+            throw new Error('[EVENT-STREAM] es.pipeable is deprecated')
+          }
+
+          /***/
+        },
+
+      /***/ '../../node_modules/meetup-api/node_modules/map-stream/index.js':
+        /*!**************************************************************************************************!*\
+  !*** /Users/saravieira/Projects/yld.io/node_modules/meetup-api/node_modules/map-stream/index.js ***!
+  \**************************************************************************************************/
+        /*! no static exports found */
+        /***/ function(module, exports, __webpack_require__) {
+          //filter will reemit the data if cb(err,pass) pass is truthy
+
+          // reduce is more tricky
+          // maybe we want to group the reductions or emit progress updates occasionally
+          // the most basic reduce just emits one 'data' event after it has recieved 'end'
+
+          var Stream = __webpack_require__(/*! stream */ 'stream').Stream
+
+          //create an event stream and apply function to each .write
+          //emitting each response as data
+          //unless it's an empty callback
+
+          module.exports = function(mapper, opts) {
+            var stream = new Stream(),
+              inputs = 0,
+              outputs = 0,
+              ended = false,
+              paused = false,
+              destroyed = false,
+              lastWritten = 0,
+              inNext = false
+
+            opts = opts || {}
+            var errorEventName = opts.failures ? 'failure' : 'error'
+
+            // Items that are not ready to be written yet (because they would come out of
+            // order) get stuck in a queue for later.
+            var writeQueue = {}
+
+            stream.writable = true
+            stream.readable = true
+
+            function queueData(data, number) {
+              var nextToWrite = lastWritten + 1
+
+              if (number === nextToWrite) {
+                // If it's next, and its not undefined write it
+                if (data !== undefined) {
+                  stream.emit.apply(stream, ['data', data])
+                }
+                lastWritten++
+                nextToWrite++
+              } else {
+                // Otherwise queue it for later.
+                writeQueue[number] = data
+              }
+
+              // If the next value is in the queue, write it
+              if (writeQueue.hasOwnProperty(nextToWrite)) {
+                var dataToWrite = writeQueue[nextToWrite]
+                delete writeQueue[nextToWrite]
+                return queueData(dataToWrite, nextToWrite)
+              }
+
+              outputs++
+              if (inputs === outputs) {
+                if (paused) (paused = false), stream.emit('drain') //written all the incoming events
+                if (ended) end()
+              }
+            }
+
+            function next(err, data, number) {
+              if (destroyed) return
+              inNext = true
+
+              if (!err || opts.failures) {
+                queueData(data, number)
+              }
+
+              if (err) {
+                stream.emit.apply(stream, [errorEventName, err])
+              }
+
+              inNext = false
+            }
+
+            // Wrap the mapper function by calling its callback with the order number of
+            // the item in the stream.
+            function wrappedMapper(input, number, callback) {
+              return mapper.call(null, input, function(err, data) {
+                callback(err, data, number)
+              })
+            }
+
+            stream.write = function(data) {
+              if (ended) throw new Error('map stream is not writable')
+              inNext = false
+              inputs++
+
+              try {
+                //catch sync errors and handle them like async errors
+                var written = wrappedMapper(data, inputs, next)
+                paused = written === false
+                return !paused
+              } catch (err) {
+                //if the callback has been called syncronously, and the error
+                //has occured in an listener, throw it again.
+                if (inNext) throw err
+                next(err)
+                return !paused
+              }
+            }
+
+            function end(data) {
+              //if end was called with args, write it,
+              ended = true //write will emit 'end' if ended is true
+              stream.writable = false
+              if (data !== undefined) {
+                return queueData(data, inputs)
+              } else if (inputs == outputs) {
+                //wait for processing
+                ;(stream.readable = false), stream.emit('end'), stream.destroy()
+              }
+            }
+
+            stream.end = function(data) {
+              if (ended) return
+              end(data)
+            }
+
+            stream.destroy = function() {
+              ended = destroyed = true
+              stream.writable = stream.readable = paused = false
+              process.nextTick(function() {
+                stream.emit('close')
+              })
+            }
+            stream.pause = function() {
+              paused = true
+            }
+
+            stream.resume = function() {
+              paused = false
+            }
+
+            return stream
+          }
+
+          /***/
+        },
+
+      /***/ '../../node_modules/meetup-api/node_modules/split/index.js':
+        /*!*********************************************************************************************!*\
+  !*** /Users/saravieira/Projects/yld.io/node_modules/meetup-api/node_modules/split/index.js ***!
+  \*********************************************************************************************/
+        /*! no static exports found */
+        /***/ function(module, exports, __webpack_require__) {
+          //filter will reemit the data if cb(err,pass) pass is truthy
+
+          // reduce is more tricky
+          // maybe we want to group the reductions or emit progress updates occasionally
+          // the most basic reduce just emits one 'data' event after it has recieved 'end'
+
+          var through = __webpack_require__(
+            /*! through */ '../../node_modules/through/index.js'
+          )
+          var Decoder = __webpack_require__(
+            /*! string_decoder */ 'string_decoder'
+          ).StringDecoder
+
+          module.exports = split
+
+          //TODO pass in a function to map across the lines.
+
+          function split(matcher, mapper, options) {
+            var decoder = new Decoder()
+            var soFar = ''
+            var maxLength = options && options.maxLength
+            var trailing = options && options.trailing === false ? false : true
+            if ('function' === typeof matcher)
+              (mapper = matcher), (matcher = null)
+            if (!matcher) matcher = /\r?\n/
+
+            function emit(stream, piece) {
+              if (mapper) {
+                try {
+                  piece = mapper(piece)
+                } catch (err) {
+                  return stream.emit('error', err)
+                }
+                if ('undefined' !== typeof piece) stream.queue(piece)
+              } else stream.queue(piece)
+            }
+
+            function next(stream, buffer) {
+              var pieces = ((soFar != null ? soFar : '') + buffer).split(
+                matcher
+              )
+              soFar = pieces.pop()
+
+              if (maxLength && soFar.length > maxLength)
+                return stream.emit('error', new Error('maximum buffer reached'))
+
+              for (var i = 0; i < pieces.length; i++) {
+                var piece = pieces[i]
+                emit(stream, piece)
+              }
+            }
+
+            return through(
+              function(b) {
+                next(this, decoder.write(b))
+              },
+              function() {
+                if (decoder.end) next(this, decoder.end())
+                if (trailing && soFar != null) emit(this, soFar)
+                this.queue(null)
+              }
+            )
+          }
+
+          /***/
+        },
+
+      /***/ '../../node_modules/meetup-api/node_modules/stream-combiner/index.js':
+        /*!*******************************************************************************************************!*\
+  !*** /Users/saravieira/Projects/yld.io/node_modules/meetup-api/node_modules/stream-combiner/index.js ***!
+  \*******************************************************************************************************/
+        /*! no static exports found */
+        /***/ function(module, exports, __webpack_require__) {
+          var duplexer = __webpack_require__(
+            /*! duplexer */ '../../node_modules/duplexer/index.js'
+          )
+          var through = __webpack_require__(
+            /*! through */ '../../node_modules/through/index.js'
+          )
+
+          module.exports = function() {
+            var streams
+
+            if (arguments.length == 1 && Array.isArray(arguments[0])) {
+              streams = arguments[0]
+            } else {
+              streams = [].slice.call(arguments)
+            }
+
+            if (streams.length == 0) return through()
+            else if (streams.length == 1) return streams[0]
+
+            var first = streams[0],
+              last = streams[streams.length - 1],
+              thepipe = duplexer(first, last)
+
+            //pipe all the streams together
+
+            function recurse(streams) {
+              if (streams.length < 2) return
+              streams[0].pipe(streams[1])
+              recurse(streams.slice(1))
+            }
+
+            recurse(streams)
+
+            function onerror() {
+              var args = [].slice.call(arguments)
+              args.unshift('error')
+              thepipe.emit.apply(thepipe, args)
+            }
+
+            //es.duplex already reemits the error from the first and last stream.
+            //add a listener for the inner streams in the pipeline.
+            for (var i = 1; i < streams.length - 1; i++)
+              streams[i].on('error', onerror)
+
+            return thepipe
           }
 
           /***/
@@ -36085,7 +36215,6 @@ type DotenvConfigOutput = {
             }
             return out
           }
-
           ;(function() {
             try {
               Object.defineProperty(WritableState.prototype, 'buffer', {
@@ -37291,135 +37420,6 @@ type DotenvConfigOutput = {
           /***/
         },
 
-      /***/ '../../node_modules/split/index.js':
-        /*!*********************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/split/index.js ***!
-  \*********************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports, __webpack_require__) {
-          //filter will reemit the data if cb(err,pass) pass is truthy
-
-          // reduce is more tricky
-          // maybe we want to group the reductions or emit progress updates occasionally
-          // the most basic reduce just emits one 'data' event after it has recieved 'end'
-
-          var through = __webpack_require__(
-            /*! through */ '../../node_modules/through/index.js'
-          )
-          var Decoder = __webpack_require__(
-            /*! string_decoder */ 'string_decoder'
-          ).StringDecoder
-
-          module.exports = split
-
-          //TODO pass in a function to map across the lines.
-
-          function split(matcher, mapper, options) {
-            var decoder = new Decoder()
-            var soFar = ''
-            var maxLength = options && options.maxLength
-            var trailing = options && options.trailing === false ? false : true
-            if ('function' === typeof matcher)
-              (mapper = matcher), (matcher = null)
-            if (!matcher) matcher = /\r?\n/
-
-            function emit(stream, piece) {
-              if (mapper) {
-                try {
-                  piece = mapper(piece)
-                } catch (err) {
-                  return stream.emit('error', err)
-                }
-                if ('undefined' !== typeof piece) stream.queue(piece)
-              } else stream.queue(piece)
-            }
-
-            function next(stream, buffer) {
-              var pieces = ((soFar != null ? soFar : '') + buffer).split(
-                matcher
-              )
-              soFar = pieces.pop()
-
-              if (maxLength && soFar.length > maxLength)
-                return stream.emit('error', new Error('maximum buffer reached'))
-
-              for (var i = 0; i < pieces.length; i++) {
-                var piece = pieces[i]
-                emit(stream, piece)
-              }
-            }
-
-            return through(
-              function(b) {
-                next(this, decoder.write(b))
-              },
-              function() {
-                if (decoder.end) next(this, decoder.end())
-                if (trailing && soFar != null) emit(this, soFar)
-                this.queue(null)
-              }
-            )
-          }
-
-          /***/
-        },
-
-      /***/ '../../node_modules/stream-combiner/index.js':
-        /*!*******************************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/stream-combiner/index.js ***!
-  \*******************************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports, __webpack_require__) {
-          var duplexer = __webpack_require__(
-            /*! duplexer */ '../../node_modules/duplexer/index.js'
-          )
-          var through = __webpack_require__(
-            /*! through */ '../../node_modules/through/index.js'
-          )
-
-          module.exports = function() {
-            var streams
-
-            if (arguments.length == 1 && Array.isArray(arguments[0])) {
-              streams = arguments[0]
-            } else {
-              streams = [].slice.call(arguments)
-            }
-
-            if (streams.length == 0) return through()
-            else if (streams.length == 1) return streams[0]
-
-            var first = streams[0],
-              last = streams[streams.length - 1],
-              thepipe = duplexer(first, last)
-
-            //pipe all the streams together
-
-            function recurse(streams) {
-              if (streams.length < 2) return
-              streams[0].pipe(streams[1])
-              recurse(streams.slice(1))
-            }
-
-            recurse(streams)
-
-            function onerror() {
-              var args = [].slice.call(arguments)
-              args.unshift('error')
-              thepipe.emit.apply(thepipe, args)
-            }
-
-            //es.duplex already reemits the error from the first and last stream.
-            //add a listener for the inner streams in the pipeline.
-            for (var i = 1; i < streams.length - 1; i++)
-              streams[i].on('error', onerror)
-
-            return thepipe
-          }
-
-          /***/
-        },
-
       /***/ '../../node_modules/stream-shift/index.js':
         /*!****************************************************************************!*\
   !*** /Users/saravieira/Projects/yld.io/node_modules/stream-shift/index.js ***!
@@ -37460,7 +37460,6 @@ type DotenvConfigOutput = {
         /***/ function(module, exports, __webpack_require__) {
           'use strict'
           var __WEBPACK_AMD_DEFINE_RESULT__
-
           ;(function(global) {
             // minimal symbol polyfill for IE11 and others
             if (typeof Symbol !== 'function') {
@@ -47340,8 +47339,8 @@ type DotenvConfigOutput = {
           }
 
           const processMeetupEvent = eventObject => {
-            console.log(eventObject.hasOwnProperty('venue'))
-            console.log(eventObject.venue)
+            // console.log(eventObject.hasOwnProperty('venue'))
+            // console.log(eventObject.venue)
             let outputObject = {
               eventName: eventObject.name,
               duration: eventObject.duration,
@@ -47413,25 +47412,25 @@ type DotenvConfigOutput = {
                   id: nextEvent,
                   urlname
                 })
-              )
-              console.log(JSON.stringify(events))
+              ) // console.log(JSON.stringify(events))
+
               const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
               const entry = generateContentfulEvent({ ...meetup, ...group })
 
               if (ev) {
                 // update
-                ev.fields = Object.assign(ev.fields, entry.fields)
-                console.log(`Updating entry ${meetup.eventName}`)
+                ev.fields = Object.assign(ev.fields, entry.fields) // console.log(`Updating entry ${meetup.eventName}`)
+
                 const id = await ev.update()
-                const updatedEntry = await environment.getEntry(id.sys.id)
-                console.log(`Publishing updated entry ${meetup.eventName}`)
+                const updatedEntry = await environment.getEntry(id.sys.id) // console.log(`Publishing updated entry ${meetup.eventName}`)
+
                 return updatedEntry.publish()
               } // create
+              // console.log(`Creating entry ${meetup.eventName}`)
 
-              console.log(`Creating entry ${meetup.eventName}`)
               const id = await environment.createEntry('meetupEven', entry)
-              const newEntry = await environment.getEntry(id.sys.id)
-              console.log(`Publishing creted entry ${meetup.eventName}`)
+              const newEntry = await environment.getEntry(id.sys.id) // console.log(`Publishing creted entry ${meetup.eventName}`)
+
               return newEntry.publish()
             })
           }

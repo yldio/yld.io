@@ -63,8 +63,6 @@ const linkStyles = css`
 
 export const MobileMenu = styled(Flex)`
   display: flex;
-  position: absolute;
-  right: ${remcalc(30)};
   cursor: pointer;
   padding: 0;
   margin: 0;
