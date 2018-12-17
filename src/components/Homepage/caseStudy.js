@@ -11,14 +11,16 @@ import getIntroSentence from '../../utils/getIntroSentence'
 
 const ImageWrapper = styled(Col)`
   margin-top: ${remcalc(-5)};
-  /* width: 100%; */
+  max-width: 100%;
   height: auto;
 
   img {
-    max-width: ${remcalc(526)};
+    max-width: 100%;
+    width: ${remcalc(526)};
 
     ${breakpoint('desktop')`
-      max-width: ${remcalc(526)};
+      max-width: 100%;
+      width: ${remcalc(526)};
     `}
   }
 `

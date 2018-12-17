@@ -64,7 +64,7 @@ const CaseStudyTop = ({ caseStudy }) => (
       </Flex>
     </Col>
     {caseStudy.posterImage && (
-      <ImageWrapper width={[1, 1, 1 / 2]}>
+      <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
         <Image
           alt={caseStudy.posterImage.title}
           image={caseStudy.posterImage}
