@@ -32,10 +32,6 @@ export const PosterImage = styled(Flex)`
     align-self: center;
     justify-self: center;
     ${breakpoint('tablet')`
-      max-width: 475px;
-      max-height: 475px;
-    `}
-    ${breakpoint('desktop')`
       max-width: 100%
     `}
   }
