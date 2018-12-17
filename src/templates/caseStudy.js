@@ -55,7 +55,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
         <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
-              <Col width={[1, 1, 1, 1, 10 / 12]}>
+              <Col width={[1]}>
                 {body[1].map((text, i) => (
                   <div
                     key={i}

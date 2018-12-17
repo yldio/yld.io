@@ -11,7 +11,7 @@ const ListItem = styled.li`
   :not(:last-of-type) {
     :after {
       content: '/';
-      padding: 0 4px;
+      padding: 0 8px;
     }
   }
 `
@@ -31,7 +31,7 @@ export default function SeoLinks({ items, ...props }) {
                     to={path}
                     style={{ textDecoration: 'underline' }}
                   >
-                    {item.title}
+                    {item.title.trim()}
                   </Link>
                 </ListItem>
               )
