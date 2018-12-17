@@ -30,12 +30,6 @@ const NoMobile = styled.div`
     `}
 `
 
-const ImageWrapper = styled.div`
-  ${breakpoint('desktop')`
-      max-width: 540px;
-  `}
-`
-
 const CenteredCol = styled(Col)`
   margin: 0 auto;
 `
@@ -102,9 +96,7 @@ const GradientContent = ({ text, image }) => (
     </Row>
     <Row>
       <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
-        <ImageWrapper>
-          <Image image={image} alt="Image of a travel itinerary" />
-        </ImageWrapper>
+        <Image image={image} alt="Image of a travel itinerary" />
       </CenteredCol>
     </Row>
   </Fragment>
@@ -277,7 +269,7 @@ export const query = graphql`
     travel: file(relativePath: { eq: "case-study/beyond_photography.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 540) {
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }
