@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { H2, H4, H6, Paragraph } from '../Typography'
+import { H2, H4, Paragraph } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -102,9 +102,7 @@ const Specialty = ({ services }) => (
                 service.homePageSpecialities.length && (
                   <Row>
                     <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
-                      <H6>
-                        <SeoLinks items={service.homePageSpecialities} />
-                      </H6>
+                      <SeoLinks items={service.homePageSpecialities} />
                     </Col>
                   </Row>
                 )}

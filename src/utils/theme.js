@@ -9,6 +9,7 @@ export const spacing = {
   3: remcalc(36),
   3.5: remcalc(54),
   4: remcalc(72),
+  4.5: remcalc(96),
   5: remcalc(108),
   6: remcalc(144),
   6.5: remcalc(210),
@@ -25,7 +26,7 @@ export const breakpoints = {
   phone: 471,
   largePhone: 553,
   smallTablet: 701, // sharon
-  tablet: 900,
+  tablet: 901,
   desktop: 1197
 }
 

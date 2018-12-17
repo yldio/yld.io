@@ -69,11 +69,12 @@ export default createGlobalStyle`
   iframe,
   object,
   embed {
-    max-width: 854px;
-    max-height: 480px;
+    max-width: 909px;
+    max-height: 511px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 100%;
   }
