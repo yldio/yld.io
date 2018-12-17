@@ -142,7 +142,7 @@ const Specialty = ({ services }) => (
                     />
                   </PosterImage>
                 </section>
-              </AnimatedLink
+              </AnimatedLink>
               <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} />
             </MasonryElement>
           )
