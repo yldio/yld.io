@@ -28,6 +28,17 @@ export const PosterImage = styled(Flex)`
     width: 475px;
     height: 473px;
   `}
+  > img {
+    align-self: center;
+    justify-self: center;
+    ${breakpoint('tablet')`
+      max-width: 475px;
+      max-height: 475px;
+    `}
+    ${breakpoint('desktop')`
+      max-width: 100%
+    `}
+  }
 `
 
 export const CardHeader = styled.header`
