@@ -16,13 +16,13 @@ const BottomParagraph = styled(Paragraph)`
 const BookCol = styled(Col)`
   position: relative;
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     &:last-child{
       display: none;
     }
    `}
 
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
    &:last-child {
     display:block;
    }
@@ -34,7 +34,7 @@ const BooksBox = styled.a`
   height: ${remcalc(222)};
   display: inline-block;
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     height: ${remcalc(360)};
   `}
 `
@@ -57,7 +57,7 @@ const BooksSection = ({ specialty }) => (
           .slice(0, 3)
           .map(externalResource => (
             <BookCol
-              width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 4 / 12]}
+              width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
               key={`${externalResource.id}`}
             >
               <Padding top={4}>
