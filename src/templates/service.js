@@ -92,7 +92,7 @@ const Service = ({ data }) => {
               </Col>
               <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
                 {service.specialityAreaTitle4 && (
-                  <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                  <Padding top={{ smallPhone: 2, tablet: 5 }}>
                     <H5>{service.specialityAreaTitle4}</H5>
                     <SeoLinks items={service.specialityAreaItems4} />
                   </Padding>

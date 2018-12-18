@@ -22,7 +22,10 @@ const WorkStages = ({ title, workStages, image }) => (
     </Grid>
     {workStages.map((workStage, index, arr) => (
       <Fragment key={workStage.id}>
-        <Padding top={index === 0 ? 3.5 : 4} bottom={index === 0 ? 4 : 5}>
+        <Padding
+          top={index === 0 ? 3.5 : 4}
+          bottom={workStage.displayType === 'Grid' ? 0 : index === 0 ? 4 : 5}
+        >
           <WorkStageAlternatives workStage={workStage} />
         </Padding>
         {index !== arr.length - 1 && (

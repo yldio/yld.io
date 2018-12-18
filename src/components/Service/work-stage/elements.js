@@ -3,7 +3,6 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import StyledLink from '../../styledLink'
-import { Col } from '../../grid'
 import { H2 } from '../../Typography'
 
 export const Item = styled.li`
@@ -43,32 +42,6 @@ export const SwitchLink = styled(StyledLink)`
 
     }
   }
-`
-
-export const MasonryContainer = styled.div`
-  ${breakpoint('desktop')`
-    column-count: 3;
-    column-gap: 0;
-    column-fill: auto;
-    height: ${props =>
-      props.length % 2 !== 0 // when there's an odd number of elements we have to manually set the height because css
-        ? remcalc(Math.ceil(props.length / 2) * 500)
-        : 'auto'}
-    padding-bottom: ${remcalc(72)}
-  `}
-`
-
-export const WorkStageGridElement = styled(Col)`
-  padding-bottom: ${props => (props.index === props.last ? 0 : remcalc(72))};
-  break-inside: avoid;
-
-  ${breakpoint('desktop')`
-    padding-bottom: ${props =>
-      props.index === props.last ||
-      (!props.evenNumber && props.index === props.halfway) ||
-      (props.evenNumber && props.index + 1 === props.halfway)
-        ? 0
-        : remcalc(72)}}`};
 `
 
 export const WorkStageContentList = styled.ul`
