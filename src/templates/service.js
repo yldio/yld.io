@@ -15,6 +15,15 @@ import GrayBackground from '../components/GrayBG'
 
 const Title = styled(H3.withComponent('h1'))`
   font-weight: normal;
+  ${breakpoint('smallTablet')`
+    width: 593px;
+    font-size: 26px;
+    line-height: 30px;
+  `}
+
+  ${breakpoint('tablet')`
+    width: inherit;
+  `}
 `
 
 const WeWorkWithPadding = styled.div`
@@ -53,7 +62,7 @@ const Service = ({ data }) => {
       <GrayBackground noTop>
         <Grid>
           <Row>
-            <Col width={[9 / 12]}>
+            <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
               <Padding top={4} bottom={2}>
                 <Title>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
