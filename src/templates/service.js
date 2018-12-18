@@ -2,7 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { H2, H3, H5, Paragraph } from '../components/Typography'
+import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
+import { H2, H3, H5 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -13,6 +15,13 @@ import GrayBackground from '../components/GrayBG'
 
 const Title = styled(H3.withComponent('h1'))`
   font-weight: normal;
+`
+
+const WeWorkWithPadding = styled.div`
+  padding-top: ${remcalc(24)};
+  ${breakpoint('tablet')`
+    padding-top: ${props => remcalc(props.index * 72)};
+  `}
 `
 
 const Service = ({ data }) => {
@@ -62,7 +71,7 @@ const Service = ({ data }) => {
         />
       </GrayBackground>
       <GrayBackground noTop>
-        <Padding top={5}>
+        <Padding top={4} bottom={3.5}>
           <Grid>
             <Row>
               <Col width={[1]}>
@@ -71,31 +80,31 @@ const Service = ({ data }) => {
             </Row>
             <Row>
               <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
-                <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                <WeWorkWithPadding index={1}>
                   <H5>{service.specialityAreaTitle1}</H5>
                   <SeoLinks items={service.specialityAreaItems1} />
-                </Padding>
+                </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
-                <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                <WeWorkWithPadding index={2}>
                   <H5>{service.specialityAreaTitle2}</H5>
                   <SeoLinks items={service.specialityAreaItems2} />
-                </Padding>
+                </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
                 {service.specialityAreaTitle3 && (
-                  <Padding vertical={{ smallPhone: 2, tablet: 5 }}>
+                  <WeWorkWithPadding index={3}>
                     <H5>{service.specialityAreaTitle3}</H5>
                     <SeoLinks items={service.specialityAreaItems3} />
-                  </Padding>
+                  </WeWorkWithPadding>
                 )}
               </Col>
               <Col width={[1, 1, 1, 1, 3 / 12, 3 / 12]}>
                 {service.specialityAreaTitle4 && (
-                  <Padding top={{ smallPhone: 2, tablet: 5 }}>
+                  <WeWorkWithPadding index={4}>
                     <H5>{service.specialityAreaTitle4}</H5>
                     <SeoLinks items={service.specialityAreaItems4} />
-                  </Padding>
+                  </WeWorkWithPadding>
                 )}
               </Col>
             </Row>
@@ -103,16 +112,12 @@ const Service = ({ data }) => {
         </Padding>
       </GrayBackground>
       <Grid>
-        <Row>
-          <Col width={[1]}>
-            <Padding top={4} bottom={2}>
-              <Paragraph>More of our work</Paragraph>
-            </Padding>
-          </Col>
-        </Row>
         {service.bottomCaseStudy ? (
-          <Padding bottom={5}>
-            <CaseStudy caseStudy={service.bottomCaseStudy} />
+          <Padding top={6} bottom={5}>
+            <CaseStudy
+              caseStudy={service.bottomCaseStudy}
+              subHeading="Featured work"
+            />
           </Padding>
         ) : null}
       </Grid>
