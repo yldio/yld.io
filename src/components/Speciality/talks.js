@@ -50,7 +50,7 @@ const TalksSection = ({ specialty }) => {
   const cta = specialty.externalResources.filter(
     ({ type, additionalInfo }) => type === 'Talk' && additionalInfo === 'CTA'
   )[0]
-  return (
+  return talks.length ? (
     <BlueBackground>
       <Grid>
         <Padding top={4} bottom={5}>
@@ -101,7 +101,7 @@ const TalksSection = ({ specialty }) => {
         </Padding>
       </Grid>
     </BlueBackground>
-  )
+  ) : null
 }
 
 export default TalksSection
