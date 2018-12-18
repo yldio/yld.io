@@ -25,11 +25,7 @@ const ImageWrapper = styled(Col)`
   }
 `
 
-const WrapperRow = styled(Row)`
-  ${breakpoint('smallTablet')`
-    align-items: center;
-  `};
-`
+const WrapperRow = styled(Row)``
 
 const SubHeading = styled(Paragraph)`
   color: #757575;

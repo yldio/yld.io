@@ -40,7 +40,7 @@ const Service = ({ data }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <Padding bottom={3}>
+            <Padding bottom={{ smallPhone: 0, tablet: 3 }}>
               <CaseStudy
                 caseStudy={service.caseStudies[0]}
                 subHeading="Featured work"
