@@ -15,7 +15,7 @@ export const Item = styled.li`
 export const Graphic = styled.div`
   position: relative;
   top: ${remcalc(0)};
-  height: ${remcalc(331)};
+  height: 85%;
   width: ${remcalc(680)};
   max-width: 80%;
   left: 50%;
@@ -24,7 +24,7 @@ export const Graphic = styled.div`
 
 export const How = styled(H2)`
   position: relative;
-  top: ${remcalc(-280)};
+  top: -71%;
 `
 
 export const SwitchLink = styled(StyledLink)`
