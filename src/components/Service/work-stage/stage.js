@@ -46,7 +46,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                       bottom={
                         index === arr.length - 1 ||
                         (arr.length % 2 === 0 && index === arr.length - 2)
-                          ? 0
+                          ? 3.5
                           : 4
                       }
                     >
