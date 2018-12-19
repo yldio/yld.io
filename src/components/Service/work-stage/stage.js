@@ -40,10 +40,16 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
         <Tag width={[1, 1, 1, 1, 0.583, 1 / 2]}>
           {workStage.displayType !== 'List'
             ? sections.map(
-                ({ sectionTitle, sectionBody, sectionIcon }, index) => (
+                ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
                   <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
-                    {/* do the logic the make the last + second last elements have no bottom here */}
-                    <Padding bottom={4}>
+                    <Padding
+                      bottom={
+                        index === arr.length - 1 ||
+                        (arr.length % 2 === 0 && index === arr.length - 2)
+                          ? 0
+                          : 4
+                      }
+                    >
                       <Padding bottom={1.5}>
                         <img
                           src={`https://${sectionIcon.file.url}`}
