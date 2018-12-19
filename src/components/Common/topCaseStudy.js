@@ -16,8 +16,6 @@ const ImageWrapper = styled(Col)`
 `
 
 const ContentWrapper = styled(Col)`
-  margin-left: auto;
-
   ${breakpoint('smallTablet')`
     padding-left: 0;
   `}
