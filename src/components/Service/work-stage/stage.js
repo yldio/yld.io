@@ -12,7 +12,16 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
   return (
     <Grid>
       <Row>
-        <Col width={[1, 1, 1, workStage.displayType !== 'List' ? 1 : 1 / 2]}>
+        <Col
+          width={[
+            1,
+            1,
+            1,
+            1,
+            workStage.displayType !== 'List' ? 1 : 0.416,
+            workStage.displayType !== 'List' ? 1 : 1 / 2
+          ]}
+        >
           <Padding bottom={2}>
             <H2 reverse>{workStage.title}</H2>
           </Padding>
@@ -28,12 +37,12 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
               </SwitchLink>
             ))}
         </Col>
-        <Tag width={[1, 1, 1, 1 / 2]}>
+        <Tag width={[1, 1, 1, 1, 0.583, 1 / 2]}>
           {workStage.displayType !== 'List' ? (
             <Row>
               {sections.map(
                 ({ sectionTitle, sectionBody, sectionIcon }, index) => (
-                  <Col width={[1, 1, 1, 1, 1 / 3]} key={index}>
+                  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
                     <Padding bottom={4}>
                       <Padding bottom={1.5}>
                         <img
