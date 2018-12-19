@@ -10,7 +10,7 @@ const EventBorder = styled(Col)`
 `
 
 const EventSection = ({ specialty }) => {
-  const futureEvents = specialty.events.filter(
+  const futureEvents = (specialty.events || []).filter(
     ({ startTime }) => new Date(startTime) > new Date()
   )
 

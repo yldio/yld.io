@@ -35,11 +35,13 @@ const CommunitySection = ({ specialty }) => (
       <Padding top={5} bottom={5}>
         <Row>
           <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
-            <img
-              alt={specialty.communityLogo.title}
-              src={specialty.communityLogo.file.url}
-              style={{ height: '100px' }}
-            />
+            {specialty.communityLogo ? (
+              <img
+                alt={specialty.communityLogo.title}
+                src={specialty.communityLogo.file.url}
+                style={{ maxHeight: '100px' }}
+              />
+            ) : null}
           </ImgContainerCol>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2
