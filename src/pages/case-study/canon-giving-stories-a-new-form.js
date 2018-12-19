@@ -134,9 +134,7 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
-            <Paragraph fullWidth>
-              {caseStudy.introSentence.introSentence}
-            </Paragraph>
+            <Paragraph fullWidth>{caseStudy.introSentence}</Paragraph>
           </IntroSentenceCol>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
@@ -287,9 +285,7 @@ export const query = graphql`
           relatedCaseStudy {
             title
             slug
-            introSentence {
-              introSentence
-            }
+            introSentence
             posterImage {
               fluid(maxWidth: 550) {
                 ...GatsbyContentfulFluid_tracedSVG
