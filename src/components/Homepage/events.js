@@ -91,7 +91,7 @@ const Events = ({ events }) => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Get tickets
+                Visit the website
               </StyledLink>
             </EventWrapper>
             <Image image={node.posterImage} />
