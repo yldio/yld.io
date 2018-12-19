@@ -22,7 +22,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             workStage.displayType !== 'List' ? 1 : 1 / 2
           ]}
         >
-          <Padding bottom={2}>
+          <Padding bottom={{ smallTablet: 0, tablet: 2 }}>
             <H2 reverse>{workStage.title}</H2>
           </Padding>
           {alternatives &&
@@ -42,6 +42,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ? sections.map(
                 ({ sectionTitle, sectionBody, sectionIcon }, index) => (
                   <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
+                    {/* do the logic the make the last + second last elements have no bottom here */}
                     <Padding bottom={4}>
                       <Padding bottom={1.5}>
                         <img
@@ -59,7 +60,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                 )
               )
             : sections.map(({ sectionTitle, sectionBody }, index) => (
-                <Padding bottom={1} key={index}>
+                <Padding bottom={{ smallPhone: 0, tablet: 1 }} key={index}>
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}

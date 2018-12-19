@@ -32,10 +32,14 @@ const WorkStages = ({ title, workStages, image }) => (
       <Fragment key={workStage.id}>
         <Padding
           top={{
-            smallTablet: index === 0 ? 5 : 4,
+            smallTablet: index === 0 ? 5 : 3,
             tablet: index === 0 ? 3.5 : 4
           }}
-          bottom={workStage.displayType === 'Grid' ? 0 : index === 0 ? 4 : 5}
+          bottom={{
+            smallTablet:
+              workStage.displayType === 'Grid' ? 0 : index === 0 ? 3 : 4,
+            tablet: workStage.displayType === 'Grid' ? 0 : index === 0 ? 4 : 5
+          }}
         >
           <WorkStageAlternatives workStage={workStage} />
         </Padding>

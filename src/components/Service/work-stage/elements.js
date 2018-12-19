@@ -28,7 +28,7 @@ export const How = styled(H2)`
 `
 
 export const SwitchLink = styled(StyledLink)`
-  margin-bottom: ${remcalc(72)};
+  margin-bottom: ${remcalc(36)};
   opacity: ${props => (props.muted ? 0.5 : 1)};
   cursor: pointer;
   ${props => (props.muted ? 'border: none;' : '')};
@@ -38,10 +38,12 @@ export const SwitchLink = styled(StyledLink)`
   }
 
   &:not(:last-child) {
-    margin-right: ${remcalc(36)};
-
-    }
+    margin-right: ${remcalc(30)};
   }
+
+  ${breakpoint('tablet')`
+      margin-bottom: ${remcalc(72)};
+  `}
 `
 
 export const WorkStageContentList = styled.ul`
