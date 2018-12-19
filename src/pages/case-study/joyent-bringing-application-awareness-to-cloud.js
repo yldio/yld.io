@@ -182,7 +182,7 @@ const IndexPage = ({
       <GrayBackground noTop>
         <Padding
           top={{ smallPhone: 3.5, tablet: 4 }}
-          bottom={{ smallPhone: 3.5, tablet: 6 }}
+          bottom={{ smallPhone: 3.5, tablet: 5 }}
         >
           <Grid>
             <Row>
