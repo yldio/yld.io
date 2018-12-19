@@ -134,7 +134,9 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
-            <Paragraph fullWidth>{caseStudy.introSentence}</Paragraph>
+            <Paragraph fullWidth>
+              {caseStudy.introSentence.introSentence}
+            </Paragraph>
           </IntroSentenceCol>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
