@@ -38,9 +38,8 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ))}
         </Col>
         <Tag width={[1, 1, 1, 1, 0.583, 1 / 2]}>
-          {workStage.displayType !== 'List' ? (
-            <Row>
-              {sections.map(
+          {workStage.displayType !== 'List'
+            ? sections.map(
                 ({ sectionTitle, sectionBody, sectionIcon }, index) => (
                   <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
                     <Padding bottom={4}>
@@ -58,18 +57,15 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                     </Padding>
                   </Col>
                 )
-              )}
-            </Row>
-          ) : (
-            sections.map(({ sectionTitle, sectionBody }, index) => (
-              <Padding bottom={1} key={index}>
-                <WorkStageContent
-                  sectionTitle={sectionTitle}
-                  sectionBody={sectionBody}
-                />
-              </Padding>
-            ))
-          )}
+              )
+            : sections.map(({ sectionTitle, sectionBody }, index) => (
+                <Padding bottom={1} key={index}>
+                  <WorkStageContent
+                    sectionTitle={sectionTitle}
+                    sectionBody={sectionBody}
+                  />
+                </Padding>
+              ))}
         </Tag>
       </Row>
     </Grid>
