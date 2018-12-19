@@ -9,7 +9,7 @@ import remcalc from 'remcalc'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudyBottom from '../../components/Homepage/caseStudy'
+import CaseStudy from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
 import Image from '../../components/Common/Image'
@@ -45,6 +45,12 @@ const MetricsCol = styled(Col)`
       max-width: 80%;
       margin: auto;
   `}
+`
+
+const Divider = styled.div`
+  height: 1px;
+  width: 100vw;
+  background-color: #e6e6e6;
 `
 
 const IndexPage = ({
@@ -120,7 +126,10 @@ const IndexPage = ({
           </Grid>
         </Padding>
       </GrayBackground>
-      <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
+      <Padding
+        top={{ smallPhone: 3, tablet: 4 }}
+        bottom={{ smallPhone: 3, tablet: 5 }}
+      >
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -146,7 +155,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <Padding>
+      <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -173,7 +182,7 @@ const IndexPage = ({
       <GrayBackground noTop>
         <Padding
           top={{ smallPhone: 3.5, tablet: 4 }}
-          bottom={{ smallPhone: 3.5, tablet: 5 }}
+          bottom={{ smallPhone: 3.5, tablet: 6 }}
         >
           <Grid>
             <Row>
@@ -273,18 +282,14 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
+      <Divider />
       {caseStudy.relatedCaseStudy ? (
         <Grid>
-          <Row>
-            <Col width={[1, 1, 1]}>
-              <Padding top={4} bottom={2}>
-                <Paragraph>More of our work</Paragraph>
-              </Padding>
-            </Col>
-          </Row>
-
-          <Padding bottom={5}>
-            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+          <Padding bottom={5} top={4}>
+            <CaseStudy
+              caseStudy={caseStudy.relatedCaseStudy}
+              subHeading="Featured work"
+            />
           </Padding>
         </Grid>
       ) : null}
@@ -296,7 +301,7 @@ export const query = graphql`
     navigation: file(relativePath: { eq: "case-study/joyent/navigation.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -305,7 +310,7 @@ export const query = graphql`
     signOn: file(relativePath: { eq: "case-study/joyent/single_sign_on.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -314,7 +319,7 @@ export const query = graphql`
     topology: file(relativePath: { eq: "case-study/joyent/topology.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -323,7 +328,7 @@ export const query = graphql`
     metric2: file(relativePath: { eq: "case-study/joyent/metric_2.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -331,7 +336,7 @@ export const query = graphql`
     metric3: file(relativePath: { eq: "case-study/joyent/metric_3.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -339,7 +344,7 @@ export const query = graphql`
     metric4: file(relativePath: { eq: "case-study/joyent/metric_4.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -348,7 +353,7 @@ export const query = graphql`
     metric1: file(relativePath: { eq: "case-study/joyent/metric_1.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -358,7 +363,7 @@ export const query = graphql`
     ) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -366,7 +371,7 @@ export const query = graphql`
     picture: file(relativePath: { eq: "case-study/joyent/big_picture.png" }) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -376,7 +381,7 @@ export const query = graphql`
     ) {
       publicURL
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
