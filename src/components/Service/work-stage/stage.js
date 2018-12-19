@@ -22,7 +22,13 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             workStage.displayType !== 'List' ? 1 : 1 / 2
           ]}
         >
-          <Padding bottom={{ smallTablet: 0, tablet: 2 }}>
+          <Padding
+            bottom={{
+              smallPhone: alternatives ? 0 : 3,
+              smallTablet: 0,
+              tablet: 2
+            }}
+          >
             <H2 reverse>{workStage.title}</H2>
           </Padding>
           {alternatives &&
@@ -43,12 +49,14 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                 ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
                   <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
                     <Padding
-                      bottom={
-                        index === arr.length - 1 ||
-                        (arr.length % 2 === 0 && index === arr.length - 2)
-                          ? 3.5
-                          : 4
-                      }
+                      bottom={{
+                        smallPhone: 3,
+                        smallTablet:
+                          index === arr.length - 1 ||
+                          (arr.length % 2 === 0 && index === arr.length - 2)
+                            ? 3.5
+                            : 4
+                      }}
                     >
                       <Padding bottom={1.5}>
                         <img
@@ -66,7 +74,10 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                 )
               )
             : sections.map(({ sectionTitle, sectionBody }, index) => (
-                <Padding bottom={{ smallPhone: 0, tablet: 1 }} key={index}>
+                <Padding
+                  bottom={{ smallPhone: 3, smallTablet: 0, tablet: 1 }}
+                  key={index}
+                >
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}

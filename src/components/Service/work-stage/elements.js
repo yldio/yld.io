@@ -7,7 +7,6 @@ import { H2 } from '../../Typography'
 
 export const Item = styled.li`
   color: ${props => props.theme.colors.white};
-  padding: ${remcalc(0)} 0 ${remcalc(12)} 0;
   line-height: ${remcalc(24)};
   opacity: 0.5;
 `
@@ -17,9 +16,13 @@ export const Graphic = styled.div`
   top: ${remcalc(0)};
   height: 85%;
   width: ${remcalc(680)};
-  max-width: 80%;
+  max-width: 100%;
   left: 50%;
   transform: translateX(-50%);
+
+  ${breakpoint('smallTablet')`
+    max-width: 80%;
+  `}
 `
 
 export const How = styled(H2)`

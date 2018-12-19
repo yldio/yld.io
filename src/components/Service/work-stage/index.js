@@ -32,6 +32,7 @@ const WorkStages = ({ title, workStages, image }) => (
       <Fragment key={workStage.id}>
         <Padding
           top={{
+            smallPhone: index === 0 ? 0 : 3,
             smallTablet: index === 0 ? 5 : 3,
             tablet: index === 0 ? 3.5 : 4
           }}

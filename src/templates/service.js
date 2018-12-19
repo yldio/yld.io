@@ -49,7 +49,7 @@ const Service = ({ data }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <Padding bottom={{ smallPhone: 0, tablet: 3 }}>
+            <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
               <CaseStudy
                 caseStudy={service.caseStudies[0]}
                 subHeading="Featured work"
@@ -63,7 +63,10 @@ const Service = ({ data }) => {
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
-              <Padding top={4} bottom={2}>
+              <Padding
+                top={{ smallPhone: 3, smallTablet: 4 }}
+                bottom={{ smallPhone: 0, smallTablet: 2 }}
+              >
                 <Title>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </Title>
