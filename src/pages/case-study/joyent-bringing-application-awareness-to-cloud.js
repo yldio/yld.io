@@ -12,19 +12,8 @@ import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
 import GrayBackground from '../../components/GrayBG'
-// import Image from '../../components/Common/Image'
+import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
-
-import deployment from '../../images/case-study/joyent/app_deployment.png'
-import picture from '../../images/case-study/joyent/big_picture.png'
-import form from '../../images/case-study/joyent/form_editing_alert.png'
-import metric1 from '../../images/case-study/joyent/metric_1.png'
-import metric2 from '../../images/case-study/joyent/metric_2.png'
-import metric3 from '../../images/case-study/joyent/metric_3.png'
-import metric4 from '../../images/case-study/joyent/metric_4.png'
-import navigation from '../../images/case-study/joyent/navigation.png'
-import signOn from '../../images/case-study/joyent/single_sign_on.png'
-import topology from '../../images/case-study/joyent/topology.png'
 
 // const MobileOnly = styled.div`
 //   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -59,7 +48,20 @@ const MetricsCol = styled(Col)`
 `
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site }
+  data: {
+    allContentfulGenericCaseStudy: content,
+    site,
+    deployment,
+    picture,
+    form,
+    metric1,
+    metric2,
+    metric3,
+    metric4,
+    navigation,
+    signOn,
+    topology
+  }
 }) => {
   const caseStudy = content.edges[0].node
   return (
@@ -111,7 +113,7 @@ const IndexPage = ({
             <Row>
               <Col width={[1]}>
                 <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
-                  <img src={signOn} alt="single sign on" />
+                  <Image text="Single Sign on" image={signOn.childImageSharp} />
                 </Padding>
               </Col>
             </Row>
@@ -135,7 +137,10 @@ const IndexPage = ({
           <Row>
             <Col width={[1]}>
               <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
-                <img src={navigation} alt="single sign on" />
+                <Image
+                  text="Joyent Navigation"
+                  image={navigation.childImageSharp}
+                />
               </Padding>
             </Col>
           </Row>
@@ -156,7 +161,10 @@ const IndexPage = ({
           <Row>
             <Col width={[1]}>
               <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
-                <img src={deployment} alt="single sign on" />
+                <Image
+                  text="Single Sign on"
+                  image={deployment.childImageSharp}
+                />
               </Padding>
             </Col>
           </Row>
@@ -178,7 +186,7 @@ const IndexPage = ({
                 ))}
               </Col>
               <Col width={[1, 1, 1, 1, 7 / 12]}>
-                <img src={topology} alt="topology view" />
+                <Image text="Topology View" image={topology.childImageSharp} />
               </Col>
             </Row>
           </Grid>
@@ -201,7 +209,7 @@ const IndexPage = ({
           <Row>
             <Col width={[1]}>
               <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
-                <img src={picture} alt="dashboard" />
+                <Image text="Dashboard" image={picture.childImageSharp} />
               </Padding>
             </Col>
           </Row>
@@ -228,10 +236,10 @@ const IndexPage = ({
             <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
               <Row>
                 <MetricsCol width={[1, 1, 1, 1, 1]}>
-                  <img src={metric1} alt="metrics1" />
-                  <img src={metric2} alt="metrics1" />
-                  <img src={metric3} alt="metrics1" />
-                  <img src={metric4} alt="metrics1" />
+                  <Image text="metrics1" image={metric1.childImageSharp} />
+                  <Image text="metrics2" image={metric2.childImageSharp} />
+                  <Image text="metrics3" image={metric3.childImageSharp} />
+                  <Image text="metrics4" image={metric4.childImageSharp} />
                 </MetricsCol>
               </Row>
             </Padding>
@@ -256,7 +264,10 @@ const IndexPage = ({
           <Row>
             <Col width={[1]}>
               <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
-                <img src={form} alt="Monitoring and alerting" />
+                <Image
+                  text="Monitoring and alerting"
+                  image={form.childImageSharp}
+                />
               </Padding>
             </Col>
           </Row>
@@ -280,17 +291,96 @@ const IndexPage = ({
     </Layout>
   )
 }
-
 export const query = graphql`
   {
-    # travel: file(relativePath: { eq: "case-study/beyond_photography.png" }) {
-    #   publicURL
-    #   childImageSharp {
-    #     fluid {
-    #       ...GatsbyImageSharpFluid
-    #     }
-    #   }
-    # }
+    navigation: file(relativePath: { eq: "case-study/joyent/navigation.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    signOn: file(relativePath: { eq: "case-study/joyent/single_sign_on.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    topology: file(relativePath: { eq: "case-study/joyent/topology.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    metric2: file(relativePath: { eq: "case-study/joyent/metric_2.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    metric3: file(relativePath: { eq: "case-study/joyent/metric_3.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    metric4: file(relativePath: { eq: "case-study/joyent/metric_4.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    metric1: file(relativePath: { eq: "case-study/joyent/metric_1.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    deployment: file(
+      relativePath: { eq: "case-study/joyent/app_deployment.png" }
+    ) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    picture: file(relativePath: { eq: "case-study/joyent/big_picture.png" }) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    form: file(
+      relativePath: { eq: "case-study/joyent/form_editing_alert.png" }
+    ) {
+      publicURL
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     site {
       siteMetadata {
         title
