@@ -49,7 +49,7 @@ const OurWork = ({ data }) => {
                 top={{
                   smallPhone: 3.5,
                   smallTablet: 3.5,
-                  largeTablet: 4,
+                  tablet: 4,
                   desktop: 4
                 }}
                 bottom={5}
