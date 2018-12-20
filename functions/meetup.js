@@ -27119,8 +27119,7 @@ type DotenvConfigOutput = {
           // combine multiple streams into a single stream.
           // will emit end only once
 
-          es.concat = es.merge = function(/*streams...*/) {
-            //actually this should be called concat
+          es.concat = es.merge = function(/*streams...*/) { //actually this should be called concat
             var toMerge = [].slice.call(arguments)
             if (toMerge.length === 1 && toMerge[0] instanceof Array) {
               toMerge = toMerge[0] //handle array as arguments object
@@ -36215,6 +36214,7 @@ type DotenvConfigOutput = {
             }
             return out
           }
+
           ;(function() {
             try {
               Object.defineProperty(WritableState.prototype, 'buffer', {
@@ -37460,6 +37460,7 @@ type DotenvConfigOutput = {
         /***/ function(module, exports, __webpack_require__) {
           'use strict'
           var __WEBPACK_AMD_DEFINE_RESULT__
+
           ;(function(global) {
             // minimal symbol polyfill for IE11 and others
             if (typeof Symbol !== 'function') {

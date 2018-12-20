@@ -79,7 +79,7 @@ export const MobileMenu = styled(Flex)`
     }
   }
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     display: none;
 
 
@@ -92,7 +92,7 @@ export const MobileMenu = styled(Flex)`
 export const HomeLink = styled(Padding)`
   display: block;
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     display: none;
   `};
 `
@@ -114,7 +114,7 @@ export const Close = styled.button`
     color: ${props => props.theme.colors.text};
   }
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     display: none;
   `};
 
@@ -140,7 +140,7 @@ export const DesktopMenu = styled(Flex)`
   transform: translateX(200%);
   transition: transform 200ms ease-out;
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     display: flex;
     width: auto;
     opacity: 1;
