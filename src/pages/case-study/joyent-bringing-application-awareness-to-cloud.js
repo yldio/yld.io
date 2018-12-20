@@ -37,7 +37,8 @@ const IntroSentenceCol = styled(Col)`
 
 const MetricsCol = styled(Col)`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 208px;
+  justify-content: center;
   grid-gap: ${remcalc(32)};
 
   ${breakpoint('smallTablet')`
@@ -102,8 +103,8 @@ const IndexPage = ({
       </Grid>
       <GrayBackground noTop>
         <Padding
-          top={{ smallPhone: 3.5, tablet: 4 }}
-          bottom={{ smallPhone: 3.5, tablet: 5 }}
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallPhone: 0, tablet: 5 }}
         >
           <Grid>
             <Row>
@@ -118,7 +119,7 @@ const IndexPage = ({
             </Row>
             <Row>
               <Col width={[1]}>
-                <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
+                <Padding top={{ smallPhone: 3, tablet: 4 }}>
                   <Image text="Single Sign on" image={signOn.childImageSharp} />
                 </Padding>
               </Col>
@@ -128,7 +129,7 @@ const IndexPage = ({
       </GrayBackground>
       <Padding
         top={{ smallPhone: 3, tablet: 4 }}
-        bottom={{ smallPhone: 3, tablet: 5 }}
+        bottom={{ smallPhone: 3.5, tablet: 5 }}
       >
         <Grid>
           <Row>
@@ -145,7 +146,7 @@ const IndexPage = ({
           </Row>
           <Row>
             <Col width={[1]}>
-              <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
+              <Padding top={{ smallPhone: 3, tablet: 4 }}>
                 <Image
                   text="Joyent Navigation"
                   image={navigation.childImageSharp}
@@ -155,7 +156,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
+      <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -169,7 +170,7 @@ const IndexPage = ({
           </Row>
           <Row>
             <Col width={[1]}>
-              <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
+              <Padding top={{ smallPhone: 3, tablet: 4 }}>
                 <Image
                   text="Single Sign on"
                   image={deployment.childImageSharp}
@@ -181,7 +182,7 @@ const IndexPage = ({
       </Padding>
       <GrayBackground noTop>
         <Padding
-          top={{ smallPhone: 3.5, tablet: 4 }}
+          top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}
         >
           <Grid>
@@ -195,7 +196,12 @@ const IndexPage = ({
                 ))}
               </Col>
               <Col width={[1, 1, 1, 1, 7 / 12]}>
-                <Image text="Topology View" image={topology.childImageSharp} />
+                <Padding top={{ smallPhone: 3, tablet: 0 }}>
+                  <Image
+                    text="Topology View"
+                    image={topology.childImageSharp}
+                  />
+                </Padding>
               </Col>
             </Row>
           </Grid>
@@ -226,7 +232,7 @@ const IndexPage = ({
       </Padding>
       <GrayBackground noTop>
         <Padding
-          top={{ smallPhone: 3.5, tablet: 4 }}
+          top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}
         >
           <Grid>
@@ -242,7 +248,7 @@ const IndexPage = ({
                 ))}
               </IntroSentenceCol>
             </Row>
-            <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
+            <Padding top={{ smallPhone: 3, tablet: 4 }}>
               <Row>
                 <MetricsCol width={[1, 1, 1, 1, 1]}>
                   <Image text="metrics1" image={metric1.childImageSharp} />
@@ -256,7 +262,7 @@ const IndexPage = ({
         </Padding>
       </GrayBackground>
       <Padding
-        top={{ smallPhone: 3.5, tablet: 4 }}
+        top={{ smallPhone: 3, tablet: 4 }}
         bottom={{ smallPhone: 3.5, tablet: 5 }}
       >
         <Grid>
@@ -272,7 +278,7 @@ const IndexPage = ({
           </Row>
           <Row>
             <Col width={[1]}>
-              <Padding top={{ smallPhone: 3.5, tablet: 4 }}>
+              <Padding top={{ smallPhone: 3, tablet: 4 }}>
                 <Image
                   text="Monitoring and alerting"
                   image={form.childImageSharp}
@@ -285,7 +291,7 @@ const IndexPage = ({
       <Divider />
       {caseStudy.relatedCaseStudy ? (
         <Grid>
-          <Padding bottom={5} top={4}>
+          <Padding bottom={5} top={{ smallPhone: 3.5, tablet: 4 }}>
             <CaseStudy
               caseStudy={caseStudy.relatedCaseStudy}
               subHeading="Featured work"
