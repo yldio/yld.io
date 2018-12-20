@@ -25,11 +25,7 @@ const ImageWrapper = styled(Col)`
   }
 `
 
-const WrapperRow = styled(Row)`
-  ${breakpoint('smallTablet')`
-    align-items: center;
-  `};
-`
+const WrapperRow = styled(Row)``
 
 const SubHeading = styled(Paragraph)`
   color: #757575;
@@ -38,9 +34,14 @@ const SubHeading = styled(Paragraph)`
 `
 
 const TextWrapper = styled.div`
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
+    align-self: center;
     width: 431px;
   `}
+`
+
+const FlexCol = styled(Col)`
+  display: flex;
 `
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
@@ -54,14 +55,18 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
     <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
-    <Col width={[0, 0, 0, 0, 1 / 2]}>
+    <FlexCol width={[0, 0, 0, 0, 1 / 2]}>
       <TextWrapper>
         <SubHeading>{subHeading}</SubHeading>
         <H2 noTop>{caseStudy.title}</H2>
-        <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
-        <StyledLink to={`/case-study/${caseStudy.slug}`}>Learn more</StyledLink>
+        <Padding top={0.5}>
+          <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
+          <StyledLink to={`/case-study/${caseStudy.slug}`}>
+            Learn more
+          </StyledLink>
+        </Padding>
       </TextWrapper>
-    </Col>
+    </FlexCol>
     <Col width={[1, 1, 1, 1, 0]}>
       <Margin top={3} />
       <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>

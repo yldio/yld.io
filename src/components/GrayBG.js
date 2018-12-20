@@ -38,7 +38,7 @@ export default styled.section`
     }
   `}
 
-    ${breakpoint('tablet')`
+  ${breakpoint('tablet')`
     margin-top: ${props =>
       props.offsetBottom
         ? 0
@@ -71,6 +71,9 @@ export default styled.section`
   ${is('noTop')`
     margin-top: ${remcalc(0)};
     padding-bottom: ${remcalc(50)};
+    &:after {
+      content: none;
+    }
   `}
 
   > * {
