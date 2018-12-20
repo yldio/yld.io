@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import is from 'styled-is'
 import StyledLink from '../../styledLink'
 import { H2 } from '../../Typography'
 
@@ -53,12 +52,5 @@ export const WorkStageContentList = styled.ul`
   list-style-position: inside;
   ${breakpoint('desktop')`
     width: 60%
-  `}
-`
-
-export const Hr = styled.hr`
-  margin: 18px 0;
-  ${is('short')`
-    width: 25%
   `}
 `

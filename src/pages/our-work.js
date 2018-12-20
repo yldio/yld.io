@@ -7,6 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import { Grid, Row, Col } from '../components/grid'
 import { H1, H3 } from '../components/Typography'
+import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/Homepage/caseStudy'
 
 const SubHeading = H3.withComponent('h2')
@@ -83,7 +84,7 @@ const OurWork = ({ data }) => {
                           subHeading={caseStudy.speciality}
                         />
                       </Padding>
-                      <hr />
+                      <Hr />
                     </Fragment>
                   )}
                   {isMiddleCaseStudy && (
@@ -94,7 +95,7 @@ const OurWork = ({ data }) => {
                           subHeading={caseStudy.speciality}
                         />
                       </Padding>
-                      <hr />
+                      <Hr />
                     </Fragment>
                   )}
                   {isLastCaseStudy && (
