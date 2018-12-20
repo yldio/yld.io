@@ -92,6 +92,9 @@ class Header extends Component {
                     <Link activeClassName="active" to="/design/">
                       Design
                     </Link>
+                    <Link activeClassName="active" to="/our-work/">
+                      Our work
+                    </Link>
                     <Link activeClassName="active" to="/contact/">
                       Contact
                     </Link>
