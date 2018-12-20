@@ -51,7 +51,7 @@ const MetaData = ({ caseStudy }) => (
 
 const CaseStudyTop = ({ caseStudy }) => (
   <Row>
-    <Col width={[1, 1, 1, 0]}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <Padding bottom={3}>
         <H1>{caseStudy.title}</H1>
       </Padding>
@@ -64,7 +64,7 @@ const CaseStudyTop = ({ caseStudy }) => (
         />
       </ImageWrapper>
     )}
-    <ContentWrapper width={[0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
+    <ContentWrapper width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
       <Flex full column justifyCenter>
         <H1>{caseStudy.title}</H1>
         <Padding top={1}>
@@ -72,7 +72,7 @@ const CaseStudyTop = ({ caseStudy }) => (
         </Padding>
       </Flex>
     </ContentWrapper>
-    <Col width={[1, 1, 1, 0]}>
+    <Col width={[1, 1, 1, 1, 0]}>
       <Padding top={3}>
         <MetaData caseStudy={caseStudy} />
       </Padding>
