@@ -27,7 +27,7 @@ const Title = styled(H3.withComponent('h1'))`
 `
 
 const WeWorkWithPadding = styled.div`
-  padding-top: ${remcalc(24)};
+  padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
   ${breakpoint('tablet')`
     padding-top: ${props => remcalc(props.index * 72)};
   `}
@@ -83,7 +83,10 @@ const Service = ({ data }) => {
         />
       </GrayBackground>
       <GrayBackground noTop>
-        <Padding top={{ smallTablet: 3, tablet: 4 }} bottom={3.5}>
+        <Padding
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallTablet: 3.5 }}
+        >
           <Grid>
             <Row>
               <Col width={[1]}>
@@ -125,7 +128,10 @@ const Service = ({ data }) => {
       </GrayBackground>
       <Grid>
         {service.bottomCaseStudy ? (
-          <Padding top={6} bottom={5}>
+          <Padding
+            top={{ smallPhone: 3.5, smallTablet: 6 }}
+            bottom={{ smallPhone: 3.5, smallTablet: 5 }}
+          >
             <CaseStudy
               caseStudy={service.bottomCaseStudy}
               subHeading="Featured work"
