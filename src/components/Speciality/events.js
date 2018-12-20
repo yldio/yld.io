@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
@@ -10,18 +10,18 @@ const EventBorder = styled(Col)`
 `
 
 const EventSection = ({ specialty }) => {
-  const futureEvents = specialty.events.filter(
+  const futureEvents = (specialty.events || []).filter(
     ({ startTime }) => new Date(startTime) > new Date()
   )
 
   return futureEvents.length > 0 ? (
-    <Grid className="grid">
+    <Grid>
       <Padding top={6} bottom={6}>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2>{`Upcoming ${specialty.title} events`}</SmallerH2>
           </Col>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             {futureEvents.map(event => (
               <EventBorder key={`${event.id}`}>
                 <Padding top={2} bottom={2}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import breakpoint from 'styled-components-breakpoint'
 import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
@@ -50,18 +50,18 @@ const TalksSection = ({ specialty }) => {
   const cta = specialty.externalResources.filter(
     ({ type, additionalInfo }) => type === 'Talk' && additionalInfo === 'CTA'
   )[0]
-  return (
+  return talks.length ? (
     <BlueBackground>
-      <Grid className="grid">
+      <Grid>
         <Padding top={4} bottom={5}>
           <Row>
-            <Col md={12} sm={12} xs={12}>
+            <Col width={[1]}>
               <SmallerH2 reverse>{`Talks`}</SmallerH2>
             </Col>
           </Row>
           <Padding top={3}>
             <Row>
-              <Col md={12} sm={12} xs={12}>
+              <Col width={[1]}>
                 <Flex justifyCenter alignCenter>
                   <Video
                     align="middle"
@@ -77,7 +77,7 @@ const TalksSection = ({ specialty }) => {
           <Padding top={4} bottom={4}>
             <Row>
               {talks.map(({ title, link, additionalInfo, id }) => (
-                <TalkLinkCol md={4} sm={4} xs={12} key={id}>
+                <TalkLinkCol width={[1, 1, 1, 1, 4 / 12]} key={id}>
                   <TalkLink href={link}>
                     <PlayIcon
                       src={`https://${specialty.videoIcon.file.url}`}
@@ -92,7 +92,7 @@ const TalksSection = ({ specialty }) => {
             </Row>
           </Padding>
           <Row>
-            <Col md={12} sm={12} xs={12}>
+            <Col width={[1]}>
               <StyledLink reverse href={cta.link}>
                 {cta.title}
               </StyledLink>
@@ -101,7 +101,7 @@ const TalksSection = ({ specialty }) => {
         </Padding>
       </Grid>
     </BlueBackground>
-  )
+  ) : null
 }
 
 export default TalksSection

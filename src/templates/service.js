@@ -1,16 +1,37 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
-import { H2, H6, H3, H5, Paragraph } from '../components/Typography'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
+import { H2, H3, H5 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
+import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GrayBackground from '../components/GrayBG'
 
-const Title = H3.withComponent('h1')
+const Title = styled(H3.withComponent('h1'))`
+  font-weight: normal;
+  ${breakpoint('smallTablet')`
+    width: 593px;
+    font-size: 26px;
+    line-height: 30px;
+  `}
+
+  ${breakpoint('tablet')`
+    width: inherit;
+  `}
+`
+
+const WeWorkWithPadding = styled.div`
+  padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
+  ${breakpoint('tablet')`
+    padding-top: ${props => remcalc(props.index * 72)};
+  `}
+`
 
 const Service = ({ data }) => {
   const service = data.allContentfulService.edges[0].node
@@ -25,99 +46,96 @@ const Service = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12}>
-            <CaseStudy
-              caseStudy={service.caseStudies[0]}
-              subHeading="Featured work"
-            />
+          <Col width={[1]}>
+            <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
+              <CaseStudy
+                caseStudy={service.caseStudies[0]}
+                subHeading="Featured work"
+              />
+            </Padding>
           </Col>
         </Row>
       </Grid>
 
-      <GrayBackground>
-        <Grid className="grid">
-          <Padding top={5} bottom={4}>
-            <Row>
-              <Col xs={11}>
+      <GrayBackground noTop>
+        <Grid>
+          <Row>
+            <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
+              <Padding
+                top={{ smallPhone: 3, smallTablet: 4 }}
+                bottom={{ smallPhone: 0, smallTablet: 2 }}
+              >
                 <Title>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </Title>
-              </Col>
-            </Row>
-          </Padding>
+              </Padding>
+            </Col>
+          </Row>
         </Grid>
       </GrayBackground>
       <GrayBackground noTop style={{ background: '#090329' }}>
-        <Padding top={4} bottom={0}>
-          <WorkStages
-            title={service.workStagesTitle}
-            workStages={service.workStages}
-            image={service.graphic}
-          />
-        </Padding>
+        <WorkStages
+          title={service.workStagesTitle}
+          workStages={service.workStages}
+          image={service.graphic}
+        />
       </GrayBackground>
       <GrayBackground noTop>
-        <Grid className="grid">
-          <Padding top={5}>
+        <Padding
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallTablet: 3.5 }}
+        >
+          <Grid>
             <Row>
-              <Col xs={12} sm={12} md={4}>
-                <H2 noTop>We work with</H2>
+              <Col width={[1]}>
+                <H2>We work with</H2>
               </Col>
-              <Col xs={12} sm={12} md={6} mdOffset={2}>
-                <Padding bottom={5}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle1}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems1} />
-                  </H6>
-                </Padding>
-                <Padding bottom={5}>
-                  <H5 noTop bold>
-                    {service.specialityAreaTitle2}
-                  </H5>
-                  <H6>
-                    <SeoLinks items={service.specialityAreaItems2} />
-                  </H6>
-                </Padding>
+            </Row>
+            <Row>
+              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
+                <WeWorkWithPadding index={1}>
+                  <H5>{service.specialityAreaTitle1}</H5>
+                  <SeoLinks items={service.specialityAreaItems1} />
+                </WeWorkWithPadding>
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
+                <WeWorkWithPadding index={2}>
+                  <H5>{service.specialityAreaTitle2}</H5>
+                  <SeoLinks items={service.specialityAreaItems2} />
+                </WeWorkWithPadding>
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle3 && (
-                  <Padding bottom={5}>
-                    <H5 noTop bold>
-                      {service.specialityAreaTitle3}
-                    </H5>
-                    <H6>
-                      <SeoLinks items={service.specialityAreaItems3} />
-                    </H6>
-                  </Padding>
+                  <WeWorkWithPadding index={3}>
+                    <H5>{service.specialityAreaTitle3}</H5>
+                    <SeoLinks items={service.specialityAreaItems3} />
+                  </WeWorkWithPadding>
                 )}
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle4 && (
-                  <Padding bottom={6}>
-                    <H5 noTop bold>
-                      {service.specialityAreaTitle4}
-                    </H5>
-                    <H6>
-                      <SeoLinks items={service.specialityAreaItems4} />
-                    </H6>
-                  </Padding>
+                  <WeWorkWithPadding index={4}>
+                    <H5>{service.specialityAreaTitle4}</H5>
+                    <SeoLinks items={service.specialityAreaItems4} />
+                  </WeWorkWithPadding>
                 )}
               </Col>
             </Row>
-          </Padding>
-        </Grid>
+          </Grid>
+        </Padding>
       </GrayBackground>
-      <Grid className="grid">
-        <Row>
-          <Col xs={12}>
-            <Padding top={4} bottom={2}>
-              <Paragraph>More of our work</Paragraph>
-            </Padding>
-          </Col>
-        </Row>
+      <Grid>
         {service.bottomCaseStudy ? (
-          <Padding bottom={5}>
-            <CaseStudy caseStudy={service.bottomCaseStudy} />
+          <Padding
+            top={{ smallPhone: 3.5, smallTablet: 6 }}
+            bottom={{ smallPhone: 3.5, smallTablet: 5 }}
+          >
+            <CaseStudy
+              caseStudy={service.bottomCaseStudy}
+              subHeading="Featured work"
+            />
           </Padding>
         ) : null}
       </Grid>

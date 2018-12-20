@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
+    "@rebass/grid": "^6.0.0-4",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
     "gatsby": "2.0.53",
@@ -24,7 +25,6 @@
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-helmet": "5.2.0",
-    "react-styled-flexboxgrid": "2.6.0",
     "remcalc": "1.0.10",
     "slash": "2.0.0",
     "styled-components": "4.1.1",
@@ -51,7 +51,6 @@
     "build": "run-p build:**",
     "lint": "run-p lint:**",
     "lint:js": "eslint . --cache --fix",
-    "lint:css": "stylelint './src/**/*.js'",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions"
   },
   "devDependencies": {
@@ -104,7 +103,7 @@
     "react-test-renderer": "^16.6.3",
     "serve-static": "^1.13.2",
     "striptags": "3.1.1",
-    "stylelint": "^9.8.0",
+    "stylelint": "^9.9.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.5.1"
@@ -117,7 +116,6 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "stylelint",
       "eslint --fix",
       "jest --bail --findRelatedTests",
       "git add"

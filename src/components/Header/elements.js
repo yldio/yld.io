@@ -63,8 +63,6 @@ const linkStyles = css`
 
 export const MobileMenu = styled(Flex)`
   display: flex;
-  position: absolute;
-  right: ${remcalc(30)};
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -136,6 +134,7 @@ export const DesktopMenu = styled(Flex)`
   top: 0;
   flex-direction: column;
   padding: ${remcalc(24)};
+  padding-right: ${remcalc(0)};
   padding-top: ${remcalc(12)};
   z-index: 999;
   transform: translateX(200%);

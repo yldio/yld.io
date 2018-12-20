@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import { format } from 'date-fns'
@@ -15,16 +15,16 @@ const BlogTitle = styled(H2)`
 
 const Blog = () => (
   <Row>
-    <Col md={6} xs={12}>
+    <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12]}>
       <BlogTitle>From the blog</BlogTitle>
     </Col>
-    <Col md={4} xs={12}>
+    <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12]}>
       <Posts>
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
-              <Li key={`${node.id}`}>
-                <H5 bold>
+              <Li fullWidth symmetrical key={`${node.id}`}>
+                <H5>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
                       node.uniqueSlug

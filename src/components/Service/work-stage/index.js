@@ -1,36 +1,52 @@
 import React, { Fragment } from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import { Padding } from 'styled-components-spacing'
-import { Graphic, How } from './elements'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
+
+import { Grid, Row, Col } from '../../grid'
+import { Graphic, How, Hr } from './elements'
 import Image from '../../Common/Image'
 import WorkStageAlternatives from './alternatives'
 
+const HowGrid = styled(Grid)`
+  margin-bottom: 0;
+  ${breakpoint('smallTablet')`margin-bottom: -10%;`}
+
+  ${breakpoint('tablet')`margin-bottom: 0;`}
+`
 const WorkStages = ({ title, workStages, image }) => (
   <Fragment>
-    <Grid className="grid">
+    <HowGrid>
       <Row style={{ position: 'relative' }}>
-        <Col xs={12}>
-          <Padding top={4} bottom={6}>
-            <Graphic>
-              <Image image={image} />
-            </Graphic>
-            <Padding top={1} />
-            <How reverse center noTop>
-              {title}
-            </How>
-          </Padding>
+        <Col width={[1]}>
+          <Graphic>
+            <Image image={image} />
+          </Graphic>
+          <How reverse center>
+            {title}
+          </How>
         </Col>
       </Row>
-    </Grid>
+    </HowGrid>
     {workStages.map((workStage, index, arr) => (
       <Fragment key={workStage.id}>
-        {index === 0 ? <Padding top={1.5} /> : null}
-        <Padding top={index === 0 ? 5 : 6} bottom={5}>
+        <Padding
+          top={{
+            smallPhone: index === 0 ? 0 : 3,
+            smallTablet: index === 0 ? 5 : 3,
+            tablet: index === 0 ? 3.5 : 4
+          }}
+          bottom={{
+            smallTablet:
+              workStage.displayType === 'Grid' ? 0 : index === 0 ? 3 : 4,
+            tablet: workStage.displayType === 'Grid' ? 0 : index === 0 ? 4 : 5
+          }}
+        >
           <WorkStageAlternatives workStage={workStage} />
         </Padding>
         {index !== arr.length - 1 && (
-          <Grid className="grid">
-            <hr />
+          <Grid>
+            <Hr />
           </Grid>
         )}
       </Fragment>

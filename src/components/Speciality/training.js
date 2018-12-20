@@ -1,12 +1,12 @@
 import React from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GrayBackground from '../GrayBG'
 import StyledLink from '../styledLink'
 
 const TrainingStage = ({ title, body, icon }) => (
-  <Col md={4} sm={12} xs={12}>
+  <Col width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={4} bottom={4}>
       <Padding bottom={1.5}>
         <img src={`https://${icon.file.url}`} alt={icon.title} />
@@ -20,9 +20,9 @@ const TrainingStage = ({ title, body, icon }) => (
 const TrainingSection = ({ specialty }) => (
   <GrayBackground noTop>
     <Padding top={4} bottom={6}>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2>{`${specialty.title.trim()} training`}</SmallerH2>
             <Paragraph>
               {specialty.trainingIntroText.content[0].content[0].value}
@@ -47,7 +47,7 @@ const TrainingSection = ({ specialty }) => (
           />
         </Row>
         <Row>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <StyledLink>{`Request ${specialty.title} training`}</StyledLink>
           </Col>
         </Row>

@@ -4,8 +4,8 @@ import { graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
-import { Grid, Row, Col } from 'react-styled-flexboxgrid'
 import Flex from 'styled-flex-component'
+import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph, H6 } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
@@ -90,7 +90,7 @@ const IndexPage = ({
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <CaseStudyTop caseStudy={caseStudy} />
         <Margin vertical={4}>
           <Row>
@@ -104,10 +104,10 @@ const IndexPage = ({
       </Grid>
       <GrayBackground>
         <Padding top={6} vertical={3}>
-          <Grid className="grid">
+          <Grid>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Building from the logo upwards</H2>
+                <H2>Building from the logo upwards</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
@@ -129,19 +129,19 @@ const IndexPage = ({
         </Padding>
       </GrayBackground>
       <div style={{ background: '#191933' }}>
-        <Grid className="grid">
+        <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <img src={meaning} alt="Logo Meaning" />
             </Col>
           </Row>
         </Grid>
       </div>
-      <Grid className="grid">
+      <Grid>
         <Padding top={60} bottom={3}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>Cutting the wordmark</H2>
+              <H2>Cutting the wordmark</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
@@ -155,18 +155,18 @@ const IndexPage = ({
       </Grid>
 
       <GrayBackground topOffset={-232}>
-        <Grid className="grid">
+        <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <img src={logoImage} alt="Stackable Logo" />
             </Col>
           </Row>
         </Grid>
-        <Grid className="grid">
+        <Grid>
           <Padding top={6}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Custom typeface</H2>
+                <H2>Custom typeface</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
@@ -179,7 +179,7 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GrayBackground>
-      <GrayBackground noTop>
+      <GrayBackground>
         <Flex>
           <Type1Wrapper>
             <Type1 src={type1} alt="Example of type" />
@@ -191,9 +191,9 @@ const IndexPage = ({
       </GrayBackground>
 
       <Code>
-        <Grid className="grid">
+        <Grid>
           <Row>
-            <Col xs={12}>
+            <Col width={[1]}>
               <Padding vertical={4}>
                 {command1.split('/n').map((p, i) => (
                   <Node key={i}>{p}</Node>
@@ -209,11 +209,11 @@ const IndexPage = ({
         </Grid>
       </Code>
 
-      <Grid className="grid">
+      <Grid>
         <Padding top={60} bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>New icon system</H2>
+              <H2>New icon system</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
@@ -225,7 +225,7 @@ const IndexPage = ({
           </Row>
           <Margin top={3}>
             <Row>
-              <Col xs={12}>
+              <Col width={[1]}>
                 <NoMobile>
                   <img src={iconsDesktop} alt="desktop icons" />
                 </NoMobile>
@@ -237,11 +237,11 @@ const IndexPage = ({
           </Margin>
         </Padding>
       </Grid>
-      <Grid className="grid">
+      <Grid>
         <Padding bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2 noTop>Colour approach</H2>
+              <H2>Colour approach</H2>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
@@ -263,12 +263,12 @@ const IndexPage = ({
           </Margin>
         </Padding>
       </Grid>
-      <GrayBackground noTop>
-        <Grid className="grid">
+      <GrayBackground>
+        <Grid>
           <Padding top={60} bottom={5}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2 noTop>Putting it all together</H2>
+                <H2>Putting it all together</H2>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
@@ -280,7 +280,7 @@ const IndexPage = ({
             </Row>
             <Margin top={3}>
               <Row>
-                <Col xs={12}>
+                <Col width={[1]}>
                   <img src={layout} alt="stackable layout" />
                 </Col>
               </Row>
@@ -289,11 +289,11 @@ const IndexPage = ({
         </Grid>
       </GrayBackground>
       <Padding top={4} bottom={60}>
-        <Grid className="grid">
+        <Grid>
           <Row>
             <Col xs={12} sm={12} md={6}>
               <Margin bottom={1}>
-                <H2 noTop>Product vision</H2>
+                <H2>Product vision</H2>
               </Margin>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
                 <Paragraph padded key={i}>
@@ -307,9 +307,9 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <Padding top={4} bottom={2}>
               <Paragraph>More of our work</Paragraph>
             </Padding>
@@ -387,9 +387,7 @@ export const query = graphql`
           relatedCaseStudy {
             title
             slug
-            introSentence {
-              introSentence
-            }
+            introSentence
             posterImage {
               file {
                 url

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import Helmet from 'react-helmet'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
-import styled from 'styled-components'
+import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import { H1, Paragraph } from '../components/Typography'
 import {
@@ -22,8 +22,7 @@ const checkboxes = [
   { name: 'design', label: 'Design services' },
   { name: 'training', label: 'Training services' },
   { name: 'join', label: 'Joining our team' },
-  { name: 'speak', label: 'Speaking at an event' },
-  { name: 'sponsor', label: 'Sponsoring an event' },
+  { name: 'community', label: 'Community' },
   { name: 'none', label: 'None of these' }
 ]
 
@@ -98,16 +97,16 @@ class ContactUs extends Component {
           >
             <html lang="en" />
           </Helmet>
-          <Grid className="grid">
+          <Grid>
             {success ? (
               <Fragment>
                 <Row>
-                  <Col xs={12} md={7} sm={8}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <H1>We will be in touch</H1>
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={12} md={7} sm={8}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Paragraph>
                       Thanks for reaching out. We will be in contact shortly
                     </Paragraph>
@@ -116,13 +115,9 @@ class ContactUs extends Component {
               </Fragment>
             ) : (
               <Fragment>
-                <Row>
-                  <Col xs={12} md={7} sm={8}>
-                    <H1>Get in touch</H1>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12} md={7} sm={8}>
+                <H1 style={{ transform: 'translateY(20%)' }}>Get in touch</H1>
+                <Row mt={2}>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Margin top={2}>
                       <form
                         name="contact"

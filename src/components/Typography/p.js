@@ -32,5 +32,10 @@ export default styled.p`
   ${is('center')`
     text-align:center;
     max-width: ${remcalc(900)};
+    margin: auto;
+  `};
+
+  ${is('fullWidth')`
+    max-width: 100% !important;
   `}
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Row, Col, Grid } from '../grid'
 import { H1, H4, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
@@ -10,7 +10,7 @@ const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
 `
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
-  <IntroBorder md={4} sm={12} xs={12}>
+  <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={2} bottom={2}>
       <Paragraph bold reverse>
         {introTextTitle}
@@ -25,9 +25,9 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
 const IntroSection = ({ specialty }) => (
   <BlueBackground>
     <Padding top={2} bottom={5}>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12} sm={12} md={6}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
               <H1 style={{ fontSize: '42px' }} reverse>
                 {specialty.title}
@@ -37,7 +37,7 @@ const IntroSection = ({ specialty }) => (
               </Paragraph>
             </Flex>
           </Col>
-          <Col md={6} sm={12} xs={12}>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
             <img
               alt={specialty.introGraphic.title}
               src={specialty.introGraphic.file.url}
@@ -46,14 +46,14 @@ const IntroSection = ({ specialty }) => (
           </Col>
         </Row>
         <Row>
-          <Col md={12} sm={12} xs={12}>
+          <Col width={[1]}>
             <Padding top={2} bottom={2}>
               <H4 reverse>{specialty.introTitle}</H4>
             </Padding>
           </Col>
         </Row>
 
-        <Col md={12}>
+        <Col width={[1]}>
           <Row>
             <IntroRectangle
               introTextTitle={specialty.introTextTitle1}

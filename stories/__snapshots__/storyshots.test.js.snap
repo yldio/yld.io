@@ -75,7 +75,7 @@ exports[`Storyshots Form Textarea 1`] = `
 
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
-  className="sc-htpNat bhfmzJ"
+  className="sc-htpNat iOnRfQ"
 >
   Large Body
 </h3>
@@ -83,7 +83,7 @@ exports[`Storyshots Typography Large Body 1`] = `
 
 exports[`Storyshots Typography Large title 1`] = `
 <h1
-  className="sc-bdVaJa iLfDqf"
+  className="sc-bdVaJa bcdDQm"
 >
   Large title
 </h1>
@@ -91,7 +91,7 @@ exports[`Storyshots Typography Large title 1`] = `
 
 exports[`Storyshots Typography Small Title 1 1`] = `
 <h4
-  className="sc-bxivhb eZMqQs"
+  className="sc-bxivhb gwyPxj"
 >
   Small Title
 </h4>
@@ -99,7 +99,7 @@ exports[`Storyshots Typography Small Title 1 1`] = `
 
 exports[`Storyshots Typography Small Title 2 1`] = `
 <h5
-  className="sc-ifAKCX epUKoN"
+  className="sc-ifAKCX cSrcVm"
 >
   Small Title
 </h5>
@@ -107,7 +107,7 @@ exports[`Storyshots Typography Small Title 2 1`] = `
 
 exports[`Storyshots Typography Small Title 3 1`] = `
 <h6
-  className="sc-EHOje kgzdlq"
+  className="sc-EHOje kYZbFa"
 >
   Small Title
 </h6>

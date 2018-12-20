@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
+import { Grid, Row, Col } from '../../grid'
 import { Padding } from 'styled-components-spacing'
 import { H2 } from '../../Typography'
-import { SwitchLink, WorkStageGridElement, MasonryContainer } from './elements'
+import { SwitchLink } from './elements'
 import WorkStageContent from './content'
 import getSections from './getSections'
 
@@ -10,13 +10,26 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   const sections = getSections(workStage)
   return (
-    <Grid className="grid">
+    <Grid>
       <Row>
-        <Col xs={12} md={workStage.displayType !== 'List' ? 12 : 6}>
-          <Padding bottom={2}>
-            <H2 reverse noTop>
-              {workStage.title}
-            </H2>
+        <Col
+          width={[
+            1,
+            1,
+            1,
+            1,
+            workStage.displayType !== 'List' ? 1 : 0.416,
+            workStage.displayType !== 'List' ? 1 : 1 / 2
+          ]}
+        >
+          <Padding
+            bottom={{
+              smallPhone: alternatives ? 0 : 3,
+              smallTablet: 0,
+              tablet: 2
+            }}
+          >
+            <H2 reverse>{workStage.title}</H2>
           </Padding>
           {alternatives &&
             alternatives.map(alternative => (
@@ -30,45 +43,47 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
               </SwitchLink>
             ))}
         </Col>
-        <Tag xs={12} md={6}>
-          {workStage.displayType !== 'List' ? (
-            <MasonryContainer length={sections.length}>
-              {sections.map(
+        <Tag width={[1, 1, 1, 1, 0.583, 1 / 2]}>
+          {workStage.displayType !== 'List'
+            ? sections.map(
                 ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
-                  <WorkStageGridElement
-                    index={index}
-                    last={arr.length - 1}
-                    halfway={Math.floor(arr.length / 2)}
-                    evenNumber={arr.length % 2 === 0}
-                    xs={12}
-                    key={index}
-                  >
-                    <Padding bottom={1.5}>
-                      <img
-                        src={`https://${sectionIcon.file.url}`}
-                        alt={sectionIcon.title}
+                  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
+                    <Padding
+                      bottom={{
+                        smallPhone: 3,
+                        smallTablet:
+                          index === arr.length - 1 ||
+                          (arr.length % 2 === 0 && index === arr.length - 2)
+                            ? 3.5
+                            : 4
+                      }}
+                    >
+                      <Padding bottom={1.5}>
+                        <img
+                          src={`https://${sectionIcon.file.url}`}
+                          alt={sectionIcon.title}
+                        />
+                      </Padding>
+                      <WorkStageContent
+                        isList
+                        sectionTitle={sectionTitle}
+                        sectionBody={sectionBody}
                       />
                     </Padding>
-
-                    <WorkStageContent
-                      isList
-                      sectionTitle={sectionTitle}
-                      sectionBody={sectionBody}
-                    />
-                  </WorkStageGridElement>
+                  </Col>
                 )
-              )}
-            </MasonryContainer>
-          ) : (
-            sections.map(({ sectionTitle, sectionBody }, index) => (
-              <Padding bottom={1} key={index}>
-                <WorkStageContent
-                  sectionTitle={sectionTitle}
-                  sectionBody={sectionBody}
-                />
-              </Padding>
-            ))
-          )}
+              )
+            : sections.map(({ sectionTitle, sectionBody }, index) => (
+                <Padding
+                  bottom={{ smallPhone: 3, smallTablet: 0, tablet: 1 }}
+                  key={index}
+                >
+                  <WorkStageContent
+                    sectionTitle={sectionTitle}
+                    sectionBody={sectionBody}
+                  />
+                </Padding>
+              ))}
         </Tag>
       </Row>
     </Grid>

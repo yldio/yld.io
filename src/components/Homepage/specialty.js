@@ -1,27 +1,64 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import remcalc from 'remcalc'
+import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
-import { H2, H4, H6, Paragraph } from '../Typography'
+import { H2, H4, Paragraph } from '../Typography'
+
+const CardHeader = styled.header`
+  padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
+  max-width: ${remcalc(475)};
+  box-sizing: border-box;
+
+  > div {
+    max-width: ${remcalc(310)};
+  }
+`
 
 const Title = styled(H4)`
   font-weight: 500;
 `
 
-const MasonryContainer = styled.div`
+const AnimatedLink = styled(Link)`
+  > section {
+    transition: all 250ms ease;
+  }
+
+  &:hover {
+    section {
+      transform: scale(0.97);
+    }
+  }
+`
+
+const PosterImage = styled.div`
+  background: #${props => props.color};
+
+  max-width: 100%;
+
+  ${breakpoint('tablet')`
+    height: 528px;
+  `}
+
+  ${breakpoint('desktop')`
+    width: 475px;
+    height: 473px;
+  `}
+`
+
+const MasonryContainer = styled(Col)`
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0 1.5rem;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
 
-  ${breakpoint('desktop')`
+  ${breakpoint('smallTablet')`
     display: block;
     column-count: 2;
     column-gap: 0;
@@ -47,27 +84,25 @@ const MasonryElement = styled.div`
 `
 
 const Specialty = ({ services }) => (
-  <Row>
-    <MasonryContainer xs={12}>
+  <Row pt={5}>
+    <MasonryContainer width={[1]}>
       {services.map((service, index, arr) => {
         return (
           service.introSentence && (
             <MasonryElement key={service.id} index={index}>
               {(arr.length === 2 && index === 1) ||
               (arr.length !== 2 && index === 2) ? (
-                <Padding top={{ phone: 0, tablet: 0, desktop: 7 }} bottom={2} />
+                <Padding top={{ smallPhone: 0, smallTablet: 6.5 }} bottom={2} />
               ) : null}
               <H2>{service.title}</H2>
-              <Padding bottom={0.5}>
+              <Padding top={1.5} bottom={0.5}>
                 <Paragraph>{service.introSentence.introSentence}</Paragraph>
               </Padding>
               {service.homePageSpecialities &&
                 service.homePageSpecialities.length && (
                   <Row>
-                    <Col xs={11} sm={7}>
-                      <H6>
-                        <SeoLinks items={service.homePageSpecialities} />
-                      </H6>
+                    <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
+                      <SeoLinks items={service.homePageSpecialities} />
                     </Col>
                   </Row>
                 )}
@@ -106,7 +141,7 @@ const Specialty = ({ services }) => (
                   </PosterImage>
                 </section>
               </AnimatedLink>
-              <Padding bottom={{ mobile: 2.5, tablet: 5 }} />
+              <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} />
             </MasonryElement>
           )
         )

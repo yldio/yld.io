@@ -8,7 +8,7 @@ const Logo = props => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 222.4 54"
       tabIndex="0"
-      ariaRole="link"
+      aria-role="link"
       height="48"
     >
       <title>yld engineering logo</title>

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col } from 'react-styled-flexboxgrid'
-import Image from '../Common/Image'
+import { Grid, Row, Col } from '../grid'
 import styled from 'styled-components'
 
 const Column = styled(Col)`
@@ -10,13 +9,18 @@ const Column = styled(Col)`
 `
 
 const Companies = ({ companies }) => (
-  <Row>
-    {companies.map(company => (
-      <Column xs={6} sm={4} md={3} key={company.id}>
-        <Image image={company} />
-      </Column>
-    ))}
-  </Row>
+  <Grid>
+    <Row>
+      {companies.map(company => (
+        <Column
+          width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]}
+          key={company.id}
+        >
+          <img src={company.file.url} />
+        </Column>
+      ))}
+    </Row>
+  </Grid>
 )
 
 export default Companies

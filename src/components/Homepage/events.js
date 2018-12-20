@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col } from 'react-styled-flexboxgrid'
+import { Row, Col } from '../grid'
 import remcalc from 'remcalc'
 import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
@@ -36,37 +36,41 @@ const EventsColumn = styled(Col)`
 
 const Events = ({ events }) => (
   <Row>
-    <Col md={4} sm={false} xs={false}>
-      <EventsColumn xs={8}>
-        <H2 noTop>Upcoming events</H2>
+    <Col width={[0, 0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
+      <EventsColumn>
+        <H2>Upcoming events</H2>
       </EventsColumn>
-      <ul>
-        {events
-          .filter(n => !n.node.homepageFeatured)
-          .slice(0, 3)
-          .map(({ node }) => (
-            <Li key={`${node.id}`}>
-              <H5 bold>
-                <a
-                  href={node.linkToEvent}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {node.eventTitle}
-                </a>
-              </H5>
-              {format(new Date(node.date), 'MMMM DD[,] dddd')}
-            </Li>
-          ))}
-      </ul>
+      <Padding top={42}>
+        <ul>
+          {events
+            .filter(n => !n.node.homepageFeatured)
+            .slice(0, 3)
+            .map(({ node }) => (
+              <Li fullWidth symmetrical key={`${node.id}`}>
+                <H5>
+                  <a
+                    href={node.linkToEvent}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {node.eventTitle}
+                  </a>
+                </H5>
+                {format(new Date(node.date), 'MMMM DD[,] dddd')}
+              </Li>
+            ))}
+        </ul>
+      </Padding>
     </Col>
-    <Col md={false} sm={12} xs={12}>
-      <EventsColumn xs={8}>
-        <H2 noTop>Upcoming events</H2>
+    <Col width={[1, 1, 1, 1, 0, 0, 0]}>
+      <EventsColumn>
+        <Padding bottom={2}>
+          <H2>Upcoming events</H2>
+        </Padding>
       </EventsColumn>
     </Col>
 
-    <Col md={8} xs={12}>
+    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
@@ -87,22 +91,22 @@ const Events = ({ events }) => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Get tickets
+                Visit the website
               </StyledLink>
             </EventWrapper>
             <Image image={node.posterImage} />
           </div>
         ))}
     </Col>
-    <Col md={false} sm={12} xs={12}>
-      <Padding top={3}>
+    <Col width={[1, 1, 1, 1, 0, 0, 0]}>
+      <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
         <ul>
           {events
             .filter(n => !n.node.homepageFeatured)
             .slice(0, 3)
             .map(({ node }) => (
-              <Li key={`${node.id}`}>
-                <H5 bold>
+              <Li fullWidth symmetrical key={`${node.id}`}>
+                <H5>
                   <a
                     href={node.linkToEvent}
                     target="_blank"

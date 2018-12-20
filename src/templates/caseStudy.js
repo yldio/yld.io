@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Row, Col, Grid } from 'react-styled-flexboxgrid'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
+import { Grid, Row, Col } from '../components/grid'
 import { H2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
@@ -36,26 +36,26 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
       >
         <html lang="en" />
       </Helmet>
-      <Grid className="grid">
+      <Grid>
         <Padding bottom={0.5}>
           <CaseStudyTop caseStudy={caseStudy} />
         </Padding>
         <Margin bottom={4} />
         <Row>
-          <Col xs={12} sm={9} md={7}>
+          <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
-              <Paragraph padded key={i}>
+              <Paragraph fullWidth padded key={i}>
                 {text}
               </Paragraph>
             ))}
           </Col>
         </Row>
       </Grid>
-      <GrayBackgroud topOffset={-250}>
-        <Grid className="grid">
+      <GrayBackgroud topOffset={-150}>
+        <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
-              <Col xs={12} md={10}>
+              <Col width={[1]}>
                 {body[1].map((text, i) => (
                   <div
                     key={i}
@@ -70,19 +70,19 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           </Padding>
           <Margin top={1} />
           <Row>
-            <Col xs={12} sm={9} md={7}>
+            <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
               {body[2].map((text, i) => (
-                <Paragraph padded key={i}>
+                <Paragraph fullWidth padded key={i}>
                   {text}
                 </Paragraph>
               ))}
             </Col>
-            <Col md={3} sm={12} mdOffset={1}>
+            <Col>
               {caseStudy.stats &&
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
-                    <Stat noTop>{stat.value}</Stat>
-                    <H5 bold>{stat.label}</H5>
+                    <Stat>{stat.value}</Stat>
+                    <H5>{stat.label}</H5>
                   </Margin>
                 ))}
             </Col>
@@ -90,11 +90,11 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           <Padding bottom={5} />
         </Grid>
       </GrayBackgroud>
-      <Grid className="grid">
+      <Grid>
         <Row>
-          <Col xs={12}>
+          <Col width={[1]}>
             <Padding top={4} bottom={2}>
-              <Paragraph>More of our work</Paragraph>
+              <Paragraph fullWidth>More of our work</Paragraph>
             </Padding>
           </Col>
         </Row>
