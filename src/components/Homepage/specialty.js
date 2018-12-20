@@ -84,7 +84,7 @@ const MasonryElement = styled.div`
 `
 
 const Specialty = ({ services }) => (
-  <Row pt={5}>
+  <Row pt={[3.5, 3.5, 3.5, 5]}>
     <MasonryContainer width={[1]}>
       {services.map((service, index, arr) => {
         return (
@@ -92,7 +92,10 @@ const Specialty = ({ services }) => (
             <MasonryElement key={service.id} index={index}>
               {(arr.length === 2 && index === 1) ||
               (arr.length !== 2 && index === 2) ? (
-                <Padding top={{ smallPhone: 0, smallTablet: 6.5 }} bottom={2} />
+                <Padding
+                  top={{ smallPhone: 0, smallTablet: 6.5 }}
+                  bottom={{ smallPhone: 0, smallTablet: 2 }}
+                />
               ) : null}
               <H2>{service.title}</H2>
               <Padding top={1.5} bottom={0.5}>
