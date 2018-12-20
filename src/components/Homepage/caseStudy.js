@@ -34,9 +34,14 @@ const SubHeading = styled(Paragraph)`
 `
 
 const TextWrapper = styled.div`
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
+    align-self: center;
     width: 431px;
   `}
+`
+
+const FlexCol = styled(Col)`
+  display: flex;
 `
 
 const CaseStudy = ({ caseStudy, subHeading }) => (
@@ -50,7 +55,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
     <ImageWrapper width={[1, 1, 1, 1, 1 / 2]}>
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
-    <Col width={[0, 0, 0, 0, 1 / 2]}>
+    <FlexCol width={[0, 0, 0, 0, 1 / 2]}>
       <TextWrapper>
         <SubHeading>{subHeading}</SubHeading>
         <H2 noTop>{caseStudy.title}</H2>
@@ -61,7 +66,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
           </StyledLink>
         </Padding>
       </TextWrapper>
-    </Col>
+    </FlexCol>
     <Col width={[1, 1, 1, 1, 0]}>
       <Margin top={3} />
       <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
