@@ -387,9 +387,7 @@ export const query = graphql`
           relatedCaseStudy {
             title
             slug
-            introSentence {
-              introSentence
-            }
+            introSentence
             posterImage {
               file {
                 url
