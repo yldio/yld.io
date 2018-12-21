@@ -22,6 +22,10 @@ const JobCommitment = styled.span`
   padding-top: ${remcalc(4)};
 `
 
+const JobLi = styled(Li)`
+  height: ${remcalc(123)};
+`
+
 const JobsComponent = () => (
   <Grid pb={3}>
     <Row>
@@ -31,7 +35,7 @@ const JobsComponent = () => (
         </Padding>
       </Col>
     </Row>
-    <Row pt={90}>
+    <Row pt={[3, 3, 3, 3, 90]}>
       <Jobs>
         {jobs =>
           Object.keys(jobs).map(key => (
@@ -43,7 +47,7 @@ const JobsComponent = () => (
 
               <JobContainer>
                 {jobs[key].slice(0, 3).map(job => (
-                  <Li key={`${job.id}`}>
+                  <JobLi key={`${job.id}`}>
                     <a
                       rel="noopener noreferrer"
                       href={job.hostedUrl}
@@ -52,7 +56,7 @@ const JobsComponent = () => (
                       {job.text.split(' - ')[0]}
                     </a>
                     <JobCommitment>{job.categories.commitment}</JobCommitment>
-                  </Li>
+                  </JobLi>
                 ))}
               </JobContainer>
             </Col>

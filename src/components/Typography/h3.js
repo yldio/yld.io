@@ -22,7 +22,7 @@ export default styled.h3`
     opacity: .5;
   `};
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     font-size: ${remcalc(32)};
     padding: ${remcalc(13)} 0 ${remcalc(11)} 0;
     line-height: ${remcalc(36)};

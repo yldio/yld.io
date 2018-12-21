@@ -9,6 +9,7 @@ import StyledLink from '../styledLink'
 import { H2, H5, H4, Paragraph } from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
+import eventIcon from './assets/homepage-event-icon.svg'
 
 const EventTitle = styled(H4)`
   padding-top: ${remcalc(2)} !important;
@@ -34,10 +35,20 @@ const EventsColumn = styled(Col)`
   padding-left: 0;
 `
 
+const FeaturedEvent = styled.section`
+  background-color: #${props => props.color};
+  ${breakpoint('smallTablet')`
+    margin-top: ${remcalc(175)}
+  `}
+`
+
 const Events = ({ events }) => (
   <Row>
     <Col width={[0, 0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
       <EventsColumn>
+        <Padding bottom={1}>
+          <img src={eventIcon} />
+        </Padding>
         <H2>Upcoming events</H2>
       </EventsColumn>
       <Padding top={42}>
@@ -65,6 +76,10 @@ const Events = ({ events }) => (
     <Col width={[1, 1, 1, 1, 0, 0, 0]}>
       <EventsColumn>
         <Padding bottom={2}>
+          <Padding bottom={1}>
+            <img src={eventIcon} />
+          </Padding>
+
           <H2>Upcoming events</H2>
         </Padding>
       </EventsColumn>
@@ -74,7 +89,7 @@ const Events = ({ events }) => (
       {events
         .filter(n => n.node.homepageFeatured)
         .map(({ node }) => (
-          <div key={node.id} style={{ background: `#${node.color}` }}>
+          <FeaturedEvent key={node.id} color={node.color}>
             <EventWrapper>
               <Paragraph muted reverse noMargin>
                 Featured
@@ -95,7 +110,7 @@ const Events = ({ events }) => (
               </StyledLink>
             </EventWrapper>
             <Image image={node.posterImage} />
-          </div>
+          </FeaturedEvent>
         ))}
     </Col>
     <Col width={[1, 1, 1, 1, 0, 0, 0]}>
