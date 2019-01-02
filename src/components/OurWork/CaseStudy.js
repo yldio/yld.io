@@ -56,7 +56,7 @@ const CaseStudy = ({ caseStudy }) => {
         <TitleSection speciality={speciality} title={title} />
       </Col>
       <FlexCol width={1}>
-        <Col width={[1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
+        <Col px={[0, 0, 0, 0, 0, 0]} width={[1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
           <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
             <Image alt={posterImage.title} image={posterImage} />
           </Padding>
