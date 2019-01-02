@@ -39,13 +39,6 @@ const InfoSection = ({ introSentence, title, slug }) => (
   </Fragment>
 )
 
-const TitleAndInfoSection = ({ speciality, title, introSentence, slug }) => (
-  <Fragment>
-    <TitleSection speciality={speciality} title={title} />
-    <InfoSection introSentence={introSentence} slug={slug} />
-  </Fragment>
-)
-
 const CaseStudy = ({ caseStudy }) => {
   const { title, speciality, posterImage, slug } = caseStudy
   const introSentence = getIntroSentence(caseStudy)
@@ -62,12 +55,8 @@ const CaseStudy = ({ caseStudy }) => {
           </Padding>
         </Col>
         <Col width={[0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}>
-          <TitleAndInfoSection
-            speciality={speciality}
-            title={title}
-            introSentence={introSentence}
-            slug={slug}
-          />
+          <TitleSection speciality={speciality} title={title} />
+          <InfoSection introSentence={introSentence} slug={slug} />
         </Col>
       </FlexCol>
       <Col width={[1, 1, 1, 0, 0, 0]}>
