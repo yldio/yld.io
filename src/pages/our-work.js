@@ -48,7 +48,7 @@ const OurWork = ({ data }) => {
       <GreyBackground>
         <Grid>
           <Row>
-            <Col width={[1, 1, 1, 11 / 12, 9 / 12, 9 / 12]}>
+            <Col width={[1, 1, 1, 1, 11 / 12, 9 / 12, 9 / 12]}>
               <Padding
                 top={{
                   smallPhone: 3.5,

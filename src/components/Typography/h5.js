@@ -9,10 +9,6 @@ export default styled.h5`
   line-height: ${remcalc(24)};
   font-weight: 700;
 
-  ${is('notBold')`
-    font-weight: 400;
-  `}
-
   ${is('noWrap')`
     white-space: nowrap;
   `}
