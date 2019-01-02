@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
@@ -7,16 +8,30 @@ import Image from '../Common/Image'
 import { H4, Paragraph } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
+const Speciality = styled(Paragraph).attrs({ muted: true })`
+  // overwrite default padding on Paragraph component
+  padding-bottom: 0;
+`
+
 const Title = H4.withComponent('h2')
+
+const IntroSentence = styled(Paragraph).attrs({ fullWidth: true })`
+  padding-bottom: 6px;
+  ${breakpoint('tablet')`
+    padding-bottom: 12px;
+  `}
+`
 
 const FlexCol = styled(Col)`
   display: flex;
-  align-items: center;
+  ${breakpoint('tablet')`
+    align-items: center;
+  `}
 `
 
 const TitleSection = ({ speciality, title }) => (
   <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-    <Paragraph muted>{speciality}</Paragraph>
+    <Speciality>{speciality}</Speciality>
     <Title>{title}</Title>
   </Padding>
 )
@@ -24,7 +39,7 @@ const TitleSection = ({ speciality, title }) => (
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
     <Padding top={1}>
-      <Paragraph fullWidth>{introSentence}</Paragraph>
+      <IntroSentence fullWidth>{introSentence}</IntroSentence>
     </Padding>
     <StyledLink
       aria-label={`Learn more about ${title}`}
