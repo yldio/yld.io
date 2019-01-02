@@ -1,20 +1,16 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 
 import Layout from '../components/layout'
+import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
 import { H1, H3 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
 const SubHeading = H3.withComponent('h2')
-
-const GreyDiv = styled.div`
-  background-color: ${props => props.theme.colors.greyBg};
-`
 
 const OurWork = ({ data }) => {
   const { site, allContentfulCaseStudy, allContentfulGenericCaseStudy } = data
@@ -35,7 +31,7 @@ const OurWork = ({ data }) => {
   const page = allContentfulCaseStudy.edges[0].node
 
   return (
-    <Layout>
+    <Layout backgroundColor="grey">
       <Helmet
         title={`${site.siteMetadata.title}  ${
           page.title ? '- ' + page.title : ''
@@ -49,7 +45,7 @@ const OurWork = ({ data }) => {
       >
         <html lang="en" />
       </Helmet>
-      <GreyDiv>
+      <GreyBackground>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 11 / 12, 9 / 12, 9 / 12]}>
@@ -76,7 +72,7 @@ const OurWork = ({ data }) => {
             </Col>
           </Row>
         </Grid>
-      </GreyDiv>
+      </GreyBackground>
       <Grid>
         {caseStudies.map((caseStudy, index) => {
           const isFirstCaseStudy = index === 0
