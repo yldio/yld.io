@@ -12,22 +12,24 @@ import CaseStudy from '../components/OurWork/CaseStudy'
 
 const SubHeading = H3.withComponent('h2')
 
+const formatCaseStudies = caseStudies =>
+  caseStudies.edges.map(caseStudyObject => {
+    const caseStudy = caseStudyObject.node
+    return {
+      ...caseStudy,
+      services: caseStudy.services
+        .filter(service => service.title)
+        .map(service => service.title)
+    }
+  })
+
 const OurWork = ({ data }) => {
   const { site, allContentfulCaseStudy, allContentfulGenericCaseStudy } = data
-  // TODO: get 'services' from contentful
-  const engineeringCaseStudies = allContentfulCaseStudy.edges.map(caseStudy => {
-    const caseStudyContent = caseStudy.node
-    caseStudyContent['services'] = 'Engineering'
-    return caseStudyContent
-  })
-  const designCaseStudies = allContentfulGenericCaseStudy.edges.map(
-    caseStudy => {
-      const caseStudyContent = caseStudy.node
-      caseStudyContent['services'] = 'Design'
-      return caseStudyContent
-    }
-  )
+
+  const engineeringCaseStudies = formatCaseStudies(allContentfulCaseStudy)
+  const designCaseStudies = formatCaseStudies(allContentfulGenericCaseStudy)
   const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
+
   const page = allContentfulCaseStudy.edges[0].node
 
   return (
@@ -131,6 +133,11 @@ const OurWorkPage = props => (
               title
               seoTitle
               seoMetaDescription
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
               introSentence
               posterImage {
                 title
@@ -152,6 +159,11 @@ const OurWorkPage = props => (
               title
               seoTitle
               seoMetaDescription
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
               introSentence {
                 introSentence
               }

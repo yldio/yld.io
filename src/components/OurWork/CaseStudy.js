@@ -29,12 +29,18 @@ const FlexCol = styled(Col)`
   `}
 `
 
-const TitleSection = ({ services, title }) => (
-  <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-    <Services>{services}</Services>
-    <Title>{title}</Title>
-  </Padding>
-)
+const TitleSection = ({ services, title }) => {
+  const commaSeparatedServices = [
+    services.slice(0, -1).join(', '),
+    services.slice(-1)[0]
+  ].join(services.length < 2 ? '' : ' & ')
+  return (
+    <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
+      <Services>{commaSeparatedServices}</Services>
+      <Title>{title}</Title>
+    </Padding>
+  )
+}
 
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
