@@ -14,16 +14,16 @@ const SubHeading = H3.withComponent('h2')
 
 const OurWork = ({ data }) => {
   const { site, allContentfulCaseStudy, allContentfulGenericCaseStudy } = data
-  // TODO: put 'speciality' into contentful
+  // TODO: get 'services' from contentful
   const engineeringCaseStudies = allContentfulCaseStudy.edges.map(caseStudy => {
     const caseStudyContent = caseStudy.node
-    caseStudyContent['speciality'] = 'Engineering'
+    caseStudyContent['services'] = 'Engineering'
     return caseStudyContent
   })
   const designCaseStudies = allContentfulGenericCaseStudy.edges.map(
     caseStudy => {
       const caseStudyContent = caseStudy.node
-      caseStudyContent['speciality'] = 'Design'
+      caseStudyContent['services'] = 'Design'
       return caseStudyContent
     }
   )

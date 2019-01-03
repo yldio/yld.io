@@ -8,7 +8,7 @@ import Image from '../Common/Image'
 import { H4, Paragraph } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
-const Speciality = styled(Paragraph).attrs({ muted: true })`
+const Services = styled(Paragraph).attrs({ muted: true })`
   // overwrite default padding on Paragraph component
   padding-bottom: 0;
 `
@@ -29,9 +29,9 @@ const FlexCol = styled(Col)`
   `}
 `
 
-const TitleSection = ({ speciality, title }) => (
+const TitleSection = ({ services, title }) => (
   <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-    <Speciality>{speciality}</Speciality>
+    <Services>{services}</Services>
     <Title>{title}</Title>
   </Padding>
 )
@@ -51,13 +51,13 @@ const InfoSection = ({ introSentence, title, slug }) => (
 )
 
 const CaseStudy = ({ caseStudy }) => {
-  const { title, speciality, posterImage, slug } = caseStudy
+  const { title, services, posterImage, slug } = caseStudy
   const introSentence = getIntroSentence(caseStudy)
 
   return (
     <Row>
       <Col width={[1, 1, 1, 1, 0, 0, 0]}>
-        <TitleSection speciality={speciality} title={title} />
+        <TitleSection services={services} title={title} />
       </Col>
       <FlexCol width={1}>
         <Col px={[0]} width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
@@ -66,7 +66,7 @@ const CaseStudy = ({ caseStudy }) => {
           </Padding>
         </Col>
         <Col pr={[0]} width={[0, 0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}>
-          <TitleSection speciality={speciality} title={title} />
+          <TitleSection services={services} title={title} />
           <InfoSection introSentence={introSentence} slug={slug} />
         </Col>
       </FlexCol>
