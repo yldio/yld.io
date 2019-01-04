@@ -23,7 +23,7 @@ const linkStyles = css`
       transition: all 300ms ease-out;
       width: 0;
       opacity: 0;
-      background: ${props => props.theme.colors.grayBg};
+      background: ${props => props.theme.colors.greyBG};
       z-index: -1;
     }
 

@@ -4,7 +4,7 @@ import is from 'styled-is'
 import breakpoint from 'styled-components-breakpoint'
 
 // topOffset prop should be a negative number for overlapping
-// the gray background
+// the grey background
 
 const afterStyles = css`
   content: ' ';
@@ -19,7 +19,7 @@ const afterStyles = css`
 const PADDING = 50
 
 export default styled.section`
-  background: ${props => props.theme.colors.grayBg};
+  background: ${props => props.theme.colors.greyBG};
 
   z-index: 1;
   position: relative;

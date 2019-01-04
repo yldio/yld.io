@@ -17,7 +17,7 @@ export default styled.li`
     content: '';
     width: ${remcalc(60)};
     height: ${remcalc(1)};
-    background: ${props => props.theme.colors.gray};
+    background: ${props => props.theme.colors.grey};
     bottom: 0;
     display: block;
     position: absolute;
@@ -30,6 +30,6 @@ export default styled.li`
 
   & span {
     display: block;
-    color: ${props => props.theme.colors.lightGray};
+    color: ${props => props.theme.colors.lightGrey};
   }
 `

@@ -12,7 +12,7 @@ import Events from '../components/Homepage/events'
 import Jobs from '../components/Homepage/jobs'
 import CaseStudy from '../components/Homepage/caseStudy'
 import Specialty from '../components/Homepage/specialty'
-import GrayBackground from '../components/GrayBG'
+import GreyBackground from '../components/greyBG'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }
@@ -35,7 +35,7 @@ const IndexPage = ({
       </Padding>
       <Padding bottom={{ smallPhone: 0, desktop: 2 }} />
     </Grid>
-    <GrayBackground>
+    <GreyBackground>
       <Grid>
         <Padding top={{ smallPhone: 2 }} />
         <Padding top={{ smallPhone: 4, smallTablet: 5, desktop: 6 }} bottom={3}>
@@ -44,17 +44,17 @@ const IndexPage = ({
           <Companies companies={content.companies} />
         </Padding>
       </Grid>
-    </GrayBackground>
+    </GreyBackground>
     <Grid>
       <Specialty services={content.services} />
     </Grid>
-    <GrayBackground noTop>
+    <GreyBackground noTop>
       <Grid pt={4}>
         <Padding bottom={{ smallPhone: 3.5, smallTablet: 3.5 }}>
           <Events events={events.edges} />
         </Padding>
       </Grid>
-    </GrayBackground>
+    </GreyBackground>
     <Grid>
       <Padding
         top={{ smallPhone: 3, smallTablet: 4 }}
@@ -63,10 +63,10 @@ const IndexPage = ({
         <Blog />
       </Padding>
     </Grid>
-    <GrayBackground noTop>
+    <GreyBackground noTop>
       <Jobs />
       <Padding bottom={{ smallPhone: 1.5, smallTablet: 0 }} />
-    </GrayBackground>
+    </GreyBackground>
   </Layout>
 )
 
