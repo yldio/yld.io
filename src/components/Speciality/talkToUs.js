@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GreyBackground from '../greyBG'
+import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
 const TalkToUsSection = ({ title, contactText }) => (
