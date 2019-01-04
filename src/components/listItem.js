@@ -17,7 +17,7 @@ export default styled.li`
     content: '';
     width: ${remcalc(60)};
     height: ${remcalc(1)};
-    background: ${props => props.theme.colors.grey};
+    background: ${props => props.theme.colors.gray};
     bottom: 0;
     display: block;
     position: absolute;

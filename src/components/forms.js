@@ -31,7 +31,7 @@ export const Input = styled.input`
   width: 100%;
   line-height: ${remcalc(24)};
   font-size: ${remcalc(18)};
-  background: ${props => props.theme.colors.greyBg};
+  background: ${props => props.theme.colors.grayBg};
   box-sizing: border-box;
 `
 

@@ -19,7 +19,7 @@ const afterStyles = css`
 const PADDING = 50
 
 export default styled.section`
-  background: ${props => props.theme.colors.greyBg};
+  background: ${props => props.theme.colors.grayBg};
 
   z-index: 1;
   position: relative;

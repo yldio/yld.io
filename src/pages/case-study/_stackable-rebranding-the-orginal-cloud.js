@@ -40,7 +40,7 @@ const Type1Wrapper = styled.div`
   ${wrapperStyles};
   justify-content: 'flex-end';
   padding-right: ${remcalc(60)};
-  background: ${props => props.theme.colors.greyBg};
+  background: ${props => props.theme.colors.grayBg};
 `
 
 const Type2Wrapper = styled.div`
