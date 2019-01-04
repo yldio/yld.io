@@ -10,7 +10,7 @@ import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
-import GreyBackground from '../components/greyBG'
+import GreyBackground from '../components/GreyBG'
 
 const Stat = styled(H2)`
   font-size: ${remcalc(72)};

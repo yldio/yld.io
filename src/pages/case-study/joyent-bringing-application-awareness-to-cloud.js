@@ -11,7 +11,7 @@ import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudy from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
-import GreyBackground from '../../components/greyBG'
+import GreyBackground from '../../components/GreyBG'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 

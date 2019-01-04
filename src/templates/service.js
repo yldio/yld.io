@@ -11,7 +11,7 @@ import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
-import GreyBackground from '../components/greyBG'
+import GreyBackground from '../components/GreyBG'
 
 const Title = styled(H3.withComponent('h1'))`
   font-weight: normal;

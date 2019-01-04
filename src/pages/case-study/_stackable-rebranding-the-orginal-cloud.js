@@ -11,7 +11,7 @@ import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
 
 import Layout from '../../components/layout'
-import GreyBackground from '../../components/greyBG'
+import GreyBackground from '../../components/GreyBG'
 import iterations from './../../images/case-study/Logo-Iterations.png'
 import meaning from './../../images/case-study/Logo-Meaning@2x.png'
 import logoImage from './../../images/case-study/Logo-on-image.jpg'
