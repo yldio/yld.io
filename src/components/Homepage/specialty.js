@@ -61,8 +61,6 @@ const MasonryContainer = styled(Col)`
   ${breakpoint('smallTablet')`
     display: block;
     column-count: 2;
-    column-gap: 0;
-    column-fill: auto;
     column-gap: 49px;
   `}
 `
