@@ -61,8 +61,6 @@ const MasonryContainer = styled(Col)`
   ${breakpoint('smallTablet')`
     display: block;
     column-count: 2;
-    column-gap: 0;
-    column-fill: auto;
     column-gap: 49px;
   `}
 `
@@ -83,7 +81,7 @@ const MasonryElement = styled.div`
   `};
 `
 
-const Specialty = ({ services }) => (
+const Services = ({ services }) => (
   <Row pt={[3.5, 3.5, 3.5, 5]}>
     <MasonryContainer width={[1]}>
       {services.map((service, index, arr) => {
@@ -153,4 +151,4 @@ const Specialty = ({ services }) => (
   </Row>
 )
 
-export default Specialty
+export default Services
