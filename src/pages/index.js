@@ -11,7 +11,7 @@ import Blog from '../components/Homepage/blog'
 import Events from '../components/Homepage/events'
 import Jobs from '../components/Homepage/jobs'
 import CaseStudy from '../components/Homepage/caseStudy'
-import Specialty from '../components/Homepage/specialty'
+import Services from '../components/Homepage/services'
 import GrayBackground from '../components/GrayBG'
 
 const IndexPage = ({
@@ -46,7 +46,7 @@ const IndexPage = ({
       </Grid>
     </GrayBackground>
     <Grid>
-      <Specialty services={content.services} />
+      <Services services={content.services} />
     </Grid>
     <GrayBackground noTop offsetBottom>
       <Grid pt={4}>
