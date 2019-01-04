@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
-import is from 'styled-is'
+import { isNot } from 'styled-is'
 import breakpoint from 'styled-components-breakpoint'
 
 // topOffset prop should be a negative number for overlapping
@@ -50,8 +50,7 @@ export default styled.section`
   `}
 
 
-  ${is('noTop')`
-    margin-top: 0;
+  ${isNot('topMargin')`
     padding-bottom: ${remcalc(PADDING)};
     &:after {
       content: none;
@@ -63,7 +62,7 @@ export default styled.section`
       top: ${({ topOffset }) => remcalc(topOffset || -PADDING)};
       position: relative;
 
-      ${is('noTop')`
+      ${isNot('topMargin')`
         top: 0;
       `};
     `}
@@ -72,7 +71,7 @@ export default styled.section`
       top: ${({ topOffset }) => remcalc(topOffset * 2 || -PADDING)};
       position: relative;
 
-      ${is('noTop')`
+      ${isNot('topMargin')`
         top: 0;
       `};
     `}

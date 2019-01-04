@@ -59,7 +59,7 @@ const Service = ({ data }) => {
         </Row>
       </Grid>
 
-      <GreyBackground noTop>
+      <GreyBackground>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
@@ -75,14 +75,14 @@ const Service = ({ data }) => {
           </Row>
         </Grid>
       </GreyBackground>
-      <GreyBackground noTop style={{ background: '#090329' }}>
+      <GreyBackground style={{ background: '#090329' }}>
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
           image={service.graphic}
         />
       </GreyBackground>
-      <GreyBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallTablet: 3.5 }}

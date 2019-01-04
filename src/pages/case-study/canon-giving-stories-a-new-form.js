@@ -142,7 +142,7 @@ const IndexPage = ({
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
 
-      <GreyBackground noTop>
+      <GreyBackground>
         <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
@@ -213,7 +213,7 @@ const IndexPage = ({
         <Video />
       </MobileOnly>
 
-      <GreyBackground topOffset={-150}>
+      <GreyBackground topMargin topOffset={-150}>
         <NoMobile>
           <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>

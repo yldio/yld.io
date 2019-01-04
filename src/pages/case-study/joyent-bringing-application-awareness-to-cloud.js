@@ -101,7 +101,7 @@ const IndexPage = ({
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
-      <GreyBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 0, tablet: 5 }}
@@ -180,7 +180,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <GreyBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}
@@ -230,7 +230,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <GreyBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}

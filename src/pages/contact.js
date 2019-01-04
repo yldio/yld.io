@@ -15,7 +15,7 @@ import {
   Fieldset,
   Field
 } from '../components/forms'
-import greyBG from '../components/greyBG'
+import GreyBG from '../components/GreyBG'
 
 const checkboxes = [
   { name: 'engineering', label: 'Engineering services' },
@@ -83,7 +83,7 @@ class ContactUs extends Component {
     const page = this.props.data.allContentfulPage.edges[0].node
     return (
       <Layout>
-        <greyBG>
+        <GreyBG topMargin>
           <Helmet
             title={`${site.siteMetadata.title}  ${
               page.title ? '- ' + page.title : ''
@@ -199,7 +199,7 @@ class ContactUs extends Component {
             )}
             <Padding bottom={5} />
           </Grid>
-        </greyBG>
+        </GreyBG>
       </Layout>
     )
   }

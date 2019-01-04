@@ -18,7 +18,7 @@ const TrainingStage = ({ title, body, icon }) => (
 )
 
 const TrainingSection = ({ specialty }) => (
-  <GreyBackground noTop>
+  <GreyBackground>
     <Padding top={4} bottom={6}>
       <Grid>
         <Row>

@@ -102,7 +102,7 @@ const IndexPage = ({
           </Row>
         </Margin>
       </Grid>
-      <GreyBackground>
+      <GreyBackground topMargin>
         <Padding top={6} vertical={3}>
           <Grid>
             <Row>
@@ -154,7 +154,7 @@ const IndexPage = ({
         </Padding>
       </Grid>
 
-      <GreyBackground topOffset={-232}>
+      <GreyBackground topMargin topOffset={-232}>
         <Grid>
           <Row>
             <Col width={[1]}>
@@ -179,7 +179,7 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GreyBackground>
-      <GreyBackground>
+      <GreyBackground topMargin>
         <Flex>
           <Type1Wrapper>
             <Type1 src={type1} alt="Example of type" />
@@ -263,7 +263,7 @@ const IndexPage = ({
           </Margin>
         </Padding>
       </Grid>
-      <GreyBackground>
+      <GreyBackground topMargin>
         <Grid>
           <Padding top={60} bottom={5}>
             <Row>

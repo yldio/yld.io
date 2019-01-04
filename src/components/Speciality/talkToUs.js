@@ -6,7 +6,7 @@ import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
 const TalkToUsSection = ({ title, contactText }) => (
-  <GreyBackground noTop>
+  <GreyBackground>
     <Grid>
       <Padding top={5} bottom={5}>
         <Row>

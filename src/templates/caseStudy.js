@@ -51,7 +51,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           </Col>
         </Row>
       </Grid>
-      <GreyBackground topOffset={-150}>
+      <GreyBackground topMargin topOffset={-150}>
         <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">

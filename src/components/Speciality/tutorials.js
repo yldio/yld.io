@@ -16,7 +16,7 @@ const TutorialsSection = ({ specialty }) =>
   specialty.externalResources.filter(
     externalResource => externalResource.type === `Tutorial`
   ).length > 0 ? (
-    <GreyBackground noTop>
+    <GreyBackground>
       <TutorialsGrid>
         <Padding top={4} bottom={5}>
           <Row>
