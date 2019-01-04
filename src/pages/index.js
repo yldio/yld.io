@@ -48,7 +48,7 @@ const IndexPage = ({
     <Grid>
       <Specialty services={content.services} />
     </Grid>
-    <GreyBackground>
+    <GreyBackground topMargin>
       <Grid pt={4}>
         <Padding bottom={{ smallPhone: 3.5, smallTablet: 3.5 }}>
           <Events events={events.edges} />
