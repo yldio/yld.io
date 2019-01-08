@@ -3,11 +3,13 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import is from 'styled-is'
 import { graphql } from 'gatsby'
+import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 
 import { H2, Paragraph } from '../components/Typography'
 import Layout from '../components/layout'
+import StyledLink from '../components/styledLink'
 import SEOText from '../components/Homepage/seoText'
 import CaseStudy from '../components/Homepage/caseStudy'
 import GrayBackground from '../components/GreyBG'
@@ -30,6 +32,10 @@ const IndexPage = ({ data: { contentfulTrainingPage: content, site } }) => {
     content.trainingApproachContent2.trainingApproachContent2,
     content.trainingApproachContent3.trainingApproachContent3
   ]
+  const courseCategories = Array.from(
+    new Set(content.courses.map(c => c.category))
+  )
+
   return (
     <Layout>
       <Helmet
@@ -131,6 +137,24 @@ const IndexPage = ({ data: { contentfulTrainingPage: content, site } }) => {
               <H2>Course catalog</H2>
             </Padding>
           </Col>
+          {courseCategories.map((cat, i) => (
+            <Col width={[1, 1, 1, 1, 1 / 2]} key={i}>
+              <Padding bottom={4}>
+                <Padding bottom={1}>
+                  <H2>{cat}</H2>
+                </Padding>
+                <Flex column alignStart>
+                  {content.courses
+                    .filter(a => a.category === cat)
+                    .map((course, id) => (
+                      <StyledLink key={id}>
+                        <Paragraph>{course.name}</Paragraph>
+                      </StyledLink>
+                    ))}
+                </Flex>
+              </Padding>
+            </Col>
+          ))}
         </Row>
       </Grid>
       <TalkToUsSection
@@ -210,6 +234,26 @@ export const query = graphql`
           title
           file {
             url
+          }
+        }
+      }
+      courses {
+        name
+        technology
+        level
+        category
+        preRequisites
+        preRequisitesCourses
+        content {
+          content {
+            content {
+              content {
+                content {
+                  value
+                  nodeType
+                }
+              }
+            }
           }
         }
       }
