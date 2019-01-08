@@ -2,11 +2,11 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SmallerH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GrayBackground from '../GrayBG'
+import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
 const TalkToUsSection = ({ title, contactText }) => (
-  <GrayBackground noTop>
+  <GreyBackground>
     <Grid>
       <Padding top={5} bottom={5}>
         <Row>
@@ -24,7 +24,7 @@ const TalkToUsSection = ({ title, contactText }) => (
       </Padding>
       <Padding bottom={3} />
     </Grid>
-  </GrayBackground>
+  </GreyBackground>
 )
 
 export default TalkToUsSection

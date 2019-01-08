@@ -16,11 +16,6 @@ const ImageWrapper = styled(Col)`
 `
 
 const ContentWrapper = styled(Col)`
-<<<<<<< HEAD
-=======
-  margin-left: auto;
-
->>>>>>> de0584bd80cd61e5feee7825ba26a2fa2f0d60e9
   ${breakpoint('smallTablet')`
     padding-left: 0;
   `}

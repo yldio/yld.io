@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GrayBackground from '../GrayBG'
+import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
 const TrainingStage = ({ title, body, icon }) => (
@@ -18,7 +18,7 @@ const TrainingStage = ({ title, body, icon }) => (
 )
 
 const TrainingSection = ({ speciality }) => (
-  <GrayBackground noTop>
+  <GreyBackground>
     <Padding top={4} bottom={6}>
       <Grid>
         <Row>
@@ -53,7 +53,7 @@ const TrainingSection = ({ speciality }) => (
         </Row>
       </Grid>
     </Padding>
-  </GrayBackground>
+  </GreyBackground>
 )
 
 export default TrainingSection

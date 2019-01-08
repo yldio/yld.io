@@ -11,7 +11,7 @@ import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudy from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
-import GrayBackground from '../../components/GrayBG'
+import GreyBackground from '../../components/GreyBG'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 
@@ -101,7 +101,7 @@ const IndexPage = ({
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
-      <GrayBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 0, tablet: 5 }}
@@ -126,7 +126,7 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
-      </GrayBackground>
+      </GreyBackground>
       <Padding
         top={{ smallPhone: 3, tablet: 4 }}
         bottom={{ smallPhone: 3.5, tablet: 5 }}
@@ -180,7 +180,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <GrayBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}
@@ -206,7 +206,7 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
-      </GrayBackground>
+      </GreyBackground>
       <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
         <Grid>
           <Row>
@@ -230,7 +230,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <GrayBackground noTop>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3.5, tablet: 5 }}
@@ -260,7 +260,7 @@ const IndexPage = ({
             </Padding>
           </Grid>
         </Padding>
-      </GrayBackground>
+      </GreyBackground>
       <Padding
         top={{ smallPhone: 3, tablet: 4 }}
         bottom={{ smallPhone: 3.5, tablet: 5 }}

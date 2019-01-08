@@ -10,7 +10,7 @@ import CaseStudyBottom from '../components/Homepage/caseStudy'
 import CaseStudyTop from '../components/Common/topCaseStudy'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
-import GrayBackgroud from '../components/GrayBG'
+import GreyBackground from '../components/GreyBG'
 
 const Stat = styled(H2)`
   font-size: ${remcalc(72)};
@@ -51,7 +51,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           </Col>
         </Row>
       </Grid>
-      <GrayBackgroud topOffset={-150}>
+      <GreyBackground topMargin topOffset={-150}>
         <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
@@ -89,7 +89,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
           </Row>
           <Padding bottom={5} />
         </Grid>
-      </GrayBackgroud>
+      </GreyBackground>
       <Grid>
         <Row>
           <Col width={[1]}>

@@ -11,7 +11,7 @@ import Layout from '../components/layout'
 import CaseStudy from '../components/Homepage/caseStudy'
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
-import GrayBackground from '../components/GrayBG'
+import GreyBackground from '../components/GreyBG'
 
 const Title = styled(H3.withComponent('h1'))`
   font-weight: normal;
@@ -59,7 +59,7 @@ const Service = ({ data }) => {
         </Row>
       </Grid>
 
-      <GrayBackground noTop>
+      <GreyBackground>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
@@ -74,15 +74,15 @@ const Service = ({ data }) => {
             </Col>
           </Row>
         </Grid>
-      </GrayBackground>
-      <GrayBackground noTop style={{ background: '#090329' }}>
+      </GreyBackground>
+      <GreyBackground style={{ background: '#090329' }}>
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
           image={service.graphic}
         />
-      </GrayBackground>
-      <GrayBackground noTop>
+      </GreyBackground>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallTablet: 3.5 }}
@@ -125,7 +125,7 @@ const Service = ({ data }) => {
             </Row>
           </Grid>
         </Padding>
-      </GrayBackground>
+      </GreyBackground>
       <Grid>
         {service.bottomCaseStudy ? (
           <Padding

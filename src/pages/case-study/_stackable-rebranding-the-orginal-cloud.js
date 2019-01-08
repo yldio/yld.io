@@ -11,7 +11,7 @@ import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
 
 import Layout from '../../components/layout'
-import GrayBackground from '../../components/GrayBG'
+import GreyBackground from '../../components/GreyBG'
 import iterations from './../../images/case-study/Logo-Iterations.png'
 import meaning from './../../images/case-study/Logo-Meaning@2x.png'
 import logoImage from './../../images/case-study/Logo-on-image.jpg'
@@ -40,7 +40,7 @@ const Type1Wrapper = styled.div`
   ${wrapperStyles};
   justify-content: 'flex-end';
   padding-right: ${remcalc(60)};
-  background: ${props => props.theme.colors.greyBg};
+  background: ${props => props.theme.colors.greyBG};
 `
 
 const Type2Wrapper = styled.div`
@@ -102,7 +102,7 @@ const IndexPage = ({
           </Row>
         </Margin>
       </Grid>
-      <GrayBackground>
+      <GreyBackground topMargin>
         <Padding top={6} vertical={3}>
           <Grid>
             <Row>
@@ -127,7 +127,7 @@ const IndexPage = ({
             </Row>
           </Grid>
         </Padding>
-      </GrayBackground>
+      </GreyBackground>
       <div style={{ background: '#191933' }}>
         <Grid>
           <Row>
@@ -154,7 +154,7 @@ const IndexPage = ({
         </Padding>
       </Grid>
 
-      <GrayBackground topOffset={-232}>
+      <GreyBackground topMargin topOffset={-232}>
         <Grid>
           <Row>
             <Col width={[1]}>
@@ -178,8 +178,8 @@ const IndexPage = ({
             </Row>
           </Padding>
         </Grid>
-      </GrayBackground>
-      <GrayBackground>
+      </GreyBackground>
+      <GreyBackground topMargin>
         <Flex>
           <Type1Wrapper>
             <Type1 src={type1} alt="Example of type" />
@@ -188,7 +188,7 @@ const IndexPage = ({
             <Type2 src={type2} alt="Example of type" />
           </Type2Wrapper>
         </Flex>
-      </GrayBackground>
+      </GreyBackground>
 
       <Code>
         <Grid>
@@ -263,7 +263,7 @@ const IndexPage = ({
           </Margin>
         </Padding>
       </Grid>
-      <GrayBackground>
+      <GreyBackground topMargin>
         <Grid>
           <Padding top={60} bottom={5}>
             <Row>
@@ -287,7 +287,7 @@ const IndexPage = ({
             </Margin>
           </Padding>
         </Grid>
-      </GrayBackground>
+      </GreyBackground>
       <Padding top={4} bottom={60}>
         <Grid>
           <Row>
