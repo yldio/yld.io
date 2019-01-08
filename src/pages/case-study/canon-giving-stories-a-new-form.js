@@ -12,7 +12,7 @@ import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
 import CaseStudyBottom from '../../components/Homepage/caseStudy'
 import Layout from '../../components/layout'
-import GrayBackground from '../../components/GrayBG'
+import GreyBackground from '../../components/GreyBG'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
@@ -144,7 +144,7 @@ const IndexPage = ({
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
 
-      <GrayBackground noTop>
+      <GreyBackground>
         <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
@@ -183,7 +183,7 @@ const IndexPage = ({
             />
           </GradientGrid>
         </NoMobile>
-      </GrayBackground>
+      </GreyBackground>
 
       <MobileOnly tablet>
         <GradientBackground>
@@ -215,7 +215,7 @@ const IndexPage = ({
         <Video />
       </MobileOnly>
 
-      <GrayBackground topOffset={-150}>
+      <GreyBackground topMargin topOffset={-150}>
         <NoMobile>
           <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>
@@ -246,7 +246,7 @@ const IndexPage = ({
             </Row>
           </Padding>
         </Grid>
-      </GrayBackground>
+      </GreyBackground>
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Row>

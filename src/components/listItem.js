@@ -30,6 +30,6 @@ export default styled.li`
 
   & span {
     display: block;
-    color: ${props => props.theme.colors.lightGray};
+    color: ${props => props.theme.colors.lightGrey};
   }
 `

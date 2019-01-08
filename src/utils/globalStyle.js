@@ -43,15 +43,15 @@ export default createGlobalStyle`
   }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: ${props => props.theme.colors.lightGray};
+      color: ${props => props.theme.colors.lightGrey};
       font-style: italic;
     }
     ::-moz-placeholder { /* Firefox 19+ */
-      color: ${props => props.theme.colors.lightGray};
+      color: ${props => props.theme.colors.lightGrey};
       font-style: italic;
     }
     :-ms-input-placeholder { /* IE 10+ */
-      color: ${props => props.theme.colors.lightGray};
+      color: ${props => props.theme.colors.lightGrey};
       font-style: italic;
     }
 

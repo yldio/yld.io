@@ -31,7 +31,7 @@ exports[`Storyshots Form Field 1`] = `
   className="sc-gqjmRU gIbBcD"
 >
   <input
-    className="sc-htoDjs eTRoOK"
+    className="sc-htoDjs jgVuvd"
     placeholder="test"
     type="text"
   />
@@ -43,7 +43,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   className="sc-VigVT iARuFr"
 >
   <input
-    className="sc-htoDjs eTRoOK"
+    className="sc-htoDjs jgVuvd"
     placeholder="test"
     type="text"
   />
@@ -52,7 +52,7 @@ exports[`Storyshots Form Fieldset 1`] = `
 
 exports[`Storyshots Form Input 1`] = `
 <input
-  className="sc-htoDjs eTRoOK"
+  className="sc-htoDjs jgVuvd"
   placeholder="test"
   type="text"
 />
@@ -68,7 +68,7 @@ exports[`Storyshots Form Label 1`] = `
 
 exports[`Storyshots Form Textarea 1`] = `
 <textarea
-  className="sc-iwsKbI dutvOg"
+  className="sc-iwsKbI dpOqPg"
   placeholder="test"
 />
 `;

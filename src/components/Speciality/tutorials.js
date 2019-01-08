@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import GrayBackground from '../GrayBG'
+import GreyBackground from '../GreyBG'
 import { SmallerH2, H5, Paragraph } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
@@ -16,7 +16,7 @@ const TutorialsSection = ({ speciality }) =>
   speciality.externalResources.filter(
     externalResource => externalResource.type === `Tutorial`
   ).length > 0 ? (
-    <GrayBackground noTop>
+    <GreyBackground>
       <TutorialsGrid>
         <Padding top={4} bottom={5}>
           <Row>
@@ -57,7 +57,7 @@ const TutorialsSection = ({ speciality }) =>
           </Row>
         </Padding>
       </TutorialsGrid>
-    </GrayBackground>
+    </GreyBackground>
   ) : null
 
 export default TutorialsSection
