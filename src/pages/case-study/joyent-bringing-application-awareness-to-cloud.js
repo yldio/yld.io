@@ -28,7 +28,7 @@ import { makeText } from '../../utils/makeText'
 //     `}
 // `
 
-const IntroSentenceCol = styled(Col)`
+const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
   ${breakpoint('smallTablet')`
     padding-left: 0;
@@ -88,16 +88,18 @@ const IndexPage = ({
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <H2>The challenge</H2>
           </Col>
-          <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
-            <Paragraph fullWidth>
-              {caseStudy.introSentence.introSentence}
-            </Paragraph>
+          <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
               <Paragraph fullWidth key={i}>
                 {p}
               </Paragraph>
             ))}
-          </IntroSentenceCol>
+            {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
+              <Paragraph fullWidth key={i}>
+                {p}
+              </Paragraph>
+            ))}
+          </ColWithoutExtraPadding>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
@@ -110,7 +112,7 @@ const IndexPage = ({
             <Row>
               <Col width={[1, 1, 1, 1, 5 / 12]}>
                 <H2>Single sign-on</H2>
-                {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
+                {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                   <Paragraph fullWidth key={i}>
                     {p}
                   </Paragraph>
@@ -137,7 +139,7 @@ const IndexPage = ({
               <H2>Navigation</H2>
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
+              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                 <Paragraph fullWidth key={i}>
                   {p}
                 </Paragraph>
@@ -161,7 +163,7 @@ const IndexPage = ({
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <H2>App deployment</H2>
-              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
+              {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
                 <Paragraph fullWidth key={i}>
                   {p}
                 </Paragraph>
@@ -240,13 +242,13 @@ const IndexPage = ({
               <Col width={[1, 1, 1, 1, 1 / 2]}>
                 <H2>Metrics visualisation</H2>
               </Col>
-              <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
+              <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText8.genericText8).map((p, i) => (
                   <Paragraph fullWidth key={i}>
                     {p}
                   </Paragraph>
                 ))}
-              </IntroSentenceCol>
+              </ColWithoutExtraPadding>
             </Row>
             <Padding top={{ smallPhone: 3, tablet: 4 }}>
               <Row>
@@ -427,10 +429,6 @@ export const query = graphql`
             file {
               url
             }
-          }
-          introSentence {
-            id
-            introSentence
           }
           genericText1 {
             id
