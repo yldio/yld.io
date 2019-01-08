@@ -39,8 +39,8 @@ const BooksBox = styled.a`
   `}
 `
 
-const BooksSection = ({ specialty }) =>
-  specialty.externalResources.filter(
+const BooksSection = ({ speciality }) =>
+  speciality.externalResources.filter(
     additionalInfo => additionalInfo.type === `Book`
   ).length ? (
     <Grid>
@@ -48,14 +48,14 @@ const BooksSection = ({ specialty }) =>
         <Row>
           <Padding top={4} />
           <Col width={[1]}>
-            <SmallerH2 center>{`${specialty.title.trim()} books`}</SmallerH2>
+            <SmallerH2 center>{`${speciality.title.trim()} books`}</SmallerH2>
             <Paragraph center>
               NodeJS books created by members of YLD for the community.
             </Paragraph>
           </Col>
         </Row>
         <Row>
-          {specialty.externalResources
+          {speciality.externalResources
             .filter(additionalInfo => additionalInfo.type === `Book`)
             .slice(0, 3)
             .map(externalResource => (
@@ -95,8 +95,8 @@ const BooksSection = ({ specialty }) =>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href={specialty.externalResources[11].link}>
-                    {specialty.externalResources[11].title}
+                  <StyledLink href={speciality.externalResources[11].link}>
+                    {speciality.externalResources[11].title}
                   </StyledLink>
                 </FlexItem>
               </Flex>

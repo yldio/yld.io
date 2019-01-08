@@ -25,20 +25,20 @@ const ImgContainerCol = styled(Col)`
   align-items: center;
   justify-content: center;
 `
-const CommunitySection = ({ specialty }) => (
+const CommunitySection = ({ speciality }) => (
   <BlueBackground>
     <Trimmer>
       <TrimmedImage
-        alt={specialty.communityBackground.title}
-        src={specialty.communityBackground.file.url}
+        alt={speciality.communityBackground.title}
+        src={speciality.communityBackground.file.url}
       />
       <Padding top={5} bottom={5}>
         <Row>
           <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
-            {specialty.communityLogo ? (
+            {speciality.communityLogo ? (
               <img
-                alt={specialty.communityLogo.title}
-                src={specialty.communityLogo.file.url}
+                alt={speciality.communityLogo.title}
+                src={speciality.communityLogo.file.url}
                 style={{ maxHeight: '100px' }}
               />
             ) : null}
@@ -46,9 +46,9 @@ const CommunitySection = ({ specialty }) => (
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SmallerH2
               reverse
-            >{`${specialty.title.trim()} community`}</SmallerH2>
+            >{`${speciality.title.trim()} community`}</SmallerH2>
             <Paragraph reverse muted>
-              {specialty.communityText.content[0].content[0].value}
+              {speciality.communityText.content[0].content[0].value}
             </Paragraph>
           </Col>
         </Row>

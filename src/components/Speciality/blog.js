@@ -8,23 +8,23 @@ import Posts from '../posts'
 import Li from '../listItem'
 import makeBlogPosts from '../../utils/makeBlogPosts'
 
-const BlogPosts = ({ specialty }) => (
+const BlogPosts = ({ speciality }) => (
   <Posts>
     {posts =>
-      makeBlogPosts(posts, specialty.title).length > 0 ? (
+      makeBlogPosts(posts, speciality.title).length > 0 ? (
         <Grid>
           <Padding vertical={{ desktop: 4, smallTablet: 3.5 }}>
             <Row>
               <Col width={[1, 1, 1, 1, 6 / 12]}>
                 <SmallerH2>{`From the blog`}</SmallerH2>
                 <Paragraph>{`${
-                  specialty.title
+                  speciality.title
                 } articles created by members of YLD for the community.`}</Paragraph>
               </Col>
               <Col width={[1, 1, 1, 1, 4 / 12]}>
                 <Padding top={1}>
                   <ul>
-                    {makeBlogPosts(posts, specialty.title)
+                    {makeBlogPosts(posts, speciality.title)
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
                         <Li key={`${id}`} fullWidthDivider>

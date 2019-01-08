@@ -52,7 +52,7 @@ const PaddedParagraph = styled(Paragraph)`
   padding: ${remcalc(12)} 0;
 `
 
-const IntroSentenceCol = styled(Col)`
+const FirstParagraphCol = styled(Col)`
   margin-left: auto;
   ${breakpoint('smallTablet')`
     padding-left: 0;
@@ -133,11 +133,13 @@ const IndexPage = ({
         <CaseStudyTop caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
-          <IntroSentenceCol width={[1, 1, 1, 1, 1 / 2]}>
-            <Paragraph fullWidth>
-              {caseStudy.introSentence.introSentence}
-            </Paragraph>
-          </IntroSentenceCol>
+          <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
+            {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
+              <Paragraph fullWidth key={i}>
+                {p}
+              </Paragraph>
+            ))}
+          </FirstParagraphCol>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
@@ -162,7 +164,7 @@ const IndexPage = ({
             <Row>
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
-                  {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
+                  {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
                     <Paragraph padded fullWidth key={i}>
                       {p}
                     </Paragraph>
@@ -176,7 +178,7 @@ const IndexPage = ({
         <NoMobile tablet>
           <GradientGrid>
             <GradientContent
-              text={caseStudy.genericText2.genericText2}
+              text={caseStudy.genericText3.genericText3}
               image={travel.childImageSharp}
             />
           </GradientGrid>
@@ -187,7 +189,7 @@ const IndexPage = ({
         <GradientBackground>
           <Grid>
             <GradientContent
-              text={caseStudy.genericText2.genericText2}
+              text={caseStudy.genericText3.genericText3}
               image={travel.childImageSharp}
             />
           </Grid>
@@ -201,7 +203,7 @@ const IndexPage = ({
               <H2>Exploring the story</H2>
             </Col>
             <Col width={[1, 1, 1, 1 / 2]}>
-              {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
+              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
                 <PaddedParagraph key={i}>{p}</PaddedParagraph>
               ))}
             </Col>
@@ -235,7 +237,7 @@ const IndexPage = ({
                 <H2>Out in the wild</H2>
               </Col>
               <Col width={[1, 1, 1, 1 / 2]}>
-                {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
+                {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
                   <Paragraph padded key={i}>
                     {p}
                   </Paragraph>
@@ -310,9 +312,6 @@ export const query = graphql`
               url
             }
           }
-          introSentence {
-            introSentence
-          }
           genericText1 {
             id
             genericText1
@@ -328,6 +327,10 @@ export const query = graphql`
           genericText4 {
             id
             genericText4
+          }
+          genericText5 {
+            id
+            genericText5
           }
           services {
             ... on ContentfulService {
