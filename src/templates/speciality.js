@@ -14,44 +14,44 @@ import TutorialsSection from '../components/Speciality/tutorials'
 import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
 
-const Specialty = ({ data }) => {
-  const specialty = data.allContentfulSpeciality.edges[0].node
+const Speciality = ({ data }) => {
+  const speciality = data.allContentfulSpeciality.edges[0].node
   const site = data.site
   return (
-    <Layout blue logoColour={specialty.logoColour}>
+    <Layout blue logoColour={speciality.logoColour}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
-          specialty.title ? '- ' + specialty.title : ''
-        } ${specialty.seoTitle ? '- ' + specialty.seoTitle : ''} `}
+          speciality.title ? '- ' + speciality.title : ''
+        } ${speciality.seoTitle ? '- ' + speciality.seoTitle : ''} `}
         meta={[
           {
             name: 'description',
-            content: specialty.seoMetaDescription
+            content: speciality.seoMetaDescription
           }
         ]}
       >
         <html lang="en" />
       </Helmet>
-      <IntroSection specialty={specialty} />
-      <ProjectsSection specialty={specialty} />
-      <TrainingSection specialty={specialty} />
-      {specialty.communityText ? (
-        <CommunitySection specialty={specialty} />
+      <IntroSection speciality={speciality} />
+      <ProjectsSection speciality={speciality} />
+      <TrainingSection speciality={speciality} />
+      {speciality.communityText ? (
+        <CommunitySection speciality={speciality} />
       ) : null}
-      <EventSection specialty={specialty} />
-      <TalksSection specialty={specialty} />
-      <BlogPostsSection specialty={specialty} />
-      <TutorialsSection specialty={specialty} />
-      <BooksSection specialty={specialty} />
+      <EventSection speciality={speciality} />
+      <TalksSection speciality={speciality} />
+      <BlogPostsSection speciality={speciality} />
+      <TutorialsSection speciality={speciality} />
+      <BooksSection speciality={speciality} />
       <TalkToUsSection
-        title={specialty.title}
-        contactText={specialty.contactText}
+        title={speciality.title}
+        contactText={speciality.contactText}
       />
     </Layout>
   )
 }
 
-export default Specialty
+export default Speciality
 
 export const pageQuery = graphql`
   query($id: String) {

@@ -12,8 +12,8 @@ const TutorialsGrid = styled(Grid)`
   padding-bottom: ${remcalc(18)};
 `
 
-const TutorialsSection = ({ specialty }) =>
-  specialty.externalResources.filter(
+const TutorialsSection = ({ speciality }) =>
+  speciality.externalResources.filter(
     externalResource => externalResource.type === `Tutorial`
   ).length > 0 ? (
     <GrayBackground noTop>
@@ -28,7 +28,7 @@ const TutorialsSection = ({ specialty }) =>
             </Col>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <ul>
-                {specialty.externalResources
+                {speciality.externalResources
                   .filter(
                     externalResource => externalResource.type === `Tutorial`
                   )
@@ -49,8 +49,8 @@ const TutorialsSection = ({ specialty }) =>
                   ))}
               </ul>
               <Padding top={3}>
-                <StyledLink href={specialty.externalResources[7].link}>
-                  {specialty.externalResources[7].title}
+                <StyledLink href={speciality.externalResources[7].link}>
+                  {speciality.externalResources[7].title}
                 </StyledLink>
               </Padding>
             </Col>
