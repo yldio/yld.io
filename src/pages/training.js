@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
 import CaseStudy from '../components/Homepage/caseStudy'
 import GrayBackground from '../components/GreyBG'
+import TalkToUsSection from '../components/Speciality/talkToUs'
 
 const IndexPage = ({
   data: {
@@ -42,6 +43,10 @@ const IndexPage = ({
         </Padding>
       </Grid>
     </GrayBackground>
+    <TalkToUsSection
+      contactTitle={content.contactUsTitle}
+      contactText={content.contactUsText.contactUsText}
+    />
     <Grid>
       {content.relatedCaseStudy ? (
         <Padding top={5} bottom={5}>
@@ -67,6 +72,10 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
+      contactUsText {
+        contactUsText
+      }
+      contactUsTitle
       featuredCaseStudy {
         id
         title
