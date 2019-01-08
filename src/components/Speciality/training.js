@@ -17,38 +17,38 @@ const TrainingStage = ({ title, body, icon }) => (
   </Col>
 )
 
-const TrainingSection = ({ specialty }) => (
+const TrainingSection = ({ speciality }) => (
   <GrayBackground noTop>
     <Padding top={4} bottom={6}>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SmallerH2>{`${specialty.title.trim()} training`}</SmallerH2>
+            <SmallerH2>{`${speciality.title.trim()} training`}</SmallerH2>
             <Paragraph>
-              {specialty.trainingIntroText.content[0].content[0].value}
+              {speciality.trainingIntroText.content[0].content[0].value}
             </Paragraph>
           </Col>
         </Row>
         <Row>
           <TrainingStage
-            title={specialty.trainingTextTitle1}
-            body={specialty.trainingTextBody1}
-            icon={specialty.trainingTextIcon1}
+            title={speciality.trainingTextTitle1}
+            body={speciality.trainingTextBody1}
+            icon={speciality.trainingTextIcon1}
           />
           <TrainingStage
-            title={specialty.trainingTextTitle2}
-            body={specialty.trainingTextBody2}
-            icon={specialty.trainingTextIcon2}
+            title={speciality.trainingTextTitle2}
+            body={speciality.trainingTextBody2}
+            icon={speciality.trainingTextIcon2}
           />
           <TrainingStage
-            title={specialty.trainingTextTitle3}
-            body={specialty.trainingTextBody3}
-            icon={specialty.trainingTextIcon3}
+            title={speciality.trainingTextTitle3}
+            body={speciality.trainingTextBody3}
+            icon={speciality.trainingTextIcon3}
           />
         </Row>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <StyledLink>{`Request ${specialty.title} training`}</StyledLink>
+            <StyledLink>{`Request ${speciality.title} training`}</StyledLink>
           </Col>
         </Row>
       </Grid>

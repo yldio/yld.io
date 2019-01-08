@@ -31,7 +31,7 @@ const PosterLinks = ({ project }) => (
   </AnimatedLink>
 )
 
-const CompaniesHelped = ({ specialty, noOther }) => (
+const CompaniesHelped = ({ speciality, noOther }) => (
   <Fragment>
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -40,44 +40,44 @@ const CompaniesHelped = ({ specialty, noOther }) => (
         </Padding>
       </Col>
     </Row>
-    <Companies companies={specialty.clients} />
+    <Companies companies={speciality.clients} />
   </Fragment>
 )
 
-const ProjectsSection = ({ specialty }) =>
-  specialty.relatedProjects ? (
+const ProjectsSection = ({ speciality }) =>
+  speciality.relatedProjects ? (
     <Grid>
       <Padding top={5} bottom={5}>
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
               <H2 noMargin noBottom>
-                {specialty.title}
+                {speciality.title}
               </H2>
               <H2 noMargin muted noTop>
                 related projects
               </H2>
             </Padding>
-            <PosterLinks project={specialty.relatedProjects[0]} />
+            <PosterLinks project={speciality.relatedProjects[0]} />
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
-            <H2 noMargin>{specialty.title}</H2>
+            <H2 noMargin>{speciality.title}</H2>
             <H2 noMargin muted>
               related projects
             </H2>
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
-            <PosterLinks project={specialty.relatedProjects[1]} />
+            <PosterLinks project={speciality.relatedProjects[1]} />
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
-        <CompaniesHelped specialty={specialty} />
+        <CompaniesHelped speciality={speciality} />
       </Padding>
     </Grid>
   ) : (
     <Grid>
       <Padding top={5} bottom={5}>
-        <CompaniesHelped noOther specialty={specialty} />
+        <CompaniesHelped noOther speciality={speciality} />
       </Padding>
     </Grid>
   )

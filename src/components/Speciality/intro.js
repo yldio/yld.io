@@ -22,7 +22,7 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   </IntroBorder>
 )
 
-const IntroSection = ({ specialty }) => (
+const IntroSection = ({ speciality }) => (
   <BlueBackground>
     <Padding top={2} bottom={5}>
       <Grid>
@@ -30,17 +30,17 @@ const IntroSection = ({ specialty }) => (
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
               <H1 style={{ fontSize: '42px' }} reverse>
-                {specialty.title}
+                {speciality.title}
               </H1>
               <Paragraph reverse muted>
-                {specialty.seoText.content[0].content[0].value}
+                {speciality.seoText.content[0].content[0].value}
               </Paragraph>
             </Flex>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <img
-              alt={specialty.introGraphic.title}
-              src={specialty.introGraphic.file.url}
+              alt={speciality.introGraphic.title}
+              src={speciality.introGraphic.file.url}
               style={{ maxHeight: '100%' }}
             />
           </Col>
@@ -48,7 +48,7 @@ const IntroSection = ({ specialty }) => (
         <Row>
           <Col width={[1]}>
             <Padding top={2} bottom={2}>
-              <H4 reverse>{specialty.introTitle}</H4>
+              <H4 reverse>{speciality.introTitle}</H4>
             </Padding>
           </Col>
         </Row>
@@ -56,16 +56,16 @@ const IntroSection = ({ specialty }) => (
         <Col width={[1]}>
           <Row>
             <IntroRectangle
-              introTextTitle={specialty.introTextTitle1}
-              introTextBody={specialty.introTextBody1}
+              introTextTitle={speciality.introTextTitle1}
+              introTextBody={speciality.introTextBody1}
             />
             <IntroRectangle
-              introTextTitle={specialty.introTextTitle2}
-              introTextBody={specialty.introTextBody2}
+              introTextTitle={speciality.introTextTitle2}
+              introTextBody={speciality.introTextBody2}
             />
             <IntroRectangle
-              introTextTitle={specialty.introTextTitle3}
-              introTextBody={specialty.introTextBody3}
+              introTextTitle={speciality.introTextTitle3}
+              introTextBody={speciality.introTextBody3}
             />
           </Row>
         </Col>

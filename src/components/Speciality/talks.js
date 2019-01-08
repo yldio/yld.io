@@ -39,15 +39,15 @@ const TalkLinkCol = styled(Col)`
     }
   `}
 `
-const TalksSection = ({ specialty }) => {
-  const talks = specialty.externalResources.filter(
+const TalksSection = ({ speciality }) => {
+  const talks = speciality.externalResources.filter(
     ({ type, additionalInfo }) => type === 'Talk' && !additionalInfo
   )
-  const featured = specialty.externalResources.filter(
+  const featured = speciality.externalResources.filter(
     ({ type, additionalInfo }) =>
       type === 'Talk' && additionalInfo === 'Featured'
   )[0]
-  const cta = specialty.externalResources.filter(
+  const cta = speciality.externalResources.filter(
     ({ type, additionalInfo }) => type === 'Talk' && additionalInfo === 'CTA'
   )[0]
   return talks.length ? (
@@ -80,8 +80,8 @@ const TalksSection = ({ specialty }) => {
                 <TalkLinkCol width={[1, 1, 1, 1, 4 / 12]} key={id}>
                   <TalkLink href={link}>
                     <PlayIcon
-                      src={`https://${specialty.videoIcon.file.url}`}
-                      alt={specialty.videoIcon.title}
+                      src={`https://${speciality.videoIcon.file.url}`}
+                      alt={speciality.videoIcon.title}
                     />
                     <Paragraph reverse muted noMargin>
                       {title}
