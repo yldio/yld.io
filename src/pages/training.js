@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
+import is from 'styled-is'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
@@ -17,6 +18,10 @@ const Hr = styled.hr`
   border: none;
   opacity: 0.2;
   background-color: #ffffff;
+
+  ${is('small')`
+    width: 76px;
+  `};
 `
 
 const IndexPage = ({ data: { contentfulTrainingPage: content, site } }) => {
@@ -87,7 +92,47 @@ const IndexPage = ({ data: { contentfulTrainingPage: content, site } }) => {
             </Row>
           </Grid>
         </Padding>
+        <Grid>
+          <Row>
+            {content.trainingFormats.map(format => (
+              <Col width={[1, 1, 1, 1, 1 / 3]} key={format.id}>
+                <img
+                  src={`https://${format.icon.file.url}`}
+                  alt={format.icon.title}
+                />
+                <Paragraph bold reverse>
+                  {format.title}
+                </Paragraph>
+                <Paragraph muted reverse>
+                  {format.description}
+                </Paragraph>
+                <Padding top={1} style={{ maxWidth: '80%' }}>
+                  {format.bulletPoints.map((point, i) => (
+                    <Padding top={1} bottom={1} key={i}>
+                      <Paragraph muted reverse>
+                        {point}
+                      </Paragraph>
+                      <Padding top={0.5}>
+                        <Hr small />
+                      </Padding>
+                    </Padding>
+                  ))}
+                </Padding>
+              </Col>
+            ))}
+          </Row>
+          <Padding bottom={5} />
+        </Grid>
       </GrayBackground>
+      <Grid>
+        <Row>
+          <Col width={[1]}>
+            <Padding bottom={{ smallPhone: 4 }} top={{ smallPhone: 5 }}>
+              <H2>Course catalog</H2>
+            </Padding>
+          </Col>
+        </Row>
+      </Grid>
       <TalkToUsSection
         contactTitle={content.contactUsTitle}
         contactText={content.contactUsText.contactUsText}
@@ -153,6 +198,18 @@ export const query = graphql`
           content {
             value
             nodeType
+          }
+        }
+      }
+      trainingFormats {
+        id
+        title
+        description
+        bulletPoints
+        icon {
+          title
+          file {
+            url
           }
         }
       }
