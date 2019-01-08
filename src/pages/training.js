@@ -7,7 +7,7 @@ import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
 import CaseStudy from '../components/Homepage/caseStudy'
-import GrayBackground from '../components/GrayBG'
+import GrayBackground from '../components/GreyBG'
 
 const IndexPage = ({
   data: {
