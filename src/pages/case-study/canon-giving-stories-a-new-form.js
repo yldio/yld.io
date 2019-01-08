@@ -333,10 +333,8 @@ export const query = graphql`
             genericText5
           }
           services {
-            ... on ContentfulService {
-              title
-              id
-            }
+            title
+            id
           }
           posterColor
           seoTitle

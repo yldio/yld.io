@@ -469,14 +469,8 @@ export const query = graphql`
             genericText9
           }
           services {
-            ... on ContentfulService {
-              title
-              id
-            }
-            ... on ContentfulSpeciality {
-              title
-              id
-            }
+            title
+            id
           }
           posterColor
           seoTitle
