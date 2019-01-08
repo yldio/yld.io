@@ -5,6 +5,7 @@
   "author": "YLD <hello@yld.io>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
+    "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
     "gatsby": "2.0.53",
@@ -18,6 +19,7 @@
     "gatsby-source-contentful": "2.0.15",
     "gatsby-source-lever": "2.0.1",
     "gatsby-source-medium": "2.0.1",
+    "get-youtube-id": "^1.0.0",
     "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "lodash": "4.17.11",
     "netlify-lambda": "1.0.3",

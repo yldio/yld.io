@@ -27,58 +27,60 @@ export default styled.section`
   padding-top: 0;
   margin-bottom: 0;
 
-  ${breakpoint('smallTablet')`
-    margin-top: ${({ topOffset }) =>
-      remcalc((topOffset && topOffset * -1) || PADDING)};
-    margin-bottom: ${({ topOffset }) => remcalc(topOffset || -PADDING)};
-    &:after {
-      ${afterStyles}
-      height: ${({ topOffset }) =>
-        remcalc(topOffset ? topOffset * -1 : PADDING)};
-    }
-  `}
-
-  ${breakpoint('tablet')`
-    margin-top: ${({ topOffset }) =>
-      remcalc((topOffset && topOffset * -2) || PADDING)};
-    margin-bottom: ${({ topOffset }) => remcalc(topOffset * 2 || -PADDING)};
-    &:after {
-      ${afterStyles}
-      height: ${({ topOffset }) =>
-        remcalc(topOffset ? topOffset * -2 : PADDING)};
-    }
-  `}
-
-
-  ${isNot('topMargin')`
-    padding-bottom: ${remcalc(PADDING)};
-    &:after {
-      content: none;
-    }
-  `}
-
-  > * {
+  ${isNot('static')`
     ${breakpoint('smallTablet')`
-      top: ${({ topOffset }) => remcalc(topOffset || -PADDING)};
-      position: relative;
-
-      ${isNot('topMargin')`
-        top: 0;
-      `};
+      margin-top: ${({ topOffset }) =>
+        remcalc((topOffset && topOffset * -1) || PADDING)};
+      margin-bottom: ${({ topOffset }) => remcalc(topOffset || -PADDING)};
+      &:after {
+        ${afterStyles}
+        height: ${({ topOffset }) =>
+          remcalc(topOffset ? topOffset * -1 : PADDING)};
+      }
     `}
 
     ${breakpoint('tablet')`
-      top: ${({ topOffset }) => remcalc(topOffset * 2 || -PADDING)};
-      position: relative;
-
-      ${isNot('topMargin')`
-        top: 0;
-      `};
+      margin-top: ${({ topOffset }) =>
+        remcalc((topOffset && topOffset * -2) || PADDING)};
+      margin-bottom: ${({ topOffset }) => remcalc(topOffset * 2 || -PADDING)};
+      &:after {
+        ${afterStyles}
+        height: ${({ topOffset }) =>
+          remcalc(topOffset ? topOffset * -2 : PADDING)};
+      }
     `}
-  }
 
-  + * {
-    z-index: 2;
-    position: relative;
-  }
+
+    ${isNot('topMargin')`
+      padding-bottom: ${remcalc(PADDING)};
+      &:after {
+        content: none;
+      }
+    `}
+
+    > * {
+      ${breakpoint('smallTablet')`
+        top: ${({ topOffset }) => remcalc(topOffset || -PADDING)};
+        position: relative;
+
+        ${isNot('topMargin')`
+          top: 0;
+        `};
+      `}
+
+      ${breakpoint('tablet')`
+        top: ${({ topOffset }) => remcalc(topOffset * 2 || -PADDING)};
+        position: relative;
+
+        ${isNot('topMargin')`
+          top: 0;
+        `};
+      `}
+    }
+
+    + * {
+      z-index: 2;
+      position: relative;
+    }
+  `}
 `

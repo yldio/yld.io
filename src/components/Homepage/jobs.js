@@ -6,7 +6,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { H2, H5 } from '../Typography'
-import Jobs from '../jobs'
+import Jobs from '../jobsByLocation'
 import Li from '../listItem'
 
 const JobContainer = styled.ul`
@@ -38,15 +38,15 @@ const JobsComponent = () => (
     <Row pt={[3, 3, 3, 3, 90]}>
       <Jobs>
         {jobs =>
-          Object.keys(jobs).map(key => (
+          jobs.map(({ location, jobs: jobsForLocation }) => (
             <Col
               width={[1, 1, 1, 1, 1 / 2, 3 / 12]}
-              key={`${key}-${jobs[key].length}-main`}
+              key={`${location}-${jobsForLocation.length}-main`}
             >
-              <H5>{key}</H5>
+              <H5>{location}</H5>
 
               <JobContainer>
-                {jobs[key].slice(0, 3).map(job => (
+                {jobsForLocation.slice(0, 3).map(({ node: job }) => (
                   <JobLi key={`${job.id}`}>
                     <a
                       rel="noopener noreferrer"

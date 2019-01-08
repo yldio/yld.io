@@ -53,6 +53,9 @@ class Header extends Component {
                       Contact
                     </Link>
                     <a href="https://medium.com/yld-engineering-blog/">Blog</a>
+                    <Link activeClassName="active" to="/join-us/">
+                      Join Us
+                    </Link>
                     <Close onClick={this.toggleMenu}>
                       <img src={close} alt="Close menu" />
                     </Close>

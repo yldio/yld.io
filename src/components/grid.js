@@ -163,3 +163,9 @@ export const Row = props => (
 export const Col = props => (
   <Flex block px={[1, 3, 60, 42, 48, 48]} {...props} />
 )
+
+export const CompensatedRow = props => <Flex mx={[-1, -1.5, -2]} {...props} />
+
+export const CompensatedCol = props => (
+  <Flex block px={[1, 1.5, 2]} {...props} />
+)
