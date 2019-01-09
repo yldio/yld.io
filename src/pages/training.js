@@ -36,13 +36,16 @@ const Modal = styled.div`
   opacity: 0;
   top: 0;
   left: 0;
-  transition: all 900ms ease;
-  z-index: -1;
-  overflow: scroll;
+  z-index: 9999;
+  transition: transform 0.3s, opacity 0.3s;
+  transform: scale(0.7);
+  visibility: hidden;
 
   ${is('visible')`
+    transform: scale(1);
     opacity: 1;
-    z-index: 9999;
+    visibility: visible;
+    overflow: scroll;
   `};
 `
 
@@ -64,6 +67,23 @@ const Close = styled.button`
 class TrainingPage extends Component {
   state = {
     modalContent: null
+  }
+
+  toggleModal = modalContent => {
+    if (modalContent) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'absolute'
+
+      return this.setState({
+        modalContent
+      })
+    }
+    document.body.style.overflow = 'auto'
+    document.body.style.position = 'inherit'
+
+    return this.setState({
+      modalContent
+    })
   }
 
   render() {
@@ -90,12 +110,11 @@ class TrainingPage extends Component {
         >
           <html lang="en" />
         </Helmet>
-        {modalContent && (
-          <Modal visible={modalContent}>
+
+        <Modal visible={modalContent}>
+          {modalContent && (
             <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-              <Close onClick={() => this.setState({ modalContent: null })}>
-                X
-              </Close>
+              <Close onClick={() => this.toggleModal(null)}>X</Close>
               <Grid>
                 <Row>
                   <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -127,8 +146,9 @@ class TrainingPage extends Component {
                 </Row>
               </Grid>
             </Padding>
-          </Modal>
-        )}
+          )}
+        </Modal>
+
         <Grid>
           <Padding bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}>
             <CaseStudy
@@ -237,9 +257,7 @@ class TrainingPage extends Component {
                       {courseInCat.map((course, id) => (
                         <StyledLink
                           style={{ cursor: 'pointer' }}
-                          onClick={() =>
-                            this.setState({ modalContent: course })
-                          }
+                          onClick={() => this.toggleModal(course)}
                           key={id}
                         >
                           <Paragraph>{course.name}</Paragraph>
