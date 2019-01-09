@@ -9,7 +9,7 @@ import remcalc from 'remcalc'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudy from '../../components/Common/caseStudy'
+import CaseStudyPreview from '../../components/Common/CaseStudyPreview'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
 import Image from '../../components/Common/Image'
@@ -294,7 +294,7 @@ const IndexPage = ({
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Padding bottom={5} top={{ smallPhone: 3.5, tablet: 4 }}>
-            <CaseStudy
+            <CaseStudyPreview
               caseStudy={caseStudy.relatedCaseStudy}
               subHeading="Featured work"
             />

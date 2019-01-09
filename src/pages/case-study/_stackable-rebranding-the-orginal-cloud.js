@@ -8,7 +8,7 @@ import Flex from 'styled-flex-component'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph, H6 } from '../../components/Typography'
 import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudyBottom from '../../components/Common/caseStudy'
+import CaseStudyPreview from '../../components/Common/CaseStudyPreview'
 
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
@@ -317,7 +317,7 @@ const IndexPage = ({
         </Row>
         {caseStudy.relatedCaseStudy ? (
           <Padding bottom={5}>
-            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         ) : null}
       </Grid>

@@ -44,7 +44,7 @@ const FlexCol = styled(Col)`
   display: flex;
 `
 
-const CaseStudy = ({ caseStudy, subHeading }) => (
+const CaseStudyPreview = ({ caseStudy, subHeading }) => (
   <WrapperRow>
     <Col width={[1, 1, 1, 1, 0]}>
       <SubHeading>{subHeading}</SubHeading>
@@ -80,4 +80,4 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
   </WrapperRow>
 )
 
-export default CaseStudy
+export default CaseStudyPreview
