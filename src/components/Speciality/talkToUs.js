@@ -5,7 +5,7 @@ import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
-const TalkToUsSection = ({ contactTitle, title, contactText }) => (
+const TalkToUsSection = ({ title, contactText }) => (
   <GreyBackground>
     <Grid>
       <Padding top={5} bottom={5}>
@@ -22,7 +22,6 @@ const TalkToUsSection = ({ contactTitle, title, contactText }) => (
           </Col>
         </Row>
       </Padding>
-      <Padding bottom={3} />
     </Grid>
   </GreyBackground>
 )

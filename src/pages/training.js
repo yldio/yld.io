@@ -190,7 +190,7 @@ class TrainingPage extends Component {
                   ))}
                 </Col>
               </Row>
-              <Padding top={{ smallPhone: 48 }} bottom={{ smallPhone: 4 }}>
+              <Padding top={{ smallPhone: 4 }} bottom={{ smallPhone: 4 }}>
                 <Hr />
               </Padding>
               <Row>
@@ -247,7 +247,7 @@ class TrainingPage extends Component {
               )
               return (
                 <Col width={[1, 1, 1, 1, 1 / 2]} key={i}>
-                  <Padding bottom={4}>
+                  <Padding bottom={5}>
                     <Padding bottom={1}>
                       <Image image={courseInCat[0].logo} />
                       <H2>{cat}</H2>
@@ -259,7 +259,7 @@ class TrainingPage extends Component {
                           onClick={() => this.toggleModal(course)}
                           key={id}
                         >
-                          <Paragraph>{course.name}</Paragraph>
+                          {course.name}
                         </StyledLink>
                       ))}
                     </Flex>
