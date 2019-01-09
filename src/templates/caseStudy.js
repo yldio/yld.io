@@ -7,7 +7,7 @@ import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import { H2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyPreview'
-import CaseStudyTop from '../components/Common/topCaseStudy'
+import CaseStudyHero from '../components/Common/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
@@ -38,7 +38,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site }, location }) => {
       </Helmet>
       <Grid>
         <Padding bottom={0.5}>
-          <CaseStudyTop caseStudy={caseStudy} />
+          <CaseStudyHero caseStudy={caseStudy} />
         </Padding>
         <Margin bottom={4} />
         <Row>

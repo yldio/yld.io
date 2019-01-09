@@ -7,7 +7,7 @@ import { Padding, Margin } from 'styled-components-spacing'
 import Flex from 'styled-flex-component'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph, H6 } from '../../components/Typography'
-import CaseStudyTop from '../../components/Common/topCaseStudy'
+import CaseStudyHero from '../../components/Common/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyPreview'
 
 import Layout from '../../components/layout'
@@ -91,7 +91,7 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid>
-        <CaseStudyTop caseStudy={caseStudy} />
+        <CaseStudyHero caseStudy={caseStudy} />
         <Margin vertical={4}>
           <Row>
             <Col xs={12} sm={9} md={7}>

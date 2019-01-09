@@ -49,7 +49,7 @@ const MetaData = ({ caseStudy }) => (
   </Flex>
 )
 
-const CaseStudyTop = ({ caseStudy }) => (
+const CaseStudyHero = ({ caseStudy }) => (
   <Row>
     <Col width={[1, 1, 1, 1, 0]}>
       <Padding bottom={3}>
@@ -80,4 +80,4 @@ const CaseStudyTop = ({ caseStudy }) => (
   </Row>
 )
 
-export default CaseStudyTop
+export default CaseStudyHero
