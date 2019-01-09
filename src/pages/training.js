@@ -158,12 +158,11 @@ class TrainingPage extends Component {
           </Padding>
           <Padding bottom={{ smallPhone: 0, desktop: 2 }} />
         </Grid>
-        <GrayBackground>
+        <GrayBackground noTop>
           <Grid>
-            <Padding top={{ smallPhone: 2 }} />
             <Padding
               top={{ smallPhone: 4, smallTablet: 4, desktop: 4 }}
-              bottom={4}
+              bottom={{ smallPhone: 4, smallTablet: 4, desktop: 4 }}
             >
               <SEOText text={content.seoText.content[0].content} />
             </Padding>
@@ -181,10 +180,10 @@ class TrainingPage extends Component {
                 <Col width={[1, 1, 1, 1, 1 / 2]}>
                   {content.trainingApproachTitle.map((approach, i) => (
                     <Padding bottom={2} key={i}>
-                      <Paragraph reverse bold>
+                      <Paragraph noMargin fullWidth reverse bold>
                         {approach}
                       </Paragraph>
-                      <Paragraph reverse muted>
+                      <Paragraph fullWidth reverse muted>
                         {trainingApproachesContent[i]}
                       </Paragraph>
                     </Padding>
@@ -211,7 +210,7 @@ class TrainingPage extends Component {
                       alt={format.icon.title}
                     />
                   </Padding>
-                  <Paragraph bold reverse>
+                  <Paragraph noMargin bold reverse>
                     {format.title}
                   </Paragraph>
                   <Paragraph muted reverse>
