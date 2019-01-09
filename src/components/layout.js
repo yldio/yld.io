@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { Location } from '@reach/router'
 import Header from './Header'
 import './layout.css'
 import theme from '../utils/theme'
@@ -25,7 +26,14 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, backgroundColor, logoColour, location } = this.props
+    const { children, backgroundColor, logoColour } = this.props
+    const Component = ({ color }) => {
+      if (backgroundColor === 'blue') return BlueBackground
+      if (backgroundColor === 'grey') return GreyBackground
+
+      return Fragment
+    }
+
     return (
       <StaticQuery
         query={graphql`
@@ -49,19 +57,18 @@ class Layout extends Component {
             `}</script>
                 <html lang="en" />
               </Helmet>
-              {backgroundColor === 'blue' && (
-                <BlueBackground>
-                  <Header blue logoColour={logoColour} location={location} />
-                </BlueBackground>
-              )}
-              {backgroundColor === 'grey' && (
-                <GreyBackground>
-                  <Header logoColour={logoColour} location={location} />
-                </GreyBackground>
-              )}
-              {!(backgroundColor === 'blue' || backgroundColor === 'grey') && (
-                <Header logoColour={logoColour} location={location} />
-              )}
+              <Location>
+                {({ location }) => (
+                  <Component color={backgroundColor}>
+                    <Header
+                      path={location.pathname}
+                      blue
+                      logoColour={logoColour}
+                      location={location}
+                    />
+                  </Component>
+                )}
+              </Location>
               <main>{children}</main>
               <Footer />
               <GlobalStyle />
