@@ -7,7 +7,7 @@ import { Padding, Margin } from 'styled-components-spacing'
 import Flex from 'styled-flex-component'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph, H6 } from '../../components/Typography'
-import CaseStudyHero from '../../components/Common/CaseStudyHero'
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 import Layout from '../../components/layout'
