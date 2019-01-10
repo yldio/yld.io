@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import ReactMarkdown from 'react-markdown'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
+import remcalc from 'remcalc'
 import { H2, Paragraph } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 
@@ -32,16 +34,44 @@ const Wrapper = styled.div`
 const Close = styled.button`
   border: none;
   border-radius: 50%;
-  width: 54px;
-  height: 54px;
+  width: ${remcalc(54)};
+  height: ${remcalc(54)};
   background-color: #333333;
   color: white;
-  right: 90px;
-  top: 36px;
+  right: ${remcalc(24)};
+  top: ${remcalc(36)};
   position: absolute;
-  font-size: 28px;
+  font-size: ${remcalc(28)};
   font-weight: 200;
   position: fixed;
+
+    &:focus {
+    background: transparent;
+    outline: ${remcalc(4)} solid #6be9c1;
+    color: ${props => props.theme.colors.text};
+  }
+
+  &:active {
+    outline: none;
+    background: #00edbf;
+    color: ${props => props.theme.colors.text};
+
+    &:after {
+      background: ${props => props.theme.colors.text};
+    }
+  }
+
+  ${breakpoint('smallTablet')`
+    right: ${remcalc(42)};
+  `}
+
+  ${breakpoint('tablet')`
+    right: ${remcalc(48)};
+  `}
+
+   ${breakpoint('desktop')`
+    right: ${remcalc(90)};
+  `}
 `
 
 const Modal = ({ content, toggleModal }) => (
