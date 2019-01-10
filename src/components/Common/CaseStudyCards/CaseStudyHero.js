@@ -1,31 +1,29 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Flex from 'styled-flex-component'
-import { Margin } from 'styled-components-spacing'
+import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
 import { H5 } from '../../Typography'
 import FixedSizeHeading from './FixedSizeHeading'
 import SeoLinks from '../seoLinks'
 
 const SubSection = ({ heading, items }) => (
-  <Flex column>
+  <Padding bottom={1}>
     <H5 noMargin noWrap>
       {heading}
     </H5>
     <Flex alignCenter wrap>
       <SeoLinks noMargin items={items} />
     </Flex>
-  </Flex>
+  </Padding>
 )
 
 const SpecialitiesAndServices = ({ specialities, services }) => (
-  <Flex>
+  <Fragment>
     {specialities && (
-      <Margin right={2}>
-        <SubSection heading="Technology used" items={specialities} />
-      </Margin>
+      <SubSection heading="Technology used" items={specialities} />
     )}
     <SubSection heading="Services provided" items={services} />
-  </Flex>
+  </Fragment>
 )
 
 const CaseStudyHero = ({ caseStudy }) => {
