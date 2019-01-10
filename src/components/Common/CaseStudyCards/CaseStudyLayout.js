@@ -28,7 +28,7 @@ const CaseStudyLayout = ({ posterImage, headings, mainText }) => (
     <Col width={[1, 1, 1, 1, 0]}>
       <Padding bottom={3}>{headings}</Padding>
     </Col>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
+    <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
       <Image alt={posterImage.title} image={posterImage} />
     </Col>
     <FlexCol width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
