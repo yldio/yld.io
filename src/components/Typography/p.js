@@ -13,6 +13,10 @@ export default styled.p`
     padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
   `};
 
+  ${is('p')`
+    color: ${props => props.theme.colors.p};
+  `}
+
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
   `};

@@ -10,7 +10,7 @@ import Companies from '../components/Homepage/companies'
 import Blog from '../components/Homepage/blog'
 import Events from '../components/Homepage/events'
 import Jobs from '../components/Homepage/jobs'
-import CaseStudyPreview from '../components/Common/CaseStudyPreview'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Services from '../components/Homepage/services'
 import GreyBackground from '../components/GreyBG'
 

@@ -8,7 +8,7 @@ import Flex from 'styled-flex-component'
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph, H6 } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyHero'
-import CaseStudyPreview from '../../components/Common/CaseStudyPreview'
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
