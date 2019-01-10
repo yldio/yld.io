@@ -24,11 +24,11 @@ const RowLayout = styled(Row)`
 
 // headings & mainText should be sub-components (rather than a string, for example)
 const CaseStudyLayout = ({ posterImage, headings, mainText }) => (
-  <RowLayout pt={[1, 1, 1, 1, 3.5]} pb={[3.5, 3.5, 3.5, 3.5, 5]}>
+  <RowLayout>
     <Col width={[1, 1, 1, 1, 0]}>
       <Padding bottom={3}>{headings}</Padding>
     </Col>
-    <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
       <Image alt={posterImage.title} image={posterImage} />
     </Col>
     <FlexCol width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
