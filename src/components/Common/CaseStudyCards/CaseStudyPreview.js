@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import CaseStudyLayout from './CaseStudyLayout'
-import FixedSizeHeading from './FixedSizeHeading'
-import { Paragraph } from '../../Typography'
+import { H1, Paragraph } from '../../Typography'
 import StyledLink from '../../styledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
@@ -10,7 +9,7 @@ const Headings = ({ title }) => (
     <Paragraph noMargin p>
       Featured work
     </Paragraph>
-    <FixedSizeHeading>{title}</FixedSizeHeading>
+    <H1>{title}</H1>
   </Fragment>
 )
 

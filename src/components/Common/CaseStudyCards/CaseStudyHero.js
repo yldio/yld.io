@@ -2,9 +2,10 @@ import React, { Fragment } from 'react'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
-import { H5 } from '../../Typography'
-import FixedSizeHeading from './FixedSizeHeading'
+import { H1, H5 } from '../../Typography'
 import SeoLinks from '../seoLinks'
+
+const CardHeading = H1.withComponent('h2')
 
 const SubSection = ({ heading, items }) => (
   <Padding bottom={1}>
@@ -31,7 +32,7 @@ const CaseStudyHero = ({ caseStudy }) => {
   return (
     <CaseStudyLayout
       posterImage={posterImage}
-      headings={<FixedSizeHeading>{title}</FixedSizeHeading>}
+      headings={<CardHeading>{title}</CardHeading>}
       mainText={
         <SpecialitiesAndServices
           specialities={specialities}
