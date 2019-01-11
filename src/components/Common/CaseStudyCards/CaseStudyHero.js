@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
@@ -8,7 +8,7 @@ import SeoLinks from '../seoLinks'
 const CardHeading = H1.withComponent('h2')
 
 const SubSection = ({ heading, items }) => (
-  <Padding bottom={1}>
+  <Padding bottom={0.5}>
     <H5 noMargin noWrap>
       {heading}
     </H5>
@@ -19,12 +19,12 @@ const SubSection = ({ heading, items }) => (
 )
 
 const SpecialitiesAndServices = ({ specialities, services }) => (
-  <Fragment>
+  <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     {specialities && (
       <SubSection heading="Technology used" items={specialities} />
     )}
     <SubSection heading="Services provided" items={services} />
-  </Fragment>
+  </Padding>
 )
 
 const CaseStudyHero = ({ caseStudy }) => {

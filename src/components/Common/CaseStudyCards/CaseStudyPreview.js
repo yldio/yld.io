@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
 import { H1, Paragraph } from '../../Typography'
 import StyledLink from '../../styledLink'
@@ -14,10 +15,10 @@ const Headings = ({ title }) => (
 )
 
 const MainText = ({ introSentence, slug }) => (
-  <Fragment>
+  <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <Paragraph fullWidth>{introSentence}</Paragraph>
     <StyledLink to={`/case-study/${slug}`}>Learn more</StyledLink>
-  </Fragment>
+  </Padding>
 )
 
 const CaseStudyPreview = ({ caseStudy }) => {
