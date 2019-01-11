@@ -96,7 +96,10 @@ class TrainingPage extends Component {
         />
         <Grid>
           {content.relatedCaseStudy ? (
-            <Padding top={5} bottom={5}>
+            <Padding
+              top={{ smallPhone: 3, tablet: 5 }}
+              bottom={{ smallPhone: 3.5, tablet: 5 }}
+            >
               <CaseStudy
                 subHeading="Featured work"
                 caseStudy={content.relatedCaseStudy}

@@ -8,7 +8,10 @@ import StyledLink from '../styledLink'
 const TalkToUsSection = ({ title, contactText }) => (
   <GreyBackground>
     <Grid>
-      <Padding top={5} bottom={4}>
+      <Padding
+        top={{ smallPhone: 3.5, tablet: 5 }}
+        bottom={{ smallPhone: 0, tablet: 4 }}
+      >
         <Row>
           <Col width={[1, 1, 1, 1, 4 / 12]}>
             <H2 small>{`Talk to us about ${title}`}</H2>
