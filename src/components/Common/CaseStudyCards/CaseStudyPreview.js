@@ -6,7 +6,7 @@ import getIntroSentence from '../../../utils/getIntroSentence'
 
 const Headings = ({ title }) => (
   <Fragment>
-    <Paragraph noMargin p>
+    <Paragraph noMargin secondary>
       Featured work
     </Paragraph>
     <H1>{title}</H1>
