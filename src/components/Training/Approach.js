@@ -5,7 +5,7 @@ import { Padding } from 'styled-components-spacing'
 
 import { H2, Paragraph } from '../Typography'
 import { Grid, Row, Col } from '../grid'
-import GrayBackground from '../GreyBG'
+import BlueBG from '../BlueBG'
 
 const Hr = styled.hr`
   height: 1px;
@@ -19,7 +19,7 @@ const Hr = styled.hr`
 `
 
 const Approach = ({ title, content, formats }) => (
-  <GrayBackground style={{ background: '#090329' }}>
+  <BlueBG style={{ background: '#090329' }}>
     <Padding
       top={{ smallPhone: 3, tablet: 4 }}
       bottom={{ smallPhone: 3, tablet: 4 }}
@@ -94,7 +94,7 @@ const Approach = ({ title, content, formats }) => (
       </Row>
       <Padding bottom={{ smallPhone: 0, tablet: 5 }} />
     </Grid>
-  </GrayBackground>
+  </BlueBG>
 )
 
 export default Approach

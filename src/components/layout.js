@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import Header from './Header'
 import './layout.css'
+import BlueBackground from './BlueBG'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
@@ -26,9 +27,9 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, backgroundColor, logoColour } = this.props
+    const { children, backgroundColor, logoColour, blue } = this.props
     const Component = ({ color }) => {
-      if (backgroundColor === 'blue') return BlueBackground
+      if (backgroundColor === 'blue' || blue) return BlueBackground
       if (backgroundColor === 'grey') return GreyBackground
 
       return Fragment

@@ -13,20 +13,21 @@ const Logo = ({ path, logoColour, blue }) => (
   <Fragment>
     {!path.includes('engineering') &&
     !path.includes('design') &&
-    !path.includes('training') ? (
+    !path.includes('training') &&
+    !blue ? (
       <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
     ) : null}
 
-    {path.includes('engineering') || path.includes('training') ? (
+    {path.includes('engineering') || path.includes('training') || blue ? (
       <Fragment>
-        <HiddenText>engineering</HiddenText>
+        <HiddenText>{path.split('/').join('')}</HiddenText>
         <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
       </Fragment>
     ) : null}
 
     {path.includes('design') ? (
       <Fragment>
-        <HiddenText>Design</HiddenText>
+        <HiddenText>{path.split('/').join('')}</HiddenText>
         <img
           role="link"
           tab-index="0"
