@@ -79,7 +79,7 @@ const CaseStudy = ({ caseStudy }) => {
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <TitleSection services={services} title={title} />
       </MobileOnlyCol>
-      <FlexCol px={[0]} width={1}>
+      <FlexCol width={1}>
         <Col px={[0]} width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
           <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
             <Image alt={posterImage.title} image={posterImage} />
