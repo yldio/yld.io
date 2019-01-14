@@ -15,28 +15,21 @@ const FlexCol = styled(Col)`
   display: flex;
 `
 
-const RowLayout = styled(Row)`
-  // creates extra column of space between image & text on RHS
-  ${breakpoint('tablet')`
-    justify-content: space-between;
-  `}
-`
-
 // headings & mainText should be sub-components (rather than a string, for example)
 const CaseStudyLayout = ({ posterImage, headings, mainText }) => (
-  <RowLayout>
+  <Row>
     <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
     <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
       <Image alt={posterImage.title} image={posterImage} />
     </Col>
-    <FlexCol width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
+    <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2]}>
       <TextWrapper>
         <Padding bottom={0.5}>{headings}</Padding>
         <Padding bottom={1}>{mainText}</Padding>
       </TextWrapper>
     </FlexCol>
     <Col width={[1, 1, 1, 1, 0]}>{mainText}</Col>
-  </RowLayout>
+  </Row>
 )
 
 export default CaseStudyLayout
