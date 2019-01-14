@@ -11,7 +11,7 @@ import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Homepage/caseStudy'
 import GrayBackground from '../components/GreyBG'
-import TalkToUsSection from '../components/Speciality/talkToUs'
+import TalkToUsSection from '../components/Common/talkToUs'
 
 class TrainingPage extends Component {
   state = {
@@ -91,7 +91,7 @@ class TrainingPage extends Component {
           courses={content.courses}
         />
         <TalkToUsSection
-          contactTitle={content.contactUsTitle}
+          title={`${content.contactUsTitle}`}
           contactText={content.contactUsText.contactUsText}
         />
         <Grid>
