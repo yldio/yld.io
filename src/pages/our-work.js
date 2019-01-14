@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
@@ -10,7 +13,16 @@ import { H1, H3 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const SubHeading = H3.withComponent('h2')
+const H3asH2 = H3.withComponent('h2')
+const SubHeading = styled(H3asH2)`
+  max-width: 100%;
+  ${breakpoint('smallTablet')`
+    max-width: ${remcalc(593)};
+  `}
+  ${breakpoint('tablet')`
+    max-width: ${remcalc(785)};
+  `}
+`
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
@@ -50,7 +62,7 @@ const OurWork = ({ data }) => {
       <GreyBackground>
         <Grid>
           <Row>
-            <Col width={[1, 1, 1, 1, 11 / 12, 9 / 12, 9 / 12]}>
+            <Col>
               <Padding
                 top={{
                   smallPhone: 3.5,
