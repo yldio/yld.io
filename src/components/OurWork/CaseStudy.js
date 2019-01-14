@@ -71,7 +71,10 @@ const CaseStudy = ({ caseStudy }) => {
             <Image alt={posterImage.title} image={posterImage} />
           </Padding>
         </Col>
-        <Col pr={[0]} width={[0, 0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}>
+        <Col
+          pr={[0, 0, 0, 0, 0, 0]}
+          width={[0, 0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}
+        >
           <TitleSection services={services} title={title} />
           <InfoSection introSentence={introSentence} slug={slug} />
         </Col>
