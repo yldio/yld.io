@@ -29,6 +29,20 @@ const FlexCol = styled(Col)`
   `}
 `
 
+const MobileOnlyCol = styled(Col)`
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
+const NonMobileCol = styled(Col)`
+  display: none;
+
+  ${breakpoint('smallTablet')`
+    display: block;
+  `}
+`
+
 const TitleSection = ({ services, title }) => {
   const commaSeparatedServices = [
     services.slice(0, -1).join(', '),
@@ -62,26 +76,26 @@ const CaseStudy = ({ caseStudy }) => {
 
   return (
     <Row>
-      <Col width={[1, 1, 1, 1, 0, 0, 0]}>
+      <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <TitleSection services={services} title={title} />
-      </Col>
+      </MobileOnlyCol>
       <FlexCol px={[0]} width={1}>
         <Col px={[0]} width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
           <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
             <Image alt={posterImage.title} image={posterImage} />
           </Padding>
         </Col>
-        <Col
+        <NonMobileCol
           pr={[0, 0, 0, 0, 0, 0]}
           width={[0, 0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}
         >
           <TitleSection services={services} title={title} />
           <InfoSection introSentence={introSentence} slug={slug} />
-        </Col>
+        </NonMobileCol>
       </FlexCol>
-      <Col width={[1, 1, 1, 1, 0, 0, 0]}>
+      <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <InfoSection introSentence={introSentence} title={title} slug={slug} />
-      </Col>
+      </MobileOnlyCol>
     </Row>
   )
 }
