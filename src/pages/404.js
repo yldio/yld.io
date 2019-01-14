@@ -18,8 +18,8 @@ const HomePageLink = styled(LinkStyled)`
   justify-content: center;
 `
 
-const NotFoundPage = ({ data: { site } }) => (
-  <Layout>
+const NotFoundPage = ({ data: { site }, location }) => (
+  <Layout location={location}>
     <Helmet
       title={`${site.siteMetadata.title} - Not Found`}
       meta={[

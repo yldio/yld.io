@@ -11,8 +11,6 @@ import menu from '../../images/menu.svg'
 import close from '../../images/menu_close.svg'
 import { MobileMenu, HomeLink, Close, DesktopMenu } from './elements.js'
 
-const isClient = () => typeof window !== 'undefined'
-
 const HiddenText = styled.h1`
   position: absolute;
   top: -9999px;
@@ -25,6 +23,8 @@ class Header extends Component {
   toggleMenu = () => this.setState(state => ({ menuOpen: !state.menuOpen }))
 
   render() {
+    const { location } = this.props
+
     return (
       <Grid>
         <Row>
@@ -33,10 +33,9 @@ class Header extends Component {
               <Padding top={2} bottom={3}>
                 <Flex alignCenter wrap justifyBetween>
                   <Link to="/">
-                    {isClient() &&
-                    !window.location.pathname.includes('engineering') &&
+                    {!location.pathname.includes('engineering') &&
                     !this.props.blue &&
-                    !window.location.pathname.includes('design') ? (
+                    !location.pathname.includes('design') ? (
                       <img
                         role="link"
                         tab-index="0"
@@ -46,8 +45,7 @@ class Header extends Component {
                       />
                     ) : null}
 
-                    {(isClient() &&
-                      window.location.pathname.includes('engineering')) ||
+                    {location.pathname.includes('engineering') ||
                     this.props.blue ? (
                       <Fragment>
                         <HiddenText>engineering</HiddenText>
@@ -58,13 +56,13 @@ class Header extends Component {
                       </Fragment>
                     ) : null}
 
-                    {isClient() && this.props.blue ? (
+                    {this.props.blue ? (
                       <Fragment>
                         <HiddenText>engineering</HiddenText>
                       </Fragment>
                     ) : null}
-                    {isClient() &&
-                    window.location.pathname.includes('design') ? (
+
+                    {location.pathname.includes('design') ? (
                       <Fragment>
                         <HiddenText>Design</HiddenText>
                         <img
@@ -109,6 +107,12 @@ class Header extends Component {
         </Row>
       </Grid>
     )
+  }
+}
+
+Header.defaultProps = {
+  location: {
+    pathname: ''
   }
 }
 

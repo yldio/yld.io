@@ -24,7 +24,8 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, blue, logoColour } = this.props
+    const { children, blue, logoColour, location } = this.props
+
     return (
       <StaticQuery
         query={graphql`
@@ -50,10 +51,10 @@ class Layout extends React.Component {
               </Helmet>
               {blue && (
                 <BlueBackground>
-                  <Header blue logoColour={logoColour} />
+                  <Header blue logoColour={logoColour} location={location} />
                 </BlueBackground>
               )}
-              {!blue && <Header logoColour={logoColour} />}
+              {!blue && <Header logoColour={logoColour} location={location} />}
               {children}
               <Footer />
               <GlobalStyle />

@@ -33,11 +33,11 @@ const WeWorkWithPadding = styled.div`
   `}
 `
 
-const Service = ({ data }) => {
+const Service = ({ data, location }) => {
   const service = data.allContentfulService.edges[0].node
   const site = data.site
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           service.title ? '- ' + service.title : ''

@@ -32,12 +32,12 @@ const Section = styled.section`
 
 const renderParagraphs = content =>
   makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
-const Policy = ({ data }) => {
+const Policy = ({ data, location }) => {
   const policy = data.allContentfulPolicy.edges[0].node
   const site = data.site
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           policy.title ? '- ' + policy.title : ''

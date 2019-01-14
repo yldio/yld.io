@@ -116,11 +116,12 @@ const Video = () => (
 )
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site, travel }
+  data: { allContentfulGenericCaseStudy: content, site, travel },
+  location
 }) => {
   const caseStudy = content.edges[0].node
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           content.title ? '- ' + content.title : ''

@@ -82,7 +82,7 @@ class ContactUs extends Component {
     const site = this.props.data.site
     const page = this.props.data.allContentfulPage.edges[0].node
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <GreyBG topMargin>
           <Helmet
             title={`${site.siteMetadata.title}  ${
