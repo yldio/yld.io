@@ -66,15 +66,11 @@ const OurWork = ({ data }) => {
               <Padding
                 top={{
                   smallPhone: 3.5,
-                  smallTablet: 3.5,
-                  tablet: 4,
-                  desktop: 4
+                  tablet: 4
                 }}
                 bottom={{
                   smallPhone: 3.5,
-                  smallTablet: 3.5,
-                  tablet: 5,
-                  desktop: 5
+                  tablet: 5
                 }}
               >
                 <H1>Our Work</H1>
