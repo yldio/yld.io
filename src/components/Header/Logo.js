@@ -9,35 +9,38 @@ const HiddenText = styled.h1`
   left: -9999px;
 `
 
-const Logo = ({ path, logoColour, blue }) => (
-  <Fragment>
-    {!path.includes('engineering') &&
-    !path.includes('design') &&
-    !path.includes('training') &&
-    !blue ? (
-      <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
-    ) : null}
+const Logo = ({ path, logoColour, blue }) => {
+  const name = path.split('/').join('')
+  return (
+    <Fragment>
+      {!path.includes('engineering') &&
+      !path.includes('design') &&
+      !path.includes('training') &&
+      !blue ? (
+        <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
+      ) : null}
 
-    {path.includes('engineering') || path.includes('training') || blue ? (
-      <Fragment>
-        <HiddenText>{path.split('/').join('')}</HiddenText>
-        <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
-      </Fragment>
-    ) : null}
+      {path.includes('engineering') || path.includes('training') || blue ? (
+        <Fragment>
+          <HiddenText>{name}</HiddenText>
+          <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
+        </Fragment>
+      ) : null}
 
-    {path.includes('design') ? (
-      <Fragment>
-        <HiddenText>{path.split('/').join('')}</HiddenText>
-        <img
-          role="link"
-          tab-index="0"
-          height="48"
-          src={logoDesign}
-          alt="yld design logo"
-        />
-      </Fragment>
-    ) : null}
-  </Fragment>
-)
+      {path.includes('design') ? (
+        <Fragment>
+          <HiddenText>{name}</HiddenText>
+          <img
+            role="link"
+            tab-index="0"
+            height="48"
+            src={logoDesign}
+            alt="yld design logo"
+          />
+        </Fragment>
+      ) : null}
+    </Fragment>
+  )
+}
 
 export default Logo

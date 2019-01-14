@@ -9,6 +9,7 @@ import Image from '../Common/Image'
 import remcalc from 'remcalc'
 import { H2, Paragraph } from '../Typography'
 import { Grid, Row, Col } from '../grid'
+import close from '../../images/close.svg'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -44,6 +45,9 @@ const Close = styled.button`
   font-size: ${remcalc(28)};
   font-weight: 200;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
     &:focus {
     background: transparent;
@@ -78,7 +82,9 @@ const Modal = ({ content, toggleModal }) => (
   <Wrapper visible={content}>
     {content && (
       <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-        <Close onClick={() => toggleModal(null)}>X</Close>
+        <Close onClick={() => toggleModal(null)}>
+          <img src={close} alt="close modal" width="18" height="18" />
+        </Close>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
