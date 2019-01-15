@@ -294,10 +294,7 @@ const IndexPage = ({
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Padding bottom={5} top={{ smallPhone: 3.5, tablet: 4 }}>
-            <CaseStudyPreview
-              caseStudy={caseStudy.relatedCaseStudy}
-              subHeading="Featured work"
-            />
+            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         </Grid>
       ) : null}

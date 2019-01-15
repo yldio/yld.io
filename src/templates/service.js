@@ -50,10 +50,7 @@ const Service = ({ data, location }) => {
         <Row>
           <Col width={[1]}>
             <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
-              <CaseStudyPreview
-                caseStudy={service.caseStudies[0]}
-                subHeading="Featured work"
-              />
+              <CaseStudyPreview caseStudy={service.caseStudies[0]} />
             </Padding>
           </Col>
         </Row>
@@ -132,10 +129,7 @@ const Service = ({ data, location }) => {
             top={{ smallPhone: 3.5, smallTablet: 6 }}
             bottom={{ smallPhone: 3.5, smallTablet: 5 }}
           >
-            <CaseStudyPreview
-              caseStudy={service.bottomCaseStudy}
-              subHeading="Featured work"
-            />
+            <CaseStudyPreview caseStudy={service.bottomCaseStudy} />
           </Padding>
         ) : null}
       </Grid>
