@@ -77,11 +77,12 @@ const Type2 = styled.img`
 `
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site }
+  data: { allContentfulGenericCaseStudy: content, site },
+  location
 }) => {
   const caseStudy = content.edges[0].node
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           content.title ? '- ' + content.title : ''

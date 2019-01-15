@@ -17,12 +17,12 @@ const Stat = styled(H2)`
   padding-bottom: 0 !important; /* sorry */
 `
 
-const CaseStudy = ({ data: { allContentfulCaseStudy, site } }) => {
+const CaseStudy = ({ data: { allContentfulCaseStudy, site }, location }) => {
   const caseStudy = allContentfulCaseStudy.edges[0].node
   const body = generateCaseStudy(caseStudy)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           caseStudy.title ? '- ' + caseStudy.title : ''

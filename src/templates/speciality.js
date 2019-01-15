@@ -14,11 +14,11 @@ import TutorialsSection from '../components/Speciality/tutorials'
 import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
 
-const Speciality = ({ data }) => {
+const Speciality = ({ data, location }) => {
   const speciality = data.allContentfulSpeciality.edges[0].node
   const site = data.site
   return (
-    <Layout blue logoColour={speciality.logoColour}>
+    <Layout blue logoColour={speciality.logoColour} location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           speciality.title ? '- ' + speciality.title : ''
