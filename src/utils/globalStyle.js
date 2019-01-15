@@ -23,14 +23,6 @@ export default createGlobalStyle`
     }
   }
 
-  hr {
-    opacity: 0.2;
-    background: ${props => props.theme.colors.white};
-    margin: 0;
-    border: none;
-    height: ${remcalc(1)};
-  }
-
   a {
     color: inherit;
     text-decoration: none;

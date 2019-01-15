@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../../grid'
-import { Graphic, How, Hr } from './elements'
+import { Graphic, How } from './elements'
+import Hr from '../../Common/Hr'
 import Image from '../../Common/Image'
 import WorkStageAlternatives from './alternatives'
 
@@ -46,7 +47,7 @@ const WorkStages = ({ title, workStages, image }) => (
         </Padding>
         {index !== arr.length - 1 && (
           <Grid>
-            <Hr />
+            <Hr muted />
           </Grid>
         )}
       </Fragment>

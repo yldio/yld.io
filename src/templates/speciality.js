@@ -18,7 +18,7 @@ const Speciality = ({ data, location }) => {
   const speciality = data.allContentfulSpeciality.edges[0].node
   const site = data.site
   return (
-    <Layout blue logoColour={speciality.logoColour} location={location}>
+    <Layout backgroundColor="blue" logoColour={speciality.logoColour} location={location}>
       <Helmet
         title={`${site.siteMetadata.title}  ${
           speciality.title ? '- ' + speciality.title : ''
