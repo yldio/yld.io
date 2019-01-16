@@ -38,7 +38,7 @@ const RightHandText = ({ title, specialities, services }) => (
     <Padding bottom={0.5}>
       <CardHeading>{title}</CardHeading>
     </Padding>
-    <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1, 5 / 6, 5 / 6]}>
+    <FlexCol pl={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1, 5 / 6, 5 / 6]}>
       <Padding bottom={1}>
         <SpecialitiesAndServices
           specialities={specialities}

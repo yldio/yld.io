@@ -33,7 +33,7 @@ const CaseStudyLayout = ({
     <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
       <Image alt={posterImage.title} image={posterImage} />
     </Col>
-    <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
+    <FlexCol pl={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
       <TextWrapper>{rightHandText}</TextWrapper>
     </FlexCol>
     <Col width={[1, 1, 1, 1, 0]}>{textBelowImage}</Col>
