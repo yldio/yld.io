@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 import { Paragraph } from '../../Typography'
-import { Item, WorkStageContentList, Hr } from './elements'
+import { Item, WorkStageContentList } from './elements'
+import Hr from '../../Common/Hr'
 
 const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => {
   const bodyList = sectionBody.split('- ')

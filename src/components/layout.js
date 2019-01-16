@@ -8,6 +8,7 @@ import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
 import BlueBackground from './BlueBG'
+import GreyBackground from './GreyBackgroundWithoutOffset'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
@@ -24,8 +25,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, blue, logoColour, location } = this.props
-
+    const { children, backgroundColor, logoColour, location } = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -49,12 +49,19 @@ class Layout extends React.Component {
             `}</script>
                 <html lang="en" />
               </Helmet>
-              {blue && (
+              {backgroundColor === 'blue' && (
                 <BlueBackground>
                   <Header blue logoColour={logoColour} location={location} />
                 </BlueBackground>
               )}
-              {!blue && <Header logoColour={logoColour} location={location} />}
+              {backgroundColor === 'grey' && (
+                <GreyBackground>
+                  <Header logoColour={logoColour} location={location} />
+                </GreyBackground>
+              )}
+              {!(backgroundColor === 'blue' || backgroundColor === 'grey') && (
+                <Header logoColour={logoColour} location={location} />
+              )}
               {children}
               <Footer />
               <GlobalStyle />
