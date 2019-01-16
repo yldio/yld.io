@@ -14,11 +14,22 @@ const Headings = ({ title }) => (
   </Fragment>
 )
 
-const MainText = ({ introSentence, slug }) => (
+const TextBelowImage = ({ introSentence, slug }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <Paragraph fullWidth>{introSentence}</Paragraph>
     <StyledLink to={`/case-study/${slug}`}>Learn more</StyledLink>
   </Padding>
+)
+
+const RightHandText = ({ title, introSentence, slug }) => (
+  <Fragment>
+    <Padding bottom={0.5}>
+      <Headings title={title} />
+    </Padding>
+    <Padding bottom={1}>
+      <TextBelowImage introSentence={introSentence} slug={slug} />
+    </Padding>
+  </Fragment>
 )
 
 const CaseStudyPreview = ({ caseStudy }) => {
@@ -28,7 +39,16 @@ const CaseStudyPreview = ({ caseStudy }) => {
     <CaseStudyLayout
       posterImage={posterImage}
       headings={<Headings title={title} />}
-      mainText={<MainText introSentence={introSentence} slug={slug} />}
+      textBelowImage={
+        <TextBelowImage introSentence={introSentence} slug={slug} />
+      }
+      rightHandText={
+        <RightHandText
+          title={title}
+          introSentence={introSentence}
+          slug={slug}
+        />
+      }
     />
   )
 }

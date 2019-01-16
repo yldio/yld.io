@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Padding } from 'styled-components-spacing'
 import { Row, Col } from '../../grid'
 import Image from '../Image'
 
@@ -22,20 +21,22 @@ const RowLayout = styled(Row)`
   `}
 `
 
-// headings & mainText should be sub-components (rather than a string, for example)
-const CaseStudyLayout = ({ posterImage, headings, mainText }) => (
+// headings, textBelowImage & rightHandText should be sub-components (rather than a string, for example)
+const CaseStudyLayout = ({
+  posterImage,
+  headings,
+  textBelowImage,
+  rightHandText
+}) => (
   <RowLayout>
     <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
     <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
       <Image alt={posterImage.title} image={posterImage} />
     </Col>
     <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
-      <TextWrapper>
-        <Padding bottom={0.5}>{headings}</Padding>
-        <Padding bottom={1}>{mainText}</Padding>
-      </TextWrapper>
+      <TextWrapper>{rightHandText}</TextWrapper>
     </FlexCol>
-    <Col width={[1, 1, 1, 1, 0]}>{mainText}</Col>
+    <Col width={[1, 1, 1, 1, 0]}>{textBelowImage}</Col>
   </RowLayout>
 )
 
