@@ -8,7 +8,7 @@ import { H2, H3, H5 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
-import CaseStudy from '../components/Homepage/caseStudy'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
@@ -50,10 +50,7 @@ const Service = ({ data, location }) => {
         <Row>
           <Col width={[1]}>
             <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
-              <CaseStudy
-                caseStudy={service.caseStudies[0]}
-                subHeading="Featured work"
-              />
+              <CaseStudyPreview caseStudy={service.caseStudies[0]} />
             </Padding>
           </Col>
         </Row>
@@ -132,10 +129,7 @@ const Service = ({ data, location }) => {
             top={{ smallPhone: 3.5, smallTablet: 6 }}
             bottom={{ smallPhone: 3.5, smallTablet: 5 }}
           >
-            <CaseStudy
-              caseStudy={service.bottomCaseStudy}
-              subHeading="Featured work"
-            />
+            <CaseStudyPreview caseStudy={service.bottomCaseStudy} />
           </Padding>
         ) : null}
       </Grid>

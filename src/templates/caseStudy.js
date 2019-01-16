@@ -6,8 +6,8 @@ import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import { H2, Paragraph, H5 } from '../components/Typography'
-import CaseStudyBottom from '../components/Homepage/caseStudy'
-import CaseStudyTop from '../components/Common/topCaseStudy'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
@@ -38,7 +38,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site }, location }) => {
       </Helmet>
       <Grid>
         <Padding bottom={0.5}>
-          <CaseStudyTop caseStudy={caseStudy} />
+          <CaseStudyHero caseStudy={caseStudy} />
         </Padding>
         <Margin bottom={4} />
         <Row>
@@ -100,7 +100,7 @@ const CaseStudy = ({ data: { allContentfulCaseStudy, site }, location }) => {
         </Row>
         {caseStudy.relatedCaseStudy ? (
           <Padding bottom={5}>
-            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         ) : null}
       </Grid>

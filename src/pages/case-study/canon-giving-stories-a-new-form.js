@@ -9,8 +9,8 @@ import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
-import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudyBottom from '../../components/Homepage/caseStudy'
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
@@ -131,7 +131,7 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid>
-        <CaseStudyTop caseStudy={caseStudy} />
+        <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
@@ -259,7 +259,7 @@ const IndexPage = ({
           </Row>
 
           <Padding bottom={5}>
-            <CaseStudyBottom caseStudy={caseStudy.relatedCaseStudy} />
+            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         </Grid>
       ) : null}

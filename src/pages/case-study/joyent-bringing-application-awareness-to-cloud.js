@@ -8,8 +8,8 @@ import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { H2, Paragraph } from '../../components/Typography'
-import CaseStudyTop from '../../components/Common/topCaseStudy'
-import CaseStudy from '../../components/Homepage/caseStudy'
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
 import Image from '../../components/Common/Image'
@@ -82,7 +82,7 @@ const IndexPage = ({
         <html lang="en" />
       </Helmet>
       <Grid>
-        <CaseStudyTop caseStudy={caseStudy} />
+        <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -294,10 +294,7 @@ const IndexPage = ({
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Padding bottom={5} top={{ smallPhone: 3.5, tablet: 4 }}>
-            <CaseStudy
-              caseStudy={caseStudy.relatedCaseStudy}
-              subHeading="Featured work"
-            />
+            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         </Grid>
       ) : null}

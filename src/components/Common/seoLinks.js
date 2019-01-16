@@ -25,12 +25,8 @@ export default function SeoLinks({ items, ...props }) {
             const path = pathsById[item.id]
             if (path) {
               return (
-                <ListItem>
-                  <Link
-                    key={item.id}
-                    to={path}
-                    style={{ textDecoration: 'underline' }}
-                  >
+                <ListItem key={item.id}>
+                  <Link to={path} style={{ textDecoration: 'underline' }}>
                     {item.title.trim()}
                   </Link>
                 </ListItem>
