@@ -66,9 +66,11 @@ const ProjectsSection = ({ speciality }) =>
               related projects
             </H2>
           </Col>
-          <Col width={[1, 1, 1, 1, 1 / 2]}>
-            <PosterLinks project={speciality.relatedProjects[1]} />
-          </Col>
+          {speciality.relatedProjects[1] && (
+            <Col width={[1, 1, 1, 1, 1 / 2]}>
+              <PosterLinks project={speciality.relatedProjects[1]} />
+            </Col>
+          )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
         <CompaniesHelped speciality={speciality} />

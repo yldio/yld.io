@@ -53,6 +53,7 @@ const TalksSection = ({ speciality }) => {
       type.toLowerCase() === 'talk' &&
       (additionalInfo || '').toLowerCase() === 'cta'
   )[0]
+
   return talks.length ? (
     <BlueBackground>
       <Grid>
