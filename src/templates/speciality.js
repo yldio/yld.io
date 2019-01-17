@@ -18,7 +18,11 @@ const Speciality = ({ data, location }) => {
   const speciality = data.allContentfulSpeciality.edges[0].node
   const site = data.site
   return (
-    <Layout backgroundColor="blue" logoColour={speciality.logoColour} location={location}>
+    <Layout
+      backgroundColor="blue"
+      logoColour={speciality.logoColour}
+      location={location}
+    >
       <Helmet
         title={`${site.siteMetadata.title}  ${
           speciality.title ? '- ' + speciality.title : ''
@@ -124,6 +128,17 @@ export const pageQuery = graphql`
               title
               slug
               introSentence
+              posterColor
+              posterImage {
+                title
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulGenericCaseStudy {
+              title
+              slug
               posterColor
               posterImage {
                 title
