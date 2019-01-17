@@ -41,14 +41,16 @@ const TalkLinkCol = styled(Col)`
 `
 const TalksSection = ({ speciality }) => {
   const talks = speciality.externalResources.filter(
-    ({ type, additionalInfo }) => type === 'Talk' && !additionalInfo
+    ({ type, additionalInfo }) =>
+      type.toLowerCase() === 'talk' && !additionalInfo
   )
   const featured = speciality.externalResources.filter(
     ({ type, additionalInfo }) =>
-      type === 'Talk' && additionalInfo === 'Featured'
+      type === 'Talk' && additionalInfo.toLowerCase() === 'featured'
   )[0]
   const cta = speciality.externalResources.filter(
-    ({ type, additionalInfo }) => type === 'Talk' && additionalInfo === 'CTA'
+    ({ type, additionalInfo }) =>
+      type.toLowerCase() === 'talk' && additionalInfo.toLowerCase() === 'cta'
   )[0]
   return talks.length ? (
     <BlueBackground>
@@ -59,21 +61,23 @@ const TalksSection = ({ speciality }) => {
               <SmallerH2 reverse>{`Talks`}</SmallerH2>
             </Col>
           </Row>
-          <Padding top={3}>
-            <Row>
-              <Col width={[1]}>
-                <Flex justifyCenter alignCenter>
-                  <Video
-                    align="middle"
-                    src={featured.link}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  />
-                </Flex>
-              </Col>
-            </Row>
-          </Padding>
+          {featured && (
+            <Padding top={3}>
+              <Row>
+                <Col width={[1]}>
+                  <Flex justifyCenter alignCenter>
+                    <Video
+                      align="middle"
+                      src={featured.link}
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    />
+                  </Flex>
+                </Col>
+              </Row>
+            </Padding>
+          )}
           <Padding top={4} bottom={4}>
             <Row>
               {talks.map(({ title, link, additionalInfo, id }) => (
@@ -91,13 +95,15 @@ const TalksSection = ({ speciality }) => {
               ))}
             </Row>
           </Padding>
-          <Row>
-            <Col width={[1]}>
-              <StyledLink reverse href={cta.link}>
-                {cta.title}
-              </StyledLink>
-            </Col>
-          </Row>
+          {cta && (
+            <Row>
+              <Col width={[1]}>
+                <StyledLink reverse href={cta.link}>
+                  {cta.title}
+                </StyledLink>
+              </Col>
+            </Row>
+          )}
         </Padding>
       </Grid>
     </BlueBackground>
