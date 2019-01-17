@@ -46,11 +46,12 @@ const TalksSection = ({ speciality }) => {
   )
   const featured = speciality.externalResources.filter(
     ({ type, additionalInfo }) =>
-      type === 'Talk' && additionalInfo.toLowerCase() === 'featured'
+      type === 'Talk' && (additionalInfo || '').toLowerCase() === 'featured'
   )[0]
   const cta = speciality.externalResources.filter(
     ({ type, additionalInfo }) =>
-      type.toLowerCase() === 'talk' && additionalInfo.toLowerCase() === 'cta'
+      type.toLowerCase() === 'talk' &&
+      (additionalInfo || '').toLowerCase() === 'cta'
   )[0]
   return talks.length ? (
     <BlueBackground>
