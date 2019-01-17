@@ -41,16 +41,17 @@ const TalkLinkCol = styled(Col)`
 `
 const TalksSection = ({ speciality }) => {
   const talks = speciality.externalResources.filter(
-    ({ type, additionalInfo = '' }) =>
+    ({ type, additionalInfo }) =>
       type.toLowerCase() === 'talk' && !additionalInfo
   )
   const featured = speciality.externalResources.filter(
-    ({ type, additionalInfo = '' }) =>
-      type === 'Talk' && additionalInfo.toLowerCase() === 'featured'
+    ({ type, additionalInfo }) =>
+      type === 'Talk' && (additionalInfo || '').toLowerCase() === 'featured'
   )[0]
   const cta = speciality.externalResources.filter(
-    ({ type, additionalInfo = '' }) =>
-      type.toLowerCase() === 'talk' && additionalInfo.toLowerCase() === 'cta'
+    ({ type, additionalInfo }) =>
+      type.toLowerCase() === 'talk' &&
+      (additionalInfo || '').toLowerCase() === 'cta'
   )[0]
   return talks.length ? (
     <BlueBackground>
