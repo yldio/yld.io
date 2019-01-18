@@ -41,19 +41,16 @@ const TalkLinkCol = styled(Col)`
 `
 const TalksSection = ({ speciality, videoIcon }) => {
   const talks = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type.toLowerCase() === 'talk' && !additionalInfo
+    ({ type, featured, cta }) =>
+      type.toLowerCase() === 'talk' && !featured && !cta
   )
-  const featured = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type === 'Talk' && (additionalInfo || '').toLowerCase() === 'featured'
-  )[0]
-  const cta = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type.toLowerCase() === 'talk' &&
-      (additionalInfo || '').toLowerCase() === 'cta'
-  )[0]
-
+  const featured = speciality.externalResources.find(
+    ({ type, featured }) => type === 'Talk' && featured
+  )
+  const cta = speciality.externalResources.find(
+    ({ type, cta }) => type.toLowerCase() === 'talk' && cta
+  )
+  console.log(speciality)
   return talks.length ? (
     <BlueBackground>
       <Grid>

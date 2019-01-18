@@ -345,36 +345,24 @@ export const pageQuery = graphql`
             id
             slug
             title
-            body {
-              nodeType
-            }
           }
           specialityAreaTitle2
           specialityAreaItems2 {
             id
             slug
             title
-            body {
-              nodeType
-            }
           }
           specialityAreaTitle3
           specialityAreaItems3 {
             id
             slug
             title
-            body {
-              nodeType
-            }
           }
           specialityAreaTitle4
           specialityAreaItems4 {
             id
             slug
             title
-            body {
-              nodeType
-            }
           }
         }
       }

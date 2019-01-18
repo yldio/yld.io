@@ -15,7 +15,8 @@ import Services from '../components/Homepage/services'
 import GreyBackground from '../components/GreyBG'
 
 const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site }, location
+  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site },
+  location
 }) => (
   <Layout location={location}>
     <Helmet
@@ -38,10 +39,7 @@ const IndexPage = ({
     <GreyBackground topMargin>
       <Grid>
         <Padding top={{ smallPhone: 2 }} />
-        <Padding
-          top={{ smallPhone: 4, smallTablet: 5, desktop: 6 }}
-          bottom={3}
-        >
+        <Padding top={{ smallPhone: 4, smallTablet: 5, desktop: 6 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
@@ -158,9 +156,6 @@ export const query = graphql`
           id
           slug
           title
-          body {
-            nodeType
-          }
         }
       }
       companies {

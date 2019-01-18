@@ -228,6 +228,8 @@ export const pageQuery = graphql`
             type
             title
             link
+            cta
+            featured
             additionalInfo
             id
             colorCode

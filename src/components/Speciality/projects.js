@@ -45,9 +45,8 @@ const CompaniesHelped = ({ speciality, noOther }) => (
 )
 
 const ProjectsSection = ({ speciality }) => {
-  const firstRelated = speciality.relatedProjects[0]
-  const secondRelated = speciality.relatedProjects[1]
-  return speciality.relatedProjects ? (
+  const related = speciality.relatedProjects
+  return related ? (
     <Grid>
       <Padding top={5} bottom={5}>
         <Row>
@@ -60,9 +59,7 @@ const ProjectsSection = ({ speciality }) => {
                 related projects
               </H2>
             </Padding>
-            {firstRelated && secondRelated && (
-              <PosterLinks project={firstRelated} />
-            )}
+            {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
             <H2 noMargin>{speciality.title}</H2>
@@ -70,14 +67,14 @@ const ProjectsSection = ({ speciality }) => {
               related projects
             </H2>
           </Col>
-          {!secondRelated && (
+          {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <PosterLinks project={firstRelated} />
+              <PosterLinks project={related[0]} />
             </Col>
           )}
-          {secondRelated && (
+          {related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <PosterLinks project={secondRelated} />
+              <PosterLinks project={related[1]} />
             </Col>
           )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
