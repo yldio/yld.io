@@ -40,17 +40,16 @@ const TalkLinkCol = styled(Col)`
   `}
 `
 const TalksSection = ({ speciality, videoIcon }) => {
+  const isTalk = type => type === 'Talk'
   const talks = speciality.externalResources.filter(
-    ({ type, featured, cta }) =>
-      type.toLowerCase() === 'talk' && !featured && !cta
+    ({ type, featured, cta }) => isTalk(type) && !featured && !cta
   )
   const featured = speciality.externalResources.find(
-    ({ type, featured }) => type === 'Talk' && featured
+    ({ type, featured }) => isTalk(type) && featured
   )
   const cta = speciality.externalResources.find(
-    ({ type, cta }) => type.toLowerCase() === 'talk' && cta
+    ({ type, cta }) => isTalk(type) && cta
   )
-  console.log(speciality)
   return talks.length ? (
     <BlueBackground>
       <Grid>
