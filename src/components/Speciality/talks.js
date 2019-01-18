@@ -39,7 +39,7 @@ const TalkLinkCol = styled(Col)`
     }
   `}
 `
-const TalksSection = ({ speciality }) => {
+const TalksSection = ({ speciality, videoIcon }) => {
   const talks = speciality.externalResources.filter(
     ({ type, additionalInfo }) =>
       type.toLowerCase() === 'talk' && !additionalInfo
@@ -86,8 +86,8 @@ const TalksSection = ({ speciality }) => {
                 <TalkLinkCol width={[1, 1, 1, 1, 4 / 12]} key={id}>
                   <TalkLink href={link}>
                     <PlayIcon
-                      src={`https://${speciality.videoIcon.file.url}`}
-                      alt={speciality.videoIcon.title}
+                      src={`https://${videoIcon.file.url}`}
+                      alt={videoIcon.title}
                     />
                     <Paragraph reverse muted noMargin>
                       {title}

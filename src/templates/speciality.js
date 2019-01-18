@@ -17,6 +17,7 @@ import BlogPostsSection from '../components/Speciality/blog'
 const Speciality = ({ data, location }) => {
   const speciality = data.allContentfulSpeciality.edges[0].node
   const site = data.site
+  const videoIcon = data.videoIcon
   return (
     <Layout
       backgroundColor="blue"
@@ -43,7 +44,7 @@ const Speciality = ({ data, location }) => {
         <CommunitySection speciality={speciality} />
       ) : null}
       <EventSection speciality={speciality} />
-      <TalksSection speciality={speciality} />
+      <TalksSection speciality={speciality} videoIcon={videoIcon} />
       <BlogPostsSection speciality={speciality} />
       <TutorialsSection speciality={speciality} />
       <BooksSection speciality={speciality} />
@@ -276,24 +277,19 @@ export const pageQuery = graphql`
             }
           }
           contactText
-          featuredTalkIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          videoIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
           logoColour
         }
+      }
+    }
+
+    videoIcon: contentfulAsset(
+      id: { eq: "395d5bbc-442f-57c2-81d8-90c04fe428e6" }
+    ) {
+      id
+      title
+      file {
+        fileName
+        url
       }
     }
   }
