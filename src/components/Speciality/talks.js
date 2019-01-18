@@ -39,21 +39,17 @@ const TalkLinkCol = styled(Col)`
     }
   `}
 `
-const TalksSection = ({ speciality }) => {
+const TalksSection = ({ speciality, videoIcon }) => {
+  const isTalk = type => type === 'Talk'
   const talks = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type.toLowerCase() === 'talk' && !additionalInfo
+    ({ type, featured, cta }) => isTalk(type) && !featured && !cta
   )
-  const featured = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type === 'Talk' && (additionalInfo || '').toLowerCase() === 'featured'
-  )[0]
-  const cta = speciality.externalResources.filter(
-    ({ type, additionalInfo }) =>
-      type.toLowerCase() === 'talk' &&
-      (additionalInfo || '').toLowerCase() === 'cta'
-  )[0]
-
+  const featured = speciality.externalResources.find(
+    ({ type, featured }) => isTalk(type) && featured
+  )
+  const cta = speciality.externalResources.find(
+    ({ type, cta }) => isTalk(type) && cta
+  )
   return talks.length ? (
     <BlueBackground>
       <Grid>
@@ -86,8 +82,8 @@ const TalksSection = ({ speciality }) => {
                 <TalkLinkCol width={[1, 1, 1, 1, 4 / 12]} key={id}>
                   <TalkLink href={link}>
                     <PlayIcon
-                      src={`https://${speciality.videoIcon.file.url}`}
-                      alt={speciality.videoIcon.title}
+                      src={`https://${videoIcon.file.url}`}
+                      alt={videoIcon.title}
                     />
                     <Paragraph reverse muted noMargin>
                       {title}

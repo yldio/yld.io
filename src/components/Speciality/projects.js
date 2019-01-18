@@ -44,8 +44,9 @@ const CompaniesHelped = ({ speciality, noOther }) => (
   </Fragment>
 )
 
-const ProjectsSection = ({ speciality }) =>
-  speciality.relatedProjects ? (
+const ProjectsSection = ({ speciality }) => {
+  const related = speciality.relatedProjects
+  return related ? (
     <Grid>
       <Padding top={5} bottom={5}>
         <Row>
@@ -58,7 +59,7 @@ const ProjectsSection = ({ speciality }) =>
                 related projects
               </H2>
             </Padding>
-            <PosterLinks project={speciality.relatedProjects[0]} />
+            {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
             <H2 noMargin>{speciality.title}</H2>
@@ -66,9 +67,14 @@ const ProjectsSection = ({ speciality }) =>
               related projects
             </H2>
           </Col>
-          {speciality.relatedProjects[1] && (
+          {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <PosterLinks project={speciality.relatedProjects[1]} />
+              <PosterLinks project={related[0]} />
+            </Col>
+          )}
+          {related[1] && (
+            <Col width={[1, 1, 1, 1, 1 / 2]}>
+              <PosterLinks project={related[1]} />
             </Col>
           )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
@@ -83,5 +89,5 @@ const ProjectsSection = ({ speciality }) =>
       </Padding>
     </Grid>
   )
-
+}
 export default ProjectsSection
