@@ -2,12 +2,12 @@ import React from 'react'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from '../grid'
-import breakpoint from 'styled-components-breakpoint'
-import { SmallerH2, Paragraph } from '../Typography'
+import { SmallerH2 } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import BlueBackground from '../BlueBG'
 import styled from 'styled-components'
+import CompactVideoLink from '../Common/CompactVideoLink'
 
 const Video = styled.iframe`
   width: ${remcalc(854)};
@@ -17,28 +17,7 @@ const Video = styled.iframe`
   box-shadow: 0px 0px 90px rgba(255, 255, 255, 0.2),
     0px 0px 20px rgba(255, 255, 255, 0.07);
 `
-const PlayIcon = styled.img`
-  min-height: ${remcalc(24)};
-  max-width: ${remcalc(24)};
-  margin-right: ${remcalc(10)};
-`
 
-const TalkLink = styled.a`
-  display: flex;
-  align-items: start;
-`
-
-const TalkLinkCol = styled(Col)`
-  :not(:first-of-type) {
-    margin-top: 10px;
-  }
-
-  ${breakpoint('tablet')`
-    :not(:first-of-type) {
-      margin-top: 0px;
-    }
-  `}
-`
 const TalksSection = ({ speciality, videoIcon }) => {
   const isTalk = type => type === 'Talk'
   const talks = speciality.externalResources.filter(
@@ -78,18 +57,10 @@ const TalksSection = ({ speciality, videoIcon }) => {
           )}
           <Padding top={4} bottom={4}>
             <Row>
-              {talks.map(({ title, link, additionalInfo, id }) => (
-                <TalkLinkCol width={[1, 1, 1, 1, 4 / 12]} key={id}>
-                  <TalkLink href={link}>
-                    <PlayIcon
-                      src={`https://${videoIcon.file.url}`}
-                      alt={videoIcon.title}
-                    />
-                    <Paragraph reverse muted noMargin>
-                      {title}
-                    </Paragraph>
-                  </TalkLink>
-                </TalkLinkCol>
+              {talks.map(({ title, link, id }) => (
+                <CompactVideoLink href={link} key={id} bg="dark">
+                  {title}
+                </CompactVideoLink>
               ))}
             </Row>
           </Padding>
