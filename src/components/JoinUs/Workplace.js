@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import { Row, Col, CompensatedCol, CompensatedRow } from '../grid'
+import { Row, CompensatedCol, CompensatedRow } from '../grid'
 import { H2, H3, Paragraph } from '../Typography'
 import colorLuminance from 'color-luminance'
 
@@ -14,7 +14,7 @@ import {
   SecondColum,
   Separator,
   List,
-  LightH3
+  TitleAndBody
 } from './elements'
 
 const MAX_CASE_STUDIES = 3
@@ -92,16 +92,7 @@ const Work = ({ data: { title, list, text, someWork } }) => (
       </SecondColum>
     </Row>
     <Separator />
-    <Row>
-      <FirstColumn>
-        <LightH3>Some of our work</LightH3>
-      </FirstColumn>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 1, 6 / 12]}>
-        <Paragraph muted>{text}</Paragraph>
-      </Col>
-    </Row>
+    <TitleAndBody title="Some of our work" body={text} />
     <CompensatedRow>
       {someWork.slice(0, MAX_CASE_STUDIES).map((cs, idx) => {
         const lightText = getColorLuminance(cs.posterColor) < 127.5

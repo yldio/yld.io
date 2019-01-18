@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 import getYoutubeId from 'get-youtube-id'
 import { Padding, Margin } from 'styled-components-spacing'
-import { Row, Col, CompensatedRow, CompensatedCol } from '../grid'
+import { Row, CompensatedRow, CompensatedCol } from '../grid'
 import Image from '../Common/Image'
 import { H2, Paragraph } from '../Typography'
 import playIcon from '../../images/button-play-default.svg'
@@ -15,7 +15,7 @@ import {
   SecondColum,
   Separator,
   List,
-  LightH3
+  TitleAndBody
 } from './elements'
 
 const MAX_VIDEOS = 3
@@ -103,16 +103,7 @@ const OpenSource = ({ data: { title, list, text, featuredTalks } }) => (
       </SecondColum>
     </Row>
     <Separator />
-    <Row>
-      <FirstColumn>
-        <LightH3>Recent talks</LightH3>
-      </FirstColumn>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 1, 6 / 12]}>
-        <Paragraph muted>{text}</Paragraph>
-      </Col>
-    </Row>
+    <TitleAndBody title="Recent Talks" body={text} />
     <Talks data={featuredTalks} />
   </Section>
 )

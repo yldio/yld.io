@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
-import { Grid, Col } from '../grid'
+import { Grid, Row, Col } from '../grid'
 import { H3, Paragraph } from '../Typography'
 import GreyBG from '../GreyBG'
 
@@ -72,6 +72,20 @@ export const ShiftedColumn = styled(Col)`
     margin-left: 8.33333%;
   `};
 `
+export const TitleAndBody = ({ title, body }) => (
+  <React.Fragment>
+    <Row>
+      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
+        <LightH3>{title}</LightH3>
+      </Col>
+    </Row>
+    <Row>
+      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
+        <Paragraph muted>{body}</Paragraph>
+      </Col>
+    </Row>
+  </React.Fragment>
+)
 
 export const Separator = ({ children }) => (
   <Padding

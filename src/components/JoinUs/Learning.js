@@ -1,7 +1,7 @@
 import React from 'react'
 import { Padding, Margin } from 'styled-components-spacing'
 import styled from 'styled-components'
-import { Row, Col, CompensatedRow, CompensatedCol } from '../grid'
+import { Row, CompensatedRow, CompensatedCol } from '../grid'
 import Image from '../Common/Image'
 import { H2, Paragraph } from '../Typography'
 
@@ -11,8 +11,8 @@ import {
   SecondColum,
   Separator,
   List,
-  LightH3,
-  Hr
+  Hr,
+  TitleAndBody
 } from './elements'
 
 const InsightAnchor = styled.a`
@@ -33,16 +33,10 @@ const Learning = ({ data: { title, text, featuredInsights, list } }) => (
       </SecondColum>
     </Row>
     <Separator />
-    <Row>
-      <FirstColumn>
-        <LightH3>Some insights into personal growth at YLD</LightH3>
-      </FirstColumn>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 1, 6 / 12]}>
-        <Paragraph muted>{text}</Paragraph>
-      </Col>
-    </Row>
+    <TitleAndBody
+      title="Some insights into personal growth at YLD"
+      body={text}
+    />
     <CompensatedRow>
       {featuredInsights.map((el, idx) => (
         <CompensatedCol width={[1, 1, 1, 4 / 12]} key={idx}>
