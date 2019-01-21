@@ -408,13 +408,6 @@ exports[`Storyshots Form Label 1`] = `
 </label>
 `;
 
-exports[`Storyshots Form Textarea 1`] = `
-<textarea
-  className="sc-kGXeez jmKxiL"
-  placeholder="test"
-/>
-`;
-
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
   className="sc-bZQynM bdjeOF"
