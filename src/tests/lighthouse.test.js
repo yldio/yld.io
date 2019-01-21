@@ -56,13 +56,13 @@ test('Security', () => {
 test('Performance', () => {
   return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'dom-size', 'smaller', 500)
-    auditTest(audits, 'network-requests', 'smaller', 66)
-    auditTest(audits, 'network-requests', 'smaller', 66)
-    auditTest(audits, 'bootup-time', 'smaller', 2400) //  0.89 -- prev 1333
+    auditTest(audits, 'network-requests', 'smaller', 70)
+    auditTest(audits, 'network-requests', 'smaller', 70)
+    auditTest(audits, 'bootup-time', 'smaller', 2600) //  0.89 -- prev 1333
     auditTest(audits, 'interactive', 'smaller', 10000) //  0.45 -- prev 7788
-    auditTest(audits, 'speed-index', 'smaller', 5000) //  0.71 -- prev 4582
-    auditTest(audits, 'first-contentful-paint', 'smaller', 4100) //  0.56 --prev 3735
-    auditTest(audits, 'first-meaningful-paint', 'smaller', 4100) //  0.53 -- prev 3885
+    auditTest(audits, 'speed-index', 'smaller', 6000) //  0.71 -- prev 4582
+    auditTest(audits, 'first-contentful-paint', 'smaller', 4200)
+    auditTest(audits, 'first-meaningful-paint', 'smaller', 4200)
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
