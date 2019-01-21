@@ -56,13 +56,13 @@ test('Security', () => {
 test('Performance', () => {
   return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'dom-size', 'smaller', 500)
-    auditTest(audits, 'network-requests', 'smaller', 65)
-    auditTest(audits, 'network-requests', 'smaller', 65)
+    auditTest(audits, 'network-requests', 'smaller', 66)
+    auditTest(audits, 'network-requests', 'smaller', 66)
     auditTest(audits, 'bootup-time', 'smaller', 2400) //  0.89 -- prev 1333
     auditTest(audits, 'interactive', 'smaller', 10000) //  0.45 -- prev 7788
     auditTest(audits, 'speed-index', 'smaller', 5000) //  0.71 -- prev 4582
-    auditTest(audits, 'first-contentful-paint', 'smaller', 4000) //  0.56 --prev 3735
-    auditTest(audits, 'first-meaningful-paint', 'smaller', 4000) //  0.53 -- prev 3885
+    auditTest(audits, 'first-contentful-paint', 'smaller', 4100) //  0.56 --prev 3735
+    auditTest(audits, 'first-meaningful-paint', 'smaller', 4100) //  0.53 -- prev 3885
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
@@ -81,8 +81,6 @@ test('Performance', () => {
     auditTest(audits, 'redirects')
     // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio
     auditTest(audits, 'image-aspect-ratio')
-    // https://developers.google.com/web/tools/lighthouse/audits/offscreen-images
-    auditTest(audits, 'offscreen-images', 'size', 3) // prev 1
     // https://developers.google.com/web/tools/lighthouse/audits/unused-css-rules
     auditTest(audits, 'unused-css-rules', 'size', 1)
   })

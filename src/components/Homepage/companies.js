@@ -16,7 +16,7 @@ const Companies = ({ companies }) => (
           width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]}
           key={company.id}
         >
-          <img src={company.file.url} />
+          <img src={company.file.url} alt={company.title} />
         </Column>
       ))}
     </Row>
