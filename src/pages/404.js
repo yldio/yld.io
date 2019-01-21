@@ -10,9 +10,7 @@ import { H1, Paragraph } from '../components/Typography'
 import { Button } from '../components/forms'
 import Layout from '../components/layout'
 
-const LinkStyled = Button.withComponent(Link)
-
-const HomePageLink = styled(LinkStyled)`
+const HomePageLink = styled(Button)`
   width: ${remcalc(145)};
   display: flex;
   justify-content: center;
@@ -41,7 +39,9 @@ const NotFoundPage = ({ data: { site }, location }) => (
               what you are looking for from our home page.
             </Paragraph>
             <Margin top={1}>
-              <HomePageLink to={'/'}>Home</HomePageLink>
+              <HomePageLink as={Link} to={'/'}>
+                Home
+              </HomePageLink>
             </Margin>
           </Col>
         </Row>

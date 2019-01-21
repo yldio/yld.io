@@ -13,7 +13,7 @@ import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 
-const Title = styled(H3.withComponent('h1'))`
+const Title = styled(H3)`
   font-weight: normal;
   ${breakpoint('smallTablet')`
     width: 593px;
@@ -64,7 +64,7 @@ const Service = ({ data, location }) => {
                 top={{ smallPhone: 3, smallTablet: 4 }}
                 bottom={{ smallPhone: 0, smallTablet: 2 }}
               >
-                <Title>
+                <Title as="h1">
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </Title>
               </Padding>

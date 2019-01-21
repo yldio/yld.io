@@ -41,8 +41,6 @@ export const Label = styled('label')`
   display: block;
 `
 
-export const Textarea = Input.withComponent('textarea')
-
 export const Button = styled.button`
   border: 0;
   display: block;

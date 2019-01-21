@@ -38,7 +38,7 @@ const GradientBackground = styled.div`
   background-image: linear-gradient(to top, #0c1835, #050a18);
 `
 
-const GradientGrid = styled(GradientBackground.withComponent(Grid))`
+const GradientGrid = styled(GradientBackground)`
   ${breakpoint('tablet')`
     width: 73.5%;
   `}
@@ -187,7 +187,7 @@ const IndexPage = ({
       </GreyBackground>
 
       <MobileOnly tablet>
-        <GradientBackground>
+        <GradientBackground as={Grid}>
           <Grid>
             <GradientContent
               text={caseStudy.genericText3.genericText3}

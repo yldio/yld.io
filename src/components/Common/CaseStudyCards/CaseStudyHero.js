@@ -4,10 +4,8 @@ import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import CaseStudyLayout from './CaseStudyLayout'
-import { H1, H5 } from '../../Typography'
+import { H2, H5 } from '../../Typography'
 import SeoLinks from '../seoLinks'
-
-const CardHeading = H1.withComponent('h2')
 
 const FlexCol = styled(Col)`
   display: flex;
@@ -36,7 +34,7 @@ const SpecialitiesAndServices = ({ specialities, services }) => (
 const RightHandText = ({ title, specialities, services }) => (
   <Fragment>
     <Padding bottom={0.5}>
-      <CardHeading>{title}</CardHeading>
+      <H2>{title}</H2>
     </Padding>
     <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1, 5 / 6, 5 / 6]}>
       <Padding bottom={1}>
@@ -54,7 +52,7 @@ const CaseStudyHero = ({ caseStudy }) => {
   return (
     <CaseStudyLayout
       posterImage={posterImage}
-      headings={<CardHeading>{title}</CardHeading>}
+      headings={<H2>{title}</H2>}
       textBelowImage={
         <SpecialitiesAndServices
           specialities={specialities}

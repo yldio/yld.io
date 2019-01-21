@@ -3,10 +3,16 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
-import H1 from './h1'
+import { h1Styles } from './h1'
 
 // this is to be able to pass the className prop down to add styles on later
-const H2 = props => React.createElement(H1.withComponent('h2'), props)
+const H2 = props =>
+  React.createElement(
+    styled.h2`
+      ${h1Styles}
+    `,
+    props
+  )
 
 export const SmallerH2 = styled.h2`
   font-size: ${remcalc(30)};

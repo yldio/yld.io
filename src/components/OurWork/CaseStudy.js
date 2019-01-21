@@ -13,8 +13,6 @@ const Services = styled(Paragraph).attrs({ muted: true })`
   padding-bottom: 0;
 `
 
-const Title = H4.withComponent('h2')
-
 const IntroSentence = styled(Paragraph).attrs({ fullWidth: true })`
   padding-bottom: 6px;
   ${breakpoint('tablet')`
@@ -51,7 +49,7 @@ const TitleSection = ({ services, title }) => {
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
       <Services>{commaSeparatedServices}</Services>
-      <Title>{title}</Title>
+      <H4 as="h2">{title}</H4>
     </Padding>
   )
 }
