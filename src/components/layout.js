@@ -62,7 +62,7 @@ class Layout extends React.Component {
               {!(backgroundColor === 'blue' || backgroundColor === 'grey') && (
                 <Header logoColour={logoColour} location={location} />
               )}
-              {children}
+              <main>{children}</main>
               <Footer />
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
