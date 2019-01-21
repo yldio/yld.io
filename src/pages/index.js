@@ -120,7 +120,7 @@ export const query = graphql`
         slug
         pageReady
         caseStudies {
-          ... on ContentfulGenericCaseStudy {
+          ... on ContentfulNonTemplatedCaseStudy {
             title
             slug
             posterColor
@@ -134,7 +134,7 @@ export const query = graphql`
               }
             }
           }
-          ... on ContentfulCaseStudy {
+          ... on ContentfulTemplatedCaseStudy {
             title
             slug
             posterColor

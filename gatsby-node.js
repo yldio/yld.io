@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allContentfulCaseStudy {
+      allContentfulTemplatedCaseStudy {
         edges {
           node {
             id
@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
   const policyTemplate = path.resolve(`./src/templates/policy.js`)
 
-  _.each(result.data.allContentfulCaseStudy.edges, edge => {
+  _.each(result.data.allContentfulTemplatedCaseStudy.edges, edge => {
     if (edge.node.slug) {
       createPage({
         path: `/case-study/${edge.node.slug}/`,

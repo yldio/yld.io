@@ -14,6 +14,7 @@ export default function PagePaths(props) {
           allSitePage {
             edges {
               node {
+                id
                 path
                 context {
                   id

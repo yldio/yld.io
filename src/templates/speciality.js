@@ -125,7 +125,7 @@ export const pageQuery = graphql`
             }
           }
           relatedProjects {
-            ... on ContentfulCaseStudy {
+            ... on ContentfulTemplatedCaseStudy {
               title
               slug
               introSentence
@@ -137,7 +137,7 @@ export const pageQuery = graphql`
                 }
               }
             }
-            ... on ContentfulGenericCaseStudy {
+            ... on ContentfulNonTemplatedCaseStudy {
               title
               slug
               posterColor

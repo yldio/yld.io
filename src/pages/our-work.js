@@ -36,13 +36,21 @@ const formatCaseStudies = caseStudies =>
   })
 
 const OurWork = ({ data }) => {
-  const { site, allContentfulCaseStudy, allContentfulGenericCaseStudy } = data
+  const {
+    site,
+    allContentfulTemplatedCaseStudy,
+    allContentfulNonTemplatedCaseStudy
+  } = data
 
-  const engineeringCaseStudies = formatCaseStudies(allContentfulCaseStudy)
-  const designCaseStudies = formatCaseStudies(allContentfulGenericCaseStudy)
+  const engineeringCaseStudies = formatCaseStudies(
+    allContentfulTemplatedCaseStudy
+  )
+  const designCaseStudies = formatCaseStudies(
+    allContentfulNonTemplatedCaseStudy
+  )
   const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
 
-  const page = allContentfulCaseStudy.edges[0].node
+  const page = allContentfulTemplatedCaseStudy.edges[0].node
 
   return (
     <Layout backgroundColor="grey">
@@ -134,7 +142,7 @@ const OurWorkPage = props => (
             title
           }
         }
-        allContentfulCaseStudy {
+        allContentfulTemplatedCaseStudy {
           edges {
             node {
               slug
@@ -160,7 +168,7 @@ const OurWorkPage = props => (
             }
           }
         }
-        allContentfulGenericCaseStudy {
+        allContentfulNonTemplatedCaseStudy {
           edges {
             node {
               slug

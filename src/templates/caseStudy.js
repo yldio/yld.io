@@ -17,8 +17,11 @@ const Stat = styled(H2)`
   padding-bottom: 0 !important; /* sorry */
 `
 
-const CaseStudy = ({ data: { allContentfulCaseStudy, site }, location }) => {
-  const caseStudy = allContentfulCaseStudy.edges[0].node
+const CaseStudy = ({
+  data: { allContentfulTemplatedCaseStudy, site },
+  location
+}) => {
+  const caseStudy = allContentfulTemplatedCaseStudy.edges[0].node
   const body = generateCaseStudy(caseStudy)
 
   return (
@@ -117,7 +120,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulCaseStudy(filter: { id: { eq: $id } }) {
+    allContentfulTemplatedCaseStudy(filter: { id: { eq: $id } }) {
       edges {
         node {
           slug
