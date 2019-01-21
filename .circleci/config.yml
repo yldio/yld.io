@@ -1,71 +1,54 @@
-version: 2
 jobs:
-  lint:
-    docker:
-      - image: circleci/node:9.11.2
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: yarn install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: yarn lint
-  snapshots:
-    docker:
-      - image: circleci/node:9.11.2
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-      - run:
-          name: Tests
-          command: yarn test:snapshots
-
   lighthouse:
     docker:
-      - image: circleci/node:9.8.0-browsers
-
-     working_directory: ~/repo
-
-     steps:
+      - image: 'circleci/node:9.8.0-browsers'
+    steps:
       - checkout
-
-       - restore_cache:
+      - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
+            - 'v1-dependencies-{{ checksum "package.json" }}'
             - v1-dependencies-
       - run:
+          command: 'npm run build'
           name: Start
-          command: npm run build
       - run:
+          command: 'npm run test:lighthouse'
           name: Lighthouse
-          command: yarn test:lighthouse
-
+    working_directory: ~/repo
+  lint:
+    docker:
+      - image: 'circleci/node:9.11.2'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies-
+      - run: 'yarn install'
+      - save_cache:
+          key: 'v1-dependencies-{{ checksum "package.json" }}'
+          paths:
+            - node_modules
+      - run: 'yarn lint'
+    working_directory: ~/repo
+  snapshots:
+    docker:
+      - image: 'circleci/node:9.11.2'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies-
+      - run:
+          command: 'npm run test:snapshots'
+          name: Snapshots
+    working_directory: ~/repo
+version: 2
 workflows:
-  version: 2
   build_and_test:
     jobs:
       - lint
-      - snapshots
       - lighthouse
+      - snapshots
+  version: 2
