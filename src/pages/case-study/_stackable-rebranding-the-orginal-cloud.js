@@ -77,7 +77,7 @@ const Type2 = styled.img`
 `
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site }
+  data: { allContentfulNonTemplatedCaseStudy: content, site }
 }) => {
   const caseStudy = content.edges[0].node
   return (
@@ -332,7 +332,7 @@ export const query = graphql`
         title
       }
     }
-    allContentfulGenericCaseStudy(
+    allContentfulNonTemplatedCaseStudy(
       filter: { slug: { eq: "stackable-rebranding-the-orginal-cloud" } }
     ) {
       edges {

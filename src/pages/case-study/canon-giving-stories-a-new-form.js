@@ -116,7 +116,7 @@ const Video = () => (
 )
 
 const IndexPage = ({
-  data: { allContentfulGenericCaseStudy: content, site, travel },
+  data: { allContentfulNonTemplatedCaseStudy: content, site, travel },
   location
 }) => {
   const caseStudy = content.edges[0].node
@@ -282,7 +282,7 @@ export const query = graphql`
         title
       }
     }
-    allContentfulGenericCaseStudy(
+    allContentfulNonTemplatedCaseStudy(
       filter: { slug: { eq: "canon-giving-stories-a-new-form" } }
     ) {
       edges {

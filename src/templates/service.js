@@ -181,7 +181,7 @@ export const pageQuery = graphql`
             posterColor
           }
           caseStudies {
-            ... on ContentfulCaseStudy {
+            ... on ContentfulTemplatedCaseStudy {
               title
               slug
               introSentence
@@ -196,7 +196,7 @@ export const pageQuery = graphql`
                 }
               }
             }
-            ... on ContentfulGenericCaseStudy {
+            ... on ContentfulNonTemplatedCaseStudy {
               title
               slug
               intro: introSentence {

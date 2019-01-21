@@ -56,7 +56,7 @@ const Divider = styled.div`
 
 const IndexPage = ({
   data: {
-    allContentfulGenericCaseStudy: content,
+    allContentfulNonTemplatedCaseStudy: content,
     site,
     deployment,
     picture,
@@ -396,7 +396,7 @@ export const query = graphql`
         title
       }
     }
-    allContentfulGenericCaseStudy(
+    allContentfulNonTemplatedCaseStudy(
       filter: { slug: { eq: "joyent-bringing-application-awareness-to-cloud" } }
     ) {
       edges {
