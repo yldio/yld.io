@@ -1,8 +1,350 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Compact Video Link Dark bg 1`] = `
+<section
+  className="sc-jzJRlG lfQJfN"
+>
+  <div
+    className="sc-bwzfXH ciboha"
+  >
+    <div
+      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="sc-htpNat hOSvSf"
+      >
+        <div
+          className="sc-bxivhb icukFi"
+        >
+          <a
+            className="sc-jTzLTM ZdqHv"
+            color="#fff"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={0.5}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div
+              className="sc-fjdhpX fdxDzp"
+            >
+              <div
+                className="sc-htpNat hSZREN"
+              >
+                <img
+                  alt="Play button"
+                  className="sc-gqjmRU heUaDl"
+                  src="test-file-stub"
+                />
+              </div>
+              <p
+                className="sc-VigVT jEpWYT"
+                color="#fff"
+                opacity={0.5}
+              >
+                Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Compact Video Link Grey bg 1`] = `
+<section
+  className="sc-cSHVUG FwFfO"
+>
+  <div
+    className="sc-bwzfXH ciboha"
+  >
+    <div
+      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="sc-htpNat hOSvSf"
+      >
+        <div
+          className="sc-bxivhb icukFi"
+        >
+          <a
+            className="sc-jTzLTM ZdqHv"
+            color="#333333"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={1}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div
+              className="sc-fjdhpX fdxDzp"
+            >
+              <div
+                className="sc-htpNat hSZREN"
+              >
+                <img
+                  alt="Play button"
+                  className="sc-gqjmRU heUaDl"
+                  src="test-file-stub"
+                />
+              </div>
+              <p
+                className="sc-VigVT ihPljm"
+                color="#333333"
+                opacity={1}
+              >
+                Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Compact Video Link Multiple Components component 1`] = `
+<div
+  className="sc-bwzfXH ciboha"
+>
+  <div
+    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+        0.3333333333333333,
+      ]
+    }
+  >
+    <div
+      className="sc-htpNat hOSvSf"
+    >
+      <div
+        className="sc-bxivhb icukFi"
+      >
+        <a
+          className="sc-jTzLTM ZdqHv"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="sc-fjdhpX fdxDzp"
+          >
+            <div
+              className="sc-htpNat hSZREN"
+            >
+              <img
+                alt="Play button"
+                className="sc-gqjmRU heUaDl"
+                src="test-file-stub"
+              />
+            </div>
+            <p
+              className="sc-VigVT ihPljm"
+              color="#333333"
+              opacity={1}
+            >
+              Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+        0.3333333333333333,
+      ]
+    }
+  >
+    <div
+      className="sc-htpNat hOSvSf"
+    >
+      <div
+        className="sc-bxivhb icukFi"
+      >
+        <a
+          className="sc-jTzLTM ZdqHv"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="sc-fjdhpX fdxDzp"
+          >
+            <div
+              className="sc-htpNat hSZREN"
+            >
+              <img
+                alt="Play button"
+                className="sc-gqjmRU heUaDl"
+                src="test-file-stub"
+              />
+            </div>
+            <p
+              className="sc-VigVT ihPljm"
+              color="#333333"
+              opacity={1}
+            >
+              Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+        0.3333333333333333,
+      ]
+    }
+  >
+    <div
+      className="sc-htpNat hOSvSf"
+    >
+      <div
+        className="sc-bxivhb icukFi"
+      >
+        <a
+          className="sc-jTzLTM ZdqHv"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="sc-fjdhpX fdxDzp"
+          >
+            <div
+              className="sc-htpNat hSZREN"
+            >
+              <img
+                alt="Play button"
+                className="sc-gqjmRU heUaDl"
+                src="test-file-stub"
+              />
+            </div>
+            <p
+              className="sc-VigVT ihPljm"
+              color="#333333"
+              opacity={1}
+            >
+              Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Compact Video Link Single component 1`] = `
+<div
+  className="sc-bwzfXH ciboha"
+>
+  <div
+    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+        0.3333333333333333,
+      ]
+    }
+  >
+    <div
+      className="sc-htpNat hOSvSf"
+    >
+      <div
+        className="sc-bxivhb icukFi"
+      >
+        <a
+          className="sc-jTzLTM ZdqHv"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div
+            className="sc-fjdhpX fdxDzp"
+          >
+            <div
+              className="sc-htpNat hSZREN"
+            >
+              <img
+                alt="Play button"
+                className="sc-gqjmRU heUaDl"
+                src="test-file-stub"
+              />
+            </div>
+            <p
+              className="sc-VigVT ihPljm"
+              color="#333333"
+              opacity={1}
+            >
+              Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Form Button 1`] = `
 <button
-  className="sc-gZMcBi gTQthr"
+  className="sc-kpOJdX hNdAcX"
 >
   Click Me
 </button>
@@ -10,10 +352,10 @@ exports[`Storyshots Form Button 1`] = `
 
 exports[`Storyshots Form Checkbox 1`] = `
 <section
-  className="sc-VigVT iARuFr"
+  className="sc-ckVGcZ cLXKCv"
 >
   <input
-    className="sc-gzVnrw geKrCW"
+    className="sc-kAzzGY fYcsoX"
     id="checkbox"
     name="checkbox"
     type="checkbox"
@@ -28,10 +370,10 @@ exports[`Storyshots Form Checkbox 1`] = `
 
 exports[`Storyshots Form Field 1`] = `
 <section
-  className="sc-gqjmRU gIbBcD"
+  className="sc-dxgOiQ gsKjl"
 >
   <input
-    className="sc-htoDjs jgVuvd"
+    className="sc-chPdSV evKaBU"
     placeholder="test"
     type="text"
   />
@@ -40,10 +382,10 @@ exports[`Storyshots Form Field 1`] = `
 
 exports[`Storyshots Form Fieldset 1`] = `
 <section
-  className="sc-VigVT iARuFr"
+  className="sc-ckVGcZ cLXKCv"
 >
   <input
-    className="sc-htoDjs jgVuvd"
+    className="sc-chPdSV evKaBU"
     placeholder="test"
     type="text"
   />
@@ -52,7 +394,7 @@ exports[`Storyshots Form Fieldset 1`] = `
 
 exports[`Storyshots Form Input 1`] = `
 <input
-  className="sc-htoDjs jgVuvd"
+  className="sc-chPdSV evKaBU"
   placeholder="test"
   type="text"
 />
@@ -60,7 +402,7 @@ exports[`Storyshots Form Input 1`] = `
 
 exports[`Storyshots Form Label 1`] = `
 <label
-  className="sc-dnqmqq cntxcn"
+  className="sc-kgoBCf bbkuDQ"
 >
   Label
 </label>
@@ -68,14 +410,14 @@ exports[`Storyshots Form Label 1`] = `
 
 exports[`Storyshots Form Textarea 1`] = `
 <textarea
-  className="sc-iwsKbI dpOqPg"
+  className="sc-kGXeez jmKxiL"
   placeholder="test"
 />
 `;
 
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
-  className="sc-htpNat deHCEJ"
+  className="sc-bZQynM bdjeOF"
 >
   Large Body
 </h3>
@@ -83,7 +425,7 @@ exports[`Storyshots Typography Large Body 1`] = `
 
 exports[`Storyshots Typography Large title 1`] = `
 <h1
-  className="sc-bdVaJa bcdDQm"
+  className="sc-ifAKCX kRxalI"
 >
   Large title
 </h1>
@@ -91,7 +433,7 @@ exports[`Storyshots Typography Large title 1`] = `
 
 exports[`Storyshots Typography Small Title 1 1`] = `
 <h4
-  className="sc-bxivhb gwyPxj"
+  className="sc-gzVnrw iltYUC"
 >
   Small Title
 </h4>
@@ -99,7 +441,7 @@ exports[`Storyshots Typography Small Title 1 1`] = `
 
 exports[`Storyshots Typography Small Title 2 1`] = `
 <h5
-  className="sc-ifAKCX cSrcVm"
+  className="sc-htoDjs jdpgcj"
 >
   Small Title
 </h5>
@@ -107,7 +449,7 @@ exports[`Storyshots Typography Small Title 2 1`] = `
 
 exports[`Storyshots Typography Small Title 3 1`] = `
 <h6
-  className="sc-EHOje kYZbFa"
+  className="sc-dnqmqq fxTddO"
 >
   Small Title
 </h6>
