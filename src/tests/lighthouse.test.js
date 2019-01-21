@@ -22,7 +22,7 @@ const auditTest = (audits, name, type, number) => {
 }
 
 test('Mobile Homepage', () => {
-  return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
+  return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     // https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag
     auditTest(audits, 'viewport', 'value')
     // https://developers.google.com/web/tools/lighthouse/audits/font-sizes
@@ -31,7 +31,7 @@ test('Mobile Homepage', () => {
 })
 
 test('SEO', () => {
-  return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
+  return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'meta-description', 'value')
     auditTest(audits, 'document-title', 'value')
     auditTest(audits, 'http-status-code', 'value')
@@ -43,7 +43,7 @@ test('SEO', () => {
 })
 
 test('Security', () => {
-  return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
+  return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     // https://developers.google.com/web/tools/lighthouse/audits/vulnerabilities
     auditTest(audits, 'no-vulnerable-libraries')
     // (https://www.chromestatus.com/features#deprecated
@@ -54,7 +54,7 @@ test('Security', () => {
 })
 
 test('Performance', () => {
-  return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
+  return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     auditTest(audits, 'dom-size', 'smaller', 500)
     auditTest(audits, 'network-requests', 'smaller', 66)
     auditTest(audits, 'network-requests', 'smaller', 66)
@@ -87,7 +87,7 @@ test('Performance', () => {
 })
 
 test('A11y Homepage', () => {
-  return serve(`http://localhost:3000`).then(({ lhr: { audits } }) => {
+  return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
     // https://dequeuniversity.com/rules/axe/2.2/image-alt?application=lighthouse
     auditTest(audits, 'image-alt')
     // https://dequeuniversity.com/rules/axe/2.2/input-image-alt?application=lighthouse

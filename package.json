@@ -37,7 +37,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-p test:**",
-    "test:lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
+    "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\"",
     "develop": "npm run develop",
     "start": "gatsby develop",
