@@ -4,10 +4,10 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { Paragraph } from '../Typography'
+import { Paragraph, H2 } from '../Typography'
 import Image from '../Common/Image'
 
-import { Section, LightH3, ShiftedColumn } from './elements'
+import { Section, ShiftedColumn } from './elements'
 
 const PerksListContainer = styled(ShiftedColumn)`
   display: grid;
@@ -68,7 +68,7 @@ const Perks = ({ data: { title, text, perks } }) => (
   <Section>
     <Row>
       <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
-        <LightH3>{title}</LightH3>
+        <H2>{title}</H2>
         <Paragraph muted>{text}</Paragraph>
       </Col>
       <PerksList perks={perks} />

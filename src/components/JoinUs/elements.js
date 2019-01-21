@@ -58,25 +58,15 @@ export const Section = ({ children, greyBg, ...props }) => {
 /**
  * Elements
  */
-
-export const LightH3 = styled(H3)`
-  font-weight: normal;
-  color: ${props => props.color || props.theme.colors.text};
-`
-
 export const TitleAndBody = ({ title, body }) => (
-  <React.Fragment>
-    <Row>
-      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-        <LightH3>{title}</LightH3>
-      </Col>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-        <Paragraph muted>{body}</Paragraph>
-      </Col>
-    </Row>
-  </React.Fragment>
+  <Row>
+    <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
+      <H3 regular dark>
+        {title}
+      </H3>
+      <Paragraph muted>{body}</Paragraph>
+    </Col>
+  </Row>
 )
 
 export const Separator = ({ children }) => (

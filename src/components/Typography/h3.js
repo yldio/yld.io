@@ -18,6 +18,10 @@ export default styled.h3`
     font-weight: normal;
   `};
 
+  ${is('dark')`
+    color: ${props => props.theme.colors.text};
+  `};
+
   ${is('muted')`
     opacity: .5;
   `};
