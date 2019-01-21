@@ -14,7 +14,7 @@ const PerksListContainer = styled(ShiftedColumn)`
   row-gap: ${remcalc(24)};
   grid-template-columns: 1fr 1fr;
   column-gap: 42px;
-  padding-top: 0;
+  padding-top: ${remcalc(24)};
 
   ${breakpoint('smallPhone')`
     grid-template-columns: 1fr 1fr;

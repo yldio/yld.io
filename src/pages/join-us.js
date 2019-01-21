@@ -110,12 +110,12 @@ const JoinUsPage = props => (
             someOfOurWorkDescription
           }
           someWork {
-            ... on ContentfulGenericCaseStudy {
+            ... on ContentfulTemplatedCaseStudy {
               title
               slug
               posterColor
             }
-            ... on ContentfulCaseStudy {
+            ... on ContentfulNonTemplatedCaseStudy {
               title
               slug
               posterColor

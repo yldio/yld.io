@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
 import { Paragraph, H2, H5 } from '../Typography'
-import { FirstColumn, SecondColum, Section, Hr } from './elements'
+import { FirstColumn, SecondColumn, Section, Hr } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import StyledLink from '../styledLink'
 
@@ -43,12 +43,12 @@ const DirectApplication = ({ title, text }) => (
       <FirstColumn>
         <H2 as="h3">{title}</H2>
       </FirstColumn>
-      <SecondColum>
+      <SecondColumn>
         <Padding top={1} bottom={{ smallPhone: 1, tablet: 3 }}>
           <Paragraph noMargin>{text}</Paragraph>
         </Padding>
         <StyledLink to="/contact">Get in Touch</StyledLink>
-      </SecondColum>
+      </SecondColumn>
     </Row>
   </Padding>
 )

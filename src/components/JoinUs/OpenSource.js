@@ -12,7 +12,7 @@ import playIcon from '../../images/button-play-default.svg'
 import {
   Section,
   FirstColumn,
-  SecondColum,
+  SecondColumn,
   Separator,
   List,
   TitleAndBody
@@ -98,9 +98,9 @@ const OpenSource = ({ data: { title, list, text, featuredTalks } }) => (
       <FirstColumn>
         <H2>{title}</H2>
       </FirstColumn>
-      <SecondColum width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+      <SecondColumn>
         <List list={list} />
-      </SecondColum>
+      </SecondColumn>
     </Row>
     <Separator />
     <TitleAndBody title="Recent Talks" body={text} />

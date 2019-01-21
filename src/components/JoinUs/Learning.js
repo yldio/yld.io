@@ -8,7 +8,7 @@ import { H2, Paragraph } from '../Typography'
 import {
   Section,
   FirstColumn,
-  SecondColum,
+  SecondColumn,
   Separator,
   List,
   Hr,
@@ -21,6 +21,9 @@ const InsightAnchor = styled.a`
   width: 100%;
   height: 100%;
 `
+const PostTitleWrapper = styled(Padding)`
+  flex: 1;
+`
 
 const Learning = ({ data: { title, text, featuredInsights, list } }) => (
   <Section greyBg>
@@ -28,9 +31,9 @@ const Learning = ({ data: { title, text, featuredInsights, list } }) => (
       <FirstColumn>
         <H2>{title}</H2>
       </FirstColumn>
-      <SecondColum width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+      <SecondColumn>
         <List list={list} />
-      </SecondColum>
+      </SecondColumn>
     </Row>
     <Separator />
     <TitleAndBody
@@ -41,16 +44,16 @@ const Learning = ({ data: { title, text, featuredInsights, list } }) => (
       {featuredInsights.map((el, idx) => (
         <CompensatedCol width={[1, 1, 1, 4 / 12]} key={idx}>
           <InsightAnchor href={el.url}>
-            <Padding top={2} style={{ width: '100%' }}>
-              <Margin bottom={1}>
+            <Margin bottom={0.5}>
+              <Padding top={{ smallPhone: 2, tablet: 3 }}>
                 <Image image={el.image} />
-              </Margin>
-            </Padding>
-            <Padding top={1} bottom={1} style={{ flex: 1 }}>
+              </Padding>
+            </Margin>
+            <PostTitleWrapper top={1} bottom={1}>
               <Paragraph bold noMargin>
                 {el.image.title}
               </Paragraph>
-            </Padding>
+            </PostTitleWrapper>
             <Hr />
           </InsightAnchor>
         </CompensatedCol>

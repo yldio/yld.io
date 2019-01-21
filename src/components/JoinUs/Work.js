@@ -11,7 +11,7 @@ import colorLuminance from 'color-luminance'
 import {
   Section,
   FirstColumn,
-  SecondColum,
+  SecondColumn,
   Separator,
   List,
   TitleAndBody
@@ -87,9 +87,9 @@ const Work = ({ data: { title, list, text, someWork } }) => (
       <FirstColumn>
         <H2>{title}</H2>
       </FirstColumn>
-      <SecondColum width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+      <SecondColumn>
         <List list={list} />
-      </SecondColum>
+      </SecondColumn>
     </Row>
     <Separator />
     <TitleAndBody title="Some of our work" body={text} />

@@ -7,11 +7,11 @@ import { H2 } from '../Typography'
 const ViewPositions = ({ text }) => (
   <Grid>
     <Padding
-      top={{ smallPhone: 4, smallTablet: 0 }}
+      top={{ smallPhone: 4, smallTablet: 0.5, tablet: 4 }}
       bottom={{ smallPhone: 3.5, desktop: 5 }}
     >
       <Row>
-        <Col width={[1, 1, 1, 1, 8 / 12]}>
+        <Col width={[1, 1, 1, 1, 9 / 12]}>
           <Padding bottom={{ smallPhone: 2, tablet: 3 }}>
             <H2>{text}</H2>
           </Padding>
