@@ -41,10 +41,14 @@ const PerkContainer = styled(Padding)`
   display: flex;
   flex-direction: column;
 `
+
+const PerkDescription = styled(Paragraph)`
+  padding: ${remcalc(12)} 0;
+`
 const Perk = ({ icon, description }) => (
   <PerkContainer>
     <Icon image={icon} />
-    <Paragraph noMargin>{description}</Paragraph>
+    <PerkDescription noMargin>{description}</PerkDescription>
   </PerkContainer>
 )
 

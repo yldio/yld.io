@@ -6,6 +6,7 @@ import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
 import { H3, Paragraph, H5 } from '../Typography'
 import GreyBG from '../GreyBG'
+import Hr from '../Common/Hr'
 
 /**
  * Layout
@@ -57,11 +58,6 @@ export const Section = ({ children, greyBg, ...props }) => {
 /**
  * Elements
  */
-export const Hr = styled.hr`
-  margin: 18px 0;
-  opacity: 1;
-  background: ${props => props.theme.colors.grey};
-`
 
 export const LightH3 = styled(H3)`
   font-weight: normal;

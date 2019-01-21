@@ -3,6 +3,7 @@ import { Padding, Margin } from 'styled-components-spacing'
 import styled from 'styled-components'
 import { Row, CompensatedRow, CompensatedCol } from '../grid'
 import Image from '../Common/Image'
+import Hr from '../Common/Hr'
 import { H2, Paragraph } from '../Typography'
 
 import {
@@ -11,7 +12,6 @@ import {
   SecondColumn,
   Separator,
   List,
-  Hr,
   TitleAndBody
 } from './elements'
 

@@ -5,8 +5,9 @@ import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
 import { Paragraph, H2, H5 } from '../Typography'
-import { FirstColumn, SecondColumn, Section, Hr } from './elements'
+import { FirstColumn, SecondColumn, Section } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
+import Hr from '../Common/Hr'
 import StyledLink from '../styledLink'
 
 const Line = styled(Hr)`
