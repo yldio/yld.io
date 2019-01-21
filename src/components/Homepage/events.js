@@ -47,7 +47,7 @@ const Events = ({ events }) => (
     <Col width={[0, 0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
       <EventsColumn>
         <Padding bottom={1}>
-          <img src={eventIcon} />
+          <img src={eventIcon} alt="events icon" />
         </Padding>
         <H2>Upcoming events</H2>
       </EventsColumn>
@@ -77,7 +77,7 @@ const Events = ({ events }) => (
       <EventsColumn>
         <Padding bottom={2}>
           <Padding bottom={1}>
-            <img src={eventIcon} />
+            <img src={eventIcon} alt="events icon" />
           </Padding>
 
           <H2>Upcoming events</H2>

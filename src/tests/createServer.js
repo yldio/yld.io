@@ -13,7 +13,7 @@ const serve = url => {
     servePublic(req, res, done)
   })
 
-  server.listen(3000)
+  server.listen(3001)
 
   return chromeLauncher.launch({ chromeFlags: [] }).then(chrome => {
     return lighthouse(url, { port: chrome.port }, config).then(results => {
