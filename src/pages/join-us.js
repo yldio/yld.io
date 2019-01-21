@@ -91,6 +91,7 @@ const JoinUsPage = props => (
           }
           insights {
             name
+            title
             url
             image {
               title

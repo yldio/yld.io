@@ -51,7 +51,7 @@ const Learning = ({ data: { title, text, featuredInsights, list } }) => (
             </Margin>
             <PostTitleWrapper top={1} bottom={1}>
               <Paragraph bold noMargin>
-                {el.image.title}
+                {el.title}
               </Paragraph>
             </PostTitleWrapper>
             <Hr />
