@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
-import { SmallerH2, H5, Paragraph } from '../Typography'
+import { H2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
@@ -23,7 +23,7 @@ const TrainingSection = ({ speciality }) => (
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SmallerH2>{`${speciality.title.trim()} training`}</SmallerH2>
+            <H2 small>{`${speciality.title.trim()} training`}</H2>
             <Paragraph>
               {speciality.trainingIntroText.content[0].content[0].value}
             </Paragraph>
