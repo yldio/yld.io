@@ -13,12 +13,10 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Text = H3.withComponent('h1')
-
 const SEOText = ({ text }) => (
   <Row>
     <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-      <Text regular>
+      <H3 as="h1" regular>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value
 
@@ -31,7 +29,7 @@ const SEOText = ({ text }) => (
           }
           return ''
         })}
-      </Text>
+      </H3>
     </Col>
   </Row>
 )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import { Row, Col, Grid } from '../grid'
-import { SmallerH2, H5, Paragraph } from '../Typography'
+import { H2, H5, Paragraph } from '../Typography'
 import StyledLink from '../styledLink'
 import Posts from '../posts'
 import Li from '../listItem'
@@ -16,7 +16,7 @@ const BlogPosts = ({ speciality }) => (
           <Padding vertical={{ desktop: 4, smallTablet: 3.5 }}>
             <Row>
               <Col width={[1, 1, 1, 1, 6 / 12]}>
-                <SmallerH2>{`From the blog`}</SmallerH2>
+                <H2 small>{`From the blog`}</H2>
                 <Paragraph>{`${
                   speciality.title
                 } articles created by members of YLD for the community.`}</Paragraph>

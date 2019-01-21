@@ -10,7 +10,6 @@ import {
   Checkbox,
   Input,
   Label,
-  Textarea,
   Button,
   Fieldset,
   Field
@@ -145,7 +144,8 @@ class ContactUs extends Component {
                           ))}
                         </Fieldset>
                         <Label htmlFor="message">Tell us a bit more</Label>
-                        <Textarea
+                        <Input
+                          as="textarea"
                           rows="4"
                           value={message}
                           onChange={this.handleChange}

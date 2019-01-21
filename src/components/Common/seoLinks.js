@@ -4,7 +4,7 @@ import { H6 } from '../Typography'
 import { Link } from 'gatsby'
 import PagePaths from '../pagePaths'
 
-const List = props => React.createElement(H6.withComponent('ul'), props)
+const List = props => React.createElement(H6, props)
 
 const ListItem = styled.li`
   display: inline-block;
@@ -20,7 +20,7 @@ export default function SeoLinks({ items, ...props }) {
   return (
     <PagePaths
       render={pathsById => (
-        <List {...props}>
+        <List as="ul" {...props}>
           {(items || []).map((item, i) => {
             const path = pathsById[item.id]
             if (path) {

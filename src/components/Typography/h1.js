@@ -1,9 +1,9 @@
 import breakpoint from 'styled-components-breakpoint'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 
-export default styled.h1`
+export const h1Styles = css`
   color: ${props => props.theme.colors.text};
   font-weight: 500;
   font-size: ${remcalc(32)};
@@ -38,4 +38,8 @@ export default styled.h1`
       padding-bottom: 0;
     `}
   `};
+`
+
+export default styled.h1`
+  ${h1Styles}
 `

@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
-import { SmallerH2, H5, Paragraph } from '../Typography'
+import { H2, H5, Paragraph } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
 
@@ -21,7 +21,7 @@ const TutorialsSection = ({ speciality }) =>
         <Padding top={4} bottom={5}>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <SmallerH2>Tutorials</SmallerH2>
+              <H2 small>Tutorials</H2>
               <Paragraph>
                 NodeJS tutorials created by members of YLD for the community.
               </Paragraph>

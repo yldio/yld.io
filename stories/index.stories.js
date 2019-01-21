@@ -10,7 +10,6 @@ import {
   Checkbox,
   Input,
   Label,
-  Textarea,
   Button,
   Field,
   Fieldset
@@ -42,7 +41,6 @@ storiesOf('Form', module)
     </Fieldset>
   ))
   .add('Input', () => <Input type="text" placeholder="test" />)
-  .add('Textarea', () => <Textarea placeholder="test" />)
   .add('Button', () => <Button>Click Me</Button>)
   .add('Label', () => <Label>Label</Label>)
   .add('Field', () => (

@@ -13,8 +13,7 @@ import { H1, H3 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const H3asH2 = H3.withComponent('h2')
-const SubHeading = styled(H3asH2)`
+const SubHeading = styled(H3)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};
@@ -82,7 +81,7 @@ const OurWork = ({ data }) => {
                 }}
               >
                 <H1>Our Work</H1>
-                <SubHeading regular>
+                <SubHeading as="h2" regular>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
                 </SubHeading>

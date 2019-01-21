@@ -83,8 +83,6 @@ const Anchor = styled(Link)`
   ${StyledLinkCss};
 `
 
-const StyledAnchor = Anchor.withComponent('a')
-
 const StyledLink = ({ to, href, children, ...props }) => {
   if (to) {
     return (
@@ -95,9 +93,9 @@ const StyledLink = ({ to, href, children, ...props }) => {
   }
 
   return (
-    <StyledAnchor href={href} {...props}>
+    <Anchor as="a" href={href} {...props}>
       {children}
-    </StyledAnchor>
+    </Anchor>
   )
 }
 
