@@ -28,7 +28,7 @@ export const List = ({ list }) => (
   <Padding top={1}>
     <ReactMarkdown
       renderers={{
-        heading: props => <H5 as="h4" noMargin bold {...props} />, // eslint-disable-line react/display-name
+        heading: props => <H5 as="h3" noMargin bold {...props} />, // eslint-disable-line react/display-name
         paragraph: props => <Paragraph muted {...props} /> // eslint-disable-line react/display-name
       }}
       source={list}

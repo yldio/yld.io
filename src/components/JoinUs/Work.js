@@ -44,13 +44,16 @@ const CaseStudyLink = styled(Link)`
   flex: 1;
 `
 
-const CaseStudy = ({ children, ...props }) => (
+const CaseStudy = ({ title, lightText, ...props }) => (
   <CaseStudyLink {...props}>
     <Padding
       vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
       horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}
     >
-      {children}
+      <Paragraph muted reverse={lightText} noMargin>
+        Case Study
+      </Paragraph>
+      <CaseStudyTitle reverse={lightText}>{title}</CaseStudyTitle>
     </Padding>
   </CaseStudyLink>
 )
@@ -103,12 +106,9 @@ const Work = ({ data: { title, list, text, someWork } }) => (
               <CaseStudy
                 bg={`#${cs.posterColor}`}
                 to={`/case-study/${cs.slug}`}
-              >
-                <Paragraph muted reverse={lightText} noMargin>
-                  Case Study
-                </Paragraph>
-                <CaseStudyTitle reverse={lightText}>{cs.title}</CaseStudyTitle>
-              </CaseStudy>
+                lightText={lightText}
+                title={cs.title}
+              />
             </CaseStudyWrapper>
           </CompensatedCol>
         )
