@@ -4,14 +4,18 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 const DisplayBodyStyles = css`
-  font-size: ${remcalc(30)};
-  padding: ${remcalc(29)} 0 ${remcalc(25)} 0;
+  font-weight: 400;
+  font-size: ${remcalc(26)};
   line-height: ${remcalc(30)};
-  font-weight: 500;
+  padding: ${remcalc(12)} 0 ${remcalc(12)} 0;
   color: ${props => props.theme.colors.text};
 
   ${is('reverse')`
     color: ${props => props.theme.colors.white};
+  `};
+
+  ${is('textLight')`
+    color: ${props => props.theme.colors.textLight};
   `};
 
   ${is('center')`
@@ -19,9 +23,9 @@ const DisplayBodyStyles = css`
   `};
 
   ${breakpoint('tablet')`
-    font-size: ${remcalc(42)};
-    padding: ${remcalc(21)} 0;
-    line-height: ${remcalc(42)};
+    font-size: ${remcalc(32)};
+    line-height: ${remcalc(36)};
+    padding: ${remcalc(13)} 0 ${remcalc(11)} 0;
   `}
 `
 
