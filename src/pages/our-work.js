@@ -9,11 +9,11 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH1, H3 } from '../components/Typography'
+import { SectionTitleH1, CardTitleH3 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const SubHeading = styled(H3)`
+const SubHeading = styled(CardTitleH3)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};

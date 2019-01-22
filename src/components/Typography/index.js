@@ -1,7 +1,7 @@
 export { default as SectionTitleH1 } from './SectionTitleH1'
 export { default as SectionTitleH2 } from './SectionTitleH2'
 export { default as DisplayBodyH2 } from './DisplayBodyH2'
-export { default as H3 } from './h3'
+export { default as CardTitleH3 } from './CardTitleH3'
 export { default as H4 } from './h4'
 export { default as H5 } from './h5'
 export { default as H6 } from './h6'

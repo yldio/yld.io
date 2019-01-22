@@ -1,9 +1,9 @@
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import { css } from 'styled-components'
 import is from 'styled-is'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
-export default styled.h3`
+const CardTitleStyles = css`
   color: ${props => props.theme.colors.textLight};
   font-weight: 500;
   font-size: ${remcalc(26)};
@@ -28,3 +28,5 @@ export default styled.h3`
     line-height: ${remcalc(36)};
   `};
 `
+
+export default CardTitleStyles

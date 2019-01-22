@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import { SectionTitleH2, H3, H5 } from '../components/Typography'
+import { SectionTitleH2, CardTitleH3, H5 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -13,7 +13,7 @@ import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 
-const Title = styled(H3)`
+const Title = styled(CardTitleH3)`
   font-weight: normal;
   ${breakpoint('smallTablet')`
     width: 593px;

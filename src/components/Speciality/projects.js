@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, H3, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, CardTitleH3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
@@ -13,9 +13,9 @@ const PosterLinks = ({ project }) => (
       }}
     >
       <CardHeader>
-        <H3 noMargin reverse>
+        <CardTitleH3 noMargin reverse>
           {project.title}
-        </H3>
+        </CardTitleH3>
         <Paragraph reverse muted>
           {project.introSentence}
         </Paragraph>
