@@ -169,3 +169,42 @@ export const CompensatedRow = props => <Flex mx={[-1, -1.5, -2]} {...props} />
 export const CompensatedCol = props => (
   <Flex block px={[1, 1.5, 2]} {...props} />
 )
+
+/**
+ * This is an Utilitary component for quickly building a column layout, providing a
+ * 'Compensated' Column or not, depending on the `compensated` prop, and automatically
+ * baking in the correct width prop for the column, based on the `cols` number prop.
+ * This calculated width can be overriden if passed explicitly to the Col.
+ *
+ * Usage:
+ *     <ColumnLayout cols={3} items={items} compensated>
+ *    { ({ Col, item, idx }) => (
+ *      <Col>
+ *        { my content here }
+ *      </Col>
+ *    )}
+ *  </ColumnLayout>
+ *
+ * Note: This component assumes that bellow the 'tablet' breakpoint, the columns will be
+ * full width, for a different scenario, it's best to manually build the layout with the
+ * appropriate components.
+ */
+export const ColumnLayout = ({ children, cols, items, compensated }) => {
+  const RowComponent = compensated ? CompensatedRow : Row
+  const ColComponent = compensated ? CompensatedCol : Col
+  const defaulWidthOnTabletAndAbove = 12 / cols / 12
+  const width = [1, 1, 1, defaulWidthOnTabletAndAbove]
+
+  return (
+    <RowComponent>
+      {items.map((item, idx) => {
+        const child = children({ Col: ColComponent, item, idx })
+
+        return React.cloneElement(child, {
+          width: child.props.width || width,
+          idx
+        })
+      })}
+    </RowComponent>
+  )
+}

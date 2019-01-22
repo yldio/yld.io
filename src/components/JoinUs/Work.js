@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import { CompensatedCol, CompensatedRow } from '../grid'
+import { ColumnLayout } from '../grid'
 import { H3, Paragraph } from '../Typography'
 import colorLuminance from 'color-luminance'
 
@@ -82,24 +82,24 @@ const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
     <TitleAndList title={title} list={list} />
     <Separator />
     <TitleAndBody title={subtitle} body={text} />
-    <CompensatedRow>
-      {someWork.slice(0, MAX_CASE_STUDIES).map((cs, idx) => {
-        const lightText = getColorLuminance(cs.posterColor) < 127.5
-
-        return (
-          <CompensatedCol width={[1, 1, 1, 4 / 12]} key={idx} block={false}>
-            <CaseStudyWrapper top={2}>
-              <CaseStudy
-                bg={`#${cs.posterColor}`}
-                to={`/case-study/${cs.slug}`}
-                lightText={lightText}
-                title={cs.title}
-              />
-            </CaseStudyWrapper>
-          </CompensatedCol>
-        )
-      })}
-    </CompensatedRow>
+    <ColumnLayout
+      cols={3}
+      items={someWork.slice(0, MAX_CASE_STUDIES)}
+      compensated
+    >
+      {({ Col, item: cs }) => (
+        <Col block={false}>
+          <CaseStudyWrapper top={2}>
+            <CaseStudy
+              bg={`#${cs.posterColor}`}
+              to={`/case-study/${cs.slug}`}
+              lightText={getColorLuminance(cs.posterColor) < 127.5}
+              title={cs.title}
+            />
+          </CaseStudyWrapper>
+        </Col>
+      )}
+    </ColumnLayout>
   </Section>
 )
 
