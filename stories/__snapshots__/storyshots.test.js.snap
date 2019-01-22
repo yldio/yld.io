@@ -493,7 +493,7 @@ exports[`Storyshots Typography H2 1`] = `
 
 exports[`Storyshots Typography H2 small 1`] = `
 <h2
-  className="sc-htoDjs HIwtQ"
+  className="sc-htoDjs icPmvC"
 >
   Large title
 </h2>
