@@ -16,7 +16,7 @@ const Approach = ({ title, content, formats }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <Padding bottom={{ smallPhone: 3, tablet: 0 }}>
-              <H2 style={{ maxWidth: 250 }} reverse>
+              <H2 noTop style={{ maxWidth: 250 }} reverse>
                 Our training approach
               </H2>
             </Padding>
