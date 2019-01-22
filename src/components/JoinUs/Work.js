@@ -4,18 +4,11 @@ import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import { Row, CompensatedCol, CompensatedRow } from '../grid'
-import { H2, H3, Paragraph } from '../Typography'
+import { CompensatedCol, CompensatedRow } from '../grid'
+import { H3, Paragraph } from '../Typography'
 import colorLuminance from 'color-luminance'
 
-import {
-  Section,
-  FirstColumn,
-  SecondColumn,
-  Separator,
-  List,
-  TitleAndBody
-} from './elements'
+import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
 
 const MAX_CASE_STUDIES = 3
 
@@ -86,14 +79,7 @@ const CaseStudyTitle = styled(H3)`
 
 const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
   <Section>
-    <Row>
-      <FirstColumn>
-        <H2>{title}</H2>
-      </FirstColumn>
-      <SecondColumn>
-        <List list={list} />
-      </SecondColumn>
-    </Row>
+    <TitleAndList title={title} list={list} />
     <Separator />
     <TitleAndBody title={subtitle} body={text} />
     <CompensatedRow>
