@@ -58,30 +58,37 @@ const TalkColumn = styled(CompensatedCol)`
 
 const Talks = ({ data }) => (
   <CompensatedRow>
-    {data.slice(0, MAX_VIDEOS).map(({ title, link }, idx) => (
-      <TalkColumn width={[1, 1, 1, 6 / 12, 6 / 12, 4 / 12]} key={idx}>
-        <Padding top={2}>
-          <TalkLink px={2} py={2} href={link} target="_blank">
-            <Padding horizontal={2} vertical={2}>
-              <Margin bottom={1}>
-                <Image
-                  image={{
-                    file: { url: getThumbnail(getYoutubeId(link)) },
-                    title
-                  }}
-                />
-              </Margin>
-              <FlexContainer>
-                <Margin right={[1.5, 1.5, 1.5, 2]}>
-                  <PlayIcon src={playIcon} alt="Play button" />
-                </Margin>
-                <TruncatedParagraph noMargin>{title}</TruncatedParagraph>
-              </FlexContainer>
-            </Padding>
-          </TalkLink>
-        </Padding>
-      </TalkColumn>
-    ))}
+    {data.slice(0, MAX_VIDEOS).map(({ title, link }, idx) => {
+      const youtubeId = link && getYoutubeId(link)
+      const thumbnail = youtubeId ? getThumbnail(youtubeId) : null
+
+      return (
+        <TalkColumn width={[1, 1, 1, 6 / 12, 6 / 12, 4 / 12]} key={idx}>
+          <Padding top={2}>
+            <TalkLink px={2} py={2} href={link} target="_blank">
+              <Padding horizontal={2} vertical={2}>
+                {thumbnail && (
+                  <Margin bottom={1}>
+                    <Image
+                      image={{
+                        file: { url: getThumbnail(getYoutubeId(link)) },
+                        title
+                      }}
+                    />
+                  </Margin>
+                )}
+                <FlexContainer>
+                  <Margin right={[1.5, 1.5, 1.5, 2]}>
+                    <PlayIcon src={playIcon} alt="Play button" />
+                  </Margin>
+                  <TruncatedParagraph noMargin>{title}</TruncatedParagraph>
+                </FlexContainer>
+              </Padding>
+            </TalkLink>
+          </Padding>
+        </TalkColumn>
+      )
+    })}
   </CompensatedRow>
 )
 

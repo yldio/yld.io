@@ -18,6 +18,22 @@ const PostTitleWrapper = styled(Padding)`
   flex: 1;
 `
 
+const Insight = ({ insight }) => (
+  <CompensatedCol width={[1, 1, 1, 4 / 12]}>
+    <InsightAnchor href={insight.url}>
+      <Padding top={{ smallPhone: 2, tablet: 3 }}>
+        <Image image={insight.image} />
+      </Padding>
+      <PostTitleWrapper top={1.5} bottom={1}>
+        <Paragraph bold noMargin>
+          {insight.title}
+        </Paragraph>
+      </PostTitleWrapper>
+      <Hr />
+    </InsightAnchor>
+  </CompensatedCol>
+)
+
 const Learning = ({
   data: { title, subtitle, text, featuredInsights, list }
 }) => (
@@ -27,19 +43,7 @@ const Learning = ({
     <TitleAndBody title={subtitle} body={text} />
     <CompensatedRow>
       {featuredInsights.map((el, idx) => (
-        <CompensatedCol width={[1, 1, 1, 4 / 12]} key={idx}>
-          <InsightAnchor href={el.url}>
-            <Padding top={{ smallPhone: 2, tablet: 3 }}>
-              <Image image={el.image} />
-            </Padding>
-            <PostTitleWrapper top={1.5} bottom={1}>
-              <Paragraph bold noMargin>
-                {el.title}
-              </Paragraph>
-            </PostTitleWrapper>
-            <Hr />
-          </InsightAnchor>
-        </CompensatedCol>
+        <Insight insight={el} key={idx} />
       ))}
     </CompensatedRow>
   </Section>
