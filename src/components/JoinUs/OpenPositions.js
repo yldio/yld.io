@@ -87,14 +87,6 @@ class OpenPositions extends React.PureComponent {
       </Padding>
     )
   }
-
-  handleChangeCheckbox = e => {
-    const target = e.target
-    this.setState(prevState => ({
-      ...prevState,
-      [target.name]: target.checked
-    }))
-  }
 }
 
 export default OpenPositions
