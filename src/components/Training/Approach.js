@@ -22,16 +22,18 @@ const Approach = ({ title, content, formats }) => (
             </Padding>
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
-            {title.map((approach, i) => (
-              <Padding bottom={2} key={i}>
-                <Paragraph noMargin fullWidth reverse bold>
-                  {approach}
-                </Paragraph>
-                <Paragraph fullWidth reverse muted>
-                  {content[i]}
-                </Paragraph>
-              </Padding>
-            ))}
+            <Padding top={{ smallPhone: 1, desktop: 0 }}>
+              {title.map((approach, i) => (
+                <Padding bottom={2} key={i}>
+                  <Paragraph noMargin fullWidth reverse bold>
+                    {approach}
+                  </Paragraph>
+                  <Paragraph fullWidth reverse muted>
+                    {content[i]}
+                  </Paragraph>
+                </Padding>
+              ))}
+            </Padding>
           </Col>
         </Row>
         <Padding
@@ -50,8 +52,8 @@ const Approach = ({ title, content, formats }) => (
     <Grid>
       <Row>
         {formats.map(format => (
-          <Col width={[1, 1, 1, 1, 1 / 3]} key={format.id}>
-            <Padding bottom={{ smallPhone: 3, tablet: 0 }}>
+          <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={format.id}>
+            <Padding bottom={{ smallPhone: 3, desktop: 0 }}>
               <Padding bottom={1}>
                 <img
                   src={`https://${format.icon.file.url}`}

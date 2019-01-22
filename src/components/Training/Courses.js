@@ -12,7 +12,7 @@ const Courses = ({ categories, courses, toggleModal }) => (
       <Col width={[1]}>
         <Padding
           bottom={{ smallPhone: 3, tablet: 4 }}
-          top={{ smallPhone: 3, tablet: 5 }}
+          top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
         >
           <H2 noMargin>Course catalog</H2>
         </Padding>

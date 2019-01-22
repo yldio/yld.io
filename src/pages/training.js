@@ -68,11 +68,14 @@ class TrainingPage extends Component {
               subHeading="Featured work"
             />
           </Padding>
-          <Padding bottom={{ smallPhone: 0, desktop: 2 }} />
+          <Padding bottom={{ smallPhone: 2, desktop: 2 }} />
         </Grid>
         <GrayBackground noTop>
           <Grid>
-            <Padding top={4} bottom={4}>
+            <Padding
+              top={{ smallPhone: 2, desktop: 4 }}
+              bottom={{ smallPhone: 0, desktop: 4 }}
+            >
               <SEOText text={content.seoText.content[0].content} />
             </Padding>
           </Grid>
@@ -94,8 +97,8 @@ class TrainingPage extends Component {
         <Grid>
           {content.relatedCaseStudy ? (
             <Padding
-              top={{ smallPhone: 3, tablet: 5 }}
-              bottom={{ smallPhone: 3.5, tablet: 5 }}
+              top={{ smallPhone: 3, smallTablet: 5 }}
+              bottom={{ smallPhone: 3.5, smallTablet: 5 }}
             >
               <CaseStudy
                 subHeading="Featured work"
