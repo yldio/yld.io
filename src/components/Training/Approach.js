@@ -38,7 +38,7 @@ const Approach = ({ title, content, formats }) => (
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3, tablet: 4 }}
         >
-          <Hr short muted />
+          <Hr muted />
         </Padding>
         <Row>
           <Col width={[1]}>
@@ -66,13 +66,11 @@ const Approach = ({ title, content, formats }) => (
               </Paragraph>
               <Padding top={1} style={{ maxWidth: '80%' }}>
                 {format.bulletPoints.map((point, i) => (
-                  <Padding top={1} bottom={1} key={i}>
+                  <Padding top={1} key={i}>
                     <Paragraph muted reverse>
                       {point}
                     </Paragraph>
-                    <Padding top={0.5}>
-                      <Hr short muted />
-                    </Padding>
+                    <Hr short muted />
                   </Padding>
                 ))}
               </Padding>
