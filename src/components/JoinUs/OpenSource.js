@@ -92,7 +92,9 @@ const Talks = ({ data }) => (
   </CompensatedRow>
 )
 
-const OpenSource = ({ data: { title, list, text, featuredTalks } }) => (
+const OpenSource = ({
+  data: { title, subtitle, list, text, featuredTalks }
+}) => (
   <Section greyBg>
     <Row>
       <FirstColumn>
@@ -103,7 +105,7 @@ const OpenSource = ({ data: { title, list, text, featuredTalks } }) => (
       </SecondColumn>
     </Row>
     <Separator />
-    <TitleAndBody title="Recent Talks" body={text} />
+    <TitleAndBody title={subtitle} body={text} />
     <Talks data={featuredTalks} />
   </Section>
 )

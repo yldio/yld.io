@@ -28,6 +28,7 @@ class JoinUs extends Component {
           data={{
             title: content.learningTitle,
             list: content.learningText.learningText,
+            subtitle: content.insightsTitle,
             text: content.insightsDescriptionText.insightsDescriptionText,
             featuredInsights: content.insights
           }}
@@ -35,8 +36,9 @@ class JoinUs extends Component {
         <Work
           data={{
             title: content.challengingTitle,
-            text: content.someOfOurWorkDescription.someOfOurWorkDescription,
             list: content.challengingText.challengingText,
+            subtitle: content.someOfOurWorkTitle,
+            text: content.someOfOurWorkDescription.someOfOurWorkDescription,
             someWork: content.someWork
           }}
         />
@@ -44,6 +46,7 @@ class JoinUs extends Component {
           data={{
             title: content.ossTitle,
             list: content.ossText.ossText,
+            subtitle: content.talksTitle,
             text: content.talksText.talksText,
             featuredTalks: content.talks
           }}
@@ -86,6 +89,7 @@ const JoinUsPage = props => (
           learningText {
             learningText
           }
+          insightsTitle
           insightsDescriptionText {
             insightsDescriptionText
           }
@@ -107,6 +111,7 @@ const JoinUsPage = props => (
           challengingText {
             challengingText
           }
+          someOfOurWorkTitle
           someOfOurWorkDescription {
             someOfOurWorkDescription
           }
@@ -126,6 +131,7 @@ const JoinUsPage = props => (
           ossText {
             ossText
           }
+          talksTitle
           talksText {
             talksText
           }

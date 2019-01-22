@@ -84,7 +84,7 @@ const CaseStudyTitle = styled(H3)`
   `};
 `
 
-const Work = ({ data: { title, list, text, someWork } }) => (
+const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
   <Section>
     <Row>
       <FirstColumn>
@@ -95,7 +95,7 @@ const Work = ({ data: { title, list, text, someWork } }) => (
       </SecondColumn>
     </Row>
     <Separator />
-    <TitleAndBody title="Some of our work" body={text} />
+    <TitleAndBody title={subtitle} body={text} />
     <CompensatedRow>
       {someWork.slice(0, MAX_CASE_STUDIES).map((cs, idx) => {
         const lightText = getColorLuminance(cs.posterColor) < 127.5

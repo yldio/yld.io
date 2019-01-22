@@ -25,7 +25,9 @@ const PostTitleWrapper = styled(Padding)`
   flex: 1;
 `
 
-const Learning = ({ data: { title, text, featuredInsights, list } }) => (
+const Learning = ({
+  data: { title, subtitle, text, featuredInsights, list }
+}) => (
   <Section greyBg>
     <Row>
       <FirstColumn>
@@ -36,10 +38,7 @@ const Learning = ({ data: { title, text, featuredInsights, list } }) => (
       </SecondColumn>
     </Row>
     <Separator />
-    <TitleAndBody
-      title="Some insights into personal growth at YLD"
-      body={text}
-    />
+    <TitleAndBody title={subtitle} body={text} />
     <CompensatedRow>
       {featuredInsights.map((el, idx) => (
         <CompensatedCol width={[1, 1, 1, 4 / 12]} key={idx}>
