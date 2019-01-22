@@ -72,10 +72,7 @@ class TrainingPage extends Component {
         </Grid>
         <GrayBackground noTop>
           <Grid>
-            <Padding
-              top={{ smallPhone: 4, smallTablet: 4, desktop: 4 }}
-              bottom={{ smallPhone: 2, smallTablet: 2, desktop: 2 }}
-            >
+            <Padding top={4} bottom={4}>
               <SEOText text={content.seoText.content[0].content} />
             </Padding>
           </Grid>

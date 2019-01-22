@@ -1,22 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
-import is from 'styled-is'
 import { Padding } from 'styled-components-spacing'
 
 import { H2, Paragraph } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import BlueBG from '../BlueBG'
-
-const Hr = styled.hr`
-  height: 1px;
-  border: none;
-  opacity: 0.2;
-  background-color: #ffffff;
-
-  ${is('small')`
-    width: 76px;
-  `};
-`
+import Hr from '../Common/Hr'
 
 const Approach = ({ title, content, formats }) => (
   <BlueBG style={{ background: '#090329' }}>
@@ -50,7 +38,7 @@ const Approach = ({ title, content, formats }) => (
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3, tablet: 4 }}
         >
-          <Hr />
+          <Hr short muted />
         </Padding>
         <Row>
           <Col width={[1]}>
@@ -83,7 +71,7 @@ const Approach = ({ title, content, formats }) => (
                       {point}
                     </Paragraph>
                     <Padding top={0.5}>
-                      <Hr small />
+                      <Hr short muted />
                     </Padding>
                   </Padding>
                 ))}
