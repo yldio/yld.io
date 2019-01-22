@@ -408,9 +408,50 @@ exports[`Storyshots Form Label 1`] = `
 </label>
 `;
 
+exports[`Storyshots Typography H2 1`] = `
+<h2
+  className="sc-EHOje gkVNXO"
+>
+  Large title
+</h2>
+`;
+
+exports[`Storyshots Typography H2 small 1`] = `
+<h2
+  className="sc-EHOje kvUlRC"
+>
+  Large title
+</h2>
+`;
+
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
   className="sc-bZQynM bdjeOF"
+>
+  Large Body
+</h3>
+`;
+
+exports[`Storyshots Typography Large Body muted 1`] = `
+<h3
+  className="sc-bZQynM cjkcOU"
+  muted={true}
+>
+  Large Body
+</h3>
+`;
+
+exports[`Storyshots Typography Large Body regular 1`] = `
+<h3
+  className="sc-bZQynM dgkqWG"
+>
+  Large Body
+</h3>
+`;
+
+exports[`Storyshots Typography Large Body reverse 1`] = `
+<h3
+  className="sc-bZQynM bJeMRK"
 >
   Large Body
 </h3>
@@ -424,9 +465,140 @@ exports[`Storyshots Typography Large title 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Typography Large title center 1`] = `
+<h1
+  className="sc-ifAKCX eHqecF"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title muted 1`] = `
+<h1
+  className="sc-ifAKCX kUBrwU"
+  muted={true}
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title regular 1`] = `
+<h1
+  className="sc-ifAKCX fMiFAB"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title reverse 1`] = `
+<h1
+  className="sc-ifAKCX hFoZoO"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Paragraph 1`] = `
+<p
+  className="sc-iwsKbI eAirZx"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph bold 1`] = `
+<p
+  className="sc-iwsKbI dFlRIg"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph center 1`] = `
+<p
+  className="sc-iwsKbI kuwEeD"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph fullWidth 1`] = `
+<p
+  className="sc-iwsKbI Vvnrp"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph muted 1`] = `
+<p
+  className="sc-iwsKbI hdigOq"
+  muted={true}
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph noMargin 1`] = `
+<p
+  className="sc-iwsKbI jkdNLH"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph padded 1`] = `
+<p
+  className="sc-iwsKbI jlRPQd"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph reverse 1`] = `
+<p
+  className="sc-iwsKbI cpGhan"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Storyshots Typography Paragraph secondary 1`] = `
+<p
+  className="sc-iwsKbI kXZtbC"
+>
+  Paragraph
+</p>
+`;
+
 exports[`Storyshots Typography Small Title 1 1`] = `
 <h4
   className="sc-gzVnrw iltYUC"
+>
+  Small Title
+</h4>
+`;
+
+exports[`Storyshots Typography Small Title 1 muted 1`] = `
+<h4
+  className="sc-gzVnrw cfcTWu"
+  muted={true}
+>
+  Small Title
+</h4>
+`;
+
+exports[`Storyshots Typography Small Title 1 noMargin 1`] = `
+<h4
+  className="sc-gzVnrw bKXDhI"
+>
+  Small Title
+</h4>
+`;
+
+exports[`Storyshots Typography Small Title 1 reverse 1`] = `
+<h4
+  className="sc-gzVnrw eVGmVU"
 >
   Small Title
 </h4>
@@ -440,7 +612,80 @@ exports[`Storyshots Typography Small Title 2 1`] = `
 </h5>
 `;
 
+exports[`Storyshots Typography Small Title 2 noBottom 1`] = `
+<h5
+  className="sc-htoDjs foGyRr"
+>
+  Small Title
+</h5>
+`;
+
+exports[`Storyshots Typography Small Title 2 noMargin 1`] = `
+<h5
+  className="sc-htoDjs bGqTzj"
+>
+  Small Title
+</h5>
+`;
+
+exports[`Storyshots Typography Small Title 2 noTop 1`] = `
+<h5
+  className="sc-htoDjs vYasY"
+>
+  Small Title
+</h5>
+`;
+
+exports[`Storyshots Typography Small Title 2 noWrap 1`] = `
+<h5
+  className="sc-htoDjs hajOLy"
+>
+  Small Title
+</h5>
+`;
+
+exports[`Storyshots Typography Small Title 2 reverse 1`] = `
+<h5
+  className="sc-htoDjs fepXGr"
+>
+  Small Title
+</h5>
+`;
+
 exports[`Storyshots Typography Small Title 3 1`] = `
+<h6
+  className="sc-dnqmqq fxTddO"
+>
+  Small Title
+</h6>
+`;
+
+exports[`Storyshots Typography Small Title 3 muted 1`] = `
+<h6
+  className="sc-dnqmqq bmUJPM"
+  muted={true}
+>
+  Small Title
+</h6>
+`;
+
+exports[`Storyshots Typography Small Title 3 noMargin 1`] = `
+<h6
+  className="sc-dnqmqq fVKizc"
+>
+  Small Title
+</h6>
+`;
+
+exports[`Storyshots Typography Small Title 3 reverse 1`] = `
+<h6
+  className="sc-dnqmqq hBVEmA"
+>
+  Small Title
+</h6>
+`;
+
+exports[`Storyshots Typography Small Title 3 underline 1`] = `
 <h6
   className="sc-dnqmqq fxTddO"
 >

@@ -1,24 +1,13 @@
-import React, { Fragment } from 'react'
-
+import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../src/utils/theme'
-import GlobalStyle from '../src/utils/globalStyle'
+import Theme from './theme'
 import CompactVideoLink from '../src/components/Common/CompactVideoLink'
 import { Row } from '../src/components/grid'
 import BlueBG from '../src/components/BlueBG'
 import GreyBG from '../src/components/GreyBG'
 
-const Theme = storyFn => (
-  <ThemeProvider theme={theme}>
-    <Fragment>
-      {storyFn()}
-      <GlobalStyle />
-    </Fragment>
-  </ThemeProvider>
-)
-
 addDecorator(Theme)
+
 const text =
   'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright'
 
