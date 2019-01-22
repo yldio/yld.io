@@ -21,7 +21,7 @@ const TalkLink = styled.a`
   display: block;
   flex: 1;
 `
-const TalkTitle = styled.div`
+const FlexContainer = styled.div`
   display: flex;
 `
 const PlayIcon = styled.img`
@@ -71,12 +71,12 @@ const Talks = ({ data }) => (
                   }}
                 />
               </Margin>
-              <TalkTitle>
+              <FlexContainer>
                 <Margin right={[1.5, 1.5, 1.5, 2]}>
                   <PlayIcon src={playIcon} alt="Play button" />
                 </Margin>
                 <TruncatedParagraph noMargin>{title}</TruncatedParagraph>
-              </TalkTitle>
+              </FlexContainer>
             </Padding>
           </TalkLink>
         </Padding>
