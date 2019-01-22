@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
-import { H2, Paragraph } from '../Typography'
+import { SectionTitleH2, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import styled from 'styled-components'
@@ -44,7 +44,10 @@ const CommunitySection = ({ speciality }) => (
             ) : null}
           </ImgContainerCol>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <H2 small reverse>{`${speciality.title.trim()} community`}</H2>
+            <SectionTitleH2
+              small
+              reverse
+            >{`${speciality.title.trim()} community`}</SectionTitleH2>
             <Paragraph reverse muted>
               {speciality.communityText.content[0].content[0].value}
             </Paragraph>

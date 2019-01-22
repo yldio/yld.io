@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
-import { H1, Paragraph } from '../../Typography'
+import { SectionTitleH1, Paragraph } from '../../Typography'
 import StyledLink from '../../styledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
@@ -10,7 +10,7 @@ const Headings = ({ title }) => (
     <Paragraph noMargin secondary>
       Featured work
     </Paragraph>
-    <H1>{title}</H1>
+    <SectionTitleH1>{title}</SectionTitleH1>
   </Fragment>
 )
 

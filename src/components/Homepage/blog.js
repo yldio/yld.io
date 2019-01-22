@@ -4,11 +4,11 @@ import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { H2, H5 } from '../Typography'
+import { SectionTitleH2, H5 } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
-const BlogTitle = styled(H2)`
+const BlogTitle = styled(SectionTitleH2)`
   /* sorry */
   padding-top: 0.5rem !important;
 `

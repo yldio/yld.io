@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Row, Col, Grid } from '../grid'
-import { H2, H3, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, H3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
@@ -52,20 +52,20 @@ const ProjectsSection = ({ speciality }) => {
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
-              <H2 noMargin noBottom>
+              <SectionTitleH2 noMargin noBottom>
                 {speciality.title}
-              </H2>
-              <H2 noMargin muted noTop>
+              </SectionTitleH2>
+              <SectionTitleH2 noMargin muted noTop>
                 related projects
-              </H2>
+              </SectionTitleH2>
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
-            <H2 noMargin>{speciality.title}</H2>
-            <H2 noMargin muted>
+            <SectionTitleH2 noMargin>{speciality.title}</SectionTitleH2>
+            <SectionTitleH2 noMargin muted>
               related projects
-            </H2>
+            </SectionTitleH2>
           </Col>
           {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>

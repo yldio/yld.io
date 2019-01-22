@@ -7,7 +7,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
-import { H2, Paragraph } from '../../components/Typography'
+import { SectionTitleH2, Paragraph } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
@@ -86,7 +86,7 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
-            <H2>The challenge</H2>
+            <SectionTitleH2>The challenge</SectionTitleH2>
           </Col>
           <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
@@ -111,7 +111,7 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 5 / 12]}>
-                <H2>Single sign-on</H2>
+                <SectionTitleH2>Single sign-on</SectionTitleH2>
                 {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
                   <Paragraph fullWidth key={i}>
                     {p}
@@ -136,7 +136,7 @@ const IndexPage = ({
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <H2>Navigation</H2>
+              <SectionTitleH2>Navigation</SectionTitleH2>
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
@@ -162,7 +162,7 @@ const IndexPage = ({
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <H2>App deployment</H2>
+              <SectionTitleH2>App deployment</SectionTitleH2>
               {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
                 <Paragraph fullWidth key={i}>
                   {p}
@@ -190,7 +190,7 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 5 / 12]}>
-                <H2>Topology</H2>
+                <SectionTitleH2>Topology</SectionTitleH2>
                 {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
                   <Paragraph fullWidth key={i}>
                     {p}
@@ -213,7 +213,7 @@ const IndexPage = ({
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <H2>The big picture</H2>
+              <SectionTitleH2>The big picture</SectionTitleH2>
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
@@ -240,7 +240,7 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2]}>
-                <H2>Metrics visualisation</H2>
+                <SectionTitleH2>Metrics visualisation</SectionTitleH2>
               </Col>
               <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText8.genericText8).map((p, i) => (
@@ -270,7 +270,7 @@ const IndexPage = ({
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <H2>Monitoring and alerting</H2>
+              <SectionTitleH2>Monitoring and alerting</SectionTitleH2>
               {makeText(caseStudy.genericText9.genericText9).map((p, i) => (
                 <Paragraph fullWidth key={i}>
                   {p}

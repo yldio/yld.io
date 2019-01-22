@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
-import { H2, Paragraph } from '../../components/Typography'
+import { SectionTitleH2, Paragraph } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
@@ -77,9 +77,9 @@ const GradientContent = ({ text, image }) => (
     <Row>
       <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
         <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
-          <H2 reverse>
+          <SectionTitleH2 reverse>
             Beyond <BrAtTablet /> photography
-          </H2>
+          </SectionTitleH2>
         </Margin>
       </CenteredCol>
     </Row>
@@ -150,7 +150,9 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1 / 2]}>
-                <H2>At the heart of a photo is a story</H2>
+                <SectionTitleH2>
+                  At the heart of a photo is a story
+                </SectionTitleH2>
               </Col>
             </Row>
             <Row>
@@ -201,7 +203,7 @@ const IndexPage = ({
         <Padding top={3.5} bottom={3}>
           <Row>
             <Col width={[1, 1, 1, 1 / 2]}>
-              <H2>Exploring the story</H2>
+              <SectionTitleH2>Exploring the story</SectionTitleH2>
             </Col>
             <Col width={[1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
@@ -235,7 +237,7 @@ const IndexPage = ({
           >
             <Row>
               <Col width={[1, 1, 1, 1 / 2]}>
-                <H2>Out in the wild</H2>
+                <SectionTitleH2>Out in the wild</SectionTitleH2>
               </Col>
               <Col width={[1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText5.genericText5).map((p, i) => (

@@ -5,7 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
-import { H2, H5 } from '../Typography'
+import { SectionTitleH2, H5 } from '../Typography'
 import Jobs from '../jobs'
 import Li from '../listItem'
 
@@ -31,7 +31,7 @@ const JobsComponent = () => (
     <Row>
       <Col width={[1]}>
         <Padding top={{ smallPhone: 3, smallTablet: 4 }}>
-          <H2>Join our team</H2>
+          <SectionTitleH2>Join our team</SectionTitleH2>
         </Padding>
       </Col>
     </Row>

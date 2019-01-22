@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
-import { H2, H5, H4, Paragraph } from '../Typography'
+import { SectionTitleH2, H5, H4, Paragraph } from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
@@ -49,7 +49,7 @@ const Events = ({ events }) => (
         <Padding bottom={1}>
           <img src={eventIcon} alt="events icon" />
         </Padding>
-        <H2>Upcoming events</H2>
+        <SectionTitleH2>Upcoming events</SectionTitleH2>
       </EventsColumn>
       <Padding top={42}>
         <ul>
@@ -80,7 +80,7 @@ const Events = ({ events }) => (
             <img src={eventIcon} alt="events icon" />
           </Padding>
 
-          <H2>Upcoming events</H2>
+          <SectionTitleH2>Upcoming events</SectionTitleH2>
         </Padding>
       </EventsColumn>
     </Col>

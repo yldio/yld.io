@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import { H2, H3, H5 } from '../components/Typography'
+import { SectionTitleH2, H3, H5 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -87,7 +87,7 @@ const Service = ({ data, location }) => {
           <Grid>
             <Row>
               <Col width={[1]}>
-                <H2>We work with</H2>
+                <SectionTitleH2>We work with</SectionTitleH2>
               </Col>
             </Row>
             <Row>

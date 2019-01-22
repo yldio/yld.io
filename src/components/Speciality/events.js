@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { H2, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -19,7 +19,9 @@ const EventSection = ({ speciality }) => {
       <Padding top={6} bottom={6}>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <H2 small>{`Upcoming ${speciality.title} events`}</H2>
+            <SectionTitleH2>{`Upcoming ${
+              speciality.title
+            } events`}</SectionTitleH2>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             {futureEvents.map(event => (

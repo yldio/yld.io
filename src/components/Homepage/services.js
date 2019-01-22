@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { H2, H4, Paragraph } from '../Typography'
+import { SectionTitleH2, H4, Paragraph } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -95,7 +95,7 @@ const Services = ({ services }) => (
                   bottom={{ smallPhone: 0, smallTablet: 2 }}
                 />
               ) : null}
-              <H2>{service.title}</H2>
+              <SectionTitleH2>{service.title}</SectionTitleH2>
               <Padding top={1.5} bottom={0.5}>
                 <Paragraph>{service.introSentence.introSentence}</Paragraph>
               </Padding>

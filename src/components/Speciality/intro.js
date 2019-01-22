@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { H1, H4, Paragraph } from '../Typography'
+import { SectionTitleH1, H4, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
@@ -29,7 +29,7 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
-              <H1 reverse>{speciality.title}</H1>
+              <SectionTitleH1 reverse>{speciality.title}</SectionTitleH1>
               <Paragraph reverse muted>
                 {speciality.seoText.content[0].content[0].value}
               </Paragraph>

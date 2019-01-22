@@ -5,14 +5,14 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
-import { H2, Paragraph, H5 } from '../components/Typography'
+import { SectionTitleH2, Paragraph, H5 } from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
 
-const Stat = styled(H2)`
+const Stat = styled(SectionTitleH2)`
   font-size: ${remcalc(72)};
   padding-bottom: 0 !important; /* sorry */
 `

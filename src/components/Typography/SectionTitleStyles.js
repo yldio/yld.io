@@ -1,9 +1,9 @@
-import breakpoint from 'styled-components-breakpoint'
-import styled, { css } from 'styled-components'
-import remcalc from 'remcalc'
+import { css } from 'styled-components'
 import is from 'styled-is'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
-export const h1Styles = css`
+const SectionTitleStyles = css`
   color: ${props => props.theme.colors.text};
   font-weight: 500;
   font-size: ${remcalc(32)};
@@ -18,18 +18,14 @@ export const h1Styles = css`
     opacity: .5;
   `};
 
-  ${is('regular')`
-    font-weight: normal;
-  `};
-
   ${is('center')`
     text-align:center
   `};
 
   ${breakpoint('tablet')`
     font-size: ${remcalc(42)};
-    padding: ${remcalc(10)} 0 ${remcalc(8)} 0;
     line-height: ${remcalc(48)};
+    padding: ${remcalc(10)} 0 ${remcalc(8)} 0;
 
     ${is('noTop')`
       padding-top: 0;
@@ -40,6 +36,4 @@ export const h1Styles = css`
   `};
 `
 
-export default styled.h1`
-  ${h1Styles}
-`
+export default SectionTitleStyles

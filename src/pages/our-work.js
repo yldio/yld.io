@@ -9,7 +9,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { H1, H3 } from '../components/Typography'
+import { SectionTitleH1, H3 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
@@ -80,7 +80,7 @@ const OurWork = ({ data }) => {
                   tablet: 5
                 }}
               >
-                <H1>Our Work</H1>
+                <SectionTitleH1>Our Work</SectionTitleH1>
                 <SubHeading as="h2" regular>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
