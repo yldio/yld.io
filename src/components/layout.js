@@ -27,12 +27,12 @@ class Layout extends Component {
 
   render() {
     const { children, backgroundColor, logoColour, blue } = this.props
-    const Component = ({ color }) => {
+    const Component = (() => {
       if (backgroundColor === 'blue' || blue) return BlueBackground
       if (backgroundColor === 'grey') return GreyBackground
 
       return Fragment
-    }
+    })()
 
     return (
       <StaticQuery
@@ -59,12 +59,11 @@ class Layout extends Component {
               </Helmet>
               <Location>
                 {({ location }) => (
-                  <Component color={backgroundColor}>
+                  <Component>
                     <Header
                       path={location.pathname}
-                      blue
+                      blue={backgroundColor === 'blue'}
                       logoColour={logoColour}
-                      location={location}
                     />
                   </Component>
                 )}

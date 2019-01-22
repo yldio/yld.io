@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
 import LogoEngComponent from '../../images/eng-logo-component'
+
 const HiddenText = styled.h1`
   position: absolute;
   top: -9999px;
