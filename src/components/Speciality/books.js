@@ -44,7 +44,7 @@ const BooksSection = ({ speciality }) =>
     additionalInfo => additionalInfo.type === `Book`
   ).length ? (
     <Grid>
-      <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
+      <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>
           <Padding top={4} />
           <Col width={[1]}>
