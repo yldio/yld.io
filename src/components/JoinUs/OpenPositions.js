@@ -81,7 +81,7 @@ class OpenPositions extends React.PureComponent {
     return (
       <Padding top={3} key={key}>
         <H5 as="h3">{location}</H5>
-        <Padding top={1}>
+        <Padding top={2}>
           <CompensatedRow as="ul">
             {jobs.map((job, idx) => (
               <Job key={`job-${location}-${idx}`} {...job.node} />
