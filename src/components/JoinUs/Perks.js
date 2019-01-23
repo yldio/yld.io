@@ -28,7 +28,7 @@ const PerksListContainer = styled.ul`
   ${breakpoint('tablet')`
     grid-template-columns: 1fr 1fr;
     row-gap: ${remcalc(36)};
-    column-gap: 42px;
+    column-gap: 48px;
     padding-top: ${remcalc(12)};
   `};
 `
