@@ -14,7 +14,7 @@ export const StyledLinkCss = css`
   font-weight: 700;
   position: relative;
   display: inline-block;
-  transition: all 200ms ease-out;
+  transition: all ${props => props.theme.animations.fast} ease-out;
 
   &:after {
     content: '';

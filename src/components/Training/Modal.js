@@ -14,13 +14,14 @@ import close from '../../images/close.svg'
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.white};
   position: fixed;
   opacity: 0;
   top: 0;
   left: 0;
   z-index: 9999;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform ${props => props.theme.animations.normal},
+    opacity ${props => props.theme.animations.normal};
   transform: scale(0.7);
   visibility: hidden;
 

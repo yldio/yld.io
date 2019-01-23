@@ -6,7 +6,7 @@ import Flex from 'styled-flex-component'
 
 export const AnimatedLink = styled(Link)`
   > section {
-    transition: all 250ms ease;
+    transition: all ${props => props.theme.animations.normal} ease;
   }
 
   &:hover {
