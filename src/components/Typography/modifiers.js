@@ -21,6 +21,10 @@ const modifiers = css`
   ${is('noMargin')`
     padding: 0;
   `};
+
+  ${is('noMarginTop')`
+    padding: 0;
+  `};
 `
 
 export default modifiers

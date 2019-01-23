@@ -1,8 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import {
@@ -15,11 +13,6 @@ import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
-
-const Stat = styled(SectionTitleH2)`
-  font-size: ${remcalc(72)};
-  padding-bottom: 0 !important; /* sorry */
-`
 
 const CaseStudy = ({
   data: { allContentfulTemplatedCaseStudy, site },
@@ -84,8 +77,8 @@ const CaseStudy = ({
               {caseStudy.stats &&
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
-                    <Stat>{stat.value}</Stat>
-                    <SubtitleH3>{stat.label}</SubtitleH3>
+                    <SectionTitleH2>{stat.value}</SectionTitleH2>
+                    <SubtitleH3 noMarginTop>{stat.label}</SubtitleH3>
                   </Margin>
                 ))}
             </Col>
