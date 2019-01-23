@@ -51,9 +51,7 @@ const CaseStudy = ({
         <Row>
           <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
-              <BodyPrimary padded key={i}>
-                {text}
-              </BodyPrimary>
+              <BodyPrimary key={i}>{text}</BodyPrimary>
             ))}
           </Col>
         </Row>
@@ -79,9 +77,7 @@ const CaseStudy = ({
           <Row>
             <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
               {body[2].map((text, i) => (
-                <BodyPrimary padded key={i}>
-                  {text}
-                </BodyPrimary>
+                <BodyPrimary key={i}>{text}</BodyPrimary>
               ))}
             </Col>
             <Col>
