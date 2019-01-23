@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH1, CardTitleH3, Paragraph } from '../Typography'
+import {
+  SectionTitleH1,
+  CardTitleH3,
+  SubtitleH3,
+  Paragraph
+} from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
@@ -12,9 +17,9 @@ const IntroBorder = styled(Col)`
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={2} bottom={2}>
-      <Paragraph bold reverse>
+      <SubtitleH3 reverse noMargin>
         {introTextTitle}
-      </Paragraph>
+      </SubtitleH3>
       <Paragraph muted reverse>
         {introTextBody.content[0].content[0].value}
       </Paragraph>
