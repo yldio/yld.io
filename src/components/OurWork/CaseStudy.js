@@ -13,7 +13,7 @@ const Services = styled(BodyPrimary).attrs({ muted: true })`
   padding-bottom: 0;
 `
 
-const IntroSentence = styled(BodyPrimary).attrs({ fullWidth: true })`
+const IntroSentence = styled(BodyPrimary)`
   padding-bottom: 6px;
   ${breakpoint('tablet')`
     padding-bottom: 12px;
@@ -57,7 +57,7 @@ const TitleSection = ({ services, title }) => {
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
     <Padding top={1}>
-      <IntroSentence fullWidth>{introSentence}</IntroSentence>
+      <IntroSentence>{introSentence}</IntroSentence>
     </Padding>
     <StyledLink
       aria-label={`Learn more about ${title}`}

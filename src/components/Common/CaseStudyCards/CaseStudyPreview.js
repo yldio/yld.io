@@ -16,7 +16,7 @@ const Headings = ({ title }) => (
 
 const TextBelowImage = ({ introSentence, slug }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
-    <BodyPrimary fullWidth>{introSentence}</BodyPrimary>
+    <BodyPrimary>{introSentence}</BodyPrimary>
     <StyledLink to={`/case-study/${slug}`}>Learn more</StyledLink>
   </Padding>
 )

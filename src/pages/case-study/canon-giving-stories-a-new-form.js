@@ -82,7 +82,7 @@ const GradientContent = ({ text, image }) => (
       <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
         <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
           {makeText(text).map((p, i) => (
-            <BodyPrimary muted reverse padded fullWidth key={i}>
+            <BodyPrimary muted reverse padded key={i}>
               {p}
             </BodyPrimary>
           ))}
@@ -131,9 +131,7 @@ const IndexPage = ({
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
-              <BodyPrimary fullWidth key={i}>
-                {p}
-              </BodyPrimary>
+              <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
           </FirstParagraphCol>
         </Row>
@@ -163,7 +161,7 @@ const IndexPage = ({
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
-                    <BodyPrimary padded fullWidth key={i}>
+                    <BodyPrimary padded key={i}>
                       {p}
                     </BodyPrimary>
                   ))}

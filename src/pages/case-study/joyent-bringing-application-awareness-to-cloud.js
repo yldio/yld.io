@@ -90,14 +90,10 @@ const IndexPage = ({
           </Col>
           <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
-              <BodyPrimary fullWidth key={i}>
-                {p}
-              </BodyPrimary>
+              <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
             {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
-              <BodyPrimary fullWidth key={i}>
-                {p}
-              </BodyPrimary>
+              <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
           </ColWithoutExtraPadding>
         </Row>
@@ -113,9 +109,7 @@ const IndexPage = ({
               <Col width={[1, 1, 1, 1, 5 / 12]}>
                 <SectionTitleH2>Single sign-on</SectionTitleH2>
                 {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
-                  <BodyPrimary fullWidth key={i}>
-                    {p}
-                  </BodyPrimary>
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </Col>
             </Row>
@@ -140,9 +134,7 @@ const IndexPage = ({
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
-                <BodyPrimary fullWidth key={i}>
-                  {p}
-                </BodyPrimary>
+                <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
           </Row>
@@ -164,9 +156,7 @@ const IndexPage = ({
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SectionTitleH2>App deployment</SectionTitleH2>
               {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
-                <BodyPrimary fullWidth key={i}>
-                  {p}
-                </BodyPrimary>
+                <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
           </Row>
@@ -192,9 +182,7 @@ const IndexPage = ({
               <Col width={[1, 1, 1, 1, 5 / 12]}>
                 <SectionTitleH2>Topology</SectionTitleH2>
                 {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
-                  <BodyPrimary fullWidth key={i}>
-                    {p}
-                  </BodyPrimary>
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </Col>
               <Col width={[1, 1, 1, 1, 7 / 12]}>
@@ -217,9 +205,7 @@ const IndexPage = ({
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
-                <BodyPrimary fullWidth key={i}>
-                  {p}
-                </BodyPrimary>
+                <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
           </Row>
@@ -244,9 +230,7 @@ const IndexPage = ({
               </Col>
               <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText8.genericText8).map((p, i) => (
-                  <BodyPrimary fullWidth key={i}>
-                    {p}
-                  </BodyPrimary>
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </ColWithoutExtraPadding>
             </Row>
@@ -272,9 +256,7 @@ const IndexPage = ({
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SectionTitleH2>Monitoring and alerting</SectionTitleH2>
               {makeText(caseStudy.genericText9.genericText9).map((p, i) => (
-                <BodyPrimary fullWidth key={i}>
-                  {p}
-                </BodyPrimary>
+                <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
           </Row>

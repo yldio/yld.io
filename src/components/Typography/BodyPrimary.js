@@ -5,7 +5,6 @@ import BodyPrimaryStyles from './BodyPrimaryStyles'
 
 const BodyPrimary = styled.p`
   ${BodyPrimaryStyles}
-  max-width: ${remcalc(600)};
 
   ${is('padded')`
     padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
@@ -16,10 +15,6 @@ const BodyPrimary = styled.p`
     max-width: ${remcalc(900)};
     margin: auto;
   `};
-
-  ${is('fullWidth')`
-    max-width: 100% !important;
-  `}
 `
 
 export default BodyPrimary
