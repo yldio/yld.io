@@ -74,10 +74,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                 )
               )
             : sections.map(({ sectionTitle, sectionBody }, index) => (
-                <Padding
-                  bottom={{ smallPhone: 3, smallTablet: 0, tablet: 1 }}
-                  key={index}
-                >
+                <Padding bottom={{ smallPhone: 1, tablet: 2 }} key={index}>
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
