@@ -9,7 +9,7 @@ import {
   SectionTitleH1,
   CardTitleH3,
   H5,
-  H6
+  BodyStylised
 } from '../src/components/Typography'
 import {
   Checkbox,
@@ -35,7 +35,7 @@ storiesOf('Typography', module)
   .add('Large title', () => <SectionTitleH1>Large title</SectionTitleH1>)
   .add('Card Title H3', () => <CardTitleH3>Card Title H3</CardTitleH3>)
   .add('Small Title 2', () => <H5>Small Title</H5>)
-  .add('Small Title 3', () => <H6>Small Title</H6>)
+  .add('Body Stylised', () => <BodyStylised>Body Stylised</BodyStylised>)
 
 storiesOf('Form', module)
   .add('Checkbox', () => (
