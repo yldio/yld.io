@@ -148,7 +148,7 @@ export const query = graphql`
             url
           }
           fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp
           }
         }
         posterColor
@@ -183,7 +183,7 @@ export const query = graphql`
         preRequisitesCourses
         logo {
           fluid(maxWidth: 680) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp
           }
           title
           file {
@@ -199,7 +199,7 @@ export const query = graphql`
         slug
         posterImage {
           fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp
           }
           title
           file {
