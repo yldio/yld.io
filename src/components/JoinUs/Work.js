@@ -36,21 +36,6 @@ const CaseStudyLink = styled(Link)`
   color: ${props => props.color || props.theme.colors.white};
   flex: 1;
 `
-
-const CaseStudy = ({ title, lightText, ...props }) => (
-  <CaseStudyLink {...props}>
-    <Padding
-      vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
-      horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}
-    >
-      <Paragraph muted reverse={lightText} noMargin>
-        Case Study
-      </Paragraph>
-      <CaseStudyTitle reverse={lightText}>{title}</CaseStudyTitle>
-    </Padding>
-  </CaseStudyLink>
-)
-
 const CaseStudyWrapper = styled(Padding)`
   display: flex;
   width: 100%;
@@ -76,6 +61,20 @@ const CaseStudyTitle = styled(H3)`
     line-height: ${remcalc(30)};
   `};
 `
+
+const CaseStudy = ({ title, lightText, ...props }) => (
+  <CaseStudyLink {...props}>
+    <Padding
+      vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
+      horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}
+    >
+      <Paragraph muted reverse={lightText} noMargin>
+        Case Study
+      </Paragraph>
+      <CaseStudyTitle reverse={lightText}>{title}</CaseStudyTitle>
+    </Padding>
+  </CaseStudyLink>
+)
 
 const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
   <Section>
