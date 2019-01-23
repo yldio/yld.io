@@ -2678,7 +2678,7 @@
                     /*! lodash.isfinite */ '../../node_modules/lodash.isfinite/index.js'
                   ),
                   __webpack_require__(
-                    /*! lodash.keys */ '../../node_modules/apr-engine-iterator/node_modules/lodash.keys/index.js'
+                    /*! lodash.keys */ '../../node_modules/lodash.keys/index.js'
                   ),
                   __webpack_require__(
                     /*! apr-engine-until */ '../../node_modules/apr-engine-until/dist/apr-engine-until.umd.js'
@@ -2793,433 +2793,6 @@
           })
 
           //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjpudWxsLCJzb3VyY2VzIjpbIi9Vc2Vycy9yYW1pdG9zL2Rldi9hcHIvcGFja2FnZXMvZW5naW5lLWl0ZXJhdG9yL2luZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGJ1aWxkQXJyYXkgPSByZXF1aXJlKCdidWlsZC1hcnJheScpO1xuY29uc3QgaXNBcnJheSA9IHJlcXVpcmUoJ2xvZGFzaC5pc2FycmF5bGlrZScpO1xuY29uc3QgaXNGaW5pdGUgPSByZXF1aXJlKCdsb2Rhc2guaXNmaW5pdGUnKTtcbmNvbnN0IGtleXMgPSByZXF1aXJlKCdsb2Rhc2gua2V5cycpO1xuXG5jb25zdCB1bnRpbCA9IHJlcXVpcmUoJ2Fwci1lbmdpbmUtdW50aWwnKTtcblxuY29uc3Qgd3JhcCA9IGZuID0+IHtcbiAgbGV0IGkgPSAwO1xuXG4gIGNvbnN0IGdyb3VwID0gc2l6ZSA9PiB7XG4gICAgaWYgKGlzRmluaXRlKHNpemUpKSB7XG4gICAgICByZXR1cm4gYnVpbGRBcnJheShzaXplKS5tYXAobmV4dCk7XG4gICAgfVxuXG4gICAgcmV0dXJuIHVudGlsKCgpID0+IG5leHQoKSk7XG4gIH07XG5cbiAgY29uc3QgbmV4dCA9IHNpemUgPT4ge1xuICAgIGlmIChzaXplKSB7XG4gICAgICByZXR1cm4gZ3JvdXAoc2l6ZSk7XG4gICAgfVxuXG4gICAgcmV0dXJuIGZuKGkrKyk7XG4gIH07XG5cbiAgcmV0dXJuIHtcbiAgICBuZXh0XG4gIH07XG59O1xuXG5jb25zdCBhcnIgPSBpbnB1dCA9PlxuICB3cmFwKGkgPT4gKHtcbiAgICB2YWx1ZTogaW5wdXRbaV0sXG4gICAgZG9uZTogaW5wdXQubGVuZ3RoID09PSBpLFxuICAgIGtleTogaVxuICB9KSk7XG5cbmNvbnN0IGl0dHIgPSBpbnB1dCA9PlxuICB3cmFwKGkgPT4ge1xuICAgIGNvbnN0IGl0ZW0gPSBpbnB1dC5uZXh0KCk7XG5cbiAgICByZXR1cm4ge1xuICAgICAgZG9uZTogaXRlbS5kb25lLFxuICAgICAgdmFsdWU6IGl0ZW0udmFsdWUsXG4gICAgICBrZXk6IGlcbiAgICB9O1xuICB9KTtcblxuY29uc3Qgb2JqID0gaW5wdXQgPT4ge1xuICBjb25zdCBva2V5cyA9IGtleXMoaW5wdXQpO1xuXG4gIHJldHVybiB3cmFwKGkgPT4ge1xuICAgIGNvbnN0IGtleSA9IG9rZXlzW2ldO1xuXG4gICAgcmV0dXJuIHtcbiAgICAgIHZhbHVlOiBpbnB1dFtrZXldLFxuICAgICAgZG9uZTogb2tleXMubGVuZ3RoID09PSBpLFxuICAgICAga2V5XG4gICAgfTtcbiAgfSk7XG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IGlucHV0ID0+IHtcbiAgaWYgKGlzQXJyYXkoaW5wdXQpKSB7XG4gICAgcmV0dXJuIGFycihpbnB1dCk7XG4gIH1cblxuICBpZiAoaW5wdXRbU3ltYm9sLml0ZXJhdG9yXSkge1xuICAgIHJldHVybiBpdHRyKGlucHV0W1N5bWJvbC5pdGVyYXRvcl0oKSk7XG4gIH1cblxuICByZXR1cm4gb2JqKGlucHV0KTtcbn07XG4iXSwibmFtZXMiOlsid3JhcCIsImkiLCJncm91cCIsImlzRmluaXRlIiwic2l6ZSIsImJ1aWxkQXJyYXkiLCJtYXAiLCJuZXh0IiwidW50aWwiLCJmbiIsImFyciIsImlucHV0IiwibGVuZ3RoIiwiaXR0ciIsIml0ZW0iLCJkb25lIiwidmFsdWUiLCJvYmoiLCJva2V5cyIsImtleXMiLCJrZXkiLCJtb2R1bGUiLCJpc0FycmF5IiwiU3ltYm9sIiwiaXRlcmF0b3IiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQU9BLElBQU1BLE9BQU8sU0FBUEEsSUFBTyxLQUFNO01BQ2JDLElBQUksQ0FBUjs7TUFFTUMsUUFBUSxTQUFSQSxLQUFRLE9BQVE7UUFDaEJDLFNBQVNDLElBQVQsQ0FBSixFQUFvQjthQUNYQyxXQUFXRCxJQUFYLEVBQWlCRSxHQUFqQixDQUFxQkMsSUFBckIsQ0FBUDs7O1dBR0tDLGVBQU07YUFBTUQsTUFBTjtLQUFOLENBQVA7R0FMRjs7TUFRTUEsT0FBTyxTQUFQQSxJQUFPLE9BQVE7UUFDZkgsSUFBSixFQUFVO2FBQ0RGLE1BQU1FLElBQU4sQ0FBUDs7O1dBR0tLLEdBQUdSLEdBQUgsQ0FBUDtHQUxGOztTQVFPOztHQUFQO0NBbkJGOztBQXdCQSxJQUFNUyxNQUFNLFNBQU5BLEdBQU07U0FDVlYsS0FBSztXQUFNO2FBQ0ZXLE1BQU1WLENBQU4sQ0FERTtZQUVIVSxNQUFNQyxNQUFOLEtBQWlCWCxDQUZkO1dBR0pBO0tBSEY7R0FBTCxDQURVO0NBQVo7O0FBT0EsSUFBTVksT0FBTyxTQUFQQSxJQUFPO1NBQ1hiLEtBQUssYUFBSztRQUNGYyxPQUFPSCxNQUFNSixJQUFOLEVBQWI7O1dBRU87WUFDQ08sS0FBS0MsSUFETjthQUVFRCxLQUFLRSxLQUZQO1dBR0FmO0tBSFA7R0FIRixDQURXO0NBQWI7O0FBV0EsSUFBTWdCLE1BQU0sU0FBTkEsR0FBTSxRQUFTO01BQ2JDLFFBQVFDLFNBQUtSLEtBQUwsQ0FBZDs7U0FFT1gsS0FBSyxhQUFLO1FBQ1RvQixNQUFNRixNQUFNakIsQ0FBTixDQUFaOztXQUVPO2FBQ0VVLE1BQU1TLEdBQU4sQ0FERjtZQUVDRixNQUFNTixNQUFOLEtBQWlCWCxDQUZsQjs7S0FBUDtHQUhLLENBQVA7Q0FIRjs7QUFjQW9CLGtCQUFBLEdBQWlCLGlCQUFTO01BQ3BCQyxPQUFRWCxLQUFSLENBQUosRUFBb0I7V0FDWEQsSUFBSUMsS0FBSixDQUFQOzs7TUFHRUEsTUFBTVksT0FBT0MsUUFBYixDQUFKLEVBQTRCO1dBQ25CWCxLQUFLRixNQUFNWSxPQUFPQyxRQUFiLEdBQUwsQ0FBUDs7O1NBR0tQLElBQUlOLEtBQUosQ0FBUDtDQVRGOzs7Ozs7OzsifQ==
-
-          /***/
-        },
-
-      /***/ '../../node_modules/apr-engine-iterator/node_modules/lodash.keys/index.js':
-        /*!************************************************************************************************************!*\
-  !*** /Users/saravieira/Projects/yld.io/node_modules/apr-engine-iterator/node_modules/lodash.keys/index.js ***!
-  \************************************************************************************************************/
-        /*! no static exports found */
-        /***/ function(module, exports) {
-          /**
-           * lodash (Custom Build) <https://lodash.com/>
-           * Build: `lodash modularize exports="npm" -o ./`
-           * Copyright jQuery Foundation and other contributors <https://jquery.org/>
-           * Released under MIT license <https://lodash.com/license>
-           * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-           * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-           */
-
-          /** Used as references for various `Number` constants. */
-          var MAX_SAFE_INTEGER = 9007199254740991
-
-          /** `Object#toString` result references. */
-          var argsTag = '[object Arguments]',
-            funcTag = '[object Function]',
-            genTag = '[object GeneratorFunction]'
-
-          /** Used to detect unsigned integer values. */
-          var reIsUint = /^(?:0|[1-9]\d*)$/
-
-          /**
-           * The base implementation of `_.times` without support for iteratee shorthands
-           * or max array length checks.
-           *
-           * @private
-           * @param {number} n The number of times to invoke `iteratee`.
-           * @param {Function} iteratee The function invoked per iteration.
-           * @returns {Array} Returns the array of results.
-           */
-          function baseTimes(n, iteratee) {
-            var index = -1,
-              result = Array(n)
-
-            while (++index < n) {
-              result[index] = iteratee(index)
-            }
-            return result
-          }
-
-          /**
-           * Creates a unary function that invokes `func` with its argument transformed.
-           *
-           * @private
-           * @param {Function} func The function to wrap.
-           * @param {Function} transform The argument transform.
-           * @returns {Function} Returns the new function.
-           */
-          function overArg(func, transform) {
-            return function(arg) {
-              return func(transform(arg))
-            }
-          }
-
-          /** Used for built-in method references. */
-          var objectProto = Object.prototype
-
-          /** Used to check objects for own properties. */
-          var hasOwnProperty = objectProto.hasOwnProperty
-
-          /**
-           * Used to resolve the
-           * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-           * of values.
-           */
-          var objectToString = objectProto.toString
-
-          /** Built-in value references. */
-          var propertyIsEnumerable = objectProto.propertyIsEnumerable
-
-          /* Built-in method references for those with the same name as other `lodash` methods. */
-          var nativeKeys = overArg(Object.keys, Object)
-
-          /**
-           * Creates an array of the enumerable property names of the array-like `value`.
-           *
-           * @private
-           * @param {*} value The value to query.
-           * @param {boolean} inherited Specify returning inherited property names.
-           * @returns {Array} Returns the array of property names.
-           */
-          function arrayLikeKeys(value, inherited) {
-            // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-            // Safari 9 makes `arguments.length` enumerable in strict mode.
-            var result =
-              isArray(value) || isArguments(value)
-                ? baseTimes(value.length, String)
-                : []
-
-            var length = result.length,
-              skipIndexes = !!length
-
-            for (var key in value) {
-              if (
-                (inherited || hasOwnProperty.call(value, key)) &&
-                !(skipIndexes && (key == 'length' || isIndex(key, length)))
-              ) {
-                result.push(key)
-              }
-            }
-            return result
-          }
-
-          /**
-           * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
-           *
-           * @private
-           * @param {Object} object The object to query.
-           * @returns {Array} Returns the array of property names.
-           */
-          function baseKeys(object) {
-            if (!isPrototype(object)) {
-              return nativeKeys(object)
-            }
-            var result = []
-            for (var key in Object(object)) {
-              if (hasOwnProperty.call(object, key) && key != 'constructor') {
-                result.push(key)
-              }
-            }
-            return result
-          }
-
-          /**
-           * Checks if `value` is a valid array-like index.
-           *
-           * @private
-           * @param {*} value The value to check.
-           * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
-           * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
-           */
-          function isIndex(value, length) {
-            length = length == null ? MAX_SAFE_INTEGER : length
-            return (
-              !!length &&
-              (typeof value == 'number' || reIsUint.test(value)) &&
-              (value > -1 && value % 1 == 0 && value < length)
-            )
-          }
-
-          /**
-           * Checks if `value` is likely a prototype object.
-           *
-           * @private
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
-           */
-          function isPrototype(value) {
-            var Ctor = value && value.constructor,
-              proto =
-                (typeof Ctor == 'function' && Ctor.prototype) || objectProto
-
-            return value === proto
-          }
-
-          /**
-           * Checks if `value` is likely an `arguments` object.
-           *
-           * @static
-           * @memberOf _
-           * @since 0.1.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is an `arguments` object,
-           *  else `false`.
-           * @example
-           *
-           * _.isArguments(function() { return arguments; }());
-           * // => true
-           *
-           * _.isArguments([1, 2, 3]);
-           * // => false
-           */
-          function isArguments(value) {
-            // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-            return (
-              isArrayLikeObject(value) &&
-              hasOwnProperty.call(value, 'callee') &&
-              (!propertyIsEnumerable.call(value, 'callee') ||
-                objectToString.call(value) == argsTag)
-            )
-          }
-
-          /**
-           * Checks if `value` is classified as an `Array` object.
-           *
-           * @static
-           * @memberOf _
-           * @since 0.1.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is an array, else `false`.
-           * @example
-           *
-           * _.isArray([1, 2, 3]);
-           * // => true
-           *
-           * _.isArray(document.body.children);
-           * // => false
-           *
-           * _.isArray('abc');
-           * // => false
-           *
-           * _.isArray(_.noop);
-           * // => false
-           */
-          var isArray = Array.isArray
-
-          /**
-           * Checks if `value` is array-like. A value is considered array-like if it's
-           * not a function and has a `value.length` that's an integer greater than or
-           * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
-           *
-           * @static
-           * @memberOf _
-           * @since 4.0.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
-           * @example
-           *
-           * _.isArrayLike([1, 2, 3]);
-           * // => true
-           *
-           * _.isArrayLike(document.body.children);
-           * // => true
-           *
-           * _.isArrayLike('abc');
-           * // => true
-           *
-           * _.isArrayLike(_.noop);
-           * // => false
-           */
-          function isArrayLike(value) {
-            return value != null && isLength(value.length) && !isFunction(value)
-          }
-
-          /**
-           * This method is like `_.isArrayLike` except that it also checks if `value`
-           * is an object.
-           *
-           * @static
-           * @memberOf _
-           * @since 4.0.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is an array-like object,
-           *  else `false`.
-           * @example
-           *
-           * _.isArrayLikeObject([1, 2, 3]);
-           * // => true
-           *
-           * _.isArrayLikeObject(document.body.children);
-           * // => true
-           *
-           * _.isArrayLikeObject('abc');
-           * // => false
-           *
-           * _.isArrayLikeObject(_.noop);
-           * // => false
-           */
-          function isArrayLikeObject(value) {
-            return isObjectLike(value) && isArrayLike(value)
-          }
-
-          /**
-           * Checks if `value` is classified as a `Function` object.
-           *
-           * @static
-           * @memberOf _
-           * @since 0.1.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is a function, else `false`.
-           * @example
-           *
-           * _.isFunction(_);
-           * // => true
-           *
-           * _.isFunction(/abc/);
-           * // => false
-           */
-          function isFunction(value) {
-            // The use of `Object#toString` avoids issues with the `typeof` operator
-            // in Safari 8-9 which returns 'object' for typed array and other constructors.
-            var tag = isObject(value) ? objectToString.call(value) : ''
-            return tag == funcTag || tag == genTag
-          }
-
-          /**
-           * Checks if `value` is a valid array-like length.
-           *
-           * **Note:** This method is loosely based on
-           * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
-           *
-           * @static
-           * @memberOf _
-           * @since 4.0.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
-           * @example
-           *
-           * _.isLength(3);
-           * // => true
-           *
-           * _.isLength(Number.MIN_VALUE);
-           * // => false
-           *
-           * _.isLength(Infinity);
-           * // => false
-           *
-           * _.isLength('3');
-           * // => false
-           */
-          function isLength(value) {
-            return (
-              typeof value == 'number' &&
-              value > -1 &&
-              value % 1 == 0 &&
-              value <= MAX_SAFE_INTEGER
-            )
-          }
-
-          /**
-           * Checks if `value` is the
-           * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-           * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-           *
-           * @static
-           * @memberOf _
-           * @since 0.1.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-           * @example
-           *
-           * _.isObject({});
-           * // => true
-           *
-           * _.isObject([1, 2, 3]);
-           * // => true
-           *
-           * _.isObject(_.noop);
-           * // => true
-           *
-           * _.isObject(null);
-           * // => false
-           */
-          function isObject(value) {
-            var type = typeof value
-            return !!value && (type == 'object' || type == 'function')
-          }
-
-          /**
-           * Checks if `value` is object-like. A value is object-like if it's not `null`
-           * and has a `typeof` result of "object".
-           *
-           * @static
-           * @memberOf _
-           * @since 4.0.0
-           * @category Lang
-           * @param {*} value The value to check.
-           * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-           * @example
-           *
-           * _.isObjectLike({});
-           * // => true
-           *
-           * _.isObjectLike([1, 2, 3]);
-           * // => true
-           *
-           * _.isObjectLike(_.noop);
-           * // => false
-           *
-           * _.isObjectLike(null);
-           * // => false
-           */
-          function isObjectLike(value) {
-            return !!value && typeof value == 'object'
-          }
-
-          /**
-           * Creates an array of the own enumerable property names of `object`.
-           *
-           * **Note:** Non-object values are coerced to objects. See the
-           * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
-           * for more details.
-           *
-           * @static
-           * @since 0.1.0
-           * @memberOf _
-           * @category Object
-           * @param {Object} object The object to query.
-           * @returns {Array} Returns the array of property names.
-           * @example
-           *
-           * function Foo() {
-           *   this.a = 1;
-           *   this.b = 2;
-           * }
-           *
-           * Foo.prototype.c = 3;
-           *
-           * _.keys(new Foo);
-           * // => ['a', 'b'] (iteration order is not guaranteed)
-           *
-           * _.keys('hi');
-           * // => ['0', '1']
-           */
-          function keys(object) {
-            return isArrayLike(object)
-              ? arrayLikeKeys(object)
-              : baseKeys(object)
-          }
-
-          module.exports = keys
 
           /***/
         },
@@ -11962,64 +11535,90 @@
           /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
             /*! ./utils */ '../../node_modules/contentful-sdk-core/dist/es-modules/utils.js'
           )
-          var _slicedToArray = (function() {
-            function sliceIterator(arr, i) {
-              var _arr = []
-              var _n = true
-              var _d = false
-              var _e = undefined
-              try {
-                for (
-                  var _i = arr[Symbol.iterator](), _s;
-                  !(_n = (_s = _i.next()).done);
-                  _n = true
-                ) {
-                  _arr.push(_s.value)
-                  if (i && _arr.length === i) break
-                }
-              } catch (err) {
-                _d = true
-                _e = err
-              } finally {
-                try {
-                  if (!_n && _i['return']) _i['return']()
-                } finally {
-                  if (_d) throw _e
-                }
+          function _slicedToArray(arr, i) {
+            return (
+              _arrayWithHoles(arr) ||
+              _iterableToArrayLimit(arr, i) ||
+              _nonIterableRest()
+            )
+          }
+
+          function _nonIterableRest() {
+            throw new TypeError(
+              'Invalid attempt to destructure non-iterable instance'
+            )
+          }
+
+          function _iterableToArrayLimit(arr, i) {
+            var _arr = []
+            var _n = true
+            var _d = false
+            var _e = undefined
+            try {
+              for (
+                var _i = arr[Symbol.iterator](), _s;
+                !(_n = (_s = _i.next()).done);
+                _n = true
+              ) {
+                _arr.push(_s.value)
+                if (i && _arr.length === i) break
               }
-              return _arr
+            } catch (err) {
+              _d = true
+              _e = err
+            } finally {
+              try {
+                if (!_n && _i['return'] != null) _i['return']()
+              } finally {
+                if (_d) throw _e
+              }
             }
-            return function(arr, i) {
-              if (Array.isArray(arr)) {
-                return arr
-              } else if (Symbol.iterator in Object(arr)) {
-                return sliceIterator(arr, i)
-              } else {
-                throw new TypeError(
-                  'Invalid attempt to destructure non-iterable instance'
+            return _arr
+          }
+
+          function _arrayWithHoles(arr) {
+            if (Array.isArray(arr)) return arr
+          }
+
+          function _objectSpread(target) {
+            for (var i = 1; i < arguments.length; i++) {
+              var source = arguments[i] != null ? arguments[i] : {}
+              var ownKeys = Object.keys(source)
+              if (typeof Object.getOwnPropertySymbols === 'function') {
+                ownKeys = ownKeys.concat(
+                  Object.getOwnPropertySymbols(source).filter(function(sym) {
+                    return Object.getOwnPropertyDescriptor(
+                      source,
+                      sym
+                    ).enumerable
+                  })
                 )
               }
+              ownKeys.forEach(function(key) {
+                _defineProperty(target, key, source[key])
+              })
             }
-          })()
+            return target
+          }
 
-          var _extends =
-            Object.assign ||
-            function(target) {
-              for (var i = 1; i < arguments.length; i++) {
-                var source = arguments[i]
-                for (var key in source) {
-                  if (Object.prototype.hasOwnProperty.call(source, key)) {
-                    target[key] = source[key]
-                  }
-                }
-              }
-              return target
+          function _defineProperty(obj, key, value) {
+            if (key in obj) {
+              Object.defineProperty(obj, key, {
+                value: value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+              })
+            } else {
+              obj[key] = value
             }
+            return obj
+          }
 
           // Matches 'sub.host:port' and extracts hostname and port
           // Also enforces toplevel domain specified, no spaces and no protocol
-          var HOST_REGEX = /^(?!\w+:\/\/)([^\s:]+\.[^\s:]+)(?::(\d+))?(?!:)$/
 
+          var HOST_REGEX = /^(?!\w+:\/\/)([^\s:]+\.[^\s:]+)(?::(\d+))?(?!:)$/
           /**
            * Create pre configured axios instance
            * @private
@@ -12031,11 +11630,13 @@
            * @prop {string=} host - Alternate host
            * @prop {Object=} httpAgent - HTTP agent for node
            * @prop {Object=} httpsAgent - HTTPS agent for node
+           * @prop {function=} adapter - Axios adapter to handle requests
            * @prop {Object=} proxy - Axios proxy config
            * @prop {Object=} headers - Additional headers
            * @prop {function=} logHandler - A log handler function to process given log messages & errors. Receives the log level (error, warning & info) and the actual log data (Error object or string). (Default can be found here: https://github.com/contentful/contentful-sdk-core/blob/master/lib/create-http-client.js)
            * @return {Object} Initialized axios instance
            */
+
           function createHttpClient(axios, options) {
             var defaultConfig = {
               insecure: false,
@@ -12047,11 +11648,12 @@
                       return a
                     })
                     .join(' - ')
-                  console.error('[error] ' + title)
+                  console.error('[error] '.concat(title))
                   console.error(data)
                   return
                 }
-                console.log('[' + level + '] ' + data)
+
+                console.log('['.concat(level, '] ').concat(data))
               },
               // Passed to axios
               headers: {},
@@ -12059,9 +11661,11 @@
               httpsAgent: false,
               timeout: 30000,
               proxy: false,
-              basePath: ''
+              basePath: '',
+              adapter: false
             }
-            var config = _extends({}, defaultConfig, options)
+
+            var config = _objectSpread({}, defaultConfig, options)
 
             if (!config.accessToken) {
               var missingAccessTokenError = new TypeError(
@@ -12069,16 +11673,16 @@
               )
               config.logHandler('error', missingAccessTokenError)
               throw missingAccessTokenError
-            }
+            } // Construct axios baseURL option
 
-            // Construct axios baseURL option
             var protocol = config.insecure ? 'http' : 'https'
-            var space = config.space ? config.space + '/' : ''
+            var space = config.space ? ''.concat(config.space, '/') : ''
             var hostname = config.defaultHostname
             var port = config.insecure ? 80 : 443
 
             if (HOST_REGEX.test(config.host)) {
               var parsed = config.host.split(':')
+
               if (parsed.length === 2) {
                 var _parsed = _slicedToArray(parsed, 2)
 
@@ -12087,34 +11691,29 @@
               } else {
                 hostname = parsed[0]
               }
-            }
+            } // Ensure that basePath does start but not end with a slash
 
-            // Ensure that basePath does start but not end with a slash
             if (config.basePath) {
-              config.basePath =
-                '/' +
+              config.basePath = '/'.concat(
                 config.basePath
                   .split('/')
                   .filter(Boolean)
                   .join('/')
+              )
             }
 
             var baseURL =
               options.baseURL ||
-              protocol +
-                '://' +
-                hostname +
-                ':' +
-                port +
-                config.basePath +
-                '/spaces/' +
-                space
-
-            config.headers['Authorization'] = 'Bearer ' + config.accessToken
-
-            // Set these headers only for node because browsers don't like it when you
+              ''
+                .concat(protocol, '://')
+                .concat(hostname, ':')
+                .concat(port)
+                .concat(config.basePath, '/spaces/')
+                .concat(space)
+            config.headers['Authorization'] = 'Bearer ' + config.accessToken // Set these headers only for node because browsers don't like it when you
             // override user-agent or accept-encoding.
             // The SDKs should set their own X-Contentful-User-Agent.
+
             if (Object(_utils__WEBPACK_IMPORTED_MODULE_3__['isNode'])()) {
               config.headers['user-agent'] =
                 'node.js/' +
@@ -12132,13 +11731,13 @@
                 qs__WEBPACK_IMPORTED_MODULE_1___default.a.stringify,
               proxy: config.proxy,
               timeout: config.timeout,
+              adapter: config.adapter,
               // Contentful
               logHandler: config.logHandler,
               retryOnError: config.retryOnError
             }
             var instance = axios.create(axiosOptions)
             instance.httpClientParams = options
-
             /**
              * Creates a new axios instance with the same default base parameters as the
              * current one, and with any overrides passed to the newParams object
@@ -12149,10 +11748,11 @@
              * @param {Object} httpClientParams - Initialization parameters for the HTTP client
              * @return {Object} Initialized axios instance
              */
+
             instance.cloneWithNewParams = function(newParams) {
               return createHttpClient(
                 axios,
-                _extends(
+                _objectSpread(
                   {},
                   lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(
                     options
@@ -12161,6 +11761,7 @@
                 )
               )
             }
+
             Object(_rate_limit__WEBPACK_IMPORTED_MODULE_2__['default'])(
               instance
             )
@@ -12198,9 +11799,9 @@
            * @param {Object} query
            * @return {Object} Config object with `params` property, ready to be used in axios
            */
+
           function createRequestConfig(_ref) {
             var query = _ref.query
-
             var config = {}
             delete query.resolveLinks
             config.params = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(
@@ -12231,14 +11832,12 @@
             if (!(path in obj)) {
               var err = new Error()
               err.name = 'PropertyMissing'
-              err.message =
-                'Required property ' +
-                path +
-                ' missing from:\n\n' +
-                JSON.stringify(obj) +
-                '\n\n'
+              err.message = 'Required property '
+                .concat(path, ' missing from:\n\n')
+                .concat(JSON.stringify(obj), '\n\n')
               throw err
             }
+
             return true
           }
 
@@ -12270,6 +11869,7 @@
           function freezeObjectDeep(obj) {
             Object.keys(obj).forEach(function(key) {
               var value = obj[key]
+
               if (
                 lodash_isPlainObject__WEBPACK_IMPORTED_MODULE_0___default()(
                   value
@@ -12327,6 +11927,7 @@
             if (!window) {
               return null
             }
+
             var userAgent = window.navigator.userAgent
             var platform = window.navigator.platform
             var macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K']
@@ -12364,9 +11965,11 @@
               sunos: 'Linux',
               win32: 'Windows'
             }
+
             if (os in osMap) {
-              return (osMap[os] || 'Linux') + '/' + version
+              return ''.concat(osMap[os] || 'Linux', '/').concat(version)
             }
+
             return null
           }
 
@@ -12374,48 +11977,54 @@
             var headerParts = []
 
             if (application) {
-              headerParts.push('app ' + application)
+              headerParts.push('app '.concat(application))
             }
 
             if (integration) {
-              headerParts.push('integration ' + integration)
+              headerParts.push('integration '.concat(integration))
             }
 
             if (feature) {
               headerParts.push('feature ' + feature)
             }
 
-            headerParts.push('sdk ' + sdk)
-
+            headerParts.push('sdk '.concat(sdk))
             var os = null
-            if (isReactNative()) {
-              os = getBrowserOS()
-              headerParts.push('platform ReactNative')
-            } else if (
-              Object(_utils__WEBPACK_IMPORTED_MODULE_1__['isNode'])()
-            ) {
-              os = getNodeOS()
-              headerParts.push(
-                'platform node.js/' +
-                  Object(
-                    _utils__WEBPACK_IMPORTED_MODULE_1__['getNodeVersion']
-                  )()
-              )
-            } else {
-              os = getBrowserOS()
-              headerParts.push('platform browser')
+
+            try {
+              if (isReactNative()) {
+                os = getBrowserOS()
+                headerParts.push('platform ReactNative')
+              } else if (
+                Object(_utils__WEBPACK_IMPORTED_MODULE_1__['isNode'])()
+              ) {
+                os = getNodeOS()
+                headerParts.push(
+                  'platform node.js/'.concat(
+                    Object(
+                      _utils__WEBPACK_IMPORTED_MODULE_1__['getNodeVersion']
+                    )()
+                  )
+                )
+              } else {
+                os = getBrowserOS()
+                headerParts.push('platform browser')
+              }
+            } catch (e) {
+              os = null
             }
 
             if (os) {
-              headerParts.push('os ' + os)
+              headerParts.push('os '.concat(os))
             }
 
-            return (
+            return ''.concat(
               headerParts
                 .filter(function(item) {
                   return item !== ''
                 })
-                .join('; ') + ';'
+                .join('; '),
+              ';'
             )
           }
 
@@ -12439,13 +12048,11 @@
           )
           var attempts = {}
           var networkErrorAttempts = 0
-
           function rateLimit(instance) {
             var maxRetry =
               arguments.length > 1 && arguments[1] !== undefined
                 ? arguments[1]
                 : 5
-
             instance.interceptors.response.use(
               function(response) {
                 // we don't need to do anything here
@@ -12453,18 +12060,15 @@
               },
               function(error) {
                 var response = error.response,
-                  config = error.config
-
-                // Do not retry if it is disabled or no request config exists (not an axios error)
+                  config = error.config // Do not retry if it is disabled or no request config exists (not an axios error)
 
                 if (!config || !instance.defaults.retryOnError) {
                   return Promise.reject(error)
                 }
 
                 var retryErrorType = null
-                var wait = 0
+                var wait = 0 // Errors without response did not recieve anything from the server
 
-                // Errors without response did not recieve anything from the server
                 if (!response) {
                   retryErrorType = 'Connection'
                   networkErrorAttempts++
@@ -12482,22 +12086,22 @@
 
                 if (response.status >= 500 && response.status < 600) {
                   // 5** errors are server related
-                  retryErrorType = 'Server ' + response.status
+                  retryErrorType = 'Server '.concat(response.status)
                   var headers = response.headers || {}
                   var requestId = headers['x-contentful-request-id'] || null
                   attempts[requestId] = attempts[requestId] || 0
-                  attempts[requestId]++
+                  attempts[requestId]++ // we reject if there are too much errors of with the same request id
 
-                  // we reject if there are too much errors of with the same request id
                   if (attempts[requestId] > maxRetry || !requestId) {
                     error.attempts = attempts[requestId]
                     return Promise.reject(error)
                   }
+
                   wait = Math.pow(Math.SQRT2, attempts[requestId])
                 } else if (response.status === 429) {
                   // 429 errors are exceeded rate limit exceptions
-                  retryErrorType = 'Rate limit'
-                  // all headers are lowercased by axios https://github.com/mzabriskie/axios/issues/413
+                  retryErrorType = 'Rate limit' // all headers are lowercased by axios https://github.com/mzabriskie/axios/issues/413
+
                   if (
                     response.headers &&
                     error.response.headers['x-contentful-ratelimit-reset']
@@ -12517,15 +12121,15 @@
                   wait = Math.floor(wait * 1000 + Math.random() * 200 + 500)
                   instance.defaults.logHandler(
                     'warning',
-                    retryErrorType +
-                      ' error occurred. Waiting for ' +
-                      wait +
-                      ' ms before retrying...'
+                    ''
+                      .concat(retryErrorType, ' error occurred. Waiting for ')
+                      .concat(wait, ' ms before retrying...')
                   )
                   return delay(wait).then(function() {
                     return instance(config)
                   })
                 }
+
                 return Promise.reject(error)
               }
             )
@@ -12562,6 +12166,7 @@
            * @param {Object} data - Any plain JSON response returned from the API
            * @return {Object} Enhanced object with toPlainObject method
            */
+
           function toPlainObject(data) {
             return Object.defineProperty(data, 'toPlainObject', {
               enumerable: false,
@@ -12610,10 +12215,9 @@
              **/
             return typeof process !== 'undefined' && !process.browser
           }
-
           function getNodeVersion() {
             return process.versions.node
-              ? 'v' + process.versions.node
+              ? 'v'.concat(process.versions.node)
               : process.version
           }
 
@@ -14038,6 +13642,7 @@ type DotenvConfigOutput = {
         /*! no static exports found */
         /***/ function(module, exports, __webpack_require__) {
           var url = __webpack_require__(/*! url */ 'url')
+          var URL = url.URL
           var http = __webpack_require__(/*! http */ 'http')
           var https = __webpack_require__(/*! https */ 'https')
           var assert = __webpack_require__(/*! assert */ 'assert')
@@ -14071,6 +13676,8 @@ type DotenvConfigOutput = {
             Writable.call(this)
             options.headers = options.headers || {}
             this._options = options
+            this._ended = false
+            this._ending = false
             this._redirectCount = 0
             this._redirects = []
             this._requestBodyLength = 0
@@ -14120,6 +13727,11 @@ type DotenvConfigOutput = {
             encoding,
             callback
           ) {
+            // Writing is not allowed if end has been called
+            if (this._ending) {
+              throw new Error('write after end')
+            }
+
             // Validate input and shift parameters if necessary
             if (
               !(
@@ -14176,11 +13788,19 @@ type DotenvConfigOutput = {
               encoding = null
             }
 
-            // Write data and end
-            var currentRequest = this._currentRequest
-            this.write(data || '', encoding, function() {
-              currentRequest.end(null, null, callback)
-            })
+            // Write data if needed and end
+            if (!data) {
+              this._ended = this._ending = true
+              this._currentRequest.end(null, null, callback)
+            } else {
+              var self = this
+              var currentRequest = this._currentRequest
+              this.write(data, encoding, function() {
+                self._ended = true
+                currentRequest.end(null, null, callback)
+              })
+              this._ending = true
+            }
           }
 
           // Sets a header value on the current native request
@@ -14256,13 +13876,29 @@ type DotenvConfigOutput = {
             if (this._isRedirect) {
               // Write the request entity and end.
               var i = 0
+              var self = this
               var buffers = this._requestBodyBuffers
-              ;(function writeNext() {
-                if (i < buffers.length) {
-                  var buffer = buffers[i++]
-                  request.write(buffer.data, buffer.encoding, writeNext)
-                } else {
-                  request.end()
+              ;(function writeNext(error) {
+                // Only write if this request has not been redirected yet
+                /* istanbul ignore else */
+                if (request === self._currentRequest) {
+                  // Report any write errors
+                  /* istanbul ignore if */
+                  if (error) {
+                    self.emit('error', error)
+                  }
+                  // Write the next buffer if there are still left
+                  else if (i < buffers.length) {
+                    var buffer = buffers[i++]
+                    /* istanbul ignore else */
+                    if (!request.finished) {
+                      request.write(buffer.data, buffer.encoding, writeNext)
+                    }
+                  }
+                  // End the request if `end` has been called on us
+                  else if (self._ended) {
+                    request.end()
+                  }
                 }
               })()
             }
@@ -14292,6 +13928,11 @@ type DotenvConfigOutput = {
               response.statusCode >= 300 &&
               response.statusCode < 400
             ) {
+              // Abort the current request
+              this._currentRequest.removeAllListeners()
+              this._currentRequest.on('error', noop)
+              this._currentRequest.abort()
+
               // RFC7231§6.4: A client SHOULD detect and intervene
               // in cyclical redirections (i.e., "infinite" redirection loops).
               if (++this._redirectCount > this._options.maxRedirects) {
@@ -14370,34 +14011,77 @@ type DotenvConfigOutput = {
               ))
 
               // Executes a request, following redirects
-              wrappedProtocol.request = function(options, callback) {
-                if (typeof options === 'string') {
-                  options = url.parse(options)
-                  options.maxRedirects = exports.maxRedirects
+              wrappedProtocol.request = function(input, options, callback) {
+                // Parse parameters
+                if (typeof input === 'string') {
+                  var urlStr = input
+                  try {
+                    input = urlToOptions(new URL(urlStr))
+                  } catch (err) {
+                    /* istanbul ignore next */
+                    input = url.parse(urlStr)
+                  }
+                } else if (URL && input instanceof URL) {
+                  input = urlToOptions(input)
                 } else {
-                  options = Object.assign(
-                    {
-                      protocol: protocol,
-                      maxRedirects: exports.maxRedirects,
-                      maxBodyLength: exports.maxBodyLength
-                    },
-                    options
-                  )
+                  callback = options
+                  options = input
+                  input = { protocol: protocol }
                 }
+                if (typeof options === 'function') {
+                  callback = options
+                  options = null
+                }
+
+                // Set defaults
+                options = Object.assign(
+                  {
+                    maxRedirects: exports.maxRedirects,
+                    maxBodyLength: exports.maxBodyLength
+                  },
+                  input,
+                  options
+                )
                 options.nativeProtocols = nativeProtocols
+
                 assert.equal(options.protocol, protocol, 'protocol mismatch')
                 debug('options', options)
                 return new RedirectableRequest(options, callback)
               }
 
               // Executes a GET request, following redirects
-              wrappedProtocol.get = function(options, callback) {
-                var request = wrappedProtocol.request(options, callback)
+              wrappedProtocol.get = function(input, options, callback) {
+                var request = wrappedProtocol.request(input, options, callback)
                 request.end()
                 return request
               }
             })
             return exports
+          }
+
+          /* istanbul ignore next */
+          function noop() {
+            /* empty */
+          }
+
+          // from https://github.com/nodejs/node/blob/master/lib/internal/url.js
+          function urlToOptions(urlObject) {
+            var options = {
+              protocol: urlObject.protocol,
+              hostname: urlObject.hostname.startsWith('[')
+                ? /* istanbul ignore next */
+                  urlObject.hostname.slice(1, -1)
+                : urlObject.hostname,
+              hash: urlObject.hash,
+              search: urlObject.search,
+              pathname: urlObject.pathname,
+              path: urlObject.pathname + urlObject.search,
+              href: urlObject.href
+            }
+            if (urlObject.port !== '') {
+              options.port = Number(urlObject.port)
+            }
+            return options
           }
 
           // Exports
@@ -21432,6 +21116,433 @@ type DotenvConfigOutput = {
           }
 
           module.exports = isFinite
+
+          /***/
+        },
+
+      /***/ '../../node_modules/lodash.keys/index.js':
+        /*!***************************************************************************!*\
+  !*** /Users/saravieira/Projects/yld.io/node_modules/lodash.keys/index.js ***!
+  \***************************************************************************/
+        /*! no static exports found */
+        /***/ function(module, exports) {
+          /**
+           * lodash (Custom Build) <https://lodash.com/>
+           * Build: `lodash modularize exports="npm" -o ./`
+           * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+           * Released under MIT license <https://lodash.com/license>
+           * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+           * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+           */
+
+          /** Used as references for various `Number` constants. */
+          var MAX_SAFE_INTEGER = 9007199254740991
+
+          /** `Object#toString` result references. */
+          var argsTag = '[object Arguments]',
+            funcTag = '[object Function]',
+            genTag = '[object GeneratorFunction]'
+
+          /** Used to detect unsigned integer values. */
+          var reIsUint = /^(?:0|[1-9]\d*)$/
+
+          /**
+           * The base implementation of `_.times` without support for iteratee shorthands
+           * or max array length checks.
+           *
+           * @private
+           * @param {number} n The number of times to invoke `iteratee`.
+           * @param {Function} iteratee The function invoked per iteration.
+           * @returns {Array} Returns the array of results.
+           */
+          function baseTimes(n, iteratee) {
+            var index = -1,
+              result = Array(n)
+
+            while (++index < n) {
+              result[index] = iteratee(index)
+            }
+            return result
+          }
+
+          /**
+           * Creates a unary function that invokes `func` with its argument transformed.
+           *
+           * @private
+           * @param {Function} func The function to wrap.
+           * @param {Function} transform The argument transform.
+           * @returns {Function} Returns the new function.
+           */
+          function overArg(func, transform) {
+            return function(arg) {
+              return func(transform(arg))
+            }
+          }
+
+          /** Used for built-in method references. */
+          var objectProto = Object.prototype
+
+          /** Used to check objects for own properties. */
+          var hasOwnProperty = objectProto.hasOwnProperty
+
+          /**
+           * Used to resolve the
+           * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+           * of values.
+           */
+          var objectToString = objectProto.toString
+
+          /** Built-in value references. */
+          var propertyIsEnumerable = objectProto.propertyIsEnumerable
+
+          /* Built-in method references for those with the same name as other `lodash` methods. */
+          var nativeKeys = overArg(Object.keys, Object)
+
+          /**
+           * Creates an array of the enumerable property names of the array-like `value`.
+           *
+           * @private
+           * @param {*} value The value to query.
+           * @param {boolean} inherited Specify returning inherited property names.
+           * @returns {Array} Returns the array of property names.
+           */
+          function arrayLikeKeys(value, inherited) {
+            // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+            // Safari 9 makes `arguments.length` enumerable in strict mode.
+            var result =
+              isArray(value) || isArguments(value)
+                ? baseTimes(value.length, String)
+                : []
+
+            var length = result.length,
+              skipIndexes = !!length
+
+            for (var key in value) {
+              if (
+                (inherited || hasOwnProperty.call(value, key)) &&
+                !(skipIndexes && (key == 'length' || isIndex(key, length)))
+              ) {
+                result.push(key)
+              }
+            }
+            return result
+          }
+
+          /**
+           * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+           *
+           * @private
+           * @param {Object} object The object to query.
+           * @returns {Array} Returns the array of property names.
+           */
+          function baseKeys(object) {
+            if (!isPrototype(object)) {
+              return nativeKeys(object)
+            }
+            var result = []
+            for (var key in Object(object)) {
+              if (hasOwnProperty.call(object, key) && key != 'constructor') {
+                result.push(key)
+              }
+            }
+            return result
+          }
+
+          /**
+           * Checks if `value` is a valid array-like index.
+           *
+           * @private
+           * @param {*} value The value to check.
+           * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+           * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+           */
+          function isIndex(value, length) {
+            length = length == null ? MAX_SAFE_INTEGER : length
+            return (
+              !!length &&
+              (typeof value == 'number' || reIsUint.test(value)) &&
+              (value > -1 && value % 1 == 0 && value < length)
+            )
+          }
+
+          /**
+           * Checks if `value` is likely a prototype object.
+           *
+           * @private
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+           */
+          function isPrototype(value) {
+            var Ctor = value && value.constructor,
+              proto =
+                (typeof Ctor == 'function' && Ctor.prototype) || objectProto
+
+            return value === proto
+          }
+
+          /**
+           * Checks if `value` is likely an `arguments` object.
+           *
+           * @static
+           * @memberOf _
+           * @since 0.1.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+           *  else `false`.
+           * @example
+           *
+           * _.isArguments(function() { return arguments; }());
+           * // => true
+           *
+           * _.isArguments([1, 2, 3]);
+           * // => false
+           */
+          function isArguments(value) {
+            // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+            return (
+              isArrayLikeObject(value) &&
+              hasOwnProperty.call(value, 'callee') &&
+              (!propertyIsEnumerable.call(value, 'callee') ||
+                objectToString.call(value) == argsTag)
+            )
+          }
+
+          /**
+           * Checks if `value` is classified as an `Array` object.
+           *
+           * @static
+           * @memberOf _
+           * @since 0.1.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+           * @example
+           *
+           * _.isArray([1, 2, 3]);
+           * // => true
+           *
+           * _.isArray(document.body.children);
+           * // => false
+           *
+           * _.isArray('abc');
+           * // => false
+           *
+           * _.isArray(_.noop);
+           * // => false
+           */
+          var isArray = Array.isArray
+
+          /**
+           * Checks if `value` is array-like. A value is considered array-like if it's
+           * not a function and has a `value.length` that's an integer greater than or
+           * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+           *
+           * @static
+           * @memberOf _
+           * @since 4.0.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+           * @example
+           *
+           * _.isArrayLike([1, 2, 3]);
+           * // => true
+           *
+           * _.isArrayLike(document.body.children);
+           * // => true
+           *
+           * _.isArrayLike('abc');
+           * // => true
+           *
+           * _.isArrayLike(_.noop);
+           * // => false
+           */
+          function isArrayLike(value) {
+            return value != null && isLength(value.length) && !isFunction(value)
+          }
+
+          /**
+           * This method is like `_.isArrayLike` except that it also checks if `value`
+           * is an object.
+           *
+           * @static
+           * @memberOf _
+           * @since 4.0.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is an array-like object,
+           *  else `false`.
+           * @example
+           *
+           * _.isArrayLikeObject([1, 2, 3]);
+           * // => true
+           *
+           * _.isArrayLikeObject(document.body.children);
+           * // => true
+           *
+           * _.isArrayLikeObject('abc');
+           * // => false
+           *
+           * _.isArrayLikeObject(_.noop);
+           * // => false
+           */
+          function isArrayLikeObject(value) {
+            return isObjectLike(value) && isArrayLike(value)
+          }
+
+          /**
+           * Checks if `value` is classified as a `Function` object.
+           *
+           * @static
+           * @memberOf _
+           * @since 0.1.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+           * @example
+           *
+           * _.isFunction(_);
+           * // => true
+           *
+           * _.isFunction(/abc/);
+           * // => false
+           */
+          function isFunction(value) {
+            // The use of `Object#toString` avoids issues with the `typeof` operator
+            // in Safari 8-9 which returns 'object' for typed array and other constructors.
+            var tag = isObject(value) ? objectToString.call(value) : ''
+            return tag == funcTag || tag == genTag
+          }
+
+          /**
+           * Checks if `value` is a valid array-like length.
+           *
+           * **Note:** This method is loosely based on
+           * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+           *
+           * @static
+           * @memberOf _
+           * @since 4.0.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+           * @example
+           *
+           * _.isLength(3);
+           * // => true
+           *
+           * _.isLength(Number.MIN_VALUE);
+           * // => false
+           *
+           * _.isLength(Infinity);
+           * // => false
+           *
+           * _.isLength('3');
+           * // => false
+           */
+          function isLength(value) {
+            return (
+              typeof value == 'number' &&
+              value > -1 &&
+              value % 1 == 0 &&
+              value <= MAX_SAFE_INTEGER
+            )
+          }
+
+          /**
+           * Checks if `value` is the
+           * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+           * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+           *
+           * @static
+           * @memberOf _
+           * @since 0.1.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+           * @example
+           *
+           * _.isObject({});
+           * // => true
+           *
+           * _.isObject([1, 2, 3]);
+           * // => true
+           *
+           * _.isObject(_.noop);
+           * // => true
+           *
+           * _.isObject(null);
+           * // => false
+           */
+          function isObject(value) {
+            var type = typeof value
+            return !!value && (type == 'object' || type == 'function')
+          }
+
+          /**
+           * Checks if `value` is object-like. A value is object-like if it's not `null`
+           * and has a `typeof` result of "object".
+           *
+           * @static
+           * @memberOf _
+           * @since 4.0.0
+           * @category Lang
+           * @param {*} value The value to check.
+           * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+           * @example
+           *
+           * _.isObjectLike({});
+           * // => true
+           *
+           * _.isObjectLike([1, 2, 3]);
+           * // => true
+           *
+           * _.isObjectLike(_.noop);
+           * // => false
+           *
+           * _.isObjectLike(null);
+           * // => false
+           */
+          function isObjectLike(value) {
+            return !!value && typeof value == 'object'
+          }
+
+          /**
+           * Creates an array of the own enumerable property names of `object`.
+           *
+           * **Note:** Non-object values are coerced to objects. See the
+           * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+           * for more details.
+           *
+           * @static
+           * @since 0.1.0
+           * @memberOf _
+           * @category Object
+           * @param {Object} object The object to query.
+           * @returns {Array} Returns the array of property names.
+           * @example
+           *
+           * function Foo() {
+           *   this.a = 1;
+           *   this.b = 2;
+           * }
+           *
+           * Foo.prototype.c = 3;
+           *
+           * _.keys(new Foo);
+           * // => ['a', 'b'] (iteration order is not guaranteed)
+           *
+           * _.keys('hi');
+           * // => ['0', '1']
+           */
+          function keys(object) {
+            return isArrayLike(object)
+              ? arrayLikeKeys(object)
+              : baseKeys(object)
+          }
+
+          module.exports = keys
 
           /***/
         },
