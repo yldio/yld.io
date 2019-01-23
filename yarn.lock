@@ -17071,7 +17071,7 @@ velocity-react@^1.4.1:
   dependencies:
     lodash "^4.17.5"
     prop-types "^15.5.8"
-    react-transition-group "^2.0.0"
+    react--group "^2.0.0"
     velocity-animate "^1.4.0"
 
 vendors@^1.0.0:
