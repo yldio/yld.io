@@ -21,7 +21,7 @@ const JobLinkWrapper = styled(Padding)`
 `
 
 const JobLink = styled(ExternalAnchor)`
-  flex: 1 0 75px;
+  flex: 1 0 90px;
 `
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
@@ -29,7 +29,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
     <JobLinkWrapper top={1}>
       <JobLink href={hostedUrl}>
         <Paragraph noMargin>{text}</Paragraph>
-        <Paragraph muted noMargin>
+        <Paragraph noMargin muted>
           {commitment}
         </Paragraph>
       </JobLink>
