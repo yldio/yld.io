@@ -1,22 +1,16 @@
 import React from 'react'
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import styled from 'styled-components'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
 import { SectionTitleH2, SubtitleH3 } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
-const BlogTitle = styled(SectionTitleH2)`
-  /* sorry */
-  padding-top: 0.5rem !important;
-`
-
 const Blog = () => (
   <Row>
     <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12]}>
-      <BlogTitle>From the blog</BlogTitle>
+      <SectionTitleH2>From the blog</SectionTitleH2>
     </Col>
     <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12]}>
       <Posts>
