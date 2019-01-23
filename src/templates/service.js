@@ -49,7 +49,10 @@ const Service = ({ data, location }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
+            <Padding
+              top={3.5}
+              bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}
+            >
               <CaseStudyPreview caseStudy={service.caseStudies[0]} />
             </Padding>
           </Col>

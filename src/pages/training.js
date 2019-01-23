@@ -10,7 +10,7 @@ import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Homepage/caseStudy'
-import GrayBackground from '../components/GreyBG'
+import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import TalkToUsSection from '../components/Common/talkToUs'
 
 class TrainingPage extends Component {
@@ -62,24 +62,27 @@ class TrainingPage extends Component {
         </Helmet>
         <Modal content={modalContent} toggleModal={this.toggleModal} />
         <Grid>
-          <Padding bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}>
+          <Padding
+            bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}
+            top={3.5}
+          >
             <CaseStudy
               caseStudy={content.featuredCaseStudy}
               subHeading="Featured work"
             />
           </Padding>
-          <Padding bottom={{ smallPhone: 2, desktop: 2 }} />
+          <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
-        <GrayBackground noTop>
+        <GreyBackground>
           <Grid>
             <Padding
-              top={{ smallPhone: 2, desktop: 4 }}
-              bottom={{ smallPhone: 0, desktop: 4 }}
+              top={{ smallPhone: 2, tablet: 4 }}
+              bottom={{ smallPhone: 2, tablet: 4 }}
             >
               <SEOText text={content.seoText.content[0].content} />
             </Padding>
           </Grid>
-        </GrayBackground>
+        </GreyBackground>
         <Approach
           title={content.trainingApproachTitle}
           content={trainingApproachesContent}

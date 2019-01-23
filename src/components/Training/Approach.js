@@ -37,7 +37,7 @@ const Approach = ({ title, content, formats }) => (
           </Col>
         </Row>
         <Padding
-          top={{ smallPhone: 3, tablet: 4 }}
+          top={{ smallPhone: 3, tablet: 48 }}
           bottom={{ smallPhone: 3, tablet: 4 }}
         >
           <Hr muted />
