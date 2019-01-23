@@ -9,7 +9,8 @@ import Image from '../Common/Image'
 
 import { Section } from './elements'
 
-const PerksListContainer = styled(Col)`
+const PerksListContainer = styled.ul`
+  width: 100%;
   display: grid;
   row-gap: ${remcalc(24)};
   grid-template-columns: 1fr 1fr;
@@ -37,7 +38,7 @@ const Icon = styled(Image)`
   height: 60px;
 `
 
-const PerkContainer = styled(Padding)`
+const PerkContainer = styled.li`
   display: flex;
   flex-direction: column;
 `
@@ -59,15 +60,17 @@ const RowLayout = styled(Row)`
 `
 
 const PerksList = ({ perks }) => (
-  <PerksListContainer width={[1, 1, 1, 1, 1, 6 / 12]}>
-    {perks.map((perk, idx) => (
-      <Perk
-        key={idx}
-        icon={perk.icon}
-        description={perk.description.description}
-      />
-    ))}
-  </PerksListContainer>
+  <Col width={[1, 1, 1, 1, 1, 6 / 12]}>
+    <PerksListContainer>
+      {perks.map((perk, idx) => (
+        <Perk
+          key={idx}
+          icon={perk.icon}
+          description={perk.description.description}
+        />
+      ))}
+    </PerksListContainer>
+  </Col>
 )
 
 const Perks = ({ data: { title, text, perks } }) => (
