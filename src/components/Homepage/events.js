@@ -92,10 +92,10 @@ const Events = ({ events }) => (
         .map(({ node }) => (
           <FeaturedEvent key={node.id} color={node.color}>
             <EventWrapper>
-              <BodyPrimary muted reverse noMargin>
+              <BodyPrimary muted reverse noPadding>
                 Featured
               </BodyPrimary>
-              <CardTitleH3 reverse noMargin biggest>
+              <CardTitleH3 reverse noPadding biggest>
                 {node.eventTitle}
               </CardTitleH3>
               <Padding top={0.5}>

@@ -17,7 +17,7 @@ const IntroBorder = styled(Col)`
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={2} bottom={2}>
-      <SubtitleH3 reverse noMargin>
+      <SubtitleH3 reverse noPadding>
         {introTextTitle}
       </SubtitleH3>
       <BodyPrimary muted reverse>
@@ -51,7 +51,7 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1]}>
             <Padding top={2} bottom={2}>
-              <CardTitleH3 reverse noMargin>
+              <CardTitleH3 reverse noPadding>
                 {speciality.introTitle}
               </CardTitleH3>
             </Padding>

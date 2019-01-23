@@ -123,7 +123,7 @@ const Services = ({ services }) => (
                       <BodyPrimary reverse muted>
                         Case study
                       </BodyPrimary>
-                      <CardTitleH3 reverse noMargin>
+                      <CardTitleH3 reverse noPadding>
                         {service.caseStudies[0].title}
                       </CardTitleH3>
                     </section>

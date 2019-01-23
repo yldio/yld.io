@@ -9,10 +9,10 @@ const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => {
   console.log('s title', sectionTitle)
   return (
     <Fragment key={sectionTitle}>
-      <SubtitleH3 reverse noMargin={!isList}>
+      <SubtitleH3 reverse noPadding={!isList}>
         {sectionTitle}
       </SubtitleH3>
-      <BodyPrimary muted reverse noMargin>
+      <BodyPrimary muted reverse noPadding>
         {bodyList[0]}
       </BodyPrimary>
       {bodyList.slice(1).length > 0 && (

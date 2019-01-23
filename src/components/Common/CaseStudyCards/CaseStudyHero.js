@@ -15,7 +15,7 @@ const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
     <SubtitleH3>{heading}</SubtitleH3>
     <Flex alignCenter wrap>
-      <SeoLinks noMargin items={items} />
+      <SeoLinks noPadding items={items} />
     </Flex>
   </Padding>
 )

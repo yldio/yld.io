@@ -18,11 +18,11 @@ const modifiers = css`
     opacity: .5;
   `};
 
-  ${is('noMargin')`
+  ${is('noPadding')`
     padding: 0;
   `};
 
-  ${is('noMarginTop')`
+  ${is('noPaddingTop')`
     padding: 0;
   `};
 `

@@ -35,7 +35,7 @@ const EventSection = ({ speciality }) => {
                       />
                     </Col>
                     <Col>
-                      <SubtitleH3 noMargin>
+                      <SubtitleH3 noPadding>
                         <a
                           href={event.linkToEvent}
                           target="_blank"
@@ -44,7 +44,7 @@ const EventSection = ({ speciality }) => {
                           {event.eventTitle}
                         </a>
                       </SubtitleH3>
-                      <BodyPrimary noMargin>
+                      <BodyPrimary noPadding>
                         {format(new Date(event.date), 'MMMM DD[,] dddd')}
                       </BodyPrimary>
                     </Col>

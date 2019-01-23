@@ -23,7 +23,7 @@ const PosterLinks = ({ project }) => (
       }}
     >
       <CardHeader>
-        <CardTitleH3 reverse noMargin bigger>
+        <CardTitleH3 reverse noPadding bigger>
           {project.title}
         </CardTitleH3>
         <BodyPrimary reverse muted>

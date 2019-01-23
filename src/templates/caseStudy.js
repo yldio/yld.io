@@ -78,7 +78,7 @@ const CaseStudy = ({
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
                     <SectionTitleH2>{stat.value}</SectionTitleH2>
-                    <SubtitleH3 noMarginTop>{stat.label}</SubtitleH3>
+                    <SubtitleH3 noPaddingTop>{stat.label}</SubtitleH3>
                   </Margin>
                 ))}
             </Col>
