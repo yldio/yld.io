@@ -160,7 +160,7 @@ const OurWorkPage = props => (
                   url
                 }
                 fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_tracedSVG
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               posterColor
@@ -188,7 +188,7 @@ const OurWorkPage = props => (
                   url
                 }
                 fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_tracedSVG
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
             }

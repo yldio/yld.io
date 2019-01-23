@@ -10,6 +10,7 @@ addDecorator(Theme)
 
 const text =
   'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright'
+const smallerText = 'Some smaller title'
 
 storiesOf('Compact Video Link', module)
   .add('Single component', () => {
@@ -21,17 +22,17 @@ storiesOf('Compact Video Link', module)
       </Row>
     )
   })
-  .add('Multiple Components component', () => {
+  .add('Multiple components', () => {
     return (
       <Row>
         <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
           {text}
         </CompactVideoLink>
         <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
-          {text}
+          {smallerText}
         </CompactVideoLink>
         <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
-          {text}
+          {smallerText}
         </CompactVideoLink>
       </Row>
     )
