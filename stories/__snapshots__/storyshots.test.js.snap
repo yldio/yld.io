@@ -1,14 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
+<a
+  className="sc-bdVaJa jDdHMZ"
+  href="/undefined"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  here
+</a>
+`;
+
+exports[`Storyshots AnimatedLink CardHeader 1`] = `
+<header
+  className="sc-htpNat mcGtW"
+>
+  here
+</header>
+`;
+
+exports[`Storyshots AnimatedLink PosterImage 1`] = `
+<div
+  className="sc-bwzfXH fmUeyT"
+>
+  here
+</div>
+`;
+
 exports[`Storyshots Compact Video Link Dark bg 1`] = `
 <section
-  className="sc-cSHVUG clRhuy"
+  className="sc-kgoBCf dYmCHy"
 >
   <div
-    className="sc-bwzfXH ciboha"
+    className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -22,13 +49,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
     >
       <div>
         <div
-          className="sc-htpNat hOSvSf"
+          className="sc-EHOje cUjftw"
         >
           <div
-            className="sc-bxivhb cFEgys"
+            className="sc-bZQynM hHdFtZ"
           >
             <a
-              className="sc-jTzLTM ZdqHv"
+              className="sc-cSHVUG kKMZZz"
               color="#fff"
               href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
               opacity={0.5}
@@ -36,19 +63,19 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
               target="_blank"
             >
               <div
-                className="sc-fjdhpX fdxDzp"
+                className="sc-kAzzGY bOfWLD"
               >
                 <div
-                  className="sc-htpNat hSZREN"
+                  className="sc-EHOje cXsIeh"
                 >
                   <img
                     alt="Play button"
-                    className="sc-gqjmRU heUaDl"
+                    className="sc-fjdhpX kJcdFF"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-VigVT iMyQzj"
+                  className="sc-jzJRlG hPSmKL"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -66,13 +93,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 
 exports[`Storyshots Compact Video Link Grey bg 1`] = `
 <section
-  className="sc-kAzzGY kfiaP"
+  className="sc-kGXeez hZYiKC"
 >
   <div
-    className="sc-bwzfXH ciboha"
+    className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -86,13 +113,13 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
     >
       <div>
         <div
-          className="sc-htpNat hOSvSf"
+          className="sc-EHOje cUjftw"
         >
           <div
-            className="sc-bxivhb cFEgys"
+            className="sc-bZQynM hHdFtZ"
           >
             <a
-              className="sc-jTzLTM ZdqHv"
+              className="sc-cSHVUG kKMZZz"
               color="#333333"
               href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
               opacity={1}
@@ -100,19 +127,19 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
               target="_blank"
             >
               <div
-                className="sc-fjdhpX fdxDzp"
+                className="sc-kAzzGY bOfWLD"
               >
                 <div
-                  className="sc-htpNat hSZREN"
+                  className="sc-EHOje cXsIeh"
                 >
                   <img
                     alt="Play button"
-                    className="sc-gqjmRU heUaDl"
+                    className="sc-fjdhpX kJcdFF"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-VigVT jhMWwi"
+                  className="sc-jzJRlG gDopSe"
                   color="#333333"
                   opacity={1}
                 >
@@ -130,10 +157,10 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 
 exports[`Storyshots Compact Video Link Multiple components 1`] = `
 <div
-  className="sc-bwzfXH ciboha"
+  className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -147,13 +174,13 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb cFEgys"
+          className="sc-bZQynM hHdFtZ"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -161,19 +188,19 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -186,7 +213,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -200,13 +227,13 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb cFEgys"
+          className="sc-bZQynM hHdFtZ"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -214,19 +241,19 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -239,7 +266,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -253,13 +280,13 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb cFEgys"
+          className="sc-bZQynM hHdFtZ"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -267,19 +294,19 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -296,10 +323,10 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 exports[`Storyshots Compact Video Link Single component 1`] = `
 <div
-  className="sc-bwzfXH ciboha"
+  className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -313,13 +340,13 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   >
     <div>
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb cFEgys"
+          className="sc-bZQynM hHdFtZ"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -327,19 +354,19 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -354,9 +381,57 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 </div>
 `;
 
+exports[`Storyshots CookieBanner CookieBanner 1`] = `
+<div
+  className="sc-kpOJdX dujtND"
+>
+  <p
+    className="sc-dxgOiQ hMJUeD"
+  >
+    By continuing to use our site you agree to the use of cookies in accordance with our
+     
+    <a
+      className="sc-jKJlTe cbdxVA"
+      href="/cookie-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Cookie
+    </a>
+    ,
+     
+    <a
+      className="sc-jKJlTe cbdxVA"
+      href="/privacy-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Privacy
+    </a>
+     and
+     
+    <a
+      className="sc-jKJlTe cbdxVA"
+      href="/data-retention-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Data-retention
+    </a>
+     
+    policies.
+  </p>
+  <button
+    className="sc-ckVGcZ hpZsaX"
+  >
+    I agree
+  </button>
+</div>
+`;
+
 exports[`Storyshots Form Button 1`] = `
 <button
-  className="sc-kpOJdX hNdAcX"
+  className="sc-kkGfuU ckYiRQ"
 >
   Click Me
 </button>
@@ -364,10 +439,10 @@ exports[`Storyshots Form Button 1`] = `
 
 exports[`Storyshots Form Checkbox 1`] = `
 <section
-  className="sc-ckVGcZ cLXKCv"
+  className="sc-hSdWYo heWctq"
 >
   <input
-    className="sc-chPdSV ykKuB"
+    className="sc-eNQAEJ dBsjhT"
     id="checkbox"
     name="checkbox"
     type="checkbox"
@@ -382,10 +457,10 @@ exports[`Storyshots Form Checkbox 1`] = `
 
 exports[`Storyshots Form Field 1`] = `
 <section
-  className="sc-dxgOiQ gsKjl"
+  className="sc-iAyFgw loeUlM"
 >
   <input
-    className="sc-kgoBCf fUtJHQ"
+    className="sc-hMqMXs bczBDs"
     placeholder="test"
     type="text"
   />
@@ -394,10 +469,10 @@ exports[`Storyshots Form Field 1`] = `
 
 exports[`Storyshots Form Fieldset 1`] = `
 <section
-  className="sc-ckVGcZ cLXKCv"
+  className="sc-hSdWYo heWctq"
 >
   <input
-    className="sc-kgoBCf fUtJHQ"
+    className="sc-hMqMXs bczBDs"
     placeholder="test"
     type="text"
   />
@@ -406,7 +481,7 @@ exports[`Storyshots Form Fieldset 1`] = `
 
 exports[`Storyshots Form Input 1`] = `
 <input
-  className="sc-kgoBCf fUtJHQ"
+  className="sc-hMqMXs bczBDs"
   placeholder="test"
   type="text"
 />
@@ -414,7 +489,7 @@ exports[`Storyshots Form Input 1`] = `
 
 exports[`Storyshots Form Label 1`] = `
 <label
-  className="sc-kGXeez jrzWzn"
+  className="sc-kEYyzF cTriVg"
 >
   Label
 </label>
@@ -422,13 +497,13 @@ exports[`Storyshots Form Label 1`] = `
 
 exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 <section
-  className="sc-cSHVUG clRhuy"
+  className="sc-kgoBCf dYmCHy"
 >
   <div
-    className="sc-bwzfXH ciboha"
+    className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -441,16 +516,16 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
       }
     >
       <div
-        className="sc-jzJRlG hQKOZb"
+        className="sc-chPdSV eXWVzH"
       >
         <div
-          className="sc-htpNat hOSvSf"
+          className="sc-EHOje cUjftw"
         >
           <div
-            className="sc-bxivhb JmYH"
+            className="sc-bZQynM jmIaZk"
           >
             <a
-              className="sc-jTzLTM ZdqHv"
+              className="sc-cSHVUG kKMZZz"
               color="#fff"
               href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
               opacity={0.5}
@@ -458,19 +533,19 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
               target="_blank"
             >
               <div
-                className="sc-fjdhpX fdxDzp"
+                className="sc-kAzzGY bOfWLD"
               >
                 <div
-                  className="sc-htpNat hSZREN"
+                  className="sc-EHOje cXsIeh"
                 >
                   <img
                     alt="Play button"
-                    className="sc-gqjmRU heUaDl"
+                    className="sc-fjdhpX kJcdFF"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-VigVT iMyQzj"
+                  className="sc-jzJRlG hPSmKL"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -488,13 +563,13 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 
 exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 <section
-  className="sc-kAzzGY kfiaP"
+  className="sc-kGXeez hZYiKC"
 >
   <div
-    className="sc-bwzfXH ciboha"
+    className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -507,16 +582,16 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
       }
     >
       <div
-        className="sc-jzJRlG hQKOZb"
+        className="sc-chPdSV eXWVzH"
       >
         <div
-          className="sc-htpNat hOSvSf"
+          className="sc-EHOje cUjftw"
         >
           <div
-            className="sc-bxivhb JmYH"
+            className="sc-bZQynM jmIaZk"
           >
             <a
-              className="sc-jTzLTM ZdqHv"
+              className="sc-cSHVUG kKMZZz"
               color="#333333"
               href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
               opacity={1}
@@ -524,19 +599,19 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
               target="_blank"
             >
               <div
-                className="sc-fjdhpX fdxDzp"
+                className="sc-kAzzGY bOfWLD"
               >
                 <div
-                  className="sc-htpNat hSZREN"
+                  className="sc-EHOje cXsIeh"
                 >
                   <img
                     alt="Play button"
-                    className="sc-gqjmRU heUaDl"
+                    className="sc-fjdhpX kJcdFF"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-VigVT jhMWwi"
+                  className="sc-jzJRlG gDopSe"
                   color="#333333"
                   opacity={1}
                 >
@@ -554,10 +629,10 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 
 exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 <div
-  className="sc-bwzfXH ciboha"
+  className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -570,16 +645,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-jzJRlG hQKOZb"
+      className="sc-chPdSV eXWVzH"
     >
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb JmYH"
+          className="sc-bZQynM jmIaZk"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -587,19 +662,19 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -612,7 +687,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -625,16 +700,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-jzJRlG hQKOZb"
+      className="sc-chPdSV eXWVzH"
     >
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb JmYH"
+          className="sc-bZQynM jmIaZk"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -642,19 +717,19 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -667,7 +742,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -680,16 +755,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-jzJRlG hQKOZb"
+      className="sc-chPdSV eXWVzH"
     >
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb JmYH"
+          className="sc-bZQynM jmIaZk"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -697,19 +772,19 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -726,10 +801,10 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 exports[`Storyshots Standalone Video Link Single component 1`] = `
 <div
-  className="sc-bwzfXH ciboha"
+  className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-gZMcBi czhXCo sc-bwzfXH imfoSK"
+    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -742,16 +817,16 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
     }
   >
     <div
-      className="sc-jzJRlG hQKOZb"
+      className="sc-chPdSV eXWVzH"
     >
       <div
-        className="sc-htpNat hOSvSf"
+        className="sc-EHOje cUjftw"
       >
         <div
-          className="sc-bxivhb JmYH"
+          className="sc-bZQynM jmIaZk"
         >
           <a
-            className="sc-jTzLTM ZdqHv"
+            className="sc-cSHVUG kKMZZz"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -759,19 +834,19 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
             target="_blank"
           >
             <div
-              className="sc-fjdhpX fdxDzp"
+              className="sc-kAzzGY bOfWLD"
             >
               <div
-                className="sc-htpNat hSZREN"
+                className="sc-EHOje cXsIeh"
               >
                 <img
                   alt="Play button"
-                  className="sc-gqjmRU heUaDl"
+                  className="sc-fjdhpX kJcdFF"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-VigVT jhMWwi"
+                className="sc-jzJRlG gDopSe"
                 color="#333333"
                 opacity={1}
               >
@@ -786,42 +861,173 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 </div>
 `;
 
+exports[`Storyshots Typography DisplayTitleH2 1`] = `
+<h2
+  className="sc-dnqmqq bssUwt"
+>
+  Large title
+</h2>
+`;
+
 exports[`Storyshots Typography Large Body 1`] = `
-<h3
-  className="sc-bZQynM bdjeOF"
+<h4
+  className="sc-gZMcBi eIHJye"
 >
   Large Body
-</h3>
+</h4>
+`;
+
+exports[`Storyshots Typography Large Body muted 1`] = `
+<h4
+  className="sc-gZMcBi laiXQ"
+  muted={true}
+>
+  Large Body
+</h4>
+`;
+
+exports[`Storyshots Typography Large Body regular 1`] = `
+<h4
+  className="sc-gZMcBi eIHJye"
+>
+  Large Body
+</h4>
+`;
+
+exports[`Storyshots Typography Large Body reverse 1`] = `
+<h4
+  className="sc-gZMcBi cvdXck"
+>
+  Large Body
+</h4>
 `;
 
 exports[`Storyshots Typography Large title 1`] = `
 <h1
-  className="sc-ifAKCX byXBNe"
+  className="sc-gzVnrw gForec"
 >
   Large title
 </h1>
 `;
 
+exports[`Storyshots Typography Large title center 1`] = `
+<h1
+  className="sc-gzVnrw gForec"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title muted 1`] = `
+<h1
+  className="sc-gzVnrw fhweBi"
+  muted={true}
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title regular 1`] = `
+<h1
+  className="sc-gzVnrw gForec"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography Large title reverse 1`] = `
+<h1
+  className="sc-gzVnrw kfMiWA"
+>
+  Large title
+</h1>
+`;
+
+exports[`Storyshots Typography SectionTitleH2 1`] = `
+<h2
+  className="sc-htoDjs cyzDCW"
+>
+  Large title
+</h2>
+`;
+
 exports[`Storyshots Typography Small Title 1 1`] = `
-<h4
-  className="sc-gzVnrw iltYUC"
+<p
+  className="sc-gqjmRU ckbPEj"
 >
   Small Title
-</h4>
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 1 muted 1`] = `
+<p
+  className="sc-gqjmRU bByMGo"
+  muted={true}
+>
+  Small Title
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 1 noMargin 1`] = `
+<p
+  className="sc-gqjmRU ckbPEj"
+>
+  Small Title
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 1 reverse 1`] = `
+<p
+  className="sc-gqjmRU gQoBDh"
+>
+  Small Title
+</p>
 `;
 
 exports[`Storyshots Typography Small Title 2 1`] = `
-<h5
-  className="sc-htoDjs jdpgcj"
+<p
+  className="sc-VigVT fBQAHn"
 >
   Small Title
-</h5>
+</p>
 `;
 
-exports[`Storyshots Typography Small Title 3 1`] = `
-<h6
-  className="sc-dnqmqq fxTddO"
+exports[`Storyshots Typography Small Title 2 noBottom 1`] = `
+<p
+  className="sc-VigVT fBQAHn"
 >
   Small Title
-</h6>
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 2 noMargin 1`] = `
+<p
+  className="sc-VigVT fBQAHn"
+>
+  Small Title
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 2 noTop 1`] = `
+<p
+  className="sc-VigVT fBQAHn"
+>
+  Small Title
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 2 noWrap 1`] = `
+<p
+  className="sc-VigVT fBQAHn"
+>
+  Small Title
+</p>
+`;
+
+exports[`Storyshots Typography Small Title 2 reverse 1`] = `
+<p
+  className="sc-VigVT hbiLri"
+>
+  Small Title
+</p>
 `;

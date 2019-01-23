@@ -16,6 +16,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
+import BlueBG from '../components/BlueBG'
 
 const FixedWidthTitle = styled(DisplayTitleH2)`
   ${breakpoint('smallTablet')`
@@ -50,7 +51,10 @@ const Service = ({ data, location }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <Padding bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}>
+            <Padding
+              top={3.5}
+              bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}
+            >
               <CaseStudyPreview caseStudy={service.caseStudies[0]} />
             </Padding>
           </Col>
@@ -73,13 +77,13 @@ const Service = ({ data, location }) => {
           </Row>
         </Grid>
       </GreyBackground>
-      <GreyBackground style={{ background: '#090329' }}>
+      <BlueBG>
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
           image={service.graphic}
         />
-      </GreyBackground>
+      </BlueBG>
       <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}

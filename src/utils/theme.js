@@ -33,6 +33,10 @@ export const breakpoints = {
 export default {
   breakpoints,
   spacing,
+  animations: {
+    fast: '200ms',
+    normal: '300ms'
+  },
   colors: {
     white: '#fff',
     text: '#333333',

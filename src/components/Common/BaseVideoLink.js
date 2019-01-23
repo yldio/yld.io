@@ -30,7 +30,6 @@ const PlayIcon = styled.img`
 `
 const TruncatedParagraph = styled(BodyPrimary)`
   height: ${remcalc(48)};
-  margin-bottom: ${remcalc(12)};
   overflow: hidden;
   color: ${props => props.color};
   opacity: ${props => props.opacity};
@@ -119,7 +118,7 @@ const BaseVideoLink = ({
                     alt="Play button"
                   />
                 </Margin>
-                <TruncatedParagraph color={color} opacity={opacity} noMargin>
+                <TruncatedParagraph color={color} opacity={opacity} noPadding>
                   {children}
                 </TruncatedParagraph>
               </FlexContent>

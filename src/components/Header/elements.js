@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 
 const linkStyles = css`
   a {
-    transition: all 300ms ease-out;
+    transition: all ${props => props.theme.animations.normal} ease-out;
     opacity: 0.8;
     padding: ${remcalc(12)} ${remcalc(6)};
     background: linear-gradient(to right, #616161 0%, transparent 0);
@@ -20,7 +20,7 @@ const linkStyles = css`
       top: 0;
       left: 0;
       height: 48px;
-      transition: all 300ms ease-out;
+      transition: all ${props => props.theme.animations.normal} ease-out;
       width: 0;
       opacity: 0;
       background: ${props => props.theme.colors.greyBG};
@@ -38,7 +38,7 @@ const linkStyles = css`
         &:after {
           width: 100%;
           opacity: 1;
-          transition: all 300ms ease-out;
+          transition: all ${props => props.theme.animations.normal} ease-out;
         }
       }
     }
@@ -79,7 +79,7 @@ export const MobileMenu = styled(Flex)`
     }
   }
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     display: none;
 
 
@@ -92,7 +92,7 @@ export const MobileMenu = styled(Flex)`
 export const HomeLink = styled(Padding)`
   display: block;
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     display: none;
   `};
 `
@@ -114,7 +114,7 @@ export const Close = styled.button`
     color: ${props => props.theme.colors.text};
   }
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     display: none;
   `};
 
@@ -138,9 +138,9 @@ export const DesktopMenu = styled(Flex)`
   padding-top: ${remcalc(12)};
   z-index: 999;
   transform: translateX(200%);
-  transition: transform 200ms ease-out;
+  transition: transform ${props => props.theme.animations.fast} ease-out;
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     display: flex;
     width: auto;
     opacity: 1;
@@ -156,7 +156,7 @@ export const DesktopMenu = styled(Flex)`
   ${is('open')`
     transform: translateX(0%);
     justify-content: center;
-    transition: all 200ms ease-out;
+    transition: all ${props => props.theme.animations.fast} ease-out;
 
     a {
       opacity: 0.5;

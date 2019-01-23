@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { Location } from '@reach/router'
 import Header from './Header'
 import './layout.css'
+import BlueBackground from './BlueBG'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
-import BlueBackground from './BlueBG'
 import GreyBackground from './GreyBackgroundWithoutOffset'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
-class Layout extends React.Component {
+class Layout extends Component {
   state = { cookiesAllowed: true }
 
   componentDidMount() {
@@ -25,7 +26,14 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, backgroundColor, logoColour, location } = this.props
+    const { children, backgroundColor, logoColour, blue } = this.props
+    const Component = (() => {
+      if (backgroundColor === 'blue' || blue) return BlueBackground
+      if (backgroundColor === 'grey') return GreyBackground
+
+      return Fragment
+    })()
+
     return (
       <StaticQuery
         query={graphql`
@@ -49,19 +57,17 @@ class Layout extends React.Component {
             `}</script>
                 <html lang="en" />
               </Helmet>
-              {backgroundColor === 'blue' && (
-                <BlueBackground>
-                  <Header blue logoColour={logoColour} location={location} />
-                </BlueBackground>
-              )}
-              {backgroundColor === 'grey' && (
-                <GreyBackground>
-                  <Header logoColour={logoColour} location={location} />
-                </GreyBackground>
-              )}
-              {!(backgroundColor === 'blue' || backgroundColor === 'grey') && (
-                <Header logoColour={logoColour} location={location} />
-              )}
+              <Location>
+                {({ location }) => (
+                  <Component>
+                    <Header
+                      path={location.pathname}
+                      blue={backgroundColor === 'blue'}
+                      logoColour={logoColour}
+                    />
+                  </Component>
+                )}
+              </Location>
               <main>{children}</main>
               <Footer />
               <GlobalStyle />

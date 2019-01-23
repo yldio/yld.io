@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import WorkStage from './stage'
 
-class WorkStageAlternatives extends React.Component {
+class WorkStageAlternatives extends Component {
   constructor(props) {
     super(props)
     this.state = { selectedAlternative: this.props.workStage }

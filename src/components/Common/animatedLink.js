@@ -6,7 +6,7 @@ import Flex from 'styled-flex-component'
 
 export const AnimatedLink = styled(Link)`
   > section {
-    transition: all 250ms ease;
+    transition: all ${props => props.theme.animations.normal} ease;
   }
 
   &:hover {
@@ -25,7 +25,7 @@ export const PosterImage = styled(Flex)`
     height: 528px;
   `}
   ${breakpoint('desktop')`
-    width: 475px;
+    width: 100%;
     height: 473px;
   `}
   > img {
@@ -33,6 +33,7 @@ export const PosterImage = styled(Flex)`
     justify-self: center;
     ${breakpoint('tablet')`
       max-width: 100%
+      width: 100%;
     `}
   }
 `
