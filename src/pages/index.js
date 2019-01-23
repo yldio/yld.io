@@ -93,7 +93,7 @@ export const query = graphql`
             url
           }
           fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid_withWebp
           }
         }
         posterColor
@@ -130,7 +130,7 @@ export const query = graphql`
                 url
               }
               fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
@@ -144,7 +144,7 @@ export const query = graphql`
                 url
               }
               fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
@@ -165,7 +165,7 @@ export const query = graphql`
           url
         }
         fluid(maxWidth: 250) {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid_withWebp
         }
       }
     }
@@ -179,7 +179,7 @@ export const query = graphql`
               url
             }
             fluid(maxWidth: 610) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           homepageFeatured
