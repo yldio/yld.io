@@ -407,7 +407,7 @@ export const query = graphql`
             introSentence
             posterImage {
               fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid_withWebp
               }
               title
               file {
@@ -420,7 +420,7 @@ export const query = graphql`
           title
           posterImage {
             fluid(maxWidth: 550) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp
             }
             title
             file {
