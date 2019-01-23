@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH1, H4, Paragraph } from '../Typography'
+import { SectionTitleH1, CardTitleH3, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
@@ -46,7 +46,9 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1]}>
             <Padding top={2} bottom={2}>
-              <H4 reverse>{speciality.introTitle}</H4>
+              <CardTitleH3 reverse noMargin>
+                {speciality.introTitle}
+              </CardTitleH3>
             </Padding>
           </Col>
         </Row>

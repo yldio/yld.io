@@ -5,7 +5,7 @@ import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
-import { H4, Paragraph } from '../Typography'
+import { CardTitleH3, Paragraph } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
 const Services = styled(Paragraph).attrs({ muted: true })`
@@ -49,7 +49,7 @@ const TitleSection = ({ services, title }) => {
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
       <Services>{commaSeparatedServices}</Services>
-      <H4 as="h2">{title}</H4>
+      <CardTitleH3 as="h2">{title}</CardTitleH3>
     </Padding>
   )
 }

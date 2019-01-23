@@ -6,14 +6,10 @@ import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
-import { SectionTitleH2, H5, H4, Paragraph } from '../Typography'
+import { SectionTitleH2, H5, CardTitleH3, Paragraph } from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
-
-const EventTitle = styled(H4)`
-  padding-top: ${remcalc(2)} !important;
-`
 
 const EventWrapper = styled.header`
   padding: ${remcalc(18)} ${remcalc(24)} 0;
@@ -94,7 +90,9 @@ const Events = ({ events }) => (
               <Paragraph muted reverse noMargin>
                 Featured
               </Paragraph>
-              <EventTitle reverse>{node.eventTitle}</EventTitle>
+              <CardTitleH3 reverse noMargin biggest>
+                {node.eventTitle}
+              </CardTitleH3>
               <Padding top={0.5}>
                 <P muted reverse>
                   {node.blurb.blurb}

@@ -6,7 +6,7 @@ import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
-import { SectionTitleH2, H4, Paragraph } from '../Typography'
+import { SectionTitleH2, CardTitleH3, Paragraph } from '../Typography'
 import StyledLink from '../styledLink'
 
 const BottomParagraph = styled(Paragraph)`
@@ -76,14 +76,14 @@ const BooksSection = ({ speciality }) =>
                     rel="noopener noreferrer"
                   >
                     <Padding top={2} left={2} right={2}>
-                      <H4
+                      <CardTitleH3
                         normal
                         style={{
                           color: `${externalResource.colorCode}`
                         }}
                       >
                         {externalResource.title}
-                      </H4>
+                      </CardTitleH3>
                       <BottomParagraph>{`By ${
                         externalResource.additionalInfo
                       }`}</BottomParagraph>

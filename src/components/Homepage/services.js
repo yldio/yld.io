@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { SectionTitleH2, H4, Paragraph } from '../Typography'
+import { SectionTitleH2, CardTitleH3, Paragraph } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -18,10 +18,6 @@ const CardHeader = styled.header`
   > div {
     max-width: ${remcalc(310)};
   }
-`
-
-const Title = styled(H4)`
-  font-weight: 500;
 `
 
 const AnimatedLink = styled(Link)`
@@ -127,9 +123,9 @@ const Services = ({ services }) => (
                       <Paragraph reverse muted>
                         Case study
                       </Paragraph>
-                      <Title noMargin reverse>
+                      <CardTitleH3 reverse noMargin>
                         {service.caseStudies[0].title}
-                      </Title>
+                      </CardTitleH3>
                     </section>
                   </CardHeader>
                   <PosterImage color={service.caseStudies[0].posterColor}>

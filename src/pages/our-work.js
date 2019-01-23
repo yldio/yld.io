@@ -9,11 +9,11 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH1, CardTitleH3 } from '../components/Typography'
+import { SectionTitleH1, DisplayBodyH2 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const SubHeading = styled(CardTitleH3)`
+const ShortenedH2 = styled(DisplayBodyH2)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};
@@ -81,10 +81,10 @@ const OurWork = ({ data }) => {
                 }}
               >
                 <SectionTitleH1>Our Work</SectionTitleH1>
-                <SubHeading as="h2" regular>
+                <ShortenedH2 as="h2" regular textLight>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
-                </SubHeading>
+                </ShortenedH2>
               </Padding>
             </Col>
           </Row>
