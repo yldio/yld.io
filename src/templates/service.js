@@ -6,7 +6,7 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import {
   SectionTitleH2,
-  CardTitleH3,
+  DisplayTitleH2,
   SubtitleH3
 } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
@@ -17,12 +17,9 @@ import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 
-const Title = styled(CardTitleH3)`
-  font-weight: normal;
+const FixedWidthTitle = styled(DisplayTitleH2)`
   ${breakpoint('smallTablet')`
     width: 593px;
-    font-size: 26px;
-    line-height: 30px;
   `}
 
   ${breakpoint('tablet')`
@@ -68,9 +65,9 @@ const Service = ({ data, location }) => {
                 top={{ smallPhone: 3, smallTablet: 4 }}
                 bottom={{ smallPhone: 0, smallTablet: 2 }}
               >
-                <Title as="h1">
+                <FixedWidthTitle as="h1" textLight>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
-                </Title>
+                </FixedWidthTitle>
               </Padding>
             </Col>
           </Row>
