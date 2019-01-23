@@ -108,7 +108,7 @@ const Modal = ({ content, toggleModal }) => (
                 <ReactMarkdown
                   renderers={{
                     paragraph: props => <Paragraph {...props} />, // eslint-disable-line react/display-name
-                    strong: props => <Paragraph bold {...props} /> // eslint-disable-line react/display-name
+                    heading: props => <Paragraph bold {...props} /> // eslint-disable-line react/display-name
                   }}
                   source={content.description.description}
                 />
