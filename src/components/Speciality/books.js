@@ -13,6 +13,11 @@ const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
   bottom: ${remcalc(26)};
 `
+
+const CenteredCol = styled(Col)`
+  text-align: center;
+`
+
 const BookCol = styled(Col)`
   position: relative;
 
@@ -47,15 +52,14 @@ const BooksSection = ({ speciality }) =>
       <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>
           <Padding top={4} />
-          <Col width={[1]}>
+          <CenteredCol width={[1]}>
             <SectionTitleH2
               small
-              center
             >{`${speciality.title.trim()} books`}</SectionTitleH2>
-            <BodyPrimary center>
+            <BodyPrimary>
               NodeJS books created by members of YLD for the community.
             </BodyPrimary>
-          </Col>
+          </CenteredCol>
         </Row>
         <Row>
           {speciality.externalResources

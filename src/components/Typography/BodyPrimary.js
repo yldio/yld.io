@@ -9,12 +9,6 @@ const BodyPrimary = styled.p`
   ${is('padded')`
     padding: ${remcalc(0)} 0 ${remcalc(24)} 0;
   `};
-
-  ${is('center')`
-    text-align:center;
-    max-width: ${remcalc(900)};
-    margin: auto;
-  `};
 `
 
 export default BodyPrimary

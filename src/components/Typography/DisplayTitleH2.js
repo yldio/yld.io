@@ -18,10 +18,6 @@ const DisplayTitleH2 = styled.h2`
     color: ${props => props.theme.colors.textLight};
   `};
 
-  ${is('center')`
-    text-align:center
-  `};
-
   ${breakpoint('tablet')`
     font-size: ${remcalc(32)};
     line-height: ${remcalc(36)};

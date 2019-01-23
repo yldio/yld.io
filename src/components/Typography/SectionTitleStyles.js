@@ -18,10 +18,6 @@ const SectionTitleStyles = css`
     opacity: .5;
   `};
 
-  ${is('center')`
-    text-align:center
-  `};
-
   ${breakpoint('tablet')`
     font-size: ${remcalc(42)};
     line-height: ${remcalc(48)};
