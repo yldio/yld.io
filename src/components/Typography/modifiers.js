@@ -23,7 +23,7 @@ const modifiers = css`
   `};
 
   ${is('noPaddingTop')`
-    padding: 0;
+    padding-top: 0;
   `};
 `
 
