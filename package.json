@@ -39,7 +39,7 @@
   "scripts": {
     "test": "run-p test:**",
     "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
-    "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\"",
+    "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "develop": "npm start",
     "start": "gatsby develop",
     "dev:clean": "rm -rf .cache && yarn develop",

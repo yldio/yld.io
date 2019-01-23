@@ -21,6 +21,10 @@ const H2 = styled.h2`
       text-align:center
     `};
 
+      ${is('noTop')`
+        padding-top: 0;
+      `};
+
     ${breakpoint('tablet')`
       font-size: ${remcalc(42)};
       padding: ${remcalc(21)} 0;

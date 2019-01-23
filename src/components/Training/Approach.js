@@ -9,8 +9,8 @@ import BlueBG from '../BlueBG'
 const Approach = ({ title, content, formats }) => (
   <BlueBG>
     <Padding
-      top={{ smallPhone: 3, tablet: 4 }}
-      bottom={{ smallPhone: 3, tablet: 4 }}
+      top={{ smallPhone: 3, desktop: 4 }}
+      bottom={{ smallPhone: 3, desktop: 4 }}
     >
       <Grid>
         <Row>

@@ -8,7 +8,7 @@ const Hr = styled.hr`
   border: none;
   background-color: ${props => props.theme.colors.grey};
   ${is('short')`
-    width: 25%
+    width: 60px;
   `};
   ${is('muted')`
     opacity: 0.25;
