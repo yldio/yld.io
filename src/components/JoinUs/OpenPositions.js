@@ -14,7 +14,7 @@ const Line = styled(Hr)`
   width: ${remcalc(60)};
 `
 
-const JobLinkWrapper = styled(Padding)`
+const JobLinkWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -26,12 +26,14 @@ const JobLink = styled(ExternalAnchor)`
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
   <CompensatedCol as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
-    <JobLinkWrapper top={1}>
+    <JobLinkWrapper>
       <JobLink href={hostedUrl}>
-        <Paragraph noMargin>{text}</Paragraph>
-        <Paragraph noMargin muted>
-          {commitment}
-        </Paragraph>
+        <Padding top={1} bottom={0.5}>
+          <Paragraph noMargin>{text}</Paragraph>
+          <Paragraph noMargin muted>
+            {commitment}
+          </Paragraph>
+        </Padding>
       </JobLink>
       <Line />
     </JobLinkWrapper>
