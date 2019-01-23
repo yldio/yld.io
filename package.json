@@ -46,7 +46,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
     "build": "run-p build:**",
-    "build:storybook": "build-storybook",
+    "build:storybook": "build-storybook -c public/.storybook",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda  -c webpack.functions.js  build src/functions",
     "lint": "run-p lint:**",
