@@ -9,7 +9,7 @@ import SEOText from '../components/Homepage/seoText'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
-import CaseStudy from '../components/Homepage/caseStudy'
+import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import TalkToUsSection from '../components/Common/talkToUs'
 
@@ -66,10 +66,7 @@ class TrainingPage extends Component {
             bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}
             top={3.5}
           >
-            <CaseStudy
-              caseStudy={content.featuredCaseStudy}
-              subHeading="Featured work"
-            />
+            <CaseStudy caseStudy={content.featuredCaseStudy} />
           </Padding>
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
