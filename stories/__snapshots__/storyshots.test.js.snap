@@ -93,13 +93,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 
 exports[`Storyshots Compact Video Link Grey bg 1`] = `
 <section
-  className="sc-kGXeez hZYiKC"
+  className="sc-kAzzGY ktSMlb"
 >
   <div
-    className="sc-ifAKCX lcGsow"
+    className="sc-bwzfXH ciboha"
   >
     <div
-      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+      className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
       width={
         Array [
           1,
@@ -160,7 +160,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -213,7 +213,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -266,7 +266,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -326,7 +326,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -503,7 +503,7 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+      className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
       width={
         Array [
           1,
@@ -563,13 +563,13 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 
 exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 <section
-  className="sc-kGXeez hZYiKC"
+  className="sc-kAzzGY ktSMlb"
 >
   <div
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+      className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
       width={
         Array [
           1,
@@ -632,7 +632,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -687,7 +687,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -742,7 +742,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -804,7 +804,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-jTzLTM gptmUt sc-ifAKCX bTIbjp"
+    className="sc-gZMcBi fVukYO sc-bwzfXH imfoSK"
     width={
       Array [
         1,
@@ -879,32 +879,7 @@ exports[`Storyshots Typography H2 small 1`] = `
 
 exports[`Storyshots Typography Large Body 1`] = `
 <h3
-  className="sc-dnqmqq ksbQxw"
->
-  Large Body
-</h3>
-`;
-
-exports[`Storyshots Typography Large Body muted 1`] = `
-<h3
-  className="sc-dnqmqq dvbqDT"
-  muted={true}
->
-  Large Body
-</h3>
-`;
-
-exports[`Storyshots Typography Large Body regular 1`] = `
-<h3
-  className="sc-dnqmqq elPQpF"
->
-  Large Body
-</h3>
-`;
-
-exports[`Storyshots Typography Large Body reverse 1`] = `
-<h3
-  className="sc-dnqmqq jczpoI"
+  className="sc-bZQynM jNhhkz"
 >
   Large Body
 </h3>
