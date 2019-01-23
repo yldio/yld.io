@@ -18,7 +18,7 @@ const Wrapper = styled(Col)`
 
   ${breakpoint('tablet')`
     &:nth-child(3) {
-      display: flex;
+      display: block;
     }
   `}
 `

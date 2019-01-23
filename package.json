@@ -19,7 +19,6 @@
     "gatsby-source-contentful": "2.0.15",
     "gatsby-source-lever": "2.0.1",
     "gatsby-source-medium": "2.0.1",
-    "get-youtube-id": "^1.0.0",
     "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "lodash": "4.17.11",
     "netlify-lambda": "1.0.3",

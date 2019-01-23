@@ -60,15 +60,17 @@ class OpenPositions extends React.PureComponent {
 
     return (
       <Section greyBg id="open-positions">
-        <H2>{title}</H2>
-        <JobsByLocation>
-          {jobs =>
-            jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-              this.renderJobsForlocation(jobsForLocation, location, idx)
-            )
-          }
-        </JobsByLocation>
-        <DirectApplication title={directApplicationTitle} text={text} />
+        <Padding top={{ smallPhone: 3, tablet: 4 }}>
+          <H2>{title}</H2>
+          <JobsByLocation>
+            {jobs =>
+              jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+                this.renderJobsForlocation(jobsForLocation, location, idx)
+              )
+            }
+          </JobsByLocation>
+          <DirectApplication title={directApplicationTitle} text={text} />
+        </Padding>
       </Section>
     )
   }

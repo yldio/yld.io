@@ -66,13 +66,15 @@ const PerksList = ({ perks }) => (
 
 const Perks = ({ data: { title, text, perks } }) => (
   <Section>
-    <Row>
-      <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
-        <H2>{title}</H2>
-        <Paragraph muted>{text}</Paragraph>
-      </Col>
-      <PerksList perks={perks} />
-    </Row>
+    <Padding top={{ smallPhone: 3, tablet: 4 }}>
+      <Row>
+        <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
+          <H2>{title}</H2>
+          <Paragraph muted>{text}</Paragraph>
+        </Col>
+        <PerksList perks={perks} />
+      </Row>
+    </Padding>
   </Section>
 )
 
