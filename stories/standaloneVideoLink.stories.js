@@ -4,7 +4,7 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import theme from '../src/utils/theme'
 import GlobalStyle from '../src/utils/globalStyle'
-import CompactVideoLink from '../src/components/Common/CompactVideoLink'
+import StandaloneVideoLink from '../src/components/Common/StandaloneVideoLink'
 import { Row } from '../src/components/grid'
 import BlueBG from '../src/components/BlueBG'
 import GreyBG from '../src/components/GreyBG'
@@ -23,28 +23,28 @@ const text =
   'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright'
 const smallerText = 'Some smaller title'
 
-storiesOf('Compact Video Link', module)
+storiesOf('Standalone Video Link', module)
   .add('Single component', () => {
     return (
       <Row>
-        <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
+        <StandaloneVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
           {text}
-        </CompactVideoLink>
+        </StandaloneVideoLink>
       </Row>
     )
   })
   .add('Multiple components', () => {
     return (
       <Row>
-        <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
+        <StandaloneVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
           {text}
-        </CompactVideoLink>
-        <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
+        </StandaloneVideoLink>
+        <StandaloneVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
           {smallerText}
-        </CompactVideoLink>
-        <CompactVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
+        </StandaloneVideoLink>
+        <StandaloneVideoLink href="https://www.youtube.com/watch?v=IeuuBKBb4Wg">
           {smallerText}
-        </CompactVideoLink>
+        </StandaloneVideoLink>
       </Row>
     )
   })
@@ -52,12 +52,12 @@ storiesOf('Compact Video Link', module)
     return (
       <BlueBG>
         <Row>
-          <CompactVideoLink
+          <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             bg="dark"
           >
             {text}
-          </CompactVideoLink>
+          </StandaloneVideoLink>
         </Row>
       </BlueBG>
     )
@@ -66,12 +66,12 @@ storiesOf('Compact Video Link', module)
     return (
       <GreyBG>
         <Row>
-          <CompactVideoLink
+          <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             bg="grey"
           >
             {text}
-          </CompactVideoLink>
+          </StandaloneVideoLink>
         </Row>
       </GreyBG>
     )
