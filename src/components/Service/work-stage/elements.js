@@ -27,6 +27,7 @@ export const Graphic = styled.div`
 export const How = styled(SectionTitleH2)`
   position: relative;
   top: -71%;
+  text-align: center;
 `
 
 export const SwitchLink = styled(StyledLink)`
