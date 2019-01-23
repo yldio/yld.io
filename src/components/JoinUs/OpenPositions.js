@@ -1,5 +1,6 @@
 import React from 'react'
 import remcalc from 'remcalc'
+import Flex from 'styled-flex-component'
 import { Row, CompensatedCol, CompensatedRow } from '../grid'
 import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
@@ -14,19 +15,13 @@ const Line = styled(Hr)`
   width: ${remcalc(60)};
 `
 
-const JobLinkWrapper = styled.div`
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-`
-
 const JobLink = styled(ExternalAnchor)`
   flex: 1 0 90px;
 `
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
   <CompensatedCol as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
-    <JobLinkWrapper>
+    <Flex column>
       <JobLink href={hostedUrl}>
         <Padding top={1} bottom={0.5}>
           <Paragraph noMargin>{text}</Paragraph>
@@ -36,7 +31,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
         </Padding>
       </JobLink>
       <Line />
-    </JobLinkWrapper>
+    </Flex>
   </CompensatedCol>
 )
 
