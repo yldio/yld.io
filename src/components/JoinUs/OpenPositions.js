@@ -1,5 +1,4 @@
 import React from 'react'
-import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Row, CompensatedCol, CompensatedRow } from '../grid'
 import styled from 'styled-components'
@@ -10,10 +9,6 @@ import { FirstColumn, SecondColumn, Section } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
 import StyledLink from '../styledLink'
-
-const Line = styled(Hr)`
-  width: ${remcalc(60)};
-`
 
 const JobLink = styled(ExternalAnchor)`
   flex: 1 0 90px;
@@ -30,7 +25,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
           </Paragraph>
         </Padding>
       </JobLink>
-      <Line />
+      <Hr short />
     </Flex>
   </CompensatedCol>
 )
