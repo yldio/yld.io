@@ -38,7 +38,6 @@ export default {
     text: '#333333',
     secondaryText: '#757575',
     textLight: '#828282',
-    link: '#757575',
     dark: '#232323',
     black: '#1d1d1d',
     lightGrey: '#737272',
