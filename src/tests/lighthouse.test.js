@@ -75,8 +75,6 @@ test('Performance', () => {
     auditTest(audits, 'uses-optimized-images')
     // https://developers.google.com/web/tools/lighthouse/audits/oversized-images
     // auditTest(audits, 'uses-responsive-images') -- commented out due a failure, to be fixed later
-    // https://developers.google.com/web/updates/2016/02/font-display
-    auditTest(audits, 'font-display')
     // https://developers.google.com/web/tools/lighthouse/audits/redirects
     auditTest(audits, 'redirects')
     // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio

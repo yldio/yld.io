@@ -17,16 +17,26 @@ const H2 = styled.h2`
     ${is('reverse')`
       color: ${props => props.theme.colors.white};
     `};
-
     ${is('center')`
       text-align:center
     `};
+
+      ${is('noTop')`
+        padding-top: 0;
+      `};
 
     ${breakpoint('tablet')`
       font-size: ${remcalc(42)};
       padding: ${remcalc(21)} 0;
       line-height: ${remcalc(42)};
+
+      ${is('noTop')`
+        padding-top: 0;
+      `};
+
     `}
+
+
 
   `}
 `

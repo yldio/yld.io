@@ -9,7 +9,7 @@ import TrainingSection from '../components/Speciality/training'
 import CommunitySection from '../components/Speciality/community'
 import EventSection from '../components/Speciality/events'
 import TalksSection from '../components/Speciality/talks'
-import TalkToUsSection from '../components/Speciality/talkToUs'
+import TalkToUsSection from '../components/Common/talkToUs'
 import TutorialsSection from '../components/Speciality/tutorials'
 import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
@@ -49,7 +49,7 @@ const Speciality = ({ data, location }) => {
       <TutorialsSection speciality={speciality} />
       <BooksSection speciality={speciality} />
       <TalkToUsSection
-        title={speciality.title}
+        title={`Talk to us about ${speciality.title}`}
         contactText={speciality.contactText}
       />
     </Layout>
