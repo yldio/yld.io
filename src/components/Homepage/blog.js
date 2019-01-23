@@ -4,7 +4,7 @@ import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { SectionTitleH2, H5 } from '../Typography'
+import { SectionTitleH2, SubtitleH3 } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
@@ -24,7 +24,7 @@ const Blog = () => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <H5>
+                <SubtitleH3>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
                       node.uniqueSlug
@@ -32,7 +32,7 @@ const Blog = () => (
                   >
                     {node.title}
                   </a>
-                </H5>
+                </SubtitleH3>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}

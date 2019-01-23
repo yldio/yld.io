@@ -6,7 +6,12 @@ import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
-import { SectionTitleH2, H5, CardTitleH3, Paragraph } from '../Typography'
+import {
+  SectionTitleH2,
+  CardTitleH3,
+  SubtitleH3,
+  Paragraph
+} from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
@@ -54,7 +59,7 @@ const Events = ({ events }) => (
             .slice(0, 3)
             .map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <H5>
+                <SubtitleH3>
                   <a
                     href={node.linkToEvent}
                     target="_blank"
@@ -62,7 +67,7 @@ const Events = ({ events }) => (
                   >
                     {node.eventTitle}
                   </a>
-                </H5>
+                </SubtitleH3>
                 {format(new Date(node.date), 'MMMM DD[,] dddd')}
               </Li>
             ))}
@@ -119,7 +124,7 @@ const Events = ({ events }) => (
             .slice(0, 3)
             .map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <H5>
+                <SubtitleH3>
                   <a
                     href={node.linkToEvent}
                     target="_blank"
@@ -127,7 +132,7 @@ const Events = ({ events }) => (
                   >
                     {node.eventTitle}
                   </a>
-                </H5>
+                </SubtitleH3>
                 {format(new Date(node.date), 'MMMM DD[,] dddd')}
               </Li>
             ))}

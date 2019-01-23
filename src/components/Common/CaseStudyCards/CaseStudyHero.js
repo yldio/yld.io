@@ -4,7 +4,7 @@ import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import CaseStudyLayout from './CaseStudyLayout'
-import { SectionTitleH2, H5 } from '../../Typography'
+import { SectionTitleH2, SubtitleH3 } from '../../Typography'
 import SeoLinks from '../seoLinks'
 
 const FlexCol = styled(Col)`
@@ -13,9 +13,7 @@ const FlexCol = styled(Col)`
 
 const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
-    <H5 noMargin noWrap>
-      {heading}
-    </H5>
+    <SubtitleH3>{heading}</SubtitleH3>
     <Flex alignCenter wrap>
       <SeoLinks noMargin items={items} />
     </Flex>

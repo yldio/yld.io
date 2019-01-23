@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, CardTitleH3, H5, Paragraph } from '../Typography'
+import {
+  SectionTitleH2,
+  CardTitleH3,
+  SubtitleH3,
+  Paragraph
+} from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
@@ -41,7 +46,7 @@ const CompaniesHelped = ({ speciality, noOther }) => (
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
         <Padding top={5} bottom={3}>
-          <H5 bold>{noOther ? 'C' : 'Other c'}lients we helped</H5>
+          <SubtitleH3>{noOther ? 'C' : 'Other c'}lients we helped</SubtitleH3>
         </Padding>
       </Col>
     </Row>

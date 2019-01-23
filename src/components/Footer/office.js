@@ -1,14 +1,11 @@
 import React from 'react'
 import { Col } from '../../components/grid'
-import { Margin } from 'styled-components-spacing'
-import { H5, Paragraph } from '../../components/Typography'
+import { SubtitleH3, Paragraph } from '../../components/Typography'
 import { Node } from './elements.js'
 
 const Office = ({ name, telephone, email, streetAddress }) => (
   <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-    <Margin bottom={1}>
-      <H5 reverse>{name}</H5>
-    </Margin>
+    <SubtitleH3 reverse>{name}</SubtitleH3>
     <Paragraph>
       <span>
         {streetAddress.map((address, i) => (

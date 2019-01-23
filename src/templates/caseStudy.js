@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH2, Paragraph, H5 } from '../components/Typography'
+import { SectionTitleH2, SubtitleH3, Paragraph } from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
@@ -85,7 +85,7 @@ const CaseStudy = ({
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
                     <Stat>{stat.value}</Stat>
-                    <H5>{stat.label}</H5>
+                    <SubtitleH3>{stat.label}</SubtitleH3>
                   </Margin>
                 ))}
             </Col>

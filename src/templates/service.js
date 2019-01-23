@@ -4,7 +4,11 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import { SectionTitleH2, CardTitleH3, H5 } from '../components/Typography'
+import {
+  SectionTitleH2,
+  CardTitleH3,
+  SubtitleH3
+} from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -93,20 +97,20 @@ const Service = ({ data, location }) => {
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 <WeWorkWithPadding index={1}>
-                  <H5>{service.specialityAreaTitle1}</H5>
+                  <SubtitleH3>{service.specialityAreaTitle1}</SubtitleH3>
                   <SeoLinks items={service.specialityAreaItems1} />
                 </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 <WeWorkWithPadding index={2}>
-                  <H5>{service.specialityAreaTitle2}</H5>
+                  <SubtitleH3>{service.specialityAreaTitle2}</SubtitleH3>
                   <SeoLinks items={service.specialityAreaItems2} />
                 </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle3 && (
                   <WeWorkWithPadding index={3}>
-                    <H5>{service.specialityAreaTitle3}</H5>
+                    <SubtitleH3>{service.specialityAreaTitle3}</SubtitleH3>
                     <SeoLinks items={service.specialityAreaItems3} />
                   </WeWorkWithPadding>
                 )}
@@ -114,7 +118,7 @@ const Service = ({ data, location }) => {
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle4 && (
                   <WeWorkWithPadding index={4}>
-                    <H5>{service.specialityAreaTitle4}</H5>
+                    <SubtitleH3>{service.specialityAreaTitle4}</SubtitleH3>
                     <SeoLinks items={service.specialityAreaItems4} />
                   </WeWorkWithPadding>
                 )}

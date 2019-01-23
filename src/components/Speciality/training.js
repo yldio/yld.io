@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
@@ -11,7 +11,7 @@ const TrainingStage = ({ title, body, icon }) => (
       <Padding bottom={1.5}>
         <img src={`https://${icon.file.url}`} alt={icon.title} />
       </Padding>
-      <H5 bold>{title}</H5>
+      <SubtitleH3>{title}</SubtitleH3>
       <Paragraph>{body.content[0].content[0].value}</Paragraph>
     </Padding>
   </Col>

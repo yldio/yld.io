@@ -5,7 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
-import { SectionTitleH2, H5 } from '../Typography'
+import { SectionTitleH2, SubtitleH3 } from '../Typography'
 import Jobs from '../jobs'
 import Li from '../listItem'
 
@@ -43,7 +43,7 @@ const JobsComponent = () => (
               width={[1, 1, 1, 1, 1 / 2, 3 / 12]}
               key={`${key}-${jobs[key].length}-main`}
             >
-              <H5>{key}</H5>
+              <SubtitleH3>{key}</SubtitleH3>
 
               <JobContainer>
                 {jobs[key].slice(0, 3).map(job => (

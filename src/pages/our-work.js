@@ -9,11 +9,11 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH1, DisplayBodyH2 } from '../components/Typography'
+import { SectionTitleH1, DisplayTitleH2 } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const ShortenedH2 = styled(DisplayBodyH2)`
+const ShortenedH2 = styled(DisplayTitleH2)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};

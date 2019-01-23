@@ -2,7 +2,7 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
 import StyledLink from '../styledLink'
 import Posts from '../posts'
 import Li from '../listItem'
@@ -28,13 +28,13 @@ const BlogPosts = ({ speciality }) => (
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
                         <Li key={`${id}`} fullWidthDivider>
-                          <H5 bold>
+                          <SubtitleH3>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
                             >
                               {title}
                             </a>
-                          </H5>
+                          </SubtitleH3>
                           {format(new Date(createdAt), 'MMMM DD[,] dddd')}
                         </Li>
                       ))}

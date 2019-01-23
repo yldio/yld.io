@@ -8,7 +8,7 @@ import GlobalStyle from '../src/utils/globalStyle'
 import {
   SectionTitleH1,
   CardTitleH3,
-  H5,
+  SubtitleH3,
   BodyStylised
 } from '../src/components/Typography'
 import {
@@ -34,7 +34,7 @@ addDecorator(Theme)
 storiesOf('Typography', module)
   .add('Large title', () => <SectionTitleH1>Large title</SectionTitleH1>)
   .add('Card Title H3', () => <CardTitleH3>Card Title H3</CardTitleH3>)
-  .add('Small Title 2', () => <H5>Small Title</H5>)
+  .add('Subtitle', () => <SubtitleH3>Subtitle</SubtitleH3>)
   .add('Body Stylised', () => <BodyStylised>Body Stylised</BodyStylised>)
 
 storiesOf('Form', module)

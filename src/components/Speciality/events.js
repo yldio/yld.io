@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -35,7 +35,7 @@ const EventSection = ({ speciality }) => {
                       />
                     </Col>
                     <Col>
-                      <H5 bold noMargin>
+                      <SubtitleH3 noMargin>
                         <a
                           href={event.linkToEvent}
                           target="_blank"
@@ -43,7 +43,7 @@ const EventSection = ({ speciality }) => {
                         >
                           {event.eventTitle}
                         </a>
-                      </H5>
+                      </SubtitleH3>
                       <Paragraph noMargin>
                         {format(new Date(event.date), 'MMMM DD[,] dddd')}
                       </Paragraph>

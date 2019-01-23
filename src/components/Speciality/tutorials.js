@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
-import { SectionTitleH2, H5, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
 
@@ -35,9 +35,7 @@ const TutorialsSection = ({ speciality }) =>
                   .slice(0, 3)
                   .map(externalResource => (
                     <Li key={`${externalResource.id}`}>
-                      <H5 bold noBottom>
-                        {externalResource.title}
-                      </H5>
+                      <SubtitleH3>{externalResource.title}</SubtitleH3>
                       <a
                         href={externalResource.link}
                         target="_blank"
