@@ -70,7 +70,9 @@ const Perks = ({ data: { title, text, perks } }) => (
       <Row>
         <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
           <H2>{title}</H2>
-          <Paragraph muted>{text}</Paragraph>
+          <Padding top={1}>
+            <Paragraph muted>{text}</Paragraph>
+          </Padding>
         </Col>
         <PerksList perks={perks} />
       </Row>
