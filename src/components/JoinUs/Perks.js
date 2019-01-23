@@ -7,9 +7,9 @@ import { Padding } from 'styled-components-spacing'
 import { Paragraph, H2 } from '../Typography'
 import Image from '../Common/Image'
 
-import { Section, ShiftedColumn } from './elements'
+import { Section } from './elements'
 
-const PerksListContainer = styled(ShiftedColumn)`
+const PerksListContainer = styled(Col)`
   display: grid;
   row-gap: ${remcalc(24)};
   grid-template-columns: 1fr 1fr;
@@ -52,8 +52,14 @@ const Perk = ({ icon, description }) => (
   </PerkContainer>
 )
 
+const RowLayout = styled(Row)`
+  ${breakpoint('tablet')`
+    justify-content: space-between;
+  `}
+`
+
 const PerksList = ({ perks }) => (
-  <PerksListContainer width={[1, 1, 1, 1, 1, 5 / 12]}>
+  <PerksListContainer width={[1, 1, 1, 1, 1, 6 / 12]}>
     {perks.map((perk, idx) => (
       <Perk
         key={idx}
@@ -67,7 +73,7 @@ const PerksList = ({ perks }) => (
 const Perks = ({ data: { title, text, perks } }) => (
   <Section>
     <Padding top={{ smallPhone: 3, tablet: 4 }}>
-      <Row>
+      <RowLayout>
         <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
           <H2>{title}</H2>
           <Padding top={1}>
@@ -75,7 +81,7 @@ const Perks = ({ data: { title, text, perks } }) => (
           </Padding>
         </Col>
         <PerksList perks={perks} />
-      </Row>
+      </RowLayout>
     </Padding>
   </Section>
 )
