@@ -1,12 +1,12 @@
 import React from 'react'
 import { Col } from '../../components/grid'
-import { SubtitleH3, Paragraph } from '../../components/Typography'
+import { SubtitleH3, BodyPrimary } from '../../components/Typography'
 import { Node } from './elements.js'
 
 const Office = ({ name, telephone, email, streetAddress }) => (
   <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
     <SubtitleH3 reverse>{name}</SubtitleH3>
-    <Paragraph>
+    <BodyPrimary>
       <span>
         {streetAddress.map((address, i) => (
           <Node key={address}>{address}</Node>
@@ -18,7 +18,7 @@ const Office = ({ name, telephone, email, streetAddress }) => (
           <a href={`mailto:${email}`}>{email}</a>
         </Node>
       ) : null}
-    </Paragraph>
+    </BodyPrimary>
   </Col>
 )
 

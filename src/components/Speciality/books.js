@@ -6,10 +6,10 @@ import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
-import { SectionTitleH2, CardTitleH3, Paragraph } from '../Typography'
+import { SectionTitleH2, CardTitleH3, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 
-const BottomParagraph = styled(Paragraph)`
+const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
   bottom: ${remcalc(26)};
 `
@@ -52,9 +52,9 @@ const BooksSection = ({ speciality }) =>
               small
               center
             >{`${speciality.title.trim()} books`}</SectionTitleH2>
-            <Paragraph center>
+            <BodyPrimary center>
               NodeJS books created by members of YLD for the community.
-            </Paragraph>
+            </BodyPrimary>
           </Col>
         </Row>
         <Row>
@@ -84,9 +84,9 @@ const BooksSection = ({ speciality }) =>
                       >
                         {externalResource.title}
                       </CardTitleH3>
-                      <BottomParagraph>{`By ${
+                      <BottomBodyPrimary>{`By ${
                         externalResource.additionalInfo
-                      }`}</BottomParagraph>
+                      }`}</BottomBodyPrimary>
                     </Padding>
                   </BooksBox>
                 </Padding>

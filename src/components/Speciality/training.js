@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
@@ -12,7 +12,7 @@ const TrainingStage = ({ title, body, icon }) => (
         <img src={`https://${icon.file.url}`} alt={icon.title} />
       </Padding>
       <SubtitleH3>{title}</SubtitleH3>
-      <Paragraph>{body.content[0].content[0].value}</Paragraph>
+      <BodyPrimary>{body.content[0].content[0].value}</BodyPrimary>
     </Padding>
   </Col>
 )
@@ -26,9 +26,9 @@ const TrainingSection = ({ speciality }) => (
             <SectionTitleH2
               small
             >{`${speciality.title.trim()} training`}</SectionTitleH2>
-            <Paragraph>
+            <BodyPrimary>
               {speciality.trainingIntroText.content[0].content[0].value}
-            </Paragraph>
+            </BodyPrimary>
           </Col>
         </Row>
         <Row>

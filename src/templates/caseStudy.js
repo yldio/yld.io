@@ -5,7 +5,11 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH2, SubtitleH3, Paragraph } from '../components/Typography'
+import {
+  SectionTitleH2,
+  SubtitleH3,
+  BodyPrimary
+} from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
@@ -47,9 +51,9 @@ const CaseStudy = ({
         <Row>
           <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
-              <Paragraph fullWidth padded key={i}>
+              <BodyPrimary fullWidth padded key={i}>
                 {text}
-              </Paragraph>
+              </BodyPrimary>
             ))}
           </Col>
         </Row>
@@ -75,9 +79,9 @@ const CaseStudy = ({
           <Row>
             <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
               {body[2].map((text, i) => (
-                <Paragraph fullWidth padded key={i}>
+                <BodyPrimary fullWidth padded key={i}>
                   {text}
-                </Paragraph>
+                </BodyPrimary>
               ))}
             </Col>
             <Col>
@@ -97,7 +101,7 @@ const CaseStudy = ({
         <Row>
           <Col width={[1]}>
             <Padding top={4} bottom={2}>
-              <Paragraph fullWidth>More of our work</Paragraph>
+              <BodyPrimary fullWidth>More of our work</BodyPrimary>
             </Padding>
           </Col>
         </Row>

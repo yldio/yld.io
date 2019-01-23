@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, Paragraph } from '../Typography'
+import { SectionTitleH2, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
@@ -16,7 +16,7 @@ const TalkToUsSection = ({ title, contactText }) => (
           <Col width={[0, 0, 0, 0, 2 / 12]} />
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Padding top={1}>
-              <Paragraph>{contactText}</Paragraph>
+              <BodyPrimary>{contactText}</BodyPrimary>
               <StyledLink to="/contact/">Get in touch</StyledLink>
             </Padding>
           </Col>

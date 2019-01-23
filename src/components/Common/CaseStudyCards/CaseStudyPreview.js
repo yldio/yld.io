@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
-import { SectionTitleH1, Paragraph } from '../../Typography'
+import { SectionTitleH1, BodyPrimary } from '../../Typography'
 import StyledLink from '../../styledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
 const Headings = ({ title }) => (
   <Fragment>
-    <Paragraph noMargin secondary>
+    <BodyPrimary noMargin secondary>
       Featured work
-    </Paragraph>
+    </BodyPrimary>
     <SectionTitleH1>{title}</SectionTitleH1>
   </Fragment>
 )
 
 const TextBelowImage = ({ introSentence, slug }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
-    <Paragraph fullWidth>{introSentence}</Paragraph>
+    <BodyPrimary fullWidth>{introSentence}</BodyPrimary>
     <StyledLink to={`/case-study/${slug}`}>Learn more</StyledLink>
   </Padding>
 )

@@ -5,15 +5,15 @@ import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
-import { CardTitleH3, Paragraph } from '../Typography'
+import { CardTitleH3, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
-const Services = styled(Paragraph).attrs({ muted: true })`
-  // overwrite default padding on Paragraph component
+const Services = styled(BodyPrimary).attrs({ muted: true })`
+  // overwrite default padding on BodyPrimary component
   padding-bottom: 0;
 `
 
-const IntroSentence = styled(Paragraph).attrs({ fullWidth: true })`
+const IntroSentence = styled(BodyPrimary).attrs({ fullWidth: true })`
   padding-bottom: 6px;
   ${breakpoint('tablet')`
     padding-bottom: 12px;

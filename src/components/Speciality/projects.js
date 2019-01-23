@@ -5,7 +5,7 @@ import {
   SectionTitleH2,
   CardTitleH3,
   SubtitleH3,
-  Paragraph
+  BodyPrimary
 } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
@@ -26,9 +26,9 @@ const PosterLinks = ({ project }) => (
         <CardTitleH3 reverse noMargin bigger>
           {project.title}
         </CardTitleH3>
-        <Paragraph reverse muted>
+        <BodyPrimary reverse muted>
           {project.introSentence}
-        </Paragraph>
+        </BodyPrimary>
       </CardHeader>
       <PosterImage justifyCenter alignCenter color={project.posterColor}>
         <img

@@ -5,7 +5,7 @@ import {
   SectionTitleH1,
   CardTitleH3,
   SubtitleH3,
-  Paragraph
+  BodyPrimary
 } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
@@ -20,9 +20,9 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
       <SubtitleH3 reverse noMargin>
         {introTextTitle}
       </SubtitleH3>
-      <Paragraph muted reverse>
+      <BodyPrimary muted reverse>
         {introTextBody.content[0].content[0].value}
-      </Paragraph>
+      </BodyPrimary>
     </Padding>
   </IntroBorder>
 )
@@ -35,9 +35,9 @@ const IntroSection = ({ speciality }) => (
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
               <SectionTitleH1 reverse>{speciality.title}</SectionTitleH1>
-              <Paragraph reverse muted>
+              <BodyPrimary reverse muted>
                 {speciality.seoText.content[0].content[0].value}
-              </Paragraph>
+              </BodyPrimary>
             </Flex>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>

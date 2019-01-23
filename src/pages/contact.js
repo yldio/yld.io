@@ -5,7 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
-import { SectionTitleH1, Paragraph } from '../components/Typography'
+import { SectionTitleH1, BodyPrimary } from '../components/Typography'
 import {
   Checkbox,
   Input,
@@ -107,9 +107,9 @@ class ContactUs extends Component {
                 </Row>
                 <Row>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <Paragraph>
+                    <BodyPrimary>
                       Thanks for reaching out. We will be in contact shortly
-                    </Paragraph>
+                    </BodyPrimary>
                   </Col>
                 </Row>
               </Fragment>

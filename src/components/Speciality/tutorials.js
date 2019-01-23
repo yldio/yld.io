@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
-import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, BodyPrimary } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
 
@@ -22,9 +22,9 @@ const TutorialsSection = ({ speciality }) =>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SectionTitleH2>Tutorials</SectionTitleH2>
-              <Paragraph>
+              <BodyPrimary>
                 NodeJS tutorials created by members of YLD for the community.
-              </Paragraph>
+              </BodyPrimary>
             </Col>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <ul>

@@ -10,7 +10,7 @@ import {
   SectionTitleH2,
   CardTitleH3,
   SubtitleH3,
-  Paragraph
+  BodyPrimary
 } from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
@@ -27,7 +27,7 @@ const EventWrapper = styled.header`
   `};
 `
 
-const P = styled(Paragraph)`
+const StyledBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(380)};
   margin-bottom: ${remcalc(3)};
 `
@@ -92,16 +92,16 @@ const Events = ({ events }) => (
         .map(({ node }) => (
           <FeaturedEvent key={node.id} color={node.color}>
             <EventWrapper>
-              <Paragraph muted reverse noMargin>
+              <BodyPrimary muted reverse noMargin>
                 Featured
-              </Paragraph>
+              </BodyPrimary>
               <CardTitleH3 reverse noMargin biggest>
                 {node.eventTitle}
               </CardTitleH3>
               <Padding top={0.5}>
-                <P muted reverse>
+                <StyledBodyPrimary muted reverse>
                   {node.blurb.blurb}
-                </P>
+                </StyledBodyPrimary>
               </Padding>
               <StyledLink
                 reverse

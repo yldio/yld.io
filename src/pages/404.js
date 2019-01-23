@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 
-import { SectionTitleH1, Paragraph } from '../components/Typography'
+import { SectionTitleH1, BodyPrimary } from '../components/Typography'
 import { Button } from '../components/forms'
 import Layout from '../components/layout'
 
@@ -34,10 +34,10 @@ const NotFoundPage = ({ data: { site }, location }) => (
         <Row>
           <Col xs={12} sm={8} md={6}>
             <SectionTitleH1>Oops, nothing to see here</SectionTitleH1>
-            <Paragraph>
+            <BodyPrimary>
               The link is broken or the page has been removed. You might find
               what you are looking for from our home page.
-            </Paragraph>
+            </BodyPrimary>
             <Margin top={1}>
               <HomePageLink as={Link} to={'/'}>
                 Home

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2, SubtitleH3, Paragraph } from '../Typography'
+import { SectionTitleH2, SubtitleH3, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -44,9 +44,9 @@ const EventSection = ({ speciality }) => {
                           {event.eventTitle}
                         </a>
                       </SubtitleH3>
-                      <Paragraph noMargin>
+                      <BodyPrimary noMargin>
                         {format(new Date(event.date), 'MMMM DD[,] dddd')}
-                      </Paragraph>
+                      </BodyPrimary>
                     </Col>
                   </Row>
                 </Padding>
