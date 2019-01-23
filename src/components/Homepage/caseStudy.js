@@ -25,10 +25,8 @@ const ImageWrapper = styled(Col)`
   }
 `
 
-const WrapperRow = styled(Row)``
-
 const SubHeading = styled(Paragraph)`
-  color: #757575;
+  color: ${props => props.theme.colors.secondaryText};
   padding-bottom: 0;
   opacity: 0.7;
 `
@@ -40,12 +38,8 @@ const TextWrapper = styled.div`
   `}
 `
 
-const FlexCol = styled(Col)`
-  display: flex;
-`
-
 const CaseStudy = ({ caseStudy, subHeading }) => (
-  <WrapperRow>
+  <Row>
     <Col width={[1, 1, 1, 1, 0]}>
       <SubHeading>{subHeading}</SubHeading>
       <Padding bottom={3}>
@@ -56,7 +50,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
       <Image alt={caseStudy.posterImage.title} image={caseStudy.posterImage} />
     </ImageWrapper>
     <Col width={[0, 0, 0, 0, 0, 0, 1 / 12]} />
-    <FlexCol width={[0, 0, 0, 0, 5 / 12]}>
+    <Col width={[0, 0, 0, 0, 5 / 12]}>
       <TextWrapper>
         <SubHeading>{subHeading}</SubHeading>
         <H2 noTop>{caseStudy.title}</H2>
@@ -69,7 +63,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
           </Padding>
         </Padding>
       </TextWrapper>
-    </FlexCol>
+    </Col>
     <Col width={[1, 1, 1, 1, 0]}>
       <Margin top={3} />
       <Paragraph fullWidth>{getIntroSentence(caseStudy)}</Paragraph>
@@ -80,7 +74,7 @@ const CaseStudy = ({ caseStudy, subHeading }) => (
         Learn more
       </StyledLink>
     </Col>
-  </WrapperRow>
+  </Row>
 )
 
 export default CaseStudy

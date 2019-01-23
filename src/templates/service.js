@@ -12,6 +12,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
+import BlueBG from '../components/BlueBG'
 
 const Title = styled(H3)`
   font-weight: normal;
@@ -75,13 +76,13 @@ const Service = ({ data, location }) => {
           </Row>
         </Grid>
       </GreyBackground>
-      <GreyBackground style={{ background: '#090329' }}>
+      <BlueBG>
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
           image={service.graphic}
         />
-      </GreyBackground>
+      </BlueBG>
       <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}

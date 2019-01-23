@@ -3,11 +3,11 @@ import { Padding } from 'styled-components-spacing'
 
 import { H2, Paragraph } from '../Typography'
 import { Grid, Row, Col } from '../grid'
-import BlueBG from '../BlueBG'
 import Hr from '../Common/Hr'
+import BlueBG from '../BlueBG'
 
 const Approach = ({ title, content, formats }) => (
-  <BlueBG style={{ background: '#090329' }}>
+  <BlueBG>
     <Padding
       top={{ smallPhone: 3, tablet: 4 }}
       bottom={{ smallPhone: 3, tablet: 4 }}
