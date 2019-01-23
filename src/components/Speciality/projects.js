@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react'
+import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitleH2, CardTitleH3, H5, Paragraph } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
+
+const Emphasis = styled.em`
+  color: ${props => props.theme.colors.secondaryText};
+`
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -52,19 +57,19 @@ const ProjectsSection = ({ speciality }) => {
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
-              <SectionTitleH2 noMargin noBottom>
+              <SectionTitleH2>
                 {speciality.title}
-              </SectionTitleH2>
-              <SectionTitleH2 noMargin muted noTop>
-                related projects
+                <br />
+                <Emphasis>related projects</Emphasis>
               </SectionTitleH2>
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
-            <SectionTitleH2 noMargin>{speciality.title}</SectionTitleH2>
-            <SectionTitleH2 noMargin muted>
-              related projects
+            <SectionTitleH2>
+              {speciality.title}
+              <br />
+              <Emphasis>related projects</Emphasis>
             </SectionTitleH2>
           </Col>
           {!related[1] && (
