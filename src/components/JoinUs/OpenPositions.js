@@ -1,14 +1,13 @@
 import React from 'react'
 import Flex from 'styled-flex-component'
-import { Row, CompensatedCol, CompensatedRow } from '../grid'
+import { CompensatedCol, CompensatedRow } from '../grid'
 import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
 import { Paragraph, H2, H5 } from '../Typography'
-import { FirstColumn, SecondColumn, Section } from './elements'
+import { Section } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
-import StyledLink from '../styledLink'
 
 const JobLink = styled(ExternalAnchor)`
   flex: 1 0 90px;
@@ -30,25 +29,9 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
   </CompensatedCol>
 )
 
-const DirectApplication = ({ title, text }) => (
-  <Padding top={{ smallPhone: 3.5, smallTablet: 3 }}>
-    <Row>
-      <FirstColumn>
-        <H2 as="h3">{title}</H2>
-      </FirstColumn>
-      <SecondColumn>
-        <Padding top={1} bottom={{ smallPhone: 1, tablet: 3 }}>
-          <Paragraph noMargin>{text}</Paragraph>
-        </Padding>
-        <StyledLink to="/contact">Get in Touch</StyledLink>
-      </SecondColumn>
-    </Row>
-  </Padding>
-)
-
 class OpenPositions extends React.PureComponent {
   render() {
-    const { title, directApplicationTitle, text } = this.props.data
+    const { title } = this.props.data
 
     return (
       <Section greyBg id="open-positions">
@@ -61,7 +44,6 @@ class OpenPositions extends React.PureComponent {
               )
             }
           </JobsByLocation>
-          <DirectApplication title={directApplicationTitle} text={text} />
         </Padding>
       </Section>
     )

@@ -46,6 +46,7 @@ const Learning = ({
         <Insight insight={el} key={idx} />
       ))}
     </CompensatedRow>
+    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
 )
 

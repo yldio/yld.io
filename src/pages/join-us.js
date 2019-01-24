@@ -8,6 +8,7 @@ import Work from '../components/JoinUs/Work'
 import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
 import OpenPositions from '../components/JoinUs/OpenPositions'
+import GetInTouch from '../components/Common/GetInTouch'
 
 class JoinUs extends Component {
   render() {
@@ -60,10 +61,12 @@ class JoinUs extends Component {
         />
         <OpenPositions
           data={{
-            title: content.openPositionsTitle,
-            directApplicationTitle: content.directApplicationTitle,
-            text: content.directApplicationText.directApplicationText
+            title: content.openPositionsTitle
           }}
+        />
+        <GetInTouch
+          title={content.directApplicationTitle}
+          contactText={content.directApplicationText.directApplicationText}
         />
       </Layout>
     )

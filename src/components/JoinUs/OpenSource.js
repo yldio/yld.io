@@ -3,6 +3,7 @@ import { Row } from '../grid'
 
 import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
 import StandaloneVideoLink from '../Common/StandaloneVideoLink'
+import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
 
 const MAX_VIDEOS = 3
 
@@ -24,6 +25,7 @@ const OpenSource = ({
     <Separator />
     <TitleAndBody title={subtitle} body={text} />
     <Talks data={featuredTalks} />
+    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
 )
 

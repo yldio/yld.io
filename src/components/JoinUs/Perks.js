@@ -86,6 +86,7 @@ const Perks = ({ data: { title, text, perks } }) => (
         <PerksList perks={perks} />
       </RowLayout>
     </Padding>
+    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
 )
 

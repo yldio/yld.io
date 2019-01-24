@@ -37,11 +37,7 @@ export const List = ({ list }) => (
 )
 
 export const Section = ({ children, greyBg, ...props }) => {
-  const content = (
-    <Grid {...props}>
-      <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>{children}</Padding>
-    </Grid>
-  )
+  const content = <Grid {...props}>{children}</Grid>
 
   if (!greyBg) {
     return content

@@ -99,6 +99,7 @@ const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
         </Col>
       )}
     </ColumnLayout>
+    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
 )
 
