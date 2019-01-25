@@ -40,7 +40,8 @@ class ContactUs extends Component {
     name: '',
     email: '',
     message: '',
-    submitting: false
+    submitting: false,
+    triedSubmitting: false
   }
 
   handleChangeCheckbox = e => {
@@ -74,6 +75,10 @@ class ContactUs extends Component {
       this.setState({ success: true, submitting: false })
       window.scrollTo(0, 0)
     })
+  }
+
+  handleButtonClick = () => {
+    this.setState({ triedSubmitting: true })
   }
 
   render() {
@@ -146,6 +151,7 @@ class ContactUs extends Component {
                         <Label htmlFor="message">Tell us a bit more</Label>
                         <Input
                           as="textarea"
+                          noBoxShadow={!this.state.triedSubmitting}
                           rows="4"
                           value={message}
                           onChange={this.handleChange}
@@ -189,7 +195,11 @@ class ContactUs extends Component {
                             </label>
                           </section>
                         </Field>
-                        <Button type="submit" disabled={submitting}>
+                        <Button
+                          onClick={this.handleButtonClick}
+                          type="submit"
+                          disabled={submitting}
+                        >
                           {submitting ? 'Submitting' : 'Submit'}
                         </Button>
                       </form>
