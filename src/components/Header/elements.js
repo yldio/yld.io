@@ -13,20 +13,6 @@ const linkStyles = css`
     background: linear-gradient(to right, #616161 0%, transparent 0);
     position: relative;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 48px;
-      transition: all ${props => props.theme.animations.normal} ease-out;
-      width: 0;
-      opacity: 0;
-      background: ${props => props.theme.colors.greyBG};
-      z-index: -1;
-    }
-
     &:not(:last-child) {
       margin-right: ${remcalc(18)};
     }
@@ -126,6 +112,30 @@ export const Close = styled.button`
   }
 `
 
+export const Overlay = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) and (min-width: 600px) {
+    z-index: 9;
+    background-color: rgba(51, 51, 51, 0.2);
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: opacity ${props => props.theme.animations.fast} ease-out;
+    opacity: 0;
+    transform: translateX(200%);
+
+    ${is('visible')`
+      transform: translateX(0);
+      opacity: 1;
+    `}
+  }
+`
+
 export const DesktopMenu = styled(Flex)`
   position: fixed;
   background: ${props => props.theme.colors.black};
@@ -139,8 +149,9 @@ export const DesktopMenu = styled(Flex)`
   padding-right: ${remcalc(0)};
   padding-top: ${remcalc(12)};
   z-index: 999;
-  transform: translateX(200%);
-  transition: transform ${props => props.theme.animations.fast} ease-out;
+  transform: translateX(100%);
+  transition: transform ${props => props.theme.animations.fast} ease-in-out;
+  justify-content: center;
 
   ${breakpoint('tablet')`
     display: flex;
@@ -155,10 +166,19 @@ export const DesktopMenu = styled(Flex)`
     ${linkStyles}
   `};
 
+  @media screen and (max-width: 768px) and (min-width: 600px) {
+    width: ${remcalc(295)};
+    left: auto;
+    right: 0;
+    padding: ${remcalc(36)};
+    z-index: 10;
+    a {
+      top: ${remcalc(0)};
+    }
+  }
+
   ${is('open')`
     transform: translateX(0%);
-    justify-content: center;
-    transition: all ${props => props.theme.animations.fast} ease-out;
 
     a {
       opacity: 0.5;
@@ -174,32 +194,6 @@ export const DesktopMenu = styled(Flex)`
         color: ${props => props.theme.colors.white};
         opacity: 1;
       }
-    }
-
-    @media screen and (max-width: 768px) and (min-width: 600px) {
-      width: ${remcalc(295)};
-      justify-content: flex-start;
-      left: auto;
-      right: 0;
-      padding: ${remcalc(36)};
-      z-index: 10;
-
-      &:after {
-          background-color: rgba(51, 51, 51, 0.2);
-          content: '';
-          display: block;
-          position: fixed;
-          width: 100vw;
-          height: 100vh;
-          left: 0;
-          top: 0;
-          z-index: 1;
-          transform: translateX(-100%);
-      }
-
-      a {
-        top: ${remcalc(0)};
-      }
-    }
+    } 
   `};
 `
