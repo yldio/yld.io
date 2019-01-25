@@ -15,7 +15,7 @@ const ViewPositions = ({ text }) => (
           <Padding bottom={{ smallPhone: 2, tablet: 3 }}>
             <H2>{text}</H2>
           </Padding>
-          <StyledLink href="#open-positions">View open positions</StyledLink>
+          <StyledLink href="#open-positions">All job opportunities</StyledLink>
         </Col>
       </Row>
     </Padding>
