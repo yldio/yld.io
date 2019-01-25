@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import {
-  SectionTitleH1,
+  SectionTitleH2,
   CardTitleH3,
   SubtitleH3,
   BodyPrimary
@@ -34,7 +34,7 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
-              <SectionTitleH1 reverse>{speciality.title}</SectionTitleH1>
+              <SectionTitleH2 reverse>{speciality.title}</SectionTitleH2>
               <BodyPrimary reverse muted>
                 {speciality.seoText.content[0].content[0].value}
               </BodyPrimary>

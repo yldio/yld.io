@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import {
-  SectionTitleH1,
   SectionTitleH2,
   DisplayTitleH2,
   SubtitleH3,
@@ -13,20 +12,6 @@ import {
 addDecorator(Theme)
 
 storiesOf('Typography', module)
-  .add('Large title', () => <SectionTitleH1>Large title</SectionTitleH1>)
-  .add('Large title reverse', () => (
-    <SectionTitleH1 reverse>Large title</SectionTitleH1>
-  ))
-  .add('Large title muted', () => (
-    <SectionTitleH1 muted>Large title</SectionTitleH1>
-  ))
-  .add('Large title regular', () => (
-    <SectionTitleH1 regular>Large title</SectionTitleH1>
-  ))
-  .add('Large title center', () => (
-    <SectionTitleH1 center>Large title</SectionTitleH1>
-  ))
-
   .add('SectionTitleH2', () => <SectionTitleH2>Large title</SectionTitleH2>)
 
   .add('DisplayTitleH2', () => (
