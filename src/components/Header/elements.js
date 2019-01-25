@@ -107,6 +107,8 @@ export const Close = styled.button`
   font-size: ${remcalc(40)};
   height: ${remcalc(32)};
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &:focus {
     background: transparent;

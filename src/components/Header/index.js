@@ -5,7 +5,7 @@ import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
 import menu from '../../images/menu.svg'
-import close from '../../images/menu_close.svg'
+import close from '../../images/close.svg'
 import { MobileMenu, HomeLink, Close, DesktopMenu } from './elements.js'
 
 class Header extends Component {
