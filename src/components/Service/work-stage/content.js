@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
-import { SubtitleH3, BodyPrimary } from '../../Typography'
+import { Subtitle, BodyPrimary } from '../../Typography'
 import { Item, WorkStageContentList } from './elements'
 import Hr from '../../Common/Hr'
 
@@ -9,9 +9,9 @@ const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => {
   console.log('s title', sectionTitle)
   return (
     <Fragment key={sectionTitle}>
-      <SubtitleH3 reverse noPadding={!isList}>
+      <Subtitle reverse noPadding={!isList}>
         {sectionTitle}
-      </SubtitleH3>
+      </Subtitle>
       <BodyPrimary muted reverse noPadding>
         {bodyList[0]}
       </BodyPrimary>

@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
-import { SectionTitleH2, SubtitleH3, BodyPrimary } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import Li from '../listItem'
 import StyledLink from '../styledLink'
 
@@ -21,7 +21,7 @@ const TutorialsSection = ({ speciality }) =>
         <Padding top={4} bottom={5}>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <SectionTitleH2>Tutorials</SectionTitleH2>
+              <SectionTitle>Tutorials</SectionTitle>
               <BodyPrimary>
                 NodeJS tutorials created by members of YLD for the community.
               </BodyPrimary>
@@ -35,7 +35,7 @@ const TutorialsSection = ({ speciality }) =>
                   .slice(0, 3)
                   .map(externalResource => (
                     <Li key={`${externalResource.id}`}>
-                      <SubtitleH3>{externalResource.title}</SubtitleH3>
+                      <Subtitle>{externalResource.title}</Subtitle>
                       <a
                         href={externalResource.link}
                         target="_blank"

@@ -5,7 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
-import { SectionTitleH2, BodyPrimary } from '../components/Typography'
+import { SectionTitle, BodyPrimary } from '../components/Typography'
 import {
   Checkbox,
   Input,
@@ -102,7 +102,7 @@ class ContactUs extends Component {
               <Fragment>
                 <Row>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <SectionTitleH2>We will be in touch</SectionTitleH2>
+                    <SectionTitle>We will be in touch</SectionTitle>
                   </Col>
                 </Row>
                 <Row>
@@ -115,12 +115,9 @@ class ContactUs extends Component {
               </Fragment>
             ) : (
               <Fragment>
-                <SectionTitleH2
-                  as="h1"
-                  style={{ transform: 'translateY(20%)' }}
-                >
+                <SectionTitle as="h1" style={{ transform: 'translateY(20%)' }}>
                   Get in touch
-                </SectionTitleH2>
+                </SectionTitle>
                 <Row mt={2}>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Margin top={2}>

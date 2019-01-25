@@ -6,7 +6,7 @@ import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
-import { SectionTitleH2, CardTitleH3, BodyPrimary } from '../Typography'
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 
 const BottomBodyPrimary = styled(BodyPrimary)`
@@ -53,9 +53,9 @@ const BooksSection = ({ speciality }) =>
         <Row>
           <Padding top={4} />
           <CenteredCol width={[1]}>
-            <SectionTitleH2
+            <SectionTitle
               small
-            >{`${speciality.title.trim()} books`}</SectionTitleH2>
+            >{`${speciality.title.trim()} books`}</SectionTitle>
             <BodyPrimary>
               NodeJS books created by members of YLD for the community.
             </BodyPrimary>
@@ -80,14 +80,14 @@ const BooksSection = ({ speciality }) =>
                     rel="noopener noreferrer"
                   >
                     <Padding top={2} left={2} right={2}>
-                      <CardTitleH3
+                      <CardTitle
                         normal
                         style={{
                           color: `${externalResource.colorCode}`
                         }}
                       >
                         {externalResource.title}
-                      </CardTitleH3>
+                      </CardTitle>
                       <BottomBodyPrimary>{`By ${
                         externalResource.additionalInfo
                       }`}</BottomBodyPrimary>

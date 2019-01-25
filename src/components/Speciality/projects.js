@@ -1,12 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import {
-  SectionTitleH2,
-  CardTitleH3,
-  SubtitleH3,
-  BodyPrimary
-} from '../Typography'
+import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
@@ -23,9 +18,9 @@ const PosterLinks = ({ project }) => (
       }}
     >
       <CardHeader>
-        <CardTitleH3 reverse noPadding bigger>
+        <CardTitle reverse noPadding bigger>
           {project.title}
-        </CardTitleH3>
+        </CardTitle>
         <BodyPrimary reverse muted>
           {project.introSentence}
         </BodyPrimary>
@@ -46,7 +41,7 @@ const CompaniesHelped = ({ speciality, noOther }) => (
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
         <Padding top={5} bottom={3}>
-          <SubtitleH3>{noOther ? 'C' : 'Other c'}lients we helped</SubtitleH3>
+          <Subtitle>{noOther ? 'C' : 'Other c'}lients we helped</Subtitle>
         </Padding>
       </Col>
     </Row>
@@ -62,20 +57,20 @@ const ProjectsSection = ({ speciality }) => {
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
-              <SectionTitleH2>
+              <SectionTitle>
                 {speciality.title}
                 <br />
                 <Emphasis>related projects</Emphasis>
-              </SectionTitleH2>
+              </SectionTitle>
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
-            <SectionTitleH2>
+            <SectionTitle>
               {speciality.title}
               <br />
               <Emphasis>related projects</Emphasis>
-            </SectionTitleH2>
+            </SectionTitle>
           </Col>
           {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>

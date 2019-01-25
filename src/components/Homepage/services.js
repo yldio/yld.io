@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { SectionTitleH2, CardTitleH3, BodyPrimary } from '../Typography'
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -91,7 +91,7 @@ const Services = ({ services }) => (
                   bottom={{ smallPhone: 0, smallTablet: 2 }}
                 />
               ) : null}
-              <SectionTitleH2>{service.title}</SectionTitleH2>
+              <SectionTitle>{service.title}</SectionTitle>
               <Padding top={1.5} bottom={0.5}>
                 <BodyPrimary>{service.introSentence.introSentence}</BodyPrimary>
               </Padding>
@@ -123,9 +123,9 @@ const Services = ({ services }) => (
                       <BodyPrimary reverse muted>
                         Case study
                       </BodyPrimary>
-                      <CardTitleH3 reverse noPadding>
+                      <CardTitle reverse noPadding>
                         {service.caseStudies[0].title}
-                      </CardTitleH3>
+                      </CardTitle>
                     </section>
                   </CardHeader>
                   <PosterImage color={service.caseStudies[0].posterColor}>

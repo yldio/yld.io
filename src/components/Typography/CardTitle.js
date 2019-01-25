@@ -5,7 +5,7 @@ import remcalc from 'remcalc'
 
 import modifiers from './modifiers'
 
-export default styled.h3`
+const CardTitle = styled.h3`
   color: ${props => props.theme.colors.text};
   font-weight: 500;
   font-size: ${remcalc(21)};
@@ -34,3 +34,5 @@ export default styled.h3`
     `}
   `};
 `
+
+export default CardTitle

@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
-import { SectionTitleH2, BodyPrimary } from '../Typography'
+import { SectionTitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 
@@ -91,7 +91,7 @@ const Modal = ({ content, toggleModal }) => (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               <Image image={content.logo} />
               <Padding bottom={2}>
-                <SectionTitleH2>{content.name}</SectionTitleH2>
+                <SectionTitle>{content.name}</SectionTitle>
               </Padding>
               <BodyPrimary bold>Level</BodyPrimary>
               <BodyPrimary>{content.level}</BodyPrimary>

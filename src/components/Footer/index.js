@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Row, Col } from '../../components/grid'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
-import { SectionTitleH2 } from '../../components/Typography'
+import { SectionTitle } from '../../components/Typography'
 import { FooterStyled, FollowUs, Social, OfficeStyled } from './elements.js'
 import Office from './office'
 
@@ -19,7 +19,7 @@ const Footer = () => {
           <Row>
             <Col width={1}>
               <Margin bottom={{ smallPhone: 0.5, tablet: 2 }}>
-                <SectionTitleH2 reverse>Find us</SectionTitleH2>
+                <SectionTitle reverse>Find us</SectionTitle>
               </Margin>
             </Col>
           </Row>

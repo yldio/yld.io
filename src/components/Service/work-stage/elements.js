@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../../styledLink'
-import { SectionTitleH2 } from '../../Typography'
+import { SectionTitle } from '../../Typography'
 
 export const Item = styled.li`
   color: ${props => props.theme.colors.white};
@@ -24,7 +24,7 @@ export const Graphic = styled.div`
   `}
 `
 
-export const How = styled(SectionTitleH2)`
+export const How = styled(SectionTitle)`
   position: relative;
   top: -71%;
   text-align: center;

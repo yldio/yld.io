@@ -9,11 +9,11 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { SectionTitleH2, DisplayTitleH2 } from '../components/Typography'
+import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const ShortenedH2 = styled(DisplayTitleH2)`
+const ShortenedH2 = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};
@@ -80,7 +80,7 @@ const OurWork = ({ data }) => {
                   tablet: 5
                 }}
               >
-                <SectionTitleH2 as="h1">Our Work</SectionTitleH2>
+                <SectionTitle as="h1">Our Work</SectionTitle>
                 <ShortenedH2 as="h2" regular textLight>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.

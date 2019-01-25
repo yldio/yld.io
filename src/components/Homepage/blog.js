@@ -3,14 +3,14 @@ import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import StyledLink from '../styledLink'
-import { SectionTitleH2, SubtitleH3 } from '../Typography'
+import { SectionTitle, Subtitle } from '../Typography'
 import Posts from '../posts'
 import Li from '../listItem'
 
 const Blog = () => (
   <Row>
     <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12]}>
-      <SectionTitleH2>From the blog</SectionTitleH2>
+      <SectionTitle>From the blog</SectionTitle>
     </Col>
     <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12]}>
       <Posts>
@@ -18,7 +18,7 @@ const Blog = () => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <SubtitleH3>
+                <Subtitle>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
                       node.uniqueSlug
@@ -26,7 +26,7 @@ const Blog = () => (
                   >
                     {node.title}
                   </a>
-                </SubtitleH3>
+                </Subtitle>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
               </Li>
             ))}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
 
-import { SectionTitleH2, SubtitleH3, BodyPrimary } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
 import BlueBG from '../BlueBG'
@@ -16,9 +16,9 @@ const Approach = ({ title, content, formats }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <Padding bottom={{ smallPhone: 3, tablet: 0 }}>
-              <SectionTitleH2 noTop style={{ maxWidth: 250 }} reverse>
+              <SectionTitle noTop style={{ maxWidth: 250 }} reverse>
                 Our training approach
-              </SectionTitleH2>
+              </SectionTitle>
             </Padding>
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -44,7 +44,7 @@ const Approach = ({ title, content, formats }) => (
         </Padding>
         <Row>
           <Col width={[1]}>
-            <SectionTitleH2 reverse>Our training formats</SectionTitleH2>
+            <SectionTitle reverse>Our training formats</SectionTitle>
           </Col>
         </Row>
       </Grid>
@@ -60,9 +60,9 @@ const Approach = ({ title, content, formats }) => (
                   alt={format.icon.title}
                 />
               </Padding>
-              <SubtitleH3 noPadding reverse>
+              <Subtitle noPadding reverse>
                 {format.title}
-              </SubtitleH3>
+              </Subtitle>
               <BodyPrimary muted reverse>
                 {format.description}
               </BodyPrimary>

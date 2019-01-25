@@ -6,12 +6,7 @@ import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
-import {
-  SectionTitleH2,
-  CardTitleH3,
-  SubtitleH3,
-  BodyPrimary
-} from '../Typography'
+import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
@@ -50,7 +45,7 @@ const Events = ({ events }) => (
         <Padding bottom={1}>
           <img src={eventIcon} alt="events icon" />
         </Padding>
-        <SectionTitleH2>Upcoming events</SectionTitleH2>
+        <SectionTitle>Upcoming events</SectionTitle>
       </EventsColumn>
       <Padding top={42}>
         <ul>
@@ -59,7 +54,7 @@ const Events = ({ events }) => (
             .slice(0, 3)
             .map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <SubtitleH3>
+                <Subtitle>
                   <a
                     href={node.linkToEvent}
                     target="_blank"
@@ -67,7 +62,7 @@ const Events = ({ events }) => (
                   >
                     {node.eventTitle}
                   </a>
-                </SubtitleH3>
+                </Subtitle>
                 {format(new Date(node.date), 'MMMM DD[,] dddd')}
               </Li>
             ))}
@@ -81,7 +76,7 @@ const Events = ({ events }) => (
             <img src={eventIcon} alt="events icon" />
           </Padding>
 
-          <SectionTitleH2>Upcoming events</SectionTitleH2>
+          <SectionTitle>Upcoming events</SectionTitle>
         </Padding>
       </EventsColumn>
     </Col>
@@ -95,9 +90,9 @@ const Events = ({ events }) => (
               <BodyPrimary muted reverse noPadding>
                 Featured
               </BodyPrimary>
-              <CardTitleH3 reverse noPadding biggest>
+              <CardTitle reverse noPadding biggest>
                 {node.eventTitle}
-              </CardTitleH3>
+              </CardTitle>
               <Padding top={0.5}>
                 <StyledBodyPrimary muted reverse>
                   {node.blurb.blurb}
@@ -124,7 +119,7 @@ const Events = ({ events }) => (
             .slice(0, 3)
             .map(({ node }) => (
               <Li fullWidth symmetrical key={`${node.id}`}>
-                <SubtitleH3>
+                <Subtitle>
                   <a
                     href={node.linkToEvent}
                     target="_blank"
@@ -132,7 +127,7 @@ const Events = ({ events }) => (
                   >
                     {node.eventTitle}
                   </a>
-                </SubtitleH3>
+                </Subtitle>
                 {format(new Date(node.date), 'MMMM DD[,] dddd')}
               </Li>
             ))}

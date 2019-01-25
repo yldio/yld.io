@@ -3,11 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
-import {
-  SectionTitleH2,
-  SubtitleH3,
-  BodyPrimary
-} from '../components/Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
@@ -77,8 +73,8 @@ const CaseStudy = ({
               {caseStudy.stats &&
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
-                    <SectionTitleH2>{stat.value}</SectionTitleH2>
-                    <SubtitleH3 noPaddingTop>{stat.label}</SubtitleH3>
+                    <SectionTitle>{stat.value}</SectionTitle>
+                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
                   </Margin>
                 ))}
             </Col>

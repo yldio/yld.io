@@ -2,9 +2,9 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import {
-  SectionTitleH2,
-  DisplayTitleH2,
-  SubtitleH3,
+  SectionTitle,
+  DisplayTitle,
+  Subtitle,
   BodyStylised,
   BodyPrimary
 } from '../src/components/Typography'
@@ -12,16 +12,32 @@ import {
 addDecorator(Theme)
 
 storiesOf('Typography', module)
-  .add('SectionTitleH2', () => <SectionTitleH2>Large title</SectionTitleH2>)
-
-  .add('DisplayTitleH2', () => (
-    <DisplayTitleH2 small>Large title</DisplayTitleH2>
+  .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>)
+  .add('SectionTitle reverse', () => (
+    <SectionTitle reverse>Section Title reverse</SectionTitle>
+  ))
+  .add('SectionTitle muted', () => (
+    <SectionTitle muted>Section Title muted</SectionTitle>
+  ))
+  .add('SectionTitle regular', () => (
+    <SectionTitle regular>Section Title regular</SectionTitle>
   ))
 
-  .add('Large Body', () => <SubtitleH3>Large Body</SubtitleH3>)
-  .add('Large Body reverse', () => <SubtitleH3 reverse>Large Body</SubtitleH3>)
-  .add('Large Body regular', () => <SubtitleH3 regular>Large Body</SubtitleH3>)
-  .add('Large Body muted', () => <SubtitleH3 muted>Large Body</SubtitleH3>)
+  .add('DisplayTitle', () => <DisplayTitle>Section Title</DisplayTitle>)
+  .add('DisplayTitle reverse', () => (
+    <DisplayTitle reverse>Section Title reverse</DisplayTitle>
+  ))
+  .add('DisplayTitle muted', () => (
+    <DisplayTitle muted>Section Title muted</DisplayTitle>
+  ))
+  .add('DisplayTitle regular', () => (
+    <DisplayTitle regular>Section Title regular</DisplayTitle>
+  ))
+
+  .add('Large Body', () => <Subtitle>Large Body</Subtitle>)
+  .add('Large Body reverse', () => <Subtitle reverse>Large Body</Subtitle>)
+  .add('Large Body regular', () => <Subtitle regular>Large Body</Subtitle>)
+  .add('Large Body muted', () => <Subtitle muted>Large Body</Subtitle>)
 
   .add('Small Title 1', () => <BodyStylised>Small Title</BodyStylised>)
   .add('Small Title 1 reverse', () => (

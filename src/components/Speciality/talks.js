@@ -2,7 +2,7 @@ import React from 'react'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitleH2 } from '../Typography'
+import { SectionTitle } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import BlueBackground from '../BlueBG'
@@ -35,7 +35,7 @@ const TalksSection = ({ speciality, videoIcon }) => {
         <Padding top={4} bottom={5}>
           <Row>
             <Col width={[1]}>
-              <SectionTitleH2 reverse>{`Talks`}</SectionTitleH2>
+              <SectionTitle reverse>{`Talks`}</SectionTitle>
             </Col>
           </Row>
           {featured && (
