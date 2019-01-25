@@ -2,5 +2,14 @@
   "name": "yld-storybook",
   "public": true,
   "alias": ["yld-storybook"],
-  "version": 1
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "storybook-static"
+      }
+    }
+  ]
 }
