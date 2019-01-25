@@ -3,6 +3,9 @@
   "public": true,
   "alias": ["yld-storybook"],
   "version": 2,
+  "github": {
+    "autoAlias": true
+  },
   "builds": [
     {
       "src": "package.json",
