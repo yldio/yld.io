@@ -6,7 +6,13 @@ import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
 import menu from '../../images/menu.svg'
 import close from '../../images/close.svg'
-import { MobileMenu, HomeLink, Close, DesktopMenu } from './elements.js'
+import {
+  MobileMenu,
+  HomeLink,
+  Close,
+  DesktopMenu,
+  Overlay
+} from './elements.js'
 
 class Header extends Component {
   state = { menuOpen: false }
@@ -57,6 +63,10 @@ class Header extends Component {
                       <img src={close} alt="Close menu" />
                     </Close>
                   </DesktopMenu>
+                  <Overlay
+                    visible={this.state.menuOpen}
+                    onClick={this.toggleMenu}
+                  />
                 </Flex>
               </Padding>
             </header>
