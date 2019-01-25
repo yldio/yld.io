@@ -192,8 +192,8 @@ export const CompensatedCol = props => (
 export const ColumnLayout = ({ children, cols, items, compensated }) => {
   const RowComponent = compensated ? CompensatedRow : Row
   const ColComponent = compensated ? CompensatedCol : Col
-  const defaulWidthOnTabletAndAbove = 12 / cols / 12
-  const width = [1, 1, 1, defaulWidthOnTabletAndAbove]
+  const defaultWidthOnTabletAndAbove = 12 / cols / 12
+  const width = [1, 1, 1, defaultWidthOnTabletAndAbove]
 
   return (
     <RowComponent>
