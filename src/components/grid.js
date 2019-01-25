@@ -202,6 +202,7 @@ export const ColumnLayout = ({ children, cols, items, compensated }) => {
 
         return React.cloneElement(child, {
           width: child.props.width || width,
+          key: child.props.key || idx,
           idx
         })
       })}

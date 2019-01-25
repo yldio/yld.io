@@ -67,13 +67,7 @@ const JobsComponent = () => (
     <Row>
       <Col width={[1]}>
         <Padding top={{ smallPhone: 3, smallTablet: 4 }}>
-          <StyledLink
-            href="https://jobs.lever.co/yld"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            View all openings
-          </StyledLink>
+          <StyledLink to="/join-us">View all openings</StyledLink>
         </Padding>
       </Col>
     </Row>
