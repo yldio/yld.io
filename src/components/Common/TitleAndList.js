@@ -1,23 +1,25 @@
 import React from 'react'
+import remcalc from 'remcalc'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Col, Row } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { Paragraph, H2 } from '../Typography'
+import { Subtitle, BodyPrimary, SectionTitle } from '../Typography'
 
 const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
 )
 
-const ParagraphWithOptionalPadding = styled(Paragraph)`
+const ParagraphWithOptionalPadding = styled(BodyPrimary)`
+  padding-bottom: ${remcalc(24)};
   &:last-child {
     padding: 0;
   }
 `
-const Subtitle = ({ children, ...props }) => (
-  <Paragraph as="h3" noMargin bold {...props}>
+const ItemTitle = ({ children, ...props }) => (
+  <Subtitle as="h3" noPadding bold {...props}>
     {children}
-  </Paragraph>
+  </Subtitle>
 )
 
 const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
@@ -26,9 +28,9 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
       <Row>
         <Col width={[1, 1, 1, 6 / 12]}>
           <Padding bottom={3}>
-            <H2 small noMargin reverse={bg === 'dark'}>
+            <SectionTitle small noPadding reverse={bg === 'dark'}>
               {title}
-            </H2>
+            </SectionTitle>
           </Padding>
         </Col>
         <Col width={[1, 1, 1, 6 / 12]}>
@@ -36,13 +38,13 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
             <ReactMarkdown
               renderers={{
                 heading: props => {
-                  const Comp = <Subtitle reverse={bg === 'dark'} {...props} /> // eslint-disable-line react/no-display-name
+                  const Comp = <ItemTitle reverse={bg === 'dark'} {...props} /> // eslint-disable-line react/no-display-name
                   return Comp
                 },
                 paragraph: props => {
                   const Comp = (
                     <ParagraphWithOptionalPadding
-                      padded
+                      noPaddingTop
                       muted={bg === 'dark'}
                       reverse={bg === 'dark'}
                       {...props}
@@ -58,9 +60,9 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
-                  <Subtitle reverse={bg === 'dark'}>{el.title}</Subtitle>
+                  <ItemTitle reverse={bg === 'dark'}>{el.title}</ItemTitle>
                   <ParagraphWithOptionalPadding
-                    padded
+                    noPaddingTop
                     muted={bg === 'dark'}
                     reverse={bg === 'dark'}
                   >
