@@ -5,7 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
-import { H1, Paragraph } from '../components/Typography'
+import { SectionTitle, BodyPrimary } from '../components/Typography'
 import {
   Checkbox,
   Input,
@@ -40,7 +40,8 @@ class ContactUs extends Component {
     name: '',
     email: '',
     message: '',
-    submitting: false
+    submitting: false,
+    triedSubmitting: false
   }
 
   handleChangeCheckbox = e => {
@@ -76,6 +77,10 @@ class ContactUs extends Component {
     })
   }
 
+  handleButtonClick = () => {
+    this.setState({ triedSubmitting: true })
+  }
+
   render() {
     const { name, email, message, submitting, success } = this.state
     const site = this.props.data.site
@@ -102,20 +107,22 @@ class ContactUs extends Component {
               <Fragment>
                 <Row>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <H1>We will be in touch</H1>
+                    <SectionTitle>We will be in touch</SectionTitle>
                   </Col>
                 </Row>
                 <Row>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <Paragraph>
+                    <BodyPrimary>
                       Thanks for reaching out. We will be in contact shortly
-                    </Paragraph>
+                    </BodyPrimary>
                   </Col>
                 </Row>
               </Fragment>
             ) : (
               <Fragment>
-                <H1 style={{ transform: 'translateY(20%)' }}>Get in touch</H1>
+                <SectionTitle as="h1" style={{ transform: 'translateY(20%)' }}>
+                  Get in touch
+                </SectionTitle>
                 <Row mt={2}>
                   <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
                     <Margin top={2}>
@@ -146,6 +153,7 @@ class ContactUs extends Component {
                         <Label htmlFor="message">Tell us a bit more</Label>
                         <Input
                           as="textarea"
+                          noBoxShadow={!this.state.triedSubmitting}
                           rows="4"
                           value={message}
                           onChange={this.handleChange}
@@ -189,7 +197,11 @@ class ContactUs extends Component {
                             </label>
                           </section>
                         </Field>
-                        <Button type="submit" disabled={submitting}>
+                        <Button
+                          onClick={this.handleButtonClick}
+                          type="submit"
+                          disabled={submitting}
+                        >
                           {submitting ? 'Submitting' : 'Submit'}
                         </Button>
                       </form>

@@ -4,7 +4,12 @@ import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
-import { H2, H3, H5, Paragraph } from '../Typography'
+import {
+  SectionTitle,
+  DisplayTitle,
+  Subtitle,
+  BodyPrimary
+} from '../Typography'
 import GreyBG from '../GreyBG'
 import Hr from '../Common/Hr'
 
@@ -28,8 +33,8 @@ export const List = ({ list }) => (
   <Padding top={1}>
     <ReactMarkdown
       renderers={{
-        heading: props => <H5 as="h3" noMargin bold {...props} />, // eslint-disable-line react/display-name
-        paragraph: props => <Paragraph muted {...props} /> // eslint-disable-line react/display-name
+        heading: props => <Subtitle noPadding {...props} />, // eslint-disable-line react/display-name
+        paragraph: props => <BodyPrimary muted {...props} /> // eslint-disable-line react/display-name
       }}
       source={list}
     />
@@ -52,10 +57,8 @@ export const Section = ({ children, greyBg, ...props }) => {
 export const TitleAndBody = ({ title, body }) => (
   <Row>
     <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-      <H3 regular dark>
-        {title}
-      </H3>
-      <Paragraph muted>{body}</Paragraph>
+      <DisplayTitle>{title}</DisplayTitle>
+      <BodyPrimary textLight>{body}</BodyPrimary>
     </Col>
   </Row>
 )
@@ -70,7 +73,7 @@ export const TitleAndList = ({ title, list, button }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>
     <Row>
       <FirstColumn>
-        <H2>{title}</H2>
+        <SectionTitle>{title}</SectionTitle>
       </FirstColumn>
       <SecondColumn>
         <List list={list} />

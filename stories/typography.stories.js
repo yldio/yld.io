@@ -2,56 +2,109 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import {
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-  Paragraph as P
+  SectionTitle,
+  DisplayTitle,
+  CardTitle,
+  Subtitle,
+  BodyStylised,
+  BodyPrimary
 } from '../src/components/Typography'
 
 addDecorator(Theme)
 
 storiesOf('Typography', module)
-  .add('Large title', () => <H1>Large title</H1>)
-  .add('Large title reverse', () => <H1 reverse>Large title</H1>)
-  .add('Large title muted', () => <H1 muted>Large title</H1>)
-  .add('Large title regular', () => <H1 regular>Large title</H1>)
-  .add('Large title center', () => <H1 center>Large title</H1>)
+  .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>)
+  .add('SectionTitle secondary text color', () => (
+    <SectionTitle secondary>Section Title secondary text color</SectionTitle>
+  ))
+  .add('SectionTitle reverse', () => (
+    <SectionTitle reverse>Section Title reverse</SectionTitle>
+  ))
+  .add('SectionTitle textLight', () => (
+    <SectionTitle textLight>Section Title textLight</SectionTitle>
+  ))
+  .add('SectionTitle muted', () => (
+    <SectionTitle muted>Section Title muted</SectionTitle>
+  ))
+  .add('SectionTitle noPadding', () => (
+    <SectionTitle noPadding>Section Title without padding</SectionTitle>
+  ))
 
-  .add('H2', () => <H2>Large title</H2>)
-  .add('H2 small', () => <H2 small>Large title</H2>)
+  .add('DisplayTitle', () => <DisplayTitle>Display Title</DisplayTitle>)
+  .add('DisplayTitle secondary text color', () => (
+    <DisplayTitle secondary>Display Title secondary text color</DisplayTitle>
+  ))
+  .add('DisplayTitle reverse', () => (
+    <DisplayTitle reverse>Display Title reverse</DisplayTitle>
+  ))
+  .add('DisplayTitle textLight', () => (
+    <DisplayTitle textLight>Display Title textLight</DisplayTitle>
+  ))
+  .add('DisplayTitle muted', () => (
+    <DisplayTitle muted>Display Title muted</DisplayTitle>
+  ))
+  .add('DisplayTitle noPadding', () => (
+    <DisplayTitle noPadding>Display Title without padding</DisplayTitle>
+  ))
 
-  .add('Large Body', () => <H3>Large Body</H3>)
-  .add('Large Body reverse', () => <H3 reverse>Large Body</H3>)
-  .add('Large Body regular', () => <H3 regular>Large Body</H3>)
-  .add('Large Body muted', () => <H3 muted>Large Body</H3>)
+  .add('CardTitle', () => <CardTitle>Display Title</CardTitle>)
+  .add('CardTitle secondary text color', () => (
+    <CardTitle secondary>Card Title secondary text color</CardTitle>
+  ))
+  .add('CardTitle reverse', () => (
+    <CardTitle reverse>Card Title reverse</CardTitle>
+  ))
+  .add('CardTitle textLight', () => (
+    <CardTitle textLight>Card Title textLight</CardTitle>
+  ))
+  .add('CardTitle muted', () => <CardTitle muted>Card Title muted</CardTitle>)
+  .add('CardTitle noPadding', () => (
+    <CardTitle noPadding>Card Title without padding</CardTitle>
+  ))
 
-  .add('Small Title 1', () => <H4>Small Title</H4>)
-  .add('Small Title 1 reverse', () => <H4 reverse>Small Title</H4>)
-  .add('Small Title 1 muted', () => <H4 muted>Small Title</H4>)
-  .add('Small Title 1 noMargin', () => <H4 noMargin>Small Title</H4>)
+  .add('Subtitle', () => <Subtitle>Subtitle</Subtitle>)
+  .add('Subtitle secondary text color', () => (
+    <Subtitle secondary>Subtitle secondary text color</Subtitle>
+  ))
+  .add('Subtitle reverse', () => <Subtitle reverse>Subtitle reverse</Subtitle>)
+  .add('Subtitle textLight', () => (
+    <Subtitle textLight>Subtitle textLight</Subtitle>
+  ))
+  .add('Subtitle muted', () => <Subtitle muted>Subtitle muted</Subtitle>)
+  .add('Subtitle noPadding', () => (
+    <Subtitle noPadding>Subtitle without padding</Subtitle>
+  ))
 
-  .add('Small Title 2', () => <H5>Small Title</H5>)
-  .add('Small Title 2 noWrap', () => <H5 noWrap>Small Title</H5>)
-  .add('Small Title 2 noMargin', () => <H5 noMargin>Small Title</H5>)
-  .add('Small Title 2 reverse', () => <H5 reverse>Small Title</H5>)
-  .add('Small Title 2 noTop', () => <H5 noTop>Small Title</H5>)
-  .add('Small Title 2 noBottom', () => <H5 noBottom>Small Title</H5>)
+  .add('BodyStylised', () => <BodyStylised>BodyStylised</BodyStylised>)
+  .add('BodyStylised secondary text color', () => (
+    <BodyStylised secondary>BodyStylised secondary text color</BodyStylised>
+  ))
+  .add('BodyStylised reverse', () => (
+    <BodyStylised reverse>BodyStylised reverse</BodyStylised>
+  ))
+  .add('BodyStylised textLight', () => (
+    <BodyStylised textLight>BodyStylised textLight</BodyStylised>
+  ))
+  .add('BodyStylised muted', () => (
+    <BodyStylised muted>BodyStylised muted</BodyStylised>
+  ))
+  .add('BodyStylised noPadding', () => (
+    <BodyStylised noPadding>BodyStylised without padding</BodyStylised>
+  ))
 
-  .add('Small Title 3', () => <H6>Small Title</H6>)
-  .add('Small Title 3 muted', () => <H6 muted>Small Title</H6>)
-  .add('Small Title 3 underline', () => <H6 underline>Small Title</H6>)
-  .add('Small Title 3 noMargin', () => <H6 noMargin>Small Title</H6>)
-  .add('Small Title 3 reverse', () => <H6 reverse>Small Title</H6>)
-
-  .add('Paragraph', () => <P>Paragraph</P>)
-  .add('Paragraph padded', () => <P padded>Paragraph</P>)
-  .add('Paragraph secondary', () => <P secondary>Paragraph</P>)
-  .add('Paragraph reverse', () => <P reverse>Paragraph</P>)
-  .add('Paragraph muted', () => <P muted>Paragraph</P>)
-  .add('Paragraph noMargin', () => <P noMargin>Paragraph</P>)
-  .add('Paragraph bold', () => <P bold>Paragraph</P>)
-  .add('Paragraph fullWidth', () => <P fullWidth>Paragraph</P>)
-  .add('Paragraph center', () => <P center>Paragraph</P>)
+  .add('BodyPrimary', () => <BodyPrimary>BodyPrimary</BodyPrimary>)
+  .add('BodyPrimary secondary text color', () => (
+    <BodyPrimary secondary>BodyPrimary secondary text color</BodyPrimary>
+  ))
+  .add('BodyPrimary reverse', () => (
+    <BodyPrimary reverse>BodyPrimary reverse</BodyPrimary>
+  ))
+  .add('BodyPrimary textLight', () => (
+    <BodyPrimary textLight>BodyPrimary textLight</BodyPrimary>
+  ))
+  .add('BodyPrimary muted', () => (
+    <BodyPrimary muted>BodyPrimary muted</BodyPrimary>
+  ))
+  .add('BodyPrimary noPadding', () => (
+    <BodyPrimary noPadding>BodyPrimary without padding</BodyPrimary>
+  ))

@@ -2,7 +2,7 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../grid'
 import StyledLink from '../styledLink'
-import { H2 } from '../Typography'
+import { SectionTitle } from '../Typography'
 
 const ViewPositions = ({ text }) => (
   <Grid>
@@ -13,7 +13,7 @@ const ViewPositions = ({ text }) => (
       <Row>
         <Col width={[1, 1, 1, 1, 9 / 12]}>
           <Padding bottom={{ smallPhone: 2, tablet: 3 }}>
-            <H2>{text}</H2>
+            <SectionTitle>{text}</SectionTitle>
           </Padding>
           <StyledLink href="#open-positions">All job opportunities</StyledLink>
         </Col>

@@ -1,5 +1,6 @@
 import remcalc from 'remcalc'
 import styled from 'styled-components'
+import is from 'styled-is'
 
 export const Checkbox = styled.input`
   appearance: none;
@@ -33,6 +34,10 @@ export const Input = styled.input`
   font-size: ${remcalc(18)};
   background: ${props => props.theme.colors.greyBg};
   box-sizing: border-box;
+
+  ${is('noBoxShadow')`
+    box-shadow:none;
+  `};
 `
 
 export const Label = styled('label')`

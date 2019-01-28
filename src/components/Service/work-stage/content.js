@@ -1,20 +1,20 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
-import { Paragraph } from '../../Typography'
+import { Subtitle, BodyPrimary } from '../../Typography'
 import { Item, WorkStageContentList } from './elements'
 import Hr from '../../Common/Hr'
 
 const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => {
   const bodyList = sectionBody.split('- ')
-
+  console.log('s title', sectionTitle)
   return (
     <Fragment key={sectionTitle}>
-      <Paragraph reverse bold noMargin={!isList}>
+      <Subtitle reverse noPadding={!isList}>
         {sectionTitle}
-      </Paragraph>
-      <Paragraph muted reverse>
+      </Subtitle>
+      <BodyPrimary muted reverse noPadding>
         {bodyList[0]}
-      </Paragraph>
+      </BodyPrimary>
       {bodyList.slice(1).length > 0 && (
         <Padding top={1.5}>
           <WorkStageContentList>

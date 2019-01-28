@@ -2,7 +2,7 @@ import React from 'react'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { H2, Paragraph } from '../Typography'
+import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBackgroundWithoutOffset'
 import StyledLink from '../styledLink'
@@ -21,12 +21,10 @@ const GetInTouch = ({ title, contactText }) => (
       >
         <RowLayout>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <H2 small noTop>
-              {title}
-            </H2>
+            <SectionTitle noPadding>{`Talk to us about ${title}`}</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-            <Paragraph>{contactText}</Paragraph>
+            <BodyPrimary>{contactText}</BodyPrimary>
             <StyledLink to="/contact/">Get in touch</StyledLink>
           </Col>
         </RowLayout>

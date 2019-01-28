@@ -6,13 +6,18 @@ import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
-import { H2, H4, Paragraph } from '../Typography'
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 
-const BottomParagraph = styled(Paragraph)`
+const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
   bottom: ${remcalc(26)};
 `
+
+const CenteredCol = styled(Col)`
+  text-align: center;
+`
+
 const BookCol = styled(Col)`
   position: relative;
 
@@ -44,15 +49,17 @@ const BooksSection = ({ speciality }) =>
     additionalInfo => additionalInfo.type === `Book`
   ).length ? (
     <Grid>
-      <Padding vertical={{ desktop: 4, mobile: 3.5 }}>
+      <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>
           <Padding top={4} />
-          <Col width={[1]}>
-            <H2 small center>{`${speciality.title.trim()} books`}</H2>
-            <Paragraph center>
+          <CenteredCol width={[1]}>
+            <SectionTitle
+              small
+            >{`${speciality.title.trim()} books`}</SectionTitle>
+            <BodyPrimary>
               NodeJS books created by members of YLD for the community.
-            </Paragraph>
-          </Col>
+            </BodyPrimary>
+          </CenteredCol>
         </Row>
         <Row>
           {speciality.externalResources
@@ -73,17 +80,17 @@ const BooksSection = ({ speciality }) =>
                     rel="noopener noreferrer"
                   >
                     <Padding top={2} left={2} right={2}>
-                      <H4
+                      <CardTitle
                         normal
                         style={{
                           color: `${externalResource.colorCode}`
                         }}
                       >
                         {externalResource.title}
-                      </H4>
-                      <BottomParagraph>{`By ${
+                      </CardTitle>
+                      <BottomBodyPrimary>{`By ${
                         externalResource.additionalInfo
-                      }`}</BottomParagraph>
+                      }`}</BottomBodyPrimary>
                     </Padding>
                   </BooksBox>
                 </Padding>

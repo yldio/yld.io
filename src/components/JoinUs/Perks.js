@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { Paragraph, H2 } from '../Typography'
+import { SectionTitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
 
 import { Section } from './elements'
@@ -43,7 +43,7 @@ const PerkContainer = styled.li`
   flex-direction: column;
 `
 
-const PerkDescription = styled(Paragraph)`
+const PerkDescription = styled(BodyPrimary)`
   padding: ${remcalc(12)} 0;
 `
 const Perk = ({ icon, description }) => (
@@ -78,9 +78,9 @@ const Perks = ({ data: { title, text, perks } }) => (
     <Padding top={{ smallPhone: 3, tablet: 4 }}>
       <RowLayout>
         <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
-          <H2>{title}</H2>
+          <SectionTitle>{title}</SectionTitle>
           <Padding top={1}>
-            <Paragraph muted>{text}</Paragraph>
+            <BodyPrimary muted>{text}</BodyPrimary>
           </Padding>
         </Col>
         <PerksList perks={perks} />

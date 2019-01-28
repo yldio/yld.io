@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { CompensatedRow, CompensatedCol } from '../grid'
 import Image from '../Common/Image'
 import Hr from '../Common/Hr'
-import { Paragraph } from '../Typography'
+import { Subtitle } from '../Typography'
 
 import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
 
@@ -25,9 +25,7 @@ const Insight = ({ insight }) => (
         <Image image={insight.image} />
       </Padding>
       <PostTitleWrapper top={1.5} bottom={1}>
-        <Paragraph bold noMargin>
-          {insight.title}
-        </Paragraph>
+        <Subtitle noMargin>{insight.title}</Subtitle>
       </PostTitleWrapper>
       <Hr />
     </InsightAnchor>

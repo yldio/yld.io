@@ -4,7 +4,7 @@ import { CompensatedCol, CompensatedRow } from '../grid'
 import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
-import { Paragraph, H2, H5 } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Section } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
@@ -18,10 +18,10 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
     <Flex column>
       <JobLink href={hostedUrl}>
         <Padding top={1} bottom={0.5}>
-          <Paragraph noMargin>{text}</Paragraph>
-          <Paragraph noMargin muted>
+          <BodyPrimary noPadding>{text}</BodyPrimary>
+          <BodyPrimary noPadding muted>
             {commitment}
-          </Paragraph>
+          </BodyPrimary>
         </Padding>
       </JobLink>
       <Hr short />
@@ -36,7 +36,7 @@ class OpenPositions extends React.PureComponent {
     return (
       <Section greyBg id="open-positions">
         <Padding top={{ smallPhone: 3, tablet: 4 }}>
-          <H2>{title}</H2>
+          <SectionTitle>{title}</SectionTitle>
           <JobsByLocation>
             {jobs =>
               jobs.map(({ location, jobs: jobsForLocation }, idx) =>
@@ -52,7 +52,7 @@ class OpenPositions extends React.PureComponent {
   renderJobsForlocation = (jobs, location, key) => {
     return (
       <Padding top={3} key={key}>
-        <H5 as="h3">{location}</H5>
+        <Subtitle>{location}</Subtitle>
         <Padding top={2}>
           <CompensatedRow as="ul">
             {jobs.map((job, idx) => (

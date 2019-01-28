@@ -5,14 +5,14 @@ import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding, Margin } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
-import { H2, Paragraph } from '../../components/Typography'
+import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
+import GreyBackgroundWidthoutOffset from '../../components/GreyBackgroundWithoutOffset'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
@@ -36,20 +36,11 @@ const CenteredCol = styled(Col)`
 
 const GradientBackground = styled.div`
   background-image: linear-gradient(to top, #0c1835, #050a18);
-`
 
-const GradientGrid = styled(GradientBackground)`
   ${breakpoint('tablet')`
-    width: 73.5%;
+    width: 83.3%; // 10/12
+    margin: 0 auto;
   `}
-
-  ${breakpoint('desktop')`
-    width: 71%;
-  `}
-`
-
-const PaddedParagraph = styled(Paragraph)`
-  padding: ${remcalc(12)} 0;
 `
 
 const FirstParagraphCol = styled(Col)`
@@ -75,27 +66,27 @@ const BrAtTablet = styled.br`
 const GradientContent = ({ text, image }) => (
   <Fragment>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
         <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
-          <H2 reverse>
+          <SectionTitle reverse>
             Beyond <BrAtTablet /> photography
-          </H2>
+          </SectionTitle>
         </Margin>
       </CenteredCol>
     </Row>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
         <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
           {makeText(text).map((p, i) => (
-            <Paragraph muted reverse padded fullWidth key={i}>
+            <BodyPrimary muted reverse key={i}>
               {p}
-            </Paragraph>
+            </BodyPrimary>
           ))}
         </Margin>
       </CenteredCol>
     </Row>
     <Row>
-      <CenteredCol width={[1, 1, 1, 8 / 12, 7.7 / 12, 7.43 / 12]}>
+      <CenteredCol width={[1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
         <Image image={image} alt="Image of a travel itinerary" />
       </CenteredCol>
     </Row>
@@ -136,21 +127,19 @@ const IndexPage = ({
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
-              <Paragraph fullWidth key={i}>
-                {p}
-              </Paragraph>
+              <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
           </FirstParagraphCol>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
 
-      <GreyBackground>
+      <GreyBackgroundWidthoutOffset>
         <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1 / 2]}>
-                <H2>At the heart of a photo is a story</H2>
+                <SectionTitle>At the heart of a photo is a story</SectionTitle>
               </Col>
             </Row>
             <Row>
@@ -166,9 +155,7 @@ const IndexPage = ({
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
-                    <Paragraph padded fullWidth key={i}>
-                      {p}
-                    </Paragraph>
+                    <BodyPrimary key={i}>{p}</BodyPrimary>
                   ))}
                 </Margin>
               </RightAlignedCol>
@@ -176,18 +163,18 @@ const IndexPage = ({
           </Grid>
         </Padding>
 
-        <NoMobile tablet>
-          <GradientGrid>
+        <NoMobile tablet as={Grid}>
+          <GradientBackground>
             <GradientContent
               text={caseStudy.genericText3.genericText3}
               image={travel.childImageSharp}
             />
-          </GradientGrid>
+          </GradientBackground>
         </NoMobile>
-      </GreyBackground>
+      </GreyBackgroundWidthoutOffset>
 
       <MobileOnly tablet>
-        <GradientBackground as={Grid}>
+        <GradientBackground>
           <Grid>
             <GradientContent
               text={caseStudy.genericText3.genericText3}
@@ -198,14 +185,17 @@ const IndexPage = ({
       </MobileOnly>
 
       <Grid>
-        <Padding top={3.5} bottom={3}>
+        <Padding
+          top={{ smallPhone: 3.5, tablet: 5 }}
+          bottom={{ smallPhone: 3, smallTablet: 3.5, tablet: 4 }}
+        >
           <Row>
             <Col width={[1, 1, 1, 1 / 2]}>
-              <H2>Exploring the story</H2>
+              <SectionTitle>Exploring the story</SectionTitle>
             </Col>
             <Col width={[1, 1, 1, 1 / 2]}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
-                <PaddedParagraph key={i}>{p}</PaddedParagraph>
+                <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
           </Row>
@@ -235,13 +225,11 @@ const IndexPage = ({
           >
             <Row>
               <Col width={[1, 1, 1, 1 / 2]}>
-                <H2>Out in the wild</H2>
+                <SectionTitle>Out in the wild</SectionTitle>
               </Col>
               <Col width={[1, 1, 1, 1 / 2]}>
                 {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
-                  <Paragraph padded key={i}>
-                    {p}
-                  </Paragraph>
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </Col>
             </Row>
@@ -253,7 +241,7 @@ const IndexPage = ({
           <Row>
             <Col width={[1, 1, 1]}>
               <Padding top={4} bottom={2}>
-                <Paragraph>More of our work</Paragraph>
+                <BodyPrimary>More of our work</BodyPrimary>
               </Padding>
             </Col>
           </Row>

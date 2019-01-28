@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import { H2, H3, H5 } from '../components/Typography'
+import { SectionTitle, DisplayTitle, Subtitle } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -14,12 +14,9 @@ import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 import BlueBG from '../components/BlueBG'
 
-const Title = styled(H3)`
-  font-weight: normal;
+const FixedWidthTitle = styled(DisplayTitle)`
   ${breakpoint('smallTablet')`
     width: 593px;
-    font-size: 26px;
-    line-height: 30px;
   `}
 
   ${breakpoint('tablet')`
@@ -68,9 +65,9 @@ const Service = ({ data, location }) => {
                 top={{ smallPhone: 3, smallTablet: 4 }}
                 bottom={{ smallPhone: 0, smallTablet: 2 }}
               >
-                <Title as="h1">
+                <FixedWidthTitle as="h1" textLight>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
-                </Title>
+                </FixedWidthTitle>
               </Padding>
             </Col>
           </Row>
@@ -91,26 +88,26 @@ const Service = ({ data, location }) => {
           <Grid>
             <Row>
               <Col width={[1]}>
-                <H2>We work with</H2>
+                <SectionTitle>We work with</SectionTitle>
               </Col>
             </Row>
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 <WeWorkWithPadding index={1}>
-                  <H5>{service.specialityAreaTitle1}</H5>
+                  <Subtitle>{service.specialityAreaTitle1}</Subtitle>
                   <SeoLinks items={service.specialityAreaItems1} />
                 </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 <WeWorkWithPadding index={2}>
-                  <H5>{service.specialityAreaTitle2}</H5>
+                  <Subtitle>{service.specialityAreaTitle2}</Subtitle>
                   <SeoLinks items={service.specialityAreaItems2} />
                 </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle3 && (
                   <WeWorkWithPadding index={3}>
-                    <H5>{service.specialityAreaTitle3}</H5>
+                    <Subtitle>{service.specialityAreaTitle3}</Subtitle>
                     <SeoLinks items={service.specialityAreaItems3} />
                   </WeWorkWithPadding>
                 )}
@@ -118,7 +115,7 @@ const Service = ({ data, location }) => {
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 {service.specialityAreaTitle4 && (
                   <WeWorkWithPadding index={4}>
-                    <H5>{service.specialityAreaTitle4}</H5>
+                    <Subtitle>{service.specialityAreaTitle4}</Subtitle>
                     <SeoLinks items={service.specialityAreaItems4} />
                   </WeWorkWithPadding>
                 )}

@@ -110,17 +110,10 @@ const stylers = () => ({
 const GridStyled = styled.div`
   ${breakpoint('phone')`
     max-width: calc(100% - 62px);
-
-    p {
-      max-width: 390px;
-    }
   `}
 
   ${breakpoint('largePhone')`
     max-width: 480px;
-    p {
-      max-width: 390px;
-    }
   `}
 
   ${breakpoint('smallTablet')`

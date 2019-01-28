@@ -5,7 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 import { Col } from '../grid'
 import { Padding, Margin } from 'styled-components-spacing'
 import theme from '../../utils/theme'
-import { Paragraph } from '../Typography'
+import { BodyPrimary } from '../Typography'
 import darkIcon from '../../images/button-play-dark.svg'
 import lightIcon from '../../images/button-play-light.svg'
 
@@ -28,7 +28,7 @@ const PlayIcon = styled.img`
   max-height: ${theme.spacing[2]};
   max-width: ${theme.spacing[2]};
 `
-const TruncatedParagraph = styled(Paragraph)`
+const TruncatedParagraph = styled(BodyPrimary)`
   height: ${remcalc(48)};
   overflow: hidden;
   color: ${props => props.color};
@@ -117,7 +117,7 @@ const BaseVideoLink = ({
                     alt="Play button"
                   />
                 </Margin>
-                <TruncatedParagraph color={color} opacity={opacity} noMargin>
+                <TruncatedParagraph color={color} opacity={opacity} noPadding>
                   {children}
                 </TruncatedParagraph>
               </FlexContent>

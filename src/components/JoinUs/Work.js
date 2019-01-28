@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import { ColumnLayout } from '../grid'
-import { H3, Paragraph } from '../Typography'
+import { CardTitle, BodyPrimary } from '../Typography'
 import colorLuminance from 'color-luminance'
 
 import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
@@ -40,7 +40,7 @@ const CaseStudyWrapper = styled(Padding)`
   display: flex;
   width: 100%;
 `
-const CaseStudyTitle = styled(H3)`
+const CaseStudyTitle = styled(CardTitle)`
   font-size: ${remcalc(21)};
   line-height: ${remcalc(24)};
   color: ${props =>
@@ -68,10 +68,10 @@ const CaseStudy = ({ title, lightText, ...props }) => (
       vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
       horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}
     >
-      <Paragraph muted reverse={lightText} noMargin>
+      <BodyPrimary muted reverse noPadding>
         Case Study
-      </Paragraph>
-      <CaseStudyTitle reverse={lightText}>{title}</CaseStudyTitle>
+      </BodyPrimary>
+      <CaseStudyTitle reverse>{title}</CaseStudyTitle>
     </Padding>
   </CaseStudyLink>
 )
