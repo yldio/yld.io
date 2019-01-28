@@ -861,11 +861,158 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 </div>
 `;
 
+exports[`Storyshots Typography BodyPrimary 1`] = `
+<p
+  className="sc-gqjmRU ewbdOb"
+>
+  BodyPrimary
+</p>
+`;
+
+exports[`Storyshots Typography BodyPrimary muted 1`] = `
+<p
+  className="sc-gqjmRU gccgIt"
+  muted={true}
+>
+  BodyPrimary muted
+</p>
+`;
+
+exports[`Storyshots Typography BodyPrimary noPadding 1`] = `
+<p
+  className="sc-gqjmRU bndKCI"
+>
+  BodyPrimary without padding
+</p>
+`;
+
+exports[`Storyshots Typography BodyPrimary reverse 1`] = `
+<p
+  className="sc-gqjmRU dgTeFt"
+>
+  BodyPrimary reverse
+</p>
+`;
+
+exports[`Storyshots Typography BodyPrimary secondary text color 1`] = `
+<p
+  className="sc-gqjmRU bGZlRT"
+>
+  BodyPrimary secondary text color
+</p>
+`;
+
+exports[`Storyshots Typography BodyPrimary textLight 1`] = `
+<p
+  className="sc-gqjmRU dnOtvo"
+>
+  BodyPrimary textLight
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised 1`] = `
+<p
+  className="sc-gZMcBi dqQpFk"
+>
+  BodyStylised
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised muted 1`] = `
+<p
+  className="sc-gZMcBi hWsGll"
+  muted={true}
+>
+  BodyStylised muted
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised noPadding 1`] = `
+<p
+  className="sc-gZMcBi drmZpQ"
+>
+  BodyStylised without padding
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised reverse 1`] = `
+<p
+  className="sc-gZMcBi cSVRYM"
+>
+  BodyStylised reverse
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised secondary text color 1`] = `
+<p
+  className="sc-gZMcBi jToOyE"
+>
+  BodyStylised secondary text color
+</p>
+`;
+
+exports[`Storyshots Typography BodyStylised textLight 1`] = `
+<p
+  className="sc-gZMcBi dooHjB"
+>
+  BodyStylised textLight
+</p>
+`;
+
+exports[`Storyshots Typography CardTitle 1`] = `
+<h3
+  className="sc-dnqmqq BbvWD"
+>
+  Display Title
+</h3>
+`;
+
+exports[`Storyshots Typography CardTitle muted 1`] = `
+<h3
+  className="sc-dnqmqq eNEUaL"
+  muted={true}
+>
+  Card Title muted
+</h3>
+`;
+
+exports[`Storyshots Typography CardTitle noPadding 1`] = `
+<h3
+  className="sc-dnqmqq emzJLt"
+>
+  Card Title without padding
+</h3>
+`;
+
+exports[`Storyshots Typography CardTitle reverse 1`] = `
+<h3
+  className="sc-dnqmqq dIepBG"
+>
+  Card Title reverse
+</h3>
+`;
+
+exports[`Storyshots Typography CardTitle secondary text color 1`] = `
+<h3
+  className="sc-dnqmqq hZTrYl"
+>
+  Card Title secondary text color
+</h3>
+`;
+
+exports[`Storyshots Typography CardTitle textLight 1`] = `
+<h3
+  className="sc-dnqmqq jloQJZ"
+>
+  Card Title textLight
+</h3>
+`;
+
 exports[`Storyshots Typography DisplayTitle 1`] = `
 <h2
   className="sc-htoDjs kxmtHS"
 >
-  Section Title
+  Display Title
 </h2>
 `;
 
@@ -874,15 +1021,15 @@ exports[`Storyshots Typography DisplayTitle muted 1`] = `
   className="sc-htoDjs jfNtmJ"
   muted={true}
 >
-  Section Title muted
+  Display Title muted
 </h2>
 `;
 
-exports[`Storyshots Typography DisplayTitle regular 1`] = `
+exports[`Storyshots Typography DisplayTitle noPadding 1`] = `
 <h2
-  className="sc-htoDjs kxmtHS"
+  className="sc-htoDjs dRHNGK"
 >
-  Section Title regular
+  Display Title without padding
 </h2>
 `;
 
@@ -890,41 +1037,24 @@ exports[`Storyshots Typography DisplayTitle reverse 1`] = `
 <h2
   className="sc-htoDjs hraXzN"
 >
-  Section Title reverse
+  Display Title reverse
 </h2>
 `;
 
-exports[`Storyshots Typography Large Body 1`] = `
-<h4
-  className="sc-iwsKbI bpHRdi"
+exports[`Storyshots Typography DisplayTitle secondary text color 1`] = `
+<h2
+  className="sc-htoDjs hZgSYX"
 >
-  Large Body
-</h4>
+  Display Title secondary text color
+</h2>
 `;
 
-exports[`Storyshots Typography Large Body muted 1`] = `
-<h4
-  className="sc-iwsKbI eEBOyF"
-  muted={true}
+exports[`Storyshots Typography DisplayTitle textLight 1`] = `
+<h2
+  className="sc-htoDjs wOyLt"
 >
-  Large Body
-</h4>
-`;
-
-exports[`Storyshots Typography Large Body regular 1`] = `
-<h4
-  className="sc-iwsKbI bpHRdi"
->
-  Large Body
-</h4>
-`;
-
-exports[`Storyshots Typography Large Body reverse 1`] = `
-<h4
-  className="sc-iwsKbI kgFENl"
->
-  Large Body
-</h4>
+  Display Title textLight
+</h2>
 `;
 
 exports[`Storyshots Typography SectionTitle 1`] = `
@@ -944,11 +1074,11 @@ exports[`Storyshots Typography SectionTitle muted 1`] = `
 </h2>
 `;
 
-exports[`Storyshots Typography SectionTitle regular 1`] = `
+exports[`Storyshots Typography SectionTitle noPadding 1`] = `
 <h2
-  className="sc-gzVnrw gForec"
+  className="sc-gzVnrw eiKAfC"
 >
-  Section Title regular
+  Section Title without padding
 </h2>
 `;
 
@@ -960,83 +1090,67 @@ exports[`Storyshots Typography SectionTitle reverse 1`] = `
 </h2>
 `;
 
-exports[`Storyshots Typography Small Title 1 1`] = `
-<p
-  className="sc-gZMcBi dqQpFk"
+exports[`Storyshots Typography SectionTitle secondary text color 1`] = `
+<h2
+  className="sc-gzVnrw gAJaHT"
 >
-  Small Title
-</p>
+  Section Title secondary text color
+</h2>
 `;
 
-exports[`Storyshots Typography Small Title 1 muted 1`] = `
-<p
-  className="sc-gZMcBi hWsGll"
+exports[`Storyshots Typography SectionTitle textLight 1`] = `
+<h2
+  className="sc-gzVnrw dpdkgv"
+>
+  Section Title textLight
+</h2>
+`;
+
+exports[`Storyshots Typography Subtitle 1`] = `
+<h4
+  className="sc-iwsKbI bpHRdi"
+>
+  Subtitle
+</h4>
+`;
+
+exports[`Storyshots Typography Subtitle muted 1`] = `
+<h4
+  className="sc-iwsKbI eEBOyF"
   muted={true}
 >
-  Small Title
-</p>
+  Subtitle muted
+</h4>
 `;
 
-exports[`Storyshots Typography Small Title 1 noMargin 1`] = `
-<p
-  className="sc-gZMcBi dqQpFk"
+exports[`Storyshots Typography Subtitle noPadding 1`] = `
+<h4
+  className="sc-iwsKbI fDauwh"
 >
-  Small Title
-</p>
+  Subtitle without padding
+</h4>
 `;
 
-exports[`Storyshots Typography Small Title 1 reverse 1`] = `
-<p
-  className="sc-gZMcBi cSVRYM"
+exports[`Storyshots Typography Subtitle reverse 1`] = `
+<h4
+  className="sc-iwsKbI kgFENl"
 >
-  Small Title
-</p>
+  Subtitle reverse
+</h4>
 `;
 
-exports[`Storyshots Typography Small Title 2 1`] = `
-<p
-  className="sc-gqjmRU ewbdOb"
+exports[`Storyshots Typography Subtitle secondary text color 1`] = `
+<h4
+  className="sc-iwsKbI jxyNIB"
 >
-  Small Title
-</p>
+  Subtitle secondary text color
+</h4>
 `;
 
-exports[`Storyshots Typography Small Title 2 noBottom 1`] = `
-<p
-  className="sc-gqjmRU ewbdOb"
+exports[`Storyshots Typography Subtitle textLight 1`] = `
+<h4
+  className="sc-iwsKbI dBzMmU"
 >
-  Small Title
-</p>
-`;
-
-exports[`Storyshots Typography Small Title 2 noMargin 1`] = `
-<p
-  className="sc-gqjmRU ewbdOb"
->
-  Small Title
-</p>
-`;
-
-exports[`Storyshots Typography Small Title 2 noTop 1`] = `
-<p
-  className="sc-gqjmRU ewbdOb"
->
-  Small Title
-</p>
-`;
-
-exports[`Storyshots Typography Small Title 2 noWrap 1`] = `
-<p
-  className="sc-gqjmRU ewbdOb"
->
-  Small Title
-</p>
-`;
-
-exports[`Storyshots Typography Small Title 2 reverse 1`] = `
-<p
-  className="sc-gqjmRU dgTeFt"
->
-  Small Title
-</p>
+  Subtitle textLight
+</h4>
 `;

@@ -4,6 +4,7 @@ import Theme from './theme'
 import {
   SectionTitle,
   DisplayTitle,
+  CardTitle,
   Subtitle,
   BodyStylised,
   BodyPrimary
@@ -13,56 +14,97 @@ addDecorator(Theme)
 
 storiesOf('Typography', module)
   .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>)
+  .add('SectionTitle secondary text color', () => (
+    <SectionTitle secondary>Section Title secondary text color</SectionTitle>
+  ))
   .add('SectionTitle reverse', () => (
     <SectionTitle reverse>Section Title reverse</SectionTitle>
+  ))
+  .add('SectionTitle textLight', () => (
+    <SectionTitle textLight>Section Title textLight</SectionTitle>
   ))
   .add('SectionTitle muted', () => (
     <SectionTitle muted>Section Title muted</SectionTitle>
   ))
-  .add('SectionTitle regular', () => (
-    <SectionTitle regular>Section Title regular</SectionTitle>
+  .add('SectionTitle noPadding', () => (
+    <SectionTitle noPadding>Section Title without padding</SectionTitle>
   ))
 
-  .add('DisplayTitle', () => <DisplayTitle>Section Title</DisplayTitle>)
+  .add('DisplayTitle', () => <DisplayTitle>Display Title</DisplayTitle>)
+  .add('DisplayTitle secondary text color', () => (
+    <DisplayTitle secondary>Display Title secondary text color</DisplayTitle>
+  ))
   .add('DisplayTitle reverse', () => (
-    <DisplayTitle reverse>Section Title reverse</DisplayTitle>
+    <DisplayTitle reverse>Display Title reverse</DisplayTitle>
+  ))
+  .add('DisplayTitle textLight', () => (
+    <DisplayTitle textLight>Display Title textLight</DisplayTitle>
   ))
   .add('DisplayTitle muted', () => (
-    <DisplayTitle muted>Section Title muted</DisplayTitle>
+    <DisplayTitle muted>Display Title muted</DisplayTitle>
   ))
-  .add('DisplayTitle regular', () => (
-    <DisplayTitle regular>Section Title regular</DisplayTitle>
-  ))
-
-  .add('Large Body', () => <Subtitle>Large Body</Subtitle>)
-  .add('Large Body reverse', () => <Subtitle reverse>Large Body</Subtitle>)
-  .add('Large Body regular', () => <Subtitle regular>Large Body</Subtitle>)
-  .add('Large Body muted', () => <Subtitle muted>Large Body</Subtitle>)
-
-  .add('Small Title 1', () => <BodyStylised>Small Title</BodyStylised>)
-  .add('Small Title 1 reverse', () => (
-    <BodyStylised reverse>Small Title</BodyStylised>
-  ))
-  .add('Small Title 1 muted', () => (
-    <BodyStylised muted>Small Title</BodyStylised>
-  ))
-  .add('Small Title 1 noMargin', () => (
-    <BodyStylised noMargin>Small Title</BodyStylised>
+  .add('DisplayTitle noPadding', () => (
+    <DisplayTitle noPadding>Display Title without padding</DisplayTitle>
   ))
 
-  .add('Small Title 2', () => <BodyPrimary>Small Title</BodyPrimary>)
-  .add('Small Title 2 noWrap', () => (
-    <BodyPrimary noWrap>Small Title</BodyPrimary>
+  .add('CardTitle', () => <CardTitle>Display Title</CardTitle>)
+  .add('CardTitle secondary text color', () => (
+    <CardTitle secondary>Card Title secondary text color</CardTitle>
   ))
-  .add('Small Title 2 noMargin', () => (
-    <BodyPrimary noMargin>Small Title</BodyPrimary>
+  .add('CardTitle reverse', () => (
+    <CardTitle reverse>Card Title reverse</CardTitle>
   ))
-  .add('Small Title 2 reverse', () => (
-    <BodyPrimary reverse>Small Title</BodyPrimary>
+  .add('CardTitle textLight', () => (
+    <CardTitle textLight>Card Title textLight</CardTitle>
   ))
-  .add('Small Title 2 noTop', () => (
-    <BodyPrimary noTop>Small Title</BodyPrimary>
+  .add('CardTitle muted', () => <CardTitle muted>Card Title muted</CardTitle>)
+  .add('CardTitle noPadding', () => (
+    <CardTitle noPadding>Card Title without padding</CardTitle>
   ))
-  .add('Small Title 2 noBottom', () => (
-    <BodyPrimary noBottom>Small Title</BodyPrimary>
+
+  .add('Subtitle', () => <Subtitle>Subtitle</Subtitle>)
+  .add('Subtitle secondary text color', () => (
+    <Subtitle secondary>Subtitle secondary text color</Subtitle>
+  ))
+  .add('Subtitle reverse', () => <Subtitle reverse>Subtitle reverse</Subtitle>)
+  .add('Subtitle textLight', () => (
+    <Subtitle textLight>Subtitle textLight</Subtitle>
+  ))
+  .add('Subtitle muted', () => <Subtitle muted>Subtitle muted</Subtitle>)
+  .add('Subtitle noPadding', () => (
+    <Subtitle noPadding>Subtitle without padding</Subtitle>
+  ))
+
+  .add('BodyStylised', () => <BodyStylised>BodyStylised</BodyStylised>)
+  .add('BodyStylised secondary text color', () => (
+    <BodyStylised secondary>BodyStylised secondary text color</BodyStylised>
+  ))
+  .add('BodyStylised reverse', () => (
+    <BodyStylised reverse>BodyStylised reverse</BodyStylised>
+  ))
+  .add('BodyStylised textLight', () => (
+    <BodyStylised textLight>BodyStylised textLight</BodyStylised>
+  ))
+  .add('BodyStylised muted', () => (
+    <BodyStylised muted>BodyStylised muted</BodyStylised>
+  ))
+  .add('BodyStylised noPadding', () => (
+    <BodyStylised noPadding>BodyStylised without padding</BodyStylised>
+  ))
+
+  .add('BodyPrimary', () => <BodyPrimary>BodyPrimary</BodyPrimary>)
+  .add('BodyPrimary secondary text color', () => (
+    <BodyPrimary secondary>BodyPrimary secondary text color</BodyPrimary>
+  ))
+  .add('BodyPrimary reverse', () => (
+    <BodyPrimary reverse>BodyPrimary reverse</BodyPrimary>
+  ))
+  .add('BodyPrimary textLight', () => (
+    <BodyPrimary textLight>BodyPrimary textLight</BodyPrimary>
+  ))
+  .add('BodyPrimary muted', () => (
+    <BodyPrimary muted>BodyPrimary muted</BodyPrimary>
+  ))
+  .add('BodyPrimary noPadding', () => (
+    <BodyPrimary noPadding>BodyPrimary without padding</BodyPrimary>
   ))
