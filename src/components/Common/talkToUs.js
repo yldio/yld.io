@@ -14,7 +14,7 @@ const TalkToUsSection = ({ title, contactText }) => (
       >
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle noTop>{`Talk to us about ${title}`}</SectionTitle>
+            <SectionTitle>{title}</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Padding top={1}>
