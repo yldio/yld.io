@@ -2,6 +2,8 @@
 
 ## [Link](https://yldio.io/)
 
+## [Storybook](https://yld-storybook.now.sh)
+
 ## How to run
 
 ```bash
@@ -36,6 +38,21 @@ We have some docs to make it easier to get you started:
 ## Deployed Using
 
 - [Netlify](https://netlify.com/)
+
+## Browser support
+Browsers people are using to access our website, based on google analytics:
+- 70% chrome
+- 23% safari
+- 3.5% firefox
+- 0.15% IE
+
+We current support:
+- Chrome
+- Firefox
+- Safari
+- Edge
+
+We're working towrads supporting IE11 & introducing graceful fallbacks for earlier versions (for where this sits in our prioritise, see trello).
 
 ## License
 

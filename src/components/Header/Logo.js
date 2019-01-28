@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
 import LogoEngComponent from '../../images/eng-logo-component'
+import logoTraining from '../../images/training-logo.svg'
 
 const HiddenText = styled.h1`
   position: absolute;
@@ -21,10 +22,23 @@ const Logo = ({ path, logoColour, blue }) => {
         <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
       ) : null}
 
-      {path.includes('engineering') || path.includes('training') || blue ? (
+      {path.includes('engineering') || blue ? (
         <Fragment>
           <HiddenText>{name}</HiddenText>
           <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
+        </Fragment>
+      ) : null}
+
+      {path.includes('training') ? (
+        <Fragment>
+          <HiddenText>{name}</HiddenText>
+          <img
+            role="link"
+            tab-index="0"
+            height="48"
+            src={logoTraining}
+            alt="yld training logo"
+          />
         </Fragment>
       ) : null}
 
