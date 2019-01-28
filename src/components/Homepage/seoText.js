@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from '../grid'
 import styled from 'styled-components'
 import StyledLink from '../styledLink'
-import { H3 } from '../Typography'
+import { DisplayTitle } from '../Typography'
 
 const Link = styled(StyledLink)`
   margin-bottom: 0;
@@ -16,7 +16,7 @@ const Link = styled(StyledLink)`
 const SEOText = ({ text }) => (
   <Row>
     <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-      <H3 as="h1" regular>
+      <DisplayTitle as="h1" textLight>
         {text.map(content => {
           if (content.nodeType === 'text') return content.value
 
@@ -29,7 +29,7 @@ const SEOText = ({ text }) => (
           }
           return ''
         })}
-      </H3>
+      </DisplayTitle>
     </Col>
   </Row>
 )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import Flex from 'styled-flex-component'
-import { H2 } from '../Typography'
+import { SectionTitle } from '../Typography'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import { Grid, Row, Col } from '../grid'
@@ -14,7 +14,7 @@ const Courses = ({ categories, courses, toggleModal }) => (
           bottom={{ smallPhone: 3, tablet: 4 }}
           top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
         >
-          <H2 noMargin>Course catalog</H2>
+          <SectionTitle noPadding>Course catalog</SectionTitle>
         </Padding>
       </Col>
       {categories.map((cat, i) => {
@@ -24,7 +24,7 @@ const Courses = ({ categories, courses, toggleModal }) => (
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
               <Padding bottom={1}>
                 <Image image={courseInCat[0].logo} />
-                <H2>{cat}</H2>
+                <SectionTitle>{cat}</SectionTitle>
               </Padding>
               <Flex column alignStart>
                 {courseInCat.map((course, id) => (

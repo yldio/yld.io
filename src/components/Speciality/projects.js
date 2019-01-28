@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react'
+import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { H2, H3, H5, Paragraph } from '../Typography'
+import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import Companies from '../Homepage/companies'
+
+const Emphasis = styled.em`
+  color: ${props => props.theme.colors.secondaryText};
+`
 
 const PosterLinks = ({ project }) => (
   <AnimatedLink to={`/case-study/${project.slug}`}>
@@ -13,12 +18,12 @@ const PosterLinks = ({ project }) => (
       }}
     >
       <CardHeader>
-        <H3 noMargin reverse>
+        <CardTitle reverse noPadding bigger>
           {project.title}
-        </H3>
-        <Paragraph reverse muted>
+        </CardTitle>
+        <BodyPrimary reverse muted>
           {project.introSentence}
-        </Paragraph>
+        </BodyPrimary>
       </CardHeader>
       <PosterImage justifyCenter alignCenter color={project.posterColor}>
         <img
@@ -36,7 +41,7 @@ const CompaniesHelped = ({ speciality, noOther }) => (
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
         <Padding top={5} bottom={3}>
-          <H5 bold>{noOther ? 'C' : 'Other c'}lients we helped</H5>
+          <Subtitle>{noOther ? 'C' : 'Other c'}lients we helped</Subtitle>
         </Padding>
       </Col>
     </Row>
@@ -52,20 +57,20 @@ const ProjectsSection = ({ speciality }) => {
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
-              <H2 noMargin noBottom>
+              <SectionTitle>
                 {speciality.title}
-              </H2>
-              <H2 noMargin muted noTop>
-                related projects
-              </H2>
+                <br />
+                <Emphasis>related projects</Emphasis>
+              </SectionTitle>
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
-            <H2 noMargin>{speciality.title}</H2>
-            <H2 noMargin muted>
-              related projects
-            </H2>
+            <SectionTitle>
+              {speciality.title}
+              <br />
+              <Emphasis>related projects</Emphasis>
+            </SectionTitle>
           </Col>
           {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>

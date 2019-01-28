@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H6 } from '../Typography'
+import { BodyStylised } from '../Typography'
 import { Link } from 'gatsby'
 import PagePaths from '../pagePaths'
 
-const List = props => React.createElement(H6, props)
+const List = props => React.createElement(BodyStylised, props)
 
 const ListItem = styled.li`
   display: inline-block;

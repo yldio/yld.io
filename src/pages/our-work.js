@@ -9,11 +9,11 @@ import breakpoint from 'styled-components-breakpoint'
 import Layout from '../components/layout'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
-import { H1, H3 } from '../components/Typography'
+import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const SubHeading = styled(H3)`
+const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};
@@ -80,11 +80,11 @@ const OurWork = ({ data }) => {
                   tablet: 5
                 }}
               >
-                <H1>Our Work</H1>
-                <SubHeading as="h2" regular>
+                <SectionTitle as="h1">Our Work</SectionTitle>
+                <FixedWidthDisplayTitle regular textLight>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
-                </SubHeading>
+                </FixedWidthDisplayTitle>
               </Padding>
             </Col>
           </Row>

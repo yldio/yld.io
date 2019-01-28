@@ -1,21 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
-import { H2, Paragraph, H5 } from '../components/Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../components/Typography'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
-
-const Stat = styled(H2)`
-  font-size: ${remcalc(72)};
-  padding-bottom: 0 !important; /* sorry */
-`
 
 const CaseStudy = ({
   data: { allContentfulTemplatedCaseStudy, site },
@@ -47,9 +40,7 @@ const CaseStudy = ({
         <Row>
           <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
-              <Paragraph fullWidth padded key={i}>
-                {text}
-              </Paragraph>
+              <BodyPrimary key={i}>{text}</BodyPrimary>
             ))}
           </Col>
         </Row>
@@ -75,17 +66,15 @@ const CaseStudy = ({
           <Row>
             <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
               {body[2].map((text, i) => (
-                <Paragraph fullWidth padded key={i}>
-                  {text}
-                </Paragraph>
+                <BodyPrimary key={i}>{text}</BodyPrimary>
               ))}
             </Col>
             <Col>
               {caseStudy.stats &&
                 caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
-                    <Stat>{stat.value}</Stat>
-                    <H5>{stat.label}</H5>
+                    <SectionTitle>{stat.value}</SectionTitle>
+                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
                   </Margin>
                 ))}
             </Col>
@@ -97,7 +86,7 @@ const CaseStudy = ({
         <Row>
           <Col width={[1]}>
             <Padding top={4} bottom={2}>
-              <Paragraph fullWidth>More of our work</Paragraph>
+              <BodyPrimary>More of our work</BodyPrimary>
             </Padding>
           </Col>
         </Row>

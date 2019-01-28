@@ -8,7 +8,7 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import SeoLinks from '../Common/seoLinks'
-import { H2, H4, Paragraph } from '../Typography'
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -18,10 +18,6 @@ const CardHeader = styled.header`
   > div {
     max-width: ${remcalc(310)};
   }
-`
-
-const Title = styled(H4)`
-  font-weight: 500;
 `
 
 const AnimatedLink = styled(Link)`
@@ -95,9 +91,9 @@ const Services = ({ services }) => (
                   bottom={{ smallPhone: 0, smallTablet: 2 }}
                 />
               ) : null}
-              <H2>{service.title}</H2>
+              <SectionTitle>{service.title}</SectionTitle>
               <Padding top={1.5} bottom={0.5}>
-                <Paragraph>{service.introSentence.introSentence}</Paragraph>
+                <BodyPrimary>{service.introSentence.introSentence}</BodyPrimary>
               </Padding>
               {service.homePageSpecialities &&
                 service.homePageSpecialities.length && (
@@ -124,12 +120,12 @@ const Services = ({ services }) => (
                 >
                   <CardHeader>
                     <section>
-                      <Paragraph reverse muted>
+                      <BodyPrimary reverse muted>
                         Case study
-                      </Paragraph>
-                      <Title noMargin reverse>
+                      </BodyPrimary>
+                      <CardTitle reverse noPadding>
                         {service.caseStudies[0].title}
-                      </Title>
+                      </CardTitle>
                     </section>
                   </CardHeader>
                   <PosterImage color={service.caseStudies[0].posterColor}>

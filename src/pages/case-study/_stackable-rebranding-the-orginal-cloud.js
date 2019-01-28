@@ -6,7 +6,7 @@ import remcalc from 'remcalc'
 import { Padding, Margin } from 'styled-components-spacing'
 import Flex from 'styled-flex-component'
 import { Grid, Row, Col } from '../../components/grid'
-import { H2, Paragraph, H6 } from '../../components/Typography'
+import { SectionTitle, Paragraph, H6 } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
@@ -107,7 +107,7 @@ const IndexPage = ({
           <Grid>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2>Building from the logo upwards</H2>
+                <SectionTitle>Building from the logo upwards</SectionTitle>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
@@ -141,7 +141,7 @@ const IndexPage = ({
         <Padding top={60} bottom={3}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2>Cutting the wordmark</H2>
+              <SectionTitle>Cutting the wordmark</SectionTitle>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
@@ -166,7 +166,7 @@ const IndexPage = ({
           <Padding top={6}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2>Custom typeface</H2>
+                <SectionTitle>Custom typeface</SectionTitle>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
@@ -213,7 +213,7 @@ const IndexPage = ({
         <Padding top={60} bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2>New icon system</H2>
+              <SectionTitle>New icon system</SectionTitle>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
@@ -241,7 +241,7 @@ const IndexPage = ({
         <Padding bottom={4}>
           <Row>
             <Col xs={12} sm={12} md={6}>
-              <H2>Colour approach</H2>
+              <SectionTitle>Colour approach</SectionTitle>
             </Col>
             <Col xs={12} sm={12} md={6}>
               {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
@@ -268,7 +268,7 @@ const IndexPage = ({
           <Padding top={60} bottom={5}>
             <Row>
               <Col xs={12} sm={12} md={6}>
-                <H2>Putting it all together</H2>
+                <SectionTitle>Putting it all together</SectionTitle>
               </Col>
               <Col xs={12} sm={12} md={6}>
                 {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
@@ -293,7 +293,7 @@ const IndexPage = ({
           <Row>
             <Col xs={12} sm={12} md={6}>
               <Margin bottom={1}>
-                <H2>Product vision</H2>
+                <SectionTitle>Product vision</SectionTitle>
               </Margin>
               {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
                 <Paragraph padded key={i}>

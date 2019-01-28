@@ -5,20 +5,8 @@ import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
-import { H4, Paragraph } from '../Typography'
+import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
-
-const Services = styled(Paragraph).attrs({ muted: true })`
-  // overwrite default padding on Paragraph component
-  padding-bottom: 0;
-`
-
-const IntroSentence = styled(Paragraph).attrs({ fullWidth: true })`
-  padding-bottom: 6px;
-  ${breakpoint('tablet')`
-    padding-bottom: 12px;
-  `}
-`
 
 const FlexCol = styled(Col)`
   display: flex;
@@ -48,16 +36,18 @@ const TitleSection = ({ services, title }) => {
   ].join(services.length < 2 ? '' : ' & ')
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-      <Services>{commaSeparatedServices}</Services>
-      <H4 as="h2">{title}</H4>
+      <BodyPrimary muted noPadding>
+        {commaSeparatedServices}
+      </BodyPrimary>
+      <CardTitle as="h2">{title}</CardTitle>
     </Padding>
   )
 }
 
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
-    <Padding top={1}>
-      <IntroSentence fullWidth>{introSentence}</IntroSentence>
+    <Padding bottom={{ smallPhone: 0.5, tablet: 1 }}>
+      <BodyPrimary>{introSentence}</BodyPrimary>
     </Padding>
     <StyledLink
       aria-label={`Learn more about ${title}`}

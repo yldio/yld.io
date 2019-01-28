@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
-import { H1, H4, Paragraph } from '../Typography'
+import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../BlueBG'
 import Flex from 'styled-flex-component'
@@ -12,12 +12,12 @@ const IntroBorder = styled(Col)`
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={2} bottom={2}>
-      <Paragraph bold reverse>
+      <Subtitle reverse noPadding>
         {introTextTitle}
-      </Paragraph>
-      <Paragraph muted reverse>
+      </Subtitle>
+      <BodyPrimary muted reverse>
         {introTextBody.content[0].content[0].value}
-      </Paragraph>
+      </BodyPrimary>
     </Padding>
   </IntroBorder>
 )
@@ -29,10 +29,10 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
-              <H1 reverse>{speciality.title}</H1>
-              <Paragraph reverse muted>
+              <SectionTitle reverse>{speciality.title}</SectionTitle>
+              <BodyPrimary reverse muted>
                 {speciality.seoText.content[0].content[0].value}
-              </Paragraph>
+              </BodyPrimary>
             </Flex>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -46,7 +46,9 @@ const IntroSection = ({ speciality }) => (
         <Row>
           <Col width={[1]}>
             <Padding top={2} bottom={2}>
-              <H4 reverse>{speciality.introTitle}</H4>
+              <CardTitle reverse noPadding>
+                {speciality.introTitle}
+              </CardTitle>
             </Padding>
           </Col>
         </Row>

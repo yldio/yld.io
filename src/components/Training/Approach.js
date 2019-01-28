@@ -1,7 +1,7 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
 
-import { H2, Paragraph } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
 import BlueBG from '../BlueBG'
@@ -16,21 +16,21 @@ const Approach = ({ title, content, formats }) => (
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <Padding bottom={{ smallPhone: 3, tablet: 0 }}>
-              <H2 noTop style={{ maxWidth: 250 }} reverse>
+              <SectionTitle noTop style={{ maxWidth: 250 }} reverse>
                 Our training approach
-              </H2>
+              </SectionTitle>
             </Padding>
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <Padding top={{ smallPhone: 1, desktop: 0 }}>
               {title.map((approach, i) => (
                 <Padding bottom={2} key={i}>
-                  <Paragraph noMargin fullWidth reverse bold>
+                  <BodyPrimary noPadding reverse>
                     {approach}
-                  </Paragraph>
-                  <Paragraph fullWidth reverse muted>
+                  </BodyPrimary>
+                  <BodyPrimary reverse muted>
                     {content[i]}
-                  </Paragraph>
+                  </BodyPrimary>
                 </Padding>
               ))}
             </Padding>
@@ -44,7 +44,7 @@ const Approach = ({ title, content, formats }) => (
         </Padding>
         <Row>
           <Col width={[1]}>
-            <H2 reverse>Our training formats</H2>
+            <SectionTitle reverse>Our training formats</SectionTitle>
           </Col>
         </Row>
       </Grid>
@@ -60,18 +60,18 @@ const Approach = ({ title, content, formats }) => (
                   alt={format.icon.title}
                 />
               </Padding>
-              <Paragraph noMargin bold reverse>
+              <Subtitle noPadding reverse>
                 {format.title}
-              </Paragraph>
-              <Paragraph muted reverse>
+              </Subtitle>
+              <BodyPrimary muted reverse>
                 {format.description}
-              </Paragraph>
+              </BodyPrimary>
               <Padding top={1} style={{ maxWidth: '80%' }}>
                 {format.bulletPoints.map((point, i) => (
                   <Padding top={1} key={i}>
-                    <Paragraph muted reverse>
+                    <BodyPrimary muted reverse>
                       {point}
-                    </Paragraph>
+                    </BodyPrimary>
                     <Hr short muted />
                   </Padding>
                 ))}

@@ -23,9 +23,7 @@ const WorkStages = ({ title, workStages, image }) => (
           <Graphic>
             <Image image={image} />
           </Graphic>
-          <How reverse center>
-            {title}
-          </How>
+          <How reverse>{title}</How>
         </Col>
       </Row>
     </HowGrid>

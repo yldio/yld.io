@@ -2,7 +2,7 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 import { Row, Col, Grid } from '../grid'
-import { H2, H5, Paragraph } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 import Posts from '../posts'
 import Li from '../listItem'
@@ -16,10 +16,10 @@ const BlogPosts = ({ speciality }) => (
           <Padding vertical={{ desktop: 4, smallTablet: 3.5 }}>
             <Row>
               <Col width={[1, 1, 1, 1, 6 / 12]}>
-                <H2 small>{`From the blog`}</H2>
-                <Paragraph>{`${
+                <SectionTitle>{`From the blog`}</SectionTitle>
+                <BodyPrimary>{`${
                   speciality.title
-                } articles created by members of YLD for the community.`}</Paragraph>
+                } articles created by members of YLD for the community.`}</BodyPrimary>
               </Col>
               <Col width={[1, 1, 1, 1, 4 / 12]}>
                 <Padding top={1}>
@@ -28,13 +28,13 @@ const BlogPosts = ({ speciality }) => (
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
                         <Li key={`${id}`} fullWidthDivider>
-                          <H5 bold>
+                          <Subtitle>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
                             >
                               {title}
                             </a>
-                          </H5>
+                          </Subtitle>
                           {format(new Date(createdAt), 'MMMM DD[,] dddd')}
                         </Li>
                       ))}

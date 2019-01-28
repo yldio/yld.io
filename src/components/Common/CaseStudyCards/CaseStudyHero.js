@@ -4,7 +4,7 @@ import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import CaseStudyLayout from './CaseStudyLayout'
-import { H2, H5 } from '../../Typography'
+import { SectionTitle, Subtitle } from '../../Typography'
 import SeoLinks from '../seoLinks'
 
 const FlexCol = styled(Col)`
@@ -13,11 +13,9 @@ const FlexCol = styled(Col)`
 
 const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
-    <H5 noMargin noWrap>
-      {heading}
-    </H5>
+    <Subtitle>{heading}</Subtitle>
     <Flex alignCenter wrap>
-      <SeoLinks noMargin items={items} />
+      <SeoLinks noPadding items={items} />
     </Flex>
   </Padding>
 )
@@ -34,7 +32,7 @@ const SpecialitiesAndServices = ({ specialities, services }) => (
 const RightHandText = ({ title, specialities, services }) => (
   <Fragment>
     <Padding bottom={0.5}>
-      <H2>{title}</H2>
+      <SectionTitle>{title}</SectionTitle>
     </Padding>
     <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1, 5 / 6, 5 / 6]}>
       <Padding bottom={1}>
@@ -52,7 +50,7 @@ const CaseStudyHero = ({ caseStudy }) => {
   return (
     <CaseStudyLayout
       posterImage={posterImage}
-      headings={<H2>{title}</H2>}
+      headings={<SectionTitle>{title}</SectionTitle>}
       textBelowImage={
         <SpecialitiesAndServices
           specialities={specialities}

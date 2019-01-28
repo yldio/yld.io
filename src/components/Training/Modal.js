@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
-import { H2, Paragraph } from '../Typography'
+import { SectionTitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 
@@ -91,14 +91,14 @@ const Modal = ({ content, toggleModal }) => (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               <Image image={content.logo} />
               <Padding bottom={2}>
-                <H2>{content.name}</H2>
+                <SectionTitle>{content.name}</SectionTitle>
               </Padding>
-              <Paragraph bold>Level</Paragraph>
-              <Paragraph>{content.level}</Paragraph>
-              <Paragraph bold>Pre-requisites</Paragraph>
-              <Paragraph>{content.preRequisites}</Paragraph>
-              <Paragraph bold>Pre-requisite Courses</Paragraph>
-              <Paragraph>{content.preRequisitesCourses}</Paragraph>
+              <BodyPrimary bold>Level</BodyPrimary>
+              <BodyPrimary>{content.level}</BodyPrimary>
+              <BodyPrimary bold>Pre-requisites</BodyPrimary>
+              <BodyPrimary>{content.preRequisites}</BodyPrimary>
+              <BodyPrimary bold>Pre-requisite Courses</BodyPrimary>
+              <BodyPrimary>{content.preRequisitesCourses}</BodyPrimary>
               <Padding top={48}>
                 <StyledLink to="/contact">Contact us</StyledLink>
               </Padding>
@@ -107,8 +107,8 @@ const Modal = ({ content, toggleModal }) => (
               <Padding top={4}>
                 <ReactMarkdown
                   renderers={{
-                    paragraph: props => <Paragraph {...props} />, // eslint-disable-line react/display-name
-                    heading: props => <Paragraph bold {...props} /> // eslint-disable-line react/display-name
+                    paragraph: props => <BodyPrimary {...props} />, // eslint-disable-line react/display-name
+                    heading: props => <BodyPrimary bold {...props} /> // eslint-disable-line react/display-name
                   }}
                   source={content.description.description}
                 />

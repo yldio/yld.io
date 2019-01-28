@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Grid, Row, Col } from '../../grid'
 import { Padding } from 'styled-components-spacing'
-import { H2 } from '../../Typography'
+import { SectionTitle } from '../../Typography'
 import { SwitchLink } from './elements'
 import WorkStageContent from './content'
 import getSections from './getSections'
@@ -29,7 +29,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
               tablet: 2
             }}
           >
-            <H2 reverse>{workStage.title}</H2>
+            <SectionTitle reverse>{workStage.title}</SectionTitle>
           </Padding>
           {alternatives &&
             alternatives.map(alternative => (
@@ -74,10 +74,7 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
                 )
               )
             : sections.map(({ sectionTitle, sectionBody }, index) => (
-                <Padding
-                  bottom={{ smallPhone: 3, smallTablet: 0, tablet: 1 }}
-                  key={index}
-                >
+                <Padding bottom={{ smallPhone: 1, tablet: 2 }} key={index}>
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
