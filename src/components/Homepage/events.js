@@ -22,9 +22,8 @@ const EventWrapper = styled.header`
   `};
 `
 
-const StyledBodyPrimary = styled(BodyPrimary)`
+const FixedWidthBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(380)};
-  margin-bottom: ${remcalc(3)};
 `
 
 const EventsColumn = styled(Col)`
@@ -94,9 +93,9 @@ const Events = ({ events }) => (
                 {node.eventTitle}
               </CardTitle>
               <Padding top={0.5}>
-                <StyledBodyPrimary muted reverse>
+                <FixedWidthBodyPrimary muted reverse>
                   {node.blurb.blurb}
-                </StyledBodyPrimary>
+                </FixedWidthBodyPrimary>
               </Padding>
               <StyledLink
                 reverse

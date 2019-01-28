@@ -13,7 +13,7 @@ import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-const ShortenedH2 = styled(DisplayTitle)`
+const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
     max-width: ${remcalc(593)};
@@ -81,10 +81,10 @@ const OurWork = ({ data }) => {
                 }}
               >
                 <SectionTitle as="h1">Our Work</SectionTitle>
-                <ShortenedH2 as="h2" regular textLight>
+                <FixedWidthDisplayTitle regular textLight>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
-                </ShortenedH2>
+                </FixedWidthDisplayTitle>
               </Padding>
             </Col>
           </Row>
