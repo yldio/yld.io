@@ -8,13 +8,6 @@ import Image from '../Common/Image'
 import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
-const IntroSentence = styled(BodyPrimary)`
-  padding-bottom: 6px;
-  ${breakpoint('tablet')`
-    padding-bottom: 12px;
-  `}
-`
-
 const FlexCol = styled(Col)`
   display: flex;
   ${breakpoint('tablet')`
@@ -53,7 +46,9 @@ const TitleSection = ({ services, title }) => {
 
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
-    <IntroSentence>{introSentence}</IntroSentence>
+    <Padding bottom={{ smallPhone: 0.5, tablet: 1 }}>
+      <BodyPrimary>{introSentence}</BodyPrimary>
+    </Padding>
     <StyledLink
       aria-label={`Learn more about ${title}`}
       to={`/case-study/${slug}`}
