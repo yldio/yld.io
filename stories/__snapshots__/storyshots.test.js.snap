@@ -460,7 +460,7 @@ exports[`Storyshots Form Field 1`] = `
   className="sc-iAyFgw loeUlM"
 >
   <input
-    className="sc-hMqMXs bczBDs"
+    className="sc-hMqMXs jhfsny"
     placeholder="test"
     type="text"
   />
@@ -472,7 +472,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   className="sc-hSdWYo heWctq"
 >
   <input
-    className="sc-hMqMXs bczBDs"
+    className="sc-hMqMXs jhfsny"
     placeholder="test"
     type="text"
   />
@@ -481,7 +481,7 @@ exports[`Storyshots Form Fieldset 1`] = `
 
 exports[`Storyshots Form Input 1`] = `
 <input
-  className="sc-hMqMXs bczBDs"
+  className="sc-hMqMXs jhfsny"
   placeholder="test"
   type="text"
 />
