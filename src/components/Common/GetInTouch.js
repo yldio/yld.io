@@ -21,7 +21,7 @@ const GetInTouch = ({ title, contactText }) => (
       >
         <RowLayout>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle noPadding>{`Talk to us about ${title}`}</SectionTitle>
+            <SectionTitle noPadding>{title}</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
             <BodyPrimary>{contactText}</BodyPrimary>
