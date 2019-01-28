@@ -5,6 +5,8 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
 import BlueBG from '../BlueBG'
+import TitleAndList from '../Common/TitleAndList'
+
 
 const Approach = ({ title, content, formats }) => (
   <BlueBG>
@@ -13,29 +15,11 @@ const Approach = ({ title, content, formats }) => (
       bottom={{ smallPhone: 3, desktop: 4 }}
     >
       <Grid>
-        <Row>
-          <Col width={[1, 1, 1, 1, 1 / 2]}>
-            <Padding bottom={{ smallPhone: 3, tablet: 0 }}>
-              <SectionTitle noTop style={{ maxWidth: 250 }} reverse>
-                Our training approach
-              </SectionTitle>
-            </Padding>
-          </Col>
-          <Col width={[1, 1, 1, 1, 1 / 2]}>
-            <Padding top={{ smallPhone: 1, desktop: 0 }}>
-              {title.map((approach, i) => (
-                <Padding bottom={2} key={i}>
-                  <BodyPrimary noPadding reverse>
-                    {approach}
-                  </BodyPrimary>
-                  <BodyPrimary reverse muted>
-                    {content[i]}
-                  </BodyPrimary>
-                </Padding>
-              ))}
-            </Padding>
-          </Col>
-        </Row>
+        <TitleAndList
+          title={'Our training approach '}
+          list={title.map((approach, i) => ({ title: approach, body: content[i] }))}
+          bg="dark"
+        />
         <Padding
           top={{ smallPhone: 3, tablet: 48 }}
           bottom={{ smallPhone: 3, tablet: 4 }}
