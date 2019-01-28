@@ -8,11 +8,6 @@ import Image from '../Common/Image'
 import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
-const Services = styled(BodyPrimary).attrs({ muted: true })`
-  // overwrite default padding on BodyPrimary component
-  padding-bottom: 0;
-`
-
 const IntroSentence = styled(BodyPrimary)`
   padding-bottom: 6px;
   ${breakpoint('tablet')`
@@ -48,7 +43,9 @@ const TitleSection = ({ services, title }) => {
   ].join(services.length < 2 ? '' : ' & ')
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-      <Services>{commaSeparatedServices}</Services>
+      <BodyPrimary muted noPadding>
+        {commaSeparatedServices}
+      </BodyPrimary>
       <CardTitle as="h2">{title}</CardTitle>
     </Padding>
   )
@@ -56,9 +53,7 @@ const TitleSection = ({ services, title }) => {
 
 const InfoSection = ({ introSentence, title, slug }) => (
   <Fragment>
-    <Padding top={1}>
-      <IntroSentence>{introSentence}</IntroSentence>
-    </Padding>
+    <IntroSentence>{introSentence}</IntroSentence>
     <StyledLink
       aria-label={`Learn more about ${title}`}
       to={`/case-study/${slug}`}
