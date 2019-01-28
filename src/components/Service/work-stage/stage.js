@@ -5,23 +5,31 @@ import { SectionTitle } from '../../Typography'
 import { SwitchLink } from './elements'
 import WorkStageContent from './content'
 import getSections from './getSections'
+import TitleAndList from '../../Common/TitleAndList'
 
 const WorkStage = ({ workStage, handleClick, alternatives }) => {
   const Tag = workStage.displayType === 'List' ? Col : Fragment
   const sections = getSections(workStage)
+
+  if (workStage.displayType === 'List') {
+    return (
+      <Grid>
+        <TitleAndList
+          title={workStage.title}
+          list={sections.map(({ sectionTitle: title, sectionBody: body }) => ({
+            title,
+            body
+          }))}
+          bg="dark"
+        />
+      </Grid>
+    )
+  }
+
   return (
     <Grid>
       <Row>
-        <Col
-          width={[
-            1,
-            1,
-            1,
-            1,
-            workStage.displayType !== 'List' ? 1 : 0.416,
-            workStage.displayType !== 'List' ? 1 : 1 / 2
-          ]}
-        >
+        <Col width={[1, 1, 1, 1]}>
           <Padding
             bottom={{
               smallPhone: alternatives ? 0 : 3,
@@ -44,43 +52,33 @@ const WorkStage = ({ workStage, handleClick, alternatives }) => {
             ))}
         </Col>
         <Tag width={[1, 1, 1, 1, 0.583, 1 / 2]}>
-          {workStage.displayType !== 'List'
-            ? sections.map(
-                ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
-                  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
-                    <Padding
-                      bottom={{
-                        smallPhone: 3,
-                        smallTablet:
-                          index === arr.length - 1 ||
-                          (arr.length % 2 === 0 && index === arr.length - 2)
-                            ? 3.5
-                            : 4
-                      }}
-                    >
-                      <Padding bottom={1.5}>
-                        <img
-                          src={`https://${sectionIcon.file.url}`}
-                          alt={sectionIcon.title}
-                        />
-                      </Padding>
-                      <WorkStageContent
-                        isList
-                        sectionTitle={sectionTitle}
-                        sectionBody={sectionBody}
-                      />
-                    </Padding>
-                  </Col>
-                )
-              )
-            : sections.map(({ sectionTitle, sectionBody }, index) => (
-                <Padding bottom={{ smallPhone: 1, tablet: 2 }} key={index}>
+          {sections.map(
+            ({ sectionTitle, sectionBody, sectionIcon }, index, arr) => (
+              <Col width={[1, 1, 1, 1, 1 / 2, 1 / 3]} key={index}>
+                <Padding
+                  bottom={{
+                    smallPhone: 3,
+                    smallTablet:
+                      index === arr.length - 1 ||
+                      (arr.length % 2 === 0 && index === arr.length - 2)
+                        ? 3.5
+                        : 4
+                  }}
+                >
+                  <Padding bottom={1.5}>
+                    <img
+                      src={`https://${sectionIcon.file.url}`}
+                      alt={sectionIcon.title}
+                    />
+                  </Padding>
                   <WorkStageContent
                     sectionTitle={sectionTitle}
                     sectionBody={sectionBody}
                   />
                 </Padding>
-              ))}
+              </Col>
+            )
+          )}
         </Tag>
       </Row>
     </Grid>
