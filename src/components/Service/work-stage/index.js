@@ -27,29 +27,18 @@ const WorkStages = ({ title, workStages, image }) => (
         </Col>
       </Row>
     </HowGrid>
-    {workStages.map((workStage, index, arr) => (
-      <Fragment key={workStage.id}>
-        <Padding
-          top={{
-            smallPhone: index === 0 ? 0 : 3,
-            smallTablet: index === 0 ? 5 : 3,
-            tablet: index === 0 ? 3.5 : 4
-          }}
-          bottom={{
-            smallTablet:
-              workStage.displayType === 'Grid' ? 0 : index === 0 ? 3 : 4,
-            tablet: workStage.displayType === 'Grid' ? 0 : index === 0 ? 4 : 5
-          }}
-        >
+    <Padding vertical={{ smallPhone: 1.5, tablet: 3 }}>
+      {workStages.map((workStage, index, arr) => (
+        <Fragment key={workStage.id}>
           <WorkStageAlternatives workStage={workStage} />
-        </Padding>
-        {index !== arr.length - 1 && (
-          <Grid>
-            <Hr muted />
-          </Grid>
-        )}
-      </Fragment>
-    ))}
+          {index !== arr.length - 1 && (
+            <Grid>
+              <Hr muted />
+            </Grid>
+          )}
+        </Fragment>
+      ))}
+    </Padding>
   </Fragment>
 )
 
