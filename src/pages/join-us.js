@@ -24,7 +24,10 @@ class JoinUs extends Component {
         >
           <html lang="en" />
         </Helmet>
-        <ViewPositions text={content.introductionText.introductionText} />
+        <ViewPositions
+          text={content.introductionText.introductionText}
+          description={content.introductionDescription.introductionDescription}
+        />
         <Learning
           data={{
             title: content.learningTitle,
@@ -87,6 +90,9 @@ const JoinUsPage = props => (
           seoTitle
           introductionText {
             introductionText
+          }
+          introductionDescription {
+            introductionDescription
           }
           learningTitle
           learningText {
