@@ -1,5 +1,4 @@
 import React from 'react'
-import remcalc from 'remcalc'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Col, Row } from '../grid'
@@ -11,7 +10,6 @@ const OuterPaddings = ({ children }) => (
 )
 
 const ParagraphWithOptionalPadding = styled(BodyPrimary)`
-  padding-bottom: ${remcalc(24)};
   &:last-child {
     padding: 0;
   }
