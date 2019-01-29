@@ -886,7 +886,7 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
           className="sc-bZQynM keNvTb"
         >
           <h2
-            className="sc-gzVnrw eiKAfC"
+            className="sc-gzVnrw gForec"
           >
             This is the Title
           </h2>
@@ -904,23 +904,23 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
         }
       >
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -956,7 +956,7 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
           className="sc-bZQynM keNvTb"
         >
           <h2
-            className="sc-gzVnrw eiKAfC"
+            className="sc-gzVnrw gForec"
           >
             This is the Title
           </h2>
@@ -974,34 +974,34 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
         }
       >
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
         </p>
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1040,7 +1040,7 @@ exports[`Storyshots Title and List on dark background 1`] = `
             className="sc-bZQynM keNvTb"
           >
             <h2
-              className="sc-gzVnrw Feyxc"
+              className="sc-gzVnrw kfMiWA"
             >
               This is the Title
             </h2>
@@ -1058,34 +1058,34 @@ exports[`Storyshots Title and List on dark background 1`] = `
           }
         >
           <h3
-            className="sc-iwsKbI bJZtSS"
+            className="sc-cvbbAY jBcaMy"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL cdBcjs"
+            className="sc-eHgmQL jjxVMR"
             muted={true}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
           </p>
           <h3
-            className="sc-iwsKbI bJZtSS"
+            className="sc-cvbbAY jBcaMy"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL cdBcjs"
+            className="sc-eHgmQL jjxVMR"
             muted={true}
           >
             Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
           </p>
           <h3
-            className="sc-iwsKbI bJZtSS"
+            className="sc-cvbbAY jBcaMy"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL cdBcjs"
+            className="sc-eHgmQL jjxVMR"
             muted={true}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1125,7 +1125,7 @@ exports[`Storyshots Title and List on grey background 1`] = `
             className="sc-bZQynM keNvTb"
           >
             <h2
-              className="sc-gzVnrw eiKAfC"
+              className="sc-gzVnrw gForec"
             >
               This is the Title
             </h2>
@@ -1143,34 +1143,34 @@ exports[`Storyshots Title and List on grey background 1`] = `
           }
         >
           <h3
-            className="sc-iwsKbI fDauwh"
+            className="sc-cvbbAY fkYggs"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL dRfrGC"
+            className="sc-eHgmQL cotAyy"
             muted={false}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
           </p>
           <h3
-            className="sc-iwsKbI fDauwh"
+            className="sc-cvbbAY fkYggs"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL dRfrGC"
+            className="sc-eHgmQL cotAyy"
             muted={false}
           >
             Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
           </p>
           <h3
-            className="sc-iwsKbI fDauwh"
+            className="sc-cvbbAY fkYggs"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL dRfrGC"
+            className="sc-eHgmQL cotAyy"
             muted={false}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1207,7 +1207,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
           className="sc-bZQynM keNvTb"
         >
           <h2
-            className="sc-gzVnrw eiKAfC"
+            className="sc-gzVnrw gForec"
           >
             This is the Title
           </h2>
@@ -1225,40 +1225,40 @@ exports[`Storyshots Title and List with extra content 1`] = `
         }
       >
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
         </p>
         <h3
-          className="sc-iwsKbI fDauwh"
+          className="sc-cvbbAY fkYggs"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL dRfrGC"
+          className="sc-eHgmQL cotAyy"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <a
-          className="sc-cvbbAY hzULqW"
+          className="sc-jWBwVP dhMQpa"
           href="/#"
           onClick={[Function]}
           onMouseEnter={[Function]}
