@@ -19,7 +19,7 @@ const SubtitleWithNoBottomPadding = styled(Subtitle)`
 `
 
 const ItemTitle = ({ children, ...props }) => (
-  <SubtitleWithNoBottomPadding as="h3" bold {...props}>
+  <SubtitleWithNoBottomPadding as="h3" {...props}>
     {children}
   </SubtitleWithNoBottomPadding>
 )
