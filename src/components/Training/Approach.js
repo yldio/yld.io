@@ -7,23 +7,19 @@ import Hr from '../Common/Hr'
 import BlueBG from '../BlueBG'
 import TitleAndList from '../Common/TitleAndList'
 
-
 const Approach = ({ title, content, formats }) => (
   <BlueBG>
-    <Padding
-      top={{ smallPhone: 3, desktop: 4 }}
-      bottom={{ smallPhone: 3, desktop: 4 }}
-    >
+    <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
       <Grid>
         <TitleAndList
           title={'Our training approach '}
-          list={title.map((approach, i) => ({ title: approach, body: content[i] }))}
+          list={title.map((approach, i) => ({
+            title: approach,
+            body: content[i]
+          }))}
           bg="dark"
         />
-        <Padding
-          top={{ smallPhone: 3, tablet: 48 }}
-          bottom={{ smallPhone: 3, tablet: 4 }}
-        >
+        <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <Hr muted />
         </Padding>
         <Row>
