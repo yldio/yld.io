@@ -16,10 +16,14 @@ const ParagraphWithOptionalPadding = styled(BodyPrimary)`
     padding: 0;
   }
 `
+const SubtitleWithNoBottomPadding = styled(Subtitle)`
+  padding-bottom: 0;
+`
+
 const ItemTitle = ({ children, ...props }) => (
-  <Subtitle as="h3" noPadding bold {...props}>
+  <SubtitleWithNoBottomPadding as="h3" bold {...props}>
     {children}
-  </Subtitle>
+  </SubtitleWithNoBottomPadding>
 )
 
 const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
@@ -28,9 +32,7 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
       <Row>
         <Col width={[1, 1, 1, 6 / 12]}>
           <Padding bottom={3}>
-            <SectionTitle small noPadding reverse={bg === 'dark'}>
-              {title}
-            </SectionTitle>
+            <SectionTitle reverse={bg === 'dark'}>{title}</SectionTitle>
           </Padding>
         </Col>
         <Col width={[1, 1, 1, 6 / 12]}>
