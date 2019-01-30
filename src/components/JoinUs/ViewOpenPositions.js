@@ -16,7 +16,7 @@ const ViewPositions = ({ text, description }) => (
       bottom={{ smallPhone: 3.5, desktop: 5 }}
     >
       <Row>
-        <Col width={[1, 1, 1, 1, 9 / 12]}>
+        <Col width={[1, 1, 1, 1, 8 / 12]}>
           <Padding bottom={{ smallPhone: 2, tablet: 3 }}>
             <SectionTitle>{text}</SectionTitle>
             {description && (

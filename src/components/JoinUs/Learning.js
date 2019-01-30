@@ -6,8 +6,9 @@ import Image from '../Common/Image'
 import Hr from '../Common/Hr'
 import { Subtitle } from '../Typography'
 
-import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
+import { Section, Separator, TitleAndBody } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
+import TitleAndList from '../Common/TitleAndList'
 
 const InsightAnchor = styled(ExternalAnchor)`
   display: flex;

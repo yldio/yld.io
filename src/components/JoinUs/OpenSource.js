@@ -1,9 +1,10 @@
 import React from 'react'
 import { Row } from '../grid'
 
-import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
+import { Section, Separator, TitleAndBody } from './elements'
 import StandaloneVideoLink from '../Common/StandaloneVideoLink'
 import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
+import TitleAndList from '../Common/TitleAndList'
 
 const MAX_VIDEOS = 3
 

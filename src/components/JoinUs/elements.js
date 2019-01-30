@@ -4,12 +4,7 @@ import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
-import {
-  SectionTitle,
-  DisplayTitle,
-  Subtitle,
-  BodyPrimary
-} from '../Typography'
+import { DisplayTitle, Subtitle, BodyPrimary } from '../Typography'
 import GreyBG from '../GreyBG'
 import Hr from '../Common/Hr'
 
@@ -72,19 +67,5 @@ export const TitleAndBody = ({ title, body }) => (
 export const Separator = ({ children }) => (
   <Padding bottom={{ smallPhone: 3, tablet: 3.5 }}>
     <Hr />
-  </Padding>
-)
-
-export const TitleAndList = ({ title, list, button }) => (
-  <Padding vertical={{ smallPhone: 3, tablet: 4 }}>
-    <Row>
-      <FirstColumn>
-        <SectionTitle>{title}</SectionTitle>
-      </FirstColumn>
-      <SecondColumn>
-        <List list={list} />
-        {button}
-      </SecondColumn>
-    </Row>
   </Padding>
 )

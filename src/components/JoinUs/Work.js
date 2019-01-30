@@ -8,7 +8,8 @@ import { ColumnLayout } from '../grid'
 import { CardTitle, BodyPrimary } from '../Typography'
 import colorLuminance from 'color-luminance'
 
-import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
+import { Section, Separator, TitleAndBody } from './elements'
+import TitleAndList from '../Common/TitleAndList'
 
 const MAX_CASE_STUDIES = 3
 
