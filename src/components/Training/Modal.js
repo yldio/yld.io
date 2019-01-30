@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import ReactMarkdown from 'react-markdown'
@@ -79,8 +79,18 @@ const Close = styled.button`
   `}
 `
 
+const ModalStyles = createGlobalStyle`
+  body {
+    ${is('open')`
+      overflow: hidden;
+      position: absolute;
+    `}
+  }
+`
+
 const Modal = ({ content, toggleModal }) => (
   <Wrapper visible={content}>
+    <ModalStyles open={content} />
     {content && (
       <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
         <Close onClick={() => toggleModal(null)}>
