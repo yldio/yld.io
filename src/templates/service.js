@@ -12,6 +12,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
+import GreyBackgroundWithoutOffset from '../components/GreyBackgroundWithoutOffset'
 import BlueBG from '../components/BlueBG'
 
 const FixedWidthTitle = styled(DisplayTitle)`
@@ -80,10 +81,10 @@ const Service = ({ data, location }) => {
           image={service.graphic}
         />
       </BlueBG>
-      <GreyBackground>
+      <GreyBackgroundWithoutOffset>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
-          bottom={{ smallTablet: 3.5 }}
+          bottom={{ smallTablet: 3.5, tablet: 5 }}
         >
           <Grid>
             <Row>
@@ -123,7 +124,7 @@ const Service = ({ data, location }) => {
             </Row>
           </Grid>
         </Padding>
-      </GreyBackground>
+      </GreyBackgroundWithoutOffset>
       <Grid>
         {service.bottomCaseStudy ? (
           <Padding

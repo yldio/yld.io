@@ -40,13 +40,16 @@ We have some docs to make it easier to get you started:
 - [Netlify](https://netlify.com/)
 
 ## Browser support
+
 Browsers people are using to access our website, based on google analytics:
+
 - 70% chrome
 - 23% safari
 - 3.5% firefox
 - 0.15% IE
 
 We current support:
+
 - Chrome
 - Firefox
 - Safari

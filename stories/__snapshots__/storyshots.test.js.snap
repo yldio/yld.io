@@ -861,6 +861,422 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 </div>
 `;
 
+exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
+<div
+  className="sc-bxivhb vToUv"
+>
+  <div
+    className="sc-bZQynM fezETr"
+  >
+    <div
+      className="sc-ifAKCX lcGsow"
+    >
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="sc-bZQynM keNvTb"
+        >
+          <h2
+            className="sc-gzVnrw gForec"
+          >
+            This is the Title
+          </h2>
+        </div>
+      </div>
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Title and List list in form of an array 1`] = `
+<div
+  className="sc-bxivhb vToUv"
+>
+  <div
+    className="sc-bZQynM fezETr"
+  >
+    <div
+      className="sc-ifAKCX lcGsow"
+    >
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="sc-bZQynM keNvTb"
+        >
+          <h2
+            className="sc-gzVnrw gForec"
+          >
+            This is the Title
+          </h2>
+        </div>
+      </div>
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+        </p>
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Title and List on dark background 1`] = `
+<section
+  className="sc-chPdSV gtkdHC"
+>
+  <div
+    className="sc-bxivhb vToUv"
+  >
+    <div
+      className="sc-bZQynM fezETr"
+    >
+      <div
+        className="sc-ifAKCX lcGsow"
+      >
+        <div
+          className="sc-ifAKCX jgpWAD"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <div
+            className="sc-bZQynM keNvTb"
+          >
+            <h2
+              className="sc-gzVnrw kfMiWA"
+            >
+              This is the Title
+            </h2>
+          </div>
+        </div>
+        <div
+          className="sc-ifAKCX jgpWAD"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <h3
+            className="sc-cvbbAY jBcaMy"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL bgLcRF"
+            muted={true}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+          <h3
+            className="sc-cvbbAY jBcaMy"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL bgLcRF"
+            muted={true}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+          <h3
+            className="sc-cvbbAY jBcaMy"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL bgLcRF"
+            muted={true}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Title and List on grey background 1`] = `
+<section
+  className="sc-hSdWYo lmjokZ"
+>
+  <div
+    className="sc-bxivhb vToUv"
+  >
+    <div
+      className="sc-bZQynM fezETr"
+    >
+      <div
+        className="sc-ifAKCX lcGsow"
+      >
+        <div
+          className="sc-ifAKCX jgpWAD"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <div
+            className="sc-bZQynM keNvTb"
+          >
+            <h2
+              className="sc-gzVnrw gForec"
+            >
+              This is the Title
+            </h2>
+          </div>
+        </div>
+        <div
+          className="sc-ifAKCX jgpWAD"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <h3
+            className="sc-cvbbAY fkYggs"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL hFZuuH"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+          <h3
+            className="sc-cvbbAY fkYggs"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL hFZuuH"
+            muted={false}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+          <h3
+            className="sc-cvbbAY fkYggs"
+          >
+            Community support
+          </h3>
+          <p
+            className="sc-eHgmQL hFZuuH"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Title and List with extra content 1`] = `
+<div
+  className="sc-bxivhb vToUv"
+>
+  <div
+    className="sc-bZQynM fezETr"
+  >
+    <div
+      className="sc-ifAKCX lcGsow"
+    >
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="sc-bZQynM keNvTb"
+        >
+          <h2
+            className="sc-gzVnrw gForec"
+          >
+            This is the Title
+          </h2>
+        </div>
+      </div>
+      <div
+        className="sc-ifAKCX jgpWAD"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+        </p>
+        <h3
+          className="sc-cvbbAY fkYggs"
+        >
+          Community support
+        </h3>
+        <p
+          className="sc-eHgmQL hFZuuH"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+        <a
+          className="sc-jWBwVP dhMQpa"
+          href="/#"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "margin": 0,
+              "padding": 0,
+            }
+          }
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Typography BodyPrimary 1`] = `
 <p
   className="sc-gqjmRU ewbdOb"

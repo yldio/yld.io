@@ -6,32 +6,31 @@ import Image from '../Common/Image'
 import StyledLink from '../styledLink'
 import { Grid, Row, Col } from '../grid'
 
-const Courses = ({ categories, courses, toggleModal }) => (
-  <Grid>
-    <Row>
-      <Col width={[1]}>
-        <Padding
-          bottom={{ smallPhone: 3, tablet: 4 }}
-          top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
-        >
-          <SectionTitle noPadding>Course catalog</SectionTitle>
-        </Padding>
-      </Col>
-      {categories.map((cat, i) => {
-        const courseInCat = courses.filter(a => a.category === cat)
-        return (
-          <Col width={[1, 1, 1, 1, 1 / 2]} key={i}>
+const Courses = ({ categories, toggleModal }) => {
+  return (
+    <Grid>
+      <Row>
+        <Col width={[1]}>
+          <Padding
+            bottom={{ smallPhone: 3, tablet: 4 }}
+            top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
+          >
+            <SectionTitle noPadding>Course catalog</SectionTitle>
+          </Padding>
+        </Col>
+        {categories.map(cat => (
+          <Col width={[1, 1, 1, 1, 1 / 2]} key={cat.id}>
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
               <Padding bottom={1}>
-                <Image image={courseInCat[0].logo} />
-                <SectionTitle>{cat}</SectionTitle>
+                <Image image={cat.logo} />
+                <SectionTitle>{cat.name}</SectionTitle>
               </Padding>
               <Flex column alignStart>
-                {courseInCat.map((course, id) => (
+                {cat.courses.map(course => (
                   <StyledLink
                     style={{ cursor: 'pointer' }}
-                    onClick={() => toggleModal(course)}
-                    key={id}
+                    onClick={() => toggleModal({ ...course, ...cat })}
+                    key={course.id}
                   >
                     {course.name}
                   </StyledLink>
@@ -39,11 +38,11 @@ const Courses = ({ categories, courses, toggleModal }) => (
               </Flex>
             </Padding>
           </Col>
-        )
-      })}
-    </Row>
-    <Padding bottom={{ smallPhone: 2, tablet: 0 }} />
-  </Grid>
-)
+        ))}
+      </Row>
+      <Padding bottom={{ smallPhone: 2, tablet: 0 }} />
+    </Grid>
+  )
+}
 
 export default Courses

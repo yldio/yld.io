@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import ReactMarkdown from 'react-markdown'
@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
-import { SectionTitle, BodyPrimary } from '../Typography'
+import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 
@@ -79,8 +79,18 @@ const Close = styled.button`
   `}
 `
 
+const ModalStyles = createGlobalStyle`
+  body {
+    ${is('open')`
+      overflow: hidden;
+      position: absolute;
+    `}
+  }
+`
+
 const Modal = ({ content, toggleModal }) => (
   <Wrapper visible={content}>
+    <ModalStyles open={content} />
     {content && (
       <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
         <Close onClick={() => toggleModal(null)}>
@@ -93,11 +103,11 @@ const Modal = ({ content, toggleModal }) => (
               <Padding bottom={2}>
                 <SectionTitle>{content.name}</SectionTitle>
               </Padding>
-              <BodyPrimary bold>Level</BodyPrimary>
+              <Subtitle as="h3">Level</Subtitle>
               <BodyPrimary>{content.level}</BodyPrimary>
-              <BodyPrimary bold>Pre-requisites</BodyPrimary>
+              <Subtitle as="h3">Pre-requisites</Subtitle>
               <BodyPrimary>{content.preRequisites}</BodyPrimary>
-              <BodyPrimary bold>Pre-requisite Courses</BodyPrimary>
+              <Subtitle as="h3">Pre-requisite Courses</Subtitle>
               <BodyPrimary>{content.preRequisitesCourses}</BodyPrimary>
               <Padding top={48}>
                 <StyledLink to="/contact">Contact us</StyledLink>
@@ -108,7 +118,7 @@ const Modal = ({ content, toggleModal }) => (
                 <ReactMarkdown
                   renderers={{
                     paragraph: props => <BodyPrimary {...props} />, // eslint-disable-line react/display-name
-                    heading: props => <BodyPrimary bold {...props} /> // eslint-disable-line react/display-name
+                    heading: props => <Subtitle {...props} /> // eslint-disable-line react/display-name
                   }}
                   source={content.description.description}
                 />
