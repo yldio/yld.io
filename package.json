@@ -121,7 +121,7 @@
     "*.js": [
       "prettier --write",
       "eslint --fix",
-      "jest --bail --findRelatedTests",
+      "jest --testPathPattern=\"storyshots.test.js\" --silent",
       "git add"
     ]
   }
