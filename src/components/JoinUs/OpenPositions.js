@@ -8,6 +8,7 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Section } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
+import GetInTouch from '../Common/GetInTouch'
 
 const JobLink = styled(ExternalAnchor)`
   flex: 1 0 90px;
@@ -31,7 +32,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
 
 class OpenPositions extends React.PureComponent {
   render() {
-    const { title } = this.props.data
+    const { title, getInTouchText, getInTouchTitle } = this.props.data
 
     return (
       <Section greyBg id="open-positions">
@@ -44,6 +45,10 @@ class OpenPositions extends React.PureComponent {
               )
             }
           </JobsByLocation>
+          <Padding top={{ smallPhone: 3, tablet: 4 }}>
+            <Hr />
+          </Padding>
+          <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
         </Padding>
       </Section>
     )
