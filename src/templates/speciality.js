@@ -15,10 +15,9 @@ import BlogPostsSection from '../components/Speciality/blog'
 import Head from '../components/Common/Head'
 
 const Speciality = ({
-  data: { allContentfulSpeciality, videoIcon },
+  data: { contentfulSpeciality: speciality, videoIcon },
   location
 }) => {
-  const speciality = allContentfulSpeciality.edges[0].node
   return (
     <Layout
       backgroundColor="blue"
@@ -49,223 +48,219 @@ export default Speciality
 
 export const pageQuery = graphql`
   query($id: String) {
-    allContentfulSpeciality(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
-          title
-          seoTitle
-          seoMetaDescription
-          seoText {
+    contentfulSpeciality(id: { eq: $id }) {
+      slug
+      title
+      seoTitle
+      seoMetaDescription
+      seoText {
+        nodeType
+        content {
+          nodeType
+          content {
             nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
+            value
           }
-          introGraphic {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          introTitle
-          introTextTitle1
-          introTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle2
-          introTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle3
-          introTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          relatedProjects {
-            ... on ContentfulTemplatedCaseStudy {
-              title
-              slug
-              introSentence
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulNonTemplatedCaseStudy {
-              title
-              slug
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-              }
-            }
-          }
-          clients {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingIntroText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon1 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle1
-          trainingTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon2 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle2
-          trainingTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon3 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle3
-          trainingTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          externalResources {
-            type
-            title
-            link
-            cta
-            featured
-            additionalInfo
-            id
-            colorCode
-          }
-          communityText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          communityLogo {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          communityBackground {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          eventIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          events {
-            id
-            eventTitle
-            date
-            startTime
-            linkToEvent
-            blurb {
-              blurb
-            }
-          }
-          contactText
-          logoColour
         }
       }
+      introGraphic {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      introTitle
+      introTextTitle1
+      introTextBody1 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      introTextTitle2
+      introTextBody2 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      introTextTitle3
+      introTextBody3 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      relatedProjects {
+        ... on ContentfulTemplatedCaseStudy {
+          title
+          slug
+          introSentence
+          posterColor
+          posterImage {
+            title
+            file {
+              url
+            }
+          }
+        }
+        ... on ContentfulNonTemplatedCaseStudy {
+          title
+          slug
+          posterColor
+          posterImage {
+            title
+            file {
+              url
+            }
+          }
+        }
+      }
+      clients {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingIntroText {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon1 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle1
+      trainingTextBody1 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon2 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle2
+      trainingTextBody2 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon3 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle3
+      trainingTextBody3 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      externalResources {
+        type
+        title
+        link
+        cta
+        featured
+        additionalInfo
+        id
+        colorCode
+      }
+      communityText {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      communityLogo {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      communityBackground {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      eventIcon {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      events {
+        id
+        eventTitle
+        date
+        startTime
+        linkToEvent
+        blurb {
+          blurb
+        }
+      }
+      contactText
+      logoColour
     }
 
     videoIcon: contentfulAsset(

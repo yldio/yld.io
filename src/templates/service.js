@@ -32,8 +32,7 @@ const WeWorkWithPadding = styled.div`
   `}
 `
 
-const Service = ({ data, location }) => {
-  const service = data.allContentfulService.edges[0].node
+const Service = ({ data: { contentfulService: service }, location }) => {
   return (
     <Layout location={location}>
       <Head page={service} />
@@ -135,225 +134,221 @@ export default Service
 
 export const pageQuery = graphql`
   query($id: String) {
-    allContentfulService(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
+    contentfulService(id: { eq: $id }) {
+      slug
+      title
+      seoTitle
+      seoMetaDescription
+      mainPageIntroSentence {
+        mainPageIntroSentence
+      }
+      graphic {
+        fluid(maxWidth: 680) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+        file {
+          url
+        }
+      }
+      bottomCaseStudy {
+        title
+        slug
+        introSentence
+        posterImage {
           title
-          seoTitle
-          seoMetaDescription
-          mainPageIntroSentence {
-            mainPageIntroSentence
+          fluid(maxWidth: 600) {
+            ...GatsbyContentfulFluid_withWebp
           }
-          graphic {
-            fluid(maxWidth: 680) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            title
-            file {
-              url
-            }
-          }
-          bottomCaseStudy {
-            title
-            slug
-            introSentence
-            posterImage {
-              title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              file {
-                url
-              }
-            }
-            posterColor
-          }
-          caseStudies {
-            ... on ContentfulTemplatedCaseStudy {
-              title
-              slug
-              introSentence
-              posterColor
-              posterImage {
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-                title
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulNonTemplatedCaseStudy {
-              title
-              slug
-              intro: introSentence {
-                introSentence
-              }
-              posterColor
-              posterImage {
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-                title
-                file {
-                  url
-                }
-              }
-            }
-          }
-          workStagesTitle
-          workStagesImage {
-            title
-            fluid(maxWidth: 680) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            file {
-              url
-              fileName
-              contentType
-            }
-          }
-          workStages {
-            id
-            title
-            displayType
-            alternativeTitle
-            alternativeWorkStages {
-              title
-              alternativeTitle
-              sectionTitle1
-              sectionTitle2
-              sectionTitle3
-              sectionTitle4
-              sectionTitle5
-              sectionIcon1 {
-                title
-                file {
-                  url
-                }
-              }
-              sectionIcon2 {
-                title
-                file {
-                  url
-                }
-              }
-              sectionIcon3 {
-                title
-                file {
-                  url
-                }
-              }
-              sectionIcon4 {
-                title
-                file {
-                  url
-                }
-              }
-              sectionIcon5 {
-                title
-                file {
-                  url
-                }
-              }
-              sectionBody1 {
-                sectionBody1
-              }
-              sectionBody2 {
-                sectionBody2
-              }
-              sectionBody3 {
-                sectionBody3
-              }
-
-              sectionBody4 {
-                sectionBody4
-              }
-
-              sectionBody5 {
-                sectionBody5
-              }
-            }
-            sectionTitle1
-            sectionTitle2
-            sectionTitle3
-            sectionTitle4
-            sectionTitle5
-            sectionIcon1 {
-              title
-              file {
-                url
-              }
-            }
-            sectionIcon2 {
-              title
-              file {
-                url
-              }
-            }
-            sectionIcon3 {
-              title
-              file {
-                url
-              }
-            }
-            sectionIcon4 {
-              title
-              file {
-                url
-              }
-            }
-            sectionIcon5 {
-              title
-              file {
-                url
-              }
-            }
-            sectionBody1 {
-              sectionBody1
-            }
-            sectionBody2 {
-              sectionBody2
-            }
-            sectionBody3 {
-              sectionBody3
-            }
-
-            sectionBody4 {
-              sectionBody4
-            }
-
-            sectionBody5 {
-              sectionBody5
-            }
-          }
-          specialityAreaTitle1
-          specialityAreaItems1 {
-            id
-            slug
-            title
-          }
-          specialityAreaTitle2
-          specialityAreaItems2 {
-            id
-            slug
-            title
-          }
-          specialityAreaTitle3
-          specialityAreaItems3 {
-            id
-            slug
-            title
-          }
-          specialityAreaTitle4
-          specialityAreaItems4 {
-            id
-            slug
-            title
+          file {
+            url
           }
         }
+        posterColor
+      }
+      caseStudies {
+        ... on ContentfulTemplatedCaseStudy {
+          title
+          slug
+          introSentence
+          posterColor
+          posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            title
+            file {
+              url
+            }
+          }
+        }
+        ... on ContentfulNonTemplatedCaseStudy {
+          title
+          slug
+          intro: introSentence {
+            introSentence
+          }
+          posterColor
+          posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            title
+            file {
+              url
+            }
+          }
+        }
+      }
+      workStagesTitle
+      workStagesImage {
+        title
+        fluid(maxWidth: 680) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      workStages {
+        id
+        title
+        displayType
+        alternativeTitle
+        alternativeWorkStages {
+          title
+          alternativeTitle
+          sectionTitle1
+          sectionTitle2
+          sectionTitle3
+          sectionTitle4
+          sectionTitle5
+          sectionIcon1 {
+            title
+            file {
+              url
+            }
+          }
+          sectionIcon2 {
+            title
+            file {
+              url
+            }
+          }
+          sectionIcon3 {
+            title
+            file {
+              url
+            }
+          }
+          sectionIcon4 {
+            title
+            file {
+              url
+            }
+          }
+          sectionIcon5 {
+            title
+            file {
+              url
+            }
+          }
+          sectionBody1 {
+            sectionBody1
+          }
+          sectionBody2 {
+            sectionBody2
+          }
+          sectionBody3 {
+            sectionBody3
+          }
+
+          sectionBody4 {
+            sectionBody4
+          }
+
+          sectionBody5 {
+            sectionBody5
+          }
+        }
+        sectionTitle1
+        sectionTitle2
+        sectionTitle3
+        sectionTitle4
+        sectionTitle5
+        sectionIcon1 {
+          title
+          file {
+            url
+          }
+        }
+        sectionIcon2 {
+          title
+          file {
+            url
+          }
+        }
+        sectionIcon3 {
+          title
+          file {
+            url
+          }
+        }
+        sectionIcon4 {
+          title
+          file {
+            url
+          }
+        }
+        sectionIcon5 {
+          title
+          file {
+            url
+          }
+        }
+        sectionBody1 {
+          sectionBody1
+        }
+        sectionBody2 {
+          sectionBody2
+        }
+        sectionBody3 {
+          sectionBody3
+        }
+
+        sectionBody4 {
+          sectionBody4
+        }
+
+        sectionBody5 {
+          sectionBody5
+        }
+      }
+      specialityAreaTitle1
+      specialityAreaItems1 {
+        id
+        slug
+        title
+      }
+      specialityAreaTitle2
+      specialityAreaItems2 {
+        id
+        slug
+        title
+      }
+      specialityAreaTitle3
+      specialityAreaItems3 {
+        id
+        slug
+        title
+      }
+      specialityAreaTitle4
+      specialityAreaItems4 {
+        id
+        slug
+        title
       }
     }
   }

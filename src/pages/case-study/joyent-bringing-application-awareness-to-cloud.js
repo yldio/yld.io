@@ -43,7 +43,7 @@ const Divider = styled.div`
 
 const IndexPage = ({
   data: {
-    allContentfulNonTemplatedCaseStudy: content,
+    contentfulNonTemplatedCaseStudy: caseStudy,
     deployment,
     picture,
     form,
@@ -56,10 +56,9 @@ const IndexPage = ({
     topology
   }
 }) => {
-  const caseStudy = content.edges[0].node
   return (
     <Layout>
-      <Head page={content} />
+      <Head page={caseStudy} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
@@ -352,82 +351,78 @@ export const query = graphql`
         }
       }
     }
-    allContentfulNonTemplatedCaseStudy(
-      filter: { slug: { eq: "joyent-bringing-application-awareness-to-cloud" } }
+    contentfulNonTemplatedCaseStudy(
+      slug: { eq: "joyent-bringing-application-awareness-to-cloud" }
     ) {
-      edges {
-        node {
-          relatedCaseStudy {
-            title
-            slug
-            introSentence
-            posterImage {
-              fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-            posterColor
+      relatedCaseStudy {
+        title
+        slug
+        introSentence
+        posterImage {
+          fluid(maxWidth: 550) {
+            ...GatsbyContentfulFluid_withWebp
           }
-          slug
           title
-          posterImage {
-            fluid(maxWidth: 550) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            title
-            file {
-              url
-            }
+          file {
+            url
           }
-          genericText1 {
-            id
-            genericText1
-          }
-          genericText2 {
-            id
-            genericText2
-          }
-          genericText3 {
-            id
-            genericText3
-          }
-          genericText4 {
-            id
-            genericText4
-          }
-          genericText5 {
-            id
-            genericText5
-          }
-          genericText6 {
-            id
-            genericText6
-          }
-          genericText7 {
-            id
-            genericText7
-          }
-          genericText8 {
-            id
-            genericText8
-          }
-          genericText9 {
-            id
-            genericText9
-          }
-          services {
-            title
-            id
-          }
-          posterColor
-          seoTitle
-          seoMetaDescription
+        }
+        posterColor
+      }
+      slug
+      title
+      posterImage {
+        fluid(maxWidth: 550) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+        file {
+          url
         }
       }
+      genericText1 {
+        id
+        genericText1
+      }
+      genericText2 {
+        id
+        genericText2
+      }
+      genericText3 {
+        id
+        genericText3
+      }
+      genericText4 {
+        id
+        genericText4
+      }
+      genericText5 {
+        id
+        genericText5
+      }
+      genericText6 {
+        id
+        genericText6
+      }
+      genericText7 {
+        id
+        genericText7
+      }
+      genericText8 {
+        id
+        genericText8
+      }
+      genericText9 {
+        id
+        genericText9
+      }
+      services {
+        title
+        id
+      }
+      posterColor
+      seoTitle
+      seoMetaDescription
     }
   }
 `

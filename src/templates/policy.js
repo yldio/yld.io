@@ -32,9 +32,7 @@ const Section = styled.section`
 
 const renderParagraphs = content =>
   makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
-const Policy = ({ data, location }) => {
-  const policy = data.allContentfulPolicy.edges[0].node
-
+const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
   return (
     <Layout location={location}>
       <Head page={policy} />
@@ -70,20 +68,16 @@ export default Policy
 
 export const pageQuery = graphql`
   query($id: String) {
-    allContentfulPolicy(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
-          title
-          body {
-            body
-          }
-          section {
-            title
-            content {
-              content
-            }
-          }
+    contentfulPolicy(id: { eq: $id }) {
+      slug
+      title
+      body {
+        body
+      }
+      section {
+        title
+        content {
+          content
         }
       }
     }

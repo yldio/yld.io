@@ -10,8 +10,10 @@ import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
 import Head from '../components/Common/Head'
 
-const CaseStudy = ({ data: { allContentfulTemplatedCaseStudy }, location }) => {
-  const caseStudy = allContentfulTemplatedCaseStudy.edges[0].node
+const CaseStudy = ({
+  data: { contentfulTemplatedCaseStudy: caseStudy },
+  location
+}) => {
   const body = generateCaseStudy(caseStudy)
 
   return (
@@ -89,64 +91,60 @@ export default CaseStudy
 
 export const pageQuery = graphql`
   query($id: String) {
-    allContentfulTemplatedCaseStudy(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
+    contentfulTemplatedCaseStudy(id: { eq: $id }) {
+      slug
+      title
+      relatedCaseStudy {
+        title
+        slug
+        posterImage {
+          fluid(maxWidth: 600) {
+            ...GatsbyContentfulFluid_withWebp
+          }
           title
-          relatedCaseStudy {
-            title
-            slug
-            posterImage {
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-            posterColor
-            introSentence
+          file {
+            url
           }
-          specialities {
-            title
-            id
-          }
-          services {
-            title
-            id
-          }
-          stats {
-            id
-            label
+        }
+        posterColor
+        introSentence
+      }
+      specialities {
+        title
+        id
+      }
+      services {
+        title
+        id
+      }
+      stats {
+        id
+        label
+        value
+      }
+      posterColor
+      body {
+        content {
+          nodeType
+          content {
             value
-          }
-          posterColor
-          body {
-            content {
-              nodeType
-              content {
-                value
-                marks {
-                  type
-                }
-              }
+            marks {
+              type
             }
           }
-          posterImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            title
-            file {
-              url
-            }
-          }
-          seoTitle
-          seoMetaDescription
         }
       }
+      posterImage {
+        fluid(maxWidth: 600) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+        file {
+          url
+        }
+      }
+      seoTitle
+      seoMetaDescription
     }
   }
 `
