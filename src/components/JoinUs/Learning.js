@@ -7,8 +7,9 @@ import Hr from '../Common/Hr'
 import { Subtitle } from '../Typography'
 
 import { Section, Separator, TitleAndBody, TitleAndList } from './elements'
+import ExternalAnchor from '../Common/ExternalAnchor'
 
-const InsightAnchor = styled.a`
+const InsightAnchor = styled(ExternalAnchor)`
   display: flex;
   flex-direction: column;
   width: 100%;
