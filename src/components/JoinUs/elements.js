@@ -29,12 +29,18 @@ export const SecondColumn = ({ children }) => (
   <ShiftedColumn width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>{children}</ShiftedColumn>
 )
 
+const BodyWithCustomAnchors = styled(BodyPrimary)`
+  a {
+    text-decoration: underline;
+  }
+`
+
 export const List = ({ list }) => (
   <Padding top={1}>
     <ReactMarkdown
       renderers={{
         heading: props => <Subtitle noPadding {...props} />, // eslint-disable-line react/display-name
-        paragraph: props => <BodyPrimary muted {...props} /> // eslint-disable-line react/display-name
+        paragraph: props => <BodyWithCustomAnchors muted {...props} /> // eslint-disable-line react/display-name
       }}
       source={list}
     />
