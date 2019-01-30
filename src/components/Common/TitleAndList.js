@@ -9,7 +9,11 @@ const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
 )
 
-const ParagraphWithOptionalPadding = styled(BodyPrimary)`
+const ItemBody = styled(BodyPrimary)`
+  > a {
+    text-decoration: underline;
+  }
+
   &:last-child {
     padding: 0;
   }
@@ -43,7 +47,7 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
                 },
                 paragraph: props => {
                   const Comp = (
-                    <ParagraphWithOptionalPadding
+                    <ItemBody
                       noPaddingTop
                       muted={bg === 'dark'}
                       reverse={bg === 'dark'}
@@ -61,13 +65,13 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
                   <ItemTitle reverse={bg === 'dark'}>{el.title}</ItemTitle>
-                  <ParagraphWithOptionalPadding
+                  <ItemBody
                     noPaddingTop
                     muted={bg === 'dark'}
                     reverse={bg === 'dark'}
                   >
                     {el.body}
-                  </ParagraphWithOptionalPadding>
+                  </ItemBody>
                 </React.Fragment>
               ))
             : null}
