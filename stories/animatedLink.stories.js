@@ -9,7 +9,23 @@ import {
 
 addDecorator(Theme)
 
-storiesOf('AnimatedLink', module)
-  .add('AnimatedLink', () => <AnimatedLink>here</AnimatedLink>)
-  .add('PosterImage', () => <PosterImage>here</PosterImage>)
-  .add('CardHeader', () => <CardHeader>here</CardHeader>)
+storiesOf('AnimatedLink', module).add('AnimatedLink', () => (
+  <AnimatedLink to="#">
+    <section
+      style={{
+        background: `#03183D`
+      }}
+    >
+      <CardHeader>
+        <h3 style={{ color: 'white' }}>I am a title</h3>
+        <p style={{ color: 'white' }}>This is an intro section</p>
+      </CardHeader>
+      <PosterImage justifyCenter alignCenter color="03183D">
+        <img
+          style={{ maxHeight: '100%' }}
+          src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp"
+        />
+      </PosterImage>
+    </section>
+  </AnimatedLink>
+))

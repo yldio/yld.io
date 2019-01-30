@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
@@ -13,30 +12,19 @@ import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/tutorials'
 import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
+import Head from '../components/Common/Head'
 
-const Speciality = ({ data, location }) => {
-  const speciality = data.allContentfulSpeciality.edges[0].node
-  const site = data.site
-  const videoIcon = data.videoIcon
+const Speciality = ({
+  data: { contentfulSpeciality: speciality, videoIcon },
+  location
+}) => {
   return (
     <Layout
       backgroundColor="blue"
       logoColour={speciality.logoColour}
       location={location}
     >
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          speciality.title ? '- ' + speciality.title : ''
-        } ${speciality.seoTitle ? '- ' + speciality.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: speciality.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={speciality} />
       <IntroSection speciality={speciality} />
       <ProjectsSection speciality={speciality} />
       <TrainingSection speciality={speciality} />
@@ -60,228 +48,219 @@ export default Speciality
 
 export const pageQuery = graphql`
   query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulSpeciality(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          slug
-          title
-          seoTitle
-          seoMetaDescription
-          seoText {
+    contentfulSpeciality(id: { eq: $id }) {
+      slug
+      title
+      seoTitle
+      seoMetaDescription
+      seoText {
+        nodeType
+        content {
+          nodeType
+          content {
             nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
+            value
           }
-          introGraphic {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          introTitle
-          introTextTitle1
-          introTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle2
-          introTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          introTextTitle3
-          introTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          relatedProjects {
-            ... on ContentfulTemplatedCaseStudy {
-              title
-              slug
-              introSentence
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-              }
-            }
-            ... on ContentfulNonTemplatedCaseStudy {
-              title
-              slug
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-              }
-            }
-          }
-          clients {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingIntroText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon1 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle1
-          trainingTextBody1 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon2 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle2
-          trainingTextBody2 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          trainingTextIcon3 {
-            id
-            title
-            file {
-              url
-              fileName
-            }
-          }
-          trainingTextTitle3
-          trainingTextBody3 {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          externalResources {
-            type
-            title
-            link
-            cta
-            featured
-            additionalInfo
-            id
-            colorCode
-          }
-          communityText {
-            nodeType
-            content {
-              nodeType
-              content {
-                nodeType
-                value
-              }
-            }
-          }
-          communityLogo {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          communityBackground {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          eventIcon {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-          events {
-            id
-            eventTitle
-            date
-            startTime
-            linkToEvent
-            blurb {
-              blurb
-            }
-          }
-          contactText
-          logoColour
         }
       }
+      introGraphic {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      introTitle
+      introTextTitle1
+      introTextBody1 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      introTextTitle2
+      introTextBody2 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      introTextTitle3
+      introTextBody3 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      relatedProjects {
+        ... on ContentfulTemplatedCaseStudy {
+          title
+          slug
+          introSentence
+          posterColor
+          posterImage {
+            title
+            file {
+              url
+            }
+          }
+        }
+        ... on ContentfulNonTemplatedCaseStudy {
+          title
+          slug
+          posterColor
+          posterImage {
+            title
+            file {
+              url
+            }
+          }
+        }
+      }
+      clients {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingIntroText {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon1 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle1
+      trainingTextBody1 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon2 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle2
+      trainingTextBody2 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      trainingTextIcon3 {
+        id
+        title
+        file {
+          url
+          fileName
+        }
+      }
+      trainingTextTitle3
+      trainingTextBody3 {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      externalResources {
+        type
+        title
+        link
+        cta
+        featured
+        additionalInfo
+        id
+        colorCode
+      }
+      communityText {
+        nodeType
+        content {
+          nodeType
+          content {
+            nodeType
+            value
+          }
+        }
+      }
+      communityLogo {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      communityBackground {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      eventIcon {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
+      events {
+        id
+        eventTitle
+        date
+        startTime
+        linkToEvent
+        blurb {
+          blurb
+        }
+      }
+      contactText
+      logoColour
     }
 
     videoIcon: contentfulAsset(

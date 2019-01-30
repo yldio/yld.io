@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
@@ -11,6 +10,7 @@ import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
+import Head from '../components/Common/Head'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
@@ -36,7 +36,6 @@ const formatCaseStudies = caseStudies =>
 
 const OurWork = ({ data }) => {
   const {
-    site,
     allContentfulTemplatedCaseStudy,
     allContentfulNonTemplatedCaseStudy
   } = data
@@ -53,19 +52,7 @@ const OurWork = ({ data }) => {
 
   return (
     <Layout backgroundColor="grey">
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          page.title ? '- ' + page.title : ''
-        } ${page.seoTitle ? '- ' + page.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: page.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={page} />
       <GreyBackground>
         <Grid>
           <Row>
@@ -136,11 +123,6 @@ const OurWorkPage = props => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
         allContentfulTemplatedCaseStudy {
           edges {
             node {

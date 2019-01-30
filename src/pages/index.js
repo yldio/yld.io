@@ -1,9 +1,8 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { Grid } from '../components/grid'
-
+import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import SEOText from '../components/Homepage/seoText'
 import Companies from '../components/Homepage/companies'
@@ -15,18 +14,11 @@ import Services from '../components/Homepage/services'
 import GreyBackground from '../components/GreyBG'
 
 const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events, site },
+  data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
   location
 }) => (
   <Layout location={location}>
-    <Helmet
-      title={`${site.siteMetadata.title} ${
-        content.seoTitle ? '- ' + content.seoTitle : ''
-      } `}
-      meta={[{ name: 'description', content: content.seoMetaDescription }]}
-    >
-      <html lang="en" />
-    </Helmet>
+    <Head page={content} />
     <Grid>
       <Padding bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}>
         <CaseStudyPreview
@@ -73,12 +65,6 @@ const IndexPage = ({
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
     contentfulHomepage {
       title
       seoTitle

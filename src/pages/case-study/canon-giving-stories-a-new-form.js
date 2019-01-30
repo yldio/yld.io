@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
@@ -16,6 +15,7 @@ import GreyBackgroundWidthoutOffset from '../../components/GreyBackgroundWithout
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
+import Head from '../../components/Common/Head'
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -107,20 +107,12 @@ const Video = () => (
 )
 
 const IndexPage = ({
-  data: { allContentfulNonTemplatedCaseStudy: content, site, travel },
+  data: { contentfulNonTemplatedCaseStudy: caseStudy, travel },
   location
 }) => {
-  const caseStudy = content.edges[0].node
   return (
     <Layout location={location}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          content.title ? '- ' + content.title : ''
-        } ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
-        meta={[{ name: 'description', content: content.seoMetaDescription }]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={caseStudy} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
@@ -265,71 +257,62 @@ export const query = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulNonTemplatedCaseStudy(
-      filter: { slug: { eq: "canon-giving-stories-a-new-form" } }
+    contentfulNonTemplatedCaseStudy(
+      slug: { eq: "canon-giving-stories-a-new-form" }
     ) {
-      edges {
-        node {
-          relatedCaseStudy {
-            title
-            slug
-            introSentence
-            posterImage {
-              fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-            posterColor
+      relatedCaseStudy {
+        title
+        slug
+        introSentence
+        posterImage {
+          fluid(maxWidth: 550) {
+            ...GatsbyContentfulFluid_withWebp
           }
-          slug
           title
-          posterImage {
-            fluid(maxWidth: 550) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            title
-            file {
-              url
-            }
+          file {
+            url
           }
-          genericText1 {
-            id
-            genericText1
-          }
-          genericText2 {
-            id
-            genericText2
-          }
-          genericText3 {
-            id
-            genericText3
-          }
-          genericText4 {
-            id
-            genericText4
-          }
-          genericText5 {
-            id
-            genericText5
-          }
-          services {
-            title
-            id
-          }
-          posterColor
-          seoTitle
-          seoMetaDescription
+        }
+        posterColor
+      }
+      slug
+      title
+      posterImage {
+        fluid(maxWidth: 550) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+        file {
+          url
         }
       }
+      genericText1 {
+        id
+        genericText1
+      }
+      genericText2 {
+        id
+        genericText2
+      }
+      genericText3 {
+        id
+        genericText3
+      }
+      genericText4 {
+        id
+        genericText4
+      }
+      genericText5 {
+        id
+        genericText5
+      }
+      services {
+        title
+        id
+      }
+      posterColor
+      seoTitle
+      seoMetaDescription
     }
   }
 `
