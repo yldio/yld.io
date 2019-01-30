@@ -26,7 +26,7 @@ const Insight = ({ insight }) => (
       <Padding top={{ smallPhone: 2, tablet: 3 }}>
         <Image image={insight.image} />
       </Padding>
-      <PostTitleWrapper top={1.5} bottom={1}>
+      <PostTitleWrapper top={1.5}>
         <Subtitle noMargin>{insight.title}</Subtitle>
       </PostTitleWrapper>
       <Hr />
