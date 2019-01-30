@@ -83,8 +83,10 @@ class ContactUs extends Component {
 
   render() {
     const { name, email, message, submitting, success } = this.state
-    const { contentfulPage: page } = this.props.data
-    const { location } = this.props
+    const {
+      location,
+      data: { contentfulPage: page }
+    } = this.props
     return (
       <Layout location={location}>
         <Head page={page} />
