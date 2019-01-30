@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
-import Head from '../components/common/Head'
+import Head from '../components/Common/Head'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import {
   Checkbox,
