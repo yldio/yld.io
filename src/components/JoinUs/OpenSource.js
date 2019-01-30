@@ -24,7 +24,9 @@ const OpenSource = ({
   <Section greyBg>
     <TitleAndList title={title} list={list} />
     <Separator />
-    <TitleAndBody title={subtitle} body={text} />
+    <Padding bottom={{ smallPhone: 0.5, tablet: 1.5 }}>
+      <TitleAndBody title={subtitle} body={text} />
+    </Padding>
     <Talks data={featuredTalks} />
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
