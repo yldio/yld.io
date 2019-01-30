@@ -11,7 +11,7 @@ import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
-import TalkToUsSection from '../components/Common/talkToUs'
+import GetInTouch from '../components/Common/GetInTouch'
 
 class TrainingPage extends Component {
   state = {
@@ -81,7 +81,7 @@ class TrainingPage extends Component {
           categories={content.courseCategories}
           toggleModal={this.toggleModal}
         />
-        <TalkToUsSection
+        <GetInTouch
           title={`${content.contactUsTitle}`}
           contactText={content.contactUsText.contactUsText}
         />

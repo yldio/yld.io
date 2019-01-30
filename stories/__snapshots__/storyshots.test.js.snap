@@ -35,7 +35,7 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -51,16 +51,16 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
         <div
           className="sc-EHOje cUjftw"
         >
-          <div
-            className="sc-bZQynM hHdFtZ"
+          <a
+            className="sc-jzJRlG ioCwbZ"
+            color="#fff"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={0.5}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <a
-              className="sc-jzJRlG ioCwbZ"
-              color="#fff"
-              href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-              opacity={0.5}
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="sc-bZQynM hHdFtZ"
             >
               <div
                 className="sc-cSHVUG kVZMia"
@@ -75,15 +75,15 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX jbghdt"
+                  className="sc-fjdhpX igMiet"
                   color="#fff"
                   opacity={0.5}
                 >
                   Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
                 </p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -93,13 +93,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 
 exports[`Storyshots Compact Video Link Grey bg 1`] = `
 <section
-  className="sc-kgoBCf JSEKb"
+  className="sc-kgoBCf eYwLQA"
 >
   <div
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -115,16 +115,16 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
         <div
           className="sc-EHOje cUjftw"
         >
-          <div
-            className="sc-bZQynM hHdFtZ"
+          <a
+            className="sc-jzJRlG ioCwbZ"
+            color="#333333"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={1}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <a
-              className="sc-jzJRlG ioCwbZ"
-              color="#333333"
-              href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-              opacity={1}
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="sc-bZQynM hHdFtZ"
             >
               <div
                 className="sc-cSHVUG kVZMia"
@@ -139,15 +139,15 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX hTLxIn"
+                  className="sc-fjdhpX kaPtVa"
                   color="#333333"
                   opacity={1}
                 >
                   Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
                 </p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -160,7 +160,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -176,16 +176,16 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM hHdFtZ"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM hHdFtZ"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -200,20 +200,20 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -229,16 +229,16 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM hHdFtZ"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM hHdFtZ"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -253,20 +253,20 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Some smaller title
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -282,16 +282,16 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM hHdFtZ"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM hHdFtZ"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -306,15 +306,15 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Some smaller title
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -326,7 +326,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -342,16 +342,16 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM hHdFtZ"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM hHdFtZ"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -366,15 +366,15 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -503,7 +503,7 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -521,16 +521,16 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
         <div
           className="sc-EHOje cUjftw"
         >
-          <div
-            className="sc-bZQynM jmIaZk"
+          <a
+            className="sc-jzJRlG ioCwbZ"
+            color="#fff"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={0.5}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <a
-              className="sc-jzJRlG ioCwbZ"
-              color="#fff"
-              href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-              opacity={0.5}
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="sc-bZQynM jmIaZk"
             >
               <div
                 className="sc-cSHVUG kVZMia"
@@ -545,15 +545,15 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX jbghdt"
+                  className="sc-fjdhpX igMiet"
                   color="#fff"
                   opacity={0.5}
                 >
                   Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
                 </p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -563,13 +563,13 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 
 exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 <section
-  className="sc-kgoBCf JSEKb"
+  className="sc-kgoBCf eYwLQA"
 >
   <div
     className="sc-ifAKCX lcGsow"
   >
     <div
-      className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
       width={
         Array [
           1,
@@ -587,16 +587,16 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
         <div
           className="sc-EHOje cUjftw"
         >
-          <div
-            className="sc-bZQynM jmIaZk"
+          <a
+            className="sc-jzJRlG ioCwbZ"
+            color="#333333"
+            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+            opacity={1}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <a
-              className="sc-jzJRlG ioCwbZ"
-              color="#333333"
-              href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-              opacity={1}
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="sc-bZQynM jmIaZk"
             >
               <div
                 className="sc-cSHVUG kVZMia"
@@ -611,15 +611,15 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX hTLxIn"
+                  className="sc-fjdhpX kaPtVa"
                   color="#333333"
                   opacity={1}
                 >
                   Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
                 </p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -632,7 +632,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -650,16 +650,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM jmIaZk"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM jmIaZk"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -674,20 +674,20 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -705,16 +705,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM jmIaZk"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM jmIaZk"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -729,20 +729,20 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Some smaller title
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -760,16 +760,16 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM jmIaZk"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM jmIaZk"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -784,15 +784,15 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Some smaller title
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -804,7 +804,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   className="sc-ifAKCX lcGsow"
 >
   <div
-    className="sc-VigVT gnEyun sc-ifAKCX bTIbjp"
+    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
     width={
       Array [
         1,
@@ -822,16 +822,16 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
       <div
         className="sc-EHOje cUjftw"
       >
-        <div
-          className="sc-bZQynM jmIaZk"
+        <a
+          className="sc-jzJRlG ioCwbZ"
+          color="#333333"
+          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+          opacity={1}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="sc-jzJRlG ioCwbZ"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="sc-bZQynM jmIaZk"
           >
             <div
               className="sc-cSHVUG kVZMia"
@@ -846,15 +846,15 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
                 />
               </div>
               <p
-                className="sc-fjdhpX hTLxIn"
+                className="sc-fjdhpX kaPtVa"
                 color="#333333"
                 opacity={1}
               >
                 Manipulating the Web Audio API with JSX and Custom Renderers - James Wright
               </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1523,50 +1523,50 @@ exports[`Storyshots Typography SectionTitle textLight 1`] = `
 `;
 
 exports[`Storyshots Typography Subtitle 1`] = `
-<h4
+<h3
   className="sc-iwsKbI bpHRdi"
 >
   Subtitle
-</h4>
+</h3>
 `;
 
 exports[`Storyshots Typography Subtitle muted 1`] = `
-<h4
+<h3
   className="sc-iwsKbI eEBOyF"
   muted={true}
 >
   Subtitle muted
-</h4>
+</h3>
 `;
 
 exports[`Storyshots Typography Subtitle noPadding 1`] = `
-<h4
+<h3
   className="sc-iwsKbI fDauwh"
 >
   Subtitle without padding
-</h4>
+</h3>
 `;
 
 exports[`Storyshots Typography Subtitle reverse 1`] = `
-<h4
+<h3
   className="sc-iwsKbI kgFENl"
 >
   Subtitle reverse
-</h4>
+</h3>
 `;
 
 exports[`Storyshots Typography Subtitle secondary text color 1`] = `
-<h4
+<h3
   className="sc-iwsKbI jxyNIB"
 >
   Subtitle secondary text color
-</h4>
+</h3>
 `;
 
 exports[`Storyshots Typography Subtitle textLight 1`] = `
-<h4
+<h3
   className="sc-iwsKbI dBzMmU"
 >
   Subtitle textLight
-</h4>
+</h3>
 `;

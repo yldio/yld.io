@@ -18,7 +18,7 @@ const Wrapper = styled(Col)`
 
   ${breakpoint('tablet')`
     &:nth-child(3) {
-      display: flex;
+      display: block;
     }
   `}
 `
@@ -35,7 +35,6 @@ const TruncatedParagraph = styled(BodyPrimary)`
   opacity: ${props => props.opacity};
 
   @supports (-webkit-line-clamp: 2) {
-    max-height: none;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -102,15 +101,15 @@ const BaseVideoLink = ({
         }
       >
         <Margin vertical={{ smallPhone: 1.5, smallTablet: 0 }}>
-          <Padding vertical={1} horizontal={mode === 'standalone' ? 2 : 0}>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={href}
-              color={color}
-              opacity={opacity}
-              {...props}
-            >
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={href}
+            color={color}
+            opacity={opacity}
+            {...props}
+          >
+            <Padding vertical={1} horizontal={mode === 'standalone' ? 2 : 0}>
               <FlexContent>
                 <Margin right={1.5}>
                   <PlayIcon
@@ -122,8 +121,8 @@ const BaseVideoLink = ({
                   {children}
                 </TruncatedParagraph>
               </FlexContent>
-            </Link>
-          </Padding>
+            </Padding>
+          </Link>
         </Margin>
       </InnerWrapper>
     </Wrapper>

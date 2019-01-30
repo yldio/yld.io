@@ -5,6 +5,7 @@
   "author": "YLD <hello@yld.io>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
+    "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
     "gatsby": "2.0.53",
@@ -121,7 +122,7 @@
     "*.js": [
       "prettier --write",
       "eslint --fix",
-      "jest --testPathPattern=\"storyshots.test.js\" --silent",
+      "jest --testPathPattern=/stories/ --silent",
       "git add"
     ]
   }
