@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
+import Head from '../components/common/Head'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import {
   Checkbox,
@@ -83,25 +83,12 @@ class ContactUs extends Component {
 
   render() {
     const { name, email, message, submitting, success } = this.state
-    const site = this.props.data.site
     const page = this.props.data.allContentfulPage.edges[0].node
     const { location } = this.props
     return (
       <Layout location={location}>
+        <Head site={this.props.data.site} page={page} />
         <GreyBG topMargin>
-          <Helmet
-            title={`${site.siteMetadata.title}  ${
-              page.title ? '- ' + page.title : ''
-            } ${page.seoTitle ? '- ' + page.seoTitle : ''} `}
-            meta={[
-              {
-                name: 'description',
-                content: page.seoMetaDescription
-              }
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
           <Grid>
             {success ? (
               <Fragment>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -14,6 +13,7 @@ import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 import GreyBackgroundWithoutOffset from '../components/GreyBackgroundWithoutOffset'
 import BlueBG from '../components/BlueBG'
+import Head from '../components/Common/Head'
 
 const FixedWidthTitle = styled(DisplayTitle)`
   ${breakpoint('smallTablet')`
@@ -34,17 +34,9 @@ const WeWorkWithPadding = styled.div`
 
 const Service = ({ data, location }) => {
   const service = data.allContentfulService.edges[0].node
-  const site = data.site
   return (
     <Layout location={location}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          service.title ? '- ' + service.title : ''
-        } ${service.seoTitle ? '- ' + service.seoTitle : ''} `}
-        meta={[{ name: 'description', content: service.seoMetaDescription }]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={service} />
       <Grid>
         <Row>
           <Col width={[1]}>
@@ -143,11 +135,6 @@ export default Service
 
 export const pageQuery = graphql`
   query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulService(filter: { id: { eq: $id } }) {
       edges {
         node {

@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
@@ -25,6 +24,7 @@ import iconsDesktop from './../../images/case-study/Icon-Graphic.png'
 import { command1, command2 } from '../../utils/text'
 import iconsMobile from './../../images/case-study/Mobile-Icon-Graphic.png'
 import { NoMobile, NoDesktop } from '../../components/Common/visibility'
+import Head from '../../components/Common/Head'
 
 const makeText = content => content.split('\n').filter(c => c.length)
 
@@ -77,19 +77,12 @@ const Type2 = styled.img`
 `
 
 const IndexPage = ({
-  data: { allContentfulNonTemplatedCaseStudy: content, site }
+  data: { allContentfulNonTemplatedCaseStudy: content }
 }) => {
   const caseStudy = content.edges[0].node
   return (
     <Layout>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          content.title ? '- ' + content.title : ''
-        } ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
-        meta={[{ name: 'description', content: content.seoMetaDescription }]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={content} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
         <Margin vertical={4}>
@@ -327,11 +320,6 @@ const IndexPage = ({
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulNonTemplatedCaseStudy(
       filter: { slug: { eq: "stackable-rebranding-the-orginal-cloud" } }
     ) {

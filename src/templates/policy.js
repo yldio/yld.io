@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../components/grid'
 import remcalc from 'remcalc'
@@ -8,6 +7,7 @@ import { Padding } from 'styled-components-spacing'
 
 import Layout from '../components/layout'
 import { makeText } from '../utils/makeText'
+import Head from '../components/Common/Head'
 
 const SectionTitle = styled.h2`
   font-size: 17px;
@@ -34,23 +34,10 @@ const renderParagraphs = content =>
   makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
 const Policy = ({ data, location }) => {
   const policy = data.allContentfulPolicy.edges[0].node
-  const site = data.site
 
   return (
     <Layout location={location}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          policy.title ? '- ' + policy.title : ''
-        } ${policy.seoTitle ? '- ' + policy.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: policy.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={policy} />
       <Padding top={4} bottom={5}>
         <Grid>
           <Row>
@@ -83,11 +70,6 @@ export default Policy
 
 export const pageQuery = graphql`
   query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulPolicy(filter: { id: { eq: $id } }) {
       edges {
         node {

@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
@@ -16,6 +15,7 @@ import GreyBackgroundWidthoutOffset from '../../components/GreyBackgroundWithout
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
+import Head from '../../components/Common/Head'
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -107,20 +107,13 @@ const Video = () => (
 )
 
 const IndexPage = ({
-  data: { allContentfulNonTemplatedCaseStudy: content, site, travel },
+  data: { allContentfulNonTemplatedCaseStudy: content, travel },
   location
 }) => {
   const caseStudy = content.edges[0].node
   return (
     <Layout location={location}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          content.title ? '- ' + content.title : ''
-        } ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
-        meta={[{ name: 'description', content: content.seoMetaDescription }]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={content} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
@@ -263,11 +256,6 @@ export const query = graphql`
         fluid {
           ...GatsbyImageSharpFluid
         }
-      }
-    }
-    site {
-      siteMetadata {
-        title
       }
     }
     allContentfulNonTemplatedCaseStudy(

@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
@@ -14,19 +13,7 @@ import Layout from '../../components/layout'
 import GreyBackground from '../../components/GreyBG'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
-
-// const MobileOnly = styled.div`
-//   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
-//       display: none;
-//     `}
-// `
-
-// const NoMobile = styled.div`
-//   display: none;
-//   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
-//       display: inherit;
-//     `}
-// `
+import Head from '../../components/Common/Head'
 
 const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
@@ -57,7 +44,6 @@ const Divider = styled.div`
 const IndexPage = ({
   data: {
     allContentfulNonTemplatedCaseStudy: content,
-    site,
     deployment,
     picture,
     form,
@@ -73,14 +59,7 @@ const IndexPage = ({
   const caseStudy = content.edges[0].node
   return (
     <Layout>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          content.title ? '- ' + content.title : ''
-        } ${content.seoTitle ? '- ' + content.seoTitle : ''} `}
-        meta={[{ name: 'description', content: content.seoMetaDescription }]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={content} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
         <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
@@ -371,11 +350,6 @@ export const query = graphql`
         fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
-      }
-    }
-    site {
-      siteMetadata {
-        title
       }
     }
     allContentfulNonTemplatedCaseStudy(

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 
@@ -12,6 +11,7 @@ import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 import GetInTouch from '../components/Common/GetInTouch'
+import Head from '../components/Common/Head'
 
 class TrainingPage extends Component {
   state = {
@@ -32,7 +32,7 @@ class TrainingPage extends Component {
 
   render() {
     const {
-      data: { contentfulTrainingPage: content, site }
+      data: { contentfulTrainingPage: content }
     } = this.props
     const { modalContent } = this.state
 
@@ -44,14 +44,7 @@ class TrainingPage extends Component {
 
     return (
       <Layout>
-        <Helmet
-          title={`${site.siteMetadata.title} ${
-            content.seoTitle ? '- ' + content.seoTitle : ''
-          } `}
-          meta={[{ name: 'description', content: content.seoMetaDescription }]}
-        >
-          <html lang="en" />
-        </Helmet>
+        <Head page={content} />
         <Modal content={modalContent} toggleModal={this.toggleModal} />
         <Grid>
           <Padding
@@ -105,11 +98,6 @@ class TrainingPage extends Component {
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     contentfulTrainingPage {
       title
       seoTitle

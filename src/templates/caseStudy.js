@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
@@ -9,29 +8,15 @@ import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import GreyBackground from '../components/GreyBG'
+import Head from '../components/Common/Head'
 
-const CaseStudy = ({
-  data: { allContentfulTemplatedCaseStudy, site },
-  location
-}) => {
+const CaseStudy = ({ data: { allContentfulTemplatedCaseStudy }, location }) => {
   const caseStudy = allContentfulTemplatedCaseStudy.edges[0].node
   const body = generateCaseStudy(caseStudy)
 
   return (
     <Layout location={location}>
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          caseStudy.title ? '- ' + caseStudy.title : ''
-        } ${caseStudy.seoTitle ? '- ' + caseStudy.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: caseStudy.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={caseStudy} />
       <Grid>
         <Padding bottom={0.5}>
           <CaseStudyHero caseStudy={caseStudy} />
@@ -104,11 +89,6 @@ export default CaseStudy
 
 export const pageQuery = graphql`
   query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulTemplatedCaseStudy(filter: { id: { eq: $id } }) {
       edges {
         node {

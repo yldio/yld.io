@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
@@ -13,30 +12,20 @@ import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/tutorials'
 import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
+import Head from '../components/Common/Head'
 
-const Speciality = ({ data, location }) => {
-  const speciality = data.allContentfulSpeciality.edges[0].node
-  const site = data.site
-  const videoIcon = data.videoIcon
+const Speciality = ({
+  data: { allContentfulSpeciality, videoIcon },
+  location
+}) => {
+  const speciality = allContentfulSpeciality.edges[0].node
   return (
     <Layout
       backgroundColor="blue"
       logoColour={speciality.logoColour}
       location={location}
     >
-      <Helmet
-        title={`${site.siteMetadata.title}  ${
-          speciality.title ? '- ' + speciality.title : ''
-        } ${speciality.seoTitle ? '- ' + speciality.seoTitle : ''} `}
-        meta={[
-          {
-            name: 'description',
-            content: speciality.seoMetaDescription
-          }
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
+      <Head page={speciality} />
       <IntroSection speciality={speciality} />
       <ProjectsSection speciality={speciality} />
       <TrainingSection speciality={speciality} />
@@ -60,11 +49,6 @@ export default Speciality
 
 export const pageQuery = graphql`
   query($id: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allContentfulSpeciality(filter: { id: { eq: $id } }) {
       edges {
         node {
