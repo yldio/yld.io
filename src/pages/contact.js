@@ -83,11 +83,11 @@ class ContactUs extends Component {
 
   render() {
     const { name, email, message, submitting, success } = this.state
-    const page = this.props.data.allContentfulPage.edges[0].node
+    const { contentfulPage: page } = this.props.data
     const { location } = this.props
     return (
       <Layout location={location}>
-        <Head site={this.props.data.site} page={page} />
+        <Head page={page} />
         <GreyBG topMargin>
           <Grid>
             {success ? (
@@ -209,20 +209,11 @@ const Contact = props => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-        allContentfulPage(filter: { slug: { eq: "contact" } }) {
-          edges {
-            node {
-              slug
-              title
-              seoTitle
-              seoMetaDescription
-            }
-          }
+        contentfulPage(slug: { eq: "contact" }) {
+          slug
+          title
+          seoTitle
+          seoMetaDescription
         }
       }
     `}
