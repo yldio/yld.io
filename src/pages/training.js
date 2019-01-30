@@ -20,15 +20,10 @@ class TrainingPage extends Component {
 
   toggleModal = modalContent => {
     if (modalContent) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.position = 'absolute'
-
       return this.setState({
         modalContent
       })
     }
-    document.body.style.overflow = 'auto'
-    document.body.style.position = 'inherit'
 
     return this.setState({
       modalContent
@@ -46,9 +41,6 @@ class TrainingPage extends Component {
       content.trainingApproachContent2.trainingApproachContent2,
       content.trainingApproachContent3.trainingApproachContent3
     ]
-    const courseCategories = Array.from(
-      new Set(content.courses.map(c => c.category))
-    )
 
     return (
       <Layout>
@@ -86,9 +78,8 @@ class TrainingPage extends Component {
           formats={content.trainingFormats}
         />
         <Courses
-          categories={courseCategories}
+          categories={content.courseCategories}
           toggleModal={this.toggleModal}
-          courses={content.courses}
         />
         <TalkToUsSection
           title={`${content.contactUsTitle}`}
@@ -119,7 +110,6 @@ export const query = graphql`
         title
       }
     }
-
     contentfulTrainingPage {
       title
       seoTitle
@@ -137,6 +127,30 @@ export const query = graphql`
       }
       trainingApproachContent3 {
         trainingApproachContent3
+      }
+      courseCategories {
+        id
+        name
+        logo {
+          fluid(maxWidth: 680) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+          title
+          file {
+            url
+          }
+        }
+        courses {
+          id
+          name
+          technology
+          level
+          preRequisites
+          preRequisitesCourses
+          description {
+            description
+          }
+        }
       }
       featuredCaseStudy {
         id
@@ -172,26 +186,6 @@ export const query = graphql`
           file {
             url
           }
-        }
-      }
-      courses {
-        name
-        technology
-        level
-        category
-        preRequisites
-        preRequisitesCourses
-        logo {
-          fluid(maxWidth: 680) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-          title
-          file {
-            url
-          }
-        }
-        description {
-          description
         }
       }
       relatedCaseStudy {
