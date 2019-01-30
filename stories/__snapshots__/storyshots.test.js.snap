@@ -1,41 +1,1522 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
+.c0 > section {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.c0:hover section {
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
+  transform: scale(0.97);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #03183D;
+  max-width: 100%;
+}
+
+.c2 > img {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.c1 {
+  padding: 1.5rem 2.25rem 1.375rem 2.25rem;
+  max-width: 29.6875rem;
+  box-sizing: border-box;
+}
+
+.c1 > div {
+  max-width: 19.375rem;
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    height: 528px;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    width: 100%;
+    height: 473px;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 > img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 <a
-  className="sc-bdVaJa jDdHMZ"
-  href="/undefined"
+  className="c0"
+  href="/#"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
-  here
+  <section
+    style={
+      Object {
+        "background": "#03183D",
+      }
+    }
+  >
+    <header
+      className="c1"
+    >
+      <h3
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        I am a title
+      </h3>
+      <p
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        This is an intro section
+      </p>
+    </header>
+    <div
+      className="c2"
+      color="03183D"
+    >
+      <img
+        src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp"
+        style={
+          Object {
+            "maxHeight": "100%",
+          }
+        }
+      />
+    </div>
+  </section>
 </a>
 `;
 
-exports[`Storyshots AnimatedLink CardHeader 1`] = `
-<header
-  className="sc-htpNat mcGtW"
+exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  padding-bottom: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-left: 0;
+  width: 0;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c5 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    width: 41.66666666666667%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+<div
+  className="c0 c1"
 >
-  here
-</header>
+  <div
+    className="c2"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+      ]
+    }
+  >
+    Headings
+  </div>
+  <div
+    className="c3"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+      ]
+    }
+  >
+    <div
+      className=" gatsby-image-wrapper"
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "paddingBottom": "100%",
+            "width": "100%",
+          }
+        }
+      />
+      <img
+        alt=""
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "objectFit": "cover",
+            "objectPosition": "center",
+            "opacity": 0,
+            "position": "absolute",
+            "top": 0,
+            "transition": "opacity 0.5s",
+            "transitionDelay": "0.5s",
+            "width": "100%",
+          }
+        }
+      />
+      <picture>
+        <source
+          sizes="(max-width: 600px) 100vw, 600px"
+          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
+          type="image/webp"
+        />
+        <source
+          sizes="(max-width: 600px) 100vw, 600px"
+          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
+        />
+        <img
+          alt="Trainline case study featured image "
+          onLoad={[Function]}
+          src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+          style={
+            Object {
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "opacity": 1,
+              "position": "absolute",
+              "top": 0,
+              "transition": "opacity 0.5s",
+              "width": "100%",
+            }
+          }
+        />
+      </picture>
+      <noscript
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c4 c5"
+    width={
+      Array [
+        0,
+        0,
+        0,
+        0,
+        0.5,
+        0.4166666666666667,
+      ]
+    }
+  >
+    <div
+      className="c6"
+    >
+      RightText
+    </div>
+  </div>
+  <div
+    className="c2"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+      ]
+    }
+  >
+    textBelowImage
+  </div>
+</div>
 `;
 
-exports[`Storyshots AnimatedLink PosterImage 1`] = `
+exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
+.c9 {
+  padding-bottom: 0.375rem;
+}
+
+.c10 {
+  padding-bottom: 0.75rem;
+}
+
+.c11 {
+  padding-top: 0;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  padding-bottom: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c7 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-left: 0;
+  width: 0;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+  padding: 0;
+}
+
+.c12 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.c13 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.c13:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c13:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c13:focus {
+  background: transparent;
+  outline: 0.25rem solid #6be9c1;
+  color: #333333;
+}
+
+.c13:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c13:active:after {
+  background: #333333;
+}
+
+@media (min-width:56.3125em) {
+  .c11 {
+    padding-top: 0.375rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c7 {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    width: 41.66666666666667%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c8 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <div
-  className="sc-bwzfXH fmUeyT"
+  className="c0 c1"
 >
-  here
+  <div
+    className="c2"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+      ]
+    }
+  >
+    <p
+      className="c3"
+    >
+      Featured work
+    </p>
+    <h2
+      className="c4"
+    >
+      Future-proofing Trainline
+    </h2>
+  </div>
+  <div
+    className="c5"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.5,
+      ]
+    }
+  >
+    <div
+      className=" gatsby-image-wrapper"
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "paddingBottom": "100%",
+            "width": "100%",
+          }
+        }
+      />
+      <img
+        alt=""
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "objectFit": "cover",
+            "objectPosition": "center",
+            "opacity": 0,
+            "position": "absolute",
+            "top": 0,
+            "transition": "opacity 0.5s",
+            "transitionDelay": "0.5s",
+            "width": "100%",
+          }
+        }
+      />
+      <picture>
+        <source
+          sizes="(max-width: 600px) 100vw, 600px"
+          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
+          type="image/webp"
+        />
+        <source
+          sizes="(max-width: 600px) 100vw, 600px"
+          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
+        />
+        <img
+          alt="Trainline case study featured image "
+          onLoad={[Function]}
+          src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+          style={
+            Object {
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "opacity": 1,
+              "position": "absolute",
+              "top": 0,
+              "transition": "opacity 0.5s",
+              "width": "100%",
+            }
+          }
+        />
+      </picture>
+      <noscript
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c6 c7"
+    width={
+      Array [
+        0,
+        0,
+        0,
+        0,
+        0.5,
+        0.4166666666666667,
+      ]
+    }
+  >
+    <div
+      className="c8"
+    >
+      <div
+        className="c9"
+      >
+        <p
+          className="c3"
+        >
+          Featured work
+        </p>
+        <h2
+          className="c4"
+        >
+          Future-proofing Trainline
+        </h2>
+      </div>
+      <div
+        className="c10"
+      >
+        <div
+          className="c11"
+        >
+          <p
+            className="c12"
+          >
+            We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+          </p>
+          <a
+            className="c13"
+            href="/case-study/future-proofing-trainline"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c2"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+      ]
+    }
+  >
+    <div
+      className="c11"
+    >
+      <p
+        className="c12"
+      >
+        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+      </p>
+      <a
+        className="c13"
+        href="/case-study/future-proofing-trainline"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Learn more
+      </a>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Compact Video Link Dark bg 1`] = `
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c9 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.c5 {
+  display: block;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 <section
-  className="sc-chPdSV gtkdHC"
+  className="c0"
 >
   <div
-    className="sc-ifAKCX lcGsow"
+    className="c1"
   >
     <div
-      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -49,10 +1530,10 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
     >
       <div>
         <div
-          className="sc-EHOje cUjftw"
+          className="c4"
         >
           <a
-            className="sc-jzJRlG ioCwbZ"
+            className="c5"
             color="#fff"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={0.5}
@@ -60,22 +1541,22 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
             target="_blank"
           >
             <div
-              className="sc-bZQynM hHdFtZ"
+              className="c6"
             >
               <div
-                className="sc-cSHVUG kVZMia"
+                className="c7"
               >
                 <div
-                  className="sc-EHOje cXsIeh"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="sc-jTzLTM hTdtvM"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX igMiet"
+                  className="c10"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -92,14 +1573,291 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Grey bg 1`] = `
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c9 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c5 {
+  display: block;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  background: #f9f9f9;
+  z-index: 1;
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 3.125rem;
+}
+
+.c0:after {
+  content: none;
+}
+
+.c0 + * {
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    margin-top: 3.125rem;
+    margin-bottom: -3.125rem;
+  }
+
+  .c0:after {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 3.125rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    margin-top: 3.125rem;
+    margin-bottom: -3.125rem;
+  }
+
+  .c0:after {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 3.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 > * {
+    top: -3.125rem;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 > * {
+    top: -3.125rem;
+    position: relative;
+    top: 0;
+  }
+}
+
 <section
-  className="sc-kgoBCf eYwLQA"
+  className="c0"
 >
   <div
-    className="sc-ifAKCX lcGsow"
+    className="c1"
   >
     <div
-      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -113,10 +1871,10 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
     >
       <div>
         <div
-          className="sc-EHOje cUjftw"
+          className="c4"
         >
           <a
-            className="sc-jzJRlG ioCwbZ"
+            className="c5"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -124,22 +1882,22 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
             target="_blank"
           >
             <div
-              className="sc-bZQynM hHdFtZ"
+              className="c6"
             >
               <div
-                className="sc-cSHVUG kVZMia"
+                className="c7"
               >
                 <div
-                  className="sc-EHOje cXsIeh"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="sc-jTzLTM hTdtvM"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX kaPtVa"
+                  className="c10"
                   color="#333333"
                   opacity={1}
                 >
@@ -156,11 +1914,217 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Multiple components 1`] = `
+.c3 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c7 {
+  margin-right: 1.125rem;
+}
+
+.c5 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c0 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c8 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c4 {
+  display: block;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c9 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 <div
-  className="sc-ifAKCX lcGsow"
+  className="c0"
 >
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -174,10 +2138,10 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-EHOje cUjftw"
+        className="c3"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c4"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -185,22 +2149,22 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM hHdFtZ"
+            className="c5"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c6"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -213,7 +2177,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -227,10 +2191,10 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-EHOje cUjftw"
+        className="c3"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c4"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -238,22 +2202,22 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM hHdFtZ"
+            className="c5"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c6"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -266,7 +2230,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -280,10 +2244,10 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   >
     <div>
       <div
-        className="sc-EHOje cUjftw"
+        className="c3"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c4"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -291,22 +2255,22 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM hHdFtZ"
+            className="c5"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c6"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -322,11 +2286,217 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Single component 1`] = `
+.c3 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c7 {
+  margin-right: 1.125rem;
+}
+
+.c5 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c0 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c8 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c4 {
+  display: block;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c9 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 <div
-  className="sc-ifAKCX lcGsow"
+  className="c0"
 >
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -340,10 +2510,10 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   >
     <div>
       <div
-        className="sc-EHOje cUjftw"
+        className="c3"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c4"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -351,22 +2521,22 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM hHdFtZ"
+            className="c5"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c6"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -382,16 +2552,88 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 `;
 
 exports[`Storyshots CookieBanner CookieBanner 1`] = `
+.c0 {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fffaf1;
+  z-index: 100;
+  border-top: 1px solid #ffcd7c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
+.c1 {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.c3 {
+  color: #fff;
+  background-color: #333333;
+  font-weight: bold;
+  text-align: center;
+  font-size: 17px;
+  height: 60px;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 95%;
+    bottom: 24px;
+    left: 0%;
+    right: 0%;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid #ffcd7c;
+    padding: 18px 24px;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    display: inline;
+    margin: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    margin-left: auto;
+    width: 150px;
+  }
+}
+
 <div
-  className="sc-kGXeez emiswm"
+  className="c0"
 >
   <p
-    className="sc-kpOJdX bfqzRn"
+    className="c1"
   >
     By continuing to use our site you agree to the use of cookies in accordance with our
      
     <a
-      className="sc-ckVGcZ kYmQbD"
+      className="c2"
       href="/cookie-policy"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -401,7 +2643,7 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
     ,
      
     <a
-      className="sc-ckVGcZ kYmQbD"
+      className="c2"
       href="/privacy-policy"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -411,7 +2653,7 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
      and
      
     <a
-      className="sc-ckVGcZ kYmQbD"
+      className="c2"
       href="/data-retention-policy"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -422,7 +2664,7 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
     policies.
   </p>
   <button
-    className="sc-dxgOiQ frUlkP"
+    className="c3"
   >
     I agree
   </button>
@@ -430,19 +2672,79 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
 `;
 
 exports[`Storyshots Form Button 1`] = `
+.c0 {
+  border: 0;
+  display: block;
+  padding: 1.125rem 1.5rem;
+  color: #fff;
+  background: #333333;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+}
+
 <button
-  className="sc-kEYyzF idKjMa"
+  className="c0"
 >
   Click Me
 </button>
 `;
 
 exports[`Storyshots Form Checkbox 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  border: solid 2px #333333;
+  margin-right: 0.75rem;
+  position: relative;
+}
+
+.c1:checked:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #333333;
+  width: 0.75rem;
+  height: 0.75rem;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c0 {
+  display: grid;
+  margin-bottom: 2.25rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.c0 > section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 <section
-  className="sc-iAyFgw dPNDpn"
+  className="c0"
 >
   <input
-    className="sc-jKJlTe kdMWuV"
+    className="c1"
     id="checkbox"
     name="checkbox"
     type="checkbox"
@@ -456,11 +2758,38 @@ exports[`Storyshots Form Checkbox 1`] = `
 `;
 
 exports[`Storyshots Form Field 1`] = `
+.c1 {
+  border: solid 2px #333333;
+  padding: 1rem 1.5rem;
+  margin-bottom: 36px;
+  display: block;
+  width: 100%;
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+}
+
+.c0 {
+  margin-bottom: 2.25rem;
+}
+
+.c0 > section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 <section
-  className="sc-kkGfuU ctTVkZ"
+  className="c0"
 >
   <input
-    className="sc-eNQAEJ fUgpmZ"
+    className="c1"
     placeholder="test"
     type="text"
   />
@@ -468,11 +2797,40 @@ exports[`Storyshots Form Field 1`] = `
 `;
 
 exports[`Storyshots Form Fieldset 1`] = `
+.c1 {
+  border: solid 2px #333333;
+  padding: 1rem 1.5rem;
+  margin-bottom: 36px;
+  display: block;
+  width: 100%;
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+}
+
+.c0 {
+  display: grid;
+  margin-bottom: 2.25rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.c0 > section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 <section
-  className="sc-iAyFgw dPNDpn"
+  className="c0"
 >
   <input
-    className="sc-eNQAEJ fUgpmZ"
+    className="c1"
     placeholder="test"
     type="text"
   />
@@ -480,30 +2838,288 @@ exports[`Storyshots Form Fieldset 1`] = `
 `;
 
 exports[`Storyshots Form Input 1`] = `
+.c0 {
+  border: solid 2px #333333;
+  padding: 1rem 1.5rem;
+  margin-bottom: 36px;
+  display: block;
+  width: 100%;
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  box-sizing: border-box;
+}
+
 <input
-  className="sc-eNQAEJ fUgpmZ"
+  className="c0"
   placeholder="test"
   type="text"
 />
 `;
 
 exports[`Storyshots Form Label 1`] = `
+.c0 {
+  font-weight: bold;
+  padding-bottom: 0.75rem;
+  display: block;
+}
+
 <label
-  className="sc-hMqMXs bMyMmr"
+  className="c0"
 >
   Label
 </label>
 `;
 
 exports[`Storyshots Standalone Video Link Dark bg 1`] = `
+.c5 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c9 {
+  margin-right: 1.125rem;
+}
+
+.c7 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c10 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c11 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.c6 {
+  display: block;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  height: 11.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c11 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 1.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-bottom: 1.125rem;
+  }
+}
+
 <section
-  className="sc-chPdSV gtkdHC"
+  className="c0"
 >
   <div
-    className="sc-ifAKCX lcGsow"
+    className="c1"
   >
     <div
-      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -516,13 +3132,13 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
       }
     >
       <div
-        className="sc-kAzzGY hLHFQQ"
+        className="c4"
       >
         <div
-          className="sc-EHOje cUjftw"
+          className="c5"
         >
           <a
-            className="sc-jzJRlG ioCwbZ"
+            className="c6"
             color="#fff"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={0.5}
@@ -530,22 +3146,22 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
             target="_blank"
           >
             <div
-              className="sc-bZQynM jmIaZk"
+              className="c7"
             >
               <div
-                className="sc-cSHVUG kVZMia"
+                className="c8"
               >
                 <div
-                  className="sc-EHOje cXsIeh"
+                  className="c9"
                 >
                   <img
                     alt="Play button"
-                    className="sc-jTzLTM hTdtvM"
+                    className="c10"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX igMiet"
+                  className="c11"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -562,14 +3178,321 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Grey bg 1`] = `
+.c5 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c9 {
+  margin-right: 1.125rem;
+}
+
+.c7 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c10 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c11 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c6 {
+  display: block;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  height: 11.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+}
+
+.c0 {
+  background: #f9f9f9;
+  z-index: 1;
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 3.125rem;
+}
+
+.c0:after {
+  content: none;
+}
+
+.c0 + * {
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c11 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 1.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-bottom: 1.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    margin-top: 3.125rem;
+    margin-bottom: -3.125rem;
+  }
+
+  .c0:after {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 3.125rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    margin-top: 3.125rem;
+    margin-bottom: -3.125rem;
+  }
+
+  .c0:after {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 3.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 > * {
+    top: -3.125rem;
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 > * {
+    top: -3.125rem;
+    position: relative;
+    top: 0;
+  }
+}
+
 <section
-  className="sc-kgoBCf eYwLQA"
+  className="c0"
 >
   <div
-    className="sc-ifAKCX lcGsow"
+    className="c1"
   >
     <div
-      className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -582,13 +3505,13 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
       }
     >
       <div
-        className="sc-kAzzGY hLHFQQ"
+        className="c4"
       >
         <div
-          className="sc-EHOje cUjftw"
+          className="c5"
         >
           <a
-            className="sc-jzJRlG ioCwbZ"
+            className="c6"
             color="#333333"
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
             opacity={1}
@@ -596,22 +3519,22 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
             target="_blank"
           >
             <div
-              className="sc-bZQynM jmIaZk"
+              className="c7"
             >
               <div
-                className="sc-cSHVUG kVZMia"
+                className="c8"
               >
                 <div
-                  className="sc-EHOje cXsIeh"
+                  className="c9"
                 >
                   <img
                     alt="Play button"
-                    className="sc-jTzLTM hTdtvM"
+                    className="c10"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="sc-fjdhpX kaPtVa"
+                  className="c11"
                   color="#333333"
                   opacity={1}
                 >
@@ -628,11 +3551,247 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Multiple components 1`] = `
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c0 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c9 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c5 {
+  display: block;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  height: 11.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 1.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-bottom: 1.125rem;
+  }
+}
+
 <div
-  className="sc-ifAKCX lcGsow"
+  className="c0"
 >
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -645,13 +3804,13 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-kAzzGY hLHFQQ"
+      className="c3"
     >
       <div
-        className="sc-EHOje cUjftw"
+        className="c4"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c5"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -659,22 +3818,22 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM jmIaZk"
+            className="c6"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c7"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c8"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c9"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c10"
                 color="#333333"
                 opacity={1}
               >
@@ -687,7 +3846,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -700,13 +3859,13 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-kAzzGY hLHFQQ"
+      className="c3"
     >
       <div
-        className="sc-EHOje cUjftw"
+        className="c4"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c5"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -714,22 +3873,22 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM jmIaZk"
+            className="c6"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c7"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c8"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c9"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c10"
                 color="#333333"
                 opacity={1}
               >
@@ -742,7 +3901,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -755,13 +3914,13 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     }
   >
     <div
-      className="sc-kAzzGY hLHFQQ"
+      className="c3"
     >
       <div
-        className="sc-EHOje cUjftw"
+        className="c4"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c5"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -769,22 +3928,22 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM jmIaZk"
+            className="c6"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c7"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c8"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c9"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c10"
                 color="#333333"
                 opacity={1}
               >
@@ -800,11 +3959,247 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Single component 1`] = `
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c0 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c9 {
+  height: 1.5rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  height: 3rem;
+  overflow: hidden;
+  color: #333333;
+  opacity: 1;
+}
+
+.c5 {
+  display: block;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  height: 11.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1:nth-child(3) {
+    display: block;
+  }
+}
+
+@supports (-webkit-line-clamp:2) {
+  .c10 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 1.125rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-bottom: 1.125rem;
+  }
+}
+
 <div
-  className="sc-ifAKCX lcGsow"
+  className="c0"
 >
   <div
-    className="sc-VigVT ewmcrx sc-ifAKCX bTIbjp"
+    className="c1 c2"
     width={
       Array [
         1,
@@ -817,13 +4212,13 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
     }
   >
     <div
-      className="sc-kAzzGY hLHFQQ"
+      className="c3"
     >
       <div
-        className="sc-EHOje cUjftw"
+        className="c4"
       >
         <a
-          className="sc-jzJRlG ioCwbZ"
+          className="c5"
           color="#333333"
           href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
           opacity={1}
@@ -831,22 +4226,22 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
           target="_blank"
         >
           <div
-            className="sc-bZQynM jmIaZk"
+            className="c6"
           >
             <div
-              className="sc-cSHVUG kVZMia"
+              className="c7"
             >
               <div
-                className="sc-EHOje cXsIeh"
+                className="c8"
               >
                 <img
                   alt="Play button"
-                  className="sc-jTzLTM hTdtvM"
+                  className="c9"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="sc-fjdhpX kaPtVa"
+                className="c10"
                 color="#333333"
                 opacity={1}
               >
@@ -862,17 +4257,226 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 `;
 
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c7 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7:last-child {
+  padding: 0;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <div
-  className="sc-bxivhb vToUv"
+  className="c0"
 >
   <div
-    className="sc-bZQynM fezETr"
+    className="c1"
   >
     <div
-      className="sc-ifAKCX lcGsow"
+      className="c2"
     >
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -883,17 +4487,17 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
         }
       >
         <div
-          className="sc-bZQynM keNvTb"
+          className="c4"
         >
           <h2
-            className="sc-gzVnrw gForec"
+            className="c5"
           >
             This is the Title
           </h2>
         </div>
       </div>
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -904,23 +4508,23 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
         }
       >
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -932,17 +4536,226 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 `;
 
 exports[`Storyshots Title and List list in form of an array 1`] = `
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c7 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7:last-child {
+  padding: 0;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <div
-  className="sc-bxivhb vToUv"
+  className="c0"
 >
   <div
-    className="sc-bZQynM fezETr"
+    className="c1"
   >
     <div
-      className="sc-ifAKCX lcGsow"
+      className="c2"
     >
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -953,17 +4766,17 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
         }
       >
         <div
-          className="sc-bZQynM keNvTb"
+          className="c4"
         >
           <h2
-            className="sc-gzVnrw gForec"
+            className="c5"
           >
             This is the Title
           </h2>
         </div>
       </div>
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -974,34 +4787,34 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
         }
       >
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
         </p>
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1013,20 +4826,239 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 `;
 
 exports[`Storyshots Title and List on dark background 1`] = `
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #fff;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  opacity: .5;
+  padding-top: 0;
+}
+
+.c8 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8:last-child {
+  padding: 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    color: #fff;
+  }
+}
+
 <section
-  className="sc-chPdSV gtkdHC"
+  className="c0"
 >
   <div
-    className="sc-bxivhb vToUv"
+    className="c1"
   >
     <div
-      className="sc-bZQynM fezETr"
+      className="c2"
     >
       <div
-        className="sc-ifAKCX lcGsow"
+        className="c3"
       >
         <div
-          className="sc-ifAKCX jgpWAD"
+          className="c4"
           width={
             Array [
               1,
@@ -1037,17 +5069,17 @@ exports[`Storyshots Title and List on dark background 1`] = `
           }
         >
           <div
-            className="sc-bZQynM keNvTb"
+            className="c5"
           >
             <h2
-              className="sc-gzVnrw kfMiWA"
+              className="c6"
             >
               This is the Title
             </h2>
           </div>
         </div>
         <div
-          className="sc-ifAKCX jgpWAD"
+          className="c4"
           width={
             Array [
               1,
@@ -1058,34 +5090,34 @@ exports[`Storyshots Title and List on dark background 1`] = `
           }
         >
           <h3
-            className="sc-cvbbAY jBcaMy"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL bgLcRF"
+            className="c8"
             muted={true}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
           </p>
           <h3
-            className="sc-cvbbAY jBcaMy"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL bgLcRF"
+            className="c8"
             muted={true}
           >
             Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
           </p>
           <h3
-            className="sc-cvbbAY jBcaMy"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL bgLcRF"
+            className="c8"
             muted={true}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1098,20 +5130,233 @@ exports[`Storyshots Title and List on dark background 1`] = `
 `;
 
 exports[`Storyshots Title and List on grey background 1`] = `
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c0 {
+  background: #f9f9f9;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c8 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8:last-child {
+  padding: 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <section
-  className="sc-hSdWYo lmjokZ"
+  className="c0"
 >
   <div
-    className="sc-bxivhb vToUv"
+    className="c1"
   >
     <div
-      className="sc-bZQynM fezETr"
+      className="c2"
     >
       <div
-        className="sc-ifAKCX lcGsow"
+        className="c3"
       >
         <div
-          className="sc-ifAKCX jgpWAD"
+          className="c4"
           width={
             Array [
               1,
@@ -1122,17 +5367,17 @@ exports[`Storyshots Title and List on grey background 1`] = `
           }
         >
           <div
-            className="sc-bZQynM keNvTb"
+            className="c5"
           >
             <h2
-              className="sc-gzVnrw gForec"
+              className="c6"
             >
               This is the Title
             </h2>
           </div>
         </div>
         <div
-          className="sc-ifAKCX jgpWAD"
+          className="c4"
           width={
             Array [
               1,
@@ -1143,34 +5388,34 @@ exports[`Storyshots Title and List on grey background 1`] = `
           }
         >
           <h3
-            className="sc-cvbbAY fkYggs"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL hFZuuH"
+            className="c8"
             muted={false}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
           </p>
           <h3
-            className="sc-cvbbAY fkYggs"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL hFZuuH"
+            className="c8"
             muted={false}
           >
             Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
           </p>
           <h3
-            className="sc-cvbbAY fkYggs"
+            className="c7"
           >
             Community support
           </h3>
           <p
-            className="sc-eHgmQL hFZuuH"
+            className="c8"
             muted={false}
           >
             Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
@@ -1183,17 +5428,271 @@ exports[`Storyshots Title and List on grey background 1`] = `
 `;
 
 exports[`Storyshots Title and List with extra content 1`] = `
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c8 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.c8:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c8:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c8:focus {
+  background: transparent;
+  outline: 0.25rem solid #6be9c1;
+  color: #333333;
+}
+
+.c8:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c8:active:after {
+  background: #333333;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c7 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7:last-child {
+  padding: 0;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <div
-  className="sc-bxivhb vToUv"
+  className="c0"
 >
   <div
-    className="sc-bZQynM fezETr"
+    className="c1"
   >
     <div
-      className="sc-ifAKCX lcGsow"
+      className="c2"
     >
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -1204,17 +5703,17 @@ exports[`Storyshots Title and List with extra content 1`] = `
         }
       >
         <div
-          className="sc-bZQynM keNvTb"
+          className="c4"
         >
           <h2
-            className="sc-gzVnrw gForec"
+            className="c5"
           >
             This is the Title
           </h2>
         </div>
       </div>
       <div
-        className="sc-ifAKCX jgpWAD"
+        className="c3"
         width={
           Array [
             1,
@@ -1225,40 +5724,40 @@ exports[`Storyshots Title and List with extra content 1`] = `
         }
       >
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
         </p>
         <h3
-          className="sc-cvbbAY fkYggs"
+          className="c6"
         >
           Community support
         </h3>
         <p
-          className="sc-eHgmQL hFZuuH"
+          className="c7"
           muted={false}
         >
           Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
         </p>
         <a
-          className="sc-jWBwVP dhMQpa"
+          className="c8"
           href="/#"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1278,16 +5777,33 @@ exports[`Storyshots Title and List with extra content 1`] = `
 `;
 
 exports[`Storyshots Typography BodyPrimary 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
 <p
-  className="sc-gqjmRU ewbdOb"
+  className="c0"
 >
   BodyPrimary
 </p>
 `;
 
 exports[`Storyshots Typography BodyPrimary muted 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+}
+
 <p
-  className="sc-gqjmRU gccgIt"
+  className="c0"
   muted={true}
 >
   BodyPrimary muted
@@ -1295,48 +5811,103 @@ exports[`Storyshots Typography BodyPrimary muted 1`] = `
 `;
 
 exports[`Storyshots Typography BodyPrimary noPadding 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+}
+
 <p
-  className="sc-gqjmRU bndKCI"
+  className="c0"
 >
   BodyPrimary without padding
 </p>
 `;
 
 exports[`Storyshots Typography BodyPrimary reverse 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+}
+
 <p
-  className="sc-gqjmRU dgTeFt"
+  className="c0"
 >
   BodyPrimary reverse
 </p>
 `;
 
 exports[`Storyshots Typography BodyPrimary secondary text color 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+}
+
 <p
-  className="sc-gqjmRU bGZlRT"
+  className="c0"
 >
   BodyPrimary secondary text color
 </p>
 `;
 
 exports[`Storyshots Typography BodyPrimary textLight 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #828282;
+}
+
 <p
-  className="sc-gqjmRU dnOtvo"
+  className="c0"
 >
   BodyPrimary textLight
 </p>
 `;
 
 exports[`Storyshots Typography BodyStylised 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
 <p
-  className="sc-gZMcBi dqQpFk"
+  className="c0"
 >
   BodyStylised
 </p>
 `;
 
 exports[`Storyshots Typography BodyStylised muted 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  opacity: .5;
+}
+
 <p
-  className="sc-gZMcBi hWsGll"
+  className="c0"
   muted={true}
 >
   BodyStylised muted
@@ -1344,48 +5915,122 @@ exports[`Storyshots Typography BodyStylised muted 1`] = `
 `;
 
 exports[`Storyshots Typography BodyStylised noPadding 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
 <p
-  className="sc-gZMcBi drmZpQ"
+  className="c0"
 >
   BodyStylised without padding
 </p>
 `;
 
 exports[`Storyshots Typography BodyStylised reverse 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #fff;
+}
+
 <p
-  className="sc-gZMcBi cSVRYM"
+  className="c0"
 >
   BodyStylised reverse
 </p>
 `;
 
 exports[`Storyshots Typography BodyStylised secondary text color 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #757575;
+}
+
 <p
-  className="sc-gZMcBi jToOyE"
+  className="c0"
 >
   BodyStylised secondary text color
 </p>
 `;
 
 exports[`Storyshots Typography BodyStylised textLight 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #828282;
+}
+
 <p
-  className="sc-gZMcBi dooHjB"
+  className="c0"
 >
   BodyStylised textLight
 </p>
 `;
 
 exports[`Storyshots Typography CardTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+  }
+}
+
 <h3
-  className="sc-dnqmqq BbvWD"
+  className="c0"
 >
   Display Title
 </h3>
 `;
 
 exports[`Storyshots Typography CardTitle muted 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  opacity: .5;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    opacity: .5;
+  }
+}
+
 <h3
-  className="sc-dnqmqq eNEUaL"
+  className="c0"
   muted={true}
 >
   Card Title muted
@@ -1393,48 +6038,154 @@ exports[`Storyshots Typography CardTitle muted 1`] = `
 `;
 
 exports[`Storyshots Typography CardTitle noPadding 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  padding: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    padding: 0;
+  }
+}
+
 <h3
-  className="sc-dnqmqq emzJLt"
+  className="c0"
 >
   Card Title without padding
 </h3>
 `;
 
 exports[`Storyshots Typography CardTitle reverse 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  color: #fff;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    color: #fff;
+  }
+}
+
 <h3
-  className="sc-dnqmqq dIepBG"
+  className="c0"
 >
   Card Title reverse
 </h3>
 `;
 
 exports[`Storyshots Typography CardTitle secondary text color 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  color: #757575;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    color: #757575;
+  }
+}
+
 <h3
-  className="sc-dnqmqq hZTrYl"
+  className="c0"
 >
   Card Title secondary text color
 </h3>
 `;
 
 exports[`Storyshots Typography CardTitle textLight 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  color: #828282;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    color: #828282;
+  }
+}
+
 <h3
-  className="sc-dnqmqq jloQJZ"
+  className="c0"
 >
   Card Title textLight
 </h3>
 `;
 
 exports[`Storyshots Typography DisplayTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+  }
+}
+
 <h2
-  className="sc-htoDjs kxmtHS"
+  className="c0"
 >
   Display Title
 </h2>
 `;
 
 exports[`Storyshots Typography DisplayTitle muted 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  opacity: .5;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    opacity: .5;
+  }
+}
+
 <h2
-  className="sc-htoDjs jfNtmJ"
+  className="c0"
   muted={true}
 >
   Display Title muted
@@ -1442,48 +6193,154 @@ exports[`Storyshots Typography DisplayTitle muted 1`] = `
 `;
 
 exports[`Storyshots Typography DisplayTitle noPadding 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  padding: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    padding: 0;
+  }
+}
+
 <h2
-  className="sc-htoDjs dRHNGK"
+  className="c0"
 >
   Display Title without padding
 </h2>
 `;
 
 exports[`Storyshots Typography DisplayTitle reverse 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #fff;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #fff;
+  }
+}
+
 <h2
-  className="sc-htoDjs hraXzN"
+  className="c0"
 >
   Display Title reverse
 </h2>
 `;
 
 exports[`Storyshots Typography DisplayTitle secondary text color 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #757575;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #757575;
+  }
+}
+
 <h2
-  className="sc-htoDjs hZgSYX"
+  className="c0"
 >
   Display Title secondary text color
 </h2>
 `;
 
 exports[`Storyshots Typography DisplayTitle textLight 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #828282;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #828282;
+  }
+}
+
 <h2
-  className="sc-htoDjs wOyLt"
+  className="c0"
 >
   Display Title textLight
 </h2>
 `;
 
 exports[`Storyshots Typography SectionTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 <h2
-  className="sc-gzVnrw gForec"
+  className="c0"
 >
   Section Title
 </h2>
 `;
 
 exports[`Storyshots Typography SectionTitle muted 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  opacity: .5;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    opacity: .5;
+  }
+}
+
 <h2
-  className="sc-gzVnrw fhweBi"
+  className="c0"
   muted={true}
 >
   Section Title muted
@@ -1491,48 +6348,139 @@ exports[`Storyshots Typography SectionTitle muted 1`] = `
 `;
 
 exports[`Storyshots Typography SectionTitle noPadding 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    padding: 0;
+  }
+}
+
 <h2
-  className="sc-gzVnrw eiKAfC"
+  className="c0"
 >
   Section Title without padding
 </h2>
 `;
 
 exports[`Storyshots Typography SectionTitle reverse 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #fff;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    color: #fff;
+  }
+}
+
 <h2
-  className="sc-gzVnrw kfMiWA"
+  className="c0"
 >
   Section Title reverse
 </h2>
 `;
 
 exports[`Storyshots Typography SectionTitle secondary text color 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #757575;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    color: #757575;
+  }
+}
+
 <h2
-  className="sc-gzVnrw gAJaHT"
+  className="c0"
 >
   Section Title secondary text color
 </h2>
 `;
 
 exports[`Storyshots Typography SectionTitle textLight 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #828282;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    color: #828282;
+  }
+}
+
 <h2
-  className="sc-gzVnrw dpdkgv"
+  className="c0"
 >
   Section Title textLight
 </h2>
 `;
 
 exports[`Storyshots Typography Subtitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI bpHRdi"
+  className="c0"
 >
   Subtitle
 </h3>
 `;
 
 exports[`Storyshots Typography Subtitle muted 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI eEBOyF"
+  className="c0"
   muted={true}
 >
   Subtitle muted
@@ -1540,32 +6488,72 @@ exports[`Storyshots Typography Subtitle muted 1`] = `
 `;
 
 exports[`Storyshots Typography Subtitle noPadding 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI fDauwh"
+  className="c0"
 >
   Subtitle without padding
 </h3>
 `;
 
 exports[`Storyshots Typography Subtitle reverse 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI kgFENl"
+  className="c0"
 >
   Subtitle reverse
 </h3>
 `;
 
 exports[`Storyshots Typography Subtitle secondary text color 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI jxyNIB"
+  className="c0"
 >
   Subtitle secondary text color
 </h3>
 `;
 
 exports[`Storyshots Typography Subtitle textLight 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #828282;
+  font-weight: 700;
+}
+
 <h3
-  className="sc-iwsKbI dBzMmU"
+  className="c0"
 >
   Subtitle textLight
 </h3>
