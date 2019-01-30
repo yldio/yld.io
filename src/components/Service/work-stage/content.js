@@ -4,12 +4,12 @@ import { Subtitle, BodyPrimary } from '../../Typography'
 import { Item, WorkStageContentList } from './elements'
 import Hr from '../../Common/Hr'
 
-const WorkStageContent = ({ sectionTitle, sectionBody, isList }) => {
+const WorkStageContent = ({ sectionTitle, sectionBody }) => {
   const bodyList = sectionBody.split('- ')
-  console.log('s title', sectionTitle)
+
   return (
     <Fragment key={sectionTitle}>
-      <Subtitle reverse noPadding={!isList}>
+      <Subtitle reverse>
         {sectionTitle}
       </Subtitle>
       <BodyPrimary muted reverse noPadding>
