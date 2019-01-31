@@ -83,17 +83,23 @@ const Anchor = styled(Link)`
   ${StyledLinkCss};
 `
 
-const StyledLink = ({ to, href, children, ...props }) => {
+const StyledLink = ({ external, to, href, children, ...props }) => {
+  const externalProps = external
+    ? {
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      }
+    : {}
   if (to) {
     return (
-      <Anchor to={to} {...props}>
+      <Anchor {...externalProps} to={to} {...props}>
         {children}
       </Anchor>
     )
   }
 
   return (
-    <Anchor as="a" href={href} {...props}>
+    <Anchor {...externalProps} as="a" href={href} {...props}>
       {children}
     </Anchor>
   )

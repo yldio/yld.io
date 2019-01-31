@@ -12,6 +12,7 @@ const RowLayout = styled(Row)`
     justify-content: space-between;
   `}
 `
+
 const GetInTouch = ({ title, contactText }) => (
   <GreyBackground>
     <Grid>

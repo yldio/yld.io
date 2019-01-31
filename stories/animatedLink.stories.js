@@ -13,7 +13,8 @@ storiesOf('AnimatedLink', module).add('AnimatedLink', () => (
   <AnimatedLink to="#">
     <section
       style={{
-        background: `#03183D`
+        background: `#03183D`,
+        maxWidth: 400
       }}
     >
       <CardHeader>

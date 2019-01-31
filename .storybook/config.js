@@ -1,4 +1,7 @@
-import { configure } from '@storybook/react'
+import React from 'react'
+import { configure, addDecorator } from '@storybook/react'
+import { checkA11y } from '@storybook/addon-a11y'
+import { configureViewport } from '@storybook/addon-viewport'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/)
@@ -18,4 +21,7 @@ global.__PATH_PREFIX__ = ''
 window.___navigate = pathname => {
   action('NavigateTo:')(pathname)
 }
+
 configure(loadStories, module)
+addDecorator(checkA11y)
+configureViewport()

@@ -8,6 +8,7 @@ import StyledLink from '../styledLink'
 import { SectionTitle, Subtitle } from '../Typography'
 import Jobs from '../jobsByLocation'
 import Li from '../listItem'
+import ExternalAnchor from '../Common/ExternalAnchor'
 
 const JobContainer = styled.ul`
   margin-top: ${remcalc(12)};
@@ -47,13 +48,9 @@ const JobsComponent = () => (
               <JobContainer>
                 {jobsForLocation.slice(0, 3).map(({ node: job }) => (
                   <JobLi key={`${job.id}`}>
-                    <a
-                      rel="noopener noreferrer"
-                      href={job.hostedUrl}
-                      target="_blank"
-                    >
+                    <ExternalAnchor href={job.hostedUrl}>
                       {job.text.split(' - ')[0]}
-                    </a>
+                    </ExternalAnchor>
                     <JobCommitment>{job.categories.commitment}</JobCommitment>
                   </JobLi>
                 ))}

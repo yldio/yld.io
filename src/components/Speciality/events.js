@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -34,13 +35,9 @@ const EventSection = ({ speciality }) => {
                     </Col>
                     <Col>
                       <Subtitle noPadding>
-                        <a
-                          href={event.linkToEvent}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <ExternalAnchor href={event.linkToEvent}>
                           {event.eventTitle}
-                        </a>
+                        </ExternalAnchor>
                       </Subtitle>
                       <BodyPrimary noPadding>
                         {format(new Date(event.date), 'MMMM DD[,] dddd')}

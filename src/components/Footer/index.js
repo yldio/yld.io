@@ -3,6 +3,7 @@ import { Grid, Row, Col } from '../../components/grid'
 import { Padding, Margin } from 'styled-components-spacing'
 import Locations from '../../components/locations'
 import { SectionTitle } from '../../components/Typography'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import { FooterStyled, FollowUs, Social, OfficeStyled } from './elements.js'
 import Office from './office'
 
@@ -52,13 +53,9 @@ const Footer = () => {
                 <Social>
                   {social.map(s => (
                     <li key={s.label}>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={s.link}
-                      >
+                      <ExternalAnchor href={s.link}>
                         <img src={s.img} alt={s.label} />
-                      </a>
+                      </ExternalAnchor>
                     </li>
                   ))}
                 </Social>
