@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Subtitle, BodyPrimary } from '../Typography'
 
@@ -19,10 +19,10 @@ const ItemSubtitle = styled(Subtitle).attrs({
 `
 
 const SubtitleWithBody = ({ subtitle, body, bg = 'white' }) => (
-  <React.Fragment>
+  <Fragment>
     <ItemSubtitle bg={bg}>{subtitle}</ItemSubtitle>
     <ItemBody bg={bg}>{body}</ItemBody>
-  </React.Fragment>
+  </Fragment>
 )
 
 export { ItemSubtitle, ItemBody }
