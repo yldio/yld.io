@@ -149,18 +149,12 @@ const Flex = styled.div`
 
 export const Grid = props => <GridStyled mx="auto" {...props} />
 
-export const Row = props => <Flex mx={[-2, -2, -2, -42, -48, -48]} {...props} />
+export const Row = props => <Flex mx={[0, 0, 0, 0, -42, -48, -48]} {...props} />
 
-const BasicCol = props => <Flex block px={[1, 1, 1, 1.75, 2, 2]} {...props} />
+const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
 export const Col = styled(BasicCol)`
-  &:first-child {
-    padding-left: ${remcalc(36)};
-  }
-
-  &:last-child {
-    padding-right: ${remcalc(36)};
-  }
+  flex: 1;
 
   ${breakpoint('smallTablet')`
     &:first-child {

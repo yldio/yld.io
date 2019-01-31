@@ -373,8 +373,8 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -387,9 +387,8 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -398,7 +397,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
 .c4 {
@@ -407,9 +405,8 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -419,7 +416,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
 .c6 {
@@ -428,9 +424,8 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   padding-left: 0;
   width: 0;
   position: absolute;
@@ -440,54 +435,53 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c5:first-child {
-  padding-left: 2.25rem;
-}
-
-.c5:last-child {
-  padding-right: 2.25rem;
-}
-
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -496,26 +490,33 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -551,26 +552,33 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -624,26 +632,33 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c6 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -938,8 +953,8 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -952,9 +967,8 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -963,7 +977,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
 .c6 {
@@ -972,9 +985,8 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -984,7 +996,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
 .c8 {
@@ -993,9 +1004,8 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   padding-left: 0;
   width: 0;
   position: absolute;
@@ -1005,30 +1015,22 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c7 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c7:first-child {
-  padding-left: 2.25rem;
-}
-
-.c7:last-child {
-  padding-right: 2.25rem;
 }
 
 .c5 {
@@ -1368,26 +1370,33 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -1396,26 +1405,33 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1451,26 +1467,33 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c6 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1524,26 +1547,33 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c8 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c8 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1893,8 +1923,8 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1907,9 +1937,8 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -1918,15 +1947,12 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c9 {
@@ -1962,26 +1988,33 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -1990,26 +2023,33 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2164,8 +2204,8 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2178,9 +2218,8 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -2189,15 +2228,12 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c9 {
@@ -2237,26 +2273,33 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -2265,26 +2308,33 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2439,8 +2489,8 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2453,9 +2503,8 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -2464,15 +2513,12 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c1:first-child {
-  padding-left: 2.25rem;
-}
-
-.c1:last-child {
-  padding-right: 2.25rem;
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c8 {
@@ -2508,26 +2554,33 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c0 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -2536,26 +2589,33 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2812,8 +2872,8 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2826,9 +2886,8 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -2837,15 +2896,12 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c1:first-child {
-  padding-left: 2.25rem;
-}
-
-.c1:last-child {
-  padding-right: 2.25rem;
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c8 {
@@ -2881,26 +2937,33 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c0 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -2909,26 +2972,33 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3636,8 +3706,8 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3650,9 +3720,8 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -3661,7 +3730,6 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
 .c8 {
@@ -3670,9 +3738,8 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -3681,15 +3748,12 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c5:first-child {
-  padding-left: 2.25rem;
-}
-
-.c5:last-child {
-  padding-right: 2.25rem;
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c7 {
@@ -3986,26 +4050,33 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c4 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c4 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c4 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c4 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -4014,26 +4085,33 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c6 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -4069,26 +4147,33 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c8 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c8 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -4231,37 +4316,41 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 </section>
 `;
 
-exports[`Storyshots Grid list in form of a string (Contentful data) 1`] = `
+exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 .c0 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.c1 {
   max-width: calc(100% - 48px);
   position: relative;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c1 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3 {
+.c6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -4270,113 +4359,196 @@ exports[`Storyshots Grid list in form of a string (Contentful data) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
-}
-
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
 }
 
 .c4 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
-  height: 200px;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c8 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c5 {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
   background: #d8fff7;
-  border-right: 1px solid #31ffde;
-  border-left: 1px solid #31ffde;
+  border: 1px solid #31ffde;
 }
 
 @media (min-width:29.4375em) {
-  .c0 {
+  .c1 {
     max-width: calc(100% - 62px);
   }
 }
 
 @media (min-width:34.5625em) {
-  .c0 {
+  .c1 {
     max-width: 480px;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c0 {
+  .c1 {
     max-width: calc(100% - 84px);
   }
 }
 
 @media (min-width:56.3125em) {
-  .c0 {
+  .c1 {
     max-width: calc(100% - 92px);
   }
 }
 
 @media (min-width:74.8125em) {
-  .c0 {
+  .c1 {
     max-width: 1100px;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
-  .c1 {
+@media screen and (min-width:56.3125rem) {
+  .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
-  .c1 {
+@media screen and (min-width:74.8125rem) {
+  .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
-  .c3 {
+@media screen and (min-width:56.3125rem) {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
-  .c3 {
+@media screen and (min-width:74.8125rem) {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c6 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4385,7 +4557,16 @@ exports[`Storyshots Grid list in form of a string (Contentful data) 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c6 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -4393,22 +4574,243 @@ exports[`Storyshots Grid list in form of a string (Contentful data) 1`] = `
   }
 }
 
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    width: 66.66666666666666%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c8 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c8 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c8 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c8 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c8 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c8 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c9 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c9 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c9 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c9 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c9 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c9 {
+    width: 25%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
 @media (min-width:43.8125em) {
-  .c2:first-child {
+  .c3:first-child {
     padding-left: 2.625rem;
   }
 
-  .c2:last-child {
+  .c3:last-child {
     padding-right: 2.625rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c2:first-child {
+  .c3:first-child {
     padding-left: 3rem;
   }
 
-  .c2:last-child {
+  .c3:last-child {
     padding-right: 3rem;
   }
 }
@@ -4420,34 +4822,212 @@ exports[`Storyshots Grid list in form of a string (Contentful data) 1`] = `
     className="c1"
   >
     <div
-      className="c2 c3"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          0.5,
-        ]
-      }
+      className="c2"
     >
       <div
-        className="c4"
-      />
+        className="c3 c4"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
     </div>
     <div
-      className="c2 c3"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          0.5,
-        ]
-      }
+      className="c2"
     >
       <div
-        className="c4"
-      />
+        className="c3 c6"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c6"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3 c7"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.6666666666666666,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c8"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3 c8"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c8"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c8"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3 c9"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.25,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c9"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.25,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c9"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.25,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c3 c9"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.25,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -4460,8 +5040,8 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4474,9 +5054,8 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -4485,15 +5064,12 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c10 {
@@ -4547,26 +5123,33 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -4575,26 +5158,33 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -4763,8 +5353,8 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4777,9 +5367,8 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -4788,15 +5377,12 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c10 {
@@ -4854,26 +5440,33 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -4882,26 +5475,33 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5070,8 +5670,8 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5084,9 +5684,8 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -5095,15 +5694,12 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c1:first-child {
-  padding-left: 2.25rem;
-}
-
-.c1:last-child {
-  padding-right: 2.25rem;
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c9 {
@@ -5157,26 +5753,33 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c0 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -5185,26 +5788,33 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5479,8 +6089,8 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5493,9 +6103,8 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -5504,15 +6113,12 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c1:first-child {
-  padding-left: 2.25rem;
-}
-
-.c1:last-child {
-  padding-right: 2.25rem;
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c9 {
@@ -5566,26 +6172,33 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c0 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c0 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -5594,26 +6207,33 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5841,9 +6461,8 @@ exports[`Storyshots Statement Statement 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -6091,9 +6710,8 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -6398,8 +7016,8 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6412,9 +7030,8 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -6614,26 +7231,33 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -6642,26 +7266,33 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -6764,9 +7395,8 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -6775,15 +7405,12 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c0 {
@@ -6850,26 +7477,33 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -6951,9 +7585,8 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -6962,15 +7595,12 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c0 {
@@ -7033,26 +7663,33 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -7134,8 +7771,8 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7148,9 +7785,8 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -7159,15 +7795,12 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c2:first-child {
-  padding-left: 2.25rem;
-}
-
-.c2:last-child {
-  padding-right: 2.25rem;
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c5 {
@@ -7226,26 +7859,33 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c1 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c1 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -7254,26 +7894,33 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -7364,8 +8011,8 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7378,9 +8025,8 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -7389,15 +8035,12 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c3:first-child {
-  padding-left: 2.25rem;
-}
-
-.c3:last-child {
-  padding-right: 2.25rem;
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c6 {
@@ -7468,26 +8111,33 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -7496,26 +8146,33 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -7667,8 +8324,8 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7694,15 +8351,12 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c3:first-child {
-  padding-left: 2.25rem;
-}
-
-.c3:last-child {
-  padding-right: 2.25rem;
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c6 {
@@ -7773,26 +8427,33 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c2 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c2 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -7801,26 +8462,33 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -7983,8 +8651,8 @@ exports[`Storyshots Title and List on dark background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7997,9 +8665,8 @@ exports[`Storyshots Title and List on dark background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  display: block;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   position: initial;
   top: 0;
@@ -8008,15 +8675,12 @@ exports[`Storyshots Title and List on dark background 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c4:first-child {
-  padding-left: 2.25rem;
-}
-
-.c4:last-child {
-  padding-right: 2.25rem;
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c7 {
@@ -8096,26 +8760,33 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -8124,26 +8795,33 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -8311,8 +8989,8 @@ exports[`Storyshots Title and List on grey background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
+  margin-left: 0;
+  margin-right: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8338,15 +9016,12 @@ exports[`Storyshots Title and List on grey background 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c4:first-child {
-  padding-left: 2.25rem;
-}
-
-.c4:last-child {
-  padding-right: 2.25rem;
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c7 {
@@ -8430,26 +9105,33 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c3 {
     margin-left: -2.625rem;
     margin-right: -2.625rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c3 {
     margin-left: -3rem;
     margin-right: -3rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c3 {
     margin-left: -3rem;
     margin-right: -3rem;
@@ -8458,26 +9140,33 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
   .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
-@media screen and (min-width:43.8125rem) {
+@media screen and (min-width:56.3125rem) {
   .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-@media screen and (min-width:56.3125rem) {
+@media screen and (min-width:74.8125rem) {
   .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -8673,15 +9362,12 @@ exports[`Storyshots Title and List with extra content 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
 }
 
-.c3:first-child {
-  padding-left: 2.25rem;
-}
-
-.c3:last-child {
-  padding-right: 2.25rem;
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c6 {

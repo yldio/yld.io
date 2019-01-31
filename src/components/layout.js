@@ -12,6 +12,9 @@ import Footer from './Footer'
 import GreyBackground from './GreyBG'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
+import GridDebugger from './Common/GridDebugger'
+
+console.log(process.env)
 
 class Layout extends Component {
   state = { cookiesAllowed: true }
@@ -68,6 +71,7 @@ class Layout extends Component {
                   </Component>
                 )}
               </Location>
+              <GridDebugger />
               <main>{children}</main>
               <Footer />
               <GlobalStyle />
