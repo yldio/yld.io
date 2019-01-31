@@ -4,6 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import menu from '../../images/menu.svg'
 import close from '../../images/close.svg'
 import {
@@ -58,7 +59,9 @@ class Header extends Component {
                     <Link activeClassName="active" to="/contact/">
                       Contact
                     </Link>
-                    <a href="https://medium.com/yld-engineering-blog/">Blog</a>
+                    <ExternalAnchor href="https://medium.com/yld-engineering-blog/">
+                      Blog
+                    </ExternalAnchor>
                     <Link activeClassName="active" to="/join-us/">
                       Join Us
                     </Link>
