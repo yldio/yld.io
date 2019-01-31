@@ -7,6 +7,7 @@ import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../styledLink'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
 import { filterMeetups, filterConferences } from '../../utils/filterEvents'
@@ -51,13 +52,9 @@ const Events = ({ events }) => (
           {filterMeetups(events).map(event => (
             <Li fullWidth symmetrical key={`${event.id}`}>
               <Subtitle noPaddingBottom>
-                <a
-                  href={event.linkToEvent}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <ExternalAnchor href={event.linkToEvent}>
                   {event.eventTitle}
-                </a>
+                </ExternalAnchor>
               </Subtitle>
               {event.date}
             </Li>
@@ -92,12 +89,7 @@ const Events = ({ events }) => (
                 {conf.blurb.blurb}
               </FixedWidthBodyPrimary>
             </Padding>
-            <StyledLink
-              reverse
-              href={conf.linkToEvent}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <StyledLink external reverse href={conf.linkToEvent}>
               Visit the website
             </StyledLink>
           </EventWrapper>
@@ -111,13 +103,9 @@ const Events = ({ events }) => (
           {filterMeetups(events).map(conf => (
             <Li fullWidth symmetrical key={`${conf.id}`}>
               <Subtitle noPaddingBottom>
-                <a
-                  href={conf.linkToEvent}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <ExternalAnchor href={conf.linkToEvent}>
                   {conf.eventTitle}
-                </a>
+                </ExternalAnchor>
               </Subtitle>
               {conf.date}
             </Li>

@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import Li from '../listItem'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import StyledLink from '../styledLink'
 
 const TutorialsGrid = styled(Grid)`
@@ -36,13 +37,9 @@ const TutorialsSection = ({ speciality }) =>
                   .map(externalResource => (
                     <Li key={`${externalResource.id}`}>
                       <Subtitle>{externalResource.title}</Subtitle>
-                      <a
-                        href={externalResource.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <ExternalAnchor href={externalResource.link}>
                         {externalResource.additionalInfo}
-                      </a>
+                      </ExternalAnchor>
                     </Li>
                   ))}
               </ul>
