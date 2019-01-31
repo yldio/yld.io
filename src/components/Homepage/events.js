@@ -10,7 +10,7 @@ import Image from '../Common/Image'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Li from '../listItem'
 import eventIcon from './assets/homepage-event-icon.svg'
-import { filterMeetups, filterConferences } from '../../utils/filterEvents'
+import { getHomepageMeetups, getHomepageConferences } from './getEvents'
 
 const EventWrapper = styled.header`
   padding: ${remcalc(18)} ${remcalc(24)} 0;
@@ -49,7 +49,7 @@ const Events = ({ events }) => (
       </EventsColumn>
       <Padding top={42}>
         <ul>
-          {filterMeetups(events).map(event => (
+          {getHomepageMeetups(events).map(event => (
             <Li fullWidth symmetrical key={`${event.id}`}>
               <Subtitle noPaddingBottom>
                 <ExternalAnchor href={event.linkToEvent}>
@@ -75,7 +75,7 @@ const Events = ({ events }) => (
     </Col>
 
     <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
-      {filterConferences(events).map(conf => (
+      {getHomepageConferences(events).map(conf => (
         <FeaturedEvent key={conf.id} color={conf.color}>
           <EventWrapper>
             <BodyPrimary muted reverse noPadding>
@@ -100,7 +100,7 @@ const Events = ({ events }) => (
     <Col width={[1, 1, 1, 1, 0, 0, 0]}>
       <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
         <ul>
-          {filterMeetups(events).map(conf => (
+          {getHomepageMeetups(events).map(conf => (
             <Li fullWidth symmetrical key={`${conf.id}`}>
               <Subtitle noPaddingBottom>
                 <ExternalAnchor href={conf.linkToEvent}>

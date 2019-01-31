@@ -1,6 +1,6 @@
 import { format, isAfter } from 'date-fns'
 
-export const filterMeetups = events =>
+export const getHomepageMeetups = events =>
   events
     .filter(n => !n.node.homepageFeatured)
     .filter(n => isAfter(new Date(n.node.date), new Date()))
@@ -12,7 +12,7 @@ export const filterMeetups = events =>
       date: format(new Date(event.date), 'MMMM DD[,] dddd')
     }))
 
-export const filterConferences = events =>
+export const getHomepageConferences = events =>
   events
     .filter(n => n.node.homepageFeatured)
     .slice(0, 1)
