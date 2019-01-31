@@ -62,7 +62,6 @@ const generateContentfulEvent = ({
 })
 const processMeetupData = arrayOfMeetups => {
   let outputArray = []
-
   arrayOfMeetups.forEach(meetup => {
     const thisMeetup = {
       meetupId: meetup.id,
@@ -145,7 +144,6 @@ exports.handler = async (event, context, callback) => {
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
   await Map(processMeetupData(await getSelfGroups()), async group => {
     const { urlname, nextEvent } = group
-
     if (!nextEvent) {
       return null
     }
@@ -157,19 +155,17 @@ exports.handler = async (event, context, callback) => {
       })
     )
 
-    // console.log(JSON.stringify(events))
-
     const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
     const entry = generateContentfulEvent({ ...meetup, ...group })
 
     if (ev) {
       // update
       ev.fields = Object.assign(ev.fields, entry.fields)
-      // console.log(`Updating entry ${meetup.eventName}`)
+      console.log(`Updating entry ${meetup.eventName}`)
       const id = await ev.update()
       const updatedEntry = await environment.getEntry(id.sys.id)
 
-      // console.log(`Publishing updated entry ${meetup.eventName}`)
+      console.log(`Publishing updated entry ${meetup.eventName}`)
       return updatedEntry.publish()
     }
 

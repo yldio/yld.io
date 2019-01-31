@@ -27230,7 +27230,8 @@ type DotenvConfigOutput = {
           // combine multiple streams into a single stream.
           // will emit end only once
 
-          es.concat = es.merge = function(/*streams...*/) { //actually this should be called concat
+          es.concat = es.merge = function(/*streams...*/) {
+            //actually this should be called concat
             var toMerge = [].slice.call(arguments)
             if (toMerge.length === 1 && toMerge[0] instanceof Array) {
               toMerge = toMerge[0] //handle array as arguments object
@@ -36325,7 +36326,6 @@ type DotenvConfigOutput = {
             }
             return out
           }
-
           ;(function() {
             try {
               Object.defineProperty(WritableState.prototype, 'buffer', {
@@ -37571,7 +37571,6 @@ type DotenvConfigOutput = {
         /***/ function(module, exports, __webpack_require__) {
           'use strict'
           var __WEBPACK_AMD_DEFINE_RESULT__
-
           ;(function(global) {
             // minimal symbol polyfill for IE11 and others
             if (typeof Symbol !== 'function') {
@@ -47524,18 +47523,17 @@ type DotenvConfigOutput = {
                   id: nextEvent,
                   urlname
                 })
-              ) // console.log(JSON.stringify(events))
-
+              )
               const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
               const entry = generateContentfulEvent({ ...meetup, ...group })
 
               if (ev) {
                 // update
-                ev.fields = Object.assign(ev.fields, entry.fields) // console.log(`Updating entry ${meetup.eventName}`)
-
+                ev.fields = Object.assign(ev.fields, entry.fields)
+                console.log(`Updating entry ${meetup.eventName}`)
                 const id = await ev.update()
-                const updatedEntry = await environment.getEntry(id.sys.id) // console.log(`Publishing updated entry ${meetup.eventName}`)
-
+                const updatedEntry = await environment.getEntry(id.sys.id)
+                console.log(`Publishing updated entry ${meetup.eventName}`)
                 return updatedEntry.publish()
               } // create
               // console.log(`Creating entry ${meetup.eventName}`)

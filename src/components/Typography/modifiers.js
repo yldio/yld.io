@@ -25,6 +25,10 @@ const modifiers = css`
   ${is('noPaddingTop')`
     padding-top: 0;
   `};
+
+  ${is('noPaddingBottom')`
+    padding-bottom: 0;
+  `};
 `
 
 export default modifiers
