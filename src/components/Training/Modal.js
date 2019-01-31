@@ -43,13 +43,13 @@ const Close = styled.button`
   color: white;
   right: ${remcalc(24)};
   top: ${remcalc(36)};
-  position: absolute;
   font-size: ${remcalc(28)};
   font-weight: 200;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
     &:focus {
     background: transparent;
