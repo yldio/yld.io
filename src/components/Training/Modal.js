@@ -10,6 +10,7 @@ import remcalc from 'remcalc'
 import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
+import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -88,6 +89,41 @@ const ModalStyles = createGlobalStyle`
   }
 `
 
+const CourseInfo = ({ content }) => (
+  <Col width={[1, 1, 1, 1, 1 / 2]}>
+    <Image image={content.logo} />
+    <Padding bottom={1}>
+      <SectionTitle>{content.name}</SectionTitle>
+    </Padding>
+    {content.description && (
+      <BodyPrimary>{content.description.description}</BodyPrimary>
+    )}
+    <SubtitleWithBody subtitle="Level" body={content.level} />
+    <SubtitleWithBody subtitle="Pre-requisites" body={content.preRequisites} />
+    <SubtitleWithBody
+      subtitle="Pre-requisite Courses"
+      body={content.preRequisitesCourses}
+    />
+    <Padding top={2}>
+      <StyledLink to="/contact">Contact us</StyledLink>
+    </Padding>
+  </Col>
+)
+
+const CourseContent = ({ content }) => (
+  <Col width={[1, 1, 1, 1, 1 / 2]}>
+    <Padding top={4}>
+      <ReactMarkdown
+        renderers={{
+          paragraph: props => <BodyPrimary {...props} />, // eslint-disable-line react/display-name
+          heading: props => <Subtitle {...props} /> // eslint-disable-line react/display-name
+        }}
+        source={content.content.content}
+      />
+    </Padding>
+  </Col>
+)
+
 const Modal = ({ content, toggleModal }) => (
   <Wrapper visible={content}>
     <ModalStyles open={content} />
@@ -98,32 +134,8 @@ const Modal = ({ content, toggleModal }) => (
         </Close>
         <Grid>
           <Row>
-            <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <Image image={content.logo} />
-              <Padding bottom={2}>
-                <SectionTitle>{content.name}</SectionTitle>
-              </Padding>
-              <Subtitle as="h3">Level</Subtitle>
-              <BodyPrimary>{content.level}</BodyPrimary>
-              <Subtitle as="h3">Pre-requisites</Subtitle>
-              <BodyPrimary>{content.preRequisites}</BodyPrimary>
-              <Subtitle as="h3">Pre-requisite Courses</Subtitle>
-              <BodyPrimary>{content.preRequisitesCourses}</BodyPrimary>
-              <Padding top={48}>
-                <StyledLink to="/contact">Contact us</StyledLink>
-              </Padding>
-            </Col>
-            <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <Padding top={4}>
-                <ReactMarkdown
-                  renderers={{
-                    paragraph: props => <BodyPrimary {...props} />, // eslint-disable-line react/display-name
-                    heading: props => <Subtitle {...props} /> // eslint-disable-line react/display-name
-                  }}
-                  source={content.description.description}
-                />
-              </Padding>
-            </Col>
+            <CourseInfo content={content} />
+            <CourseContent content={content} />
           </Row>
         </Grid>
       </Padding>

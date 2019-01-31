@@ -138,6 +138,9 @@ export const query = graphql`
           description {
             description
           }
+          content {
+            content
+          }
         }
       }
       featuredCaseStudy {
