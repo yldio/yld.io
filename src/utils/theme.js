@@ -5,6 +5,7 @@ export const spacing = {
   0.5: remcalc(6),
   1: remcalc(12),
   1.5: remcalc(18),
+  1.75: remcalc(21),
   2: remcalc(24),
   3: remcalc(36),
   3.5: remcalc(54),

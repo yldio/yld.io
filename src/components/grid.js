@@ -149,13 +149,39 @@ const Flex = styled.div`
 
 export const Grid = props => <GridStyled mx="auto" {...props} />
 
-export const Row = props => (
-  <Flex mx={[-1, -3, -60, -42, -48, -48]} {...props} />
-)
+export const Row = props => <Flex mx={[-2, -2, -2, -42, -48, -48]} {...props} />
 
-export const Col = props => (
-  <Flex block px={[1, 3, 60, 42, 48, 48]} {...props} />
-)
+const BasicCol = props => <Flex block px={[1, 1, 1, 1.75, 2, 2]} {...props} />
+
+export const Col = styled(BasicCol)`
+  &:first-child {
+    padding-left: ${remcalc(36)};
+  }
+
+  &:last-child {
+    padding-right: ${remcalc(36)};
+  }
+
+  ${breakpoint('smallTablet')`
+    &:first-child {
+      padding-left: ${remcalc(42)};
+    }
+
+    &:last-child {
+      padding-right: ${remcalc(42)};
+    }
+  `}
+
+  ${breakpoint('tablet')`
+    &:first-child {
+      padding-left: ${remcalc(48)};
+    }
+
+    &:last-child {
+      padding-right: ${remcalc(48)};
+    }
+  `}
+`
 
 export const CompensatedRow = props => <Flex mx={[-1, -1.5, -2]} {...props} />
 
