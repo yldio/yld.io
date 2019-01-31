@@ -154,7 +154,11 @@ export const Row = props => <Flex mx={[0, 0, 0, 0, -42, -48, -48]} {...props} />
 const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
 export const Col = styled(BasicCol)`
-  flex: 1;
+  ${props =>
+    !props.block &&
+    `
+    flex: 1;
+  `};
 
   ${breakpoint('smallTablet')`
     &:first-child {
@@ -176,6 +180,10 @@ export const Col = styled(BasicCol)`
     }
   `}
 `
+
+Col.defaultProps = {
+  block: true
+}
 
 export const CompensatedRow = props => <Flex mx={[-1, -1.5, -2]} {...props} />
 

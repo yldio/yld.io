@@ -19,12 +19,12 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
   return (
     <OuterPaddings>
       <Row>
-        <Col width={[1, 1, 1, 6 / 12]}>
+        <Col width={[1, 1, 1, 1, 6 / 12]}>
           <Padding bottom={3}>
             <SectionTitle reverse={bg === 'dark'}>{title}</SectionTitle>
           </Padding>
         </Col>
-        <Col width={[1, 1, 1, 6 / 12]}>
+        <Col width={[1, 1, 1, 1, 6 / 12]}>
           {typeof list === 'string' ? (
             <ReactMarkdown
               renderers={{
