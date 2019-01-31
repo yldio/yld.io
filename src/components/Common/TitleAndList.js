@@ -3,31 +3,18 @@ import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Col, Row } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { Subtitle, BodyPrimary, SectionTitle } from '../Typography'
+import { SectionTitle } from '../Typography'
+import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 
 const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
 )
 
-const ItemBody = styled(BodyPrimary)`
-  > a {
-    text-decoration: underline;
-  }
-
+const ItemBody = styled(Body)`
   &:last-child {
     padding: 0;
   }
 `
-const SubtitleWithNoBottomPadding = styled(Subtitle)`
-  padding-bottom: 0;
-`
-
-const ItemTitle = ({ children, ...props }) => (
-  <SubtitleWithNoBottomPadding as="h3" {...props}>
-    {children}
-  </SubtitleWithNoBottomPadding>
-)
-
 const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
   return (
     <OuterPaddings>
@@ -42,18 +29,11 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
             <ReactMarkdown
               renderers={{
                 heading: props => {
-                  const Comp = <ItemTitle reverse={bg === 'dark'} {...props} /> // eslint-disable-line react/no-display-name
+                  const Comp = <ItemSubtitle bg={bg} {...props} /> // eslint-disable-line react/no-display-name
                   return Comp
                 },
                 paragraph: props => {
-                  const Comp = (
-                    <ItemBody
-                      noPaddingTop
-                      muted={bg === 'dark'}
-                      reverse={bg === 'dark'}
-                      {...props}
-                    />
-                  ) // eslint-disable-line react/no-display-name
+                  const Comp = <ItemBody bg={bg} {...props} /> // eslint-disable-line react/no-display-name
 
                   return Comp
                 }
@@ -64,14 +44,8 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
-                  <ItemTitle reverse={bg === 'dark'}>{el.title}</ItemTitle>
-                  <ItemBody
-                    noPaddingTop
-                    muted={bg === 'dark'}
-                    reverse={bg === 'dark'}
-                  >
-                    {el.body}
-                  </ItemBody>
+                  <ItemSubtitle bg={bg}>{el.title}</ItemSubtitle>
+                  <ItemBody bg={bg}>{el.body}</ItemBody>
                 </React.Fragment>
               ))
             : null}

@@ -4256,6 +4256,581 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 </div>
 `;
 
+exports[`Storyshots Subtitle and Body on dark background 1`] = `
+.c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  opacity: .5;
+  padding-top: 0;
+}
+
+.c4 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+        ]
+      }
+    >
+      <h3
+        className="c3"
+      >
+        Community support
+      </h3>
+      <p
+        className="c4"
+        muted={true}
+      >
+        Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+      </p>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Subtitle and Body on grey background 1`] = `
+.c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c0 {
+  background: #f9f9f9;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c4 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+<section
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+        ]
+      }
+    >
+      <h3
+        className="c3"
+      >
+        Community support
+      </h3>
+      <p
+        className="c4"
+        muted={false}
+      >
+        Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+      </p>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Subtitle and Body on white Background 1`] = `
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c4 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+        ]
+      }
+    >
+      <h3
+        className="c3"
+      >
+        Community support
+      </h3>
+      <p
+        className="c4"
+        muted={false}
+      >
+        Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
 .c1 {
   padding-top: 2.25rem;
@@ -4319,6 +4894,16 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -4335,16 +4920,6 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 .c7:last-child {
   padding: 0;
-}
-
-.c6 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 0;
 }
 
 @media (min-width:56.3125em) {
@@ -4598,6 +5173,16 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -4614,16 +5199,6 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 .c7:last-child {
   padding: 0;
-}
-
-.c6 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 0;
 }
 
 @media (min-width:56.3125em) {
@@ -4894,6 +5469,17 @@ exports[`Storyshots Title and List on dark background 1`] = `
   color: #fff;
 }
 
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
 .c8 {
   color: #333333;
   font-weight: 400;
@@ -4912,17 +5498,6 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 .c8:last-child {
   padding: 0;
-}
-
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #fff;
-  font-weight: 700;
-  padding-bottom: 0;
 }
 
 @media (min-width:56.3125em) {
@@ -5196,6 +5771,16 @@ exports[`Storyshots Title and List on grey background 1`] = `
   background: #f9f9f9;
 }
 
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
 .c8 {
   color: #333333;
   font-weight: 400;
@@ -5212,16 +5797,6 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 .c8:last-child {
   padding: 0;
-}
-
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 0;
 }
 
 @media (min-width:56.3125em) {
@@ -5535,6 +6110,16 @@ exports[`Storyshots Title and List with extra content 1`] = `
   background: #333333;
 }
 
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -5551,16 +6136,6 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 .c7:last-child {
   padding: 0;
-}
-
-.c6 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 0;
 }
 
 @media (min-width:56.3125em) {

@@ -1,0 +1,48 @@
+import React from 'react'
+import { storiesOf, addDecorator } from '@storybook/react'
+import Theme from './theme'
+import BlueBG from '../src/components/BlueBG'
+import GreyBG from '../src/components/GreyBackgroundWithoutOffset'
+import { Grid, Col, Row } from '../src/components/grid'
+import SubtitleWithBody from '../src/components/Common/SubtitleWithBody'
+
+addDecorator(Theme)
+
+const title = 'Community support'
+const body =
+  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
+
+storiesOf('Subtitle and Body', module)
+  .add('on white Background', () => {
+    return (
+      <Grid>
+        <Row>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody subtitle={title} body={body} bg="white" />
+          </Col>
+        </Row>
+      </Grid>
+    )
+  })
+  .add('on dark background', () => {
+    return (
+      <BlueBG>
+        <Grid>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody subtitle={title} body={body} bg="dark" />
+          </Col>
+        </Grid>
+      </BlueBG>
+    )
+  })
+  .add('on grey background', () => {
+    return (
+      <GreyBG>
+        <Grid>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody subtitle={title} body={body} bg="grey" />
+          </Col>
+        </Grid>
+      </GreyBG>
+    )
+  })

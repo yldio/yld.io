@@ -1,10 +1,9 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
-import { DisplayTitle, Subtitle, BodyPrimary } from '../Typography'
+import { DisplayTitle, BodyPrimary } from '../Typography'
 import GreyBG from '../GreyBG'
 import Hr from '../Common/Hr'
 
@@ -22,24 +21,6 @@ export const ShiftedColumn = styled(Col)`
 `
 export const SecondColumn = ({ children }) => (
   <ShiftedColumn width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>{children}</ShiftedColumn>
-)
-
-const BodyWithCustomAnchors = styled(BodyPrimary)`
-  a {
-    text-decoration: underline;
-  }
-`
-
-export const List = ({ list }) => (
-  <Padding top={1}>
-    <ReactMarkdown
-      renderers={{
-        heading: props => <Subtitle noPadding {...props} />, // eslint-disable-line react/display-name
-        paragraph: props => <BodyWithCustomAnchors muted {...props} /> // eslint-disable-line react/display-name
-      }}
-      source={list}
-    />
-  </Padding>
 )
 
 export const Section = ({ children, greyBg, ...props }) => {
