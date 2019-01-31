@@ -479,6 +479,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -ms-flexbox;
   display: flex;
   display: block;
+<<<<<<< HEAD
 }
 
 .c3 {
@@ -487,6 +488,11 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 .c4 {
+=======
+}
+
+.c5 {
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -990,9 +996,17 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
+<<<<<<< HEAD
 .c5 {
   width: 100%;
   height: auto;
+=======
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c3 {
@@ -1607,6 +1621,7 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   top: 0;
   left: 0;
   display: block;
+<<<<<<< HEAD
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1622,10 +1637,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   overflow: hidden;
   margin-left: 0;
   margin-right: 0;
+=======
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c0 {
@@ -1647,6 +1665,9 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c9 {
@@ -1905,12 +1926,23 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c4 {
@@ -1927,6 +1959,9 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c9 {
@@ -2189,12 +2224,23 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c3 {
@@ -2211,6 +2257,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c8 {
@@ -2571,12 +2620,23 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c3 {
@@ -2593,6 +2653,9 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c8 {
@@ -3381,7 +3444,11 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   display: block;
 }
 
+<<<<<<< HEAD
 .c5 {
+=======
+.c7 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -3951,12 +4018,23 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c8 {
@@ -3975,6 +4053,9 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c0 {
@@ -4702,12 +4783,23 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c0 {
@@ -4729,6 +4821,9 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c10 {
@@ -5019,12 +5114,23 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c5 {
@@ -5041,6 +5147,9 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c10 {
@@ -5335,12 +5444,23 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c4 {
@@ -5357,6 +5477,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c9 {
@@ -5753,12 +5876,23 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c4 {
@@ -5775,6 +5909,9 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+=======
+  display: block;
+>>>>>>> feat: toggling grid debugger
 }
 
 .c9 {
@@ -6879,6 +7016,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
             1,
             1,
             1,
+            1,
             0.8333333333333334,
             0.8333333333333334,
             0.75,
@@ -7378,15 +7516,32 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c4 {
+=======
+  display: block;
+}
+
+.c5 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -7642,15 +7797,32 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c5 {
+=======
+  display: block;
+}
+
+.c6 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -7805,7 +7977,11 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 }
 
 @media screen and (min-width:34.5625rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 100%;
     position: initial;
     top: 0;
@@ -7814,7 +7990,11 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 }
 
 @media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 50%;
     position: initial;
     top: 0;
@@ -7979,15 +8159,35 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c5 {
+=======
+  display: block;
+}
+
+.c6 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -8142,7 +8342,11 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 100%;
     position: initial;
     top: 0;
@@ -8151,7 +8355,11 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 50%;
     position: initial;
     top: 0;
@@ -8327,15 +8535,32 @@ exports[`Storyshots Title and List on dark background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c6 {
+=======
+  display: block;
+}
+
+.c7 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -8499,7 +8724,11 @@ exports[`Storyshots Title and List on dark background 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
+<<<<<<< HEAD
   .c4 {
+=======
+  .c5 {
+>>>>>>> feat: toggling grid debugger
     width: 100%;
     position: initial;
     top: 0;
@@ -8508,7 +8737,11 @@ exports[`Storyshots Title and List on dark background 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c4 {
+=======
+  .c5 {
+>>>>>>> feat: toggling grid debugger
     width: 50%;
     position: initial;
     top: 0;
@@ -8689,15 +8922,35 @@ exports[`Storyshots Title and List on grey background 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c6 {
+=======
+  display: block;
+}
+
+.c7 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -8856,7 +9109,11 @@ exports[`Storyshots Title and List on grey background 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
+<<<<<<< HEAD
   .c4 {
+=======
+  .c5 {
+>>>>>>> feat: toggling grid debugger
     width: 100%;
     position: initial;
     top: 0;
@@ -8865,7 +9122,11 @@ exports[`Storyshots Title and List on grey background 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c4 {
+=======
+  .c5 {
+>>>>>>> feat: toggling grid debugger
     width: 50%;
     position: initial;
     top: 0;
@@ -9045,15 +9306,35 @@ exports[`Storyshots Title and List with extra content 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;
+=======
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+>>>>>>> feat: toggling grid debugger
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 }
 
 .c5 {
+=======
+  display: block;
+}
+
+.c6 {
+>>>>>>> feat: toggling grid debugger
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -9253,7 +9534,11 @@ exports[`Storyshots Title and List with extra content 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 100%;
     position: initial;
     top: 0;
@@ -9262,7 +9547,11 @@ exports[`Storyshots Title and List with extra content 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c3 {
+=======
+  .c4 {
+>>>>>>> feat: toggling grid debugger
     width: 50%;
     position: initial;
     top: 0;
