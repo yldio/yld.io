@@ -12,13 +12,34 @@ import Footer from './Footer'
 import GreyBackground from './GreyBG'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
-import GridDebugger from './Common/GridDebugger'
+
+const { GATSBY_ENVIRONMENT } = process.env
+
+const isDevEnvironment =
+  GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
 
 class Layout extends Component {
-  state = { cookiesAllowed: true }
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      cookiesAllowed: true,
+      GridDebugger: null
+    }
+  }
 
   componentDidMount() {
     this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) })
+
+    if (isDevEnvironment) {
+      import(/* webpackChunkName: "grid-debugger" */ './Common/GridDebugger').then(
+        ({ default: component }) => {
+          this.setState({
+            GridDebugger: component
+          })
+        }
+      )
+    }
   }
 
   handleClick = () => {
@@ -34,6 +55,7 @@ class Layout extends Component {
 
       return Fragment
     })()
+    const { GridDebugger } = this.state
 
     return (
       <StaticQuery
@@ -69,7 +91,7 @@ class Layout extends Component {
                   </Component>
                 )}
               </Location>
-              <GridDebugger />
+              {GridDebugger && <GridDebugger />}
               <main>{children}</main>
               <Footer />
               <GlobalStyle />

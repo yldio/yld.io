@@ -1,2 +1,5 @@
 [build]
   Functions = "./functions"
+
+[context.deploy-preview.environment]
+  GATSBY_ENVIRONMENT = "preview"
