@@ -4,6 +4,7 @@ import is from 'styled-is'
 
 export default styled.li`
   position: relative;
+  list-style: none;
   padding-top: ${remcalc(12)};
   padding-bottom: ${remcalc(21)};
   margin-bottom: ${remcalc(8)};
