@@ -147,9 +147,11 @@ const Flex = styled.div`
   `};
 `
 
-export const Grid = props => <GridStyled mx="auto" {...props} />
+export const Grid = props => (
+  <GridStyled mx="auto" px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
+)
 
-export const Row = props => <Flex mx={[0, 0, 0, 0, -42, -48, -48]} {...props} />
+export const Row = props => <Flex mx={[0, 0, 0, 0, -1.75, -2, -2]} {...props} />
 
 const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
@@ -159,42 +161,15 @@ export const Col = styled(BasicCol)`
     `
     flex: 1;
   `};
-
-  ${breakpoint('smallTablet')`
-    &:first-child {
-      padding-left: ${remcalc(42)};
-    }
-
-    &:last-child {
-      padding-right: ${remcalc(42)};
-    }
-  `}
-
-  ${breakpoint('tablet')`
-    &:first-child {
-      padding-left: ${remcalc(48)};
-    }
-
-    &:last-child {
-      padding-right: ${remcalc(48)};
-    }
-  `}
 `
 
 Col.defaultProps = {
   block: true
 }
 
-export const CompensatedRow = props => <Flex mx={[-1, -1.5, -2]} {...props} />
-
-export const CompensatedCol = props => (
-  <Flex block px={[1, 1.5, 2]} {...props} />
-)
-
 /**
- * This is an Utilitary component for quickly building a column layout, providing a
- * 'Compensated' Column or not, depending on the `compensated` prop, and automatically
- * baking in the correct width prop for the column, based on the `cols` number prop.
+ * This is an Utilitary component for quickly building a column layout.
+ * It bakes in the correct width prop for the column, based on the `cols` number prop.
  * This calculated width can be overriden if passed explicitly to the Col.
  *
  * Usage:
@@ -207,19 +182,16 @@ export const CompensatedCol = props => (
  *  </ColumnLayout>
  *
  * Note: This component assumes that bellow the 'tablet' breakpoint, the columns will be
- * full width, for a different scenario, it's best to manually build the layout with the
- * appropriate components.
+ * full width, for a different scenario, it's best to manually build the layout with the appropriate components.
  */
-export const ColumnLayout = ({ children, cols, items, compensated }) => {
-  const RowComponent = compensated ? CompensatedRow : Row
-  const ColComponent = compensated ? CompensatedCol : Col
+export const ColumnLayout = ({ children, cols, items }) => {
   const defaultWidthOnTabletAndAbove = 12 / cols / 12
   const width = [1, 1, 1, defaultWidthOnTabletAndAbove]
 
   return (
-    <RowComponent>
+    <Row>
       {items.map((item, idx) => {
-        const child = children({ Col: ColComponent, item, idx })
+        const child = children({ Col, item, idx })
 
         return React.cloneElement(child, {
           width: child.props.width || width,
@@ -227,6 +199,6 @@ export const ColumnLayout = ({ children, cols, items, compensated }) => {
           idx
         })
       })}
-    </RowComponent>
+    </Row>
   )
 }

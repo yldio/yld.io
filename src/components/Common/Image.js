@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 const Image = ({ image, alt, className }) =>
@@ -12,4 +13,7 @@ const Image = ({ image, alt, className }) =>
     />
   )
 
-export default Image
+export default styled(Image)`
+  width: ${props => (props.width ? `${props.width}` : 'auto')};
+  height: ${props => (props.height ? `${props.height}` : 'auto')};
+`

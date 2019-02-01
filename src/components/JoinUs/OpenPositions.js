@@ -1,6 +1,6 @@
 import React from 'react'
 import Flex from 'styled-flex-component'
-import { CompensatedCol, CompensatedRow } from '../grid'
+import { Col, Row } from '../grid'
 import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
@@ -15,7 +15,7 @@ const JobLink = styled(ExternalAnchor)`
 `
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
-  <CompensatedCol as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
+  <Col as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
     <Flex column>
       <JobLink href={hostedUrl}>
         <Padding top={1} bottom={0.5}>
@@ -27,7 +27,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
       </JobLink>
       <Hr short />
     </Flex>
-  </CompensatedCol>
+  </Col>
 )
 
 class OpenPositions extends React.PureComponent {
@@ -59,11 +59,11 @@ class OpenPositions extends React.PureComponent {
       <Padding top={3} key={key}>
         <Subtitle>{location}</Subtitle>
         <Padding top={2}>
-          <CompensatedRow as="ul">
+          <Row as="ul">
             {jobs.map((job, idx) => (
               <Job key={`job-${location}-${idx}`} {...job.node} />
             ))}
-          </CompensatedRow>
+          </Row>
         </Padding>
       </Padding>
     )

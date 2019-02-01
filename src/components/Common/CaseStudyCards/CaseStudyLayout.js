@@ -31,9 +31,9 @@ const CaseStudyLayout = ({
   <RowLayout>
     <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
     <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
-      <Image alt={posterImage.title} image={posterImage} />
+      <Image alt={posterImage.title} image={posterImage} width="100%" />
     </Col>
-    <FlexCol pl={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1 / 2, 5 / 12]}>
+    <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
       <TextWrapper>{rightHandText}</TextWrapper>
     </FlexCol>
     <Col width={[1, 1, 1, 1, 0]}>{textBelowImage}</Col>

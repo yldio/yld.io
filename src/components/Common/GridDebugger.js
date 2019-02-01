@@ -10,7 +10,7 @@ const Container = styled(Grid)`
   left: 0;
   right: 0;
   opacity: 0.6;
-  z-index: 999;
+  z-index: 10000;
   pointer-events: none;
 `
 
@@ -29,7 +29,8 @@ const ColumnContent = styled.div`
   width: 100%;
   height: 100vh;
   background: #d8fff7;
-  border: 1px solid #31ffde;
+  border-left: 1px solid #31ffde;
+  border-right: 1px solid #31ffde;
 `
 
 class GridDebugger extends PureComponent {
