@@ -127,7 +127,7 @@ const CourseContent = ({ content }) => (
           ),
           heading: props => <ItemSubtitle {...props} />,
           list: props => (
-            <Padding top={1} bottom={30}>
+            <Padding top={1} bottom={3}>
               <ul {...props} />
             </Padding>
           ),
