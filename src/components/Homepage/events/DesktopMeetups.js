@@ -19,7 +19,11 @@ const DesktopMeetups = ({ events }) => (
     <Padding top={42}>
       <ul>
         {getHomepageMeetups(events).map(event => (
-          <CustomisedBulletpoint fullWidth symmetrical key={`${event.id}`}>
+          <CustomisedBulletpoint
+            fullWidthBorder
+            symmetrical
+            key={`${event.id}`}
+          >
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={event.linkToEvent}>
                 {event.eventTitle}

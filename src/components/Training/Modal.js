@@ -127,11 +127,13 @@ const CourseContent = ({ content }) => (
           ),
           heading: props => <ItemSubtitle {...props} />,
           list: props => (
-            <Padding top={1} bottom={3}>
+            <Padding top={1} bottom={30}>
               <ul {...props} />
             </Padding>
           ),
-          listItem: props => <CustomisedBulletpoint {...props} />
+          listItem: props => (
+            <CustomisedBulletpoint style={{ maxWidth: 430 }} {...props} />
+          )
         }}
         source={content.content.content}
       />

@@ -17,8 +17,8 @@ storiesOf('CustomisedBulletpoint', module)
       I am a bullet thingy
     </CustomisedBulletpoint>
   ))
-  .add('CustomisedBulletpoint fullWidth', () => (
-    <CustomisedBulletpoint fullWidth>
+  .add('CustomisedBulletpoint fullWidthBorder', () => (
+    <CustomisedBulletpoint fullWidthBorder>
       I am a bullet thingy
     </CustomisedBulletpoint>
   ))

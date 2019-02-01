@@ -17,7 +17,11 @@ const Blog = () => (
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
-              <CustomisedBulletpoint fullWidth symmetrical key={`${node.id}`}>
+              <CustomisedBulletpoint
+                fullWidthBorder
+                symmetrical
+                key={`${node.id}`}
+              >
                 <Subtitle>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${

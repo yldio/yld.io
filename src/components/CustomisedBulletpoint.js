@@ -9,6 +9,7 @@ export default styled.li`
   padding-bottom: ${remcalc(21)};
   margin-bottom: ${remcalc(8)};
   line-height: ${remcalc(24)};
+  max-width: ${remcalc(240)};
 
   ${is('symmetrical')`
     padding-top: ${remcalc(0)};
@@ -32,7 +33,7 @@ export default styled.li`
     position: absolute;
     max-width: ${remcalc(335)};
 
-    ${is('fullWidth')`
+    ${is('fullWidthBorder')`
       width: 100%;
     `};
   }
