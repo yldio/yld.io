@@ -11,7 +11,7 @@ import Events from '../components/Homepage/events/index'
 import Jobs from '../components/Homepage/jobs'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Services from '../components/Homepage/services'
-import GreyBackground from '../components/GreyBG'
+import GreyBackground from '../components/GreyBackgroundWithoutOffset'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
@@ -20,18 +20,16 @@ const IndexPage = ({
   <Layout location={location}>
     <Head page={content} />
     <Grid>
-      <Padding bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}>
+      <Padding bottom={{ smallPhone: 2, smallTablet: 4.5, desktop: 4.5 }}>
         <CaseStudyPreview
           caseStudy={content.featuredCaseStudy}
           subHeading="Featured work"
         />
       </Padding>
-      <Padding bottom={{ smallPhone: 0, desktop: 2 }} />
     </Grid>
-    <GreyBackground topMargin>
+    <GreyBackground>
       <Grid>
-        <Padding top={{ smallPhone: 2 }} />
-        <Padding top={{ smallPhone: 4, smallTablet: 5, desktop: 6 }} bottom={3}>
+        <Padding top={{ smallPhone: 4 }} bottom={3}>
           <SEOText text={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
@@ -41,9 +39,9 @@ const IndexPage = ({
     <Grid>
       <Services services={content.services} />
     </Grid>
-    <GreyBackground topMargin>
-      <Grid pt={4}>
-        <Padding bottom={{ smallPhone: 3.5, smallTablet: 3.5 }}>
+    <GreyBackground>
+      <Grid>
+        <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} top={4}>
           <Events events={events.edges} />
         </Padding>
       </Grid>
@@ -51,7 +49,7 @@ const IndexPage = ({
     <Grid>
       <Padding
         top={{ smallPhone: 3, smallTablet: 4 }}
-        bottom={{ smallPhone: 3.5, smallTablet: 3.5 }}
+        bottom={{ smallPhone: 3, smallTablet: 4 }}
       >
         <Blog />
       </Padding>

@@ -14,7 +14,24 @@ import {
   Fieldset,
   Field
 } from '../components/forms'
-import GreyBG from '../components/GreyBG'
+import GreyBG from '../components/GreyBackgroundWithoutOffset'
+
+const Success = () => (
+  <Fragment>
+    <Row>
+      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
+        <SectionTitle>We will be in touch</SectionTitle>
+      </Col>
+    </Row>
+    <Row>
+      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
+        <BodyPrimary>
+          Thanks for reaching out. We will be in contact shortly
+        </BodyPrimary>
+      </Col>
+    </Row>
+  </Fragment>
+)
 
 const checkboxes = [
   { name: 'engineering', label: 'Engineering services' },
@@ -90,23 +107,10 @@ class ContactUs extends Component {
     return (
       <Layout location={location}>
         <Head page={page} />
-        <GreyBG topMargin>
-          <Grid>
+        <GreyBG>
+          <Grid mt={4}>
             {success ? (
-              <Fragment>
-                <Row>
-                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <SectionTitle>We will be in touch</SectionTitle>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <BodyPrimary>
-                      Thanks for reaching out. We will be in contact shortly
-                    </BodyPrimary>
-                  </Col>
-                </Row>
-              </Fragment>
+              <Success />
             ) : (
               <Fragment>
                 <SectionTitle as="h1" style={{ transform: 'translateY(20%)' }}>

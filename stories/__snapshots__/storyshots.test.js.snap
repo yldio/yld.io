@@ -1661,21 +1661,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 
 .c0 {
   background: #f9f9f9;
-  z-index: 1;
-  position: relative;
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 3.125rem;
-}
-
-.c0:after {
-  content: none;
-}
-
-.c0 + * {
-  z-index: 2;
-  position: relative;
 }
 
 @media (min-width:43.8125em) {
@@ -1796,58 +1781,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    margin-top: 3.125rem;
-    margin-bottom: -3.125rem;
-  }
-
-  .c0:after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    background-color: white;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 3.125rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 {
-    margin-top: 3.125rem;
-    margin-bottom: -3.125rem;
-  }
-
-  .c0:after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    background-color: white;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 3.125rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 > * {
-    top: -3.125rem;
-    position: relative;
-    top: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 > * {
-    top: -3.125rem;
-    position: relative;
-    top: 0;
   }
 }
 
@@ -3691,21 +3624,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 
 .c0 {
   background: #f9f9f9;
-  z-index: 1;
-  position: relative;
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 3.125rem;
-}
-
-.c0:after {
-  content: none;
-}
-
-.c0 + * {
-  z-index: 2;
-  position: relative;
 }
 
 @media (min-width:43.8125em) {
@@ -3838,58 +3756,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 @media (min-width:43.8125em) {
   .c4 {
     margin-bottom: 1.125rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    margin-top: 3.125rem;
-    margin-bottom: -3.125rem;
-  }
-
-  .c0:after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    background-color: white;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 3.125rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 {
-    margin-top: 3.125rem;
-    margin-bottom: -3.125rem;
-  }
-
-  .c0:after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    background-color: white;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 3.125rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 > * {
-    top: -3.125rem;
-    position: relative;
-    top: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 > * {
-    top: -3.125rem;
-    position: relative;
-    top: 0;
   }
 }
 
