@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import BlueBG from '../src/components/BlueBG'
-import GreyBG from '../src/components/GreyBackgroundWithoutOffset'
+import BlueBackground from '../src/components/BlueBG'
+import GreyBackground from '../src/components/GreyBG'
 import { Grid } from '../src/components/grid'
 import TitleAndList from '../src/components/Common/TitleAndList'
 import StyledLink from '../src/components/styledLink'
@@ -63,19 +63,19 @@ storiesOf('Title and List', module)
   })
   .add('on dark background', () => {
     return (
-      <BlueBG>
+      <BlueBackground>
         <Grid>
           <TitleAndList title="This is the Title" list={arrayList} bg="dark" />
         </Grid>
-      </BlueBG>
+      </BlueBackground>
     )
   })
   .add('on grey background', () => {
     return (
-      <GreyBG>
+      <GreyBackground>
         <Grid>
           <TitleAndList title="This is the Title" list={arrayList} bg="grey" />
         </Grid>
-      </GreyBG>
+      </GreyBackground>
     )
   })

@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import BlueBG from '../src/components/BlueBG'
-import GreyBG from '../src/components/GreyBackgroundWithoutOffset'
+import BlueBackground from '../src/components/BlueBG'
+import GreyBackground from '../src/components/GreyBG'
 import { Grid, Col, Row } from '../src/components/grid'
 import SubtitleWithBody from '../src/components/Common/SubtitleWithBody'
 
@@ -26,23 +26,23 @@ storiesOf('Subtitle and Body', module)
   })
   .add('on dark background', () => {
     return (
-      <BlueBG>
+      <BlueBackground>
         <Grid>
           <Col width={[1, 1, 1, 1, 0.5]}>
             <SubtitleWithBody subtitle={title} body={body} bg="dark" />
           </Col>
         </Grid>
-      </BlueBG>
+      </BlueBackground>
     )
   })
   .add('on grey background', () => {
     return (
-      <GreyBG>
+      <GreyBackground>
         <Grid>
           <Col width={[1, 1, 1, 1, 0.5]}>
             <SubtitleWithBody subtitle={title} body={body} bg="grey" />
           </Col>
         </Grid>
-      </GreyBG>
+      </GreyBackground>
     )
   })

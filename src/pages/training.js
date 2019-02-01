@@ -9,7 +9,7 @@ import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import GreyBackground from '../components/GreyBackgroundWithoutOffset'
+import GreyBackground from '../components/GreyBG'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 

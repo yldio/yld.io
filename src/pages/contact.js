@@ -14,7 +14,7 @@ import {
   Fieldset,
   Field
 } from '../components/forms'
-import GreyBG from '../components/GreyBackgroundWithoutOffset'
+import GreyBackground from '../components/GreyBG'
 
 const Success = () => (
   <Fragment>
@@ -107,7 +107,7 @@ class ContactUs extends Component {
     return (
       <Layout location={location}>
         <Head page={page} />
-        <GreyBG>
+        <GreyBackground>
           <Grid mt={4}>
             {success ? (
               <Success />
@@ -205,7 +205,7 @@ class ContactUs extends Component {
             )}
             <Padding bottom={5} />
           </Grid>
-        </GreyBG>
+        </GreyBackground>
       </Layout>
     )
   }

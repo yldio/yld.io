@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GreyBackground from '../GreyBackgroundWithoutOffset'
+import GreyBackground from '../GreyBG'
 import StyledLink from '../styledLink'
 
 const TrainingStage = ({ title, body, icon }) => (

@@ -3,8 +3,9 @@ import remcalc from 'remcalc'
 import { isNot } from 'styled-is'
 import breakpoint from 'styled-components-breakpoint'
 
-// topOffset prop should be a negative number for overlapping
-// the grey background
+export default styled.section`
+  background: ${props => props.theme.colors.greyBG};
+`
 
 const afterStyles = css`
   content: ' ';
@@ -18,7 +19,7 @@ const afterStyles = css`
 
 const PADDING = 50
 
-export default styled.section`
+export const GreyBGOffset = styled.section`
   background: ${props => props.theme.colors.greyBG};
 
   z-index: 1;

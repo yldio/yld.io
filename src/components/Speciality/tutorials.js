@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import GreyBackground from '../GreyBackgroundWithoutOffset'
+import GreyBackground from '../GreyBG'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import Li from '../listItem'
 import ExternalAnchor from '../Common/ExternalAnchor'
@@ -19,7 +19,7 @@ const TutorialsSection = ({ speciality }) =>
   ).length > 0 ? (
     <GreyBackground>
       <TutorialsGrid>
-        <Padding top={5} bottom={5}>
+        <Padding vertical={5}>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SectionTitle>Tutorials</SectionTitle>

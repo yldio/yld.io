@@ -6,8 +6,8 @@ import theme from '../src/utils/theme'
 import GlobalStyle from '../src/utils/globalStyle'
 import StandaloneVideoLink from '../src/components/Common/StandaloneVideoLink'
 import { Row } from '../src/components/grid'
-import BlueBG from '../src/components/BlueBG'
-import GreyBG from '../src/components/GreyBackgroundWithoutOffset'
+import BlueBackground from '../src/components/BlueBG'
+import GreyBackground from '../src/components/GreyBG'
 
 const Theme = storyFn => (
   <ThemeProvider theme={theme}>
@@ -50,7 +50,7 @@ storiesOf('Standalone Video Link', module)
   })
   .add('Dark bg', () => {
     return (
-      <BlueBG>
+      <BlueBackground>
         <Row>
           <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
@@ -59,12 +59,12 @@ storiesOf('Standalone Video Link', module)
             {text}
           </StandaloneVideoLink>
         </Row>
-      </BlueBG>
+      </BlueBackground>
     )
   })
   .add('Grey bg', () => {
     return (
-      <GreyBG>
+      <GreyBackground>
         <Row>
           <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
@@ -73,6 +73,6 @@ storiesOf('Standalone Video Link', module)
             {text}
           </StandaloneVideoLink>
         </Row>
-      </GreyBG>
+      </GreyBackground>
     )
   })

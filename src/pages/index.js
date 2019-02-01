@@ -11,7 +11,7 @@ import Events from '../components/Homepage/events/index'
 import Jobs from '../components/Homepage/jobs'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Services from '../components/Homepage/services'
-import GreyBackground from '../components/GreyBackgroundWithoutOffset'
+import GreyBackground from '../components/GreyBG'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events },

@@ -3,8 +3,8 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import CompactVideoLink from '../src/components/Common/CompactVideoLink'
 import { Row } from '../src/components/grid'
-import BlueBG from '../src/components/BlueBG'
-import GreyBG from '../src/components/GreyBackgroundWithoutOffset'
+import BlueBackground from '../src/components/BlueBG'
+import GreyBackground from '../src/components/GreyBG'
 
 addDecorator(Theme)
 
@@ -39,7 +39,7 @@ storiesOf('Compact Video Link', module)
   })
   .add('Dark bg', () => {
     return (
-      <BlueBG>
+      <BlueBackground>
         <Row>
           <CompactVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
@@ -48,12 +48,12 @@ storiesOf('Compact Video Link', module)
             {text}
           </CompactVideoLink>
         </Row>
-      </BlueBG>
+      </BlueBackground>
     )
   })
   .add('Grey bg', () => {
     return (
-      <GreyBG>
+      <GreyBackground>
         <Row>
           <CompactVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
@@ -62,6 +62,6 @@ storiesOf('Compact Video Link', module)
             {text}
           </CompactVideoLink>
         </Row>
-      </GreyBG>
+      </GreyBackground>
     )
   })

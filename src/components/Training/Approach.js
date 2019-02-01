@@ -4,11 +4,11 @@ import { Padding } from 'styled-components-spacing'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
-import BlueBG from '../BlueBG'
+import BlueBackground from '../BlueBG'
 import TitleAndList from '../Common/TitleAndList'
 
 const Approach = ({ title, content, formats }) => (
-  <BlueBG>
+  <BlueBackground>
     <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
       <Grid>
         <TitleAndList
@@ -62,7 +62,7 @@ const Approach = ({ title, content, formats }) => (
       </Row>
       <Padding bottom={{ smallPhone: 0, tablet: 5 }} />
     </Grid>
-  </BlueBG>
+  </BlueBackground>
 )
 
 export default Approach
