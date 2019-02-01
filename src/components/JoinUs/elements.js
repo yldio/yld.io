@@ -30,7 +30,7 @@ export const Section = ({ children, greyBg, ...props }) => {
     return content
   }
 
-  return <GreyBackground static>{content}</GreyBackground>
+  return <GreyBackground>{content}</GreyBackground>
 }
 
 /**
