@@ -3,7 +3,7 @@ import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import { Subtitle, SectionTitle } from '../../Typography'
 import { getHomepageMeetups } from './getEvents'
-import Li from '../../listItem'
+import CustomisedBulletpoint from '../../CustomisedBulletpoint'
 import ExternalAnchor from '../../Common/ExternalAnchor'
 import eventIcon from './assets/homepage-event-icon.svg'
 import { EventsColumn } from './elements'
@@ -13,14 +13,14 @@ export const MobileMeetups = ({ events }) => (
     <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
       <ul>
         {getHomepageMeetups(events).map(conf => (
-          <Li fullWidth symmetrical key={`${conf.id}`}>
+          <CustomisedBulletpoint fullWidth symmetrical key={`${conf.id}`}>
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={conf.linkToEvent}>
                 {conf.eventTitle}
               </ExternalAnchor>
             </Subtitle>
             {conf.date}
-          </Li>
+          </CustomisedBulletpoint>
         ))}
       </ul>
     </Padding>

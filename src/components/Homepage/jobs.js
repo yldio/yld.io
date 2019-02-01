@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { SectionTitle, Subtitle } from '../Typography'
 import Jobs from '../jobsByLocation'
-import Li from '../listItem'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
 
 const JobContainer = styled.ul`
@@ -23,7 +23,7 @@ const JobCommitment = styled.span`
   padding-top: ${remcalc(4)};
 `
 
-const JobLi = styled(Li)`
+const JobLi = styled(CustomisedBulletpoint)`
   height: ${remcalc(123)};
 `
 

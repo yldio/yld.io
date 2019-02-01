@@ -4,7 +4,7 @@ import { Col } from '../../grid'
 import eventIcon from './assets/homepage-event-icon.svg'
 import { SectionTitle, Subtitle } from '../../Typography'
 import { getHomepageMeetups } from './getEvents'
-import Li from '../../listItem'
+import CustomisedBulletpoint from '../../CustomisedBulletpoint'
 import ExternalAnchor from '../../Common/ExternalAnchor'
 import { EventsColumn } from './elements'
 
@@ -19,14 +19,14 @@ const DesktopMeetups = ({ events }) => (
     <Padding top={42}>
       <ul>
         {getHomepageMeetups(events).map(event => (
-          <Li fullWidth symmetrical key={`${event.id}`}>
+          <CustomisedBulletpoint fullWidth symmetrical key={`${event.id}`}>
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={event.linkToEvent}>
                 {event.eventTitle}
               </ExternalAnchor>
             </Subtitle>
             {event.date}
-          </Li>
+          </CustomisedBulletpoint>
         ))}
       </ul>
     </Padding>

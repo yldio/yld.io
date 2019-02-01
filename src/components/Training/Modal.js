@@ -8,7 +8,7 @@ import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import ListItem from '../listItem'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 import SubtitleWithBody, {
@@ -131,7 +131,7 @@ const CourseContent = ({ content }) => (
               <ul {...props} />
             </Padding>
           ),
-          listItem: props => <ListItem {...props} />
+          listItem: props => <CustomisedBulletpoint {...props} />
         }}
         source={content.content.content}
       />

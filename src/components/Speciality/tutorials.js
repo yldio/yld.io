@@ -5,7 +5,7 @@ import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import Li from '../listItem'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import StyledLink from '../styledLink'
 
@@ -35,12 +35,12 @@ const TutorialsSection = ({ speciality }) =>
                   )
                   .slice(0, 3)
                   .map(externalResource => (
-                    <Li big key={`${externalResource.id}`}>
+                    <CustomisedBulletpoint big key={`${externalResource.id}`}>
                       <Subtitle>{externalResource.title}</Subtitle>
                       <ExternalAnchor href={externalResource.link}>
                         {externalResource.additionalInfo}
                       </ExternalAnchor>
-                    </Li>
+                    </CustomisedBulletpoint>
                   ))}
               </ul>
               <Padding top={3}>
