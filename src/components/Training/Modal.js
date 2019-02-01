@@ -121,7 +121,11 @@ const CourseContent = ({ content }) => (
       <ReactMarkdown
         renderers={{
           paragraph: props => <ItemBody {...props} />,
-          heading: props => <ItemSubtitle {...props} />,
+          heading: props => (
+            <Padding bottom={1}>
+              <ItemSubtitle {...props} />
+            </Padding>
+          ),
           list: props => (
             <Padding top={1} bottom={30}>
               <ul {...props} />
