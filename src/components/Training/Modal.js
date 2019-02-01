@@ -120,12 +120,12 @@ const CourseContent = ({ content }) => (
       {/* eslint-disable react/display-name */}
       <ReactMarkdown
         renderers={{
-          paragraph: props => <ItemBody {...props} />,
-          heading: props => (
+          paragraph: props => (
             <Padding bottom={1}>
-              <ItemSubtitle {...props} />
+              <ItemBody {...props} />
             </Padding>
           ),
+          heading: props => <ItemSubtitle {...props} />,
           list: props => (
             <Padding top={1} bottom={30}>
               <ul {...props} />
