@@ -32,13 +32,13 @@ const devices = [
     uid: 'tablet',
     title: 'Tablet',
     width: 1000,
-    height: 800
+    height: 600
   },
   {
     uid: 'desktop',
     title: 'Desktop',
     width: 1440,
-    height: 924
+    height: 624
   }
 ]
 
