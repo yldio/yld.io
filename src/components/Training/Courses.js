@@ -29,7 +29,9 @@ const Courses = ({ categories, toggleModal }) => {
                 {cat.courses.map(course => (
                   <StyledLink
                     style={{ cursor: 'pointer' }}
-                    onClick={() => toggleModal({ ...course, ...cat })}
+                    onClick={() =>
+                      toggleModal({ ...course, ...cat, name: course.name })
+                    }
                     key={course.id}
                   >
                     {course.name}

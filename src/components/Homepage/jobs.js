@@ -47,7 +47,7 @@ const JobsComponent = () => (
               <Subtitle>{location}</Subtitle>
               <JobContainer>
                 {jobsForLocation.slice(0, 3).map(({ node: job }) => (
-                  <JobLi key={`${job.id}`}>
+                  <JobLi big key={`${job.id}`}>
                     <ExternalAnchor href={job.hostedUrl}>
                       {job.text.split(' - ')[0]}
                     </ExternalAnchor>

@@ -35,7 +35,7 @@ const TutorialsSection = ({ speciality }) =>
                   )
                   .slice(0, 3)
                   .map(externalResource => (
-                    <Li key={`${externalResource.id}`}>
+                    <Li big key={`${externalResource.id}`}>
                       <Subtitle>{externalResource.title}</Subtitle>
                       <ExternalAnchor href={externalResource.link}>
                         {externalResource.additionalInfo}

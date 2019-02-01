@@ -27,7 +27,7 @@ const BlogPosts = ({ speciality }) => (
                     {makeBlogPosts(posts, speciality.title)
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
-                        <Li key={`${id}`} fullWidthDivider>
+                        <Li big key={`${id}`} fullWidthDivider>
                           <Subtitle>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
