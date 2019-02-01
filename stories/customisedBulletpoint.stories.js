@@ -10,7 +10,7 @@ storiesOf('CustomisedBulletpoint', module)
     <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
   ))
   .add('CustomisedBulletpoint Big', () => (
-    <CustomisedBulletpoint big>I am a bullet thingy</CustomisedBulletpoint>
+    <CustomisedBulletpoint spaced>I am a bullet thingy</CustomisedBulletpoint>
   ))
   .add('CustomisedBulletpoint Symmetrical', () => (
     <CustomisedBulletpoint symmetrical>

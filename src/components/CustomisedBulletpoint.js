@@ -16,7 +16,7 @@ export default styled.li`
     margin-bottom: ${remcalc(18)};
   `};
 
-  ${is('big')`
+  ${is('spaced')`
     padding-top: ${remcalc(0)};
     padding-bottom: ${remcalc(47)};
     margin-bottom: ${remcalc(30)};

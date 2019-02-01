@@ -35,7 +35,10 @@ const TutorialsSection = ({ speciality }) =>
                   )
                   .slice(0, 3)
                   .map(externalResource => (
-                    <CustomisedBulletpoint big key={`${externalResource.id}`}>
+                    <CustomisedBulletpoint
+                      spaced
+                      key={`${externalResource.id}`}
+                    >
                       <Subtitle>{externalResource.title}</Subtitle>
                       <ExternalAnchor href={externalResource.link}>
                         {externalResource.additionalInfo}

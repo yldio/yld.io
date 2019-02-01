@@ -26,8 +26,8 @@ class TrainingPage extends Component {
     document.removeEventListener('keyup', this.handleKeyPress, false)
   }
 
-  handleKeyPress = ({ keyCode }) => {
-    if (keyCode === 27) {
+  handleKeyPress = ({ key }) => {
+    if (key === 'Escape') {
       this.setState({
         modalContent: null
       })

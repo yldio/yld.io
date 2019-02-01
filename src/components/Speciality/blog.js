@@ -28,7 +28,7 @@ const BlogPosts = ({ speciality }) => (
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
                         <CustomisedBulletpoint
-                          big
+                          spaced
                           key={`${id}`}
                           fullWidthDivider
                         >
