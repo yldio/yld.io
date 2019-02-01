@@ -11,8 +11,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
-import GreyBackgroundWithoutOffset from '../components/GreyBackgroundWithoutOffset'
-import BlueBG from '../components/BlueBG'
+import BlueBackground from '../components/BlueBG'
 import Head from '../components/Common/Head'
 
 const FixedWidthTitle = styled(DisplayTitle)`
@@ -39,10 +38,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
       <Grid>
         <Row>
           <Col width={[1]}>
-            <Padding
-              top={3.5}
-              bottom={{ smallPhone: 3, smallTablet: 0, tablet: 3 }}
-            >
+            <Padding vertical={3.5}>
               <CaseStudyPreview caseStudy={service.caseStudies[0]} />
             </Padding>
           </Col>
@@ -53,10 +49,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
-              <Padding
-                top={{ smallPhone: 3, smallTablet: 4 }}
-                bottom={{ smallPhone: 0, smallTablet: 2 }}
-              >
+              <Padding vertical={{ smallPhone: 3, smallTablet: 4 }}>
                 <FixedWidthTitle as="h1" textLight>
                   {service.mainPageIntroSentence.mainPageIntroSentence}
                 </FixedWidthTitle>
@@ -65,14 +58,14 @@ const Service = ({ data: { contentfulService: service }, location }) => {
           </Row>
         </Grid>
       </GreyBackground>
-      <BlueBG>
+      <BlueBackground>
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
           image={service.graphic}
         />
-      </BlueBG>
-      <GreyBackgroundWithoutOffset>
+      </BlueBackground>
+      <GreyBackground>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallTablet: 3.5, tablet: 5 }}
@@ -115,7 +108,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
             </Row>
           </Grid>
         </Padding>
-      </GreyBackgroundWithoutOffset>
+      </GreyBackground>
       <Grid>
         {service.bottomCaseStudy ? (
           <Padding

@@ -128,7 +128,7 @@ const IndexPage = ({
           </Row>
         </Grid>
       </Padding>
-      <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
+      <Padding bottom={{ smallPhone: 3.5, smallTablet: 5 }}>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -175,7 +175,7 @@ const IndexPage = ({
           </Grid>
         </Padding>
       </GreyBackground>
-      <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
+      <Padding vertical={{ smallPhone: 3, tablet: 4 }}>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1, 1 / 2]}>

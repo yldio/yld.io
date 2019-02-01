@@ -19,7 +19,7 @@ const TutorialsSection = ({ speciality }) =>
   ).length > 0 ? (
     <GreyBackground>
       <TutorialsGrid>
-        <Padding top={4} bottom={5}>
+        <Padding vertical={5}>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <SectionTitle>Tutorials</SectionTitle>

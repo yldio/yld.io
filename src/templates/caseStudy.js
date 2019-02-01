@@ -7,7 +7,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
-import GreyBackground from '../components/GreyBG'
+import { GreyBGOffset } from '../components/GreyBG'
 import Head from '../components/Common/Head'
 
 const CaseStudy = ({
@@ -32,7 +32,7 @@ const CaseStudy = ({
           </Col>
         </Row>
       </Grid>
-      <GreyBackground topMargin topOffset={-150}>
+      <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
           <Padding bottom={4} top={4}>
             <Row center="md">
@@ -68,7 +68,7 @@ const CaseStudy = ({
           </Row>
           <Padding bottom={5} />
         </Grid>
-      </GreyBackground>
+      </GreyBGOffset>
       <Grid>
         <Row>
           <Col width={[1]}>

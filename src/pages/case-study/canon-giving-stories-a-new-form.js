@@ -10,8 +10,7 @@ import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
-import GreyBackground from '../../components/GreyBG'
-import GreyBackgroundWidthoutOffset from '../../components/GreyBackgroundWithoutOffset'
+import GreyBackground, { GreyBGOffset } from '../../components/GreyBG'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
@@ -126,7 +125,7 @@ const IndexPage = ({
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
 
-      <GreyBackgroundWidthoutOffset>
+      <GreyBackground>
         <Padding top={{ smallPhone: 3, tablet: 4 }} bottom={30}>
           <Grid>
             <Row>
@@ -163,7 +162,7 @@ const IndexPage = ({
             />
           </GradientBackground>
         </NoMobile>
-      </GreyBackgroundWidthoutOffset>
+      </GreyBackground>
 
       <MobileOnly tablet>
         <GradientBackground>
@@ -198,7 +197,7 @@ const IndexPage = ({
         <Video />
       </MobileOnly>
 
-      <GreyBackground topMargin topOffset={-150}>
+      <GreyBGOffset topMargin topOffset={-150}>
         <NoMobile>
           <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>
@@ -227,7 +226,7 @@ const IndexPage = ({
             </Row>
           </Padding>
         </Grid>
-      </GreyBackground>
+      </GreyBGOffset>
       {caseStudy.relatedCaseStudy ? (
         <Grid>
           <Row>

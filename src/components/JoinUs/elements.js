@@ -4,7 +4,7 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
 import { DisplayTitle, BodyPrimary } from '../Typography'
-import GreyBG from '../GreyBG'
+import GreyBackground from '../GreyBG'
 import Hr from '../Common/Hr'
 
 /**
@@ -30,7 +30,7 @@ export const Section = ({ children, greyBg, ...props }) => {
     return content
   }
 
-  return <GreyBG static>{content}</GreyBG>
+  return <GreyBackground>{content}</GreyBackground>
 }
 
 /**
