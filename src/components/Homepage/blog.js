@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import StyledLink from '../styledLink'
 import { SectionTitle, Subtitle } from '../Typography'
 import Posts from '../posts'
-import Li from '../listItem'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 
 const Blog = () => (
   <Row>
@@ -17,7 +17,11 @@ const Blog = () => (
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
-              <Li fullWidth symmetrical key={`${node.id}`}>
+              <CustomisedBulletpoint
+                fullWidthBorder
+                symmetrical
+                key={`${node.id}`}
+              >
                 <Subtitle>
                   <a
                     href={`https://medium.com/yld-engineering-blog/${
@@ -28,7 +32,7 @@ const Blog = () => (
                   </a>
                 </Subtitle>
                 {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
-              </Li>
+              </CustomisedBulletpoint>
             ))}
           </ul>
         )}

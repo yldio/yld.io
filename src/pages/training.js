@@ -18,6 +18,22 @@ class TrainingPage extends Component {
     modalContent: null
   }
 
+  componentDidMount() {
+    document.addEventListener('keyup', this.handleKeyPress, false)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleKeyPress, false)
+  }
+
+  handleKeyPress = ({ key }) => {
+    if (key === 'Escape') {
+      this.setState({
+        modalContent: null
+      })
+    }
+  }
+
   toggleModal = modalContent => {
     if (modalContent) {
       return this.setState({

@@ -5,7 +5,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 import Posts from '../posts'
-import Li from '../listItem'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import makeBlogPosts from '../../utils/makeBlogPosts'
 
 const BlogPosts = ({ speciality }) => (
@@ -27,7 +27,11 @@ const BlogPosts = ({ speciality }) => (
                     {makeBlogPosts(posts, speciality.title)
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
-                        <Li key={`${id}`} fullWidthDivider>
+                        <CustomisedBulletpoint
+                          spaced
+                          key={`${id}`}
+                          fullWidthDivider
+                        >
                           <Subtitle>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
@@ -36,7 +40,7 @@ const BlogPosts = ({ speciality }) => (
                             </a>
                           </Subtitle>
                           {format(new Date(createdAt), 'MMMM DD[,] dddd')}
-                        </Li>
+                        </CustomisedBulletpoint>
                       ))}
                   </ul>
                 </Padding>

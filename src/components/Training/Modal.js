@@ -7,10 +7,14 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../styledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
-import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
+import { SectionTitle, BodyPrimary } from '../Typography'
+import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
-import SubtitleWithBody from '../Common/SubtitleWithBody'
+import SubtitleWithBody, {
+  ItemSubtitle,
+  ItemBody
+} from '../Common/SubtitleWithBody'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -113,13 +117,27 @@ const CourseInfo = ({ content }) => (
 const CourseContent = ({ content }) => (
   <Col width={[1, 1, 1, 1, 1 / 2]}>
     <Padding top={4}>
+      {/* eslint-disable react/display-name */}
       <ReactMarkdown
         renderers={{
-          paragraph: props => <BodyPrimary {...props} />, // eslint-disable-line react/display-name
-          heading: props => <Subtitle {...props} /> // eslint-disable-line react/display-name
+          paragraph: props => (
+            <Padding bottom={1}>
+              <ItemBody {...props} />
+            </Padding>
+          ),
+          heading: props => <ItemSubtitle {...props} />,
+          list: props => (
+            <Padding top={1} bottom={30}>
+              <ul {...props} />
+            </Padding>
+          ),
+          listItem: props => (
+            <CustomisedBulletpoint style={{ maxWidth: 430 }} {...props} />
+          )
         }}
         source={content.content.content}
       />
+      {/* eslint-enable react/display-name */}
     </Padding>
   </Col>
 )

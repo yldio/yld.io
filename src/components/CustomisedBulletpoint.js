@@ -4,13 +4,23 @@ import is from 'styled-is'
 
 export default styled.li`
   position: relative;
-  padding-bottom: ${remcalc(47)};
-  margin-bottom: ${remcalc(30)};
+  list-style: none;
+  padding-top: ${remcalc(12)};
+  padding-bottom: ${remcalc(21)};
+  margin-bottom: ${remcalc(8)};
   line-height: ${remcalc(24)};
+  max-width: ${remcalc(240)};
 
   ${is('symmetrical')`
+    padding-top: ${remcalc(0)};
     padding-bottom: ${remcalc(30)};
     margin-bottom: ${remcalc(18)};
+  `};
+
+  ${is('spaced')`
+    padding-top: ${remcalc(0)};
+    padding-bottom: ${remcalc(47)};
+    margin-bottom: ${remcalc(30)};
   `};
 
   &:after {
@@ -23,7 +33,7 @@ export default styled.li`
     position: absolute;
     max-width: ${remcalc(335)};
 
-    ${is('fullWidth')`
+    ${is('fullWidthBorder')`
       width: 100%;
     `};
   }
