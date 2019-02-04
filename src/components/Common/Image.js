@@ -2,14 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-const Image = ({ image, alt, className }) =>
+const Image = ({ image, alt, className, ...props }) =>
   (image.fluid || {}).src ? (
-    <Img alt={alt || image.title} fluid={image.fluid} className={className} />
+    <Img
+      alt={alt || image.title}
+      fluid={image.fluid}
+      className={className}
+      {...props}
+    />
   ) : (
     <img
       alt={alt || image.title}
       src={(image.file || {}).url}
       className={className}
+      {...props}
     />
   )
 
