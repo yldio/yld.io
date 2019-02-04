@@ -7,6 +7,10 @@ import { Grid, Row, Col } from '../src/components/grid'
 
 addDecorator(Theme)
 
+const Container = styled(Margin)`
+  width: 100%;
+`
+
 const Block = styled.div`
   width: 100%;
   height: 300px;
@@ -17,7 +21,7 @@ const Block = styled.div`
 
 storiesOf('Grid', module).add('Rows and Colums (some combinations)', () => {
   return (
-    <Margin vertical={2}>
+    <Container vertical={2}>
       <Grid>
         <Row>
           <Col width={[1]}>
@@ -66,6 +70,6 @@ storiesOf('Grid', module).add('Rows and Colums (some combinations)', () => {
           </Col>
         </Row>
       </Grid>
-    </Margin>
+    </Container>
   )
 })

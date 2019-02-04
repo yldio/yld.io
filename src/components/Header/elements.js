@@ -85,7 +85,9 @@ export const HomeLink = styled(Padding)`
 
 export const Close = styled.button`
   position: absolute;
-  top: ${remcalc(40)};
+  min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+  min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+  top: ${remcalc(24)};
   right: ${remcalc(24)};
   background: transparent;
   color: ${props => props.theme.colors.white};
@@ -95,6 +97,7 @@ export const Close = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   &:focus {
     background: transparent;
@@ -105,11 +108,6 @@ export const Close = styled.button`
   ${breakpoint('tablet')`
     display: none;
   `};
-
-  @media screen and (max-width: 768px) and (min-width: 600px) {
-    top: ${remcalc(40)};
-    right: ${remcalc(36)};
-  }
 `
 
 export const Overlay = styled.div`

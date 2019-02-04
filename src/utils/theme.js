@@ -31,9 +31,14 @@ export const breakpoints = {
   desktop: 1197
 }
 
+export const elementSizes = {
+  tappableArea: 48
+}
+
 export default {
   breakpoints,
   spacing,
+  elementSizes,
   animations: {
     fast: '200ms',
     normal: '300ms'
