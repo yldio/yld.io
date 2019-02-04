@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import StatementComponent from '../src/components/Common/StatementComponent'
+import Statement from '../src/components/Common/Statement'
 
 addDecorator(Theme)
 
@@ -41,16 +41,14 @@ const richText = [
   }
 ]
 
-storiesOf('StatementComponent', module)
-  .add('StatementComponent', () => (
-    <StatementComponent text="We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development." />
+storiesOf('Statement', module)
+  .add('Statement', () => (
+    <Statement text="We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development." />
   ))
-  .add('StatementComponent noPadding', () => (
-    <StatementComponent
+  .add('Statement noPadding', () => (
+    <Statement
       noPadding
       text="We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development."
     />
   ))
-  .add('StatementComponent Rich Text', () => (
-    <StatementComponent text={richText} />
-  ))
+  .add('Statement Rich Text', () => <Statement text={richText} />)

@@ -16,7 +16,7 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const StatementComponent = ({ text, noPadding }) => (
+const Statement = ({ text, noPadding }) => (
   <GreyBackground>
     <Grid>
       <Row>
@@ -54,4 +54,4 @@ const StatementComponent = ({ text, noPadding }) => (
   </GreyBackground>
 )
 
-export default StatementComponent
+export default Statement

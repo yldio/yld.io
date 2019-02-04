@@ -4,7 +4,7 @@ import { Padding } from 'styled-components-spacing'
 import { Grid } from '../components/grid'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
-import StatementComponent from '../components/Common/StatementComponent'
+import Statement from '../components/Common/Statement'
 import Companies from '../components/Homepage/companies'
 import Blog from '../components/Homepage/blog'
 import Events from '../components/Homepage/events/index'
@@ -30,10 +30,7 @@ const IndexPage = ({
     <GreyBackground>
       <Grid>
         <Padding top={{ smallPhone: 4 }} bottom={3}>
-          <StatementComponent
-            noPadding
-            text={content.seoText.content[0].content}
-          />
+          <Statement noPadding text={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
         </Padding>

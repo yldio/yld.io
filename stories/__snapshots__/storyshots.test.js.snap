@@ -4673,7 +4673,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 </div>
 `;
 
-exports[`Storyshots StatementComponent StatementComponent 1`] = `
+exports[`Storyshots Statement Statement 1`] = `
 .c4 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
@@ -4912,7 +4912,7 @@ exports[`Storyshots StatementComponent StatementComponent 1`] = `
 </section>
 `;
 
-exports[`Storyshots StatementComponent StatementComponent Rich Text 1`] = `
+exports[`Storyshots Statement Statement Rich Text 1`] = `
 .c4 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
@@ -5237,7 +5237,7 @@ exports[`Storyshots StatementComponent StatementComponent Rich Text 1`] = `
 </section>
 `;
 
-exports[`Storyshots StatementComponent StatementComponent noPadding 1`] = `
+exports[`Storyshots Statement Statement noPadding 1`] = `
 .c4 {
   padding-top: 0;
   padding-bottom: 0;

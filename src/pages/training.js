@@ -4,7 +4,7 @@ import { Padding } from 'styled-components-spacing'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
-import StatementComponent from '../components/Common/StatementComponent'
+import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
@@ -71,7 +71,7 @@ class TrainingPage extends Component {
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
 
-        <StatementComponent text={content.seoText.content[0].content} />
+        <Statement text={content.seoText.content[0].content} />
 
         <Approach
           title={content.trainingApproachTitle}

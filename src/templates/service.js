@@ -13,7 +13,7 @@ import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 import BlueBackground from '../components/BlueBG'
 import Head from '../components/Common/Head'
-import StatementComponent from '../components/Common/StatementComponent'
+import Statement from '../components/Common/Statement'
 
 const WeWorkWithPadding = styled.div`
   padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
@@ -36,9 +36,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         </Row>
       </Grid>
 
-      <StatementComponent
-        text={service.mainPageIntroSentence.mainPageIntroSentence}
-      />
+      <Statement text={service.mainPageIntroSentence.mainPageIntroSentence} />
       <BlueBackground>
         <WorkStages
           title={service.workStagesTitle}
