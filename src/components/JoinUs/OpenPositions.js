@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Flex from 'styled-flex-component'
 import { Col, Row } from '../grid'
 import styled from 'styled-components'
@@ -35,22 +35,24 @@ class OpenPositions extends React.PureComponent {
     const { title, getInTouchText, getInTouchTitle } = this.props.data
 
     return (
-      <Section greyBg id="open-positions">
-        <Padding top={{ smallPhone: 3, tablet: 4 }}>
-          <SectionTitle>{title}</SectionTitle>
-          <JobsByLocation>
-            {jobs =>
-              jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-                this.renderJobsForlocation(jobsForLocation, location, idx)
-              )
-            }
-          </JobsByLocation>
+      <Fragment>
+        <Section greyBg id="open-positions">
           <Padding top={{ smallPhone: 3, tablet: 4 }}>
-            <Hr />
+            <SectionTitle>{title}</SectionTitle>
+            <JobsByLocation>
+              {jobs =>
+                jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+                  this.renderJobsForlocation(jobsForLocation, location, idx)
+                )
+              }
+            </JobsByLocation>
+            <Padding top={{ smallPhone: 3, tablet: 4 }}>
+              <Hr />
+            </Padding>
           </Padding>
-          <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
-        </Padding>
-      </Section>
+        </Section>
+        <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+      </Fragment>
     )
   }
 
