@@ -15,7 +15,7 @@ const JobLink = styled(ExternalAnchor)`
 `
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
-  <Col as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
+  <Col width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
     <Flex column>
       <JobLink href={hostedUrl}>
         <Padding top={1} bottom={0.5}>
