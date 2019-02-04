@@ -37,8 +37,8 @@ export const elementSizes = {
 
 export const zIndexes = {
   header: 999,
-  modal: 9999,
-  gridDebugger: 10000
+  modal: 10000,
+  gridDebugger: 10001
 }
 
 export default {

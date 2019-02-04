@@ -9,7 +9,7 @@ storiesOf('CustomisedBulletpoint', module)
   .add('CustomisedBulletpoint', () => (
     <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
   ))
-  .add('CustomisedBulletpoint Big', () => (
+  .add('CustomisedBulletpoint spaced', () => (
     <CustomisedBulletpoint spaced>I am a bullet thingy</CustomisedBulletpoint>
   ))
   .add('CustomisedBulletpoint Symmetrical', () => (
