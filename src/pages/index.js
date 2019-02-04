@@ -30,7 +30,7 @@ const IndexPage = ({
     <GreyBackground>
       <Grid>
         <Padding top={{ smallPhone: 4 }} bottom={3}>
-          <Statement noPadding text={content.seoText.content[0].content} />
+          <Statement noPadding richText={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
           <Companies companies={content.companies} />
         </Padding>

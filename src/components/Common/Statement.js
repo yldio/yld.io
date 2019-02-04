@@ -16,7 +16,7 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ text, noPadding }) => (
+const Statement = ({ richText, children, noPadding }) => (
   <GreyBackground>
     <Grid>
       <Row>
@@ -28,24 +28,24 @@ const Statement = ({ text, noPadding }) => (
             }}
           >
             <DisplayTitle as="h1" textLight>
-              {typeof text === 'string'
-                ? text
-                : text.map(content => {
-                    if (content.nodeType === 'text') return content.value
+              {children}
+              {richText &&
+                richText.map(content => {
+                  if (content.nodeType === 'text') return content.value
 
-                    if (content.nodeType === 'hyperlink') {
-                      return (
-                        <Link
-                          key={content.data.uri}
-                          noAfter
-                          to={`/${content.data.uri}`}
-                        >
-                          {content.content[0].value}
-                        </Link>
-                      )
-                    }
-                    return ''
-                  })}
+                  if (content.nodeType === 'hyperlink') {
+                    return (
+                      <Link
+                        key={content.data.uri}
+                        noAfter
+                        to={`/${content.data.uri}`}
+                      >
+                        {content.content[0].value}
+                      </Link>
+                    )
+                  }
+                  return ''
+                })}
             </DisplayTitle>
           </Padding>
         </Col>

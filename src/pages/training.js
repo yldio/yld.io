@@ -70,8 +70,8 @@ class TrainingPage extends Component {
           </Padding>
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
-
-        <Statement text={content.seoText.content[0].content} />
+        {console.log(content.seoText.content[0].content)}
+        <Statement richText={content.seoText.content[0].content} />
 
         <Approach
           title={content.trainingApproachTitle}

@@ -43,12 +43,15 @@ const richText = [
 
 storiesOf('Statement', module)
   .add('Statement', () => (
-    <Statement text="We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development." />
+    <Statement>
+      We enable you to adopt emerging technologies and grow powerful engineering
+      teams with a strong focus on open source development.
+    </Statement>
   ))
   .add('Statement noPadding', () => (
-    <Statement
-      noPadding
-      text="We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development."
-    />
+    <Statement noPadding>
+      We enable you to adopt emerging technologies and grow powerful engineering
+      teams with a strong focus on open source development.
+    </Statement>
   ))
-  .add('Statement Rich Text', () => <Statement text={richText} />)
+  .add('Statement Rich Text', () => <Statement richText={richText} />)
