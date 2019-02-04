@@ -28,17 +28,17 @@ class Layout extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) })
 
     if (isDevEnvironment) {
-      import(/* webpackChunkName: "grid-debugger" */ './Common/GridDebugger').then(
-        ({ default: component }) => {
-          this.setState({
-            GridDebugger: component
-          })
-        }
-      )
+      const {
+        default: component
+      } = await import(/* webpackChunkName: "grid-debugger" */ './Common/GridDebugger')
+
+      this.setState({
+        GridDebugger: component
+      })
     }
   }
 
