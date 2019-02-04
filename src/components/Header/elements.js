@@ -143,8 +143,10 @@ export const DesktopMenu = styled(Flex)`
   left: 0;
   top: 0;
   flex-direction: column;
-  padding: ${remcalc(12)} ${remcalc(0)} ${remcalc(12)} ${remcalc(24)};
-  z-index: 999;
+  padding: ${remcalc(24)};
+  padding-right: ${remcalc(0)};
+  padding-top: ${remcalc(12)};
+  z-index: ${props => props.theme.zIndexes.header};
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
   justify-content: center;

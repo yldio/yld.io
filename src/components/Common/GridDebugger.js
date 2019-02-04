@@ -10,7 +10,7 @@ const Container = styled(Grid)`
   left: 0;
   right: 0;
   opacity: 0.6;
-  z-index: 10000;
+  z-index: ${props => props.theme.zIndexes.gridDebugger};
   pointer-events: none;
 `
 

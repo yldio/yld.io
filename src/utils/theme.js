@@ -35,10 +35,17 @@ export const elementSizes = {
   tappableArea: 48
 }
 
+export const zIndexes = {
+  header: 999,
+  modal: 9999,
+  gridDebugger: 10000
+}
+
 export default {
   breakpoints,
   spacing,
   elementSizes,
+  zIndexes,
   animations: {
     fast: '200ms',
     normal: '300ms'
