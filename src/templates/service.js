@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
-import { SectionTitle, DisplayTitle, Subtitle } from '../components/Typography'
+import { SectionTitle, Subtitle } from '../components/Typography'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -13,16 +13,7 @@ import WorkStages from '../components/Service/work-stage/index'
 import GreyBackground from '../components/GreyBG'
 import BlueBackground from '../components/BlueBG'
 import Head from '../components/Common/Head'
-
-const FixedWidthTitle = styled(DisplayTitle)`
-  ${breakpoint('smallTablet')`
-    width: 593px;
-  `}
-
-  ${breakpoint('tablet')`
-    width: inherit;
-  `}
-`
+import StatementComponent from '../components/Common/StatementComponent'
 
 const WeWorkWithPadding = styled.div`
   padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
@@ -45,19 +36,9 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         </Row>
       </Grid>
 
-      <GreyBackground>
-        <Grid>
-          <Row>
-            <Col width={[1, 1, 1, 1, 1, 9 / 12]}>
-              <Padding vertical={{ smallPhone: 3, smallTablet: 4 }}>
-                <FixedWidthTitle as="h1" textLight>
-                  {service.mainPageIntroSentence.mainPageIntroSentence}
-                </FixedWidthTitle>
-              </Padding>
-            </Col>
-          </Row>
-        </Grid>
-      </GreyBackground>
+      <StatementComponent
+        text={service.mainPageIntroSentence.mainPageIntroSentence}
+      />
       <BlueBackground>
         <WorkStages
           title={service.workStagesTitle}
