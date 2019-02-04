@@ -4,12 +4,11 @@ import { Padding } from 'styled-components-spacing'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
-import SEOText from '../components/Homepage/seoText'
+import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import GreyBackground from '../components/GreyBG'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 
@@ -71,16 +70,9 @@ class TrainingPage extends Component {
           </Padding>
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
-        <GreyBackground>
-          <Grid>
-            <Padding
-              top={{ smallPhone: 2, tablet: 4 }}
-              bottom={{ smallPhone: 2, tablet: 4 }}
-            >
-              <SEOText text={content.seoText.content[0].content} />
-            </Padding>
-          </Grid>
-        </GreyBackground>
+        {console.log(content.seoText.content[0].content)}
+        <Statement richText={content.seoText.content[0].content} />
+
         <Approach
           title={content.trainingApproachTitle}
           content={trainingApproachesContent}
