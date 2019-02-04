@@ -22,11 +22,12 @@ const CardHeader = styled.header`
 
 const AnimatedLink = styled(Link)`
   > section {
-    transition: all ${props => props.theme.animations.normal} ease;
+    transition: transform ${props => props.theme.animations.normal} ease;
   }
 
+  &:focus,
   &:hover {
-    section {
+    > section {
       transform: scale(0.97);
     }
   }
