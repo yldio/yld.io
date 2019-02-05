@@ -5,10 +5,12 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
 import BlueBackground from '../BlueBG'
+import HowWeWork from '../Common/HowWeWork'
 import TitleAndList from '../Common/TitleAndList'
 
 const Approach = ({ title, content, formats }) => (
   <BlueBackground>
+    <HowWeWork title="How we work" />
     <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
       <Grid>
         <TitleAndList
