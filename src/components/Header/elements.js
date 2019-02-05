@@ -145,13 +145,15 @@ export const DesktopMenu = styled(Flex)`
   left: 0;
   top: 0;
   flex-direction: column;
-  padding: ${remcalc(24)};
-  padding-right: ${remcalc(0)};
-  padding-top: ${remcalc(12)};
+  padding: ${remcalc(12)} ${remcalc(0)} ${remcalc(12)} ${remcalc(24)};
   z-index: 999;
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
   justify-content: center;
+
+  ${breakpoint('phone')`
+    padding-bottom: ${remcalc(24)};
+  `}
 
   ${breakpoint('tablet')`
     display: flex;
@@ -180,20 +182,28 @@ export const DesktopMenu = styled(Flex)`
   ${is('open')`
     transform: translateX(0%);
 
+    > a:last-of-type {
+      margin-bottom: 0;
+    }
+
     a {
       opacity: 0.5;
-      font-size: ${remcalc(42)};
+      font-size: ${remcalc(28)};
       font-weight: 500;
       line-height: 1.14;
       margin-bottom: ${remcalc(18)};
       color: ${props => props.theme.colors.white};
       display: block;
-      top: ${remcalc(-60)};
+
+      ${breakpoint('phone')`
+        font-size: ${remcalc(42)};
+        top: ${remcalc(-60)};
+      `}
 
       &:hover, &.active {
         color: ${props => props.theme.colors.white};
         opacity: 1;
       }
-    } 
+    }
   `};
 `
