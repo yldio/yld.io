@@ -301,15 +301,8 @@ const IndexPage = ({
         </Grid>
       </Padding>
       <Grid>
-        <Row>
-          <Col width={[1]}>
-            <Padding top={4} bottom={2}>
-              <Paragraph>More of our work</Paragraph>
-            </Padding>
-          </Col>
-        </Row>
         {caseStudy.relatedCaseStudy ? (
-          <Padding bottom={5}>
+          <Padding top={4} bottom={5}>
             <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         ) : null}
