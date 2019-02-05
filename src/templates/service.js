@@ -9,7 +9,7 @@ import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import SeoLinks from '../components/Common/seoLinks'
-import WorkStages from '../components/Service/work-stage/index'
+import WorkStages from '../components/Service/WorkStages'
 import GreyBackground from '../components/GreyBG'
 import BlueBackground from '../components/BlueBG'
 import Head from '../components/Common/Head'
@@ -170,78 +170,10 @@ export const pageQuery = graphql`
         }
       }
       workStagesTitle
-      workStagesImage {
-        title
-        fluid(maxWidth: 680) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
       workStages {
         id
         title
         displayType
-        alternativeTitle
-        alternativeWorkStages {
-          title
-          alternativeTitle
-          sectionTitle1
-          sectionTitle2
-          sectionTitle3
-          sectionTitle4
-          sectionTitle5
-          sectionIcon1 {
-            title
-            file {
-              url
-            }
-          }
-          sectionIcon2 {
-            title
-            file {
-              url
-            }
-          }
-          sectionIcon3 {
-            title
-            file {
-              url
-            }
-          }
-          sectionIcon4 {
-            title
-            file {
-              url
-            }
-          }
-          sectionIcon5 {
-            title
-            file {
-              url
-            }
-          }
-          sectionBody1 {
-            sectionBody1
-          }
-          sectionBody2 {
-            sectionBody2
-          }
-          sectionBody3 {
-            sectionBody3
-          }
-
-          sectionBody4 {
-            sectionBody4
-          }
-
-          sectionBody5 {
-            sectionBody5
-          }
-        }
         sectionTitle1
         sectionTitle2
         sectionTitle3
