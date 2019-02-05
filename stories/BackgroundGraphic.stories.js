@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import { HowWeWork } from '../src/components/Common/HowWeWork'
+import { BackgroundGraphic } from '../src/components/Common/BackgroundGraphic'
 import BlueBackground from '../src/components/BlueBG'
 
 addDecorator(Theme)
@@ -16,8 +16,8 @@ const image = {
   }
 }
 
-storiesOf('HowWeWork', module).add('HowWeWork', () => (
+storiesOf('BackgroundGraphic', module).add('BackgroundGraphic', () => (
   <BlueBackground style={{ width: '100%' }}>
-    <HowWeWork title="How we work" image={image} />
+    <BackgroundGraphic title="How we work" image={image} />
   </BlueBackground>
 ))

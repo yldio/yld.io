@@ -3,12 +3,12 @@ import { Padding } from 'styled-components-spacing'
 import { Grid } from '../../grid'
 
 import Hr from '../../Common/Hr'
-import HowWeWork from '../../Common/HowWeWork'
+import BackgroundGraphic from '../../Common/BackgroundGraphic'
 import WorkStageAlternatives from './alternatives'
 
 const WorkStages = ({ title, workStages }) => (
   <Fragment>
-    <HowWeWork title={title} />
+    <BackgroundGraphic title={title} />
     <Padding vertical={{ smallPhone: 1.5, tablet: 3 }}>
       {workStages.map((workStage, index, arr) => (
         <Fragment key={workStage.id}>

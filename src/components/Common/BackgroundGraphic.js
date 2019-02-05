@@ -32,7 +32,7 @@ const HowGrid = styled(Grid)`
   ${breakpoint('tablet')`margin-bottom: 0;`};
 `
 
-export const HowWeWork = ({ title, image }) => (
+export const BackgroundGraphic = ({ title, image }) => (
   <HowGrid>
     <Row style={{ position: 'relative' }}>
       <Col width={[1]}>
@@ -45,7 +45,7 @@ export const HowWeWork = ({ title, image }) => (
   </HowGrid>
 )
 
-const HowWeWorkWrapper = ({ title }) => (
+const BackgroundGraphicWrapper = ({ title }) => (
   <StaticQuery
     query={graphql`
       {
@@ -60,8 +60,8 @@ const HowWeWorkWrapper = ({ title }) => (
         }
       }
     `}
-    render={({ image }) => <HowWeWork title={title} image={image} />}
+    render={({ image }) => <BackgroundGraphic title={title} image={image} />}
   />
 )
 
-export default HowWeWorkWrapper
+export default BackgroundGraphicWrapper
