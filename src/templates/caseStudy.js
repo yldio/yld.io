@@ -70,15 +70,8 @@ const CaseStudy = ({
         </Grid>
       </GreyBGOffset>
       <Grid>
-        <Row>
-          <Col width={[1]}>
-            <Padding top={4} bottom={2}>
-              <BodyPrimary>More of our work</BodyPrimary>
-            </Padding>
-          </Col>
-        </Row>
         {caseStudy.relatedCaseStudy ? (
-          <Padding bottom={5}>
+          <Padding top={4} bottom={5}>
             <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         ) : null}

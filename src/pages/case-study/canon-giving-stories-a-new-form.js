@@ -229,15 +229,7 @@ const IndexPage = ({
       </GreyBGOffset>
       {caseStudy.relatedCaseStudy ? (
         <Grid>
-          <Row>
-            <Col width={[1, 1, 1]}>
-              <Padding top={4} bottom={2}>
-                <BodyPrimary>More of our work</BodyPrimary>
-              </Padding>
-            </Col>
-          </Row>
-
-          <Padding bottom={5}>
+          <Padding top={4} bottom={5}>
             <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
           </Padding>
         </Grid>
