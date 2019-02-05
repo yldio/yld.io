@@ -3925,7 +3925,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   display: block;
 }
 
-.c8 {
+.c9 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -3957,6 +3957,24 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c8 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c0 {
@@ -4260,42 +4278,42 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c9 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c9 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c9 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c9 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c9 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c9 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4304,7 +4322,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c9 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4313,7 +4331,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c9 {
     width: 25%;
     position: initial;
     top: 0;
@@ -4351,6 +4369,41 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 
 @media screen and (min-width:74.8125rem) {
   .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c8 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c8 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c8 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c8 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c8 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -4451,6 +4504,42 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       </div>
     </div>
     <div
+      className="c8"
+    >
+      <div
+        className="c7"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="c4"
+        />
+      </div>
+      <div
+        className="c5"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
       className="c2"
     >
       <div
@@ -4506,7 +4595,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       className="c2"
     >
       <div
-        className="c8"
+        className="c9"
         width={
           Array [
             1,
@@ -4522,7 +4611,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c8"
+        className="c9"
         width={
           Array [
             1,
@@ -4538,7 +4627,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c8"
+        className="c9"
         width={
           Array [
             1,
@@ -4554,7 +4643,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c8"
+        className="c9"
         width={
           Array [
             1,

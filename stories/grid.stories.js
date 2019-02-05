@@ -44,6 +44,14 @@ storiesOf('Grid', module).add('Rows and Colums (some combinations)', () => {
             <Block />
           </Col>
         </Row>
+        <Row spaced>
+          <Col width={[1, 1, 1, 1, 4 / 12]}>
+            <Block />
+          </Col>
+          <Col width={[1, 1, 1, 1, 6 / 12]}>
+            <Block />
+          </Col>
+        </Row>
         <Row>
           <Col width={[1, 1, 1, 1, 4 / 12]}>
             <Block />
