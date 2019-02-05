@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import Statement from '../src/components/Common/Statement'
+import { Grid } from '../src/components/grid'
 
 addDecorator(Theme)
 
@@ -43,15 +44,19 @@ const richText = [
 
 storiesOf('Statement', module)
   .add('Statement', () => (
-    <Statement>
-      We enable you to adopt emerging technologies and grow powerful engineering
-      teams with a strong focus on open source development.
-    </Statement>
+    <Grid>
+      <Statement>
+        We enable you to adopt emerging technologies and grow powerful
+        engineering teams with a strong focus on open source development.
+      </Statement>
+    </Grid>
   ))
   .add('Statement noPadding', () => (
-    <Statement noPadding>
-      We enable you to adopt emerging technologies and grow powerful engineering
-      teams with a strong focus on open source development.
-    </Statement>
+    <Grid>
+      <Statement noPadding>
+        We enable you to adopt emerging technologies and grow powerful
+        engineering teams with a strong focus on open source development.
+      </Statement>
+    </Grid>
   ))
   .add('Statement Rich Text', () => <Statement richText={richText} />)

@@ -147,11 +147,19 @@ const Flex = styled.div`
   `};
 `
 
+const FlexWithSpaceBetween = styled(Flex)`
+  ${breakpoint('smallTablet')`
+    justify-content: space-between;
+  `}
+`
+
 export const Grid = props => (
   <GridStyled mx="auto" px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 )
 
-export const Row = props => <Flex mx={[0, 0, 0, 0, -1.75, -2, -2]} {...props} />
+export const Row = props => (
+  <FlexWithSpaceBetween mx={[0, 0, 0, 0, -1.75, -2, -2]} {...props} />
+)
 
 const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 

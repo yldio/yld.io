@@ -6,20 +6,20 @@ import { SectionTitle, Subtitle } from '../../Typography'
 import { getHomepageMeetups } from './getEvents'
 import CustomisedBulletpoint from '../../CustomisedBulletpoint'
 import ExternalAnchor from '../../Common/ExternalAnchor'
-import { EventsColumn } from './elements'
 
 const DesktopMeetups = ({ events }) => (
-  <Col width={[0, 0, 0, 0, 4 / 12, 4 / 12, 4 / 12]}>
-    <EventsColumn>
+  <Col width={[0, 0, 0, 0, 6 / 12, 4 / 12, 4 / 12]}>
+    <div>
       <Padding bottom={1}>
         <img src={eventIcon} alt="events icon" />
       </Padding>
       <SectionTitle>Upcoming events</SectionTitle>
-    </EventsColumn>
+    </div>
     <Padding top={42}>
       <ul>
         {getHomepageMeetups(events).map(event => (
           <CustomisedBulletpoint
+            fullWidth
             fullWidthBorder
             symmetrical
             key={`${event.id}`}

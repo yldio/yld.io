@@ -70,7 +70,9 @@ class TrainingPage extends Component {
           </Padding>
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
-        <Statement richText={content.seoText.content[0].content} />
+        <Grid>
+          <Statement richText={content.seoText.content[0].content} />
+        </Grid>
         <Approach
           title={content.trainingApproachTitle}
           content={trainingApproachesContent}
