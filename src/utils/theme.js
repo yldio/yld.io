@@ -35,17 +35,23 @@ export const elementSizes = {
   tappableArea: 48
 }
 
+<<<<<<< HEAD
 export const zIndexes = {
   header: 999,
   modal: 10000,
   gridDebugger: 10001
 }
 
+=======
+>>>>>>> feat: create StaffCard component
 export default {
   breakpoints,
   spacing,
   elementSizes,
+<<<<<<< HEAD
   zIndexes,
+=======
+>>>>>>> feat: create StaffCard component
   animations: {
     fast: '200ms',
     normal: '300ms'

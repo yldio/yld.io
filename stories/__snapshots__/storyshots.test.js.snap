@@ -1,5 +1,336 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots About Us Page Components StaffCard 1`] = `
+.c3 {
+  padding-bottom: 1.5rem;
+}
+
+.c6 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c4 {
+  width: 100%;
+  height: auto;
+}
+
+.c11 {
+  width: 24px;
+  height: auto;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-bottom: 0;
+}
+
+.c10 {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c10:first-child {
+  margin-left: -0.75rem;
+}
+
+.c9 {
+  padding-top: 2.25rem;
+  padding-bottom: 1.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <img
+          className="c4"
+          src="test-file-stub"
+          width="100%"
+        />
+      </div>
+      <h3
+        className="c5"
+      >
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
+        <h3
+          className="c7"
+          muted={true}
+        >
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
+        <a
+          className="c10"
+          href="twitter.com/etc"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="twitter profile link"
+            className="c11"
+            heigh="24px"
+            src="test-file-stub"
+            width="24px"
+          />
+        </a>
+        <a
+          className="c10"
+          href="linkedin.com/etc"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="linkedin  profile link"
+            className="c11"
+            heigh="24px"
+            src="test-file-stub"
+            width="24px"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
 .c0 > section {
   -webkit-transition: all 300ms ease;
@@ -461,7 +792,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c5 {
+.c6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -487,6 +818,11 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 .c4 {
+  width: auto;
+  height: auto;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -650,42 +986,89 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
+<<<<<<< HEAD
   .c5 {
-    padding-left: 0;
-    padding-right: 0;
+=======
+  .c6 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
-    padding-left: 0;
-    padding-right: 0;
+  .c6 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
+  .c6 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .c6 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
+  .c6 {
+>>>>>>> feat: create StaffCard component
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c5 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+=======
+  .c6 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+<<<<<<< HEAD
+  .c5 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+=======
+  .c6 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+<<<<<<< HEAD
+  .c5 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+=======
+  .c6 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c6 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -694,7 +1077,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c6 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -703,7 +1086,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -712,6 +1095,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
+<<<<<<< HEAD
   .c5 {
     width: 50%;
     position: initial;
@@ -722,6 +1106,9 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:74.8125rem) {
   .c5 {
+=======
+  .c6 {
+>>>>>>> feat: create StaffCard component
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -730,7 +1117,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c6 {
+  .c7 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -811,7 +1198,11 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     }
   >
     <div
+<<<<<<< HEAD
       className="c3 gatsby-image-wrapper"
+=======
+      className="c4 gatsby-image-wrapper"
+>>>>>>> feat: create StaffCard component
       style={
         Object {
           "overflow": "hidden",
@@ -892,7 +1283,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     </div>
   </div>
   <div
-    className="c4 c5"
+    className="c5 c6"
     width={
       Array [
         0,
@@ -906,7 +1297,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     }
   >
     <div
-      className="c6"
+      className="c7"
     >
       RightText
     </div>
@@ -929,6 +1320,21 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
+<<<<<<< HEAD
+=======
+.c10 {
+  padding-bottom: 0.375rem;
+}
+
+.c11 {
+  padding-bottom: 0.75rem;
+}
+
+.c12 {
+  padding-top: 0;
+}
+
+>>>>>>> feat: create StaffCard component
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -976,6 +1382,37 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  padding-bottom: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c8 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+>>>>>>> feat: create StaffCard component
   padding-left: 0;
   padding-right: 0;
   width: 0;
@@ -990,12 +1427,31 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
+<<<<<<< HEAD
 .c5 {
   width: 100%;
   height: auto;
 }
 
 .c3 {
+=======
+<<<<<<< HEAD
+=======
+.c6 {
+  width: auto;
+  height: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+>>>>>>> feat: create StaffCard component
+.c4 {
+>>>>>>> feat: create StaffCard component
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -1013,7 +1469,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0;
 }
 
-.c12 {
+.c13 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1021,6 +1477,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
+<<<<<<< HEAD
 .c9 {
   padding-bottom: 0.375rem;
 }
@@ -1055,6 +1512,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 .c13 {
+=======
+.c14 {
+>>>>>>> feat: create StaffCard component
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1068,7 +1528,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition: all 200ms ease-out;
 }
 
-.c13:after {
+.c14:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1078,27 +1538,36 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   box-sizing: border-box;
 }
 
-.c13:hover {
+.c14:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c13:focus {
+.c14:focus {
   background: transparent;
   outline: 0.25rem solid #6be9c1;
   color: #333333;
 }
 
-.c13:active {
+.c14:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c13:active:after {
+.c14:active:after {
   background: #333333;
 }
 
+<<<<<<< HEAD
+=======
+@media (min-width:56.3125em) {
+  .c12 {
+    padding-top: 0.375rem;
+  }
+}
+
+>>>>>>> feat: create StaffCard component
 @media screen and (min-width:29.4375rem) {
   .c1 {
     padding-left: 0;
@@ -1242,42 +1711,89 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
+<<<<<<< HEAD
   .c7 {
-    padding-left: 0;
-    padding-right: 0;
+=======
+  .c8 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
-    padding-left: 0;
-    padding-right: 0;
+  .c8 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
+  .c8 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c7 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .c8 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
+  .c8 {
+>>>>>>> feat: create StaffCard component
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+<<<<<<< HEAD
   .c7 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+=======
+  .c8 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+<<<<<<< HEAD
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+=======
+  .c8 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+<<<<<<< HEAD
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+=======
+  .c8 {
+    padding-left: 0;
+>>>>>>> feat: create StaffCard component
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1286,7 +1802,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1295,7 +1811,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1304,6 +1820,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
+<<<<<<< HEAD
   .c7 {
     width: 50%;
     position: initial;
@@ -1314,6 +1831,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:74.8125rem) {
   .c7 {
+=======
+  .c8 {
+>>>>>>> feat: create StaffCard component
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -1322,7 +1842,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
+<<<<<<< HEAD
   .c3 {
+=======
+<<<<<<< HEAD
+  .c4 {
+>>>>>>> feat: create StaffCard component
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
@@ -1337,6 +1862,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media (min-width:56.3125em) {
   .c8 {
+=======
+  .c9 {
+>>>>>>> feat: create StaffCard component
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -1426,7 +1954,11 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
+<<<<<<< HEAD
       className="c5 gatsby-image-wrapper"
+=======
+      className="c6 gatsby-image-wrapper"
+>>>>>>> feat: create StaffCard component
       style={
         Object {
           "overflow": "hidden",
@@ -1507,7 +2039,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     </div>
   </div>
   <div
-    className="c6 c7"
+    className="c7 c8"
     width={
       Array [
         0,
@@ -1521,10 +2053,10 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
-      className="c8"
+      className="c9"
     >
       <div
-        className="c9"
+        className="c10"
       >
         <p
           className="c2"
@@ -1538,18 +2070,18 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         </h2>
       </div>
       <div
-        className="c10"
+        className="c11"
       >
         <div
-          className="c11"
+          className="c12"
         >
           <p
-            className="c12"
+            className="c13"
           >
             We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
           </p>
           <a
-            className="c13"
+            className="c14"
             href="/case-study/future-proofing-trainline"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1573,15 +2105,15 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
-      className="c11"
+      className="c12"
     >
       <p
-        className="c12"
+        className="c13"
       >
         We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
       </p>
       <a
-        className="c13"
+        className="c14"
         href="/case-study/future-proofing-trainline"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7607,6 +8139,18 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 `;
 
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
+<<<<<<< HEAD
+=======
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+>>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -7944,6 +8488,18 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 `;
 
 exports[`Storyshots Title and List list in form of an array 1`] = `
+<<<<<<< HEAD
+=======
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+>>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -8292,6 +8848,18 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 `;
 
 exports[`Storyshots Title and List on dark background 1`] = `
+<<<<<<< HEAD
+=======
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+>>>>>>> feat: create StaffCard component
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -8654,6 +9222,18 @@ exports[`Storyshots Title and List on dark background 1`] = `
 `;
 
 exports[`Storyshots Title and List on grey background 1`] = `
+<<<<<<< HEAD
+=======
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+>>>>>>> feat: create StaffCard component
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -9010,6 +9590,18 @@ exports[`Storyshots Title and List on grey background 1`] = `
 `;
 
 exports[`Storyshots Title and List with extra content 1`] = `
+<<<<<<< HEAD
+=======
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+>>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
