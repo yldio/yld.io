@@ -11,6 +11,7 @@ import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
+import GreyBG from '../components/GreyBG'
 
 class TrainingPage extends Component {
   state = {
@@ -70,9 +71,11 @@ class TrainingPage extends Component {
           </Padding>
           <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
         </Grid>
-        <Grid>
-          <Statement richText={content.seoText.content[0].content} />
-        </Grid>
+        <GreyBG>
+          <Grid>
+            <Statement richText={content.seoText.content[0].content} />
+          </Grid>
+        </GreyBG>
         <Approach
           title={content.trainingApproachTitle}
           content={trainingApproachesContent}
