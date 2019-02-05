@@ -170,17 +170,6 @@ export const pageQuery = graphql`
         }
       }
       workStagesTitle
-      workStagesImage {
-        title
-        fluid(maxWidth: 680) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
       workStages {
         id
         title
