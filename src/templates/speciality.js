@@ -63,6 +63,14 @@ export const pageQuery = graphql`
           }
         }
       }
+      introGraphic {
+        id
+        title
+        file {
+          fileName
+          url
+        }
+      }
       introTitle
       introTextTitle1
       introTextBody1 {

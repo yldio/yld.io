@@ -51,10 +51,11 @@ const HowWeWorkWrapper = ({ title }) => (
     query={graphql`
       {
         image: contentfulAsset(title: { eq: "Background graphic" }) {
-          id
+          fluid(maxWidth: 680) {
+            ...GatsbyContentfulFluid_withWebp
+          }
           title
           file {
-            fileName
             url
           }
         }
