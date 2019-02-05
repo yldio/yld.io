@@ -3429,10 +3429,6 @@ exports[`Storyshots HowWeWork HowWeWork 1`] = `
   text-align: center;
 }
 
-.c1 {
-  margin-bottom: 0;
-}
-
 @media (min-width:29.4375em) {
   .c2 {
     max-width: calc(100% - 62px);

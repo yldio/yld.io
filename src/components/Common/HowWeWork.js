@@ -28,7 +28,6 @@ export const How = styled(SectionTitle)`
 `
 
 const HowGrid = styled(Grid)`
-  margin-bottom: 0;
   ${breakpoint('smallTablet')`margin-bottom: -10%;`};
   ${breakpoint('tablet')`margin-bottom: 0;`};
 `
