@@ -43,7 +43,6 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         <WorkStages
           title={service.workStagesTitle}
           workStages={service.workStages}
-          image={service.graphic}
         />
       </BlueBackground>
       <GreyBackground>
@@ -115,15 +114,6 @@ export const pageQuery = graphql`
       seoMetaDescription
       mainPageIntroSentence {
         mainPageIntroSentence
-      }
-      graphic {
-        fluid(maxWidth: 680) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        title
-        file {
-          url
-        }
       }
       bottomCaseStudy {
         title

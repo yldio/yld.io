@@ -132,6 +132,240 @@ exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
 </a>
 `;
 
+exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
+.c2 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  position: relative;
+  top: 0rem;
+  height: 85%;
+  width: 42.5rem;
+  max-width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  color: #fff;
+  position: relative;
+  top: -71%;
+  text-align: center;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+@media (min-width:29.4375em) {
+  .c2 {
+    max-width: calc(100% - 62px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c2 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2 {
+    max-width: calc(100% - 84px);
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    max-width: calc(100% - 92px);
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    margin-left: -3.75rem;
+    margin-right: -3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    margin-left: -2.625rem;
+    margin-right: -2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    max-width: 80%;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+    color: #fff;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    margin-bottom: -10%;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    margin-bottom: 0;
+  }
+}
+
+<section
+  className="c0"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="c1 c2"
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        className="c4"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <div
+          className="c5"
+        >
+          <img
+            alt="Background graphic"
+            src="//images.ctfassets.net/22g1lenhck4z/5mJBlVfVuMEGsYsUAgasSa/09eee531f2e46e80cf1a4478fc230c52/eng-graphic.svg"
+          />
+        </div>
+        <h2
+          className="c6"
+        >
+          How we work
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 .c1 {
   -webkit-flex-wrap: wrap;
@@ -638,18 +872,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
-.c9 {
-  padding-bottom: 0.375rem;
-}
-
-.c10 {
-  padding-bottom: 0.75rem;
-}
-
-.c11 {
-  padding-top: 0;
-}
-
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -734,13 +956,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c4 {
   color: #333333;
   font-weight: 500;
@@ -765,6 +980,25 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+}
+
+.c9 {
+  padding-bottom: 0.375rem;
+}
+
+.c10 {
+  padding-bottom: 0.75rem;
+}
+
+.c11 {
+  padding-top: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c13 {
@@ -810,12 +1044,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 .c13:active:after {
   background: #333333;
-}
-
-@media (min-width:56.3125em) {
-  .c11 {
-    padding-top: 0.375rem;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -1069,6 +1297,20 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c11 {
+    padding-top: 0.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
   .c8 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
@@ -1082,14 +1324,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c4 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
   }
 }
 
@@ -1299,22 +1533,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Dark bg 1`] = `
-.c4 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c8 {
-  margin-right: 1.125rem;
-}
-
-.c6 {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1353,6 +1571,27 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   display: block;
 }
 
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .c9 {
   height: 1.5rem;
   width: 1.5rem;
@@ -1382,18 +1621,6 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c0 {
-  background: #090329;
-  color: #fff;
-}
-
-@media (min-width:43.8125em) {
-  .c4 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -1485,6 +1712,13 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1574,22 +1808,6 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Grey bg 1`] = `
-.c4 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c8 {
-  margin-right: 1.125rem;
-}
-
-.c6 {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1628,6 +1846,22 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   display: block;
 }
 
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .c9 {
   height: 1.5rem;
   width: 1.5rem;
@@ -1661,13 +1895,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 
 .c0 {
   background: #f9f9f9;
-}
-
-@media (min-width:43.8125em) {
-  .c4 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -1759,6 +1986,13 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1848,22 +2082,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Multiple components 1`] = `
-.c3 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c7 {
-  margin-right: 1.125rem;
-}
-
-.c5 {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1902,6 +2120,22 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   display: block;
 }
 
+.c3 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c7 {
+  margin-right: 1.125rem;
+}
+
+.c5 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .c8 {
   height: 1.5rem;
   width: 1.5rem;
@@ -1931,13 +2165,6 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media (min-width:43.8125em) {
-  .c3 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -2029,6 +2256,13 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -2220,22 +2454,6 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 `;
 
 exports[`Storyshots Compact Video Link Single component 1`] = `
-.c3 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c7 {
-  margin-right: 1.125rem;
-}
-
-.c5 {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -2274,6 +2492,22 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   display: block;
 }
 
+.c3 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c7 {
+  margin-right: 1.125rem;
+}
+
+.c5 {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .c8 {
   height: 1.5rem;
   width: 1.5rem;
@@ -2303,13 +2537,6 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media (min-width:43.8125em) {
-  .c3 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -2401,6 +2628,13 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -2948,11 +3182,6 @@ exports[`Storyshots Form Label 1`] = `
 `;
 
 exports[`Storyshots GetInTouch GetInTouch 1`] = `
-.c2 {
-  padding-top: 3.375rem;
-  padding-bottom: 3.375rem;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -3036,6 +3265,11 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding: 0.75rem 0;
 }
 
+.c2 {
+  padding-top: 3.375rem;
+  padding-bottom: 3.375rem;
+}
+
 .c9 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
@@ -3083,18 +3317,6 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 .c0 {
   background: #f9f9f9;
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 6.75rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-bottom: 6.75rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -3282,6 +3504,18 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 6.75rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-bottom: 6.75rem;
+  }
+}
+
 @media (min-width:74.8125em) {
   .c3 {
     -webkit-box-pack: justify;
@@ -3355,22 +3589,6 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Dark bg 1`] = `
-.c5 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c9 {
-  margin-right: 1.125rem;
-}
-
-.c7 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -3407,6 +3625,27 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   display: -ms-flexbox;
   display: flex;
   display: block;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
+.c5 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c9 {
+  margin-right: 1.125rem;
+}
+
+.c7 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .c10 {
@@ -3456,18 +3695,6 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border: 1px solid #e6e6e6;
-}
-
-.c0 {
-  background: #090329;
-  color: #fff;
-}
-
-@media (min-width:43.8125em) {
-  .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -3559,6 +3786,13 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -3662,22 +3896,6 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Grey bg 1`] = `
-.c5 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c9 {
-  margin-right: 1.125rem;
-}
-
-.c7 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -3714,6 +3932,22 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   display: -ms-flexbox;
   display: flex;
   display: block;
+}
+
+.c5 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c9 {
+  margin-right: 1.125rem;
+}
+
+.c7 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .c10 {
@@ -3767,13 +4001,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 
 .c0 {
   background: #f9f9f9;
-}
-
-@media (min-width:43.8125em) {
-  .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -3865,6 +4092,13 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -3968,22 +4202,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Multiple components 1`] = `
-.c4 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c8 {
-  margin-right: 1.125rem;
-}
-
-.c6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -4020,6 +4238,22 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   display: -ms-flexbox;
   display: flex;
   display: block;
+}
+
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .c9 {
@@ -4069,13 +4303,6 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border: 1px solid #e6e6e6;
-}
-
-@media (min-width:43.8125em) {
-  .c4 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -4167,6 +4394,13 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -4376,22 +4610,6 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 `;
 
 exports[`Storyshots Standalone Video Link Single component 1`] = `
-.c4 {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-}
-
-.c8 {
-  margin-right: 1.125rem;
-}
-
-.c6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -4428,6 +4646,22 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   display: -ms-flexbox;
   display: flex;
   display: block;
+}
+
+.c4 {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.c8 {
+  margin-right: 1.125rem;
+}
+
+.c6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .c9 {
@@ -4477,13 +4711,6 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border: 1px solid #e6e6e6;
-}
-
-@media (min-width:43.8125em) {
-  .c4 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -4575,6 +4802,13 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
     position: initial;
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -4674,11 +4908,6 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 `;
 
 exports[`Storyshots Statement Statement 1`] = `
-.c4 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -4733,15 +4962,13 @@ exports[`Storyshots Statement Statement 1`] = `
   color: #828282;
 }
 
-.c0 {
-  background: #f9f9f9;
+.c4 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-@media (min-width:43.8125em) {
-  .c4 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
+.c0 {
+  background: #f9f9f9;
 }
 
 @media (min-width:29.4375em) {
@@ -4875,6 +5102,13 @@ exports[`Storyshots Statement Statement 1`] = `
   }
 }
 
+@media (min-width:43.8125em) {
+  .c4 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
 <section
   className="c0"
 >
@@ -4913,11 +5147,6 @@ exports[`Storyshots Statement Statement 1`] = `
 `;
 
 exports[`Storyshots Statement Statement Rich Text 1`] = `
-.c4 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -4970,6 +5199,11 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   line-height: 1.875rem;
   padding: 0.75rem 0 0.75rem 0;
   color: #828282;
+}
+
+.c4 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .c7 {
@@ -5032,13 +5266,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   display: initial;
 }
 
-@media (min-width:43.8125em) {
-  .c4 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-}
-
 @media (min-width:29.4375em) {
   .c1 {
     max-width: calc(100% - 62px);
@@ -5167,6 +5394,13 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -5238,11 +5472,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 `;
 
 exports[`Storyshots Statement Statement noPadding 1`] = `
-.c4 {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -5297,15 +5526,13 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   color: #828282;
 }
 
-.c0 {
-  background: #f9f9f9;
+.c4 {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-@media (min-width:43.8125em) {
-  .c4 {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+.c0 {
+  background: #f9f9f9;
 }
 
 @media (min-width:29.4375em) {
@@ -5436,6 +5663,13 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c4 {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -6052,15 +6286,6 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 `;
 
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -6114,6 +6339,15 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -6140,13 +6374,6 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 .c7:last-child {
   padding: 0;
-}
-
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -6258,6 +6485,13 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -6331,15 +6565,6 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 `;
 
 exports[`Storyshots Title and List list in form of an array 1`] = `
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -6393,6 +6618,15 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -6419,13 +6653,6 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 .c7:last-child {
   padding: 0;
-}
-
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -6537,6 +6764,13 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -6621,15 +6855,6 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 `;
 
 exports[`Storyshots Title and List on dark background 1`] = `
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -6689,6 +6914,15 @@ exports[`Storyshots Title and List on dark background 1`] = `
   color: #fff;
 }
 
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -6718,13 +6952,6 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 .c8:last-child {
   padding: 0;
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -6840,6 +7067,13 @@ exports[`Storyshots Title and List on dark background 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
 <section
   className="c0"
 >
@@ -6925,15 +7159,6 @@ exports[`Storyshots Title and List on dark background 1`] = `
 `;
 
 exports[`Storyshots Title and List on grey background 1`] = `
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -6987,6 +7212,15 @@ exports[`Storyshots Title and List on grey background 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c5 {
+  padding-bottom: 2.25rem;
+}
+
 .c0 {
   background: #f9f9f9;
 }
@@ -7017,13 +7251,6 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 .c8:last-child {
   padding: 0;
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -7138,6 +7365,13 @@ exports[`Storyshots Title and List on grey background 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
 <section
   className="c0"
 >
@@ -7223,15 +7457,6 @@ exports[`Storyshots Title and List on grey background 1`] = `
 `;
 
 exports[`Storyshots Title and List with extra content 1`] = `
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -7283,6 +7508,15 @@ exports[`Storyshots Title and List with extra content 1`] = `
   font-size: 2rem;
   line-height: 2.25rem;
   padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c1 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
 }
 
 .c8 {
@@ -7356,13 +7590,6 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 .c7:last-child {
   padding: 0;
-}
-
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
 }
 
 @media (min-width:29.4375em) {
@@ -7474,6 +7701,13 @@ exports[`Storyshots Title and List with extra content 1`] = `
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 

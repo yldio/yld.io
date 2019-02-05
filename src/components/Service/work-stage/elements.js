@@ -2,32 +2,11 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import StyledLink from '../../styledLink'
-import { SectionTitle } from '../../Typography'
 
 export const Item = styled.li`
   color: ${props => props.theme.colors.white};
   line-height: ${remcalc(24)};
   opacity: 0.5;
-`
-
-export const Graphic = styled.div`
-  position: relative;
-  top: ${remcalc(0)};
-  height: 85%;
-  width: ${remcalc(680)};
-  max-width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  ${breakpoint('smallTablet')`
-    max-width: 80%;
-  `}
-`
-
-export const How = styled(SectionTitle)`
-  position: relative;
-  top: -71%;
-  text-align: center;
 `
 
 export const SwitchLink = styled(StyledLink)`
