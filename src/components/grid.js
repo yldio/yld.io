@@ -147,20 +147,20 @@ const Flex = styled.div`
   `};
 `
 
-const FlexWithSpaceBetween = styled(Flex)`
-  ${breakpoint('smallTablet')`
-    justify-content: space-between;
-  `}
-`
-
 export const Grid = props => (
   <GridStyled mx="auto" px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 )
 
-export const Row = props => (
-  <FlexWithSpaceBetween mx={[0, 0, 0, 0, -1.75, -2, -2]} {...props} />
-)
-
+export const Row = styled(Flex).attrs({
+  mx: [0, 0, 0, 0, -1.75, -2, -2],
+  spaced: props => props.spaced
+})`
+  ${props =>
+    props.spaced &&
+    `
+    justify-content: space-between;
+  `}
+`
 const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
 export const Col = styled(BasicCol)`
@@ -194,10 +194,17 @@ Col.defaultProps = {
  */
 export const ColumnLayout = ({ children, cols, items }) => {
   const defaultWidthOnTabletAndAbove = 12 / cols / 12
-  const width = [1, 1, 1, defaultWidthOnTabletAndAbove]
+  const width = [1, 1, 1, 1, defaultWidthOnTabletAndAbove]
+  const StackableRow = styled(Row)`
+    flex-direction: column;
+
+    ${breakpoint('smallTablet')`
+      flex-direction: row;
+    `}
+  `
 
   return (
-    <Row>
+    <StackableRow>
       {items.map((item, idx) => {
         const child = children({ Col, item, idx })
 
@@ -207,6 +214,6 @@ export const ColumnLayout = ({ children, cols, items }) => {
           idx
         })
       })}
-    </Row>
+    </StackableRow>
   )
 }

@@ -367,7 +367,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
-.c2 {
+.c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -387,7 +387,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -408,7 +408,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c6 {
+.c5 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -428,7 +428,19 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c1 {
+.c3 {
+  width: 100%;
+  height: auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -442,55 +454,43 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: flex;
 }
 
-.c4 {
-  width: 100%;
-  height: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     width: 100%;
     position: initial;
     top: 0;
@@ -499,7 +499,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     width: 100%;
     position: initial;
     top: 0;
@@ -508,7 +508,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -517,42 +517,42 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -561,7 +561,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -570,7 +570,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     width: 50%;
     position: initial;
     top: 0;
@@ -579,60 +579,60 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c5 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -641,7 +641,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c5 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -659,7 +659,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -668,7 +668,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c5 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -676,55 +676,46 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c6 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c0 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c0 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c7 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
   }
 }
 
@@ -738,10 +729,10 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0"
 >
   <div
-    className="c2"
+    className="c1"
     width={
       Array [
         1,
@@ -755,7 +746,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     Headings
   </div>
   <div
-    className="c3"
+    className="c2"
     width={
       Array [
         1,
@@ -767,7 +758,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     }
   >
     <div
-      className="c4 gatsby-image-wrapper"
+      className="c3 gatsby-image-wrapper"
       style={
         Object {
           "overflow": "hidden",
@@ -848,7 +839,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     </div>
   </div>
   <div
-    className="c5 c6"
+    className="c4 c5"
     width={
       Array [
         0,
@@ -862,13 +853,13 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
     }
   >
     <div
-      className="c7"
+      className="c6"
     >
       RightText
     </div>
   </div>
   <div
-    className="c2"
+    className="c1"
     width={
       Array [
         1,
@@ -885,19 +876,19 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
-.c10 {
+.c9 {
   padding-bottom: 0.375rem;
 }
 
-.c11 {
+.c10 {
   padding-bottom: 0.75rem;
 }
 
-.c12 {
+.c11 {
   padding-top: 0;
 }
 
-.c2 {
+.c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -917,7 +908,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c5 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -938,7 +929,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c8 {
+.c7 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -958,7 +949,19 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c1 {
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -972,19 +975,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: flex;
 }
 
-.c6 {
-  width: 100%;
-  height: auto;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 {
+.c3 {
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -992,7 +983,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c3 {
+.c2 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1002,7 +993,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0;
 }
 
-.c13 {
+.c12 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1010,7 +1001,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
-.c14 {
+.c13 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1024,7 +1015,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition: all 200ms ease-out;
 }
 
-.c14:after {
+.c13:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1034,24 +1025,24 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   box-sizing: border-box;
 }
 
-.c14:hover {
+.c13:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c14:focus {
+.c13:focus {
   background: transparent;
   outline: 0.25rem solid #6be9c1;
   color: #333333;
 }
 
-.c14:active {
+.c13:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c14:active:after {
+.c13:active:after {
   background: #333333;
 }
 
@@ -1314,48 +1305,48 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c12 {
+  .c11 {
     padding-top: 0.375rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c1 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1364,7 +1355,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1373,7 +1364,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1382,42 +1373,42 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1426,7 +1417,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1435,7 +1426,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1444,60 +1435,60 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c4 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c4 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c4 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1506,7 +1497,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1515,7 +1506,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1524,7 +1515,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1533,7 +1524,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -1541,55 +1532,46 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c8 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c0 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c0 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c9 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
   }
 }
 
@@ -1603,7 +1585,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c4 {
+  .c3 {
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
@@ -1611,10 +1593,10 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 <div
-  className="c0 c1"
+  className="c0"
 >
   <div
-    className="c2"
+    className="c1"
     width={
       Array [
         1,
@@ -1626,18 +1608,18 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <p
-      className="c3"
+      className="c2"
     >
       Featured work
     </p>
     <h2
-      className="c4"
+      className="c3"
     >
       Future-proofing Trainline
     </h2>
   </div>
   <div
-    className="c5"
+    className="c4"
     width={
       Array [
         1,
@@ -1649,7 +1631,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
-      className="c6 gatsby-image-wrapper"
+      className="c5 gatsby-image-wrapper"
       style={
         Object {
           "overflow": "hidden",
@@ -1730,7 +1712,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     </div>
   </div>
   <div
-    className="c7 c8"
+    className="c6 c7"
     width={
       Array [
         0,
@@ -1744,35 +1726,35 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
-      className="c9"
+      className="c8"
     >
       <div
-        className="c10"
+        className="c9"
       >
         <p
-          className="c3"
+          className="c2"
         >
           Featured work
         </p>
         <h2
-          className="c4"
+          className="c3"
         >
           Future-proofing Trainline
         </h2>
       </div>
       <div
-        className="c11"
+        className="c10"
       >
         <div
-          className="c12"
+          className="c11"
         >
           <p
-            className="c13"
+            className="c12"
           >
             We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
           </p>
           <a
-            className="c14"
+            className="c13"
             href="/case-study/future-proofing-trainline"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1784,7 +1766,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     </div>
   </div>
   <div
-    className="c2"
+    className="c1"
     width={
       Array [
         1,
@@ -1796,15 +1778,15 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
     }
   >
     <div
-      className="c12"
+      className="c11"
     >
       <p
-        className="c13"
+        className="c12"
       >
         We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
       </p>
       <a
-        className="c14"
+        className="c13"
         href="/case-study/future-proofing-trainline"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -2001,15 +1983,6 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
   .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -2291,15 +2264,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:43.8125em) {
   .c2:nth-child(3) {
     display: none;
   }
@@ -2569,15 +2533,6 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -2953,15 +2908,6 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -3379,7 +3325,8 @@ exports[`Storyshots Form Checkbox 1`] = `
   min-width: 1.5rem;
   min-height: 1.5rem;
   border: solid 2px #333333;
-  margin-right: 0.75rem;
+  margin-right: 0.5625rem;
+  margin-left: 0rem;
   position: relative;
 }
 
@@ -3397,12 +3344,18 @@ exports[`Storyshots Form Checkbox 1`] = `
 }
 
 .c0 {
-  display: grid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
   margin-bottom: 2.25rem;
-  grid-template-columns: 1fr 1fr;
 }
 
-.c0 > section {
+.c0 > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3483,12 +3436,18 @@ exports[`Storyshots Form Fieldset 1`] = `
 }
 
 .c0 {
-  display: grid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
   margin-bottom: 2.25rem;
-  grid-template-columns: 1fr 1fr;
 }
 
-.c0 > section {
+.c0 > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3639,61 +3598,47 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   margin-right: auto;
 }
 
-.c5 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c7 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
 .c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  display: block;
 }
 
 .c6 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -3701,7 +3646,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c8 {
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3709,7 +3654,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding: 0.75rem 0;
 }
 
-.c9 {
+.c8 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -3723,7 +3668,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   transition: all 200ms ease-out;
 }
 
-.c9:after {
+.c8:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -3733,24 +3678,24 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   box-sizing: border-box;
 }
 
-.c9:hover {
+.c8:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c9:focus {
+.c8:focus {
   background: transparent;
   outline: 0.25rem solid #6be9c1;
   color: #333333;
 }
 
-.c9:active {
+.c8:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c9:active:after {
+.c8:active:after {
   background: #333333;
 }
 
@@ -3758,6 +3703,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   background: #f9f9f9;
 }
 
+<<<<<<< HEAD
 @media (min-width:29.4375em) {
   .c1 {
     max-width: calc(100% - 62px);
@@ -3941,6 +3887,20 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
   }
+=======
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+>>>>>>> fix: designer review fixes - second batch
 }
 
 @media (min-width:56.3125em) {
@@ -4021,42 +3981,42 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c5 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4065,7 +4025,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4074,7 +4034,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -4083,42 +4043,42 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c6 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c6 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c7 {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c6 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4127,7 +4087,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c6 {
     width: 100%;
     position: initial;
     top: 0;
@@ -4136,7 +4096,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -4145,7 +4105,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c6 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -4153,55 +4113,46 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c3 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c4 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c6 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
   }
 }
 
@@ -4224,10 +4175,10 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
       className="c2"
     >
       <div
-        className="c3 c4"
+        className="c3"
       >
         <div
-          className="c5"
+          className="c4"
           width={
             Array [
               1,
@@ -4239,13 +4190,13 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
           }
         >
           <h2
-            className="c6"
+            className="c5"
           >
             Talk to us about Node.js 
           </h2>
         </div>
         <div
-          className="c7"
+          className="c6"
           width={
             Array [
               1,
@@ -4258,12 +4209,12 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
           }
         >
           <p
-            className="c8"
+            className="c7"
           >
              Whether you need help with a project or are interested in training, we love to talk about all things Node.
           </p>
           <a
-            className="c9"
+            className="c8"
             href="/contact/"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4843,15 +4794,6 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
 <div
   className="c0"
 >
@@ -5289,15 +5231,6 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:43.8125em) {
   .c2:nth-child(3) {
     display: none;
   }
@@ -5607,15 +5540,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:43.8125em) {
   .c2:nth-child(3) {
     display: none;
   }
@@ -5917,15 +5841,6 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   .c0 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -6341,15 +6256,6 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c0 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width:43.8125em) {
   .c1:nth-child(3) {
     display: none;
   }
@@ -6677,15 +6583,6 @@ exports[`Storyshots Statement Statement 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
 @media (min-width:56.3125em) {
   .c5 {
     font-size: 2rem;
@@ -6951,15 +6848,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -7410,15 +7298,6 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -8141,15 +8020,6 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
 <div
   className="c0"
 >
@@ -8432,15 +8302,6 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -8781,15 +8642,6 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -9147,15 +8999,6 @@ exports[`Storyshots Title and List on dark background 1`] = `
   .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c3 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -9522,15 +9365,6 @@ exports[`Storyshots Title and List on grey background 1`] = `
   .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c3 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 
@@ -9928,15 +9762,6 @@ exports[`Storyshots Title and List with extra content 1`] = `
   .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
 }
 

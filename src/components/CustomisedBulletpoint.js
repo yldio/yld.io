@@ -27,6 +27,10 @@ export default styled.li`
     max-width: none;
   `};
 
+  ${is('muted')`
+    opacity: .5;
+  `};
+
   &:after {
     content: '';
     width: ${remcalc(60)};

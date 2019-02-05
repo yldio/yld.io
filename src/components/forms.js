@@ -9,7 +9,8 @@ export const Checkbox = styled.input`
   min-width: ${remcalc(24)};
   min-height: ${remcalc(24)};
   border: solid 2px ${props => props.theme.colors.text};
-  margin-right: ${remcalc(12)};
+  margin-right: ${remcalc(9)};
+  margin-left: ${remcalc(0)};
   position: relative;
 
   &:checked:after {
@@ -73,11 +74,12 @@ export const Field = styled.section`
 `
 
 export const Fieldset = styled.section`
-  display: grid;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
   margin-bottom: ${remcalc(36)};
-  grid-template-columns: 1fr 1fr;
 
-  > section {
+  > * {
     display: flex;
     align-items: center;
     margin-bottom: ${remcalc(24)};

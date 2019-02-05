@@ -15,7 +15,7 @@ const FlexCol = styled(Col)`
 `
 
 const RowLayout = styled(Row)`
-  // creates extra column of space between image & text on RHS
+  /* creates extra column of space between image & text on RHS */
   ${breakpoint('desktop')`
     justify-content: space-between;
   `}

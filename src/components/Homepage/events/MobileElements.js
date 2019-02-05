@@ -13,7 +13,12 @@ export const MobileMeetups = ({ events }) => (
     <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
       <ul>
         {getHomepageMeetups(events).map(conf => (
-          <CustomisedBulletpoint fullWidthBorder symmetrical key={`${conf.id}`}>
+          <CustomisedBulletpoint
+            fullWidth
+            fullWidthBorder
+            symmetrical
+            key={`${conf.id}`}
+          >
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={conf.linkToEvent}>
                 {conf.eventTitle}
