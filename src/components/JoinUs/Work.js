@@ -32,12 +32,6 @@ const getColorLuminance = hexColor => {
   return colorLuminance(rgbValue.r, rgbValue.g, rgbValue.b)
 }
 
-// const CaseStudyCol = styled(Col).attrs({
-//   block: false
-// })`
-//   flex: none;
-// `
-
 const CaseStudyLink = styled(Link)`
   background: ${props => props.bg};
   color: ${props => props.color || props.theme.colors.white};
