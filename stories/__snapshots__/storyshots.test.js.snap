@@ -8664,6 +8664,251 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tabs Multiple Tabs 1`] = `
+.c1 {
+  display: inline-block;
+}
+
+.c1 + .c0 {
+  margin-left: 2.25rem;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.c2 {
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.c2:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c2:active {
+  outline: none;
+}
+
+.c3 {
+  padding: 0.5625rem 0 2.125rem;
+}
+
+.c7 {
+  width: 100%;
+  background: black;
+  height: 2px;
+  position: absolute;
+  bottom: 22px;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -webkit-transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  left: 0;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+
+.c5 {
+  width: 100%;
+  background: black;
+  height: 2px;
+  position: absolute;
+  bottom: 22px;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -webkit-transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  left: 0;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+<ul>
+  <li
+    className="c0 c1"
+  >
+    <button
+      className="c2"
+      onClick={[Function]}
+    >
+      <div
+        className="c3"
+      >
+        <h3
+          className="c4"
+          muted={false}
+        >
+          First Tab
+        </h3>
+        <div
+          className="c5"
+        />
+      </div>
+    </button>
+  </li>
+  <li
+    className="c0 c1"
+  >
+    <button
+      className="c2"
+      onClick={[Function]}
+    >
+      <div
+        className="c3"
+      >
+        <h3
+          className="c6"
+          muted={true}
+        >
+          Second Tab
+        </h3>
+        <div
+          className="c7"
+        />
+      </div>
+    </button>
+  </li>
+  <li
+    className="c0 c1"
+  >
+    <button
+      className="c2"
+      onClick={[Function]}
+    >
+      <div
+        className="c3"
+      >
+        <h3
+          className="c6"
+          muted={true}
+        >
+          Third Tab
+        </h3>
+        <div
+          className="c7"
+        />
+      </div>
+    </button>
+  </li>
+</ul>
+`;
+
+exports[`Storyshots Tabs Single Tab 1`] = `
+.c1 {
+  display: inline-block;
+}
+
+.c1 + .c0 {
+  margin-left: 2.25rem;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.c2 {
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.c2:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c2:active {
+  outline: none;
+}
+
+.c3 {
+  padding: 0.5625rem 0 2.125rem;
+}
+
+.c5 {
+  width: 100%;
+  background: black;
+  height: 2px;
+  position: absolute;
+  bottom: 22px;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -webkit-transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  left: 0;
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+
+<li
+  className="c0 c1"
+>
+  <button
+    className="c2"
+    onClick={[Function]}
+  >
+    <div
+      className="c3"
+    >
+      <h3
+        className="c4"
+        muted={true}
+      >
+        This is a tab
+      </h3>
+      <div
+        className="c5"
+      />
+    </div>
+  </button>
+</li>
+`;
+
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
 .c0 {
   max-width: calc(100% - 48px);
