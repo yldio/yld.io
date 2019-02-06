@@ -5,6 +5,7 @@ export const spacing = {
   0.5: remcalc(6),
   1: remcalc(12),
   1.5: remcalc(18),
+  1.75: remcalc(21),
   2: remcalc(24),
   3: remcalc(36),
   3.5: remcalc(54),
@@ -30,9 +31,21 @@ export const breakpoints = {
   desktop: 1197
 }
 
+export const elementSizes = {
+  tappableArea: 48
+}
+
+export const zIndexes = {
+  header: 999,
+  modal: 10000,
+  gridDebugger: 10001
+}
+
 export default {
   breakpoints,
   spacing,
+  elementSizes,
+  zIndexes,
   animations: {
     fast: '200ms',
     normal: '300ms'

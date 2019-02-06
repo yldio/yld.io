@@ -77,7 +77,7 @@ const Perks = ({ data: { title, text, perks } }) => (
   <Section>
     <Padding top={{ smallPhone: 3, tablet: 4 }}>
       <RowLayout>
-        <Col width={[1, 1, 1, 1, 1, 5 / 12]}>
+        <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
           <SectionTitle>{title}</SectionTitle>
           <Padding top={1}>
             <BodyPrimary muted>{text}</BodyPrimary>

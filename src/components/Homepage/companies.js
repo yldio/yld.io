@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Row, Col } from '../grid'
+import { Row, Col } from '../grid'
 import styled from 'styled-components'
 
 const Column = styled(Col)`
@@ -10,18 +10,16 @@ const Column = styled(Col)`
 
 const Companies = ({ companies = [] }) =>
   companies ? (
-    <Grid>
-      <Row>
-        {companies.map(company => (
-          <Column
-            width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]}
-            key={company.id}
-          >
-            <img src={company.file.url} alt={company.title} />
-          </Column>
-        ))}
-      </Row>
-    </Grid>
+    <Row>
+      {companies.map(company => (
+        <Column
+          width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4]}
+          key={company.id}
+        >
+          <img src={company.file.url} alt={company.title} />
+        </Column>
+      ))}
+    </Row>
   ) : null
 
 export default Companies

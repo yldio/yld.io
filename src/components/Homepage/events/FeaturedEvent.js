@@ -12,7 +12,7 @@ import {
 import StyledLink from '../../styledLink'
 
 const FeaturedEvent = ({ events }) => (
-  <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 8 / 12]}>
+  <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
     {getHomepageConferences(events).map(conf => (
       <FeaturedEventWrapper key={conf.id} color={conf.color}>
         <EventWrapper>

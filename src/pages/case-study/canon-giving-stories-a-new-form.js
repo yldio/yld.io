@@ -44,9 +44,6 @@ const GradientBackground = styled.div`
 
 const FirstParagraphCol = styled(Col)`
   margin-left: auto;
-  ${breakpoint('smallTablet')`
-    padding-left: 0;
-  `}
 `
 
 const RightAlignedCol = styled(Col)`

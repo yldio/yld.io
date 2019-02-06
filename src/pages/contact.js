@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding, Margin } from 'styled-components-spacing'
@@ -6,14 +7,7 @@ import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
-import {
-  Checkbox,
-  Input,
-  Label,
-  Button,
-  Fieldset,
-  Field
-} from '../components/forms'
+import { Checkbox, Input, Label, Button, Field } from '../components/forms'
 import GreyBackground from '../components/GreyBG'
 
 const Success = () => (
@@ -32,6 +26,28 @@ const Success = () => (
     </Row>
   </Fragment>
 )
+
+export const CheckBoxesContainer = styled(Col)`
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: ${remcalc(36)};
+
+  /* Since these columns are inside a column, 
+     we have to reset the padding on the edges */
+  > * {
+    display: flex;
+    align-items: center;
+    margin-bottom: ${remcalc(24)};
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+  }
+`
 
 const checkboxes = [
   { name: 'engineering', label: 'Engineering services' },
@@ -116,33 +132,42 @@ class ContactUs extends Component {
                 <SectionTitle as="h1" style={{ transform: 'translateY(20%)' }}>
                   Get in touch
                 </SectionTitle>
-                <Row mt={2}>
-                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-                    <Margin top={2}>
-                      <form
-                        name="contact"
-                        method="post"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                        onSubmit={this.handleSubmit}
-                      >
-                        <input type="hidden" name="form-name" value="contact" />
+                <Margin top={2}>
+                  <form
+                    name="contact"
+                    method="post"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={this.handleSubmit}
+                    style={{ width: '100%' }}
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <Row mt={2}>
+                      <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12]}>
                         <Margin bottom={1}>
                           <Label>What are you interested in?</Label>
                         </Margin>
-                        <Fieldset>
-                          {checkboxes.map(c => (
-                            <section key={c.name}>
-                              <Checkbox
-                                type="checkbox"
-                                id={c.name}
-                                name={c.name}
-                                onChange={this.handleChangeCheckbox}
-                              />
-                              <label htmlFor={c.name}>{c.label}</label>
-                            </section>
-                          ))}
-                        </Fieldset>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <CheckBoxesContainer
+                        width={[1, 1, 1, 1, 10 / 12, 8 / 12]}
+                      >
+                        {checkboxes.map(c => (
+                          <Col width={[1, 1, 1, 1, 6 / 12]} key={c.name}>
+                            <Checkbox
+                              type="checkbox"
+                              id={c.name}
+                              name={c.name}
+                              onChange={this.handleChangeCheckbox}
+                            />
+                            <label htmlFor={c.name}>{c.label}</label>
+                          </Col>
+                        ))}
+                      </CheckBoxesContainer>
+                    </Row>
+                    <Row>
+                      <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
                         <Label htmlFor="message">Tell us a bit more</Label>
                         <Input
                           as="textarea"
@@ -155,6 +180,10 @@ class ContactUs extends Component {
                           name="message"
                           required
                         />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
                         <Label htmlFor="name">Your Name</Label>
                         <Input
                           id="name"
@@ -164,6 +193,7 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
+                        kk
                         <Label htmlFor="email">Your Email</Label>
                         <Input
                           id="email"
@@ -197,10 +227,10 @@ class ContactUs extends Component {
                         >
                           {submitting ? 'Submitting' : 'Submit'}
                         </Button>
-                      </form>
-                    </Margin>
-                  </Col>
-                </Row>
+                      </Col>
+                    </Row>
+                  </form>
+                </Margin>
               </Fragment>
             )}
             <Padding bottom={5} />

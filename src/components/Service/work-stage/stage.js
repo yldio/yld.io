@@ -39,7 +39,7 @@ const WorkStage = ({ workStage, handleClick, alternatives, index }) => {
       }}
     >
       <Grid>
-        <Row>
+        <Row spaced={false}>
           <Col width={[1, 1, 1, 1]}>
             <Padding
               bottom={{
