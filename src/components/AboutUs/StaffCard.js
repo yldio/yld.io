@@ -57,7 +57,7 @@ const getSocialLink = ({ network, url }) => {
             image={{ file: { url: linkedin } }}
             alt="linkedin  profile link"
             width={size}
-            heigh={size}
+            height={size}
           />
         </TappableAnchor>
       )
