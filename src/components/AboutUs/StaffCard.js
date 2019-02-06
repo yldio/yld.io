@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import { Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
@@ -25,8 +24,15 @@ const TappableAnchor = styled(ExternalAnchor)`
   }
 `
 
-const LinksContainer = styled(Padding)`
+const LinksContainer = styled.div`
   display: flex;
+  margin-top: -${props => remcalc((props.theme.elementSizes.tappableArea - IMAGE_SIZE) / 2)};
+  padding-bottom: ${props =>
+    remcalc(18 - (props.theme.elementSizes.tappableArea - IMAGE_SIZE) / 2)};
+`
+
+const Description = styled(BodyPrimary)`
+  padding-bottom: ${props => remcalc(30)};
 `
 
 const getSocialLink = ({ network, url }) => {
@@ -60,25 +66,15 @@ const getSocialLink = ({ network, url }) => {
   }
 }
 
-const StaffCardCol = styled(Col)`
-  ${breakpoint('smallTablet')`
-    &:nth-child(3) {
-        display: none;
-    }
-  `}
-
-  ${breakpoint('tablet')`
-    &:nth-child(3) {
-      display: block;
-    }
-  `}
-`
-
 const StaffCard = ({ name, image, title, description, socialLinks = [] }) => {
-  const links = socialLinks.map(getSocialLink)
+  const links = (socialLinks || []).map(getSocialLink).filter(e => e)
+  const Links =
+    links.length > 0 ? (
+      <LinksContainer>{links.map((Link, idx) => Link)}</LinksContainer>
+    ) : null
 
   return (
-    <StaffCardCol width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
+    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
       <Padding bottom={2}>
         <Image image={image} width="100%" />
       </Padding>
@@ -88,13 +84,9 @@ const StaffCard = ({ name, image, title, description, socialLinks = [] }) => {
           {title}
         </Subtitle>
       </Padding>
-      <BodyPrimary noPaddingBottom>{description}</BodyPrimary>
-      {links.length > 0 ? (
-        <LinksContainer top={3} bottom={1.5}>
-          {links.map((Link, idx) => Link)}
-        </LinksContainer>
-      ) : null}
-    </StaffCardCol>
+      <Description noPadding>{description}</Description>
+      {Links}
+    </Col>
   )
 }
 

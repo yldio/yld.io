@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
-.c4 {
+.c3 {
   padding-bottom: 1.5rem;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 2.25rem;
 }
 
@@ -32,7 +32,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   display: flex;
 }
 
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -54,17 +54,17 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   display: block;
 }
 
-.c5 {
+.c4 {
   width: 100%;
   height: auto;
 }
 
-.c12 {
+.c11 {
   width: 24px;
   height: auto;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -74,7 +74,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   font-weight: 700;
 }
 
-.c8 {
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -85,16 +85,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   font-weight: 700;
 }
 
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-bottom: 0;
-}
-
-.c11 {
+.c10 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -111,17 +102,27 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   align-items: center;
 }
 
-.c11:first-child {
+.c10:first-child {
   margin-left: -0.75rem;
 }
 
-.c10 {
-  padding-top: 2.25rem;
-  padding-bottom: 1.125rem;
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -0.75rem;
+  padding-bottom: 0.375rem;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  padding-bottom: 1.875rem;
 }
 
 @media (min-width:29.4375em) {
@@ -183,35 +184,35 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-left: 2.625rem;
     padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -220,7 +221,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -229,7 +230,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     width: 50%;
     position: initial;
     top: 0;
@@ -238,23 +239,11 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
     left: 0;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2:nth-child(3) {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c2:nth-child(3) {
-    display: block;
   }
 }
 
@@ -265,7 +254,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     className="c1"
   >
     <div
-      className="c2 c3"
+      className="c2"
       width={
         Array [
           1,
@@ -278,60 +267,60 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       }
     >
       <div
-        className="c4"
+        className="c3"
       >
         <img
-          className="c5"
+          className="c4"
           src="test-file-stub"
           width="100%"
         />
       </div>
       <h3
-        className="c6"
+        className="c5"
       >
         Nuno Job
       </h3>
       <div
-        className="c7"
+        className="c6"
       >
         <h3
-          className="c8"
+          className="c7"
           muted={true}
         >
           Chief Executive Officer
         </h3>
       </div>
       <p
-        className="c9"
+        className="c8"
       >
         Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
       </p>
       <div
-        className="c10"
+        className="c9"
       >
         <a
-          className="c11"
+          className="c10"
           href="twitter.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="twitter profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
           />
         </a>
         <a
-          className="c11"
+          className="c10"
           href="linkedin.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="linkedin  profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
@@ -340,7 +329,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2 c3"
+      className="c2"
       width={
         Array [
           1,
@@ -353,60 +342,60 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       }
     >
       <div
-        className="c4"
+        className="c3"
       >
         <img
-          className="c5"
+          className="c4"
           src="test-file-stub"
           width="100%"
         />
       </div>
       <h3
-        className="c6"
+        className="c5"
       >
         Nuno Job
       </h3>
       <div
-        className="c7"
+        className="c6"
       >
         <h3
-          className="c8"
+          className="c7"
           muted={true}
         >
           Chief Executive Officer
         </h3>
       </div>
       <p
-        className="c9"
+        className="c8"
       >
         Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
       </p>
       <div
-        className="c10"
+        className="c9"
       >
         <a
-          className="c11"
+          className="c10"
           href="twitter.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="twitter profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
           />
         </a>
         <a
-          className="c11"
+          className="c10"
           href="linkedin.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="linkedin  profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
@@ -415,7 +404,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2 c3"
+      className="c2"
       width={
         Array [
           1,
@@ -428,60 +417,60 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       }
     >
       <div
-        className="c4"
+        className="c3"
       >
         <img
-          className="c5"
+          className="c4"
           src="test-file-stub"
           width="100%"
         />
       </div>
       <h3
-        className="c6"
+        className="c5"
       >
         Nuno Job
       </h3>
       <div
-        className="c7"
+        className="c6"
       >
         <h3
-          className="c8"
+          className="c7"
           muted={true}
         >
           Chief Executive Officer
         </h3>
       </div>
       <p
-        className="c9"
+        className="c8"
       >
         Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
       </p>
       <div
-        className="c10"
+        className="c9"
       >
         <a
-          className="c11"
+          className="c10"
           href="twitter.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="twitter profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
           />
         </a>
         <a
-          className="c11"
+          className="c10"
           href="linkedin.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="linkedin  profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
@@ -494,11 +483,11 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 `;
 
 exports[`Storyshots About Us Page Components StaffCard 1`] = `
-.c4 {
+.c3 {
   padding-bottom: 1.5rem;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 2.25rem;
 }
 
@@ -525,7 +514,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   display: flex;
 }
 
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -547,17 +536,17 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   display: block;
 }
 
-.c5 {
+.c4 {
   width: 100%;
   height: auto;
 }
 
-.c12 {
+.c11 {
   width: 24px;
   height: auto;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -567,7 +556,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   font-weight: 700;
 }
 
-.c8 {
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -578,16 +567,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   font-weight: 700;
 }
 
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-bottom: 0;
-}
-
-.c11 {
+.c10 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -604,17 +584,27 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   align-items: center;
 }
 
-.c11:first-child {
+.c10:first-child {
   margin-left: -0.75rem;
 }
 
-.c10 {
-  padding-top: 2.25rem;
-  padding-bottom: 1.125rem;
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -0.75rem;
+  padding-bottom: 0.375rem;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  padding-bottom: 1.875rem;
 }
 
 @media (min-width:29.4375em) {
@@ -676,35 +666,35 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-left: 2.625rem;
     padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -713,7 +703,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -722,7 +712,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     width: 50%;
     position: initial;
     top: 0;
@@ -731,23 +721,11 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
     left: 0;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c2:nth-child(3) {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c2:nth-child(3) {
-    display: block;
   }
 }
 
@@ -758,7 +736,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
     className="c1"
   >
     <div
-      className="c2 c3"
+      className="c2"
       width={
         Array [
           1,
@@ -771,60 +749,60 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
       }
     >
       <div
-        className="c4"
+        className="c3"
       >
         <img
-          className="c5"
+          className="c4"
           src="test-file-stub"
           width="100%"
         />
       </div>
       <h3
-        className="c6"
+        className="c5"
       >
         Nuno Job
       </h3>
       <div
-        className="c7"
+        className="c6"
       >
         <h3
-          className="c8"
+          className="c7"
           muted={true}
         >
           Chief Executive Officer
         </h3>
       </div>
       <p
-        className="c9"
+        className="c8"
       >
         Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
       </p>
       <div
-        className="c10"
+        className="c9"
       >
         <a
-          className="c11"
+          className="c10"
           href="twitter.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="twitter profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
           />
         </a>
         <a
-          className="c11"
+          className="c10"
           href="linkedin.com/etc"
           rel="noopener noreferrer"
           target="_blank"
         >
           <img
             alt="linkedin  profile link"
-            className="c12"
+            className="c11"
             heigh="24px"
             src="test-file-stub"
             width="24px"
