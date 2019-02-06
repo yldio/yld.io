@@ -21,7 +21,7 @@ const Speciality = ({
   const getExternalType = type =>
     speciality.externalResources.filter(
       additionalInfo => additionalInfo.type === type
-    )
+    ) || []
 
   return (
     <Layout

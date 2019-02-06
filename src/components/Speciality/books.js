@@ -2,6 +2,7 @@ import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import Flex, { FlexItem } from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
@@ -34,7 +35,7 @@ const BookCol = styled(Col)`
    `}
 `
 
-const BooksBox = styled.a`
+const BooksBox = styled(ExternalAnchor)`
   border: 1px solid;
   height: ${remcalc(222)};
   display: inline-block;
@@ -69,8 +70,6 @@ const BooksSection = ({ books, title }) =>
                     borderColor: `${externalResource.colorCode}`
                   }}
                   href={externalResource.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   <Padding top={2} left={2} right={2}>
                     <CardTitle
