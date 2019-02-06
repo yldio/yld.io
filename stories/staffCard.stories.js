@@ -3,7 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import { Grid, Row } from '../src/components/grid'
 import StaffCard from '../src/components/AboutUs/StaffCard'
-import logo from '../src/images/logo_animated.gif'
+import logo from '../src/images/favicon.png'
 
 addDecorator(Theme)
 
@@ -63,6 +63,8 @@ storiesOf('About Us Page Components', module)
     return (
       <Grid>
         <Row>
+          {Sc}
+          {Sc}
           {Sc}
           {Sc}
           {Sc}
