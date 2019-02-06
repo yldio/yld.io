@@ -36,9 +36,14 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         </Row>
       </Grid>
 
-      <Statement>
-        {service.mainPageIntroSentence.mainPageIntroSentence}
-      </Statement>
+      <GreyBackground>
+        <Grid>
+          <Statement>
+            {service.mainPageIntroSentence.mainPageIntroSentence}
+          </Statement>
+        </Grid>
+      </GreyBackground>
+
       <BlueBackground>
         <WorkStages
           title={service.workStagesTitle}

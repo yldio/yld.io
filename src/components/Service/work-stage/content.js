@@ -1,17 +1,15 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 import { Subtitle, BodyPrimary } from '../../Typography'
-import { Item, WorkStageContentList } from './elements'
-import Hr from '../../Common/Hr'
+import { WorkStageContentList } from './elements'
+import CustomisedBulletpoint from '../../CustomisedBulletpoint'
 
 const WorkStageContent = ({ sectionTitle, sectionBody }) => {
   const bodyList = sectionBody.split('- ')
 
   return (
     <Fragment key={sectionTitle}>
-      <Subtitle reverse>
-        {sectionTitle}
-      </Subtitle>
+      <Subtitle reverse>{sectionTitle}</Subtitle>
       <BodyPrimary muted reverse noPadding>
         {bodyList[0]}
       </BodyPrimary>
@@ -19,10 +17,9 @@ const WorkStageContent = ({ sectionTitle, sectionBody }) => {
         <Padding top={1.5}>
           <WorkStageContentList>
             {bodyList.slice(1).map(c => (
-              <Item key={c}>
+              <CustomisedBulletpoint muted key={c}>
                 {c}
-                <Hr short />
-              </Item>
+              </CustomisedBulletpoint>
             ))}
           </WorkStageContentList>
         </Padding>

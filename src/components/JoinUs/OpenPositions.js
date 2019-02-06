@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Flex from 'styled-flex-component'
-import { CompensatedCol, CompensatedRow } from '../grid'
+import { Col, Row } from '../grid'
 import styled from 'styled-components'
 import JobsByLocation from '../jobsByLocation'
 import { Padding } from 'styled-components-spacing'
@@ -15,7 +15,7 @@ const JobLink = styled(ExternalAnchor)`
 `
 
 const Job = ({ text, hostedUrl, categories: { commitment } }) => (
-  <CompensatedCol as="li" width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
+  <Col width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
     <Flex column>
       <JobLink href={hostedUrl}>
         <Padding top={1} bottom={0.5}>
@@ -27,7 +27,7 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
       </JobLink>
       <Hr short />
     </Flex>
-  </CompensatedCol>
+  </Col>
 )
 
 class OpenPositions extends React.PureComponent {
@@ -35,22 +35,24 @@ class OpenPositions extends React.PureComponent {
     const { title, getInTouchText, getInTouchTitle } = this.props.data
 
     return (
-      <Section greyBg id="open-positions">
-        <Padding top={{ smallPhone: 3, tablet: 4 }}>
-          <SectionTitle>{title}</SectionTitle>
-          <JobsByLocation>
-            {jobs =>
-              jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-                this.renderJobsForlocation(jobsForLocation, location, idx)
-              )
-            }
-          </JobsByLocation>
+      <Fragment>
+        <Section greyBg id="open-positions">
           <Padding top={{ smallPhone: 3, tablet: 4 }}>
-            <Hr />
+            <SectionTitle>{title}</SectionTitle>
+            <JobsByLocation>
+              {jobs =>
+                jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+                  this.renderJobsForlocation(jobsForLocation, location, idx)
+                )
+              }
+            </JobsByLocation>
+            <Padding top={{ smallPhone: 3, tablet: 4 }}>
+              <Hr />
+            </Padding>
           </Padding>
-          <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
-        </Padding>
-      </Section>
+        </Section>
+        <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+      </Fragment>
     )
   }
 
@@ -59,11 +61,11 @@ class OpenPositions extends React.PureComponent {
       <Padding top={3} key={key}>
         <Subtitle>{location}</Subtitle>
         <Padding top={2}>
-          <CompensatedRow as="ul">
+          <Row as="ul">
             {jobs.map((job, idx) => (
               <Job key={`job-${location}-${idx}`} {...job.node} />
             ))}
-          </CompensatedRow>
+          </Row>
         </Padding>
       </Padding>
     )

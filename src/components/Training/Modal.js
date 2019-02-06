@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   opacity: 0;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: ${props => props.theme.zIndexes.modal};
   transition: transform ${props => props.theme.animations.normal},
     opacity ${props => props.theme.animations.normal};
   transform: scale(0.7);

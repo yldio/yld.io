@@ -39,6 +39,9 @@ class Header extends Component {
                     </button>
                   </MobileMenu>
                   <DesktopMenu open={this.state.menuOpen}>
+                    <Close onClick={this.toggleMenu}>
+                      <img src={close} alt="Close menu" />
+                    </Close>
                     <HomeLink right={30}>
                       <Link activeClassName="active" to="/">
                         Home
@@ -65,9 +68,6 @@ class Header extends Component {
                     <Link activeClassName="active" to="/join-us/">
                       Join Us
                     </Link>
-                    <Close onClick={this.toggleMenu}>
-                      <img src={close} alt="Close menu" />
-                    </Close>
                   </DesktopMenu>
                   <Overlay
                     visible={this.state.menuOpen}

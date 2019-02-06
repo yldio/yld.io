@@ -9,15 +9,16 @@ import CustomisedBulletpoint from '../CustomisedBulletpoint'
 
 const Blog = () => (
   <Row>
-    <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12]}>
+    <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
       <SectionTitle>From the blog</SectionTitle>
     </Col>
-    <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12]}>
+    <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
       <Posts>
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
               <CustomisedBulletpoint
+                fullWidth
                 fullWidthBorder
                 symmetrical
                 key={`${node.id}`}

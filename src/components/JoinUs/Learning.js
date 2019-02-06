@@ -1,7 +1,7 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import { CompensatedRow, CompensatedCol } from '../grid'
+import { Row, Col } from '../grid'
 import Image from '../Common/Image'
 import Hr from '../Common/Hr'
 import { Subtitle } from '../Typography'
@@ -21,7 +21,7 @@ const PostTitleWrapper = styled(Padding)`
 `
 
 const Insight = ({ insight }) => (
-  <CompensatedCol width={[1, 1, 1, 4 / 12]}>
+  <Col width={[1, 1, 1, 4 / 12]}>
     <InsightAnchor href={insight.url}>
       <Padding top={{ smallPhone: 2, tablet: 3 }}>
         <Image image={insight.image} />
@@ -31,7 +31,7 @@ const Insight = ({ insight }) => (
       </PostTitleWrapper>
       <Hr />
     </InsightAnchor>
-  </CompensatedCol>
+  </Col>
 )
 
 const Learning = ({
@@ -41,11 +41,11 @@ const Learning = ({
     <TitleAndList title={title} list={list} />
     <Separator />
     <TitleAndBody title={subtitle} body={text} />
-    <CompensatedRow>
+    <Row>
       {featuredInsights.map((el, idx) => (
         <Insight insight={el} key={idx} />
       ))}
-    </CompensatedRow>
+    </Row>
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
 )

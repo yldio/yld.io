@@ -18,6 +18,8 @@ const Courses = ({ categories, toggleModal }) => {
             <SectionTitle noPadding>Course catalog</SectionTitle>
           </Padding>
         </Col>
+      </Row>
+      <Row>
         {categories.map(cat => (
           <Col width={[1, 1, 1, 1, 1 / 2]} key={cat.id}>
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>

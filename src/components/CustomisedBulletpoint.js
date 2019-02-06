@@ -23,6 +23,14 @@ export default styled.li`
     margin-bottom: ${remcalc(30)};
   `};
 
+  ${is('fullWidth')`
+    max-width: none;
+  `};
+
+  ${is('muted')`
+    opacity: .5;
+  `};
+
   &:after {
     content: '';
     width: ${remcalc(60)};
@@ -35,6 +43,10 @@ export default styled.li`
 
     ${is('fullWidthBorder')`
       width: 100%;
+    `};
+
+    ${is('fullWidth')`
+      max-width: none;
     `};
   }
 

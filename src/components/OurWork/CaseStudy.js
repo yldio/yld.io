@@ -8,13 +8,6 @@ import Image from '../Common/Image'
 import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
 
-const FlexCol = styled(Col)`
-  display: flex;
-  ${breakpoint('tablet')`
-    align-items: center;
-  `}
-`
-
 const MobileOnlyCol = styled(Col)`
   ${breakpoint('smallTablet')`
     display: none;
@@ -25,7 +18,11 @@ const NonMobileCol = styled(Col)`
   display: none;
 
   ${breakpoint('smallTablet')`
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   `}
 `
 
@@ -67,20 +64,15 @@ const CaseStudy = ({ caseStudy }) => {
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <TitleSection services={services} title={title} />
       </MobileOnlyCol>
-      <FlexCol width={1}>
-        <Col px={[0]} width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
-          <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-            <Image alt={posterImage.title} image={posterImage} />
-          </Padding>
-        </Col>
-        <NonMobileCol
-          pr={[0, 0, 0, 0, 0, 0]}
-          width={[0, 0, 0, 0, 7 / 12, 6 / 12, 6 / 12]}
-        >
-          <TitleSection services={services} title={title} />
-          <InfoSection introSentence={introSentence} slug={slug} />
-        </NonMobileCol>
-      </FlexCol>
+      <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
+        <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
+          <Image alt={posterImage.title} image={posterImage} />
+        </Padding>
+      </Col>
+      <NonMobileCol width={[0, 0, 0, 0, 7 / 12, 6 / 12]}>
+        <TitleSection services={services} title={title} />
+        <InfoSection introSentence={introSentence} slug={slug} />
+      </NonMobileCol>
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <InfoSection introSentence={introSentence} title={title} slug={slug} />
       </MobileOnlyCol>

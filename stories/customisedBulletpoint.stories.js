@@ -9,7 +9,7 @@ storiesOf('CustomisedBulletpoint', module)
   .add('CustomisedBulletpoint', () => (
     <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
   ))
-  .add('CustomisedBulletpoint Big', () => (
+  .add('CustomisedBulletpoint spaced', () => (
     <CustomisedBulletpoint spaced>I am a bullet thingy</CustomisedBulletpoint>
   ))
   .add('CustomisedBulletpoint Symmetrical', () => (
@@ -20,5 +20,10 @@ storiesOf('CustomisedBulletpoint', module)
   .add('CustomisedBulletpoint fullWidthBorder', () => (
     <CustomisedBulletpoint fullWidthBorder>
       I am a bullet thingy
+    </CustomisedBulletpoint>
+  ))
+  .add('CustomisedBulletpoint fullWidth', () => (
+    <CustomisedBulletpoint fullWidth>
+      I am a bullet thingy full width
     </CustomisedBulletpoint>
   ))

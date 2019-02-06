@@ -22,6 +22,40 @@ const ColWithoutExtraPadding = styled(Col)`
   `}
 `
 
+const SpreadUntilDesktop = styled(Col)`
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  ${breakpoint('smallTablet')`
+    flex: 0 0 50%;
+  `}
+
+  ${breakpoint('desktop')`
+    flex: none;
+    &:last-child {
+      padding-left: 0;
+    }
+  `}
+`
+
+const FlexDirectionColumn = styled(Col)`
+  flex: none;
+  flex-direction: column;
+
+  ${breakpoint('smallTablet')`
+    flex-direction: row;
+  `}
+
+  ${breakpoint('desktop')`
+    flex-direction: column;
+  `}
+`
+
 const MetricsCol = styled(Col)`
   display: grid;
   grid-template-columns: 208px;
@@ -66,14 +100,14 @@ const IndexPage = ({
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <SectionTitle>The challenge</SectionTitle>
           </Col>
-          <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
+          <Col width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
             {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
-          </ColWithoutExtraPadding>
+          </Col>
         </Row>
         <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
       </Grid>
@@ -84,12 +118,19 @@ const IndexPage = ({
         >
           <Grid>
             <Row>
-              <Col width={[1, 1, 1, 1, 5 / 12]}>
-                <SectionTitle>Single sign-on</SectionTitle>
-                {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
-                  <BodyPrimary key={i}>{p}</BodyPrimary>
-                ))}
-              </Col>
+              <FlexDirectionColumn
+                width={[1, 1, 1, 1, 1, 1, 5 / 12]}
+                block={false}
+              >
+                <SpreadUntilDesktop>
+                  <SectionTitle>Single sign-on</SectionTitle>
+                </SpreadUntilDesktop>
+                <SpreadUntilDesktop>
+                  {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
+                    <BodyPrimary key={i}>{p}</BodyPrimary>
+                  ))}
+                </SpreadUntilDesktop>
+              </FlexDirectionColumn>
             </Row>
             <Row>
               <Col width={[1]}>
@@ -131,12 +172,16 @@ const IndexPage = ({
       <Padding bottom={{ smallPhone: 3.5, smallTablet: 5 }}>
         <Grid>
           <Row>
-            <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <SectionTitle>App deployment</SectionTitle>
-              {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
-                <BodyPrimary key={i}>{p}</BodyPrimary>
-              ))}
-            </Col>
+            <FlexDirectionColumn width={[1, 1, 1, 1, 1, 1, 0.5]} block={false}>
+              <SpreadUntilDesktop>
+                <SectionTitle>App deployment</SectionTitle>
+              </SpreadUntilDesktop>
+              <SpreadUntilDesktop>
+                {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
+                ))}
+              </SpreadUntilDesktop>
+            </FlexDirectionColumn>
           </Row>
           <Row>
             <Col width={[1]}>
@@ -231,12 +276,16 @@ const IndexPage = ({
       >
         <Grid>
           <Row>
-            <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <SectionTitle>Monitoring and alerting</SectionTitle>
-              {makeText(caseStudy.genericText9.genericText9).map((p, i) => (
-                <BodyPrimary key={i}>{p}</BodyPrimary>
-              ))}
-            </Col>
+            <FlexDirectionColumn width={[1, 1, 1, 1, 1, 1, 0.5]} block={false}>
+              <SpreadUntilDesktop>
+                <SectionTitle>Monitoring and alerting</SectionTitle>
+              </SpreadUntilDesktop>
+              <SpreadUntilDesktop>
+                {makeText(caseStudy.genericText9.genericText9).map((p, i) => (
+                  <BodyPrimary key={i}>{p}</BodyPrimary>
+                ))}
+              </SpreadUntilDesktop>
+            </FlexDirectionColumn>
           </Row>
           <Row>
             <Col width={[1]}>
