@@ -18,6 +18,11 @@ const Speciality = ({
   data: { contentfulSpeciality: speciality, videoIcon },
   location
 }) => {
+  const getExternalType = type =>
+    speciality.externalResources.filter(
+      additionalInfo => additionalInfo.type === type
+    ) || []
+
   return (
     <Layout
       backgroundColor="blue"
@@ -26,16 +31,30 @@ const Speciality = ({
     >
       <Head page={speciality} />
       <IntroSection speciality={speciality} />
-      <ProjectsSection speciality={speciality} />
+      <ProjectsSection
+        related={speciality.relatedProjects}
+        title={speciality.title}
+        clients={speciality.clients}
+      />
       <TrainingSection speciality={speciality} />
-      {speciality.communityText ? (
-        <CommunitySection speciality={speciality} />
-      ) : null}
-      <EventSection speciality={speciality} />
-      <TalksSection speciality={speciality} videoIcon={videoIcon} />
-      <BlogPostsSection speciality={speciality} />
-      <TutorialsSection speciality={speciality} />
-      <BooksSection speciality={speciality} />
+      <CommunitySection
+        background={speciality.communityBackground}
+        logo={speciality.communityLogo}
+        text={speciality.communityText}
+        title={speciality.title}
+      />
+      <EventSection
+        events={speciality.events}
+        title={speciality.title}
+        eventIcon={speciality.eventIcon}
+      />
+      <TalksSection talks={getExternalType(`Talk`)} videoIcon={videoIcon} />
+      <BlogPostsSection title={speciality.title} />
+      <TutorialsSection
+        externalResources={speciality.externalResources}
+        tutorials={getExternalType(`Tutorial`)}
+      />
+      <BooksSection title={speciality.title} books={getExternalType(`Book`)} />
       <GetInTouch
         title={`Talk to us about ${speciality.title}`}
         contactText={speciality.contactText}

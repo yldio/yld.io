@@ -18,17 +18,10 @@ const Video = styled.iframe`
     0px 0px 20px rgba(255, 255, 255, 0.07);
 `
 
-const TalksSection = ({ speciality, videoIcon }) => {
-  const isTalk = type => type === 'Talk'
-  const talks = speciality.externalResources.filter(
-    ({ type, featured, cta }) => isTalk(type) && !featured && !cta
-  )
-  const featured = speciality.externalResources.find(
-    ({ type, featured }) => isTalk(type) && featured
-  )
-  const cta = speciality.externalResources.find(
-    ({ type, cta }) => isTalk(type) && cta
-  )
+const TalksSection = ({ talks: allTalks, videoIcon }) => {
+  const talks = allTalks.filter(({ type, featured, cta }) => !featured && !cta)
+  const featured = allTalks.find(({ type, featured }) => featured)
+  const cta = allTalks.find(({ type, cta }) => cta)
   return talks.length ? (
     <BlueBackground>
       <Grid>

@@ -13,10 +13,8 @@ const TutorialsGrid = styled(Grid)`
   padding-bottom: ${remcalc(18)};
 `
 
-const TutorialsSection = ({ speciality }) =>
-  speciality.externalResources.filter(
-    externalResource => externalResource.type === `Tutorial`
-  ).length > 0 ? (
+const TutorialsSection = ({ tutorials, externalResources }) =>
+  tutorials.length > 0 ? (
     <GreyBackground>
       <TutorialsGrid>
         <Padding vertical={5}>
@@ -29,26 +27,18 @@ const TutorialsSection = ({ speciality }) =>
             </Col>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <ul>
-                {speciality.externalResources
-                  .filter(
-                    externalResource => externalResource.type === `Tutorial`
-                  )
-                  .slice(0, 3)
-                  .map(externalResource => (
-                    <CustomisedBulletpoint
-                      spaced
-                      key={`${externalResource.id}`}
-                    >
-                      <Subtitle>{externalResource.title}</Subtitle>
-                      <ExternalAnchor href={externalResource.link}>
-                        {externalResource.additionalInfo}
-                      </ExternalAnchor>
-                    </CustomisedBulletpoint>
-                  ))}
+                {tutorials.slice(0, 3).map(externalResource => (
+                  <CustomisedBulletpoint spaced key={`${externalResource.id}`}>
+                    <Subtitle>{externalResource.title}</Subtitle>
+                    <ExternalAnchor href={externalResource.link}>
+                      {externalResource.additionalInfo}
+                    </ExternalAnchor>
+                  </CustomisedBulletpoint>
+                ))}
               </ul>
               <Padding top={3}>
-                <StyledLink href={speciality.externalResources[7].link}>
-                  {speciality.externalResources[7].title}
+                <StyledLink href="http://nodetuts.com/">
+                  More tutorials
                 </StyledLink>
               </Padding>
             </Col>
