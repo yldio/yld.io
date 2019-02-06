@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
-.c3 {
-  padding-bottom: 1.5rem;
-}
-
-.c6 {
-  padding-bottom: 2.25rem;
-}
-
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -83,6 +75,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   opacity: .5;
   padding: 0;
   font-weight: 700;
+}
+
+.c3 {
+  padding-bottom: 1.5rem;
+}
+
+.c6 {
+  padding-bottom: 2.25rem;
 }
 
 .c10 {
@@ -483,14 +483,6 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 `;
 
 exports[`Storyshots About Us Page Components StaffCard 1`] = `
-.c3 {
-  padding-bottom: 1.5rem;
-}
-
-.c6 {
-  padding-bottom: 2.25rem;
-}
-
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -565,6 +557,14 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   opacity: .5;
   padding: 0;
   font-weight: 700;
+}
+
+.c3 {
+  padding-bottom: 1.5rem;
+}
+
+.c6 {
+  padding-bottom: 2.25rem;
 }
 
 .c10 {
@@ -988,6 +988,11 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c6 {
+  width: auto;
+  height: auto;
 }
 
 .c6 {
@@ -1803,21 +1808,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
-<<<<<<< HEAD
-=======
-.c10 {
-  padding-bottom: 0.375rem;
-}
-
-.c11 {
-  padding-bottom: 0.75rem;
-}
-
-.c12 {
-  padding-top: 0;
-}
-
->>>>>>> feat: create StaffCard component
 .c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1911,6 +1901,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .c5 {
   width: 100%;
   height: auto;
@@ -1920,19 +1911,13 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 =======
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> update snapshot
 .c6 {
   width: auto;
   height: auto;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
->>>>>>> feat: create StaffCard component
 .c4 {
 >>>>>>> feat: create StaffCard component
   color: #333333;
@@ -1960,26 +1945,26 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
-<<<<<<< HEAD
-.c9 {
+.c10 {
   padding-bottom: 0.375rem;
 }
 
-.c10 {
+.c11 {
   padding-bottom: 0.75rem;
 }
 
-.c11 {
+.c12 {
   padding-top: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
+<<<<<<< HEAD
 .c0 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1996,8 +1981,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 .c13 {
 =======
+=======
+>>>>>>> update snapshot
 .c14 {
->>>>>>> feat: create StaffCard component
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -2042,15 +2028,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   background: #333333;
 }
 
-<<<<<<< HEAD
-=======
-@media (min-width:56.3125em) {
-  .c12 {
-    padding-top: 0.375rem;
-  }
-}
-
->>>>>>> feat: create StaffCard component
 @media screen and (min-width:29.4375rem) {
   .c1 {
     padding-left: 0;
@@ -2326,9 +2303,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media (min-width:56.3125em) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   .c3 {
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> update snapshot
   .c4 {
 >>>>>>> feat: create StaffCard component
     font-size: 2.625rem;
@@ -2338,16 +2318,13 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c11 {
+  .c12 {
     padding-top: 0.375rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c8 {
-=======
   .c9 {
->>>>>>> feat: create StaffCard component
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -8622,18 +8599,6 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 `;
 
 exports[`Storyshots Title and List list in form of a string (Contentful data) 1`] = `
-<<<<<<< HEAD
-=======
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
->>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -8685,12 +8650,12 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
+.c4 {
   padding-bottom: 2.25rem;
 }
 
-.c4 {
+.c1 {
+  padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
@@ -8971,18 +8936,6 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 `;
 
 exports[`Storyshots Title and List list in form of an array 1`] = `
-<<<<<<< HEAD
-=======
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
->>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -9034,12 +8987,12 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
+.c4 {
   padding-bottom: 2.25rem;
 }
 
-.c4 {
+.c1 {
+  padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
@@ -9331,18 +9284,6 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 `;
 
 exports[`Storyshots Title and List on dark background 1`] = `
-<<<<<<< HEAD
-=======
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
->>>>>>> feat: create StaffCard component
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -9400,12 +9341,12 @@ exports[`Storyshots Title and List on dark background 1`] = `
   color: #fff;
 }
 
-.c2 {
-  padding-top: 2.25rem;
+.c5 {
   padding-bottom: 2.25rem;
 }
 
-.c5 {
+.c2 {
+  padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
@@ -9705,18 +9646,6 @@ exports[`Storyshots Title and List on dark background 1`] = `
 `;
 
 exports[`Storyshots Title and List on grey background 1`] = `
-<<<<<<< HEAD
-=======
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
->>>>>>> feat: create StaffCard component
 .c1 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -9768,12 +9697,12 @@ exports[`Storyshots Title and List on grey background 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c2 {
-  padding-top: 2.25rem;
+.c5 {
   padding-bottom: 2.25rem;
 }
 
-.c5 {
+.c2 {
+  padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
@@ -10073,18 +10002,6 @@ exports[`Storyshots Title and List on grey background 1`] = `
 `;
 
 exports[`Storyshots Title and List with extra content 1`] = `
-<<<<<<< HEAD
-=======
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
->>>>>>> feat: create StaffCard component
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -10136,12 +10053,12 @@ exports[`Storyshots Title and List with extra content 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
+.c4 {
   padding-bottom: 2.25rem;
 }
 
-.c4 {
+.c1 {
+  padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
