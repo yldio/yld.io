@@ -67,7 +67,7 @@ const OurWork = ({ data }) => {
                   tablet: 5
                 }}
               >
-                <SectionTitle as="h1">Our Work</SectionTitle>
+                <SectionTitle as="h1">Our work</SectionTitle>
                 <FixedWidthDisplayTitle regular textLight>
                   We make work that we’re proud to stand behind and celebrate.
                   That way we’re sure our clients love it too.
