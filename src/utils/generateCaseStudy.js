@@ -5,7 +5,6 @@
 */
 
 const generateCaseStudy = caseStudy => {
-  console.log(JSON.stringify(caseStudy))
   let met = false
   return caseStudy.body.content.reduce(
     (acc, c) => {
