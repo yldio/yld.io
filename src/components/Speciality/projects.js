@@ -36,7 +36,7 @@ const PosterLinks = ({ project }) => (
   </AnimatedLink>
 )
 
-const CompaniesHelped = ({ speciality, noOther }) => (
+const CompaniesHelped = ({ clients, noOther }) => (
   <Fragment>
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -45,12 +45,11 @@ const CompaniesHelped = ({ speciality, noOther }) => (
         </Padding>
       </Col>
     </Row>
-    <Companies companies={speciality.clients} />
+    <Companies companies={clients} />
   </Fragment>
 )
 
-const ProjectsSection = ({ speciality }) => {
-  const related = speciality.relatedProjects
+const ProjectsSection = ({ related, title, clients }) => {
   return related ? (
     <Grid>
       <Padding top={5} bottom={5}>
@@ -58,7 +57,7 @@ const ProjectsSection = ({ speciality }) => {
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
               <SectionTitle>
-                {speciality.title}
+                {title}
                 <br />
                 <Emphasis>related projects</Emphasis>
               </SectionTitle>
@@ -67,7 +66,7 @@ const ProjectsSection = ({ speciality }) => {
           </Col>
           <Col width={[1, 1, 1, 1, 0]}>
             <SectionTitle>
-              {speciality.title}
+              {title}
               <br />
               <Emphasis>related projects</Emphasis>
             </SectionTitle>
@@ -84,13 +83,13 @@ const ProjectsSection = ({ speciality }) => {
           )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
-        <CompaniesHelped speciality={speciality} />
+        <CompaniesHelped clients={clients} />
       </Padding>
     </Grid>
   ) : (
     <Grid>
       <Padding top={5} bottom={5}>
-        <CompaniesHelped noOther speciality={speciality} />
+        <CompaniesHelped noOther clients={clients} />
       </Padding>
     </Grid>
   )

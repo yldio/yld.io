@@ -10,8 +10,8 @@ const EventBorder = styled(Col)`
   border: 1px solid rgba(51, 51, 51, 0.15);
 `
 
-const EventSection = ({ speciality }) => {
-  const futureEvents = (speciality.events || []).filter(
+const EventSection = ({ events, title, eventIcon }) => {
+  const futureEvents = (events || []).filter(
     ({ startTime }) => new Date(startTime) > new Date()
   )
 
@@ -20,7 +20,7 @@ const EventSection = ({ speciality }) => {
       <Padding top={6} bottom={6}>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle>{`Upcoming ${speciality.title} events`}</SectionTitle>
+            <SectionTitle>{`Upcoming ${title} events`}</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             {futureEvents.map(event => (
@@ -29,8 +29,8 @@ const EventSection = ({ speciality }) => {
                   <Row>
                     <Col>
                       <img
-                        src={`https://${speciality.eventIcon.file.url}`}
-                        alt={speciality.eventIcon.title}
+                        src={`https://${eventIcon.file.url}`}
+                        alt={eventIcon.title}
                       />
                     </Col>
                     <Col>

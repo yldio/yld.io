@@ -44,66 +44,59 @@ const BooksBox = styled.a`
   `}
 `
 
-const BooksSection = ({ speciality }) =>
-  speciality.externalResources.filter(
-    additionalInfo => additionalInfo.type === `Book`
-  ).length ? (
+const BooksSection = ({ books, title }) =>
+  books.length ? (
     <Grid>
       <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>
           <Padding top={4} />
           <CenteredCol width={[1]}>
-            <SectionTitle
-              small
-            >{`${speciality.title.trim()} books`}</SectionTitle>
+            <SectionTitle small>{`${title.trim()} books`}</SectionTitle>
             <BodyPrimary>
-              NodeJS books created by members of YLD for the community.
+              Node.js books written by members of YLD for our community.
             </BodyPrimary>
           </CenteredCol>
         </Row>
         <Row>
-          {speciality.externalResources
-            .filter(additionalInfo => additionalInfo.type === `Book`)
-            .slice(0, 3)
-            .map(externalResource => (
-              <BookCol
-                width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
-                key={`${externalResource.id}`}
-              >
-                <Padding top={4}>
-                  <BooksBox
-                    style={{
-                      borderColor: `${externalResource.colorCode}`
-                    }}
-                    href={externalResource.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Padding top={2} left={2} right={2}>
-                      <CardTitle
-                        normal
-                        style={{
-                          color: `${externalResource.colorCode}`
-                        }}
-                      >
-                        {externalResource.title}
-                      </CardTitle>
-                      <BottomBodyPrimary>{`By ${
-                        externalResource.additionalInfo
-                      }`}</BottomBodyPrimary>
-                    </Padding>
-                  </BooksBox>
-                </Padding>
-              </BookCol>
-            ))}
+          {books.slice(0, 3).map(externalResource => (
+            <BookCol
+              width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
+              key={`${externalResource.id}`}
+            >
+              <Padding top={4}>
+                <BooksBox
+                  style={{
+                    borderColor: `${externalResource.colorCode}`
+                  }}
+                  href={externalResource.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Padding top={2} left={2} right={2}>
+                    <CardTitle
+                      normal
+                      style={{
+                        color: `${externalResource.colorCode}`
+                      }}
+                    >
+                      {externalResource.title}
+                    </CardTitle>
+                    <BottomBodyPrimary>{`By ${
+                      externalResource.additionalInfo
+                    }`}</BottomBodyPrimary>
+                  </Padding>
+                </BooksBox>
+              </Padding>
+            </BookCol>
+          ))}
         </Row>
         <Row>
           <Col width={[1]}>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href={speciality.externalResources[11].link}>
-                    {speciality.externalResources[11].title}
+                  <StyledLink href="http://nodepatternsbooks.com/index.html">
+                    More Books
                   </StyledLink>
                 </FlexItem>
               </Flex>
