@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import { Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
@@ -59,12 +60,25 @@ const getSocialLink = ({ network, url }) => {
   }
 }
 
+const StaffCardCol = styled(Col)`
+  ${breakpoint('smallTablet')`
+    &:nth-child(3) {
+        display: none;
+    }
+  `}
+
+  ${breakpoint('tablet')`
+    &:nth-child(3) {
+      display: block;
+    }
+  `}
+`
+
 const StaffCard = ({ name, image, title, description, socialLinks = [] }) => {
   const links = socialLinks.map(getSocialLink)
-  console.log({ links })
 
   return (
-    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
+    <StaffCardCol width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
       <Padding bottom={2}>
         <Image image={image} width="100%" />
       </Padding>
@@ -80,7 +94,7 @@ const StaffCard = ({ name, image, title, description, socialLinks = [] }) => {
           {links.map((Link, idx) => Link)}
         </LinksContainer>
       ) : null}
-    </Col>
+    </StaffCardCol>
   )
 }
 
