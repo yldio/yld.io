@@ -31,7 +31,7 @@ export const breakpoints = {
   desktop: 1197
 }
 
-export const elementSizes = {
+const elementSizes = {
   tappableArea: 48
 }
 

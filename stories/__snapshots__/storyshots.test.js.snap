@@ -61,7 +61,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 
 .c11 {
   width: 24px;
-  height: auto;
+  height: 24px;
 }
 
 .c5 {
@@ -307,7 +307,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="twitter profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -321,7 +321,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="linkedin  profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -382,7 +382,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="twitter profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -396,7 +396,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="linkedin  profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -457,7 +457,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="twitter profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -471,7 +471,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <img
             alt="linkedin  profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -543,7 +543,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 
 .c11 {
   width: 24px;
-  height: auto;
+  height: 24px;
 }
 
 .c5 {
@@ -789,7 +789,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <img
             alt="twitter profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
@@ -803,7 +803,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <img
             alt="linkedin  profile link"
             className="c11"
-            heigh="24px"
+            height="24px"
             src="test-file-stub"
             width="24px"
           />
