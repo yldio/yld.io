@@ -48,11 +48,13 @@ export default {
   zIndexes,
   animations: {
     fast: '200ms',
-    normal: '300ms'
+    normal: '300ms',
+    long: '450ms'
   },
   colors: {
     white: '#fff',
     text: '#333333',
+    outline: '#6be9c1',
     secondaryText: '#757575',
     textLight: '#828282',
     dark: '#232323',
