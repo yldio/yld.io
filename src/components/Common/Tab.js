@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 import UnstyledButton from './UnstyledButton'
@@ -18,6 +18,25 @@ const Text = styled(Subtitle)`
   transition: opacity ${props => props.theme.animations.normal} ease-in-out;
 `
 
+const Underline = css`
+  content: '';
+  display: block;
+  width: 100%;
+  background: ${props => props.theme.colors.text};
+  height: ${remcalc(2)};
+  position: absolute;
+  bottom: ${remcalc(22)};
+  will-change: transform;
+  transition: transform ${props => props.theme.animations.long} ease-in-out;
+  left: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  ${is('active')`
+        transform: scaleX(1);
+    `};
+`
+
 const Button = styled(UnstyledButton)`
   position: relative;
 
@@ -25,36 +44,23 @@ const Button = styled(UnstyledButton)`
   &:focus {
     outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
   }
+
+  &:after {
+    ${Underline}
+  }
 `
 
 const ButtonContent = styled.div`
   padding: ${remcalc(9)} 0 ${remcalc(34)};
 `
 
-const Underline = styled.div`
-  width: 100%;
-  background: black;
-  height: 2px;
-  position: absolute;
-  bottom: 22px;
-  transition: transform ${props => props.theme.animations.long} ease-in-out;
-  left: 0;
-  transform-origin: left;
-  transform: scaleX(0);
-
-  ${is('active')`
-    transform: scaleX(1);
-  `};
-`
-
 const Tab = ({ active, onClick, children, ...props }) => (
   <TabContainer>
-    <Button onClick={onClick} {...props}>
+    <Button onClick={onClick} {...props} active={active}>
       <ButtonContent>
         <Text muted={!active} noPadding>
           {children}
         </Text>
-        <Underline active={active} />
       </ButtonContent>
     </Button>
   </TabContainer>

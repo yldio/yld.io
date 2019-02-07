@@ -5,31 +5,6 @@ import Tab, { Tabs } from '../src/components/Common/Tab'
 
 addDecorator(Theme)
 
-class SingleTab extends PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      active: props.active
-    }
-  }
-  state = {
-    active: false
-  }
-
-  render() {
-    return (
-      <Tab active={this.state.active} onClick={this.handleClick}>
-        This is a tab
-      </Tab>
-    )
-  }
-
-  handleClick = () => {
-    this.setState({ active: !this.state.active })
-  }
-}
-
 class MultipleTabs extends PureComponent {
   state = {
     active: 0
@@ -59,12 +34,8 @@ class MultipleTabs extends PureComponent {
 }
 
 storiesOf('Tabs', module)
-  .add('Single Tab - active', () => {
-    return <SingleTab active />
-  })
-  .add('Single Tab - inactive', () => {
-    return <SingleTab />
-  })
+  .add('Single Tab - active', () => <Tab active>This is a tab</Tab>)
+  .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>)
   .add('Multiple Tabs', () => {
     return <MultipleTabs />
   })

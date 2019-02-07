@@ -8710,16 +8710,15 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   outline: 0.25rem solid #6be9c1;
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
-.c5 {
+.c2:after {
+  content: '';
+  display: block;
   width: 100%;
-  background: black;
-  height: 2px;
+  background: #333333;
+  height: 0.125rem;
   position: absolute;
-  bottom: 22px;
+  bottom: 1.375rem;
+  will-change: transform;
   -webkit-transition: -webkit-transform 450ms ease-in-out;
   -webkit-transition: transform 450ms ease-in-out;
   transition: transform 450ms ease-in-out;
@@ -8735,12 +8734,27 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   transform: scaleX(1);
 }
 
-.c7 {
+.c5 {
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.c5:active,
+.c5:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c5:after {
+  content: '';
+  display: block;
   width: 100%;
-  background: black;
-  height: 2px;
+  background: #333333;
+  height: 0.125rem;
   position: absolute;
-  bottom: 22px;
+  bottom: 1.375rem;
+  will-change: transform;
   -webkit-transition: -webkit-transform 450ms ease-in-out;
   -webkit-transition: transform 450ms ease-in-out;
   transition: transform 450ms ease-in-out;
@@ -8751,6 +8765,10 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   -webkit-transform: scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);
+}
+
+.c3 {
+  padding: 0.5625rem 0 2.125rem;
 }
 
 <ul>
@@ -8770,9 +8788,6 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
         >
           First Tab
         </h3>
-        <div
-          className="c5"
-        />
       </div>
     </button>
   </li>
@@ -8780,7 +8795,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
     className="c0 c1"
   >
     <button
-      className="c2"
+      className="c5"
       onClick={[Function]}
     >
       <div
@@ -8792,9 +8807,6 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
         >
           Second Tab
         </h3>
-        <div
-          className="c7"
-        />
       </div>
     </button>
   </li>
@@ -8802,7 +8814,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
     className="c0 c1"
   >
     <button
-      className="c2"
+      className="c5"
       onClick={[Function]}
     >
       <div
@@ -8814,9 +8826,6 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
         >
           Third Tab
         </h3>
-        <div
-          className="c7"
-        />
       </div>
     </button>
   </li>
@@ -8856,16 +8865,15 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   outline: 0.25rem solid #6be9c1;
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
-.c5 {
+.c2:after {
+  content: '';
+  display: block;
   width: 100%;
-  background: black;
-  height: 2px;
+  background: #333333;
+  height: 0.125rem;
   position: absolute;
-  bottom: 22px;
+  bottom: 1.375rem;
+  will-change: transform;
   -webkit-transition: -webkit-transform 450ms ease-in-out;
   -webkit-transition: transform 450ms ease-in-out;
   transition: transform 450ms ease-in-out;
@@ -8881,12 +8889,15 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   transform: scaleX(1);
 }
 
+.c3 {
+  padding: 0.5625rem 0 2.125rem;
+}
+
 <li
   className="c0 c1"
 >
   <button
     className="c2"
-    onClick={[Function]}
   >
     <div
       className="c3"
@@ -8897,9 +8908,6 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
       >
         This is a tab
       </h3>
-      <div
-        className="c5"
-      />
     </div>
   </button>
 </li>
@@ -8939,16 +8947,15 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   outline: 0.25rem solid #6be9c1;
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
-.c5 {
+.c2:after {
+  content: '';
+  display: block;
   width: 100%;
-  background: black;
-  height: 2px;
+  background: #333333;
+  height: 0.125rem;
   position: absolute;
-  bottom: 22px;
+  bottom: 1.375rem;
+  will-change: transform;
   -webkit-transition: -webkit-transform 450ms ease-in-out;
   -webkit-transition: transform 450ms ease-in-out;
   transition: transform 450ms ease-in-out;
@@ -8961,12 +8968,15 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   transform: scaleX(0);
 }
 
+.c3 {
+  padding: 0.5625rem 0 2.125rem;
+}
+
 <li
   className="c0 c1"
 >
   <button
     className="c2"
-    onClick={[Function]}
   >
     <div
       className="c3"
@@ -8977,9 +8987,6 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
       >
         This is a tab
       </h3>
-      <div
-        className="c5"
-      />
     </div>
   </button>
 </li>
