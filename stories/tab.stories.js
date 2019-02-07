@@ -6,6 +6,13 @@ import Tab, { Tabs } from '../src/components/Common/Tab'
 addDecorator(Theme)
 
 class SingleTab extends PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      active: props.active
+    }
+  }
   state = {
     active: false
   }
@@ -52,7 +59,10 @@ class MultipleTabs extends PureComponent {
 }
 
 storiesOf('Tabs', module)
-  .add('Single Tab', () => {
+  .add('Single Tab - active', () => {
+    return <SingleTab active />
+  })
+  .add('Single Tab - inactive', () => {
     return <SingleTab />
   })
   .add('Multiple Tabs', () => {

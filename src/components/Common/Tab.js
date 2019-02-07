@@ -8,6 +8,7 @@ import { Subtitle } from '../Typography'
 const TabContainer = styled.li`
   display: inline-block;
 
+  /* Targetting the next sibling and add a margin to the left of it */
   & + & {
     margin-left: ${remcalc(36)};
   }
@@ -20,12 +21,9 @@ const Text = styled(Subtitle)`
 const Button = styled(UnstyledButton)`
   position: relative;
 
+  &:active,
   &:focus {
     outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-  }
-
-  &:active {
-    outline: none;
   }
 `
 
