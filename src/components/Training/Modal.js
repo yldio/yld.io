@@ -57,7 +57,7 @@ const Close = styled.button`
 
     &:focus {
     background: transparent;
-    outline: ${remcalc(4)} solid #6be9c1;
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
     color: ${props => props.theme.colors.text};
   }
 

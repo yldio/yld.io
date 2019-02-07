@@ -8723,9 +8723,9 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   height: 2px;
   position: absolute;
   bottom: 22px;
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  -webkit-transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
+  -webkit-transition: -webkit-transform 450ms ease-in-out;
+  -webkit-transition: transform 450ms ease-in-out;
+  transition: transform 450ms ease-in-out;
   left: 0;
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
@@ -8741,9 +8741,9 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   height: 2px;
   position: absolute;
   bottom: 22px;
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  -webkit-transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
+  -webkit-transition: -webkit-transform 450ms ease-in-out;
+  -webkit-transition: transform 450ms ease-in-out;
+  transition: transform 450ms ease-in-out;
   left: 0;
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
@@ -8873,9 +8873,9 @@ exports[`Storyshots Tabs Single Tab 1`] = `
   height: 2px;
   position: absolute;
   bottom: 22px;
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  -webkit-transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
+  -webkit-transition: -webkit-transform 450ms ease-in-out;
+  -webkit-transition: transform 450ms ease-in-out;
+  transition: transform 450ms ease-in-out;
   left: 0;
   -webkit-transform-origin: left;
   -ms-transform-origin: left;

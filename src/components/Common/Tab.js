@@ -21,7 +21,7 @@ const Button = styled(UnstyledButton)`
   position: relative;
 
   &:focus {
-    outline: ${remcalc(4)} solid #6be9c1;
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
   }
 
   &:active {
@@ -39,7 +39,7 @@ const Underline = styled.div`
   height: 2px;
   position: absolute;
   bottom: 22px;
-  transition: transform ${props => props.theme.animations.normal} ease-in-out;
+  transition: transform ${props => props.theme.animations.long} ease-in-out;
   left: 0;
   transform-origin: left;
   transform: scaleX(0);
