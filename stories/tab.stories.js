@@ -34,7 +34,11 @@ class MultipleTabs extends PureComponent {
 }
 
 storiesOf('Tabs', module)
-  .add('Single Tab - active', () => <Tab active>This is a tab</Tab>)
+  .add('Single Tab - active', () => (
+    <Tab active as="p">
+      This is a tab
+    </Tab>
+  ))
   .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>)
   .add('Multiple Tabs', () => {
     return <MultipleTabs />

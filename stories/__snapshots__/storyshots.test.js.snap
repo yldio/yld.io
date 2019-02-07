@@ -8673,7 +8673,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   margin-left: 2.25rem;
 }
 
-.c4 {
+.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8683,9 +8683,10 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
+  padding: 0.5625rem 0 2.125rem;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8696,6 +8697,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
+  padding: 0.5625rem 0 2.125rem;
 }
 
 .c2 {
@@ -8734,19 +8736,19 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   transform: scaleX(1);
 }
 
-.c5 {
+.c4 {
   border: none;
   background: transparent;
   padding: 0;
   position: relative;
 }
 
-.c5:active,
-.c5:focus {
+.c4:active,
+.c4:focus {
   outline: 0.25rem solid #6be9c1;
 }
 
-.c5:after {
+.c4:after {
   content: '';
   display: block;
   width: 100%;
@@ -8767,10 +8769,6 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   transform: scaleX(0);
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
 <ul>
   <li
     className="c0 c1"
@@ -8779,54 +8777,42 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <div
+      <h3
         className="c3"
+        muted={false}
       >
-        <h3
-          className="c4"
-          muted={false}
-        >
-          First Tab
-        </h3>
-      </div>
+        First Tab
+      </h3>
     </button>
   </li>
   <li
     className="c0 c1"
   >
     <button
-      className="c5"
+      className="c4"
       onClick={[Function]}
     >
-      <div
-        className="c3"
+      <h3
+        className="c5"
+        muted={true}
       >
-        <h3
-          className="c6"
-          muted={true}
-        >
-          Second Tab
-        </h3>
-      </div>
+        Second Tab
+      </h3>
     </button>
   </li>
   <li
     className="c0 c1"
   >
     <button
-      className="c5"
+      className="c4"
       onClick={[Function]}
     >
-      <div
-        className="c3"
+      <h3
+        className="c5"
+        muted={true}
       >
-        <h3
-          className="c6"
-          muted={true}
-        >
-          Third Tab
-        </h3>
-      </div>
+        Third Tab
+      </h3>
     </button>
   </li>
 </ul>
@@ -8841,7 +8827,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   margin-left: 2.25rem;
 }
 
-.c4 {
+.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8851,6 +8837,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
+  padding: 0.5625rem 0 2.125rem;
 }
 
 .c2 {
@@ -8889,26 +8876,18 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   transform: scaleX(1);
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
 <li
   className="c0 c1"
 >
   <button
     className="c2"
   >
-    <div
+    <p
       className="c3"
+      muted={false}
     >
-      <h3
-        className="c4"
-        muted={false}
-      >
-        This is a tab
-      </h3>
-    </div>
+      This is a tab
+    </p>
   </button>
 </li>
 `;
@@ -8922,7 +8901,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   margin-left: 2.25rem;
 }
 
-.c4 {
+.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8933,6 +8912,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
+  padding: 0.5625rem 0 2.125rem;
 }
 
 .c2 {
@@ -8968,26 +8948,18 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   transform: scaleX(0);
 }
 
-.c3 {
-  padding: 0.5625rem 0 2.125rem;
-}
-
 <li
   className="c0 c1"
 >
   <button
     className="c2"
   >
-    <div
+    <h3
       className="c3"
+      muted={true}
     >
-      <h3
-        className="c4"
-        muted={true}
-      >
-        This is a tab
-      </h3>
-    </div>
+      This is a tab
+    </h3>
   </button>
 </li>
 `;

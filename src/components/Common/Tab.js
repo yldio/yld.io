@@ -16,6 +16,7 @@ const TabContainer = styled.li`
 
 const Text = styled(Subtitle)`
   transition: opacity ${props => props.theme.animations.normal} ease-in-out;
+  padding: ${remcalc(9)} 0 ${remcalc(34)};
 `
 
 const Underline = css`
@@ -33,8 +34,8 @@ const Underline = css`
   transform: scaleX(0);
 
   ${is('active')`
-        transform: scaleX(1);
-    `};
+    transform: scaleX(1);
+  `};
 `
 
 const Button = styled(UnstyledButton)`
@@ -50,18 +51,12 @@ const Button = styled(UnstyledButton)`
   }
 `
 
-const ButtonContent = styled.div`
-  padding: ${remcalc(9)} 0 ${remcalc(34)};
-`
-
-const Tab = ({ active, onClick, children, ...props }) => (
+const Tab = ({ active, onClick, children, as, ...props }) => (
   <TabContainer>
     <Button onClick={onClick} {...props} active={active}>
-      <ButtonContent>
-        <Text muted={!active} noPadding>
-          {children}
-        </Text>
-      </ButtonContent>
+      <Text muted={!active} noPadding as={as}>
+        {children}
+      </Text>
     </Button>
   </TabContainer>
 )
