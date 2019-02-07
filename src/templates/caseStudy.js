@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import { graphql } from 'gatsby'
 import { Margin, Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
@@ -9,6 +11,28 @@ import Layout from '../components/layout'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import { GreyBGOffset } from '../components/GreyBG'
 import Head from '../components/Common/Head'
+
+const NonMobileCol = styled(Col)`
+  display: none;
+
+  ${breakpoint('smallTablet')`
+    display: flex;
+  `}
+`
+
+const MobileOnlyCol = styled(Col)`
+  display: flex;
+
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
+const RowLayout = styled(Row)`
+  ${breakpoint('smallTablet')`
+    justify-content: flex-end;
+  `}
+`
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
@@ -24,13 +48,13 @@ const CaseStudy = ({
           <CaseStudyHero caseStudy={caseStudy} />
         </Padding>
         <Margin bottom={4} />
-        <Row>
+        <RowLayout>
           <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
             {body[0].map((text, i) => (
               <BodyPrimary key={i}>{text}</BodyPrimary>
             ))}
           </Col>
-        </Row>
+        </RowLayout>
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
@@ -50,22 +74,40 @@ const CaseStudy = ({
             </Row>
           </Padding>
           <Margin top={1} />
-          <Row>
-            <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-              {body[2].map((text, i) => (
-                <BodyPrimary key={i}>{text}</BodyPrimary>
-              ))}
-            </Col>
-            <Col>
-              {caseStudy.stats &&
-                caseStudy.stats.map(stat => (
+          {caseStudy.stats && (
+            <Row spaced>
+              <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
+                {caseStudy.stats.map(stat => (
                   <Margin bottom={1} key={stat.id}>
                     <SectionTitle>{stat.value}</SectionTitle>
                     <Subtitle noPaddingTop>{stat.label}</Subtitle>
                   </Margin>
                 ))}
-            </Col>
-          </Row>
+              </NonMobileCol>
+              <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+                {body[2].map((text, i) => (
+                  <BodyPrimary key={i}>{text}</BodyPrimary>
+                ))}
+              </Col>
+              <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
+                {caseStudy.stats.map(stat => (
+                  <Margin bottom={1} key={stat.id}>
+                    <SectionTitle>{stat.value}</SectionTitle>
+                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
+                  </Margin>
+                ))}
+              </MobileOnlyCol>
+            </Row>
+          )}
+          {!caseStudy.stats && (
+            <Row flexEnd>
+              <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+                {body[2].map((text, i) => (
+                  <BodyPrimary key={i}>{text}</BodyPrimary>
+                ))}
+              </Col> 
+            </Row>
+          )}
           <Padding bottom={5} />
         </Grid>
       </GreyBGOffset>
