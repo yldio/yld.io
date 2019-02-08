@@ -18,9 +18,9 @@ const CaseStudy = ({
   location
 }) => {
   const body = generateCaseStudy(caseStudy)
-  const textAboveVideo = body[0]
+  const firstTextBlock = body[0]
   const videoInfo = body[1]
-  const textBelowVideo = body[2]
+  const secondTextBlock = body[2]
 
   return (
     <Layout location={location}>
@@ -31,7 +31,7 @@ const CaseStudy = ({
           top={{ smallPhone: 3, tablet: 4 }}
           bottom={{ smallPhone: 3, tablet: 4 }}
         >
-          <FirstTextSection textAboveVideo={textAboveVideo} />
+          <FirstTextSection text={firstTextBlock} />
         </Padding>
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
@@ -41,10 +41,7 @@ const CaseStudy = ({
             top={{ smallPhone: 3, tablet: 4 }}
             bottom={{ smallPhone: 3.5, tablet: 4 }}
           >
-            <SecondTextSection
-              stats={caseStudy.stats}
-              textBelowVideo={textBelowVideo}
-            />
+            <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
           </Padding>
         </Grid>
       </GreyBGOffset>

@@ -11,10 +11,10 @@ const RowLayout = styled(Row)`
   `}
 `
 
-const FirstTextSection = ({ textAboveVideo }) => (
+const FirstTextSection = ({ text }) => (
   <RowLayout>
     <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-      {textAboveVideo.map((text, i) => (
+      {text.map((text, i) => (
         <BodyPrimary key={i}>{text}</BodyPrimary>
       ))}
     </Col>

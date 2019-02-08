@@ -37,15 +37,15 @@ const Stats = ({ stats }) => (
   </Fragment>
 )
 
-const TextColumn = ({ textBelowVideo }) => (
+const TextColumn = ({ text }) => (
   <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-    {textBelowVideo.map((text, i) => (
+    {text.map((text, i) => (
       <BodyPrimary key={i}>{text}</BodyPrimary>
     ))}
   </Col>
 )
 
-const SecondTextSection = ({ stats, textBelowVideo }) => (
+const SecondTextSection = ({ stats, text }) => (
   <Fragment>
     {stats ? (
       <Fragment>
@@ -53,10 +53,10 @@ const SecondTextSection = ({ stats, textBelowVideo }) => (
           <Col width={[3 / 12]}>
             <Stats stats={stats} />
           </Col>
-          <TextColumn textBelowVideo={textBelowVideo} />
+          <TextColumn text={text} />
         </NonMobileRow>
         <MobileOnlyRow>
-          <TextColumn textBelowVideo={textBelowVideo} />
+          <TextColumn text={text} />
           <Col width={[1]}>
             <Stats stats={stats} />
           </Col>
@@ -64,7 +64,7 @@ const SecondTextSection = ({ stats, textBelowVideo }) => (
       </Fragment>
     ) : (
       <Row flexEnd>
-        <TextColumn textBelowVideo={textBelowVideo} />
+        <TextColumn text={text} />
       </Row>
     )}
   </Fragment>
