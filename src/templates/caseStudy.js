@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { graphql } from 'gatsby'
@@ -34,11 +34,49 @@ const RowLayout = styled(Row)`
   `}
 `
 
+const Stats = ({ stats }) => (
+  <Fragment>
+    {stats.map(stat => (
+      <Margin bottom={1} key={stat.id}>
+        <SectionTitle>{stat.value}</SectionTitle>
+        <Subtitle noPaddingTop>{stat.label}</Subtitle>
+      </Margin>
+    ))}
+  </Fragment>
+)
+
+const TextAndStatsSection = ({ stats, textBelowVideo }) => (
+  <Fragment>
+    {caseStudy.stats && (
+      <Row spaced>
+        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
+          <Stats stats={caseStudy.stats} />
+        </NonMobileCol>
+        <SecondTextColumn textBelowVideo={textBelowVideo} />
+        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
+          <Stats stats={caseStudy.stats} />
+        </MobileOnlyCol>
+      </Row>
+    )}
+  </Fragment>
+)
+
+const SecondTextColumn = ({ textBelowVideo }) => (
+  <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+    {textBelowVideo.map((text, i) => (
+      <BodyPrimary key={i}>{text}</BodyPrimary>
+    ))}
+  </Col>
+)
+
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location
 }) => {
   const body = generateCaseStudy(caseStudy)
+  const textAboveVideo = body[0]
+  const videoSection = body[1]
+  const textBelowVideo = body[2]
 
   return (
     <Layout location={location}>
@@ -50,7 +88,7 @@ const CaseStudy = ({
         <Margin bottom={4} />
         <RowLayout>
           <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
-            {body[0].map((text, i) => (
+            {textAboveVideo.map((text, i) => (
               <BodyPrimary key={i}>{text}</BodyPrimary>
             ))}
           </Col>
@@ -61,7 +99,7 @@ const CaseStudy = ({
           <Padding bottom={4} top={4}>
             <Row center="md">
               <Col width={[1]}>
-                {body[1].map((text, i) => (
+                {videoSection.map((text, i) => (
                   <div
                     key={i}
                     className="video-container"
@@ -75,37 +113,11 @@ const CaseStudy = ({
           </Padding>
           <Margin top={1} />
           {caseStudy.stats && (
-            <Row spaced>
-              <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
-                {caseStudy.stats.map(stat => (
-                  <Margin bottom={1} key={stat.id}>
-                    <SectionTitle>{stat.value}</SectionTitle>
-                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
-                  </Margin>
-                ))}
-              </NonMobileCol>
-              <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-                {body[2].map((text, i) => (
-                  <BodyPrimary key={i}>{text}</BodyPrimary>
-                ))}
-              </Col>
-              <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
-                {caseStudy.stats.map(stat => (
-                  <Margin bottom={1} key={stat.id}>
-                    <SectionTitle>{stat.value}</SectionTitle>
-                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
-                  </Margin>
-                ))}
-              </MobileOnlyCol>
-            </Row>
+            <TextAndStatsSection stats={stats} textBelowVideo={textBelowVideo} />
           )}
           {!caseStudy.stats && (
             <Row flexEnd>
-              <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-                {body[2].map((text, i) => (
-                  <BodyPrimary key={i}>{text}</BodyPrimary>
-                ))}
-              </Col> 
+              <SecondTextColumn textBelowVideo={textBelowVideo} />
             </Row>
           )}
           <Padding bottom={5} />
