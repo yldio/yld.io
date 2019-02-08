@@ -50,14 +50,14 @@ const SecondTextSection = ({ stats, textBelowVideo }) => (
     {stats ? (
       <Fragment>
         <NonMobileRow spaced>
-          <Col width={[0, 0, 0, 0, 3 / 12]}>
+          <Col width={[3 / 12]}>
             <Stats stats={stats} />
           </Col>
           <TextColumn textBelowVideo={textBelowVideo} />
         </NonMobileRow>
         <MobileOnlyRow>
           <TextColumn textBelowVideo={textBelowVideo} />
-          <Col width={[1, 1, 1, 1, 0]}>
+          <Col width={[1]}>
             <Stats stats={stats} />
           </Col>
         </MobileOnlyRow>
