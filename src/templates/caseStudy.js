@@ -1,115 +1,17 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react'
+import { Padding } from 'styled-components-spacing'
 import { graphql } from 'gatsby'
-import { Margin, Padding } from 'styled-components-spacing'
-import { Grid, Row, Col } from '../components/grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../components/Typography'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
-import Layout from '../components/layout'
+
 import generateCaseStudy from '../utils/generateCaseStudy'
+import Layout from '../components/layout'
+import { Grid } from '../components/grid'
 import { GreyBGOffset } from '../components/GreyBG'
 import Head from '../components/Common/Head'
-
-const NonMobileCol = styled(Col)`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-    display: flex;
-  `}
-`
-
-const MobileOnlyCol = styled(Col)`
-  display: flex;
-
-  ${breakpoint('smallTablet')`
-    display: none;
-  `}
-`
-
-const RowLayout = styled(Row)`
-  ${breakpoint('smallTablet')`
-    justify-content: flex-end;
-  `}
-`
-
-const FirstTextSection = ({ textAboveVideo }) => (
-  <RowLayout>
-    <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
-      {textAboveVideo.map((text, i) => (
-        <BodyPrimary key={i}>{text}</BodyPrimary>
-      ))}
-    </Col>
-  </RowLayout>
-)
-
-const Stats = ({ stats }) => (
-  <Fragment>
-    {stats.map(stat => (
-      <Margin bottom={1} key={stat.id}>
-        <SectionTitle>{stat.value}</SectionTitle>
-        <Subtitle noPaddingTop>{stat.label}</Subtitle>
-      </Margin>
-    ))}
-  </Fragment>
-)
-
-const SecondTextColumn = ({ textBelowVideo }) => (
-  <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-    {textBelowVideo.map((text, i) => (
-      <BodyPrimary key={i}>{text}</BodyPrimary>
-    ))}
-  </Col>
-)
-
-const TextAndStatsSection = ({ stats, textBelowVideo }) => (
-  <Fragment>
-    {stats && (
-      <Row spaced>
-        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
-          <Stats stats={stats} />
-        </NonMobileCol>
-        <SecondTextColumn textBelowVideo={textBelowVideo} />
-        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
-          <Stats stats={stats} />
-        </MobileOnlyCol>
-      </Row>
-    )}
-  </Fragment>
-)
-
-const TextSectionWithoutStats = ({ textBelowVideo }) => (
-  <Row flexEnd>
-    <SecondTextColumn textBelowVideo={textBelowVideo} />
-  </Row>
-)
-
-const SecondTextSection = ({ hasStats, stats, textBelowVideo }) => (
-  <Fragment>
-    {hasStats ? (
-      <TextAndStatsSection stats={stats} textBelowVideo={textBelowVideo} />
-    ) : (
-      <TextSectionWithoutStats textBelowVideo={textBelowVideo} />
-    )}
-  </Fragment>
-)
-
-const VideoSection = ({ videoInfo }) => (
-  <Row center="md">
-    <Col width={[1]}>
-      {videoInfo.map((text, i) => (
-        <div
-          key={i}
-          className="video-container"
-          dangerouslySetInnerHTML={{
-            __html: `<iframe width="844" height="480" src="${text}" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>`
-          }}
-        />
-      ))}
-    </Col>
-  </Row>
-)
+import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
+import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
+import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
+import VideoSection from '../components/TemplatedCaseStudy/VideoSection'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
