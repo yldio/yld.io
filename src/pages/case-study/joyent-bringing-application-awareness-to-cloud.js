@@ -465,6 +465,10 @@ export const query = graphql`
         id
         genericText9
       }
+      specialities {
+        title
+        id
+      }
       services {
         title
         id
