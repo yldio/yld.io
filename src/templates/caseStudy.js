@@ -28,14 +28,20 @@ const CaseStudy = ({
       <Head page={caseStudy} />
       <Grid>
         <CaseStudyHero caseStudy={caseStudy} />
-        <Padding top={4} bottom={4}>
+        <Padding
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallPhone: 3, tablet: 4 }}
+        >
           <FirstTextSection textAboveVideo={textAboveVideo} />
         </Padding>
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
           <VideoSection videoInfo={videoInfo} />
-          <Padding top={4} bottom={4}>
+          <Padding
+            top={{ smallPhone: 3, tablet: 4 }}
+            bottom={{ smallPhone: 3.5, tablet: 4 }}
+          >
             <SecondTextSection
               hasStats={hasStats}
               stats={caseStudy.stats}
