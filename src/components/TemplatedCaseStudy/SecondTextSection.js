@@ -4,9 +4,9 @@ import breakpoint from 'styled-components-breakpoint'
 import { Margin } from 'styled-components-spacing'
 
 import { Row, Col } from '../grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
+import { SectionTitleStyles, BodyPrimary } from '../Typography'
 
-const NonMobileCol = styled(Col)`
+const NonMobileRow = styled(Row)`
   display: none;
 
   ${breakpoint('smallTablet')`
@@ -14,7 +14,7 @@ const NonMobileCol = styled(Col)`
   `}
 `
 
-const MobileOnlyCol = styled(Col)`
+const MobileOnlyRow = styled(Row)`
   display: flex;
 
   ${breakpoint('smallTablet')`
@@ -22,12 +22,18 @@ const MobileOnlyCol = styled(Col)`
   `}
 `
 
+const LargeStatsValue = styled(BodyPrimary)`
+  ${SectionTitleStyles}
+`
+
 const Stats = ({ stats }) => (
   <Fragment>
     {stats.map(stat => (
       <Margin bottom={1} key={stat.id}>
-        <SectionTitle>{stat.value}</SectionTitle>
-        <Subtitle noPaddingTop>{stat.label}</Subtitle>
+        <LargeStatsValue>{stat.value}</LargeStatsValue>
+        <BodyPrimary bold noPaddingTop>
+          {stat.label}
+        </BodyPrimary>
       </Margin>
     ))}
   </Fragment>
@@ -44,15 +50,20 @@ const TextColumn = ({ textBelowVideo }) => (
 const SecondTextSection = ({ hasStats, stats, textBelowVideo }) => (
   <Fragment>
     {hasStats ? (
-      <Row spaced>
-        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
-          <Stats stats={stats} />
-        </NonMobileCol>
-        <TextColumn textBelowVideo={textBelowVideo} />
-        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
-          <Stats stats={stats} />
-        </MobileOnlyCol>
-      </Row>
+      <Fragment>
+        <NonMobileRow spaced>
+          <Col width={[0, 0, 0, 0, 3 / 12]}>
+            <Stats stats={stats} />
+          </Col>
+          <TextColumn textBelowVideo={textBelowVideo} />
+        </NonMobileRow>
+        <MobileOnlyRow>
+          <TextColumn textBelowVideo={textBelowVideo} />
+          <Col width={[1, 1, 1, 1, 0]}>
+            <Stats stats={stats} />
+          </Col>
+        </MobileOnlyRow>
+      </Fragment>
     ) : (
       <Row flexEnd>
         <TextColumn textBelowVideo={textBelowVideo} />
