@@ -15,8 +15,6 @@ const NonMobileRow = styled(Row)`
 `
 
 const MobileOnlyRow = styled(Row)`
-  display: flex;
-
   ${breakpoint('smallTablet')`
     display: none;
   `}
@@ -47,9 +45,9 @@ const TextColumn = ({ textBelowVideo }) => (
   </Col>
 )
 
-const SecondTextSection = ({ hasStats, stats, textBelowVideo }) => (
+const SecondTextSection = ({ stats, textBelowVideo }) => (
   <Fragment>
-    {hasStats ? (
+    {stats ? (
       <Fragment>
         <NonMobileRow spaced>
           <Col width={[0, 0, 0, 0, 3 / 12]}>

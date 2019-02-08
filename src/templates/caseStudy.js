@@ -21,7 +21,6 @@ const CaseStudy = ({
   const textAboveVideo = body[0]
   const videoInfo = body[1]
   const textBelowVideo = body[2]
-  const hasStats = !!caseStudy.stats
 
   return (
     <Layout location={location}>
@@ -43,7 +42,6 @@ const CaseStudy = ({
             bottom={{ smallPhone: 3.5, tablet: 4 }}
           >
             <SecondTextSection
-              hasStats={hasStats}
               stats={caseStudy.stats}
               textBelowVideo={textBelowVideo}
             />
