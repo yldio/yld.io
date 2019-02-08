@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import ViewPositions from '../components/JoinUs/ViewOpenPositions'
@@ -8,17 +7,11 @@ import Work from '../components/JoinUs/Work'
 import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
 import OpenPositions from '../components/JoinUs/OpenPositions'
+import Head from '../components/Common/Head'
 
-const JoinUs = ({ site, contentfulJoinUsPage: content }) => (
+const JoinUs = ({ data: { contentfulJoinUsPage: content } }) => (
   <Layout>
-    <Helmet
-      title={`${site.siteMetadata.title} ${
-        content.seoTitle ? '- ' + content.seoTitle : ''
-      } `}
-      meta={[{ name: 'description', content: content.seoMetaDescription }]}
-    >
-      <html lang="en" />
-    </Helmet>
+    <Head page={content} />
     <ViewPositions
       text={content.introductionText.introductionText}
       description={content.introductionDescription.introductionDescription}
