@@ -34,6 +34,16 @@ const RowLayout = styled(Row)`
   `}
 `
 
+const FirstTextSection = ({ textAboveVideo }) => (
+  <RowLayout>
+    <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
+      {textAboveVideo.map((text, i) => (
+        <BodyPrimary key={i}>{text}</BodyPrimary>
+      ))}
+    </Col>
+  </RowLayout>
+)
+
 const Stats = ({ stats }) => (
   <Fragment>
     {stats.map(stat => (
@@ -75,58 +85,61 @@ const TextSectionWithoutStats = ({ textBelowVideo }) => (
   </Row>
 )
 
+const SecondTextSection = ({ hasStats, stats, textBelowVideo }) => (
+  <Fragment>
+    {hasStats ? (
+      <TextAndStatsSection stats={stats} textBelowVideo={textBelowVideo} />
+    ) : (
+      <TextSectionWithoutStats textBelowVideo={textBelowVideo} />
+    )}
+  </Fragment>
+)
+
+const VideoSection = ({ videoInfo }) => (
+  <Row center="md">
+    <Col width={[1]}>
+      {videoInfo.map((text, i) => (
+        <div
+          key={i}
+          className="video-container"
+          dangerouslySetInnerHTML={{
+            __html: `<iframe width="844" height="480" src="${text}" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>`
+          }}
+        />
+      ))}
+    </Col>
+  </Row>
+)
+
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location
 }) => {
   const body = generateCaseStudy(caseStudy)
   const textAboveVideo = body[0]
-  const videoSection = body[1]
+  const videoInfo = body[1]
   const textBelowVideo = body[2]
+  const hasStats = !!caseStudy.stats
 
   return (
     <Layout location={location}>
       <Head page={caseStudy} />
       <Grid>
-        <Padding bottom={0.5}>
-          <CaseStudyHero caseStudy={caseStudy} />
+        <CaseStudyHero caseStudy={caseStudy} />
+        <Padding top={4} bottom={4}>
+          <FirstTextSection textAboveVideo={textAboveVideo} />
         </Padding>
-        <Margin bottom={4} />
-        <RowLayout>
-          <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
-            {textAboveVideo.map((text, i) => (
-              <BodyPrimary key={i}>{text}</BodyPrimary>
-            ))}
-          </Col>
-        </RowLayout>
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
-          <Padding bottom={4} top={4}>
-            <Row center="md">
-              <Col width={[1]}>
-                {videoSection.map((text, i) => (
-                  <div
-                    key={i}
-                    className="video-container"
-                    dangerouslySetInnerHTML={{
-                      __html: `<iframe width="844" height="480" src="${text}" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>`
-                    }}
-                  />
-                ))}
-              </Col>
-            </Row>
-          </Padding>
-          <Margin top={1} />
-          {caseStudy.stats ? (
-            <TextAndStatsSection
+          <VideoSection videoInfo={videoInfo} />
+          <Padding top={4} bottom={4}>
+            <SecondTextSection
+              hasStats={hasStats}
               stats={caseStudy.stats}
               textBelowVideo={textBelowVideo}
             />
-          ) : (
-            <TextSectionWithoutStats textBelowVideo={textBelowVideo} />
-          )}
-          <Padding bottom={5} />
+          </Padding>
         </Grid>
       </GreyBGOffset>
       <Grid>
