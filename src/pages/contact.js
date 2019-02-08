@@ -32,7 +32,7 @@ export const CheckBoxesContainer = styled(Col)`
   flex-flow: row wrap;
   margin-bottom: ${remcalc(36)};
 
-  /* Since these columns are inside a column, 
+  /* Since these columns are inside a column,
      we have to reset the padding on the edges */
   > * {
     display: flex;
@@ -68,6 +68,7 @@ const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
 
+// NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
 class ContactUs extends Component {
   state = {
     name: '',

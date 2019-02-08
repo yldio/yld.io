@@ -30,46 +30,42 @@ const Job = ({ text, hostedUrl, categories: { commitment } }) => (
   </Col>
 )
 
-class OpenPositions extends React.PureComponent {
-  render() {
-    const { title, getInTouchText, getInTouchTitle } = this.props.data
+const renderJobsForlocation = (jobs, location, key) => {
+  return (
+    <Padding top={3} key={key}>
+      <Subtitle>{location}</Subtitle>
+      <Padding top={2}>
+        <Row as="ul">
+          {jobs.map((job, idx) => (
+            <Job key={`job-${location}-${idx}`} {...job.node} />
+          ))}
+        </Row>
+      </Padding>
+    </Padding>
+  )
+}
 
-    return (
-      <Fragment>
-        <Section greyBg id="open-positions">
-          <Padding top={{ smallPhone: 3, tablet: 4 }}>
-            <SectionTitle>{title}</SectionTitle>
-            <JobsByLocation>
-              {jobs =>
-                jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-                  this.renderJobsForlocation(jobsForLocation, location, idx)
-                )
-              }
-            </JobsByLocation>
-            <Padding top={{ smallPhone: 3, tablet: 4 }}>
-              <Hr />
-            </Padding>
-          </Padding>
-        </Section>
-        <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
-      </Fragment>
-    )
-  }
-
-  renderJobsForlocation = (jobs, location, key) => {
-    return (
-      <Padding top={3} key={key}>
-        <Subtitle>{location}</Subtitle>
-        <Padding top={2}>
-          <Row as="ul">
-            {jobs.map((job, idx) => (
-              <Job key={`job-${location}-${idx}`} {...job.node} />
-            ))}
-          </Row>
+const OpenPositions = ({
+  data: { title, getInTouchText, getInTouchTitle }
+}) => (
+  <Fragment>
+    <Section greyBg id="open-positions">
+      <Padding top={{ smallPhone: 3, tablet: 4 }}>
+        <SectionTitle>{title}</SectionTitle>
+        <JobsByLocation>
+          {jobs =>
+            jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+              renderJobsForlocation(jobsForLocation, location, idx)
+            )
+          }
+        </JobsByLocation>
+        <Padding top={{ smallPhone: 3, tablet: 4 }}>
+          <Hr />
         </Padding>
       </Padding>
-    )
-  }
-}
+    </Section>
+    <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+  </Fragment>
+)
 
 export default OpenPositions

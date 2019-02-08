@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
@@ -9,69 +9,63 @@ import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
 import OpenPositions from '../components/JoinUs/OpenPositions'
 
-class JoinUs extends Component {
-  render() {
-    const { site, contentfulJoinUsPage: content } = this.props.data
-
-    return (
-      <Layout>
-        <Helmet
-          title={`${site.siteMetadata.title} ${
-            content.seoTitle ? '- ' + content.seoTitle : ''
-          } `}
-          meta={[{ name: 'description', content: content.seoMetaDescription }]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <ViewPositions
-          text={content.introductionText.introductionText}
-          description={content.introductionDescription.introductionDescription}
-        />
-        <Learning
-          data={{
-            title: content.learningTitle,
-            list: content.learningText.learningText,
-            subtitle: content.insightsTitle,
-            text: content.insightsDescriptionText.insightsDescriptionText,
-            featuredInsights: content.insights
-          }}
-        />
-        <Work
-          data={{
-            title: content.challengingTitle,
-            list: content.challengingText.challengingText,
-            subtitle: content.someOfOurWorkTitle,
-            text: content.someOfOurWorkDescription.someOfOurWorkDescription,
-            someWork: content.someWork
-          }}
-        />
-        <OSS
-          data={{
-            title: content.ossTitle,
-            list: content.ossText.ossText,
-            subtitle: content.talksTitle,
-            text: content.talksText.talksText,
-            featuredTalks: content.talks
-          }}
-        />
-        <Perks
-          data={{
-            title: content.perksTitle,
-            text: content.perksText.perksText,
-            perks: content.perks
-          }}
-        />
-        <OpenPositions
-          data={{
-            title: content.openPositionsTitle,
-            getInTouchTitle: content.directApplicationTitle,
-            getInTouchText: content.directApplicationText.directApplicationText
-          }}
-        />
-      </Layout>
-    )
-  }
-}
+const JoinUs = ({ site, contentfulJoinUsPage: content }) => (
+  <Layout>
+    <Helmet
+      title={`${site.siteMetadata.title} ${
+        content.seoTitle ? '- ' + content.seoTitle : ''
+      } `}
+      meta={[{ name: 'description', content: content.seoMetaDescription }]}
+    >
+      <html lang="en" />
+    </Helmet>
+    <ViewPositions
+      text={content.introductionText.introductionText}
+      description={content.introductionDescription.introductionDescription}
+    />
+    <Learning
+      data={{
+        title: content.learningTitle,
+        list: content.learningText.learningText,
+        subtitle: content.insightsTitle,
+        text: content.insightsDescriptionText.insightsDescriptionText,
+        featuredInsights: content.insights
+      }}
+    />
+    <Work
+      data={{
+        title: content.challengingTitle,
+        list: content.challengingText.challengingText,
+        subtitle: content.someOfOurWorkTitle,
+        text: content.someOfOurWorkDescription.someOfOurWorkDescription,
+        someWork: content.someWork
+      }}
+    />
+    <OSS
+      data={{
+        title: content.ossTitle,
+        list: content.ossText.ossText,
+        subtitle: content.talksTitle,
+        text: content.talksText.talksText,
+        featuredTalks: content.talks
+      }}
+    />
+    <Perks
+      data={{
+        title: content.perksTitle,
+        text: content.perksText.perksText,
+        perks: content.perks
+      }}
+    />
+    <OpenPositions
+      data={{
+        title: content.openPositionsTitle,
+        getInTouchTitle: content.directApplicationTitle,
+        getInTouchText: content.directApplicationText.directApplicationText
+      }}
+    />
+  </Layout>
+)
 
 const JoinUsPage = props => (
   <StaticQuery
