@@ -108,8 +108,12 @@ const stylers = () => ({
 })
 
 const GridStyled = styled.div`
+  ${breakpoint('smallPhone')`
+    max-width: calc(100% - 48px);
+  `}
+
   ${breakpoint('phone')`
-    max-width: calc(100% - 62px);
+    max-width: calc(100% - 72px);
   `}
 
   ${breakpoint('largePhone')`
@@ -117,18 +121,13 @@ const GridStyled = styled.div`
   `}
 
   ${breakpoint('smallTablet')`
-    max-width: calc(100% - 84px);
-  `}
-
-  ${breakpoint('tablet')`
-    max-width: calc(100% - 92px);
+    max-width: none;
   `}
 
   ${breakpoint('desktop')`
     max-width: 1100px;
   `}
 
-  max-width: calc(100% - 48px);
   position: relative;
 
   ${props => css(props)}
@@ -148,7 +147,7 @@ const Flex = styled.div`
 `
 
 export const Grid = props => (
-  <GridStyled mx="auto" px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
+  <GridStyled mx="auto" px={[0, 0, 0, 0, 42, 48, 0]} {...props} />
 )
 
 export const Row = styled(Flex).attrs({
