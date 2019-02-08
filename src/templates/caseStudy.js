@@ -45,28 +45,34 @@ const Stats = ({ stats }) => (
   </Fragment>
 )
 
-const TextAndStatsSection = ({ stats, textBelowVideo }) => (
-  <Fragment>
-    {caseStudy.stats && (
-      <Row spaced>
-        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
-          <Stats stats={caseStudy.stats} />
-        </NonMobileCol>
-        <SecondTextColumn textBelowVideo={textBelowVideo} />
-        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
-          <Stats stats={caseStudy.stats} />
-        </MobileOnlyCol>
-      </Row>
-    )}
-  </Fragment>
-)
-
 const SecondTextColumn = ({ textBelowVideo }) => (
   <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
     {textBelowVideo.map((text, i) => (
       <BodyPrimary key={i}>{text}</BodyPrimary>
     ))}
   </Col>
+)
+
+const TextAndStatsSection = ({ stats, textBelowVideo }) => (
+  <Fragment>
+    {stats && (
+      <Row spaced>
+        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
+          <Stats stats={stats} />
+        </NonMobileCol>
+        <SecondTextColumn textBelowVideo={textBelowVideo} />
+        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
+          <Stats stats={stats} />
+        </MobileOnlyCol>
+      </Row>
+    )}
+  </Fragment>
+)
+
+const TextSectionWithoutStats = ({ textBelowVideo }) => (
+  <Row flexEnd>
+    <SecondTextColumn textBelowVideo={textBelowVideo} />
+  </Row>
 )
 
 const CaseStudy = ({
@@ -112,13 +118,13 @@ const CaseStudy = ({
             </Row>
           </Padding>
           <Margin top={1} />
-          {caseStudy.stats && (
-            <TextAndStatsSection stats={stats} textBelowVideo={textBelowVideo} />
-          )}
-          {!caseStudy.stats && (
-            <Row flexEnd>
-              <SecondTextColumn textBelowVideo={textBelowVideo} />
-            </Row>
+          {caseStudy.stats ? (
+            <TextAndStatsSection
+              stats={caseStudy.stats}
+              textBelowVideo={textBelowVideo}
+            />
+          ) : (
+            <TextSectionWithoutStats textBelowVideo={textBelowVideo} />
           )}
           <Padding bottom={5} />
         </Grid>
