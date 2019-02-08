@@ -5,10 +5,12 @@
     "plugin:react/recommended",
     "plugin:jest/recommended"
   ],
+  "plugins": ["react-hooks"],
   "rules": {
     "react/prop-types": 0,
     "space-before-function-paren": 0,
-    "indent": 0
+    "indent": 0,
+    "react-hooks/rules-of-hooks": "error"
   },
   "env": {
     "jest": true,
