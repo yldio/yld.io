@@ -41,30 +41,22 @@ const TextColumn = ({ textBelowVideo }) => (
   </Col>
 )
 
-const TextAndStatsSection = ({ stats, textBelowVideo }) => (
-  <Row spaced>
-    <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
-      <Stats stats={stats} />
-    </NonMobileCol>
-    <TextColumn textBelowVideo={textBelowVideo} />
-    <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
-      <Stats stats={stats} />
-    </MobileOnlyCol>
-  </Row>
-)
-
-const TextSectionWithoutStats = ({ textBelowVideo }) => (
-  <Row flexEnd>
-    <TextColumn textBelowVideo={textBelowVideo} />
-  </Row>
-)
-
 const SecondTextSection = ({ hasStats, stats, textBelowVideo }) => (
   <Fragment>
     {hasStats ? (
-      <TextAndStatsSection stats={stats} textBelowVideo={textBelowVideo} />
+      <Row spaced>
+        <NonMobileCol width={[0, 0, 0, 0, 3 / 12]}>
+          <Stats stats={stats} />
+        </NonMobileCol>
+        <TextColumn textBelowVideo={textBelowVideo} />
+        <MobileOnlyCol width={[1, 1, 1, 1, 0]}>
+          <Stats stats={stats} />
+        </MobileOnlyCol>
+      </Row>
     ) : (
-      <TextSectionWithoutStats textBelowVideo={textBelowVideo} />
+      <Row flexEnd>
+        <TextColumn textBelowVideo={textBelowVideo} />
+      </Row>
     )}
   </Fragment>
 )
