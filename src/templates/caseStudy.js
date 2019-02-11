@@ -1,72 +1,48 @@
 import React from 'react'
+import { Padding } from 'styled-components-spacing'
 import { graphql } from 'gatsby'
-import { Margin, Padding } from 'styled-components-spacing'
-import { Grid, Row, Col } from '../components/grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../components/Typography'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
-import Layout from '../components/layout'
+
 import generateCaseStudy from '../utils/generateCaseStudy'
+import Layout from '../components/layout'
+import { Grid } from '../components/grid'
 import { GreyBGOffset } from '../components/GreyBG'
 import Head from '../components/Common/Head'
+import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
+import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
+import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
+import VideoSection from '../components/TemplatedCaseStudy/VideoSection'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location
 }) => {
   const body = generateCaseStudy(caseStudy)
+  const firstTextBlock = body[0]
+  const videoInfo = body[1]
+  const secondTextBlock = body[2]
 
   return (
     <Layout location={location}>
       <Head page={caseStudy} />
       <Grid>
-        <Padding bottom={0.5}>
-          <CaseStudyHero caseStudy={caseStudy} />
+        <CaseStudyHero caseStudy={caseStudy} />
+        <Padding
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallPhone: 3, tablet: 4 }}
+        >
+          <FirstTextSection text={firstTextBlock} />
         </Padding>
-        <Margin bottom={4} />
-        <Row>
-          <Col width={[1, 1, 1, 9 / 12, 7 / 12]}>
-            {body[0].map((text, i) => (
-              <BodyPrimary key={i}>{text}</BodyPrimary>
-            ))}
-          </Col>
-        </Row>
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
-          <Padding bottom={4} top={4}>
-            <Row center="md">
-              <Col width={[1]}>
-                {body[1].map((text, i) => (
-                  <div
-                    key={i}
-                    className="video-container"
-                    dangerouslySetInnerHTML={{
-                      __html: `<iframe width="844" height="480" src="${text}" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>`
-                    }}
-                  />
-                ))}
-              </Col>
-            </Row>
+          <VideoSection videoInfo={videoInfo} />
+          <Padding
+            top={{ smallPhone: 3, tablet: 4 }}
+            bottom={{ smallPhone: 3.5, tablet: 4 }}
+          >
+            <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
           </Padding>
-          <Margin top={1} />
-          <Row>
-            <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-              {body[2].map((text, i) => (
-                <BodyPrimary key={i}>{text}</BodyPrimary>
-              ))}
-            </Col>
-            <Col>
-              {caseStudy.stats &&
-                caseStudy.stats.map(stat => (
-                  <Margin bottom={1} key={stat.id}>
-                    <SectionTitle>{stat.value}</SectionTitle>
-                    <Subtitle noPaddingTop>{stat.label}</Subtitle>
-                  </Margin>
-                ))}
-            </Col>
-          </Row>
-          <Padding bottom={5} />
         </Grid>
       </GreyBGOffset>
       <Grid>
