@@ -23,7 +23,7 @@ const SubSection = ({ heading, items }) => (
 const SpecialitiesAndServices = ({ specialities, services }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     {specialities ? (
-      <SubSection heading="Technology used" items={specialities} />
+      <SubSection heading="Specialities used" items={specialities} />
     ) : null}
     <SubSection heading="Services provided" items={services} />
   </Padding>
