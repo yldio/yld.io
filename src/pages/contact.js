@@ -194,7 +194,6 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
-                        kk
                         <Label htmlFor="email">Your Email</Label>
                         <Input
                           id="email"
