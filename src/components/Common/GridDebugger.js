@@ -38,7 +38,6 @@ const GridDebugger = () => {
 
   const handleKey = ev => {
     if (ev.key === 'g' && ev.ctrlKey) {
-      console.log('lol')
       toggleShowGrid(!showGrid)
     }
   }

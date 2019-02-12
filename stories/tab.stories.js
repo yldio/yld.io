@@ -1,27 +1,36 @@
-import React, { useState } from 'react'
+import React, { PureComponent } from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import Tab, { Tabs } from '../src/components/Common/Tab'
 
 addDecorator(Theme)
 
-const MultipleTabs = () => {
-  const tabs = ['First Tab', 'Second Tab', 'Third Tab']
-  const [active, setActive] = useState(0)
-
-  const handleClick = idx => {
-    setActive(active === idx ? undefined : idx)
+class MultipleTabs extends PureComponent {
+  state = {
+    active: 0
   }
 
-  return (
-    <Tabs>
-      {tabs.map((tab, idx) => (
-        <Tab key={idx} active={active === idx} onClick={() => handleClick(idx)}>
-          {tab}
-        </Tab>
-      ))}
-    </Tabs>
-  )
+  tabs = ['First Tab', 'Second Tab', 'Third Tab']
+
+  render() {
+    return (
+      <Tabs>
+        {this.tabs.map((tab, idx) => (
+          <Tab
+            key={idx}
+            active={this.state.active === idx}
+            onClick={() => this.handleClick(idx)}
+          >
+            {tab}
+          </Tab>
+        ))}
+      </Tabs>
+    )
+  }
+
+  handleClick = idx => {
+    this.setState({ active: this.state.active === idx ? undefined : idx })
+  }
 }
 
 storiesOf('Tabs', module)
