@@ -152,24 +152,22 @@ export const Grid = props => (
 )
 
 export const Row = styled(Flex).attrs({
-  mx: [0, 0, 0, 0, -1.75, -2, -2],
-  spaced: props => props.spaced
+  mx: [0, 0, 0, 0, -1.75, -2, -2]
 })`
   ${props =>
     props.spaced &&
     `
     justify-content: space-between;
   `}
-`
-const BasicCol = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
-export const Col = styled(BasicCol)`
   ${props =>
-    !props.block &&
+    props.flexEnd &&
     `
-    flex: 1;
-  `};
+    justify-content: flex-end;
+  `}
 `
+
+export const Col = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
 Col.defaultProps = {
   block: true
