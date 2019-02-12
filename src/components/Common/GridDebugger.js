@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Col, Row, Grid } from '../grid'
@@ -33,44 +33,35 @@ const ColumnContent = styled.div`
   border-right: 1px solid #31ffde;
 `
 
-class GridDebugger extends PureComponent {
-  state = {
-    showGrid: false
-  }
+const GridDebugger = () => {
+  const [showGrid, toggleShowGrid] = useState(false)
 
-  componentDidMount() {
-    window.addEventListener('keyup', this.handleKey)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('keyup', this.handleKey)
-  }
-
-  render() {
-    if (!this.state.showGrid) {
-      return null
-    }
-
-    return (
-      <Container>
-        <Row>
-          {Array.from(new Array(12)).map((el, idx) => (
-            <Column key={idx} width={[1, 1, 1, 1, 1 / 12]} block={false}>
-              <ColumnContent />
-            </Column>
-          ))}
-        </Row>
-      </Container>
-    )
-  }
-
-  handleKey = ev => {
+  const handleKey = ev => {
     if (ev.key === 'g' && ev.ctrlKey) {
-      this.setState({
-        showGrid: !this.state.showGrid
-      })
+      toggleShowGrid(!showGrid)
     }
   }
+
+  useEffect(
+    () => {
+      window.addEventListener('keyup', handleKey)
+
+      return () => window.removeEventListener('keyup', handleKey)
+    },
+    [showGrid]
+  )
+
+  return showGrid ? (
+    <Container>
+      <Row>
+        {Array.from(new Array(12)).map((el, idx) => (
+          <Column key={idx} width={[1, 1, 1, 1, 1 / 12]} block={false}>
+            <ColumnContent />
+          </Column>
+        ))}
+      </Row>
+    </Container>
+  ) : null
 }
 
 export default GridDebugger

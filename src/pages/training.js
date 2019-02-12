@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 
@@ -13,98 +13,83 @@ import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 import GreyBG from '../components/GreyBG'
 
-class TrainingPage extends Component {
-  state = {
-    modalContent: null
-  }
+const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
+  const [modalContent, setModalContent] = useState(null)
+  const trainingApproachesContent = [
+    content.trainingApproachContent1.trainingApproachContent1,
+    content.trainingApproachContent2.trainingApproachContent2,
+    content.trainingApproachContent3.trainingApproachContent3
+  ]
 
-  componentDidMount() {
-    document.addEventListener('keyup', this.handleKeyPress, false)
-  }
+  useEffect(
+    () => {
+      document.addEventListener('keyup', handleKeyPress, false)
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyPress, false)
-  }
+      return () => document.removeEventListener('keyup', handleKeyPress, false)
+    },
+    [modalContent]
+  )
 
-  handleKeyPress = ({ key }) => {
+  const handleKeyPress = ({ key }) => {
     if (key === 'Escape') {
-      this.setState({
-        modalContent: null
-      })
+      setModalContent(null)
     }
   }
 
-  toggleModal = modalContent => {
+  const toggleModal = modalContent => {
     if (modalContent) {
-      return this.setState({
-        modalContent
-      })
+      setModalContent(modalContent)
     }
 
-    return this.setState({
-      modalContent
-    })
+    setModalContent(modalContent)
   }
 
-  render() {
-    const {
-      data: { contentfulTrainingPage: content }
-    } = this.props
-    const { modalContent } = this.state
-
-    const trainingApproachesContent = [
-      content.trainingApproachContent1.trainingApproachContent1,
-      content.trainingApproachContent2.trainingApproachContent2,
-      content.trainingApproachContent3.trainingApproachContent3
-    ]
-
-    return (
-      <Layout>
-        <Head page={content} />
-        <Modal content={modalContent} toggleModal={this.toggleModal} />
+  return (
+    <Layout>
+      <Head page={content} />
+      <Modal content={modalContent} toggleModal={toggleModal} />
+      <Grid>
+        <Padding
+          bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}
+          top={3.5}
+        >
+          <CaseStudy caseStudy={content.featuredCaseStudy} />
+        </Padding>
+        <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
+      </Grid>
+      <GreyBG>
         <Grid>
+          <Statement richText={content.seoText.content[0].content} />
+        </Grid>
+      </GreyBG>
+      <Approach
+        title={content.trainingApproachTitle}
+        content={trainingApproachesContent}
+        formats={content.trainingFormats}
+      />
+      <Courses
+        categories={content.courseCategories}
+        toggleModal={toggleModal}
+      />
+      <GetInTouch
+        title={`${content.contactUsTitle}`}
+        contactText={content.contactUsText.contactUsText}
+      />
+      <Grid>
+        {content.relatedCaseStudy ? (
           <Padding
-            bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}
-            top={3.5}
+            top={{ smallPhone: 3, smallTablet: 5 }}
+            bottom={{ smallPhone: 3.5, smallTablet: 5 }}
           >
-            <CaseStudy caseStudy={content.featuredCaseStudy} />
+            <CaseStudy
+              subHeading="Featured work"
+              caseStudy={content.relatedCaseStudy}
+            />
           </Padding>
-          <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
-        </Grid>
-        <GreyBG>
-          <Grid>
-            <Statement richText={content.seoText.content[0].content} />
-          </Grid>
-        </GreyBG>
-        <Approach
-          title={content.trainingApproachTitle}
-          content={trainingApproachesContent}
-          formats={content.trainingFormats}
-        />
-        <Courses
-          categories={content.courseCategories}
-          toggleModal={this.toggleModal}
-        />
-        <GetInTouch
-          title={`${content.contactUsTitle}`}
-          contactText={content.contactUsText.contactUsText}
-        />
-        <Grid>
-          {content.relatedCaseStudy ? (
-            <Padding
-              top={{ smallPhone: 3, smallTablet: 5 }}
-              bottom={{ smallPhone: 3.5, smallTablet: 5 }}
-            >
-              <CaseStudy
-                subHeading="Featured work"
-                caseStudy={content.relatedCaseStudy}
-              />
-            </Padding>
-          ) : null}
-        </Grid>
-      </Layout>
-    )
-  }
+        ) : null}
+      </Grid>
+    </Layout>
+  )
 }
 
 export const query = graphql`
