@@ -1,7 +1,7 @@
 {
   "name": "yld.io",
   "description": "Company Website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
