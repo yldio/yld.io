@@ -7,7 +7,7 @@ jobs:
       - restore_cache:
           keys:
             - 'v1-dependencies-{{ checksum "package.json" }}'
-            - v1-dependencies-
+            - v1-dependencies
       - run:
           command: 'npm run build:app'
           name: Start
@@ -23,7 +23,7 @@ jobs:
       - restore_cache:
           keys:
             - 'v1-dependencies-{{ checksum "package.json" }}'
-            - v1-dependencies-
+            - v1-dependencies
       - run: 'yarn install'
       - save_cache:
           key: 'v1-dependencies-{{ checksum "package.json" }}'
@@ -39,7 +39,7 @@ jobs:
       - restore_cache:
           keys:
             - 'v1-dependencies-{{ checksum "package.json" }}'
-            - v1-dependencies-
+            - v1-dependencies
       - run:
           command: 'npm run test:snapshots'
           name: Snapshots
