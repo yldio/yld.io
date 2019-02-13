@@ -13,7 +13,8 @@ import {
   Close,
   DesktopMenu,
   Overlay,
-  DesktopMenuItem
+  DesktopMenuItem,
+  HeaderAnchor
 } from './elements.js'
 
 const Header = ({ path, blue, logoColour }) => {

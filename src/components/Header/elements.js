@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
-import { Padding } from 'styled-components-spacing'
+import Anchor from '../Common/Anchor'
 
 export const outlineStyles = css`
   &:focus {
@@ -15,38 +15,36 @@ export const outlineStyles = css`
     outline: none;
   }
 `
-const linkStyles = css`
-  a {
-    transition: all ${props => props.theme.animations.normal} ease-out;
-    padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
-    background: linear-gradient(to right, #616161 0%, transparent 0);
-    position: relative;
+export const HeaderAnchor = styled(Anchor)`
+  transition: all ${props => props.theme.animations.normal} ease-out;
+  padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
+  background: linear-gradient(to right, #616161 0%, transparent 0);
+  position: relative;
 
-    &:hover {
-      color: ${props => props.theme.colors.text};
+  &:hover {
+    color: ${props => props.theme.colors.text};
 
-      @media (pointer: fine) {
-        &:after {
-          width: 100%;
-          opacity: 1;
-          transition: all ${props => props.theme.animations.normal} ease-out;
-        }
+    @media (pointer: fine) {
+      &:after {
+        width: 100%;
+        opacity: 1;
+        transition: all ${props => props.theme.animations.normal} ease-out;
       }
     }
+  }
 
-    &:focus {
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-    }
-  
-    &:active {
-      outline: none;
-    }
+  &:focus {
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+  }
 
-    ${outlineStyles}
+  &:active {
+    outline: none;
+  }
 
-    &.active {
-      opacity: 1;
-    }
+  ${outlineStyles}
+
+  &.active {
+    opacity: 1;
   }
 `
 
@@ -78,8 +76,9 @@ export const MobileMenu = styled(Flex)`
   `};
 `
 
-export const HomeLink = styled(Padding)`
+export const HomeLink = styled(HeaderAnchor)`
   display: block;
+  padding-right: ${remcalc(30)};
 
   ${breakpoint('tablet')`
     display: none;
@@ -193,8 +192,6 @@ const DesktopMenuContainer = styled(Flex).attrs({
     flex-direction: row;
     background: transparent;
     position: relative;
-
-    ${linkStyles}
   `};
 
   @media screen and (max-width: 768px) and (min-width: 600px) {

@@ -77,6 +77,7 @@ const DesktopMenuDropdownItems = styled.ul`
       background: ${props => props.theme.colors.greyBG};
       color: #666;
     }
+    ${outlineStyles}
   }
 `
 
@@ -126,7 +127,8 @@ export default class DesktopMenuDropdown extends PureComponent {
       >
         <DropdownNameWrapper
           tabIndex="0"
-          darkTheme={ themeVariation === theme.variations.dark }>
+          darkTheme={themeVariation === theme.variations.dark}
+        >
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
