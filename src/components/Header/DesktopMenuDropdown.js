@@ -75,6 +75,7 @@ const DesktopMenuDropdownItems = styled.ul`
     &:focus,
     &:hover {
       background: ${props => props.theme.colors.greyBG};
+      color: #666;
     }
   }
 `
