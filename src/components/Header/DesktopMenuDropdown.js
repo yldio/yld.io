@@ -5,6 +5,7 @@ import remcalc from 'remcalc'
 import Chevron from '../Common/Chevron'
 import { DesktopMenuItem } from './elements'
 import Anchor from '../Common/Anchor'
+import theme from '../../utils/theme'
 
 const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 
@@ -13,18 +14,35 @@ const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
   transition: color ${props => props.theme.animations.fast} ease-in-out,
     background ${props => props.theme.animations.fast} ease-in-out;
   cursor: pointer;
-  background: ${props => props.theme.colors.white};
+  background: transparent;
 
-  &:hover {
-    background: ${props => props.theme.colors.greyBG};
-  }
+  ${is('darkTheme')`
+    color: ${props => props.theme.colors.white};
+  `}
 
   ${is('expanded')`
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.colors.text};
+
     &:hover {
       background: ${props => props.theme.colors.text};
     }
+  `}
+
+  ${is('darkTheme')`
+    &:hover {
+      background: #3A3553;
+    }
+
+    ${is('expanded')`
+      background: ${props => props.theme.colors.vibrant};
+      color: ${props => props.theme.colors.text};
+
+      &:hover {
+        background: ${props => props.theme.colors.vibrant};
+        color: ${props => props.theme.colors.text};
+      }
+    `}
   `}
 `
 
@@ -86,14 +104,14 @@ export default class DesktopMenuDropdown extends PureComponent {
 
     return (
       <DesktopMenuDropdownContainer
-        themeVariation={themeVariation}
-        ref={this.ref}
         aria-haspopup="true"
         expanded={isExpanded}
         aria-expanded={isExpanded}
         onMouseDown={this.toggle}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
+        darkTheme={themeVariation === theme.variations.dark}
+        ref={this.ref}
       >
         <DropdownNameWrapper tabIndex="0">
           <DropdownName>{children}</DropdownName>
@@ -121,14 +139,10 @@ export default class DesktopMenuDropdown extends PureComponent {
   }
 
   handleFocus = (e, ...rest) => {
-    console.log('focus')
     this.setState({ isExpanded: true })
-    // this.ref.current.parentElement.querySelectorAll('li').forEach(el => el !== this.ref.current && el.setAttribute('tabindex', '-1'))
   }
 
   handleBlur = () => {
-    console.log('blur')
     this.setState({ isExpanded: false })
-    // this.ref.current.parentElement.querySelectorAll('li').forEach(el => el !== this.ref.current && el.setAttribute('tabindex', '0'))
   }
 }

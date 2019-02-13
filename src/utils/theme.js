@@ -60,6 +60,7 @@ export default {
     white: '#fff',
     text: '#333333',
     outline: '#6be9c1',
+    vibrant: '#6be9c1',
     secondaryText: '#757575',
     textLight: '#828282',
     dark: '#232323',

@@ -37,6 +37,39 @@ storiesOf('Header', module)
       </ul>
     </div>
   ))
+  .add('DestkopMenu Dropdown - dark theme', () => (
+    <div
+      style={{
+        height: '50vh',
+        width: '100vw',
+        justifyContent: 'center',
+        display: 'flex'
+      }}
+    >
+      <ul
+        style={{
+          width: '100vw',
+          boxShadow: '0px 2px 10px -3px rgba(0,0,0,0.75)',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          background: '#090329',
+          height: '48px',
+          display: 'flex'
+        }}
+      >
+        <DesktopMenuDropdown
+          themeVariation="dark"
+          items={[
+            { href: '/', label: 'home' },
+            { href: '/engineering', label: 'engineering' },
+            { href: '/engineering', label: 'long long label content' }
+          ]}
+        >
+          Menu
+        </DesktopMenuDropdown>
+      </ul>
+    </div>
+  ))
   .add('DestkopMenu Dropdown - multiple components', () => (
     <div
       style={{
