@@ -20,6 +20,7 @@ storiesOf('Header', module)
         <ul
           style={{
             width: '100vw',
+            boxShadow: '0px 2px 10px -3px rgba(0,0,0,0.75)',
             flexDirection: 'row',
             justifyContent: 'center',
             height: '48px',
@@ -40,42 +41,41 @@ storiesOf('Header', module)
     </GreyBackground>
   ))
   .add('DestkopMenu Dropdown - multiple components', () => (
-    <GreyBackground>
-      <div
+    <div
+      style={{
+        height: '50vh',
+        width: '100vw',
+        justifyContent: 'center',
+        display: 'flex'
+      }}
+    >
+      <ul
         style={{
-          height: '50vh',
           width: '100vw',
+          boxShadow: '0px 2px 10px -3px rgba(0,0,0,0.75)',
+          flexDirection: 'row',
           justifyContent: 'center',
+          height: '48px',
           display: 'flex'
         }}
       >
-        <ul
-          style={{
-            width: '100vw',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            height: '48px',
-            display: 'flex'
-          }}
+        <DesktopMenuDropdown
+          items={[
+            { href: '/', label: 'home' },
+            { href: '/engineering', label: 'engineering' }
+          ]}
         >
-          <DesktopMenuDropdown
-            items={[
-              { href: '/', label: 'home' },
-              { href: '/engineering', label: 'engineering' }
-            ]}
-          >
-            Menu 1
-          </DesktopMenuDropdown>
-          <DesktopMenuDropdown
-            items={[
-              { href: '/', label: 'home' },
-              { href: '/engineering', label: 'engineering' },
-              { href: '/engineering', label: 'long long label content' }
-            ]}
-          >
-            Menu 2
-          </DesktopMenuDropdown>
-        </ul>
-      </div>
-    </GreyBackground>
+          Menu 1
+        </DesktopMenuDropdown>
+        <DesktopMenuDropdown
+          items={[
+            { href: '/', label: 'home' },
+            { href: '/engineering', label: 'engineering' },
+            { href: '/engineering', label: 'long long label content' }
+          ]}
+        >
+          Menu 2
+        </DesktopMenuDropdown>
+      </ul>
+    </div>
   ))

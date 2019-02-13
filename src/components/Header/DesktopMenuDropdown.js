@@ -50,6 +50,7 @@ const DesktopMenuDropdownItems = styled.ul`
 
   a {
     color: ${props => props.theme.colors.text};
+    width: 100%;
     ${dropDownItemPadding}
 
     &:active,
