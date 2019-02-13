@@ -7,6 +7,7 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import getSections from './getSections'
 import TitleAndList from '../Common/TitleAndList'
 import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import theme from '../../utils/theme'
 
 const WorkStage = ({ workStage }) => {
   const sections = getSections(workStage)
@@ -18,7 +19,7 @@ const WorkStage = ({ workStage }) => {
           title,
           body
         }))}
-        bg="dark"
+        themeVariation={theme.variations.dark}
       />
     )
   }

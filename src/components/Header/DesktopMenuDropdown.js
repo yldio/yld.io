@@ -37,7 +37,7 @@ const DesktopMenuDropdownItems = styled.ul`
   left: -9999px;
   opacity: 0;
   transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.greyBG};
 
   ${is('expanded')`
     left: 0;
@@ -81,12 +81,12 @@ export default class DesktopMenuDropdown extends PureComponent {
   }
 
   render() {
-    const { items, bg, children } = this.props
+    const { items, themeVariation, children } = this.props
     const { isExpanded } = this.state
 
     return (
       <DesktopMenuDropdownContainer
-        bg={bg}
+        themeVariation={themeVariation}
         ref={this.ref}
         aria-haspopup="true"
         expanded={isExpanded}

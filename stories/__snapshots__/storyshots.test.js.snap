@@ -2633,7 +2633,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 </div>
 `;
 
-exports[`Storyshots Compact Video Link Dark bg 1`] = `
+exports[`Storyshots Compact Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -2918,7 +2918,7 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 </section>
 `;
 
-exports[`Storyshots Compact Video Link Grey bg 1`] = `
+exports[`Storyshots Compact Video Link Grey theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -2969,10 +2969,6 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   padding-bottom: 0.75rem;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
 .c9 {
   height: 1.5rem;
   width: 1.5rem;
@@ -3002,6 +2998,10 @@ exports[`Storyshots Compact Video Link Grey bg 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.c0 {
+  background: #f9f9f9;
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -4442,10 +4442,6 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding-bottom: 3.375rem;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
 .c8 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
@@ -4489,6 +4485,10 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 .c8:active:after {
   background: #333333;
+}
+
+.c0 {
+  background: #f9f9f9;
 }
 
 .c3 {
@@ -5691,7 +5691,7 @@ exports[`Storyshots Header DestkopMenu Dropdown - multiple components 1`] = `
   opacity: 0;
   -webkit-transition: opacity 300ms ease;
   transition: opacity 300ms ease;
-  background: #fff;
+  background: #f9f9f9;
 }
 
 .c4 li {
@@ -5882,7 +5882,7 @@ exports[`Storyshots Header DestkopMenu Dropdown - multiple components 1`] = `
 `;
 
 exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
-.c4 {
+.c3 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -5894,7 +5894,7 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c1 {
+.c0 {
   list-style-type: none;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5907,11 +5907,11 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   background: #fff;
 }
 
-.c1:hover {
+.c0:hover {
   background: #f9f9f9;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   width: 10rem;
   display: -webkit-box;
@@ -5926,29 +5926,29 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   opacity: 0;
   -webkit-transition: opacity 300ms ease;
   transition: opacity 300ms ease;
-  background: #fff;
+  background: #f9f9f9;
 }
 
-.c5 li {
+.c4 li {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c5 a {
+.c4 a {
   color: #333333;
   width: 100%;
   padding: 10px 15px 14px 15px;
 }
 
-.c5 a:active,
-.c5 a:focus,
-.c5 a:hover {
+.c4 a:active,
+.c4 a:focus,
+.c4 a:hover {
   background: #f9f9f9;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5960,111 +5960,103 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   padding: 10px 15px 14px 15px;
 }
 
-.c3 {
+.c2 {
   margin-right: 0.375rem;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
-<section
-  className="c0"
+<div
+  style={
+    Object {
+      "display": "flex",
+      "height": "50vh",
+      "justifyContent": "center",
+      "width": "100vw",
+    }
+  }
 >
-  <div
+  <ul
     style={
       Object {
+        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
         "display": "flex",
-        "height": "50vh",
+        "flexDirection": "row",
+        "height": "48px",
         "justifyContent": "center",
         "width": "100vw",
       }
     }
   >
-    <ul
-      style={
-        Object {
-          "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
-          "display": "flex",
-          "flexDirection": "row",
-          "height": "48px",
-          "justifyContent": "center",
-          "width": "100vw",
-        }
-      }
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c0"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
     >
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
+      <span
         className="c1"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
+        tabIndex="0"
       >
         <span
           className="c2"
-          tabIndex="0"
         >
-          <span
-            className="c3"
-          >
-            Menu
-          </span>
-          <svg
-            className="c4"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
+          Menu
         </span>
-        <ul
-          className="c5"
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
         >
-          <li>
-            <a
-              href="/"
-              onClick={[Function]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span>
-                home
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/engineering"
-              onClick={[Function]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span>
-                engineering
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/engineering"
-              onClick={[Function]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span>
-                long long label content
-              </span>
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c4"
+      >
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              engineering
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              long long label content
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
 `;
 
 exports[`Storyshots Image with file url 1`] = `
@@ -6079,7 +6071,7 @@ exports[`Storyshots Image with file url 1`] = `
 />
 `;
 
-exports[`Storyshots Standalone Video Link Dark bg 1`] = `
+exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -6396,7 +6388,7 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 </section>
 `;
 
-exports[`Storyshots Standalone Video Link Grey bg 1`] = `
+exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -6447,10 +6439,6 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   padding-bottom: 0.75rem;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
 .c10 {
   height: 1.5rem;
   width: 1.5rem;
@@ -6498,6 +6486,10 @@ exports[`Storyshots Standalone Video Link Grey bg 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border: 1px solid #e6e6e6;
+}
+
+.c0 {
+  background: #f9f9f9;
 }
 
 @media screen and (min-width:29.4375rem) {
@@ -7767,10 +7759,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
 .c6 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
@@ -7815,6 +7803,10 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 .c6:active:after {
   background: #333333;
+}
+
+.c0 {
+  background: #f9f9f9;
 }
 
 .c5 {

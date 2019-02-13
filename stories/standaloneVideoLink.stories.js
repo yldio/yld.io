@@ -48,13 +48,13 @@ storiesOf('Standalone Video Link', module)
       </Row>
     )
   })
-  .add('Dark bg', () => {
+  .add('Dark theme', () => {
     return (
       <BlueBackground>
         <Row>
           <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            bg="dark"
+            themeVariation="dark"
           >
             {text}
           </StandaloneVideoLink>
@@ -62,13 +62,13 @@ storiesOf('Standalone Video Link', module)
       </BlueBackground>
     )
   })
-  .add('Grey bg', () => {
+  .add('Grey theme', () => {
     return (
       <GreyBackground>
         <Row>
           <StandaloneVideoLink
             href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            bg="grey"
+            themeVariation="grey"
           >
             {text}
           </StandaloneVideoLink>

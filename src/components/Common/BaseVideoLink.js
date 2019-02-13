@@ -49,16 +49,16 @@ const Link = styled.a`
 const FlexContent = styled.div`
   display: flex;
 `
-const getColorBasedOnBackground = bg => {
-  switch (bg) {
-    case 'dark':
+const getColorBasedOnBackground = themeVariation => {
+  switch (themeVariation) {
+    case theme.variations.dark:
       return {
         opacity: 0.5,
         useLightIcon: true,
         color: theme.colors.white
       }
-    case 'white':
-    case 'grey':
+    case theme.variations.white:
+    case theme.variations.grey:
     default:
       return {
         opacity: 1,
@@ -79,11 +79,13 @@ const StandaloneWrapper = styled(Margin)`
 const BaseVideoLink = ({
   children,
   href,
-  bg = 'white',
+  themeVariation = 'white',
   mode = 'compact',
   ...props
 }) => {
-  const { opacity, useLightIcon, color } = getColorBasedOnBackground(bg)
+  const { opacity, useLightIcon, color } = getColorBasedOnBackground(
+    themeVariation
+  )
   const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div'
 
   return (

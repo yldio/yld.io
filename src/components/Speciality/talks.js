@@ -8,6 +8,7 @@ import StyledLink from '../styledLink'
 import BlueBackground from '../BlueBG'
 import styled from 'styled-components'
 import CompactVideoLink from '../Common/CompactVideoLink'
+import theme from '../../utils/theme'
 
 const Video = styled.iframe`
   width: ${remcalc(854)};
@@ -51,7 +52,11 @@ const TalksSection = ({ talks: allTalks, videoIcon }) => {
           <Padding top={4} bottom={4}>
             <Row>
               {talks.map(({ title, link, id }) => (
-                <CompactVideoLink href={link} key={id} bg="dark">
+                <CompactVideoLink
+                  href={link}
+                  key={id}
+                  themeVariation={theme.variations.dark}
+                >
                   {title}
                 </CompactVideoLink>
               ))}

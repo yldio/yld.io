@@ -34,14 +34,22 @@ storiesOf('Title and List', module)
   .add('list in form of a string (Contentful data)', () => {
     return (
       <Grid>
-        <TitleAndList title="This is the Title" list={stringList} bg="white" />
+        <TitleAndList
+          title="This is the Title"
+          list={stringList}
+          themeVariation="white"
+        />
       </Grid>
     )
   })
   .add('list in form of an array', () => {
     return (
       <Grid>
-        <TitleAndList title="This is the Title" list={arrayList} bg="white" />
+        <TitleAndList
+          title="This is the Title"
+          list={arrayList}
+          themeVariation="white"
+        />
       </Grid>
     )
   })
@@ -56,7 +64,7 @@ storiesOf('Title and List', module)
               Learn more
             </StyledLink>
           }
-          bg="white"
+          themeVariation="white"
         />
       </Grid>
     )
@@ -65,7 +73,11 @@ storiesOf('Title and List', module)
     return (
       <BlueBackground>
         <Grid>
-          <TitleAndList title="This is the Title" list={arrayList} bg="dark" />
+          <TitleAndList
+            title="This is the Title"
+            list={arrayList}
+            themeVariation="dark"
+          />
         </Grid>
       </BlueBackground>
     )
@@ -74,7 +86,11 @@ storiesOf('Title and List', module)
     return (
       <GreyBackground>
         <Grid>
-          <TitleAndList title="This is the Title" list={arrayList} bg="grey" />
+          <TitleAndList
+            title="This is the Title"
+            list={arrayList}
+            themeVariation="grey"
+          />
         </Grid>
       </GreyBackground>
     )

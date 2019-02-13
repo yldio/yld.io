@@ -46,6 +46,11 @@ export default {
   spacing,
   elementSizes,
   zIndexes,
+  variations: {
+    white: 'white',
+    dark: 'dark',
+    grey: 'grey'
+  },
   animations: {
     fast: '200ms',
     normal: '300ms',
