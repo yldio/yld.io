@@ -6,6 +6,7 @@ import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import { Link } from 'gatsby'
+import Chevron from '../Common/Chevron'
 
 const linkStyles = css`
   a {
@@ -249,14 +250,15 @@ const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
   position: relative;
   ${dropDownItemPadding}
+  align-items: center;
   transition: color ${props => props.theme.animations.fast} ease-in-out,
-  background ${props => props.theme.animations.fast} ease-in-out;
+    background ${props => props.theme.animations.fast} ease-in-out;
   cursor: pointer;
 
   &:hover {
     background: ${props => props.theme.colors.greyBG};
   }
-    
+
   ${is('expanded')`
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.colors.text};
@@ -268,10 +270,10 @@ const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
 
 const DesktopMenuDropdownItems = styled.ul`
   position: absolute;
-  width: 160px;
+  width: ${remcalc(160)};
   display: flex;
   flex-direction: column;
-  top: 46px;
+  top: ${remcalc(46)};
   left: -9999px;
   opacity: 0;
   transition: opacity ${props => props.theme.animations.normal} ease;
@@ -294,6 +296,10 @@ const DesktopMenuDropdownItems = styled.ul`
   }
 `
 
+const DropdownName = styled.span`
+  margin-right: ${remcalc(6)};
+`
+
 export class DesktopMenuDropdown extends PureComponent {
   state = {
     isExpanded: false
@@ -313,7 +319,8 @@ export class DesktopMenuDropdown extends PureComponent {
         bg={bg}
         expanded={isExpanded}
       >
-        <span>{children}</span>
+        <DropdownName>{children}</DropdownName>
+        <Chevron direction={this.state.isExpanded ? 'up' : 'down'} />
         <DesktopMenuDropdownItems expanded={isExpanded}>
           {items.map(({ to, label }, idx) => (
             <DesktopMenuDropdownLink
@@ -322,7 +329,7 @@ export class DesktopMenuDropdown extends PureComponent {
               tabIndex={isExpanded ? '0' : '-1'}
               onClick={this.handleItemClick}
             >
-              {label}
+              <span>{label}</span>
             </DesktopMenuDropdownLink>
           ))}
         </DesktopMenuDropdownItems>

@@ -5647,6 +5647,18 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 `;
 
 exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
+.c3 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
 .c1 {
   list-style-type: none;
   display: -webkit-box;
@@ -5655,6 +5667,10 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   display: flex;
   position: relative;
   padding: 10px 15px 14px 15px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
   transition: color 200ms ease-in-out, background 200ms ease-in-out;
   cursor: pointer;
@@ -5664,9 +5680,9 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   background: #f9f9f9;
 }
 
-.c2 {
+.c4 {
   position: absolute;
-  width: 160px;
+  width: 10rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5674,7 +5690,7 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  top: 46px;
+  top: 2.875rem;
   left: -9999px;
   opacity: 0;
   -webkit-transition: opacity 300ms ease;
@@ -5682,15 +5698,19 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   background: #fff;
 }
 
-.c2 a {
+.c4 a {
   color: #333333;
   padding: 10px 15px 14px 15px;
 }
 
-.c2 a:active,
-.c2 a:focus,
-.c2 a:hover {
+.c4 a:active,
+.c4 a:focus,
+.c4 a:hover {
   background: #f9f9f9;
+}
+
+.c2 {
+  margin-right: 0.375rem;
 }
 
 .c0 {
@@ -5719,11 +5739,23 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
         onMouseDown={[Function]}
         tabIndex="1"
       >
-        <span>
+        <span
+          className="c2"
+        >
           Label
         </span>
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
         <ul
-          className="c2"
+          className="c4"
         >
           <a
             aria-current="page"
@@ -5734,7 +5766,9 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
             style={Object {}}
             tabIndex="-1"
           >
-            home
+            <span>
+              home
+            </span>
           </a>
           <a
             className=""
@@ -5743,7 +5777,9 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
             onMouseEnter={[Function]}
             tabIndex="-1"
           >
-            engineering
+            <span>
+              engineering
+            </span>
           </a>
           <a
             className=""
@@ -5752,7 +5788,9 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
             onMouseEnter={[Function]}
             tabIndex="-1"
           >
-            long long label content
+            <span>
+              long long label content
+            </span>
           </a>
         </ul>
       </li>
