@@ -12,7 +12,8 @@ import {
   HomeLink,
   Close,
   DesktopMenu,
-  Overlay
+  Overlay,
+  DesktopMenuItem
 } from './elements.js'
 
 const Header = ({ path, blue, logoColour }) => {
