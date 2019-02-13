@@ -6,7 +6,7 @@ import DesktopMenuDropdown from '../src/components/Header/DesktopMenuDropdown'
 addDecorator(Theme)
 
 storiesOf('Header', module)
-  .add('DestkopMenu Dropdown', () => (
+  .add('DestkopMenuDropdown', () => (
     <div
       style={{
         height: '50vh',
@@ -37,7 +37,7 @@ storiesOf('Header', module)
       </ul>
     </div>
   ))
-  .add('DestkopMenu Dropdown - dark theme', () => (
+  .add('DestkopMenuDropdown - dark theme', () => (
     <div
       style={{
         height: '50vh',
@@ -70,7 +70,7 @@ storiesOf('Header', module)
       </ul>
     </div>
   ))
-  .add('DestkopMenu Dropdown - multiple components', () => (
+  .add('DestkopMenuDropdown - multiple components', () => (
     <div
       style={{
         height: '50vh',

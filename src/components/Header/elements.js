@@ -6,11 +6,19 @@ import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 
+export const outlineStyles = css`
+  &:focus {
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+  }
+
+  &:active {
+    outline: none;
+  }
+`
 const linkStyles = css`
   a {
     transition: all ${props => props.theme.animations.normal} ease-out;
-    opacity: 0.8;
-    padding: ${remcalc(12)} ${remcalc(6)};
+    padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
     background: linear-gradient(to right, #616161 0%, transparent 0);
     position: relative;
 
@@ -27,16 +35,14 @@ const linkStyles = css`
     }
 
     &:focus {
-      background: transparent;
       outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-      color: ${props => props.theme.colors.text};
     }
-
+  
     &:active {
-      background: ${props => props.theme.colors.text};
-      color: ${props => props.theme.colors.white};
       outline: none;
     }
+
+    ${outlineStyles}
 
     &.active {
       opacity: 1;
@@ -149,7 +155,7 @@ const DesktopMenuList = styled.ul`
     flex-direction: row;
     position: relative;
 
-    li:not(:last-child) {
+    > li:not(:last-child) {
       margin-right: ${remcalc(18)};
     }
   `};

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import Chevron from '../Common/Chevron'
-import { DesktopMenuItem } from './elements'
+import { DesktopMenuItem, outlineStyles } from './elements'
 import Anchor from '../Common/Anchor'
 import theme from '../../utils/theme'
 
@@ -83,7 +83,17 @@ const DesktopMenuDropdownItems = styled.ul`
 const DropdownNameWrapper = styled.span`
   display: flex;
   align-items: center;
+  transition: outline ${props => props.theme.animations.normal} ease-out;
+  /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
+  z-index: 2;
   ${dropDownItemPadding}
+  ${outlineStyles}
+
+  ${is('darkTheme')`
+    &:focus {
+      outline-color: #3A3553;
+    }
+  `}
 `
 
 const DropdownName = styled.span`
@@ -114,7 +124,9 @@ export default class DesktopMenuDropdown extends PureComponent {
         darkTheme={themeVariation === theme.variations.dark}
         ref={this.ref}
       >
-        <DropdownNameWrapper tabIndex="0">
+        <DropdownNameWrapper
+          tabIndex="0"
+          darkTheme={ themeVariation === theme.variations.dark }>
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
