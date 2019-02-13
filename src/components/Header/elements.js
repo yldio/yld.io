@@ -1,12 +1,10 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
-import { Link } from 'gatsby'
-import Chevron from '../Common/Chevron'
 
 const linkStyles = css`
   a {
@@ -242,114 +240,3 @@ export const DesktopMenuItem = styled.li`
   list-style-type: none;
   display: flex;
 `
-
-const DesktopMenuDropdownLink = styled(Link)``
-
-const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
-
-const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
-  position: relative;
-  ${dropDownItemPadding}
-  align-items: center;
-  transition: color ${props => props.theme.animations.fast} ease-in-out,
-    background ${props => props.theme.animations.fast} ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    background: ${props => props.theme.colors.greyBG};
-  }
-
-  ${is('expanded')`
-    color: ${props => props.theme.colors.white};
-    background: ${props => props.theme.colors.text};
-    &:hover {
-      background: ${props => props.theme.colors.text};
-    }
-  `}
-`
-
-const DesktopMenuDropdownItems = styled.ul`
-  position: absolute;
-  width: ${remcalc(160)};
-  display: flex;
-  flex-direction: column;
-  top: ${remcalc(46)};
-  left: -9999px;
-  opacity: 0;
-  transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.white};
-
-  ${is('expanded')`
-    left: 0;
-    opacity: 1;
-  `}
-
-  a {
-    color: ${props => props.theme.colors.text};
-    ${dropDownItemPadding}
-
-    &:active,
-    &:focus,
-    &:hover {
-      background: ${props => props.theme.colors.greyBG};
-    }
-  }
-`
-
-const DropdownName = styled.span`
-  margin-right: ${remcalc(6)};
-`
-
-export class DesktopMenuDropdown extends PureComponent {
-  state = {
-    isExpanded: false
-  }
-
-  render() {
-    const { items, bg, children } = this.props
-    const { isExpanded } = this.state
-
-    return (
-      <DesktopMenuDropdownContainer
-        tabIndex="1"
-        onMouseDown={this.toggle}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
-        aria-haspopup="true"
-        bg={bg}
-        expanded={isExpanded}
-      >
-        <DropdownName>{children}</DropdownName>
-        <Chevron direction={this.state.isExpanded ? 'up' : 'down'} />
-        <DesktopMenuDropdownItems expanded={isExpanded}>
-          {items.map(({ to, label }, idx) => (
-            <DesktopMenuDropdownLink
-              to={to}
-              key={idx}
-              tabIndex={isExpanded ? '0' : '-1'}
-              onClick={this.handleItemClick}
-            >
-              <span>{label}</span>
-            </DesktopMenuDropdownLink>
-          ))}
-        </DesktopMenuDropdownItems>
-      </DesktopMenuDropdownContainer>
-    )
-  }
-
-  toggle = e => {
-    this.setState({ isExpanded: !this.state.isExpanded })
-  }
-
-  handleItemClick = () => {
-    this.setState({ isExpanded: false })
-  }
-
-  handleFocus = (e, ...rest) => {
-    this.setState({ isExpanded: true })
-  }
-
-  handleBlur = () => {
-    this.setState({ isExpanded: false })
-  }
-}
