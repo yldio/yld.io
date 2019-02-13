@@ -5687,6 +5687,12 @@ exports[`Storyshots Header DestkopMenu Dropdown 1`] = `
   padding: 10px 15px 14px 15px;
 }
 
+.c2 a:active,
+.c2 a:focus,
+.c2 a:hover {
+  background: #f9f9f9;
+}
+
 .c0 {
   background: #f9f9f9;
 }

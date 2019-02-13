@@ -285,6 +285,12 @@ const DesktopMenuDropdownItems = styled.ul`
   a {
     color: ${props => props.theme.colors.text};
     ${dropDownItemPadding}
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: ${props => props.theme.colors.greyBG};
+    }
   }
 `
 
