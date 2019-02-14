@@ -94,7 +94,6 @@ class Layout extends Component {
               </Location>
               {GridDebugger && (
                 <GridDebugger
-                  show
                   theme={theme}
                   maxWidth={['none', 'none', '480px', '1100px']}
                   numCols={[1, 1, 1, 12]}
