@@ -20,6 +20,10 @@ const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
     color: ${props => props.theme.colors.white};
   `}
 
+  &:hover {
+    background: ${props => props.theme.colors.greyBG};
+  }
+
   ${is('expanded')`
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.colors.text};
@@ -40,7 +44,7 @@ const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
 
       &:hover {
         background: ${props => props.theme.colors.vibrant};
-        color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.textLight};
       }
     `}
   `}
@@ -75,7 +79,7 @@ const DesktopMenuDropdownItems = styled.ul`
     &:focus,
     &:hover {
       background: ${props => props.theme.colors.greyBG};
-      color: #666;
+      color: ${props => props.theme.colors.textLight};
     }
     ${outlineStyles}
   }
@@ -92,7 +96,7 @@ const DropdownNameWrapper = styled.span`
 
   ${is('darkTheme')`
     &:focus {
-      outline-color: #3A3553;
+      outline-color: white;
     }
   `}
 `

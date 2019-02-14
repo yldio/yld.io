@@ -20,9 +20,10 @@ export const HeaderAnchor = styled(Anchor)`
   padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
   background: linear-gradient(to right, #616161 0%, transparent 0);
   position: relative;
+  color: ${props => props.theme.colors.text};
 
   &:hover {
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.textLight};
 
     @media (pointer: fine) {
       &:after {

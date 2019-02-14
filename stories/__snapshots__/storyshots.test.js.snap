@@ -5665,10 +5665,11 @@ exports[`Storyshots Header DestkopMenu 1`] = `
   padding: 0.625rem 0.375rem 0.875rem;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   position: relative;
+  color: #333333;
 }
 
 .c3:hover {
-  color: #333333;
+  color: #828282;
 }
 
 .c3:focus {
@@ -5773,6 +5774,10 @@ exports[`Storyshots Header DestkopMenu 1`] = `
   background: transparent;
 }
 
+.c4:hover {
+  background: #f9f9f9;
+}
+
 .c8 {
   position: absolute;
   width: 10rem;
@@ -5808,7 +5813,7 @@ exports[`Storyshots Header DestkopMenu 1`] = `
 .c8 a:focus,
 .c8 a:hover {
   background: #f9f9f9;
-  color: #666;
+  color: #828282;
 }
 
 .c8 a:focus {
@@ -6039,6 +6044,10 @@ exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
 }
 
 .c0:hover {
+  background: #f9f9f9;
+}
+
+.c0:hover {
   background: #3A3553;
 }
 
@@ -6077,7 +6086,7 @@ exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
 .c4 a:focus,
 .c4 a:hover {
   background: #f9f9f9;
-  color: #666;
+  color: #828282;
 }
 
 .c4 a:focus {
@@ -6112,7 +6121,7 @@ exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
 }
 
 .c1:focus {
-  outline-color: #3A3553;
+  outline-color: white;
 }
 
 .c2 {
@@ -6241,6 +6250,10 @@ exports[`Storyshots Header DestkopMenuDropdown - multiple components 1`] = `
   background: transparent;
 }
 
+.c0:hover {
+  background: #f9f9f9;
+}
+
 .c4 {
   position: absolute;
   width: 10rem;
@@ -6276,7 +6289,7 @@ exports[`Storyshots Header DestkopMenuDropdown - multiple components 1`] = `
 .c4 a:focus,
 .c4 a:hover {
   background: #f9f9f9;
-  color: #666;
+  color: #828282;
 }
 
 .c4 a:focus {
@@ -6492,6 +6505,10 @@ exports[`Storyshots Header DestkopMenuDropdown 1`] = `
   background: transparent;
 }
 
+.c0:hover {
+  background: #f9f9f9;
+}
+
 .c4 {
   position: absolute;
   width: 10rem;
@@ -6527,7 +6544,7 @@ exports[`Storyshots Header DestkopMenuDropdown 1`] = `
 .c4 a:focus,
 .c4 a:hover {
   background: #f9f9f9;
-  color: #666;
+  color: #828282;
 }
 
 .c4 a:focus {
