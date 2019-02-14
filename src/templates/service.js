@@ -23,6 +23,17 @@ const WeWorkWithPadding = styled.div`
 `
 
 const Service = ({ data: { contentfulService: service }, location }) => {
+  const {
+    specialityAreaTitle1,
+    specialityAreaItems1,
+    specialityAreaTitle2,
+    specialityAreaItems2,
+    specialityAreaTitle3,
+    specialityAreaItems3,
+    specialityAreaTitle4,
+    specialityAreaItems4
+  } = service
+
   return (
     <Layout location={location}>
       <Head page={service} />
@@ -64,29 +75,33 @@ const Service = ({ data: { contentfulService: service }, location }) => {
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
                 <WeWorkWithPadding index={1}>
-                  <Subtitle>{service.specialityAreaTitle1}</Subtitle>
-                  <SeoLinks items={service.specialityAreaItems1} />
+                  {specialityAreaTitle1 ? (
+                    <Subtitle>{specialityAreaTitle1}</Subtitle>
+                  ) : null}
+                  <SeoLinks items={specialityAreaItems1} />
                 </WeWorkWithPadding>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                <WeWorkWithPadding index={2}>
-                  <Subtitle>{service.specialityAreaTitle2}</Subtitle>
-                  <SeoLinks items={service.specialityAreaItems2} />
-                </WeWorkWithPadding>
-              </Col>
-              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                {service.specialityAreaTitle3 && (
-                  <WeWorkWithPadding index={3}>
-                    <Subtitle>{service.specialityAreaTitle3}</Subtitle>
-                    <SeoLinks items={service.specialityAreaItems3} />
+                {specialityAreaItems2 && (
+                  <WeWorkWithPadding index={2}>
+                    <Subtitle>{specialityAreaTitle2}</Subtitle>
+                    <SeoLinks items={specialityAreaItems2} />
                   </WeWorkWithPadding>
                 )}
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                {service.specialityAreaTitle4 && (
+                {specialityAreaItems3 && (
+                  <WeWorkWithPadding index={3}>
+                    <Subtitle>{specialityAreaTitle3}</Subtitle>
+                    <SeoLinks items={specialityAreaItems3} />
+                  </WeWorkWithPadding>
+                )}
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
+                {specialityAreaItems4 && (
                   <WeWorkWithPadding index={4}>
-                    <Subtitle>{service.specialityAreaTitle4}</Subtitle>
-                    <SeoLinks items={service.specialityAreaItems4} />
+                    <Subtitle>{specialityAreaTitle4}</Subtitle>
+                    <SeoLinks items={specialityAreaItems4} />
                   </WeWorkWithPadding>
                 )}
               </Col>
