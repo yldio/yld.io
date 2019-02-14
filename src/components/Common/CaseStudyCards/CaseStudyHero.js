@@ -13,7 +13,7 @@ const FlexCol = styled(Col)`
 
 const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
-    <Subtitle>{heading}</Subtitle>
+    <Subtitle noPaddingBottom>{heading}</Subtitle>
     <Flex alignCenter wrap>
       <SeoLinks noPadding items={items} />
     </Flex>
