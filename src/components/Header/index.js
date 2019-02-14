@@ -4,7 +4,6 @@ import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
-import ExternalAnchor from '../Common/ExternalAnchor'
 import menu from '../../images/menu.svg'
 import close from '../../images/close.svg'
 import {
@@ -39,32 +38,52 @@ const Header = ({ path, blue, logoColour }) => {
                   <Close onClick={() => toggleMenu(!menuOpen)}>
                     <img src={close} alt="Close menu" />
                   </Close>
-                  <HomeLink right={30}>
-                    <Link activeClassName="active" to="/">
-                      Home
-                    </Link>
-                  </HomeLink>
-                  <Link reverse activeClassName="active" to="/engineering/">
-                    Engineering
-                  </Link>
-                  <Link activeClassName="active" to="/design/">
-                    Design
-                  </Link>
-                  <Link activeClassName="active" to="/training/">
-                    Training
-                  </Link>
-                  <Link activeClassName="active" to="/our-work/">
-                    Our work
-                  </Link>
-                  <Link activeClassName="active" to="/contact/">
-                    Contact
-                  </Link>
-                  <ExternalAnchor href="https://medium.com/yld-engineering-blog/">
-                    Blog
-                  </ExternalAnchor>
-                  <Link activeClassName="active" to="/join-us/">
-                    Join Us
-                  </Link>
+                  <DesktopMenuItem>
+                    <HomeLink right={30}>
+                      <Link activeClassName="active" to="/">
+                        Home
+                      </Link>
+                    </HomeLink>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor
+                      reverse
+                      activeClassName="active"
+                      to="/engineering/"
+                    >
+                      Engineering
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor activeClassName="active" to="/design/">
+                      Design
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor activeClassName="active" to="/training/">
+                      Training
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor activeClassName="active" to="/our-work/">
+                      Our work
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor activeClassName="active" to="/contact/">
+                      Contact
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
+                      Blog
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
+                  <DesktopMenuItem>
+                    <HeaderAnchor activeClassName="active" to="/join-us/">
+                      Join Us
+                    </HeaderAnchor>
+                  </DesktopMenuItem>
                 </DesktopMenu>
                 <Overlay
                   visible={menuOpen}
