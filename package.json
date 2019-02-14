@@ -25,6 +25,7 @@
     "polished": "2.3.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
+    "react-grid-debugger": "^1.0.1",
     "react-helmet": "5.2.0",
     "react-markdown": "^4.0.6",
     "remcalc": "1.0.10",
