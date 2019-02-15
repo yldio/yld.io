@@ -6643,10 +6643,6 @@ exports[`Storyshots Header Navbar 1`] = `
     right: 0;
     z-index: 10;
   }
-
-  .c0 a {
-    top: 0rem;
-  }
 }
 
 @media (min-width:56.3125em) {

@@ -107,9 +107,6 @@ const NavBarContainer = styled(Flex).attrs({
     left: auto;
     right: 0;
     z-index: 10;
-    a {
-      top: ${remcalc(0)};
-    }
   }
 
   ${is('open')`
