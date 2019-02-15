@@ -6599,7 +6599,6 @@ exports[`Storyshots Header Navbar 1`] = `
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    position: relative;
   }
 }
 

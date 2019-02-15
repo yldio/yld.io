@@ -52,7 +52,6 @@ const NavbarItems = styled.ul`
     width: auto;
     height: auto;
     flex-direction: row;
-    position: relative;
   `};
 
   @media screen and (max-width: 768px) and (min-width: 600px) {
