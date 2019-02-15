@@ -4,7 +4,6 @@ import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
-import Anchor from '../Common/Anchor'
 
 export const outlineStyles = css`
   &:focus {
@@ -15,40 +14,6 @@ export const outlineStyles = css`
     outline: none;
   }
 `
-export const HeaderAnchor = styled(Anchor)`
-  transition: all ${props => props.theme.animations.normal} ease-out;
-  padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
-  background: linear-gradient(to right, #616161 0%, transparent 0);
-  position: relative;
-  color: ${props => props.theme.colors.text};
-
-  &:hover {
-    color: ${props => props.theme.colors.textLight};
-
-    @media (pointer: fine) {
-      &:after {
-        width: 100%;
-        opacity: 1;
-        transition: all ${props => props.theme.animations.normal} ease-out;
-      }
-    }
-  }
-
-  &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-  }
-
-  &:active {
-    outline: none;
-  }
-
-  ${outlineStyles}
-
-  &.active {
-    opacity: 1;
-  }
-`
-
 export const MobileMenu = styled(Flex)`
   display: flex;
   cursor: pointer;
@@ -74,15 +39,6 @@ export const MobileMenu = styled(Flex)`
     button {
       display: none;
     }
-  `};
-`
-
-export const HomeLink = styled(HeaderAnchor)`
-  display: block;
-  padding-right: ${remcalc(30)};
-
-  ${breakpoint('tablet')`
-    display: none;
   `};
 `
 
@@ -239,8 +195,3 @@ export const DesktopMenu = ({ children, open }) => (
     <DesktopMenuList>{children}</DesktopMenuList>
   </DesktopMenuContainer>
 )
-
-export const DesktopMenuItem = styled.li`
-  list-style-type: none;
-  display: flex;
-`

@@ -1,23 +1,21 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import DesktopMenuDropdown from '../src/components/Header/DesktopMenuDropdown'
-import {
-  DesktopMenuItem,
-  DesktopMenu,
-  HeaderAnchor
-} from '../src/components/Header/elements'
+import DesktopDropdown from '../src/components/Header/DesktopDropdown'
+import { DesktopMenu } from '../src/components/Header/elements'
+import MenuItem from '../src/components/Header/MenuItem'
+import HeaderAnchor from '../src/components/Header/HeaderAnchor'
 
 addDecorator(Theme)
 
 storiesOf('Header', module).add('DestkopMenu', () => (
   <DesktopMenu>
-    <DesktopMenuItem>
+    <MenuItem>
       <HeaderAnchor reverse activeClassName="active" to="/engineering/">
         Engineering
       </HeaderAnchor>
-    </DesktopMenuItem>
-    <DesktopMenuDropdown
+    </MenuItem>
+    <DesktopDropdown
       items={[
         { href: '/', label: 'home' },
         { href: '/engineering', label: 'engineering' },
@@ -25,6 +23,6 @@ storiesOf('Header', module).add('DestkopMenu', () => (
       ]}
     >
       Menu
-    </DesktopMenuDropdown>
+    </DesktopDropdown>
   </DesktopMenu>
 ))

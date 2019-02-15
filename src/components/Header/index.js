@@ -6,15 +6,10 @@ import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
 import menu from '../../images/menu.svg'
 import close from '../../images/close.svg'
-import {
-  MobileMenu,
-  HomeLink,
-  Close,
-  DesktopMenu,
-  Overlay,
-  DesktopMenuItem,
-  HeaderAnchor
-} from './elements.js'
+import { MobileMenu, Close, DesktopMenu, Overlay } from './elements.js'
+import MenuItem from './MenuItem'
+import HomeLink from './HomeLink'
+import HeaderAnchor from './HeaderAnchor'
 
 const Header = ({ path, blue, logoColour }) => {
   const [menuOpen, toggleMenu] = useState(false)
@@ -38,14 +33,14 @@ const Header = ({ path, blue, logoColour }) => {
                   <Close onClick={() => toggleMenu(!menuOpen)}>
                     <img src={close} alt="Close menu" />
                   </Close>
-                  <DesktopMenuItem>
-                    <HomeLink right={30}>
+                  <MenuItem>
+                    <HomeLink>
                       <Link activeClassName="active" to="/">
                         Home
                       </Link>
                     </HomeLink>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor
                       reverse
                       activeClassName="active"
@@ -53,37 +48,37 @@ const Header = ({ path, blue, logoColour }) => {
                     >
                       Engineering
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor activeClassName="active" to="/design/">
                       Design
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor activeClassName="active" to="/training/">
                       Training
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor activeClassName="active" to="/our-work/">
                       Our work
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor activeClassName="active" to="/contact/">
                       Contact
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
                       Blog
                     </HeaderAnchor>
-                  </DesktopMenuItem>
-                  <DesktopMenuItem>
+                  </MenuItem>
+                  <MenuItem>
                     <HeaderAnchor activeClassName="active" to="/join-us/">
                       Join Us
                     </HeaderAnchor>
-                  </DesktopMenuItem>
+                  </MenuItem>
                 </DesktopMenu>
                 <Overlay
                   visible={menuOpen}

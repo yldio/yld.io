@@ -3,18 +3,11 @@ import { Link } from 'gatsby'
 import ExternalAnchor from './ExternalAnchor'
 
 const Anchor = ({ to, href, ...props }) => {
-  const appropriateProps = {}
-  let Component
-
   if (to != null) {
-    Component = Link
-    appropriateProps.to = to
+    return <Link to={to} {...props} />
   } else {
-    Component = ExternalAnchor
-    appropriateProps.href = href
+    return <ExternalAnchor href={href} {...props} />
   }
-
-  return <Component {...appropriateProps} {...props} />
 }
 
 export default Anchor

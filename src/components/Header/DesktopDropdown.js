@@ -3,22 +3,19 @@ import styled from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import Chevron from '../Common/Chevron'
-import { DesktopMenuItem, outlineStyles } from './elements'
+import { outlineStyles } from './elements'
+import MenuItem from './MenuItem'
 import Anchor from '../Common/Anchor'
 import theme from '../../utils/theme'
 
 const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 
-const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
+const DesktopMenuDropdownContainer = styled(MenuItem)`
   position: relative;
   transition: color ${props => props.theme.animations.fast} ease-in-out,
     background ${props => props.theme.animations.fast} ease-in-out;
   cursor: pointer;
   background: transparent;
-
-  ${is('darkTheme')`
-    color: ${props => props.theme.colors.white};
-  `}
 
   &:hover {
     background: ${props => props.theme.colors.greyBG};
@@ -34,6 +31,8 @@ const DesktopMenuDropdownContainer = styled(DesktopMenuItem)`
   `}
 
   ${is('darkTheme')`
+    color: ${props => props.theme.colors.white};
+
     &:hover {
       background: #3A3553;
     }
@@ -97,6 +96,10 @@ const DropdownNameWrapper = styled.span`
   ${is('darkTheme')`
     &:focus {
       outline-color: white;
+    }
+
+    &:hover {
+      color: ${props => props.theme.colors.white};
     }
   `}
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import DesktopMenuDropdown from '../src/components/Header/DesktopMenuDropdown'
+import DesktopDropdown from '../src/components/Header/DesktopDropdown'
 
 addDecorator(Theme)
 
@@ -25,7 +25,7 @@ storiesOf('Header', module)
           display: 'flex'
         }}
       >
-        <DesktopMenuDropdown
+        <DesktopDropdown
           items={[
             { href: '/', label: 'home' },
             { href: '/engineering', label: 'engineering' },
@@ -33,7 +33,7 @@ storiesOf('Header', module)
           ]}
         >
           Menu
-        </DesktopMenuDropdown>
+        </DesktopDropdown>
       </ul>
     </div>
   ))
@@ -57,7 +57,7 @@ storiesOf('Header', module)
           display: 'flex'
         }}
       >
-        <DesktopMenuDropdown
+        <DesktopDropdown
           themeVariation="dark"
           items={[
             { href: '/', label: 'home' },
@@ -66,7 +66,7 @@ storiesOf('Header', module)
           ]}
         >
           Menu
-        </DesktopMenuDropdown>
+        </DesktopDropdown>
       </ul>
     </div>
   ))
@@ -89,15 +89,15 @@ storiesOf('Header', module)
           display: 'flex'
         }}
       >
-        <DesktopMenuDropdown
+        <DesktopDropdown
           items={[
             { href: '/', label: 'home' },
             { href: '/engineering', label: 'engineering' }
           ]}
         >
           Menu 1
-        </DesktopMenuDropdown>
-        <DesktopMenuDropdown
+        </DesktopDropdown>
+        <DesktopDropdown
           items={[
             { href: '/', label: 'home' },
             { href: '/engineering', label: 'engineering' },
@@ -105,7 +105,7 @@ storiesOf('Header', module)
           ]}
         >
           Menu 2
-        </DesktopMenuDropdown>
+        </DesktopDropdown>
       </ul>
     </div>
   ))

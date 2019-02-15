@@ -5659,39 +5659,6 @@ exports[`Storyshots Header DestkopMenu 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c3 {
-  -webkit-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  padding: 0.625rem 0.375rem 0.875rem;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  position: relative;
-  color: #333333;
-}
-
-.c3:hover {
-  color: #828282;
-}
-
-.c3:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c3:active {
-  outline: none;
-}
-
-.c3:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c3:active {
-  outline: none;
-}
-
-.c3.active {
-  opacity: 1;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5851,13 +5818,37 @@ exports[`Storyshots Header DestkopMenu 1`] = `
   margin-right: 0.375rem;
 }
 
-@media (pointer:fine) {
-  .c3:hover:after {
-    width: 100%;
-    opacity: 1;
-    -webkit-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
-  }
+.c3 {
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  padding: 0.625rem 0.375rem 0.875rem;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  position: relative;
+  color: #333333;
+}
+
+.c3:hover {
+  color: #828282;
+}
+
+.c3:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c3:active {
+  outline: none;
+}
+
+.c3:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c3:active {
+  outline: none;
+}
+
+.c3.active {
+  opacity: 1;
 }
 
 @media (min-width:29.4375em) {
@@ -5921,6 +5912,15 @@ exports[`Storyshots Header DestkopMenu 1`] = `
 
   .c0 a {
     top: 0rem;
+  }
+}
+
+@media (pointer:fine) {
+  .c3:hover:after {
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
   }
 }
 
@@ -6122,6 +6122,10 @@ exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
 
 .c1:focus {
   outline-color: white;
+}
+
+.c1:hover {
+  color: #fff;
 }
 
 .c2 {

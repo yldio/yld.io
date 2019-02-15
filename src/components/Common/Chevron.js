@@ -11,7 +11,7 @@ const ChevronSvg = styled.svg`
   transition: transform 0s ease 0.1s;
 
   ${is('up')`
-    transform: rotate(-45deg);
+    transform: translateY(2px) rotate(-45deg);
   `}
 `
 
