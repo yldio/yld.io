@@ -7,6 +7,7 @@ import Hr from '../Common/Hr'
 import BlueBackground from '../BlueBG'
 import BackgroundGraphic from '../Common/BackgroundGraphic'
 import TitleAndList from '../Common/TitleAndList'
+import theme from '../../utils/theme'
 
 const Approach = ({ title, content, formats }) => (
   <BlueBackground>
@@ -19,7 +20,7 @@ const Approach = ({ title, content, formats }) => (
             title: approach,
             body: content[i]
           }))}
-          bg="dark"
+          themeVariation={theme.variations.dark}
         />
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <Hr muted />

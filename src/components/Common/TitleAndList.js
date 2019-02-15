@@ -5,6 +5,7 @@ import { Col, Row } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
+import theme from '../../utils/theme'
 
 const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
@@ -15,13 +16,20 @@ const ItemBody = styled(Body)`
     padding: 0;
   }
 `
-const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
+const TitleAndList = ({
+  title,
+  list,
+  themeVariation = 'white',
+  extraContent
+}) => {
   return (
     <OuterPaddings>
       <Row>
         <Col width={[1, 1, 1, 1, 6 / 12]}>
           <Padding bottom={3}>
-            <SectionTitle reverse={bg === 'dark'}>{title}</SectionTitle>
+            <SectionTitle reverse={themeVariation === theme.variations.dark}>
+              {title}
+            </SectionTitle>
           </Padding>
         </Col>
         <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -29,11 +37,15 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
             <ReactMarkdown
               renderers={{
                 heading: props => {
-                  const Comp = <ItemSubtitle bg={bg} {...props} /> // eslint-disable-line react/no-display-name
+                  const Comp = (
+                    <ItemSubtitle themeVariation={themeVariation} {...props} />
+                  ) // eslint-disable-line react/no-display-name
                   return Comp
                 },
                 paragraph: props => {
-                  const Comp = <ItemBody bg={bg} {...props} /> // eslint-disable-line react/no-display-name
+                  const Comp = (
+                    <ItemBody themeVariation={themeVariation} {...props} />
+                  ) // eslint-disable-line react/no-display-name
 
                   return Comp
                 }
@@ -44,8 +56,10 @@ const TitleAndList = ({ title, list, bg = 'white', extraContent }) => {
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
-                  <ItemSubtitle bg={bg}>{el.title}</ItemSubtitle>
-                  <ItemBody bg={bg}>{el.body}</ItemBody>
+                  <ItemSubtitle themeVariation={themeVariation}>
+                    {el.title}
+                  </ItemSubtitle>
+                  <ItemBody themeVariation={themeVariation}>{el.body}</ItemBody>
                 </React.Fragment>
               ))
             : null}

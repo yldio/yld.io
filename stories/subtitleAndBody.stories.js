@@ -18,7 +18,11 @@ storiesOf('Subtitle and Body', module)
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 0.5]}>
-            <SubtitleWithBody subtitle={title} body={body} bg="white" />
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="white"
+            />
           </Col>
         </Row>
       </Grid>
@@ -29,7 +33,11 @@ storiesOf('Subtitle and Body', module)
       <BlueBackground>
         <Grid>
           <Col width={[1, 1, 1, 1, 0.5]}>
-            <SubtitleWithBody subtitle={title} body={body} bg="dark" />
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="dark"
+            />
           </Col>
         </Grid>
       </BlueBackground>
@@ -40,7 +48,11 @@ storiesOf('Subtitle and Body', module)
       <GreyBackground>
         <Grid>
           <Col width={[1, 1, 1, 1, 0.5]}>
-            <SubtitleWithBody subtitle={title} body={body} bg="grey" />
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="grey"
+            />
           </Col>
         </Grid>
       </GreyBackground>

@@ -46,6 +46,11 @@ export default {
   spacing,
   elementSizes,
   zIndexes,
+  variations: {
+    white: 'white',
+    dark: 'dark',
+    grey: 'grey'
+  },
   animations: {
     fast: '200ms',
     normal: '300ms',
@@ -54,9 +59,10 @@ export default {
   colors: {
     white: '#fff',
     text: '#333333',
-    outline: '#6be9c1',
-    secondaryText: '#757575',
     textLight: '#828282',
+    secondaryText: '#757575',
+    outline: '#6be9c1',
+    vibrant: '#6be9c1',
     dark: '#232323',
     black: '#1d1d1d',
     lightGrey: '#737272',

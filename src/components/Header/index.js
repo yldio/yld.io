@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import menu from '../../images/menu.svg'
-import close from '../../images/close.svg'
-import {
-  MobileMenu,
-  HomeLink,
-  Close,
-  DesktopMenu,
-  Overlay
-} from './elements.js'
+import { Hamburger, Overlay } from './elements'
+import HeaderAnchor from './HeaderAnchor'
+import Navbar from './Navbar'
 
+const HomeLink = styled(HeaderAnchor)`
+  display: block;
+  padding-right: ${remcalc(30)};
+
+  ${breakpoint('tablet')`
+    display: none;
+  `};
+`
 const Header = ({ path, blue, logoColour }) => {
-  const [menuOpen, toggleMenu] = useState(false)
+  const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
   return (
     <Grid>
@@ -28,45 +32,45 @@ const Header = ({ path, blue, logoColour }) => {
                 <Link to="/">
                   <Logo path={path} blue={blue} logoColour={logoColour} />
                 </Link>
-                <MobileMenu>
-                  <button onClick={() => toggleMenu(!menuOpen)}>
-                    <img src={menu} alt="open menu" />
-                  </button>
-                </MobileMenu>
-                <DesktopMenu open={menuOpen}>
-                  <Close onClick={() => toggleMenu(!menuOpen)}>
-                    <img src={close} alt="Close menu" />
-                  </Close>
-                  <HomeLink right={30}>
-                    <Link activeClassName="active" to="/">
-                      Home
-                    </Link>
+                <Hamburger
+                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+                />
+                <Navbar
+                  isOpen={isMobileNavbarOpen}
+                  onClose={() => toggleMobileNavbar(false)}
+                >
+                  <HomeLink activeClassName="active" to="/">
+                    Home
                   </HomeLink>
-                  <Link reverse activeClassName="active" to="/engineering/">
+                  <HeaderAnchor
+                    reverse
+                    activeClassName="active"
+                    to="/engineering/"
+                  >
                     Engineering
-                  </Link>
-                  <Link activeClassName="active" to="/design/">
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/design/">
                     Design
-                  </Link>
-                  <Link activeClassName="active" to="/training/">
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/training/">
                     Training
-                  </Link>
-                  <Link activeClassName="active" to="/our-work/">
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/our-work/">
                     Our work
-                  </Link>
-                  <Link activeClassName="active" to="/contact/">
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/contact/">
                     Contact
-                  </Link>
-                  <ExternalAnchor href="https://medium.com/yld-engineering-blog/">
+                  </HeaderAnchor>
+                  <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
                     Blog
-                  </ExternalAnchor>
-                  <Link activeClassName="active" to="/join-us/">
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/join-us/">
                     Join Us
-                  </Link>
-                </DesktopMenu>
+                  </HeaderAnchor>
+                </Navbar>
                 <Overlay
-                  visible={menuOpen}
-                  onClick={() => toggleMenu(!menuOpen)}
+                  visible={isMobileNavbarOpen}
+                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
                 />
               </Flex>
             </Padding>

@@ -2633,7 +2633,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 </div>
 `;
 
-exports[`Storyshots Compact Video Link Dark bg 1`] = `
+exports[`Storyshots Compact Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -2918,7 +2918,7 @@ exports[`Storyshots Compact Video Link Dark bg 1`] = `
 </section>
 `;
 
-exports[`Storyshots Compact Video Link Grey bg 1`] = `
+exports[`Storyshots Compact Video Link Grey theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -5646,6 +5646,1151 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 </div>
 `;
 
+exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
+.c3 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+}
+
+.c0:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+
+.c0:hover {
+  background: #f9f9f9;
+}
+
+.c0:hover {
+  background: #3A3553;
+}
+
+.c4 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+}
+
+.c4 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 a {
+  color: #333333;
+  width: 100%;
+  padding: 10px 15px 14px 15px;
+}
+
+.c4 a:active,
+.c4 a:focus,
+.c4 a:hover {
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c4 a:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c4 a:active {
+  outline: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  padding: 10px 15px 14px 15px;
+}
+
+.c1:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c1:active {
+  outline: none;
+}
+
+.c1:focus {
+  outline-color: white;
+}
+
+.c2 {
+  margin-right: 0.375rem;
+}
+
+@media (min-width:56.3125em) {
+  .c0:not(:last-child) {
+    margin-right: 1.125rem;
+    margin-bottom: 0rem;
+  }
+}
+
+<div
+  style={
+    Object {
+      "display": "flex",
+      "height": "50vh",
+      "justifyContent": "center",
+      "width": "100vw",
+    }
+  }
+>
+  <ul
+    style={
+      Object {
+        "background": "#090329",
+        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": "48px",
+        "justifyContent": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c0"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c1"
+        tabIndex="0"
+      >
+        <span
+          className="c2"
+        >
+          Menu
+        </span>
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c4"
+      >
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              engineering
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              long long label content
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Header DestkopMenuDropdown - multiple components 1`] = `
+.c3 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c0:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+
+.c0:hover {
+  background: #f9f9f9;
+}
+
+.c4 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+}
+
+.c4 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 a {
+  color: #333333;
+  width: 100%;
+  padding: 10px 15px 14px 15px;
+}
+
+.c4 a:active,
+.c4 a:focus,
+.c4 a:hover {
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c4 a:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c4 a:active {
+  outline: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  padding: 10px 15px 14px 15px;
+}
+
+.c1:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c1:active {
+  outline: none;
+}
+
+.c2 {
+  margin-right: 0.375rem;
+}
+
+@media (min-width:56.3125em) {
+  .c0:not(:last-child) {
+    margin-right: 1.125rem;
+    margin-bottom: 0rem;
+  }
+}
+
+<div
+  style={
+    Object {
+      "display": "flex",
+      "height": "50vh",
+      "justifyContent": "center",
+      "width": "100vw",
+    }
+  }
+>
+  <ul
+    style={
+      Object {
+        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": "48px",
+        "justifyContent": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c0"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c1"
+        tabIndex="0"
+      >
+        <span
+          className="c2"
+        >
+          Menu 1
+        </span>
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c4"
+      >
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              engineering
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c0"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c1"
+        tabIndex="0"
+      >
+        <span
+          className="c2"
+        >
+          Menu 2
+        </span>
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c4"
+      >
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              engineering
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              long long label content
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Header DestkopMenuDropdown 1`] = `
+.c3 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c0 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c0:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+
+.c0:hover {
+  background: #f9f9f9;
+}
+
+.c4 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+}
+
+.c4 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 a {
+  color: #333333;
+  width: 100%;
+  padding: 10px 15px 14px 15px;
+}
+
+.c4 a:active,
+.c4 a:focus,
+.c4 a:hover {
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c4 a:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c4 a:active {
+  outline: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  padding: 10px 15px 14px 15px;
+}
+
+.c1:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c1:active {
+  outline: none;
+}
+
+.c2 {
+  margin-right: 0.375rem;
+}
+
+@media (min-width:56.3125em) {
+  .c0:not(:last-child) {
+    margin-right: 1.125rem;
+    margin-bottom: 0rem;
+  }
+}
+
+<div
+  style={
+    Object {
+      "display": "flex",
+      "height": "50vh",
+      "justifyContent": "center",
+      "width": "100vw",
+    }
+  }
+>
+  <ul
+    style={
+      Object {
+        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": "48px",
+        "justifyContent": "center",
+        "width": "100vw",
+      }
+    }
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c0"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c1"
+        tabIndex="0"
+      >
+        <span
+          className="c2"
+        >
+          Menu
+        </span>
+        <svg
+          className="c3"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c4"
+      >
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              home
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              engineering
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/engineering"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>
+              long long label content
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Header Navbar 1`] = `
+.c8 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c1 {
+  position: absolute;
+  min-width: 3rem;
+  min-height: 3rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 2.5rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1:focus {
+  background: transparent;
+  outline: 0.25rem solid #6be9c1;
+  color: #333333;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1.5rem;
+  padding-right: 0rem;
+  padding-top: 0.75rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  position: fixed;
+  background: #1d1d1d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 999;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  -webkit-transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  transition: color 200ms ease-in-out, background 200ms ease-in-out;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c5:not(:last-child) {
+  margin-bottom: 1.125rem;
+}
+
+.c5:hover {
+  background: #f9f9f9;
+}
+
+.c9 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+}
+
+.c9 li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 a {
+  color: #333333;
+  width: 100%;
+  padding: 10px 15px 14px 15px;
+}
+
+.c9 a:active,
+.c9 a:focus,
+.c9 a:hover {
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c9 a:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c9 a:active {
+  outline: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  padding: 10px 15px 14px 15px;
+}
+
+.c6:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c6:active {
+  outline: none;
+}
+
+.c7 {
+  margin-right: 0.375rem;
+}
+
+.c4 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.14;
+  display: block;
+}
+
+.c4:hover,
+.c4.active {
+  color: #fff;
+  opacity: 1;
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c2 {
+    position: relative;
+    top: -3.75rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    position: static;
+    width: auto;
+    height: auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width:768px) and (min-width:600px) {
+  .c2 {
+    padding: 2.25rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3:not(:last-child) {
+    margin-right: 1.125rem;
+    margin-bottom: 0rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    height: auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background: transparent;
+    position: relative;
+  }
+}
+
+@media screen and (max-width:901px) and (min-width:600px) {
+  .c0 {
+    width: 18.4375rem;
+    left: auto;
+    right: 0;
+    z-index: 10;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5:not(:last-child) {
+    margin-right: 1.125rem;
+    margin-bottom: 0rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c4 {
+    font-size: 2.625rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 100%;
+    color: #333333;
+    font-weight: 400;
+    opacity: 1;
+    padding: 0.625rem 0.375rem 0.875rem;
+  }
+
+  .c4.active {
+    color: #333333;
+  }
+
+  .c4:hover {
+    color: #828282;
+  }
+
+  .c4:active {
+    outline: none;
+  }
+
+  .c4:focus {
+    outline: 0.25rem solid #6be9c1;
+  }
+
+  .c4:active {
+    outline: none;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <button
+    className="c1"
+  >
+    <img
+      alt="Close menu"
+      src="test-file-stub"
+    />
+  </button>
+  <ul
+    className="c2"
+  >
+    <li
+      className="c3"
+    >
+      <a
+        className="c4"
+        href="/engineering/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        reverse={true}
+      >
+        Engineering
+      </a>
+    </li>
+    <li
+      className="c3"
+    >
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c5"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c6"
+          tabIndex="0"
+        >
+          <span
+            className="c7"
+          >
+            Menu
+          </span>
+          <svg
+            className="c8"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
+          >
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
+        </span>
+        <ul
+          className="c9"
+        >
+          <li>
+            <a
+              href="/"
+              onClick={[Function]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                home
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/engineering"
+              onClick={[Function]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                engineering
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/engineering"
+              onClick={[Function]}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span>
+                long long label content
+              </span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </li>
+  </ul>
+</nav>
+`;
+
 exports[`Storyshots Image with file url 1`] = `
 .c0 {
   width: auto;
@@ -5658,7 +6803,7 @@ exports[`Storyshots Image with file url 1`] = `
 />
 `;
 
-exports[`Storyshots Standalone Video Link Dark bg 1`] = `
+exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -5975,7 +7120,7 @@ exports[`Storyshots Standalone Video Link Dark bg 1`] = `
 </section>
 `;
 
-exports[`Storyshots Standalone Video Link Grey bg 1`] = `
+exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
