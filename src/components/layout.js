@@ -34,7 +34,7 @@ class Layout extends Component {
     if (isDevEnvironment) {
       const {
         default: component
-      } = await import(/* webpackChunkName: "grid-debugger" */ './Common/GridDebugger')
+      } = await import(/* webpackChunkName: "grid-debugger" */ 'react-grid-debugger')
 
       this.setState({
         GridDebugger: component
@@ -55,6 +55,7 @@ class Layout extends Component {
 
       return Fragment
     })()
+
     const { GridDebugger } = this.state
 
     return (
@@ -91,7 +92,14 @@ class Layout extends Component {
                   </Component>
                 )}
               </Location>
-              {GridDebugger && <GridDebugger />}
+              {GridDebugger && (
+                <GridDebugger
+                  theme={theme}
+                  maxWidth={['none', 'none', '480px', '1100px']}
+                  numCols={[1, 1, 1, 12]}
+                  gutter={['24px', '36px', '36px', '42px', '48px']}
+                />
+              )}
               <main>{children}</main>
               <Footer />
               <GlobalStyle />
