@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
 import remcalc from 'remcalc'
-import Flex from 'styled-flex-component'
+import menu from '../../images/menu.svg'
 
 export const outlineStyles = css`
   &:focus {
@@ -14,49 +14,14 @@ export const outlineStyles = css`
     outline: none;
   }
 `
-export const MobileMenu = styled(Flex)`
+
+const HamburgerButton = styled.button`
   display: flex;
   cursor: pointer;
-  padding: 0;
   margin: 0;
-
-  button {
-    border: none;
-    background: transparent;
-    padding: ${remcalc(8)} ${remcalc(6)};
-
-    &:focus {
-      background: transparent;
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-      color: ${props => props.theme.colors.text};
-    }
-  }
-
-  ${breakpoint('tablet')`
-    display: none;
-
-
-    button {
-      display: none;
-    }
-  `};
-`
-
-export const Close = styled.button`
-  position: absolute;
-  min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  top: ${remcalc(24)};
-  right: ${remcalc(24)};
-  background: transparent;
-  color: ${props => props.theme.colors.white};
   border: none;
-  font-size: ${remcalc(40)};
-  height: ${remcalc(32)};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: transparent;
+  padding: ${remcalc(8)} ${remcalc(6)};
 
   &:focus {
     background: transparent;
@@ -68,6 +33,12 @@ export const Close = styled.button`
     display: none;
   `};
 `
+
+export const Hamburger = ({ onClick }) => (
+  <HamburgerButton onClick={onClick}>
+    <img src={menu} alt="open menu" />
+  </HamburgerButton>
+)
 
 export const Overlay = styled.div`
   display: none;
@@ -92,106 +63,3 @@ export const Overlay = styled.div`
     `}
   }
 `
-
-const DesktopMenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  padding: ${remcalc(24)};
-  padding-right: ${remcalc(0)};
-  padding-top: ${remcalc(12)};
-  justify-content: center;
-
-  ${breakpoint('phone')`
-    padding-bottom: ${remcalc(24)};
-  `}
-
-  ${breakpoint('tablet')`
-    width: auto;
-    height: auto;
-    flex-direction: row;
-    position: relative;
-
-    > li:not(:last-child) {
-      margin-right: ${remcalc(18)};
-    }
-  `};
-
-  @media screen and (max-width: 768px) and (min-width: 600px) {
-    padding: ${remcalc(36)};
-    a {
-      top: ${remcalc(0)};
-    }
-  }
-`
-
-const DesktopMenuContainer = styled(Flex).attrs({
-  as: 'nav'
-})`
-  position: fixed;
-  background: ${props => props.theme.colors.black};
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  flex-direction: column;
-  z-index: ${props => props.theme.zIndexes.header};
-  transform: translateX(100%);
-  transition: transform ${props => props.theme.animations.fast} ease-in-out;
-  justify-content: center;
-
-  ${breakpoint('tablet')`
-    display: flex;
-    width: auto;
-    opacity: 1;
-    transform: translateX(0%);
-    height: auto;
-    flex-direction: row;
-    background: transparent;
-    position: relative;
-  `};
-
-  @media screen and (max-width: 768px) and (min-width: 600px) {
-    width: ${remcalc(295)};
-    left: auto;
-    right: 0;
-    z-index: 10;
-    a {
-      top: ${remcalc(0)};
-    }
-  }
-
-  ${is('open')`
-    transform: translateX(0%);
-
-    > a:last-of-type {
-      margin-bottom: 0;
-    }
-
-    a {
-      opacity: 0.5;
-      font-size: ${remcalc(28)};
-      font-weight: 500;
-      line-height: 1.14;
-      margin-bottom: ${remcalc(18)};
-      color: ${props => props.theme.colors.white};
-      display: block;
-
-      ${breakpoint('phone')`
-        font-size: ${remcalc(42)};
-        top: ${remcalc(-60)};
-      `}
-
-      &:hover, &.active {
-        color: ${props => props.theme.colors.white};
-        opacity: 1;
-      }
-    }
-  `};
-`
-
-export const DesktopMenu = ({ children, open }) => (
-  <DesktopMenuContainer open={open}>
-    <DesktopMenuList>{children}</DesktopMenuList>
-  </DesktopMenuContainer>
-)

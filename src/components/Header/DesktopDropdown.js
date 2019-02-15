@@ -4,13 +4,13 @@ import is from 'styled-is'
 import remcalc from 'remcalc'
 import Chevron from '../Common/Chevron'
 import { outlineStyles } from './elements'
-import MenuItem from './MenuItem'
 import Anchor from '../Common/Anchor'
 import theme from '../../utils/theme'
+import { NavbarItem } from './Navbar'
 
 const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 
-const DesktopMenuDropdownContainer = styled(MenuItem)`
+const DesktopMenuDropdownContainer = styled(NavbarItem)`
   position: relative;
   transition: color ${props => props.theme.animations.fast} ease-in-out,
     background ${props => props.theme.animations.fast} ease-in-out;
@@ -43,7 +43,7 @@ const DesktopMenuDropdownContainer = styled(MenuItem)`
 
       &:hover {
         background: ${props => props.theme.colors.vibrant};
-        color: ${props => props.theme.colors.textLight};
+        color: #007F56;
       }
     `}
   `}
@@ -96,7 +96,7 @@ const DropdownNameWrapper = styled.span`
   ${is('darkTheme')`
     &:focus {
       outline-color: white;
-    }
+    } 
   `}
 `
 

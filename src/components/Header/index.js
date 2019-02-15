@@ -7,11 +7,9 @@ import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import Logo from './Logo'
-import menu from '../../images/menu.svg'
-import close from '../../images/close.svg'
-import { MobileMenu, Close, DesktopMenu, Overlay } from './elements.js'
-import MenuItem from './MenuItem'
+import { Hamburger, Overlay } from './elements'
 import HeaderAnchor from './HeaderAnchor'
+import Navbar from './Navbar'
 
 const HomeLink = styled(HeaderAnchor)`
   display: block;
@@ -22,7 +20,7 @@ const HomeLink = styled(HeaderAnchor)`
   `};
 `
 const Header = ({ path, blue, logoColour }) => {
-  const [menuOpen, toggleMenu] = useState(false)
+  const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
   return (
     <Grid>
@@ -34,63 +32,45 @@ const Header = ({ path, blue, logoColour }) => {
                 <Link to="/">
                   <Logo path={path} blue={blue} logoColour={logoColour} />
                 </Link>
-                <MobileMenu>
-                  <button onClick={() => toggleMenu(!menuOpen)}>
-                    <img src={menu} alt="open menu" />
-                  </button>
-                </MobileMenu>
-                <DesktopMenu open={menuOpen}>
-                  <Close onClick={() => toggleMenu(!menuOpen)}>
-                    <img src={close} alt="Close menu" />
-                  </Close>
-                  <MenuItem>
-                    <HomeLink activeClassName="active" to="/">
-                      Home
-                    </HomeLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor
-                      reverse
-                      activeClassName="active"
-                      to="/engineering/"
-                    >
-                      Engineering
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor activeClassName="active" to="/design/">
-                      Design
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor activeClassName="active" to="/training/">
-                      Training
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor activeClassName="active" to="/our-work/">
-                      Our work
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor activeClassName="active" to="/contact/">
-                      Contact
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
-                      Blog
-                    </HeaderAnchor>
-                  </MenuItem>
-                  <MenuItem>
-                    <HeaderAnchor activeClassName="active" to="/join-us/">
-                      Join Us
-                    </HeaderAnchor>
-                  </MenuItem>
-                </DesktopMenu>
+                <Hamburger
+                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+                />
+                <Navbar
+                  isOpen={isMobileNavbarOpen}
+                  onClose={() => toggleMobileNavbar(false)}
+                >
+                  <HomeLink activeClassName="active" to="/">
+                    Home
+                  </HomeLink>
+                  <HeaderAnchor
+                    reverse
+                    activeClassName="active"
+                    to="/engineering/"
+                  >
+                    Engineering
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/design/">
+                    Design
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/training/">
+                    Training
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/our-work/">
+                    Our work
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/contact/">
+                    Contact
+                  </HeaderAnchor>
+                  <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
+                    Blog
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/join-us/">
+                    Join Us
+                  </HeaderAnchor>
+                </Navbar>
                 <Overlay
-                  visible={menuOpen}
-                  onClick={() => toggleMenu(!menuOpen)}
+                  visible={isMobileNavbarOpen}
+                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
                 />
               </Flex>
             </Padding>
