@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
@@ -8,9 +11,16 @@ import menu from '../../images/menu.svg'
 import close from '../../images/close.svg'
 import { MobileMenu, Close, DesktopMenu, Overlay } from './elements.js'
 import MenuItem from './MenuItem'
-import HomeLink from './HomeLink'
 import HeaderAnchor from './HeaderAnchor'
 
+const HomeLink = styled(HeaderAnchor)`
+  display: block;
+  padding-right: ${remcalc(30)};
+
+  ${breakpoint('tablet')`
+    display: none;
+  `};
+`
 const Header = ({ path, blue, logoColour }) => {
   const [menuOpen, toggleMenu] = useState(false)
 
@@ -34,10 +44,8 @@ const Header = ({ path, blue, logoColour }) => {
                     <img src={close} alt="Close menu" />
                   </Close>
                   <MenuItem>
-                    <HomeLink>
-                      <Link activeClassName="active" to="/">
-                        Home
-                      </Link>
+                    <HomeLink activeClassName="active" to="/">
+                      Home
                     </HomeLink>
                   </MenuItem>
                   <MenuItem>

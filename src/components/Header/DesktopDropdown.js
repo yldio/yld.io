@@ -97,10 +97,6 @@ const DropdownNameWrapper = styled.span`
     &:focus {
       outline-color: white;
     }
-
-    &:hover {
-      color: ${props => props.theme.colors.white};
-    }
   `}
 `
 

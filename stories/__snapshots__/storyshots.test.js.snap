@@ -5831,10 +5831,6 @@ exports[`Storyshots Header DestkopMenu 1`] = `
   color: #828282;
 }
 
-.c3:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
 .c3:active {
   outline: none;
 }
@@ -6122,10 +6118,6 @@ exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
 
 .c1:focus {
   outline-color: white;
-}
-
-.c1:hover {
-  color: #fff;
 }
 
 .c2 {

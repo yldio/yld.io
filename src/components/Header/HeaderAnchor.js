@@ -22,10 +22,6 @@ const HeaderAnchor = styled(Anchor)`
     }
   }
 
-  &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-  }
-
   &:active {
     outline: none;
   }
