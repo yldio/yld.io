@@ -1,8 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import Anchor from '../Common/Anchor'
-import { outlineStyles } from './elements'
+
+export const outlineStyles = css`
+  &:focus {
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+  }
+
+  &:active {
+    outline: none;
+  }
+`
 
 const HeaderAnchor = styled(Anchor)`
   transition-duration: ${props => props.theme.animations.normal};

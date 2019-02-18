@@ -6353,6 +6353,29 @@ exports[`Storyshots Header Navbar 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
+.c4 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.14;
+  display: block;
+}
+
+.c4:hover,
+.c4.active {
+  color: #fff;
+  opacity: 1;
+}
+
 .c1 {
   position: absolute;
   min-width: 3rem;
@@ -6554,27 +6577,40 @@ exports[`Storyshots Header Navbar 1`] = `
   margin-right: 0.375rem;
 }
 
-.c4 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  color: #fff;
-  opacity: 0.5;
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.14;
-  display: block;
+@media (min-width:29.4375em) {
+  .c4 {
+    font-size: 2.625rem;
+  }
 }
 
-.c4:hover,
-.c4.active {
-  color: #fff;
-  opacity: 1;
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 100%;
+    color: #333333;
+    font-weight: 400;
+    opacity: 1;
+    padding: 0.625rem 0.375rem 0.875rem;
+  }
+
+  .c4.active {
+    color: #333333;
+  }
+
+  .c4:hover {
+    color: #828282;
+  }
+
+  .c4:active {
+    outline: none;
+  }
+
+  .c4:focus {
+    outline: 0.25rem solid #6be9c1;
+  }
+
+  .c4:active {
+    outline: none;
+  }
 }
 
 @media (min-width:56.3125em) {
@@ -6648,42 +6684,6 @@ exports[`Storyshots Header Navbar 1`] = `
   .c5:not(:last-child) {
     margin-right: 1.125rem;
     margin-bottom: 0rem;
-  }
-}
-
-@media (min-width:29.4375em) {
-  .c4 {
-    font-size: 2.625rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c4 {
-    font-size: 100%;
-    color: #333333;
-    font-weight: 400;
-    opacity: 1;
-    padding: 0.625rem 0.375rem 0.875rem;
-  }
-
-  .c4.active {
-    color: #333333;
-  }
-
-  .c4:hover {
-    color: #828282;
-  }
-
-  .c4:active {
-    outline: none;
-  }
-
-  .c4:focus {
-    outline: 0.25rem solid #6be9c1;
-  }
-
-  .c4:active {
-    outline: none;
   }
 }
 
