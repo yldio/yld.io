@@ -6362,7 +6362,6 @@ exports[`Storyshots Header Navbar 1`] = `
   transition-property: opacity,color,outline;
   padding: 0;
   background: linear-gradient(to right,#616161 0%,transparent 0);
-  color: #fff;
   opacity: 0.5;
   font-size: 1.75rem;
   font-weight: 500;
@@ -6418,9 +6417,8 @@ exports[`Storyshots Header Navbar 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 0.75rem 1.5rem;
   padding-right: 0rem;
-  padding-top: 0.75rem;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -6586,10 +6584,10 @@ exports[`Storyshots Header Navbar 1`] = `
 @media (min-width:56.3125em) {
   .c4 {
     font-size: 100%;
-    color: #333333;
     font-weight: 400;
     opacity: 1;
     padding: 0.625rem 0.375rem 0.875rem;
+    color: #828282;
   }
 
   .c4.active {
@@ -6597,7 +6595,7 @@ exports[`Storyshots Header Navbar 1`] = `
   }
 
   .c4:hover {
-    color: #828282;
+    color: #333333;
   }
 
   .c4:active {
@@ -6635,6 +6633,7 @@ exports[`Storyshots Header Navbar 1`] = `
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    padding-bottom: 0.75rem;
   }
 }
 
