@@ -74,6 +74,13 @@ const Header = ({ path, blue, logoColour }) => {
                   <HeaderAnchor
                     light={!!blue}
                     activeClassName="active"
+                    to="/about-us/"
+                  >
+                    About us
+                  </HeaderAnchor>
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
                     to="/contact/"
                   >
                     Contact
