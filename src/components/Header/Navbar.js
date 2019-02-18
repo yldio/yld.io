@@ -36,9 +36,11 @@ const MobileCloseButton = styled.button`
 const NavbarItems = styled.ul`
   display: flex;
   flex-direction: column;
-  padding: ${remcalc(12)} ${remcalc(24)};
+  padding: ${remcalc(12)};
   padding-right: ${remcalc(0)};
-  justify-content: center;
+  flex: 1;
+  justify-content: space-between;
+  max-width: ${remcalc(655)};
 
   ${breakpoint('phone')`
     position: relative;
@@ -46,7 +48,8 @@ const NavbarItems = styled.ul`
     padding-bottom: ${remcalc(24)};
   `}
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
+    padding-bottom: ${remcalc(12)};
     position: static;
     width: auto;
     height: auto;
@@ -68,8 +71,11 @@ export const NavbarItem = styled.li`
 
   ${breakpoint('tablet')`
     &:not(:last-child) {
-      margin-right: ${remcalc(18)};
       margin-bottom: ${remcalc(0)};
+    }
+
+    &:last-child > a{
+      padding-right: 0;
     }
   `};
 `
@@ -87,7 +93,8 @@ const NavBarContainer = styled(Flex).attrs({
   z-index: ${props => props.theme.zIndexes.header};
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
-  justify-content: center;
+  flex: 1;
+  justify-content: flex-end;
 
   ${breakpoint('tablet')`
     display: flex;
