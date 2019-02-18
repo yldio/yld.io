@@ -101,9 +101,6 @@ const Header = ({ path, blue, logoColour }) => {
                   >
                     Join Us
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/join-us/">
-                    About Us
-                  </HeaderAnchor>
                 </Navbar>
                 <Overlay
                   visible={isMobileNavbarOpen}
