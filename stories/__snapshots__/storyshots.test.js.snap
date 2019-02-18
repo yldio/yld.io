@@ -6362,6 +6362,7 @@ exports[`Storyshots Header Navbar 1`] = `
   transition-property: opacity,color,outline;
   padding: 0;
   background: linear-gradient(to right,#616161 0%,transparent 0);
+  color: #fff;
   opacity: 0.5;
   font-size: 1.75rem;
   font-weight: 500;
