@@ -20,6 +20,16 @@ const HomeLink = styled(HeaderAnchor)`
     display: none;
   `};
 `
+
+/* Note: This scale applied to the logo is a temporary solution until the topNav is rebuilt
+   according to new design specs. */
+const LogoLink = styled(Link)`
+  @media (min-width: 901px) and (max-width: 1005px) {
+    transform: scale(0.7, 0.7);
+    margin-left: -${remcalc(30)};
+  }
+`
+
 const Header = ({ path, blue, logoColour }) => {
   const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
@@ -30,9 +40,9 @@ const Header = ({ path, blue, logoColour }) => {
           <header>
             <Padding top={2} bottom={3}>
               <Flex alignCenter wrap justifyBetween>
-                <Link to="/">
+                <LogoLink to="/">
                   <Logo path={path} blue={blue} logoColour={logoColour} />
-                </Link>
+                </LogoLink>
                 <Hamburger
                   onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
                 />
@@ -90,6 +100,9 @@ const Header = ({ path, blue, logoColour }) => {
                     to="/join-us/"
                   >
                     Join Us
+                  </HeaderAnchor>
+                  <HeaderAnchor activeClassName="active" to="/join-us/">
+                    About Us
                   </HeaderAnchor>
                 </Navbar>
                 <Overlay
