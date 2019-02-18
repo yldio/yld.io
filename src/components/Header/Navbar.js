@@ -36,9 +36,8 @@ const MobileCloseButton = styled.button`
 const NavbarItems = styled.ul`
   display: flex;
   flex-direction: column;
-  padding: ${remcalc(24)};
+  padding: ${remcalc(12)} ${remcalc(24)};
   padding-right: ${remcalc(0)};
-  padding-top: ${remcalc(12)};
   justify-content: center;
 
   ${breakpoint('phone')`
@@ -52,6 +51,7 @@ const NavbarItems = styled.ul`
     width: auto;
     height: auto;
     flex-direction: row;
+    padding-bottom: ${remcalc(12)};
   `};
 
   @media screen and (max-width: 768px) and (min-width: 600px) {
