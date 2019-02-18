@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 import Anchor from '../Common/Anchor'
 
 export const outlineStyles = css`
@@ -19,7 +20,6 @@ const HeaderAnchor = styled(Anchor)`
   transition-property: opacity, color, outline;
   padding: 0;
   background: linear-gradient(to right, #616161 0%, transparent 0);
-  color: ${props => props.theme.colors.white};
 
   /* Styles for mobile */
   opacity: 0.5;
@@ -30,7 +30,7 @@ const HeaderAnchor = styled(Anchor)`
 
   &:hover, &.active {
     color: ${props => props.theme.colors.white};
-    opacity: 1;
+    opacity: 1; 
   }
 
   ${breakpoint('phone')`
@@ -40,17 +40,30 @@ const HeaderAnchor = styled(Anchor)`
   /* Styles for Tablet and above */
   ${breakpoint('tablet')`
     font-size: 100%;
-    color: ${props => props.theme.colors.text};
     font-weight: 400;
     opacity: 1;
     padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
 
+    color: ${props => props.theme.colors.textLight};
+
+    ${is('light')`
+      color: ${props => props.theme.colors.grey}; 
+    `}
+
     &.active {
       color: ${props => props.theme.colors.text};
+
+      ${is('light')`
+        color: ${props => props.theme.colors.white};
+      `}
     }
 
     &:hover {
-      color: ${props => props.theme.colors.textLight};
+      color: ${props => props.theme.colors.text};
+
+      ${is('light')`
+        color: ${props => props.theme.colors.white};
+      `}
 
       @media (pointer: fine) {
         &:after {

@@ -44,28 +44,51 @@ const Header = ({ path, blue, logoColour }) => {
                     Home
                   </HomeLink>
                   <HeaderAnchor
-                    reverse
+                    light={!!blue}
                     activeClassName="active"
                     to="/engineering/"
                   >
                     Engineering
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/design/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
+                    to="/design/"
+                  >
                     Design
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/training/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
+                    to="/training/"
+                  >
                     Training
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/our-work/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
+                    to="/our-work/"
+                  >
                     Our work
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/contact/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
+                    to="/contact/"
+                  >
                     Contact
                   </HeaderAnchor>
-                  <HeaderAnchor href="https://medium.com/yld-engineering-blog/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    href="https://medium.com/yld-engineering-blog/"
+                  >
                     Blog
                   </HeaderAnchor>
-                  <HeaderAnchor activeClassName="active" to="/join-us/">
+                  <HeaderAnchor
+                    light={!!blue}
+                    activeClassName="active"
+                    to="/join-us/"
+                  >
                     Join Us
                   </HeaderAnchor>
                 </Navbar>
