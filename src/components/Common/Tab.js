@@ -7,10 +7,10 @@ import { Subtitle } from '../Typography'
 
 const TabContainer = styled.li`
   display: inline-block;
+  margin-right: ${remcalc(36)};
 
-  /* Targetting the next sibling and add a margin to the left of it */
-  & + & {
-    margin-left: ${remcalc(36)};
+  &:last-child {
+    margin-right: 0;
   }
 `
 
@@ -61,6 +61,13 @@ const Tab = ({ active, onClick, children, as, ...props }) => (
   </TabContainer>
 )
 
-export const Tabs = ({ children, ...props }) => <ul {...props}>{children}</ul>
+const StyledUl = styled.ul`
+  /* Adding 4px margin for allowing tabs outline to be fully visible */
+  margin: 4px;
+`
+
+export const Tabs = ({ children, ...props }) => (
+  <StyledUl {...props}>{children}</StyledUl>
+)
 
 export default Tab

@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import Subsidiaries from '../components/AboutUs/Subsidiaries'
+import Teams from '../components/AboutUs/Teams'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   const { yldGroupTitle, subsidiaries } = content
@@ -12,6 +13,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     <Layout>
       <Head page={content} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+      <Teams title={content.teamSectionTitle} teams={content.teams} />
     </Layout>
   )
 }
@@ -30,6 +32,9 @@ const AboutUsPage = props => (
             members {
               name
               role
+              description {
+                description
+              }
               image {
                 title
                 file {
