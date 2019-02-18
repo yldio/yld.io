@@ -4,6 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
 import BlueBG from '../BlueBG'
+import Image from '../Common/Image'
 import { Grid, ColumnLayout, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
@@ -34,12 +35,14 @@ const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
           {({ Col, item: subsidiary }) => {
             const {
               description: { description },
+              image,
               linkUrl,
               linkText
             } = subsidiary
 
             return (
               <PaddedCol block={false}>
+                <Image image={image} />
                 <BodyPrimary reverse muted>
                   {description}
                 </BodyPrimary>

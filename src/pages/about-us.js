@@ -57,6 +57,15 @@ const AboutUsPage = props => (
             description {
               description
             }
+            image {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 250) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
             linkUrl
             linkText
           }
