@@ -4,14 +4,15 @@ import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
 import Image from '../Common/Image'
-import { Grid, ColumnLayout, Col } from '../grid'
+import { Grid, Col, Row } from '../grid'
 import { SectionTitle } from '../Typography'
 
 const PaddedCol = styled(Col)`
   flex-direction: column;
   align-items: flex-start;
+
   ${breakpoint('smallPhone')`
-    padding-bottom: ${props => props.theme.spacing[3]}
+    padding-bottom: ${props => props.theme.spacing[1]}
     &:last-child {
       padding-bottom: 0
     }
@@ -30,16 +31,17 @@ const PartnersSection = ({ partnershipsTitle, partners }) => (
       <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
         <SectionTitle>{partnershipsTitle}</SectionTitle>
       </Padding>
-      <ColumnLayout cols={4} items={partners}>
-        {({ Col, item: partner }) => {
-          const { image } = partner
-          return (
-            <PaddedCol block={false}>
-              <Image image={image} />
-            </PaddedCol>
-          )
-        }}
-      </ColumnLayout>
+      <Row>
+        {partners.map((partner, idx) => (
+          <PaddedCol
+            key={idx}
+            block={false}
+            width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 3 / 12]}
+          >
+            <Image image={partner.image} width="250px" />
+          </PaddedCol>
+        ))}
+      </Row>
     </Padding>
   </Grid>
 )
