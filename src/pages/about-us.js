@@ -7,13 +7,13 @@ import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import Teams from '../components/AboutUs/Teams'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
-  const { yldGroupTitle, subsidiaries } = content
+  const { yldGroupTitle, subsidiaries, teamSectionTitle, teams } = content
 
   return (
     <Layout>
       <Head page={content} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
-      <Teams title={content.teamSectionTitle} teams={content.teams} />
+      <Teams title={teamSectionTitle} teams={teams} />
     </Layout>
   )
 }
