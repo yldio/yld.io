@@ -8,7 +8,7 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 
 const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;

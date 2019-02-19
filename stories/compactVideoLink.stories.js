@@ -3,8 +3,8 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import CompactVideoLink from '../src/components/Common/CompactVideoLink'
 import { Row } from '../src/components/grid'
-import BlueBackground from '../src/components/BlueBG'
-import GreyBackground from '../src/components/GreyBG'
+import BlueBackground from '../src/components/Common/BlueBackground'
+import GreyBackground from '../src/components/Common/GreyBackground'
 
 addDecorator(Theme)
 

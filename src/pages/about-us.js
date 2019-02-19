@@ -3,12 +3,18 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
+import Subsidiaries from '../components/AboutUs/Subsidiaries'
 
-const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => (
-  <Layout>
-    <Head page={content} />
-  </Layout>
-)
+const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
+  const { yldGroupTitle, subsidiaries } = content
+
+  return (
+    <Layout>
+      <Head page={content} />
+      <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+    </Layout>
+  )
+}
 
 const AboutUsPage = props => (
   <StaticQuery
@@ -45,6 +51,18 @@ const AboutUsPage = props => (
           yldGroupTitle
           subsidiaries {
             name
+            description {
+              description
+            }
+            image {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 250) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
             linkUrl
             linkText
           }

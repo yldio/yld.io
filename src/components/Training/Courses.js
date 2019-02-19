@@ -3,7 +3,7 @@ import { Padding } from 'styled-components-spacing'
 import Flex from 'styled-flex-component'
 import { SectionTitle } from '../Typography'
 import Image from '../Common/Image'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 
 const Courses = ({ categories, toggleModal }) => {

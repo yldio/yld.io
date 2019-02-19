@@ -1223,7 +1223,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 }
 
 .c6 {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -6838,7 +6838,7 @@ exports[`Storyshots Header Navbar 1`] = `
 
 exports[`Storyshots Image with file url 1`] = `
 .c0 {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 

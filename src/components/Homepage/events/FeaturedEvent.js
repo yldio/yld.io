@@ -9,7 +9,7 @@ import {
   EventWrapper,
   FixedWidthBodyPrimary
 } from './elements'
-import StyledLink from '../../styledLink'
+import StyledLink from '../../Common/StyledLink'
 
 const FeaturedEvent = ({ events }) => (
   <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>

@@ -6,12 +6,12 @@ import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
+import TitleSection from '../components/ContactUs/TitleSection'
+import GreyBackground from '../components/Common/GreyBackground'
+import ThankYouMessage from '../components/ContactUs/ThankYouMessage'
+import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
-import GreyBackground from '../components/GreyBG'
-import TitleSection from '../components/ContactUs/TitleSection'
-import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
-import ThankYouMessage from '../components/ContactUs/ThankYouMessage'
 
 const interests = [
   { name: 'engineering', label: 'Engineering services' },
