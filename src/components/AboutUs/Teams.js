@@ -4,15 +4,13 @@ import { Padding } from 'styled-components-spacing'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle } from '../Typography'
 import Tab, { Tabs } from '../Common/Tab'
-import GreyBG from '../GreyBG'
+import GreyBackground from '../Common/GreyBackground'
 import StaffCard from './StaffCard'
 
-const Team = ({ data }) => {
-  if (!data) {
+const Team = ({ members }) => {
+  if (!members) {
     return null
   }
-
-  const { members, name: teamName } = data
 
   return (
     <Padding top={{ smallPhone: 3, tablet: 4 }}>
@@ -20,7 +18,7 @@ const Team = ({ data }) => {
         {(members || []).map(
           ({ name, description, role, image, socialLinks }, idx) => (
             <StaffCard
-              key={`staff-${teamName}-${idx}`}
+              key={`staff-${name}-${idx}`}
               name={name}
               description={description.description}
               role={role}
@@ -39,7 +37,7 @@ const Teams = ({ title, teams }) => {
   const currentTeam = teams[currentTab]
 
   return (
-    <GreyBG>
+    <GreyBackground>
       <Grid>
         <Padding
           top={{ smallPhone: 3, tablet: 4 }}
@@ -64,10 +62,10 @@ const Teams = ({ title, teams }) => {
             </Col>
             <Col />
           </Row>
-          <Team data={currentTeam} />
+          <Team members={currentTeam.members} />
         </Padding>
       </Grid>
-    </GreyBG>
+    </GreyBackground>
   )
 }
 
