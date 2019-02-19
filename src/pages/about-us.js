@@ -40,6 +40,9 @@ const AboutUsPage = props => (
                 file {
                   url
                 }
+                fluid(maxWidth: 400) {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
               }
               socialLinks {
                 name
@@ -48,6 +51,9 @@ const AboutUsPage = props => (
                   title
                   file {
                     url
+                  }
+                  fluid(maxWidth: 30) {
+                    ...GatsbyContentfulFluid_withWebp
                   }
                 }
               }
@@ -85,6 +91,11 @@ const AboutUsPage = props => (
               title
               file {
                 url
+                fileName
+                contentType
+              }
+              fluid(maxWidth: 30) {
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
