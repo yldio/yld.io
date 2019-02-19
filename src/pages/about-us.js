@@ -40,7 +40,7 @@ const AboutUsPage = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 400) {
+                fluid(maxWidth: 500) {
                   ...GatsbyContentfulFluid_tracedSVG
                 }
               }
@@ -91,11 +91,6 @@ const AboutUsPage = props => (
               title
               file {
                 url
-                fileName
-                contentType
-              }
-              fluid(maxWidth: 30) {
-                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
