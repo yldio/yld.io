@@ -38,7 +38,11 @@ const Partners = ({ partnershipsTitle, partners }) => (
             block={false}
             width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 3 / 12]}
           >
-            <Image image={partner.image} width="250px" />
+            <Image
+              image={partner.image}
+              width="250px"
+              style={{ filter: 'grayscale(1)', saturate: '0' }}
+            />
           </PaddedCol>
         ))}
       </Row>
