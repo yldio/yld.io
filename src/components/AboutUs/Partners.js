@@ -22,14 +22,14 @@ const PaddedCol = styled(Col)`
   `}
 `
 
-const Partners = ({ partnershipsTitle, partners }) => (
+const Partners = ({ title, partners }) => (
   <Grid>
     <Padding
       top={{ smallPhone: 3, tablet: 4 }}
       bottom={{ smallPhone: 3.5, tablet: 5 }}
     >
       <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
-        <SectionTitle>{partnershipsTitle}</SectionTitle>
+        <SectionTitle>{title}</SectionTitle>
       </Padding>
       <Row>
         {partners.map((partner, idx) => (

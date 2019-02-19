@@ -22,7 +22,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
       <Head page={content} />
       <Teams title={teamSectionTitle} teams={teams} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
-      <Partners partnershipsTitle={partnershipsTitle} partners={partners} />
+      <Partners title={partnershipsTitle} partners={partners} />
     </Layout>
   )
 }
