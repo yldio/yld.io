@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import Teams from '../components/AboutUs/Teams'
-import PartnersSection from '../components/AboutUs/PartnersSection'
+import Partners from '../components/AboutUs/Partners'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   const {
@@ -22,10 +22,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
       <Head page={content} />
       <Teams title={teamSectionTitle} teams={teams} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
-      <PartnersSection
-        partnershipsTitle={partnershipsTitle}
-        partners={partners}
-      />
+      <Partners partnershipsTitle={partnershipsTitle} partners={partners} />
     </Layout>
   )
 }

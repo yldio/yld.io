@@ -22,7 +22,7 @@ const PaddedCol = styled(Col)`
   `}
 `
 
-const PartnersSection = ({ partnershipsTitle, partners }) => (
+const Partners = ({ partnershipsTitle, partners }) => (
   <Grid>
     <Padding
       top={{ smallPhone: 3, tablet: 4 }}
@@ -46,4 +46,4 @@ const PartnersSection = ({ partnershipsTitle, partners }) => (
   </Grid>
 )
 
-export default PartnersSection
+export default Partners
