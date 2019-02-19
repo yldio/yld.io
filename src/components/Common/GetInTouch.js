@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GreyBackground from './GreyBG'
+import GreyBackground from './GreyBackground'
 import StyledLink from './StyledLink'
 
 const RowLayout = styled(Row)`

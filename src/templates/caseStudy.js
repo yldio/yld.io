@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import Layout from '../components/layout'
 import { Grid } from '../components/grid'
-import { GreyBGOffset } from '../components/Common/GreyBG'
+import { GreyBackgroundOffset } from '../components/Common/GreyBackground'
 import Head from '../components/Common/Head'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
@@ -34,7 +34,7 @@ const CaseStudy = ({
           <FirstTextSection text={firstTextBlock} />
         </Padding>
       </Grid>
-      <GreyBGOffset topMargin topOffset={-150}>
+      <GreyBackgroundOffset topMargin topOffset={-150}>
         <Grid>
           <VideoSection videoInfo={videoInfo} />
           <Padding
@@ -44,7 +44,7 @@ const CaseStudy = ({
             <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
           </Padding>
         </Grid>
-      </GreyBGOffset>
+      </GreyBackgroundOffset>
       <Grid>
         {caseStudy.relatedCaseStudy ? (
           <Padding top={4} bottom={5}>

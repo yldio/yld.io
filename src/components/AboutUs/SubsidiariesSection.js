@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
-import BlueBG from '../Common/BlueBG'
+import BlueBackground from '../Common/BlueBackground'
 import Image from '../Common/Image'
 import { Grid, ColumnLayout, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
@@ -25,7 +25,7 @@ const PaddedCol = styled(Col)`
 `
 
 const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
-  <BlueBG>
+  <BlueBackground>
     <Grid>
       <Padding
         top={{ smallPhone: 3, tablet: 4 }}
@@ -60,7 +60,7 @@ const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
         </ColumnLayout>
       </Padding>
     </Grid>
-  </BlueBG>
+  </BlueBackground>
 )
 
 export default SubsidiariesSection

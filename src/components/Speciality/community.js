@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import BlueBackground from '../Common/BlueBG'
+import BlueBackground from '../Common/BlueBackground'
 import styled from 'styled-components'
 
 const TrimmedImage = styled.img`

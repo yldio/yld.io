@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Checkbox, Input, Label, Button, Field } from '../components/forms'
-import GreyBackground from '../components/Common/GreyBG'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const Success = () => (
   <Fragment>
