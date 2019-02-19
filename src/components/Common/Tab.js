@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 import UnstyledButton from './UnstyledButton'
@@ -7,11 +8,15 @@ import { Subtitle } from '../Typography'
 
 const TabContainer = styled.li`
   display: inline-block;
-  margin-right: ${remcalc(36)};
+  margin-right: ${remcalc(28)};
 
   &:last-child {
     margin-right: 0;
   }
+
+  ${breakpoint('phone')`
+    margin-right: ${remcalc(36)};
+  `}
 `
 
 const Text = styled(Subtitle)`
