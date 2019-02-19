@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import is from 'styled-is'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
-import menu from '../../images/menu.svg'
+
+const HamburgerSvg = styled.svg`
+  fill: currentColor;
+
+  ${is('light')`
+    fill: ${props => props.theme.colors.white};
+  `}
+`
 
 const HamburgerButton = styled.button`
   display: flex;
@@ -23,9 +31,17 @@ const HamburgerButton = styled.button`
   `};
 `
 
-const Hamburger = ({ onClick }) => (
+const Hamburger = ({ onClick, light }) => (
   <HamburgerButton onClick={onClick}>
-    <img src={menu} alt="open menu" />
+    <HamburgerSvg
+      light={light}
+      title="open menu"
+      width="24"
+      height="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 16h24v2H0zm0-8h24v2H0zm0-8h24v2H0z" fillRule="evenodd" />
+    </HamburgerSvg>
   </HamburgerButton>
 )
 

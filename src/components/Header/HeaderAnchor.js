@@ -24,7 +24,7 @@ const HeaderAnchor = styled(Anchor)`
 
   /* Styles for mobile */
   opacity: 0.5;
-  font-size: ${remcalc(28)};
+  font-size: ${remcalc(32)};
   font-weight: 500;
   line-height: 1.14;
   display: block;

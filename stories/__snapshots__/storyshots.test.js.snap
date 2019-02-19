@@ -6373,7 +6373,7 @@ exports[`Storyshots Header Navbar 1`] = `
   background: linear-gradient(to right,#616161 0%,transparent 0);
   color: #fff;
   opacity: 0.5;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 500;
   line-height: 1.14;
   display: block;
@@ -6429,14 +6429,6 @@ exports[`Storyshots Header Navbar 1`] = `
   flex-direction: column;
   padding: 0.75rem;
   padding-right: 0rem;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  max-width: 40.9375rem;
 }
 
 .c3 {
@@ -6492,10 +6484,11 @@ exports[`Storyshots Header Navbar 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding-top: 3.75rem;
 }
 
 .c5 {
@@ -6637,27 +6630,39 @@ exports[`Storyshots Header Navbar 1`] = `
 @media (min-width:29.4375em) {
   .c2 {
     position: relative;
-    top: -3.75rem;
     padding-bottom: 1.5rem;
   }
 }
 
 @media (min-width:43.8125em) {
   .c2 {
-    padding-bottom: 0.75rem;
-    position: static;
     width: auto;
     height: auto;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    padding-bottom: 0.75rem;
   }
 }
 
-@media screen and (max-width:768px) and (min-width:600px) {
+@media screen and (min-width:600px) and (max-width:901px) {
   .c2 {
+    position: static;
+    top: -3.75rem;
     padding: 2.25rem;
+  }
+}
+
+@media screen and (min-width:901px) {
+  .c2 {
+    top: 0;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 40.9375rem;
   }
 }
 
@@ -6668,6 +6673,20 @@ exports[`Storyshots Header Navbar 1`] = `
 
   .c3:last-child > a {
     padding-right: 0;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:901px) {
+  .c0 {
+    padding-top: 0;
+    width: 18.4375rem;
+    left: auto;
+    right: 0;
+    z-index: 10;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -6691,12 +6710,13 @@ exports[`Storyshots Header Navbar 1`] = `
   }
 }
 
-@media screen and (max-width:901px) and (min-width:600px) {
+@media screen and (min-width:901px) {
   .c0 {
-    width: 18.4375rem;
-    left: auto;
-    right: 0;
-    z-index: 10;
+    padding-top: 0;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
 }
 

@@ -38,27 +38,29 @@ const NavbarItems = styled.ul`
   flex-direction: column;
   padding: ${remcalc(12)};
   padding-right: ${remcalc(0)};
-  flex: 1;
-  justify-content: space-between;
-  max-width: ${remcalc(655)};
 
   ${breakpoint('phone')`
     position: relative;
-    top: -${remcalc(60)};
     padding-bottom: ${remcalc(24)};
   `}
 
   ${breakpoint('smallTablet')`
-    padding-bottom: ${remcalc(12)};
-    position: static;
     width: auto;
     height: auto;
-    flex-direction: row;
-    padding-bottom: ${remcalc(12)};
   `};
 
-  @media screen and (max-width: 768px) and (min-width: 600px) {
+  @media screen and (min-width: 600px) and (max-width: 901px) {
+    position: static;
+    top: -${remcalc(60)};
     padding: ${remcalc(36)};
+  }
+
+  @media screen and (min-width: 901px) {
+    top: 0;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: ${remcalc(655)};
   }
 `
 export const NavbarItem = styled.li`
@@ -94,7 +96,18 @@ const NavBarContainer = styled(Flex).attrs({
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  padding-top: ${remcalc(60)};
+
+  /* Showing the 'thinner version' of the navbar from 600px to tablet */
+  @media screen and (min-width: 600px) and (max-width: 901px) {
+    padding-top: 0;
+    width: ${remcalc(295)};
+    left: auto;
+    right: 0;
+    z-index: 10;
+    justify-content: center;
+  }
 
   ${breakpoint('tablet')`
     display: flex;
@@ -107,12 +120,9 @@ const NavBarContainer = styled(Flex).attrs({
     position: relative;
   `};
 
-  /* Showing the 'thinner version' of the navbar from 600px to tablet */
-  @media screen and (max-width: 901px) and (min-width: 600px) {
-    width: ${remcalc(295)};
-    left: auto;
-    right: 0;
-    z-index: 10;
+  @media screen and (min-width: 901px) {
+    padding-top: 0;
+    justify-content: flex-end;
   }
 
   ${is('open')`
