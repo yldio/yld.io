@@ -24,7 +24,7 @@ const PaddedCol = styled(Col)`
   `}
 `
 
-const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
+const Subsidiaries = ({ yldGroupTitle, subsidiaries }) => (
   <BlueBackground>
     <Grid>
       <Padding
@@ -63,4 +63,4 @@ const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
   </BlueBackground>
 )
 
-export default SubsidiariesSection
+export default Subsidiaries

@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-import SubsidiariesSection from '../components/AboutUs/SubsidiariesSection'
+import Subsidiaries from '../components/AboutUs/Subsidiaries'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   const { yldGroupTitle, subsidiaries } = content
@@ -11,10 +11,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   return (
     <Layout>
       <Head page={content} />
-      <SubsidiariesSection
-        yldGroupTitle={yldGroupTitle}
-        subsidiaries={subsidiaries}
-      />
+      <Subsidiaries yldGroupTitle={yldGroupTitle} subsidiaries={subsidiaries} />
     </Layout>
   )
 }
