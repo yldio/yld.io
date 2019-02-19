@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import BlueBackground from '../BlueBG'
+import BlueBackground from '../Common/BlueBG'
 import Flex from 'styled-flex-component'
 
 const IntroBorder = styled(Col)`

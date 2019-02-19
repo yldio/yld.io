@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
-import BlueBG from '../BlueBG'
+import BlueBG from '../Common/BlueBG'
 import Image from '../Common/Image'
 import { Grid, ColumnLayout, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'

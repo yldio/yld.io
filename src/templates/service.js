@@ -11,7 +11,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import SeoLinks from '../components/Common/seoLinks'
 import WorkStages from '../components/Service/WorkStages'
 import GreyBackground from '../components/GreyBG'
-import BlueBackground from '../components/BlueBG'
+import BlueBackground from '../components/Common/BlueBG'
 import Head from '../components/Common/Head'
 import Statement from '../components/Common/Statement'
 
