@@ -11,7 +11,7 @@ import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
-import GreyBG from '../components/GreyBG'
+import GreyBG from '../components/Common/GreyBG'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   const [modalContent, setModalContent] = useState(null)

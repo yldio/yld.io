@@ -4,7 +4,7 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
 import { DisplayTitle, BodyPrimary } from '../Typography'
-import GreyBackground from '../GreyBG'
+import GreyBackground from '../Common/GreyBG'
 import Hr from '../Common/Hr'
 
 /**

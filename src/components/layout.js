@@ -9,7 +9,7 @@ import BlueBackground from './Common/BlueBG'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
-import GreyBackground from './GreyBG'
+import GreyBackground from './Common/GreyBG'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 

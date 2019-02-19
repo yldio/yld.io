@@ -7,7 +7,7 @@ import GlobalStyle from '../src/utils/globalStyle'
 import StandaloneVideoLink from '../src/components/Common/StandaloneVideoLink'
 import { Row } from '../src/components/grid'
 import BlueBackground from '../src/components/Common/BlueBG'
-import GreyBackground from '../src/components/GreyBG'
+import GreyBackground from '../src/components/Common/GreyBG'
 
 const Theme = storyFn => (
   <ThemeProvider theme={theme}>

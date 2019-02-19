@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import BlueBackground from '../src/components/Common/BlueBG'
-import GreyBackground from '../src/components/GreyBG'
+import GreyBackground from '../src/components/Common/GreyBG'
 import { Grid, Col, Row } from '../src/components/grid'
 import SubtitleWithBody from '../src/components/Common/SubtitleWithBody'
 

@@ -4,7 +4,7 @@ import Theme from './theme'
 import CompactVideoLink from '../src/components/Common/CompactVideoLink'
 import { Row } from '../src/components/grid'
 import BlueBackground from '../src/components/Common/BlueBG'
-import GreyBackground from '../src/components/GreyBG'
+import GreyBackground from '../src/components/Common/GreyBG'
 
 addDecorator(Theme)
 
