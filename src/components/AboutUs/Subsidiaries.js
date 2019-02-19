@@ -24,7 +24,7 @@ const PaddedCol = styled(Col)`
   `}
 `
 
-const Subsidiaries = ({ yldGroupTitle, subsidiaries }) => (
+const Subsidiaries = ({ title, subsidiaries }) => (
   <BlueBackground>
     <Grid>
       <Padding
@@ -32,7 +32,7 @@ const Subsidiaries = ({ yldGroupTitle, subsidiaries }) => (
         bottom={{ smallPhone: 3.5, tablet: 5 }}
       >
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
-          <SectionTitle reverse>{yldGroupTitle}</SectionTitle>
+          <SectionTitle reverse>{title}</SectionTitle>
         </Padding>
         <ColumnLayout cols={2} items={subsidiaries}>
           {({ Col, item: subsidiary }) => {

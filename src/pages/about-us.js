@@ -11,7 +11,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   return (
     <Layout>
       <Head page={content} />
-      <Subsidiaries yldGroupTitle={yldGroupTitle} subsidiaries={subsidiaries} />
+      <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
     </Layout>
   )
 }
