@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
@@ -24,6 +24,20 @@ const PaddedCol = styled(Col)`
   `}
 `
 
+const Subsidiary = ({ image, description, linkUrl, linkText }) => (
+  <Fragment>
+    <Image image={image} width="250px" />
+    <BodyPrimary reverse muted>
+      {description}
+    </BodyPrimary>
+    {linkText ? (
+      <StyledLink reverse href={linkUrl}>
+        {linkText}
+      </StyledLink>
+    ) : null}
+  </Fragment>
+)
+
 const Subsidiaries = ({ title, subsidiaries }) => (
   <BlueBackground>
     <Grid>
@@ -45,15 +59,12 @@ const Subsidiaries = ({ title, subsidiaries }) => (
 
             return (
               <PaddedCol block={false}>
-                <Image image={image} width="250px" />
-                <BodyPrimary reverse muted>
-                  {description}
-                </BodyPrimary>
-                {linkText ? (
-                  <StyledLink reverse href={linkUrl}>
-                    {linkText}
-                  </StyledLink>
-                ) : null}
+                <Subsidiary
+                  image={image}
+                  description={description}
+                  linkText={linkText}
+                  linkUrl={linkUrl}
+                />
               </PaddedCol>
             )
           }}
