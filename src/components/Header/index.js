@@ -44,6 +44,7 @@ const Header = ({ path, blue, logoColour }) => {
                   <Logo path={path} blue={blue} logoColour={logoColour} />
                 </LogoLink>
                 <Hamburger
+                  light={!!blue}
                   onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
                 />
                 <Navbar
