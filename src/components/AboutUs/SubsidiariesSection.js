@@ -7,7 +7,7 @@ import BlueBG from '../BlueBG'
 import Image from '../Common/Image'
 import { Grid, ColumnLayout, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 
 const PaddedCol = styled(Col)`
   flex-direction: column;

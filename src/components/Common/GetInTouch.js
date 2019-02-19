@@ -5,7 +5,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../GreyBG'
-import StyledLink from '../styledLink'
+import StyledLink from './StyledLink'
 
 const RowLayout = styled(Row)`
   ${breakpoint('desktop')`

@@ -7,7 +7,7 @@ import GreyBackground from '../GreyBG'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 
 const TutorialsGrid = styled(Grid)`
   padding-bottom: ${remcalc(18)};

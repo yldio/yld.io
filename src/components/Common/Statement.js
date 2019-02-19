@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
-import StyledLink from '../styledLink'
+import StyledLink from './StyledLink'
 import GreyBackground from '../GreyBG'
 import { Row, Col } from '../grid'
 import { DisplayTitle } from '../Typography'

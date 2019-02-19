@@ -63,7 +63,7 @@ const AboutUsPage = props => (
                 url
               }
               fluid(maxWidth: 250) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid_tracedSVG
               }
             }
             linkUrl

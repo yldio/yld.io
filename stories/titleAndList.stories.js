@@ -5,7 +5,7 @@ import BlueBackground from '../src/components/BlueBG'
 import GreyBackground from '../src/components/GreyBG'
 import { Grid } from '../src/components/grid'
 import TitleAndList from '../src/components/Common/TitleAndList'
-import StyledLink from '../src/components/styledLink'
+import StyledLink from '../src/components/Common/StyledLink'
 
 addDecorator(Theme)
 
