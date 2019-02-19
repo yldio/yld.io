@@ -10,6 +10,9 @@ import { SectionTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 
 const PaddedCol = styled(Col)`
+  flex-direction: column;
+  align-items: flex-start;
+
   ${breakpoint('smallPhone')`
     padding-bottom: ${props => props.theme.spacing[3]}
     &:last-child {
