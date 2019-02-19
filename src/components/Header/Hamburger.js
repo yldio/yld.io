@@ -35,7 +35,7 @@ const Hamburger = ({ onClick, light }) => (
   <HamburgerButton onClick={onClick}>
     <HamburgerSvg
       light={light}
-      alt="open menu"
+      title="open menu"
       width="24"
       height="18"
       xmlns="http://www.w3.org/2000/svg"
