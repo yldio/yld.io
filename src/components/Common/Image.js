@@ -20,6 +20,6 @@ const Image = ({ image, alt, className, ...props }) =>
   )
 
 export default styled(Image)`
-  width: ${props => (props.width ? `${props.width}` : 'auto')};
+  width: ${props => (props.width ? `${props.width}` : '100%')};
   height: ${props => (props.height ? `${props.height}` : 'auto')};
 `

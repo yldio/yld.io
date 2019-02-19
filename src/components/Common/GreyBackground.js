@@ -19,7 +19,7 @@ const afterStyles = css`
 
 const PADDING = 50
 
-export const GreyBGOffset = styled.section`
+export const GreyBackgroundOffset = styled.section`
   background: ${props => props.theme.colors.greyBG};
 
   z-index: 1;
