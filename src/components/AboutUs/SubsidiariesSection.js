@@ -42,7 +42,7 @@ const SubsidiariesSection = ({ yldGroupTitle, subsidiaries }) => (
 
             return (
               <PaddedCol block={false}>
-                <Image image={image} />
+                <Image image={image} width="250px" />
                 <BodyPrimary reverse muted>
                   {description}
                 </BodyPrimary>
