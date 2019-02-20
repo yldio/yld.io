@@ -5,15 +5,24 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import Teams from '../components/AboutUs/Teams'
+import Partners from '../components/AboutUs/Partners'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
-  const { yldGroupTitle, subsidiaries, teamSectionTitle, teams } = content
+  const {
+    teamSectionTitle,
+    teams,
+    yldGroupTitle,
+    subsidiaries,
+    partnershipsTitle,
+    partners
+  } = content
 
   return (
     <Layout>
       <Head page={content} />
-      <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
       <Teams title={teamSectionTitle} teams={teams} />
+      <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+      <Partners title={partnershipsTitle} partners={partners} />
     </Layout>
   )
 }
@@ -91,6 +100,9 @@ const AboutUsPage = props => (
               title
               file {
                 url
+              }
+              fluid(maxWidth: 250) {
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
