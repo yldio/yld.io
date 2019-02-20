@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
 import BlueBackground from '../Common/BlueBackground'
 import Image from '../Common/Image'
-import { Grid, ColumnLayout, Col } from '../grid'
+import { Grid, Row, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
 
@@ -25,7 +25,7 @@ const PaddedCol = styled(Col)`
 `
 
 const Subsidiary = ({ image, description, linkUrl, linkText }) => (
-  <Fragment>
+  <PaddedCol block={false} width={[1, 1, 1, 1, 1 / 2]}>
     <Image image={image} width="250px" />
     <BodyPrimary reverse muted>
       {description}
@@ -35,7 +35,7 @@ const Subsidiary = ({ image, description, linkUrl, linkText }) => (
         {linkText}
       </StyledLink>
     ) : null}
-  </Fragment>
+  </PaddedCol>
 )
 
 const Subsidiaries = ({ title, subsidiaries }) => (
@@ -48,8 +48,8 @@ const Subsidiaries = ({ title, subsidiaries }) => (
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <SectionTitle reverse>{title}</SectionTitle>
         </Padding>
-        <ColumnLayout cols={2} items={subsidiaries}>
-          {({ Col, item: subsidiary }) => {
+        <Row>
+          {subsidiaries.map((subsidiary, idx) => {
             const {
               description: { description },
               image,
@@ -58,17 +58,16 @@ const Subsidiaries = ({ title, subsidiaries }) => (
             } = subsidiary
 
             return (
-              <PaddedCol block={false}>
-                <Subsidiary
-                  image={image}
-                  description={description}
-                  linkText={linkText}
-                  linkUrl={linkUrl}
-                />
-              </PaddedCol>
+              <Subsidiary
+                key={idx}
+                image={image}
+                description={description}
+                linkText={linkText}
+                linkUrl={linkUrl}
+              />
             )
-          }}
-        </ColumnLayout>
+          })}
+        </Row>
       </Padding>
     </Grid>
   </BlueBackground>
