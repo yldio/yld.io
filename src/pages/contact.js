@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
@@ -7,24 +7,23 @@ import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
-import { Checkbox, Input, Label, Button, Field } from '../components/forms'
+import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
+import Button from '../components/Common/Button'
 import GreyBackground from '../components/GreyBG'
 
-const Success = () => (
-  <Fragment>
-    <Row>
-      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-        <SectionTitle>We will be in touch</SectionTitle>
-      </Col>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-        <BodyPrimary>
-          Thanks for reaching out. We will be in contact shortly
-        </BodyPrimary>
-      </Col>
-    </Row>
-  </Fragment>
+const TitleSection = ({ title }) => (
+  <Grid>
+    <Padding
+      top={{ smallPhone: 3, tablet: 4 }}
+      bottom={{ smallPhone: 3, tablet: 4 }}
+    >
+      <Row>
+        <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
+          <SectionTitle as="h1">{title}</SectionTitle>
+        </Col>
+      </Row>
+    </Padding>
+  </Grid>
 )
 
 export const CheckBoxesContainer = styled(Col)`
@@ -124,18 +123,9 @@ class ContactUs extends Component {
     return (
       <Layout location={location}>
         <Head page={page} />
-        <Grid>
-          <Padding
-            top={{ smallPhone: 3, tablet: 4 }}
-            bottom={{ smallPhone: 3, tablet: 4 }}
-          >
-            <Row>
-              <Col width={[8 / 12]}>
-                <SectionTitle as="h1">Get in touch</SectionTitle>
-              </Col>
-            </Row>
-          </Padding>
-        </Grid>
+        <TitleSection
+          title={success ? 'We will be in touch' : 'Get in touch'}
+        />
         <GreyBackground>
           <Grid>
             <Padding
@@ -143,7 +133,13 @@ class ContactUs extends Component {
               bottom={{ smallPhone: 3.5, tablet: 5 }}
             >
               {success ? (
-                <Success />
+                <Row>
+                  <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
+                    <BodyPrimary>
+                      Thanks for reaching out. We will be in contact shortly
+                    </BodyPrimary>
+                  </Col>
+                </Row>
               ) : (
                 <form
                   name="contact"
