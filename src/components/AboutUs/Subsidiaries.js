@@ -1,31 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
 
 import BlueBackground from '../Common/BlueBackground'
 import Image from '../Common/Image'
-import { Grid, Row, Col } from '../grid'
+import { Grid, Row } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
-
-const PaddedCol = styled(Col)`
-  flex-direction: column;
-  align-items: flex-start;
-
-  ${breakpoint('smallPhone')`
-    padding-bottom: ${props => props.theme.spacing[3]}
-    &:last-child {
-      padding-bottom: 0
-    }
-  `}
-  ${breakpoint('tablet')`
-    padding-bottom: 0
-  `}
-`
+import PaddedCol from './PaddedCol'
 
 const Subsidiary = ({ image, description, linkUrl, linkText }) => (
-  <PaddedCol block={false} width={[1, 1, 1, 1, 1 / 2]}>
+  <PaddedCol width={[1, 1, 1, 1, 1 / 2]}>
     <Image image={image} width="250px" />
     <BodyPrimary reverse muted>
       {description}
