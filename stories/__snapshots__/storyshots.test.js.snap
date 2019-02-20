@@ -9763,7 +9763,7 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 exports[`Storyshots Tabs Multiple Tabs 1`] = `
 .c1 {
   display: inline-block;
-  margin-right: 2.25rem;
+  margin-right: 1.75rem;
 }
 
 .c1:last-child {
@@ -9870,6 +9870,12 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   margin: 4px;
 }
 
+@media (min-width:29.4375em) {
+  .c1 {
+    margin-right: 2.25rem;
+  }
+}
+
 <ul
   className="c0"
 >
@@ -9924,7 +9930,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 exports[`Storyshots Tabs Single Tab - active 1`] = `
 .c0 {
   display: inline-block;
-  margin-right: 2.25rem;
+  margin-right: 1.75rem;
 }
 
 .c0:last-child {
@@ -9980,6 +9986,12 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   transform: scaleX(1);
 }
 
+@media (min-width:29.4375em) {
+  .c0 {
+    margin-right: 2.25rem;
+  }
+}
+
 <li
   className="c0"
 >
@@ -9999,7 +10011,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
 exports[`Storyshots Tabs Single Tab - inactive 1`] = `
 .c0 {
   display: inline-block;
-  margin-right: 2.25rem;
+  margin-right: 1.75rem;
 }
 
 .c0:last-child {
@@ -10051,6 +10063,12 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   -webkit-transform: scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    margin-right: 2.25rem;
+  }
 }
 
 <li
