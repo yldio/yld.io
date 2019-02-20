@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 
 import { SectionTitle, BodyPrimary } from '../components/Typography'
-import { Button } from '../components/forms'
+import Button from '../components/Common/Button'
 import Layout from '../components/layout'
 
 const HomePageLink = styled(Button)`
