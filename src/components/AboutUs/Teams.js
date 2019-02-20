@@ -8,10 +8,6 @@ import GreyBackground from '../Common/GreyBackground'
 import StaffCard from './StaffCard'
 
 const Team = ({ members }) => {
-  if (!members) {
-    return null
-  }
-
   return (
     <Padding top={{ smallPhone: 3, tablet: 4 }}>
       <Row>
