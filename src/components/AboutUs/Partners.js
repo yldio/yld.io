@@ -22,6 +22,16 @@ const PaddedCol = styled(Col)`
   `}
 `
 
+const Partner = ({ image }) => (
+  <PaddedCol block={false} width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 3 / 12]}>
+    <Image
+      image={image}
+      width="250px"
+      style={{ filter: 'grayscale(1)', saturate: '0' }}
+    />
+  </PaddedCol>
+)
+
 const Partners = ({ title, partners }) => (
   <Grid>
     <Padding
@@ -33,17 +43,7 @@ const Partners = ({ title, partners }) => (
       </Padding>
       <Row>
         {partners.map((partner, idx) => (
-          <PaddedCol
-            key={idx}
-            block={false}
-            width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 3 / 12]}
-          >
-            <Image
-              image={partner.image}
-              width="250px"
-              style={{ filter: 'grayscale(1)', saturate: '0' }}
-            />
-          </PaddedCol>
+          <Partner key={idx} image={partner.image} />
         ))}
       </Row>
     </Padding>
