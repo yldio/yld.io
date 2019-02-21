@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 
-const Button = styled.button`
-  border: 0;
+export const UnstyledButton = styled.button`
+  border: none;
+  background: transparent;
+  padding: 0;
+`
+
+const Button = styled(UnstyledButton)`
   display: block;
   padding: ${remcalc(18)} ${remcalc(24)};
   color: ${props => props.theme.colors.white};
