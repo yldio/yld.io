@@ -3,12 +3,20 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
+import AboutUsHero from '../components/AboutUs/AboutUsHero'
 import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import Teams from '../components/AboutUs/Teams'
 import Partners from '../components/AboutUs/Partners'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
   const {
+    statementText,
+    supportingStatement1Icon,
+    supportingStatement1Text,
+    supportingStatement2Icon,
+    supportingStatement2Text,
+    supportingStatement3Icon,
+    supportingStatement3Text,
     teamSectionTitle,
     teams,
     yldGroupTitle,
@@ -17,9 +25,28 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     partners
   } = content
 
+  const supportingStatements = [
+    {
+      icon: supportingStatement1Icon,
+      text: supportingStatement1Text
+    },
+    {
+      icon: supportingStatement2Icon,
+      text: supportingStatement2Text
+    },
+    {
+      icon: supportingStatement3Icon,
+      text: supportingStatement3Text
+    }
+  ]
+
   return (
     <Layout>
       <Head page={content} />
+      <AboutUsHero
+        statementText={statementText}
+        supportingStatements={supportingStatements}
+      />
       <Teams title={teamSectionTitle} teams={teams} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
       <Partners title={partnershipsTitle} partners={partners} />
@@ -35,6 +62,37 @@ const AboutUsPage = props => (
           title
           seoTitle
           seoDescription
+          statementText
+          supportingStatement1Icon {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          supportingStatement1Text
+          supportingStatement2Icon {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          supportingStatement2Text
+          supportingStatement3Icon {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          supportingStatement3Text
           teamSectionTitle
           teams {
             name
