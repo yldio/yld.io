@@ -2,8 +2,9 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
-import { Col } from '../../grid'
+
 import CaseStudyLayout from './CaseStudyLayout'
+import { Col } from '../../grid'
 import { SectionTitle, Subtitle } from '../../Typography'
 import SeoLinks from '../seoLinks'
 

@@ -93,9 +93,8 @@ const IndexPage = ({
   return (
     <Layout>
       <Head page={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} />
       <Grid>
-        <CaseStudyHero caseStudy={caseStudy} />
-        <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             <SectionTitle>The challenge</SectionTitle>
@@ -301,11 +300,10 @@ const IndexPage = ({
       </Padding>
       <Divider />
       {caseStudy.relatedCaseStudy ? (
-        <Grid>
-          <Padding bottom={5} top={{ smallPhone: 3.5, tablet: 4 }}>
-            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
-          </Padding>
-        </Grid>
+        <CaseStudyPreview
+          isTop={false}
+          caseStudy={caseStudy.relatedCaseStudy}
+        />
       ) : null}
     </Layout>
   )

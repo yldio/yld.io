@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
+
 import CaseStudyLayout from './CaseStudyLayout'
 import { SectionTitle, BodyPrimary } from '../../Typography'
 import StyledLink from '../../styledLink'
@@ -32,11 +33,12 @@ const RightHandText = ({ title, introSentence, slug }) => (
   </Fragment>
 )
 
-const CaseStudyPreview = ({ caseStudy }) => {
+const CaseStudyPreview = ({ isTop, caseStudy }) => {
   const introSentence = getIntroSentence(caseStudy)
   const { posterImage, title, slug } = caseStudy
   return (
     <CaseStudyLayout
+      isTop={isTop}
       posterImage={posterImage}
       headings={<Headings title={title} />}
       textBelowImage={

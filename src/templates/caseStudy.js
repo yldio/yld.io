@@ -25,14 +25,9 @@ const CaseStudy = ({
   return (
     <Layout location={location}>
       <Head page={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} />
       <Grid>
-        <CaseStudyHero caseStudy={caseStudy} />
-        <Padding
-          top={{ smallPhone: 3, tablet: 4 }}
-          bottom={{ smallPhone: 3, tablet: 4 }}
-        >
-          <FirstTextSection text={firstTextBlock} />
-        </Padding>
+        <FirstTextSection text={firstTextBlock} />
       </Grid>
       <GreyBGOffset topMargin topOffset={-150}>
         <Grid>
@@ -47,9 +42,10 @@ const CaseStudy = ({
       </GreyBGOffset>
       <Grid>
         {caseStudy.relatedCaseStudy ? (
-          <Padding top={4} bottom={5}>
-            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
-          </Padding>
+          <CaseStudyPreview
+            isTop={false}
+            caseStudy={caseStudy.relatedCaseStudy}
+          />
         ) : null}
       </Grid>
     </Layout>
