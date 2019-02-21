@@ -10,7 +10,7 @@ import Head from '../components/Common/Head'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
 import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
-import VideoSection from '../components/TemplatedCaseStudy/VideoSection'
+import VideoSection from '../components/Common/VideoSection'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const CaseStudy = ({
@@ -36,7 +36,7 @@ const CaseStudy = ({
       </Grid>
       <GreyBackgroundOffset topMargin topOffset={-150}>
         <Grid>
-          <VideoSection videoInfo={videoInfo} />
+          <VideoSection videoLink={videoInfo[0]} />
           <Padding
             top={{ smallPhone: 3, tablet: 4 }}
             bottom={{ smallPhone: 3.5, tablet: 4 }}
