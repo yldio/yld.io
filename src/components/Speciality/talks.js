@@ -24,7 +24,7 @@ const TalksSection = ({ talks: allTalks, videoIcon }) => {
           </Row>
           {featured && (
             <Padding top={3}>
-              <VideoSection videoLink={featured.link} />
+              <VideoSection src={featured.link} />
             </Padding>
           )}
           <Padding top={4} bottom={4}>

@@ -36,7 +36,7 @@ const CaseStudy = ({
       </Grid>
       <GreyBackgroundOffset topMargin topOffset={-150}>
         <Grid>
-          <VideoSection videoLink={videoInfo[0]} />
+          <VideoSection src={videoInfo[0]} />
           <Padding
             top={{ smallPhone: 3, tablet: 4 }}
             bottom={{ smallPhone: 3.5, tablet: 4 }}

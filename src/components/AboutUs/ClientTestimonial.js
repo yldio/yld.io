@@ -22,7 +22,7 @@ const ClientTestimonial = ({ title, video }) => (
             </Col>
           </Row>
         </Padding>
-        <VideoSection videoLink={video.link} />
+        <VideoSection src={video.link} />
       </Padding>
     </Grid>
   </GreyBackground>

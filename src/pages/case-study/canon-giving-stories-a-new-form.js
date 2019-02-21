@@ -181,14 +181,14 @@ const IndexPage = ({
       </Grid>
 
       <MobileOnly>
-        <VideoSection videoLink="https://www.youtube.com/embed/MPPk-BkImsc" />
+        <VideoSection src="https://www.youtube.com/embed/MPPk-BkImsc" />
       </MobileOnly>
 
       <GreyBackgroundOffset topMargin topOffset={-150}>
         <NoMobile>
           <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>
-              <VideoSection videoLink="https://www.youtube.com/embed/MPPk-BkImsc" />
+              <VideoSection src="https://www.youtube.com/embed/MPPk-BkImsc" />
             </Grid>
           </Padding>
         </NoMobile>

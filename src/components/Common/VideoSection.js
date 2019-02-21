@@ -28,13 +28,13 @@ const CenteredRow = styled(Row)`
   justify-content: center;
 `
 
-const VideoSection = ({ videoLink }) => (
+const VideoSection = ({ src }) => (
   <CenteredRow>
     <Col width={[1, 1, 1, 10 / 12]}>
       <VideoRatioContainer height={480} width={854}>
         <Video
           align="middle"
-          src={videoLink}
+          src={src}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
