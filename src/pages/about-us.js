@@ -6,6 +6,8 @@ import Head from '../components/Common/Head'
 import AboutUsHero from '../components/AboutUs/AboutUsHero'
 import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import Teams from '../components/AboutUs/Teams'
+import Subsidiaries from '../components/AboutUs/Subsidiaries'
+import ClientTestimonial from '../components/AboutUs/ClientTestimonial'
 import Partners from '../components/AboutUs/Partners'
 
 const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
@@ -21,6 +23,8 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     teams,
     yldGroupTitle,
     subsidiaries,
+    clientTestimonialTitle,
+    clientTestimonialVideo,
     partnershipsTitle,
     partners
   } = content
@@ -49,6 +53,10 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
       />
       <Teams title={teamSectionTitle} teams={teams} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+      <ClientTestimonial
+        title={clientTestimonialTitle}
+        video={clientTestimonialVideo}
+      />
       <Partners title={partnershipsTitle} partners={partners} />
     </Layout>
   )
@@ -108,7 +116,7 @@ const AboutUsPage = props => (
                   url
                 }
                 fluid(maxWidth: 500) {
-                  ...GatsbyContentfulFluid_tracedSVG
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
               socialLinks {
