@@ -15,15 +15,7 @@ const SupportingStatement = ({ icon, text }) => (
   </PaddedCol>
 )
 
-const AboutUsHero = ({
-  statementText,
-  supportingStatement1Icon,
-  supportingStatement1Text,
-  supportingStatement2Icon,
-  supportingStatement2Text,
-  supportingStatement3Icon,
-  supportingStatement3Text
-}) => (
+const AboutUsHero = ({ statementText, supportingStatements }) => (
   <Grid>
     <Padding
       top={{ smallPhone: 3.5, tablet: 5 }}
@@ -37,18 +29,13 @@ const AboutUsHero = ({
         </Padding>
       </Row>
       <Row>
-        <SupportingStatement
-          icon={supportingStatement1Icon}
-          text={supportingStatement1Text}
-        />
-        <SupportingStatement
-          icon={supportingStatement2Icon}
-          text={supportingStatement2Text}
-        />
-        <SupportingStatement
-          icon={supportingStatement3Icon}
-          text={supportingStatement3Text}
-        />
+        {supportingStatements.map((supportingStatement, idx) => (
+          <SupportingStatement
+            key={idx}
+            icon={supportingStatement.icon}
+            text={supportingStatement.text}
+          />
+        ))}
       </Row>
     </Padding>
   </Grid>

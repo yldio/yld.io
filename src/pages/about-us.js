@@ -25,17 +25,27 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     partners
   } = content
 
+  const supportingStatements = [
+    {
+      icon: supportingStatement1Icon,
+      text: supportingStatement1Text
+    },
+    {
+      icon: supportingStatement2Icon,
+      text: supportingStatement2Text
+    },
+    {
+      icon: supportingStatement3Icon,
+      text: supportingStatement3Text
+    }
+  ]
+
   return (
     <Layout>
       <Head page={content} />
       <AboutUsHero
         statementText={statementText}
-        supportingStatement1Icon={supportingStatement1Icon}
-        supportingStatement1Text={supportingStatement1Text}
-        supportingStatement2Icon={supportingStatement2Icon}
-        supportingStatement2Text={supportingStatement2Text}
-        supportingStatement3Icon={supportingStatement3Icon}
-        supportingStatement3Text={supportingStatement3Text}
+        supportingStatements={supportingStatements}
       />
       <Teams title={teamSectionTitle} teams={teams} />
       <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
