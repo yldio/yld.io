@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
-import UnstyledButton from './UnstyledButton'
+import { UnstyledButton } from './Button'
 import { Subtitle } from '../Typography'
 
 const TabContainer = styled.li`

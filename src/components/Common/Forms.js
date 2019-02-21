@@ -47,22 +47,6 @@ export const Label = styled('label')`
   display: block;
 `
 
-export const Button = styled.button`
-  border: 0;
-  display: block;
-  padding: ${remcalc(18)} ${remcalc(24)};
-  color: ${props => props.theme.colors.white};
-  background: ${props => props.theme.colors.text};
-  font-weight: bold;
-  font-size: ${remcalc(18)};
-  line-height: ${remcalc(24)};
-  box-sizing: border-box;
-
-  :disabled {
-    opacity: 0.5;
-  }
-`
-
 export const Field = styled.section`
   margin-bottom: ${remcalc(36)};
 

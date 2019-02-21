@@ -4161,7 +4161,9 @@ exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint spaced 1`] = `
 
 exports[`Storyshots Form Button 1`] = `
 .c0 {
-  border: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
   display: block;
   padding: 1.125rem 1.5rem;
   color: #fff;

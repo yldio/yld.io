@@ -5,10 +5,10 @@ import {
   Checkbox,
   Input,
   Label,
-  Button,
   Field,
   Fieldset
-} from '../src/components/forms'
+} from '../src/components/Common/Forms'
+import Button from '../src/components/Common/Button'
 
 addDecorator(Theme)
 

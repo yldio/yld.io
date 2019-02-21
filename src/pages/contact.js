@@ -1,55 +1,19 @@
 import React, { Component, Fragment } from 'react'
-import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import { Padding, Margin } from 'styled-components-spacing'
+import { Padding } from 'styled-components-spacing'
+
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-import { SectionTitle, BodyPrimary } from '../components/Typography'
-import { Checkbox, Input, Label, Button, Field } from '../components/forms'
+import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
+import Button from '../components/Common/Button'
 import GreyBackground from '../components/GreyBG'
+import TitleSection from '../components/ContactUs/TitleSection'
+import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
+import ThankYouMessage from '../components/ContactUs/ThankYouMessage'
 
-const Success = () => (
-  <Fragment>
-    <Row>
-      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-        <SectionTitle>We will be in touch</SectionTitle>
-      </Col>
-    </Row>
-    <Row>
-      <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
-        <BodyPrimary>
-          Thanks for reaching out. We will be in contact shortly
-        </BodyPrimary>
-      </Col>
-    </Row>
-  </Fragment>
-)
-
-export const CheckBoxesContainer = styled(Col)`
-  display: flex;
-  flex-flow: row wrap;
-  margin-bottom: ${remcalc(36)};
-
-  /* Since these columns are inside a column,
-     we have to reset the padding on the edges */
-  > * {
-    display: flex;
-    align-items: center;
-    margin-bottom: ${remcalc(24)};
-
-    &:nth-child(odd) {
-      padding-left: 0;
-    }
-
-    &:nth-child(even) {
-      padding-right: 0;
-    }
-  }
-`
-
-const checkboxes = [
+const interests = [
   { name: 'engineering', label: 'Engineering services' },
   { name: 'design', label: 'Design services' },
   { name: 'training', label: 'Training services' },
@@ -124,49 +88,33 @@ class ContactUs extends Component {
     return (
       <Layout location={location}>
         <Head page={page} />
-        <GreyBackground>
-          <Grid mt={4}>
-            {success ? (
-              <Success />
-            ) : (
-              <Fragment>
-                <SectionTitle as="h1" style={{ transform: 'translateY(20%)' }}>
-                  Get in touch
-                </SectionTitle>
-                <Margin top={2}>
-                  <form
-                    name="contact"
-                    method="post"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                    onSubmit={this.handleSubmit}
-                    style={{ width: '100%' }}
-                  >
-                    <input type="hidden" name="form-name" value="contact" />
-                    <Row mt={2}>
-                      <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12]}>
-                        <Margin bottom={1}>
-                          <Label>What are you interested in?</Label>
-                        </Margin>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <CheckBoxesContainer
-                        width={[1, 1, 1, 1, 10 / 12, 8 / 12]}
-                      >
-                        {checkboxes.map(c => (
-                          <Col width={[1, 1, 1, 1, 6 / 12]} key={c.name}>
-                            <Checkbox
-                              type="checkbox"
-                              id={c.name}
-                              name={c.name}
-                              onChange={this.handleChangeCheckbox}
-                            />
-                            <label htmlFor={c.name}>{c.label}</label>
-                          </Col>
-                        ))}
-                      </CheckBoxesContainer>
-                    </Row>
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
+          style={{ width: '100%' }}
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <TitleSection
+            title={success ? 'We will be in touch' : 'Get in touch'}
+          />
+          <GreyBackground>
+            <Grid>
+              <Padding
+                top={{ smallPhone: 3, tablet: 4 }}
+                bottom={{ smallPhone: 3.5, tablet: 5 }}
+              >
+                {success ? (
+                  <ThankYouMessage message="Thanks for reaching out. We will be in contact shortly" />
+                ) : (
+                  <Fragment>
+                    <AreasOfInterest
+                      title="What are you interested in?"
+                      interests={interests}
+                      onChange={this.handleChangeCheckbox}
+                    />
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
                         <Label htmlFor="message">Tell us a bit more</Label>
@@ -229,13 +177,12 @@ class ContactUs extends Component {
                         </Button>
                       </Col>
                     </Row>
-                  </form>
-                </Margin>
-              </Fragment>
-            )}
-            <Padding bottom={5} />
-          </Grid>
-        </GreyBackground>
+                  </Fragment>
+                )}
+              </Padding>
+            </Grid>
+          </GreyBackground>
+        </form>
       </Layout>
     )
   }
