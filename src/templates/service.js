@@ -101,9 +101,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
           </Grid>
         </Padding>
       </GreyBackground>
-      {service.bottomCaseStudy ? (
-        <CaseStudyPreview isTop={false} caseStudy={service.bottomCaseStudy} />
-      ) : null}
+      <CaseStudyPreview isTop={false} caseStudy={service.bottomCaseStudy} />
     </Layout>
   )
 }

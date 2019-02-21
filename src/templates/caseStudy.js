@@ -40,14 +40,7 @@ const CaseStudy = ({
           </Padding>
         </Grid>
       </GreyBGOffset>
-      <Grid>
-        {caseStudy.relatedCaseStudy ? (
-          <CaseStudyPreview
-            isTop={false}
-            caseStudy={caseStudy.relatedCaseStudy}
-          />
-        ) : null}
-      </Grid>
+      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
 }

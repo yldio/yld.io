@@ -34,6 +34,10 @@ const RightHandText = ({ title, introSentence, slug }) => (
 )
 
 const CaseStudyPreview = ({ isTop, caseStudy }) => {
+  if (!caseStudy) {
+    return null
+  }
+
   const introSentence = getIntroSentence(caseStudy)
   const { posterImage, title, slug } = caseStudy
   return (

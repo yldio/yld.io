@@ -299,12 +299,7 @@ const IndexPage = ({
         </Grid>
       </Padding>
       <Divider />
-      {caseStudy.relatedCaseStudy ? (
-        <CaseStudyPreview
-          isTop={false}
-          caseStudy={caseStudy.relatedCaseStudy}
-        />
-      ) : null}
+      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
 }
