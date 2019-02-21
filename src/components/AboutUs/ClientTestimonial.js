@@ -16,9 +16,7 @@ const ClientTestimonial = ({ title, video }) => (
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-              <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
-                <SectionTitle>{title}</SectionTitle>
-              </Padding>
+              <SectionTitle>{title}</SectionTitle>
             </Col>
           </Row>
         </Padding>
