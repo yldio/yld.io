@@ -1,23 +1,13 @@
 import React from 'react'
-import remcalc from 'remcalc'
-import Flex from 'styled-flex-component'
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import StyledLink from '../Common/StyledLink'
-import BlueBackground from '../Common/BlueBackground'
-import styled from 'styled-components'
-import CompactVideoLink from '../Common/CompactVideoLink'
-import theme from '../../utils/theme'
 
-const Video = styled.iframe`
-  width: ${remcalc(854)};
-  height: ${remcalc(480)};
-  margin: auto;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 90px rgba(255, 255, 255, 0.2),
-    0px 0px 20px rgba(255, 255, 255, 0.07);
-`
+import BlueBackground from '../Common/BlueBackground'
+import { Grid, Row, Col } from '../grid'
+import { SectionTitle } from '../Typography'
+import VideoSection from '../Common/VideoSection'
+import CompactVideoLink from '../Common/CompactVideoLink'
+import StyledLink from '../Common/StyledLink'
+import theme from '../../utils/theme'
 
 const TalksSection = ({ talks: allTalks, videoIcon }) => {
   const talks = allTalks.filter(({ type, featured, cta }) => !featured && !cta)
@@ -34,19 +24,7 @@ const TalksSection = ({ talks: allTalks, videoIcon }) => {
           </Row>
           {featured && (
             <Padding top={3}>
-              <Row>
-                <Col width={[1]}>
-                  <Flex justifyCenter alignCenter>
-                    <Video
-                      align="middle"
-                      src={featured.link}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </Flex>
-                </Col>
-              </Row>
+              <VideoSection src={featured.link} />
             </Padding>
           )}
           <Padding top={4} bottom={4}>

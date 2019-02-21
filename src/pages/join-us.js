@@ -96,7 +96,7 @@ const JoinUsPage = props => (
                 url
               }
               fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid_withWebp
               }
             }
           }
