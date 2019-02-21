@@ -29,21 +29,19 @@ const CenteredRow = styled(Row)`
 `
 
 const ClientTestimonialVideo = ({ video }) => (
-  <Padding top={{ smallPhone: 3, tablet: 4 }}>
-    <CenteredRow>
-      <Col width={[1, 1, 1, 10 / 12]}>
-        <VideoRatioContainer height={480} width={854}>
-          <Video
-            align="middle"
-            src={video.link}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </VideoRatioContainer>
-      </Col>
-    </CenteredRow>
-  </Padding>
+  <CenteredRow>
+    <Col width={[1, 1, 1, 10 / 12]}>
+      <VideoRatioContainer height={480} width={854}>
+        <Video
+          align="middle"
+          src={video.link}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </VideoRatioContainer>
+    </Col>
+  </CenteredRow>
 )
 
 const ClientTestimonial = ({ title, video }) => {
@@ -56,7 +54,9 @@ const ClientTestimonial = ({ title, video }) => {
         >
           <Row>
             <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-              <SectionTitle>{title}</SectionTitle>
+              <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
+                <SectionTitle>{title}</SectionTitle>
+              </Padding>
             </Col>
           </Row>
           <ClientTestimonialVideo video={video} />
