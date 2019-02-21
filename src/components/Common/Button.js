@@ -12,7 +12,7 @@ const Button = styled.button`
   line-height: ${remcalc(24)};
   box-sizing: border-box;
 
-  :disabled {
+  &:disabled {
     opacity: 0.5;
   }
 `
