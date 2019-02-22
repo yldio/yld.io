@@ -52,11 +52,7 @@ const WorkStage = ({ workStage }) => {
               source={body}
               renderers={{
                 paragraph: props => <BodyPrimary muted reverse {...props} />,
-                listItem: props => (
-                  <Padding top={1}>
-                    <CustomisedBulletpoint muted {...props} />
-                  </Padding>
-                )
+                listItem: props => <CustomisedBulletpoint muted {...props} />
               }}
             />
             {/* eslint-enable react/display-name */}

@@ -51,12 +51,10 @@ const Approach = ({ title, content, formats }) => (
                 {format.description}
               </BodyPrimary>
               <Padding top={1} style={{ maxWidth: '80%' }}>
-                {format.bulletPoints.map((point, i) => (
-                  <Padding top={1} key={i}>
-                    <CustomisedBulletpoint muted reverse>
-                      {point}
-                    </CustomisedBulletpoint>
-                  </Padding>
+                {format.bulletPoints.map((point, idx) => (
+                  <CustomisedBulletpoint key={idx} muted reverse>
+                    {point}
+                  </CustomisedBulletpoint>
                 ))}
               </Padding>
             </Padding>
