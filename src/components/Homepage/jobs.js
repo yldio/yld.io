@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import StyledLink from '../styledLink'
 import { SectionTitle, Subtitle } from '../Typography'
 import Jobs from '../jobsByLocation'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
 
 const JobContainer = styled.ul`

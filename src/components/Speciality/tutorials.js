@@ -5,7 +5,7 @@ import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import GreyBackground from '../GreyBG'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import StyledLink from '../styledLink'
 

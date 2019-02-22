@@ -5,7 +5,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../styledLink'
 import Posts from '../posts'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import makeBlogPosts from '../../utils/makeBlogPosts'
 
 const BlogPosts = ({ title }) => (

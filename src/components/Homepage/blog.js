@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import StyledLink from '../styledLink'
 import { SectionTitle, Subtitle } from '../Typography'
 import Posts from '../posts'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 
 const Blog = () => (
   <Row>
