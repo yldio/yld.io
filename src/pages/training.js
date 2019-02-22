@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
-import { Padding } from 'styled-components-spacing'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
@@ -8,7 +7,7 @@ import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import Modal from '../components/Training/Modal'
-import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 import GreyBG from '../components/GreyBG'
@@ -48,15 +47,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
     <Layout>
       <Head page={content} />
       <Modal content={modalContent} toggleModal={toggleModal} />
-      <Grid>
-        <Padding
-          bottom={{ smallPhone: 0, smallTablet: 2, desktop: 2 }}
-          top={3.5}
-        >
-          <CaseStudy caseStudy={content.featuredCaseStudy} />
-        </Padding>
-        <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
-      </Grid>
+      <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
       <GreyBG>
         <Grid>
           <Statement richText={content.seoText.content[0].content} />
@@ -75,19 +66,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
         title={`${content.contactUsTitle}`}
         contactText={content.contactUsText.contactUsText}
       />
-      <Grid>
-        {content.relatedCaseStudy ? (
-          <Padding
-            top={{ smallPhone: 3, smallTablet: 5 }}
-            bottom={{ smallPhone: 3.5, smallTablet: 5 }}
-          >
-            <CaseStudy
-              subHeading="Featured work"
-              caseStudy={content.relatedCaseStudy}
-            />
-          </Padding>
-        ) : null}
-      </Grid>
+      <CaseStudyPreview caseStudy={content.relatedCaseStudy} />
     </Layout>
   )
 }
