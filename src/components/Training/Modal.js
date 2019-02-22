@@ -8,7 +8,7 @@ import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
 import remcalc from 'remcalc'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 import SubtitleWithBody, {

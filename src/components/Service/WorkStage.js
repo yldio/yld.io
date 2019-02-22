@@ -6,7 +6,7 @@ import { Row, Col } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import getSections from './getSections'
 import TitleAndList from '../Common/TitleAndList'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import theme from '../../utils/theme'
 
 const WorkStage = ({ workStage }) => {

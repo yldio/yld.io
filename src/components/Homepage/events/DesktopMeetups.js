@@ -4,7 +4,7 @@ import { Col } from '../../grid'
 import eventIcon from './assets/homepage-event-icon.svg'
 import { SectionTitle, Subtitle } from '../../Typography'
 import { getHomepageMeetups } from './getEvents'
-import CustomisedBulletpoint from '../../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../../Common/CustomisedBulletpoint'
 import ExternalAnchor from '../../Common/ExternalAnchor'
 
 const DesktopMeetups = ({ events }) => (

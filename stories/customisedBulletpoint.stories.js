@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import CustomisedBulletpoint from '../src/components/CustomisedBulletpoint'
+import CustomisedBulletpoint from '../src/components/Common/CustomisedBulletpoint'
 
 addDecorator(Theme)
 
