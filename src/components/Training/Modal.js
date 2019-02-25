@@ -131,9 +131,7 @@ const CourseContent = ({ content }) => (
               <ul {...props} />
             </Padding>
           ),
-          listItem: props => (
-            <CustomisedBulletpoint style={{ maxWidth: 430 }} {...props} />
-          )
+          listItem: props => <CustomisedBulletpoint fullWidth {...props} />
         }}
         source={content.content.content}
       />
