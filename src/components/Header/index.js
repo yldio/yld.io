@@ -37,8 +37,8 @@ const Header = ({ path, blue, logoColour }) => {
     <Grid as="header">
       <Row>
         <Col width={[1]}>
-          <Padding top={2} bottom={3}>
-            <Flex alignCenter wrap justifyBetween>
+          <Padding bottom={3}>
+            <Flex alignCenter justifyBetween>
               <LogoLink to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
               </LogoLink>

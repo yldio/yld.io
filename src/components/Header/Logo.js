@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
 import LogoEngComponent from '../../images/eng-logo-component'
@@ -11,6 +12,11 @@ const HiddenText = styled.h1`
   left: -9999px;
 `
 
+const YLDLogoImageWrapper = styled.div`
+  padding-top: 25px;
+  padding-bottom: 23px;
+`
+
 const Logo = ({ path, logoColour, blue }) => {
   const name = path.split('/').join('')
   return (
@@ -19,13 +25,25 @@ const Logo = ({ path, logoColour, blue }) => {
       !path.includes('design') &&
       !path.includes('training') &&
       !blue ? (
-        <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
+        <YLDLogoImageWrapper>
+          <img
+            role="link"
+            tab-index="0"
+            height="36"
+            src={logo}
+            alt="yld logo"
+          />
+        </YLDLogoImageWrapper>
       ) : null}
 
       {path.includes('engineering') || blue ? (
         <Fragment>
           <HiddenText>{name}</HiddenText>
-          <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
+          <LogoEngComponent
+            style={{ display: 'block' }}
+            boxColour={logoColour}
+            backgroundBlue={blue}
+          />
         </Fragment>
       ) : null}
 
@@ -38,6 +56,7 @@ const Logo = ({ path, logoColour, blue }) => {
             height="48"
             src={logoTraining}
             alt="yld training logo"
+            style={{ display: 'block' }}
           />
         </Fragment>
       ) : null}
@@ -51,6 +70,7 @@ const Logo = ({ path, logoColour, blue }) => {
             height="48"
             src={logoDesign}
             alt="yld design logo"
+            style={{ display: 'block' }}
           />
         </Fragment>
       ) : null}
