@@ -34,89 +34,87 @@ const Header = ({ path, blue, logoColour }) => {
   const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
   return (
-    <Grid>
+    <Grid as="header">
       <Row>
         <Col width={[1]}>
-          <header>
-            <Padding top={2} bottom={3}>
-              <Flex alignCenter wrap justifyBetween>
-                <LogoLink to="/">
-                  <Logo path={path} blue={blue} logoColour={logoColour} />
-                </LogoLink>
-                <Hamburger
+          <Padding top={2} bottom={3}>
+            <Flex alignCenter wrap justifyBetween>
+              <LogoLink to="/">
+                <Logo path={path} blue={blue} logoColour={logoColour} />
+              </LogoLink>
+              <Hamburger
+                light={!!blue}
+                onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+              />
+              <Navbar
+                isOpen={isMobileNavbarOpen}
+                onClose={() => toggleMobileNavbar(false)}
+              >
+                <HomeLink activeClassName="active" to="/">
+                  Home
+                </HomeLink>
+                <HeaderAnchor
                   light={!!blue}
-                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
-                />
-                <Navbar
-                  isOpen={isMobileNavbarOpen}
-                  onClose={() => toggleMobileNavbar(false)}
+                  activeClassName="active"
+                  to="/engineering/"
                 >
-                  <HomeLink activeClassName="active" to="/">
-                    Home
-                  </HomeLink>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/engineering/"
-                  >
-                    Engineering
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/design/"
-                  >
-                    Design
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/training/"
-                  >
-                    Training
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/our-work/"
-                  >
-                    Our work
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/about-us/"
-                  >
-                    About us
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/contact/"
-                  >
-                    Contact
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    href="https://medium.com/yld-engineering-blog/"
-                  >
-                    Blog
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/join-us/"
-                  >
-                    Join Us
-                  </HeaderAnchor>
-                </Navbar>
-                <Overlay
-                  visible={isMobileNavbarOpen}
-                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
-                />
-              </Flex>
-            </Padding>
-          </header>
+                  Engineering
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/design/"
+                >
+                  Design
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/training/"
+                >
+                  Training
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/our-work/"
+                >
+                  Our work
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/about-us/"
+                >
+                  About us
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/contact/"
+                >
+                  Contact
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  href="https://medium.com/yld-engineering-blog/"
+                >
+                  Blog
+                </HeaderAnchor>
+                <HeaderAnchor
+                  light={!!blue}
+                  activeClassName="active"
+                  to="/join-us/"
+                >
+                  Join Us
+                </HeaderAnchor>
+              </Navbar>
+              <Overlay
+                visible={isMobileNavbarOpen}
+                onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+              />
+            </Flex>
+          </Padding>
         </Col>
       </Row>
     </Grid>
