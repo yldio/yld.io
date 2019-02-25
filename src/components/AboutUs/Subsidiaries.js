@@ -9,16 +9,18 @@ import StyledLink from '../Common/StyledLink'
 import PaddedCol from './PaddedCol'
 
 const Subsidiary = ({ image, description, linkUrl, linkText }) => (
-  <PaddedCol width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-    <Image image={image} width="250px" />
-    <BodyPrimary reverse muted>
-      {description}
-    </BodyPrimary>
-    {linkText ? (
-      <StyledLink reverse href={linkUrl}>
-        {linkText}
-      </StyledLink>
-    ) : null}
+  <PaddedCol width={[1, 1, 1, 1, 6 / 12]}>
+    <PaddedCol width={[1, 1, 1, 1, 1, 5 / 6]} px={0}>
+      <Image image={image} width="250px" />
+      <BodyPrimary reverse muted>
+        {description}
+      </BodyPrimary>
+      {linkText ? (
+        <StyledLink reverse href={linkUrl}>
+          {linkText}
+        </StyledLink>
+      ) : null}
+    </PaddedCol>
   </PaddedCol>
 )
 
@@ -32,7 +34,7 @@ const Subsidiaries = ({ title, subsidiaries }) => (
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <SectionTitle reverse>{title}</SectionTitle>
         </Padding>
-        <Row spaced>
+        <Row>
           {subsidiaries.map((subsidiary, idx) => {
             const {
               description: { description },
