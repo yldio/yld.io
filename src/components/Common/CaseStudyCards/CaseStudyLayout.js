@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../grid'
 import Image from '../Image'
@@ -25,9 +26,9 @@ const RowLayout = styled(Row)`
 
   ${breakpoint('tablet')`
     padding-top: ${props =>
-      props.isTop ? props.theme.spacing[3.5] : props.theme.spacing[5]};
+      props.isTop ? remcalc(51) : props.theme.spacing[5]};
     padding-bottom: ${props =>
-      props.isTop ? props.theme.spacing[5] : props.theme.spacing[5]};
+      props.isTop ? remcalc(86) : props.theme.spacing[5]};
   `}
 
   /* creates extra column of space between image & text on RHS */

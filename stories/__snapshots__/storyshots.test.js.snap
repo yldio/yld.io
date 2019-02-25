@@ -1884,8 +1884,8 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 3.375rem;
-    padding-bottom: 6.75rem;
+    padding-top: 3.1875rem;
+    padding-bottom: 5.375rem;
   }
 }
 
@@ -2571,8 +2571,8 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 3.375rem;
-    padding-bottom: 6.75rem;
+    padding-top: 3.1875rem;
+    padding-bottom: 5.375rem;
   }
 }
 
