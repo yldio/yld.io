@@ -1,25 +1,15 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 import { Link } from 'gatsby'
-import { Row, Col, Grid } from '../grid'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+
+import { Row, Col, Grid } from '../grid'
 import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
-import HeaderAnchor from './HeaderAnchor'
 import Navbar from './Navbar'
-
-const HomeLink = styled(HeaderAnchor)`
-  display: block;
-  padding-right: ${remcalc(30)};
-
-  ${breakpoint('tablet')`
-    display: none;
-  `};
-`
 
 /* Note: This scale applied to the logo is a temporary solution until the topNav is rebuilt
    according to new design specs. */
@@ -29,6 +19,49 @@ const LogoLink = styled(Link)`
     margin-left: -${remcalc(30)};
   }
 `
+
+const links = [
+  {
+    text: 'Engineering',
+    path: '/engineering/',
+    isInternal: true
+  },
+  {
+    text: 'Design',
+    path: '/design/',
+    isInternal: true
+  },
+  {
+    text: 'Training',
+    path: '/training/',
+    isInternal: true
+  },
+  {
+    text: 'Our work',
+    path: '/our-work/',
+    isInternal: true
+  },
+  {
+    text: 'About us',
+    path: '/about-us/',
+    isInternal: true
+  },
+  {
+    text: 'Contact',
+    path: '/contact/',
+    isInternal: true
+  },
+  {
+    text: 'Blog',
+    path: 'https://medium.com/yld-engineering-blog/',
+    isInternal: false
+  },
+  {
+    text: 'Join Us',
+    path: '/join-us/',
+    isInternal: true
+  }
+]
 
 const Header = ({ path, blue, logoColour }) => {
   const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
@@ -42,73 +75,16 @@ const Header = ({ path, blue, logoColour }) => {
               <LogoLink to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
               </LogoLink>
+              <Navbar
+                isOpen={isMobileNavbarOpen}
+                onClose={() => toggleMobileNavbar(false)}
+                links={links}
+                blue={blue}
+              />
               <Hamburger
                 light={!!blue}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
               />
-              <Navbar
-                isOpen={isMobileNavbarOpen}
-                onClose={() => toggleMobileNavbar(false)}
-              >
-                <HomeLink activeClassName="active" to="/">
-                  Home
-                </HomeLink>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/engineering/"
-                >
-                  Engineering
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/design/"
-                >
-                  Design
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/training/"
-                >
-                  Training
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/our-work/"
-                >
-                  Our work
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/about-us/"
-                >
-                  About us
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/contact/"
-                >
-                  Contact
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  href="https://medium.com/yld-engineering-blog/"
-                >
-                  Blog
-                </HeaderAnchor>
-                <HeaderAnchor
-                  light={!!blue}
-                  activeClassName="active"
-                  to="/join-us/"
-                >
-                  Join Us
-                </HeaderAnchor>
-              </Navbar>
               <Overlay
                 visible={isMobileNavbarOpen}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}

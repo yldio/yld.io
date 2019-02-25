@@ -6,6 +6,7 @@ import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
 import close from '../../images/close.svg'
+import HeaderAnchor from './HeaderAnchor'
 
 const MobileCloseButton = styled.button`
   position: absolute;
@@ -130,14 +131,45 @@ const NavBarContainer = styled(Flex).attrs({
   `};
 `
 
-const Navbar = ({ children, isOpen, onClose }) => (
+const HomeLink = styled(HeaderAnchor)`
+  display: block;
+
+  ${breakpoint('tablet')`
+    display: none;
+  `};
+`
+
+const Navbar = ({ links, isOpen, onClose, blue }) => (
   <NavBarContainer open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
     </MobileCloseButton>
     <NavbarItems>
-      {children.map((child, idx) => (
-        <NavbarItem key={idx}>{child}</NavbarItem>
+      <NavbarItem>
+        <HomeLink activeClassName="active" to="/">
+          Home
+        </HomeLink>
+      </NavbarItem>
+      {links.map((link, idx) => (
+        <NavbarItem key={idx}>
+          {link.isInternal ? (
+            <HeaderAnchor
+              light={!!blue}
+              activeClassName="active"
+              to={link.path}
+            >
+              {link.text}
+            </HeaderAnchor>
+          ) : (
+            <HeaderAnchor
+              light={!!blue}
+              activeClassName="active"
+              href={link.path}
+            >
+              {link.text}
+            </HeaderAnchor>
+          )}
+        </NavbarItem>
       ))}
     </NavbarItems>
   </NavBarContainer>
