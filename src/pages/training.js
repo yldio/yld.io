@@ -11,7 +11,7 @@ import Modal from '../components/Training/Modal'
 import CaseStudy from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
-import GreyBG from '../components/GreyBG'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   const [modalContent, setModalContent] = useState(null)
@@ -57,11 +57,11 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
         </Padding>
         <Padding bottom={{ smallPhone: 2, desktop: 4 }} />
       </Grid>
-      <GreyBG>
+      <GreyBackground>
         <Grid>
           <Statement richText={content.seoText.content[0].content} />
         </Grid>
-      </GreyBG>
+      </GreyBackground>
       <Approach
         title={content.trainingApproachTitle}
         content={trainingApproachesContent}

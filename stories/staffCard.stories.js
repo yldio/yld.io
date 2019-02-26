@@ -4,6 +4,8 @@ import Theme from './theme'
 import { Grid, Row } from '../src/components/grid'
 import StaffCard from '../src/components/AboutUs/StaffCard'
 import logo from '../src/images/favicon.png'
+import twitter from '../src/images/twiter-icon.svg'
+import linkedin from '../src/images/linkedin-icon.svg'
 
 addDecorator(Theme)
 
@@ -19,15 +21,17 @@ storiesOf('About Us Page Components', module)
               }
             }}
             name="Nuno Job"
-            title="Chief Executive Officer"
+            role="Chief Executive Officer"
             description="Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni."
             socialLinks={[
               {
-                network: 'twitter',
+                name: 'twitter',
+                image: { file: { url: twitter } },
                 url: 'twitter.com/etc'
               },
               {
-                network: 'linkedin',
+                name: 'linkedin',
+                image: { file: { url: linkedin } },
                 url: 'linkedin.com/etc'
               }
             ]}
@@ -45,15 +49,17 @@ storiesOf('About Us Page Components', module)
           }
         }}
         name="Nuno Job"
-        title="Chief Executive Officer"
+        role="Chief Executive Officer"
         description="Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni."
         socialLinks={[
           {
-            network: 'twitter',
+            name: 'twitter',
+            image: { file: { url: twitter } },
             url: 'twitter.com/etc'
           },
           {
-            network: 'linkedin',
+            name: 'linkedin',
+            image: { file: { url: linkedin } },
             url: 'linkedin.com/etc'
           }
         ]}

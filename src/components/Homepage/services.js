@@ -6,7 +6,7 @@ import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 import SeoLinks from '../Common/seoLinks'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 

@@ -5,8 +5,6 @@ import { Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import { BodyPrimary, Subtitle } from '../Typography'
 
-import twitter from '../../images/twiter-icon.svg'
-import linkedin from '../../images/linkedin-icon.svg'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Image from '../Common/Image'
 
@@ -35,57 +33,47 @@ const Description = styled(BodyPrimary)`
   padding-bottom: ${props => remcalc(30)};
 `
 
-const getSocialLink = ({ network, url }) => {
+const SocialLink = ({ name, url, image }) => {
   const size = `${IMAGE_SIZE}px`
 
-  switch (network) {
-    case 'twitter':
-      return (
-        <TappableAnchor href={url}>
-          <Image
-            image={{ file: { url: twitter } }}
-            alt="twitter profile link"
-            width={size}
-            height={size}
-          />
-        </TappableAnchor>
-      )
-    case 'linkedin':
-      return (
-        <TappableAnchor href={url}>
-          <Image
-            image={{ file: { url: linkedin } }}
-            alt="linkedin  profile link"
-            width={size}
-            height={size}
-          />
-        </TappableAnchor>
-      )
-    default:
-      return null
-  }
+  return (
+    <TappableAnchor href={url}>
+      <Image image={image} alt={name} width={size} height={size} />
+    </TappableAnchor>
+  )
 }
 
-const StaffCard = ({ name, image, title, description, socialLinks = [] }) => {
-  const links = (socialLinks || []).map(getSocialLink).filter(e => e)
-  const Links =
-    links.length > 0 ? (
-      <LinksContainer>{links.map((Link, idx) => Link)}</LinksContainer>
-    ) : null
+const SocialLinks = ({ data }) => {
+  return (data || []).length > 0 ? (
+    <LinksContainer>
+      {data.map(({ name, url, image }, idx) => (
+        <SocialLink
+          key={`${name}-${idx}`}
+          name={name}
+          url={url}
+          image={image}
+        />
+      ))}
+    </LinksContainer>
+  ) : null
+}
 
+const StaffCard = ({ name, image, role, description, socialLinks = [] }) => {
   return (
     <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
-      <Padding bottom={2}>
-        <Image image={image} width="100%" />
+      <Padding bottom={{ smallPhone: 3, smallTablet: 3.5, tablet: 5 }}>
+        <Padding bottom={2}>
+          <Image image={image} width="100%" />
+        </Padding>
+        <Subtitle noPadding>{name}</Subtitle>
+        <Padding bottom={3}>
+          <Subtitle noPadding muted>
+            {role}
+          </Subtitle>
+        </Padding>
+        <Description noPadding>{description}</Description>
+        <SocialLinks data={socialLinks} />
       </Padding>
-      <Subtitle noPadding>{name}</Subtitle>
-      <Padding bottom={3}>
-        <Subtitle noPadding muted>
-          {title}
-        </Subtitle>
-      </Padding>
-      <Description noPadding>{description}</Description>
-      {Links}
     </Col>
   )
 }

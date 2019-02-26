@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 import CaseStudyLayout from './CaseStudyLayout'
 import { SectionTitle, BodyPrimary } from '../../Typography'
-import StyledLink from '../../styledLink'
+import StyledLink from '../StyledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
 const Headings = ({ title }) => (
