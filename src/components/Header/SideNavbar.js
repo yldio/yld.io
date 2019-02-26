@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
@@ -9,20 +8,18 @@ import close from '../../images/close.svg'
 import HeaderAnchor from './HeaderAnchor'
 
 const MobileCloseButton = styled.button`
-  position: absolute;
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
   min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  top: ${remcalc(24)};
-  right: ${remcalc(24)};
   background: transparent;
   color: ${props => props.theme.colors.white};
   border: none;
   font-size: ${remcalc(40)};
-  height: ${remcalc(32)};
+  height: ${remcalc(24)};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin: ${remcalc(24)};
 
   &:focus {
     background: transparent;
@@ -30,31 +27,12 @@ const MobileCloseButton = styled.button`
     color: ${props => props.theme.colors.text};
   }
 `
-const NavbarItems = styled.ul`
-  display: flex;
-  flex-direction: column;
-  padding: ${remcalc(12)};
-  padding-right: ${remcalc(0)};
-
-  ${breakpoint('phone')`
-    position: relative;
-    padding-bottom: ${remcalc(24)};
-  `}
-
-  ${breakpoint('smallTablet')`
-    width: auto;
-    height: auto;
-  `};
-
-  @media screen and (min-width: 600px) and (max-width: 959px) {
-    position: static;
-    top: -${remcalc(60)};
-    padding: ${remcalc(36)};
-  }
+const SideNavList = styled.ul`
+  padding-left: ${remcalc(24)};
 `
-export const NavbarItem = styled.li`
+
+export const SideNavListItem = styled.li`
   list-style-type: none;
-  display: flex;
 
   &:not(:last-child) {
     margin-bottom: ${remcalc(18)};
@@ -64,11 +42,11 @@ export const NavbarItem = styled.li`
     padding-right: 0;
   }
 `
-const NavBarContainer = styled(Flex).attrs({
+const SideNavModal = styled(Flex).attrs({
   as: 'nav'
 })`
   position: fixed;
-  background: ${props => props.theme.colors.black};
+  background: ${props => props.theme.colors.blueBg};
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -78,18 +56,13 @@ const NavBarContainer = styled(Flex).attrs({
   z-index: ${props => props.theme.zIndexes.header};
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
-  flex: 1;
-  justify-content: flex-start;
-  padding-top: ${remcalc(60)};
 
   /* Showing the 'thinner version' of the navbar from 600px to tablet */
   @media screen and (min-width: 600px) and (max-width: 959px) {
-    padding-top: 0;
     width: ${remcalc(295)};
     left: auto;
     right: 0;
     z-index: 10;
-    justify-content: center;
   }
 
   ${is('open')`
@@ -101,19 +74,19 @@ const NavBarContainer = styled(Flex).attrs({
   }
 `
 
-const Navbar = ({ links, isOpen, onClose, blue }) => (
-  <NavBarContainer open={isOpen}>
+const SideNavbar = ({ links, isOpen, onClose, blue }) => (
+  <SideNavModal open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
     </MobileCloseButton>
-    <NavbarItems>
-      <NavbarItem>
+    <SideNavList>
+      <SideNavListItem>
         <HeaderAnchor activeClassName="active" to="/">
           Home
         </HeaderAnchor>
-      </NavbarItem>
+      </SideNavListItem>
       {links.map((link, idx) => (
-        <NavbarItem key={idx}>
+        <SideNavListItem key={idx}>
           {link.isInternal ? (
             <HeaderAnchor
               light={!!blue}
@@ -131,9 +104,9 @@ const Navbar = ({ links, isOpen, onClose, blue }) => (
               {link.text}
             </HeaderAnchor>
           )}
-        </NavbarItem>
+        </SideNavListItem>
       ))}
-    </NavbarItems>
-  </NavBarContainer>
+    </SideNavList>
+  </SideNavModal>
 )
-export default Navbar
+export default SideNavbar

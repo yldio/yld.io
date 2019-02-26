@@ -9,7 +9,7 @@ import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNavbar from './TopNavbar'
-import SideNavbar from './Navbar'
+import SideNavbar from './SideNavbar'
 
 const FixedHeightFlex = styled(Flex)`
   height: 84px;
