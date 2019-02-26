@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 
@@ -9,6 +10,10 @@ import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNavbar from './TopNavbar'
 import SideNavbar from './Navbar'
+
+const FixedHeightFlex = styled(Flex)`
+  height: 84px;
+`
 
 const links = [
   {
@@ -57,11 +62,11 @@ const Header = ({ path, blue, logoColour }) => {
   const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
   return (
-    <Grid as="header">
+    <Grid>
       <Row>
         <Col width={[1]}>
           <Padding bottom={3}>
-            <Flex alignCenter justifyBetween>
+            <FixedHeightFlex alignCenter justifyBetween as="header">
               <Link to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
               </Link>
@@ -80,7 +85,7 @@ const Header = ({ path, blue, logoColour }) => {
                 isOpen={isMobileNavbarOpen}
                 onClose={() => toggleMobileNavbar(false)}
               />
-            </Flex>
+            </FixedHeightFlex>
           </Padding>
         </Col>
       </Row>
