@@ -2,23 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 import { Row, Col, Grid } from '../grid'
 import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
-import Navbar from './Navbar'
-
-/* Note: This scale applied to the logo is a temporary solution until the topNav is rebuilt
-   according to new design specs. */
-const LogoLink = styled(Link)`
-  @media (min-width: 901px) and (max-width: 1005px) {
-    transform: scale(0.7, 0.7);
-    margin-left: -${remcalc(30)};
-  }
-`
+import TopNavbar from './TopNavbar'
+import SideNavbar from './Navbar'
 
 const links = [
   {
@@ -72,15 +62,10 @@ const Header = ({ path, blue, logoColour }) => {
         <Col width={[1]}>
           <Padding bottom={3}>
             <Flex alignCenter justifyBetween>
-              <LogoLink to="/">
+              <Link to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
-              </LogoLink>
-              <Navbar
-                isOpen={isMobileNavbarOpen}
-                onClose={() => toggleMobileNavbar(false)}
-                links={links}
-                blue={blue}
-              />
+              </Link>
+              <TopNavbar links={links} blue={blue} />
               <Hamburger
                 light={!!blue}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
@@ -88,6 +73,12 @@ const Header = ({ path, blue, logoColour }) => {
               <Overlay
                 visible={isMobileNavbarOpen}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+              />
+              <SideNavbar
+                links={links}
+                blue={blue}
+                isOpen={isMobileNavbarOpen}
+                onClose={() => toggleMobileNavbar(false)}
               />
             </Flex>
           </Padding>

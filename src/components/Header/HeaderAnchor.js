@@ -29,7 +29,8 @@ const HeaderAnchor = styled(Anchor)`
   line-height: 1.14;
   display: block;
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: ${props => props.theme.colors.white};
     opacity: 1;
   }
@@ -39,11 +40,12 @@ const HeaderAnchor = styled(Anchor)`
   `}
 
   /* Styles for Tablet and above */
-  ${breakpoint('tablet')`
-    font-size: 100%;
+  @media screen and (min-width: 959px) {
     font-weight: 400;
+    font-size: ${remcalc(17)};
+    line-height: ${remcalc(24)};
     opacity: 1;
-    padding: ${remcalc(10)} ${remcalc(6)} ${remcalc(14)};
+    padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
 
     color: ${props => props.theme.colors.textLight};
 
@@ -80,7 +82,7 @@ const HeaderAnchor = styled(Anchor)`
     }
 
     ${outlineStyles}
-  `}; 
+  }
 `
 
 export default HeaderAnchor

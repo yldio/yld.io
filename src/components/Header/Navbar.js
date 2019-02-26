@@ -29,10 +29,6 @@ const MobileCloseButton = styled.button`
     outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
     color: ${props => props.theme.colors.text};
   }
-
-  ${breakpoint('tablet')`
-    display: none;
-  `};
 `
 const NavbarItems = styled.ul`
   display: flex;
@@ -50,18 +46,10 @@ const NavbarItems = styled.ul`
     height: auto;
   `};
 
-  @media screen and (min-width: 600px) and (max-width: 901px) {
+  @media screen and (min-width: 600px) and (max-width: 959px) {
     position: static;
     top: -${remcalc(60)};
     padding: ${remcalc(36)};
-  }
-
-  @media screen and (min-width: 901px) {
-    top: 0;
-    flex: 1;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: ${remcalc(655)};
   }
 `
 export const NavbarItem = styled.li`
@@ -72,15 +60,9 @@ export const NavbarItem = styled.li`
     margin-bottom: ${remcalc(18)};
   }
 
-  ${breakpoint('tablet')`
-    &:not(:last-child) {
-      margin-bottom: ${remcalc(0)};
-    }
-
-    &:last-child > a{
-      padding-right: 0;
-    }
-  `};
+  &:last-child > a {
+    padding-right: 0;
+  }
 `
 const NavBarContainer = styled(Flex).attrs({
   as: 'nav'
@@ -101,7 +83,7 @@ const NavBarContainer = styled(Flex).attrs({
   padding-top: ${remcalc(60)};
 
   /* Showing the 'thinner version' of the navbar from 600px to tablet */
-  @media screen and (min-width: 600px) and (max-width: 901px) {
+  @media screen and (min-width: 600px) and (max-width: 959px) {
     padding-top: 0;
     width: ${remcalc(295)};
     left: auto;
@@ -110,33 +92,13 @@ const NavBarContainer = styled(Flex).attrs({
     justify-content: center;
   }
 
-  ${breakpoint('tablet')`
-    display: flex;
-    width: auto;
-    opacity: 1;
-    transform: translateX(0%);
-    height: auto;
-    flex-direction: row;
-    background: transparent;
-    position: relative;
-  `};
-
-  @media screen and (min-width: 901px) {
-    padding-top: 0;
-    justify-content: flex-end;
-  }
-
   ${is('open')`
     transform: translateX(0%);
   `};
-`
 
-const HomeLink = styled(HeaderAnchor)`
-  display: block;
-
-  ${breakpoint('tablet')`
+  @media screen and (min-width: 960px) {
     display: none;
-  `};
+  }
 `
 
 const Navbar = ({ links, isOpen, onClose, blue }) => (
@@ -146,9 +108,9 @@ const Navbar = ({ links, isOpen, onClose, blue }) => (
     </MobileCloseButton>
     <NavbarItems>
       <NavbarItem>
-        <HomeLink activeClassName="active" to="/">
+        <HeaderAnchor activeClassName="active" to="/">
           Home
-        </HomeLink>
+        </HeaderAnchor>
       </NavbarItem>
       {links.map((link, idx) => (
         <NavbarItem key={idx}>

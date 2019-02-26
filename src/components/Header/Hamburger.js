@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import is from 'styled-is'
-import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 const HamburgerSvg = styled.svg`
@@ -14,6 +13,11 @@ const HamburgerSvg = styled.svg`
 
 const HamburgerButton = styled.button`
   display: flex;
+
+  @media screen and (min-width: 959px) {
+    display: none;
+  }
+
   cursor: pointer;
   margin: 0;
   border: none;
@@ -25,10 +29,6 @@ const HamburgerButton = styled.button`
     outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
     color: ${props => props.theme.colors.text};
   }
-
-  ${breakpoint('tablet')`
-    display: none;
-  `};
 `
 
 const Hamburger = ({ onClick, light }) => (
