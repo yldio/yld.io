@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import HeaderAnchor from './HeaderAnchor'
+import { TopNavAnchor } from './HeaderAnchor'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`
     display: none;
   `}
 
-  @media screen and (min-width: 959px) {
+  @media screen and (min-width: 960px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,21 +34,13 @@ const TopNavbar = ({ links, blue }) => (
       {links.map((link, idx) => (
         <TopNavListItem key={idx}>
           {link.isInternal ? (
-            <HeaderAnchor
-              light={!!blue}
-              activeClassName="active"
-              to={link.path}
-            >
+            <TopNavAnchor dark={blue} activeClassName="active" to={link.path}>
               {link.text}
-            </HeaderAnchor>
+            </TopNavAnchor>
           ) : (
-            <HeaderAnchor
-              light={!!blue}
-              activeClassName="active"
-              href={link.path}
-            >
+            <TopNavAnchor dark={blue} activeClassName="active" href={link.path}>
               {link.text}
-            </HeaderAnchor>
+            </TopNavAnchor>
           )}
         </TopNavListItem>
       ))}
