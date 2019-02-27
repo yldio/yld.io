@@ -10,7 +10,7 @@ const TopNavList = styled.ul`
     display: none;
   `}
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1010px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

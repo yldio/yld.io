@@ -4,7 +4,7 @@ import is from 'styled-is'
 const Overlay = styled.div`
   display: none;
 
-  @media screen and (max-width: 959px) {
+  @media screen and (max-width: 1009px) {
     z-index: 9;
     background-color: rgba(51, 51, 51, 0.2);
     content: '';

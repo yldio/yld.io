@@ -57,8 +57,8 @@ const SideNavModal = styled(Flex).attrs({
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
 
-  /* Showing the 'thinner version' of the navbar from 600px to tablet */
-  @media screen and (min-width: 600px) and (max-width: 959px) {
+  /* Thinner version' of the navbar */
+  @media screen and (min-width: 600px) and (max-width: 1009px) {
     width: ${remcalc(295)};
     left: auto;
     right: 0;
@@ -69,7 +69,7 @@ const SideNavModal = styled(Flex).attrs({
     transform: translateX(0%);
   `};
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1010px) {
     display: none;
   }
 `

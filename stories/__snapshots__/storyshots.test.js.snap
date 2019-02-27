@@ -6395,7 +6395,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   }
 }
 
-@media screen and (min-width:960px) {
+@media screen and (min-width:1010px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;

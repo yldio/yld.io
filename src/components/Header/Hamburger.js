@@ -28,7 +28,7 @@ const HamburgerButton = styled.button`
     }
   `}
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1010px) {
     display: none;
   }
 `
