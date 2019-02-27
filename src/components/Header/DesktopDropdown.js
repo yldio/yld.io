@@ -6,11 +6,10 @@ import Chevron from '../Common/Chevron'
 import outlineStyles from './outlineStyles'
 import Anchor from '../Common/Anchor'
 import theme from '../../utils/theme'
-import { NavbarItem } from './Navbar'
 
 const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 
-const DesktopMenuDropdownContainer = styled(NavbarItem)`
+const DesktopMenuDropdownContainer = styled.div`
   position: relative;
   transition: color ${props => props.theme.animations.fast} ease-in-out,
     background ${props => props.theme.animations.fast} ease-in-out;
