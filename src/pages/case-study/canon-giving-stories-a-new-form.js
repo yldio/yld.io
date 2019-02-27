@@ -10,11 +10,14 @@ import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
-import GreyBackground, { GreyBGOffset } from '../../components/GreyBG'
+import GreyBackground, {
+  GreyBackgroundOffset
+} from '../../components/Common/GreyBackground'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
+import VideoSection from '../../components/Common/VideoSection'
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -87,19 +90,6 @@ const GradientContent = ({ text, image }) => (
       </CenteredCol>
     </Row>
   </Fragment>
-)
-
-const Video = () => (
-  <div className="video-container">
-    <iframe
-      width="844"
-      height="480"
-      src="https://www.youtube.com/embed/MPPk-BkImsc"
-      frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-  </div>
 )
 
 const IndexPage = ({
@@ -190,18 +180,14 @@ const IndexPage = ({
       </Grid>
 
       <MobileOnly>
-        <Video />
+        <VideoSection src="https://www.youtube.com/embed/MPPk-BkImsc" />
       </MobileOnly>
 
-      <GreyBGOffset topMargin topOffset={-150}>
+      <GreyBackgroundOffset topMargin topOffset={-150}>
         <NoMobile>
           <Padding top={{ smallTablet: 0, tablet: 3 }} bottom={5}>
             <Grid>
-              <Row>
-                <Col width={[1]}>
-                  <Video />
-                </Col>
-              </Row>
+              <VideoSection src="https://www.youtube.com/embed/MPPk-BkImsc" />
             </Grid>
           </Padding>
         </NoMobile>
@@ -222,7 +208,7 @@ const IndexPage = ({
             </Row>
           </Padding>
         </Grid>
-      </GreyBGOffset>
+      </GreyBackgroundOffset>
       <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )

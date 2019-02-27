@@ -2,8 +2,8 @@ import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GreyBackground from '../GreyBG'
-import StyledLink from '../styledLink'
+import GreyBackground from '../Common/GreyBackground'
+import StyledLink from '../Common/StyledLink'
 
 const TrainingStage = ({ title, body, icon }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>

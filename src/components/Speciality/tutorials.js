@@ -3,11 +3,11 @@ import remcalc from 'remcalc'
 import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
-import GreyBackground from '../GreyBG'
+import GreyBackground from '../Common/GreyBackground'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 
 const TutorialsGrid = styled(Grid)`
   padding-bottom: ${remcalc(18)};

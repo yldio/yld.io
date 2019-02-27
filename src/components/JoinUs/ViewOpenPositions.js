@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../grid'
-import StyledLink from '../styledLink'
+import StyledLink from '../Common/StyledLink'
 import { SectionTitle, BodyPrimary } from '../Typography'
 
 const FixedWidthBodyPrimary = styled(BodyPrimary)`

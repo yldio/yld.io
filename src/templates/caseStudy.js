@@ -5,12 +5,12 @@ import { graphql } from 'gatsby'
 import generateCaseStudy from '../utils/generateCaseStudy'
 import Layout from '../components/layout'
 import { Grid } from '../components/grid'
-import { GreyBGOffset } from '../components/GreyBG'
+import { GreyBackgroundOffset } from '../components/Common/GreyBackground'
 import Head from '../components/Common/Head'
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
 import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
 import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
-import VideoSection from '../components/TemplatedCaseStudy/VideoSection'
+import VideoSection from '../components/Common/VideoSection'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const CaseStudy = ({
@@ -29,9 +29,9 @@ const CaseStudy = ({
       <Grid>
         <FirstTextSection text={firstTextBlock} />
       </Grid>
-      <GreyBGOffset topMargin topOffset={-150}>
+      <GreyBackgroundOffset topMargin topOffset={-150}>
         <Grid>
-          <VideoSection videoInfo={videoInfo} />
+          <VideoSection src={videoInfo[0]} />
           <Padding
             top={{ smallPhone: 3, tablet: 4 }}
             bottom={{ smallPhone: 3.5, tablet: 4 }}
@@ -39,7 +39,7 @@ const CaseStudy = ({
             <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
           </Padding>
         </Grid>
-      </GreyBGOffset>
+      </GreyBackgroundOffset>
       <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )

@@ -6,7 +6,7 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
 import Layout from '../components/layout'
-import GreyBackground from '../components/GreyBG'
+import GreyBackground from '../components/Common/GreyBackground'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'

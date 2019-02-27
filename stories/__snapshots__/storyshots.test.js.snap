@@ -44,17 +44,17 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   display: flex;
 }
 
-.c4 {
+.c5 {
   width: 100%;
   height: auto;
 }
 
-.c11 {
+.c12 {
   width: 24px;
   height: 24px;
 }
 
-.c5 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -64,7 +64,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   font-weight: 700;
 }
 
-.c7 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -76,14 +76,18 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 .c3 {
-  padding-bottom: 1.5rem;
-}
-
-.c6 {
   padding-bottom: 2.25rem;
 }
 
-.c10 {
+.c4 {
+  padding-bottom: 1.5rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
+}
+
+.c11 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -100,11 +104,11 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   align-items: center;
 }
 
-.c10:first-child {
+.c11:first-child {
   margin-left: -0.75rem;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -113,7 +117,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c8 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -288,6 +292,18 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   }
 }
 
+@media (min-width:43.8125em) {
+  .c3 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    padding-bottom: 6.75rem;
+  }
+}
+
 <div
   className="c0"
 >
@@ -310,63 +326,67 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -385,63 +405,67 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -460,63 +484,67 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -535,63 +563,67 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -610,63 +642,67 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -717,17 +753,17 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   display: flex;
 }
 
-.c4 {
+.c5 {
   width: 100%;
   height: auto;
 }
 
-.c11 {
+.c12 {
   width: 24px;
   height: 24px;
 }
 
-.c5 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -737,7 +773,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   font-weight: 700;
 }
 
-.c7 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -749,14 +785,18 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 .c3 {
-  padding-bottom: 1.5rem;
-}
-
-.c6 {
   padding-bottom: 2.25rem;
 }
 
-.c10 {
+.c4 {
+  padding-bottom: 1.5rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
+}
+
+.c11 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -773,11 +813,11 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   align-items: center;
 }
 
-.c10:first-child {
+.c11:first-child {
   margin-left: -0.75rem;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -786,7 +826,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c8 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -961,6 +1001,18 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   }
 }
 
+@media (min-width:43.8125em) {
+  .c3 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    padding-bottom: 6.75rem;
+  }
+}
+
 <div
   className="c0"
 >
@@ -983,63 +1035,67 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
       <div
         className="c3"
       >
-        <img
+        <div
           className="c4"
-          src="test-file-stub"
-          width="100%"
-        />
-      </div>
-      <h3
-        className="c5"
-      >
-        Nuno Job
-      </h3>
-      <div
-        className="c6"
-      >
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
         <h3
-          className="c7"
-          muted={true}
+          className="c6"
         >
-          Chief Executive Officer
+          Nuno Job
         </h3>
-      </div>
-      <p
-        className="c8"
-      >
-        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-      </p>
-      <div
-        className="c9"
-      >
-        <a
-          className="c10"
-          href="twitter.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c7"
         >
-          <img
-            alt="twitter profile link"
-            className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
-        <a
-          className="c10"
-          href="linkedin.com/etc"
-          rel="noopener noreferrer"
-          target="_blank"
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
         >
-          <img
-            alt="linkedin  profile link"
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
             className="c11"
-            height="24px"
-            src="test-file-stub"
-            width="24px"
-          />
-        </a>
+            href="twitter.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1223,7 +1279,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 }
 
 .c6 {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -7000,7 +7056,7 @@ exports[`Storyshots Header Navbar 1`] = `
 
 exports[`Storyshots Image with file url 1`] = `
 .c0 {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -9914,10 +9970,11 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 exports[`Storyshots Tabs Multiple Tabs 1`] = `
 .c1 {
   display: inline-block;
+  margin-right: 1.75rem;
 }
 
-.c1 + .c0 {
-  margin-left: 2.25rem;
+.c1:last-child {
+  margin-right: 0;
 }
 
 .c3 {
@@ -10016,9 +10073,21 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   transform: scaleX(0);
 }
 
-<ul>
+.c0 {
+  margin: 4px;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    margin-right: 2.25rem;
+  }
+}
+
+<ul
+  className="c0"
+>
   <li
-    className="c0 c1"
+    className="c1"
   >
     <button
       className="c2"
@@ -10033,7 +10102,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
     </button>
   </li>
   <li
-    className="c0 c1"
+    className="c1"
   >
     <button
       className="c4"
@@ -10048,7 +10117,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
     </button>
   </li>
   <li
-    className="c0 c1"
+    className="c1"
   >
     <button
       className="c4"
@@ -10066,15 +10135,16 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 `;
 
 exports[`Storyshots Tabs Single Tab - active 1`] = `
-.c1 {
+.c0 {
   display: inline-block;
+  margin-right: 1.75rem;
 }
 
-.c1 + .c0 {
-  margin-left: 2.25rem;
+.c0:last-child {
+  margin-right: 0;
 }
 
-.c3 {
+.c2 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -10087,19 +10157,19 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   padding: 0.5625rem 0 2.125rem;
 }
 
-.c2 {
+.c1 {
   border: none;
   background: transparent;
   padding: 0;
   position: relative;
 }
 
-.c2:active,
-.c2:focus {
+.c1:active,
+.c1:focus {
   outline: 0.25rem solid #6be9c1;
 }
 
-.c2:after {
+.c1:after {
   content: '';
   display: block;
   width: 100%;
@@ -10123,14 +10193,20 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   transform: scaleX(1);
 }
 
+@media (min-width:29.4375em) {
+  .c0 {
+    margin-right: 2.25rem;
+  }
+}
+
 <li
-  className="c0 c1"
+  className="c0"
 >
   <button
-    className="c2"
+    className="c1"
   >
     <p
-      className="c3"
+      className="c2"
       muted={false}
     >
       This is a tab
@@ -10140,15 +10216,16 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
 `;
 
 exports[`Storyshots Tabs Single Tab - inactive 1`] = `
-.c1 {
+.c0 {
   display: inline-block;
+  margin-right: 1.75rem;
 }
 
-.c1 + .c0 {
-  margin-left: 2.25rem;
+.c0:last-child {
+  margin-right: 0;
 }
 
-.c3 {
+.c2 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -10162,19 +10239,19 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   padding: 0.5625rem 0 2.125rem;
 }
 
-.c2 {
+.c1 {
   border: none;
   background: transparent;
   padding: 0;
   position: relative;
 }
 
-.c2:active,
-.c2:focus {
+.c1:active,
+.c1:focus {
   outline: 0.25rem solid #6be9c1;
 }
 
-.c2:after {
+.c1:after {
   content: '';
   display: block;
   width: 100%;
@@ -10195,14 +10272,20 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   transform: scaleX(0);
 }
 
+@media (min-width:29.4375em) {
+  .c0 {
+    margin-right: 2.25rem;
+  }
+}
+
 <li
-  className="c0 c1"
+  className="c0"
 >
   <button
-    className="c2"
+    className="c1"
   >
     <h3
-      className="c3"
+      className="c2"
       muted={true}
     >
       This is a tab

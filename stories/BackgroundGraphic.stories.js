@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import { BackgroundGraphic } from '../src/components/Common/BackgroundGraphic'
-import BlueBackground from '../src/components/BlueBG'
+import BlueBackground from '../src/components/Common/BlueBackground'
 
 addDecorator(Theme)
 

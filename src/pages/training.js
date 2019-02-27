@@ -10,7 +10,7 @@ import Modal from '../components/Training/Modal'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
-import GreyBG from '../components/GreyBG'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   const [modalContent, setModalContent] = useState(null)
@@ -48,11 +48,11 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
       <Head page={content} />
       <Modal content={modalContent} toggleModal={toggleModal} />
       <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
-      <GreyBG>
+      <GreyBackground>
         <Grid>
           <Statement richText={content.seoText.content[0].content} />
         </Grid>
-      </GreyBG>
+      </GreyBackground>
       <Approach
         title={content.trainingApproachTitle}
         content={trainingApproachesContent}
