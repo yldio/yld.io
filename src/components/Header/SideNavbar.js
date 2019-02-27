@@ -5,7 +5,7 @@ import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
 import close from '../../images/close.svg'
-import { SideNavAnchor } from './HeaderAnchor'
+import SideNavAnchor from './SideNavAnchor'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -74,7 +74,7 @@ const SideNavModal = styled(Flex).attrs({
   }
 `
 
-const SideNavbar = ({ links, isOpen, onClose, blue }) => (
+const SideNavbar = ({ links, isOpen, onClose, dark }) => (
   <SideNavModal open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
@@ -88,12 +88,12 @@ const SideNavbar = ({ links, isOpen, onClose, blue }) => (
       {links.map((link, idx) => (
         <SideNavListItem key={idx}>
           {link.isInternal ? (
-            <SideNavAnchor dark={blue} activeClassName="active" to={link.path}>
+            <SideNavAnchor dark={dark} activeClassName="active" to={link.path}>
               {link.text}
             </SideNavAnchor>
           ) : (
             <SideNavAnchor
-              dark={blue}
+              dark={dark}
               activeClassName="active"
               href={link.path}
             >

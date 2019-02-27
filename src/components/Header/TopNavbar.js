@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import { TopNavAnchor } from './HeaderAnchor'
+import TopNavAnchor from './TopNavAnchor'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`
@@ -28,17 +28,17 @@ export const TopNavListItem = styled.li`
   }
 `
 
-const TopNavbar = ({ links, blue }) => (
+const TopNavbar = ({ links, dark }) => (
   <nav>
     <TopNavList>
       {links.map((link, idx) => (
         <TopNavListItem key={idx}>
           {link.isInternal ? (
-            <TopNavAnchor dark={blue} activeClassName="active" to={link.path}>
+            <TopNavAnchor dark={dark} activeClassName="active" to={link.path}>
               {link.text}
             </TopNavAnchor>
           ) : (
-            <TopNavAnchor dark={blue} activeClassName="active" href={link.path}>
+            <TopNavAnchor dark={dark} activeClassName="active" href={link.path}>
               {link.text}
             </TopNavAnchor>
           )}
