@@ -15,7 +15,57 @@ const FixedHeightFlex = styled(Flex)`
   height: 84px;
 `
 
-const links = [
+const topNavLinks = [
+  {
+    text: 'Services',
+    dropdownItems: [
+      {
+        label: 'Engineering',
+        to: '/engineering/'
+      },
+      {
+        label: 'Design',
+        to: '/design/'
+      },
+      {
+        label: 'Training',
+        to: '/training/'
+      }
+    ]
+  },
+  {
+    text: 'Our work',
+    path: '/our-work/',
+    isInternal: true
+  },
+  {
+    text: 'Blog',
+    path: 'https://medium.com/yld-engineering-blog/',
+    isInternal: false
+  },
+  {
+    text: 'About',
+    dropdownItems: [
+      {
+        text: 'Our team',
+        path: '/about-us/',
+        isInternal: true
+      },
+      {
+        text: 'Contact',
+        path: '/contact/',
+        isInternal: true
+      }
+    ]
+  },
+  {
+    text: 'Join Us',
+    path: '/join-us/',
+    isInternal: true
+  }
+]
+
+const sideNavLinks = [
   {
     text: 'Engineering',
     path: '/engineering/',
@@ -70,7 +120,7 @@ const Header = ({ path, blue, logoColour }) => {
               <Link to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
               </Link>
-              <TopNavbar links={links} dark={blue} />
+              <TopNavbar links={topNavLinks} dark={blue} />
               <Hamburger
                 light={!!blue}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
@@ -80,7 +130,7 @@ const Header = ({ path, blue, logoColour }) => {
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
               />
               <SideNavbar
-                links={links}
+                links={sideNavLinks}
                 dark={blue}
                 isOpen={isMobileNavbarOpen}
                 onClose={() => toggleMobileNavbar(false)}

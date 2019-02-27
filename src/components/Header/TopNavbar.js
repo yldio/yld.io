@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import TopNavAnchor from './TopNavAnchor'
+import Dropdown from './DesktopDropdown'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`
@@ -28,21 +29,42 @@ export const TopNavListItem = styled.li`
   }
 `
 
+const TopNavAnchorFromProps = ({ text, path, isInternal }) => (
+  <Fragment>
+    {isInternal ? (
+      <TopNavAnchor activeClassName="active" to={path}>
+        {text}
+      </TopNavAnchor>
+    ) : (
+      <TopNavAnchor activeClassName="active" href={path}>
+        {text}
+      </TopNavAnchor>
+    )}
+  </Fragment>
+)
+
 const TopNavbar = ({ links, dark }) => (
   <nav>
     <TopNavList>
       {links.map((link, idx) => (
-        <TopNavListItem key={idx}>
-          {link.isInternal ? (
-            <TopNavAnchor dark={dark} activeClassName="active" to={link.path}>
+        <Fragment key={idx}>
+          {link.dropdownItems ? (
+            <Dropdown
+              themeVariation={dark ? 'dark' : 'light'}
+              items={link.dropdownItems}
+            >
               {link.text}
-            </TopNavAnchor>
+            </Dropdown>
           ) : (
-            <TopNavAnchor dark={dark} activeClassName="active" href={link.path}>
-              {link.text}
-            </TopNavAnchor>
+            <TopNavListItem>
+              <TopNavAnchorFromProps
+                text={link.text}
+                path={link.path}
+                isInternal={link.isInternal}
+              />
+            </TopNavListItem>
           )}
-        </TopNavListItem>
+        </Fragment>
       ))}
     </TopNavList>
   </nav>
