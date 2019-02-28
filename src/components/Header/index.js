@@ -47,14 +47,12 @@ const topNavLinks = [
     text: 'About',
     dropdownItems: [
       {
-        text: 'Our team',
-        path: '/about-us/',
-        isInternal: true
+        label: 'Our team',
+        to: '/about-us/'
       },
       {
-        text: 'Contact',
-        path: '/contact/',
-        isInternal: true
+        label: 'Contact',
+        to: '/contact/'
       }
     ]
   },
