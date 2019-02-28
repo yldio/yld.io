@@ -12,7 +12,7 @@ const TopNavAnchor = styled(Anchor)`
   line-height: ${remcalc(24)};
   opacity: 1;
 
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.text};
 
   &.active,
   &:hover {
