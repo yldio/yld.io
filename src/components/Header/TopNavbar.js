@@ -24,7 +24,9 @@ const TopNavList = styled.ul`
 export const TopNavListItem = styled.li`
   list-style-type: none;
 
-  &:last-child > a {
+  padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
+
+  &:last-child {
     padding-right: 0;
   }
 `
