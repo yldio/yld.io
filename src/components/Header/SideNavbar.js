@@ -42,7 +42,7 @@ export const SideNavListItem = styled.li`
     padding-right: 0;
   }
 `
-const SideNavModal = styled(Flex).attrs({
+const SideNavPanel = styled(Flex).attrs({
   as: 'nav'
 })`
   position: fixed;
@@ -75,7 +75,7 @@ const SideNavModal = styled(Flex).attrs({
 `
 
 const SideNavbar = ({ links, isOpen, onClose, dark }) => (
-  <SideNavModal open={isOpen}>
+  <SideNavPanel open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
     </MobileCloseButton>
@@ -103,6 +103,6 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
         </SideNavListItem>
       ))}
     </SideNavList>
-  </SideNavModal>
+  </SideNavPanel>
 )
 export default SideNavbar
