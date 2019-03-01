@@ -50,7 +50,12 @@ const TopNavbar = ({ links, dark }) => (
           const { label, to, href } = link
           return (
             <TopNavListItem key={idx}>
-              <TopNavAnchor activeClassName="active" to={to} href={href}>
+              <TopNavAnchor
+                dark={dark}
+                activeClassName="active"
+                to={to}
+                href={href}
+              >
                 {label}
               </TopNavAnchor>
             </TopNavListItem>
