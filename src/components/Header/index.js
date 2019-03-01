@@ -58,6 +58,51 @@ const links = [
   }
 ]
 
+const sideNavLinks = [
+  {
+    label: 'Services',
+    dropdownItems: [
+      {
+        label: 'Engineering',
+        to: '/engineering/'
+      },
+      {
+        label: 'Design',
+        to: '/design/'
+      },
+      {
+        label: 'Training',
+        to: '/training/'
+      }
+    ]
+  },
+  {
+    label: 'Our work',
+    to: '/our-work/'
+  },
+  {
+    label: 'Blog',
+    href: 'https://medium.com/yld-engineering-blog/'
+  },
+  {
+    label: 'About',
+    dropdownItems: [
+      {
+        label: 'Our team',
+        to: '/about-us/'
+      },
+      {
+        label: 'Contact',
+        to: '/contact/'
+      }
+    ]
+  },
+  {
+    label: 'Join Us',
+    to: '/join-us/'
+  }
+]
+
 const Header = ({ path, blue, logoColour }) => {
   const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
 
@@ -80,8 +125,8 @@ const Header = ({ path, blue, logoColour }) => {
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
               />
               <SideNavbar
-                links={links}
-                dark={blue}
+                links={sideNavLinks}
+                dark={blue ? 'dark' : 'light'}
                 isOpen={isMobileNavbarOpen}
                 onClose={() => toggleMobileNavbar(false)}
               />

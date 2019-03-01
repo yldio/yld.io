@@ -9,7 +9,7 @@ import theme from '../../utils/theme'
 
 const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
 
-const DesktopMenuDropdownContainer = styled.div`
+const TopNavDropdownContainer = styled.div`
   position: relative;
   transition: color ${props => props.theme.animations.fast} ease-in-out,
     background ${props => props.theme.animations.fast} ease-in-out;
@@ -48,7 +48,7 @@ const DesktopMenuDropdownContainer = styled.div`
   `}
 `
 
-const DesktopMenuDropdownItems = styled.ul`
+const TopNavDropdownList = styled.ul`
   position: absolute;
   width: ${remcalc(160)};
   display: flex;
@@ -63,10 +63,6 @@ const DesktopMenuDropdownItems = styled.ul`
     left: 0;
     opacity: 1;
   `}
-
-  li {
-    display: flex;
-  }
 
   a {
     color: ${props => props.theme.colors.text};
@@ -83,7 +79,11 @@ const DesktopMenuDropdownItems = styled.ul`
   }
 `
 
-const DropdownNameWrapper = styled.span`
+const TopNavDropdownListItem = styled.li`
+  display: flex;
+`
+
+const TopNavDropdownNameWrapper = styled.span`
   display: flex;
   align-items: center;
   transition: outline ${props => props.theme.animations.normal} ease-out;
@@ -99,11 +99,11 @@ const DropdownNameWrapper = styled.span`
   `}
 `
 
-const DropdownName = styled.span`
+const TopNavDropdownName = styled.span`
   margin-right: ${remcalc(6)};
 `
 
-export default class DesktopMenuDropdown extends PureComponent {
+export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -113,11 +113,21 @@ export default class DesktopMenuDropdown extends PureComponent {
   }
 
   render() {
-    const { items, themeVariation, children } = this.props
+    const {
+      items,
+      DropdownContainer = TopNavDropdownContainer,
+      ListItemComponent = TopNavDropdownListItem,
+      DropdownNameWrapper = TopNavDropdownNameWrapper,
+      DropdownName = TopNavDropdownName,
+      DropdownList = TopNavDropdownList,
+      AnchorComponent = Anchor,
+      themeVariation,
+      children
+    } = this.props
     const { isExpanded } = this.state
 
     return (
-      <DesktopMenuDropdownContainer
+      <DropdownContainer
         aria-haspopup="true"
         expanded={isExpanded}
         aria-expanded={isExpanded}
@@ -134,16 +144,20 @@ export default class DesktopMenuDropdown extends PureComponent {
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
-        <DesktopMenuDropdownItems expanded={isExpanded}>
+        <DropdownList expanded={isExpanded}>
           {items.map(({ to, href, label }, idx) => (
-            <li key={idx}>
-              <Anchor to={to} href={href} onClick={this.handleItemClick}>
+            <ListItemComponent key={idx}>
+              <AnchorComponent
+                to={to}
+                href={href}
+                onClick={this.handleItemClick}
+              >
                 <span>{label}</span>
-              </Anchor>
-            </li>
+              </AnchorComponent>
+            </ListItemComponent>
           ))}
-        </DesktopMenuDropdownItems>
-      </DesktopMenuDropdownContainer>
+        </DropdownList>
+      </DropdownContainer>
     )
   }
 

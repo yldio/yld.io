@@ -6,6 +6,7 @@ import is from 'styled-is'
 
 import close from '../../images/close.svg'
 import SideNavAnchor from './SideNavAnchor'
+import Dropdown from './Dropdown'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -27,11 +28,12 @@ const MobileCloseButton = styled.button`
     color: ${props => props.theme.colors.text};
   }
 `
+
 const SideNavList = styled.ul`
   padding-left: ${remcalc(24)};
 `
 
-export const SideNavListItem = styled.li`
+const SideNavListItem = styled.li`
   list-style-type: none;
 
   &:not(:last-child) {
@@ -42,6 +44,7 @@ export const SideNavListItem = styled.li`
     padding-right: 0;
   }
 `
+
 const SideNavPanel = styled(Flex).attrs({
   as: 'nav'
 })`
@@ -85,23 +88,29 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
           Home
         </SideNavAnchor>
       </SideNavListItem>
-      {links.map((link, idx) => (
-        <SideNavListItem key={idx}>
-          {link.isInternal ? (
-            <SideNavAnchor dark={dark} activeClassName="active" to={link.path}>
-              {link.text}
-            </SideNavAnchor>
-          ) : (
-            <SideNavAnchor
-              dark={dark}
-              activeClassName="active"
-              href={link.path}
+      {links.map((link, idx) => {
+        if (link.dropdownItems) {
+          const { label, dropdownItems } = link
+          return (
+            <Dropdown
+              key={idx}
+              themeVariation={dark ? 'dark' : 'light'}
+              items={dropdownItems}
             >
-              {link.text}
-            </SideNavAnchor>
-          )}
-        </SideNavListItem>
-      ))}
+              {label}
+            </Dropdown>
+          )
+        } else {
+          const { label, to, href } = link
+          return (
+            <SideNavListItem key={idx}>
+              <SideNavAnchor activeClassName="active" to={to} href={href}>
+                {label}
+              </SideNavAnchor>
+            </SideNavListItem>
+          )
+        }
+      })}
     </SideNavList>
   </SideNavPanel>
 )
