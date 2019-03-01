@@ -100,8 +100,8 @@ const Header = ({ path, blue, logoColour }) => {
 
   return (
     <Grid>
-      <Row>
-        <Col width={[1]}>
+      <Row style={{ overflow: 'visible' }}>
+        <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
             <FixedHeightFlex alignCenter justifyBetween as="header">
               <Link to="/">

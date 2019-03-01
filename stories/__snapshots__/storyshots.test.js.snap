@@ -6916,9 +6916,19 @@ exports[`Storyshots Header Header itself 1`] = `
 >
   <div
     className="c1"
+    style={
+      Object {
+        "overflow": "visible",
+      }
+    }
   >
     <div
       className="c2"
+      style={
+        Object {
+          "overflow": "visible",
+        }
+      }
       width={
         Array [
           1,
