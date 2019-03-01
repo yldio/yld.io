@@ -85,23 +85,21 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
           Home
         </SideNavAnchor>
       </SideNavListItem>
-      {links.map((link, idx) => (
-        <SideNavListItem key={idx}>
-          {link.isInternal ? (
-            <SideNavAnchor dark={dark} activeClassName="active" to={link.path}>
-              {link.text}
-            </SideNavAnchor>
-          ) : (
+      {links.map((link, idx) => {
+        const { label, to, href } = link
+        return (
+          <SideNavListItem key={idx}>
             <SideNavAnchor
               dark={dark}
               activeClassName="active"
-              href={link.path}
+              to={to}
+              href={href}
             >
-              {link.text}
+              {label}
             </SideNavAnchor>
-          )}
-        </SideNavListItem>
-      ))}
+          </SideNavListItem>
+        )
+      })}
     </SideNavList>
   </SideNavModal>
 )

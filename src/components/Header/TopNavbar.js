@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
@@ -31,43 +31,32 @@ export const TopNavListItem = styled.li`
   }
 `
 
-const TopNavAnchorFromProps = ({ text, path, isInternal }) => (
-  <Fragment>
-    {isInternal ? (
-      <TopNavAnchor activeClassName="active" to={path}>
-        {text}
-      </TopNavAnchor>
-    ) : (
-      <TopNavAnchor activeClassName="active" href={path}>
-        {text}
-      </TopNavAnchor>
-    )}
-  </Fragment>
-)
-
 const TopNavbar = ({ links, dark }) => (
   <nav>
     <TopNavList>
-      {links.map((link, idx) => (
-        <Fragment key={idx}>
-          {link.dropdownItems ? (
+      {links.map((link, idx) => {
+        if (link.dropdownItems) {
+          const { label, dropdownItems } = link
+          return (
             <Dropdown
+              key={idx}
               themeVariation={dark ? 'dark' : 'light'}
-              items={link.dropdownItems}
+              items={dropdownItems}
             >
-              {link.text}
+              {label}
             </Dropdown>
-          ) : (
-            <TopNavListItem>
-              <TopNavAnchorFromProps
-                text={link.text}
-                path={link.path}
-                isInternal={link.isInternal}
-              />
+          )
+        } else {
+          const { label, to, href } = link
+          return (
+            <TopNavListItem key={idx}>
+              <TopNavAnchor activeClassName="active" to={to} href={href}>
+                {label}
+              </TopNavAnchor>
             </TopNavListItem>
-          )}
-        </Fragment>
-      ))}
+          )
+        }
+      })}
     </TopNavList>
   </nav>
 )

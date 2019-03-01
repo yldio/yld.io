@@ -7,67 +7,61 @@ addDecorator(Theme)
 
 const anchors = [
   {
-    text: 'Home',
-    path: '/',
-    isInternal: true
+    label: 'Here',
+    to: '/'
   },
   {
-    text: 'Engineering',
-    path: '/engineering',
-    isInternal: true
+    label: 'There',
+    to: '/there'
   },
   {
-    text: 'LinkedIn',
-    path: 'https://uk.linkedin.com/',
-    isInternal: false
+    label: 'LinkedIn (external anchor)',
+    to: 'https://uk.linkedin.com/'
   }
 ]
 
 const anchorsAndDropdowns = [
   {
-    text: 'Services',
+    label: 'First dropdown',
     dropdownItems: [
       {
-        label: 'Engineering',
-        to: '/engineering/'
+        label: 'Item 1',
+        to: '/item-1/'
       },
       {
-        label: 'Design',
-        to: '/design/'
+        label: 'Item 2',
+        to: '/item-2/'
       },
       {
-        label: 'Training',
-        to: '/training/'
+        label: 'Item 3',
+        to: '/item-3/'
       }
     ]
   },
   {
-    text: 'Our work',
-    path: '/our-work/',
-    isInternal: true
+    label: 'First anchor',
+    to: '/anchor/'
   },
   {
-    text: 'Blog',
-    path: 'https://medium.com/yld-engineering-blog/',
-    isInternal: false
+    label: 'LinkedIn (external anchor)',
+    href: 'https://uk.linkedin.com/'
   },
   {
-    text: 'About',
+    label: 'Second dropdown',
     dropdownItems: [
       {
-        label: 'Our team',
-        to: '/about-us/'
+        label: 'Go here',
+        to: '/go-here/'
       },
       {
-        label: 'Contact',
-        to: '/contact/'
+        label: 'Go there',
+        to: '/go-there/'
       }
     ]
   },
   {
-    text: 'Join Us',
-    path: '/join-us/',
-    isInternal: true
+    label: 'Last anchor',
+    to: '/last-anchor/'
   }
 ]
 

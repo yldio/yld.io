@@ -17,7 +17,7 @@ const FixedHeightFlex = styled(Flex)`
 
 const topNavLinks = [
   {
-    text: 'Services',
+    label: 'Services',
     dropdownItems: [
       {
         label: 'Engineering',
@@ -34,17 +34,15 @@ const topNavLinks = [
     ]
   },
   {
-    text: 'Our work',
-    path: '/our-work/',
-    isInternal: true
+    label: 'Our work',
+    to: '/our-work/'
   },
   {
-    text: 'Blog',
-    path: 'https://medium.com/yld-engineering-blog/',
-    isInternal: false
+    label: 'Blog',
+    href: 'https://medium.com/yld-engineering-blog/'
   },
   {
-    text: 'About',
+    label: 'About',
     dropdownItems: [
       {
         label: 'Our team',
@@ -57,52 +55,43 @@ const topNavLinks = [
     ]
   },
   {
-    text: 'Join Us',
-    path: '/join-us/',
-    isInternal: true
+    label: 'Join Us',
+    to: '/join-us/'
   }
 ]
 
 const sideNavLinks = [
   {
-    text: 'Engineering',
-    path: '/engineering/',
-    isInternal: true
+    label: 'Engineering',
+    to: '/engineering/'
   },
   {
-    text: 'Design',
-    path: '/design/',
-    isInternal: true
+    label: 'Design',
+    to: '/design/'
   },
   {
-    text: 'Training',
-    path: '/training/',
-    isInternal: true
+    label: 'Training',
+    to: '/training/'
   },
   {
-    text: 'Our work',
-    path: '/our-work/',
-    isInternal: true
+    label: 'Our work',
+    to: '/our-work/'
   },
   {
-    text: 'About us',
-    path: '/about-us/',
-    isInternal: true
+    label: 'About us',
+    to: '/about-us/'
   },
   {
-    text: 'Contact',
-    path: '/contact/',
-    isInternal: true
+    label: 'Contact',
+    to: '/contact/'
   },
   {
-    text: 'Blog',
-    path: 'https://medium.com/yld-engineering-blog/',
-    isInternal: false
+    label: 'Blog',
+    href: 'https://medium.com/yld-engineering-blog/'
   },
   {
-    text: 'Join Us',
-    path: '/join-us/',
-    isInternal: true
+    label: 'Join Us',
+    to: '/join-us/'
   }
 ]
 

@@ -7353,7 +7353,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         onMouseEnter={[Function]}
         style={Object {}}
       >
-        Home
+        Here
       </a>
     </li>
     <li
@@ -7361,24 +7361,23 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     >
       <a
         className="c2"
-        href="/engineering"
+        href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Engineering
+        There
       </a>
     </li>
     <li
       className="c1"
     >
       <a
-        activeClassName="active"
         className="c2"
-        href="https://uk.linkedin.com/"
-        rel="noopener noreferrer"
-        target="_blank"
+        href="/https:/uk.linkedin.com/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        LinkedIn
+        LinkedIn (external anchor)
       </a>
     </li>
   </ul>
@@ -7567,7 +7566,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         <span
           className="c3"
         >
-          Services
+          First dropdown
         </span>
         <svg
           className="c4"
@@ -7585,34 +7584,34 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <li>
           <a
-            href="/engineering/"
+            href="/item-1/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <span>
-              Engineering
+              Item 1
             </span>
           </a>
         </li>
         <li>
           <a
-            href="/design/"
+            href="/item-2/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <span>
-              Design
+              Item 2
             </span>
           </a>
         </li>
         <li>
           <a
-            href="/training/"
+            href="/item-3/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <span>
-              Training
+              Item 3
             </span>
           </a>
         </li>
@@ -7623,11 +7622,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     >
       <a
         className="c7"
-        href="/our-work/"
+        href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Our work
+        First anchor
       </a>
     </li>
     <li
@@ -7636,11 +7635,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       <a
         activeClassName="active"
         className="c7"
-        href="https://medium.com/yld-engineering-blog/"
+        href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Blog
+        LinkedIn (external anchor)
       </a>
     </li>
     <div
@@ -7658,7 +7657,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         <span
           className="c3"
         >
-          About
+          Second dropdown
         </span>
         <svg
           className="c4"
@@ -7676,23 +7675,23 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <li>
           <a
-            href="/about-us/"
+            href="/go-here/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <span>
-              Our team
+              Go here
             </span>
           </a>
         </li>
         <li>
           <a
-            href="/contact/"
+            href="/go-there/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <span>
-              Contact
+              Go there
             </span>
           </a>
         </li>
@@ -7703,11 +7702,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     >
       <a
         className="c7"
-        href="/join-us/"
+        href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Join Us
+        Last anchor
       </a>
     </li>
   </ul>
