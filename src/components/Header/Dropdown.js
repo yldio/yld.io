@@ -48,6 +48,7 @@ export default class Dropdown extends PureComponent {
         <DropdownNameWrapper
           tabIndex="0"
           darkTheme={themeVariation === theme.variations.dark}
+          expanded={isExpanded}
         >
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />

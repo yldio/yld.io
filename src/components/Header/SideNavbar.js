@@ -5,8 +5,16 @@ import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
 import close from '../../images/close.svg'
-import SideNavAnchor from './SideNavAnchor'
 import Dropdown from './Dropdown'
+import {
+  SideNavDropdownContainer,
+  SideNavDropdownListItem,
+  SideNavDropdownNameWrapper,
+  SideNavDropdownName,
+  SideNavDropdownList,
+  SideNavOuterAnchor,
+  SideNavInnerAnchor
+} from './DropdownStylesSideNav'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -29,20 +37,11 @@ const MobileCloseButton = styled.button`
   }
 `
 
-const SideNavList = styled.ul`
-  padding-left: ${remcalc(24)};
-`
+const SideNavList = styled.ul``
 
 const SideNavListItem = styled.li`
   list-style-type: none;
-
-  &:not(:last-child) {
-    margin-bottom: ${remcalc(18)};
-  }
-
-  &:last-child > a {
-    padding-right: 0;
-  }
+  padding: ${remcalc('13')} ${remcalc('38')} ${remcalc('11')} ${remcalc('24')};
 `
 
 const SideNavPanel = styled(Flex).attrs({
@@ -84,9 +83,9 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
     </MobileCloseButton>
     <SideNavList>
       <SideNavListItem>
-        <SideNavAnchor activeClassName="active" to="/">
+        <SideNavOuterAnchor activeClassName="active" to="/">
           Home
-        </SideNavAnchor>
+        </SideNavOuterAnchor>
       </SideNavListItem>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
@@ -94,8 +93,14 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
           return (
             <Dropdown
               key={idx}
-              themeVariation={dark ? 'dark' : 'light'}
+              themeVariation="dark"
               items={dropdownItems}
+              DropdownContainer={SideNavDropdownContainer}
+              ListItemComponent={SideNavDropdownListItem}
+              DropdownNameWrapper={SideNavDropdownNameWrapper}
+              DropdownName={SideNavDropdownName}
+              DropdownList={SideNavDropdownList}
+              AnchorComponent={SideNavInnerAnchor}
             >
               {label}
             </Dropdown>
@@ -104,9 +109,9 @@ const SideNavbar = ({ links, isOpen, onClose, dark }) => (
           const { label, to, href } = link
           return (
             <SideNavListItem key={idx}>
-              <SideNavAnchor activeClassName="active" to={to} href={href}>
+              <SideNavOuterAnchor activeClassName="active" to={to} href={href}>
                 {label}
-              </SideNavAnchor>
+              </SideNavOuterAnchor>
             </SideNavListItem>
           )
         }
