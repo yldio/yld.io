@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import TopNavAnchor from './TopNavAnchor'
-import Dropdown from './DesktopDropdown'
+import TopNavListAnchor from './TopNavListAnchor'
+import Dropdown from './Dropdown'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`
@@ -18,16 +18,6 @@ const TopNavList = styled.ul`
     flex: 1;
     padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
     padding-right: ${remcalc(0)};
-  }
-`
-
-export const TopNavListItem = styled.li`
-  list-style-type: none;
-
-  padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
-
-  &:last-child {
-    padding-right: 0;
   }
 `
 
@@ -48,17 +38,17 @@ const TopNavbar = ({ links, dark }) => (
           )
         } else {
           const { label, to, href } = link
+          console.log(label, dark)
           return (
-            <TopNavListItem key={idx}>
-              <TopNavAnchor
-                dark={dark}
-                activeClassName="active"
-                to={to}
-                href={href}
-              >
-                {label}
-              </TopNavAnchor>
-            </TopNavListItem>
+            <TopNavListAnchor
+              key={idx}
+              dark={dark}
+              activeClassName="active"
+              to={to}
+              href={href}
+            >
+              {label}
+            </TopNavListAnchor>
           )
         }
       })}
