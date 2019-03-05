@@ -5704,652 +5704,6 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 </div>
 `;
 
-exports[`Storyshots Header DestkopMenuDropdown - dark theme 1`] = `
-.c3 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c0 {
-  position: relative;
-  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  cursor: pointer;
-  background: transparent;
-  color: #fff;
-}
-
-.c0:hover {
-  background: #f9f9f9;
-}
-
-.c0:hover {
-  background: #3A3553;
-}
-
-.c4 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-}
-
-.c4 li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 a {
-  color: #333333;
-  width: 100%;
-  padding: 10px 15px 14px 15px;
-}
-
-.c4 a:active,
-.c4 a:focus,
-.c4 a:hover {
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c4 a:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c4 a:active {
-  outline: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  padding: 10px 15px 14px 15px;
-}
-
-.c1:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c1:active {
-  outline: none;
-}
-
-.c1:focus {
-  outline-color: white;
-}
-
-.c2 {
-  margin-right: 0.375rem;
-}
-
-<div
-  style={
-    Object {
-      "display": "flex",
-      "height": "50vh",
-      "justifyContent": "center",
-      "width": "100vw",
-    }
-  }
->
-  <ul
-    style={
-      Object {
-        "background": "#090329",
-        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
-        "display": "flex",
-        "flexDirection": "row",
-        "height": "48px",
-        "justifyContent": "center",
-        "width": "100vw",
-      }
-    }
-  >
-    <div
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c0"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c1"
-        tabIndex="0"
-      >
-        <span
-          className="c2"
-        >
-          Menu
-        </span>
-        <svg
-          className="c3"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c4"
-      >
-        <li>
-          <a
-            href="/"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              home
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              engineering
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              long long label content
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </ul>
-</div>
-`;
-
-exports[`Storyshots Header DestkopMenuDropdown - multiple components 1`] = `
-.c3 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c0 {
-  position: relative;
-  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  cursor: pointer;
-  background: transparent;
-}
-
-.c0:hover {
-  background: #f9f9f9;
-}
-
-.c4 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-}
-
-.c4 li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 a {
-  color: #333333;
-  width: 100%;
-  padding: 10px 15px 14px 15px;
-}
-
-.c4 a:active,
-.c4 a:focus,
-.c4 a:hover {
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c4 a:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c4 a:active {
-  outline: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  padding: 10px 15px 14px 15px;
-}
-
-.c1:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c1:active {
-  outline: none;
-}
-
-.c2 {
-  margin-right: 0.375rem;
-}
-
-<div
-  style={
-    Object {
-      "display": "flex",
-      "height": "50vh",
-      "justifyContent": "center",
-      "width": "100vw",
-    }
-  }
->
-  <ul
-    style={
-      Object {
-        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
-        "display": "flex",
-        "flexDirection": "row",
-        "height": "48px",
-        "justifyContent": "center",
-        "width": "100vw",
-      }
-    }
-  >
-    <div
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c0"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c1"
-        tabIndex="0"
-      >
-        <span
-          className="c2"
-        >
-          Menu 1
-        </span>
-        <svg
-          className="c3"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c4"
-      >
-        <li>
-          <a
-            href="/"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              home
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              engineering
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c0"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c1"
-        tabIndex="0"
-      >
-        <span
-          className="c2"
-        >
-          Menu 2
-        </span>
-        <svg
-          className="c3"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c4"
-      >
-        <li>
-          <a
-            href="/"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              home
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              engineering
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              long long label content
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </ul>
-</div>
-`;
-
-exports[`Storyshots Header DestkopMenuDropdown 1`] = `
-.c3 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c0 {
-  position: relative;
-  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  cursor: pointer;
-  background: transparent;
-}
-
-.c0:hover {
-  background: #f9f9f9;
-}
-
-.c4 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-}
-
-.c4 li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c4 a {
-  color: #333333;
-  width: 100%;
-  padding: 10px 15px 14px 15px;
-}
-
-.c4 a:active,
-.c4 a:focus,
-.c4 a:hover {
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c4 a:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c4 a:active {
-  outline: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  padding: 10px 15px 14px 15px;
-}
-
-.c1:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c1:active {
-  outline: none;
-}
-
-.c2 {
-  margin-right: 0.375rem;
-}
-
-<div
-  style={
-    Object {
-      "display": "flex",
-      "height": "50vh",
-      "justifyContent": "center",
-      "width": "100vw",
-    }
-  }
->
-  <ul
-    style={
-      Object {
-        "boxShadow": "0px 2px 10px -3px rgba(0,0,0,0.75)",
-        "display": "flex",
-        "flexDirection": "row",
-        "height": "48px",
-        "justifyContent": "center",
-        "width": "100vw",
-      }
-    }
-  >
-    <div
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c0"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c1"
-        tabIndex="0"
-      >
-        <span
-          className="c2"
-        >
-          Menu
-        </span>
-        <svg
-          className="c3"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c4"
-      >
-        <li>
-          <a
-            href="/"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              home
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              engineering
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="/engineering"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              long long label content
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </ul>
-</div>
-`;
-
 exports[`Storyshots Header Header itself 1`] = `
 .c0 {
   max-width: calc(100% - 48px);
@@ -6394,16 +5748,50 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
 }
 
-.c10 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c5 {
+  padding-top: 25px;
+  padding-bottom: 23px;
+}
+
+.c16 {
+  fill: currentColor;
+}
+
+.c17 {
+  display: none;
+}
+
+.c14 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  opacity: 1;
+  color: #333333;
+}
+
+.c14:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c14:active {
+  outline: none;
+}
+
+.c14.active,
+.c14:hover {
+  color: #333333;
 }
 
 .c7 {
@@ -6436,13 +5824,6 @@ exports[`Storyshots Header Header itself 1`] = `
   background: #f9f9f9;
 }
 
-.c11 li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c11 a {
   color: #333333;
   width: 100%;
@@ -6462,6 +5843,13 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c11 a:active {
   outline: none;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c8 {
@@ -6491,59 +5879,39 @@ exports[`Storyshots Header Header itself 1`] = `
   margin-right: 0.375rem;
 }
 
-.c3 {
-  padding-bottom: 2.25rem;
-}
-
-.c5 {
-  padding-top: 25px;
-  padding-bottom: 23px;
-}
-
-.c15 {
-  fill: currentColor;
-}
-
-.c16 {
-  display: none;
+.c10 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
 }
 
 .c13 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  opacity: 1;
-  color: #333333;
-}
-
-.c13:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c13:active {
-  outline: none;
-}
-
-.c13.active,
-.c13:hover {
-  color: #333333;
-}
-
-.c12 {
   list-style-type: none;
   padding: 0.625rem 0.9375rem 0.875rem;
 }
 
-.c12:last-child {
+.c13:last-child {
   padding-right: 0;
+}
+
+.c22 {
+  cursor: pointer;
+  background: inherit;
+}
+
+.c25 {
+  display: none;
+  opacity: 0;
+}
+
+.c26 {
+  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
 }
 
 .c21 {
@@ -6559,6 +5927,7 @@ exports[`Storyshots Header Header itself 1`] = `
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.5rem;
+  background: inherit;
   color: #fff;
   opacity: 0.5;
 }
@@ -6577,7 +5946,95 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 1;
 }
 
-.c18 {
+.c27 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  display: block;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  background: inherit;
+  color: #fff;
+  opacity: 0.5;
+  color: #333333;
+}
+
+.c27:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c27:active {
+  outline: none;
+}
+
+.c27:hover,
+.c27.active {
+  color: #fff;
+  opacity: 1;
+}
+
+.c27:hover,
+.c27.active {
+  color: #333333;
+  opacity: 1;
+}
+
+.c23 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  display: block;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  background: inherit;
+  color: #fff;
+  opacity: 0.5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
+}
+
+.c23:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c23:active {
+  outline: none;
+}
+
+.c23:hover,
+.c23.active {
+  color: #fff;
+  opacity: 1;
+}
+
+.c23:focus {
+  outline-color: white;
+}
+
+.c24 {
+  width: 320px;
+}
+
+.c19 {
   min-width: 3rem;
   min-height: 3rem;
   background: transparent;
@@ -6603,29 +6060,18 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 1.5rem;
 }
 
-.c18:focus {
+.c19:focus {
   background: transparent;
   outline: 0.25rem solid #6be9c1;
   color: #333333;
 }
 
-.c19 {
-  padding-left: 1.5rem;
-}
-
 .c20 {
   list-style-type: none;
+  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
 }
 
-.c20:not(:last-child) {
-  margin-bottom: 1.125rem;
-}
-
-.c20:last-child > a {
-  padding-right: 0;
-}
-
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6824,7 +6270,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media (min-width:29.4375em) {
-  .c14 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6836,7 +6282,7 @@ exports[`Storyshots Header Header itself 1`] = `
     padding: 0.5rem 0.375rem;
   }
 
-  .c14:focus {
+  .c15:focus {
     background: transparent;
     outline: 0.25rem solid #6be9c1;
     color: #333333;
@@ -6844,13 +6290,13 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:1010px) {
-  .c14 {
+  .c15 {
     display: none;
   }
 }
 
 @media screen and (max-width:1009px) {
-  .c16 {
+  .c17 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6897,7 +6343,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:600px) and (max-width:1009px) {
-  .c17 {
+  .c18 {
     width: 18.4375rem;
     left: auto;
     right: 0;
@@ -6906,7 +6352,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:1010px) {
-  .c17 {
+  .c18 {
     display: none;
   }
 }
@@ -6996,7 +6442,9 @@ exports[`Storyshots Header Header itself 1`] = `
                 <ul
                   className="c11"
                 >
-                  <li>
+                  <li
+                    className="c12"
+                  >
                     <a
                       href="/engineering/"
                       onClick={[Function]}
@@ -7007,7 +6455,9 @@ exports[`Storyshots Header Header itself 1`] = `
                       </span>
                     </a>
                   </li>
-                  <li>
+                  <li
+                    className="c12"
+                  >
                     <a
                       href="/design/"
                       onClick={[Function]}
@@ -7018,7 +6468,9 @@ exports[`Storyshots Header Header itself 1`] = `
                       </span>
                     </a>
                   </li>
-                  <li>
+                  <li
+                    className="c12"
+                  >
                     <a
                       href="/training/"
                       onClick={[Function]}
@@ -7032,10 +6484,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </div>
               <li
-                className="c12"
+                className="c13"
               >
                 <a
-                  className="c13"
+                  className="c14"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7044,11 +6496,11 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c12"
+                className="c13"
               >
                 <a
                   activeClassName="active"
-                  className="c13"
+                  className="c14"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -7087,7 +6539,9 @@ exports[`Storyshots Header Header itself 1`] = `
                 <ul
                   className="c11"
                 >
-                  <li>
+                  <li
+                    className="c12"
+                  >
                     <a
                       href="/about-us/"
                       onClick={[Function]}
@@ -7098,7 +6552,9 @@ exports[`Storyshots Header Header itself 1`] = `
                       </span>
                     </a>
                   </li>
-                  <li>
+                  <li
+                    className="c12"
+                  >
                     <a
                       href="/contact/"
                       onClick={[Function]}
@@ -7112,10 +6568,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </div>
               <li
-                className="c12"
+                className="c13"
               >
                 <a
-                  className="c13"
+                  className="c14"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7126,11 +6582,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </ul>
           </nav>
           <button
-            className="c14"
+            className="c15"
             onClick={[Function]}
           >
             <svg
-              className="c15"
+              className="c16"
               height="18"
               title="open menu"
               width="24"
@@ -7143,15 +6599,15 @@ exports[`Storyshots Header Header itself 1`] = `
             </svg>
           </button>
           <div
-            className="c16"
+            className="c17"
             onClick={[Function]}
           />
           <nav
-            className="c17"
+            className="c18"
             open={false}
           >
             <button
-              className="c18"
+              className="c19"
               onClick={[Function]}
             >
               <img
@@ -7160,7 +6616,7 @@ exports[`Storyshots Header Header itself 1`] = `
               />
             </button>
             <ul
-              className="c19"
+              className=""
             >
               <li
                 className="c20"
@@ -7176,42 +6632,81 @@ exports[`Storyshots Header Header itself 1`] = `
                   Home
                 </a>
               </li>
-              <li
-                className="c20"
+              <div
+                aria-expanded={false}
+                aria-haspopup="true"
+                className="c22"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
               >
-                <a
-                  className="c21"
-                  href="/engineering/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
+                <span
+                  className="c23"
+                  tabIndex="0"
                 >
-                  Engineering
-                </a>
-              </li>
-              <li
-                className="c20"
-              >
-                <a
-                  className="c21"
-                  href="/design/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
+                  <span
+                    className="c24"
+                  >
+                    Services
+                  </span>
+                  <svg
+                    className="c10"
+                    height="6"
+                    viewBox="0 0 6 6"
+                    width="6"
+                  >
+                    <polyline
+                      points="0,0 6,0 6,6"
+                    />
+                  </svg>
+                </span>
+                <ul
+                  className="c25"
                 >
-                  Design
-                </a>
-              </li>
-              <li
-                className="c20"
-              >
-                <a
-                  className="c21"
-                  href="/training/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  Training
-                </a>
-              </li>
+                  <li
+                    className="c26"
+                  >
+                    <a
+                      className="c27"
+                      href="/engineering/"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <span>
+                        Engineering
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    className="c26"
+                  >
+                    <a
+                      className="c27"
+                      href="/design/"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <span>
+                        Design
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    className="c26"
+                  >
+                    <a
+                      className="c27"
+                      href="/training/"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <span>
+                        Training
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <li
                 className="c20"
               >
@@ -7228,30 +6723,6 @@ exports[`Storyshots Header Header itself 1`] = `
                 className="c20"
               >
                 <a
-                  className="c21"
-                  href="/about-us/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  About us
-                </a>
-              </li>
-              <li
-                className="c20"
-              >
-                <a
-                  className="c21"
-                  href="/contact/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  Contact
-                </a>
-              </li>
-              <li
-                className="c20"
-              >
-                <a
                   activeClassName="active"
                   className="c21"
                   href="https://medium.com/yld-engineering-blog/"
@@ -7261,6 +6732,67 @@ exports[`Storyshots Header Header itself 1`] = `
                   Blog
                 </a>
               </li>
+              <div
+                aria-expanded={false}
+                aria-haspopup="true"
+                className="c22"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="c23"
+                  tabIndex="0"
+                >
+                  <span
+                    className="c24"
+                  >
+                    About
+                  </span>
+                  <svg
+                    className="c10"
+                    height="6"
+                    viewBox="0 0 6 6"
+                    width="6"
+                  >
+                    <polyline
+                      points="0,0 6,0 6,6"
+                    />
+                  </svg>
+                </span>
+                <ul
+                  className="c25"
+                >
+                  <li
+                    className="c26"
+                  >
+                    <a
+                      className="c27"
+                      href="/about-us/"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <span>
+                        Our team
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    className="c26"
+                  >
+                    <a
+                      className="c27"
+                      href="/contact/"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <span>
+                        Contact
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <li
                 className="c20"
               >
@@ -7358,6 +6890,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
       <a
         aria-current="page"
         className="c2 active"
+        dark={false}
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7371,6 +6904,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     >
       <a
         className="c2"
+        dark={false}
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7383,6 +6917,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     >
       <a
         className="c2"
+        dark={false}
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7395,16 +6930,33 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 `;
 
 exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
-.c4 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
+.c8 {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: opacity,color,outline;
+  transition-property: opacity,color,outline;
+  padding: 0;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  opacity: 1;
+  color: #333333;
+}
+
+.c8:focus {
+  outline: 0.25rem solid #6be9c1;
+}
+
+.c8:active {
+  outline: none;
+}
+
+.c8.active,
+.c8:hover {
+  color: #333333;
 }
 
 .c1 {
@@ -7437,13 +6989,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   background: #f9f9f9;
 }
 
-.c5 li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c5 a {
   color: #333333;
   width: 100%;
@@ -7463,6 +7008,13 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 
 .c5 a:active {
   outline: none;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c2 {
@@ -7492,41 +7044,24 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   margin-right: 0.375rem;
 }
 
+.c4 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
 .c7 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  opacity: 1;
-  color: #333333;
-}
-
-.c7:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c7:active {
-  outline: none;
-}
-
-.c7.active,
-.c7:hover {
-  color: #333333;
-}
-
-.c6 {
   list-style-type: none;
   padding: 0.625rem 0.9375rem 0.875rem;
 }
 
-.c6:last-child {
+.c7:last-child {
   padding-right: 0;
 }
 
@@ -7592,7 +7127,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       <ul
         className="c5"
       >
-        <li>
+        <li
+          className="c6"
+        >
           <a
             href="/item-1/"
             onClick={[Function]}
@@ -7603,7 +7140,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          className="c6"
+        >
           <a
             href="/item-2/"
             onClick={[Function]}
@@ -7614,7 +7153,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          className="c6"
+        >
           <a
             href="/item-3/"
             onClick={[Function]}
@@ -7628,10 +7169,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       </ul>
     </div>
     <li
-      className="c6"
+      className="c7"
     >
       <a
-        className="c7"
+        className="c8"
+        dark={false}
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7640,11 +7182,12 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       </a>
     </li>
     <li
-      className="c6"
+      className="c7"
     >
       <a
         activeClassName="active"
-        className="c7"
+        className="c8"
+        dark={false}
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
@@ -7683,7 +7226,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       <ul
         className="c5"
       >
-        <li>
+        <li
+          className="c6"
+        >
           <a
             href="/go-here/"
             onClick={[Function]}
@@ -7694,7 +7239,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             </span>
           </a>
         </li>
-        <li>
+        <li
+          className="c6"
+        >
           <a
             href="/go-there/"
             onClick={[Function]}
@@ -7708,10 +7255,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       </ul>
     </div>
     <li
-      className="c6"
+      className="c7"
     >
       <a
-        className="c7"
+        className="c8"
+        dark={false}
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
