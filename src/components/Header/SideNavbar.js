@@ -76,7 +76,7 @@ const SideNavPanel = styled(Flex).attrs({
   }
 `
 
-const SideNavbar = ({ links, isOpen, onClose, dark }) => (
+const SideNavbar = ({ links, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />

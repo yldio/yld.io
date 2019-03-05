@@ -11,9 +11,8 @@ const TopNavAnchor = styled(Anchor)`
   font-size: ${remcalc(17)};
   line-height: ${remcalc(24)};
   opacity: 1;
-  padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
 
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.text};
 
   &.active,
   &:hover {
