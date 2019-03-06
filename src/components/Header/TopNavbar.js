@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import TopNavListAnchor from './TopNavListAnchor'
+import TopNavAnchorItem from './TopNavAnchorItem'
 import Dropdown from './Dropdown'
 
 const TopNavList = styled.ul`
@@ -40,15 +40,15 @@ const TopNavbar = ({ links, dark }) => (
           const { label, to, href } = link
           console.log(label, dark)
           return (
-            <TopNavListAnchor
+            <TopNavAnchorItem
               key={idx}
-              dark={dark}
+              themeVariation={dark ? 'dark' : 'light'}
               activeClassName="active"
               to={to}
               href={href}
             >
               {label}
-            </TopNavListAnchor>
+            </TopNavAnchorItem>
           )
         }
       })}
