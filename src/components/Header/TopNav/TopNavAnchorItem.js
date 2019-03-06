@@ -3,8 +3,9 @@ import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
-import headerAnchorStyles from '../headerAnchorStyles'
+import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
+import itemPadding from './itemPadding'
 import itemLightStyles, {
   hoverLightStyles,
   clickTapLightStyles,
@@ -19,7 +20,8 @@ import itemDarkStyles, {
 } from './itemDarkStyles'
 
 const StyledAnchor = styled(Anchor)`
-  ${headerAnchorStyles}
+  ${headerItemStyles}
+  ${itemPadding}
   font-weight: 400;
   font-size: ${remcalc(17)};
   line-height: ${remcalc(24)};

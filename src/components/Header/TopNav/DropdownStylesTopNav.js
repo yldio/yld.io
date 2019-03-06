@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 
-import headerAnchorStyles from '../headerAnchorStyles'
+import headerItemStyles from '../headerItemStyles'
+import itemPadding from './itemPadding'
 import outlineStyles from '../outlineStyles'
 import itemLightStyles, {
   hoverLightStyles,
@@ -95,7 +96,8 @@ export const TopNavDropdownNameWrapper = styled.span`
   transition: outline ${props => props.theme.animations.normal} ease-out;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
-  ${headerAnchorStyles}
+  ${headerItemStyles}
+  ${itemPadding}
   ${outlineStyles}
 
   ${is('darkTheme')`

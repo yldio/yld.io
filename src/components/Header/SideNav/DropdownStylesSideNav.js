@@ -3,7 +3,7 @@ import is from 'styled-is'
 import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
-import headerAnchorStyles from '../headerAnchorStyles'
+import headerItemStyles from '../headerItemStyles'
 
 const listItemPadding = css`
   padding: ${remcalc('13')} ${remcalc('38')} ${remcalc('11')} ${remcalc('24')};
@@ -33,7 +33,7 @@ export const SideNavDropdownListItem = styled.li`
 `
 
 const OuterItemStyles = css`
-  ${headerAnchorStyles}
+  ${headerItemStyles}
   display: block;
   font-weight: 400;
   font-size: ${remcalc(21)};

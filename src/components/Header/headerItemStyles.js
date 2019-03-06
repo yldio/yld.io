@@ -1,8 +1,6 @@
 import { css } from 'styled-components'
-import remcalc from 'remcalc'
 
-const headerAnchorStyles = css`
-  padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
+const headerItemStyles = css`
   transition: opacity ${props => props.theme.animations.fast} ease-out,
     color ${props => props.theme.animations.fast} ease-out,
     outline ${props => props.theme.animations.fast} ease-out;
@@ -10,4 +8,4 @@ const headerAnchorStyles = css`
   outline: none;
 `
 
-export default headerAnchorStyles
+export default headerItemStyles
