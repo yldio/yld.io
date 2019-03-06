@@ -67,8 +67,8 @@ const anchorsAndDropdowns = [
 
 storiesOf('Header', module)
   .add('TopNavbar - light theme', () => (
-    <TopNavbar links={anchors} dark={false} />
+    <TopNavbar links={anchors} themeVariation="light" />
   ))
   .add('TopNavbar with dropdowns - light theme', () => (
-    <TopNavbar links={anchorsAndDropdowns} dark={false} />
+    <TopNavbar links={anchorsAndDropdowns} themeVariation="light" />
   ))

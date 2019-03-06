@@ -3,13 +3,12 @@ import React, { PureComponent } from 'react'
 import theme from '../../utils/theme'
 import {
   TopNavDropdownContainer,
-  TopNavDropdownListItem,
   TopNavDropdownNameWrapper,
   TopNavDropdownName,
   TopNavDropdownList
 } from './DropdownStylesTopNav'
+import TopNavAnchorItem from './TopNavAnchorItem'
 import Chevron from '../Common/Chevron'
-import Anchor from '../Common/Anchor'
 
 export default class Dropdown extends PureComponent {
   constructor(props) {
@@ -24,11 +23,9 @@ export default class Dropdown extends PureComponent {
     const {
       items,
       DropdownContainer = TopNavDropdownContainer,
-      ListItemComponent = TopNavDropdownListItem,
       DropdownNameWrapper = TopNavDropdownNameWrapper,
       DropdownName = TopNavDropdownName,
       DropdownList = TopNavDropdownList,
-      AnchorComponent = Anchor,
       themeVariation,
       children
     } = this.props
@@ -42,7 +39,7 @@ export default class Dropdown extends PureComponent {
         onMouseDown={this.toggle}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
-        darkTheme={themeVariation === theme.variations.dark}
+        themeVariation={themeVariation}
         ref={this.ref}
       >
         <DropdownNameWrapper
@@ -55,15 +52,16 @@ export default class Dropdown extends PureComponent {
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
           {items.map(({ to, href, label }, idx) => (
-            <ListItemComponent key={idx}>
-              <AnchorComponent
-                to={to}
-                href={href}
-                onClick={this.handleItemClick}
-              >
-                <span>{label}</span>
-              </AnchorComponent>
-            </ListItemComponent>
+            <TopNavAnchorItem
+              key={idx}
+              themeVariation="light"
+              activeClassName="active"
+              onClick={this.handleItemClick}
+              to={to}
+              href={href}
+            >
+              {label}
+            </TopNavAnchorItem>
           ))}
         </DropdownList>
       </DropdownContainer>

@@ -21,7 +21,7 @@ const TopNavList = styled.ul`
   }
 `
 
-const TopNavbar = ({ links, dark }) => (
+const TopNavbar = ({ links, themeVariation }) => (
   <nav>
     <TopNavList>
       {links.map((link, idx) => {
@@ -30,7 +30,7 @@ const TopNavbar = ({ links, dark }) => (
           return (
             <Dropdown
               key={idx}
-              themeVariation={dark ? 'dark' : 'light'}
+              themeVariation={themeVariation}
               items={dropdownItems}
             >
               {label}
@@ -38,11 +38,10 @@ const TopNavbar = ({ links, dark }) => (
           )
         } else {
           const { label, to, href } = link
-          console.log(label, dark)
           return (
             <TopNavAnchorItem
               key={idx}
-              themeVariation={dark ? 'dark' : 'light'}
+              themeVariation={themeVariation}
               activeClassName="active"
               to={to}
               href={href}

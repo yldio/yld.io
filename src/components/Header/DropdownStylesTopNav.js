@@ -1,48 +1,75 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 
+import headerAnchorStyles from './headerAnchorStyles'
 import outlineStyles from './outlineStyles'
+import itemLightStyles, {
+  hoverLightStyles,
+  clickTapLightStyles,
+  activeAndHoverLightStyles
+} from './itemLightStyles'
+import itemDarkStyles, {
+  hoverDarkStyles,
+  clickTapDarkStyles,
+  activeAndHoverDarkStyles
+} from './itemDarkStyles'
 
-const dropDownItemPadding = `padding: 10px 15px 14px 15px;`
-
-export const TopNavDropdownContainer = styled.div`
+export const TopNavDropdownContainer = styled.li`
   position: relative;
-  transition: color ${props => props.theme.animations.fast} ease-in-out,
-    background ${props => props.theme.animations.fast} ease-in-out;
   cursor: pointer;
   background: transparent;
+  ${props => {
+    if (props.themeVariation === 'light') {
+      return css`
+        > span {
+          ${itemLightStyles}
+        }
 
-  &:hover {
-    background: ${props => props.theme.colors.greyBG};
-  }
+        &:hover {
+          > span {
+            ${hoverLightStyles}
+          }
+        }
 
-  ${is('expanded')`
-    color: ${props => props.theme.colors.white};
-    background: ${props => props.theme.colors.text};
+        ${is('expanded')`
+          > span {
+            ${clickTapLightStyles}
+          }
+      
+          &:hover {
+            > span {
+              ${activeAndHoverLightStyles}
+            }
+          }
+        `}
+      `
+    } else if (props.themeVariation === 'dark') {
+      return css`
+        > span {
+          ${itemDarkStyles}
+        }
 
-    &:hover {
-      background: ${props => props.theme.colors.text};
+        &:hover {
+          > span {
+            ${hoverDarkStyles}
+          }
+        }
+
+        ${is('expanded')`
+          > span {
+            ${clickTapDarkStyles}
+          }
+      
+          &:hover {
+            > span {
+              ${activeAndHoverDarkStyles}
+            }
+          }
+        `}
+      `
     }
-  `}
-
-  ${is('darkTheme')`
-    color: ${props => props.theme.colors.white};
-
-    &:hover {
-      background: #3A3553;
-    }
-
-    ${is('expanded')`
-      background: ${props => props.theme.colors.vibrant};
-      color: ${props => props.theme.colors.text};
-
-      &:hover {
-        background: ${props => props.theme.colors.vibrant};
-        color: #007F56;
-      }
-    `}
-  `}
+  }}
 `
 
 export const TopNavDropdownList = styled.ul`
@@ -60,24 +87,6 @@ export const TopNavDropdownList = styled.ul`
     left: 0;
     opacity: 1;
   `}
-
-  a {
-    color: ${props => props.theme.colors.text};
-    width: 100%;
-    ${dropDownItemPadding}
-
-    &:active,
-    &:focus,
-    &:hover {
-      background: ${props => props.theme.colors.greyBG};
-      color: ${props => props.theme.colors.textLight};
-    }
-    ${outlineStyles}
-  }
-`
-
-export const TopNavDropdownListItem = styled.li`
-  display: flex;
 `
 
 export const TopNavDropdownNameWrapper = styled.span`
@@ -86,7 +95,7 @@ export const TopNavDropdownNameWrapper = styled.span`
   transition: outline ${props => props.theme.animations.normal} ease-out;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
-  ${dropDownItemPadding}
+  ${headerAnchorStyles}
   ${outlineStyles}
 
   ${is('darkTheme')`

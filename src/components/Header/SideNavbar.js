@@ -76,7 +76,7 @@ const SideNavPanel = styled(Flex).attrs({
   }
 `
 
-const SideNavbar = ({ links, isOpen, onClose }) => (
+const SideNavbar = ({ links, themeVariation, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
@@ -93,7 +93,7 @@ const SideNavbar = ({ links, isOpen, onClose }) => (
           return (
             <Dropdown
               key={idx}
-              themeVariation="dark"
+              themeVariation={themeVariation}
               items={dropdownItems}
               DropdownContainer={SideNavDropdownContainer}
               ListItemComponent={SideNavDropdownListItem}
