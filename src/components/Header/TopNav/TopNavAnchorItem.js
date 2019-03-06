@@ -86,10 +86,16 @@ const TopNavAnchorItem = ({
   href,
   activeClassName,
   themeVariation,
+  onClick,
   ...props
 }) => (
   <TopNavListItem themeVariation={themeVariation} {...props}>
-    <StyledAnchor href={href} to={to} activeClassName={activeClassName}>
+    <StyledAnchor
+      href={href}
+      to={to}
+      activeClassName={activeClassName}
+      onClick={onClick}
+    >
       {children}
     </StyledAnchor>
   </TopNavListItem>

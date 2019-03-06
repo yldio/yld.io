@@ -26,6 +26,7 @@ export default class Dropdown extends PureComponent {
       DropdownNameWrapper = TopNavDropdownNameWrapper,
       DropdownName = TopNavDropdownName,
       DropdownList = TopNavDropdownList,
+      AnchorItem = TopNavAnchorItem,
       themeVariation,
       children
     } = this.props
@@ -52,7 +53,7 @@ export default class Dropdown extends PureComponent {
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
           {items.map(({ to, href, label }, idx) => (
-            <TopNavAnchorItem
+            <AnchorItem
               key={idx}
               themeVariation="light"
               activeClassName="active"
@@ -61,7 +62,7 @@ export default class Dropdown extends PureComponent {
               href={href}
             >
               {label}
-            </TopNavAnchorItem>
+            </AnchorItem>
           ))}
         </DropdownList>
       </DropdownContainer>
