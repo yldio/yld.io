@@ -8,13 +8,12 @@ import close from '../../../images/close.svg'
 import Dropdown from '../Dropdown'
 import {
   SideNavDropdownContainer,
-  SideNavDropdownListItem,
   SideNavDropdownNameWrapper,
   SideNavDropdownName,
   SideNavDropdownList,
-  SideNavOuterAnchor,
-  SideNavInnerAnchor
+  SideNavOuterAnchor
 } from './DropdownStylesSideNav'
+import SideNavInnerAnchorItem from './SideNavInnerAnchorItem'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -96,11 +95,10 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
               themeVariation={themeVariation}
               items={dropdownItems}
               DropdownContainer={SideNavDropdownContainer}
-              ListItemComponent={SideNavDropdownListItem}
               DropdownNameWrapper={SideNavDropdownNameWrapper}
               DropdownName={SideNavDropdownName}
               DropdownList={SideNavDropdownList}
-              AnchorComponent={SideNavInnerAnchor}
+              AnchorItem={SideNavInnerAnchorItem}
             >
               {label}
             </Dropdown>

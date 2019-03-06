@@ -4,10 +4,7 @@ import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
-
-const listItemPadding = css`
-  padding: ${remcalc('13')} ${remcalc('38')} ${remcalc('11')} ${remcalc('24')};
-`
+import itemPadding from './itemPadding'
 
 export const SideNavDropdownContainer = styled.div`
   cursor: pointer;
@@ -28,10 +25,6 @@ export const SideNavDropdownList = styled.ul`
   `}
 `
 
-export const SideNavDropdownListItem = styled.li`
-  ${listItemPadding}
-`
-
 const OuterItemStyles = css`
   ${headerItemStyles}
   display: block;
@@ -48,26 +41,16 @@ const OuterItemStyles = css`
     opacity: 1;
   }
 `
+
 export const SideNavOuterAnchor = styled(Anchor)`
   ${OuterItemStyles}
-`
-
-export const SideNavInnerAnchor = styled(Anchor)`
-  ${OuterItemStyles}
-  color: ${props => props.theme.colors.text};
-
-  &:hover,
-  &.active {
-    color: ${props => props.theme.colors.text};
-    opacity: 1;
-  }
 `
 
 export const SideNavDropdownNameWrapper = styled.span`
   ${OuterItemStyles}
   display: flex;
   align-items: center;
-  ${listItemPadding}
+  ${itemPadding}
 
   ${is('expanded')`
     color: ${props => props.theme.colors.white};
