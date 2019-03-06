@@ -6,8 +6,8 @@ import {
   TopNavDropdownNameWrapper,
   TopNavDropdownName,
   TopNavDropdownList
-} from './DropdownStylesTopNav'
-import TopNavAnchorItem from './TopNavAnchorItem'
+} from './TopNav/DropdownStylesTopNav'
+import TopNavAnchorItem from './TopNav/TopNavAnchorItem'
 import Chevron from '../Common/Chevron'
 
 export default class Dropdown extends PureComponent {

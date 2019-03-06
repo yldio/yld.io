@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 
-import headerAnchorStyles from './headerAnchorStyles'
-import outlineStyles from './outlineStyles'
+import headerAnchorStyles from '../headerAnchorStyles'
+import outlineStyles from '../outlineStyles'
 import itemLightStyles, {
   hoverLightStyles,
   clickTapLightStyles,

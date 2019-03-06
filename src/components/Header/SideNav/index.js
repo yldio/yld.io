@@ -4,8 +4,8 @@ import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
-import close from '../../images/close.svg'
-import Dropdown from './Dropdown'
+import close from '../../../images/close.svg'
+import Dropdown from '../Dropdown'
 import {
   SideNavDropdownContainer,
   SideNavDropdownListItem,
@@ -76,7 +76,7 @@ const SideNavPanel = styled(Flex).attrs({
   }
 `
 
-const SideNavbar = ({ links, themeVariation, isOpen, onClose }) => (
+const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
@@ -119,4 +119,5 @@ const SideNavbar = ({ links, themeVariation, isOpen, onClose }) => (
     </SideNavList>
   </SideNavPanel>
 )
-export default SideNavbar
+
+export default SideNav

@@ -2,9 +2,9 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 
-import Anchor from '../Common/Anchor'
-import headerAnchorStyles from './headerAnchorStyles'
-import outlineStyles from './outlineStyles'
+import Anchor from '../../Common/Anchor'
+import headerAnchorStyles from '../headerAnchorStyles'
+import outlineStyles from '../outlineStyles'
 import itemLightStyles, {
   hoverLightStyles,
   clickTapLightStyles,

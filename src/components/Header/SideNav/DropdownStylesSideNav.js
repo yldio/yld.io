@@ -2,8 +2,8 @@ import styled, { css } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 
-import Anchor from '../Common/Anchor'
-import headerAnchorStyles from './headerAnchorStyles'
+import Anchor from '../../Common/Anchor'
+import headerAnchorStyles from '../headerAnchorStyles'
 
 const listItemPadding = css`
   padding: ${remcalc('13')} ${remcalc('38')} ${remcalc('11')} ${remcalc('24')};

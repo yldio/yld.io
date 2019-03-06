@@ -8,8 +8,8 @@ import { Row, Col, Grid } from '../grid'
 import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
-import TopNavbar from './TopNavbar'
-import SideNavbar from './SideNavbar'
+import TopNav from './TopNav'
+import SideNav from './SideNav'
 
 const FixedHeightFlex = styled(Flex)`
   height: 84px;
@@ -72,7 +72,7 @@ const Header = ({ path, blue, logoColour }) => {
               <Link to="/">
                 <Logo path={path} blue={blue} logoColour={logoColour} />
               </Link>
-              <TopNavbar
+              <TopNav
                 links={navLinks}
                 themeVariation={blue ? 'dark' : 'light'}
               />
@@ -84,7 +84,7 @@ const Header = ({ path, blue, logoColour }) => {
                 visible={isMobileNavbarOpen}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
               />
-              <SideNavbar
+              <SideNav
                 links={navLinks}
                 themeVariation="dark"
                 isOpen={isMobileNavbarOpen}

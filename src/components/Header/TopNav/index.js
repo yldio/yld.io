@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import TopNavAnchorItem from './TopNavAnchorItem'
-import Dropdown from './Dropdown'
+import Dropdown from '../Dropdown'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`
@@ -21,7 +21,7 @@ const TopNavList = styled.ul`
   }
 `
 
-const TopNavbar = ({ links, themeVariation }) => (
+const TopNav = ({ links, themeVariation }) => (
   <nav>
     <TopNavList>
       {links.map((link, idx) => {
@@ -54,4 +54,5 @@ const TopNavbar = ({ links, themeVariation }) => (
     </TopNavList>
   </nav>
 )
-export default TopNavbar
+
+export default TopNav
