@@ -3,7 +3,7 @@ import is from 'styled-is'
 import remcalc from 'remcalc'
 
 import headerItemStyles from '../headerItemStyles'
-import itemPadding from './itemPadding'
+import topNavItemPadding from './topNavItemPadding'
 import outlineStyles from '../outlineStyles'
 import itemLightStyles, {
   hoverLightStyles,
@@ -97,7 +97,7 @@ export const TopNavDropdownNameWrapper = styled.span`
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
   ${headerItemStyles}
-  ${itemPadding}
+  ${topNavItemPadding}
   ${outlineStyles}
 
   ${is('darkTheme')`

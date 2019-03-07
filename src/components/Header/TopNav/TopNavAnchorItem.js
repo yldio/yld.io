@@ -5,7 +5,7 @@ import remcalc from 'remcalc'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
-import itemPadding from './itemPadding'
+import topNavItemPadding from './topNavItemPadding'
 import itemLightStyles, {
   hoverLightStyles,
   clickTapLightStyles,
@@ -21,7 +21,7 @@ import itemDarkStyles, {
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
-  ${itemPadding}
+  ${topNavItemPadding}
   font-weight: 400;
   font-size: ${remcalc(17)};
   line-height: ${remcalc(24)};

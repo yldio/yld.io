@@ -13,7 +13,7 @@ import {
   SideNavDropdownList,
   SideNavOuterAnchor
 } from './DropdownStylesSideNav'
-import SideNavInnerAnchorItem from './SideNavInnerAnchorItem'
+import { SideNavInnerAnchor } from '../InnerAnchor'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -98,7 +98,7 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
               DropdownNameWrapper={SideNavDropdownNameWrapper}
               DropdownName={SideNavDropdownName}
               DropdownList={SideNavDropdownList}
-              AnchorItem={SideNavInnerAnchorItem}
+              InnerAnchor={SideNavInnerAnchor}
             >
               {label}
             </Dropdown>

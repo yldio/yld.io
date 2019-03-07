@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
-import itemPadding from './itemPadding'
+import sideNavItemPadding from './sideNavItemPadding'
 
 export const SideNavDropdownContainer = styled.div`
   cursor: pointer;
@@ -50,7 +50,7 @@ export const SideNavDropdownNameWrapper = styled.span`
   ${OuterItemStyles}
   display: flex;
   align-items: center;
-  ${itemPadding}
+  ${sideNavItemPadding}
 
   ${is('expanded')`
     color: ${props => props.theme.colors.white};

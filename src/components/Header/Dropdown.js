@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import styled from 'styled-components'
 
 import theme from '../../utils/theme'
 import {
@@ -7,8 +8,16 @@ import {
   TopNavDropdownName,
   TopNavDropdownList
 } from './TopNav/DropdownStylesTopNav'
-import TopNavAnchorItem from './TopNav/TopNavAnchorItem'
+import { TopNavInnerAnchor } from './InnerAnchor'
 import Chevron from '../Common/Chevron'
+import outlineStyles from './outlineStyles'
+
+const InnerListItem = styled.li`
+  display: flex;
+  > a:focus {
+    ${outlineStyles}
+  }
+`
 
 export default class Dropdown extends PureComponent {
   constructor(props) {
@@ -26,7 +35,7 @@ export default class Dropdown extends PureComponent {
       DropdownNameWrapper = TopNavDropdownNameWrapper,
       DropdownName = TopNavDropdownName,
       DropdownList = TopNavDropdownList,
-      AnchorItem = TopNavAnchorItem,
+      InnerAnchor = TopNavInnerAnchor,
       themeVariation,
       children
     } = this.props
@@ -53,16 +62,16 @@ export default class Dropdown extends PureComponent {
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
           {items.map(({ to, href, label }, idx) => (
-            <AnchorItem
-              key={idx}
-              themeVariation="light"
-              activeClassName="active"
-              onClick={this.handleItemClick}
-              to={to}
-              href={href}
-            >
-              {label}
-            </AnchorItem>
+            <InnerListItem key={idx} themeVariation={themeVariation}>
+              <InnerAnchor
+                href={href}
+                to={to}
+                activeClassName="active"
+                onClick={this.handleItemClick}
+              >
+                {label}
+              </InnerAnchor>
+            </InnerListItem>
           ))}
         </DropdownList>
       </DropdownContainer>

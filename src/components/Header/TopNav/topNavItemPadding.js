@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 import remcalc from 'remcalc'
 
-const itemPadding = css`
+const topNavItemPadding = css`
   padding: ${remcalc(10)} ${remcalc(15)} ${remcalc(14)};
 `
 
-export default itemPadding
+export default topNavItemPadding
