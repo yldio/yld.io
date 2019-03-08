@@ -1,7 +1,10 @@
+import React from 'react'
 import styled from 'styled-components'
 import is from 'styled-is'
 
-const DropdownList = styled.ul`
+import InnerAnchorItem from './InnerAnchorItem'
+
+const StyledList = styled.ul`
   display: none;
   opacity: 0;
 
@@ -14,5 +17,21 @@ const DropdownList = styled.ul`
     background: ${props => props.theme.colors.greyBG};
   `}
 `
+
+const DropdownList = ({ expanded, items, themeVariation, onClick }) => (
+  <StyledList expanded={expanded}>
+    {items.map(({ to, href, label }, idx) => (
+      <InnerAnchorItem
+        key={idx}
+        href={href}
+        to={to}
+        activeClassName="active"
+        onClick={onClick}
+      >
+        {label}
+      </InnerAnchorItem>
+    ))}
+  </StyledList>
+)
 
 export default DropdownList

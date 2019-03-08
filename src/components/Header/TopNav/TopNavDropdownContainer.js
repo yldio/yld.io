@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components'
 import is from 'styled-is'
-import remcalc from 'remcalc'
 
-import headerItemStyles from '../headerItemStyles'
-import topNavItemPadding from './topNavItemPadding'
-import outlineStyles from '../outlineStyles'
 import {
   defaultLightStyles,
   hoverLightStyles,
@@ -16,7 +12,7 @@ import {
   activeAndHoverDarkStyles
 } from './outerItemStyles'
 
-export const TopNavDropdownContainer = styled.li`
+const TopNavDropdownContainer = styled.li`
   position: relative;
   cursor: pointer;
   background: transparent;
@@ -73,39 +69,4 @@ export const TopNavDropdownContainer = styled.li`
   }}
 `
 
-export const TopNavDropdownList = styled.ul`
-  position: absolute;
-  width: ${remcalc(160)};
-  display: flex;
-  flex-direction: column;
-  top: ${remcalc(48)};
-  left: -9999px;
-  opacity: 0;
-  transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBG};
-  z-index: ${props => props.theme.zIndexes.header} ${is('expanded')`
-    left: 0;
-    opacity: 1;
-  `};
-`
-
-export const TopNavDropdownNameWrapper = styled.span`
-  display: flex;
-  align-items: center;
-  transition: outline ${props => props.theme.animations.normal} ease-out;
-  /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
-  z-index: 2;
-  ${headerItemStyles}
-  ${topNavItemPadding}
-  ${outlineStyles}
-
-  ${is('darkTheme')`
-    &:focus {
-      outline-color: white;
-    } 
-  `}
-`
-
-export const TopNavDropdownName = styled.span`
-  margin-right: ${remcalc(6)};
-`
+export default TopNavDropdownContainer

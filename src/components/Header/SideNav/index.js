@@ -6,10 +6,9 @@ import is from 'styled-is'
 
 import close from '../../../images/close.svg'
 import Dropdown from '../Dropdown'
-import DropdownList from './DropdownList'
 import { DropdownNameWrapper, DropdownName } from './DropdownSelectButton'
-import OuterAnchor from './OuterAnchor'
-import { SideNavInnerAnchor } from '../InnerAnchor'
+import DropdownList from './DropdownList'
+import OuterAnchorItem from './OuterAnchorItem'
 
 const MobileCloseButton = styled.button`
   min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
@@ -33,11 +32,6 @@ const MobileCloseButton = styled.button`
 `
 
 const SideNavList = styled.ul``
-
-const SideNavListItem = styled.li`
-  list-style-type: none;
-  padding: ${remcalc('13')} ${remcalc('38')} ${remcalc('11')} ${remcalc('24')};
-`
 
 const SideNavPanel = styled(Flex).attrs({
   as: 'nav'
@@ -77,11 +71,9 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
       <img src={close} alt="Close menu" />
     </MobileCloseButton>
     <SideNavList>
-      <SideNavListItem>
-        <OuterAnchor activeClassName="active" to="/">
-          Home
-        </OuterAnchor>
-      </SideNavListItem>
+      <OuterAnchorItem activeClassName="active" to="/">
+        Home
+      </OuterAnchorItem>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
           const { label, dropdownItems } = link
@@ -94,7 +86,6 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
               DropdownNameWrapper={DropdownNameWrapper}
               DropdownName={DropdownName}
               DropdownList={DropdownList}
-              InnerAnchor={SideNavInnerAnchor}
             >
               {label}
             </Dropdown>
@@ -102,11 +93,14 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
         } else {
           const { label, to, href } = link
           return (
-            <SideNavListItem key={idx}>
-              <OuterAnchor activeClassName="active" to={to} href={href}>
-                {label}
-              </OuterAnchor>
-            </SideNavListItem>
+            <OuterAnchorItem
+              key={idx}
+              activeClassName="active"
+              to={to}
+              href={href}
+            >
+              {label}
+            </OuterAnchorItem>
           )
         }
       })}

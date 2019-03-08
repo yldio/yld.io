@@ -1,23 +1,13 @@
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
 
 import theme from '../../utils/theme'
+import TopNavDropdownContainer from './TopNav/TopNavDropdownContainer'
 import {
-  TopNavDropdownContainer,
   TopNavDropdownNameWrapper,
-  TopNavDropdownName,
-  TopNavDropdownList
-} from './TopNav/DropdownStylesTopNav'
-import { TopNavInnerAnchor } from './InnerAnchor'
+  TopNavDropdownName
+} from './TopNav/TopNavDropdownSelectButton'
+import TopNavDropdownList from './TopNav/TopNavDropdownList'
 import Chevron from '../Common/Chevron'
-import outlineStyles from './outlineStyles'
-
-const InnerListItem = styled.li`
-  display: flex;
-  > a:focus {
-    ${outlineStyles}
-  }
-`
 
 export default class Dropdown extends PureComponent {
   constructor(props) {
@@ -29,13 +19,13 @@ export default class Dropdown extends PureComponent {
   }
 
   render() {
+    console.log('props', this.props)
     const {
       items,
       DropdownContainer = TopNavDropdownContainer,
       DropdownNameWrapper = TopNavDropdownNameWrapper,
       DropdownName = TopNavDropdownName,
       DropdownList = TopNavDropdownList,
-      InnerAnchor = TopNavInnerAnchor,
       themeVariation,
       children
     } = this.props
@@ -60,20 +50,12 @@ export default class Dropdown extends PureComponent {
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
-        <DropdownList expanded={isExpanded}>
-          {items.map(({ to, href, label }, idx) => (
-            <InnerListItem key={idx} themeVariation={themeVariation}>
-              <InnerAnchor
-                href={href}
-                to={to}
-                activeClassName="active"
-                onClick={this.handleItemClick}
-              >
-                {label}
-              </InnerAnchor>
-            </InnerListItem>
-          ))}
-        </DropdownList>
+        <DropdownList
+          expanded={isExpanded}
+          items={items}
+          themeVariation={themeVariation}
+          onClick={this.handleClick}
+        />
       </DropdownContainer>
     )
   }
