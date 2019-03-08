@@ -6,12 +6,8 @@ import is from 'styled-is'
 
 import close from '../../../images/close.svg'
 import Dropdown from '../Dropdown'
-import {
-  SideNavDropdownContainer,
-  SideNavDropdownNameWrapper,
-  SideNavDropdownName,
-  SideNavDropdownList
-} from './DropdownStylesSideNav'
+import DropdownList from './DropdownList'
+import { DropdownNameWrapper, DropdownName } from './DropdownSelectButton'
 import OuterAnchor from './OuterAnchor'
 import { SideNavInnerAnchor } from '../InnerAnchor'
 
@@ -94,10 +90,10 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
               key={idx}
               themeVariation={themeVariation}
               items={dropdownItems}
-              DropdownContainer={SideNavDropdownContainer}
-              DropdownNameWrapper={SideNavDropdownNameWrapper}
-              DropdownName={SideNavDropdownName}
-              DropdownList={SideNavDropdownList}
+              DropdownContainer={props => <div {...props} />}
+              DropdownNameWrapper={DropdownNameWrapper}
+              DropdownName={DropdownName}
+              DropdownList={DropdownList}
               InnerAnchor={SideNavInnerAnchor}
             >
               {label}

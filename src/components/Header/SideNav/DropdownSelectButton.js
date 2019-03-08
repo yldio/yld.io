@@ -9,28 +9,10 @@ import {
   hoverActiveStyles
 } from './outerItemStyles'
 
-export const SideNavDropdownContainer = styled.div`
-  cursor: pointer;
-  background: inherit;
-`
-
-export const SideNavDropdownList = styled.ul`
-  display: none;
-  opacity: 0;
-
-  ${is('expanded')`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    opacity: 1;
-    transition: opacity ${props => props.theme.animations.normal} ease;
-    background: ${props => props.theme.colors.greyBG};
-  `}
-`
-
-export const SideNavDropdownNameWrapper = styled.span`
+export const DropdownNameWrapper = styled.span`
   display: flex;
   align-items: center;
+  cursor: pointer;
   ${headerItemStyles}
   ${sideNavItemPadding}
   ${fontSizeAndWeight}
@@ -45,6 +27,6 @@ export const SideNavDropdownNameWrapper = styled.span`
   `}
 `
 
-export const SideNavDropdownName = styled.span`
+export const DropdownName = styled.span`
   width: 320px;
 `
