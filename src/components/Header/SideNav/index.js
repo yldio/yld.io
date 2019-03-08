@@ -10,9 +10,9 @@ import {
   SideNavDropdownContainer,
   SideNavDropdownNameWrapper,
   SideNavDropdownName,
-  SideNavDropdownList,
-  SideNavOuterAnchor
+  SideNavDropdownList
 } from './DropdownStylesSideNav'
+import OuterAnchor from './OuterAnchor'
 import { SideNavInnerAnchor } from '../InnerAnchor'
 
 const MobileCloseButton = styled.button`
@@ -82,9 +82,9 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
     </MobileCloseButton>
     <SideNavList>
       <SideNavListItem>
-        <SideNavOuterAnchor activeClassName="active" to="/">
+        <OuterAnchor activeClassName="active" to="/">
           Home
-        </SideNavOuterAnchor>
+        </OuterAnchor>
       </SideNavListItem>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
@@ -107,9 +107,9 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
           const { label, to, href } = link
           return (
             <SideNavListItem key={idx}>
-              <SideNavOuterAnchor activeClassName="active" to={to} href={href}>
+              <OuterAnchor activeClassName="active" to={to} href={href}>
                 {label}
-              </SideNavOuterAnchor>
+              </OuterAnchor>
             </SideNavListItem>
           )
         }

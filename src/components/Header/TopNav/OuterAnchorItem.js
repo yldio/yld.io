@@ -25,7 +25,7 @@ const StyledAnchor = styled(Anchor)`
   ${fontSizeAndWeight}
 `
 
-const TopNavListItem = styled.li`
+const StyledListItem = styled.li`
   display: flex;
   > a:focus {
     ${outlineStyles}
@@ -78,7 +78,7 @@ const TopNavListItem = styled.li`
   }}
 `
 
-const TopNavAnchorItem = ({
+const OuterAnchorItem = ({
   children,
   to,
   href,
@@ -87,7 +87,7 @@ const TopNavAnchorItem = ({
   onClick,
   ...props
 }) => (
-  <TopNavListItem themeVariation={themeVariation} {...props}>
+  <StyledListItem themeVariation={themeVariation} {...props}>
     <StyledAnchor
       href={href}
       to={to}
@@ -96,7 +96,7 @@ const TopNavAnchorItem = ({
     >
       {children}
     </StyledAnchor>
-  </TopNavListItem>
+  </StyledListItem>
 )
 
-export default TopNavAnchorItem
+export default OuterAnchorItem

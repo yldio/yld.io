@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import TopNavAnchorItem from './TopNavAnchorItem'
+import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from '../Dropdown'
 
 const TopNavList = styled.ul`
@@ -39,7 +39,7 @@ const TopNav = ({ links, themeVariation }) => (
         } else {
           const { label, to, href } = link
           return (
-            <TopNavAnchorItem
+            <OuterAnchorItem
               key={idx}
               themeVariation={themeVariation}
               activeClassName="active"
@@ -47,7 +47,7 @@ const TopNav = ({ links, themeVariation }) => (
               href={href}
             >
               {label}
-            </TopNavAnchorItem>
+            </OuterAnchorItem>
           )
         }
       })}

@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 import is from 'styled-is'
 
-import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
+import sideNavItemPadding from './sideNavItemPadding'
 import {
   fontSizeAndWeight,
   defaultStyles,
   hoverActiveStyles
 } from './outerItemStyles'
-import sideNavItemPadding from './sideNavItemPadding'
 
 export const SideNavDropdownContainer = styled.div`
   cursor: pointer;
@@ -27,19 +26,6 @@ export const SideNavDropdownList = styled.ul`
     transition: opacity ${props => props.theme.animations.normal} ease;
     background: ${props => props.theme.colors.greyBG};
   `}
-`
-
-export const SideNavOuterAnchor = styled(Anchor)`
-  display: block;
-  ${headerItemStyles}
-  ${fontSizeAndWeight}
-  ${defaultStyles}
-
-  &:hover,
-  &:active,
-  &.active {
-    ${hoverActiveStyles}
-  }
 `
 
 export const SideNavDropdownNameWrapper = styled.span`
