@@ -83,11 +83,10 @@ export const TopNavDropdownList = styled.ul`
   opacity: 0;
   transition: opacity ${props => props.theme.animations.normal} ease;
   background: ${props => props.theme.colors.greyBG};
-
-  ${is('expanded')`
+  z-index: ${props => props.theme.zIndexes.header} ${is('expanded')`
     left: 0;
     opacity: 1;
-  `}
+  `};
 `
 
 export const TopNavDropdownNameWrapper = styled.span`
