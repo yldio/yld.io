@@ -1,10 +1,11 @@
 import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 import Anchor from '../Common/Anchor'
 import headerItemStyles from './headerItemStyles'
 import sideNavItemPadding from './SideNav/sideNavItemPadding'
+import { fontSizeAndWeight as sideNavFont } from './SideNav/outerItemStyles'
 import topNavItemPadding from './TopNav/topNavItemPadding'
+import { fontSizeAndWeight as topNavFont } from './TopNav/outerItemStyles'
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
@@ -21,15 +22,11 @@ const StyledAnchor = styled(Anchor)`
 `
 
 export const SideNavInnerAnchor = styled(StyledAnchor)`
-  font-weight: 400;
-  font-size: ${remcalc(21)};
-  line-height: ${remcalc(24)};
+  ${sideNavFont}
   ${sideNavItemPadding}
 `
 
 export const TopNavInnerAnchor = styled(StyledAnchor)`
-  font-weight: 400;
-  font-size: ${remcalc(17)};
-  line-height: ${remcalc(24)};
+  ${topNavFont}
   ${topNavItemPadding}
 `

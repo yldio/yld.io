@@ -1,9 +1,13 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import is from 'styled-is'
-import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
+import {
+  fontSizeAndWeight,
+  defaultStyles,
+  hoverActiveStyles
+} from './outerItemStyles'
 import sideNavItemPadding from './sideNavItemPadding'
 
 export const SideNavDropdownContainer = styled.div`
@@ -25,42 +29,33 @@ export const SideNavDropdownList = styled.ul`
   `}
 `
 
-const OuterItemStyles = css`
-  ${headerItemStyles}
+export const SideNavOuterAnchor = styled(Anchor)`
   display: block;
-  font-weight: 400;
-  font-size: ${remcalc(21)};
-  line-height: ${remcalc(24)};
-  background: inherit;
-  color: ${props => props.theme.colors.white};
-  opacity: 0.5;
+  ${headerItemStyles}
+  ${fontSizeAndWeight}
+  ${defaultStyles}
 
   &:hover,
+  &:active,
   &.active {
-    color: ${props => props.theme.colors.white};
-    opacity: 1;
+    ${hoverActiveStyles}
   }
 `
 
-export const SideNavOuterAnchor = styled(Anchor)`
-  ${OuterItemStyles}
-`
-
 export const SideNavDropdownNameWrapper = styled.span`
-  ${OuterItemStyles}
   display: flex;
   align-items: center;
+  ${headerItemStyles}
   ${sideNavItemPadding}
+  ${fontSizeAndWeight}
+  ${defaultStyles}
 
   ${is('expanded')`
-    color: ${props => props.theme.colors.white};
-    opacity: 1;
-  `}
-  
-  ${is('darkTheme')`
+    ${hoverActiveStyles}
+    
     &:focus {
-      outline-color: white;
-    } 
+      outline-color: ${props => props.theme.colors.white};
+    }
   `}
 `
 

@@ -1,30 +1,28 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import remcalc from 'remcalc'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemPadding from './topNavItemPadding'
-import itemLightStyles, {
+import {
+  fontSizeAndWeight,
+  defaultLightStyles,
   hoverLightStyles,
   clickTapLightStyles,
   activeLightStyles,
-  activeAndHoverLightStyles
-} from './itemLightStyles'
-import itemDarkStyles, {
+  activeAndHoverLightStyles,
+  defaultDarkStyles,
   hoverDarkStyles,
   clickTapDarkStyles,
   activeDarkStyles,
   activeAndHoverDarkStyles
-} from './itemDarkStyles'
+} from './outerItemStyles'
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemPadding}
-  font-weight: 400;
-  font-size: ${remcalc(17)};
-  line-height: ${remcalc(24)};
+  ${fontSizeAndWeight}
 `
 
 const TopNavListItem = styled.li`
@@ -36,7 +34,7 @@ const TopNavListItem = styled.li`
   ${props => {
     if (props.themeVariation === 'light') {
       return css`
-        ${itemLightStyles}
+        ${defaultLightStyles}
 
         &:hover,
         > a:hover {
@@ -57,7 +55,7 @@ const TopNavListItem = styled.li`
       `
     } else if (props.themeVariation === 'dark') {
       return css`
-        ${itemDarkStyles}
+        ${defaultDarkStyles}
 
         &:hover,
         > a:hover {

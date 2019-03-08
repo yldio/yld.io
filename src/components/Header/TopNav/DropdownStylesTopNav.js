@@ -5,16 +5,16 @@ import remcalc from 'remcalc'
 import headerItemStyles from '../headerItemStyles'
 import topNavItemPadding from './topNavItemPadding'
 import outlineStyles from '../outlineStyles'
-import itemLightStyles, {
+import {
+  defaultLightStyles,
   hoverLightStyles,
   clickTapLightStyles,
-  activeAndHoverLightStyles
-} from './itemLightStyles'
-import itemDarkStyles, {
+  activeAndHoverLightStyles,
+  defaultDarkStyles,
   hoverDarkStyles,
   clickTapDarkStyles,
   activeAndHoverDarkStyles
-} from './itemDarkStyles'
+} from './outerItemStyles'
 
 export const TopNavDropdownContainer = styled.li`
   position: relative;
@@ -24,7 +24,7 @@ export const TopNavDropdownContainer = styled.li`
     if (props.themeVariation === 'light') {
       return css`
         > span {
-          ${itemLightStyles}
+          ${defaultLightStyles}
         }
 
         &:hover {
@@ -48,7 +48,7 @@ export const TopNavDropdownContainer = styled.li`
     } else if (props.themeVariation === 'dark') {
       return css`
         > span {
-          ${itemDarkStyles}
+          ${defaultDarkStyles}
         }
 
         &:hover {
