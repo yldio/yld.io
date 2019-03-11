@@ -60,7 +60,7 @@ class ContactUs extends Component {
     e.preventDefault()
     this.setState({ submitting: true })
 
-    fetch('/', {
+    fetch('/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
