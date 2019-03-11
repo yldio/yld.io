@@ -59,7 +59,6 @@ class ContactUs extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.setState({ submitting: true })
-
     fetch('/contact', {
       method: 'POST',
       headers: {
