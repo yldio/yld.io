@@ -2181,7 +2181,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 .c13:focus {
   background: transparent;
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
@@ -4531,7 +4531,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 .c8:focus {
   background: transparent;
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
@@ -5757,53 +5757,162 @@ exports[`Storyshots Header Header itself 1`] = `
   padding-bottom: 23px;
 }
 
-.c16 {
+.c17 {
   fill: currentColor;
 }
 
-.c17 {
+.c18 {
   display: none;
 }
 
-.c14 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
+.c15 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
-  opacity: 1;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
   color: #333333;
+  opacity: 1;
 }
 
-.c14:focus {
-  outline: 0.25rem solid #6be9c1;
+.c14 > a:focus:focus {
+  outline: 0.25rem solid #65FFCD;
 }
 
-.c14:active {
+.c14 > a:focus:active {
   outline: none;
 }
 
-.c14.active,
-.c14:hover {
+.c14:hover,
+.c14 > a:hover {
+  background: #f9f9f9;
   color: #333333;
+  opacity: 1;
+}
+
+.c14 > a:active {
+  background: #333333;
+  color: #fff;
+  opacity: 1;
+}
+
+.c14 > a.active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c14 > a.active:hover {
+  background: #333333;
+  color: #a9a9a9;
+  opacity: 1;
+}
+
+.c10 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 > a:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c12 > a:focus:active {
+  outline: none;
+}
+
+.c13 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  background: #f9f9f9;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c13:hover,
+.c13.active {
+  color: #333333;
+  opacity: 1;
 }
 
 .c7 {
   position: relative;
-  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
   cursor: pointer;
   background: transparent;
 }
 
-.c7:hover {
+.c7 > span {
+  background: #fff;
+  color: #333333;
+  opacity: 1;
+}
+
+.c7:hover > span {
   background: #f9f9f9;
+  color: #333333;
+  opacity: 1;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  padding: 0.625rem 0.9375rem 0.875rem;
+}
+
+.c8:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c8:active {
+  outline: none;
+}
+
+.c9 {
+  margin-right: 0.375rem;
 }
 
 .c11 {
@@ -5822,185 +5931,10 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-transition: opacity 300ms ease;
   transition: opacity 300ms ease;
   background: #f9f9f9;
-}
-
-.c11 a {
-  color: #333333;
-  width: 100%;
-  padding: 10px 15px 14px 15px;
-}
-
-.c11 a:active,
-.c11 a:focus,
-.c11 a:hover {
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c11 a:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c11 a:active {
-  outline: none;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  padding: 10px 15px 14px 15px;
-}
-
-.c8:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c8:active {
-  outline: none;
-}
-
-.c9 {
-  margin-right: 0.375rem;
-}
-
-.c10 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c13 {
-  list-style-type: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
-}
-
-.c13:last-child {
-  padding-right: 0;
-}
-
-.c22 {
-  cursor: pointer;
-  background: inherit;
-}
-
-.c25 {
-  display: none;
-  opacity: 0;
-}
-
-.c26 {
-  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
-}
-
-.c21 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  display: block;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  background: inherit;
-  color: #fff;
-  opacity: 0.5;
-}
-
-.c21:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c21:active {
-  outline: none;
-}
-
-.c21:hover,
-.c21.active {
-  color: #fff;
-  opacity: 1;
-}
-
-.c27 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  display: block;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  background: inherit;
-  color: #fff;
-  opacity: 0.5;
-  color: #333333;
-}
-
-.c27:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c27:active {
-  outline: none;
-}
-
-.c27:hover,
-.c27.active {
-  color: #fff;
-  opacity: 1;
-}
-
-.c27:hover,
-.c27.active {
-  color: #333333;
-  opacity: 1;
+  z-index: 999;
 }
 
 .c23 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  display: block;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  background: inherit;
-  color: #fff;
-  opacity: 0.5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6009,32 +5943,49 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
-}
-
-.c23:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c23:active {
+  cursor: pointer;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-}
-
-.c23:hover,
-.c23.active {
+  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
   color: #fff;
-  opacity: 1;
-}
-
-.c23:focus {
-  outline-color: white;
+  opacity: 0.5;
 }
 
 .c24 {
   width: 320px;
 }
 
-.c19 {
+.c22 {
+  display: block;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.c22:hover,
+.c22:active,
+.c22.active {
+  color: #fff;
+  opacity: 1;
+}
+
+.c21 {
+  list-style-type: none;
+  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
+}
+
+.c20 {
   min-width: 3rem;
   min-height: 3rem;
   background: transparent;
@@ -6060,18 +6011,13 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 1.5rem;
 }
 
-.c19:focus {
+.c20:focus {
   background: transparent;
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c20 {
-  list-style-type: none;
-  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
-}
-
-.c18 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6270,7 +6216,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media (min-width:29.4375em) {
-  .c15 {
+  .c16 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6282,21 +6228,21 @@ exports[`Storyshots Header Header itself 1`] = `
     padding: 0.5rem 0.375rem;
   }
 
-  .c15:focus {
+  .c16:focus {
     background: transparent;
-    outline: 0.25rem solid #6be9c1;
+    outline: 0.25rem solid #65FFCD;
     color: #333333;
   }
 }
 
 @media screen and (min-width:1010px) {
-  .c15 {
+  .c16 {
     display: none;
   }
 }
 
 @media screen and (max-width:1009px) {
-  .c17 {
+  .c18 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6343,7 +6289,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:600px) and (max-width:1009px) {
-  .c18 {
+  .c19 {
     width: 18.4375rem;
     left: auto;
     right: 0;
@@ -6352,7 +6298,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:1010px) {
-  .c18 {
+  .c19 {
     display: none;
   }
 }
@@ -6411,7 +6357,7 @@ exports[`Storyshots Header Header itself 1`] = `
             <ul
               className="c6"
             >
-              <div
+              <li
                 aria-expanded={false}
                 aria-haspopup="true"
                 className="c7"
@@ -6446,48 +6392,45 @@ exports[`Storyshots Header Header itself 1`] = `
                     className="c12"
                   >
                     <a
+                      className="c13"
                       href="/engineering/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >
-                      <span>
-                        Engineering
-                      </span>
+                      Engineering
                     </a>
                   </li>
                   <li
                     className="c12"
                   >
                     <a
+                      className="c13"
                       href="/design/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >
-                      <span>
-                        Design
-                      </span>
+                      Design
                     </a>
                   </li>
                   <li
                     className="c12"
                   >
                     <a
+                      className="c13"
                       href="/training/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >
-                      <span>
-                        Training
-                      </span>
+                      Training
                     </a>
                   </li>
                 </ul>
-              </div>
+              </li>
               <li
-                className="c13"
+                className="c14"
               >
                 <a
-                  className="c14"
+                  className="c15"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6496,11 +6439,11 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c13"
+                className="c14"
               >
                 <a
                   activeClassName="active"
-                  className="c14"
+                  className="c15"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -6508,7 +6451,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   Blog
                 </a>
               </li>
-              <div
+              <li
                 aria-expanded={false}
                 aria-haspopup="true"
                 className="c7"
@@ -6543,35 +6486,33 @@ exports[`Storyshots Header Header itself 1`] = `
                     className="c12"
                   >
                     <a
+                      className="c13"
                       href="/about-us/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >
-                      <span>
-                        Our team
-                      </span>
+                      Our team
                     </a>
                   </li>
                   <li
                     className="c12"
                   >
                     <a
+                      className="c13"
                       href="/contact/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >
-                      <span>
-                        Contact
-                      </span>
+                      Contact
                     </a>
                   </li>
                 </ul>
-              </div>
+              </li>
               <li
-                className="c13"
+                className="c14"
               >
                 <a
-                  className="c14"
+                  className="c15"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6582,11 +6523,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </ul>
           </nav>
           <button
-            className="c15"
+            className="c16"
             onClick={[Function]}
           >
             <svg
-              className="c16"
+              className="c17"
               height="18"
               title="open menu"
               width="24"
@@ -6599,15 +6540,15 @@ exports[`Storyshots Header Header itself 1`] = `
             </svg>
           </button>
           <div
-            className="c17"
+            className="c18"
             onClick={[Function]}
           />
           <nav
-            className="c18"
+            className="c19"
             open={false}
           >
             <button
-              className="c19"
+              className="c20"
               onClick={[Function]}
             >
               <img
@@ -6619,11 +6560,11 @@ exports[`Storyshots Header Header itself 1`] = `
               className=""
             >
               <li
-                className="c20"
+                className="c21"
               >
                 <a
                   aria-current="page"
-                  className="c21 active"
+                  className="c22 active"
                   href="/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6632,16 +6573,14 @@ exports[`Storyshots Header Header itself 1`] = `
                   Home
                 </a>
               </li>
-              <div
+              <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c22"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
               >
                 <span
                   className="c23"
+                  onFocus={[Function]}
+                  onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
@@ -6660,58 +6599,12 @@ exports[`Storyshots Header Header itself 1`] = `
                     />
                   </svg>
                 </span>
-                <ul
-                  className="c25"
-                >
-                  <li
-                    className="c26"
-                  >
-                    <a
-                      className="c27"
-                      href="/engineering/"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <span>
-                        Engineering
-                      </span>
-                    </a>
-                  </li>
-                  <li
-                    className="c26"
-                  >
-                    <a
-                      className="c27"
-                      href="/design/"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <span>
-                        Design
-                      </span>
-                    </a>
-                  </li>
-                  <li
-                    className="c26"
-                  >
-                    <a
-                      className="c27"
-                      href="/training/"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <span>
-                        Training
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              </li>
               <li
-                className="c20"
+                className="c21"
               >
                 <a
-                  className="c21"
+                  className="c22"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6720,11 +6613,11 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c20"
+                className="c21"
               >
                 <a
                   activeClassName="active"
-                  className="c21"
+                  className="c22"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -6732,16 +6625,14 @@ exports[`Storyshots Header Header itself 1`] = `
                   Blog
                 </a>
               </li>
-              <div
+              <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c22"
-                onBlur={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
               >
                 <span
                   className="c23"
+                  onFocus={[Function]}
+                  onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
@@ -6760,44 +6651,12 @@ exports[`Storyshots Header Header itself 1`] = `
                     />
                   </svg>
                 </span>
-                <ul
-                  className="c25"
-                >
-                  <li
-                    className="c26"
-                  >
-                    <a
-                      className="c27"
-                      href="/about-us/"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <span>
-                        Our team
-                      </span>
-                    </a>
-                  </li>
-                  <li
-                    className="c26"
-                  >
-                    <a
-                      className="c27"
-                      href="/contact/"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <span>
-                        Contact
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              </li>
               <li
-                className="c20"
+                className="c21"
               >
                 <a
-                  className="c21"
+                  className="c22"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6816,41 +6675,57 @@ exports[`Storyshots Header Header itself 1`] = `
 
 exports[`Storyshots Header TopNavbar - light theme 1`] = `
 .c2 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
-  opacity: 1;
-  color: #333333;
-}
-
-.c2:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c2:active {
-  outline: none;
-}
-
-.c2.active,
-.c2:hover {
-  color: #333333;
 }
 
 .c1 {
-  list-style-type: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  color: #333333;
+  opacity: 1;
 }
 
-.c1:last-child {
-  padding-right: 0;
+.c1 > a:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c1 > a:focus:active {
+  outline: none;
+}
+
+.c1:hover,
+.c1 > a:hover {
+  background: #f9f9f9;
+  color: #333333;
+  opacity: 1;
+}
+
+.c1 > a:active {
+  background: #333333;
+  color: #fff;
+  opacity: 1;
+}
+
+.c1 > a.active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c1 > a.active:hover {
+  background: #333333;
+  color: #a9a9a9;
+  opacity: 1;
 }
 
 @media (min-width:29.4375em) {
@@ -6890,7 +6765,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
       <a
         aria-current="page"
         className="c2 active"
-        dark={false}
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -6904,7 +6778,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     >
       <a
         className="c2"
-        dark={false}
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -6917,7 +6790,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     >
       <a
         className="c2"
-        dark={false}
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -6930,45 +6802,154 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 `;
 
 exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
-.c8 {
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  -webkit-transition-property: opacity,color,outline;
-  transition-property: opacity,color,outline;
-  padding: 0;
+.c9 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
-  opacity: 1;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
   color: #333333;
+  opacity: 1;
 }
 
-.c8:focus {
-  outline: 0.25rem solid #6be9c1;
+.c8 > a:focus:focus {
+  outline: 0.25rem solid #65FFCD;
 }
 
-.c8:active {
+.c8 > a:focus:active {
   outline: none;
 }
 
-.c8.active,
-.c8:hover {
+.c8:hover,
+.c8 > a:hover {
+  background: #f9f9f9;
   color: #333333;
+  opacity: 1;
+}
+
+.c8 > a:active {
+  background: #333333;
+  color: #fff;
+  opacity: 1;
+}
+
+.c8 > a.active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c8 > a.active:hover {
+  background: #333333;
+  color: #a9a9a9;
+  opacity: 1;
+}
+
+.c4 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 > a:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c6 > a:focus:active {
+  outline: none;
+}
+
+.c7 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  background: #f9f9f9;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c7:hover,
+.c7.active {
+  color: #333333;
+  opacity: 1;
 }
 
 .c1 {
   position: relative;
-  -webkit-transition: color 200ms ease-in-out, background 200ms ease-in-out;
-  transition: color 200ms ease-in-out, background 200ms ease-in-out;
   cursor: pointer;
   background: transparent;
 }
 
-.c1:hover {
+.c1 > span {
+  background: #fff;
+  color: #333333;
+  opacity: 1;
+}
+
+.c1:hover > span {
   background: #f9f9f9;
+  color: #333333;
+  opacity: 1;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  padding: 0.625rem 0.9375rem 0.875rem;
+}
+
+.c2:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c2:active {
+  outline: none;
+}
+
+.c3 {
+  margin-right: 0.375rem;
 }
 
 .c5 {
@@ -6987,82 +6968,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   -webkit-transition: opacity 300ms ease;
   transition: opacity 300ms ease;
   background: #f9f9f9;
-}
-
-.c5 a {
-  color: #333333;
-  width: 100%;
-  padding: 10px 15px 14px 15px;
-}
-
-.c5 a:active,
-.c5 a:focus,
-.c5 a:hover {
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c5 a:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c5 a:active {
-  outline: none;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  padding: 10px 15px 14px 15px;
-}
-
-.c2:focus {
-  outline: 0.25rem solid #6be9c1;
-}
-
-.c2:active {
-  outline: none;
-}
-
-.c3 {
-  margin-right: 0.375rem;
-}
-
-.c4 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c7 {
-  list-style-type: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
-}
-
-.c7:last-child {
-  padding-right: 0;
+  z-index: 999;
 }
 
 @media (min-width:29.4375em) {
@@ -7096,7 +7002,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   <ul
     className="c0"
   >
-    <div
+    <li
       aria-expanded={false}
       aria-haspopup="true"
       className="c1"
@@ -7131,49 +7037,45 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
           className="c6"
         >
           <a
+            className="c7"
             href="/item-1/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <span>
-              Item 1
-            </span>
+            Item 1
           </a>
         </li>
         <li
           className="c6"
         >
           <a
+            className="c7"
             href="/item-2/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <span>
-              Item 2
-            </span>
+            Item 2
           </a>
         </li>
         <li
           className="c6"
         >
           <a
+            className="c7"
             href="/item-3/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <span>
-              Item 3
-            </span>
+            Item 3
           </a>
         </li>
       </ul>
-    </div>
+    </li>
     <li
-      className="c7"
+      className="c8"
     >
       <a
-        className="c8"
-        dark={false}
+        className="c9"
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7182,12 +7084,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       </a>
     </li>
     <li
-      className="c7"
+      className="c8"
     >
       <a
         activeClassName="active"
-        className="c8"
-        dark={false}
+        className="c9"
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
@@ -7195,7 +7096,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         LinkedIn (external anchor)
       </a>
     </li>
-    <div
+    <li
       aria-expanded={false}
       aria-haspopup="true"
       className="c1"
@@ -7230,36 +7131,33 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
           className="c6"
         >
           <a
+            className="c7"
             href="/go-here/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <span>
-              Go here
-            </span>
+            Go here
           </a>
         </li>
         <li
           className="c6"
         >
           <a
+            className="c7"
             href="/go-there/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <span>
-              Go there
-            </span>
+            Go there
           </a>
         </li>
       </ul>
-    </div>
+    </li>
     <li
-      className="c7"
+      className="c8"
     >
       <a
-        className="c8"
-        dark={false}
+        className="c9"
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -9003,7 +8901,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 .c6:focus {
   background: transparent;
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
@@ -10230,7 +10128,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 
 .c2:active,
 .c2:focus {
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
 }
 
 .c2:after {
@@ -10266,7 +10164,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 
 .c4:active,
 .c4:focus {
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
 }
 
 .c4:after {
@@ -10383,7 +10281,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
 
 .c1:active,
 .c1:focus {
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
 }
 
 .c1:after {
@@ -10465,7 +10363,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
 
 .c1:active,
 .c1:focus {
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
 }
 
 .c1:after {
@@ -11982,7 +11880,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 .c8:focus {
   background: transparent;
-  outline: 0.25rem solid #6be9c1;
+  outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
