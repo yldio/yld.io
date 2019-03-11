@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import OuterAnchorItem from './OuterAnchorItem'
-import Dropdown from '../Dropdown'
+import Dropdown from './Dropdown'
 
 const TopNavList = styled.ul`
   ${breakpoint('phone')`

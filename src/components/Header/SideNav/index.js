@@ -5,9 +5,7 @@ import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
 import close from '../../../images/close.svg'
-import Dropdown from '../Dropdown'
-import { DropdownNameWrapper, DropdownName } from './DropdownSelectButton'
-import DropdownList from './DropdownList'
+import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
 
 const MobileCloseButton = styled.button`
@@ -65,7 +63,7 @@ const SideNavPanel = styled(Flex).attrs({
   }
 `
 
-const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
+const SideNav = ({ links, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <MobileCloseButton onClick={onClose}>
       <img src={close} alt="Close menu" />
@@ -78,15 +76,7 @@ const SideNav = ({ links, themeVariation, isOpen, onClose }) => (
         if (link.dropdownItems) {
           const { label, dropdownItems } = link
           return (
-            <Dropdown
-              key={idx}
-              themeVariation={themeVariation}
-              items={dropdownItems}
-              DropdownContainer={props => <div {...props} />}
-              DropdownNameWrapper={DropdownNameWrapper}
-              DropdownName={DropdownName}
-              DropdownList={DropdownList}
-            >
+            <Dropdown key={idx} items={dropdownItems}>
               {label}
             </Dropdown>
           )

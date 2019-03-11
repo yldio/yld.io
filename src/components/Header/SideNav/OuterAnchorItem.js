@@ -25,7 +25,7 @@ const StyledAnchor = styled(Anchor)`
 
 const StyledListItem = styled.li`
   list-style-type: none;
-  padding: ${sideNavItemPadding};
+  ${sideNavItemPadding};
 `
 
 const OuterAnchorItem = ({
@@ -33,11 +33,10 @@ const OuterAnchorItem = ({
   to,
   href,
   activeClassName,
-  themeVariation,
   onClick,
   ...props
 }) => (
-  <StyledListItem themeVariation={themeVariation} {...props}>
+  <StyledListItem {...props}>
     <StyledAnchor
       href={href}
       to={to}

@@ -35,10 +35,9 @@ export const InnerAnchorItem = ({
   to,
   href,
   activeClassName,
-  themeVariation,
   onClick
 }) => (
-  <InnerListItem themeVariation={themeVariation}>
+  <InnerListItem>
     <InnerAnchor
       href={href}
       to={to}
