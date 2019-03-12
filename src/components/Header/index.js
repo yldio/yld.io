@@ -107,7 +107,7 @@ const Header = ({ path, blue, logoColour }) => {
                     activeClassName="active"
                     to="/join-us/"
                   >
-                    Join Us
+                    Join us
                   </HeaderAnchor>
                 </Navbar>
                 <Overlay
