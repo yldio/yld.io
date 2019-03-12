@@ -71,7 +71,7 @@ export default class Dropdown extends PureComponent {
     const { isExpanded } = this.state
 
     return (
-      <div aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
+      <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
@@ -95,7 +95,7 @@ export default class Dropdown extends PureComponent {
             ))}
           </DropdownList>
         )}
-      </div>
+      </li>
     )
   }
 }
