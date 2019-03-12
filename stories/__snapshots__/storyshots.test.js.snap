@@ -4038,181 +4038,123 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
 
 exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint 1`] = `
 .c0 {
-  position: relative;
-  list-style: none;
-  padding-top: 0.75rem;
-  padding-bottom: 1.3125rem;
-  margin-bottom: 0.5rem;
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
   line-height: 1.5rem;
-  max-width: 15rem;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
+  list-style: none;
+  max-width: 240px;
 }
 
-.c0:after {
-  content: '';
-  width: 3.75rem;
+.c1 {
   height: 0.0625rem;
-  background: #e6e6e6;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  max-width: 20.9375rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
 }
 
-.c0 span {
-  display: block;
-  color: #737272;
-}
-
-<li
-  className="c0"
->
-  I am a bullet thingy
-</li>
+<div>
+  <li
+    className="c0"
+  >
+    I am a bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+</div>
 `;
 
-exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint Symmetrical 1`] = `
+exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint with non-deafault width (500px) 1`] = `
 .c0 {
-  position: relative;
-  list-style: none;
-  padding-top: 0.75rem;
-  padding-bottom: 1.3125rem;
-  margin-bottom: 0.5rem;
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
   line-height: 1.5rem;
-  max-width: 15rem;
-  padding-top: 0rem;
-  padding-bottom: 1.875rem;
-  margin-bottom: 1.125rem;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
+  list-style: none;
+  max-width: 500px;
 }
 
-.c0:after {
-  content: '';
-  width: 3.75rem;
+.c1 {
   height: 0.0625rem;
-  background: #e6e6e6;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  max-width: 20.9375rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
 }
 
-.c0 span {
-  display: block;
-  color: #737272;
-}
-
-<li
-  className="c0"
->
-  I am a bullet thingy
-</li>
+<div>
+  <li
+    className="c0"
+  >
+    I am a bullet thingy with altered width and really loooooong text inside
+  </li>
+  <hr
+    className="c1"
+  />
+</div>
 `;
 
-exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint fullWidth 1`] = `
+exports[`Storyshots CustomisedBulletpoint Multiple CustomisedBulletpoints in a ul 1`] = `
 .c0 {
-  position: relative;
-  list-style: none;
-  padding-top: 0.75rem;
-  padding-bottom: 1.3125rem;
-  margin-bottom: 0.5rem;
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
   line-height: 1.5rem;
-  max-width: 15rem;
-  max-width: none;
-}
-
-.c0:after {
-  content: '';
-  width: 3.75rem;
-  height: 0.0625rem;
-  background: #e6e6e6;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  max-width: 20.9375rem;
-  max-width: none;
-}
-
-.c0 span {
-  display: block;
-  color: #737272;
-}
-
-<li
-  className="c0"
->
-  I am a bullet thingy full width
-</li>
-`;
-
-exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint fullWidthBorder 1`] = `
-.c0 {
-  position: relative;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
   list-style: none;
-  padding-top: 0.75rem;
-  padding-bottom: 1.3125rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.5rem;
-  max-width: 15rem;
+  max-width: 240px;
 }
 
-.c0:after {
-  content: '';
-  width: 3.75rem;
+.c1 {
   height: 0.0625rem;
-  background: #e6e6e6;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  max-width: 20.9375rem;
-  width: 100%;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
 }
 
-.c0 span {
-  display: block;
-  color: #737272;
-}
-
-<li
-  className="c0"
->
-  I am a bullet thingy
-</li>
-`;
-
-exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint spaced 1`] = `
-.c0 {
-  position: relative;
-  list-style: none;
-  padding-top: 0.75rem;
-  padding-bottom: 1.3125rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.5rem;
-  max-width: 15rem;
-  padding-top: 0rem;
-  padding-bottom: 2.9375rem;
-  margin-bottom: 1.875rem;
-}
-
-.c0:after {
-  content: '';
-  width: 3.75rem;
-  height: 0.0625rem;
-  background: #e6e6e6;
-  bottom: 0;
-  display: block;
-  position: absolute;
-  max-width: 20.9375rem;
-}
-
-.c0 span {
-  display: block;
-  color: #737272;
-}
-
-<li
-  className="c0"
->
-  I am a bullet thingy
-</li>
+<ul>
+  <li
+    className="c0"
+  >
+    First bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+  <li
+    className="c0"
+  >
+    Second bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+  <li
+    className="c0"
+  >
+    Third bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+</ul>
 `;
 
 exports[`Storyshots Form Button 1`] = `

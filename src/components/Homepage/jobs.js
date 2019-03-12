@@ -1,14 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
+
 import StyledLink from '../Common/StyledLink'
-import { SectionTitle, Subtitle } from '../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import Jobs from '../jobsByLocation'
-import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
+import Hr from '../Common/Hr'
 
 const JobContainer = styled.ul`
   margin-top: ${remcalc(12)};
@@ -17,14 +18,6 @@ const JobContainer = styled.ul`
   ${breakpoint('smallTablet')`
       margin-bottom: ${remcalc(0)};
   `}
-`
-
-const JobCommitment = styled.span`
-  padding-top: ${remcalc(4)};
-`
-
-const JobLi = styled(CustomisedBulletpoint)`
-  height: ${remcalc(123)};
 `
 
 const JobsComponent = () => (
@@ -47,12 +40,15 @@ const JobsComponent = () => (
               <Subtitle>{location}</Subtitle>
               <JobContainer>
                 {jobsForLocation.slice(0, 3).map(({ node: job }) => (
-                  <JobLi spaced key={`${job.id}`}>
+                  <li key={`${job.id}`}>
                     <ExternalAnchor href={job.hostedUrl}>
                       {job.text.split(' - ')[0]}
                     </ExternalAnchor>
-                    <JobCommitment>{job.categories.commitment}</JobCommitment>
-                  </JobLi>
+                    <BodyPrimary muted noPaddingTop>
+                      {job.categories.commitment}
+                    </BodyPrimary>
+                    <Hr short />
+                  </li>
                 ))}
               </JobContainer>
             </Col>
