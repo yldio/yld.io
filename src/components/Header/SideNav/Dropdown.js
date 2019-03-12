@@ -71,16 +71,13 @@ export default class Dropdown extends PureComponent {
     const { isExpanded } = this.state
 
     return (
-      <div
-        aria-haspopup="true"
-        expanded={isExpanded}
-        aria-expanded={isExpanded}
-        onMouseDown={this.toggle}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
-        ref={this.ref}
-      >
-        <DropdownNameWrapper tabIndex="0" expanded={isExpanded}>
+      <div aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
+        <DropdownNameWrapper
+          tabIndex="0"
+          expanded={isExpanded}
+          onMouseDown={this.toggle}
+          onFocus={this.handleFocus}
+        >
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
