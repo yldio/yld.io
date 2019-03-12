@@ -6442,7 +6442,6 @@ exports[`Storyshots Header Header itself 1`] = `
                 className="c14"
               >
                 <a
-                  activeClassName="active"
                   className="c15"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
@@ -6517,7 +6516,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
-                  Join Us
+                  Join us
                 </a>
               </li>
             </ul>
@@ -6616,7 +6615,6 @@ exports[`Storyshots Header Header itself 1`] = `
                 className="c21"
               >
                 <a
-                  activeClassName="active"
                   className="c22"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
@@ -6661,7 +6659,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
-                  Join Us
+                  Join us
                 </a>
               </li>
             </ul>
@@ -7087,7 +7085,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       className="c8"
     >
       <a
-        activeClassName="active"
         className="c9"
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
