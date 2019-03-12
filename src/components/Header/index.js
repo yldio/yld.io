@@ -55,7 +55,7 @@ const navLinks = [
     ]
   },
   {
-    label: 'Join Us',
+    label: 'Join us',
     to: '/join-us/'
   }
 ]
