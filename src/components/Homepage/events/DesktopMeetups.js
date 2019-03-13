@@ -1,11 +1,12 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
+
 import { Col } from '../../grid'
 import eventIcon from './assets/homepage-event-icon.svg'
-import { SectionTitle, Subtitle } from '../../Typography'
+import { SectionTitle, Subtitle, BodyPrimary } from '../../Typography'
 import { getHomepageMeetups } from './getEvents'
-import CustomisedBulletpoint from '../../CustomisedBulletpoint'
 import ExternalAnchor from '../../Common/ExternalAnchor'
+import Hr from '../../Common/Hr'
 
 const DesktopMeetups = ({ events }) => (
   <Col width={[0, 0, 0, 0, 6 / 12, 4 / 12, 4 / 12]}>
@@ -18,19 +19,15 @@ const DesktopMeetups = ({ events }) => (
     <Padding top={42}>
       <ul>
         {getHomepageMeetups(events).map(event => (
-          <CustomisedBulletpoint
-            fullWidth
-            fullWidthBorder
-            symmetrical
-            key={`${event.id}`}
-          >
+          <li key={`${event.id}`}>
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={event.linkToEvent}>
                 {event.eventTitle}
               </ExternalAnchor>
             </Subtitle>
-            {event.date}
-          </CustomisedBulletpoint>
+            <BodyPrimary noPaddingTop>{event.date}</BodyPrimary>
+            <Hr />
+          </li>
         ))}
       </ul>
     </Padding>

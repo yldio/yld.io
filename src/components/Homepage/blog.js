@@ -1,11 +1,13 @@
 import React from 'react'
-import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
+
+import { Row, Col } from '../grid'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
-import { SectionTitle, Subtitle } from '../Typography'
+import Hr from '../Common/Hr'
+import ExternalAnchor from '../Common/ExternalAnchor'
 import Posts from '../posts'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
 
 const Blog = () => (
   <Row>
@@ -17,23 +19,21 @@ const Blog = () => (
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
-              <CustomisedBulletpoint
-                fullWidth
-                fullWidthBorder
-                symmetrical
-                key={`${node.id}`}
-              >
-                <Subtitle>
-                  <a
+              <li key={`${node.id}`}>
+                <Subtitle noPaddingBottom>
+                  <ExternalAnchor
                     href={`https://medium.com/yld-engineering-blog/${
                       node.uniqueSlug
                     }`}
                   >
                     {node.title}
-                  </a>
+                  </ExternalAnchor>
                 </Subtitle>
-                {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
-              </CustomisedBulletpoint>
+                <BodyPrimary noPaddingTop>
+                  {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
+                </BodyPrimary>
+                <Hr />
+              </li>
             ))}
           </ul>
         )}
