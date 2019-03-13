@@ -1610,7 +1610,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 2.25rem;
+  padding-top: 0;
   padding-bottom: 2.25rem;
 }
 
@@ -1940,7 +1940,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 3.1875rem;
+    padding-top: 0;
     padding-bottom: 5.375rem;
   }
 }
@@ -2238,7 +2238,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 2.25rem;
+  padding-top: 0;
   padding-bottom: 2.25rem;
 }
 
@@ -2627,7 +2627,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 3.1875rem;
+    padding-top: 0;
     padding-bottom: 5.375rem;
   }
 }
