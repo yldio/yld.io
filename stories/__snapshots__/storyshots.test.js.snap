@@ -1516,7 +1516,16 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 `;
 
 exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
-.c1 {
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1536,7 +1545,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c2 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1557,7 +1566,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c5 {
+.c6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1577,19 +1586,19 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   width: 100%;
   height: auto;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0 {
+.c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1601,45 +1610,106 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0;
+  padding-bottom: 2.25rem;
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1648,7 +1718,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1657,7 +1727,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c2 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1666,42 +1736,42 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1710,7 +1780,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1719,7 +1789,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1728,60 +1798,60 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c6 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c6 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c6 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c5 {
+  .c6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c6 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1790,7 +1860,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c6 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1799,7 +1869,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1808,7 +1878,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1817,7 +1887,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c5 {
+  .c6 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -1826,7 +1896,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c6 {
+  .c7 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -1834,42 +1904,49 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c0 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c0 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 0;
+    padding-bottom: 5.375rem;
+  }
+}
+
 @media (min-width:74.8125em) {
-  .c0 {
+  .c1 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -1882,150 +1959,163 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 >
   <div
     className="c1"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-      ]
-    }
-  >
-    Headings
-  </div>
-  <div
-    className="c2"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0.5,
-      ]
-    }
   >
     <div
-      className="c3 gatsby-image-wrapper"
-      style={
-        Object {
-          "overflow": "hidden",
-          "position": "relative",
-        }
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0,
+        ]
+      }
+    >
+      Headings
+    </div>
+    <div
+      className="c3"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+        ]
       }
     >
       <div
+        className="c4 gatsby-image-wrapper"
         style={
           Object {
-            "paddingBottom": "100%",
-            "width": "100%",
+            "overflow": "hidden",
+            "position": "relative",
           }
         }
-      />
-      <img
-        alt=""
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
-        style={
-          Object {
-            "height": "100%",
-            "left": 0,
-            "objectFit": "cover",
-            "objectPosition": "center",
-            "opacity": 0,
-            "position": "absolute",
-            "top": 0,
-            "transition": "opacity 0.5s",
-            "transitionDelay": "0.5s",
-            "width": "100%",
+      >
+        <div
+          style={
+            Object {
+              "paddingBottom": "100%",
+              "width": "100%",
+            }
           }
-        }
-      />
-      <picture>
-        <source
-          sizes="(max-width: 600px) 100vw, 600px"
-          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
-          type="image/webp"
-        />
-        <source
-          sizes="(max-width: 600px) 100vw, 600px"
-          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
         />
         <img
-          alt="Trainline case study featured image "
-          onLoad={[Function]}
-          src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+          alt=""
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
           style={
             Object {
               "height": "100%",
               "left": 0,
               "objectFit": "cover",
               "objectPosition": "center",
-              "opacity": 1,
+              "opacity": 0,
               "position": "absolute",
               "top": 0,
               "transition": "opacity 0.5s",
+              "transitionDelay": "0.5s",
               "width": "100%",
             }
           }
         />
-      </picture>
-      <noscript
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+        <picture>
+          <source
+            sizes="(max-width: 600px) 100vw, 600px"
+            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 600px) 100vw, 600px"
+            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
+          />
+          <img
+            alt="Trainline case study featured image "
+            onLoad={[Function]}
+            src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "width": "100%",
+              }
+            }
+          />
+        </picture>
+        <noscript
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+            }
           }
-        }
-      />
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="c4 c5"
-    width={
-      Array [
-        0,
-        0,
-        0,
-        0,
-        0.5,
-        0.5,
-        0.4166666666666667,
-      ]
-    }
-  >
     <div
-      className="c6"
+      className="c5 c6"
+      width={
+        Array [
+          0,
+          0,
+          0,
+          0,
+          0.5,
+          0.5,
+          0.4166666666666667,
+        ]
+      }
     >
-      RightText
+      <div
+        className="c7"
+      >
+        RightText
+      </div>
     </div>
-  </div>
-  <div
-    className="c1"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-      ]
-    }
-  >
-    textBelowImage
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0,
+        ]
+      }
+    >
+      textBelowImage
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
-.c1 {
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2045,7 +2135,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c4 {
+.c5 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2066,7 +2156,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c7 {
+.c8 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2086,12 +2176,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c5 {
+.c6 {
   width: 100%;
   height: auto;
 }
 
-.c3 {
+.c4 {
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -2099,7 +2189,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c2 {
+.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -2109,7 +2199,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0;
 }
 
-.c12 {
+.c13 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -2117,26 +2207,26 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
-.c9 {
+.c10 {
   padding-bottom: 0.375rem;
 }
 
-.c10 {
+.c11 {
   padding-bottom: 0.75rem;
 }
 
-.c11 {
+.c12 {
   padding-top: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c0 {
+.c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2148,9 +2238,11 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0;
+  padding-bottom: 2.25rem;
 }
 
-.c13 {
+.c14 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -2164,7 +2256,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition: all 200ms ease-out;
 }
 
-.c13:after {
+.c14:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -2174,64 +2266,123 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   box-sizing: border-box;
 }
 
-.c13:hover {
+.c14:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c13:focus {
+.c14:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c13:active {
+.c14:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c13:active:after {
+.c14:active:after {
   background: #333333;
 }
 
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2240,7 +2391,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c2 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2249,7 +2400,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c2 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -2258,42 +2409,42 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2302,7 +2453,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2311,7 +2462,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2320,60 +2471,60 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -2382,7 +2533,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -2391,7 +2542,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2400,7 +2551,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2409,7 +2560,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c7 {
+  .c8 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -2418,7 +2569,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c3 {
+  .c4 {
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
@@ -2426,13 +2577,13 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c11 {
+  .c12 {
     padding-top: 0.375rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c8 {
+  .c9 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -2440,42 +2591,49 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c0 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c0 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c0 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 0;
+    padding-bottom: 5.375rem;
+  }
+}
+
 @media (min-width:74.8125em) {
-  .c0 {
+  .c1 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -2488,202 +2646,206 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 >
   <div
     className="c1"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-      ]
-    }
-  >
-    <p
-      className="c2"
-    >
-      Featured work
-    </p>
-    <h2
-      className="c3"
-    >
-      Future-proofing Trainline
-    </h2>
-  </div>
-  <div
-    className="c4"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0.5,
-      ]
-    }
   >
     <div
-      className="c5 gatsby-image-wrapper"
-      style={
-        Object {
-          "overflow": "hidden",
-          "position": "relative",
-        }
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0,
+        ]
+      }
+    >
+      <p
+        className="c3"
+      >
+        Featured work
+      </p>
+      <h2
+        className="c4"
+      >
+        Future-proofing Trainline
+      </h2>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+        ]
       }
     >
       <div
+        className="c6 gatsby-image-wrapper"
         style={
           Object {
-            "paddingBottom": "100%",
-            "width": "100%",
+            "overflow": "hidden",
+            "position": "relative",
           }
         }
-      />
-      <img
-        alt=""
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
-        style={
-          Object {
-            "height": "100%",
-            "left": 0,
-            "objectFit": "cover",
-            "objectPosition": "center",
-            "opacity": 0,
-            "position": "absolute",
-            "top": 0,
-            "transition": "opacity 0.5s",
-            "transitionDelay": "0.5s",
-            "width": "100%",
+      >
+        <div
+          style={
+            Object {
+              "paddingBottom": "100%",
+              "width": "100%",
+            }
           }
-        }
-      />
-      <picture>
-        <source
-          sizes="(max-width: 600px) 100vw, 600px"
-          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
-          type="image/webp"
-        />
-        <source
-          sizes="(max-width: 600px) 100vw, 600px"
-          srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
         />
         <img
-          alt="Trainline case study featured image "
-          onLoad={[Function]}
-          src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+          alt=""
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
           style={
             Object {
               "height": "100%",
               "left": 0,
               "objectFit": "cover",
               "objectPosition": "center",
-              "opacity": 1,
+              "opacity": 0,
               "position": "absolute",
               "top": 0,
               "transition": "opacity 0.5s",
+              "transitionDelay": "0.5s",
               "width": "100%",
             }
           }
         />
-      </picture>
-      <noscript
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+        <picture>
+          <source
+            sizes="(max-width: 600px) 100vw, 600px"
+            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 600px) 100vw, 600px"
+            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
+//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
+          />
+          <img
+            alt="Trainline case study featured image "
+            onLoad={[Function]}
+            src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 1,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "width": "100%",
+              }
+            }
+          />
+        </picture>
+        <noscript
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
 //images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+            }
           }
-        }
-      />
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="c6 c7"
-    width={
-      Array [
-        0,
-        0,
-        0,
-        0,
-        0.5,
-        0.5,
-        0.4166666666666667,
-      ]
-    }
-  >
     <div
-      className="c8"
+      className="c7 c8"
+      width={
+        Array [
+          0,
+          0,
+          0,
+          0,
+          0.5,
+          0.5,
+          0.4166666666666667,
+        ]
+      }
     >
       <div
         className="c9"
       >
-        <p
-          className="c2"
+        <div
+          className="c10"
         >
-          Featured work
-        </p>
-        <h2
-          className="c3"
-        >
-          Future-proofing Trainline
-        </h2>
-      </div>
-      <div
-        className="c10"
-      >
+          <p
+            className="c3"
+          >
+            Featured work
+          </p>
+          <h2
+            className="c4"
+          >
+            Future-proofing Trainline
+          </h2>
+        </div>
         <div
           className="c11"
         >
-          <p
+          <div
             className="c12"
           >
-            We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-          </p>
-          <a
-            className="c13"
-            href="/case-study/future-proofing-trainline"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn more
-          </a>
+            <p
+              className="c13"
+            >
+              We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+            </p>
+            <a
+              className="c14"
+              href="/case-study/future-proofing-trainline"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learn more
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="c1"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-      ]
-    }
-  >
     <div
-      className="c11"
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0,
+        ]
+      }
     >
-      <p
+      <div
         className="c12"
       >
-        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-      </p>
-      <a
-        className="c13"
-        href="/case-study/future-proofing-trainline"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Learn more
-      </a>
+        <p
+          className="c13"
+        >
+          We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+        </p>
+        <a
+          className="c14"
+          href="/case-study/future-proofing-trainline"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn more
+        </a>
+      </div>
     </div>
   </div>
 </div>
