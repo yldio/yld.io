@@ -4,8 +4,8 @@ import { format } from 'date-fns'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
+import Hr from '../Common/Hr'
 import Posts from '../posts'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import makeBlogPosts from '../../utils/makeBlogPosts'
 
 const BlogPosts = ({ title }) => (
@@ -25,11 +25,7 @@ const BlogPosts = ({ title }) => (
                     {makeBlogPosts(posts, title)
                       .slice(0, 3)
                       .map(({ id, uniqueSlug, title, createdAt }) => (
-                        <CustomisedBulletpoint
-                          spaced
-                          key={`${id}`}
-                          fullWidthDivider
-                        >
+                        <li key={`${id}`}>
                           <Subtitle>
                             <a
                               href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
@@ -38,7 +34,8 @@ const BlogPosts = ({ title }) => (
                             </a>
                           </Subtitle>
                           {format(new Date(createdAt), 'MMMM DD[,] dddd')}
-                        </CustomisedBulletpoint>
+                          <Hr />
+                        </li>
                       ))}
                   </ul>
                 </Padding>

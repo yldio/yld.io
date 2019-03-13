@@ -1,20 +1,21 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import is from 'styled-is'
+import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 import { Padding } from 'styled-components-spacing'
+
 import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
-import remcalc from 'remcalc'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import { Grid, Row, Col } from '../grid'
 import close from '../../images/close.svg'
 import SubtitleWithBody, {
   ItemSubtitle,
   ItemBody
 } from '../Common/SubtitleWithBody'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -132,7 +133,7 @@ const CourseContent = ({ content }) => (
             </Padding>
           ),
           listItem: props => (
-            <CustomisedBulletpoint style={{ maxWidth: 430 }} {...props} />
+            <CustomisedBulletpoint maxWidth="430px" {...props} />
           )
         }}
         source={content.content.content}

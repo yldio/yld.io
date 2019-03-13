@@ -1,13 +1,14 @@
 import React from 'react'
-import remcalc from 'remcalc'
-import { Row, Col, Grid } from '../grid'
-import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
+import remcalc from 'remcalc'
+import { Padding } from 'styled-components-spacing'
+
+import { Row, Col, Grid } from '../grid'
 import GreyBackground from '../Common/GreyBackground'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import StyledLink from '../Common/StyledLink'
+import Hr from '../Common/Hr'
 
 const TutorialsGrid = styled(Grid)`
   padding-bottom: ${remcalc(18)};
@@ -25,15 +26,16 @@ const TutorialsSection = ({ tutorials, externalResources }) =>
                 NodeJS tutorials created by members of YLD for the community.
               </BodyPrimary>
             </Col>
-            <Col width={[1, 1, 1, 1, 6 / 12]}>
+            <Col width={[1, 1, 1, 1, 4 / 12]}>
               <ul>
                 {tutorials.slice(0, 3).map(externalResource => (
-                  <CustomisedBulletpoint spaced key={`${externalResource.id}`}>
+                  <li key={`${externalResource.id}`}>
                     <Subtitle>{externalResource.title}</Subtitle>
                     <ExternalAnchor href={externalResource.link}>
                       {externalResource.additionalInfo}
                     </ExternalAnchor>
-                  </CustomisedBulletpoint>
+                    <Hr />
+                  </li>
                 ))}
               </ul>
               <Padding top={3}>

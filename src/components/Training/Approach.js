@@ -8,6 +8,7 @@ import BlueBackground from '../Common/BlueBackground'
 import BackgroundGraphic from '../Common/BackgroundGraphic'
 import TitleAndList from '../Common/TitleAndList'
 import theme from '../../utils/theme'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 
 const Approach = ({ title, content, formats }) => (
   <BlueBackground>
@@ -50,13 +51,10 @@ const Approach = ({ title, content, formats }) => (
                 {format.description}
               </BodyPrimary>
               <Padding top={1} style={{ maxWidth: '80%' }}>
-                {format.bulletPoints.map((point, i) => (
-                  <Padding top={1} key={i}>
-                    <BodyPrimary muted reverse>
-                      {point}
-                    </BodyPrimary>
-                    <Hr short muted />
-                  </Padding>
+                {format.bulletPoints.map((point, idx) => (
+                  <CustomisedBulletpoint key={idx} muted reverse>
+                    {point}
+                  </CustomisedBulletpoint>
                 ))}
               </Padding>
             </Padding>

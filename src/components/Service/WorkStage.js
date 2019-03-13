@@ -6,7 +6,7 @@ import { Row, Col } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import getSections from './getSections'
 import TitleAndList from '../Common/TitleAndList'
-import CustomisedBulletpoint from '../CustomisedBulletpoint'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import theme from '../../utils/theme'
 
 const WorkStage = ({ workStage }) => {
@@ -53,9 +53,7 @@ const WorkStage = ({ workStage }) => {
               renderers={{
                 paragraph: props => <BodyPrimary muted reverse {...props} />,
                 listItem: props => (
-                  <Padding top={1}>
-                    <CustomisedBulletpoint muted {...props} />
-                  </Padding>
+                  <CustomisedBulletpoint muted reverse {...props} />
                 )
               }}
             />

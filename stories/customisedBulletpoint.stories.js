@@ -1,29 +1,27 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import CustomisedBulletpoint from '../src/components/CustomisedBulletpoint'
+import CustomisedBulletpoint from '../src/components/Common/CustomisedBulletpoint'
 
 addDecorator(Theme)
 
 storiesOf('CustomisedBulletpoint', module)
   .add('CustomisedBulletpoint', () => (
-    <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
+    <div>
+      <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
+    </div>
   ))
-  .add('CustomisedBulletpoint spaced', () => (
-    <CustomisedBulletpoint spaced>I am a bullet thingy</CustomisedBulletpoint>
+  .add('CustomisedBulletpoint with non-default width (500px)', () => (
+    <div>
+      <CustomisedBulletpoint maxWidth="500px">
+        I am a bullet thingy with altered width and really loooooong text inside
+      </CustomisedBulletpoint>
+    </div>
   ))
-  .add('CustomisedBulletpoint Symmetrical', () => (
-    <CustomisedBulletpoint symmetrical>
-      I am a bullet thingy
-    </CustomisedBulletpoint>
-  ))
-  .add('CustomisedBulletpoint fullWidthBorder', () => (
-    <CustomisedBulletpoint fullWidthBorder>
-      I am a bullet thingy
-    </CustomisedBulletpoint>
-  ))
-  .add('CustomisedBulletpoint fullWidth', () => (
-    <CustomisedBulletpoint fullWidth>
-      I am a bullet thingy full width
-    </CustomisedBulletpoint>
+  .add('Multiple CustomisedBulletpoints in a ul', () => (
+    <ul>
+      <CustomisedBulletpoint>First bullet thingy</CustomisedBulletpoint>
+      <CustomisedBulletpoint>Second bullet thingy</CustomisedBulletpoint>
+      <CustomisedBulletpoint>Third bullet thingy</CustomisedBulletpoint>
+    </ul>
   ))
