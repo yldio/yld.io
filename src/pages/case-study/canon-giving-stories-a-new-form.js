@@ -99,9 +99,8 @@ const IndexPage = ({
   return (
     <Layout location={location}>
       <Head page={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} />
       <Grid>
-        <CaseStudyHero caseStudy={caseStudy} />
-        <Padding top={{ smallPhone: 3.5, tablet: 5 }} />
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
@@ -210,13 +209,7 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GreyBackgroundOffset>
-      {caseStudy.relatedCaseStudy ? (
-        <Grid>
-          <Padding top={4} bottom={5}>
-            <CaseStudyPreview caseStudy={caseStudy.relatedCaseStudy} />
-          </Padding>
-        </Grid>
-      ) : null}
+      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
 }
