@@ -4071,7 +4071,7 @@ exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint 1`] = `
 </div>
 `;
 
-exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint with non-deafault width (500px) 1`] = `
+exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint with non-default width (500px) 1`] = `
 .c0 {
   color: #333333;
   font-weight: 400;

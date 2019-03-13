@@ -11,7 +11,7 @@ storiesOf('CustomisedBulletpoint', module)
       <CustomisedBulletpoint>I am a bullet thingy</CustomisedBulletpoint>
     </div>
   ))
-  .add('CustomisedBulletpoint with non-deafault width (500px)', () => (
+  .add('CustomisedBulletpoint with non-default width (500px)', () => (
     <div>
       <CustomisedBulletpoint maxWidth="500px">
         I am a bullet thingy with altered width and really loooooong text inside
