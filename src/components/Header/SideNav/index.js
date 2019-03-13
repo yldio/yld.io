@@ -47,7 +47,7 @@ const SideNavPanel = styled(Flex).attrs({
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
 
   /* Thinner version' of the navbar */
-  @media screen and (min-width: 600px) and (max-width: 1009px) {
+  @media screen and (min-width: 600px) and (max-width: 959px) {
     width: ${remcalc(295)};
     left: auto;
     right: 0;
@@ -58,7 +58,7 @@ const SideNavPanel = styled(Flex).attrs({
     transform: translateX(0%);
   `};
 
-  @media screen and (min-width: 1010px) {
+  @media screen and (min-width: 960px) {
     display: none;
   }
 `

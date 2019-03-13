@@ -6339,13 +6339,13 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media screen and (min-width:1010px) {
+@media screen and (min-width:960px) {
   .c16 {
     display: none;
   }
 }
 
-@media screen and (max-width:1009px) {
+@media screen and (max-width:959px) {
   .c18 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
@@ -6371,7 +6371,7 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media screen and (min-width:1010px) {
+@media screen and (min-width:960px) {
   .c6 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -6392,7 +6392,7 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media screen and (min-width:600px) and (max-width:1009px) {
+@media screen and (min-width:600px) and (max-width:959px) {
   .c19 {
     width: 18.4375rem;
     left: auto;
@@ -6401,7 +6401,7 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media screen and (min-width:1010px) {
+@media screen and (min-width:960px) {
   .c19 {
     display: none;
   }
@@ -6836,7 +6836,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   }
 }
 
-@media screen and (min-width:1010px) {
+@media screen and (min-width:960px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -7079,7 +7079,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   }
 }
 
-@media screen and (min-width:1010px) {
+@media screen and (min-width:960px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
