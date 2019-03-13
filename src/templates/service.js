@@ -37,15 +37,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
   return (
     <Layout location={location}>
       <Head page={service} />
-      <Grid>
-        <Row>
-          <Col width={[1]}>
-            <Padding vertical={3.5}>
-              <CaseStudyPreview caseStudy={service.caseStudies[0]} />
-            </Padding>
-          </Col>
-        </Row>
-      </Grid>
+      <CaseStudyPreview caseStudy={service.caseStudies[0]} />
 
       <GreyBackground>
         <Grid>
@@ -109,16 +101,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
           </Grid>
         </Padding>
       </GreyBackground>
-      <Grid>
-        {service.bottomCaseStudy ? (
-          <Padding
-            top={{ smallPhone: 3.5, smallTablet: 6 }}
-            bottom={{ smallPhone: 3.5, smallTablet: 5 }}
-          >
-            <CaseStudyPreview caseStudy={service.bottomCaseStudy} />
-          </Padding>
-        ) : null}
-      </Grid>
+      <CaseStudyPreview isTop={false} caseStudy={service.bottomCaseStudy} />
     </Layout>
   )
 }
