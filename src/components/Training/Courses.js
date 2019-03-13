@@ -24,7 +24,7 @@ const Courses = ({ categories, toggleModal }) => {
           <Col width={[1, 1, 1, 1, 1 / 2]} key={cat.id}>
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
               <Padding bottom={1}>
-                <Image image={cat.logo} />
+                <Image image={cat.logo} width="60px" />
                 <SectionTitle>{cat.name}</SectionTitle>
               </Padding>
               <Flex column alignStart>

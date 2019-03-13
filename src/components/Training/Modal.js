@@ -95,7 +95,7 @@ const ModalStyles = createGlobalStyle`
 
 const CourseInfo = ({ content }) => (
   <Col width={[1, 1, 1, 1, 1 / 2]}>
-    <Image image={content.logo} />
+    <Image image={content.logo} width="60px" />
     <Padding bottom={1}>
       <SectionTitle>{content.name}</SectionTitle>
     </Padding>

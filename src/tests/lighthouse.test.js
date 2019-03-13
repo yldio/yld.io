@@ -55,7 +55,7 @@ test('Security', () => {
 
 test('Performance', () => {
   return serve(`http://localhost:3001`).then(({ lhr: { audits } }) => {
-    auditTest(audits, 'dom-size', 'smaller', 500)
+    auditTest(audits, 'dom-size', 'smaller', 700)
     auditTest(audits, 'network-requests', 'smaller', 70)
     auditTest(audits, 'network-requests', 'smaller', 70)
     auditTest(audits, 'bootup-time', 'smaller', 2600) //  0.89 -- prev 1333
