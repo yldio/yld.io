@@ -39,6 +39,8 @@ const DropdownList = styled.ul`
   flex-direction: column;
   width: 100%;
   background: ${props => props.theme.colors.greyBG};
+  padding: ${props => props.theme.spacing[1]} 0
+    ${props => props.theme.spacing[1]} 0;
 `
 
 export default class Dropdown extends PureComponent {
