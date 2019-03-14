@@ -86,6 +86,12 @@ const DropdownNameWrapper = styled.span`
   ${headerItemStyles}
   ${topNavItemPadding}
   ${outlineStyles}
+
+  ${is('expanded')`
+    &:focus {
+      outline-color: ${props => props.theme.colors.white};
+    }
+  `}
 `
 
 const DropdownName = styled.span`
