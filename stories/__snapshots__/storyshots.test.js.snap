@@ -5971,6 +5971,12 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 0.5;
 }
 
+.c14 > a.active:active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
 .c14 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
@@ -6903,6 +6909,12 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   opacity: 0.5;
 }
 
+.c1 > a.active:active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
 .c1 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
@@ -7035,6 +7047,12 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 > a.active {
+  background: #fff;
+  color: #333333;
+  opacity: 0.5;
+}
+
+.c8 > a.active:active {
   background: #fff;
   color: #333333;
   opacity: 0.5;
