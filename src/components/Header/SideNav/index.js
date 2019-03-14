@@ -4,29 +4,9 @@ import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
-import ButtonAsIconWrapper from '../../Common/ButtonAsIconWrapper'
-import outlineStyles from '../outlineStyles'
-import close from '../../../images/close.svg'
+import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
-
-const CloseIcon = styled.img`
-  fill: ${props => props.theme.colors.white};
-`
-
-const StyledButton = styled(ButtonAsIconWrapper)`
-  width: ${remcalc(80)};
-  height: ${remcalc(80)};
-
-  margin: ${remcalc(4)};
-  ${outlineStyles}
-`
-
-const CloseButton = ({ onClick, src, alt }) => (
-  <StyledButton onClick={onClick}>
-    <CloseIcon src={src} alt={alt} />
-  </StyledButton>
-)
 
 const SideNavList = styled.ul``
 
@@ -63,7 +43,7 @@ const SideNavPanel = styled.div.attrs({
 const SideNav = ({ links, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <Flex justifyEnd>
-      <CloseButton onClick={onClose} src={close} alt="Close menu" />
+      <CloseButton onClick={onClose} />
     </Flex>
     <SideNavList>
       <OuterAnchorItem activeClassName="active" to="/">
