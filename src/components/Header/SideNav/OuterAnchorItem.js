@@ -8,24 +8,30 @@ import {
   defaultStyles,
   hoverActiveStyles
 } from './outerItemStyles'
-import sideNavItemPadding from './sideNavItemPadding'
+import sideNavItemSpacing from './sideNavItemSpacing'
+import outlineStyles from '../outlineStyles'
 
 const StyledAnchor = styled(Anchor)`
   display: block;
   ${headerItemStyles}
   ${fontSizeAndWeight}
   ${defaultStyles}
+  ${sideNavItemSpacing};
 
   &:hover,
   &:active,
   &.active {
     ${hoverActiveStyles}
   }
+
+  &:focus {
+    ${hoverActiveStyles}
+    ${outlineStyles}
+  }
 `
 
 const StyledListItem = styled.li`
   list-style-type: none;
-  ${sideNavItemPadding};
 `
 
 const OuterAnchorItem = ({

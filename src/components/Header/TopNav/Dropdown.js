@@ -6,10 +6,11 @@ import remcalc from 'remcalc'
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
-import topNavItemPadding from './topNavItemPadding'
+import topNavItemSpacing from './topNavItemSpacing'
 import outlineStyles from '../outlineStyles'
 
 import {
+  fontSizeAndWeight,
   defaultLightStyles,
   hoverLightStyles,
   clickTapLightStyles,
@@ -84,18 +85,24 @@ const DropdownNameWrapper = styled.span`
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
   ${headerItemStyles}
-  ${topNavItemPadding}
+  ${fontSizeAndWeight}
+  ${topNavItemSpacing}
   ${outlineStyles}
 
-  ${is('expanded')`
-    &:focus {
-      outline-color: ${props => props.theme.colors.white};
-    }
-  `}
+  ${props =>
+    props.themeVariation === props.theme.variations.dark &&
+    props.expanded === true &&
+    css`
+      &:focus {
+        outline-color: ${props.theme.colors.white};
+        ${topNavItemSpacing}
+      }
+    `}
 `
 
 const DropdownName = styled.span`
   margin-right: ${remcalc(6)};
+  outline: none;
 `
 
 const DropdownList = styled.ul`
@@ -155,7 +162,11 @@ export default class Dropdown extends PureComponent {
         themeVariation={themeVariation}
         ref={this.ref}
       >
-        <DropdownNameWrapper tabIndex="0" expanded={isExpanded}>
+        <DropdownNameWrapper
+          tabIndex="0"
+          expanded={isExpanded}
+          themeVariation={themeVariation}
+        >
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>

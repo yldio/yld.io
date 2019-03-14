@@ -5,7 +5,7 @@ import outlineStyles from '../outlineStyles'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import { fontSizeAndWeight as sideNavFont } from './outerItemStyles'
-import sideNavItemPadding from './sideNavItemPadding'
+import sideNavItemSpacing from './sideNavItemSpacing'
 
 const InnerListItem = styled.li`
   display: flex;
@@ -17,7 +17,8 @@ const InnerListItem = styled.li`
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${sideNavFont}
-  ${sideNavItemPadding}
+  ${sideNavItemSpacing}
+  width: 100%;
 
   background: ${props => props.theme.colors.greyBG};
   color: ${props => props.theme.colors.text};

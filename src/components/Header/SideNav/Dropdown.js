@@ -5,28 +5,26 @@ import is from 'styled-is'
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
-import sideNavItemPadding from './sideNavItemPadding'
+import sideNavItemSpacing from './sideNavItemSpacing'
 import {
   fontSizeAndWeight,
   defaultStyles,
   hoverActiveStyles
 } from './outerItemStyles'
+import outlineStyles from '../outlineStyles'
 
 const DropdownNameWrapper = styled.span`
   display: flex;
   align-items: center;
   cursor: pointer;
   ${headerItemStyles}
-  ${sideNavItemPadding}
+  ${sideNavItemSpacing}
   ${fontSizeAndWeight}
   ${defaultStyles}
+  ${outlineStyles}
 
   ${is('expanded')`
     ${hoverActiveStyles}
-    
-    &:focus {
-      outline-color: ${props => props.theme.colors.white};
-    }
   `}
 `
 

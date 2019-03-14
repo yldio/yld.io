@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
-import topNavItemPadding from './topNavItemPadding'
+import topNavItemSpacing from './topNavItemSpacing'
 import {
   fontSizeAndWeight,
   defaultLightStyles,
@@ -21,13 +21,17 @@ import {
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
-  ${topNavItemPadding}
   ${fontSizeAndWeight}
+  ${topNavItemSpacing}
+
+  &:focus {
+    ${outlineStyles}
+  }
 `
 
 const StyledListItem = styled.li`
   display: flex;
-  > a:focus {
+  &:focus {
     ${outlineStyles}
   }
 
