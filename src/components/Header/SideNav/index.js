@@ -4,44 +4,41 @@ import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
 
+import ButtonAsIconWrapper from '../../Common/ButtonAsIconWrapper'
+import outlineStyles from '../outlineStyles'
 import close from '../../../images/close.svg'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
 
-const MobileCloseButton = styled.button`
-  min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  background: transparent;
-  color: ${props => props.theme.colors.white};
-  border: none;
-  font-size: ${remcalc(40)};
-  height: ${remcalc(24)};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin: ${remcalc(24)};
-
-  &:focus {
-    background: transparent;
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
-    color: ${props => props.theme.colors.text};
-  }
+const CloseIcon = styled.img`
+  fill: ${props => props.theme.colors.white};
 `
+
+const StyledButton = styled(ButtonAsIconWrapper)`
+  width: ${remcalc(80)};
+  height: ${remcalc(80)};
+
+  margin: ${remcalc(4)};
+  ${outlineStyles}
+`
+
+const CloseButton = ({ onClick, src, alt }) => (
+  <StyledButton onClick={onClick}>
+    <CloseIcon src={src} alt={alt} />
+  </StyledButton>
+)
 
 const SideNavList = styled.ul``
 
-const SideNavPanel = styled(Flex).attrs({
+const SideNavPanel = styled.div.attrs({
   as: 'nav'
 })`
   position: fixed;
   background: ${props => props.theme.colors.blueBg};
-  display: flex;
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
-  flex-direction: column;
   z-index: ${props => props.theme.zIndexes.header};
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
@@ -65,9 +62,9 @@ const SideNavPanel = styled(Flex).attrs({
 
 const SideNav = ({ links, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
-    <MobileCloseButton onClick={onClose}>
-      <img src={close} alt="Close menu" />
-    </MobileCloseButton>
+    <Flex justifyEnd>
+      <CloseButton onClick={onClose} src={close} alt="Close menu" />
+    </Flex>
     <SideNavList>
       <OuterAnchorItem activeClassName="active" to="/">
         Home

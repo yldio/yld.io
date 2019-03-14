@@ -1,31 +1,32 @@
 import React from 'react'
-import styled from 'styled-components'
-import is from 'styled-is'
+import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
-const HamburgerSvg = styled.svg`
-  fill: currentColor;
+import ButtonAsIconWrapper from '../Common/ButtonAsIconWrapper'
+import outlineStyles from './outlineStyles'
 
-  ${is('light')`
-    fill: ${props => props.theme.colors.white};
-  `}
+const HamburgerSvg = styled.svg`
+  ${props =>
+    props.themeVariation === props.theme.variations.dark
+      ? css`
+          fill: ${props => props.theme.colors.white};
+        `
+      : css`
+          fill: ${props => props.theme.colors.text};
+        `}
 `
 
-const HamburgerButton = styled.button`
+const HamburgerButton = styled(ButtonAsIconWrapper)`
   ${breakpoint('phone')`
-    display: flex;
-    cursor: pointer;
-    margin: 0;
-    border: none;
-    background: transparent;
-    padding: ${remcalc(8)} ${remcalc(6)};
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: ${remcalc(80)};
+    height: ${remcalc(80)};
 
-    &:focus {
-      background: transparent;
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
-      color: ${props => props.theme.colors.text};
-    }
+    margin: ${remcalc(4)};
+    ${outlineStyles}
   `}
 
   @media screen and (min-width: 960px) {
@@ -33,10 +34,10 @@ const HamburgerButton = styled.button`
   }
 `
 
-const Hamburger = ({ onClick, light }) => (
+const Hamburger = ({ themeVariation, onClick }) => (
   <HamburgerButton onClick={onClick}>
     <HamburgerSvg
-      light={light}
+      themeVariation={themeVariation}
       title="open menu"
       width="24"
       height="18"

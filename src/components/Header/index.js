@@ -77,8 +77,8 @@ const Header = ({ path, blue, logoColour }) => {
                 themeVariation={blue ? 'dark' : 'light'}
               />
               <Hamburger
-                light={!!blue}
                 onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+                themeVariation={blue ? 'dark' : 'light'}
               />
               <Overlay
                 visible={isMobileNavbarOpen}
