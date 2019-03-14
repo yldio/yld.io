@@ -64,10 +64,6 @@ export default class Dropdown extends PureComponent {
     this.setState({ isExpanded: true })
   }
 
-  handleBlur = () => {
-    this.setState({ isExpanded: false })
-  }
-
   render() {
     const { items, children } = this.props
     const { isExpanded } = this.state
@@ -77,7 +73,7 @@ export default class Dropdown extends PureComponent {
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
-          onMouseDown={this.toggle}
+          onClick={this.toggle}
           onFocus={this.handleFocus}
         >
           <DropdownName>{children}</DropdownName>
@@ -91,6 +87,7 @@ export default class Dropdown extends PureComponent {
                 href={href}
                 to={to}
                 activeClassName="active"
+                onClick={this.handleItemClick}
               >
                 {label}
               </InnerAnchorItem>
