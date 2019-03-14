@@ -5919,10 +5919,19 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
+}
+
+.c15:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c15:focus:active {
+  outline: none;
 }
 
 .c14 {
@@ -5935,11 +5944,11 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 1;
 }
 
-.c14 > a:focus:focus {
+.c14:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c14 > a:focus:active {
+.c14:focus:active {
   outline: none;
 }
 
@@ -6003,7 +6012,9 @@ exports[`Storyshots Header Header itself 1`] = `
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
+  width: 100%;
   background: #f9f9f9;
   color: #333333;
   opacity: 0.5;
@@ -6049,7 +6060,11 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
 }
 
 .c8:focus {
@@ -6062,6 +6077,7 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c9 {
   margin-right: 0.375rem;
+  outline: none;
 }
 
 .c11 {
@@ -6097,12 +6113,21 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
+  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
+  margin: 0.25rem;
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.5rem;
   color: #fff;
   opacity: 0.5;
+}
+
+.c25:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c25:active {
+  outline: none;
 }
 
 .c26 {
@@ -6120,6 +6145,8 @@ exports[`Storyshots Header Header itself 1`] = `
   line-height: 1.5rem;
   color: #fff;
   opacity: 0.5;
+  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
+  margin: 0.25rem;
 }
 
 .c24:hover,
@@ -6129,9 +6156,21 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 1;
 }
 
+.c24:focus {
+  color: #fff;
+  opacity: 1;
+}
+
+.c24:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c24:focus:active {
+  outline: none;
+}
+
 .c23 {
   list-style-type: none;
-  padding: 0.8125rem 2.375rem 0.6875rem 1.5rem;
 }
 
 .c22 {
@@ -6812,10 +6851,19 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
+}
+
+.c2:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c2:focus:active {
+  outline: none;
 }
 
 .c1 {
@@ -6828,11 +6876,11 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   opacity: 1;
 }
 
-.c1 > a:focus:focus {
+.c1:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c1 > a:focus:active {
+.c1:focus:active {
   outline: none;
 }
 
@@ -6940,10 +6988,19 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
+}
+
+.c9:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c9:focus:active {
+  outline: none;
 }
 
 .c8 {
@@ -6956,11 +7013,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   opacity: 1;
 }
 
-.c8 > a:focus:focus {
+.c8:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c8 > a:focus:active {
+.c8:focus:active {
   outline: none;
 }
 
@@ -7024,7 +7081,9 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
+  width: 100%;
   background: #f9f9f9;
   color: #333333;
   opacity: 0.5;
@@ -7070,7 +7129,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.625rem 0.9375rem 0.875rem;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.375rem 0.6875rem 0.625rem;
+  margin: 0.25rem;
 }
 
 .c2:focus {
@@ -7083,6 +7146,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 
 .c3 {
   margin-right: 0.375rem;
+  outline: none;
 }
 
 .c5 {
