@@ -51,6 +51,9 @@ const StyledListItem = styled.li`
 
         > a.active {
           ${activeLightStyles}
+          &:active {
+            ${activeLightStyles}
+          }
 
           &:hover {
             ${activeAndHoverLightStyles}
