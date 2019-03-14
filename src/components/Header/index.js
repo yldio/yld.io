@@ -61,7 +61,7 @@ const navLinks = [
 ]
 
 const Header = ({ path, blue, logoColour }) => {
-  const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
+  const [isSideNavOpen, toggleSideNav] = useState(false)
 
   return (
     <Grid>
@@ -77,18 +77,18 @@ const Header = ({ path, blue, logoColour }) => {
                 themeVariation={blue ? 'dark' : 'light'}
               />
               <Hamburger
-                onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+                onClick={() => toggleSideNav(true)}
                 themeVariation={blue ? 'dark' : 'light'}
               />
               <Overlay
-                visible={isMobileNavbarOpen}
-                onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
+                visible={isSideNavOpen}
+                onClick={() => toggleSideNav(false)}
               />
               <SideNav
                 links={navLinks}
                 themeVariation="dark"
-                isOpen={isMobileNavbarOpen}
-                onClose={() => toggleMobileNavbar(false)}
+                isOpen={isSideNavOpen}
+                onClose={() => toggleSideNav(false)}
               />
             </FixedHeightFlex>
           </Padding>
