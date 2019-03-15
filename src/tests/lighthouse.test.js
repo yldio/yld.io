@@ -61,8 +61,8 @@ test('Performance', () => {
     auditTest(audits, 'bootup-time', 'smaller', 2600) //  0.89 -- prev 1333
     auditTest(audits, 'interactive', 'smaller', 10000) //  0.45 -- prev 7788
     auditTest(audits, 'speed-index', 'smaller', 6000) //  0.71 -- prev 4582
-    auditTest(audits, 'first-contentful-paint', 'smaller', 4400)
-    auditTest(audits, 'first-meaningful-paint', 'smaller', 4400)
+    auditTest(audits, 'first-contentful-paint', 'smaller', 4700)
+    auditTest(audits, 'first-meaningful-paint', 'smaller', 4700)
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
