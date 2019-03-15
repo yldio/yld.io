@@ -95,9 +95,9 @@ const ModalStyles = createGlobalStyle`
 `
 
 const CourseInfo = ({ content }) => (
-  <Col width={[1, 1, 1, 1, 1 / 2]}>
-    <Image image={content.logo} width="60px" />
+  <Col width={[1, 1, 1, 1, 5 / 6]} px={0}>
     <Padding bottom={1}>
+      <Image image={content.logo} width="60px" />
       <SectionTitle>{content.name}</SectionTitle>
     </Padding>
     {content.description && (
@@ -116,7 +116,7 @@ const CourseInfo = ({ content }) => (
 )
 
 const CourseContent = ({ content }) => (
-  <Col width={[1, 1, 1, 1, 1 / 2]}>
+  <Col width={[1, 1, 1, 1, 1, 5 / 6]} px={0}>
     <Padding top={4}>
       {/* eslint-disable react/display-name */}
       <ReactMarkdown
@@ -133,7 +133,7 @@ const CourseContent = ({ content }) => (
             </Padding>
           ),
           listItem: props => (
-            <CustomisedBulletpoint maxWidth="430px" {...props} />
+            <CustomisedBulletpoint maxWidth="auto" {...props} />
           )
         }}
         source={content.content.content}
@@ -153,8 +153,12 @@ const Modal = ({ content, toggleModal }) => (
         </Close>
         <Grid>
           <Row>
-            <CourseInfo content={content} />
-            <CourseContent content={content} />
+            <Col width={[1, 1, 1, 1, 1 / 2]}>
+              <CourseInfo content={content} />
+            </Col>
+            <Col width={[1, 1, 1, 1, 1 / 2]}>
+              <CourseContent content={content} />
+            </Col>
           </Row>
         </Grid>
       </Padding>
