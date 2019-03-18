@@ -35,6 +35,20 @@ const SideNavPanel = styled.nav`
   }
 `
 
+const SideNavItem = ({ item }) => {
+  if (item.dropdownItems) {
+    const { label, dropdownItems } = item
+    return <Dropdown items={dropdownItems}>{label}</Dropdown>
+  } else {
+    const { label, to, href } = item
+    return (
+      <OuterAnchorItem activeClassName="active" to={to} href={href}>
+        {label}
+      </OuterAnchorItem>
+    )
+  }
+}
+
 const SideNav = ({ links, isOpen, onClose }) => (
   <SideNavPanel open={isOpen}>
     <Flex justifyEnd>
@@ -44,28 +58,9 @@ const SideNav = ({ links, isOpen, onClose }) => (
       <OuterAnchorItem activeClassName="active" to="/">
         Home
       </OuterAnchorItem>
-      {links.map((link, idx) => {
-        if (link.dropdownItems) {
-          const { label, dropdownItems } = link
-          return (
-            <Dropdown key={idx} items={dropdownItems}>
-              {label}
-            </Dropdown>
-          )
-        } else {
-          const { label, to, href } = link
-          return (
-            <OuterAnchorItem
-              key={idx}
-              activeClassName="active"
-              to={to}
-              href={href}
-            >
-              {label}
-            </OuterAnchorItem>
-          )
-        }
-      })}
+      {links.map((link, idx) => (
+        <SideNavItem item={link} key={idx} />
+      ))}
     </ul>
   </SideNavPanel>
 )
