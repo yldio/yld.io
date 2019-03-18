@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 
 import close from '../../../images/close.svg'
-import ButtonAsIconWrapper from '../../Common/ButtonAsIconWrapper'
+import { UnstyledButton } from '../../Common/Button'
 import outlineStyles from '../outlineStyles'
 
 const CloseIcon = styled.img`
   fill: ${props => props.theme.colors.white};
 `
 
-const StyledButton = styled(ButtonAsIconWrapper)`
+const StyledButton = styled(UnstyledButton)`
   width: ${remcalc(80)};
   height: ${remcalc(80)};
 

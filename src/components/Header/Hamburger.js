@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
-import ButtonAsIconWrapper from '../Common/ButtonAsIconWrapper'
+import { UnstyledButton } from '../Common/Button'
 import outlineStyles from './outlineStyles'
 
 const HamburgerSvg = styled.svg`
@@ -17,7 +17,7 @@ const HamburgerSvg = styled.svg`
         `}
 `
 
-const HamburgerButton = styled(ButtonAsIconWrapper)`
+const HamburgerButton = styled(UnstyledButton)`
   ${breakpoint('phone')`
     position: fixed;
     right: 0;
