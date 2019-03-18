@@ -4324,6 +4324,20 @@ exports[`Storyshots Form Button 1`] = `
   border: none;
   background: transparent;
   padding: 0;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: block;
   padding: 1.125rem 1.5rem;
   color: #fff;
@@ -5852,7 +5866,7 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5880,22 +5894,21 @@ exports[`Storyshots Header Header itself 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c5 {
+.c6 {
   padding-top: 25px;
   padding-bottom: 23px;
 }
 
-.c17 {
+.c18 {
   fill: #333333;
 }
 
-.c16 {
+.c17 {
+  border: none;
+  background: transparent;
+  padding: 0;
   min-width: 3rem;
   min-height: 3rem;
-  background-color: transparent;
-  border: none;
-  line-height: 0;
-  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5908,13 +5921,27 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 5rem;
+  height: 5rem;
+  margin: 0.25rem;
 }
 
-.c18 {
+.c17:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c17:active {
+  outline: none;
+}
+
+.c19 {
   display: none;
 }
 
-.c15 {
+.c16 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -5926,15 +5953,15 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
 }
 
-.c15:focus:focus {
+.c16:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c15:focus:active {
+.c16:focus:active {
   outline: none;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5944,46 +5971,46 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 1;
 }
 
-.c14:focus:focus {
+.c15:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c14:focus:active {
+.c15:focus:active {
   outline: none;
 }
 
-.c14:hover,
-.c14 > a:hover {
+.c15:hover,
+.c15 > a:hover {
   background: #f9f9f9;
   color: #333333;
   opacity: 1;
 }
 
-.c14 > a:active {
+.c15 > a:active {
   background: #333333;
   color: #fff;
   opacity: 1;
 }
 
-.c14 > a.active {
+.c15 > a.active {
   background: #fff;
   color: #333333;
   opacity: 0.5;
 }
 
-.c14 > a.active:active {
+.c15 > a.active:active {
   background: #fff;
   color: #333333;
   opacity: 0.5;
 }
 
-.c14 > a.active:hover {
+.c15 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
   opacity: 1;
 }
 
-.c10 {
+.c11 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -5995,22 +6022,22 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c12 > a:focus:focus {
+.c13 > a:focus:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c12 > a:focus:active {
+.c13 > a:focus:active {
   outline: none;
 }
 
-.c13 {
+.c14 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6026,31 +6053,31 @@ exports[`Storyshots Header Header itself 1`] = `
   opacity: 0.5;
 }
 
-.c13:hover,
-.c13.active {
-  color: #333333;
-  opacity: 1;
-}
-
-.c7 {
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-}
-
-.c7 > span {
-  background: #fff;
-  color: #333333;
-  opacity: 1;
-}
-
-.c7:hover > span {
-  background: #f9f9f9;
+.c14:hover,
+.c14.active {
   color: #333333;
   opacity: 1;
 }
 
 .c8 {
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c8 > span {
+  background: #fff;
+  color: #333333;
+  opacity: 1;
+}
+
+.c8 > span:hover {
+  background: #f9f9f9;
+  color: #333333;
+  opacity: 1;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6073,20 +6100,20 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
 }
 
-.c8:focus {
+.c9:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c8:active {
+.c9:active {
   outline: none;
 }
 
-.c9 {
+.c10 {
   margin-right: 0.375rem;
   outline: none;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   width: 10rem;
   display: -webkit-box;
@@ -6105,17 +6132,16 @@ exports[`Storyshots Header Header itself 1`] = `
   z-index: 999;
 }
 
-.c22 {
-  fill: #fff;
+.c7 {
+  display: none;
 }
 
-.c21 {
+.c22 {
+  border: none;
+  background: transparent;
+  padding: 0;
   min-width: 3rem;
   min-height: 3rem;
-  background-color: transparent;
-  border: none;
-  line-height: 0;
-  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6133,11 +6159,11 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
 }
 
-.c21:focus {
+.c22:focus {
   outline: 0.25rem solid #65FFCD;
 }
 
-.c21:active {
+.c22:active {
   outline: none;
 }
 
@@ -6155,11 +6181,11 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: opacity 200ms ease-out, color 200ms ease-out, outline 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
-  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
-  margin: 0.25rem;
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.5rem;
+  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
+  margin: 0.25rem;
   color: #fff;
   opacity: 0.5;
 }
@@ -6185,10 +6211,10 @@ exports[`Storyshots Header Header itself 1`] = `
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.5rem;
-  color: #fff;
-  opacity: 0.5;
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
+  color: #fff;
+  opacity: 0.5;
 }
 
 .c24:hover,
@@ -6215,7 +6241,7 @@ exports[`Storyshots Header Header itself 1`] = `
   list-style-type: none;
 }
 
-.c19 {
+.c20 {
   position: fixed;
   background: #090329;
   height: 100vh;
@@ -6258,6 +6284,14 @@ exports[`Storyshots Header Header itself 1`] = `
   -ms-flex-align: center;
   align-items: center;
   height: 84px;
+}
+
+.c5:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c5:active {
+  outline: none;
 }
 
 @media (min-width:29.4375em) {
@@ -6389,33 +6423,14 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c16 {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 5rem;
-    height: 5rem;
-    margin: 0.25rem;
-  }
-
-  .c16:focus {
-    outline: 0.25rem solid #65FFCD;
-  }
-
-  .c16:active {
-    outline: none;
-  }
-}
-
 @media screen and (min-width:960px) {
-  .c16 {
+  .c17 {
     display: none;
   }
 }
 
 @media screen and (max-width:959px) {
-  .c18 {
+  .c19 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6434,14 +6449,8 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c6 {
-    display: none;
-  }
-}
-
 @media screen and (min-width:960px) {
-  .c6 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6462,16 +6471,15 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:600px) and (max-width:959px) {
-  .c19 {
+  .c20 {
     width: 18.4375rem;
     left: auto;
     right: 0;
-    z-index: 10;
   }
 }
 
 @media screen and (min-width:960px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
@@ -6508,47 +6516,46 @@ exports[`Storyshots Header Header itself 1`] = `
         >
           <a
             aria-current="page"
-            className=""
+            className="c5"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
             style={Object {}}
           >
             <div
-              className="c5"
+              className="c6"
             >
               <img
                 alt="yld logo"
                 height="36"
                 role="link"
                 src="test-file-stub"
-                tab-index="0"
               />
             </div>
           </a>
           <nav>
             <ul
-              className="c6"
+              className="c7"
             >
               <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c7"
+                className="c8"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
                 <span
-                  className="c8"
+                  className="c9"
                   tabIndex="0"
                 >
                   <span
-                    className="c9"
+                    className="c10"
                   >
                     Services
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6559,13 +6566,13 @@ exports[`Storyshots Header Header itself 1`] = `
                   </svg>
                 </span>
                 <ul
-                  className="c11"
+                  className="c12"
                 >
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/engineering/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -6574,10 +6581,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/design/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -6586,10 +6593,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/training/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -6600,10 +6607,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6612,10 +6619,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -6626,22 +6633,22 @@ exports[`Storyshots Header Header itself 1`] = `
               <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c7"
+                className="c8"
                 onBlur={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
                 <span
-                  className="c8"
+                  className="c9"
                   tabIndex="0"
                 >
                   <span
-                    className="c9"
+                    className="c10"
                   >
                     About
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6652,13 +6659,13 @@ exports[`Storyshots Header Header itself 1`] = `
                   </svg>
                 </span>
                 <ul
-                  className="c11"
+                  className="c12"
                 >
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/about-us/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -6667,10 +6674,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/contact/"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -6681,10 +6688,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6695,12 +6702,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </ul>
           </nav>
           <button
-            className="c16"
+            className="c17"
             onClick={[Function]}
-            type="button"
           >
             <svg
-              className="c17"
+              className="c18"
               height="18"
               title="open menu"
               width="24"
@@ -6713,31 +6719,27 @@ exports[`Storyshots Header Header itself 1`] = `
             </svg>
           </button>
           <div
-            className="c18"
+            className="c19"
             onClick={[Function]}
           />
           <nav
-            className="c19"
+            className="c20"
             open={false}
           >
             <div
-              className="c20"
+              className="c21"
             >
               <button
-                className="c21"
+                className="c22"
                 onClick={[Function]}
-                type="button"
               >
                 <img
                   alt="Close menu"
-                  className="c22"
                   src="test-file-stub"
                 />
               </button>
             </div>
-            <ul
-              className=""
-            >
+            <ul>
               <li
                 className="c23"
               >
@@ -6747,6 +6749,26 @@ exports[`Storyshots Header Header itself 1`] = `
                   href="/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
+                  states={
+                    Object {
+                      "default": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 0.5;
+",
+                      ],
+                      "hoverActive": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 1;
+",
+                      ],
+                    }
+                  }
                   style={Object {}}
                 >
                   Home
@@ -6768,7 +6790,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Services
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6787,6 +6809,26 @@ exports[`Storyshots Header Header itself 1`] = `
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
+                  states={
+                    Object {
+                      "default": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 0.5;
+",
+                      ],
+                      "hoverActive": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 1;
+",
+                      ],
+                    }
+                  }
                 >
                   Our work
                 </a>
@@ -6798,6 +6840,26 @@ exports[`Storyshots Header Header itself 1`] = `
                   className="c24"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
+                  states={
+                    Object {
+                      "default": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 0.5;
+",
+                      ],
+                      "hoverActive": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 1;
+",
+                      ],
+                    }
+                  }
                   target="_blank"
                 >
                   Blog
@@ -6819,7 +6881,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     About
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6838,6 +6900,26 @@ exports[`Storyshots Header Header itself 1`] = `
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
+                  states={
+                    Object {
+                      "default": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 0.5;
+",
+                      ],
+                      "hoverActive": Array [
+                        "
+  color: ",
+                        [Function],
+                        ";
+  opacity: 1;
+",
+                      ],
+                    }
+                  }
                 >
                   Join us
                 </a>
@@ -6921,10 +7003,8 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   opacity: 1;
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    display: none;
-  }
+.c0 {
+  display: none;
 }
 
 @media screen and (min-width:960px) {
@@ -7125,7 +7205,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   opacity: 1;
 }
 
-.c1:hover > span {
+.c1 > span:hover {
   background: #f9f9f9;
   color: #333333;
   opacity: 1;
@@ -7186,10 +7266,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   z-index: 999;
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    display: none;
-  }
+.c0 {
+  display: none;
 }
 
 @media screen and (min-width:960px) {
@@ -10337,6 +10415,20 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   border: none;
   background: transparent;
   padding: 0;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -10373,6 +10465,20 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   border: none;
   background: transparent;
   padding: 0;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -10490,6 +10596,20 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   border: none;
   background: transparent;
   padding: 0;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
@@ -10572,6 +10692,20 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   border: none;
   background: transparent;
   padding: 0;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
 }
 
