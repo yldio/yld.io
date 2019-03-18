@@ -7,7 +7,7 @@ import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
-import { fontSizeAndWeight, itemSpacing } from './topNavItemStyles'
+import topNavItemStyles from './topNavItemStyles'
 import {
   defaultLightStyles,
   hoverLightStyles,
@@ -83,8 +83,7 @@ const DropdownNameWrapper = styled.span`
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
   ${headerItemStyles}
-  ${fontSizeAndWeight}
-  ${itemSpacing}
+  ${topNavItemStyles}
   ${outlineStyles}
 
   ${props =>
