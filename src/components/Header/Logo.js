@@ -26,13 +26,7 @@ const Logo = ({ path, logoColour, blue }) => {
       !path.includes('training') &&
       !blue ? (
         <YLDLogoImageWrapper>
-          <img
-            role="link"
-            tab-index="0"
-            height="36"
-            src={logo}
-            alt="yld logo"
-          />
+          <img role="link" height="36" src={logo} alt="yld logo" />
         </YLDLogoImageWrapper>
       ) : null}
 
@@ -52,7 +46,6 @@ const Logo = ({ path, logoColour, blue }) => {
           <HiddenText>{name}</HiddenText>
           <img
             role="link"
-            tab-index="0"
             height="48"
             src={logoTraining}
             alt="yld training logo"
@@ -66,7 +59,6 @@ const Logo = ({ path, logoColour, blue }) => {
           <HiddenText>{name}</HiddenText>
           <img
             role="link"
-            tab-index="0"
             height="48"
             src={logoDesign}
             alt="yld design logo"
