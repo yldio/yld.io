@@ -7,32 +7,29 @@ import is from 'styled-is'
 import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
-import breakpoint from 'styled-components-breakpoint'
 
 const SideNavPanel = styled.nav`
   position: fixed;
-  z-index: ${props => props.theme.zIndexes.header};
   background: ${props => props.theme.colors.blueBg};
   height: 100vh;
-
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: ${props => props.theme.zIndexes.header};
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
-  ${is('open')`
-    transform: translateX(0%);
-  `};
-
-  ${breakpoint('phone')`
-    width: 100vw;
-    top: 0;
-    left: 0;
-  `}
 
   /* Thinner version' of the navbar */
   @media screen and (min-width: 600px) and (max-width: 959px) {
-    width: ${remcalc(320)};
+    width: ${remcalc(295)};
     left: auto;
     right: 0;
+    z-index: 10;
   }
+
+  ${is('open')`
+    transform: translateX(0%);
+  `};
 
   @media screen and (min-width: 960px) {
     display: none;
