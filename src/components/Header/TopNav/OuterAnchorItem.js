@@ -4,9 +4,8 @@ import styled, { css } from 'styled-components'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
-import topNavItemSpacing from './topNavItemSpacing'
+import { fontSizeAndWeight, itemSpacing } from './topNavItemStyles'
 import {
-  fontSizeAndWeight,
   defaultLightStyles,
   hoverLightStyles,
   clickTapLightStyles,
@@ -22,7 +21,7 @@ import {
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${fontSizeAndWeight}
-  ${topNavItemSpacing}
+  ${itemSpacing}
 
   &:focus {
     ${outlineStyles}

@@ -6,11 +6,9 @@ import remcalc from 'remcalc'
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
-import topNavItemSpacing from './topNavItemSpacing'
 import outlineStyles from '../outlineStyles'
-
+import { fontSizeAndWeight, itemSpacing } from './topNavItemStyles'
 import {
-  fontSizeAndWeight,
   defaultLightStyles,
   hoverLightStyles,
   clickTapLightStyles,
@@ -86,7 +84,7 @@ const DropdownNameWrapper = styled.span`
   z-index: 2;
   ${headerItemStyles}
   ${fontSizeAndWeight}
-  ${topNavItemSpacing}
+  ${itemSpacing}
   ${outlineStyles}
 
   ${props =>
@@ -95,7 +93,7 @@ const DropdownNameWrapper = styled.span`
     css`
       &:focus {
         outline-color: ${props.theme.colors.white};
-        ${topNavItemSpacing}
+        ${itemSpacing}
       }
     `}
 `

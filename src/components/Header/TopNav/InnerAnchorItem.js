@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import outlineStyles from '../outlineStyles'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
-import { fontSizeAndWeight as topNavFont } from './outerItemStyles'
-import topNavItemSpacing from './topNavItemSpacing'
+import { fontSizeAndWeight, itemSpacing } from './topNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
@@ -16,8 +15,8 @@ const InnerListItem = styled.li`
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
-  ${topNavFont}
-  ${topNavItemSpacing}
+  ${fontSizeAndWeight}
+  ${itemSpacing}
   width: 100%;
 
   background: ${props => props.theme.colors.greyBG};

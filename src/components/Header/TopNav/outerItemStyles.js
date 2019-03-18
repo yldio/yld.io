@@ -1,11 +1,4 @@
 import { css } from 'styled-components'
-import remcalc from 'remcalc'
-
-export const fontSizeAndWeight = css`
-  font-weight: 400;
-  font-size: ${remcalc(17)};
-  line-height: ${remcalc(24)};
-`
 
 export const defaultLightStyles = css`
   background: ${props => props.theme.colors.white};

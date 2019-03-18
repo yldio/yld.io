@@ -8,11 +8,7 @@ import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
 
-const SideNavList = styled.ul``
-
-const SideNavPanel = styled.div.attrs({
-  as: 'nav'
-})`
+const SideNavPanel = styled.nav`
   position: fixed;
   background: ${props => props.theme.colors.blueBg};
   height: 100vh;
@@ -45,7 +41,7 @@ const SideNav = ({ links, isOpen, onClose }) => (
     <Flex justifyEnd>
       <CloseButton onClick={onClose} />
     </Flex>
-    <SideNavList>
+    <ul>
       <OuterAnchorItem activeClassName="active" to="/">
         Home
       </OuterAnchorItem>
@@ -71,7 +67,7 @@ const SideNav = ({ links, isOpen, onClose }) => (
           )
         }
       })}
-    </SideNavList>
+    </ul>
   </SideNavPanel>
 )
 

@@ -3,20 +3,16 @@ import styled from 'styled-components'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
-import {
-  fontSizeAndWeight,
-  defaultStyles,
-  hoverActiveStyles
-} from './outerItemStyles'
-import sideNavItemSpacing from './sideNavItemSpacing'
 import outlineStyles from '../outlineStyles'
+import { fontSizeAndWeight, itemSpacing } from './sideNavItemStyles'
+import { defaultStyles, hoverActiveStyles } from './outerItemStyles'
 
 const StyledAnchor = styled(Anchor)`
   display: block;
   ${headerItemStyles}
   ${fontSizeAndWeight}
   ${defaultStyles}
-  ${sideNavItemSpacing};
+  ${itemSpacing};
 
   &:hover,
   &:active,

@@ -5,12 +5,8 @@ import is from 'styled-is'
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
-import sideNavItemSpacing from './sideNavItemSpacing'
-import {
-  fontSizeAndWeight,
-  defaultStyles,
-  hoverActiveStyles
-} from './outerItemStyles'
+import { fontSizeAndWeight, itemSpacing } from './sideNavItemStyles'
+import { defaultStyles, hoverActiveStyles } from './outerItemStyles'
 import outlineStyles from '../outlineStyles'
 
 const DropdownNameWrapper = styled.span`
@@ -18,7 +14,7 @@ const DropdownNameWrapper = styled.span`
   align-items: center;
   cursor: pointer;
   ${headerItemStyles}
-  ${sideNavItemSpacing}
+  ${itemSpacing}
   ${fontSizeAndWeight}
   ${defaultStyles}
   ${outlineStyles}
