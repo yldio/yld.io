@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
@@ -7,14 +7,10 @@ import { UnstyledButton } from '../Common/Button'
 import outlineStyles from './outlineStyles'
 
 const HamburgerSvg = styled.svg`
-  ${props =>
-    props.themeVariation === props.theme.variations.dark
-      ? css`
-          fill: ${props => props.theme.colors.white};
-        `
-      : css`
-          fill: ${props => props.theme.colors.text};
-        `}
+  fill: ${({ themeVariation, theme }) =>
+    themeVariation === theme.variations.dark
+      ? theme.colors.white
+      : theme.colors.text};
 `
 
 const HamburgerButton = styled(UnstyledButton)`
