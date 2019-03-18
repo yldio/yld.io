@@ -24,7 +24,6 @@ const SideNavPanel = styled.nav`
     width: ${remcalc(295)};
     left: auto;
     right: 0;
-    z-index: 10;
   }
 
   ${is('open')`
