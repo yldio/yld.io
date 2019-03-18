@@ -93,7 +93,6 @@ const DropdownNameWrapper = styled.span`
     css`
       &:focus {
         outline-color: ${props.theme.colors.white};
-        ${itemSpacing}
       }
     `}
 `
