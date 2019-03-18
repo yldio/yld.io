@@ -5,22 +5,25 @@ import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import sideNavItemStyles from './sideNavItemStyles'
-import { defaultStyles, hoverActiveStyles } from './outerItemStyles'
+import outerItemStates from './outerItemStates'
 
-const StyledAnchor = styled(Anchor)`
+const StyledAnchor = styled(Anchor).attrs(props => ({
+  states: outerItemStates
+}))`
   display: block;
   ${headerItemStyles}
   ${sideNavItemStyles}
-  ${defaultStyles}
+
+  ${props => props.states.default}
 
   &:hover,
   &:active,
   &.active {
-    ${hoverActiveStyles}
+    ${props => props.states.hoverActive}
   }
 
   &:focus {
-    ${hoverActiveStyles}
+    ${props => props.states.hoverActive}
     ${outlineStyles}
   }
 `

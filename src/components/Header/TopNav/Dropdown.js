@@ -8,72 +8,32 @@ import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
-import {
-  defaultLightStyles,
-  hoverLightStyles,
-  clickTapLightStyles,
-  activeAndHoverLightStyles,
-  defaultDarkStyles,
-  hoverDarkStyles,
-  clickTapDarkStyles,
-  activeAndHoverDarkStyles
-} from './outerItemStyles'
+import { lightStates, darkStates } from './outerItemStates'
 
-const DropdownContainer = styled.li`
+const DropdownContainer = styled.li.attrs(props => ({
+  states: props.themeVariation === 'dark' ? darkStates : lightStates
+}))`
   position: relative;
   cursor: pointer;
   background: transparent;
-  ${props => {
-    if (props.themeVariation === 'light') {
-      return css`
-        > span {
-          ${defaultLightStyles}
-        }
 
-        &:hover {
-          > span {
-            ${hoverLightStyles}
-          }
-        }
+  > span {
+    ${props => props.states.default}
 
-        ${is('expanded')`
-          > span {
-            ${clickTapLightStyles}
-          }
-      
-          &:hover {
-            > span {
-              ${activeAndHoverLightStyles}
-            }
-          }
-        `}
-      `
-    } else if (props.themeVariation === 'dark') {
-      return css`
-        > span {
-          ${defaultDarkStyles}
-        }
-
-        &:hover {
-          > span {
-            ${hoverDarkStyles}
-          }
-        }
-
-        ${is('expanded')`
-          > span {
-            ${clickTapDarkStyles}
-          }
-      
-          &:hover {
-            > span {
-              ${activeAndHoverDarkStyles}
-            }
-          }
-        `}
-      `
+    &:hover {
+      ${props => props.states.hover}
     }
-  }}
+  }
+
+  ${is('expanded')`
+    > span {
+      ${props => props.states.clickTap}
+
+      &:hover {
+        ${props => props.states.activeAndHover}
+      }
+    }
+  `}
 `
 
 const DropdownNameWrapper = styled.span`

@@ -1,22 +1,11 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
-import {
-  defaultLightStyles,
-  hoverLightStyles,
-  clickTapLightStyles,
-  activeLightStyles,
-  activeAndHoverLightStyles,
-  defaultDarkStyles,
-  hoverDarkStyles,
-  clickTapDarkStyles,
-  activeDarkStyles,
-  activeAndHoverDarkStyles
-} from './outerItemStyles'
+import { lightStates, darkStates } from './outerItemStates'
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
@@ -27,60 +16,35 @@ const StyledAnchor = styled(Anchor)`
   }
 `
 
-const StyledListItem = styled.li`
+const StyledListItem = styled.li.attrs(props => ({
+  states: props.themeVariation === 'dark' ? darkStates : lightStates
+}))`
   display: flex;
   &:focus {
     ${outlineStyles}
   }
 
-  ${props => {
-    if (props.themeVariation === 'light') {
-      return css`
-        ${defaultLightStyles}
+  ${props => props.states.default}
 
-        &:hover,
-        > a:hover {
-          ${hoverLightStyles}
-        }
+  &:hover,
+  > a:hover {
+    ${props => props.states.hover}
+  }
 
-        > a:active {
-          ${clickTapLightStyles}
-        }
+  > a:active {
+    ${props => props.states.clickTap}
+  }
 
-        > a.active {
-          ${activeLightStyles}
-          &:active {
-            ${activeLightStyles}
-          }
-
-          &:hover {
-            ${activeAndHoverLightStyles}
-          }
-        }
-      `
-    } else if (props.themeVariation === 'dark') {
-      return css`
-        ${defaultDarkStyles}
-
-        &:hover,
-        > a:hover {
-          ${hoverDarkStyles}
-        }
-
-        > a:active {
-          ${clickTapDarkStyles}
-        }
-
-        > a.active {
-          ${activeDarkStyles}
-
-          &:hover {
-            ${activeAndHoverDarkStyles}
-          }
-        }
-      `
+  > a.active {
+    ${props => props.states.active}
+    &:active {
+      ${props => props.states.active}
     }
-  }}
+
+    &:hover {
+      ${props => props.states.activeAndHover}
+    }
+  }
 `
 
 const OuterAnchorItem = ({

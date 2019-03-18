@@ -6,20 +6,23 @@ import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
-import { defaultStyles, hoverActiveStyles } from './outerItemStyles'
+import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
 
-const DropdownNameWrapper = styled.span`
+const DropdownNameWrapper = styled.span.attrs(props => ({
+  states: outerItemStates
+}))`
   display: flex;
   align-items: center;
   cursor: pointer;
   ${headerItemStyles}
   ${sideNavItemStyles}
-  ${defaultStyles}
   ${outlineStyles}
 
+  ${props => props.states.default}
+
   ${is('expanded')`
-    ${hoverActiveStyles}
+    ${props => props.states.hoverActive}
   `}
 `
 
