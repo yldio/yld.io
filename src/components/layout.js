@@ -14,6 +14,7 @@ import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
 const { GATSBY_ENVIRONMENT } = process.env
+const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =
   GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
@@ -77,7 +78,7 @@ class Layout extends Component {
                 meta={[{ name: 'description', content: '' }]}
               >
                 <script type="application/ld+json">{`
-                ${JSON.stringify(google)}
+                ${googleJson}
             `}</script>
                 <html lang="en" />
               </Helmet>
