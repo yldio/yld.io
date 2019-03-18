@@ -7,7 +7,7 @@ import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
 
 const TopNavList = styled.ul`
-  ${breakpoint('phone')`
+  ${breakpoint('smallPhone')`
     display: none;
   `}
 

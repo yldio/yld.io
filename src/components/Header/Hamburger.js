@@ -14,7 +14,7 @@ const HamburgerSvg = styled.svg`
 `
 
 const HamburgerButton = styled(UnstyledButton)`
-  ${breakpoint('phone')`
+  ${breakpoint('smallPhone')`
     position: fixed;
     right: 0;
     top: 0;
