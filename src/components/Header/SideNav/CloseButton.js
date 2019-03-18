@@ -6,10 +6,6 @@ import close from '../../../images/close.svg'
 import { UnstyledButton } from '../../Common/Button'
 import outlineStyles from '../outlineStyles'
 
-const CloseIcon = styled.img`
-  fill: ${props => props.theme.colors.white};
-`
-
 const StyledButton = styled(UnstyledButton)`
   width: ${remcalc(80)};
   height: ${remcalc(80)};
@@ -20,7 +16,7 @@ const StyledButton = styled(UnstyledButton)`
 
 const CloseButton = ({ onClick }) => (
   <StyledButton onClick={onClick}>
-    <CloseIcon src={close} alt="Close menu" />
+    <img src={close} alt="Close menu" />
   </StyledButton>
 )
 
