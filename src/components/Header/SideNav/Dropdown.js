@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import is from 'styled-is'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
@@ -20,10 +19,6 @@ const DropdownNameWrapper = styled.span.attrs(props => ({
   ${outlineStyles}
 
   ${props => props.states.default}
-
-  ${is('expanded')`
-    ${props => props.states.hoverActive}
-  `}
 `
 
 const DropdownName = styled.span`
