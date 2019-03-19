@@ -57,7 +57,7 @@ const DropdownNameWrapper = styled.span`
 `
 
 const DropdownName = styled.span`
-  margin-right: ${remcalc(6)};
+  padding-right: ${remcalc(6)};
   outline: none;
 `
 
