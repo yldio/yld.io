@@ -66,7 +66,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
         title={`${content.contactUsTitle}`}
         contactText={content.contactUsText.contactUsText}
       />
-      <CaseStudyPreview caseStudy={content.relatedCaseStudy} />
+      <CaseStudyPreview isTop={false} caseStudy={content.relatedCaseStudy} />
     </Layout>
   )
 }
