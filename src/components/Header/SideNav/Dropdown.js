@@ -6,7 +6,6 @@ import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
-import outlineStyles from '../outlineStyles'
 
 const DropdownNameWrapper = styled.span.attrs(props => ({
   states: outerItemStates
@@ -16,7 +15,6 @@ const DropdownNameWrapper = styled.span.attrs(props => ({
   cursor: pointer;
   ${headerItemStyles}
   ${sideNavItemStyles}
-  ${outlineStyles}
 
   ${props => props.states.default}
 `

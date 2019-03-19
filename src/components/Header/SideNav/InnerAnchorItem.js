@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import outlineStyles from '../outlineStyles'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
-  > a:focus {
-    ${outlineStyles}
-  }
 `
 
 const InnerAnchor = styled(Anchor)`
