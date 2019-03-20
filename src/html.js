@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 const HTML = ({
   htmlAttributes,
   headComponents,
+  preBodyComponents,
   bodyAttributes,
   postBodyComponents,
   body
@@ -29,7 +30,7 @@ const HTML = ({
         {headComponents}
       </head>
       <body {...bodyAttributes}>
-        {headComponents}
+        {preBodyComponents}
         <div
           key={`body`}
           id="___gatsby"
