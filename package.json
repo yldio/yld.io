@@ -82,6 +82,7 @@
     "babel-plugin-styled-components": "1.8.0",
     "babel-preset-gatsby": "^0.1.6",
     "chrome-launcher": "^0.10.5",
+    "compression": "^1.7.4",
     "contentful": "7.0.5",
     "contentful-management": "5.4.0",
     "dotenv": "6.1.0",
