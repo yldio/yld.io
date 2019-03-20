@@ -4,7 +4,6 @@ import remcalc from 'remcalc'
 import { lighten } from 'polished'
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=PT+Mono|Roboto:400,500,700');
   ${reset}
 
   body {

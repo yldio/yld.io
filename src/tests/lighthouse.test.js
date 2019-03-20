@@ -66,7 +66,7 @@ test('Performance', () => {
     // https://developers.google.com/web/tools/lighthouse/audits/preload
     auditTest(audits, 'uses-rel-preload')
     // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
-    auditTest(audits, 'render-blocking-resources')
+    auditTest(audits, 'render-blocking-resources', 'size', 1) // currently we have one blocking CSS resource (google fonts)
     // https://developers.google.com/web/tools/lighthouse/audits/minify-css
     auditTest(audits, 'unminified-css')
     // https://developers.google.com/speed/docs/insights/MinifyResources
@@ -74,7 +74,7 @@ test('Performance', () => {
     // https://developers.google.com/web/tools/lighthouse/audits/optimize-images
     auditTest(audits, 'uses-optimized-images')
     // https://developers.google.com/web/tools/lighthouse/audits/oversized-images
-    // auditTest(audits, 'uses-responsive-images') -- commented out due a failure, to be fixed later
+    auditTest(audits, 'uses-responsive-images')
     // https://developers.google.com/web/tools/lighthouse/audits/redirects
     auditTest(audits, 'redirects')
     // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio

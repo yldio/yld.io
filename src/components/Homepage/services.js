@@ -39,7 +39,7 @@ const PosterImage = styled.div`
   max-width: 100%;
 
   ${breakpoint('tablet')`
-    height: 528px;
+    height: 45vw;
   `}
 
   ${breakpoint('desktop')`
@@ -130,12 +130,7 @@ const Services = ({ services }) => (
                     </section>
                   </CardHeader>
                   <PosterImage color={service.caseStudies[0].posterColor}>
-                    <Image
-                      image={{
-                        ...service.caseStudies[0].posterImage,
-                        fluid: {}
-                      }}
-                    />
+                    <Image image={service.caseStudies[0].posterImage} />
                   </PosterImage>
                 </section>
               </AnimatedLink>
