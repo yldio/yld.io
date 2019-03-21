@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
+import outlineStyles from '../outlineStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 
@@ -23,6 +24,7 @@ const StyledAnchor = styled(Anchor).attrs(props => ({
 
   &:focus {
     ${props => props.states.hoverActive}
+    ${outlineStyles}
   }
 `
 
