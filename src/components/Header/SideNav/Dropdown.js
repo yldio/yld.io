@@ -64,7 +64,7 @@ export default class Dropdown extends PureComponent {
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
-          onClick={this.toggle}
+          onMouseDown={this.toggle}
           onFocus={this.handleFocus}
         >
           <DropdownName>{children}</DropdownName>
