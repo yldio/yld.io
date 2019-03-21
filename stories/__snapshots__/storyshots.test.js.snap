@@ -5895,8 +5895,8 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c6 {
-  padding-top: 25px;
-  padding-bottom: 23px;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.4375rem;
 }
 
 .c18 {
@@ -6159,6 +6159,14 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
 }
 
+.c22:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c22:active {
+  outline: none;
+}
+
 .c25 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6180,6 +6188,14 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
   color: #fff;
   opacity: 0.5;
+}
+
+.c25:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c25:active {
+  outline: none;
 }
 
 .c26 {
@@ -6211,6 +6227,14 @@ exports[`Storyshots Header Header itself 1`] = `
 .c24:focus {
   color: #fff;
   opacity: 1;
+}
+
+.c24:focus:focus {
+  outline: 0.25rem solid #65FFCD;
+}
+
+.c24:focus:active {
+  outline: none;
 }
 
 .c23 {
