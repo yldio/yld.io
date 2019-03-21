@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
@@ -13,11 +12,6 @@ const HiddenText = styled.h1`
   left: -9999px;
 `
 
-const YLDLogoImageWrapper = styled.div`
-  padding-top: ${remcalc('25')};
-  padding-bottom: ${remcalc('23')};
-`
-
 const Logo = ({ path, logoColour, blue }) => {
   const name = path.split('/').join('')
   return (
@@ -26,9 +20,7 @@ const Logo = ({ path, logoColour, blue }) => {
       !path.includes('design') &&
       !path.includes('training') &&
       !blue ? (
-        <YLDLogoImageWrapper>
-          <img role="link" height="36" src={logo} alt="yld logo" />
-        </YLDLogoImageWrapper>
+        <img role="link" height="48" src={logo} alt="yld logo" />
       ) : null}
 
       {path.includes('engineering') || blue ? (
