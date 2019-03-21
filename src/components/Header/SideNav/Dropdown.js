@@ -22,7 +22,8 @@ const DropdownNameWrapper = styled.span.attrs(props => ({
 `
 
 const DropdownName = styled.span`
-  width: 320px;
+  max-width: 320px;
+  flex: 1;
 `
 
 const DropdownList = styled.ul`
