@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import remcalc from 'remcalc'
 
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
@@ -13,8 +14,8 @@ const HiddenText = styled.h1`
 `
 
 const YLDLogoImageWrapper = styled.div`
-  padding-top: 25px;
-  padding-bottom: 23px;
+  padding-top: ${remcalc('25')};
+  padding-bottom: ${remcalc('23')};
 `
 
 const Logo = ({ path, logoColour, blue }) => {
