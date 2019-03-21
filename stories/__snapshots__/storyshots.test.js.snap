@@ -6109,7 +6109,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c10 {
-  margin-right: 0.375rem;
+  padding-right: 0.375rem;
   outline: none;
 }
 
@@ -6159,14 +6159,6 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
 }
 
-.c22:focus {
-  outline: 0.25rem solid #65FFCD;
-}
-
-.c22:active {
-  outline: none;
-}
-
 .c25 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6188,14 +6180,6 @@ exports[`Storyshots Header Header itself 1`] = `
   margin: 0.25rem;
   color: #fff;
   opacity: 0.5;
-}
-
-.c25:focus {
-  outline: 0.25rem solid #65FFCD;
-}
-
-.c25:active {
-  outline: none;
 }
 
 .c26 {
@@ -6227,14 +6211,6 @@ exports[`Storyshots Header Header itself 1`] = `
 .c24:focus {
   color: #fff;
   opacity: 1;
-}
-
-.c24:focus:focus {
-  outline: 0.25rem solid #65FFCD;
-}
-
-.c24:focus:active {
-  outline: none;
 }
 
 .c23 {
@@ -6466,6 +6442,14 @@ exports[`Storyshots Header Header itself 1`] = `
     -ms-flex: 1;
     flex: 1;
     padding: 1.25rem 0rem 1rem;
+    padding-right: 0rem;
+  }
+
+  .c7 > li {
+    padding-right: 0.375rem;
+  }
+
+  .c7 > li:last-child {
     padding-right: 0rem;
   }
 }
@@ -7026,6 +7010,14 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
+
+  .c0 > li {
+    padding-right: 0.375rem;
+  }
+
+  .c0 > li:last-child {
+    padding-right: 0rem;
+  }
 }
 
 <nav>
@@ -7243,7 +7235,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c3 {
-  margin-right: 0.375rem;
+  padding-right: 0.375rem;
   outline: none;
 }
 
@@ -7287,6 +7279,14 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     -ms-flex: 1;
     flex: 1;
     padding: 1.25rem 0rem 1rem;
+    padding-right: 0rem;
+  }
+
+  .c0 > li {
+    padding-right: 0.375rem;
+  }
+
+  .c0 > li:last-child {
     padding-right: 0rem;
   }
 }
