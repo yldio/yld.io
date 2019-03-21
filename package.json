@@ -40,7 +40,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-p test:**",
-    "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
+    "test:lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "develop": "npm start",
     "start": "gatsby develop",
@@ -82,6 +82,7 @@
     "babel-plugin-styled-components": "1.8.0",
     "babel-preset-gatsby": "^0.1.6",
     "chrome-launcher": "^0.10.5",
+    "compression": "^1.7.4",
     "contentful": "7.0.5",
     "contentful-management": "5.4.0",
     "dotenv": "6.1.0",

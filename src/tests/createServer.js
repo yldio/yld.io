@@ -4,11 +4,16 @@ const http = require('http')
 const finalhandler = require('finalhandler')
 const config = require('./lh-config.js')
 const serveStatic = require('serve-static')
+const { promisify } = require('util')
+const compression = require('compression')
+
+const compressionHandler = promisify(compression())
 
 const serve = url => {
   const servePublic = serveStatic('./public')
 
-  const server = http.createServer((req, res) => {
+  const server = http.createServer(async (req, res) => {
+    await compressionHandler(req, res)
     const done = finalhandler(req, res)
     servePublic(req, res, done)
   })

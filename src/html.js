@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 const HTML = ({
   htmlAttributes,
   headComponents,
+  preBodyComponents,
   bodyAttributes,
   postBodyComponents,
   body
@@ -17,10 +18,19 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link
+          crossOrigin="true"
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=PT+Mono|Roboto:400,500,700"
+          rel="stylesheet"
+        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>
-        {headComponents}
+        {preBodyComponents}
         <div
           key={`body`}
           id="___gatsby"

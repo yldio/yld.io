@@ -142,7 +142,7 @@ export const query = graphql`
           url
         }
         fluid(maxWidth: 250) {
-          ...GatsbyContentfulFluid_withWebp
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
     }
