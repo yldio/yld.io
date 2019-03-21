@@ -51,70 +51,70 @@ const OurWork = ({ data }) => {
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
   return (
-    <Layout backgroundColor="grey">
+    <Layout>
       <Head page={page} />
+      <Grid>
+        <Row>
+          <Col>
+            <Padding
+              top={{
+                smallPhone: 3.5,
+                tablet: 4
+              }}
+              bottom={{
+                smallPhone: 3.5,
+                tablet: 5
+              }}
+            >
+              <SectionTitle as="h1">Our work</SectionTitle>
+              <FixedWidthDisplayTitle regular textLight>
+                We make work that we’re proud to stand behind and celebrate.
+                That way we’re sure our clients love it too.
+              </FixedWidthDisplayTitle>
+            </Padding>
+          </Col>
+        </Row>
+      </Grid>
       <GreyBackground>
         <Grid>
-          <Row>
-            <Col>
-              <Padding
-                top={{
-                  smallPhone: 3.5,
-                  tablet: 4
-                }}
-                bottom={{
-                  smallPhone: 3.5,
-                  tablet: 5
-                }}
-              >
-                <SectionTitle as="h1">Our work</SectionTitle>
-                <FixedWidthDisplayTitle regular textLight>
-                  We make work that we’re proud to stand behind and celebrate.
-                  That way we’re sure our clients love it too.
-                </FixedWidthDisplayTitle>
-              </Padding>
-            </Col>
-          </Row>
-        </Grid>
-      </GreyBackground>
-      <Grid>
-        {caseStudies.map((caseStudy, index) => {
-          const isFirstCaseStudy = index === 0
-          const isLastCaseStudy = index === caseStudies.length - 1
-          const isMiddleCaseStudy = !!(!isFirstCaseStudy && !isLastCaseStudy)
-          return (
-            <Fragment key={index}>
-              {isFirstCaseStudy && (
-                <Fragment>
+          {caseStudies.map((caseStudy, index) => {
+            const isFirstCaseStudy = index === 0
+            const isLastCaseStudy = index === caseStudies.length - 1
+            const isMiddleCaseStudy = !!(!isFirstCaseStudy && !isLastCaseStudy)
+            return (
+              <Fragment key={index}>
+                {isFirstCaseStudy && (
+                  <Fragment>
+                    <Padding
+                      top={{ smallPhone: 3, smallTablet: 3.5, tablet: 4 }}
+                      bottom={{ smallPhone: 2, smallTablet: 3 }}
+                    >
+                      <CaseStudy caseStudy={caseStudy} />
+                    </Padding>
+                    <Hr />
+                  </Fragment>
+                )}
+                {isMiddleCaseStudy && (
+                  <Fragment>
+                    <Padding top={3} bottom={{ smallPhone: 2, smallTablet: 3 }}>
+                      <CaseStudy caseStudy={caseStudy} />
+                    </Padding>
+                    <Hr />
+                  </Fragment>
+                )}
+                {isLastCaseStudy && (
                   <Padding
-                    top={{ smallPhone: 3, smallTablet: 3.5, tablet: 4 }}
-                    bottom={{ smallPhone: 2, smallTablet: 3 }}
+                    top={3}
+                    bottom={{ smallPhone: 3.5, smallTablet: 3.5, tablet: 4 }}
                   >
                     <CaseStudy caseStudy={caseStudy} />
                   </Padding>
-                  <Hr />
-                </Fragment>
-              )}
-              {isMiddleCaseStudy && (
-                <Fragment>
-                  <Padding top={3} bottom={{ smallPhone: 2, smallTablet: 3 }}>
-                    <CaseStudy caseStudy={caseStudy} />
-                  </Padding>
-                  <Hr />
-                </Fragment>
-              )}
-              {isLastCaseStudy && (
-                <Padding
-                  top={3}
-                  bottom={{ smallPhone: 3.5, smallTablet: 3.5, tablet: 4 }}
-                >
-                  <CaseStudy caseStudy={caseStudy} />
-                </Padding>
-              )}
-            </Fragment>
-          )
-        })}
-      </Grid>
+                )}
+              </Fragment>
+            )
+          })}
+        </Grid>
+      </GreyBackground>
     </Layout>
   )
 }

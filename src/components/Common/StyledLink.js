@@ -39,7 +39,7 @@ export const StyledLinkCss = css`
 
   &:focus {
     background: transparent;
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
     color: ${props => props.theme.colors.text};
   }
 
@@ -63,7 +63,7 @@ export const StyledLinkCss = css`
 
     &:focus {
       background: transparent;
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+      outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
       color: ${props => props.theme.colors.white};
     }
 

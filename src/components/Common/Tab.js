@@ -48,7 +48,7 @@ const Button = styled(UnstyledButton)`
 
   &:active,
   &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
+    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
   }
 
   &:after {

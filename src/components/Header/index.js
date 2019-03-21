@@ -1,122 +1,102 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 import { Link } from 'gatsby'
-import { Row, Col, Grid } from '../grid'
+import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
+
+import { Row, Col, Grid } from '../grid'
 import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
-import HeaderAnchor from './HeaderAnchor'
-import Navbar from './Navbar'
+import TopNav from './TopNav'
+import SideNav from './SideNav'
+import outlineStyles from './outlineStyles'
 
-const HomeLink = styled(HeaderAnchor)`
-  display: block;
-  padding-right: ${remcalc(30)};
-
-  ${breakpoint('tablet')`
-    display: none;
-  `};
+const FixedHeightFlex = styled(Flex)`
+  height: 84px;
 `
 
-/* Note: This scale applied to the logo is a temporary solution until the topNav is rebuilt
-   according to new design specs. */
-const LogoLink = styled(Link)`
-  @media (min-width: 901px) and (max-width: 1005px) {
-    transform: scale(0.7, 0.7);
-    margin-left: -${remcalc(30)};
+const navLinks = [
+  {
+    label: 'Services',
+    dropdownItems: [
+      {
+        label: 'Engineering',
+        to: '/engineering/'
+      },
+      {
+        label: 'Design',
+        to: '/design/'
+      },
+      {
+        label: 'Training',
+        to: '/training/'
+      }
+    ]
+  },
+  {
+    label: 'Our work',
+    to: '/our-work/'
+  },
+  {
+    label: 'Blog',
+    href: 'https://medium.com/yld-engineering-blog/'
+  },
+  {
+    label: 'About',
+    dropdownItems: [
+      {
+        label: 'Our team',
+        to: '/about-us/'
+      },
+      {
+        label: 'Contact',
+        to: '/contact/'
+      }
+    ]
+  },
+  {
+    label: 'Join us',
+    to: '/join-us/'
   }
+]
+
+const StyledLink = styled(Link)`
+  ${outlineStyles}
 `
 
 const Header = ({ path, blue, logoColour }) => {
-  const [isMobileNavbarOpen, toggleMobileNavbar] = useState(false)
+  const [isSideNavOpen, toggleSideNav] = useState(false)
 
   return (
     <Grid>
-      <Row>
-        <Col width={[1]}>
-          <header>
-            <Padding top={2} bottom={3}>
-              <Flex alignCenter wrap justifyBetween>
-                <LogoLink to="/">
-                  <Logo path={path} blue={blue} logoColour={logoColour} />
-                </LogoLink>
-                <Hamburger
-                  light={!!blue}
-                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
-                />
-                <Navbar
-                  isOpen={isMobileNavbarOpen}
-                  onClose={() => toggleMobileNavbar(false)}
-                >
-                  <HomeLink activeClassName="active" to="/">
-                    Home
-                  </HomeLink>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/engineering/"
-                  >
-                    Engineering
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/design/"
-                  >
-                    Design
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/training/"
-                  >
-                    Training
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/our-work/"
-                  >
-                    Our work
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/about-us/"
-                  >
-                    About us
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/contact/"
-                  >
-                    Contact
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    href="https://medium.com/yld-engineering-blog/"
-                  >
-                    Blog
-                  </HeaderAnchor>
-                  <HeaderAnchor
-                    light={!!blue}
-                    activeClassName="active"
-                    to="/join-us/"
-                  >
-                    Join us
-                  </HeaderAnchor>
-                </Navbar>
-                <Overlay
-                  visible={isMobileNavbarOpen}
-                  onClick={() => toggleMobileNavbar(!isMobileNavbarOpen)}
-                />
-              </Flex>
-            </Padding>
-          </header>
+      <Row style={{ overflow: 'visible' }}>
+        <Col width={[1]} style={{ overflow: 'visible' }}>
+          <Padding bottom={3}>
+            <FixedHeightFlex alignCenter justifyBetween as="header">
+              <StyledLink to="/">
+                <Logo path={path} blue={blue} logoColour={logoColour} />
+              </StyledLink>
+              <TopNav
+                links={navLinks}
+                themeVariation={blue ? 'dark' : 'light'}
+              />
+              <Hamburger
+                onClick={() => toggleSideNav(true)}
+                themeVariation={blue ? 'dark' : 'light'}
+              />
+              <Overlay
+                visible={isSideNavOpen}
+                onClick={() => toggleSideNav(false)}
+              />
+              <SideNav
+                links={navLinks}
+                themeVariation="dark"
+                isOpen={isSideNavOpen}
+                onClose={() => toggleSideNav(false)}
+              />
+            </FixedHeightFlex>
+          </Padding>
         </Col>
       </Row>
     </Grid>

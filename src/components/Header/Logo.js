@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
 import LogoEngComponent from '../../images/eng-logo-component'
@@ -19,13 +20,17 @@ const Logo = ({ path, logoColour, blue }) => {
       !path.includes('design') &&
       !path.includes('training') &&
       !blue ? (
-        <img role="link" tab-index="0" height="48" src={logo} alt="yld logo" />
+        <img role="link" height="48" src={logo} alt="yld logo" />
       ) : null}
 
       {path.includes('engineering') || blue ? (
         <Fragment>
           <HiddenText>{name}</HiddenText>
-          <LogoEngComponent boxColour={logoColour} backgroundBlue={blue} />
+          <LogoEngComponent
+            style={{ display: 'block' }}
+            boxColour={logoColour}
+            backgroundBlue={blue}
+          />
         </Fragment>
       ) : null}
 
@@ -34,10 +39,10 @@ const Logo = ({ path, logoColour, blue }) => {
           <HiddenText>{name}</HiddenText>
           <img
             role="link"
-            tab-index="0"
             height="48"
             src={logoTraining}
             alt="yld training logo"
+            style={{ display: 'block' }}
           />
         </Fragment>
       ) : null}
@@ -47,10 +52,10 @@ const Logo = ({ path, logoColour, blue }) => {
           <HiddenText>{name}</HiddenText>
           <img
             role="link"
-            tab-index="0"
             height="48"
             src={logoDesign}
             alt="yld design logo"
+            style={{ display: 'block' }}
           />
         </Fragment>
       ) : null}

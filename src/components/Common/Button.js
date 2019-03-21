@@ -5,6 +5,13 @@ export const UnstyledButton = styled.button`
   border: none;
   background: transparent;
   padding: 0;
+  min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+  min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+
+  /* center icon inside button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Button = styled(UnstyledButton)`

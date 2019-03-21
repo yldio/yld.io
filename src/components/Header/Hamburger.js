@@ -1,40 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
-import is from 'styled-is'
-import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
+
+import { UnstyledButton } from '../Common/Button'
+import outlineStyles from './outlineStyles'
 
 const HamburgerSvg = styled.svg`
-  fill: currentColor;
+  fill: ${({ themeVariation, theme }) =>
+    themeVariation === theme.variations.dark
+      ? theme.colors.white
+      : theme.colors.text};
+`
 
-  ${is('light')`
-    fill: ${props => props.theme.colors.white};
+const HamburgerButton = styled(UnstyledButton)`
+  ${breakpoint('smallPhone')`
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: ${remcalc(80)};
+    height: ${remcalc(80)};
+
+    margin: ${remcalc(4)} ${remcalc(-20)} ${remcalc(4)} ${remcalc(4)};
+    ${outlineStyles}
   `}
-`
 
-const HamburgerButton = styled.button`
-  display: flex;
-  cursor: pointer;
-  margin: 0;
-  border: none;
-  background: transparent;
-  padding: ${remcalc(8)} ${remcalc(6)};
-
-  &:focus {
-    background: transparent;
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.outline};
-    color: ${props => props.theme.colors.text};
-  }
-
-  ${breakpoint('tablet')`
+  @media screen and (min-width: 960px) {
     display: none;
-  `};
+  }
 `
 
-const Hamburger = ({ onClick, light }) => (
+const Hamburger = ({ themeVariation, onClick }) => (
   <HamburgerButton onClick={onClick}>
     <HamburgerSvg
-      light={light}
+      themeVariation={themeVariation}
       title="open menu"
       width="24"
       height="18"
