@@ -6,6 +6,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
+      allContentfulTrainingCourseCategory {
+        edges {
+          node {
+            id
+            slug
+            courses {
+              id
+              slug
+            }
+          }
+        }
+      }
       allContentfulSpeciality {
         edges {
           node {
@@ -46,10 +58,29 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
+  const trainingCourseTemplate = path.resolve(
+    `./src/templates/trainingCourseModal.js`
+  )
   const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
   const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
   const policyTemplate = path.resolve(`./src/templates/policy.js`)
+
+  _.each(result.data.allContentfulTrainingCourseCategory.edges, edge => {
+    if (edge.node.slug && edge.node.courses) {
+      _.each(edge.node.courses, course => {
+        if (course.slug && course.id) {
+          createPage({
+            path: `/training/${edge.node.slug}/${course.slug}`,
+            component: slash(trainingCourseTemplate),
+            context: {
+              id: course.id
+            }
+          })
+        }
+      })
+    }
+  })
 
   _.each(result.data.allContentfulTemplatedCaseStudy.edges, edge => {
     if (edge.node.slug) {

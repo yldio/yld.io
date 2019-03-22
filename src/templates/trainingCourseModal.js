@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
@@ -6,16 +7,17 @@ import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 import { Padding } from 'styled-components-spacing'
 
-import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import { Grid, Row, Col } from '../grid'
-import close from '../../images/close.svg'
+import Layout from '../components/layout'
+import StyledLink from '../components/Common/StyledLink'
+import Image from '../components/Common/Image'
+import { SectionTitle, BodyPrimary } from '../components/Typography'
+import { Grid, Row, Col } from '../components/grid'
+import close from '../images/close.svg'
 import SubtitleWithBody, {
   ItemSubtitle,
   ItemBody
-} from '../Common/SubtitleWithBody'
-import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
+} from '../components/Common/SubtitleWithBody'
+import CustomisedBulletpoint from '../components/Common/CustomisedBulletpoint'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -143,27 +145,53 @@ const CourseContent = ({ content }) => (
   </Col>
 )
 
-const Modal = ({ content, toggleModal }) => (
-  <Wrapper visible={content}>
-    <ModalStyles open={content} />
-    {content && (
-      <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-        <Close onClick={() => toggleModal(null)}>
-          <img src={close} alt="close modal" width="18" height="18" />
-        </Close>
-        <Grid>
-          <Row>
-            <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <CourseInfo content={content} />
-            </Col>
-            <Col width={[1, 1, 1, 1, 1 / 2]}>
-              <CourseContent content={content} />
-            </Col>
-          </Row>
-        </Grid>
-      </Padding>
-    )}
-  </Wrapper>
+// const Modal = ({ content, toggleModal }) => (
+const TrainingCourseModal = ({
+  data: { contentFulTrainingCourse: content },
+  location
+}) => (
+  <Layout location={location}>
+    <Wrapper visible={content}>
+      <ModalStyles open={content} />
+      {content && (
+        <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
+          <Close onClick={() => {}}>
+            <img src={close} alt="close modal" width="18" height="18" />
+          </Close>
+          <Grid>
+            <Row>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseInfo content={content} />
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseContent content={content} />
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
+      )}
+    </Wrapper>
+  </Layout>
 )
 
-export default Modal
+export default TrainingCourseModal
+
+export const pageQuery = graphql`
+  query($id: String) {
+    contentfulTrainingCourse(id: { eq: $id }) {
+      id
+      name
+      slug
+      technology
+      level
+      preRequisites
+      preRequisitesCourses
+      description {
+        description
+      }
+      content {
+        content
+      }
+    }
+  }
+`

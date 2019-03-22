@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
-import Modal from '../components/Training/Modal'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
@@ -46,7 +45,6 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   return (
     <Layout>
       <Head page={content} />
-      <Modal content={modalContent} toggleModal={toggleModal} />
       <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
       <GreyBackground>
         <Grid>
