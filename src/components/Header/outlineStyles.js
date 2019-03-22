@@ -2,8 +2,10 @@ import { css } from 'styled-components'
 import remcalc from 'remcalc'
 
 const outlineStyles = css`
+  outline: ${remcalc(4)} solid transparent;
   &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
+    outline-color: ${props => props.theme.colors.vibrant};
+    z-index: 1;
   }
 
   &:active {

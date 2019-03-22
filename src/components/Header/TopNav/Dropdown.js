@@ -44,9 +44,10 @@ const DropdownNameWrapper = styled.span`
   z-index: 2;
   ${headerItemStyles}
   ${topNavItemStyles}
-  ${outlineStyles}
+  ${props => !props.clicked && outlineStyles}
 
   ${props =>
+    props.clicked &&
     props.themeVariation === props.theme.variations.dark &&
     props.expanded === true &&
     css`
@@ -82,45 +83,50 @@ export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      isExpanded: false
+      isExpanded: false,
+      clicked: false
     }
-    this.ref = React.createRef()
   }
 
-  toggle = e => {
-    this.setState({ isExpanded: !this.state.isExpanded })
+  /**
+   * The outline is not desired when the user opens the dropdown with the mouse
+   * so we're detecting it on mouse down
+   */
+  handleMouseDown = () => {
+    this.setState({ clicked: true })
   }
 
-  handleItemClick = () => {
-    this.setState({ isExpanded: false })
+  handleItemClick = e => {
+    e.preventDefault()
+    this.setState({ clicked: false })
   }
 
-  handleFocus = (e, ...rest) => {
+  handleFocus = () => {
     this.setState({ isExpanded: true })
   }
 
   handleBlur = () => {
-    this.setState({ isExpanded: false })
+    this.setState({ isExpanded: false, clicked: false })
   }
 
   render() {
     const { items, themeVariation, children } = this.props
-    const { isExpanded } = this.state
+    const { isExpanded, clicked } = this.state
 
     return (
       <DropdownContainer
-        aria-haspopup="true"
         expanded={isExpanded}
+        aria-haspopup="true"
         aria-expanded={isExpanded}
-        onMouseDown={this.toggle}
         onFocus={this.handleFocus}
+        onMouseDown={this.handleMouseDown}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
-        ref={this.ref}
       >
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
+          clicked={clicked}
           themeVariation={themeVariation}
         >
           <DropdownName>{children}</DropdownName>
@@ -134,7 +140,7 @@ export default class Dropdown extends PureComponent {
               href={href}
               to={to}
               activeClassName="active"
-              onClick={this.handleClick}
+              onMouseDown={this.handleItemClick}
             >
               {label}
             </InnerAnchorItem>

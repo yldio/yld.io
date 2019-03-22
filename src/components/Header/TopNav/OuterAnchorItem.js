@@ -11,19 +11,13 @@ const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
 
-  &:focus {
-    ${outlineStyles}
-  }
+  ${outlineStyles}
 `
 
 const StyledListItem = styled.li.attrs(props => ({
   states: props.themeVariation === 'dark' ? darkStates : lightStates
 }))`
   display: flex;
-  &:focus {
-    ${outlineStyles}
-  }
-
   ${props => props.states.default}
 
   &:hover,
