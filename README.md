@@ -46,7 +46,8 @@ We have some docs to make it easier to get you started:
 - [Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/)
 
 Lighthouse expects you to have your app built locally in and served from the /public directory.
-As a result make sure to run `npm run build` before running the Lighthouse tests. Depending on your environment you may on occasion also need to serve manually with `serve public`.
+As a result make sure to run `npm run build` before running the Lighthouse tests.
+If you want to check the ouput of the build, you can run `gatsby serve`.
 
 ## Content in
 
