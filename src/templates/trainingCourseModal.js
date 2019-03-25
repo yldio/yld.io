@@ -96,10 +96,10 @@ const ModalStyles = createGlobalStyle`
   }
 `
 
-const CourseInfo = ({ content }) => (
+const CourseInfo = ({ content, image }) => (
   <Col width={[1, 1, 1, 1, 5 / 6]} px={0}>
     <Padding bottom={1}>
-      <Image image={content.logo} width="60px" />
+      {image && <Image image={image} width="60px" />}
       <SectionTitle>{content.name}</SectionTitle>
     </Padding>
     {content.description && (
@@ -147,7 +147,10 @@ const CourseContent = ({ content }) => (
 
 // const Modal = ({ content, toggleModal }) => (
 const TrainingCourseModal = ({
-  data: { contentFulTrainingCourse: content },
+  data: {
+    contentfulTrainingCourse: content,
+    contentfulTrainingCourseCategory: category
+  },
   location
 }) => (
   <Layout location={location}>
@@ -161,7 +164,7 @@ const TrainingCourseModal = ({
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2]}>
-                <CourseInfo content={content} />
+                <CourseInfo content={content} image={category.logo} />
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2]}>
                 <CourseContent content={content} />
@@ -177,7 +180,7 @@ const TrainingCourseModal = ({
 export default TrainingCourseModal
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query($id: String, $categoryId: String) {
     contentfulTrainingCourse(id: { eq: $id }) {
       id
       name
@@ -191,6 +194,17 @@ export const pageQuery = graphql`
       }
       content {
         content
+      }
+    }
+    contentfulTrainingCourseCategory(id: { eq: $categoryId }) {
+      logo {
+        fluid(maxWidth: 60) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+        title
+        file {
+          url
+        }
       }
     }
   }

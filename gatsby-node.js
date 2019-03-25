@@ -74,7 +74,8 @@ exports.createPages = async ({ graphql, actions }) => {
             path: `/training/${edge.node.slug}/${course.slug}`,
             component: slash(trainingCourseTemplate),
             context: {
-              id: course.id
+              id: course.id,
+              categoryId: edge.node.id
             }
           })
         }
