@@ -8,11 +8,9 @@ import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
-import { lightStates, darkStates } from './outerItemStates'
+import TopNavItem from './TopNavItem'
 
-const DropdownContainer = styled.li.attrs(props => ({
-  states: props.themeVariation === 'dark' ? darkStates : lightStates
-}))`
+const DropdownContainer = styled(TopNavItem)`
   position: relative;
   cursor: pointer;
   background: transparent;
