@@ -6029,7 +6029,7 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
   width: 100%;
   background: #f9f9f9;
-  color: #333333;
+  color: #828282;
 }
 
 .c13:focus {
@@ -6175,8 +6175,7 @@ exports[`Storyshots Header Header itself 1`] = `
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
   outline: 0.25rem solid transparent;
-  color: #fff;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c24:focus {
@@ -6186,6 +6185,11 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c24:active {
   outline: none;
+}
+
+.c24:hover,
+.c24:focus {
+  color: #fff;
 }
 
 .c25 {
@@ -6206,20 +6210,17 @@ exports[`Storyshots Header Header itself 1`] = `
   line-height: 1.5rem;
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
-  color: #fff;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c23:hover,
 .c23:active,
 .c23.active {
   color: #fff;
-  opacity: 1;
 }
 
 .c23:focus {
   color: #fff;
-  opacity: 1;
   outline: 0.25rem solid transparent;
 }
 
@@ -6777,7 +6778,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 0.5;
 ",
                       ],
                       "hoverActive": Array [
@@ -6785,7 +6785,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 1;
 ",
                       ],
                     }
@@ -6837,7 +6836,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 0.5;
 ",
                       ],
                       "hoverActive": Array [
@@ -6845,7 +6843,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 1;
 ",
                       ],
                     }
@@ -6868,7 +6865,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 0.5;
 ",
                       ],
                       "hoverActive": Array [
@@ -6876,7 +6872,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 1;
 ",
                       ],
                     }
@@ -6928,7 +6923,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 0.5;
 ",
                       ],
                       "hoverActive": Array [
@@ -6936,7 +6930,6 @@ exports[`Storyshots Header Header itself 1`] = `
   color: ",
                         [Function],
                         ";
-  opacity: 1;
 ",
                       ],
                     }
@@ -7180,7 +7173,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   outline: 0.25rem solid transparent;
   width: 100%;
   background: #f9f9f9;
-  color: #333333;
+  color: #828282;
 }
 
 .c7:focus {
