@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 
 import { Grid } from '../components/grid'
@@ -12,35 +12,11 @@ import Head from '../components/Common/Head'
 import GreyBackground from '../components/Common/GreyBackground'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
-  const [modalContent, setModalContent] = useState(null)
   const trainingApproachesContent = [
     content.trainingApproachContent1.trainingApproachContent1,
     content.trainingApproachContent2.trainingApproachContent2,
     content.trainingApproachContent3.trainingApproachContent3
   ]
-
-  useEffect(
-    () => {
-      document.addEventListener('keyup', handleKeyPress, false)
-
-      return () => document.removeEventListener('keyup', handleKeyPress, false)
-    },
-    [modalContent]
-  )
-
-  const handleKeyPress = ({ key }) => {
-    if (key === 'Escape') {
-      setModalContent(null)
-    }
-  }
-
-  const toggleModal = modalContent => {
-    if (modalContent) {
-      setModalContent(modalContent)
-    }
-
-    setModalContent(modalContent)
-  }
 
   return (
     <Layout>
@@ -56,10 +32,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
         content={trainingApproachesContent}
         formats={content.trainingFormats}
       />
-      <Courses
-        categories={content.courseCategories}
-        toggleModal={toggleModal}
-      />
+      <Courses categories={content.courseCategories} />
       <GetInTouch
         title={`${content.contactUsTitle}`}
         contactText={content.contactUsText.contactUsText}
@@ -91,6 +64,7 @@ export const query = graphql`
       }
       courseCategories {
         id
+        slug
         name
         logo {
           fluid(maxWidth: 680) {
@@ -103,6 +77,7 @@ export const query = graphql`
         }
         courses {
           id
+          slug
           name
           technology
           level

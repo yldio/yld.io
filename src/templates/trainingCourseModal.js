@@ -1,11 +1,12 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React, { Fragment } from 'react'
+import { graphql, Link } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 import { Padding } from 'styled-components-spacing'
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 
 import Layout from '../components/layout'
 import StyledLink from '../components/Common/StyledLink'
@@ -41,7 +42,7 @@ const Wrapper = styled.div`
   `};
 `
 
-const Close = styled.button`
+const Close = styled(Link)`
   border: none;
   border-radius: 50%;
   width: ${remcalc(54)};
@@ -153,28 +154,36 @@ const TrainingCourseModal = ({
   },
   location
 }) => (
-  <Layout location={location}>
-    <Wrapper visible={content}>
-      <ModalStyles open={content} />
-      {content && (
-        <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-          <Close onClick={() => {}}>
-            <img src={close} alt="close modal" width="18" height="18" />
-          </Close>
-          <Grid>
-            <Row>
-              <Col width={[1, 1, 1, 1, 1 / 2]}>
-                <CourseInfo content={content} image={category.logo} />
-              </Col>
-              <Col width={[1, 1, 1, 1, 1 / 2]}>
-                <CourseContent content={content} />
-              </Col>
-            </Row>
-          </Grid>
-        </Padding>
-      )}
-    </Wrapper>
-  </Layout>
+  <ModalRoutingContext.Consumer>
+    {({ modal, closeTo }) => (
+      <Fragment>
+        {modal ? (
+          <Layout location={location}>
+            <Wrapper visible={content}>
+              <ModalStyles open={content} />
+              {content && (
+                <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
+                  <Close to={closeTo}>
+                    <img src={close} alt="close modal" width="18" height="18" />
+                  </Close>
+                  <Grid>
+                    <Row>
+                      <Col width={[1, 1, 1, 1, 1 / 2]}>
+                        <CourseInfo content={content} image={category.logo} />
+                      </Col>
+                      <Col width={[1, 1, 1, 1, 1 / 2]}>
+                        <CourseContent content={content} />
+                      </Col>
+                    </Row>
+                  </Grid>
+                </Padding>
+              )}
+            </Wrapper>
+          </Layout>
+        ) : null}
+      </Fragment>
+    )}
+  </ModalRoutingContext.Consumer>
 )
 
 export default TrainingCourseModal

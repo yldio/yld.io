@@ -15,11 +15,12 @@ module.exports = {
     siteUrl: `https://yld.io`
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-modal-routing`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

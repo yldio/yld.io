@@ -6,7 +6,7 @@ import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 
-const Courses = ({ categories, toggleModal }) => {
+const Courses = ({ categories }) => {
   return (
     <Grid>
       <Row>
@@ -31,8 +31,11 @@ const Courses = ({ categories, toggleModal }) => {
                 {cat.courses.map(course => (
                   <StyledLink
                     style={{ cursor: 'pointer' }}
-                    onClick={() => toggleModal({ ...cat, ...course })}
+                    to={`/training/${cat.slug}/${course.slug}`}
                     key={course.id}
+                    state={{
+                      modal: true
+                    }}
                   >
                     {course.name}
                   </StyledLink>
