@@ -5970,56 +5970,35 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
   background: #fff;
   color: #333333;
-  opacity: 1;
 }
 
 .c14:hover,
 .c14 > a:hover {
   background: #f9f9f9;
   color: #333333;
-  opacity: 1;
 }
 
 .c14 > a:active {
   background: #333333;
   color: #fff;
-  opacity: 1;
 }
 
 .c14 > a.active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c14 > a.active:active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c14 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
-  opacity: 1;
 }
 
 .c10 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-  -webkit-transform: translateY(2px) rotate(-45deg);
-  -ms-transform: translateY(2px) rotate(-45deg);
-  transform: translateY(2px) rotate(-45deg);
-}
-
-.c26 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -6076,25 +6055,11 @@ exports[`Storyshots Header Header itself 1`] = `
 .c7 > span {
   background: #fff;
   color: #333333;
-  opacity: 1;
 }
 
 .c7 > span:hover {
   background: #f9f9f9;
   color: #333333;
-  opacity: 1;
-}
-
-.c7 > span {
-  background: #333333;
-  color: #fff;
-  opacity: 1;
-}
-
-.c7 > span:hover {
-  background: #333333;
-  color: #a9a9a9;
-  opacity: 1;
 }
 
 .c8 {
@@ -6151,8 +6116,6 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: opacity 300ms ease;
   background: #f9f9f9;
   z-index: 999;
-  left: 0;
-  opacity: 1;
 }
 
 .c6 {
@@ -6579,9 +6542,12 @@ exports[`Storyshots Header Header itself 1`] = `
               className="c6"
             >
               <li
-                aria-expanded={true}
+                aria-expanded={false}
                 aria-haspopup="true"
                 className="c7"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
               >
                 <span
                   className="c8"
@@ -6613,8 +6579,8 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/engineering/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
-                      tabIndex="0"
                     >
                       Engineering
                     </a>
@@ -6626,8 +6592,8 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/design/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
-                      tabIndex="0"
                     >
                       Design
                     </a>
@@ -6639,8 +6605,8 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/training/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
-                      tabIndex="0"
                     >
                       Training
                     </a>
@@ -6655,7 +6621,6 @@ exports[`Storyshots Header Header itself 1`] = `
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
-                  tabIndex="0"
                 >
                   Our work
                 </a>
@@ -6667,16 +6632,18 @@ exports[`Storyshots Header Header itself 1`] = `
                   className="c15"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
-                  tabIndex="0"
                   target="_blank"
                 >
                   Blog
                 </a>
               </li>
               <li
-                aria-expanded={true}
+                aria-expanded={false}
                 aria-haspopup="true"
                 className="c7"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
               >
                 <span
                   className="c8"
@@ -6708,8 +6675,8 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/about-us/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
-                      tabIndex="0"
                     >
                       Our team
                     </a>
@@ -6721,8 +6688,8 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/contact/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
-                      tabIndex="0"
                     >
                       Contact
                     </a>
@@ -6737,7 +6704,6 @@ exports[`Storyshots Header Header itself 1`] = `
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
-                  tabIndex="0"
                 >
                   Join us
                 </a>
@@ -6833,7 +6799,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Services
                   </span>
                   <svg
-                    className="c26"
+                    className="c10"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6924,7 +6890,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     About
                   </span>
                   <svg
-                    className="c26"
+                    className="c10"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7005,38 +6971,32 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   display: flex;
   background: #fff;
   color: #333333;
-  opacity: 1;
 }
 
 .c1:hover,
 .c1 > a:hover {
   background: #f9f9f9;
   color: #333333;
-  opacity: 1;
 }
 
 .c1 > a:active {
   background: #333333;
   color: #fff;
-  opacity: 1;
 }
 
 .c1 > a.active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c1 > a.active:active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c1 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
-  opacity: 1;
 }
 
 .c0 {
@@ -7086,7 +7046,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
         style={Object {}}
-        tabIndex="0"
       >
         Here
       </a>
@@ -7099,7 +7058,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        tabIndex="0"
       >
         There
       </a>
@@ -7112,7 +7070,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        tabIndex="0"
       >
         LinkedIn (external anchor)
       </a>
@@ -7150,38 +7107,32 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   display: flex;
   background: #fff;
   color: #333333;
-  opacity: 1;
 }
 
 .c8:hover,
 .c8 > a:hover {
   background: #f9f9f9;
   color: #333333;
-  opacity: 1;
 }
 
 .c8 > a:active {
   background: #333333;
   color: #fff;
-  opacity: 1;
 }
 
 .c8 > a.active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c8 > a.active:active {
   background: #fff;
-  color: #333333;
-  opacity: 0.5;
+  color: #828282;
 }
 
 .c8 > a.active:hover {
   background: #333333;
   color: #a9a9a9;
-  opacity: 1;
 }
 
 .c4 {
@@ -7194,9 +7145,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   -webkit-transition: -webkit-transform 0s ease 0.1s;
   -webkit-transition: transform 0s ease 0.1s;
   transition: transform 0s ease 0.1s;
-  -webkit-transform: translateY(2px) rotate(-45deg);
-  -ms-transform: translateY(2px) rotate(-45deg);
-  transform: translateY(2px) rotate(-45deg);
 }
 
 .c6 {
@@ -7244,25 +7192,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 .c1 > span {
   background: #fff;
   color: #333333;
-  opacity: 1;
 }
 
 .c1 > span:hover {
   background: #f9f9f9;
   color: #333333;
-  opacity: 1;
-}
-
-.c1 > span {
-  background: #333333;
-  color: #fff;
-  opacity: 1;
-}
-
-.c1 > span:hover {
-  background: #333333;
-  color: #a9a9a9;
-  opacity: 1;
 }
 
 .c2 {
@@ -7319,8 +7253,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   transition: opacity 300ms ease;
   background: #f9f9f9;
   z-index: 999;
-  left: 0;
-  opacity: 1;
 }
 
 .c0 {
@@ -7361,9 +7293,12 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     className="c0"
   >
     <li
-      aria-expanded={true}
+      aria-expanded={false}
       aria-haspopup="true"
       className="c1"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
     >
       <span
         className="c2"
@@ -7395,8 +7330,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-1/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
-            tabIndex="0"
           >
             Item 1
           </a>
@@ -7408,8 +7343,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-2/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
-            tabIndex="0"
           >
             Item 2
           </a>
@@ -7421,8 +7356,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-3/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
-            tabIndex="0"
           >
             Item 3
           </a>
@@ -7437,7 +7372,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        tabIndex="0"
       >
         First anchor
       </a>
@@ -7449,16 +7383,18 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         className="c9"
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
-        tabIndex="0"
         target="_blank"
       >
         LinkedIn (external anchor)
       </a>
     </li>
     <li
-      aria-expanded={true}
+      aria-expanded={false}
       aria-haspopup="true"
       className="c1"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
     >
       <span
         className="c2"
@@ -7490,8 +7426,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-here/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
-            tabIndex="0"
           >
             Go here
           </a>
@@ -7503,8 +7439,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-there/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
-            tabIndex="0"
           >
             Go there
           </a>
@@ -7519,7 +7455,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        tabIndex="0"
       >
         Last anchor
       </a>
