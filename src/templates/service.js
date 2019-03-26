@@ -101,7 +101,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
           </Grid>
         </Padding>
       </GreyBackground>
-      <CaseStudyPreview isTop={false} caseStudy={service.bottomCaseStudy} />
+      <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
     </Layout>
   )
 }
@@ -118,20 +118,39 @@ export const pageQuery = graphql`
       mainPageIntroSentence {
         mainPageIntroSentence
       }
-      bottomCaseStudy {
-        title
-        slug
-        introSentence
-        posterImage {
+      relatedCaseStudy {
+        ... on ContentfulTemplatedCaseStudy {
           title
-          fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_withWebp
+          slug
+          introSentence
+          posterImage {
+            title
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+            }
           }
-          file {
-            url
-          }
+          posterColor
         }
-        posterColor
+        ... on ContentfulNonTemplatedCaseStudy {
+          title
+          slug
+          intro: introSentence {
+            introSentence
+          }
+          posterImage {
+            title
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+            }
+          }
+          posterColor
+        }
       }
       caseStudies {
         ... on ContentfulTemplatedCaseStudy {

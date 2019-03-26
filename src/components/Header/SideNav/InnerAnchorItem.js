@@ -19,30 +19,18 @@ const InnerAnchor = styled(Anchor)`
   width: 100%;
 
   background: ${props => props.theme.colors.greyBG};
-  color: ${props => props.theme.colors.text};
-  opacity: 0.5;
+  color: ${props => props.theme.colors.textLight};
 
   &:hover,
+  &:focus,
   &.active {
     color: ${props => props.theme.colors.text};
-    opacity: 1;
   }
 `
 
-export const InnerAnchorItem = ({
-  children,
-  to,
-  href,
-  activeClassName,
-  onClick
-}) => (
+export const InnerAnchorItem = ({ children, to, href, activeClassName }) => (
   <InnerListItem>
-    <InnerAnchor
-      href={href}
-      to={to}
-      activeClassName={activeClassName}
-      onClick={onClick}
-    >
+    <InnerAnchor href={href} to={to} activeClassName={activeClassName}>
       {children}
     </InnerAnchor>
   </InnerListItem>

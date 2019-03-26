@@ -8,24 +8,20 @@ import topNavItemStyles from './topNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
-  > a:focus {
-    ${outlineStyles}
-  }
 `
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
-  width: 100%;
+  ${outlineStyles}
 
+  width: 100%;
   background: ${props => props.theme.colors.greyBG};
-  color: ${props => props.theme.colors.text};
-  opacity: 0.5;
+  color: ${props => props.theme.colors.textLight};
 
   &:hover,
   &.active {
     color: ${props => props.theme.colors.text};
-    opacity: 1;
   }
 `
 
@@ -35,7 +31,7 @@ export const InnerAnchorItem = ({
   href,
   activeClassName,
   themeVariation,
-  onClick,
+  onMouseDown,
   ...props
 }) => (
   <InnerListItem themeVariation={themeVariation} {...props}>
@@ -43,7 +39,7 @@ export const InnerAnchorItem = ({
       href={href}
       to={to}
       activeClassName={activeClassName}
-      onClick={onClick}
+      onMouseDown={onMouseDown}
     >
       {children}
     </InnerAnchor>

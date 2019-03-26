@@ -45,7 +45,7 @@ export default [
   },
   {
     label: 'Behance',
-    link: 'https://www.behance.net/MakeUsProud',
+    link: 'https://www.behance.net/YLDio',
     img: behance
   }
 ]
