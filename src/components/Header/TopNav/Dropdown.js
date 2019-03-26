@@ -14,6 +14,7 @@ const DropdownContainer = styled(TopNavItem)`
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   > span {
     ${props => props.states.default}
@@ -91,15 +92,35 @@ export default class Dropdown extends PureComponent {
    * so we're detecting it on mouse down
    */
   handleMouseDown = () => {
+    if (this.hasTouch()) {
+      return
+    }
+    this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
+  }
+
+  handleClick = () => {
+    if (!this.hasTouch()) {
+      return
+    }
     this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
   }
 
   handleFocus = () => {
+    if (this.hasTouch()) {
+      return
+    }
     this.setState({ isExpanded: true })
   }
 
   handleBlur = () => {
-    this.setState({ isExpanded: false, clicked: false })
+    if (this.hasTouch()) {
+      return
+    }
+    this.setState({ isExpanded: false })
+  }
+
+  hasTouch = () => {
+    return 'ontouchstart' in window
   }
 
   render() {
@@ -111,8 +132,9 @@ export default class Dropdown extends PureComponent {
         expanded={isExpanded}
         aria-haspopup="true"
         aria-expanded={isExpanded}
-        onFocus={this.handleFocus}
+        onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
+        onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
       >
