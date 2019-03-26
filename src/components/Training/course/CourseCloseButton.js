@@ -10,28 +10,22 @@ const Close = styled(Link)`
   border-radius: 50%;
   width: ${remcalc(54)};
   height: ${remcalc(54)};
-  background-color: #333333;
-  color: white;
+  background-color: ${props => props.theme.colors.text};
   right: ${remcalc(24)};
   top: ${remcalc(36)};
-  font-size: ${remcalc(28)};
-  font-weight: 200;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 
-    &:focus {
-    background: transparent;
+  &:focus {
     outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
-    color: ${props => props.theme.colors.text};
   }
 
   &:active {
     outline: none;
-    background: #00edbf;
-    color: ${props => props.theme.colors.text};
+    background-color: ${props => props.theme.colors.vibrant};
 
     &:after {
       background: ${props => props.theme.colors.text};
