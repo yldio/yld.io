@@ -30,7 +30,7 @@ const CourseContent = ({ content }) => (
             <CustomisedBulletpoint maxWidth="auto" {...props} />
           )
         }}
-        source={content.content.content}
+        source={content}
       />
       {/* eslint-enable react/display-name */}
     </Padding>

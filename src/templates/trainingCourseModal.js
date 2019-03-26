@@ -11,7 +11,7 @@ import { Grid, Row, Col } from '../components/grid'
 
 const TrainingCourseModal = ({
   data: {
-    contentfulTrainingCourse: content,
+    contentfulTrainingCourse: course,
     contentfulTrainingCourseCategory: category
   },
   location
@@ -20,16 +20,23 @@ const TrainingCourseModal = ({
     {({ modal, closeTo }) => (
       <Fragment>
         {modal ? (
-          <CourseWrapper location={location} content={content}>
+          <CourseWrapper location={location} content={course}>
             <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
               <CourseCloseButton closeTo={closeTo} />
               <Grid>
                 <Row>
                   <Col width={[1, 1, 1, 1, 1 / 2]}>
-                    <CourseInfo content={content} image={category.logo} />
+                    <CourseInfo
+                      name={course.name}
+                      description={course.description.description}
+                      level={course.level}
+                      preRequisites={course.preRequisites}
+                      preRequisitesCourses={course.preRequisitesCourses}
+                      image={category.logo}
+                    />
                   </Col>
                   <Col width={[1, 1, 1, 1, 1 / 2]}>
-                    <CourseContent content={content} />
+                    <CourseContent content={course.content.content} />
                   </Col>
                 </Row>
               </Grid>

@@ -15,23 +15,25 @@ const constants = {
   contactUs: 'Contact us'
 }
 
-const CourseInfo = ({ content, image }) => (
+const CourseInfo = ({
+  name,
+  description,
+  level,
+  preRequisites,
+  preRequisitesCourses,
+  image
+}) => (
   <Col width={[1, 1, 1, 1, 5 / 6]} px={0}>
     <Padding bottom={1}>
       {image && <Image image={image} width="60px" />}
-      <SectionTitle>{content.name}</SectionTitle>
+      <SectionTitle>{name}</SectionTitle>
     </Padding>
-    {content.description && (
-      <BodyPrimary>{content.description.description}</BodyPrimary>
-    )}
-    <SubtitleWithBody subtitle={constants.level} body={content.level} />
-    <SubtitleWithBody
-      subtitle={constants.preRequisites}
-      body={content.preRequisites}
-    />
+    {description && <BodyPrimary>{description}</BodyPrimary>}
+    <SubtitleWithBody subtitle={constants.level} body={level} />
+    <SubtitleWithBody subtitle={constants.preRequisites} body={preRequisites} />
     <SubtitleWithBody
       subtitle={constants.preRequisitesCourses}
-      body={content.preRequisitesCourses}
+      body={preRequisitesCourses}
     />
     <Padding top={2}>
       <StyledLink to="/contact">{constants.contactUs}</StyledLink>
