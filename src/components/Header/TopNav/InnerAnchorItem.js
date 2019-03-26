@@ -31,16 +31,10 @@ export const InnerAnchorItem = ({
   href,
   activeClassName,
   themeVariation,
-  onMouseDown,
   ...props
 }) => (
   <InnerListItem themeVariation={themeVariation} {...props}>
-    <InnerAnchor
-      href={href}
-      to={to}
-      activeClassName={activeClassName}
-      onMouseDown={onMouseDown}
-    >
+    <InnerAnchor href={href} to={to} activeClassName={activeClassName}>
       {children}
     </InnerAnchor>
   </InnerListItem>
