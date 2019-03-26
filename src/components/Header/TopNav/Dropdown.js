@@ -91,7 +91,7 @@ export default class Dropdown extends PureComponent {
    * so we're detecting it on mouse down
    */
   handleMouseDown = () => {
-    this.setState({ clicked: true })
+    this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
   }
 
   handleItemClick = e => {
