@@ -6592,7 +6592,6 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/engineering/"
                       onClick={[Function]}
-                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Engineering
@@ -6605,7 +6604,6 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/design/"
                       onClick={[Function]}
-                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Design
@@ -6618,7 +6616,6 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/training/"
                       onClick={[Function]}
-                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Training
@@ -6688,7 +6685,6 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/about-us/"
                       onClick={[Function]}
-                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Our team
@@ -6701,7 +6697,6 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/contact/"
                       onClick={[Function]}
-                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Contact
@@ -7349,7 +7344,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-1/"
             onClick={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 1
@@ -7362,7 +7356,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-2/"
             onClick={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 2
@@ -7375,7 +7368,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-3/"
             onClick={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 3
@@ -7445,7 +7437,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-here/"
             onClick={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go here
@@ -7458,7 +7449,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-there/"
             onClick={[Function]}
-            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go there
