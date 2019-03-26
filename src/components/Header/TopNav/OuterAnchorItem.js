@@ -5,25 +5,17 @@ import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
-import { lightStates, darkStates } from './outerItemStates'
+import TopNavItem from './TopNavItem'
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
 
-  &:focus {
-    ${outlineStyles}
-  }
+  ${outlineStyles}
 `
 
-const StyledListItem = styled.li.attrs(props => ({
-  states: props.themeVariation === 'dark' ? darkStates : lightStates
-}))`
+const StyledListItem = styled(TopNavItem)`
   display: flex;
-  &:focus {
-    ${outlineStyles}
-  }
-
   ${props => props.states.default}
 
   &:hover,

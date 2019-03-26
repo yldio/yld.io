@@ -15,6 +15,7 @@ export const StyledLinkCss = css`
   position: relative;
   display: inline-block;
   transition: all ${props => props.theme.animations.fast} ease-out;
+  transition-property: background, color;
 
   &:after {
     content: '';
