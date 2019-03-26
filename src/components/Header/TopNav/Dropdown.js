@@ -94,11 +94,6 @@ export default class Dropdown extends PureComponent {
     this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
   }
 
-  handleItemClick = e => {
-    e.preventDefault()
-    this.setState({ clicked: false })
-  }
-
   handleFocus = () => {
     this.setState({ isExpanded: true })
   }
@@ -138,7 +133,6 @@ export default class Dropdown extends PureComponent {
               href={href}
               to={to}
               activeClassName="active"
-              onMouseDown={this.handleItemClick}
             >
               {label}
             </InnerAnchorItem>
