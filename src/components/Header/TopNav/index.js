@@ -18,14 +18,6 @@ const TopNavList = styled.ul`
     flex: 1;
     padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
     padding-right: ${remcalc(0)};
-
-    // Extra padding on top of spacing created by topNavItemStyles, to create extra space between list items
-    > li {
-      padding-right: ${remcalc(6)};
-    }
-    > li:last-child {
-      padding-right: ${remcalc(0)};
-    }
   }
 `
 

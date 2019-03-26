@@ -19,6 +19,11 @@ const DropdownNameWrapper = styled.span.attrs(props => ({
   ${outlineStyles}
 
   ${props => props.states.default}
+
+  &:hover,
+  &:focus {
+    ${props => props.states.hoverActive}
+  }
 `
 
 const DropdownName = styled.span`
@@ -45,14 +50,11 @@ export default class Dropdown extends PureComponent {
   }
 
   toggle = e => {
+    e.preventDefault()
     this.setState({ isExpanded: !this.state.isExpanded })
   }
 
-  handleItemClick = () => {
-    this.setState({ isExpanded: false })
-  }
-
-  handleFocus = (e, ...rest) => {
+  handleFocus = () => {
     this.setState({ isExpanded: true })
   }
 
@@ -79,7 +81,6 @@ export default class Dropdown extends PureComponent {
                 href={href}
                 to={to}
                 activeClassName="active"
-                onClick={this.handleItemClick}
               >
                 {label}
               </InnerAnchorItem>
