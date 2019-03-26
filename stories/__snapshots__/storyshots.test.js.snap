@@ -5974,8 +5974,8 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c14:hover,
 .c14 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c14 > a:active {
@@ -5985,17 +5985,20 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c14 > a.active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c14 > a.active:active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c14 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  background: #f9f9f9;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c10 {
@@ -6058,8 +6061,8 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c7 > span:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c8 {
@@ -6975,8 +6978,8 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 
 .c1:hover,
 .c1 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c1 > a:active {
@@ -6986,17 +6989,20 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 
 .c1 > a.active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c1 > a.active:active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c1 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  background: #f9f9f9;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c0 {
@@ -7113,8 +7119,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 
 .c8:hover,
 .c8 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c8 > a:active {
@@ -7124,17 +7130,20 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 
 .c8 > a.active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c8 > a.active:active {
   background: #fff;
-  color: #828282;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c8 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  background: #f9f9f9;
+  color: #333333;
+  font-weight: bold;
 }
 
 .c4 {
@@ -7197,8 +7206,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c1 > span:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c2 {
