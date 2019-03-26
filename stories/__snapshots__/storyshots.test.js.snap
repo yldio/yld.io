@@ -5964,6 +5964,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c14 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6047,9 +6048,11 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c7 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c7 > span {
@@ -6559,6 +6562,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6652,6 +6656,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6965,6 +6970,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7103,6 +7109,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7186,9 +7193,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c1 > span {
@@ -7311,6 +7320,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >
@@ -7404,6 +7414,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >

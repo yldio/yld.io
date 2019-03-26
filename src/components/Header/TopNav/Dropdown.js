@@ -132,9 +132,9 @@ export default class Dropdown extends PureComponent {
         expanded={isExpanded}
         aria-haspopup="true"
         aria-expanded={isExpanded}
-        onFocus={this.handleFocus}
         onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
+        onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
       >
