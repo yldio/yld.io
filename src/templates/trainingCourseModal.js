@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
@@ -18,32 +18,28 @@ const TrainingCourseModal = ({
 }) => (
   <ModalRoutingContext.Consumer>
     {({ modal, closeTo }) => (
-      <Fragment>
-        {modal ? (
-          <CourseWrapper location={location} content={course}>
-            <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-              <CourseCloseButton closeTo={closeTo} />
-              <Grid>
-                <Row>
-                  <Col width={[1, 1, 1, 1, 1 / 2]}>
-                    <CourseInfo
-                      name={course.name}
-                      description={course.description.description}
-                      level={course.level}
-                      preRequisites={course.preRequisites}
-                      preRequisitesCourses={course.preRequisitesCourses}
-                      image={category.logo}
-                    />
-                  </Col>
-                  <Col width={[1, 1, 1, 1, 1 / 2]}>
-                    <CourseContent content={course.content.content} />
-                  </Col>
-                </Row>
-              </Grid>
-            </Padding>
-          </CourseWrapper>
-        ) : null}
-      </Fragment>
+      <CourseWrapper location={location} content={course}>
+        <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
+          <CourseCloseButton closeTo={modal ? closeTo : '/training'} />
+          <Grid>
+            <Row>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseInfo
+                  name={course.name}
+                  description={course.description.description}
+                  level={course.level}
+                  preRequisites={course.preRequisites}
+                  preRequisitesCourses={course.preRequisitesCourses}
+                  image={category.logo}
+                />
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseContent content={course.content.content} />
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
+      </CourseWrapper>
     )}
   </ModalRoutingContext.Consumer>
 )
