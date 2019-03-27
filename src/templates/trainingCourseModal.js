@@ -20,7 +20,9 @@ const TrainingCourseModal = ({
     {({ modal, closeTo }) => (
       <CourseWrapper location={location} content={course}>
         <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-          <CourseCloseButton closeTo={modal ? closeTo : '/training'} />
+          <CourseCloseButton
+            closeTo={modal ? `${closeTo}/#${category.slug}` : `/training`}
+          />
           <Grid>
             <Row>
               <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -64,6 +66,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulTrainingCourseCategory(id: { eq: $categoryId }) {
+      slug
       logo {
         fluid(maxWidth: 60) {
           ...GatsbyContentfulFluid_withWebp
