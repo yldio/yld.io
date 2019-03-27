@@ -6,26 +6,25 @@
 
 ## How to run
 
-```bash
+```
   git clone git@github.com:yldio/yld.io.git
   cd yld.io
   yarn
-  yarn develop
 ```
 
-In order to access the development branch on contentful during development set the environment variable `ENV` to `'dev'`
-
-```bash
-ENV=dev yarn develop
-```
-
-and your .env file to match the contentful keys and tokens
+In order to access data from contentful make sure that you have an .env file that matches the contentful keys and tokens:
 
 ```
 CONTENTFUL_TOKEN=(see in contentful/settings/API keys)
 CONTENTFUL_SPACE=(see in contentful/settings/API keys)
 MEETUP_KEY=(see in contentful/settings/API keys)
 GATSBY_ENVIRONMENT="development"
+```
+
+You can now run:
+
+```
+  yarn develop
 ```
 
 We have some docs to make it easier to get you started:
