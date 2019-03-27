@@ -32,7 +32,10 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
         content={trainingApproachesContent}
         formats={content.trainingFormats}
       />
-      <Courses categories={content.courseCategories} />
+      <Courses
+        categories={content.courseCategories}
+        sectionTitle={content.courseSectionTitle}
+      />
       <GetInTouch
         title={`${content.contactUsTitle}`}
         contactText={content.contactUsText.contactUsText}
@@ -62,6 +65,7 @@ export const query = graphql`
       trainingApproachContent3 {
         trainingApproachContent3
       }
+      courseSectionTitle
       courseCategories {
         id
         slug

@@ -7,8 +7,8 @@ import { SectionTitle, BodyPrimary } from '../../../components/Typography'
 import { Col } from '../../../components/grid'
 import SubtitleWithBody from '../../../components/Common/SubtitleWithBody'
 
-// TODO - retrieve from contentful
-const constants = {
+// TODO - should come from contentful
+const courseInfoSectionNames = {
   level: 'Level',
   preRequisites: 'Pre-requisites',
   preRequisitesCourses: 'Pre-requisite Courses',
@@ -29,14 +29,17 @@ const CourseInfo = ({
       <SectionTitle>{name}</SectionTitle>
     </Padding>
     {description && <BodyPrimary>{description}</BodyPrimary>}
-    <SubtitleWithBody subtitle={constants.level} body={level} />
-    <SubtitleWithBody subtitle={constants.preRequisites} body={preRequisites} />
+    <SubtitleWithBody subtitle={courseInfoSectionNames.level} body={level} />
     <SubtitleWithBody
-      subtitle={constants.preRequisitesCourses}
+      subtitle={courseInfoSectionNames.preRequisites}
+      body={preRequisites}
+    />
+    <SubtitleWithBody
+      subtitle={courseInfoSectionNames.preRequisitesCourses}
       body={preRequisitesCourses}
     />
     <Padding top={2}>
-      <StyledLink to="/contact">{constants.contactUs}</StyledLink>
+      <StyledLink to="/contact">{courseInfoSectionNames.contactUs}</StyledLink>
     </Padding>
   </Col>
 )

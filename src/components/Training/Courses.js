@@ -6,7 +6,7 @@ import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 
-const Courses = ({ categories }) => {
+const Courses = ({ categories, sectionTitle }) => {
   return (
     <Grid>
       <Row>
@@ -15,7 +15,7 @@ const Courses = ({ categories }) => {
             bottom={{ smallPhone: 3, tablet: 4 }}
             top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
           >
-            <SectionTitle noPadding>Course catalog</SectionTitle>
+            <SectionTitle noPadding>{sectionTitle}</SectionTitle>
           </Padding>
         </Col>
       </Row>
