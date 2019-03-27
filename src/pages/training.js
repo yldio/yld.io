@@ -79,16 +79,6 @@ export const query = graphql`
           id
           slug
           name
-          technology
-          level
-          preRequisites
-          preRequisitesCourses
-          description {
-            description
-          }
-          content {
-            content
-          }
         }
       }
       featuredCaseStudy {
