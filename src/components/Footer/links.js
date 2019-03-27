@@ -40,12 +40,12 @@ export default [
   },
   {
     label: 'Dribbble',
-    link: 'https://dribbble.com/makeusproud',
+    link: 'https://dribbble.com/yld',
     img: dribbble
   },
   {
     label: 'Behance',
-    link: 'https://www.behance.net/MakeUsProud',
+    link: 'https://www.behance.net/YLDio',
     img: behance
   }
 ]
