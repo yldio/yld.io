@@ -36,6 +36,7 @@ const Courses = ({ categories, sectionTitle }) => {
                     state={{
                       modal: true
                     }}
+                    data-testid={`modal/${cat.slug}/${course.slug}`}
                   >
                     {course.name}
                   </StyledLink>
