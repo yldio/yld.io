@@ -44,6 +44,19 @@ jobs:
           command: 'npm run test:snapshots'
           name: Snapshots
     working_directory: ~/repo
+  testcafe:
+    docker:
+      - image: 'circleci/node:9.8.0-browsers'
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies
+      - run:
+          command: 'npm run test:e2e'
+          name: Testcafe
+    working_directory: ~/repo
 version: 2
 workflows:
   build_and_test:
@@ -51,4 +64,5 @@ workflows:
       - lint
       - lighthouse
       - snapshots
+      - testcafe
   version: 2
