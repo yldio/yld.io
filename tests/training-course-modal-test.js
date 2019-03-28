@@ -1,6 +1,14 @@
 import { Selector, ClientFunction } from 'testcafe'
+require('dotenv').config()
 
-const trainingPageUrl = 'http://localhost:8000/training'
+const { GATSBY_ENVIRONMENT } = process.env
+
+const baseUrl =
+  GATSBY_ENVIRONMENT === 'preview'
+    ? process.env.DEPLOY_PRIME_URL
+    : process.env.BASE_URL
+
+const trainingPageUrl = `${baseUrl}/training`
 const getWindowLocation = ClientFunction(() => window.location)
 
 fixture`Training course modal`.page`${trainingPageUrl}`
