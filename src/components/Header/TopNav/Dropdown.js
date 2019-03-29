@@ -107,6 +107,7 @@ export default class Dropdown extends PureComponent {
 
   handleItemClick = e => {
     e.preventDefault()
+    e.stopPropagation()
     this.setState({ clicked: false })
   }
 
