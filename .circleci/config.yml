@@ -46,18 +46,20 @@ jobs:
     working_directory: ~/repo
   testcafe:
     docker:
-      - image: 'circleci/node:9.8.0-browsers'
+      - image: circleci/node:9.8.0-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
-            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          command: npm run develop
-          name: Start
-      - run:
-          command: 'npm run test:e2e'
+          command: npm run test:e2e
           name: Testcafe
     working_directory: ~/repo
 version: 2
