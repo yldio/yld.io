@@ -29,5 +29,5 @@ test('should be accessible via a link on the training page', async t => {
 
   const location = await getWindowLocation()
 
-  await t.expect(location.href).eql(`${trainingPageUrl}/${coursePathName}`)
+  await t.expect(location.href).contains(`${trainingPageUrl}/${coursePathName}`)
 })
