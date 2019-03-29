@@ -11,11 +11,12 @@ const baseUrl =
 const trainingPageUrl = `${baseUrl}/training`
 const getWindowLocation = ClientFunction(() => window.location)
 
-fixture`Training course modal`.page`${trainingPageUrl}`
+let firstModalLink
+fixture`Training page`.page`${trainingPageUrl}`.beforeEach(async t => {
+  firstModalLink = await Selector('a[data-testid^="modal"]').nth(0)
+})
 
-test('should be accessible via a link on the training page', async t => {
-  const firstModalLink = Selector('a[data-testid^="modal"]').nth(0)
-
+test('should open the correct training course modal when accessed via a link', async t => {
   const coursePathName = await firstModalLink
     .getAttribute('data-testid')
     .then(data =>
@@ -26,8 +27,15 @@ test('should be accessible via a link on the training page', async t => {
     )
 
   await t.click(firstModalLink)
+  const location = await getWindowLocation()
+  await t.expect(location.href).contains(`${trainingPageUrl}/${coursePathName}`)
+})
+
+test('should be redirected to when the training course modal is closed', async t => {
+  await t.click(firstModalLink)
+  const modalCloseButton = Selector('a[class^="CourseCloseButton"]').nth(0)
+  await t.click(modalCloseButton)
 
   const location = await getWindowLocation()
-
-  await t.expect(location.href).contains(`${trainingPageUrl}/${coursePathName}`)
+  await t.expect(location.href).contains(trainingPageUrl)
 })
