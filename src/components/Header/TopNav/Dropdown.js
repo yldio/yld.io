@@ -95,7 +95,7 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
-    this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
+    this.setState({ clicked: true })
   }
 
   handleClick = () => {
@@ -103,6 +103,12 @@ export default class Dropdown extends PureComponent {
       return
     }
     this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
+  }
+
+  handleItemMouseDown = e => {
+    e.preventDefault()
+    e.stopPropagation()
+    this.setState({ clicked: false })
   }
 
   handleFocus = () => {
@@ -116,7 +122,7 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
-    this.setState({ isExpanded: false })
+    this.setState({ clicked: false, isExpanded: false })
   }
 
   hasTouch = () => {
@@ -155,6 +161,7 @@ export default class Dropdown extends PureComponent {
               href={href}
               to={to}
               activeClassName="active"
+              onMouseDown={this.handleItemMouseDown}
             >
               {label}
             </InnerAnchorItem>
