@@ -40,10 +40,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "run-p test:**",
+    "test": "npm run test:snapshots && npm run test:e2e && npm run build:app && npm run test:lighthouse",
     "test:lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
-    "test:e2e": "testcafe chrome ./tests",
+    "test:e2e": "testcafe chrome ./tests/e2e",
     "develop": "npm start",
     "start": "gatsby develop",
     "dev:clean": "rm -rf .cache && yarn develop",
