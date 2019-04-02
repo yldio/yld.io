@@ -7,7 +7,7 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
 import Hr from '../Common/Hr'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import Posts from '../posts'
+import LatestPosts from '../LatestPosts'
 
 const Blog = () => (
   <Row>
@@ -15,7 +15,7 @@ const Blog = () => (
       <SectionTitle>From the blog</SectionTitle>
     </Col>
     <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-      <Posts>
+      <LatestPosts>
         {posts => (
           <ul>
             {posts.slice(0, 3).map(({ node }) => (
@@ -37,7 +37,7 @@ const Blog = () => (
             ))}
           </ul>
         )}
-      </Posts>
+      </LatestPosts>
       <Padding top={3}>
         <StyledLink href="https://medium.com/yld-engineering-blog">
           More articles

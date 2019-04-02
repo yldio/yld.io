@@ -21,11 +21,11 @@ const POSTS = graphql`
   }
 `
 
-const Posts = ({ data, children }) => (
+const LatestPosts = ({ data, children }) => (
   <StaticQuery
     query={POSTS}
     render={({ allMediumPost }) => children(allMediumPost.edges)}
   />
 )
 
-export default Posts
+export default LatestPosts

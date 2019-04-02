@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+const { getTagsForTitle } = require('./src/utils/getTagsForTitle')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -10,6 +11,8 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            title
+            blogpostTags
             slug
             generate
           }
@@ -65,11 +68,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   _.each(result.data.allContentfulSpeciality.edges, edge => {
     if (edge.node.slug && edge.node.generate) {
+      const extraTags = getTagsForTitle(edge.node.title)
+
+      console.log('tags:', [...extraTags, ...(edge.node.blogpostTags || [])])
+
       createPage({
         path: `/speciality/${edge.node.slug}/`,
         component: slash(specialityTemplate),
         context: {
-          id: edge.node.id
+          id: edge.node.id,
+          postsLimit: 3,
+          postsTags: [...extraTags, ...(edge.node.blogpostTags || [])]
         }
       })
     }

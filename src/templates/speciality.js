@@ -14,50 +14,63 @@ import BooksSection from '../components/Speciality/books'
 import BlogPostsSection from '../components/Speciality/blog'
 import Head from '../components/Common/Head'
 
+const getExternalType = (speciality, type) =>
+  speciality.externalResources.filter(
+    additionalInfo => additionalInfo.type === type
+  ) || []
+
 const Speciality = ({
-  data: { contentfulSpeciality: speciality, videoIcon },
+  data: {
+    contentfulSpeciality: speciality,
+    videoIcon,
+    filteredPosts: { edges: posts }
+  },
   location
 }) => {
-  const getExternalType = type =>
-    speciality.externalResources.filter(
-      additionalInfo => additionalInfo.type === type
-    ) || []
+  const {
+    logoColour,
+    relatedProjects,
+    title,
+    clients,
+    communityBackground,
+    communityLogo,
+    communityText,
+    events,
+    eventIcon,
+    externalResources,
+    contactText
+  } = speciality
 
   return (
-    <Layout
-      backgroundColor="blue"
-      logoColour={speciality.logoColour}
-      location={location}
-    >
+    <Layout backgroundColor="blue" logoColour={logoColour} location={location}>
       <Head page={speciality} />
       <IntroSection speciality={speciality} />
       <ProjectsSection
-        related={speciality.relatedProjects}
-        title={speciality.title}
-        clients={speciality.clients}
+        related={relatedProjects}
+        title={title}
+        clients={clients}
       />
       <TrainingSection speciality={speciality} />
       <CommunitySection
-        background={speciality.communityBackground}
-        logo={speciality.communityLogo}
-        text={speciality.communityText}
-        title={speciality.title}
+        background={communityBackground}
+        logo={communityLogo}
+        text={communityText}
+        title={title}
       />
-      <EventSection
-        events={speciality.events}
-        title={speciality.title}
-        eventIcon={speciality.eventIcon}
+      <EventSection events={events} title={title} eventIcon={eventIcon} />
+      <TalksSection
+        talks={getExternalType(speciality, `Talk`)}
+        videoIcon={videoIcon}
       />
-      <TalksSection talks={getExternalType(`Talk`)} videoIcon={videoIcon} />
-      <BlogPostsSection title={speciality.title} />
+      <BlogPostsSection title={title} posts={posts} />
       <TutorialsSection
-        externalResources={speciality.externalResources}
-        tutorials={getExternalType(`Tutorial`)}
+        externalResources={externalResources}
+        tutorials={getExternalType(speciality, `Tutorial`)}
       />
-      <BooksSection title={speciality.title} books={getExternalType(`Book`)} />
+      <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
       <GetInTouch
-        title={`Talk to us about ${speciality.title}`}
-        contactText={speciality.contactText}
+        title={`Talk to us about ${title}`}
+        contactText={contactText}
       />
     </Layout>
   )
@@ -66,7 +79,7 @@ const Speciality = ({
 export default Speciality
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query($id: String, $postsTags: [String], $postsLimit: Int) {
     contentfulSpeciality(id: { eq: $id }) {
       slug
       title
@@ -290,6 +303,28 @@ export const pageQuery = graphql`
       file {
         fileName
         url
+      }
+    }
+
+    filteredPosts: allMediumPost(
+      limit: $postsLimit
+      sort: { fields: [createdAt], order: DESC }
+      filter: {
+        virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
+      }
+    ) {
+      edges {
+        node {
+          id
+          title
+          createdAt
+          virtuals {
+            tags {
+              slug
+            }
+          }
+          uniqueSlug
+        }
       }
     }
   }
