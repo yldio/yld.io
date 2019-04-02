@@ -2,7 +2,9 @@ import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
 require('dotenv').config()
 
-const baseUrl = `localhost:3001`
+const hostname = `localhost`
+const port = `3001`
+const baseUrl = `${hostname}:${port}`
 const trainingPageUrl = `${baseUrl}/training`
 const getWindowLocation = ClientFunction(() => window.location)
 
@@ -10,7 +12,7 @@ let server
 let firstModalLink
 fixture`Training page`.page`${trainingPageUrl}`
   .before(async t => {
-    server = createServer()
+    server = createServer(port)
   })
   .beforeEach(async t => {
     firstModalLink = await Selector('a[data-testid^="modal"]').nth(0)

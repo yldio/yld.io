@@ -6,7 +6,7 @@ const finalhandler = require('finalhandler')
 
 const compressionHandler = promisify(compression())
 
-const createServer = () => {
+const createServer = port => {
   const servePublic = serveStatic('./public')
 
   const server = http.createServer(async (req, res) => {
@@ -15,7 +15,7 @@ const createServer = () => {
     servePublic(req, res, done)
   })
 
-  server.listen(3001)
+  server.listen(port)
 
   return server
 }
