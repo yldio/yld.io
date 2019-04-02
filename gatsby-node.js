@@ -70,8 +70,6 @@ exports.createPages = async ({ graphql, actions }) => {
     if (edge.node.slug && edge.node.generate) {
       const extraTags = getTagsForTitle(edge.node.title)
 
-      console.log('tags:', [...extraTags, ...(edge.node.blogpostTags || [])])
-
       createPage({
         path: `/speciality/${edge.node.slug}/`,
         component: slash(specialityTemplate),
