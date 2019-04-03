@@ -24,9 +24,9 @@ const CourseInfo = ({
   image
 }) => (
   <Col width={[1, 1, 1, 1, 5 / 6]} px={0}>
-    <Padding bottom={1}>
+    <Padding bottom={1} data-testid="modal-title">
       {image && <Image image={image} width="60px" />}
-      <SectionTitle>{name}</SectionTitle>
+      <SectionTitle data-testid="modal-title">{name}</SectionTitle>
     </Padding>
     {description && <BodyPrimary>{description}</BodyPrimary>}
     <SubtitleWithBody subtitle={courseInfoSectionNames.level} body={level} />

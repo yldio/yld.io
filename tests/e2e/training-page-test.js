@@ -6,6 +6,7 @@ const hostname = `localhost`
 const port = `3001`
 const baseUrl = `${hostname}:${port}`
 const trainingPageUrl = `${baseUrl}/training`
+
 const getWindowLocation = ClientFunction(() => window.location)
 
 let server
@@ -15,23 +16,15 @@ fixture`Training page`.page`${trainingPageUrl}`
     server = createServer(port)
   })
   .beforeEach(async t => {
-    firstModalLink = await Selector('a[data-testid^="modal"]').nth(0)
+    firstModalLink = await Selector('a[data-testid=course-link]').nth(0)
   })
   .after(() => server.close())
 
-test('should open the correct training course modal when accessed via a link', async t => {
-  const coursePathName = await firstModalLink
-    .getAttribute('data-testid')
-    .then(data =>
-      data
-        .split('/')
-        .slice(1)
-        .join('/')
-    )
-
+test('clicking a link on the training page should open up a modal with information on the correct training course', async t => {
+  const courseLinkText = await firstModalLink.textContent
   await t.click(firstModalLink)
-  const location = await getWindowLocation()
-  await t.expect(location.href).contains(`${trainingPageUrl}/${coursePathName}`)
+  const modalTitle = await Selector('[data-testid="modal-title"]').textContent
+  await t.expect(courseLinkText).eql(modalTitle)
 })
 
 test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
