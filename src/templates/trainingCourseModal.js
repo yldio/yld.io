@@ -21,7 +21,7 @@ const TrainingCourseModal = ({
       <CourseWrapper location={location} content={course}>
         <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
           <CourseCloseButton
-            closeTo={modal ? `${closeTo}/#${category.slug}` : `/training`}
+            to={modal ? `${closeTo}/#${category.slug}` : `/training`}
           />
           <Grid>
             <Row>
