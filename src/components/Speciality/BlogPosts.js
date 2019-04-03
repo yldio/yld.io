@@ -21,23 +21,26 @@ const BlogPosts = ({ title, posts }) => {
               <ul>
                 {posts
                   .map(({ node }) => node)
-                  .map(({ id, uniqueSlug, title, createdAt }) => (
+                  .map(({ id, uniqueSlug, title, firstPublishedAt }) => (
                     <li key={`${id}`}>
-                      <Subtitle>
+                      <Subtitle noPaddingBottom>
                         <ExternalAnchor
                           href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
                         >
                           {title}
                         </ExternalAnchor>
                       </Subtitle>
-                      {format(new Date(createdAt), 'MMMM DD[,] dddd')}
+                      {format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')}
                       <Hr />
                     </li>
                   ))}
               </ul>
             </Padding>
             <Padding top={3}>
-              <StyledLink href="https://medium.com/yld-engineering-blog">
+              <StyledLink
+                external
+                href="https://medium.com/yld-engineering-blog"
+              >
                 More articles
               </StyledLink>
             </Padding>

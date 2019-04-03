@@ -7,8 +7,9 @@ const getTagsForTitle = title => {
     .replace('.', '')
     .toLowerCase()
     .trim()
+  const titleWithoutSpaces = titleWithoutJs.replace(new RegExp(/\s/, 'gm'), '-')
 
-  return [titleWithoutDots, titleWithoutJs]
+  return [titleWithoutDots, titleWithoutJs, titleWithoutSpaces]
 }
 
 exports.getTagsForTitle = getTagsForTitle

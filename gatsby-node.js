@@ -66,17 +66,22 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  _.each(result.data.allContentfulSpeciality.edges, edge => {
-    if (edge.node.slug && edge.node.generate) {
-      const extraTags = getTagsForTitle(edge.node.title)
+  _.each(result.data.allContentfulSpeciality.edges, ({ node }) => {
+    const { id, slug, title, generate, blogpostTags } = node
+
+    if (slug && generate) {
+      const titleTags = getTagsForTitle(title)
+      const contentfulTags = blogpostTags
+        ? blogpostTags.map(el => el.toLowerCase().trim())
+        : []
 
       createPage({
-        path: `/speciality/${edge.node.slug}/`,
+        path: `/speciality/${slug}/`,
         component: slash(specialityTemplate),
         context: {
-          id: edge.node.id,
+          id: id,
           postsLimit: 3,
-          postsTags: [...extraTags, ...(edge.node.blogpostTags || [])]
+          postsTags: [...titleTags, ...contentfulTags]
         }
       })
     }

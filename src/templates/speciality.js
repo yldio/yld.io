@@ -308,7 +308,7 @@ export const pageQuery = graphql`
 
     filteredPosts: allMediumPost(
       limit: $postsLimit
-      sort: { fields: [createdAt], order: DESC }
+      sort: { fields: [firstPublishedAt], order: DESC }
       filter: {
         virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
       }
@@ -317,7 +317,7 @@ export const pageQuery = graphql`
         node {
           id
           title
-          createdAt
+          firstPublishedAt
           virtuals {
             tags {
               slug

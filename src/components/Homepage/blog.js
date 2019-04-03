@@ -18,28 +18,29 @@ const Blog = () => (
       <LatestPosts>
         {posts => (
           <ul>
-            {posts.slice(0, 3).map(({ node }) => (
-              <li key={`${node.id}`}>
-                <Subtitle noPaddingBottom>
-                  <ExternalAnchor
-                    href={`https://medium.com/yld-engineering-blog/${
-                      node.uniqueSlug
-                    }`}
-                  >
-                    {node.title}
-                  </ExternalAnchor>
-                </Subtitle>
-                <BodyPrimary noPaddingTop>
-                  {format(new Date(node.createdAt), 'MMMM DD[,] dddd')}
-                </BodyPrimary>
-                <Hr />
-              </li>
-            ))}
+            {posts
+              .slice(0, 3)
+              .map(({ node }) => node)
+              .map(({ id, uniqueSlug, title, firstPublishedAt }) => (
+                <li key={`${id}`}>
+                  <Subtitle noPaddingBottom>
+                    <ExternalAnchor
+                      href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
+                    >
+                      {title}
+                    </ExternalAnchor>
+                  </Subtitle>
+                  <BodyPrimary noPaddingTop>
+                    {format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')}
+                  </BodyPrimary>
+                  <Hr />
+                </li>
+              ))}
           </ul>
         )}
       </LatestPosts>
       <Padding top={3}>
-        <StyledLink href="https://medium.com/yld-engineering-blog">
+        <StyledLink external href="https://medium.com/yld-engineering-blog">
           More articles
         </StyledLink>
       </Padding>

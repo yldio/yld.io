@@ -3,12 +3,15 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const POSTS = graphql`
   query mediumPosts {
-    allMediumPost(limit: 100, sort: { fields: [createdAt], order: DESC }) {
+    allMediumPost(
+      limit: 100
+      sort: { fields: [firstPublishedAt], order: DESC }
+    ) {
       edges {
         node {
           id
           title
-          createdAt
+          firstPublishedAt
           virtuals {
             tags {
               slug
