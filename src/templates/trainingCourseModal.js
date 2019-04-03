@@ -6,7 +6,7 @@ import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import CourseWrapper from '../components/Training/course/CourseWrapper'
 import CourseInfo from '../components/Training/course/CourseInfo'
 import CourseContent from '../components/Training/course/CourseContent'
-import CourseCloseButton from '../components/Training/course/CourseCloseButton'
+import ModalCloseButton from '../components/Training/course/ModalCloseButton'
 import { Grid, Row, Col } from '../components/grid'
 
 const TrainingCourseModal = ({
@@ -20,7 +20,7 @@ const TrainingCourseModal = ({
     {({ modal, closeTo }) => (
       <CourseWrapper location={location} content={course}>
         <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-          <CourseCloseButton
+          <ModalCloseButton
             to={modal ? `${closeTo}/#${category.slug}` : `/training`}
           />
           <Grid>

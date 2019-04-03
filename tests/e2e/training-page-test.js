@@ -36,7 +36,7 @@ test('should open the correct training course modal when accessed via a link', a
 
 test('should be redirected to when the training course modal is closed', async t => {
   await t.click(firstModalLink)
-  const modalCloseButton = Selector('a[class^="CourseCloseButton"]').nth(0)
+  const modalCloseButton = Selector('a[data-testid="modal-close-button"]')
   await t.click(modalCloseButton)
 
   const location = await getWindowLocation()

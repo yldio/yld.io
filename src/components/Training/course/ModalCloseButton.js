@@ -45,10 +45,10 @@ const Close = styled(Link)`
   `}
 `
 
-const CourseCloseButton = ({ to }) => (
-  <Close to={to}>
+const ModalCloseButton = ({ to }) => (
+  <Close to={to} data-testid="modal-close-button">
     <img src={close} alt="close modal" width="18" height="18" />
   </Close>
 )
 
-export default CourseCloseButton
+export default ModalCloseButton
