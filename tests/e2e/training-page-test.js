@@ -34,11 +34,15 @@ test('should open the correct training course modal when accessed via a link', a
   await t.expect(location.href).contains(`${trainingPageUrl}/${coursePathName}`)
 })
 
-test('should be redirected to when the training course modal is closed', async t => {
+test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
   await t.click(firstModalLink)
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]')
   await t.click(modalCloseButton)
 
   const location = await getWindowLocation()
-  await t.expect(location.href).contains(trainingPageUrl)
+  await t
+    .expect(location.href)
+    .contains(trainingPageUrl)
+    .expect(firstModalLink.visible)
+    .ok()
 })
