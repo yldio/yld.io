@@ -39,3 +39,17 @@ test('should be redirected to the course catalog on the training page when the m
     .expect(firstModalLink.visible)
     .ok()
 })
+
+test("navigating directly to a training course's url should show the same content as navigating via the training page", async t => {
+  await t.click(firstModalLink)
+  const titleFromTrainingPageLink = await Selector(
+    '[data-testid="modal-title"]'
+  ).textContent
+
+  await t.navigateTo('/')
+  await t.navigateTo(`/training/node-js/node-js-fundamentals`)
+  const titleFromUrlNavigation = await Selector('[data-testid="modal-title"]')
+    .textContent
+
+  await t.expect(titleFromUrlNavigation).eql(titleFromTrainingPageLink)
+})
