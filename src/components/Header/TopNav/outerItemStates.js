@@ -18,13 +18,11 @@ const clickTapLight = css`
 const activeLight = css`
   background: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.text};
-  font-weight: bold;
 `
 
 const activeAndHoverLight = css`
   background: ${props => props.theme.colors.greyBG};
   color: ${props => props.theme.colors.text};
-  font-weight: bold;
 `
 
 const defaultDark = css`
@@ -45,13 +43,11 @@ const clickTapDark = css`
 const activeDark = css`
   background: ${props => props.theme.colors.blueBg};
   color: ${props => props.theme.colors.white};
-  font-weight: bold;
 `
 
 const activeAndHoverDark = css`
   background: #3a3553;
   color: ${props => props.theme.colors.white};
-  font-weight: bold;
 `
 
 export const lightStates = {
