@@ -45,9 +45,10 @@ test("navigating directly to a training course's url should show the same conten
   const titleFromTrainingPageLink = await Selector(
     '[data-testid="modal-title"]'
   ).textContent
+  const location = await getWindowLocation()
 
   await t.navigateTo('/')
-  await t.navigateTo(`/training/node-js/node-js-fundamentals`)
+  await t.navigateTo(location.pathname)
   const titleFromUrlNavigation = await Selector('[data-testid="modal-title"]')
     .textContent
 
