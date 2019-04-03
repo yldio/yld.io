@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import is from 'styled-is'
 
 import Layout from '../../../components/layout'
@@ -26,21 +26,9 @@ const Wrapper = styled.div`
   `};
 `
 
-const ModalStyles = createGlobalStyle`
-  body {
-    ${is('open')`
-      overflow: hidden;
-      position: absolute;
-    `}
-  }
-`
-
 const CourseWrapper = ({ location, content, children }) => (
   <Layout location={location}>
-    <Wrapper visible={content}>
-      <ModalStyles open={content} />
-      {children}
-    </Wrapper>
+    <Wrapper visible={content}>{children}</Wrapper>
   </Layout>
 )
 
