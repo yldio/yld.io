@@ -23,7 +23,7 @@ const BlogPosts = ({ title, posts }) => {
                   .map(({ node }) => node)
                   .map(({ id, uniqueSlug, title, firstPublishedAt }) => (
                     <li key={`${id}`}>
-                      <Subtitle noPaddingBottom>
+                      <Subtitle>
                         <ExternalAnchor
                           href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
                         >
