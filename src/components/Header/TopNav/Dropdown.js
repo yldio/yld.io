@@ -25,10 +25,10 @@ const DropdownContainer = styled(TopNavItem)`
 
   ${is('expanded')`
     > span {
-      ${props => props.states.hover}
+      ${props => props.states.clickTap}
 
       &:hover {
-        ${props => props.states.activeAndHover}
+        ${props => props.states.hover}
       }
     }
   `}
