@@ -29,7 +29,7 @@ const DropdownContainer = styled(TopNavItem)`
       ${props => props.states.clickTap}
 
       &:hover {
-        ${props => props.states.activeAndHover}
+        ${props => props.states.hover}
       }
     }
   `}
