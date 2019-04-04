@@ -17,7 +17,7 @@ const clickTapLight = css`
 
 const activeLight = css`
   background: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.textLight};
 `
 
 const activeAndHoverLight = css`
@@ -42,7 +42,7 @@ const clickTapDark = css`
 
 const activeDark = css`
   background: ${props => props.theme.colors.blueBg};
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.textLight};
 `
 
 const activeAndHoverDark = css`
