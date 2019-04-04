@@ -9,7 +9,7 @@ const Hr = styled.hr`
   padding: 0 0 ${remcalc(18)} 0;
   border: none;
   margin: ${remcalc(17)} 0 0 0;
-  border-top: 1px solid ${props => props.theme.colors.grey};
+  border-top: 1px solid ${props => props.theme.colors.border};
   ${modifiers};
 
   ${is('short')`

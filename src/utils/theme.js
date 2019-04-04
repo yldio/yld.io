@@ -41,6 +41,18 @@ export const zIndexes = {
   gridDebugger: 10001
 }
 
+const colorsVariables = {
+  darkBlue: '#090329',
+  neonGreen: '#65FFCD',
+  darkBlack: '#1d1d1d',
+  black: '#333333',
+  darkGrey: '#828282',
+  lightGrey: '#f9f9f9',
+  grey: '#e6e6e6',
+  white: '#fff',
+  mediumGrey: '#757575'
+}
+
 export default {
   breakpoints,
   spacing,
@@ -57,16 +69,15 @@ export default {
     long: '450ms'
   },
   colors: {
-    white: '#fff',
-    text: '#333333',
-    textLight: '#828282',
-    secondaryText: '#757575',
-    vibrant: '#65FFCD',
-    dark: '#232323',
-    black: '#1d1d1d',
-    lightGrey: '#737272',
-    greyBG: '#f9f9f9',
-    grey: '#e6e6e6',
-    blueBg: '#090329'
+    blueBg: colorsVariables.darkBlue,
+    vibrant: colorsVariables.neonGreen,
+    white: colorsVariables.white,
+    greyBG: colorsVariables.lightGrey,
+    border: colorsVariables.grey,
+    black: colorsVariables.darkBlack,
+    text: colorsVariables.black,
+    secondaryText: colorsVariables.mediumGrey,
+    placeholder: colorsVariables.mediumGrey,
+    textLight: colorsVariables.darkGrey
   }
 }
