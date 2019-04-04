@@ -6175,7 +6175,7 @@ exports[`Storyshots Header Header itself 1`] = `
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
   outline: 0.25rem solid transparent;
-  color: #828282;
+  color: #858196;
 }
 
 .c24:focus {
@@ -6210,7 +6210,7 @@ exports[`Storyshots Header Header itself 1`] = `
   line-height: 1.5rem;
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
-  color: #828282;
+  color: #858196;
 }
 
 .c23:hover,
@@ -6770,9 +6770,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6828,9 +6826,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6857,9 +6853,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6915,9 +6909,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
