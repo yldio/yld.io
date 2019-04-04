@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
 import close from '../../../images/close.svg'
 
 const Close = styled(Link)`
@@ -11,9 +10,6 @@ const Close = styled(Link)`
   width: ${remcalc(54)};
   height: ${remcalc(54)};
   background-color: ${props => props.theme.colors.text};
-  right: ${remcalc(24)};
-  top: ${remcalc(36)};
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,18 +27,6 @@ const Close = styled(Link)`
       background: ${props => props.theme.colors.text};
     }
   }
-
-  ${breakpoint('smallTablet')`
-    right: ${remcalc(42)};
-  `}
-
-  ${breakpoint('tablet')`
-    right: ${remcalc(48)};
-  `}
-
-   ${breakpoint('desktop')`
-    right: ${remcalc(90)};
-  `}
 `
 
 const ModalCloseButton = ({ to }) => (

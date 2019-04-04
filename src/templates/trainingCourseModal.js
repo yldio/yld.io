@@ -21,6 +21,11 @@ const Wrapper = styled.div`
   overflow: scroll;
 `
 
+const CloseButtonWrapper = styled(Padding)`
+  display: flex;
+  justify-content: flex-end;
+`
+
 const TrainingCourseModal = ({
   data: {
     contentfulTrainingCourse: course,
@@ -32,11 +37,13 @@ const TrainingCourseModal = ({
     {({ modal, closeTo }) => (
       <Layout location={location}>
         <Wrapper>
-          <Padding top={{ smallPhone: 5 }} bottom={{ smallPhone: 5 }}>
-            <ModalCloseButton
-              to={modal ? `${closeTo}/#${category.slug}` : `/training`}
-            />
+          <Padding top={{ smallPhone: 3 }} bottom={{ smallPhone: 5 }}>
             <Grid>
+              <CloseButtonWrapper bottom={{ smallPhone: 3 }}>
+                <ModalCloseButton
+                  to={modal ? `${closeTo}/#${category.slug}` : `/training`}
+                />
+              </CloseButtonWrapper>
               <Row>
                 <Col width={[1, 1, 1, 1, 1 / 2]}>
                   <CourseInfo
