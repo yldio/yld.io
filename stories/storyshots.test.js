@@ -1,10 +1,11 @@
 import initStoryshots from '@storybook/addon-storyshots'
-
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer'
+import path from 'path'
 
 const getGotoOptions = ({ context, url }) => {
+  console.log('returnin')
   return {
-    waitUntil: 'load'
+    waitUntil: 'networkidle0'
   }
 }
 
@@ -34,10 +35,14 @@ const beforeScreenshot = (page, { context: { kind, story }, url }) => {
   )
 }
 
+const storybookPath = path.resolve(process.cwd(), 'storybook-static')
+console.log({ storybookPath })
+
 initStoryshots({
   suite: 'Image storyshots',
   test: imageSnapshot({
-    storybookUrl: 'http://localhost:6006',
+    // storybookUrl: 'http://localhost:6006',
+    storybookUrl: `file://${storybookPath}`,
     getGotoOptions,
     beforeScreenshot
     // createNodeMock: element => {
