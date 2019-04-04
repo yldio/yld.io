@@ -5964,6 +5964,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c14 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6047,9 +6048,11 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c7 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c7 > span {
@@ -6559,6 +6562,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6592,6 +6596,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/engineering/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Engineering
@@ -6604,6 +6609,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/design/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Design
@@ -6616,6 +6622,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/training/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Training
@@ -6652,6 +6659,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6685,6 +6693,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/about-us/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Our team
@@ -6697,6 +6706,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/contact/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Contact
@@ -6957,6 +6967,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7095,6 +7106,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7178,9 +7190,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c1 > span {
@@ -7303,6 +7317,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >
@@ -7336,6 +7351,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-1/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 1
@@ -7348,6 +7364,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-2/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 2
@@ -7360,6 +7377,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-3/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 3
@@ -7396,6 +7414,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >
@@ -7429,6 +7448,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-here/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go here
@@ -7441,6 +7461,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-there/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go there

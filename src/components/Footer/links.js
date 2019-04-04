@@ -40,7 +40,7 @@ export default [
   },
   {
     label: 'Dribbble',
-    link: 'https://dribbble.com/makeusproud',
+    link: 'https://dribbble.com/yld',
     img: dribbble
   },
   {
