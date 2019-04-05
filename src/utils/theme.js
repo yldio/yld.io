@@ -72,7 +72,7 @@ export default {
     blueBg: colorsVariables.darkBlue,
     vibrant: colorsVariables.neonGreen,
     white: colorsVariables.white,
-    greyBG: colorsVariables.lightGrey,
+    greyBg: colorsVariables.lightGrey,
     border: colorsVariables.grey,
     black: colorsVariables.darkBlack,
     text: colorsVariables.black,

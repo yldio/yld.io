@@ -2977,7 +2977,7 @@ exports[`Storyshots Colors Colors 1`] = `
         }
       }
     >
-      greyBG
+      greyBg
     </p>
     <p>
       #f9f9f9
