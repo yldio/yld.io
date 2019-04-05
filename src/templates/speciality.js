@@ -2,62 +2,75 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
-import IntroSection from '../components/Speciality/intro'
-import ProjectsSection from '../components/Speciality/projects'
-import TrainingSection from '../components/Speciality/training'
-import CommunitySection from '../components/Speciality/community'
-import EventSection from '../components/Speciality/events'
-import TalksSection from '../components/Speciality/talks'
+import IntroSection from '../components/Speciality/Intro'
+import ProjectsSection from '../components/Speciality/Projects'
+import TrainingSection from '../components/Speciality/Training'
+import CommunitySection from '../components/Speciality/Community'
+import EventSection from '../components/Speciality/Events'
+import TalksSection from '../components/Speciality/Talks'
 import GetInTouch from '../components/Common/GetInTouch'
-import TutorialsSection from '../components/Speciality/tutorials'
-import BooksSection from '../components/Speciality/books'
-import BlogPostsSection from '../components/Speciality/blog'
+import TutorialsSection from '../components/Speciality/Tutorials'
+import BooksSection from '../components/Speciality/Books'
+import BlogPostsSection from '../components/Speciality/BlogPosts'
 import Head from '../components/Common/Head'
 
+const getExternalType = (speciality, type) =>
+  speciality.externalResources.filter(
+    additionalInfo => additionalInfo.type === type
+  ) || []
+
 const Speciality = ({
-  data: { contentfulSpeciality: speciality, videoIcon },
+  data: {
+    contentfulSpeciality: speciality,
+    videoIcon,
+    filteredPosts: { edges: posts }
+  },
   location
 }) => {
-  const getExternalType = type =>
-    speciality.externalResources.filter(
-      additionalInfo => additionalInfo.type === type
-    ) || []
+  const {
+    logoColour,
+    relatedProjects,
+    title,
+    clients,
+    communityBackground,
+    communityLogo,
+    communityText,
+    events,
+    eventIcon,
+    externalResources,
+    contactText
+  } = speciality
 
   return (
-    <Layout
-      backgroundColor="blue"
-      logoColour={speciality.logoColour}
-      location={location}
-    >
+    <Layout backgroundColor="blue" logoColour={logoColour} location={location}>
       <Head page={speciality} />
       <IntroSection speciality={speciality} />
       <ProjectsSection
-        related={speciality.relatedProjects}
-        title={speciality.title}
-        clients={speciality.clients}
+        related={relatedProjects}
+        title={title}
+        clients={clients}
       />
       <TrainingSection speciality={speciality} />
       <CommunitySection
-        background={speciality.communityBackground}
-        logo={speciality.communityLogo}
-        text={speciality.communityText}
-        title={speciality.title}
+        background={communityBackground}
+        logo={communityLogo}
+        text={communityText}
+        title={title}
       />
-      <EventSection
-        events={speciality.events}
-        title={speciality.title}
-        eventIcon={speciality.eventIcon}
+      <EventSection events={events} title={title} eventIcon={eventIcon} />
+      <TalksSection
+        talks={getExternalType(speciality, `Talk`)}
+        videoIcon={videoIcon}
       />
-      <TalksSection talks={getExternalType(`Talk`)} videoIcon={videoIcon} />
-      <BlogPostsSection title={speciality.title} />
+      <BlogPostsSection title={title} posts={posts} />
       <TutorialsSection
-        externalResources={speciality.externalResources}
-        tutorials={getExternalType(`Tutorial`)}
+        externalResources={externalResources}
+        tutorials={getExternalType(speciality, `Tutorial`)}
       />
-      <BooksSection title={speciality.title} books={getExternalType(`Book`)} />
+      <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
       <GetInTouch
-        title={`Talk to us about ${speciality.title}`}
-        contactText={speciality.contactText}
+        title={`Talk to us about ${title}`}
+        contactText={contactText}
       />
     </Layout>
   )
@@ -66,7 +79,7 @@ const Speciality = ({
 export default Speciality
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query($id: String, $postsTags: [String], $postsLimit: Int) {
     contentfulSpeciality(id: { eq: $id }) {
       slug
       title
@@ -290,6 +303,28 @@ export const pageQuery = graphql`
       file {
         fileName
         url
+      }
+    }
+
+    filteredPosts: allMediumPost(
+      limit: $postsLimit
+      sort: { fields: [firstPublishedAt], order: DESC }
+      filter: {
+        virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
+      }
+    ) {
+      edges {
+        node {
+          id
+          title
+          firstPublishedAt
+          virtuals {
+            tags {
+              slug
+            }
+          }
+          uniqueSlug
+        }
       }
     }
   }

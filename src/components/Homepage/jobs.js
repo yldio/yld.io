@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 
 import StyledLink from '../Common/StyledLink'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import Jobs from '../jobsByLocation'
+import Jobs from '../JobsByLocation'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
 
