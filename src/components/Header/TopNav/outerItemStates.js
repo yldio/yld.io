@@ -6,8 +6,8 @@ const defaultLight = css`
 `
 
 const hoverLight = css`
-  background: ${props => props.theme.colors.greyBG};
-  color: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.text};
+  color: #a9a9a9;
 `
 
 const clickTapLight = css`
@@ -21,8 +21,8 @@ const activeLight = css`
 `
 
 const activeAndHoverLight = css`
-  background: ${props => props.theme.colors.text};
-  color: #a9a9a9;
+  background: ${props => props.theme.colors.greyBG};
+  color: ${props => props.theme.colors.text};
 `
 
 const defaultDark = css`
@@ -31,8 +31,8 @@ const defaultDark = css`
 `
 
 const hoverDark = css`
-  background: #3a3553;
-  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.vibrant};
+  color: #007f56;
 `
 
 const clickTapDark = css`
@@ -46,8 +46,8 @@ const activeDark = css`
 `
 
 const activeAndHoverDark = css`
-  background: ${props => props.theme.colors.vibrant};
-  color: #007f56;
+  background: #3a3553;
+  color: ${props => props.theme.colors.white};
 `
 
 export const lightStates = {
