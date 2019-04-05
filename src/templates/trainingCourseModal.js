@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 
@@ -26,6 +26,51 @@ const CloseButtonWrapper = styled(Padding)`
   justify-content: flex-end;
 `
 
+const ModalContent = ({ modal, closeTo, course, category, location }) => {
+  const returnPath = `${closeTo}/#${category.slug}`
+
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyPress, false)
+
+    return () => document.removeEventListener('keyup', handleKeyPress, false)
+  }, [])
+
+  const handleKeyPress = ({ key }) => {
+    if (key === 'Escape') {
+      navigate(returnPath)
+    }
+  }
+
+  return (
+    <Layout location={location}>
+      <Wrapper>
+        <Padding top={{ smallPhone: 3 }} bottom={{ smallPhone: 5 }}>
+          <Grid>
+            <CloseButtonWrapper bottom={{ smallPhone: 3 }}>
+              <ModalCloseButton to={modal ? returnPath : `/training`} />
+            </CloseButtonWrapper>
+            <Row>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseInfo
+                  name={course.name}
+                  description={course.description.description}
+                  level={course.level}
+                  preRequisites={course.preRequisites}
+                  preRequisitesCourses={course.preRequisitesCourses}
+                  image={category.logo}
+                />
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <CourseContent content={course.content.content} />
+              </Col>
+            </Row>
+          </Grid>
+        </Padding>
+      </Wrapper>
+    </Layout>
+  )
+}
+
 const TrainingCourseModal = ({
   data: {
     contentfulTrainingCourse: course,
@@ -35,34 +80,13 @@ const TrainingCourseModal = ({
 }) => (
   <ModalRoutingContext.Consumer>
     {({ modal, closeTo }) => (
-      <Layout location={location}>
-        <Wrapper>
-          <Padding top={{ smallPhone: 3 }} bottom={{ smallPhone: 5 }}>
-            <Grid>
-              <CloseButtonWrapper bottom={{ smallPhone: 3 }}>
-                <ModalCloseButton
-                  to={modal ? `${closeTo}/#${category.slug}` : `/training`}
-                />
-              </CloseButtonWrapper>
-              <Row>
-                <Col width={[1, 1, 1, 1, 1 / 2]}>
-                  <CourseInfo
-                    name={course.name}
-                    description={course.description.description}
-                    level={course.level}
-                    preRequisites={course.preRequisites}
-                    preRequisitesCourses={course.preRequisitesCourses}
-                    image={category.logo}
-                  />
-                </Col>
-                <Col width={[1, 1, 1, 1, 1 / 2]}>
-                  <CourseContent content={course.content.content} />
-                </Col>
-              </Row>
-            </Grid>
-          </Padding>
-        </Wrapper>
-      </Layout>
+      <ModalContent
+        course={course}
+        category={category}
+        closeTo={closeTo}
+        location={location}
+        modal={modal}
+      />
     )}
   </ModalRoutingContext.Consumer>
 )

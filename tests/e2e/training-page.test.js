@@ -40,6 +40,18 @@ test('should be redirected to the course catalog on the training page when the m
     .ok()
 })
 
+test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async t => {
+  await t.click(firstModalLink)
+  await t.pressKey('esc')
+
+  const location = await getWindowLocation()
+  await t
+    .expect(location.href)
+    .contains(trainingPageUrl)
+    .expect(firstModalLink.visible)
+    .ok()
+})
+
 test("navigating directly to a training course's url should show the same content as navigating via the training page", async t => {
   await t.click(firstModalLink)
   const titleFromTrainingPageLink = await Selector(
