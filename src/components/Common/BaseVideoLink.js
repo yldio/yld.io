@@ -73,7 +73,7 @@ const StandaloneWrapper = styled(Margin)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid ${props => props.theme.colors.grey};
+  border: 1px solid ${props => props.theme.colors.border};
 `
 
 const BaseVideoLink = ({

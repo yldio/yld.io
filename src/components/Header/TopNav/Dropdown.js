@@ -70,7 +70,7 @@ const DropdownList = styled.ul`
   left: -9999px;
   opacity: 0;
   transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBG};
+  background: ${props => props.theme.colors.greyBg};
   z-index: ${props => props.theme.zIndexes.header};
   ${is('expanded')`
     left: 0;

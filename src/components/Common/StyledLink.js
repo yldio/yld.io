@@ -34,7 +34,7 @@ export const StyledLinkCss = css`
   }
 
   &:hover {
-    background: ${props => props.theme.colors.greyBG};
+    background: ${props => props.theme.colors.greyBg};
     color: ${props => props.theme.colors.text};
   }
 

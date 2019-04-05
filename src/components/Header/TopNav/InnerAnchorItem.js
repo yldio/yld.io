@@ -16,7 +16,7 @@ const InnerAnchor = styled(Anchor)`
   ${outlineStyles}
 
   width: 100%;
-  background: ${props => props.theme.colors.greyBG};
+  background: ${props => props.theme.colors.greyBg};
   color: ${props => props.theme.colors.textLight};
 
   &:hover,
