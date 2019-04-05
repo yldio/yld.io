@@ -6323,7 +6323,6 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c14 > a.active:hover {
-  background: #f9f9f9;
   color: #333333;
 }
 
@@ -7326,7 +7325,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 .c1 > a.active:hover {
-  background: #f9f9f9;
   color: #333333;
 }
 
@@ -7465,7 +7463,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 > a.active:hover {
-  background: #f9f9f9;
   color: #333333;
 }
 
