@@ -4764,6 +4764,7 @@ exports[`Storyshots Form Field 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
@@ -4803,6 +4804,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
@@ -4850,6 +4852,7 @@ exports[`Storyshots Form Input 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
