@@ -52,6 +52,23 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
     .ok()
 })
 
+test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {
+  const firstCourseLinkText = await firstModalLink.textContent
+  const secondModalLink = await Selector('a[data-testid=course-link]').nth(1)
+  const secondCourseLinkText = await secondModalLink.textContent
+
+  let modalTitle
+  await t.click(firstModalLink)
+  modalTitle = await Selector('[data-testid="modal-title"]').textContent
+  await t.expect(firstCourseLinkText).eql(modalTitle)
+
+  await t.pressKey('esc')
+
+  await t.click(secondModalLink)
+  modalTitle = await Selector('[data-testid="modal-title"]').textContent
+  await t.expect(secondCourseLinkText).eql(modalTitle)
+})
+
 test("navigating directly to a training course's url should show the same content as navigating via the training page", async t => {
   await t.click(firstModalLink)
   const titleFromTrainingPageLink = await Selector(
