@@ -3,9 +3,10 @@
   "extends": [
     "standard",
     "plugin:react/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:testcafe/recommended"
   ],
-  "plugins": ["react-hooks"],
+  "plugins": ["react-hooks", "testcafe"],
   "rules": {
     "react/prop-types": 0,
     "space-before-function-paren": 0,

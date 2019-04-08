@@ -6,7 +6,7 @@ import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 
-const Courses = ({ categories, toggleModal }) => {
+const Courses = ({ categories, sectionTitle }) => {
   return (
     <Grid>
       <Row>
@@ -15,7 +15,7 @@ const Courses = ({ categories, toggleModal }) => {
             bottom={{ smallPhone: 3, tablet: 4 }}
             top={{ smallPhone: 3, tablet: 4, desktop: 5 }}
           >
-            <SectionTitle noPadding>Course catalog</SectionTitle>
+            <SectionTitle noPadding>{sectionTitle}</SectionTitle>
           </Padding>
         </Col>
       </Row>
@@ -24,15 +24,19 @@ const Courses = ({ categories, toggleModal }) => {
           <Col width={[1, 1, 1, 1, 1 / 2]} key={cat.id}>
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
               <Padding bottom={1}>
-                <Image image={cat.logo} width="60px" />
+                <Image image={cat.logo} width="60px" id={cat.slug} />
                 <SectionTitle>{cat.name}</SectionTitle>
               </Padding>
               <Flex column alignStart>
                 {cat.courses.map(course => (
                   <StyledLink
                     style={{ cursor: 'pointer' }}
-                    onClick={() => toggleModal({ ...cat, ...course })}
+                    to={`/training/${cat.slug}/${course.slug}`}
                     key={course.id}
+                    state={{
+                      modal: true
+                    }}
+                    data-testid="course-link"
                   >
                     {course.name}
                   </StyledLink>
