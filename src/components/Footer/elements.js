@@ -10,13 +10,6 @@ export const FollowUs = styled.section`
   background: ${props => props.theme.colors.black};
 `
 
-export const Node = styled.span`
-  opacity: 0.5;
-  color: ${props => props.theme.colors.white};
-  display: block;
-  margin-bottom: 6px;
-`
-
 export const Social = styled.ul`
   display: flex;
   flex-wrap: wrap;
