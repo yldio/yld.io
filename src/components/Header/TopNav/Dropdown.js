@@ -14,6 +14,7 @@ const DropdownContainer = styled(TopNavItem)`
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   > span {
     ${props => props.states.default}
@@ -28,7 +29,7 @@ const DropdownContainer = styled(TopNavItem)`
       ${props => props.states.clickTap}
 
       &:hover {
-        ${props => props.states.activeAndHover}
+        ${props => props.states.hover}
       }
     }
   `}
@@ -69,7 +70,7 @@ const DropdownList = styled.ul`
   left: -9999px;
   opacity: 0;
   transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBG};
+  background: ${props => props.theme.colors.greyBg};
   z-index: ${props => props.theme.zIndexes.header};
   ${is('expanded')`
     left: 0;
@@ -91,15 +92,41 @@ export default class Dropdown extends PureComponent {
    * so we're detecting it on mouse down
    */
   handleMouseDown = () => {
+    if (this.hasTouch()) {
+      return
+    }
+    this.setState({ clicked: true })
+  }
+
+  handleClick = () => {
+    if (!this.hasTouch()) {
+      return
+    }
     this.setState({ clicked: true, isExpanded: !this.state.isExpanded })
   }
 
+  handleItemMouseDown = e => {
+    e.preventDefault()
+    e.stopPropagation()
+    this.setState({ clicked: false })
+  }
+
   handleFocus = () => {
+    if (this.hasTouch()) {
+      return
+    }
     this.setState({ isExpanded: true })
   }
 
   handleBlur = () => {
-    this.setState({ isExpanded: false, clicked: false })
+    if (this.hasTouch()) {
+      return
+    }
+    this.setState({ clicked: false, isExpanded: false })
+  }
+
+  hasTouch = () => {
+    return 'ontouchstart' in window
   }
 
   render() {
@@ -111,8 +138,9 @@ export default class Dropdown extends PureComponent {
         expanded={isExpanded}
         aria-haspopup="true"
         aria-expanded={isExpanded}
-        onFocus={this.handleFocus}
+        onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
+        onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
       >
@@ -133,6 +161,7 @@ export default class Dropdown extends PureComponent {
               href={href}
               to={to}
               activeClassName="active"
+              onMouseDown={this.handleItemMouseDown}
             >
               {label}
             </InnerAnchorItem>

@@ -35,7 +35,7 @@ const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: ${props => props.theme.colors.greyBG};
+  background: ${props => props.theme.colors.greyBg};
   padding: ${props => props.theme.spacing[1]} 0
     ${props => props.theme.spacing[1]} 0;
 `

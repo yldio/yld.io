@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Row } from '../../components/grid'
 
 export const FooterStyled = styled.footer`
-  background: ${props => props.theme.colors.dark};
+  background: #232323;
   color: ${props => props.theme.colors.white};
 `
 

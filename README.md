@@ -6,25 +6,32 @@
 
 ## How to run
 
-```bash
+```
   git clone git@github.com:yldio/yld.io.git
   cd yld.io
   yarn
-  yarn develop
 ```
 
-In order to access the development branch on contentful during development set the environment variable `ENV` to `'dev'`
+In order to access data from contentful make sure that you have an .env file that matches the contentful keys and tokens:
 
-```bash
-ENV=dev yarn develop
+```
+CONTENTFUL_TOKEN=(see in contentful/settings/API keys)
+CONTENTFUL_SPACE=(see in contentful/settings/API keys)
+MEETUP_KEY=(see in contentful/settings/API keys)
+GATSBY_ENVIRONMENT="development"
+```
+
+You can now run:
+
+```
+  yarn develop
 ```
 
 We have some docs to make it easier to get you started:
 
 - [Scripts Overview](./docs/scripts.md)
 
-
-## Tech Used
+## Tech used
 
 - [Yarn](https://yarnpkg.com)
 - [Gatsby](https://www.gatsbyjs.org/docs/)
@@ -32,13 +39,34 @@ We have some docs to make it easier to get you started:
 - [Styled Components](https://styled-components.com)
 - [Storybook](https://storybook.js.org/)
 
+## Tests stack
+
+- [Jest](https://jestjs.io/)
+- [Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/)
+
+Lighthouse expects you to have your app built locally in and served from the /public directory.
+As a result make sure to run `npm run build` before running the Lighthouse tests.
+If you want to check the output of the build, you can run `gatsby serve`.
+
 ## Content in
 
 - [Contentful](https://contentful.com)
 
-## Deployed Using
+## Deployment
 
-- [Netlify](https://netlify.com/)
+The website is built and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
+- a new commit is pushed to our **production** (`master`) branch, read more [here](https://www.netlify.com/docs/continuous-deployment/);
+- the Contentful data is updated (via *webhook*).
+
+Also, for each Pull Request that's open, a [Deploy Preview](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) is created, allowing for that branch to be tested and shared amongst stakeholders.
+
+## Content Model notes
+This section serves as a information repository for some of our content models, stating what they represent and explaining some of their fields, if needed.
+
+### Speciality
+This content type describe YLD's specialities (Design and engineering methodologies, technologies, models, patterns, etc). These specialities may or may not have their own page and that's decided based on the content.
+- **generate:** a boolean value that indicates wether a page should be generate for the current speciality;
+- **Blogpost tags:** comma-separated list of tags that should be considered when displaying the latest blog posts for the current speciality. By default, the speciality title is already added as a tag, so this fields are added to that base filtering.
 
 ## Browser support
 
@@ -56,7 +84,7 @@ We current support:
 - Safari
 - Edge
 
-We're working towrads supporting IE11 & introducing graceful fallbacks for earlier versions (for where this sits in our prioritise, see trello).
+We're working towards supporting IE11 & introducing graceful fallbacks for earlier versions (for where this sits in our priorities, see trello).
 
 ## License
 

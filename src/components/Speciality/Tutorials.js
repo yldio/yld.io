@@ -30,16 +30,18 @@ const TutorialsSection = ({ tutorials, externalResources }) =>
               <ul>
                 {tutorials.slice(0, 3).map(externalResource => (
                   <li key={`${externalResource.id}`}>
-                    <Subtitle>{externalResource.title}</Subtitle>
-                    <ExternalAnchor href={externalResource.link}>
-                      {externalResource.additionalInfo}
-                    </ExternalAnchor>
+                    <Subtitle noPaddingBottom>
+                      <ExternalAnchor href={externalResource.link}>
+                        {externalResource.title}
+                      </ExternalAnchor>
+                    </Subtitle>
+                    {externalResource.additionalInfo}
                     <Hr />
                   </li>
                 ))}
               </ul>
               <Padding top={3}>
-                <StyledLink href="http://nodetuts.com/">
+                <StyledLink external href="http://nodetuts.com/">
                   More tutorials
                 </StyledLink>
               </Padding>

@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 const defaultStyles = css`
-  color: ${props => props.theme.colors.textLight};
+  color: #858196;
 `
 
 const hoverActiveStyles = css`

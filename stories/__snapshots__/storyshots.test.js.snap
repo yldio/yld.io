@@ -2853,6 +2853,331 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 </div>
 `;
 
+exports[`Storyshots Colors Colors 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#090329",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      blueBg
+    </p>
+    <p>
+      #090329
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#65FFCD",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      vibrant
+    </p>
+    <p>
+      #65FFCD
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#fff",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      white
+    </p>
+    <p>
+      #fff
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#f9f9f9",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      greyBg
+    </p>
+    <p>
+      #f9f9f9
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#e6e6e6",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      border
+    </p>
+    <p>
+      #e6e6e6
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#1d1d1d",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      black
+    </p>
+    <p>
+      #1d1d1d
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#333333",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      text
+    </p>
+    <p>
+      #333333
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#757575",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      secondaryText
+    </p>
+    <p>
+      #757575
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#757575",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      placeholder
+    </p>
+    <p>
+      #757575
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#828282",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      textLight
+    </p>
+    <p>
+      #828282
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Compact Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
@@ -4439,6 +4764,7 @@ exports[`Storyshots Form Field 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
@@ -4478,6 +4804,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
@@ -4525,6 +4852,7 @@ exports[`Storyshots Form Input 1`] = `
   width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
+  background: #f9f9f9;
   box-sizing: border-box;
 }
 
@@ -5964,6 +6292,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c14 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5974,8 +6303,8 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c14:hover,
 .c14 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c14 > a:active {
@@ -5994,8 +6323,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c14 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  color: #333333;
 }
 
 .c10 {
@@ -6047,9 +6375,11 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c7 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c7 > span {
@@ -6058,8 +6388,8 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 .c7 > span:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c8 {
@@ -6175,7 +6505,7 @@ exports[`Storyshots Header Header itself 1`] = `
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
   outline: 0.25rem solid transparent;
-  color: #828282;
+  color: #858196;
 }
 
 .c24:focus {
@@ -6210,7 +6540,7 @@ exports[`Storyshots Header Header itself 1`] = `
   line-height: 1.5rem;
   padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
   margin: 0.25rem;
-  color: #828282;
+  color: #858196;
 }
 
 .c23:hover,
@@ -6559,6 +6889,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6592,6 +6923,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/engineering/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Engineering
@@ -6604,6 +6936,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/design/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Design
@@ -6616,6 +6949,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/training/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Training
@@ -6652,6 +6986,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
                 className="c7"
                 onBlur={[Function]}
+                onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
@@ -6685,6 +7020,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/about-us/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Our team
@@ -6697,6 +7033,7 @@ exports[`Storyshots Header Header itself 1`] = `
                       className="c13"
                       href="/contact/"
                       onClick={[Function]}
+                      onMouseDown={[Function]}
                       onMouseEnter={[Function]}
                     >
                       Contact
@@ -6770,9 +7107,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6828,9 +7163,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6857,9 +7190,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6915,9 +7246,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     Object {
                       "default": Array [
                         "
-  color: ",
-                        [Function],
-                        ";
+  color: #858196;
 ",
                       ],
                       "hoverActive": Array [
@@ -6965,6 +7294,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6975,8 +7305,8 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 
 .c1:hover,
 .c1 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c1 > a:active {
@@ -6995,8 +7325,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 .c1 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  color: #333333;
 }
 
 .c0 {
@@ -7103,6 +7432,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7113,8 +7443,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 
 .c8:hover,
 .c8 > a:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c8 > a:active {
@@ -7133,8 +7463,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c8 > a.active:hover {
-  background: #333333;
-  color: #a9a9a9;
+  color: #333333;
 }
 
 .c4 {
@@ -7186,9 +7515,11 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c1 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .c1 > span {
@@ -7197,8 +7528,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 .c1 > span:hover {
-  background: #f9f9f9;
-  color: #333333;
+  background: #333333;
+  color: #a9a9a9;
 }
 
 .c2 {
@@ -7311,6 +7642,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >
@@ -7344,6 +7676,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-1/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 1
@@ -7356,6 +7689,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-2/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 2
@@ -7368,6 +7702,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/item-3/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Item 3
@@ -7404,6 +7739,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       aria-haspopup="true"
       className="c1"
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onMouseDown={[Function]}
     >
@@ -7437,6 +7773,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-here/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go here
@@ -7449,6 +7786,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             className="c7"
             href="/go-there/"
             onClick={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
           >
             Go there
