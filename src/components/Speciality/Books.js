@@ -11,10 +11,7 @@ import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
 
 // TODO - should come from contentful
-const bookData = {
-  link: 'http://nodepatternsbooks.com/index.html',
-  text: 'More Books'
-}
+const moreBooksLink = 'http://nodepatternsbooks.com/index.html'
 
 const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
@@ -60,7 +57,7 @@ const BooksSection = ({ books, title }) =>
           <CenteredCol width={[1]}>
             <SectionTitle small>{`${title.trim()} books`}</SectionTitle>
             <BodyPrimary>
-              Node.js books written by members of YLD for our community.
+              {`${title.trim()} books written by members of YLD for our community.`}
             </BodyPrimary>
           </CenteredCol>
         </Row>
@@ -100,8 +97,8 @@ const BooksSection = ({ books, title }) =>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href={bookData.link} target="_blank">
-                    {bookData.text}
+                  <StyledLink href={moreBooksLink} target="_blank">
+                    More Books
                   </StyledLink>
                 </FlexItem>
               </Flex>
