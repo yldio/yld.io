@@ -9,9 +9,6 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies
       - run:
-          command: npm run build:app
-          name: Start
-      - run:
           command: npm run test:lighthouse
           name: Lighthouse
     working_directory: ~/repo
