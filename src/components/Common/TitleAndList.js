@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Col, Row } from '../grid'
@@ -22,6 +22,15 @@ const TitleAndList = ({
   themeVariation = 'white',
   extraContent
 }) => {
+  useEffect(() => {
+    const allAnchors = document.querySelectorAll('a')
+    allAnchors.forEach(a => {
+      if (a.title) {
+        a.setAttribute('target', '_blank')
+      }
+    })
+  })
+
   return (
     <OuterPaddings>
       <Row>
