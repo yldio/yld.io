@@ -97,7 +97,7 @@ const BooksSection = ({ books, title }) =>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href={moreBooksLink} target="_blank">
+                  <StyledLink href={moreBooksLink} external>
                     More Books
                   </StyledLink>
                 </FlexItem>

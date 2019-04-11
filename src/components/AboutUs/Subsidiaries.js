@@ -16,7 +16,7 @@ const Subsidiary = ({ image, description, linkUrl, linkText }) => (
         {description}
       </BodyPrimary>
       {linkText ? (
-        <StyledLink reverse href={linkUrl} target="_blank">
+        <StyledLink reverse href={linkUrl} external>
           {linkText}
         </StyledLink>
       ) : null}

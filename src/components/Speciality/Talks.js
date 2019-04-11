@@ -43,7 +43,7 @@ const TalksSection = ({ talks: allTalks, videoIcon }) => {
           {cta && (
             <Row>
               <Col width={[1]}>
-                <StyledLink reverse href={cta.link} target="_blank">
+                <StyledLink reverse href={cta.link} external>
                   {cta.title}
                 </StyledLink>
               </Col>
