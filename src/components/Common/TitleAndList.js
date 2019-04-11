@@ -23,12 +23,10 @@ const TitleAndList = ({
   extraContent
 }) => {
   useEffect(() => {
-    const allAnchors = document.querySelectorAll('a')
-    allAnchors.forEach(a => {
-      if (a.title) {
-        a.setAttribute('target', '_blank')
-      }
-    })
+    const titledAnchors = Array.from(document.querySelectorAll('a')).filter(
+      a => a.title
+    )
+    titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
   })
 
   return (
@@ -55,7 +53,6 @@ const TitleAndList = ({
                   const Comp = (
                     <ItemBody themeVariation={themeVariation} {...props} />
                   ) // eslint-disable-line react/no-display-name
-
                   return Comp
                 }
               }}
