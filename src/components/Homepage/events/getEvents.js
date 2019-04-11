@@ -2,6 +2,7 @@ import { format, isAfter } from 'date-fns'
 
 export const getHomepageMeetups = events =>
   events
+    .sort((a, b) => (a.node.date < b.node.date ? -1 : 1))
     .filter(n => !n.node.homepageFeatured)
     .filter(n => isAfter(new Date(n.node.date), new Date()))
     .slice(0, 3)
