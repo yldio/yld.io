@@ -22,6 +22,17 @@ export const spacing = {
   90: remcalc(90)
 }
 
+export const space = [
+  '0', // 0
+  remcalc(12), // 1
+  remcalc(24), // 2
+  remcalc(36), // 3
+  remcalc(54), // 4
+  remcalc(72), // 5
+  remcalc(108), // 6
+  remcalc(144) // 7
+]
+
 export const breakpoints = {
   smallPhone: 0,
   phone: 471,
@@ -56,6 +67,7 @@ const colorsVariables = {
 export default {
   breakpoints,
   spacing,
+  space,
   elementSizes,
   zIndexes,
   variations: {

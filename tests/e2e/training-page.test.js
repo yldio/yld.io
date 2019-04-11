@@ -3,7 +3,7 @@ import { Selector, ClientFunction } from 'testcafe'
 require('dotenv').config()
 
 const hostname = `localhost`
-const port = `3001`
+const port = 3002
 const baseUrl = `${hostname}:${port}`
 const trainingPageUrl = `${baseUrl}/training`
 

@@ -52,6 +52,14 @@ yarn test:lighthouse
 
 We also have some lighthouse tests in place to make sure we don't make the website too slow or fail in accessability and you can run it like this.
 
+### Testcafe
+
+```bash
+yarn test:e2e
+```
+
+Testcafe is our end-to-end web testing tool; we use it to make sure that the website work the way it is supposed to.
+
 ```bash
 yarn test
 ```
