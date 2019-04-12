@@ -45,13 +45,13 @@ const JobsComponent = () => (
                     categories: { commitment }
                   } = job.node
                   return (
-                    <JobLink
-                      as="li"
-                      key={`job-${location}-${idx}`}
-                      position={text}
-                      hostedUrl={hostedUrl}
-                      contractType={commitment}
-                    />
+                    <li key={`job-${location}-${idx}`}>
+                      <JobLink
+                        position={text}
+                        hostedUrl={hostedUrl}
+                        contractType={commitment}
+                      />
+                    </li>
                   )
                 })}
               </JobContainer>
