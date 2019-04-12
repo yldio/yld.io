@@ -7823,7 +7823,7 @@ exports[`Storyshots Image with file url 1`] = `
 `;
 
 exports[`Storyshots JobLink JobLink 1`] = `
-.c2 {
+.c0 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -7832,78 +7832,45 @@ exports[`Storyshots JobLink JobLink 1`] = `
   padding-bottom: 0;
 }
 
-.c3 {
+.c1 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
   opacity: .5;
-  padding: 0;
+  padding-top: 0;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c4 {
+.c2 {
   height: 0.0625rem;
   padding: 0 0 1.125rem 0;
   border: none;
   margin: 1.0625rem 0 0 0;
   border-top: 1px solid #e6e6e6;
   width: 60px;
-  margin-top: 0;
 }
 
-.c1 {
-  height: 107px;
-}
-
-<div
-  className="c0"
+<a
+  href="http://www.lever.com"
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <a
-    className="c1"
-    href="http://www.lever.com"
-    rel="noopener noreferrer"
-    target="_blank"
+  <p
+    className="c0"
   >
-    <p
-      className="c2"
-    >
-      Software Engineer
-    </p>
-    <p
-      className="c3"
-      muted={true}
-    >
-      Permanent
-    </p>
-  </a>
+    Software Engineer
+  </p>
+  <p
+    className="c1"
+    muted={true}
+  >
+    Permanent
+  </p>
   <hr
-    className="c4"
+    className="c2"
   />
-</div>
+</a>
 `;
 
 exports[`Storyshots Spaces Spaces 1`] = `
