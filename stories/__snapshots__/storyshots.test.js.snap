@@ -7906,6 +7906,298 @@ exports[`Storyshots JobLink JobLink 1`] = `
 </div>
 `;
 
+exports[`Storyshots Spaces Spaces 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      1
+       - 
+      12
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "0.75rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      2
+       - 
+      24
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "1.5rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      3
+       - 
+      36
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "2.25rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      4
+       - 
+      54
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "3.375rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      5
+       - 
+      72
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "4.5rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      6
+       - 
+      108
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "6.75rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      7
+       - 
+      144
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "9rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 .c3 {
   -webkit-flex-wrap: wrap;
