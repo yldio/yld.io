@@ -15,6 +15,10 @@ const Hr = styled.hr`
   ${is('short')`
     width: 60px;
   `};
+
+  ${is('noMarginTop')`
+    margin-top: 0;
+  `}
 `
 
 export default Hr

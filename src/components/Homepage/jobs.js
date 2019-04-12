@@ -6,10 +6,9 @@ import { Row, Col, Grid } from '../grid'
 import { Padding } from 'styled-components-spacing'
 
 import StyledLink from '../Common/StyledLink'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
+import { SectionTitle, Subtitle } from '../Typography'
 import Jobs from '../JobsByLocation'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import Hr from '../Common/Hr'
+import JobLink from '../Common/JobLink'
 
 const JobContainer = styled.ul`
   margin-top: ${remcalc(12)};
@@ -39,17 +38,22 @@ const JobsComponent = () => (
             >
               <Subtitle>{location}</Subtitle>
               <JobContainer>
-                {jobsForLocation.slice(0, 3).map(({ node: job }) => (
-                  <li key={`${job.id}`}>
-                    <ExternalAnchor href={job.hostedUrl}>
-                      {job.text.split(' - ')[0]}
-                    </ExternalAnchor>
-                    <BodyPrimary muted noPaddingTop>
-                      {job.categories.commitment}
-                    </BodyPrimary>
-                    <Hr short />
-                  </li>
-                ))}
+                {jobsForLocation.slice(0, 3).map((job, idx) => {
+                  const {
+                    text,
+                    hostedUrl,
+                    categories: { commitment }
+                  } = job.node
+                  return (
+                    <JobLink
+                      as="li"
+                      key={`job-${location}-${idx}`}
+                      position={text}
+                      hostedUrl={hostedUrl}
+                      contractType={commitment}
+                    />
+                  )
+                })}
               </JobContainer>
             </Col>
           ))
