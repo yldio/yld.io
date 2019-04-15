@@ -6,7 +6,7 @@ export const getHomepageMeetups = events =>
   events
     .filter(n => !n.node.homepageFeatured)
     .filter(n => isAfter(new Date(n.node.date), new Date()))
-    .sort((a, b) => (toDate(a.node.date) < toDate(b.node.date) ? -1 : 1))
+    .sort((a, b) => (toDate(a.node.date) <= toDate(b.node.date) ? -1 : 1))
     .slice(0, 3)
     .reverse()
     .map(n => n.node)
