@@ -27,7 +27,7 @@ const TitleAndList = ({
       a => a.title
     )
     titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
-  })
+  }, [])
 
   return (
     <OuterPaddings>
