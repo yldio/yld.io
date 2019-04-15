@@ -41,6 +41,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-s test:**",
+    "test:unit": "jest ./src/components/**/**/*.test.js",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "test:e2e": "testcafe chrome ./tests/e2e",
     "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
