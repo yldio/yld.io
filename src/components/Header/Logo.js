@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
+import outlineStyles from './outlineStyles'
 import logo from '../../images/logo_animated.gif'
 import logoDesign from '../../images/design-logo.svg'
 import LogoEngComponent from '../../images/eng-logo-component'
@@ -12,6 +14,10 @@ const HiddenText = styled.h1`
   left: -9999px;
 `
 
+const StyledLink = styled(Link)`
+  ${outlineStyles}
+`
+
 const Logo = ({ path, logoColour, blue }) => {
   const name = path.split('/').join('')
   return (
@@ -20,7 +26,9 @@ const Logo = ({ path, logoColour, blue }) => {
       !path.includes('design') &&
       !path.includes('training') &&
       !blue ? (
-        <img role="link" height="48" src={logo} alt="yld logo" />
+        <StyledLink to="/">
+          <img role="link" height="48" src={logo} alt="yld logo" />
+        </StyledLink>
       ) : null}
 
       {path.includes('engineering') || blue ? (
