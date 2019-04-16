@@ -10,6 +10,9 @@ import breakpoint from 'styled-components-breakpoint'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
 
+// TODO - should come from contentful
+const moreBooksLink = 'http://nodepatternsbooks.com/index.html'
+
 const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
   bottom: ${remcalc(26)};
@@ -54,7 +57,7 @@ const BooksSection = ({ books, title }) =>
           <CenteredCol width={[1]}>
             <SectionTitle small>{`${title.trim()} books`}</SectionTitle>
             <BodyPrimary>
-              Node.js books written by members of YLD for our community.
+              {`${title.trim()} books written by members of YLD for our community.`}
             </BodyPrimary>
           </CenteredCol>
         </Row>
@@ -94,7 +97,7 @@ const BooksSection = ({ books, title }) =>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href="http://nodepatternsbooks.com/index.html">
+                  <StyledLink href={moreBooksLink} external>
                     More Books
                   </StyledLink>
                 </FlexItem>

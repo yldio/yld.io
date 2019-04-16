@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { Col, Row } from '../grid'
@@ -22,6 +22,13 @@ const TitleAndList = ({
   themeVariation = 'white',
   extraContent
 }) => {
+  useEffect(() => {
+    const titledAnchors = Array.from(document.querySelectorAll('a')).filter(
+      a => a.title
+    )
+    titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
+  }, [])
+
   return (
     <OuterPaddings>
       <Row>
@@ -36,19 +43,14 @@ const TitleAndList = ({
           {typeof list === 'string' ? (
             <ReactMarkdown
               renderers={{
-                heading: props => {
-                  const Comp = (
-                    <ItemSubtitle themeVariation={themeVariation} {...props} />
-                  ) // eslint-disable-line react/no-display-name
-                  return Comp
-                },
-                paragraph: props => {
-                  const Comp = (
-                    <ItemBody themeVariation={themeVariation} {...props} />
-                  ) // eslint-disable-line react/no-display-name
-
-                  return Comp
-                }
+                // eslint-disable-next-line
+                heading: props => (
+                  <ItemSubtitle themeVariation={themeVariation} {...props} />
+                ),
+                // eslint-disable-next-line
+                paragraph: props => (
+                  <ItemBody themeVariation={themeVariation} {...props} />
+                )
               }}
               source={list}
             />
