@@ -35,16 +35,20 @@ const specialitiesMap = {
   openSource: []
 }
 
-const getSpecialityService = path => {
-  const servicesList = Object.keys(specialitiesMap)
-  return servicesList.find(service => {
+const servicesList = Object.keys(specialitiesMap)
+const servicesRegExp = new RegExp(servicesList.join('|'))
+
+const getSpecialityService = path =>
+  servicesList.find(service => {
     const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
     return path.search(specialitiesRegExp) > -1
   })
-}
 
 const Logo = ({ path, logoColour, blue }) => {
   // const name = path.split('/').join('')
+  const isServicePage = path.search(servicesRegExp) > -1
+  const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
+
   const isSpecialityPage = path.includes('speciality')
   const specialityService = isSpecialityPage ? getSpecialityService(path) : null
 
@@ -54,15 +58,17 @@ const Logo = ({ path, logoColour, blue }) => {
         <img role="link" height="48" src={logo} alt="yld logo" />
       </StyledLink>
 
+      {isServicePage ? <Fragment>{capitalize(serviceTitle)}</Fragment> : null}
+
       {isSpecialityPage || blue ? (
         <StyledServiceLink to={`/${specialityService}`}>
           {capitalize(specialityService)}
         </StyledServiceLink>
       ) : null}
 
-      {path.includes('engineering') ? (
-        <StyledServiceLink to="/engineering">Engineering</StyledServiceLink>
-      ) // <Fragment>
+      {/* {path.includes('engineering') ? (
+        <StyledServiceLink to="/engineering">Enw</StyledServiceLink>
+      ) : null// <Fragment>
       //   <HiddenText>{name}</HiddenText>
       //   <LogoEngComponent
       //     style={{ display: 'block' }}
@@ -98,7 +104,7 @@ const Logo = ({ path, logoColour, blue }) => {
       //     style={{ display: 'block' }}
       //   />
       // </Fragment>
-      : null}
+      null} */}
     </Fragment>
   )
 }
