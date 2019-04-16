@@ -22,14 +22,9 @@ const Logo = ({ path, logoColour, blue }) => {
   const name = path.split('/').join('')
   return (
     <Fragment>
-      {!path.includes('engineering') &&
-      !path.includes('design') &&
-      !path.includes('training') &&
-      !blue ? (
-        <StyledLink to="/">
-          <img role="link" height="48" src={logo} alt="yld logo" />
-        </StyledLink>
-      ) : null}
+      <StyledLink to="/">
+        <img role="link" height="48" src={logo} alt="yld logo" />
+      </StyledLink>
 
       {path.includes('engineering') || blue ? (
         <Fragment>
