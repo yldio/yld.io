@@ -19,11 +19,19 @@ const StyledLink = styled(Link)`
   ${outlineStyles}
 `
 
+const styledService = `
+position: absolute;
+font-size: 30px;
+top: 20px;
+left: 100px;
+`
+
 const StyledServiceLink = styled(Link)`
-  position: absolute;
-  font-size: 30px;
-  top: 20px;
-  left: 100px;
+  ${styledService}
+`
+
+const StyledServiceTitle = styled.div`
+  ${styledService}
 `
 
 const specialitiesMap = {
@@ -58,7 +66,9 @@ const Logo = ({ path, logoColour, blue }) => {
         <img role="link" height="48" src={logo} alt="yld logo" />
       </StyledLink>
 
-      {isServicePage ? <Fragment>{capitalize(serviceTitle)}</Fragment> : null}
+      {isServicePage ? (
+        <StyledServiceTitle>{capitalize(serviceTitle)}</StyledServiceTitle>
+      ) : null}
 
       {isSpecialityPage || blue ? (
         <StyledServiceLink to={`/${specialityService}`}>
