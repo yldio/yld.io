@@ -25,15 +25,41 @@ const StyledServiceLink = styled(Link)`
   left: 100px;
 `
 
+const specialitiesMap = {
+  engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
+  design: [],
+  training: [],
+  delivery: [],
+  dedicatedTeams: [],
+  openSource: []
+}
+
+const getSpecialityService = path => {
+  const servicesList = Object.keys(specialitiesMap)
+  return servicesList.find(service => {
+    const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
+    return path.search(specialitiesRegExp) > -1
+  })
+}
+
 const Logo = ({ path, logoColour, blue }) => {
   // const name = path.split('/').join('')
+  const isSpecialityPage = path.includes('speciality')
+  const specialityService = isSpecialityPage ? getSpecialityService(path) : null
+
   return (
     <Fragment>
       <StyledLink to="/">
         <img role="link" height="48" src={logo} alt="yld logo" />
       </StyledLink>
 
-      {path.includes('engineering') || blue ? (
+      {isSpecialityPage || blue ? (
+        <StyledServiceLink to={`/${specialityService}`}>
+          {specialityService}
+        </StyledServiceLink>
+      ) : null}
+
+      {path.includes('engineering') ? (
         <StyledServiceLink to="/engineering">Engineering</StyledServiceLink>
       ) // <Fragment>
       //   <HiddenText>{name}</HiddenText>
