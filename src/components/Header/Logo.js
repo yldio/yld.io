@@ -18,6 +18,13 @@ const StyledLink = styled(Link)`
   ${outlineStyles}
 `
 
+const StyledServiceLink = styled(Link)`
+  position: absolute;
+  font-size: 30px;
+  top: 20px;
+  left: 100px;
+`
+
 const Logo = ({ path, logoColour, blue }) => {
   // const name = path.split('/').join('')
   return (
@@ -27,7 +34,7 @@ const Logo = ({ path, logoColour, blue }) => {
       </StyledLink>
 
       {path.includes('engineering') || blue ? (
-        <Link to="/engineering">Link to engineering</Link>
+        <StyledServiceLink to="/engineering">Engineering</StyledServiceLink>
       ) // <Fragment>
       //   <HiddenText>{name}</HiddenText>
       //   <LogoEngComponent
@@ -39,11 +46,11 @@ const Logo = ({ path, logoColour, blue }) => {
       : null}
 
       {path.includes('training') ? (
-        <Link to="/training">Link to training</Link>
+        <StyledServiceLink to="/training">Training</StyledServiceLink>
       ) // <Fragment>
       //   <HiddenText>{name}</HiddenText>
       //   <img
-      //     role="link"
+      //     role="StyledServiceLink"
       //     height="48"
       //     src={logoTraining}
       //     alt="yld training logo"
@@ -53,7 +60,7 @@ const Logo = ({ path, logoColour, blue }) => {
       : null}
 
       {path.includes('design') ? (
-        <Link to="/design">Link to design</Link>
+        <StyledServiceLink to="/design">Design</StyledServiceLink>
       ) // <Fragment>
       //   <HiddenText>{name}</HiddenText>
       //   <img
