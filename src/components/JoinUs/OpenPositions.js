@@ -1,34 +1,12 @@
 import React, { Fragment } from 'react'
-import Flex from 'styled-flex-component'
 import { Col, Row } from '../grid'
-import styled from 'styled-components'
 import JobsByLocation from '../JobsByLocation'
 import { Padding } from 'styled-components-spacing'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
+import { SectionTitle, Subtitle } from '../Typography'
 import { Section } from './elements'
-import ExternalAnchor from '../Common/ExternalAnchor'
 import Hr from '../Common/Hr'
 import GetInTouch from '../Common/GetInTouch'
-
-const JobLink = styled(ExternalAnchor)`
-  flex: 1 0 90px;
-`
-
-const Job = ({ text, hostedUrl, categories: { commitment } }) => (
-  <Col width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
-    <Flex column>
-      <JobLink href={hostedUrl}>
-        <Padding top={1} bottom={0.5}>
-          <BodyPrimary noPadding>{text}</BodyPrimary>
-          <BodyPrimary noPadding muted>
-            {commitment}
-          </BodyPrimary>
-        </Padding>
-      </JobLink>
-      <Hr short />
-    </Flex>
-  </Col>
-)
+import JobLink from '../Common/JobLink'
 
 const renderJobsForlocation = (jobs, location, key) => {
   return (
@@ -36,9 +14,26 @@ const renderJobsForlocation = (jobs, location, key) => {
       <Subtitle>{location}</Subtitle>
       <Padding top={2}>
         <Row as="ul">
-          {jobs.map((job, idx) => (
-            <Job key={`job-${location}-${idx}`} {...job.node} />
-          ))}
+          {jobs.map((job, idx) => {
+            const {
+              text,
+              hostedUrl,
+              categories: { commitment }
+            } = job.node
+            return (
+              <Col
+                key={`job-${location}-${idx}`}
+                as="li"
+                width={[1, 1, 1, 1, 4 / 12, 3 / 12]}
+              >
+                <JobLink
+                  position={text}
+                  hostedUrl={hostedUrl}
+                  contractType={commitment}
+                />
+              </Col>
+            )
+          })}
         </Row>
       </Padding>
     </Padding>
