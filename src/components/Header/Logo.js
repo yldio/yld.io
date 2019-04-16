@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { capitalize } from 'lodash'
 
 import outlineStyles from './outlineStyles'
 import logo from '../../images/logo_animated.gif'
@@ -55,7 +56,7 @@ const Logo = ({ path, logoColour, blue }) => {
 
       {isSpecialityPage || blue ? (
         <StyledServiceLink to={`/${specialityService}`}>
-          {specialityService}
+          {capitalize(specialityService)}
         </StyledServiceLink>
       ) : null}
 
