@@ -1,9 +1,0 @@
-{
-    "fixtures": [
-        {
-            "name": "New Fixture",
-            "pageUrl": "https://www.yld.io",
-            "tests": []
-        }
-    ]
-}
