@@ -6,6 +6,7 @@ import { Padding } from 'styled-components-spacing'
 
 import { Row, Col, Grid } from '../grid'
 import Logo from './Logo'
+import Title from './Title'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNav from './TopNav'
@@ -60,7 +61,7 @@ const navLinks = [
   }
 ]
 
-const Header = ({ path, blue, logoColour }) => {
+const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
 
   return (
@@ -69,7 +70,8 @@ const Header = ({ path, blue, logoColour }) => {
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
             <FixedHeightFlex alignCenter justifyBetween as="header">
-              <Logo path={path} blue={blue} logoColour={logoColour} />
+              <Logo path={path} />
+              <Title path={path} />
               <TopNav
                 links={navLinks}
                 themeVariation={blue ? 'dark' : 'light'}
