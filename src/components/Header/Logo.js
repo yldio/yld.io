@@ -66,7 +66,10 @@ const Logo = ({ path, logoColour, blue }) => {
     <Fragment>
       <StyledLink to="/">
         {isSpecialityPage || isServicePage ? (
-          <ServiceSpecialityLogo isServicePage={isServicePage} />
+          <ServiceSpecialityLogo
+            backgroundColor={isSpecialityPage ? '#52FFAC' : null}
+            textColor={isSpecialityPage ? '#090329' : null}
+          />
         ) : (
           <img role="link" height="48" src={logo} alt="yld logo" />
         )}
