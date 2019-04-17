@@ -5,8 +5,7 @@ import { capitalize } from 'lodash'
 
 import outlineStyles from './outlineStyles'
 import logo from '../../images/logo_animated.gif'
-import SpecialityLogo from '../../images/speciality-logo-component'
-import serviceLogo from '../../images/yld-service-logo.svg'
+import ServiceSpecialityLogo from '../../images/service-speciality-logo-component'
 
 // import logoDesign from '../../images/design-logo.svg'
 // import LogoEngComponent from '../../images/eng-logo-component'
@@ -66,15 +65,10 @@ const Logo = ({ path, logoColour, blue }) => {
   return (
     <Fragment>
       <StyledLink to="/">
-        {isSpecialityPage ? (
-          <SpecialityLogo />
+        {isSpecialityPage || isServicePage ? (
+          <ServiceSpecialityLogo />
         ) : (
-          <img
-            role="link"
-            height={isServicePage ? '54' : '48'}
-            src={isServicePage ? serviceLogo : logo}
-            alt="yld logo"
-          />
+          <img role="link" height="48" src={logo} alt="yld logo" />
         )}
       </StyledLink>
 
