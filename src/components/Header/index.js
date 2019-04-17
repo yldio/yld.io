@@ -5,8 +5,8 @@ import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 
 import { Row, Col, Grid } from '../grid'
-import Logo from './Logo'
-import Title from './Title'
+import TopNavLogo from './TopNavLogo'
+import TopNavTitle from './TopNavTitle'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNav from './TopNav'
@@ -70,8 +70,8 @@ const Header = ({ path, blue }) => {
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
             <FixedHeightFlex alignCenter justifyBetween as="header">
-              <Logo path={path} />
-              <Title path={path} />
+              <TopNavLogo path={path} />
+              <TopNavTitle path={path} />
               <TopNav
                 links={navLinks}
                 themeVariation={blue ? 'dark' : 'light'}

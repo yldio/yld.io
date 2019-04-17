@@ -15,7 +15,7 @@ const servicesList = [
 
 const servicesRegExp = new RegExp(servicesList.join('|'))
 
-const Logo = ({ path }) => {
+const TopNavLogo = ({ path }) => {
   const isServicePage = path.search(servicesRegExp) > -1
   const isSpecialityPage = path.includes('speciality')
 
@@ -33,4 +33,4 @@ const Logo = ({ path }) => {
   )
 }
 
-export default Logo
+export default TopNavLogo

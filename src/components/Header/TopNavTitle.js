@@ -51,7 +51,7 @@ const getSpecialityService = path =>
     return path.search(specialitiesRegExp) > -1
   })
 
-const Title = ({ path }) => {
+const TopNavTitle = ({ path }) => {
   // const name = path.split('/').join('')
   const isServicePage = path.search(servicesRegExp) > -1
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
@@ -114,4 +114,4 @@ const Title = ({ path }) => {
   )
 }
 
-export default Title
+export default TopNavTitle
