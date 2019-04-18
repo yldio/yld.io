@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
 const StyledServiceLink = styled(Link)`
-  position: absolute;
-  font-size: 30px;
-  top: 20px;
-  left: 100px;
+  /* position: absolute; */
+  font-size: ${remcalc(30)};
+  margin-left: ${remcalc(12)};
 
   &:hover {
     text-decoration: underline;

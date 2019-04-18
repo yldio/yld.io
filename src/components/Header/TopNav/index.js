@@ -8,6 +8,11 @@ import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
 
+const StyledLinksContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 const TopNavList = styled.ul`
   ${breakpoint('smallPhone')`
     display: none;
@@ -25,8 +30,10 @@ const TopNavList = styled.ul`
 
 const TopNav = ({ links, themeVariation, path }) => (
   <Fragment>
-    <LogoLink path={path} />
-    <ServiceLink path={path} />
+    <StyledLinksContainer>
+      <LogoLink path={path} />
+      <ServiceLink path={path} />
+    </StyledLinksContainer>
     <nav>
       <TopNavList>
         {links.map((link, idx) => {
