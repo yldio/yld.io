@@ -29,10 +29,6 @@ const StyledServiceLink = styled(Link)`
   ${styledService}
 `
 
-const StyledServiceTitle = styled.div`
-  ${styledService}
-`
-
 const specialitiesMap = {
   engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
   design: [],
@@ -61,13 +57,11 @@ const TopNavTitle = ({ path }) => {
 
   return (
     <Fragment>
-      {isServicePage ? (
-        <StyledServiceTitle>{capitalize(serviceTitle)}</StyledServiceTitle>
-      ) : null}
-
-      {isSpecialityPage ? (
-        <StyledServiceLink to={`/${specialityService}`}>
-          {capitalize(specialityService)}
+      {isServicePage || isSpecialityPage ? (
+        <StyledServiceLink
+          to={`/${isServicePage ? serviceTitle : specialityService}`}
+        >
+          {capitalize(isServicePage ? serviceTitle : specialityService)}
         </StyledServiceLink>
       ) : null}
 
