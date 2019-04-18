@@ -3,15 +3,11 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { capitalize } from 'lodash'
 
-const styledService = `
+const StyledServiceLink = styled(Link)`
   position: absolute;
   font-size: 30px;
   top: 20px;
   left: 100px;
-`
-
-const StyledServiceLink = styled(Link)`
-  ${styledService}
 `
 
 const specialitiesMap = {
@@ -32,7 +28,7 @@ const getSpecialityService = path =>
     return path.search(specialitiesRegExp) > -1
   })
 
-const TopNavTitle = ({ path }) => {
+const ServiceLink = ({ path }) => {
   const isServicePage = path.search(servicesRegExp) > -1
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
 
@@ -50,4 +46,4 @@ const TopNavTitle = ({ path }) => {
   )
 }
 
-export default TopNavTitle
+export default ServiceLink
