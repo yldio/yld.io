@@ -5,9 +5,12 @@ import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
 const StyledServiceLink = styled(Link)`
-  /* position: absolute; */
-  font-size: ${remcalc(30)};
+  font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
+
+  @media screen and (min-width: 960px) {
+    font-size: ${remcalc(30)};
+  }
 
   &:hover {
     text-decoration: underline;
