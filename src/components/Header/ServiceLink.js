@@ -8,6 +8,11 @@ const StyledServiceLink = styled(Link)`
   font-size: 30px;
   top: 20px;
   left: 100px;
+
+  &:hover {
+    text-decoration: underline;
+    color: ${props => props.hoverColor};
+  }
 `
 
 const specialitiesMap = {
@@ -38,7 +43,10 @@ const ServiceLink = ({ path }) => {
   return (
     <Fragment>
       {isServicePage || isSpecialityPage ? (
-        <StyledServiceLink to={`/${service}`}>
+        <StyledServiceLink
+          to={`/${service}`}
+          hoverColor={isServicePage ? 'black' : 'white'}
+        >
           {capitalize(service)}
         </StyledServiceLink>
       ) : null}
