@@ -53,15 +53,13 @@ const TopNavTitle = ({ path }) => {
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
 
   const isSpecialityPage = path.includes('speciality')
-  const specialityService = isSpecialityPage ? getSpecialityService(path) : null
+  const service = isSpecialityPage ? getSpecialityService(path) : serviceTitle
 
   return (
     <Fragment>
       {isServicePage || isSpecialityPage ? (
-        <StyledServiceLink
-          to={`/${isServicePage ? serviceTitle : specialityService}`}
-        >
-          {capitalize(isServicePage ? serviceTitle : specialityService)}
+        <StyledServiceLink to={`/${service}`}>
+          {capitalize(service)}
         </StyledServiceLink>
       ) : null}
 
