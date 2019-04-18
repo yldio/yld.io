@@ -49,7 +49,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, backgroundColor, logoColour, blue } = this.props
+    const { children, backgroundColor, blue } = this.props
     const Component = (() => {
       if (backgroundColor === 'blue' || blue) return BlueBackground
       if (backgroundColor === 'grey') return GreyBackground
@@ -88,7 +88,6 @@ class Layout extends Component {
                     <Header
                       path={location.pathname}
                       blue={backgroundColor === 'blue'}
-                      logoColour={logoColour}
                     />
                   </Component>
                 )}

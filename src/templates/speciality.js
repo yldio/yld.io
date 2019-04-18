@@ -28,7 +28,6 @@ const Speciality = ({
   location
 }) => {
   const {
-    logoColour,
     relatedProjects,
     title,
     clients,
@@ -42,7 +41,7 @@ const Speciality = ({
   } = speciality
 
   return (
-    <Layout backgroundColor="blue" logoColour={logoColour} location={location}>
+    <Layout backgroundColor="blue" location={location}>
       <Head page={speciality} />
       <IntroSection speciality={speciality} />
       <ProjectsSection
@@ -292,7 +291,6 @@ export const pageQuery = graphql`
         }
       }
       contactText
-      logoColour
     }
 
     videoIcon: contentfulAsset(
