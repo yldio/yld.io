@@ -25,6 +25,7 @@ const TopNavLogo = ({ path }) => {
         <ServiceSpecialityLogo
           backgroundColor={isSpecialityPage ? '#52FFAC' : null}
           textColor={isSpecialityPage ? '#090329' : null}
+          hoverBackgroundColor={isSpecialityPage ? '#FFFFFF' : null}
         />
       ) : (
         <img role="link" height="48" src={logo} alt="yld logo" />

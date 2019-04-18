@@ -1,6 +1,10 @@
 import React from 'react'
 
-const ServiceSpecialityLogo = ({ backgroundColor, textColor }) => (
+const ServiceSpecialityLogo = ({
+  backgroundColor,
+  textColor,
+  hoverBackgroundColor
+}) => (
   <svg width="54px" height="54px" viewBox="0 0 54 54">
     <title>service speciality logo</title>
     <g id="yld-service-speciality-logo" stroke="none" fill="none">
@@ -8,6 +12,16 @@ const ServiceSpecialityLogo = ({ backgroundColor, textColor }) => (
         <rect
           id="Rectangle-7"
           fill={backgroundColor || '#333333'}
+          onMouseEnter={e =>
+            hoverBackgroundColor
+              ? e.target.setAttribute('fill', hoverBackgroundColor)
+              : e.target.setAttribute('opacity', 0.5)
+          }
+          onMouseLeave={e =>
+            hoverBackgroundColor
+              ? e.target.setAttribute('fill', backgroundColor || '#333333')
+              : e.target.removeAttribute('opacity')
+          }
           x="0"
           y="0"
           width="54"
