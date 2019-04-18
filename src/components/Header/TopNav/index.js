@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
+import LogoLink from './LogoLink'
+import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
 
@@ -21,38 +23,42 @@ const TopNavList = styled.ul`
   }
 `
 
-const TopNav = ({ links, themeVariation }) => (
-  <nav>
-    <TopNavList>
-      {links.map((link, idx) => {
-        if (link.dropdownItems) {
-          const { label, dropdownItems } = link
-          return (
-            <Dropdown
-              key={idx}
-              themeVariation={themeVariation}
-              items={dropdownItems}
-            >
-              {label}
-            </Dropdown>
-          )
-        } else {
-          const { label, to, href } = link
-          return (
-            <OuterAnchorItem
-              key={idx}
-              themeVariation={themeVariation}
-              activeClassName="active"
-              to={to}
-              href={href}
-            >
-              {label}
-            </OuterAnchorItem>
-          )
-        }
-      })}
-    </TopNavList>
-  </nav>
+const TopNav = ({ links, themeVariation, path }) => (
+  <Fragment>
+    <LogoLink path={path} />
+    <ServiceLink path={path} />
+    <nav>
+      <TopNavList>
+        {links.map((link, idx) => {
+          if (link.dropdownItems) {
+            const { label, dropdownItems } = link
+            return (
+              <Dropdown
+                key={idx}
+                themeVariation={themeVariation}
+                items={dropdownItems}
+              >
+                {label}
+              </Dropdown>
+            )
+          } else {
+            const { label, to, href } = link
+            return (
+              <OuterAnchorItem
+                key={idx}
+                themeVariation={themeVariation}
+                activeClassName="active"
+                to={to}
+                href={href}
+              >
+                {label}
+              </OuterAnchorItem>
+            )
+          }
+        })}
+      </TopNavList>
+    </nav>
+  </Fragment>
 )
 
 export default TopNav

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../../images/logo_animated.gif'
-import ServiceSpecialityLogo from '../../images/service-speciality-logo-component'
+import logo from '../../../images/logo_animated.gif'
+import ServiceSpecialityLogo from '../../../images/service-speciality-logo-component'
 
 const servicesList = [
   'engineering',
@@ -15,7 +15,7 @@ const servicesList = [
 
 const servicesRegExp = new RegExp(servicesList.join('|'))
 
-const YldLogoLink = ({ path }) => {
+const LogoLink = ({ path }) => {
   const isServicePage = path.search(servicesRegExp) > -1
   const isSpecialityPage = path.includes('speciality')
 
@@ -34,4 +34,4 @@ const YldLogoLink = ({ path }) => {
   )
 }
 
-export default YldLogoLink
+export default LogoLink
