@@ -17,23 +17,25 @@ const ServiceSpecialityLogo = ({
   textColor,
   hoverBackgroundColor
 }) => (
-  <StyledSVG viewBox="0 0 54 54">
+  <StyledSVG
+    viewBox="0 0 54 54"
+    onMouseEnter={e =>
+      hoverBackgroundColor
+        ? e.target.setAttribute('fill', hoverBackgroundColor)
+        : e.target.setAttribute('opacity', 0.5)
+    }
+    onMouseLeave={e =>
+      hoverBackgroundColor
+        ? e.target.setAttribute('fill', backgroundColor || '#333333')
+        : e.target.removeAttribute('opacity')
+    }
+  >
     <title>service speciality logo</title>
     <g id="yld-service-speciality-logo" stroke="none" fill="none">
       <g id="Logo-group">
         <rect
           id="Logo-rectangle"
           fill={backgroundColor || '#333333'}
-          onMouseEnter={e =>
-            hoverBackgroundColor
-              ? e.target.setAttribute('fill', hoverBackgroundColor)
-              : e.target.setAttribute('opacity', 0.5)
-          }
-          onMouseLeave={e =>
-            hoverBackgroundColor
-              ? e.target.setAttribute('fill', backgroundColor || '#333333')
-              : e.target.removeAttribute('opacity')
-          }
           x="0"
           y="0"
           width="54"
