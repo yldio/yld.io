@@ -1,15 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 const StyledSVG = styled.svg`
-  height: ${remcalc(48)};
-  width: ${remcalc(48)};
-
-  @media screen and (min-width: 960px) {
-    height: ${remcalc(54)};
-    width: ${remcalc(54)};
-  }
+  height: 100%;
+  width: 100%;
 `
 
 const ServiceSpecialityLogo = ({
