@@ -7,8 +7,30 @@ const specialitiesMap = {
   openSource: []
 }
 
+const servicesColors = {
+  default: 'black',
+  engineering: '#52FFAC',
+  design: 'black',
+  training: 'black',
+  delivery: 'black',
+  dedicatedTeams: 'black',
+  openSource: 'black'
+}
+
 const servicesList = Object.keys(specialitiesMap)
 
 const servicesRegExp = new RegExp(servicesList.join('|'))
 
-export { specialitiesMap, servicesList, servicesRegExp }
+const getSpecialityService = path =>
+  servicesList.find(service => {
+    const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
+    return path.search(specialitiesRegExp) > -1
+  })
+
+export {
+  specialitiesMap,
+  servicesColors,
+  servicesList,
+  servicesRegExp,
+  getSpecialityService
+}

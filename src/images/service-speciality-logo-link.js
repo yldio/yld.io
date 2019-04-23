@@ -1,48 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
-
-const StyledLink = styled(Link)`
-  height: ${remcalc(48)};
-  width: ${remcalc(48)};
-
-  @media screen and (min-width: 960px) {
-    height: ${remcalc(54)};
-    width: ${remcalc(54)};
-  }
-`
 
 const StyledSVG = styled.svg`
   height: 100%;
   width: 100%;
 `
 
-const ServiceSpecialityLogoLink = ({
-  backgroundColor,
-  textColor,
-  hoverBackgroundColor
-}) => (
-  <StyledLink to="/">
-    <StyledSVG
-      viewBox="0 0 54 54"
-      onMouseEnter={e =>
-        hoverBackgroundColor
-          ? e.target.setAttribute('fill', hoverBackgroundColor)
-          : e.target.setAttribute('opacity', 0.5)
-      }
-      onMouseLeave={e =>
-        hoverBackgroundColor
-          ? e.target.setAttribute('fill', backgroundColor || '#333333')
-          : e.target.removeAttribute('opacity')
-      }
-    >
+const ServiceSpecialityLogoLink = ({ fillColor, textColor }) => (
+  <Link to="/">
+    <StyledSVG viewBox="0 0 54 54">
       <title>service speciality logo</title>
       <g id="yld-service-speciality-logo" stroke="none" fill="none">
         <g id="Logo-group">
           <rect
             id="Logo-rectangle"
-            fill={backgroundColor || '#333333'}
+            fill={fillColor || '#333333'}
             x="0"
             y="0"
             width="54"
@@ -56,7 +29,7 @@ const ServiceSpecialityLogoLink = ({
         </g>
       </g>
     </StyledSVG>
-  </StyledLink>
+  </Link>
 )
 
 export default ServiceSpecialityLogoLink

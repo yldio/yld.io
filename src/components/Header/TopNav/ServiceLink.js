@@ -4,11 +4,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import {
-  specialitiesMap,
-  servicesList,
-  servicesRegExp
-} from './ServicesSpecialitiesMap'
+import { servicesRegExp, getSpecialityService } from './ServicesSpecialitiesMap'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -23,12 +19,6 @@ const StyledServiceLink = styled(Link)`
     color: ${props => props.hoverColor};
   }
 `
-
-const getSpecialityService = path =>
-  servicesList.find(service => {
-    const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
-    return path.search(specialitiesRegExp) > -1
-  })
 
 const ServiceLink = ({ path = '/' }) => {
   const isServicePage = path.search(servicesRegExp) > -1
