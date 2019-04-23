@@ -3,17 +3,7 @@ import { Link } from 'gatsby'
 
 import logo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo-component'
-
-const servicesList = [
-  'engineering',
-  'design',
-  'training',
-  'delivery',
-  'dedicatedTeams',
-  'openSource'
-]
-
-const servicesRegExp = new RegExp(servicesList.join('|'))
+import { servicesRegExp } from './ServicesSpecialitiesMap'
 
 const LogoLink = ({ path }) => {
   const isServicePage = path.search(servicesRegExp) > -1

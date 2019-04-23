@@ -4,6 +4,12 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
+import {
+  specialitiesMap,
+  servicesList,
+  servicesRegExp
+} from './ServicesSpecialitiesMap'
+
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
@@ -17,18 +23,6 @@ const StyledServiceLink = styled(Link)`
     color: ${props => props.hoverColor};
   }
 `
-
-const specialitiesMap = {
-  engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
-  design: [],
-  training: [],
-  delivery: [],
-  dedicatedTeams: [],
-  openSource: []
-}
-
-const servicesList = Object.keys(specialitiesMap)
-const servicesRegExp = new RegExp(servicesList.join('|'))
 
 const getSpecialityService = path =>
   servicesList.find(service => {
