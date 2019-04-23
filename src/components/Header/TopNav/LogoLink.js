@@ -5,7 +5,7 @@ import logo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo-component'
 import { servicesRegExp } from './ServicesSpecialitiesMap'
 
-const LogoLink = ({ path }) => {
+const LogoLink = ({ path = '/' }) => {
   const isServicePage = path.search(servicesRegExp) > -1
   const isSpecialityPage = path.includes('speciality')
 

@@ -30,7 +30,7 @@ const getSpecialityService = path =>
     return path.search(specialitiesRegExp) > -1
   })
 
-const ServiceLink = ({ path }) => {
+const ServiceLink = ({ path = '/' }) => {
   const isServicePage = path.search(servicesRegExp) > -1
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
 
