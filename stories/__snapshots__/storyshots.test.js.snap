@@ -6198,7 +6198,7 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6226,11 +6226,11 @@ exports[`Storyshots Header Header itself 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c17 {
+.c18 {
   fill: #333333;
 }
 
-.c16 {
+.c17 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6257,20 +6257,25 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c16:focus {
+.c17:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c16:active {
+.c17:active {
   outline: none;
 }
 
-.c18 {
+.c19 {
   display: none;
 }
 
-.c15 {
+.c6 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.c16 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6282,16 +6287,16 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c15:focus {
+.c16:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c15:active {
+.c16:active {
   outline: none;
 }
 
-.c14 {
+.c15 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
@@ -6301,32 +6306,32 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #333333;
 }
 
-.c14:hover,
-.c14 > a:hover {
+.c15:hover,
+.c15 > a:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c14 > a:active {
+.c15 > a:active {
   background: #333333;
   color: #fff;
 }
 
-.c14 > a.active {
+.c15 > a.active {
   background: #fff;
   color: #828282;
 }
 
-.c14 > a.active:active {
+.c15 > a.active:active {
   background: #fff;
   color: #828282;
 }
 
-.c14 > a.active:hover {
+.c15 > a.active:hover {
   color: #333333;
 }
 
-.c10 {
+.c11 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -6338,14 +6343,14 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c13 {
+.c14 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6360,21 +6365,21 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #828282;
 }
 
-.c13:focus {
+.c14:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c13:active {
+.c14:active {
   outline: none;
 }
 
-.c13:hover,
-.c13.active {
+.c14:hover,
+.c14.active {
   color: #333333;
 }
 
-.c7 {
+.c8 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
@@ -6382,17 +6387,17 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.c7 > span {
+.c8 > span {
   background: #fff;
   color: #333333;
 }
 
-.c7 > span:hover {
+.c8 > span:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6415,21 +6420,21 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c8:focus {
+.c9:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c8:active {
+.c9:active {
   outline: none;
 }
 
-.c9 {
+.c10 {
   padding-right: 0.375rem;
   outline: none;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   width: 10rem;
   display: -webkit-box;
@@ -6459,11 +6464,11 @@ exports[`Storyshots Header Header itself 1`] = `
   align-items: center;
 }
 
-.c6 {
+.c7 {
   display: none;
 }
 
-.c21 {
+.c22 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6487,16 +6492,16 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c21:focus {
+.c22:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c21:active {
+.c22:active {
   outline: none;
 }
 
-.c24 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6519,28 +6524,28 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c24:focus {
+.c25:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c24:active {
+.c25:active {
   outline: none;
 }
 
-.c24:hover,
-.c24:focus {
+.c25:hover,
+.c25:focus {
   color: #fff;
 }
 
-.c25 {
+.c26 {
   max-width: 320px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c23 {
+.c24 {
   display: block;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
@@ -6554,31 +6559,31 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c23:hover,
-.c23:active,
-.c23.active {
+.c24:hover,
+.c24:active,
+.c24.active {
   color: #fff;
 }
 
-.c23:focus {
+.c24:focus {
   color: #fff;
   outline: 0.25rem solid transparent;
 }
 
-.c23:focus:focus {
+.c24:focus:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c23:focus:active {
+.c24:focus:active {
   outline: none;
 }
 
-.c22 {
+.c23 {
   list-style-type: none;
 }
 
-.c19 {
+.c20 {
   position: fixed;
   background: #090329;
   height: 100vh;
@@ -6753,13 +6758,13 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c16 {
+  .c17 {
     display: none;
   }
 }
 
 @media screen and (max-width:959px) {
-  .c18 {
+  .c19 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6779,27 +6784,34 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c14 {
+  .c6 {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c15 {
     margin-right: 0.375rem;
   }
 
-  .c14:last-child {
+  .c15:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c8 {
+    margin-right: 0.375rem;
+  }
+
+  .c8:last-child {
     margin-right: 0rem;
   }
 }
 
 @media screen and (min-width:960px) {
   .c7 {
-    margin-right: 0.375rem;
-  }
-
-  .c7:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6820,7 +6832,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:600px) and (max-width:959px) {
-  .c19 {
+  .c20 {
     width: 18.4375rem;
     left: auto;
     right: 0;
@@ -6828,7 +6840,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c19 {
+  .c20 {
     display: none;
   }
 }
@@ -6868,7 +6880,7 @@ exports[`Storyshots Header Header itself 1`] = `
           >
             <a
               aria-current="page"
-              className=""
+              className="c6"
               href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -6884,28 +6896,28 @@ exports[`Storyshots Header Header itself 1`] = `
           </div>
           <nav>
             <ul
-              className="c6"
+              className="c7"
             >
               <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c7"
+                className="c8"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
                 <span
-                  className="c8"
+                  className="c9"
                   tabIndex="0"
                 >
                   <span
-                    className="c9"
+                    className="c10"
                   >
                     Services
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -6916,13 +6928,13 @@ exports[`Storyshots Header Header itself 1`] = `
                   </svg>
                 </span>
                 <ul
-                  className="c11"
+                  className="c12"
                 >
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/engineering/"
                       onClick={[Function]}
                       onMouseDown={[Function]}
@@ -6932,10 +6944,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/design/"
                       onClick={[Function]}
                       onMouseDown={[Function]}
@@ -6945,10 +6957,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/training/"
                       onClick={[Function]}
                       onMouseDown={[Function]}
@@ -6960,10 +6972,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -6972,10 +6984,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -6986,23 +6998,23 @@ exports[`Storyshots Header Header itself 1`] = `
               <li
                 aria-expanded={false}
                 aria-haspopup="true"
-                className="c7"
+                className="c8"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
               >
                 <span
-                  className="c8"
+                  className="c9"
                   tabIndex="0"
                 >
                   <span
-                    className="c9"
+                    className="c10"
                   >
                     About
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7013,13 +7025,13 @@ exports[`Storyshots Header Header itself 1`] = `
                   </svg>
                 </span>
                 <ul
-                  className="c11"
+                  className="c12"
                 >
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/about-us/"
                       onClick={[Function]}
                       onMouseDown={[Function]}
@@ -7029,10 +7041,10 @@ exports[`Storyshots Header Header itself 1`] = `
                     </a>
                   </li>
                   <li
-                    className="c12"
+                    className="c13"
                   >
                     <a
-                      className="c13"
+                      className="c14"
                       href="/contact/"
                       onClick={[Function]}
                       onMouseDown={[Function]}
@@ -7044,10 +7056,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </ul>
               </li>
               <li
-                className="c14"
+                className="c15"
               >
                 <a
-                  className="c15"
+                  className="c16"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7058,11 +7070,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </ul>
           </nav>
           <button
-            className="c16"
+            className="c17"
             onClick={[Function]}
           >
             <svg
-              className="c17"
+              className="c18"
               height="18"
               title="open menu"
               width="24"
@@ -7075,18 +7087,18 @@ exports[`Storyshots Header Header itself 1`] = `
             </svg>
           </button>
           <div
-            className="c18"
+            className="c19"
             onClick={[Function]}
           />
           <nav
-            className="c19"
+            className="c20"
             open={false}
           >
             <div
-              className="c20"
+              className="c21"
             >
               <button
-                className="c21"
+                className="c22"
                 onClick={[Function]}
               >
                 <img
@@ -7097,11 +7109,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </div>
             <ul>
               <li
-                className="c22"
+                className="c23"
               >
                 <a
                   aria-current="page"
-                  className="c23 active"
+                  className="c24 active"
                   href="/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7131,18 +7143,18 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
               >
                 <span
-                  className="c24"
+                  className="c25"
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
-                    className="c25"
+                    className="c26"
                   >
                     Services
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7154,10 +7166,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </span>
               </li>
               <li
-                className="c22"
+                className="c23"
               >
                 <a
-                  className="c23"
+                  className="c24"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7182,10 +7194,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c22"
+                className="c23"
               >
                 <a
-                  className="c23"
+                  className="c24"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   states={
@@ -7214,18 +7226,18 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
               >
                 <span
-                  className="c24"
+                  className="c25"
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
-                    className="c25"
+                    className="c26"
                   >
                     About
                   </span>
                   <svg
-                    className="c10"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7237,10 +7249,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </span>
               </li>
               <li
-                className="c22"
+                className="c23"
               >
                 <a
-                  className="c23"
+                  className="c24"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7275,7 +7287,12 @@ exports[`Storyshots Header Header itself 1`] = `
 
 exports[`Storyshots Header TopNavbar - light theme 1`] = `
 Array [
-  .c0 {
+  .c1 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7286,12 +7303,19 @@ Array [
   align-items: center;
 }
 
+@media screen and (min-width:960px) {
+  .c1 {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
 <div
     className="c0"
   >
     <a
       aria-current="page"
-      className=""
+      className="c1"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -7445,7 +7469,12 @@ Array [
 
 exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 Array [
-  .c0 {
+  .c1 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7456,12 +7485,19 @@ Array [
   align-items: center;
 }
 
+@media screen and (min-width:960px) {
+  .c1 {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
 <div
     className="c0"
   >
     <a
       aria-current="page"
-      className=""
+      className="c1"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
