@@ -6,6 +6,4 @@ import Header from '../src/components/Header/'
 
 addDecorator(Theme)
 
-storiesOf('Header', module).add('Header itself', () => (
-  <Header path="/" logoColour />
-))
+storiesOf('Header', module).add('Header itself', () => <Header path="/" />)
