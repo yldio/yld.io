@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'gatsby'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
@@ -21,67 +21,38 @@ const StyledLink = styled(Link)`
   }
 `
 
-class LogoLink extends React.Component {
-  constructor(props) {
-    super(props)
-    const isServicePage = this.props.path.search(servicesRegExp) > -1
-    const isSpecialityPage = this.props.path.includes('speciality')
-    const serviceTitle = isServicePage
-      ? this.props.path.match(servicesRegExp)[0]
-      : null
-    const service = isSpecialityPage
-      ? getSpecialityService(this.props.path)
-      : serviceTitle
+const LogoLink = ({ path = '/' }) => {
+  const isServicePage = path.search(servicesRegExp) > -1
+  const isSpecialityPage = path.includes('speciality')
 
-    this.state = {
-      fillColor: isSpecialityPage ? servicesColors[service] : 'black'
-    }
-  }
+  const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
+  const service = isSpecialityPage ? getSpecialityService(path) : serviceTitle
 
-  onEnter = isServicePage => {
-    this.setState({ fillColor: isServicePage ? 'grey' : 'white' })
-  }
+  const originalFillColor = isSpecialityPage ? servicesColors[service] : 'black'
+  const [fillColor, setFillColor] = useState(originalFillColor)
 
-  onLeave = (isServicePage, originalFillColor) => {
-    this.setState({ fillColor: isServicePage ? 'black' : originalFillColor })
-  }
-
-  render() {
-    const path = this.props.path || '/'
-    const isServicePage = path.search(servicesRegExp) > -1
-    const isSpecialityPage = path.includes('speciality')
-    const serviceTitle = isServicePage
-      ? this.props.path.match(servicesRegExp)[0]
-      : null
-    const service = isSpecialityPage
-      ? getSpecialityService(this.props.path)
-      : serviceTitle
-    const originalFillColor = servicesColors[service]
-
-    return (
-      <Fragment>
-        {isSpecialityPage || isServicePage ? (
-          <StyledLink to="/">
-            <div
-              onMouseEnter={() => this.onEnter(isServicePage)}
-              onMouseLeave={() =>
-                this.onLeave(isServicePage, originalFillColor)
-              }
-            >
-              <ServiceSpecialityLogoLink
-                fillColor={this.state.fillColor}
-                textColor={isSpecialityPage ? '#090329' : null}
-              />
-            </div>
-          </StyledLink>
-        ) : (
-          <Link to="/">
-            <img role="link" height="48" src={logo} alt="yld logo" />
-          </Link>
-        )}
-      </Fragment>
-    )
-  }
+  return (
+    <Fragment>
+      {isSpecialityPage || isServicePage ? (
+        <StyledLink
+          to="/"
+          onMouseEnter={() => setFillColor(isServicePage ? 'grey' : 'white')}
+          onMouseLeave={() =>
+            setFillColor(isServicePage ? 'black' : originalFillColor)
+          }
+        >
+          <ServiceSpecialityLogoLink
+            fillColor={fillColor}
+            textColor={isSpecialityPage ? '#090329' : null}
+          />
+        </StyledLink>
+      ) : (
+        <Link to="/">
+          <img role="link" height="48" src={logo} alt="yld logo" />
+        </Link>
+      )}
+    </Fragment>
+  )
 }
 
 export default LogoLink
