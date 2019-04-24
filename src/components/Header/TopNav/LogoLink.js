@@ -28,7 +28,8 @@ const LogoLink = ({ path = '/' }) => {
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
   const service = isSpecialityPage ? getSpecialityService(path) : serviceTitle
 
-  const originalFillColor = isSpecialityPage ? servicesColors[service] : 'black'
+  const originalFillColor =
+    servicesColors[isSpecialityPage ? service : 'default']
   const [fillColor, setFillColor] = useState(originalFillColor)
 
   return (
@@ -36,12 +37,18 @@ const LogoLink = ({ path = '/' }) => {
       {isSpecialityPage || isServicePage ? (
         <StyledLink
           to="/"
-          onMouseEnter={() => setFillColor(isServicePage ? '#8e8e8e' : 'white')}
+          onMouseEnter={() =>
+            setFillColor(
+              servicesColors[isServicePage ? 'defaultHover' : 'specialityHover']
+            )
+          }
           onMouseLeave={() => setFillColor(originalFillColor)}
         >
           <ServiceSpecialityLogo
             fillColor={fillColor}
-            textColor={isSpecialityPage ? '#090329' : 'white'}
+            textColor={
+              servicesColors[isServicePage ? 'defaultText' : 'specialityText']
+            }
           />
         </StyledLink>
       ) : (

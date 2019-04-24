@@ -9,12 +9,16 @@ const specialitiesMap = {
 
 const servicesColors = {
   default: 'black',
+  defaultText: 'white',
+  defaultHover: '#8e8e8e',
   engineering: '#52FFAC',
-  design: 'black',
-  training: 'black',
-  delivery: 'black',
-  dedicatedTeams: 'black',
-  openSource: 'black'
+  design: '#52FFAC',
+  training: '#52FFAC',
+  delivery: '#52FFAC',
+  dedicatedTeams: '#52FFAC',
+  openSource: '#52FFAC',
+  specialityText: '#090329',
+  specialityHover: 'white'
 }
 
 const servicesList = Object.keys(specialitiesMap)
