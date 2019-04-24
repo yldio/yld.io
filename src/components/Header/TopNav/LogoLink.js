@@ -36,14 +36,12 @@ const LogoLink = ({ path = '/' }) => {
       {isSpecialityPage || isServicePage ? (
         <StyledLink
           to="/"
-          onMouseEnter={() => setFillColor(isServicePage ? 'grey' : 'white')}
-          onMouseLeave={() =>
-            setFillColor(isServicePage ? 'black' : originalFillColor)
-          }
+          onMouseEnter={() => setFillColor(isServicePage ? '#8e8e8e' : 'white')}
+          onMouseLeave={() => setFillColor(originalFillColor)}
         >
           <ServiceSpecialityLogoLink
             fillColor={fillColor}
-            textColor={isSpecialityPage ? '#090329' : null}
+            textColor={isSpecialityPage ? '#090329' : 'white'}
           />
         </StyledLink>
       ) : (
