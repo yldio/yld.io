@@ -7888,6 +7888,57 @@ exports[`Storyshots Image with file url 1`] = `
 />
 `;
 
+exports[`Storyshots JobLink JobLink 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-bottom: 0;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding-top: 0;
+}
+
+.c2 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+}
+
+<a
+  href="http://www.lever.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <p
+    className="c0"
+  >
+    Software Engineer
+  </p>
+  <p
+    className="c1"
+    muted={true}
+  >
+    Permanent
+  </p>
+  <hr
+    className="c2"
+  />
+</a>
+`;
+
 exports[`Storyshots Spaces Spaces 1`] = `
 <div>
   <div
