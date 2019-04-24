@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 
 import logo from '../../../images/logo_animated.gif'
-import ServiceSpecialityLogoLink from '../../../images/service-speciality-logo-link'
+import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
 import {
   servicesRegExp,
   servicesColors,
@@ -39,7 +39,7 @@ const LogoLink = ({ path = '/' }) => {
           onMouseEnter={() => setFillColor(isServicePage ? '#8e8e8e' : 'white')}
           onMouseLeave={() => setFillColor(originalFillColor)}
         >
-          <ServiceSpecialityLogoLink
+          <ServiceSpecialityLogo
             fillColor={fillColor}
             textColor={isSpecialityPage ? '#090329' : 'white'}
           />
