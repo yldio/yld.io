@@ -11,10 +11,6 @@ import Overlay from './Overlay'
 import TopNav from './TopNav'
 import SideNav from './SideNav'
 
-const FixedHeightFlex = styled(Flex)`
-  height: 84px;
-`
-
 const navLinks = [
   {
     label: 'Services',
@@ -63,6 +59,7 @@ const navLinks = [
 const StyledGrid = styled(Grid)`
   position: fixed;
   width: ${remcalc(1100)};
+  height: ${remcalc(84)};
   display: flex;
   justify-content: space-between;
   background: white;
@@ -77,7 +74,7 @@ const Header = ({ path, blue }) => {
       <Row style={{ overflow: 'visible' }}>
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
-            <FixedHeightFlex alignCenter justifyBetween as="header">
+            <Flex alignCenter justifyBetween as="header">
               <TopNav
                 path={path}
                 links={navLinks}
@@ -97,7 +94,7 @@ const Header = ({ path, blue }) => {
                 isOpen={isSideNavOpen}
                 onClose={() => toggleSideNav(false)}
               />
-            </FixedHeightFlex>
+            </Flex>
           </Padding>
         </Col>
       </Row>
