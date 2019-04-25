@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
+import remcalc from 'remcalc'
 
 import { Row, Col, Grid } from '../grid'
 import Hamburger from './Hamburger'
@@ -59,11 +60,20 @@ const navLinks = [
   }
 ]
 
+const StyledGrid = styled(Grid)`
+  position: fixed;
+  width: ${remcalc(1100)};
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  z-index: 100;
+`
+
 const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
 
   return (
-    <Grid>
+    <StyledGrid>
       <Row style={{ overflow: 'visible' }}>
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
@@ -91,7 +101,7 @@ const Header = ({ path, blue }) => {
           </Padding>
         </Col>
       </Row>
-    </Grid>
+    </StyledGrid>
   )
 }
 

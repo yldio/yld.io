@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
@@ -7,15 +7,6 @@ import LogoLink from './LogoLink'
 import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
-
-const StyledTopNavContainer = styled.div`
-  position: fixed;
-  width: ${remcalc(1100)};
-  display: flex;
-  justify-content: space-between;
-  background: white;
-  z-index: 100;
-`
 
 const StyledLinksContainer = styled.div`
   display: flex;
@@ -38,7 +29,7 @@ const TopNavList = styled.ul`
 `
 
 const TopNav = ({ links, themeVariation, path }) => (
-  <StyledTopNavContainer>
+  <Fragment>
     <StyledLinksContainer>
       <LogoLink path={path} />
       <ServiceLink path={path} />
@@ -74,7 +65,7 @@ const TopNav = ({ links, themeVariation, path }) => (
         })}
       </TopNavList>
     </nav>
-  </StyledTopNavContainer>
+  </Fragment>
 )
 
 export default TopNav
