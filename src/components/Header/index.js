@@ -62,8 +62,6 @@ const StyledGrid = styled(Grid)`
   height: ${remcalc(84)};
   right: 50%;
   margin-right: -${remcalc(550)};
-  display: flex;
-  justify-content: space-between;
   background: white;
   z-index: 100;
 `
