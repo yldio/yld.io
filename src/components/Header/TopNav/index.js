@@ -9,9 +9,12 @@ import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
 
 const StyledTopNavContainer = styled.div`
-  width: ${remcalc(1100)};
   display: flex;
   justify-content: space-between;
+
+  @media screen and (min-width: 960px) {
+    width: ${remcalc(1100)};
+  }
 `
 
 const StyledLinksContainer = styled.div`

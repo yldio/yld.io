@@ -58,12 +58,18 @@ const navLinks = [
 
 const StyledGrid = styled(Grid)`
   position: fixed;
-  width: ${remcalc(1100)};
+  width: 100%;
   height: ${remcalc(84)};
-  right: 50%;
-  margin-right: -${remcalc(550)};
   background: white;
   z-index: 100;
+
+  @media screen and (min-width: 960px) {
+    max-width: unset;
+    right: 50%;
+    margin-right: -50%;
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const Header = ({ path, blue }) => {
