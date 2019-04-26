@@ -62,6 +62,7 @@ const StyledGrid = styled(Grid)`
   height: ${remcalc(84)};
   background: white;
   z-index: 100;
+  box-shadow: 0 9px 9px -9px lightgrey;
 
   @media screen and (min-width: 960px) {
     max-width: unset;
