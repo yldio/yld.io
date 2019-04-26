@@ -60,7 +60,7 @@ const navLinks = [
 const StyledGrid = styled(Grid)`
   position: fixed;
   height: ${remcalc(84)};
-  background: white;
+  background: ${props => (props.isSpecialityPage ? '#090329' : 'white')};
   width: 100%;
   max-width: unset;
   z-index: 100;
@@ -76,9 +76,10 @@ const StyledGrid = styled(Grid)`
 
 const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
+  const isSpecialityPage = path.includes('speciality')
 
   return (
-    <StyledGrid>
+    <StyledGrid isSpecialityPage={isSpecialityPage}>
       <Row style={{ overflow: 'visible' }}>
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
