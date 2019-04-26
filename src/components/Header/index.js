@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Row, Col, Grid } from '../grid'
@@ -64,13 +65,13 @@ const StyledGrid = styled(Grid)`
   z-index: 100;
   box-shadow: 0 9px 9px -9px lightgrey;
 
-  @media screen and (min-width: 960px) {
+  ${breakpoint('desktop')`
     max-width: unset;
     right: 50%;
     margin-right: -50%;
     display: flex;
     justify-content: center;
-  }
+  `}
 `
 
 const Header = ({ path, blue }) => {

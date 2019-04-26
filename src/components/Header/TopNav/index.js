@@ -12,9 +12,9 @@ const StyledTopNavContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (min-width: 960px) {
+  ${breakpoint('tablet')`
     width: ${remcalc(1100)};
-  }
+  `}
 `
 
 const StyledLinksContainer = styled.div`
