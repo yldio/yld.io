@@ -60,11 +60,12 @@ const navLinks = [
 const StyledGrid = styled(Grid)`
   position: fixed;
   height: ${remcalc(84)};
-  background: ${props => (props.isSpecialityPage ? '#090329' : 'white')};
+  background: ${props =>
+    props.theme.colors[props.isSpecialityPage ? 'blueBg' : 'white']};
   width: 100%;
   max-width: unset;
   z-index: 100;
-  box-shadow: 0 9px 9px -9px lightgrey;
+  box-shadow: ${props => `0 9px 9px -9px ${props.theme.colors.border}`};
 
   ${breakpoint('desktop')`
     right: 50%;
