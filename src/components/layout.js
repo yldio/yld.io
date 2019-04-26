@@ -1,8 +1,10 @@
 import React, { Fragment, Component } from 'react'
 import Helmet from 'react-helmet'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
+import remcalc from 'remcalc'
+
 import Header from './Header'
 import './layout.css'
 import BlueBackground from './Common/BlueBackground'
@@ -18,6 +20,10 @@ const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =
   GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
+
+const StyledMain = styled.main`
+  padding-top: ${remcalc(120)};
+`
 
 class Layout extends Component {
   constructor(props) {
@@ -100,7 +106,7 @@ class Layout extends Component {
                   gutter={['24px', '36px', '36px', '42px', '48px']}
                 />
               )}
-              <main>{children}</main>
+              <StyledMain>{children}</StyledMain>
               <Footer />
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
