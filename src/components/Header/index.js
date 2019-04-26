@@ -59,14 +59,14 @@ const navLinks = [
 
 const StyledGrid = styled(Grid)`
   position: fixed;
-  width: 100%;
   height: ${remcalc(84)};
   background: white;
+  width: 100%;
+  max-width: unset;
   z-index: 100;
   box-shadow: 0 9px 9px -9px lightgrey;
 
   ${breakpoint('desktop')`
-    max-width: unset;
     right: 50%;
     margin-right: -50%;
     display: flex;
