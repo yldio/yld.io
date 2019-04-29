@@ -110,7 +110,7 @@ const Header = ({ path, blue }) => {
       <Row style={{ overflow: 'visible' }}>
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <StyledPadding bottom={3}>
-            <Flex alignCenter justifyBetween as="header">
+            <Flex alignCenter justifyBetween full as="header">
               <TopNav
                 path={path}
                 links={navLinks}

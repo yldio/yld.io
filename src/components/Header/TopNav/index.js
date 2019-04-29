@@ -12,9 +12,13 @@ const StyledTopNavContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  ${breakpoint('tablet')`
-    width: ${remcalc(1100)};
+  ${breakpoint('smallTablet')`
+    width: 100%;
   `}
+
+  ${breakpoint('desktop')`
+    width: ${remcalc(1100)};
+  `};
 `
 
 const StyledLinksContainer = styled.div`
