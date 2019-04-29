@@ -57,6 +57,12 @@ const navLinks = [
   }
 ]
 
+const StyledPadding = styled(Padding)`
+  display: flex;
+  height: ${remcalc(120)};
+  align-items: center;
+`
+
 const StyledGrid = styled(Grid)`
   position: fixed;
   height: ${remcalc(84)};
@@ -83,7 +89,7 @@ const Header = ({ path, blue }) => {
     <StyledGrid isSpecialityPage={isSpecialityPage}>
       <Row style={{ overflow: 'visible' }}>
         <Col width={[1]} style={{ overflow: 'visible' }}>
-          <Padding bottom={3}>
+          <StyledPadding bottom={3}>
             <Flex alignCenter justifyBetween as="header">
               <TopNav
                 path={path}
@@ -105,7 +111,7 @@ const Header = ({ path, blue }) => {
                 onClose={() => toggleSideNav(false)}
               />
             </Flex>
-          </Padding>
+          </StyledPadding>
         </Col>
       </Row>
     </StyledGrid>
