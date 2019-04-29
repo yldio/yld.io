@@ -73,9 +73,29 @@ const StyledGrid = styled(Grid)`
   z-index: 100;
   box-shadow: ${props => `0 9px 9px -9px ${props.theme.colors.border}`};
 
+  ${breakpoint('smallPhone')`
+    max-width: calc(100% - 48px);
+    margin: 0 ${remcalc(24)};
+  `}
+
+  ${breakpoint('phone')`
+    max-width: calc(100% - 72px);
+    margin: 0 ${remcalc(36)};
+  `}
+
+  ${breakpoint('largePhone')`
+    max-width: ${remcalc(480)};
+    margin: 0 calc(50% - 240px);
+  `}
+
+  ${breakpoint('smallTablet')`
+    max-width: none;
+    margin: 0 auto;
+  `}
+
   ${breakpoint('desktop')`
     right: 50%;
-    margin-right: -50%;
+    margin: 0 -50% 0 0;
     display: flex;
     justify-content: center;
   `}
