@@ -6,56 +6,12 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
+import navLinks from './navLinks'
 import { Row, Col, Grid } from '../grid'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNav from './TopNav'
 import SideNav from './SideNav'
-
-const navLinks = [
-  {
-    label: 'Services',
-    dropdownItems: [
-      {
-        label: 'Engineering',
-        to: '/engineering/'
-      },
-      {
-        label: 'Design',
-        to: '/design/'
-      },
-      {
-        label: 'Training',
-        to: '/training/'
-      }
-    ]
-  },
-  {
-    label: 'Our work',
-    to: '/our-work/'
-  },
-  {
-    label: 'Blog',
-    href: 'https://medium.com/yld-engineering-blog/'
-  },
-  {
-    label: 'About',
-    dropdownItems: [
-      {
-        label: 'Our team',
-        to: '/about-us/'
-      },
-      {
-        label: 'Contact',
-        to: '/contact/'
-      }
-    ]
-  },
-  {
-    label: 'Join us',
-    to: '/join-us/'
-  }
-]
 
 const StyledPadding = styled(Padding)`
   display: flex;
