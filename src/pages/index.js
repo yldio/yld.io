@@ -5,7 +5,7 @@ import { Grid } from '../components/grid'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import Statement from '../components/Common/Statement'
-import Companies from '../components/Homepage/companies'
+import LogoGrid from '../components/Common/LogoGrid'
 import Blog from '../components/Homepage/blog'
 import Events from '../components/Homepage/events/index'
 import Jobs from '../components/Homepage/jobs'
@@ -25,7 +25,7 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 4 }} bottom={3}>
           <Statement noPadding richText={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
-          <Companies companies={content.companies} />
+          <LogoGrid logos={content.companies} />
         </Padding>
       </Grid>
     </GreyBackground>

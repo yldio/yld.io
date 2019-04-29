@@ -10,18 +10,18 @@ const Column = styled(Col)`
   padding-bottom: ${props => props.theme.spacing[1]};
 `
 
-const Companies = ({ companies = [] }) =>
-  companies ? (
+const LogoGrid = ({ logos = [] }) =>
+  logos ? (
     <Row>
-      {companies.map(company => (
+      {logos.map(logo => (
         <Column
           width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 3, 1 / 4]}
-          key={company.id}
+          key={logo.id}
         >
-          <Image image={company} />
+          <Image image={logo} />
         </Column>
       ))}
     </Row>
   ) : null
 
-export default Companies
+export default LogoGrid

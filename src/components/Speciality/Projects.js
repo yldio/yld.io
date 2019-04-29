@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
-import Companies from '../Homepage/companies'
+import LogoGrid from '../Common/LogoGrid'
 
 const Emphasis = styled.em`
   color: ${props => props.theme.colors.secondaryText};
@@ -45,7 +45,7 @@ const CompaniesHelped = ({ clients, noOther }) => (
         </Padding>
       </Col>
     </Row>
-    <Companies companies={clients} />
+    <LogoGrid logos={clients} />
   </Fragment>
 )
 
