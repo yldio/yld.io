@@ -25,7 +25,7 @@ const BlogListing = ({ title, description, posts }) => {
           description={description}
           mediaItems={mediaItems}
           CTALink="https://medium.com/yld-engineering-blog"
-          CTAText="More articles"
+          CTAText="Visit our blog"
         />
       </Padding>
     </Grid>
