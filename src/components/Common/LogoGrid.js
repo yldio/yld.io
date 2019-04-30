@@ -11,31 +11,27 @@ const Column = styled(Col)`
   padding-bottom: ${props => props.theme.spacing[1]};
 `
 
-const LogoGrid = ({ logos = [] }) =>
-  logos ? (
-    <Row>
-      {logos.map(logo => (
-        <Column
-          width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 3, 1 / 4]}
-          key={logo.id}
-        >
-          {logo.url ? (
-            <ExternalAnchor href={logo.url}>
-              <Image
-                image={logo.image}
-                width="250px"
-                style={{ filter: 'grayscale(1)', saturate: '0' }}
-              />
-            </ExternalAnchor>
-          ) : (
+const LogoGrid = ({ logos }) => (
+  <Row>
+    {logos.map(logo => (
+      <Column width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 3, 1 / 4]} key={logo.id}>
+        {logo.url ? (
+          <ExternalAnchor href={logo.url}>
             <Image
-              image={logo}
+              image={logo.image}
+              width="250px"
               style={{ filter: 'grayscale(1)', saturate: '0' }}
             />
-          )}
-        </Column>
-      ))}
-    </Row>
-  ) : null
+          </ExternalAnchor>
+        ) : (
+          <Image
+            image={logo}
+            style={{ filter: 'grayscale(1)', saturate: '0' }}
+          />
+        )}
+      </Column>
+    ))}
+  </Row>
+)
 
 export default LogoGrid
