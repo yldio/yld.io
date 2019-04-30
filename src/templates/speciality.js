@@ -36,7 +36,6 @@ const Speciality = ({
     communityText,
     events,
     eventIcon,
-    externalResources,
     contactText
   } = speciality
 
@@ -68,10 +67,7 @@ const Speciality = ({
         description={`${title} articles created by members of YLD for the community.`}
         posts={posts}
       />
-      <TutorialsSection
-        externalResources={externalResources}
-        tutorials={getExternalType(speciality, `Tutorial`)}
-      />
+      <TutorialsSection tutorials={getExternalType(speciality, `Tutorial`)} />
       <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
       <GetInTouch
         title={`Talk to us about ${title}`}
