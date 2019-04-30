@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
@@ -42,40 +42,47 @@ const StyledGrid = styled(Grid)`
   `}
 `
 
+const trainingModalRegExp = /training\/(node|react|engineering-skills|development-tools)/
+
 const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
   const isSpecialityPage = path.includes('speciality')
+  const isModalPage = !!path.match(trainingModalRegExp)
 
   return (
-    <StyledGrid isSpecialityPage={isSpecialityPage}>
-      <Row style={{ overflow: 'visible' }}>
-        <Col width={[1]} style={{ overflow: 'visible' }}>
-          <StyledPadding bottom={3}>
-            <Flex alignCenter justifyBetween full as="header">
-              <TopNav
-                path={path}
-                links={navLinks}
-                themeVariation={blue ? 'dark' : 'light'}
-              />
-              <Hamburger
-                onClick={() => toggleSideNav(true)}
-                themeVariation={blue ? 'dark' : 'light'}
-              />
-              <Overlay
-                visible={isSideNavOpen}
-                onClick={() => toggleSideNav(false)}
-              />
-              <SideNav
-                links={navLinks}
-                themeVariation="dark"
-                isOpen={isSideNavOpen}
-                onClose={() => toggleSideNav(false)}
-              />
-            </Flex>
-          </StyledPadding>
-        </Col>
-      </Row>
-    </StyledGrid>
+    <Fragment>
+      {!isModalPage ? (
+        <StyledGrid isSpecialityPage={isSpecialityPage}>
+          <Row style={{ overflow: 'visible' }}>
+            <Col width={[1]} style={{ overflow: 'visible' }}>
+              <StyledPadding bottom={3}>
+                <Flex alignCenter justifyBetween full as="header">
+                  <TopNav
+                    path={path}
+                    links={navLinks}
+                    themeVariation={blue ? 'dark' : 'light'}
+                  />
+                  <Hamburger
+                    onClick={() => toggleSideNav(true)}
+                    themeVariation={blue ? 'dark' : 'light'}
+                  />
+                  <Overlay
+                    visible={isSideNavOpen}
+                    onClick={() => toggleSideNav(false)}
+                  />
+                  <SideNav
+                    links={navLinks}
+                    themeVariation="dark"
+                    isOpen={isSideNavOpen}
+                    onClose={() => toggleSideNav(false)}
+                  />
+                </Flex>
+              </StyledPadding>
+            </Col>
+          </Row>
+        </StyledGrid>
+      ) : null}
+    </Fragment>
   )
 }
 
