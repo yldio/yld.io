@@ -1,14 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import Flex from 'styled-flex-component'
+import { Padding } from 'styled-components-spacing'
+import remcalc from 'remcalc'
+
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../Common/BlueBackground'
-import Flex from 'styled-flex-component'
 
 const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
 `
+
+const StyledBlueBackground = styled(BlueBackground)`
+  padding-top: ${remcalc(36)};
+  margin-top: -${remcalc(36)};
+`
+
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={2} bottom={2}>
@@ -23,7 +31,7 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
 )
 
 const IntroSection = ({ speciality }) => (
-  <BlueBackground>
+  <StyledBlueBackground>
     <Padding top={2} bottom={5}>
       <Grid>
         <Row>
@@ -71,6 +79,6 @@ const IntroSection = ({ speciality }) => (
         </Col>
       </Grid>
     </Padding>
-  </BlueBackground>
+  </StyledBlueBackground>
 )
 export default IntroSection
