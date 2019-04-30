@@ -16,10 +16,25 @@ const HamburgerSvg = styled.svg`
 const HamburgerButton = styled(UnstyledButton)`
   ${breakpoint('smallPhone')`
     position: absolute;
-    right: 0;
     top: 0;
     width: ${remcalc(80)};
     height: ${remcalc(80)};
+
+    ${breakpoint('smallPhone')`
+      right: ${remcalc(24)};
+    `}
+
+    ${breakpoint('phone')`
+      right: ${remcalc(36)};
+    `}
+
+    ${breakpoint('largePhone')`
+      right: calc(50% - 240px);
+    `}
+
+    ${breakpoint('smallTablet')`
+      right: 0;
+    `}
 
     margin: ${remcalc(4)} ${remcalc(-20)} ${remcalc(4)} ${remcalc(4)};
     ${outlineStyles}
