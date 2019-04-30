@@ -3223,25 +3223,25 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3254,11 +3254,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   opacity: 0.5;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3391,7 +3387,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3419,35 +3415,34 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
         ]
       }
     >
-      <div>
-        <div
-          className="c4"
-        >
-          <a
-            className="c5"
-            color="#fff"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={0.5}
-            rel="noopener noreferrer"
-            target="_blank"
+      <a
+        color="#fff"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={0.5}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          <div
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <div
-                  className="c8"
+                  className="c7"
                 >
                   <img
                     alt="Play button"
-                    className="c9"
+                    className="c8"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c10"
+                  className="c9"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -3455,9 +3450,9 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -3503,25 +3498,25 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3534,11 +3529,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3675,7 +3666,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3703,35 +3694,34 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
         ]
       }
     >
-      <div>
-        <div
-          className="c4"
-        >
-          <a
-            className="c5"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+      <a
+        color="#333333"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={1}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          <div
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <div
-                  className="c8"
+                  className="c7"
                 >
                   <img
                     alt="Play button"
-                    className="c9"
+                    className="c8"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c10"
+                  className="c9"
                   color="#333333"
                   opacity={1}
                 >
@@ -3739,9 +3729,9 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -3787,25 +3777,25 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c7 {
+.c6 {
   margin-right: 1.125rem;
 }
 
-.c5 {
+.c4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c8 {
+.c7 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3818,11 +3808,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   opacity: 1;
 }
 
-.c4 {
-  display: block;
-}
-
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3955,7 +3941,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c9 {
+  .c8 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3980,35 +3966,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4016,9 +4001,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -4033,35 +4018,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4069,9 +4053,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -4086,35 +4070,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4122,9 +4105,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -4169,25 +4152,25 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c7 {
+.c6 {
   margin-right: 1.125rem;
 }
 
-.c5 {
+.c4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c8 {
+.c7 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -4200,11 +4183,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   opacity: 1;
 }
 
-.c4 {
-  display: block;
-}
-
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4337,7 +4316,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c9 {
+  .c8 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -4362,35 +4341,34 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4398,9 +4376,9 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -8276,25 +8254,25 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c9 {
+.c8 {
   margin-right: 1.125rem;
 }
 
-.c7 {
+.c6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8307,11 +8285,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   opacity: 0.5;
 }
 
-.c6 {
-  display: block;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8462,7 +8436,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c11 {
+  .c10 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -8502,37 +8476,36 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
         ]
       }
     >
-      <div
-        className="c4"
+      <a
+        color="#fff"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={0.5}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <div
-          className="c5"
+          className="c4"
         >
-          <a
-            className="c6"
-            color="#fff"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={0.5}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <div
-                  className="c9"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="c10"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c11"
+                  className="c10"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -8540,9 +8513,9 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -8588,25 +8561,25 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c9 {
+.c8 {
   margin-right: 1.125rem;
 }
 
-.c7 {
+.c6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8619,11 +8592,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
   opacity: 1;
 }
 
-.c6 {
-  display: block;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8778,7 +8747,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c11 {
+  .c10 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -8818,37 +8787,36 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
         ]
       }
     >
-      <div
-        className="c4"
+      <a
+        color="#333333"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={1}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <div
-          className="c5"
+          className="c4"
         >
-          <a
-            className="c6"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <div
-                  className="c9"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="c10"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c11"
+                  className="c10"
                   color="#333333"
                   opacity={1}
                 >
@@ -8856,9 +8824,9 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -8904,25 +8872,25 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8935,11 +8903,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9090,7 +9054,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -9127,37 +9091,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -9165,9 +9128,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -9182,37 +9145,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -9220,9 +9182,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -9237,37 +9199,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -9275,9 +9236,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -9322,25 +9283,25 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9353,11 +9314,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9508,7 +9465,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -9545,37 +9502,36 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -9583,9 +9539,9 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
