@@ -1,6 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import yldLogo from 'file-loader!../../images/logo.png'
 
 const TITLE = graphql`
   query SITE_TITLE {
@@ -23,6 +25,10 @@ const Head = ({ page }) => (
           {
             name: 'description',
             content: page.seoMetaDescription
+          },
+          {
+            name: 'og:image',
+            content: page.socialLogo ? page.socialLogo : yldLogo
           }
         ]}
       >

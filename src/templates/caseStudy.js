@@ -24,7 +24,12 @@ const CaseStudy = ({
 
   return (
     <Layout location={location}>
-      <Head page={caseStudy} />
+      <Head
+        page={{
+          ...caseStudy,
+          socialLogo: (caseStudy.posterImage.file || {}).url
+        }}
+      />
       <CaseStudyHero caseStudy={caseStudy} />
       <Grid>
         <FirstTextSection text={firstTextBlock} />

@@ -16,9 +16,9 @@
 In order to access data from contentful make sure that you have an .env file that matches the contentful keys and tokens:
 
 ```
-CONTENTFUL_TOKEN=(see in contentful/settings/API keys)
-CONTENTFUL_SPACE=(see in contentful/settings/API keys)
-MEETUP_KEY=(see in contentful/settings/API keys)
+CONTENTFUL_TOKEN=(see in contentful/settings/API keys "meetup > Content Delivery API - Access Token")
+CONTENTFUL_SPACE=(see in contentful/settings/API keys "meetup > Space ID")
+MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 GATSBY_ENVIRONMENT="development"
 ```
 
