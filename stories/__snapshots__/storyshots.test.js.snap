@@ -3223,25 +3223,25 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3254,11 +3254,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   opacity: 0.5;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3391,7 +3387,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3419,35 +3415,34 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
         ]
       }
     >
-      <div>
-        <div
-          className="c4"
-        >
-          <a
-            className="c5"
-            color="#fff"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={0.5}
-            rel="noopener noreferrer"
-            target="_blank"
+      <a
+        color="#fff"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={0.5}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          <div
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <div
-                  className="c8"
+                  className="c7"
                 >
                   <img
                     alt="Play button"
-                    className="c9"
+                    className="c8"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c10"
+                  className="c9"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -3455,9 +3450,9 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -3503,25 +3498,25 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3534,11 +3529,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3675,7 +3666,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3703,35 +3694,34 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
         ]
       }
     >
-      <div>
-        <div
-          className="c4"
-        >
-          <a
-            className="c5"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+      <a
+        color="#333333"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={1}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div>
+          <div
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <div
-                  className="c8"
+                  className="c7"
                 >
                   <img
                     alt="Play button"
-                    className="c9"
+                    className="c8"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c10"
+                  className="c9"
                   color="#333333"
                   opacity={1}
                 >
@@ -3739,9 +3729,9 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -3787,25 +3777,25 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c7 {
+.c6 {
   margin-right: 1.125rem;
 }
 
-.c5 {
+.c4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c8 {
+.c7 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -3818,11 +3808,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   opacity: 1;
 }
 
-.c4 {
-  display: block;
-}
-
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3955,7 +3941,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c9 {
+  .c8 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3980,35 +3966,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4016,9 +4001,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -4033,35 +4018,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4069,9 +4053,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -4086,35 +4070,34 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4122,9 +4105,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -4169,25 +4152,25 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c7 {
+.c6 {
   margin-right: 1.125rem;
 }
 
-.c5 {
+.c4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c8 {
+.c7 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -4200,11 +4183,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   opacity: 1;
 }
 
-.c4 {
-  display: block;
-}
-
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4337,7 +4316,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c9 {
+  .c8 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -4362,35 +4341,34 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
       ]
     }
   >
-    <div>
-      <div
-        className="c3"
-      >
-        <a
-          className="c4"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div>
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
           >
             <div
-              className="c6"
+              className="c5"
             >
               <div
-                className="c7"
+                className="c6"
               >
                 <img
                   alt="Play button"
-                  className="c8"
+                  className="c7"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c9"
+                className="c8"
                 color="#333333"
                 opacity={1}
               >
@@ -4398,9 +4376,9 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -6448,6 +6426,17 @@ exports[`Storyshots Header Header itself 1`] = `
   z-index: 999;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c6 {
   display: none;
 }
@@ -6610,19 +6599,6 @@ exports[`Storyshots Header Header itself 1`] = `
   -ms-flex-align: center;
   align-items: center;
   height: 84px;
-}
-
-.c5 {
-  outline: 0.25rem solid transparent;
-}
-
-.c5:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c5:active {
-  outline: none;
 }
 
 @media (min-width:29.4375em) {
@@ -6865,21 +6841,25 @@ exports[`Storyshots Header Header itself 1`] = `
         <header
           className="c4"
         >
-          <a
-            aria-current="page"
+          <div
             className="c5"
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={Object {}}
           >
-            <img
-              alt="yld logo"
-              height="48"
-              role="link"
-              src="test-file-stub"
-            />
-          </a>
+            <a
+              aria-current="page"
+              className=""
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={Object {}}
+            >
+              <img
+                alt="yld logo"
+                height="48"
+                role="link"
+                src="test-file-stub"
+              />
+            </a>
+          </div>
           <nav>
             <ul
               className="c6"
@@ -7272,7 +7252,38 @@ exports[`Storyshots Header Header itself 1`] = `
 `;
 
 exports[`Storyshots Header TopNavbar - light theme 1`] = `
-.c2 {
+Array [
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+    className="c0"
+  >
+    <a
+      aria-current="page"
+      className=""
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      style={Object {}}
+    >
+      <img
+        alt="yld logo"
+        height="48"
+        role="link"
+        src="test-file-stub"
+      />
+    </a>
+  </div>,
+  .c2 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -7364,53 +7375,85 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 }
 
 <nav>
-  <ul
-    className="c0"
-  >
-    <li
-      className="c1"
+    <ul
+      className="c0"
     >
-      <a
-        aria-current="page"
-        className="c2 active"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        style={Object {}}
+      <li
+        className="c1"
       >
-        Here
-      </a>
-    </li>
-    <li
-      className="c1"
-    >
-      <a
-        className="c2"
-        href="/there"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+        <a
+          aria-current="page"
+          className="c2 active"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={Object {}}
+        >
+          Here
+        </a>
+      </li>
+      <li
+        className="c1"
       >
-        There
-      </a>
-    </li>
-    <li
-      className="c1"
-    >
-      <a
-        className="c2"
-        href="/https:/uk.linkedin.com/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+        <a
+          className="c2"
+          href="/there"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          There
+        </a>
+      </li>
+      <li
+        className="c1"
       >
-        LinkedIn (external anchor)
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          className="c2"
+          href="/https:/uk.linkedin.com/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          LinkedIn (external anchor)
+        </a>
+      </li>
+    </ul>
+  </nav>,
+]
 `;
 
 exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
-.c9 {
+Array [
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div
+    className="c0"
+  >
+    <a
+      aria-current="page"
+      className=""
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      style={Object {}}
+    >
+      <img
+        alt="yld logo"
+        height="48"
+        role="link"
+        src="test-file-stub"
+      />
+    </a>
+  </div>,
+  .c9 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -7634,180 +7677,181 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 }
 
 <nav>
-  <ul
-    className="c0"
-  >
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c1"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
+    <ul
+      className="c0"
     >
-      <span
-        className="c2"
-        tabIndex="0"
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c1"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
       >
         <span
-          className="c3"
+          className="c2"
+          tabIndex="0"
         >
-          First dropdown
+          <span
+            className="c3"
+          >
+            First dropdown
+          </span>
+          <svg
+            className="c4"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
+          >
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
         </span>
-        <svg
-          className="c4"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
+        <ul
+          className="c5"
         >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c5"
+          <li
+            className="c6"
+          >
+            <a
+              className="c7"
+              href="/item-1/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 1
+            </a>
+          </li>
+          <li
+            className="c6"
+          >
+            <a
+              className="c7"
+              href="/item-2/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 2
+            </a>
+          </li>
+          <li
+            className="c6"
+          >
+            <a
+              className="c7"
+              href="/item-3/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 3
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c8"
       >
-        <li
-          className="c6"
+        <a
+          className="c9"
+          href="/anchor/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          <a
-            className="c7"
-            href="/item-1/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Item 1
-          </a>
-        </li>
-        <li
-          className="c6"
+          First anchor
+        </a>
+      </li>
+      <li
+        className="c8"
+      >
+        <a
+          className="c9"
+          href="https://uk.linkedin.com/"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <a
-            className="c7"
-            href="/item-2/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Item 2
-          </a>
-        </li>
-        <li
-          className="c6"
-        >
-          <a
-            className="c7"
-            href="/item-3/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Item 3
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c8"
-    >
-      <a
-        className="c9"
-        href="/anchor/"
+          LinkedIn (external anchor)
+        </a>
+      </li>
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c1"
+        onBlur={[Function]}
         onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        First anchor
-      </a>
-    </li>
-    <li
-      className="c8"
-    >
-      <a
-        className="c9"
-        href="https://uk.linkedin.com/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        LinkedIn (external anchor)
-      </a>
-    </li>
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c1"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c2"
-        tabIndex="0"
+        onFocus={[Function]}
+        onMouseDown={[Function]}
       >
         <span
-          className="c3"
+          className="c2"
+          tabIndex="0"
         >
-          Second dropdown
+          <span
+            className="c3"
+          >
+            Second dropdown
+          </span>
+          <svg
+            className="c4"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
+          >
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
         </span>
-        <svg
-          className="c4"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
+        <ul
+          className="c5"
         >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c5"
-      >
-        <li
-          className="c6"
-        >
-          <a
-            className="c7"
-            href="/go-here/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
+          <li
+            className="c6"
           >
-            Go here
-          </a>
-        </li>
-        <li
-          className="c6"
-        >
-          <a
-            className="c7"
-            href="/go-there/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
+            <a
+              className="c7"
+              href="/go-here/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Go here
+            </a>
+          </li>
+          <li
+            className="c6"
           >
-            Go there
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c8"
-    >
-      <a
-        className="c9"
-        href="/last-anchor/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+            <a
+              className="c7"
+              href="/go-there/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Go there
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c8"
       >
-        Last anchor
-      </a>
-    </li>
-  </ul>
-</nav>
+        <a
+          className="c9"
+          href="/last-anchor/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Last anchor
+        </a>
+      </li>
+    </ul>
+  </nav>,
+]
 `;
 
 exports[`Storyshots Image with file url 1`] = `
@@ -7820,6 +7864,349 @@ exports[`Storyshots Image with file url 1`] = `
   className="c0"
   src="test-file-stub"
 />
+`;
+
+exports[`Storyshots JobLink JobLink 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-bottom: 0;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding-top: 0;
+}
+
+.c2 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+}
+
+<a
+  href="http://www.lever.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <p
+    className="c0"
+  >
+    Software Engineer
+  </p>
+  <p
+    className="c1"
+    muted={true}
+  >
+    Permanent
+  </p>
+  <hr
+    className="c2"
+  />
+</a>
+`;
+
+exports[`Storyshots Spaces Spaces 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      1
+       - 
+      12
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "0.75rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      2
+       - 
+      24
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "1.5rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      3
+       - 
+      36
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "2.25rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      4
+       - 
+      54
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "3.375rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      5
+       - 
+      72
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "4.5rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      6
+       - 
+      108
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "6.75rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      7
+       - 
+      144
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "9rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+</div>
 `;
 
 exports[`Storyshots Standalone Video Link Dark theme 1`] = `
@@ -7867,25 +8254,25 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c9 {
+.c8 {
   margin-right: 1.125rem;
 }
 
-.c7 {
+.c6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -7898,11 +8285,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   opacity: 0.5;
 }
 
-.c6 {
-  display: block;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8053,7 +8436,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c11 {
+  .c10 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -8093,37 +8476,36 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
         ]
       }
     >
-      <div
-        className="c4"
+      <a
+        color="#fff"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={0.5}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <div
-          className="c5"
+          className="c4"
         >
-          <a
-            className="c6"
-            color="#fff"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={0.5}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <div
-                  className="c9"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="c10"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c11"
+                  className="c10"
                   color="#fff"
                   opacity={0.5}
                 >
@@ -8131,9 +8513,9 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -8179,25 +8561,25 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c9 {
+.c8 {
   margin-right: 1.125rem;
 }
 
-.c7 {
+.c6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8210,11 +8592,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
   opacity: 1;
 }
 
-.c6 {
-  display: block;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8369,7 +8747,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c11 {
+  .c10 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -8409,37 +8787,36 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
         ]
       }
     >
-      <div
-        className="c4"
+      <a
+        color="#333333"
+        href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        opacity={1}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <div
-          className="c5"
+          className="c4"
         >
-          <a
-            className="c6"
-            color="#333333"
-            href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-            opacity={1}
-            rel="noopener noreferrer"
-            target="_blank"
+          <div
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <div
-                  className="c9"
+                  className="c8"
                 >
                   <img
                     alt="Play button"
-                    className="c10"
+                    className="c9"
                     src="test-file-stub"
                   />
                 </div>
                 <p
-                  className="c11"
+                  className="c10"
                   color="#333333"
                   opacity={1}
                 >
@@ -8447,9 +8824,9 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
                 </p>
               </div>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -8495,25 +8872,25 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8526,11 +8903,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8681,7 +9054,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -8718,37 +9091,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -8756,9 +9128,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -8773,37 +9145,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -8811,9 +9182,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
   <div
     className="c1 c2"
@@ -8828,37 +9199,36 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -8866,9 +9236,9 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;
@@ -8913,25 +9283,25 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   margin-bottom: 1.125rem;
 }
 
-.c8 {
+.c7 {
   margin-right: 1.125rem;
 }
 
-.c6 {
+.c5 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c9 {
+.c8 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8944,11 +9314,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   opacity: 1;
 }
 
-.c5 {
-  display: block;
-}
-
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9099,7 +9465,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c10 {
+  .c9 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -9136,37 +9502,36 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
       ]
     }
   >
-    <div
-      className="c3"
+    <a
+      color="#333333"
+      href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      opacity={1}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c4"
+        className="c3"
       >
-        <a
-          className="c5"
-          color="#333333"
-          href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
-          opacity={1}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="c4"
         >
           <div
-            className="c6"
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <div
-                className="c8"
+                className="c7"
               >
                 <img
                   alt="Play button"
-                  className="c9"
+                  className="c8"
                   src="test-file-stub"
                 />
               </div>
               <p
-                className="c10"
+                className="c9"
                 color="#333333"
                 opacity={1}
               >
@@ -9174,9 +9539,9 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
               </p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 `;

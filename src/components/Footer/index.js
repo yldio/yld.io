@@ -1,52 +1,79 @@
 import React from 'react'
+import styled from 'styled-components'
+import { Padding } from 'styled-components-spacing'
+
 import { Grid, Row, Col } from '../../components/grid'
-import { Padding, Margin } from 'styled-components-spacing'
-import Locations from '../../components/locations'
 import { SectionTitle } from '../../components/Typography'
+import Locations from './Locations'
+import Office from './Office'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import { FooterStyled, FollowUs, Social, OfficeStyled } from './elements.js'
-import Office from './office'
 
 import social from './links'
 
+export const GreyFooter = styled.footer`
+  background: #232323;
+`
+
+export const FollowUs = styled.section`
+  background: ${props => props.theme.colors.black};
+`
+
+export const Social = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 500px) {
+    li {
+      margin-bottom: 24px;
+    }
+  }
+
+  li:not(:last-child) {
+    margin-right: 24px;
+  }
+`
+
+export const OfficeStyled = styled(Row)`
+  overflow: hidden;
+`
+
 const Footer = () => {
   return (
-    <FooterStyled>
-      <Padding
-        top={{ smallPhone: 3.5, tablet: 4 }}
-        bottom={{ smallPhone: 3.5, tablet: 4 }}
-      >
+    <GreyFooter>
+      <Padding top={{ smallPhone: 3, tablet: 4 }}>
         <Grid>
           <Row>
             <Col width={1}>
-              <Margin bottom={{ smallPhone: 0.5, tablet: 2 }}>
+              <Padding bottom={3}>
                 <SectionTitle reverse>Find us</SectionTitle>
-              </Margin>
+              </Padding>
             </Col>
           </Row>
-          <OfficeStyled>
-            <Locations>
-              {data =>
-                data.map(location => {
-                  const streetAddress = location.node.streetAddress.streetAddress.split(
-                    '\n'
-                  )
+          <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
+            <OfficeStyled>
+              <Locations>
+                {data =>
+                  data.map(location => {
+                    const streetAddress = location.node.streetAddress.streetAddress.split(
+                      '\n'
+                    )
 
-                  return (
-                    <Office
-                      key={location.node.id}
-                      {...location.node}
-                      streetAddress={streetAddress}
-                    />
-                  )
-                })
-              }
-            </Locations>
-          </OfficeStyled>
+                    return (
+                      <Office
+                        key={location.node.id}
+                        {...location.node}
+                        streetAddress={streetAddress}
+                      />
+                    )
+                  })
+                }
+              </Locations>
+            </OfficeStyled>
+          </Padding>
         </Grid>
       </Padding>
       <FollowUs>
-        <Padding top={3} bottom={{ smallPhone: 1, tablet: 3 }}>
+        <Padding top={3} bottom={3}>
           <Grid>
             <Row>
               <Col width={1}>
@@ -64,7 +91,7 @@ const Footer = () => {
           </Grid>
         </Padding>
       </FollowUs>
-    </FooterStyled>
+    </GreyFooter>
   )
 }
 

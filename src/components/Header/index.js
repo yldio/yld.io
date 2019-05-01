@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 
 import { Row, Col, Grid } from '../grid'
-import Logo from './Logo'
 import Hamburger from './Hamburger'
 import Overlay from './Overlay'
 import TopNav from './TopNav'
 import SideNav from './SideNav'
-import outlineStyles from './outlineStyles'
 
 const FixedHeightFlex = styled(Flex)`
   height: 84px;
@@ -61,11 +59,7 @@ const navLinks = [
   }
 ]
 
-const StyledLink = styled(Link)`
-  ${outlineStyles}
-`
-
-const Header = ({ path, blue, logoColour }) => {
+const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
 
   return (
@@ -74,10 +68,8 @@ const Header = ({ path, blue, logoColour }) => {
         <Col width={[1]} style={{ overflow: 'visible' }}>
           <Padding bottom={3}>
             <FixedHeightFlex alignCenter justifyBetween as="header">
-              <StyledLink to="/">
-                <Logo path={path} blue={blue} logoColour={logoColour} />
-              </StyledLink>
               <TopNav
+                path={path}
                 links={navLinks}
                 themeVariation={blue ? 'dark' : 'light'}
               />

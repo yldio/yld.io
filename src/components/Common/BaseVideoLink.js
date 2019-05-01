@@ -8,6 +8,7 @@ import theme from '../../utils/theme'
 import { BodyPrimary } from '../Typography'
 import darkIcon from '../../images/button-play-dark.svg'
 import lightIcon from '../../images/button-play-light.svg'
+import ExternalAnchor from '../Common/ExternalAnchor'
 
 const Wrapper = styled(Col)`
   ${breakpoint('smallTablet')`
@@ -22,12 +23,14 @@ const Wrapper = styled(Col)`
     }
   `}
 `
+
 const PlayIcon = styled.img`
   height: ${theme.spacing[2]};
   width: ${theme.spacing[2]};
   max-height: ${theme.spacing[2]};
   max-width: ${theme.spacing[2]};
 `
+
 const TruncatedParagraph = styled(BodyPrimary)`
   height: ${remcalc(48)};
   overflow: hidden;
@@ -43,12 +46,10 @@ const TruncatedParagraph = styled(BodyPrimary)`
   }
 `
 
-const Link = styled.a`
-  display: block;
-`
 const FlexContent = styled.div`
   display: flex;
 `
+
 const getColorBasedOnBackground = themeVariation => {
   switch (themeVariation) {
     case theme.variations.dark:
@@ -90,27 +91,20 @@ const BaseVideoLink = ({
 
   return (
     <Wrapper width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
-      <InnerWrapper
-        top={
-          mode === 'standalone'
-            ? { smallPhone: 2, smallTablet: 1.5 }
-            : undefined
-        }
-        bottom={
-          mode === 'standalone'
-            ? { smallPhone: 0, smallTablet: 1.5 }
-            : undefined
-        }
-      >
-        <Margin vertical={{ smallPhone: 1.5, smallTablet: 0 }}>
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href={href}
-            color={color}
-            opacity={opacity}
-            {...props}
-          >
+      <ExternalAnchor href={href} color={color} opacity={opacity} {...props}>
+        <InnerWrapper
+          top={
+            mode === 'standalone'
+              ? { smallPhone: 2, smallTablet: 1.5 }
+              : undefined
+          }
+          bottom={
+            mode === 'standalone'
+              ? { smallPhone: 0, smallTablet: 1.5 }
+              : undefined
+          }
+        >
+          <Margin vertical={{ smallPhone: 1.5, smallTablet: 0 }}>
             <Padding vertical={1} horizontal={mode === 'standalone' ? 2 : 0}>
               <FlexContent>
                 <Margin right={1.5}>
@@ -124,9 +118,9 @@ const BaseVideoLink = ({
                 </TruncatedParagraph>
               </FlexContent>
             </Padding>
-          </Link>
-        </Margin>
-      </InnerWrapper>
+          </Margin>
+        </InnerWrapper>
+      </ExternalAnchor>
     </Wrapper>
   )
 }
