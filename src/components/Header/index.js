@@ -27,8 +27,6 @@ const StyledGrid = styled(Grid)`
   width: 100%;
   max-width: unset;
   z-index: 100;
-  box-shadow: ${props =>
-    props.hasShadow ? `0 9px 9px -9px ${props.theme.colors.border}` : null};
 
   ${breakpoint('smallTablet')`
     max-width: none;
@@ -43,12 +41,22 @@ const StyledGrid = styled(Grid)`
   `}
 `
 
+const StyledShadowGradient = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: ${remcalc(84)};
+  height: ${remcalc(9)};
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
+`
+
 // nb: training/ and training/#node-js for example are navigation pages and still render the header
 const trainingModalRegExp = /training\/(node|react|engineering-skills|development-tools)/
 
 const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
-  const [isScrolling, setScrolling] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const isSpecialityPage = path.includes('speciality')
   const isModalPage = !!path.match(trainingModalRegExp)
 
@@ -58,12 +66,13 @@ const Header = ({ path, blue }) => {
   }, [])
 
   const handleScroll = () =>
-    setScrolling(document.documentElement.scrollTop !== 0)
+    setIsScrolled(document.documentElement.scrollTop !== 0)
 
   return (
     <Fragment>
       {!isModalPage ? (
-        <StyledGrid isSpecialityPage={isSpecialityPage} hasShadow={isScrolling}>
+        <StyledGrid isSpecialityPage={isSpecialityPage}>
+          {isScrolled ? <StyledShadowGradient /> : null}
           <Row style={{ overflow: 'visible' }}>
             <Col width={[1]} style={{ overflow: 'visible' }}>
               <StyledPadding bottom={3}>
