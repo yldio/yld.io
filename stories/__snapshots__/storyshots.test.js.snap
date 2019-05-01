@@ -6633,7 +6633,6 @@ exports[`Storyshots Header Header itself 1`] = `
   width: 100%;
   max-width: unset;
   z-index: 100;
-  box-shadow: 0 9px 9px -9px #e6e6e6;
 }
 
 @media (min-width:29.4375em) {
