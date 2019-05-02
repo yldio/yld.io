@@ -14,9 +14,7 @@ import TopNav from './TopNav'
 import SideNav from './SideNav'
 
 const StyledPadding = styled(Padding)`
-  display: flex;
   height: ${remcalc(120)};
-  align-items: center;
 `
 
 const StyledGrid = styled(Grid)`
@@ -26,7 +24,7 @@ const StyledGrid = styled(Grid)`
     props.theme.colors[props.isSpecialityPage ? 'blueBg' : 'white']};
   width: 100%;
   max-width: unset;
-  z-index: 100;
+  z-index: ${props => props.theme.zIndexes.header};
 
   ${breakpoint('smallTablet')`
     max-width: none;
