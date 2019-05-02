@@ -6176,7 +6176,7 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6209,7 +6209,7 @@ exports[`Storyshots Header Header itself 1`] = `
   flex-basis: 100%;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6233,11 +6233,11 @@ exports[`Storyshots Header Header itself 1`] = `
   justify-content: flex-end;
 }
 
-.c19 {
+.c18 {
   fill: #333333;
 }
 
-.c18 {
+.c17 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6256,36 +6256,11 @@ exports[`Storyshots Header Header itself 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
+  right: 0;
   top: 0;
   width: 5rem;
   height: 5rem;
-  right: 1.5rem;
   margin: 0.25rem -1.25rem 0.25rem 0.25rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c18:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c18:active {
-  outline: none;
-}
-
-.c20 {
-  display: none;
-}
-
-.c17 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
   outline: 0.25rem solid transparent;
 }
 
@@ -6298,7 +6273,32 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: none;
 }
 
+.c19 {
+  display: none;
+}
+
 .c16 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  background: linear-gradient(to right,#616161 0%,transparent 0);
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+}
+
+.c16:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c16:active {
+  outline: none;
+}
+
+.c15 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
@@ -6308,32 +6308,32 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #333333;
 }
 
-.c16:hover,
-.c16 > a:hover {
+.c15:hover,
+.c15 > a:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c16 > a:active {
+.c15 > a:active {
   background: #333333;
   color: #fff;
 }
 
-.c16 > a.active {
+.c15 > a.active {
   background: #fff;
   color: #828282;
 }
 
-.c16 > a.active:active {
+.c15 > a.active:active {
   background: #fff;
   color: #828282;
 }
 
-.c16 > a.active:hover {
+.c15 > a.active:hover {
   color: #333333;
 }
 
-.c12 {
+.c11 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -6345,14 +6345,14 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c14 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c15 {
+.c14 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6367,21 +6367,21 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #828282;
 }
 
-.c15:focus {
+.c14:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c15:active {
+.c14:active {
   outline: none;
 }
 
-.c15:hover,
-.c15.active {
+.c14:hover,
+.c14.active {
   color: #333333;
 }
 
-.c9 {
+.c8 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
@@ -6389,17 +6389,17 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.c9 > span {
+.c8 > span {
   background: #fff;
   color: #333333;
 }
 
-.c9 > span:hover {
+.c8 > span:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6422,21 +6422,21 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c10:focus {
+.c9:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c10:active {
+.c9:active {
   outline: none;
 }
 
-.c11 {
+.c10 {
   padding-right: 0.375rem;
   outline: none;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   width: 10rem;
   display: -webkit-box;
@@ -6455,7 +6455,7 @@ exports[`Storyshots Header Header itself 1`] = `
   z-index: 999;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6464,10 +6464,11 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 5.25rem;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6478,11 +6479,11 @@ exports[`Storyshots Header Header itself 1`] = `
   align-items: center;
 }
 
-.c8 {
+.c7 {
   display: none;
 }
 
-.c23 {
+.c22 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6506,16 +6507,16 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c23:focus {
+.c22:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c23:active {
+.c22:active {
   outline: none;
 }
 
-.c26 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6538,28 +6539,28 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c26:focus {
+.c25:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c26:active {
+.c25:active {
   outline: none;
 }
 
-.c26:hover,
-.c26:focus {
+.c25:hover,
+.c25:focus {
   color: #fff;
 }
 
-.c27 {
+.c26 {
   max-width: 320px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c25 {
+.c24 {
   display: block;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
@@ -6573,31 +6574,31 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c25:hover,
-.c25:active,
-.c25.active {
+.c24:hover,
+.c24:active,
+.c24.active {
   color: #fff;
 }
 
-.c25:focus {
+.c24:focus {
   color: #fff;
   outline: 0.25rem solid transparent;
 }
 
-.c25:focus:focus {
+.c24:focus:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c25:focus:active {
+.c24:focus:active {
   outline: none;
 }
 
-.c24 {
+.c23 {
   list-style-type: none;
 }
 
-.c21 {
+.c20 {
   position: fixed;
   background: #090329;
   height: 100vh;
@@ -6613,14 +6614,8 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: transform 200ms ease-in-out;
 }
 
-.c4 {
-  padding-bottom: 2.25rem;
-  height: 7.5rem;
-}
-
 .c0 {
   position: fixed;
-  height: 5.25rem;
   background: #fff;
   width: 100%;
   max-width: unset;
@@ -6756,32 +6751,14 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c18 {
-    right: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c18 {
-    right: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c18 {
-    right: 0;
-  }
-}
-
 @media screen and (min-width:960px) {
-  .c18 {
+  .c17 {
     display: none;
   }
 }
 
 @media screen and (max-width:959px) {
-  .c20 {
+  .c19 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6801,52 +6778,27 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c16 {
+  .c15 {
     margin-right: 0.375rem;
   }
 
-  .c16:last-child {
+  .c15:last-child {
     margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c9 {
-    margin-right: 0.375rem;
-  }
-
-  .c9:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media (min-width:29.4375em) {
-  .c6 {
-    padding-left: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c6 {
-    padding-left: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c6 {
-    padding-left: 0;
-    width: 100%;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c6 {
-    width: 68.75rem;
   }
 }
 
 @media screen and (min-width:960px) {
   .c8 {
+    margin-right: 0.375rem;
+  }
+
+  .c8:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6858,16 +6810,13 @@ exports[`Storyshots Header Header itself 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
 }
 
 @media screen and (min-width:600px) and (max-width:959px) {
-  .c21 {
+  .c20 {
     width: 18.4375rem;
     left: auto;
     right: 0;
@@ -6875,59 +6824,46 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c21 {
+  .c20 {
     display: none;
   }
 }
 
-@media (min-width:74.8125em) {
-  .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-}
-
 <div
-  className="c0 c1"
+  className="c0"
 >
   <div
-    className="c2"
-    style={
-      Object {
-        "overflow": "visible",
-      }
-    }
+    className="c1"
   >
     <div
-      className="c3"
+      className="c2"
       style={
         Object {
           "overflow": "visible",
         }
       }
-      width={
-        Array [
-          1,
-        ]
-      }
     >
       <div
-        className="c4"
+        className="c3"
+        style={
+          Object {
+            "overflow": "visible",
+          }
+        }
+        width={
+          Array [
+            1,
+          ]
+        }
       >
         <header
-          className="c5"
+          className="c4"
         >
-          <div
-            className="c6"
+          <nav
+            className="c5"
           >
             <div
-              className="c7"
+              className="c6"
             >
               <a
                 aria-current="page"
@@ -6945,188 +6881,186 @@ exports[`Storyshots Header Header itself 1`] = `
                 />
               </a>
             </div>
-            <nav>
-              <ul
+            <ul
+              className="c7"
+            >
+              <li
+                aria-expanded={false}
+                aria-haspopup="true"
                 className="c8"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
               >
-                <li
-                  aria-expanded={false}
-                  aria-haspopup="true"
+                <span
                   className="c9"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
+                  tabIndex="0"
                 >
                   <span
                     className="c10"
-                    tabIndex="0"
                   >
-                    <span
-                      className="c11"
-                    >
-                      Services
-                    </span>
-                    <svg
-                      className="c12"
-                      height="6"
-                      viewBox="0 0 6 6"
-                      width="6"
-                    >
-                      <polyline
-                        points="0,0 6,0 6,6"
-                      />
-                    </svg>
+                    Services
                   </span>
-                  <ul
+                  <svg
+                    className="c11"
+                    height="6"
+                    viewBox="0 0 6 6"
+                    width="6"
+                  >
+                    <polyline
+                      points="0,0 6,0 6,6"
+                    />
+                  </svg>
+                </span>
+                <ul
+                  className="c12"
+                >
+                  <li
                     className="c13"
                   >
-                    <li
+                    <a
                       className="c14"
+                      href="/engineering/"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
                     >
-                      <a
-                        className="c15"
-                        href="/engineering/"
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        Engineering
-                      </a>
-                    </li>
-                    <li
-                      className="c14"
-                    >
-                      <a
-                        className="c15"
-                        href="/design/"
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        Design
-                      </a>
-                    </li>
-                    <li
-                      className="c14"
-                    >
-                      <a
-                        className="c15"
-                        href="/training/"
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        Training
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className="c16"
-                >
-                  <a
-                    className="c17"
-                    href="/our-work/"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
+                      Engineering
+                    </a>
+                  </li>
+                  <li
+                    className="c13"
                   >
-                    Our work
-                  </a>
-                </li>
-                <li
-                  className="c16"
-                >
-                  <a
-                    className="c17"
-                    href="https://medium.com/yld-engineering-blog/"
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    <a
+                      className="c14"
+                      href="/design/"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      Design
+                    </a>
+                  </li>
+                  <li
+                    className="c13"
                   >
-                    Blog
-                  </a>
-                </li>
-                <li
-                  aria-expanded={false}
-                  aria-haspopup="true"
-                  className="c9"
-                  onBlur={[Function]}
+                    <a
+                      className="c14"
+                      href="/training/"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      Training
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="c15"
+              >
+                <a
+                  className="c16"
+                  href="/our-work/"
                   onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  Our work
+                </a>
+              </li>
+              <li
+                className="c15"
+              >
+                <a
+                  className="c16"
+                  href="https://medium.com/yld-engineering-blog/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Blog
+                </a>
+              </li>
+              <li
+                aria-expanded={false}
+                aria-haspopup="true"
+                className="c8"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="c9"
+                  tabIndex="0"
                 >
                   <span
                     className="c10"
-                    tabIndex="0"
                   >
-                    <span
-                      className="c11"
-                    >
-                      About
-                    </span>
-                    <svg
-                      className="c12"
-                      height="6"
-                      viewBox="0 0 6 6"
-                      width="6"
-                    >
-                      <polyline
-                        points="0,0 6,0 6,6"
-                      />
-                    </svg>
+                    About
                   </span>
-                  <ul
+                  <svg
+                    className="c11"
+                    height="6"
+                    viewBox="0 0 6 6"
+                    width="6"
+                  >
+                    <polyline
+                      points="0,0 6,0 6,6"
+                    />
+                  </svg>
+                </span>
+                <ul
+                  className="c12"
+                >
+                  <li
                     className="c13"
                   >
-                    <li
+                    <a
                       className="c14"
+                      href="/about-us/"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
                     >
-                      <a
-                        className="c15"
-                        href="/about-us/"
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        Our team
-                      </a>
-                    </li>
-                    <li
-                      className="c14"
-                    >
-                      <a
-                        className="c15"
-                        href="/contact/"
-                        onClick={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        Contact
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className="c16"
-                >
-                  <a
-                    className="c17"
-                    href="/join-us/"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
+                      Our team
+                    </a>
+                  </li>
+                  <li
+                    className="c13"
                   >
-                    Join us
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                    <a
+                      className="c14"
+                      href="/contact/"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="c15"
+              >
+                <a
+                  className="c16"
+                  href="/join-us/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  Join us
+                </a>
+              </li>
+            </ul>
+          </nav>
           <button
-            className="c18"
+            className="c17"
             onClick={[Function]}
           >
             <svg
-              className="c19"
+              className="c18"
               height="18"
               title="open menu"
               width="24"
@@ -7139,18 +7073,18 @@ exports[`Storyshots Header Header itself 1`] = `
             </svg>
           </button>
           <div
-            className="c20"
+            className="c19"
             onClick={[Function]}
           />
           <nav
-            className="c21"
+            className="c20"
             open={false}
           >
             <div
-              className="c22"
+              className="c21"
             >
               <button
-                className="c23"
+                className="c22"
                 onClick={[Function]}
               >
                 <img
@@ -7161,11 +7095,11 @@ exports[`Storyshots Header Header itself 1`] = `
             </div>
             <ul>
               <li
-                className="c24"
+                className="c23"
               >
                 <a
                   aria-current="page"
-                  className="c25 active"
+                  className="c24 active"
                   href="/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7195,18 +7129,18 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
               >
                 <span
-                  className="c26"
+                  className="c25"
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
-                    className="c27"
+                    className="c26"
                   >
                     Services
                   </span>
                   <svg
-                    className="c12"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7218,10 +7152,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </span>
               </li>
               <li
-                className="c24"
+                className="c23"
               >
                 <a
-                  className="c25"
+                  className="c24"
                   href="/our-work/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7246,10 +7180,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </a>
               </li>
               <li
-                className="c24"
+                className="c23"
               >
                 <a
-                  className="c25"
+                  className="c24"
                   href="https://medium.com/yld-engineering-blog/"
                   rel="noopener noreferrer"
                   states={
@@ -7278,18 +7212,18 @@ exports[`Storyshots Header Header itself 1`] = `
                 aria-haspopup="true"
               >
                 <span
-                  className="c26"
+                  className="c25"
                   onFocus={[Function]}
                   onMouseDown={[Function]}
                   tabIndex="0"
                 >
                   <span
-                    className="c27"
+                    className="c26"
                   >
                     About
                   </span>
                   <svg
-                    className="c12"
+                    className="c11"
                     height="6"
                     viewBox="0 0 6 6"
                     width="6"
@@ -7301,10 +7235,10 @@ exports[`Storyshots Header Header itself 1`] = `
                 </span>
               </li>
               <li
-                className="c24"
+                className="c23"
               >
                 <a
-                  className="c25"
+                  className="c24"
                   href="/join-us/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -7542,7 +7476,8 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 5.25rem;
 }
 
 .c1 {
@@ -7593,31 +7528,6 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    padding-left: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    padding-left: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    padding-left: 0;
-    width: 100%;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    width: 68.75rem;
-  }
-}
-
 @media screen and (min-width:960px) {
   .c4 {
     display: -webkit-box;
@@ -7631,15 +7541,12 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
 }
 
-<div
+<nav
   className="c0"
 >
   <div
@@ -7691,182 +7598,180 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       Engineering
     </a>
   </div>
-  <nav>
-    <ul
-      className="c4"
+  <ul
+    className="c4"
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c5"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
     >
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c5"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
+      <span
+        className="c6"
+        tabIndex="0"
       >
         <span
-          className="c6"
-          tabIndex="0"
+          className="c7"
         >
-          <span
-            className="c7"
-          >
-            Dropdown 1
-          </span>
-          <svg
-            className="c8"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
+          Dropdown 1
         </span>
-        <ul
-          className="c9"
+        <svg
+          className="c8"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
         >
-          <li
-            className="c10"
-          >
-            <a
-              className="c11"
-              href="/item-1/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 1
-            </a>
-          </li>
-          <li
-            className="c10"
-          >
-            <a
-              className="c11"
-              href="/item-2/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 2
-            </a>
-          </li>
-          <li
-            className="c10"
-          >
-            <a
-              className="c11"
-              href="/item-3/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 3
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c12"
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c9"
       >
-        <a
-          className="c13"
-          href="/anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <li
+          className="c10"
         >
-          Anchor 1
-        </a>
-      </li>
-      <li
-        className="c12"
-      >
-        <a
-          className="c13"
-          href="https://uk.linkedin.com/"
-          rel="noopener noreferrer"
-          target="_blank"
+          <a
+            className="c11"
+            href="/item-1/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 1
+          </a>
+        </li>
+        <li
+          className="c10"
         >
-          External anchor
-        </a>
-      </li>
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c5"
-        onBlur={[Function]}
+          <a
+            className="c11"
+            href="/item-2/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 2
+          </a>
+        </li>
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/item-3/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 3
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="/anchor/"
         onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Anchor 1
+      </a>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="https://uk.linkedin.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        External anchor
+      </a>
+    </li>
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c5"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c6"
+        tabIndex="0"
       >
         <span
-          className="c6"
-          tabIndex="0"
+          className="c7"
         >
-          <span
-            className="c7"
-          >
-            Dropdown 2
-          </span>
-          <svg
-            className="c8"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
+          Dropdown 2
         </span>
-        <ul
-          className="c9"
+        <svg
+          className="c8"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
         >
-          <li
-            className="c10"
-          >
-            <a
-              className="c11"
-              href="/go-here/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Go here
-            </a>
-          </li>
-          <li
-            className="c10"
-          >
-            <a
-              className="c11"
-              href="/go-there/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Go there
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c12"
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c9"
       >
-        <a
-          className="c13"
-          href="/last-anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <li
+          className="c10"
         >
-          Anchor 2
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+          <a
+            className="c11"
+            href="/go-here/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Go here
+          </a>
+        </li>
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/go-there/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Go there
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="/last-anchor/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Anchor 2
+      </a>
+    </li>
+  </ul>
+</nav>
 `;
 
 exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
@@ -8075,7 +7980,8 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 5.25rem;
 }
 
 .c2 {
@@ -8131,31 +8037,6 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c1 {
-    padding-left: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c1 {
-    padding-left: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    padding-left: 0;
-    width: 100%;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c1 {
-    width: 68.75rem;
-  }
-}
-
 @media screen and (min-width:960px) {
   .c5 {
     display: -webkit-box;
@@ -8169,9 +8050,6 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
@@ -8180,7 +8058,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
 <header
   className="c0"
 >
-  <div
+  <nav
     className="c1"
   >
     <div
@@ -8232,182 +8110,180 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         Engineering
       </a>
     </div>
-    <nav>
-      <ul
-        className="c5"
+    <ul
+      className="c5"
+    >
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c6"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
       >
-        <li
-          aria-expanded={false}
-          aria-haspopup="true"
-          className="c6"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
+        <span
+          className="c7"
+          tabIndex="0"
         >
           <span
-            className="c7"
-            tabIndex="0"
+            className="c8"
           >
-            <span
-              className="c8"
-            >
-              Dropdown 1
-            </span>
-            <svg
-              className="c9"
-              height="6"
-              viewBox="0 0 6 6"
-              width="6"
-            >
-              <polyline
-                points="0,0 6,0 6,6"
-              />
-            </svg>
+            Dropdown 1
           </span>
-          <ul
-            className="c10"
+          <svg
+            className="c9"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
           >
-            <li
-              className="c11"
-            >
-              <a
-                className="c12"
-                href="/item-1/"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Item 1
-              </a>
-            </li>
-            <li
-              className="c11"
-            >
-              <a
-                className="c12"
-                href="/item-2/"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Item 2
-              </a>
-            </li>
-            <li
-              className="c11"
-            >
-              <a
-                className="c12"
-                href="/item-3/"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Item 3
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li
-          className="c13"
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
+        </span>
+        <ul
+          className="c10"
         >
-          <a
-            className="c14"
-            href="/anchor/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+          <li
+            className="c11"
           >
-            Anchor 1
-          </a>
-        </li>
-        <li
-          className="c13"
-        >
-          <a
-            className="c14"
-            href="https://uk.linkedin.com/"
-            rel="noopener noreferrer"
-            target="_blank"
+            <a
+              className="c12"
+              href="/item-1/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 1
+            </a>
+          </li>
+          <li
+            className="c11"
           >
-            External anchor
-          </a>
-        </li>
-        <li
-          aria-expanded={false}
-          aria-haspopup="true"
-          className="c6"
-          onBlur={[Function]}
+            <a
+              className="c12"
+              href="/item-2/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 2
+            </a>
+          </li>
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/item-3/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Item 3
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="/anchor/"
           onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Anchor 1
+        </a>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="https://uk.linkedin.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          External anchor
+        </a>
+      </li>
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c6"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c7"
+          tabIndex="0"
         >
           <span
-            className="c7"
-            tabIndex="0"
+            className="c8"
           >
-            <span
-              className="c8"
-            >
-              Dropdown 2
-            </span>
-            <svg
-              className="c9"
-              height="6"
-              viewBox="0 0 6 6"
-              width="6"
-            >
-              <polyline
-                points="0,0 6,0 6,6"
-              />
-            </svg>
+            Dropdown 2
           </span>
-          <ul
-            className="c10"
+          <svg
+            className="c9"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
           >
-            <li
-              className="c11"
-            >
-              <a
-                className="c12"
-                href="/go-here/"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Go here
-              </a>
-            </li>
-            <li
-              className="c11"
-            >
-              <a
-                className="c12"
-                href="/go-there/"
-                onClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Go there
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li
-          className="c13"
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
+        </span>
+        <ul
+          className="c10"
         >
-          <a
-            className="c14"
-            href="/last-anchor/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+          <li
+            className="c11"
           >
-            Anchor 2
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+            <a
+              className="c12"
+              href="/go-here/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Go here
+            </a>
+          </li>
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/go-there/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Go there
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="/last-anchor/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Anchor 2
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 `;
 
@@ -8477,7 +8353,8 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 5.25rem;
 }
 
 .c1 {
@@ -8505,31 +8382,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    padding-left: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    padding-left: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    padding-left: 0;
-    width: 100%;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    width: 68.75rem;
-  }
-}
-
 @media screen and (min-width:960px) {
   .c2 {
     display: -webkit-box;
@@ -8543,15 +8395,12 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
 }
 
-<div
+<nav
   className="c0"
 >
   <div
@@ -8573,51 +8422,49 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
       />
     </a>
   </div>
-  <nav>
-    <ul
-      className="c2"
+  <ul
+    className="c2"
+  >
+    <li
+      className="c3"
     >
-      <li
-        className="c3"
+      <a
+        aria-current="page"
+        className="c4 active"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
       >
-        <a
-          aria-current="page"
-          className="c4 active"
-          href="/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          style={Object {}}
-        >
-          Here
-        </a>
-      </li>
-      <li
-        className="c3"
+        Here
+      </a>
+    </li>
+    <li
+      className="c3"
+    >
+      <a
+        className="c4"
+        href="/there"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <a
-          className="c4"
-          href="/there"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          There
-        </a>
-      </li>
-      <li
-        className="c3"
+        There
+      </a>
+    </li>
+    <li
+      className="c3"
+    >
+      <a
+        className="c4"
+        href="/https:/uk.linkedin.com/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <a
-          className="c4"
-          href="/https:/uk.linkedin.com/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          LinkedIn (external anchor)
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+        LinkedIn (external anchor)
+      </a>
+    </li>
+  </ul>
+</nav>
 `;
 
 exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
@@ -8808,7 +8655,8 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1.5rem;
+  width: 100%;
+  height: 5.25rem;
 }
 
 .c1 {
@@ -8846,31 +8694,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   }
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    padding-left: 2.25rem;
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    padding-left: calc(50% - 240px);
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    padding-left: 0;
-    width: 100%;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    width: 68.75rem;
-  }
-}
-
 @media screen and (min-width:960px) {
   .c2 {
     display: -webkit-box;
@@ -8884,15 +8707,12 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     padding: 1.25rem 0rem 1rem;
     padding-right: 0rem;
   }
 }
 
-<div
+<nav
   className="c0"
 >
   <div
@@ -8914,182 +8734,180 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       />
     </a>
   </div>
-  <nav>
-    <ul
-      className="c2"
+  <ul
+    className="c2"
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c3"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
     >
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
+      <span
+        className="c4"
+        tabIndex="0"
       >
         <span
-          className="c4"
-          tabIndex="0"
+          className="c5"
         >
-          <span
-            className="c5"
-          >
-            First dropdown
-          </span>
-          <svg
-            className="c6"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
+          First dropdown
         </span>
-        <ul
-          className="c7"
+        <svg
+          className="c6"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
         >
-          <li
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/item-1/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 1
-            </a>
-          </li>
-          <li
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/item-2/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 2
-            </a>
-          </li>
-          <li
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/item-3/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Item 3
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c10"
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c7"
       >
-        <a
-          className="c11"
-          href="/anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <li
+          className="c8"
         >
-          First anchor
-        </a>
-      </li>
-      <li
-        className="c10"
-      >
-        <a
-          className="c11"
-          href="https://uk.linkedin.com/"
-          rel="noopener noreferrer"
-          target="_blank"
+          <a
+            className="c9"
+            href="/item-1/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 1
+          </a>
+        </li>
+        <li
+          className="c8"
         >
-          LinkedIn (external anchor)
-        </a>
-      </li>
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c3"
-        onBlur={[Function]}
+          <a
+            className="c9"
+            href="/item-2/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 2
+          </a>
+        </li>
+        <li
+          className="c8"
+        >
+          <a
+            className="c9"
+            href="/item-3/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 3
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c10"
+    >
+      <a
+        className="c11"
+        href="/anchor/"
         onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        First anchor
+      </a>
+    </li>
+    <li
+      className="c10"
+    >
+      <a
+        className="c11"
+        href="https://uk.linkedin.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        LinkedIn (external anchor)
+      </a>
+    </li>
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c3"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c4"
+        tabIndex="0"
       >
         <span
-          className="c4"
-          tabIndex="0"
+          className="c5"
         >
-          <span
-            className="c5"
-          >
-            Second dropdown
-          </span>
-          <svg
-            className="c6"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
+          Second dropdown
         </span>
-        <ul
-          className="c7"
+        <svg
+          className="c6"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
         >
-          <li
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/go-here/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Go here
-            </a>
-          </li>
-          <li
-            className="c8"
-          >
-            <a
-              className="c9"
-              href="/go-there/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Go there
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c10"
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c7"
       >
-        <a
-          className="c11"
-          href="/last-anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <li
+          className="c8"
         >
-          Last anchor
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+          <a
+            className="c9"
+            href="/go-here/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Go here
+          </a>
+        </li>
+        <li
+          className="c8"
+        >
+          <a
+            className="c9"
+            href="/go-there/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Go there
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c10"
+    >
+      <a
+        className="c11"
+        href="/last-anchor/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Last anchor
+      </a>
+    </li>
+  </ul>
+</nav>
 `;
 
 exports[`Storyshots Image with file url 1`] = `
