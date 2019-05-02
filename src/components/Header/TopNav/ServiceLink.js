@@ -3,14 +3,14 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
-import theme from '../../../../src/utils/theme'
 
 import { servicesRegExp, getSpecialityService } from './ServicesSpecialitiesMap'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
-  color: ${props => props.color};
+  color: ${props =>
+    props.theme.colors[props.isServicePage ? 'black' : 'white']};
 
   @media screen and (min-width: 960px) {
     font-size: ${remcalc(30)};
@@ -18,7 +18,8 @@ const StyledServiceLink = styled(Link)`
 
   &:hover {
     text-decoration: underline;
-    color: ${props => props.color};
+    color: ${props =>
+      props.theme.colors[props.isServicePage ? 'black' : 'white']};
   }
 `
 
@@ -32,10 +33,7 @@ const ServiceLink = ({ path = '/' }) => {
   return (
     <Fragment>
       {isServicePage || isSpecialityPage ? (
-        <StyledServiceLink
-          to={`/${service}`}
-          color={theme.colors[isServicePage ? 'black' : 'white']}
-        >
+        <StyledServiceLink to={`/${service}`} isServicePage={isServicePage}>
           {capitalize(service)}
         </StyledServiceLink>
       ) : null}
