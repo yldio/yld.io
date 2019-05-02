@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import Flex from 'styled-flex-component'
 import remcalc from 'remcalc'
 
 import navLinks from './navLinks'
@@ -54,27 +53,25 @@ const Header = ({ path, blue }) => {
           <Grid>
             <Row style={{ overflow: 'visible' }}>
               <Col width={[1]} style={{ overflow: 'visible' }}>
-                <Flex alignCenter justifyBetween full as="header">
-                  <TopNav
-                    path={path}
-                    links={navLinks}
-                    themeVariation={blue ? 'dark' : 'light'}
-                  />
-                  <Hamburger
-                    onClick={() => toggleSideNav(true)}
-                    themeVariation={blue ? 'dark' : 'light'}
-                  />
-                  <Overlay
-                    visible={isSideNavOpen}
-                    onClick={() => toggleSideNav(false)}
-                  />
-                  <SideNav
-                    links={navLinks}
-                    themeVariation="dark"
-                    isOpen={isSideNavOpen}
-                    onClose={() => toggleSideNav(false)}
-                  />
-                </Flex>
+                <TopNav
+                  path={path}
+                  links={navLinks}
+                  themeVariation={blue ? 'dark' : 'light'}
+                />
+                <Hamburger
+                  onClick={() => toggleSideNav(true)}
+                  themeVariation={blue ? 'dark' : 'light'}
+                />
+                <Overlay
+                  visible={isSideNavOpen}
+                  onClick={() => toggleSideNav(false)}
+                />
+                <SideNav
+                  links={navLinks}
+                  themeVariation="dark"
+                  isOpen={isSideNavOpen}
+                  onClose={() => toggleSideNav(false)}
+                />
               </Col>
             </Row>
           </Grid>

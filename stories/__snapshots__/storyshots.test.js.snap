@@ -6176,68 +6176,11 @@ exports[`Storyshots Header Header itself 1`] = `
   display: flex;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c18 {
+.c17 {
   fill: #333333;
 }
 
-.c17 {
+.c16 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6264,20 +6207,20 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c17:focus {
+.c16:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c17:active {
+.c16:active {
   outline: none;
 }
 
-.c19 {
+.c18 {
   display: none;
 }
 
-.c16 {
+.c15 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6289,16 +6232,16 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c16:focus {
+.c15:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c16:active {
+.c15:active {
   outline: none;
 }
 
-.c15 {
+.c14 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   display: -webkit-box;
   display: -webkit-flex;
@@ -6308,32 +6251,32 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #333333;
 }
 
-.c15:hover,
-.c15 > a:hover {
+.c14:hover,
+.c14 > a:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c15 > a:active {
+.c14 > a:active {
   background: #333333;
   color: #fff;
 }
 
-.c15 > a.active {
+.c14 > a.active {
   background: #fff;
   color: #828282;
 }
 
-.c15 > a.active:active {
+.c14 > a.active:active {
   background: #fff;
   color: #828282;
 }
 
-.c15 > a.active:hover {
+.c14 > a.active:hover {
   color: #333333;
 }
 
-.c11 {
+.c10 {
   stroke: currentColor;
   stroke-width: 0.1875rem;
   fill: none;
@@ -6345,14 +6288,14 @@ exports[`Storyshots Header Header itself 1`] = `
   transition: transform 0s ease 0.1s;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c14 {
+.c13 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
   background: linear-gradient(to right,#616161 0%,transparent 0);
@@ -6367,21 +6310,21 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #828282;
 }
 
-.c14:focus {
+.c13:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c14:active {
+.c13:active {
   outline: none;
 }
 
-.c14:hover,
-.c14.active {
+.c13:hover,
+.c13.active {
   color: #333333;
 }
 
-.c8 {
+.c7 {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   cursor: pointer;
@@ -6389,17 +6332,17 @@ exports[`Storyshots Header Header itself 1`] = `
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.c8 > span {
+.c7 > span {
   background: #fff;
   color: #333333;
 }
 
-.c8 > span:hover {
+.c7 > span:hover {
   background: #333333;
   color: #a9a9a9;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6422,21 +6365,21 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c9:focus {
+.c8:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c9:active {
+.c8:active {
   outline: none;
 }
 
-.c10 {
+.c9 {
   padding-right: 0.375rem;
   outline: none;
 }
 
-.c12 {
+.c11 {
   position: absolute;
   width: 10rem;
   display: -webkit-box;
@@ -6455,7 +6398,7 @@ exports[`Storyshots Header Header itself 1`] = `
   z-index: 999;
 }
 
-.c5 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6468,7 +6411,7 @@ exports[`Storyshots Header Header itself 1`] = `
   height: 5.25rem;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6479,11 +6422,35 @@ exports[`Storyshots Header Header itself 1`] = `
   align-items: center;
 }
 
-.c7 {
+.c6 {
   display: none;
 }
 
-.c22 {
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c21 {
   border: none;
   background: transparent;
   padding: 0;
@@ -6507,16 +6474,16 @@ exports[`Storyshots Header Header itself 1`] = `
   outline: 0.25rem solid transparent;
 }
 
-.c22:focus {
+.c21:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c22:active {
+.c21:active {
   outline: none;
 }
 
-.c25 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6539,28 +6506,28 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c25:focus {
+.c24:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c25:active {
+.c24:active {
   outline: none;
 }
 
-.c25:hover,
-.c25:focus {
+.c24:hover,
+.c24:focus {
   color: #fff;
 }
 
-.c26 {
+.c25 {
   max-width: 320px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c24 {
+.c23 {
   display: block;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
@@ -6574,31 +6541,31 @@ exports[`Storyshots Header Header itself 1`] = `
   color: #858196;
 }
 
-.c24:hover,
-.c24:active,
-.c24.active {
+.c23:hover,
+.c23:active,
+.c23.active {
   color: #fff;
 }
 
-.c24:focus {
+.c23:focus {
   color: #fff;
   outline: 0.25rem solid transparent;
 }
 
-.c24:focus:focus {
+.c23:focus:focus {
   outline-color: #65FFCD;
   z-index: 1;
 }
 
-.c24:focus:active {
+.c23:focus:active {
   outline: none;
 }
 
-.c23 {
+.c22 {
   list-style-type: none;
 }
 
-.c20 {
+.c19 {
   position: fixed;
   background: #090329;
   height: 100vh;
@@ -6752,13 +6719,13 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c17 {
+  .c16 {
     display: none;
   }
 }
 
 @media screen and (max-width:959px) {
-  .c19 {
+  .c18 {
     z-index: 9;
     background-color: rgba(51,51,51,0.2);
     content: '';
@@ -6778,27 +6745,27 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c15 {
+  .c14 {
     margin-right: 0.375rem;
   }
 
-  .c15:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c8 {
-    margin-right: 0.375rem;
-  }
-
-  .c8:last-child {
+  .c14:last-child {
     margin-right: 0rem;
   }
 }
 
 @media screen and (min-width:960px) {
   .c7 {
+    margin-right: 0.375rem;
+  }
+
+  .c7:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6816,7 +6783,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:600px) and (max-width:959px) {
-  .c20 {
+  .c19 {
     width: 18.4375rem;
     left: auto;
     right: 0;
@@ -6824,7 +6791,7 @@ exports[`Storyshots Header Header itself 1`] = `
 }
 
 @media screen and (min-width:960px) {
-  .c20 {
+  .c19 {
     display: none;
   }
 }
@@ -6856,415 +6823,411 @@ exports[`Storyshots Header Header itself 1`] = `
           ]
         }
       >
-        <header
+        <nav
           className="c4"
         >
-          <nav
+          <div
             className="c5"
           >
-            <div
-              className="c6"
+            <a
+              aria-current="page"
+              className=""
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={Object {}}
+            >
+              <img
+                alt="yld logo"
+                height="48"
+                role="link"
+                src="test-file-stub"
+              />
+            </a>
+          </div>
+          <ul
+            className="c6"
+          >
+            <li
+              aria-expanded={false}
+              aria-haspopup="true"
+              className="c7"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+            >
+              <span
+                className="c8"
+                tabIndex="0"
+              >
+                <span
+                  className="c9"
+                >
+                  Services
+                </span>
+                <svg
+                  className="c10"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  width="6"
+                >
+                  <polyline
+                    points="0,0 6,0 6,6"
+                  />
+                </svg>
+              </span>
+              <ul
+                className="c11"
+              >
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/engineering/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Engineering
+                  </a>
+                </li>
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/design/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Design
+                  </a>
+                </li>
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/training/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Training
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              className="c14"
+            >
+              <a
+                className="c15"
+                href="/our-work/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Our work
+              </a>
+            </li>
+            <li
+              className="c14"
+            >
+              <a
+                className="c15"
+                href="https://medium.com/yld-engineering-blog/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Blog
+              </a>
+            </li>
+            <li
+              aria-expanded={false}
+              aria-haspopup="true"
+              className="c7"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+            >
+              <span
+                className="c8"
+                tabIndex="0"
+              >
+                <span
+                  className="c9"
+                >
+                  About
+                </span>
+                <svg
+                  className="c10"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  width="6"
+                >
+                  <polyline
+                    points="0,0 6,0 6,6"
+                  />
+                </svg>
+              </span>
+              <ul
+                className="c11"
+              >
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/about-us/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Our team
+                  </a>
+                </li>
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/contact/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              className="c14"
+            >
+              <a
+                className="c15"
+                href="/join-us/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Join us
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          className="c16"
+          onClick={[Function]}
+        >
+          <svg
+            className="c17"
+            height="18"
+            title="open menu"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 16h24v2H0zm0-8h24v2H0zm0-8h24v2H0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+        <div
+          className="c18"
+          onClick={[Function]}
+        />
+        <nav
+          className="c19"
+          open={false}
+        >
+          <div
+            className="c20"
+          >
+            <button
+              className="c21"
+              onClick={[Function]}
+            >
+              <img
+                alt="Close menu"
+                src="test-file-stub"
+              />
+            </button>
+          </div>
+          <ul>
+            <li
+              className="c22"
             >
               <a
                 aria-current="page"
-                className=""
+                className="c23 active"
                 href="/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                states={
+                  Object {
+                    "default": Array [
+                      "
+  color: #858196;
+",
+                    ],
+                    "hoverActive": Array [
+                      "
+  color: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  }
+                }
                 style={Object {}}
               >
-                <img
-                  alt="yld logo"
-                  height="48"
-                  role="link"
-                  src="test-file-stub"
-                />
+                Home
               </a>
-            </div>
-            <ul
-              className="c7"
+            </li>
+            <li
+              aria-expanded={false}
+              aria-haspopup="true"
             >
-              <li
-                aria-expanded={false}
-                aria-haspopup="true"
-                className="c8"
-                onBlur={[Function]}
-                onClick={[Function]}
+              <span
+                className="c24"
                 onFocus={[Function]}
                 onMouseDown={[Function]}
-              >
-                <span
-                  className="c9"
-                  tabIndex="0"
-                >
-                  <span
-                    className="c10"
-                  >
-                    Services
-                  </span>
-                  <svg
-                    className="c11"
-                    height="6"
-                    viewBox="0 0 6 6"
-                    width="6"
-                  >
-                    <polyline
-                      points="0,0 6,0 6,6"
-                    />
-                  </svg>
-                </span>
-                <ul
-                  className="c12"
-                >
-                  <li
-                    className="c13"
-                  >
-                    <a
-                      className="c14"
-                      href="/engineering/"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      Engineering
-                    </a>
-                  </li>
-                  <li
-                    className="c13"
-                  >
-                    <a
-                      className="c14"
-                      href="/design/"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      Design
-                    </a>
-                  </li>
-                  <li
-                    className="c13"
-                  >
-                    <a
-                      className="c14"
-                      href="/training/"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      Training
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li
-                className="c15"
-              >
-                <a
-                  className="c16"
-                  href="/our-work/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  Our work
-                </a>
-              </li>
-              <li
-                className="c15"
-              >
-                <a
-                  className="c16"
-                  href="https://medium.com/yld-engineering-blog/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Blog
-                </a>
-              </li>
-              <li
-                aria-expanded={false}
-                aria-haspopup="true"
-                className="c8"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-              >
-                <span
-                  className="c9"
-                  tabIndex="0"
-                >
-                  <span
-                    className="c10"
-                  >
-                    About
-                  </span>
-                  <svg
-                    className="c11"
-                    height="6"
-                    viewBox="0 0 6 6"
-                    width="6"
-                  >
-                    <polyline
-                      points="0,0 6,0 6,6"
-                    />
-                  </svg>
-                </span>
-                <ul
-                  className="c12"
-                >
-                  <li
-                    className="c13"
-                  >
-                    <a
-                      className="c14"
-                      href="/about-us/"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      Our team
-                    </a>
-                  </li>
-                  <li
-                    className="c13"
-                  >
-                    <a
-                      className="c14"
-                      href="/contact/"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li
-                className="c15"
-              >
-                <a
-                  className="c16"
-                  href="/join-us/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  Join us
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <button
-            className="c17"
-            onClick={[Function]}
-          >
-            <svg
-              className="c18"
-              height="18"
-              title="open menu"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 16h24v2H0zm0-8h24v2H0zm0-8h24v2H0z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </button>
-          <div
-            className="c19"
-            onClick={[Function]}
-          />
-          <nav
-            className="c20"
-            open={false}
-          >
-            <div
-              className="c21"
-            >
-              <button
-                className="c22"
-                onClick={[Function]}
-              >
-                <img
-                  alt="Close menu"
-                  src="test-file-stub"
-                />
-              </button>
-            </div>
-            <ul>
-              <li
-                className="c23"
-              >
-                <a
-                  aria-current="page"
-                  className="c24 active"
-                  href="/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  states={
-                    Object {
-                      "default": Array [
-                        "
-  color: #858196;
-",
-                      ],
-                      "hoverActive": Array [
-                        "
-  color: ",
-                        [Function],
-                        ";
-",
-                      ],
-                    }
-                  }
-                  style={Object {}}
-                >
-                  Home
-                </a>
-              </li>
-              <li
-                aria-expanded={false}
-                aria-haspopup="true"
+                tabIndex="0"
               >
                 <span
                   className="c25"
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
-                  tabIndex="0"
                 >
-                  <span
-                    className="c26"
-                  >
-                    Services
-                  </span>
-                  <svg
-                    className="c11"
-                    height="6"
-                    viewBox="0 0 6 6"
-                    width="6"
-                  >
-                    <polyline
-                      points="0,0 6,0 6,6"
-                    />
-                  </svg>
+                  Services
                 </span>
-              </li>
-              <li
+                <svg
+                  className="c10"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  width="6"
+                >
+                  <polyline
+                    points="0,0 6,0 6,6"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li
+              className="c22"
+            >
+              <a
                 className="c23"
-              >
-                <a
-                  className="c24"
-                  href="/our-work/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  states={
-                    Object {
-                      "default": Array [
-                        "
+                href="/our-work/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                states={
+                  Object {
+                    "default": Array [
+                      "
   color: #858196;
 ",
-                      ],
-                      "hoverActive": Array [
-                        "
+                    ],
+                    "hoverActive": Array [
+                      "
   color: ",
-                        [Function],
-                        ";
+                      [Function],
+                      ";
 ",
-                      ],
-                    }
+                    ],
                   }
-                >
-                  Our work
-                </a>
-              </li>
-              <li
-                className="c23"
+                }
               >
-                <a
-                  className="c24"
-                  href="https://medium.com/yld-engineering-blog/"
-                  rel="noopener noreferrer"
-                  states={
-                    Object {
-                      "default": Array [
-                        "
+                Our work
+              </a>
+            </li>
+            <li
+              className="c22"
+            >
+              <a
+                className="c23"
+                href="https://medium.com/yld-engineering-blog/"
+                rel="noopener noreferrer"
+                states={
+                  Object {
+                    "default": Array [
+                      "
   color: #858196;
 ",
-                      ],
-                      "hoverActive": Array [
-                        "
+                    ],
+                    "hoverActive": Array [
+                      "
   color: ",
-                        [Function],
-                        ";
+                      [Function],
+                      ";
 ",
-                      ],
-                    }
+                    ],
                   }
-                  target="_blank"
-                >
-                  Blog
-                </a>
-              </li>
-              <li
-                aria-expanded={false}
-                aria-haspopup="true"
+                }
+                target="_blank"
+              >
+                Blog
+              </a>
+            </li>
+            <li
+              aria-expanded={false}
+              aria-haspopup="true"
+            >
+              <span
+                className="c24"
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                tabIndex="0"
               >
                 <span
                   className="c25"
-                  onFocus={[Function]}
-                  onMouseDown={[Function]}
-                  tabIndex="0"
                 >
-                  <span
-                    className="c26"
-                  >
-                    About
-                  </span>
-                  <svg
-                    className="c11"
-                    height="6"
-                    viewBox="0 0 6 6"
-                    width="6"
-                  >
-                    <polyline
-                      points="0,0 6,0 6,6"
-                    />
-                  </svg>
+                  About
                 </span>
-              </li>
-              <li
+                <svg
+                  className="c10"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  width="6"
+                >
+                  <polyline
+                    points="0,0 6,0 6,6"
+                  />
+                </svg>
+              </span>
+            </li>
+            <li
+              className="c22"
+            >
+              <a
                 className="c23"
-              >
-                <a
-                  className="c24"
-                  href="/join-us/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  states={
-                    Object {
-                      "default": Array [
-                        "
+                href="/join-us/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                states={
+                  Object {
+                    "default": Array [
+                      "
   color: #858196;
 ",
-                      ],
-                      "hoverActive": Array [
-                        "
+                    ],
+                    "hoverActive": Array [
+                      "
   color: ",
-                        [Function],
-                        ";
+                      [Function],
+                      ";
 ",
-                      ],
-                    }
+                    ],
                   }
-                >
-                  Join us
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+                }
+              >
+                Join us
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
