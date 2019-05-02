@@ -26,14 +26,7 @@ const StyledGrid = styled(Grid)`
   max-width: unset;
   z-index: ${props => props.theme.zIndexes.header};
 
-  ${breakpoint('smallTablet')`
-    max-width: none;
-    margin: 0 auto;
-  `}
-
   ${breakpoint('desktop')`
-    right: 50%;
-    margin: 0 -50% 0 0;
     display: flex;
     justify-content: center;
   `}
