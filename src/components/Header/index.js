@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
 
 import navLinks from './navLinks'
 import { Row, Col, Grid } from '../grid'
@@ -16,16 +15,8 @@ const StyledContainer = styled.div`
   width: 100%;
   max-width: unset;
   z-index: ${props => props.theme.zIndexes.header};
-`
-
-const StyledShadowGradient = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: ${remcalc(84)};
-  height: ${remcalc(9)};
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
+  box-shadow: ${props =>
+    props.hasShadow ? `0 9px 9px -9px rgba(0, 0, 0, 0.175)` : null};
 `
 
 // nb: training/ and training/#node-js for example are navigation pages and still render the header
@@ -48,8 +39,10 @@ const Header = ({ path, blue }) => {
   return (
     <Fragment>
       {!isModalPage ? (
-        <StyledContainer isSpecialityPage={isSpecialityPage}>
-          {isScrolled ? <StyledShadowGradient /> : null}
+        <StyledContainer
+          isSpecialityPage={isSpecialityPage}
+          hasShadow={isScrolled}
+        >
           <Grid>
             <Row style={{ overflow: 'visible' }}>
               <Col width={[1]} style={{ overflow: 'visible' }}>
