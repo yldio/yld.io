@@ -8,7 +8,7 @@ import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
 
-const StyledTopNavContainer = styled.div`
+const StyledTopNavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -29,7 +29,6 @@ const TopNavList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex: 1;
     padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
     padding-right: ${remcalc(0)};
   }
@@ -41,37 +40,35 @@ const TopNav = ({ links, themeVariation, path }) => (
       <LogoLink path={path} />
       <ServiceLink path={path} />
     </StyledLinksContainer>
-    <nav>
-      <TopNavList>
-        {links.map((link, idx) => {
-          if (link.dropdownItems) {
-            const { label, dropdownItems } = link
-            return (
-              <Dropdown
-                key={idx}
-                themeVariation={themeVariation}
-                items={dropdownItems}
-              >
-                {label}
-              </Dropdown>
-            )
-          } else {
-            const { label, to, href } = link
-            return (
-              <OuterAnchorItem
-                key={idx}
-                themeVariation={themeVariation}
-                activeClassName="active"
-                to={to}
-                href={href}
-              >
-                {label}
-              </OuterAnchorItem>
-            )
-          }
-        })}
-      </TopNavList>
-    </nav>
+    <TopNavList>
+      {links.map((link, idx) => {
+        if (link.dropdownItems) {
+          const { label, dropdownItems } = link
+          return (
+            <Dropdown
+              key={idx}
+              themeVariation={themeVariation}
+              items={dropdownItems}
+            >
+              {label}
+            </Dropdown>
+          )
+        } else {
+          const { label, to, href } = link
+          return (
+            <OuterAnchorItem
+              key={idx}
+              themeVariation={themeVariation}
+              activeClassName="active"
+              to={to}
+              href={href}
+            >
+              {label}
+            </OuterAnchorItem>
+          )
+        }
+      })}
+    </TopNavList>
   </StyledTopNavContainer>
 )
 
