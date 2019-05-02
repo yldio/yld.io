@@ -1,9 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
-
 import styled from 'styled-components'
 import Flex from 'styled-flex-component'
-import { Padding } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import navLinks from './navLinks'
@@ -13,23 +10,13 @@ import Overlay from './Overlay'
 import TopNav from './TopNav'
 import SideNav from './SideNav'
 
-const StyledPadding = styled(Padding)`
-  height: ${remcalc(120)};
-`
-
-const StyledGrid = styled(Grid)`
+const StyledContainer = styled.div`
   position: fixed;
-  height: ${remcalc(84)};
   background: ${props =>
     props.theme.colors[props.isSpecialityPage ? 'blueBg' : 'white']};
   width: 100%;
   max-width: unset;
   z-index: ${props => props.theme.zIndexes.header};
-
-  ${breakpoint('desktop')`
-    display: flex;
-    justify-content: center;
-  `}
 `
 
 const StyledShadowGradient = styled.div`
@@ -62,11 +49,11 @@ const Header = ({ path, blue }) => {
   return (
     <Fragment>
       {!isModalPage ? (
-        <StyledGrid isSpecialityPage={isSpecialityPage}>
+        <StyledContainer isSpecialityPage={isSpecialityPage}>
           {isScrolled ? <StyledShadowGradient /> : null}
-          <Row style={{ overflow: 'visible' }}>
-            <Col width={[1]} style={{ overflow: 'visible' }}>
-              <StyledPadding bottom={3}>
+          <Grid>
+            <Row style={{ overflow: 'visible' }}>
+              <Col width={[1]} style={{ overflow: 'visible' }}>
                 <Flex alignCenter justifyBetween full as="header">
                   <TopNav
                     path={path}
@@ -88,10 +75,10 @@ const Header = ({ path, blue }) => {
                     onClose={() => toggleSideNav(false)}
                   />
                 </Flex>
-              </StyledPadding>
-            </Col>
-          </Row>
-        </StyledGrid>
+              </Col>
+            </Row>
+          </Grid>
+        </StyledContainer>
       ) : null}
     </Fragment>
   )

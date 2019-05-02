@@ -11,27 +11,8 @@ import Dropdown from './Dropdown'
 const StyledTopNavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
-  ${breakpoint('smallPhone')`
-    padding-left: ${remcalc(24)};
-  `}
-
-  ${breakpoint('phone')`
-    padding-left: ${remcalc(36)};
-  `}
-
-  ${breakpoint('largePhone')`
-    padding-left: calc(50% - 240px);
-  `}
-
-  ${breakpoint('smallTablet')`
-    padding-left: 0;
-    width: 100%;
-  `}
-
-  ${breakpoint('desktop')`
-    width: ${remcalc(1100)};
-  `};
+  width: 100%;
+  height: ${remcalc(84)};
 `
 
 const StyledLinksContainer = styled.div`
