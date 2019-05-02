@@ -8,14 +8,12 @@ import TitleAndMediaList from '../Common/TitleAndMediaList'
 const TutorialsSection = ({ tutorials }) => {
   const mediaItems = tutorials
     .slice(0, 3)
-    .map(({ id, title, link, additionalInfo }) => {
-      return {
-        id,
-        title,
-        href: link,
-        body: additionalInfo
-      }
-    })
+    .map(({ id, title, link, additionalInfo }) => ({
+      id,
+      title,
+      href: link,
+      body: additionalInfo
+    }))
 
   return (
     <GreyBackground>
