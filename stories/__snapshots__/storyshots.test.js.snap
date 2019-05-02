@@ -6615,15 +6615,7 @@ exports[`Storyshots Header Header itself 1`] = `
 
 .c4 {
   padding-bottom: 2.25rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 7.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .c0 {
@@ -6632,7 +6624,7 @@ exports[`Storyshots Header Header itself 1`] = `
   background: #fff;
   width: 100%;
   max-width: unset;
-  z-index: 100;
+  z-index: 999;
 }
 
 @media (min-width:29.4375em) {
@@ -6888,17 +6880,8 @@ exports[`Storyshots Header Header itself 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c0 {
-    max-width: none;
-    margin: 0 auto;
-  }
-}
-
 @media (min-width:74.8125em) {
   .c0 {
-    right: 50%;
-    margin: 0 -50% 0 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -7700,8 +7683,8 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
     </a>
     <a
       className="c3"
-      color="#1d1d1d"
       href="/engineering"
+      isServicePage={true}
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -8241,8 +8224,8 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
       </a>
       <a
         className="c4"
-        color="#fff"
         href="/engineering"
+        isServicePage={false}
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
