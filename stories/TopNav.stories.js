@@ -1,7 +1,10 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
+import styled from 'styled-components'
+
 import Theme from './theme'
 import TopNav from '../src/components/Header/TopNav/'
+import theme from '../src/utils/theme'
 
 addDecorator(Theme)
 
@@ -22,7 +25,7 @@ const anchors = [
 
 const anchorsAndDropdowns = [
   {
-    label: 'First dropdown',
+    label: 'Dropdown 1',
     dropdownItems: [
       {
         label: 'Item 1',
@@ -39,15 +42,15 @@ const anchorsAndDropdowns = [
     ]
   },
   {
-    label: 'First anchor',
+    label: 'Anchor 1',
     to: '/anchor/'
   },
   {
-    label: 'LinkedIn (external anchor)',
+    label: 'External anchor',
     href: 'https://uk.linkedin.com/'
   },
   {
-    label: 'Second dropdown',
+    label: 'Dropdown 2',
     dropdownItems: [
       {
         label: 'Go here',
@@ -60,10 +63,15 @@ const anchorsAndDropdowns = [
     ]
   },
   {
-    label: 'Last anchor',
+    label: 'Anchor 2',
     to: '/last-anchor/'
   }
 ]
+
+const DarkThemedHeader = styled.header`
+  background: ${theme.colors.blueBg};
+  width: 100%;
+`
 
 storiesOf('Header', module)
   .add('TopNavbar - light theme', () => (
@@ -71,4 +79,16 @@ storiesOf('Header', module)
   ))
   .add('TopNavbar with dropdowns - light theme', () => (
     <TopNav links={anchorsAndDropdowns} themeVariation="light" />
+  ))
+  .add('TopNavbar - Service TopNavBar', () => (
+    <TopNav links={anchorsAndDropdowns} path="engineering" />
+  ))
+  .add('TopNavbar - Speciality TopNavBar', () => (
+    <DarkThemedHeader>
+      <TopNav
+        links={anchorsAndDropdowns}
+        path="speciality/node-js/"
+        themeVariation="dark"
+      />
+    </DarkThemedHeader>
   ))
