@@ -92,7 +92,12 @@ const IndexPage = ({
 }) => {
   return (
     <Layout>
-      <Head page={caseStudy} />
+      <Head
+        page={{
+          ...caseStudy,
+          socialLogo: (caseStudy.posterImage.file || {}).url
+        }}
+      />
       <CaseStudyHero caseStudy={caseStudy} />
       <Grid>
         <Row>
