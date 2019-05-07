@@ -116,6 +116,7 @@
     "serve": "^10.1.1",
     "serve-static": "^1.13.2",
     "storybook-addon-scissors": "4.0.2",
+    "storybook-readme": "^5.0.3",
     "striptags": "3.1.1",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended": "^2.1.0",
