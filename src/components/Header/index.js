@@ -19,8 +19,8 @@ const StyledContainer = styled.div`
     props.hasShadow ? `0 9px 9px -9px rgba(0, 0, 0, 0.175)` : null};
 `
 
-// nb: training/ and training/#node-js for example are navigation pages and still render the header
-const trainingModalRegExp = /training\/(node|react|engineering-skills|development-tools)/
+// nb: at the moment only the training service has modals pages. Modals match this RegExp:
+const trainingModalRegExp = /training\/[a-zA-Z]/
 
 const Header = ({ path, blue }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
