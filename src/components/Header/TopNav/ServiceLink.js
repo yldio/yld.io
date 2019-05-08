@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import { servicesRegExp, getSpecialityService } from './ServicesSpecialitiesMap'
+import { servicesRegExp, getService } from './ServicesSpecialitiesMap'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -27,7 +27,7 @@ const ServiceLink = ({ path = '/' }) => {
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
 
   const isSpecialityPage = path.includes('speciality')
-  const service = isSpecialityPage ? getSpecialityService(path) : serviceTitle
+  const service = isSpecialityPage ? getService(path) : serviceTitle
 
   return (
     <Fragment>
