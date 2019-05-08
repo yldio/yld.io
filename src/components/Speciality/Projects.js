@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
-import Companies from '../Homepage/companies'
+import LogoGrid from '../Common/LogoGrid'
 
 const Emphasis = styled.em`
   color: ${props => props.theme.colors.secondaryText};
@@ -45,14 +45,14 @@ const CompaniesHelped = ({ clients, noOther }) => (
         </Padding>
       </Col>
     </Row>
-    <Companies companies={clients} />
+    <LogoGrid companies={clients} />
   </Fragment>
 )
 
-const ProjectsSection = ({ related, title, clients }) => {
-  return related ? (
-    <Grid>
-      <Padding top={5} bottom={5}>
+const ProjectsSection = ({ related, title, clients }) => (
+  <Grid>
+    <Padding top={5} bottom={5}>
+      {related ? (
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
@@ -83,15 +83,10 @@ const ProjectsSection = ({ related, title, clients }) => {
           )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
-        <CompaniesHelped clients={clients} />
-      </Padding>
-    </Grid>
-  ) : (
-    <Grid>
-      <Padding top={5} bottom={5}>
-        <CompaniesHelped noOther clients={clients} />
-      </Padding>
-    </Grid>
-  )
-}
+      ) : null}
+      {clients ? <CompaniesHelped clients={clients} /> : null}
+    </Padding>
+  </Grid>
+)
+
 export default ProjectsSection
