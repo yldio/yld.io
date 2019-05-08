@@ -1,3 +1,5 @@
+import theme from '../../../utils/theme'
+
 const specialitiesMap = {
   engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
   design: [],
@@ -8,8 +10,8 @@ const specialitiesMap = {
 }
 
 const servicesColors = {
-  default: 'black',
-  defaultText: 'white',
+  default: theme.colors.text,
+  defaultText: theme.colors.white,
   defaultHover: '#8e8e8e',
   engineering: '#52FFAC',
   design: '#52FFAC',
@@ -18,7 +20,7 @@ const servicesColors = {
   dedicatedTeams: '#52FFAC',
   openSource: '#52FFAC',
   specialityText: '#090329',
-  specialityHover: 'white'
+  specialityHover: theme.colors.white
 }
 
 const servicesList = Object.keys(specialitiesMap)
