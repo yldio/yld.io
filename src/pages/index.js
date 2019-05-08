@@ -25,7 +25,7 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 4 }} bottom={3}>
           <Statement noPadding richText={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
-          <LogoGrid logos={content.companies} />
+          <LogoGrid companies={content.companies} />
         </Padding>
       </Grid>
     </GreyBackground>

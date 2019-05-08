@@ -14,7 +14,7 @@ const Partners = ({ title, partners }) => (
       <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
         <SectionTitle>{title}</SectionTitle>
       </Padding>
-      <LogoGrid logos={partners} />
+      <LogoGrid companies={partners} />
     </Padding>
   </Grid>
 )

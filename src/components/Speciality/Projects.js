@@ -45,7 +45,7 @@ const CompaniesHelped = ({ clients, noOther }) => (
         </Padding>
       </Col>
     </Row>
-    <LogoGrid logos={clients} />
+    <LogoGrid companies={clients} />
   </Fragment>
 )
 
