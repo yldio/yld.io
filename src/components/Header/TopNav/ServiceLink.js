@@ -9,8 +9,7 @@ import { servicesRegExp, getSpecialityService } from './ServicesSpecialitiesMap'
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
-  color: ${props =>
-    props.theme.colors[props.isServicePage ? 'black' : 'white']};
+  color: ${props => props.theme.colors[props.isServicePage ? 'text' : 'white']};
 
   @media screen and (min-width: 960px) {
     font-size: ${remcalc(30)};
@@ -19,7 +18,7 @@ const StyledServiceLink = styled(Link)`
   &:hover {
     text-decoration: underline;
     color: ${props =>
-      props.theme.colors[props.isServicePage ? 'black' : 'white']};
+      props.theme.colors[props.isServicePage ? 'text' : 'white']};
   }
 `
 
