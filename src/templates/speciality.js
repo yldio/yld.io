@@ -40,6 +40,7 @@ const Speciality = ({
   } = speciality
 
   const posts = filteredPosts.map(({ node }) => node)
+  const tutorials = getExternalType(speciality, `Tutorial`)
 
   return (
     <Layout backgroundColor="blue" location={location}>
@@ -67,7 +68,9 @@ const Speciality = ({
         description={`${title} articles created by members of YLD for the community.`}
         posts={posts}
       />
-      <TutorialsSection tutorials={getExternalType(speciality, `Tutorial`)} />
+      {tutorials.length > 0 ? (
+        <TutorialsSection speciality={title} tutorials={tutorials} />
+      ) : null}
       <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
       <GetInTouch
         title={`Talk to us about ${title}`}
