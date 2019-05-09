@@ -11,7 +11,7 @@ import TalksSection from '../components/Speciality/Talks'
 import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
-import BlogPostsSection from '../components/Speciality/BlogPosts'
+import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
 
 const getExternalType = (speciality, type) =>
@@ -23,7 +23,7 @@ const Speciality = ({
   data: {
     contentfulSpeciality: speciality,
     videoIcon,
-    filteredPosts: { edges: posts }
+    filteredPosts: { edges: filteredPosts }
   },
   location
 }) => {
@@ -36,9 +36,10 @@ const Speciality = ({
     communityText,
     events,
     eventIcon,
-    externalResources,
     contactText
   } = speciality
+
+  const posts = filteredPosts.map(({ node }) => node)
 
   return (
     <Layout backgroundColor="blue" location={location}>
@@ -61,11 +62,12 @@ const Speciality = ({
         talks={getExternalType(speciality, `Talk`)}
         videoIcon={videoIcon}
       />
-      <BlogPostsSection title={title} posts={posts} />
-      <TutorialsSection
-        externalResources={externalResources}
-        tutorials={getExternalType(speciality, `Tutorial`)}
+      <BlogListing
+        title="Blog posts"
+        description={`${title} articles created by members of YLD for the community.`}
+        posts={posts}
       />
+      <TutorialsSection tutorials={getExternalType(speciality, `Tutorial`)} />
       <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
       <GetInTouch
         title={`Talk to us about ${title}`}

@@ -1,55 +1,35 @@
 import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 
-import { Row, Col, Grid } from '../grid'
 import GreyBackground from '../Common/GreyBackground'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import StyledLink from '../Common/StyledLink'
-import Hr from '../Common/Hr'
+import { Grid } from '../grid'
+import TitleAndMediaList from '../Common/TitleAndMediaList'
 
-const TutorialsGrid = styled(Grid)`
-  padding-bottom: ${remcalc(18)};
-`
+const TutorialsSection = ({ tutorials }) => {
+  const mediaItems = tutorials
+    .slice(0, 3)
+    .map(({ id, title, link, additionalInfo }) => ({
+      id,
+      title,
+      href: link,
+      body: additionalInfo
+    }))
 
-const TutorialsSection = ({ tutorials, externalResources }) =>
-  tutorials.length > 0 ? (
+  return (
     <GreyBackground>
-      <TutorialsGrid>
-        <Padding vertical={5}>
-          <Row>
-            <Col width={[1, 1, 1, 1, 6 / 12]}>
-              <SectionTitle>Tutorials</SectionTitle>
-              <BodyPrimary>
-                NodeJS tutorials created by members of YLD for the community.
-              </BodyPrimary>
-            </Col>
-            <Col width={[1, 1, 1, 1, 4 / 12]}>
-              <ul>
-                {tutorials.slice(0, 3).map(externalResource => (
-                  <li key={`${externalResource.id}`}>
-                    <Subtitle noPaddingBottom>
-                      <ExternalAnchor href={externalResource.link}>
-                        {externalResource.title}
-                      </ExternalAnchor>
-                    </Subtitle>
-                    {externalResource.additionalInfo}
-                    <Hr />
-                  </li>
-                ))}
-              </ul>
-              <Padding top={3}>
-                <StyledLink external href="http://nodetuts.com/">
-                  More tutorials
-                </StyledLink>
-              </Padding>
-            </Col>
-          </Row>
+      <Grid>
+        <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
+          <TitleAndMediaList
+            title="Tutorials"
+            description="NodeJS tutorials created by members of YLD for the community."
+            mediaItems={mediaItems}
+            CTALink="http://nodetuts.com/"
+            CTAText="More tutorials"
+          />
         </Padding>
-      </TutorialsGrid>
+      </Grid>
     </GreyBackground>
-  ) : null
+  )
+}
 
 export default TutorialsSection
