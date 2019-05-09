@@ -1,3 +1,5 @@
+import theme from '../../../utils/theme'
+
 const specialitiesMap = {
   engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
   design: [],
@@ -7,25 +9,33 @@ const specialitiesMap = {
   openSource: []
 }
 
-const servicesColors = {
-  default: 'black',
-  defaultText: 'white',
+const logoColors = {
+  default: theme.colors.text,
+  defaultText: theme.colors.white,
   defaultHover: '#8e8e8e',
-  engineering: '#52FFAC',
-  design: '#52FFAC',
-  training: '#52FFAC',
-  delivery: '#52FFAC',
-  dedicatedTeams: '#52FFAC',
-  openSource: '#52FFAC',
-  specialityText: '#090329',
-  specialityHover: 'white'
+  engineering: {
+    'node-js': '#52FFAC',
+    graphql: '#EB008B',
+    'vue-js': '#039328',
+    'react-js': '#0BDDF9',
+    kubernetes: '#29EFEF'
+  },
+  design: {},
+  training: {},
+  delivery: {},
+  dedicatedTeams: {},
+  openSource: {},
+  specialityText: theme.colors.blueBg,
+  specialityHover: theme.colors.white
 }
 
 const servicesList = Object.keys(specialitiesMap)
 
 const servicesRegExp = new RegExp(servicesList.join('|'))
 
-const getSpecialityService = path =>
+const getSpeciality = path => path.split('/')[2]
+
+const getService = path =>
   servicesList.find(service => {
     const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
     return path.search(specialitiesRegExp) > -1
@@ -33,8 +43,9 @@ const getSpecialityService = path =>
 
 export {
   specialitiesMap,
-  servicesColors,
+  logoColors,
   servicesList,
   servicesRegExp,
-  getSpecialityService
+  getSpeciality,
+  getService
 }
