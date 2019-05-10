@@ -41,7 +41,7 @@ jobs:
             - 'v1-dependencies-{{ checksum "package.json" }}'
             - v1-dependencies
       - run:
-          command: 'yarn build:storyshot'
+          command: 'yarn build:storybook'
           name: build_storyshot
       - run:
           command: 'export STATIC_BUILD=true; yarn test:snapshots'
