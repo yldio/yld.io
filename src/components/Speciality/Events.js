@@ -1,5 +1,5 @@
 import React from 'react'
-import { format } from 'date-fns'
+import { format, isAfter, endOfYesterday } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 
 import specialityEventIcon from './assets/events-icon.svg'
@@ -11,10 +11,24 @@ import Hr from '../Common/Hr'
 const noEventsMessage = title =>
   `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`
 
-const EventSection = ({ events, title, eventIcon }) => {
-  const futureEvents = (events || []).filter(
-    ({ startTime }) => new Date(startTime) > new Date()
+const isSpecialityEvent = (eventTitle, title) => {
+  const formattedTitle = title
+    .toLowerCase()
+    .replace(/(\.|js)/gi, '')
+    .trim()
+
+  return eventTitle.toLowerCase().includes(formattedTitle)
+}
+
+const getSpecialityEvents = (events = [], title) =>
+  events.filter(
+    ({ eventTitle, startTime }) =>
+      isSpecialityEvent(eventTitle, title) &&
+      isAfter(startTime, endOfYesterday())
   )
+
+const EventSection = ({ events, title, eventIcon }) => {
+  const specialityEvents = getSpecialityEvents(events, title)
 
   return (
     <Grid>
@@ -29,9 +43,9 @@ const EventSection = ({ events, title, eventIcon }) => {
             </div>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            {futureEvents.length ? (
+            {specialityEvents.length ? (
               <ul>
-                {futureEvents.map(event => (
+                {specialityEvents.map(event => (
                   <li key={`${event.id}`}>
                     <Subtitle noPaddingBottom>
                       <ExternalAnchor href={event.linkToEvent}>
