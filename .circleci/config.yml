@@ -49,8 +49,8 @@ jobs:
             STATIC_BUILD_PATH: '/home/circleci/repo/storybook-static'
           name: Snapshots
       - store_artifacts:
-        path: '/home/circleci/repo/stories/__image_snapshots__/'
-        destination: '/tmp/snapshots'
+          path: '/home/circleci/repo/stories/__image_snapshots__/'
+          destination: '/tmp/snapshots'
     working_directory: ~/repo
   testcafe:
     docker:
