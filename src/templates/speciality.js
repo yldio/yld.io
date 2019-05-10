@@ -67,7 +67,7 @@ const Speciality = ({
         description={`${title} articles created by members of YLD for the community.`}
         posts={posts}
       />
-      {tutorials && tutorials.length > 0 ? (
+      {tutorials && tutorials.length ? (
         <TutorialsSection speciality={title} tutorials={tutorials} />
       ) : null}
       <BooksSection title={title} books={books} />
