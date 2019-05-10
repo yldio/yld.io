@@ -12773,11 +12773,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-}
-
-.c2:active,
-.c2:focus {
-  outline: 0.25rem solid #65FFCD;
+  outline: none;
 }
 
 .c2:after {
@@ -12823,11 +12819,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-}
-
-.c4:active,
-.c4:focus {
-  outline: 0.25rem solid #65FFCD;
+  outline: none;
 }
 
 .c4:after {
@@ -12858,6 +12850,20 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 @media (min-width:29.4375em) {
   .c1 {
     margin-right: 2.25rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2:active,
+  .c2:focus {
+    outline: 0.25rem solid #65FFCD;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c4:active,
+  .c4:focus {
+    outline: 0.25rem solid #65FFCD;
   }
 }
 
@@ -12954,11 +12960,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-}
-
-.c1:active,
-.c1:focus {
-  outline: 0.25rem solid #65FFCD;
+  outline: none;
 }
 
 .c1:after {
@@ -12988,6 +12990,13 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
 @media (min-width:29.4375em) {
   .c0 {
     margin-right: 2.25rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1:active,
+  .c1:focus {
+    outline: 0.25rem solid #65FFCD;
   }
 }
 
@@ -13050,11 +13059,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-}
-
-.c1:active,
-.c1:focus {
-  outline: 0.25rem solid #65FFCD;
+  outline: none;
 }
 
 .c1:after {
@@ -13081,6 +13086,13 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
 @media (min-width:29.4375em) {
   .c0 {
     margin-right: 2.25rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1:active,
+  .c1:focus {
+    outline: 0.25rem solid #65FFCD;
   }
 }
 
