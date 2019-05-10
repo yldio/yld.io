@@ -41,7 +41,10 @@ jobs:
             - 'v1-dependencies-{{ checksum "package.json" }}'
             - v1-dependencies
       - run:
-          command: 'npm run test:snapshots'
+          command: 'yarn build:storyshot'
+          name: build_storyshot
+      - run:
+          command: 'export STATIC_BUILD=true; yarn test:snapshots'
           name: Snapshots
     working_directory: ~/repo
   testcafe:
