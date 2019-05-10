@@ -1,17 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import { format } from 'date-fns'
+import { Padding } from 'styled-components-spacing'
+
+import specialityEventIcon from './assets/events-icon.svg'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import { Padding } from 'styled-components-spacing'
-import { format } from 'date-fns'
+import Hr from '../Common/Hr'
 
 const noEventsMessage = title =>
   `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`
-
-const EventBorder = styled(Col)`
-  border: 1px solid rgba(51, 51, 51, 0.15);
-`
 
 const EventSection = ({ events, title, eventIcon }) => {
   const futureEvents = (events || []).filter(
@@ -23,35 +21,33 @@ const EventSection = ({ events, title, eventIcon }) => {
       <Padding top={6} bottom={6}>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle>{`Upcoming ${title} events`}</SectionTitle>
+            <div>
+              <Padding bottom={1}>
+                <img src={specialityEventIcon} alt="events icon" />
+              </Padding>
+              <SectionTitle>{`Upcoming ${title} events`}</SectionTitle>
+            </div>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            {futureEvents.length
-              ? futureEvents.map(event => (
-                  <EventBorder key={`${event.id}`}>
-                    <Padding top={2} bottom={2}>
-                      <Row>
-                        <Col>
-                          <img
-                            src={`https://${eventIcon.file.url}`}
-                            alt={eventIcon.title}
-                          />
-                        </Col>
-                        <Col>
-                          <Subtitle noPadding>
-                            <ExternalAnchor href={event.linkToEvent}>
-                              {event.eventTitle}
-                            </ExternalAnchor>
-                          </Subtitle>
-                          <BodyPrimary noPadding>
-                            {format(new Date(event.date), 'MMMM DD[,] dddd')}
-                          </BodyPrimary>
-                        </Col>
-                      </Row>
-                    </Padding>
-                  </EventBorder>
-                ))
-              : noEventsMessage(title)}
+            {futureEvents.length ? (
+              <ul>
+                {futureEvents.map(event => (
+                  <li key={`${event.id}`}>
+                    <Subtitle noPaddingBottom>
+                      <ExternalAnchor href={event.linkToEvent}>
+                        {event.eventTitle}
+                      </ExternalAnchor>
+                    </Subtitle>
+                    <BodyPrimary noPaddingTop>
+                      {format(event.date, 'MMMM DD[,] dddd')}
+                    </BodyPrimary>
+                    <Hr />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              noEventsMessage(title)
+            )}
           </Col>
         </Row>
       </Padding>
