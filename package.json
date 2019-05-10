@@ -4,8 +4,6 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
-    "@rebass/grid": "^6.0.0-4",
-    "@storybook/theming": "^5.0.11",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
@@ -72,7 +70,7 @@
     "@storybook/addon-links": "5.0.11",
     "@storybook/addon-storyshots": "5.0.11",
     "@storybook/react": "5.0.11",
-    "apr": "2.0.2",
+    "@storybook/theming": "^5.0.11",
     "apr-intercept": "3.0.3",
     "apr-main": "4.0.3",
     "apr-map": "3.0.3",
@@ -123,6 +121,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.5.1",
     "testcafe": "^1.1.0"
+    
   },
   "husky": {
     "hooks": {
