@@ -27,7 +27,6 @@ const Speciality = ({
   },
   location
 }) => {
-  console.log('speciality', speciality)
   const {
     relatedProjects,
     title,
