@@ -152,7 +152,6 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 
 exports.handler = async (event, context, callback) => {
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
-  console.log("I'm about to run meetup function")
 
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
@@ -161,7 +160,7 @@ exports.handler = async (event, context, callback) => {
   const { items: events } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven'
-    // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the contet from scratch
+    // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
   })
 
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
@@ -171,8 +170,6 @@ exports.handler = async (event, context, callback) => {
       return null
     }
 
-    console.log(urlname, nextEvent)
-
     const meetup = processMeetupEvent(
       await getEvent({
         id: nextEvent,
@@ -180,13 +177,8 @@ exports.handler = async (event, context, callback) => {
       })
     )
 
-    console.log(meetup)
-
     const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
     const entry = generateContentfulEvent({ ...meetup, ...group })
-
-    console.log(ev)
-    console.log(entry)
 
     if (ev) {
       // update
@@ -200,11 +192,11 @@ exports.handler = async (event, context, callback) => {
     }
 
     // create
-    // console.log(`Creating entry ${meetup.eventName}`)
+    console.log(`Creating entry ${meetup.eventName}`)
     const id = await environment.createEntry('meetupEven', entry)
     const newEntry = await environment.getEntry(id.sys.id)
 
-    // console.log(`Publishing creted entry ${meetup.eventName}`)
+    console.log(`Publishing creted entry ${meetup.eventName}`)
     return newEntry.publish()
   })
 
