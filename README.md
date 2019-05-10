@@ -20,7 +20,10 @@ CONTENTFUL_TOKEN=(see in contentful/settings/API keys "meetup > Content Delivery
 CONTENTFUL_SPACE=(see in contentful/settings/API keys "meetup > Space ID")
 MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 GATSBY_ENVIRONMENT="development"
+CMS_CRUD=(copy from Netlify - Build & Deploy - Environment - Edit variables - CMS_CRUD. Read below why copy)
 ```
+
+The meetup contentful lambda script uses Contentful's Content Management API (https://www.contentful.com/developers/docs/references/content-management-api/). This requires a *Content Management Token* and NOT a Content Delivery Token (Content Delivery can only give you the info that's there, you can't CRUD entries). A CMT can only be viewed just after it has been generated. In theory these are Personal Tokens and each user can generate their own, but for simplicity's sake, it's easier for everyone to use the same one in their env file. Should you need to generate a new CMT, you can do so from contentful/settings/API keys/Content management tokens. The one used in Netlify is the "cms-crud" one. 
 
 You can now run:
 
