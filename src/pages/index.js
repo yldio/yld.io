@@ -2,16 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { Grid } from '../components/grid'
-import Head from '../components/Common/Head'
 import Layout from '../components/layout'
-import Statement from '../components/Common/Statement'
-import Companies from '../components/Homepage/companies'
-import Blog from '../components/Homepage/blog'
-import Events from '../components/Homepage/events/index'
-import Jobs from '../components/Homepage/jobs'
+import Head from '../components/Common/Head'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import Services from '../components/Homepage/services'
 import GreyBackground from '../components/Common/GreyBackground'
+import Statement from '../components/Common/Statement'
+import LogoGrid from '../components/Common/LogoGrid'
+import Services from '../components/Homepage/services'
+import Events from '../components/Homepage/events/index'
+import LatestPosts from '../components/LatestPosts'
+import BlogListing from '../components/Common/BlogListing'
+import Jobs from '../components/Homepage/jobs'
 
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
@@ -25,7 +26,7 @@ const IndexPage = ({
         <Padding top={{ smallPhone: 4 }} bottom={3}>
           <Statement noPadding richText={content.seoText.content[0].content} />
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
-          <Companies companies={content.companies} />
+          <LogoGrid companies={content.companies} />
         </Padding>
       </Grid>
     </GreyBackground>
@@ -39,14 +40,14 @@ const IndexPage = ({
         </Padding>
       </Grid>
     </GreyBackground>
-    <Grid>
-      <Padding
-        top={{ smallPhone: 3, smallTablet: 4 }}
-        bottom={{ smallPhone: 3, smallTablet: 4 }}
-      >
-        <Blog />
-      </Padding>
-    </Grid>
+    <LatestPosts>
+      {posts => (
+        <BlogListing
+          title="From the blog"
+          posts={posts.map(({ node }) => node).slice(0, 3)}
+        />
+      )}
+    </LatestPosts>
     <GreyBackground>
       <Jobs />
       <Padding bottom={{ smallPhone: 1.5, smallTablet: 0 }} />
