@@ -44,7 +44,9 @@ jobs:
           command: 'yarn build:storybook'
           name: build_storyshot
       - run:
-          command: 'export STATIC_BUILD=true; yarn test:snapshots'
+          command: 'yarn test:snapshots'
+          environment:
+            STATIC_BUILD_PATH: '/home/circleci/repo/storybook-static'
           name: Snapshots
     working_directory: ~/repo
   testcafe:
