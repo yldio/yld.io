@@ -7,12 +7,7 @@ const find = require('lodash.find')
 const striptags = require('striptags')
 
 // Set up dot-env variables
-const {
-  CONTENTFUL_MANAGEMENT_TOKEN,
-  CONTENTFUL_SPACE,
-  MEETUP_KEY,
-  CMS_CRUD
-} = process.env
+const { CONTENTFUL_SPACE, MEETUP_KEY, CMS_CRUD } = process.env
 
 // Import helper functions
 const generateContentfulEvent = ({
@@ -58,6 +53,9 @@ const generateContentfulEvent = ({
     },
     blurb: {
       'en-US': description
+    },
+    homepageFeatured: {
+      'en-US': false
     }
   }
 })
@@ -209,4 +207,9 @@ exports.handler = async (event, context, callback) => {
     // console.log(`Publishing creted entry ${meetup.eventName}`)
     return newEntry.publish()
   })
+
+  return {
+    statusCode: 200,
+    body: 'Meetup function has finished running'
+  }
 }

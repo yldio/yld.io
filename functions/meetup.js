@@ -47382,12 +47382,7 @@ type DotenvConfigOutput = {
             /*! striptags */ '../../node_modules/striptags/src/striptags.js'
           ) // Set up dot-env variables
 
-          const {
-            CONTENTFUL_MANAGEMENT_TOKEN,
-            CONTENTFUL_SPACE,
-            MEETUP_KEY,
-            CMS_CRUD
-          } = process.env // Import helper functions
+          const { CONTENTFUL_SPACE, MEETUP_KEY, CMS_CRUD } = process.env // Import helper functions
 
           const generateContentfulEvent = ({
             urlname,
@@ -47432,6 +47427,9 @@ type DotenvConfigOutput = {
               },
               blurb: {
                 'en-US': description
+              },
+              homepageFeatured: {
+                'en-US': false
               }
             }
           })
@@ -47569,6 +47567,10 @@ type DotenvConfigOutput = {
 
               return newEntry.publish()
             })
+            return {
+              statusCode: 200,
+              body: 'Meetup function has finished running'
+            }
           }
 
           /***/
