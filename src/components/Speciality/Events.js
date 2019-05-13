@@ -55,7 +55,7 @@ const EventSection = ({ events, title, eventIcon }) => {
               <Padding bottom={1}>
                 <img src={specialityEventIcon} alt="events icon" />
               </Padding>
-              <SectionTitle>{`Upcoming ${title} events`}</SectionTitle>
+              <SectionTitle>{`Upcoming ${title.trim()} events`}</SectionTitle>
             </div>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
