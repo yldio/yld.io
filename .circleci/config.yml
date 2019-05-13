@@ -33,7 +33,7 @@ jobs:
     working_directory: ~/repo
   snapshots:
     docker:
-      - image: 'circleci/node:9.8.0-browsers'
+      - image: 'circleci/node:9.10.0-browsers'
     steps:
       - checkout
       - restore_cache:
