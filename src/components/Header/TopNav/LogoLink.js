@@ -7,8 +7,9 @@ import logo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
 import {
   servicesRegExp,
-  servicesColors,
-  getSpecialityService
+  logoColors,
+  getSpeciality,
+  getService
 } from './ServicesSpecialitiesMap'
 
 const StyledLink = styled(Link)`
@@ -26,10 +27,12 @@ const LogoLink = ({ path = '/' }) => {
   const isSpecialityPage = path.includes('speciality')
 
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
-  const service = isSpecialityPage ? getSpecialityService(path) : serviceTitle
+  const service = isSpecialityPage ? getService(path) : serviceTitle
+  const speciality = isSpecialityPage ? getSpeciality(path) : null
 
-  const originalFillColor =
-    servicesColors[isSpecialityPage ? service : 'default']
+  let originalFillColor = isSpecialityPage
+    ? logoColors[service][speciality]
+    : logoColors['default']
   const [fillColor, setFillColor] = useState(originalFillColor)
 
   return (
@@ -39,7 +42,7 @@ const LogoLink = ({ path = '/' }) => {
           to="/"
           onMouseEnter={() =>
             setFillColor(
-              servicesColors[isServicePage ? 'defaultHover' : 'specialityHover']
+              logoColors[isServicePage ? 'defaultHover' : 'specialityHover']
             )
           }
           onMouseLeave={() => setFillColor(originalFillColor)}
@@ -47,7 +50,7 @@ const LogoLink = ({ path = '/' }) => {
           <ServiceSpecialityLogo
             fillColor={fillColor}
             textColor={
-              servicesColors[isServicePage ? 'defaultText' : 'specialityText']
+              logoColors[isServicePage ? 'defaultText' : 'specialityText']
             }
           />
         </StyledLink>

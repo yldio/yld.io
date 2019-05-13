@@ -5,7 +5,7 @@ import GreyBackground from '../Common/GreyBackground'
 import { Grid } from '../grid'
 import TitleAndMediaList from '../Common/TitleAndMediaList'
 
-const TutorialsSection = ({ tutorials }) => {
+const TutorialsSection = ({ speciality, tutorials }) => {
   const mediaItems = tutorials
     .slice(0, 3)
     .map(({ id, title, link, additionalInfo }) => ({
@@ -21,7 +21,7 @@ const TutorialsSection = ({ tutorials }) => {
         <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
           <TitleAndMediaList
             title="Tutorials"
-            description="NodeJS tutorials created by members of YLD for the community."
+            description={`${speciality} tutorials created by members of YLD for the community.`}
             mediaItems={mediaItems}
             CTALink="http://nodetuts.com/"
             CTAText="More tutorials"

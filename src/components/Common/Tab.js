@@ -45,11 +45,14 @@ const Underline = css`
 
 const Button = styled(UnstyledButton)`
   position: relative;
+  outline: none;
 
-  &:active,
-  &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
-  }
+  ${breakpoint('desktop')`
+    &:active,
+    &:focus {
+      outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
+    }
+  `}
 
   &:after {
     ${Underline}
