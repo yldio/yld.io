@@ -73,6 +73,7 @@
     "@storybook/addon-storyshots-puppeteer": "^4.1.16",
     "@storybook/addons": "4.1.11",
     "@storybook/react": "4.1.11",
+    "@storybook/theming": "^5.0.11",
     "apr": "2.0.2",
     "apr-intercept": "3.0.3",
     "apr-main": "4.0.3",
