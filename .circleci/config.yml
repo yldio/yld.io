@@ -36,10 +36,6 @@ jobs:
       - image: 'circleci/node:9.10.0-browsers'
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - 'v1-dependencies-{{ checksum "yarn.lock" }}'
-            - v1-dependencies
       - run:
           command: 'yarn'
       - run:
