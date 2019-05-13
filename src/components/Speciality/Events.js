@@ -20,15 +20,18 @@ const isSpecialityEvent = (eventTitle, title) => {
   return eventTitle.toLowerCase().includes(formattedTitle)
 }
 
-const getSpecialityEvents = (events = [], title) =>
-  events.filter(
-    ({ eventTitle, startTime }) =>
-      isSpecialityEvent(eventTitle, title) &&
-      isAfter(startTime, endOfYesterday())
-  )
+const getSpecialityEvents = (title, events) =>
+  events
+    .filter(
+      ({ eventTitle, startTime }) =>
+        isSpecialityEvent(eventTitle, title) &&
+        isAfter(startTime, endOfYesterday())
+    )
+    .sort((a, b) => (a.startTime <= b.startTime ? -1 : 1))
+    .slice(0, 3)
 
 const EventSection = ({ events, title, eventIcon }) => {
-  const specialityEvents = getSpecialityEvents(events, title)
+  const specialityEvents = events ? getSpecialityEvents(title, events) : []
 
   return (
     <Grid>
