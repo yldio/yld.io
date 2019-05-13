@@ -7,6 +7,7 @@ import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
+import { servicesRegExp, getService } from '../TopNav/ServicesSpecialitiesMap'
 
 const DropdownNameWrapper = styled.span.attrs(props => ({
   states: outerItemStates
@@ -59,8 +60,19 @@ export default class Dropdown extends PureComponent {
   }
 
   render() {
-    const { items, children } = this.props
-    const { isExpanded } = this.state
+    const { items, children, path } = this.props
+    let { isExpanded } = this.state
+
+    console.log(this.props)
+
+    const isServicePage = path.search(servicesRegExp) > -1
+    const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
+    const isSpecialityPage = path.includes('speciality')
+    const service = isSpecialityPage ? getService(path) : serviceTitle
+
+    isExpanded =
+      items.filter(item => item.to.startsWith(`/${service}`)).length > 0
+    console.log(isExpanded)
 
     return (
       <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
