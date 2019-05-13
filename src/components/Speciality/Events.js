@@ -28,7 +28,7 @@ const getSpecialityEvents = (title, events) =>
         isAfter(startTime, endOfYesterday())
     )
     .sort((a, b) => (a.startTime <= b.startTime ? -1 : 1))
-    .slice(0, 3)
+    .slice(0, 5)
 
 const EventSection = ({ events, title, eventIcon }) => {
   const specialityEvents = events ? getSpecialityEvents(title, events) : []

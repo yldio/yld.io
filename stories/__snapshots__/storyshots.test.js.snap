@@ -8162,8 +8162,8 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
     </a>
     <a
       className="c3"
+      color="text"
       href="/engineering"
-      isServicePage={true}
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -8673,8 +8673,8 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
       </a>
       <a
         className="c4"
+        color="white"
         href="/engineering"
-        isServicePage={false}
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
