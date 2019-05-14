@@ -6986,6 +6986,10 @@ exports[`Storyshots Header Header itself 1`] = `
 .c9 {
   padding-right: 0.375rem;
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c11 {
@@ -8018,6 +8022,10 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
 .c7 {
   padding-right: 0.375rem;
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c9 {
@@ -8522,6 +8530,10 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
 .c8 {
   padding-right: 0.375rem;
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c10 {
@@ -9196,6 +9208,10 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 .c5 {
   padding-right: 0.375rem;
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c7 {
