@@ -7,7 +7,12 @@ import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
-import { servicesRegExp, getService, getAboutUrl } from '../navLinksHelper'
+import {
+  servicesRegExp,
+  getIsServicePage,
+  getService,
+  getAboutUrl
+} from '../navLinksHelper'
 
 const DropdownNameWrapper = styled.span.attrs(props => ({
   states: outerItemStates
@@ -63,7 +68,7 @@ export default class Dropdown extends PureComponent {
     const { items, children, path } = this.props
     let { isExpanded } = this.state
 
-    const isServicePage = path.search(servicesRegExp) > -1
+    const isServicePage = getIsServicePage(path)
     const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
     const isSpecialityPage = path.includes('speciality')
     const service = isSpecialityPage ? getService(path) : serviceTitle

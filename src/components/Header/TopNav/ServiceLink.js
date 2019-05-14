@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import { servicesRegExp, getService } from '../navLinksHelper'
+import { servicesRegExp, getIsServicePage, getService } from '../navLinksHelper'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -22,7 +22,7 @@ const StyledServiceLink = styled(Link)`
 `
 
 const ServiceLink = ({ path = '/' }) => {
-  const isServicePage = path.search(servicesRegExp) > -1
+  const isServicePage = getIsServicePage(path)
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
 
   const isSpecialityPage = path.includes('speciality')
