@@ -41,11 +41,17 @@ const getService = path =>
     return path.search(specialitiesRegExp) > -1
   })
 
+const AboutUrlList = ['about-us', 'contact']
+
+const getAboutUrl = path =>
+  AboutUrlList.find(aboutUrl => path.includes(aboutUrl))
+
 export {
   specialitiesMap,
   logoColors,
   servicesList,
   servicesRegExp,
   getSpeciality,
-  getService
+  getService,
+  getAboutUrl
 }
