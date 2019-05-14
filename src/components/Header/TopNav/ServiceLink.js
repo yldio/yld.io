@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import { servicesRegExp, getService } from './ServicesSpecialitiesMap'
+import { servicesRegExp, getService } from '../navLinksHelper'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};

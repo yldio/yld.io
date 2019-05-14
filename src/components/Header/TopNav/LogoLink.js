@@ -10,7 +10,7 @@ import {
   logoColors,
   getSpeciality,
   getService
-} from './ServicesSpecialitiesMap'
+} from '../navLinksHelper'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
