@@ -7,11 +7,7 @@ const find = require('lodash.find')
 const striptags = require('striptags')
 
 // Set up dot-env variables
-const {
-  CONTENTFUL_MANAGEMENT_TOKEN,
-  CONTENTFUL_SPACE,
-  MEETUP_KEY
-} = process.env
+const { CONTENTFUL_SPACE, MEETUP_KEY, CMS_CRUD } = process.env
 
 // Import helper functions
 const generateContentfulEvent = ({
@@ -57,6 +53,9 @@ const generateContentfulEvent = ({
     },
     blurb: {
       'en-US': description
+    },
+    homepageFeatured: {
+      'en-US': false
     }
   }
 })
@@ -117,7 +116,7 @@ const meetup = require('meetup-api')({
 })
 
 const client = createClient({
-  accessToken: CONTENTFUL_MANAGEMENT_TOKEN
+  accessToken: CMS_CRUD
 })
 
 // ----- Query Meetup
@@ -128,8 +127,32 @@ const getSelfGroups = promisify(meetup.getSelfGroups.bind(meetup))
 // getEvent returns event details - address, description etc
 const getEvent = promisify(meetup.getEvent.bind(meetup))
 
+// DEBUGGING THE CONTENTFUL API (May 2019)
+// https://www.contentful.com/developers/docs/references/content-management-api
+//
+// Client is defined above with the correct accessToken
+//
+// Figure out what *spaces* are there
+// `const spaces = await client.getSpaces();`
+// `console.log(space.items)`
+// sys.id is the space ID
+//
+// Figure out what *environments* are there in a space
+// `const environments = await client.getSpace({spaceID});
+// `console.log(environment.items);
+//
+// Figure out the content types
+// `const collections = await space.getContentTypes();`
+// `console.log("content types are", collections.items);`
+//
+// Each content type has an ID that you can use as filter when calling `environment.getEntries({content_type: $contentTypeID})`
+// You can also find the content type ID on its Contentful page that lists its fields. This info is on the right hand side of the window (easy to miss on wider screens)
+//
+// space.getEntries() will be depreciated, use space -> environment -> entries
+
 exports.handler = async (event, context, callback) => {
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
@@ -137,6 +160,7 @@ exports.handler = async (event, context, callback) => {
   const { items: events } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven'
+    // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
   })
 
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
@@ -168,11 +192,16 @@ exports.handler = async (event, context, callback) => {
     }
 
     // create
-    // console.log(`Creating entry ${meetup.eventName}`)
+    console.log(`Creating entry ${meetup.eventName}`)
     const id = await environment.createEntry('meetupEven', entry)
     const newEntry = await environment.getEntry(id.sys.id)
 
-    // console.log(`Publishing creted entry ${meetup.eventName}`)
+    console.log(`Publishing creted entry ${meetup.eventName}`)
     return newEntry.publish()
   })
+
+  return {
+    statusCode: 200,
+    body: 'Meetup function has finished running'
+  }
 }
