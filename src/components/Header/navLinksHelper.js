@@ -1,4 +1,4 @@
-import theme from '../../../utils/theme'
+import theme from '../../utils/theme'
 
 const specialitiesMap = {
   engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],

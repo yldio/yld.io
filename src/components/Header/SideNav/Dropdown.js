@@ -7,7 +7,7 @@ import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
-import { servicesRegExp, getService } from '../TopNav/ServicesSpecialitiesMap'
+import { servicesRegExp, getService } from '../navLinksHelper'
 
 const DropdownNameWrapper = styled.span.attrs(props => ({
   states: outerItemStates
