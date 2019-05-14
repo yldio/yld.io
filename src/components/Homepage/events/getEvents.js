@@ -1,26 +1,22 @@
-import { format, isAfter } from 'date-fns'
+import { format, isAfter, endOfYesterday } from 'date-fns'
 
-const toDate = stringDate => new Date(stringDate)
-
-export const getHomepageMeetups = events =>
+export const getHomepageMeetups = (events = []) =>
   events
-    .filter(n => !n.node.homepageFeatured)
-    .filter(n => isAfter(new Date(n.node.date), new Date()))
-    .sort((a, b) => (toDate(a.node.date) <= toDate(b.node.date) ? -1 : 1))
-    .slice(0, 3)
-    .reverse()
-    .map(n => n.node)
-    .map(event => ({
-      ...event,
-      date: format(new Date(event.date), 'MMMM DD[,] dddd')
+    .filter(
+      n => !n.node.homepageFeatured && isAfter(n.node.date, endOfYesterday())
+    )
+    .sort((a, b) => (a.node.date <= b.node.date ? -1 : 1))
+    .slice(0, 5)
+    .map(n => ({
+      ...n.node,
+      date: format(n.node.date, 'MMMM DD[,] dddd')
     }))
 
-export const getHomepageConferences = events =>
+export const getHomepageConferences = (events = []) =>
   events
     .filter(n => n.node.homepageFeatured)
     .slice(0, 1)
-    .map(n => n.node)
-    .map(event => ({
-      ...event,
-      date: format(new Date(event.date), 'MMMM DD[,] dddd')
+    .map(n => ({
+      ...n.node,
+      date: format(n.node.date, 'MMMM DD[,] dddd')
     }))

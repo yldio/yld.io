@@ -11,7 +11,7 @@ import TalksSection from '../components/Speciality/Talks'
 import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
-import BlogPostsSection from '../components/Speciality/BlogPosts'
+import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
 
 const getExternalType = (speciality, type) =>
@@ -23,7 +23,7 @@ const Speciality = ({
   data: {
     contentfulSpeciality: speciality,
     videoIcon,
-    filteredPosts: { edges: posts }
+    filteredPosts: { edges: filteredPosts }
   },
   location
 }) => {
@@ -36,9 +36,13 @@ const Speciality = ({
     communityText,
     events,
     eventIcon,
-    externalResources,
     contactText
   } = speciality
+
+  const posts = filteredPosts.map(({ node }) => node)
+  const talks = getExternalType(speciality, `Talk`)
+  const tutorials = getExternalType(speciality, `Tutorial`)
+  const books = getExternalType(speciality, `Book`)
 
   return (
     <Layout backgroundColor="blue" location={location}>
@@ -57,16 +61,16 @@ const Speciality = ({
         title={title}
       />
       <EventSection events={events} title={title} eventIcon={eventIcon} />
-      <TalksSection
-        talks={getExternalType(speciality, `Talk`)}
-        videoIcon={videoIcon}
+      <TalksSection talks={talks} videoIcon={videoIcon} />
+      <BlogListing
+        title="Blog posts"
+        description={`${title} articles created by members of YLD for the community.`}
+        posts={posts}
       />
-      <BlogPostsSection title={title} posts={posts} />
-      <TutorialsSection
-        externalResources={externalResources}
-        tutorials={getExternalType(speciality, `Tutorial`)}
-      />
-      <BooksSection title={title} books={getExternalType(speciality, `Book`)} />
+      {tutorials && tutorials.length ? (
+        <TutorialsSection speciality={title} tutorials={tutorials} />
+      ) : null}
+      <BooksSection title={title} books={books} />
       <GetInTouch
         title={`Talk to us about ${title}`}
         contactText={contactText}

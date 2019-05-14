@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="48px" viewBox="0 0 44 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon: pair programming</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-/-Desktop" transform="translate(-90.000000, -3966.000000)">
+            <g id="icon-copy-3" transform="translate(90.000000, 3954.000000)">
+                <g id="icon:-pair-programming" transform="translate(0.000000, 12.000000)">
+                    <polygon id="Fill-1" fill="#FF9E80" points="0 48 32 48 32 16 0 16"></polygon>
+                    <g id="Group-11" transform="translate(13.000000, 0.000000)" fill="#333333">
+                        <path d="M24.0003,-0.0001 L24.0003,2.9999 L10.9993,2.9999 L10.9993,-0.0001 L9.0003,-0.0001 L9.0003,2.9999 L3.9993,2.9999 L3.9993,31 L30.9993,31.0009 L30.9993,2.9999 L26.0003,2.9999 L26.0003,-0.0001 L24.0003,-0.0001 Z M26.0003,5.9999 L26.0003,4.9999 L28.9993,4.9999 L28.9993,28.9999 L6.0003,28.9999 L6.0003,4.9999 L9.0003,4.9999 L9.0003,5.9999 L10.9993,5.9999 L10.9993,4.9999 L24.0003,4.9999 L24.0003,5.9999 L26.0003,5.9999 Z" id="Fill-1"></path>
+                        <polygon id="Fill-2" points="0 8 0 35 26 35 26 33 2 33 2 8"></polygon>
+                        <polygon id="Fill-3" points="10 13 13 13 13 10 10 10"></polygon>
+                        <polygon id="Fill-4" points="22 13 25 13 25 10 22 10"></polygon>
+                        <polygon id="Fill-5" points="16 13 19 13 19 10 16 10"></polygon>
+                        <polygon id="Fill-6" points="10 19 13 19 13 16 10 16"></polygon>
+                        <polygon id="Fill-7" points="22 19 25 19 25 16 22 16"></polygon>
+                        <polygon id="Fill-8" points="16 19 19 19 19 16 16 16"></polygon>
+                        <polygon id="Fill-9" points="10 25 13 25 13 22 10 22"></polygon>
+                        <polygon id="Fill-10" points="16 25 19 25 19 22 16 22"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
