@@ -22,6 +22,7 @@ const getExternalType = (speciality, type) =>
 const Speciality = ({
   data: {
     contentfulSpeciality: speciality,
+    allContentfulMeetupEvent: { edges: events },
     videoIcon,
     filteredPosts: { edges: filteredPosts }
   },
@@ -34,7 +35,6 @@ const Speciality = ({
     communityBackground,
     communityLogo,
     communityText,
-    events,
     eventIcon,
     contactText
   } = speciality
@@ -284,17 +284,18 @@ export const pageQuery = graphql`
           url
         }
       }
-      events {
-        id
-        eventTitle
-        date
-        startTime
-        linkToEvent
-        blurb {
-          blurb
+      contactText
+    }
+
+    allContentfulMeetupEvent {
+      edges {
+        node {
+          id
+          eventTitle
+          date
+          linkToEvent
         }
       }
-      contactText
     }
 
     videoIcon: contentfulAsset(
