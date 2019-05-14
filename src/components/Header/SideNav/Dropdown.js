@@ -69,6 +69,7 @@ export default class Dropdown extends PureComponent {
     const service = isSpecialityPage ? getService(path) : serviceTitle
 
     isExpanded =
+      isExpanded ||
       items.filter(item => item.to.startsWith(`/${service}`)).length > 0
 
     return (
