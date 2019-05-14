@@ -63,8 +63,6 @@ export default class Dropdown extends PureComponent {
     const { items, children, path } = this.props
     let { isExpanded } = this.state
 
-    console.log(this.props)
-
     const isServicePage = path.search(servicesRegExp) > -1
     const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
     const isSpecialityPage = path.includes('speciality')
@@ -72,7 +70,6 @@ export default class Dropdown extends PureComponent {
 
     isExpanded =
       items.filter(item => item.to.startsWith(`/${service}`)).length > 0
-    console.log(isExpanded)
 
     return (
       <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
