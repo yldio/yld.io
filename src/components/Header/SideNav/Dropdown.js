@@ -75,11 +75,33 @@ export default class Dropdown extends PureComponent {
 
     const aboutUrl = getAboutUrl(path)
     const activeSubTab = aboutUrl || service
-    console.log(activeSubTab) // always return the subtab or null;
+    console.log('ActiveSubTab', activeSubTab) // always return the subtab or null;
 
     isExpanded =
       isExpanded ||
-      items.filter(item => item.to.startsWith(`/${service}`)).length > 0
+      items.filter(item => item.to.startsWith(`/${activeSubTab}`)).length > 0
+    // console.log(isAboutURL)
+
+    // isExpanded =
+    //   isExpanded ||
+    //   items.filter(item => item.to.startsWith(`/${service}`)).length > 0
+
+    // let serviceExpandedHelper
+
+    console.log(
+      `isExpanded: ${isExpanded}, items.filter... :${items.filter(item =>
+        item.to.startsWith(`/${service}}`)
+      ).length > 0}`
+    )
+
+    // if (isExpanded === false && (items.filter(item => item.to.startsWith(`/ ${service}`)).length > 0) === true) {
+    //   serviceExpandedHelper = false
+    // } else {
+    //   serviceExpandedHelper = isExpanded ||
+    //     items.filter(item => item.to.startsWith(`/ ${service}`)).length > 0
+    // }
+
+    // console.log(serviceExpandedHelper)
 
     return (
       <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
