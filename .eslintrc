@@ -14,7 +14,13 @@
     "react/no-access-state-in-setstate": "error",
     "space-before-function-paren": 0,
     "indent": 0,
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "jsx-a11y/aria-role": [
+      2,
+      {
+        "ignoreNonDOM": true
+      }
+    ]
   },
   "env": {
     "jest": true,
