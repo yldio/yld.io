@@ -25,6 +25,7 @@ storiesOf('AnimatedLink', module).add('AnimatedLink', () => (
         <img
           style={{ maxHeight: '100%' }}
           src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp"
+          alt="trainline graphic"
         />
       </PosterImage>
     </section>
