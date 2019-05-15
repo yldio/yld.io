@@ -7,12 +7,6 @@ import headerItemStyles from '../headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
-import {
-  servicesRegExp,
-  getIsServicePage,
-  getService,
-  getAboutUrl
-} from '../navLinksHelper'
 
 const DropdownNameWrapper = styled.span.attrs(props => ({
   states: outerItemStates
@@ -45,19 +39,24 @@ const DropdownList = styled.ul`
   padding: ${props => props.theme.spacing[1]} 0
     ${props => props.theme.spacing[1]} 0;
 `
-
 export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
+
+    const { items, path } = props
+
     this.state = {
-      isExpanded: false
+      isExpanded: items.some(({ to }) => path === to)
     }
+
     this.ref = React.createRef()
   }
 
   toggle = e => {
     e.preventDefault()
-    this.setState({ isExpanded: !this.state.isExpanded })
+    this.setState(prevState => ({
+      isExpanded: !prevState.isExpanded
+    }))
   }
 
   handleFocus = () => {
@@ -65,21 +64,8 @@ export default class Dropdown extends PureComponent {
   }
 
   render() {
-    const { items, children, path } = this.props
-    let { isExpanded } = this.state
-
-    const isServicePage = getIsServicePage(path)
-    const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
-    const isSpecialityPage = path.includes('speciality')
-    const service = isSpecialityPage ? getService(path) : serviceTitle
-
-    const aboutUrl = getAboutUrl(path)
-    const activeSubTab = aboutUrl || service
-    console.log(activeSubTab) // always return the subtab or null;
-
-    isExpanded =
-      isExpanded ||
-      items.filter(item => item.to.startsWith(`/${service}`)).length > 0
+    const { items, children } = this.props
+    const { isExpanded } = this.state
 
     return (
       <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
