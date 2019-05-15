@@ -9,7 +9,7 @@ export default workStage =>
       // arrays start with 0 so that's why the + 1
       const getCurrent = part => `section${capitalize(part)}${index + 1}`
       return {
-        id: `${workStage.id}-${generate()}`,
+        id: generate(),
         title: workStage[getCurrent('title')],
         icon: workStage[getCurrent('icon')],
         body: (workStage[getCurrent('body')] || {})[getCurrent('body')]
