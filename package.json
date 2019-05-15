@@ -46,6 +46,7 @@
   "scripts": {
     "test": "run-s test:**",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
+    "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "testcafe chrome ./tests/e2e",
     "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
     "develop": "npm start",
