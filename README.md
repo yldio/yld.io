@@ -85,7 +85,7 @@ Due to Lever's "all or nothing" permission access developers do not have access 
 
 #### Meetup
 
-Using Netlify's lambda
+Using Netlify's [lambda](https://www.netlify.com/docs/functions/) functionality we 
 
 ## Content Model notes
 
