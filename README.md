@@ -54,7 +54,7 @@ We have some docs to make it easier to get you started:
 
 ## Deployment
 
-The website is built and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
+The website and lambda are built (`yarn build`) and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
 
 - a new commit is pushed to our **production** (`master`) branch, read more [here](https://www.netlify.com/docs/continuous-deployment/);
 - the Contentful data is updated (via _webhook_).
@@ -83,9 +83,13 @@ Due to Lever's "all or nothing" permission access developers do not have access 
 
 ### ƛ Netlify lambda automated deployments
 
+Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
+
 #### Meetup
 
-Using Netlify's [lambda](https://www.netlify.com/docs/functions/) functionality we 
+`src/functions/meetup.js`
+
+Gets events from meetup.com and writes to contentful which then triggers a deployment via the contentful -> netlify webhook.
 
 ## Content Model notes
 

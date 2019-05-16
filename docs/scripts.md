@@ -24,6 +24,12 @@ This scripts cleans your `.cache` folder and then runs `yarn start`. If you are 
 
 This will run storybook so you can see our shared components.
 
+```bash
+yarn storybook:static
+```
+
+This command will build a static version of our storybook instance to `storybook-static/`.
+
 ### Lambda
 
 ```bash
@@ -31,6 +37,8 @@ This will run storybook so you can see our shared components.
 ```
 
 We also have one lambda function that goes to meetup and gets our latest meetups to put them in contentful and if need to make any changes this is the script to run.
+
+See [here](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how these are used.
 
 ## Tests
 
@@ -93,14 +101,6 @@ yarn build:app
 ```
 
 This command will build gatsby and the website.
-
-### Storybook
-
-```bash
-yarn build:storybook
-```
-
-This command will build our storybook instance.
 
 ### Lambda
 

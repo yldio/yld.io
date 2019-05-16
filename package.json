@@ -51,14 +51,14 @@
     "dev:clean": "rm -rf .cache && yarn develop",
     "format": "prettier --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 6006",
+    "storybook:static": "build-storybook",
     "build": "run-p build:**",
-    "build:storybook": "build-storybook",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda -c webpack.functions.js build src/functions",
     "lint": "run-p lint:**",
     "lint:js": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions",
-    "now-build": "yarn build:storybook",
+    "now-build": "storybook:static",
     "now-start": "serve storybook-static"
   },
   "devDependencies": {
