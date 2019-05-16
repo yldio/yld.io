@@ -35,11 +35,10 @@ const isSpecialityEvent = (eventTitle, title) => {
 const getSpecialityEvents = (title, events) =>
   events
     .filter(
-      ({ eventTitle, startTime }) =>
-        isSpecialityEvent(eventTitle, title) &&
-        isAfter(startTime, endOfYesterday())
+      ({ node: { eventTitle, date } }) =>
+        isSpecialityEvent(eventTitle, title) && isAfter(date, endOfYesterday())
     )
-    .sort((a, b) => (a.startTime <= b.startTime ? -1 : 1))
+    .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
 const EventSection = ({ events, title, eventIcon }) => {
@@ -61,19 +60,21 @@ const EventSection = ({ events, title, eventIcon }) => {
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             {hasEvents ? (
               <ul>
-                {specialityEvents.map(event => (
-                  <li key={`${event.id}`}>
-                    <Subtitle noPaddingBottom>
-                      <ExternalAnchor href={event.linkToEvent}>
-                        {event.eventTitle}
-                      </ExternalAnchor>
-                    </Subtitle>
-                    <BodyPrimary noPaddingTop>
-                      {format(event.startTime, 'MMMM DD[,] dddd')}
-                    </BodyPrimary>
-                    <Hr />
-                  </li>
-                ))}
+                {specialityEvents.map(
+                  ({ node: { id, eventTitle, date, linkToEvent } }) => (
+                    <li key={`${id}`}>
+                      <Subtitle noPaddingBottom>
+                        <ExternalAnchor href={linkToEvent}>
+                          {eventTitle}
+                        </ExternalAnchor>
+                      </Subtitle>
+                      <BodyPrimary noPaddingTop>
+                        {format(date, 'MMMM DD[,] dddd')}
+                      </BodyPrimary>
+                      <Hr />
+                    </li>
+                  )
+                )}
               </ul>
             ) : (
               noEventsMessage(title)
