@@ -17,24 +17,29 @@ fixture`Menu`.page`${baseUrl}`
   .after(() => server.close())
 
 test('we are on the homepage', async t => {
-  const displayTitle = await Selector('h1[class^="DisplayTitle"]')
-
-  await t.expect(displayTitle.exists).ok()
+  const location = await getWindowLocation()
+  await t.expect(location.href).contains(baseUrl)
 })
 
-test('dropdown opens on desktop ', async t => {
-  const services = await Selector('li').nth(0)
-
+test('a dropdown dropdownContainer opens on desktop and redirects correctly', async t => {
+  const services = await Selector('li').withText('Services')
   await t.expect(services.exists).ok()
-
   await t.click(services)
 
-  const servicesSubItem = await Selector('li[class^="InnerAnchorItem"]').nth(0)
+  const engineeringSubItem = await Selector('li[class^="InnerAnchorItem"]').nth(
+    0
+  )
+  await t.click(engineeringSubItem)
 
-  await t.click(servicesSubItem).wait(2000)
-
-  const engineeringPageUrl = `${baseUrl}/engineering`
   const location = await getWindowLocation()
+  await t.expect(location.href).contains(`${baseUrl}/engineering`)
+})
 
-  await t.expect(location.href).contains(engineeringPageUrl)
+test('An outerAnchorItem redirects to a page', async t => {
+  const joinUs = await Selector('li').withText('Join us')
+  await t.expect(joinUs.exists).ok()
+  await t.click(joinUs)
+
+  const location = await getWindowLocation()
+  await t.expect(location.href).contains(`${baseUrl}/join-us`)
 })
