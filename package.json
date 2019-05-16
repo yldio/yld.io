@@ -46,6 +46,7 @@
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "testcafe chrome ./tests/e2e",
+    "test:e2e-mobile": "testcafe \"chrome:emulation:mobile=true;device=iphone 6\" ./tests/e2e/sideNav-dropdown-test.js",
     "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
     "develop": "npm start",
     "start": "gatsby develop",
