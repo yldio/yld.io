@@ -1,7 +1,7 @@
 [build]
   functions = "./functions"
   # Overrides UI settings.
-  # builds gatsby, storybook and lambdas
+  # builds gatsby and lambdas
   command = "yarn build"
 
 [context.deploy-preview.environment]

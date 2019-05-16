@@ -58,7 +58,7 @@
     "lint": "run-p lint:**",
     "lint:js": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions",
-    "now-build": "storybook:static",
+    "now-build": "yarn storybook:static",
     "now-start": "serve storybook-static"
   },
   "devDependencies": {
