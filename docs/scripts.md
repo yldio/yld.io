@@ -72,7 +72,7 @@ Testcafe is our end-to-end web testing tool; we use it to make sure that the web
 yarn test
 ```
 
-This will run all the above.
+This will run all test:\*\* scripts
 
 ## Lint
 
@@ -108,12 +108,14 @@ This command will build gatsby and the website.
 yarn build:lambda
 ```
 
-This command will build our meetup lambda.
+This command will build our lambdas using the [netlify-lambda](https://github.com/netlify/netlify-lambda) package.
+
+See [here](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how the lambdas are used.
 
 ```bash
 yarn build
 ```
 
-This will run all our build scripts.
+This will run all our build:\*\* scripts.
 
 Any questions feel free to create an issue :)
