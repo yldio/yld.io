@@ -10,7 +10,7 @@ const baseUrl = `${hostname}:${port}`
 
 let server
 
-fixture`Menu`.page`${baseUrl}`
+fixture`Top Nav Menu`.page`${baseUrl}`
   .before(async t => {
     server = createServer(port)
   })
