@@ -1,6 +1,5 @@
 # YLD Website
 
-
 ## [Link](https://yldio.io/)
 
 ## [Storybook](https://yld-storybook.now.sh)
@@ -23,7 +22,7 @@ GATSBY_ENVIRONMENT="development"
 CMS_CRUD=(copy from Netlify - Build & Deploy - Environment - Edit variables - CMS_CRUD. Read below why copy)
 ```
 
-The meetup contentful lambda script uses [Contentful's Content Management API](https://www.contentful.com/developers/docs/references/content-management-api/). This requires a *Content Management Token* and NOT a Content Delivery Token (Content Delivery can only give you the info that's there, you can't CRUD entries). A CMT can only be viewed just after it has been generated. In theory these are Personal Tokens and each user can generate their own, but for simplicity's sake, it's easier for everyone to use the same one in their env file. Should you need to generate a new CMT, you can do so from contentful/settings/API keys/Content management tokens. The one used in Netlify is the "cms-crud" one. The token used in Netlify / production is registered with the apis@yld.io's Contentful account. 
+The meetup contentful lambda script uses [Contentful's Content Management API](https://www.contentful.com/developers/docs/references/content-management-api/). This requires a _Content Management Token_ and NOT a Content Delivery Token (Content Delivery can only give you the info that's there, you can't CRUD entries). A CMT can only be viewed just after it has been generated. In theory these are Personal Tokens and each user can generate their own, but for simplicity's sake, it's easier for everyone to use the same one in their env file. Should you need to generate a new CMT, you can do so from contentful/settings/API keys/Content management tokens. The one used in Netlify is the "cms-crud" one. The token used in Netlify production is registered with the apis@yld.io's Contentful account.
 
 You can now run:
 
@@ -61,6 +60,32 @@ The website is built and deployed on [Netlify](https://netlify.com/) to our prod
 - the Contentful data is updated (via _webhook_).
 
 Also, for each Pull Request that's open, a [Deploy Preview](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) is created, allowing for that branch to be tested and shared amongst stakeholders.
+
+## Automated deployments
+
+### 📬 Webhook automated deployments
+
+We are using Netlify webhooks/build hooks to automate new builds when services we use update. Each service has its own webhook url set up in Netlify.
+
+Keep in mind if you need to urgently alter any of the automated builds but don't have access to the services below, it's possible to just remove the webhook url from Netlify and stop it temporarily!
+
+#### Medium
+
+Zapier is subscribed to the yld engineering medium account via an RSS feeds, it checks every 5mins for new content. Upon new content zapier makes a post request to Netlify to trigger a fresh build.
+
+The account is registered under apis@yld.io, for access speak with Carlos Vilhena.
+
+#### Lever
+
+Using Lever's internal webhook functionality, a POST request is made to the corresponding Netlify endpoint whenver a role is ADDED or REMOVED within the yld Lever account.
+
+Due to Lever's "all or nothing" permission access developers do not have access to set up webhooks. At time of writing Nick Osborn has God tier access and will happily set the url endpoints if they need changing.
+
+### ƛ Netlify lambda automated deployments
+
+#### Meetup
+
+Using Netlify's lambda
 
 ## Content Model notes
 
