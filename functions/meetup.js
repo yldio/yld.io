@@ -281,13 +281,12 @@
 
           exports.handler = async (event, context, callback) => {
             // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
-            console.log("I'm about to run meetup function")
             const space = await client.getSpace(CONTENTFUL_SPACE)
             const environment = await space.getEnvironment('master') // filter to return published entries that belong to a specific content model.
 
             const { items: events } = await environment.getEntries({
               limit: 1000,
-              content_type: 'meetupEven' // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the contet from scratch
+              content_type: 'meetupEven' // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
             }) // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
 
             await Map(processMeetupData(await getSelfGroups()), async group => {
@@ -297,18 +296,14 @@
                 return null
               }
 
-              console.log(urlname, nextEvent)
               const meetup = processMeetupEvent(
                 await getEvent({
                   id: nextEvent,
                   urlname
                 })
               )
-              console.log(meetup)
               const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
               const entry = generateContentfulEvent({ ...meetup, ...group })
-              console.log(ev)
-              console.log(entry)
 
               if (ev) {
                 // update
@@ -319,11 +314,11 @@
                 console.log(`Publishing updated entry ${meetup.eventName}`)
                 return updatedEntry.publish()
               } // create
-              // console.log(`Creating entry ${meetup.eventName}`)
 
+              console.log(`Creating entry ${meetup.eventName}`)
               const id = await environment.createEntry('meetupEven', entry)
-              const newEntry = await environment.getEntry(id.sys.id) // console.log(`Publishing creted entry ${meetup.eventName}`)
-
+              const newEntry = await environment.getEntry(id.sys.id)
+              console.log(`Publishing creted entry ${meetup.eventName}`)
               return newEntry.publish()
             })
             return {
