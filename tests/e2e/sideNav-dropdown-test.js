@@ -32,7 +32,12 @@ test('we are on the homepage', async t => {
 
 test('a hamburger is present on the page', async t => {
   const hamburger = await Selector('[class^="Hamburger"').filterVisible()
-  await t.expect(hamburger.exists).ok()
+  await t
+    .resizeWindowToFitDevice('iPhone 6', {
+      portraitOrientation: true
+    })
+    .expect(hamburger.exists)
+    .ok()
 })
 
 test('the side nav is not expanded at its initial state', async t => {
