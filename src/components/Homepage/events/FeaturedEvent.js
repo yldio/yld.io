@@ -23,6 +23,9 @@ const FeaturedEvent = ({ events }) => (
             {conf.eventTitle}
           </CardTitle>
           <Padding top={0.5}>
+            <BodyPrimary noPadding reverse>
+              {conf.date}
+            </BodyPrimary>
             <FixedWidthBodyPrimary muted reverse>
               {conf.blurb.blurb}
             </FixedWidthBodyPrimary>
