@@ -23,7 +23,7 @@
     "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "lodash": "4.17.11",
     "lodash.isequal": "^4.5.0",
-    "netlify-lambda": "1.0.3",
+    "netlify-lambda": "1.4.9",
     "polished": "2.3.0",
     "react": "16.8.1",
     "react-dom": "16.8.1",
@@ -37,8 +37,7 @@
     "styled-components-spacing": "3.1.1",
     "styled-flex-component": "2.2.2",
     "styled-is": "1.1.5",
-    "styled-reset": "1.6.0",
-    "webpack-node-externals": "^1.7.2"
+    "styled-reset": "1.6.0"
   },
   "license": "MIT",
   "scripts": {
@@ -123,7 +122,8 @@
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.5.1",
-    "testcafe": "^1.1.0"
+    "testcafe": "^1.1.0",
+    "webpack-node-externals": "^1.7.2"
   },
   "husky": {
     "hooks": {

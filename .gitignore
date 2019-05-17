@@ -5,6 +5,7 @@ yarn-error.log
 
 # Build directory
 /public
+/functions
 .DS_Store
 .eslintcache
 .env
