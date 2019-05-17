@@ -13,7 +13,11 @@ let server
 
 const openSideNav = async t => {
   const hamburger = await Selector('[class^="Hamburger"')
-  await t.click(hamburger)
+  await t
+    .resizeWindowToFitDevice('iPhone 6', {
+      portraitOrientation: true
+    })
+    .click(hamburger)
 }
 
 fixture`Side Nav Menu`.page`${baseUrl}`
