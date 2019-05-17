@@ -28,7 +28,7 @@ const FeaturedEvent = ({ events }) => (
             </FixedWidthBodyPrimary>
           </Padding>
           <StyledLink external reverse href={conf.linkToEvent}>
-            Visit the website
+            {conf.ctaText}
           </StyledLink>
         </EventWrapper>
         <Image image={conf.posterImage} />
