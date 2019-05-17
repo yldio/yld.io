@@ -164,6 +164,7 @@ export const query = graphql`
           id
           eventTitle
           date
+          ctaText
           linkToEvent
           blurb {
             blurb
