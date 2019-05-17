@@ -47,10 +47,21 @@ test('when the hamburger button is clicked the side nav expands', async t => {
   await t.expect(sideNavPanel.exists).ok()
 })
 
-test('when the side nav expands for the first time no sub item is shown by default', async t => {
+test('when the side nav expands for the first time no sub-item is shown by default', async t => {
   await openSideNav(t)
   const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
 
   const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).notOk()
+})
+
+test('when an item is clicked a sub-item is shown by default', async t => {
+  await openSideNav(t)
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+
+  const servicesItem = sideNavPanel.find('span').withText('Services')
+  await t.click(servicesItem)
+
+  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  await t.expect(engineeringSubItem.exists).ok()
 })
