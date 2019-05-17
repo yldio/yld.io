@@ -49,7 +49,7 @@ test('when the hamburger button is clicked the side nav expands', async t => {
 
 test('clicking a side Nav link redirects to the correct url and closes the side Nav', async t => {
   await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
 
   const joinUsLink = sideNavPanel.find('a').withText('Join us')
   await t.click(joinUsLink)
@@ -61,7 +61,7 @@ test('clicking a side Nav link redirects to the correct url and closes the side 
 
 test('when the side nav expands for the first time no sub-item is shown by default', async t => {
   await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
 
   const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).notOk()
@@ -69,7 +69,7 @@ test('when the side nav expands for the first time no sub-item is shown by defau
 
 test('when an item is clicked its sub-items appear', async t => {
   await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
 
   const servicesItem = sideNavPanel.find('span').withText('Services')
   await t.click(servicesItem)
@@ -80,7 +80,7 @@ test('when an item is clicked its sub-items appear', async t => {
 
 test('clicking a sub-item redirects to the correct url and closes the side Nav', async t => {
   await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
 
   const servicesItem = sideNavPanel.find('span').withText('Services')
   await t.click(servicesItem)
@@ -91,4 +91,30 @@ test('clicking a sub-item redirects to the correct url and closes the side Nav',
   const location = await getWindowLocation()
   await t.expect(location.href).contains(`${baseUrl}/engineering`)
   await t.expect(sideNavPanel.exists).notOk()
+})
+
+test('After a sub-item has been clicked and if the sideNav is re-opened, the subitems are still visible and the selected one highlighted', async t => {
+  await openSideNav(t)
+  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+
+  const servicesItem = sideNavPanel.find('span').withText('Services')
+  await t.click(servicesItem)
+
+  const designSubItem = sideNavPanel.find('a').withText('Design')
+  await t.click(designSubItem)
+  await openSideNav(t)
+
+  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  await t.expect(engineeringSubItem.exists).ok()
+
+  const inactiveSubItem = sideNavPanel
+    .find('a')
+    .withText('Engineering')
+    .withAttribute('active')
+  await t.expect(inactiveSubItem.exists).notOk()
+
+  const activeSubItem = sideNavPanel
+    .find('a[class$="active"]')
+    .withText('Design')
+  await t.expect(activeSubItem.exists).ok()
 })
