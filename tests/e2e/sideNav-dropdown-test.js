@@ -77,3 +77,18 @@ test('when an item is clicked its sub-items appear', async t => {
   const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).ok()
 })
+
+test('clicking a sub-item redirects to the correct url and closes the side Nav', async t => {
+  await openSideNav(t)
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+
+  const servicesItem = sideNavPanel.find('span').withText('Services')
+  await t.click(servicesItem)
+
+  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  await t.click(engineeringSubItem)
+
+  const location = await getWindowLocation()
+  await t.expect(location.href).contains(`${baseUrl}/engineering`)
+  await t.expect(sideNavPanel.exists).notOk()
+})
