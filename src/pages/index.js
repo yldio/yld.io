@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import { format, isAfter, endOfYesterday } from 'date-fns'
+
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
@@ -14,46 +16,78 @@ import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 
+const getHomepageMeetups = (events = []) =>
+  events
+    .filter(
+      n => !n.node.homepageFeatured && isAfter(n.node.date, endOfYesterday())
+    )
+    .sort((a, b) => (a.node.date <= b.node.date ? -1 : 1))
+    .slice(0, 5)
+    .map(n => ({
+      ...n.node,
+      date: format(n.node.date, 'MMMM DD[,] dddd')
+    }))
+
+const getHomepageConferences = (events = []) =>
+  events
+    .filter(n => n.node.homepageFeatured)
+    .slice(0, 1)
+    .map(n => ({
+      ...n.node,
+      date: format(n.node.date, 'MMMM DD[,] dddd')
+    }))
+
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
   location
-}) => (
-  <Layout location={location}>
-    <Head page={content} />
-    <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
-    <GreyBackground>
+}) => {
+  const featuredEvent = getHomepageConferences(events.edges)[0]
+  const nonFeaturedEvents = getHomepageMeetups(events.edges)
+
+  return (
+    <Layout location={location}>
+      <Head page={content} />
+      <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
+      <GreyBackground>
+        <Grid>
+          <Padding top={{ smallPhone: 4 }} bottom={3}>
+            <Statement
+              noPadding
+              richText={content.seoText.content[0].content}
+            />
+            <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
+            <LogoGrid companies={content.companies} />
+          </Padding>
+        </Grid>
+      </GreyBackground>
       <Grid>
-        <Padding top={{ smallPhone: 4 }} bottom={3}>
-          <Statement noPadding richText={content.seoText.content[0].content} />
-          <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
-          <LogoGrid companies={content.companies} />
-        </Padding>
+        <Services services={content.services} />
       </Grid>
-    </GreyBackground>
-    <Grid>
-      <Services services={content.services} />
-    </Grid>
-    <GreyBackground>
-      <Grid>
-        <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} top={4}>
-          <Events events={events.edges} />
-        </Padding>
-      </Grid>
-    </GreyBackground>
-    <LatestPosts>
-      {posts => (
-        <BlogListing
-          title="From the blog"
-          posts={posts.map(({ node }) => node).slice(0, 3)}
-        />
-      )}
-    </LatestPosts>
-    <GreyBackground>
-      <Jobs />
-      <Padding bottom={{ smallPhone: 1.5, smallTablet: 0 }} />
-    </GreyBackground>
-  </Layout>
-)
+      <GreyBackground>
+        <Grid>
+          <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} top={4}>
+            <Events
+              nonFeaturedEvents={nonFeaturedEvents}
+              featuredEvent={featuredEvent}
+            />
+          </Padding>
+        </Grid>
+      </GreyBackground>
+      <LatestPosts>
+        {posts => (
+          <BlogListing
+            title="From the blog"
+            posts={posts.map(({ node }) => node).slice(0, 3)}
+          />
+        )}
+      </LatestPosts>
+      <GreyBackground>
+        <Jobs />
+        <Padding bottom={{ smallPhone: 1.5, smallTablet: 0 }} />
+      </GreyBackground>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query {
