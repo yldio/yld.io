@@ -47,6 +47,18 @@ test('when the hamburger button is clicked the side nav expands', async t => {
   await t.expect(sideNavPanel.exists).ok()
 })
 
+test('clicking a side Nav link redirects to the correct url and closes the side Nav', async t => {
+  await openSideNav(t)
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+
+  const joinUsLink = sideNavPanel.find('a').withText('Join us')
+  await t.click(joinUsLink)
+
+  const location = await getWindowLocation()
+  await t.expect(location.href).contains(`${baseUrl}/join-us`)
+  await t.expect(sideNavPanel.exists).notOk()
+})
+
 test('when the side nav expands for the first time no sub-item is shown by default', async t => {
   await openSideNav(t)
   const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
@@ -55,7 +67,7 @@ test('when the side nav expands for the first time no sub-item is shown by defau
   await t.expect(engineeringSubItem.exists).notOk()
 })
 
-test('when an item is clicked a sub-item is shown by default', async t => {
+test('when an item is clicked its sub-items appear', async t => {
   await openSideNav(t)
   const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
 
