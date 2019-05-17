@@ -11,6 +11,11 @@ const baseUrl = `${hostname}:${port}`
 
 let server
 
+const openSideNav = async t => {
+  const hamburger = await Selector('[class^="Hamburger"')
+  await t.click(hamburger)
+}
+
 fixture`Side Nav Menu`.page`${baseUrl}`
   .before(async () => {
     server = createServer(port)
@@ -36,9 +41,16 @@ test('the side nav is not expanded at its initial state', async t => {
 })
 
 test('when the hamburger button is clicked the side nav expands', async t => {
-  const hamburger = await Selector('[class^="Hamburger"')
-  await t.click(hamburger)
+  await openSideNav(t)
 
   const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
   await t.expect(sideNavPanel.exists).ok()
+})
+
+test('when the side nav expands for the first time no sub item is shown by default', async t => {
+  await openSideNav(t)
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
+
+  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  await t.expect(engineeringSubItem.exists).notOk()
 })
