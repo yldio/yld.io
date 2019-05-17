@@ -1,6 +1,6 @@
 import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
-import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
+// import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
 require('dotenv').config()
 
 const getWindowLocation = ClientFunction(() => window.location)
@@ -15,9 +15,9 @@ fixture`Side Nav Menu`.page`${baseUrl}`
   .before(async () => {
     server = createServer(port)
   })
-  .beforeEach(async () => {
-    await waitForReact()
-  })
+  //   .beforeEach(async () => {
+  //     await waitForReact()
+  //   })
   .after(() => server.close())
 
 test('we are on the homepage', async t => {
@@ -31,20 +31,14 @@ test('a hamburger is present on the page', async t => {
 })
 
 test('the side nav is not expanded at its initial state', async t => {
-  const sideNavPanel = ReactSelector('nav[class^="SideNav"').withProps(
-    'open',
-    true
-  )
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
   await t.expect(sideNavPanel.exists).notOk()
 })
 
-test.skip('when the hamburger button is clicked the side nav expands', async t => {
+test('when the hamburger button is clicked the side nav expands', async t => {
   const hamburger = await Selector('[class^="Hamburger"')
   await t.click(hamburger)
 
-  const sideNavPanel = ReactSelector('nav[class^="SideNav"').withProps(
-    'open',
-    true
-  )
+  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
   await t.expect(sideNavPanel.exists).ok()
 })
