@@ -1,5 +1,6 @@
 import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
+
 require('dotenv').config()
 
 const getWindowLocation = ClientFunction(() => window.location)
@@ -14,6 +15,9 @@ fixture`Top Nav Menu`.page`${baseUrl}`
   .before(async t => {
     server = createServer(port)
   })
+  // .beforeEach(async () => {
+  //   await waitForReact()
+  // })
   .after(() => server.close())
 
 test('we are on the homepage', async t => {
@@ -42,4 +46,23 @@ test('An outerAnchorItem redirects to a page', async t => {
 
   const location = await getWindowLocation()
   await t.expect(location.href).contains(`${baseUrl}/join-us`)
+})
+
+test('opens and close a dropdown', async t => {
+  const services = await Selector('li').withText('Services')
+  await t.expect(services.exists).ok()
+  await t.click(services)
+
+  const openDropdown = Selector('li')
+    .withText('Services')
+    .withAttribute('aria-expanded', 'true')
+  await t.expect(openDropdown.exists).ok()
+
+  const elsewhere = Selector('section').nth(0)
+  await t.click(elsewhere)
+
+  const closedDropdown = Selector('li')
+    .withText('Services')
+    .withAttribute('aria-expanded', 'false')
+  await t.expect(closedDropdown.exists).ok()
 })
