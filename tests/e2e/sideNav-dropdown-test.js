@@ -1,5 +1,6 @@
 import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
+import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
 require('dotenv').config()
 
 const getWindowLocation = ClientFunction(() => window.location)
@@ -11,8 +12,11 @@ const baseUrl = `${hostname}:${port}`
 let server
 
 fixture`Side Nav Menu`.page`${baseUrl}`
-  .before(async t => {
+  .before(async () => {
     server = createServer(port)
+  })
+  .beforeEach(async () => {
+    await waitForReact()
   })
   .after(() => server.close())
 
@@ -21,11 +25,26 @@ test('we are on the homepage', async t => {
   await t.expect(location.href).contains(baseUrl)
 })
 
-test('a hamburger is present and opens the side nav', async t => {
+test('a hamburger is present on the page', async t => {
   const hamburger = await Selector('[class^="Hamburger"').filterVisible()
   await t.expect(hamburger.exists).ok()
+})
+
+test('the side nav is not expanded at its initial state', async t => {
+  const sideNavPanel = ReactSelector('nav[class^="SideNav"').withProps(
+    'open',
+    true
+  )
+  await t.expect(sideNavPanel.exists).notOk()
+})
+
+test.skip('when the hamburger button is clicked the side nav expands', async t => {
+  const hamburger = await Selector('[class^="Hamburger"')
   await t.click(hamburger)
 
-  const sideNav = await Selector('[class^="SideNav"]').filterVisible()
-  await t.expect(sideNav.exists).ok()
+  const sideNavPanel = ReactSelector('nav[class^="SideNav"').withProps(
+    'open',
+    true
+  )
+  await t.expect(sideNavPanel.exists).ok()
 })
