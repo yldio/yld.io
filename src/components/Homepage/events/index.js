@@ -12,12 +12,12 @@ const EventsRow = styled(Row)`
   `}
 `
 
-const Events = ({ events }) => (
+const Events = ({ featuredEvent, nonFeaturedEvents }) => (
   <EventsRow>
-    <DesktopMeetups events={events} />
+    <DesktopMeetups events={nonFeaturedEvents} />
     <MobileHeader />
-    <FeaturedEvent events={events} />
-    <MobileMeetups events={events} />
+    <FeaturedEvent event={featuredEvent} />
+    <MobileMeetups events={nonFeaturedEvents} />
   </EventsRow>
 )
 

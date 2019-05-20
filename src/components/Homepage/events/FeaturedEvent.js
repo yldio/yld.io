@@ -2,7 +2,6 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import { CardTitle, BodyPrimary } from '../../Typography'
-import { getHomepageConferences } from './getEvents'
 import Image from '../../Common/Image'
 import {
   FeaturedEventWrapper,
@@ -11,29 +10,30 @@ import {
 } from './elements'
 import StyledLink from '../../Common/StyledLink'
 
-const FeaturedEvent = ({ events }) => (
+const FeaturedEvent = ({ event }) => (
   <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
-    {getHomepageConferences(events).map(conf => (
-      <FeaturedEventWrapper key={conf.id} color={conf.color}>
-        <EventWrapper>
-          <BodyPrimary muted reverse noPadding>
-            Featured
+    <FeaturedEventWrapper key={event.id} color={event.color}>
+      <EventWrapper>
+        <BodyPrimary muted reverse noPadding>
+          Featured
+        </BodyPrimary>
+        <CardTitle reverse noPadding biggest>
+          {event.eventTitle}
+        </CardTitle>
+        <Padding top={0.5}>
+          <BodyPrimary noPadding reverse>
+            {event.date}
           </BodyPrimary>
-          <CardTitle reverse noPadding biggest>
-            {conf.eventTitle}
-          </CardTitle>
-          <Padding top={0.5}>
-            <FixedWidthBodyPrimary muted reverse>
-              {conf.blurb.blurb}
-            </FixedWidthBodyPrimary>
-          </Padding>
-          <StyledLink external reverse href={conf.linkToEvent}>
-            {conf.ctaText}
-          </StyledLink>
-        </EventWrapper>
-        <Image image={conf.posterImage} />
-      </FeaturedEventWrapper>
-    ))}
+          <FixedWidthBodyPrimary muted reverse>
+            {event.blurb.blurb}
+          </FixedWidthBodyPrimary>
+        </Padding>
+        <StyledLink external reverse href={event.linkToEvent}>
+          {event.ctaText}
+        </StyledLink>
+      </EventWrapper>
+      <Image image={event.posterImage} />
+    </FeaturedEventWrapper>
   </Col>
 )
 
