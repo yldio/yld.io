@@ -2,6 +2,7 @@ const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
 const { getTagsForTitle } = require('./src/utils/getTagsForTitle')
+const { writeFile } = require('mz/fs')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -142,4 +143,44 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     }
   })
+}
+
+exports.onPostBuild = async ({ graphql }) => {
+  /**
+   * Grab a bunch of meta information from the site and make public
+   *
+   * The lever information is used in the lever lambda to work out whether to
+   * trigger a new build of the site. see src/functions/lever.js
+   */
+  const {
+    errors,
+    data: { allLever }
+  } = await graphql(`
+    {
+      allLever(limit: 500) {
+        group(field: categories___location) {
+          edges {
+            node {
+              lever_id
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    throw new Error(errors)
+  }
+
+  const allJobIds =
+    allLever &&
+    allLever.group &&
+    allLever.group.reduce(
+      (acc, { edges }) =>
+        acc.concat(...edges.map(({ node: { lever_id: id } }) => id)),
+      []
+    )
+
+  await writeFile('./public/meta.json', JSON.stringify({ allJobIds }))
 }

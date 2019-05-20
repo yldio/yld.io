@@ -17,12 +17,12 @@ In order to access data from contentful make sure that you have an .env file tha
 ```
 CONTENTFUL_TOKEN=(see in contentful/settings/API keys "meetup > Content Delivery API - Access Token")
 CONTENTFUL_SPACE=(see in contentful/settings/API keys "meetup > Space ID")
-MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 GATSBY_ENVIRONMENT="development"
+
+# For local Lambda development
+MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 CMS_CRUD=(copy from Netlify - Build & Deploy - Environment - Edit variables - CMS_CRUD. Read below why copy)
 ```
-
-The meetup contentful lambda script uses [Contentful's Content Management API](https://www.contentful.com/developers/docs/references/content-management-api/). This requires a _Content Management Token_ and NOT a Content Delivery Token (Content Delivery can only give you the info that's there, you can't CRUD entries). A CMT can only be viewed just after it has been generated. In theory these are Personal Tokens and each user can generate their own, but for simplicity's sake, it's easier for everyone to use the same one in their env file. Should you need to generate a new CMT, you can do so from contentful/settings/API keys/Content management tokens. The one used in Netlify is the "cms-crud" one. The token used in Netlify production is registered with the apis@yld.io's Contentful account.
 
 You can now run:
 
@@ -71,9 +71,9 @@ Keep in mind if you need to urgently alter any of the automated builds but don't
 
 #### Medium
 
-Zapier is subscribed to the yld engineering medium account via an RSS feeds, it checks every 5mins for new content. Upon new content zapier makes a post request to Netlify to trigger a fresh build.
+Zapier is subscribed to the yld engineering medium account via an RSS feeds, it checks every hour for new content. Upon new content zapier makes a post request to Netlify to trigger a fresh build.
 
-The account is registered under apis@yld.io, for access speak with Carlos Vilhena.
+The account is registered under `apis@yld.io`, for access speak with Carlos Vilhena.
 
 #### Lever
 
@@ -87,9 +87,15 @@ Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
 
 #### Meetup
 
+Local development requires:
+
+`MEETUP_KEY` - Key for the lambda to get content from Contentful. Available from Contentful API Keys Settings.
+
+`CMS_CRUD` - A personal access token generated from your Contentful account settings to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
+
 `src/functions/meetup.js`
 
-Gets events from meetup.com and writes to contentful which then triggers a deployment via the contentful -> netlify webhook.
+Gets events from meetup.com and writes to Contentful which then triggers a deployment via the Contentful -> Netlify webhook.
 
 ## Content Model notes
 
