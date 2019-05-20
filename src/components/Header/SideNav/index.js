@@ -16,6 +16,7 @@ const SideNavPanel = styled.nav`
   left: 0;
   top: 0;
   z-index: ${props => props.theme.zIndexes.header};
+  overflow-y: scroll;
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
 
