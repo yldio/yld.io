@@ -22,6 +22,23 @@ const interests = [
   { name: 'none', label: 'None of these' }
 ]
 
+const data = {
+  labels: {
+    interests: 'What are you interested in?',
+    yourName: 'Your Name',
+    yourEmail: 'Your Email'
+  },
+  textArea: {
+    label: 'Tell us a bit more',
+    placeHolder: 'A brief description of what you’re looking for'
+  },
+  successMessage: 'Thanks for reaching out. We will be in contact shortly',
+  privacyPolicy: {
+    text: "I agree to the terms of YLD's ",
+    linkText: 'privacy policy'
+  }
+}
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -107,24 +124,24 @@ class ContactUs extends Component {
                 bottom={{ smallPhone: 3.5, tablet: 5 }}
               >
                 {success ? (
-                  <ThankYouMessage message="Thanks for reaching out. We will be in contact shortly" />
+                  <ThankYouMessage message={data.successMessage} />
                 ) : (
                   <Fragment>
                     <AreasOfInterest
-                      title="What are you interested in?"
+                      title={data.labels.interests}
                       interests={interests}
                       onChange={this.handleChangeCheckbox}
                     />
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
-                        <Label htmlFor="message">Tell us a bit more</Label>
+                        <Label htmlFor="message">{data.textArea.label}</Label>
                         <Input
                           as="textarea"
                           noBoxShadow={!this.state.triedSubmitting}
                           rows="4"
                           value={message}
                           onChange={this.handleChange}
-                          placeholder="A brief description of what you’re looking for"
+                          placeholder={data.textArea.placeHolder}
                           id="message"
                           name="message"
                           required
@@ -133,7 +150,7 @@ class ContactUs extends Component {
                     </Row>
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
-                        <Label htmlFor="name">Your Name</Label>
+                        <Label htmlFor="name">{data.labels.yourName}</Label>
                         <Input
                           id="name"
                           type="text"
@@ -142,7 +159,7 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
-                        <Label htmlFor="email">Your Email</Label>
+                        <Label htmlFor="email">{data.labels.yourEmail}</Label>
                         <Input
                           id="email"
                           type="email"
@@ -161,9 +178,9 @@ class ContactUs extends Component {
                               onChange={this.handleChangeCheckbox}
                             />
                             <label htmlFor="privacy">
-                              {"I agree to the terms of YLD's "}
+                              {data.privacyPolicy.text}
                               <LinkUnderline to={'/privacy-policy'}>
-                                privacy policy
+                                {data.privacyPolicy.linkText}
                               </LinkUnderline>
                             </label>
                           </section>
