@@ -49,6 +49,12 @@ const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
 
+const StyledInput = styled(Input)`
+  ::placeholder {
+    color: ${props => props.theme.colors.text};
+  }
+`
+
 // NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
 class ContactUs extends Component {
   state = {
@@ -135,7 +141,7 @@ class ContactUs extends Component {
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
                         <Label htmlFor="message">{data.textArea.label}</Label>
-                        <Input
+                        <StyledInput
                           as="textarea"
                           noBoxShadow={!this.state.triedSubmitting}
                           rows="4"
