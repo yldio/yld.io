@@ -181,6 +181,52 @@ exports.handler = async (event, context, callback) => {
     const entry = generateContentfulEvent({ ...meetup, ...group })
 
     if (ev) {
+      const needsUpdating = Object.keys(ev.fields).reduce((acc, current) => {
+        console.log('---')
+        console.log(ev.fields[current]['en-US'], entry.fields[current]['en-US'])
+        console.log(acc)
+        console.log('$$$')
+
+        if (
+          ev.fields[current]['en-US'] === entry.fields[current]['en-US'] &&
+          acc === false
+        ) {
+          acc = false
+        } else if (
+          ev.fields[current]['en-US'] !== entry.fields[current]['en-US'] &&
+          acc === false &&
+          current === 'homepageFeatured'
+        ) {
+          acc = false
+        } else if (
+          ev.fields[current]['en-US'] !== entry.fields[current]['en-US'] &&
+          acc === false &&
+          (current === 'startTime' || current === 'endTime')
+        ) {
+          if (
+            new Date(ev.fields[current]['en-US']) -
+              entry.fields[current]['en-US'] ===
+            0
+          ) {
+            acc = false
+          } else acc = true
+        } else {
+          acc = true
+        }
+        return acc
+      }, false)
+
+      console.log(needsUpdating)
+
+      if (needsUpdating === false) {
+        console.log(
+          `Entry ${meetup.eventName} unchanged. No need to update. Moving on.`
+        )
+        return null
+      }
+
+      // TODO: make sure that homepageFeatured isn't updated!
+
       // update
       ev.fields = Object.assign(ev.fields, entry.fields)
       console.log(`Updating entry ${meetup.eventName}`)
