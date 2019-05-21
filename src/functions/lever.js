@@ -2,13 +2,27 @@ const got = require('got')
 const { parse, format } = require('url')
 const isEqual = require('lodash.isequal')
 
-const { URL = 'http://localhost:8000', DEPLOY_URL } = process.env
+/**
+ *
+ * This lambda is used to check for any differences in roles listed on yld.io
+ * and our lever account. If any new changes are found we trigger a new site deployment.
+ *
+ * The yld.io/meta.json endpoint is created on the postBuild method of gatsby.
+ * See gatsby-node.js for more detials.
+ *
+ */
+const {
+  DEPLOY_URL = 'http://localhost:8000', // Current deployment context
+  CONTEXT, // production / deploy-preview / branch-deploy
+  LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
+} = process.env
+
 exports.handler = async (event, context, callback) => {
-  console.log('------------------------')
-  console.log({ URL, DEPLOY_URL })
-  console.log('------------------------')
+  console.log(process.env)
+  const isProd = CONTEXT === 'production'
+
   const metaHref = format({
-    ...parse(URL),
+    ...parse(DEPLOY_URL),
     pathname: '/meta.json'
   })
 
@@ -20,8 +34,6 @@ exports.handler = async (event, context, callback) => {
     }
   })
 
-  console.log(process.env, { metaHref, leverHref })
-
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })
 
@@ -29,15 +41,25 @@ exports.handler = async (event, context, callback) => {
   const leverJobIds =
     leverBody && leverBody.length && leverBody.map(({ id }) => id)
 
-  console.log({ DEPLOY_URL })
-
   if (!isEqual(allJobIds.sort(), leverJobIds.sort())) {
-    console.log('They are not the same, time to deploy')
-    // const { body } = await got(DEPLOY_URL)
+    if (isProd) {
+      const { body } = await got(LAMBDA_LEVER_WEBHOOK)
+
+      return {
+        status: 200,
+        body
+      }
+    } else {
+      return {
+        status: 200,
+        body:
+          'Difference in jobs found but this is not production so no deployment for you'
+      }
+    }
   }
 
   return {
-    body: 'amazing',
+    body: 'No differences in jobs found, not deploying',
     statusCode: 200
   }
 }
