@@ -37,6 +37,10 @@ export const OfficeStyled = styled(Row)`
   overflow: hidden;
 `
 
+const CookiesAndPrivacyPolicies = styled.div`
+  color: white;
+`
+
 const Footer = () => {
   return (
     <GreyFooter>
@@ -85,12 +89,18 @@ const Footer = () => {
                       </ExternalAnchor>
                     </li>
                   ))}
+                  <CookiesAndPrivacyPolicies>
+                    Desktop Cookies and privacy policies placeholder
+                  </CookiesAndPrivacyPolicies>
                 </Social>
               </Col>
             </Row>
           </Grid>
         </Padding>
       </FollowUs>
+      <CookiesAndPrivacyPolicies>
+        Mobile and tablets Cookies and privacy policies placeholder
+      </CookiesAndPrivacyPolicies>
     </GreyFooter>
   )
 }
