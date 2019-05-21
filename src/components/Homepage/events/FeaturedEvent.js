@@ -4,13 +4,9 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Col } from '../../grid'
-import { BodyPrimary, DisplayTitle } from '../../Typography'
 import Image from '../../Common/Image'
 import StyledLink from '../../Common/StyledLink'
-
-const PaddedBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${props => props.theme.space[1]};
-`
+import { BodyPrimary, DisplayTitle } from '../../Typography'
 
 const FeaturedEventWrapper = styled.section`
   background-color: #${props => props.color};
@@ -28,6 +24,10 @@ const EventWrapper = styled.header`
     padding-top: ${remcalc(24)};
     padding-left: ${remcalc(36)};
   `};
+`
+
+const PaddedBodyPrimary = styled(BodyPrimary)`
+  padding-bottom: ${props => props.theme.space[1]};
 `
 
 const FixedWidthBodyPrimary = styled(BodyPrimary)`
