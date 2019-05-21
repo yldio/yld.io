@@ -1,5 +1,6 @@
 import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import styled from 'styled-components'
+
 import { Col } from '../../grid'
 import { CardTitle, BodyPrimary } from '../../Typography'
 import Image from '../../Common/Image'
@@ -10,24 +11,24 @@ import {
 } from './elements'
 import StyledLink from '../../Common/StyledLink'
 
+const PaddedBodyPrimary = styled(BodyPrimary)`
+  padding-bottom: ${props => props.theme.spacing[0.5]};
+`
+
 const FeaturedEvent = ({ event }) => (
   <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
     <FeaturedEventWrapper key={event.id} color={event.color}>
       <EventWrapper>
-        <BodyPrimary muted reverse noPadding>
+        <PaddedBodyPrimary muted reverse noPadding>
           Featured
-        </BodyPrimary>
-        <CardTitle reverse noPadding biggest>
+        </PaddedBodyPrimary>
+        <CardTitle reverse noPaddingTop biggest>
           {event.eventTitle}
         </CardTitle>
-        <Padding top={0.5}>
-          <BodyPrimary noPadding reverse>
-            {event.date}
-          </BodyPrimary>
-          <FixedWidthBodyPrimary muted reverse>
-            {event.blurb.blurb}
-          </FixedWidthBodyPrimary>
-        </Padding>
+        <BodyPrimary reverse>{event.date}</BodyPrimary>
+        <FixedWidthBodyPrimary muted reverse>
+          {event.blurb.blurb}
+        </FixedWidthBodyPrimary>
         <StyledLink external reverse href={event.linkToEvent}>
           {event.ctaText}
         </StyledLink>
