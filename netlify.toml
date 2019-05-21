@@ -5,8 +5,10 @@
   command = "yarn build"
 
 [context.production]
-  environment = { NODE_ENV = "production" }
+  environment = { LAMBDA_ENV = "production" }
 
 [context.deploy-preview.environment]
-  NODE_ENV = "production"
+  # Naturally we would use NODE_ENV but this breaks the 
+  # run-p command on yarn build within netlify deploy
+  LAMBDA_ENV = "production"
   GATSBY_ENVIRONMENT = "preview"

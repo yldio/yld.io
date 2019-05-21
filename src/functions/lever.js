@@ -16,12 +16,12 @@ const isEqual = require('lodash.isequal')
  */
 const {
   URL,
-  NODE_ENV = 'production',
+  LAMBDA_ENV = 'production',
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
 exports.handler = async (event, context) => {
-  const isProd = NODE_ENV === 'production'
+  const isProd = LAMBDA_ENV === 'production'
 
   const metaHref = format({
     ...parse(isProd ? URL : 'http://localhost:8000'),
