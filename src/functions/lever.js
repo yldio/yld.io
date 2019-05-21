@@ -36,7 +36,10 @@ exports.handler = async (event, context) => {
     }
   })
 
-  console.log({ metaHref, leverHref })
+  const env = process.env
+  console.log(
+    JSON.stringify({ env, event, context, metaHref, leverHref }, null, 2)
+  )
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })
 
