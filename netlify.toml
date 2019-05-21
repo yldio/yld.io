@@ -5,8 +5,7 @@
   command = "yarn build"
 
 [context.production]
-  environment = { NODE_ENV = 'production' }
+  environment = { NODE_ENV = "production" }
 
 [context.deploy-preview.environment]
-  NODE_ENV = 'production'
   GATSBY_ENVIRONMENT = "preview"
