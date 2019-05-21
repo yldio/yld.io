@@ -23,6 +23,10 @@ const interests = [
 ]
 
 const data = {
+  title: {
+    notContacted: 'Get in touch',
+    contacted: 'We will be in touch'
+  },
   labels: {
     interests: 'What are you interested in?',
     yourName: 'Your Name',
@@ -36,6 +40,10 @@ const data = {
   privacyPolicy: {
     text: "I agree to the terms of YLD's ",
     linkText: 'privacy policy'
+  },
+  status: {
+    notSent: 'Submit',
+    sent: 'Submitting'
   }
 }
 
@@ -125,7 +133,7 @@ class ContactUs extends Component {
         >
           <input type="hidden" name="form-name" value="contact" />
           <TitleSection
-            title={success ? 'We will be in touch' : 'Get in touch'}
+            title={data.title[success ? 'contacted' : 'notContacted']}
           />
           <GreyBackground>
             <Grid>
@@ -200,7 +208,7 @@ class ContactUs extends Component {
                           type="submit"
                           disabled={submitting}
                         >
-                          {submitting ? 'Submitting' : 'Submit'}
+                          {data.status[submitting ? 'sent' : 'notSent']}
                         </Button>
                       </Col>
                     </Row>
