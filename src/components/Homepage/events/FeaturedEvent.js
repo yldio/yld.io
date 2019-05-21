@@ -34,6 +34,11 @@ const FixedWidthBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(380)};
 `
 
+const StyledImage = styled(Image)`
+  // to remove extra space below SVG
+  display: block;
+`
+
 const FeaturedEvent = ({ event }) => (
   <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
     <FeaturedEventWrapper key={event.id} color={event.color}>
@@ -52,7 +57,7 @@ const FeaturedEvent = ({ event }) => (
           {event.ctaText}
         </StyledLink>
       </EventWrapper>
-      <Image image={event.posterImage} />
+      <StyledImage image={event.posterImage} />
     </FeaturedEventWrapper>
   </Col>
 )
