@@ -16,7 +16,7 @@ const isEqual = require('lodash.isequal')
  */
 const {
   URL,
-  LAMBDA_ENV = 'production',
+  LAMBDA_ENV = 'development',
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
@@ -45,7 +45,7 @@ exports.handler = async (event, context) => {
 
   if (!isEqual(allJobIds.sort(), leverJobIds.sort())) {
     if (isProd) {
-      const { body } = await got(LAMBDA_LEVER_WEBHOOK)
+      const { body } = await got.post(LAMBDA_LEVER_WEBHOOK)
 
       return {
         status: 200,

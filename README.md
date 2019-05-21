@@ -75,12 +75,6 @@ Zapier is subscribed to the yld engineering medium account via an RSS feeds, it 
 
 The account is registered under `apis@yld.io`, for access speak with Carlos Vilhena.
 
-#### Lever
-
-Using Lever's internal webhook functionality, a POST request is made to the corresponding Netlify endpoint whenver a role is ADDED or REMOVED within the yld Lever account.
-
-Due to Lever's "all or nothing" permission access developers do not have access to set up webhooks. At time of writing Nick Osborn has God tier access and will happily set the url endpoints if they need changing.
-
 ### ƛ Netlify lambda automated deployments
 
 Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
@@ -93,9 +87,19 @@ Local development requires:
 
 `CMS_CRUD` - A personal access token generated from your Contentful account settings to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
 
-`src/functions/meetup.js`
+`./src/functions/meetup.js`
 
 Gets events from meetup.com and writes to Contentful which then triggers a deployment via the Contentful -> Netlify webhook.
+
+#### Lever
+
+`./src/functions/lever.js`
+
+Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./gatsby-node.js) and Gatsby docs [here](https://www.gatsbyjs.org/docs/node-apis/#onPostBuild)
+
+Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lmabda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
+
+The zap is within the zapier account registered to `apis@yld.io`
 
 ## Content Model notes
 
