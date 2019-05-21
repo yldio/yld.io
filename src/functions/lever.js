@@ -17,7 +17,9 @@ const {
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
+  console.log(JSON.stringify({ event, context }, null, 2))
+
   console.log(process.env)
   const isProd = CONTEXT === 'production'
 

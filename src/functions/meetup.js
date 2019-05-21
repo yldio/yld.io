@@ -65,6 +65,7 @@ const generateContentfulEvent = ({
     }
   }
 })
+
 const processMeetupData = arrayOfMeetups => {
   let outputArray = []
   arrayOfMeetups.forEach(meetup => {

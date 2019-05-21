@@ -58,7 +58,7 @@
     "build:lambda": "netlify-lambda -c webpack.functions.js --babelrc false build src/functions",
     "lint": "run-p lint:**",
     "lint:js": "eslint . --cache --fix",
-    "start:lambda": "netlify-lambda serve -c webpack.functions.js src/functions",
+    "start:lambda": "netlify-lambda -c webpack.functions.js --babelrc false serve src/functions",
     "now-build": "yarn storybook:static",
     "now-start": "serve storybook-static"
   },
