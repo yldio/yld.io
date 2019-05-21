@@ -10,21 +10,21 @@ const isEqual = require('lodash.isequal')
  * The yld.io/meta.json endpoint is created on the postBuild method of gatsby.
  * See gatsby-node.js for more detials.
  *
+ * I've not found a way to test this in a deploy preview as we have no reference to the
+ * deploy url e.g. "https://deploy-preview-203--yldio.netlify.com/.netlify/functions/lever"
+ * so have no way of getting to the `/meta.json` endpoint.
  */
 const {
-  CONTEXT, // production / deploy-preview / branch-deploy
+  URL,
+  NODE_ENV = 'production',
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
 exports.handler = async (event, context) => {
-  const isProd = CONTEXT === 'production'
-
-  const {
-    headers: { host }
-  } = event
+  const isProd = NODE_ENV === 'production'
 
   const metaHref = format({
-    ...parse(isProd ? `https://${host}` : 'http://localhost:8000'),
+    ...parse(isProd ? URL : 'http://localhost:8000'),
     pathname: '/meta.json'
   })
 
@@ -36,10 +36,6 @@ exports.handler = async (event, context) => {
     }
   })
 
-  const env = process.env
-  console.log(
-    JSON.stringify({ env, event, context, metaHref, leverHref }, null, 2)
-  )
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })
 
