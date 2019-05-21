@@ -4,6 +4,9 @@ const isEqual = require('lodash.isequal')
 
 const { URL = 'http://localhost:8000', DEPLOY_URL } = process.env
 exports.handler = async (event, context, callback) => {
+  console.log('------------------------')
+  console.log({ URL, DEPLOY_URL })
+  console.log('------------------------')
   const metaHref = format({
     ...parse(URL),
     pathname: '/meta.json'
