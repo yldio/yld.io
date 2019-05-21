@@ -7186,6 +7186,7 @@ exports[`Storyshots Header Header itself 1`] = `
   left: 0;
   top: 0;
   z-index: 999;
+  overflow-y: auto;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
