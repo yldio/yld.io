@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Col } from '../../grid'
-import { BodyPrimary, CardTitle } from '../../Typography'
+import { BodyPrimary, DisplayTitle } from '../../Typography'
 import Image from '../../Common/Image'
 import StyledLink from '../../Common/StyledLink'
 
@@ -41,9 +41,9 @@ const FeaturedEvent = ({ event }) => (
         <PaddedBodyPrimary muted reverse noPadding>
           Featured event
         </PaddedBodyPrimary>
-        <CardTitle reverse noPaddingTop biggest>
+        <DisplayTitle reverse noPaddingTop>
           {event.eventTitle}
-        </CardTitle>
+        </DisplayTitle>
         <BodyPrimary reverse>{event.date}</BodyPrimary>
         <FixedWidthBodyPrimary muted reverse>
           {event.blurb.blurb}

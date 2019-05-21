@@ -27,11 +27,6 @@ const CardTitle = styled.h3`
       font-size: ${remcalc(30)};
       line-height: ${remcalc(36)};
     `}
-
-    ${is('biggest')`
-      font-size: ${remcalc(32)};
-      line-height: ${remcalc(36)};
-    `}
   `};
 `
 
