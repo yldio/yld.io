@@ -304,23 +304,20 @@
               )
               const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
               const entry = generateContentfulEvent({ ...meetup, ...group })
+              const presetHomepageFeatured = ev.fields.homepageFeatured
 
               if (ev) {
                 const needsUpdating = Object.keys(ev.fields).reduce(
                   (acc, current) => {
-                    console.log('---')
-                    console.log(
-                      ev.fields[current]['en-US'],
-                      entry.fields[current]['en-US']
-                    )
-                    console.log(acc)
-                    console.log('$$$')
-
-                    if (
+                    if (acc === true) {
+                      // if change is already detected previously, just pass that on
+                      acc = true
+                    } else if (
                       ev.fields[current]['en-US'] ===
                         entry.fields[current]['en-US'] &&
                       acc === false
                     ) {
+                      // case: field is the same and acc is false
                       acc = false
                     } else if (
                       ev.fields[current]['en-US'] !==
@@ -328,8 +325,10 @@
                       acc === false &&
                       current === 'homepageFeatured'
                     ) {
+                      // case: field is different, but the field is homepageFeatures (given it's set at Contentful level, we don't want this to cause a diff)
                       acc = false
                     } else if (
+                      // case: field is a Date, those need to be compared differently
                       ev.fields[current]['en-US'] !==
                         entry.fields[current]['en-US'] &&
                       acc === false &&
@@ -341,7 +340,9 @@
                         0
                       ) {
                         acc = false
-                      } else acc = true
+                      } else {
+                        acc = true
+                      }
                     } else {
                       acc = true
                     }
@@ -350,7 +351,6 @@
                   },
                   false
                 )
-                console.log(needsUpdating)
 
                 if (needsUpdating === false) {
                   console.log(
@@ -359,10 +359,11 @@
                     } unchanged. No need to update. Moving on.`
                   )
                   return null
-                } // TODO: make sure that homepageFeatured isn't updated!
-                // update
+                } // update
 
-                ev.fields = Object.assign(ev.fields, entry.fields)
+                ev.fields = Object.assign(ev.fields, entry.fields) // make sure that homepageFeatured isn't updated, as that's a manual change in Contentful, we don't want to override that!
+
+                ev.fields.homepageFeatured = presetHomepageFeatured
                 console.log(`Updating entry ${meetup.eventName}`)
                 const id = await ev.update()
                 const updatedEntry = await environment.getEntry(id.sys.id)
