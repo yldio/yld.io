@@ -1,18 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
 import { Col } from '../../grid'
-import { CardTitle, BodyPrimary } from '../../Typography'
+import { BodyPrimary, CardTitle } from '../../Typography'
 import Image from '../../Common/Image'
-import {
-  FeaturedEventWrapper,
-  EventWrapper,
-  FixedWidthBodyPrimary
-} from './elements'
 import StyledLink from '../../Common/StyledLink'
 
 const PaddedBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${props => props.theme.spacing[0.5]};
+  padding-bottom: ${props => props.theme.space[1]};
+`
+
+const FeaturedEventWrapper = styled.section`
+  background-color: #${props => props.color};
+  ${breakpoint('smallTablet')`
+    margin-top: ${remcalc(175)}
+  `}
+`
+
+const EventWrapper = styled.header`
+  padding: ${remcalc(18)} ${remcalc(24)} 0;
+
+  ${breakpoint('tablet')`
+    padding: ${remcalc(24)} ${remcalc(36)} 0;
+  `} ${breakpoint('desktop')`
+    padding-top: ${remcalc(24)};
+    padding-left: ${remcalc(36)};
+  `};
+`
+
+const FixedWidthBodyPrimary = styled(BodyPrimary)`
+  max-width: ${remcalc(380)};
 `
 
 const FeaturedEvent = ({ event }) => (
@@ -20,7 +39,7 @@ const FeaturedEvent = ({ event }) => (
     <FeaturedEventWrapper key={event.id} color={event.color}>
       <EventWrapper>
         <PaddedBodyPrimary muted reverse noPadding>
-          Featured
+          Featured event
         </PaddedBodyPrimary>
         <CardTitle reverse noPaddingTop biggest>
           {event.eventTitle}
