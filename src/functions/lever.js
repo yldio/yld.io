@@ -12,19 +12,19 @@ const isEqual = require('lodash.isequal')
  *
  */
 const {
-  DEPLOY_URL = 'http://localhost:8000', // Current deployment context
   CONTEXT, // production / deploy-preview / branch-deploy
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
 exports.handler = async (event, context) => {
-  console.log(JSON.stringify({ event, context }, null, 2))
-
-  console.log(process.env)
   const isProd = CONTEXT === 'production'
 
+  const {
+    headers: { host }
+  } = event
+
   const metaHref = format({
-    ...parse(DEPLOY_URL),
+    ...parse(isProd ? `https://${host}` : 'http://localhost:8000'),
     pathname: '/meta.json'
   })
 
@@ -36,6 +36,7 @@ exports.handler = async (event, context) => {
     }
   })
 
+  console.log({ metaHref, leverHref })
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })
 
