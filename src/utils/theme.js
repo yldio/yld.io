@@ -24,13 +24,14 @@ export const spacing = {
 
 export const space = [
   '0', // 0
-  remcalc(12), // 1
-  remcalc(24), // 2
-  remcalc(36), // 3
-  remcalc(54), // 4
-  remcalc(72), // 5
-  remcalc(108), // 6
-  remcalc(144) // 7
+  remcalc(6), // 1
+  remcalc(12), // 2
+  remcalc(24), // 3
+  remcalc(36), // 4
+  remcalc(54), // 5
+  remcalc(72), // 6
+  remcalc(108), // 7
+  remcalc(144) // 8
 ]
 
 export const breakpoints = {
