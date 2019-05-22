@@ -364,8 +364,11 @@
                   // are set in the contentful UI.
 
                   contentfulEvent.fields = Object.assign(
-                    generatedEvent.fields,
-                    contentfulEvent.fields
+                    contentfulEvent.fields,
+                    {
+                      ...generatedEvent.fields,
+                      homepageFeatured: contentfulEvent.fields.homepageFeatured
+                    }
                   )
 
                   if (isProd) {

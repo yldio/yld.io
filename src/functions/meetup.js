@@ -226,10 +226,10 @@ exports.handler = async (event, context, callback) => {
       // update
       // contentfulEvent overwrites generated, this is to preserve any extra keys that
       // are set in the contentful UI.
-      contentfulEvent.fields = Object.assign(
-        generatedEvent.fields,
-        contentfulEvent.fields
-      )
+      contentfulEvent.fields = Object.assign(contentfulEvent.fields, {
+        ...generatedEvent.fields,
+        homepageFeatured: contentfulEvent.fields.homepageFeatured
+      })
 
       if (isProd) {
         console.log(`Updating entry ${meetup.eventName}`)
