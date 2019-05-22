@@ -45,6 +45,10 @@ const DesktopGDPR = styled.div`
   right: 0;
   color: white;
 
+  a {
+    margin-left: 24px;
+  }
+
   ${breakpoint('desktop')`
     visibility: visible;
   `}
@@ -52,6 +56,10 @@ const DesktopGDPR = styled.div`
 
 const MobileGDPR = styled.div`
   color: white;
+
+  a {
+    margin-right: 24px;
+  }
 
   ${breakpoint('desktop')`
     visibility: hidden;
@@ -118,7 +126,15 @@ const Footer = () => (
         </Grid>
       </Padding>
     </FollowUs>
-    <MobileGDPR>{gdprLinksElement}</MobileGDPR>
+    <Grid>
+      <Row>
+        <Col width={1}>
+          <Padding bottom={3}>
+            <MobileGDPR>{gdprLinksElement}</MobileGDPR>
+          </Padding>
+        </Col>
+      </Row>
+    </Grid>
   </GreyFooter>
 )
 
