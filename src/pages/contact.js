@@ -60,9 +60,6 @@ const LinkUnderline = styled(Link)`
 const StyledInput = styled(Input)`
   ::placeholder {
     color: ${props => props.theme.colors.text};
-  }
-
-  ::-webkit-input-placeholder {
     font-style: normal;
   }
 `
