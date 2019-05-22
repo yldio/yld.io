@@ -50,6 +50,14 @@ const DesktopGDPR = styled.div`
   `}
 `
 
+const MobileGDPR = styled.div`
+  color: white;
+
+  ${breakpoint('desktop')`
+    visibility: hidden;
+  `}
+`
+
 const gdprLinksElement = gdpr.map(link => (
   <Link key={link.text} to={link.to}>
     {link.text}
@@ -110,9 +118,7 @@ const Footer = () => (
         </Grid>
       </Padding>
     </FollowUs>
-    {/* <DesktopGDPR>
-        Mobile and tablets Cookies and privacy policies placeholder
-      </DesktopGDPR> */}
+    <MobileGDPR>{gdprLinksElement}</MobileGDPR>
   </GreyFooter>
 )
 

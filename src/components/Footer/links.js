@@ -7,7 +7,7 @@ import youtube from '../../images/youtube-icon.svg'
 import instagram from '../../images/instagram-icon.svg'
 import linkedin from '../../images/linkedin-icon.svg'
 
-export default [
+const social = [
   {
     label: 'Twitter',
     link: 'http://twitter.com/yldio',
@@ -49,3 +49,20 @@ export default [
     img: behance
   }
 ]
+
+const gdpr = [
+  {
+    text: 'Cookies',
+    to: '/cookie-policy'
+  },
+  {
+    text: 'Privacy policy',
+    to: '/privacy-policy'
+  },
+  {
+    text: 'Data-retention policy',
+    to: '/data-retention-policy'
+  }
+]
+
+export { social, gdpr }
