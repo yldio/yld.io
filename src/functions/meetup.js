@@ -171,7 +171,7 @@ exports.handler = async (event, context, callback) => {
   })
 
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
-  await Map(processMeetupData(await getSelfGroups()), async group => {
+  await Map(processMeetupData(await getSelfGroups()), async (group, index) => {
     const { urlname, nextEvent } = group
     if (!nextEvent) {
       return null
@@ -192,24 +192,30 @@ exports.handler = async (event, context, callback) => {
     const generatedEvent = generateContentfulEvent({ ...meetup, ...group })
 
     if (generatedEvent) {
-      // iterates through the generatedEvent, returns an array of
-      // differing keys.
-      const diffVals = Object.keys(generatedEvent).reduce((acc, curr) => {
+      // iterates through the generatedEvent, returns an array of differing keys.
+      const { fields: generatedEventFields } = generatedEvent
+      const { fields: contentfulEventFields } = contentfulEvent
+
+      const diffVals = Object.keys(generatedEventFields).reduce((acc, curr) => {
         // we don't care about homepageFeatured
         if (['homepageFeatured'].includes(curr)) {
           return acc
         }
 
-        return isEqual(
-          contentfulEvent[curr].fields,
-          generatedEvent[curr].fields
-        )
+        if (['startTime', 'endTime'].includes(curr)) {
+          return new Date(contentfulEventFields[curr]['en-US']) -
+            generatedEventFields[curr]['en-US'] ===
+            0
+            ? acc
+            : [...acc, curr]
+        }
+
+        return isEqual(contentfulEventFields[curr], generatedEventFields[curr])
           ? acc
           : [...acc, curr]
       }, [])
 
       // If there are no differences then length will be 0
-      console.log({ diffVals })
       if (diffVals && !diffVals.length) {
         console.log(
           `Entry ${meetup.eventName} unchanged. No need to update. Moving on.`
