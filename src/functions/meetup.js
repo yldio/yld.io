@@ -5,9 +5,15 @@ const { default: Map } = require('apr-map')
 const { promisify } = require('util')
 const find = require('lodash.find')
 const striptags = require('striptags')
+const isEqual = require('lodash.isequal')
 
 // Set up dot-env variables
-const { CONTENTFUL_SPACE, MEETUP_KEY, CMS_CRUD } = process.env
+const {
+  CONTENTFUL_SPACE,
+  MEETUP_KEY,
+  CMS_CRUD,
+  LAMBDA_ENV = 'development'
+} = process.env
 
 // Import helper functions
 const generateContentfulEvent = ({
@@ -151,8 +157,9 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 // space.getEntries() will be depreciated, use space -> environment -> entries
 
 exports.handler = async (event, context, callback) => {
-  // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+  const isProd = LAMBDA_ENV === 'production'
 
+  // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
@@ -177,76 +184,76 @@ exports.handler = async (event, context, callback) => {
       })
     )
 
-    const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
-    const entry = generateContentfulEvent({ ...meetup, ...group })
-    const presetHomepageFeatured = ev.fields.homepageFeatured
+    const contentfulEvent = find(events, [
+      'fields.linkToEvent.en-US',
+      meetup.link
+    ])
 
-    if (ev) {
-      const needsUpdating = Object.keys(ev.fields).reduce((acc, current) => {
-        if (acc === true) {
-          // if change is already detected previously, just pass that on
-          acc = true
-        } else if (
-          ev.fields[current]['en-US'] === entry.fields[current]['en-US'] &&
-          acc === false
-        ) {
-          // case: field is the same and acc is false
-          acc = false
-        } else if (
-          ev.fields[current]['en-US'] !== entry.fields[current]['en-US'] &&
-          acc === false &&
-          current === 'homepageFeatured'
-        ) {
-          // case: field is different, but the field is homepageFeatures (given it's set at Contentful level, we don't want this to cause a diff)
-          acc = false
-        } else if (
-          // case: field is a Date, those need to be compared differently
-          ev.fields[current]['en-US'] !== entry.fields[current]['en-US'] &&
-          acc === false &&
-          (current === 'startTime' || current === 'endTime')
-        ) {
-          if (
-            new Date(ev.fields[current]['en-US']) -
-              entry.fields[current]['en-US'] ===
-            0
-          ) {
-            acc = false
-          } else {
-            acc = true
-          }
-        } else {
-          acc = true
+    const generatedEvent = generateContentfulEvent({ ...meetup, ...group })
+
+    if (generatedEvent) {
+      // iterates through the generatedEvent, returns an array of
+      // differing keys.
+      const diffVals = Object.keys(generatedEvent).reduce((acc, curr) => {
+        // we don't care about homepageFeatured
+        if (['homepageFeatured'].includes(curr)) {
+          return acc
         }
-        return acc
-      }, false)
 
-      if (needsUpdating === false) {
+        return isEqual(
+          contentfulEvent[curr].fields,
+          generatedEvent[curr].fields
+        )
+          ? acc
+          : [...acc, curr]
+      }, [])
+
+      // If there are no differences then length will be 0
+      console.log({ diffVals })
+      if (diffVals && !diffVals.length) {
         console.log(
           `Entry ${meetup.eventName} unchanged. No need to update. Moving on.`
         )
-        return null
+        return
       }
 
       // update
-      ev.fields = Object.assign(ev.fields, entry.fields)
+      // contentfulEvent overwrites generated, this is to preserve any extra keys that
+      // are set in the contentful UI.
+      contentfulEvent.fields = Object.assign(
+        generatedEvent.fields,
+        contentfulEvent.fields
+      )
 
-      // make sure that homepageFeatured isn't updated, as that's a manual change in Contentful, we don't want to override that!
-      ev.fields.homepageFeatured = presetHomepageFeatured
-      console.log(`Updating entry ${meetup.eventName}`)
-      const id = await ev.update()
-      const updatedEntry = await environment.getEntry(id.sys.id)
+      if (isProd) {
+        console.log(`Updating entry ${meetup.eventName}`)
+        const id = await contentfulEvent.update()
+        const updatedEntry = await environment.getEntry(id.sys.id)
 
-      console.log(`Publishing updated entry ${meetup.eventName}`)
-      return updatedEntry.publish()
+        console.log(`Publishing updated entry ${meetup.eventName}`)
+        return updatedEntry.publish()
+      } else {
+        console.log(
+          `Not prod so not updating contentful for ${meetup.eventName}`
+        )
+        return
+      }
     }
 
     // create
-    console.log(`Creating entry ${meetup.eventName}`)
-    const id = await environment.createEntry('meetupEven', entry)
-    const newEntry = await environment.getEntry(id.sys.id)
+    if (isProd) {
+      console.log(`Creating entry ${meetup.eventName}`)
+      const id = await environment.createEntry('meetupEven', generatedEvent)
+      const newEntry = await environment.getEntry(id.sys.id)
 
-    console.log(`Publishing creted entry ${meetup.eventName}`)
-    return newEntry.publish()
+      console.log(`Publishing creted entry ${meetup.eventName}`)
+      return newEntry.publish()
+    } else {
+      console.log(
+        `Not prod so not creating contentful event for ${meetup.eventName}`
+      )
+      return
+    }
   })
 
   return {
