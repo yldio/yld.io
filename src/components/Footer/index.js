@@ -58,7 +58,9 @@ const MobileGDPR = styled.div`
   color: white;
 
   a {
+    display: inline-block;
     margin-right: 24px;
+    margin-bottom: 24px;
   }
 
   ${breakpoint('desktop')`
@@ -66,10 +68,14 @@ const MobileGDPR = styled.div`
   `}
 `
 
+const LinkUnderline = styled(Link)`
+  text-decoration: underline;
+`
+
 const gdprLinksElement = gdpr.map(link => (
-  <Link key={link.text} to={link.to}>
+  <LinkUnderline key={link.text} to={link.to}>
     {link.text}
-  </Link>
+  </LinkUnderline>
 ))
 
 const Footer = () => (
