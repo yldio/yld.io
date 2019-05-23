@@ -56,9 +56,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          command: npm run build:app
-          name: Start
-      - run:
           command: npm run test:e2e
           name: Testcafe
     working_directory: ~/repo
