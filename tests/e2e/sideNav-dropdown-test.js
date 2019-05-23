@@ -11,6 +11,15 @@ const baseUrl = `${hostname}:${port}`
 
 let server
 
+fixture`Side Nav Menu`.page`${baseUrl}`
+  .before(async t => {
+    server = createServer(port)
+  })
+  // .beforeEach(async () => {
+  //   await waitForReact()
+  // })
+  .after(() => server.close())
+
 const openSideNav = async t => {
   const hamburger = await Selector('[class^="Hamburger"')
   await t
