@@ -1,6 +1,5 @@
 # YLD Website
 
-
 ## [Link](https://yldio.io/)
 
 ## [Storybook](https://yld-storybook.now.sh)
@@ -18,12 +17,12 @@ In order to access data from contentful make sure that you have an .env file tha
 ```
 CONTENTFUL_TOKEN=(see in contentful/settings/API keys "meetup > Content Delivery API - Access Token")
 CONTENTFUL_SPACE=(see in contentful/settings/API keys "meetup > Space ID")
-MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 GATSBY_ENVIRONMENT="development"
+
+# For local Lambda development
+MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
 CMS_CRUD=(copy from Netlify - Build & Deploy - Environment - Edit variables - CMS_CRUD. Read below why copy)
 ```
-
-The meetup contentful lambda script uses [Contentful's Content Management API](https://www.contentful.com/developers/docs/references/content-management-api/). This requires a *Content Management Token* and NOT a Content Delivery Token (Content Delivery can only give you the info that's there, you can't CRUD entries). A CMT can only be viewed just after it has been generated. In theory these are Personal Tokens and each user can generate their own, but for simplicity's sake, it's easier for everyone to use the same one in their env file. Should you need to generate a new CMT, you can do so from contentful/settings/API keys/Content management tokens. The one used in Netlify is the "cms-crud" one. The token used in Netlify / production is registered with the apis@yld.io's Contentful account. 
 
 You can now run:
 
@@ -55,12 +54,54 @@ We have some docs to make it easier to get you started:
 
 ## Deployment
 
-The website is built and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
+The website and lambda are built (`yarn build`) and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
 
 - a new commit is pushed to our **production** (`master`) branch, read more [here](https://www.netlify.com/docs/continuous-deployment/);
 - the Contentful data is updated (via _webhook_).
 
 Also, for each Pull Request that's open, a [Deploy Preview](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) is created, allowing for that branch to be tested and shared amongst stakeholders.
+
+## Automated deployments
+
+[`Zapier`](http://zapier.com) is a great tool for automating certain tasks, e.g. tracking changes to RSS feeds or simple scheduling requests to certain endpoints. We depend on it for several of our automated deployments, all listed below.
+
+### 📬 Webhook automated deployments
+
+We are using Netlify [webhooks/build hooks](https://www.netlify.com/docs/webhooks/) to automate new builds when services we use update. Each service has its own webhook url set up in Netlify.
+
+Keep in mind if you need to urgently alter any of the automated builds but don't have access to the services below, it's possible to just remove the webhook url from Netlify and stop it temporarily!
+
+#### Medium
+
+Zapier is subscribed to the yld engineering medium account via an RSS feeds, it checks every hour for new content. Upon new content zapier makes a post request to Netlify to trigger a fresh build.
+
+The account is registered under `apis@yld.io`, for access speak with Carlos Vilhena.
+
+### ƛ Netlify lambda automated deployments
+
+Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
+
+#### Meetup
+
+Local development requires:
+
+`MEETUP_KEY` - Key for the lambda to get content from Contentful. Available from Contentful API Keys Settings.
+
+`CMS_CRUD` - A _personal access token_ generated from your Contentful account settings (listed under the `Content management tokens` section in settings > APIs) to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
+
+`./src/functions/meetup.js`
+
+Gets events from meetup.com and writes to Contentful which then triggers a deployment via the Contentful -> Netlify webhook.
+
+#### Lever
+
+`./src/functions/lever.js`
+
+Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./gatsby-node.js) and Gatsby docs [here](https://www.gatsbyjs.org/docs/node-apis/#onPostBuild)
+
+Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lmabda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
+
+The zap is within the zapier account registered to `apis@yld.io`
 
 ## Content Model notes
 
