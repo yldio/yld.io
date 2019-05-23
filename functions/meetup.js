@@ -141,9 +141,18 @@
 
           const find = __webpack_require__(/*! lodash.find */ 'lodash.find')
 
-          const striptags = __webpack_require__(/*! striptags */ 'striptags') // Set up dot-env variables
+          const striptags = __webpack_require__(/*! striptags */ 'striptags')
 
-          const { CONTENTFUL_SPACE, MEETUP_KEY, CMS_CRUD } = process.env // Import helper functions
+          const isEqual = __webpack_require__(
+            /*! lodash.isequal */ 'lodash.isequal'
+          ) // Set up dot-env variables
+
+          const {
+            CONTENTFUL_SPACE,
+            MEETUP_KEY,
+            CMS_CRUD,
+            LAMBDA_ENV = 'development'
+          } = process.env // Import helper functions
 
           const generateContentfulEvent = ({
             urlname,
@@ -280,7 +289,8 @@
           // space.getEntries() will be depreciated, use space -> environment -> entries
 
           exports.handler = async (event, context, callback) => {
-            // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+            const isProd = LAMBDA_ENV === 'production' // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+
             const space = await client.getSpace(CONTENTFUL_SPACE)
             const environment = await space.getEnvironment('master') // filter to return published entries that belong to a specific content model.
 
@@ -289,38 +299,114 @@
               content_type: 'meetupEven' // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
             }) // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
 
-            await Map(processMeetupData(await getSelfGroups()), async group => {
-              const { urlname, nextEvent } = group
+            await Map(
+              processMeetupData(await getSelfGroups()),
+              async (group, index) => {
+                const { urlname, nextEvent } = group
 
-              if (!nextEvent) {
-                return null
-              }
+                if (!nextEvent) {
+                  return null
+                }
 
-              const meetup = processMeetupEvent(
-                await getEvent({
-                  id: nextEvent,
-                  urlname
+                const meetup = processMeetupEvent(
+                  await getEvent({
+                    id: nextEvent,
+                    urlname
+                  })
+                )
+                const contentfulEvent = find(events, [
+                  'fields.linkToEvent.en-US',
+                  meetup.link
+                ])
+                const generatedEvent = generateContentfulEvent({
+                  ...meetup,
+                  ...group
                 })
-              )
-              const ev = find(events, ['fields.linkToEvent.en-US', meetup.link])
-              const entry = generateContentfulEvent({ ...meetup, ...group })
 
-              if (ev) {
-                // update
-                ev.fields = Object.assign(ev.fields, entry.fields)
-                console.log(`Updating entry ${meetup.eventName}`)
-                const id = await ev.update()
-                const updatedEntry = await environment.getEntry(id.sys.id)
-                console.log(`Publishing updated entry ${meetup.eventName}`)
-                return updatedEntry.publish()
-              } // create
+                if (generatedEvent) {
+                  // iterates through the generatedEvent, returns an array of differing keys.
+                  const { fields: generatedEventFields } = generatedEvent
+                  const { fields: contentfulEventFields } = contentfulEvent
+                  const diffVals = Object.keys(generatedEventFields).reduce(
+                    (acc, curr) => {
+                      // we don't care about homepageFeatured
+                      if (['homepageFeatured'].includes(curr)) {
+                        return acc
+                      }
 
-              console.log(`Creating entry ${meetup.eventName}`)
-              const id = await environment.createEntry('meetupEven', entry)
-              const newEntry = await environment.getEntry(id.sys.id)
-              console.log(`Publishing creted entry ${meetup.eventName}`)
-              return newEntry.publish()
-            })
+                      if (['startTime', 'endTime'].includes(curr)) {
+                        return new Date(contentfulEventFields[curr]['en-US']) -
+                          generatedEventFields[curr]['en-US'] ===
+                          0
+                          ? acc
+                          : [...acc, curr]
+                      }
+
+                      return isEqual(
+                        contentfulEventFields[curr],
+                        generatedEventFields[curr]
+                      )
+                        ? acc
+                        : [...acc, curr]
+                    },
+                    []
+                  ) // If there are no differences then length will be 0
+
+                  if (diffVals && !diffVals.length) {
+                    console.log(
+                      `Entry ${
+                        meetup.eventName
+                      } unchanged. No need to update. Moving on.`
+                    )
+                    return
+                  } // update
+
+                  contentfulEvent.fields = Object.assign(
+                    contentfulEvent.fields,
+                    diffVals.reduce(
+                      (acc, curr) => ({
+                        ...acc,
+                        [curr]: generatedEventFields[curr]
+                      }),
+                      {}
+                    )
+                  )
+
+                  if (isProd) {
+                    console.log(`Updating entry ${meetup.eventName}`)
+                    const id = await contentfulEvent.update()
+                    const updatedEntry = await environment.getEntry(id.sys.id)
+                    console.log(`Publishing updated entry ${meetup.eventName}`)
+                    return updatedEntry.publish()
+                  } else {
+                    console.log(
+                      `Not prod so not updating contentful for ${
+                        meetup.eventName
+                      }`
+                    )
+                    return
+                  }
+                } // create
+
+                if (isProd) {
+                  console.log(`Creating entry ${meetup.eventName}`)
+                  const id = await environment.createEntry(
+                    'meetupEven',
+                    generatedEvent
+                  )
+                  const newEntry = await environment.getEntry(id.sys.id)
+                  console.log(`Publishing creted entry ${meetup.eventName}`)
+                  return newEntry.publish()
+                } else {
+                  console.log(
+                    `Not prod so not creating contentful event for ${
+                      meetup.eventName
+                    }`
+                  )
+                  return
+                }
+              }
+            )
             return {
               statusCode: 200,
               body: 'Meetup function has finished running'
@@ -370,6 +456,17 @@
         /*! no static exports found */
         /***/ function(module, exports) {
           module.exports = require('lodash.find')
+
+          /***/
+        },
+
+      /***/ 'lodash.isequal':
+        /*!*********************************!*\
+  !*** external "lodash.isequal" ***!
+  \*********************************/
+        /*! no static exports found */
+        /***/ function(module, exports) {
+          module.exports = require('lodash.isequal')
 
           /***/
         },

@@ -7187,6 +7187,7 @@ exports[`Storyshots Header Header itself 1`] = `
   left: 0;
   top: 0;
   z-index: 999;
+  overflow-y: auto;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -9591,6 +9592,47 @@ exports[`Storyshots Spaces Spaces 1`] = `
       Level 
       1
        - 
+      6
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "0.375rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      2
+       - 
       12
       px
     </p>
@@ -9630,7 +9672,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      2
+      3
        - 
       24
       px
@@ -9671,7 +9713,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      3
+      4
        - 
       36
       px
@@ -9712,7 +9754,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      4
+      5
        - 
       54
       px
@@ -9753,7 +9795,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      5
+      6
        - 
       72
       px
@@ -9794,7 +9836,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      6
+      7
        - 
       108
       px
@@ -9835,7 +9877,7 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     >
       Level 
-      7
+      8
        - 
       144
       px
@@ -11732,7 +11774,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/engineering"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11742,7 +11784,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/design"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11752,7 +11794,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/training"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >

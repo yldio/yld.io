@@ -4,7 +4,6 @@ import { Padding } from 'styled-components-spacing'
 import { Col } from '../../grid'
 import eventIcon from './assets/homepage-event-icon.svg'
 import { SectionTitle, Subtitle, BodyPrimary } from '../../Typography'
-import { getHomepageMeetups } from './getEvents'
 import ExternalAnchor from '../../Common/ExternalAnchor'
 import Hr from '../../Common/Hr'
 
@@ -18,7 +17,7 @@ const DesktopMeetups = ({ events }) => (
     </div>
     <Padding top={42}>
       <ul>
-        {getHomepageMeetups(events).map(event => (
+        {events.map(event => (
           <li key={`${event.id}`}>
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={event.linkToEvent}>
