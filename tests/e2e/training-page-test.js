@@ -1,4 +1,4 @@
-import createServer from '../../createServer'
+import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
 require('dotenv').config()
 
