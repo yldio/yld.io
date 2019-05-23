@@ -11773,7 +11773,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/engineering"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11783,7 +11783,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/design"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11793,7 +11793,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/training"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
