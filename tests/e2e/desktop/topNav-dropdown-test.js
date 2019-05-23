@@ -20,7 +20,7 @@ fixture`Top Nav Menu`.page`${baseUrl}`
 test('we are on the homepage', async t => {
   const location = await getWindowLocation()
   await t
-    // .resizeWindow(1280, 720)
+    .resizeWindow(1280, 720)
     .expect(location.href)
     .contains(baseUrl)
 })
