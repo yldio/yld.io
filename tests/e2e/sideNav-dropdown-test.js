@@ -15,9 +15,6 @@ fixture`Side Nav Menu`.page`${baseUrl}`
   .before(async t => {
     server = createServer(port)
   })
-  // .beforeEach(async () => {
-  //   await waitForReact()
-  // })
   .after(() => server.close())
 
 const openSideNav = async t => {
@@ -33,9 +30,6 @@ fixture`Side Nav Menu`.page`${baseUrl}`
   .before(async () => {
     server = createServer(port)
   })
-  //   .beforeEach(async () => {
-  //     await waitForReact()
-  //   })
   .after(() => server.close())
 
 test('we are on the homepage', async t => {
