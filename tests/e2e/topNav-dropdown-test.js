@@ -22,7 +22,10 @@ fixture`Top Nav Menu`.page`${baseUrl}`
 
 test('we are on the homepage', async t => {
   const location = await getWindowLocation()
-  await t.expect(location.href).contains(baseUrl)
+  await t
+    .resizeWindow(1280, 720)
+    .expect(location.href)
+    .contains(baseUrl)
 })
 
 test('a dropdown dropdownContainer opens on desktop and redirects correctly', async t => {
