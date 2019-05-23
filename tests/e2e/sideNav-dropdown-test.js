@@ -1,4 +1,4 @@
-import createServer from '../../createServer'
+import createServer from '../createServer'
 import { Selector, ClientFunction } from 'testcafe'
 // import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
 require('dotenv').config()
@@ -19,11 +19,8 @@ fixture`Side Nav Menu`.page`${baseUrl}`
 
 const openSideNav = async t => {
   const hamburger = await Selector('[class^="Hamburger"')
-  await t
-    // .resizeWindowToFitDevice('iPhone 6', {
-    //   portraitOrientation: true
-    // })
-    .click(hamburger)
+  // 414 x 736 is the viewport of the iphone 6
+  await t.resizeWindow(414, 736).click(hamburger)
 }
 
 fixture`Side Nav Menu`.page`${baseUrl}`
@@ -39,12 +36,7 @@ test('we are on the homepage', async t => {
 
 test('a hamburger is present on the page', async t => {
   const hamburger = await Selector('[class^="Hamburger"').filterVisible()
-  await t
-    // .resizeWindowToFitDevice('iPhone 6', {
-    //   portraitOrientation: true
-    // })
-    .expect(hamburger.exists)
-    .ok()
+  await t.expect(hamburger.exists).ok()
 })
 
 test('the side nav is not expanded at its initial state', async t => {
