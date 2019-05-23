@@ -1,7 +1,8 @@
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 
-const { NODE_ENV } = process.env
+// I don't think NODE_ENV is even set on the Netlify function environment...
+const { NODE_ENV = 'production' } = process.env
 module.exports = {
   externals: [nodeExternals()],
   mode: NODE_ENV,
