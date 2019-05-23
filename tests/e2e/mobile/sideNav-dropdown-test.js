@@ -1,4 +1,4 @@
-import createServer from '../createServer'
+import createServer from '../../createServer'
 import { Selector, ClientFunction } from 'testcafe'
 // import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
 require('dotenv').config()
@@ -20,9 +20,9 @@ fixture`Side Nav Menu`.page`${baseUrl}`
 const openSideNav = async t => {
   const hamburger = await Selector('[class^="Hamburger"')
   await t
-    .resizeWindowToFitDevice('iPhone 6', {
-      portraitOrientation: true
-    })
+    // .resizeWindowToFitDevice('iPhone 6', {
+    //   portraitOrientation: true
+    // })
     .click(hamburger)
 }
 
@@ -40,9 +40,9 @@ test('we are on the homepage', async t => {
 test('a hamburger is present on the page', async t => {
   const hamburger = await Selector('[class^="Hamburger"').filterVisible()
   await t
-    .resizeWindowToFitDevice('iPhone 6', {
-      portraitOrientation: true
-    })
+    // .resizeWindowToFitDevice('iPhone 6', {
+    //   portraitOrientation: true
+    // })
     .expect(hamburger.exists)
     .ok()
 })
