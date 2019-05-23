@@ -10,9 +10,12 @@ const isEqual = require('lodash.isequal')
  * The yld.io/meta.json endpoint is created on the postBuild method of gatsby.
  * See gatsby-node.js for more detials.
  *
- * I've not found a way to test this in a deploy preview as we have no reference to the
- * deploy url e.g. "https://deploy-preview-203--yldio.netlify.com/.netlify/functions/lever"
- * so have no way of getting to the `/meta.json` endpoint.
+ * Unfortunately in the netlify lambda build there is no way to reference the URL of the deployment
+ * context it is currently in. e.g. yld.io (production) or deploy-preview-203--yldio.netlify.com (deploy-preview).
+ * Without this we cannot reliably resolve the url for the meta.json file, so the only way to reliably test
+ * is locally! There are certain env variables Netlify gives to the *build* environemnt (gatsby build) but not the function
+ * environemnt unfortunately.
+ *
  */
 const {
   URL,

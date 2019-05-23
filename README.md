@@ -63,9 +63,11 @@ Also, for each Pull Request that's open, a [Deploy Preview](https://www.netlify.
 
 ## Automated deployments
 
+[`Zapier`](http://zapier.com) is a great tool for automating certain tasks, e.g. tracking changes to RSS feeds or simple scheduling requests to certain endpoints. We depend on it for several of our automated deployments, all listed below.
+
 ### 📬 Webhook automated deployments
 
-We are using Netlify webhooks/build hooks to automate new builds when services we use update. Each service has its own webhook url set up in Netlify.
+We are using Netlify [webhooks/build hooks](https://www.netlify.com/docs/webhooks/) to automate new builds when services we use update. Each service has its own webhook url set up in Netlify.
 
 Keep in mind if you need to urgently alter any of the automated builds but don't have access to the services below, it's possible to just remove the webhook url from Netlify and stop it temporarily!
 
@@ -85,7 +87,7 @@ Local development requires:
 
 `MEETUP_KEY` - Key for the lambda to get content from Contentful. Available from Contentful API Keys Settings.
 
-`CMS_CRUD` - A personal access token generated from your Contentful account settings to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
+`CMS_CRUD` - A _personal access token_ generated from your Contentful account settings (listed under the `Content management tokens` section in settings > APIs) to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
 
 `./src/functions/meetup.js`
 

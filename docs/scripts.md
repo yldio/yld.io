@@ -110,7 +110,7 @@ yarn build:lambda
 
 This command will build our lambdas using the [netlify-lambda](https://github.com/netlify/netlify-lambda) package.
 
-See [here](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how the lambdas are used.
+See [Netlify automated deployments](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how the lambdas are used.
 
 ```bash
 yarn build
