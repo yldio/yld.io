@@ -9,8 +9,9 @@ const StyledSubtitleWithBody = styled(SubtitleWithBody)`
   margin-bottom: ${props => props.theme.spacing['2']};
 `
 
-const WhyOpenSource = ({ subtitle, body, themeVariation = 'white' }) => (
+const WhyOpenSource = ({ icon, subtitle, body, themeVariation = 'white' }) => (
   <Fragment>
+    <img src={icon} />
     <StyledSubtitleWithBody
       subtitle={subtitle}
       body={body}
