@@ -33,19 +33,22 @@
     "react-helmet": "5.2.0",
     "react-markdown": "^4.0.6",
     "remcalc": "1.0.10",
+    "shortid": "^2.2.14",
     "slash": "2.0.0",
     "styled-components": "4.1.1",
     "styled-components-breakpoint": "2.1.1",
     "styled-components-spacing": "3.1.1",
     "styled-flex-component": "2.2.2",
     "styled-is": "1.1.5",
-    "styled-reset": "1.6.0"
+    "styled-reset": "1.6.0",
+    "testcafe-react-selectors": "^3.1.0"
   },
   "license": "MIT",
   "scripts": {
     "test": "run-s test:**",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
-    "test:e2e": "testcafe chrome ./tests/e2e",
+    "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
+    "test:e2e": "npm run build:app && testcafe chrome:headless ./tests/e2e",
     "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
     "develop": "npm start",
     "start": "gatsby develop",
@@ -92,6 +95,7 @@
     "contentful-management": "5.4.0",
     "dotenv": "6.1.0",
     "eslint": "^5.9.0",
+    "eslint-config-react-app": "^4.0.1",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
@@ -134,8 +138,12 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
       "eslint --fix",
+      "prettier --config .prettierrc --write",
+      "git add"
+    ],
+    "*.*": [
+      "prettier --config .prettierrc --write",
       "git add"
     ]
   }

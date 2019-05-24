@@ -2,6 +2,8 @@
   "parser": "babel-eslint",
   "extends": [
     "standard",
+    "eslint:recommended",
+    "react-app",
     "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:testcafe/recommended"
@@ -9,9 +11,16 @@
   "plugins": ["react-hooks", "testcafe"],
   "rules": {
     "react/prop-types": 0,
+    "react/no-access-state-in-setstate": "error",
     "space-before-function-paren": 0,
     "indent": 0,
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "jsx-a11y/aria-role": [
+      2,
+      {
+        "ignoreNonDOM": true
+      }
+    ]
   },
   "env": {
     "jest": true,

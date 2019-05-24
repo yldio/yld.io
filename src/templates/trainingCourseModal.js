@@ -29,11 +29,14 @@ const CloseButtonWrapper = styled(Padding)`
 const ModalContent = ({ modal, closeTo, course, category, location }) => {
   const returnPath = `${closeTo}/#${category.slug}`
 
-  useEffect(() => {
-    document.addEventListener('keyup', handleKeyPress, false)
+  useEffect(
+    () => {
+      document.addEventListener('keyup', handleKeyPress, false)
 
-    return () => document.removeEventListener('keyup', handleKeyPress, false)
-  }, [])
+      return () => document.removeEventListener('keyup', handleKeyPress, false)
+    },
+    [handleKeyPress]
+  )
 
   const handleKeyPress = ({ key }) => {
     if (key === 'Escape') {

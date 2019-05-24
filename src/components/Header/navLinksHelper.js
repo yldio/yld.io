@@ -1,4 +1,4 @@
-import theme from '../../../utils/theme'
+import theme from '../../utils/theme'
 
 const specialitiesMap = {
   engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
@@ -33,6 +33,8 @@ const servicesList = Object.keys(specialitiesMap)
 
 const servicesRegExp = new RegExp(servicesList.join('|'))
 
+const getIsServicePage = path => path.search(servicesRegExp) > -1
+
 const getSpeciality = path => path.split('/')[2]
 
 const getService = path =>
@@ -41,11 +43,18 @@ const getService = path =>
     return path.search(specialitiesRegExp) > -1
   })
 
+const AboutUrlList = ['about-us', 'contact']
+
+const getAboutUrl = path =>
+  AboutUrlList.find(aboutUrl => path.includes(aboutUrl))
+
 export {
   specialitiesMap,
   logoColors,
   servicesList,
   servicesRegExp,
+  getIsServicePage,
   getSpeciality,
-  getService
+  getService,
+  getAboutUrl
 }

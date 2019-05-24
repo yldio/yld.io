@@ -39,19 +39,24 @@ const DropdownList = styled.ul`
   padding: ${props => props.theme.spacing[1]} 0
     ${props => props.theme.spacing[1]} 0;
 `
-
 export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
+
+    const { items, path } = props
+
     this.state = {
-      isExpanded: false
+      isExpanded: items.some(({ to }) => path === to)
     }
+
     this.ref = React.createRef()
   }
 
   toggle = e => {
     e.preventDefault()
-    this.setState({ isExpanded: !this.state.isExpanded })
+    this.setState(prevState => ({
+      isExpanded: !prevState.isExpanded
+    }))
   }
 
   handleFocus = () => {
