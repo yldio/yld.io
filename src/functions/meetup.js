@@ -228,7 +228,10 @@ exports.handler = async (event, context, callback) => {
       contentfulEvent.fields = Object.assign(
         contentfulEvent.fields,
         diffVals.reduce(
-          (acc, curr) => ({ ...acc, [curr]: generatedEventFields[curr] }),
+          (acc, curr) => ({
+            ...acc,
+            [curr]: { 'en-US': generatedEventFields[curr] }
+          }),
           {}
         )
       )
