@@ -1,14 +1,9 @@
+import { Selector } from 'testcafe'
+
 import createServer from '../createServer'
-import { Selector, ClientFunction } from 'testcafe'
-// import { ReactSelector, waitForReact } from 'testcafe-react-selectors'
+import { port, baseUrl, getWindowLocation } from './helper'
+
 require('dotenv').config()
-
-const getWindowLocation = ClientFunction(() => window.location)
-
-const hostname = `localhost`
-const port = 3002
-const baseUrl = `${hostname}:${port}`
-
 let server
 
 fixture`Side Nav Menu`.page`${baseUrl}`

@@ -1,16 +1,14 @@
+import { Selector } from 'testcafe'
+
 import createServer from '../createServer'
-import { Selector, ClientFunction } from 'testcafe'
+import { port, baseUrl, getWindowLocation } from './helper'
+
 require('dotenv').config()
-
-const hostname = `localhost`
-const port = 3002
-const baseUrl = `${hostname}:${port}`
-const trainingPageUrl = `${baseUrl}/training`
-
-const getWindowLocation = ClientFunction(() => window.location)
-
 let server
+
+const trainingPageUrl = `${baseUrl}/training`
 let firstModalLink
+
 fixture`Training page`.page`${trainingPageUrl}`
   .before(async t => {
     server = createServer(port)
