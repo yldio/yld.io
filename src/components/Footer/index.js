@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import { Link } from 'gatsby'
-import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle } from '../../components/Typography'
@@ -23,6 +22,7 @@ export const FollowUs = styled.section`
 export const Social = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 24px;
 
   @media (max-width: 500px) {
     li {
@@ -39,33 +39,15 @@ export const OfficeStyled = styled(Row)`
   overflow: hidden;
 `
 
-const DesktopGDPR = styled.div`
-  visibility: hidden;
-  position: absolute;
-  right: 0;
+const GDPR = styled.div`
+  display: flex;
+  height: 48px;
+  align-items: center;
   color: white;
 
   a {
-    margin-left: 24px;
+    padding-right: 36px;
   }
-
-  ${breakpoint('desktop')`
-    visibility: visible;
-  `}
-`
-
-const MobileGDPR = styled.div`
-  color: white;
-
-  a {
-    display: inline-block;
-    margin-right: 24px;
-    margin-bottom: 24px;
-  }
-
-  ${breakpoint('desktop')`
-    visibility: hidden;
-  `}
 `
 
 const LinkUnderline = styled(Link)`
@@ -125,22 +107,15 @@ const Footer = () => (
                     </ExternalAnchor>
                   </li>
                 ))}
-                <DesktopGDPR>{gdprLinksElement}</DesktopGDPR>
               </Social>
+            </Col>
+            <Col width={1}>
+              <GDPR>{gdprLinksElement}</GDPR>
             </Col>
           </Row>
         </Grid>
       </Padding>
     </FollowUs>
-    <Grid>
-      <Row>
-        <Col width={1}>
-          <Padding bottom={3}>
-            <MobileGDPR>{gdprLinksElement}</MobileGDPR>
-          </Padding>
-        </Col>
-      </Row>
-    </Grid>
   </GreyFooter>
 )
 
