@@ -5350,6 +5350,7 @@ exports[`Storyshots Form Field 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
@@ -5390,6 +5391,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
@@ -5438,6 +5440,7 @@ exports[`Storyshots Form Input 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
