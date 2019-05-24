@@ -15,7 +15,7 @@ export const GreyFooter = styled.footer`
   background: #232323;
 `
 
-export const FollowUs = styled.section`
+export const FooterBanner = styled.section`
   background: ${props => props.theme.colors.black};
 `
 
@@ -94,7 +94,7 @@ const Footer = () => (
         </Padding>
       </Grid>
     </Padding>
-    <FollowUs>
+    <FooterBanner>
       <Padding top={3} bottom={3}>
         <Grid>
           <Row>
@@ -115,7 +115,7 @@ const Footer = () => (
           </Row>
         </Grid>
       </Padding>
-    </FollowUs>
+    </FooterBanner>
   </GreyFooter>
 )
 
