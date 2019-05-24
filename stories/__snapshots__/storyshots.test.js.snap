@@ -1222,6 +1222,7 @@ exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
       color="03183D"
     >
       <img
+        alt="trainline graphic"
         src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp"
         style={
           Object {
@@ -5349,6 +5350,7 @@ exports[`Storyshots Form Field 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
@@ -5389,6 +5391,7 @@ exports[`Storyshots Form Fieldset 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
@@ -5437,6 +5440,7 @@ exports[`Storyshots Form Input 1`] = `
   margin-bottom: 36px;
   display: block;
   width: 100%;
+  max-width: 100%;
   line-height: 1.5rem;
   font-size: 1.125rem;
   background: #f9f9f9;
@@ -11773,7 +11777,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/engineering"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11783,7 +11787,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/design"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -11793,7 +11797,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           <a
             className="c5 c6"
             href="/training"
-            noAfter={true}
+            noafter="true"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >

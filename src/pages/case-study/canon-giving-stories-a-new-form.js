@@ -128,7 +128,7 @@ const IndexPage = ({
               <CenteredCol width={[1, 1, 1, 8 / 12]}>
                 <Margin top={3}>
                   <Flex justifyCenter alignCenter>
-                    <img src={landscape} alt="image representing travel" />
+                    <img src={landscape} alt="representing travel" />
                   </Flex>
                 </Margin>
               </CenteredCol>

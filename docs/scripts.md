@@ -24,6 +24,12 @@ This scripts cleans your `.cache` folder and then runs `yarn start`. If you are 
 
 This will run storybook so you can see our shared components.
 
+```bash
+yarn storybook:static
+```
+
+This command will build a static version of our storybook instance to `storybook-static/`.
+
 ### Lambda
 
 ```bash
@@ -31,6 +37,8 @@ This will run storybook so you can see our shared components.
 ```
 
 We also have one lambda function that goes to meetup and gets our latest meetups to put them in contentful and if need to make any changes this is the script to run.
+
+See [here](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how these are used.
 
 ## Tests
 
@@ -64,7 +72,7 @@ Testcafe is our end-to-end web testing tool; we use it to make sure that the web
 yarn test
 ```
 
-This will run all the above.
+This will run all test:\*\* scripts
 
 ## Lint
 
@@ -94,26 +102,20 @@ yarn build:app
 
 This command will build gatsby and the website.
 
-### Storybook
-
-```bash
-yarn build:storybook
-```
-
-This command will build our storybook instance.
-
 ### Lambda
 
 ```bash
 yarn build:lambda
 ```
 
-This command will build our meetup lambda.
+This command will build our lambdas using the [netlify-lambda](https://github.com/netlify/netlify-lambda) package.
+
+See [Netlify automated deployments](../README.md#ƛ-netlify-lambda-automated-deployments) for details on how the lambdas are used.
 
 ```bash
 yarn build
 ```
 
-This will run all our build scripts.
+This will run all our build:\*\* scripts.
 
 Any questions feel free to create an issue :)

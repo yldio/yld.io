@@ -36,7 +36,7 @@ const Statement = ({ richText, children, noPadding }) => (
                   return (
                     <Link
                       key={content.data.uri}
-                      noAfter
+                      noafter="true"
                       to={`/${content.data.uri}`}
                     >
                       {content.content[0].value}
