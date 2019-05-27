@@ -1,7 +1,10 @@
 const Reduce = require('apr-reduce')
-const { get, find, isEqual, head } = require('lodash')
+const { find, isEqual } = require('lodash')
 
+const { getFieldValue, generateContentfulDataType } = require('./utils')
 const { LAMBDA_ENV = 'development' } = process.env
+
+const repoKeys = ['url', 'nameWithOwner', 'descriptionHTML', 'pullRequestCount']
 
 const Repos = async (environment, { repos }) => {
   const isProd = LAMBDA_ENV === 'production'
@@ -21,7 +24,7 @@ const Repos = async (environment, { repos }) => {
   )
 
   // Iterate over the contentful repo data
-  return await Reduce(contentfulRepos, async (acc = [], contentfulRepo) => {
+  return Reduce(contentfulRepos, async (acc = [], contentfulRepo) => {
     const githubRepo = find(filteredRepos, [
       `url`,
       getFieldValue(contentfulRepo, 'url')

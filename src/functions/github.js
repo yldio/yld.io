@@ -11,8 +11,7 @@ const {
   summariseContributions
 } = require('@yldio/oss-stats')
 const { createClient } = require('contentful-management')
-const Reduce = require('apr-reduce')
-const { get, find, isEqual, head } = require('lodash')
+
 const Meta = require('./oss/meta')
 const Repos = require('./oss/repos')
 
@@ -24,24 +23,6 @@ const {
 } = process.env
 
 const org = 'yldio'
-const locale = 'en-US'
-
-const getInFields = locale => (obj, key) => {
-  return get(obj, `fields.${key}.${locale}`)
-}
-const getFieldValue = getInFields(locale)
-
-const metaKeys = ['repoCount', 'pullRequestCount']
-const repoKeys = ['url', 'nameWithOwner', 'descriptionHTML', 'pullRequestCount']
-
-const generateContentfulDataType = (obj, keys) =>
-  keys.reduce((acc, curr) => ({ ...acc, [curr]: { [locale]: obj[curr] } }), {})
-
-const getContentfulMeta = data =>
-  metaKeys.reduce(
-    (acc, curr) => ({ ...acc, [curr]: getFieldValue(data, curr) }),
-    {}
-  )
 
 exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
