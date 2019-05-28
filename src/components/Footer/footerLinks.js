@@ -18,12 +18,18 @@ export const Social = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding-bottom: ${remcalc(24)};
+  align-items: center;
 
   @media (max-width: 500px) {
     li {
       margin-bottom: ${remcalc(24)};
     }
   }
+
+  ${breakpoint('desktop')`
+    height: ${remcalc(48)};
+    padding-bottom: 0;
+  `}
 
   li:not(:last-child) {
     margin-right: ${remcalc(24)};
@@ -41,7 +47,6 @@ const GDPR = styled.div`
   }
 
   ${breakpoint('desktop')`
-    align-items: flex-start;
     justify-content: flex-end;
     padding: 0 0 0 ${remcalc(36)};
   `}
