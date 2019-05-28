@@ -38,17 +38,18 @@ export const Social = styled.ul`
 
 const GDPR = styled.div`
   display: flex;
-  height: ${remcalc(48)};
-  align-items: center;
   color: white;
+  flex-wrap: wrap;
 
   a {
-    padding: 0 ${remcalc(36)} 0 0;
+    padding: ${remcalc(12)} ${remcalc(36)} ${remcalc(12)} 0;
   }
 
   ${breakpoint('desktop')`
     justify-content: flex-end;
-    padding: 0 0 0 ${remcalc(36)};
+    a {
+      padding: ${remcalc(12)} 0 ${remcalc(12)} ${remcalc(36)};
+    }
   `}
 `
 
