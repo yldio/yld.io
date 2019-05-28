@@ -8,7 +8,13 @@ const {
 } = require('./utils')
 const { LAMBDA_ENV = 'development' } = process.env
 
-const repoKeys = ['url', 'nameWithOwner', 'descriptionHTML', 'pullRequestCount']
+const repoKeys = [
+  'url',
+  'nameWithOwner',
+  'descriptionHTML',
+  'pullRequestCount',
+  'starCount'
+]
 
 const Repos = async (environment, { repos }) => {
   const isProd = LAMBDA_ENV === 'production'
