@@ -29,12 +29,11 @@ const data = {
   },
   labels: {
     interests: 'What are you interested in?',
-    yourName: 'Your Name',
+    yourName: 'Your full name',
     yourEmail: 'Your Email'
   },
   textArea: {
-    label: 'Tell us a bit more',
-    placeHolder: 'A brief description of what you’re looking for'
+    label: "Tell us a bit more about what you're looking for"
   },
   successMessage: 'Thanks for reaching out. We will be in contact shortly',
   privacyPolicy: {
@@ -55,13 +54,6 @@ function encode(data) {
 
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
-`
-
-const StyledInput = styled(Input)`
-  ::placeholder {
-    color: ${props => props.theme.colors.text};
-    font-style: normal;
-  }
 `
 
 // NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
@@ -150,13 +142,12 @@ class ContactUs extends Component {
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
                         <Label htmlFor="message">{data.textArea.label}</Label>
-                        <StyledInput
+                        <Input
                           as="textarea"
                           noBoxShadow={!this.state.triedSubmitting}
                           rows="4"
                           value={message}
                           onChange={this.handleChange}
-                          placeholder={data.textArea.placeHolder}
                           id="message"
                           name="message"
                           required
