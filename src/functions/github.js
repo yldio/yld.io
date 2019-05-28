@@ -15,18 +15,11 @@ const { createClient } = require('contentful-management')
 const Meta = require('./oss/meta')
 const Repos = require('./oss/repos')
 
-const {
-  CONTENTFUL_SPACE,
-  CMS_CRUD,
-  LAMBDA_ENV = 'development',
-  GITHUB_TOKEN
-} = process.env
+const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
 
 const org = 'yldio'
 
 exports.handler = async () => {
-  const isProd = LAMBDA_ENV === 'production'
-
   // Get github data
   const { repos, repoCount, pullRequestCount } = await getData({
     org,

@@ -1,7 +1,11 @@
 const Reduce = require('apr-reduce')
 const { find, isEqual } = require('lodash')
 
-const { getFieldValue, generateContentfulDataType } = require('./utils')
+const {
+  getFieldValue,
+  generateContentfulDataType,
+  updateEntry
+} = require('./utils')
 const { LAMBDA_ENV = 'development' } = process.env
 
 const repoKeys = ['url', 'nameWithOwner', 'descriptionHTML', 'pullRequestCount']
@@ -41,15 +45,15 @@ const Repos = async (environment, { repos }) => {
     )
 
     if (isProd && !fieldsAreEqual) {
-      contentfulRepo.fields = contentfulRepoFromGithub
+      const { nameWithOwner } = githubRepo
+      await updateEntry(
+        contentfulRepo,
+        contentfulRepoFromGithub,
+        environment,
+        nameWithOwner
+      )
 
-      const id = await contentfulRepo.update()
-      const updatedEntry = await environment.getEntry(id.sys.id)
-
-      console.log(`Publishing updated entry ${githubRepo.nameWithOwner}`)
-
-      await updatedEntry.publish()
-      return [...acc, githubRepo.nameWithOwner]
+      return [...acc, nameWithOwner]
     } else {
       console.log(
         fieldsAreEqual
