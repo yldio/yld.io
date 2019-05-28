@@ -13,7 +13,7 @@ const Office = ({ name, telephone, email, streetAddress }) => (
   <PaddedCol width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
     <Subtitle reverse>{name}</Subtitle>
     <Padding top={1} bottom={1}>
-      {streetAddress.map((address, i) => (
+      {streetAddress.map(address => (
         <StyledBodyPrimary key={address}>{address}</StyledBodyPrimary>
       ))}
       <StyledBodyPrimary itemProp="telephone">{telephone}</StyledBodyPrimary>

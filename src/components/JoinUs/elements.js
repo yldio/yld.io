@@ -45,7 +45,7 @@ export const TitleAndBody = ({ title, body }) => (
   </Row>
 )
 
-export const Separator = ({ children }) => (
+export const Separator = () => (
   <Padding bottom={{ smallPhone: 3, tablet: 3.5 }}>
     <Hr />
   </Padding>

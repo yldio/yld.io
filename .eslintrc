@@ -8,10 +8,11 @@
     "plugin:jest/recommended",
     "plugin:testcafe/recommended"
   ],
-  "plugins": ["react-hooks", "testcafe"],
+  "plugins": ["react-hooks", "testcafe", "standard"],
   "rules": {
     "react/prop-types": 0,
     "react/no-access-state-in-setstate": "error",
+    "no-unused-vars": ["error", { "vars": "all", "args": "all", "ignoreRestSiblings": false }],
     "space-before-function-paren": 0,
     "indent": 0,
     "react-hooks/rules-of-hooks": "error",

@@ -156,7 +156,7 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 //
 // space.getEntries() will be depreciated, use space -> environment -> entries
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
 
@@ -260,7 +260,6 @@ exports.handler = async (event, context, callback) => {
       console.log(
         `Not prod so not creating contentful event for ${meetup.eventName}`
       )
-      return
     }
   })
 

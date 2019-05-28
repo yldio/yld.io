@@ -24,7 +24,7 @@ const LOCATIONS = graphql`
   }
 `
 
-const Locations = ({ data, children }) => (
+const Locations = ({ children }) => (
   <StaticQuery
     query={LOCATIONS}
     render={({ allContentfulLocation }) =>

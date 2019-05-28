@@ -30,7 +30,7 @@ const LinksContainer = styled.div`
 `
 
 const Description = styled(BodyPrimary)`
-  padding-bottom: ${props => remcalc(30)};
+  padding-bottom: ${() => remcalc(30)};
 `
 
 const SocialLink = ({ name, url, image }) => {

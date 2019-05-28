@@ -8,7 +8,7 @@ import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../outlineStyles'
 
-const DropdownNameWrapper = styled.span.attrs(props => ({
+const DropdownNameWrapper = styled.span.attrs(() => ({
   states: outerItemStates
 }))`
   display: flex;

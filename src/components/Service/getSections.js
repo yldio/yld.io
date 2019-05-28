@@ -4,6 +4,8 @@ const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
 export default workStage =>
   Array.from(new Array(15))
+    // Better way to fix this?
+    // eslint-disable-next-line no-unused-vars
     .map((_, index) => {
       // get the current body of the part we want. They're all numbered starting with 1.
       // arrays start with 0 so that's why the + 1

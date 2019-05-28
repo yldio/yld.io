@@ -10,10 +10,10 @@ const trainingPageUrl = `${baseUrl}/training`
 let firstModalLink
 
 fixture`Training page`.page`${trainingPageUrl}`
-  .before(async t => {
+  .before(async () => {
     server = createServer(port)
   })
-  .beforeEach(async t => {
+  .beforeEach(async () => {
     firstModalLink = await Selector('a[data-testid=course-link]').nth(0)
   })
   .after(() => server.close())
