@@ -20,6 +20,10 @@ const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
 const org = 'yldio'
 
 exports.handler = async () => {
+  if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
+    throw new Error(`Missing env variables, check set up`)
+  }
+
   // Get github data
   const { repos, repoCount, pullRequestCount } = await getData({
     org,
@@ -33,11 +37,16 @@ exports.handler = async () => {
     accessToken: CMS_CRUD
   })
 
-  const space = await client.getSpace(CONTENTFUL_SPACE)
-  const environment = await space.getEnvironment('master')
+  const environment = await client
+    .getSpace(CONTENTFUL_SPACE)
+    .getEnvironment('master')
 
-  const meta = await Meta(environment, { repoCount, pullRequestCount })
-  const updatedRepos = await Repos(environment, { repos })
+  const [meta, updatedRepos] = Promise.all([
+    Meta(environment, { repoCount, pullRequestCount }),
+    Repos(environment, { repos })
+  ]).catch(err => {
+    throw new Error(err)
+  })
 
   return {
     statusCode: 200,
