@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import { Link } from 'gatsby'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle } from '../../components/Typography'
@@ -47,8 +48,14 @@ const GDPR = styled.div`
   color: white;
 
   a {
-    padding-right: ${remcalc(36)};
+    padding: 0 ${remcalc(36)} 0 0;
   }
+
+  ${breakpoint('desktop')`
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 0 0 ${remcalc(36)};
+  `}
 `
 
 const LinkUnderline = styled(Link)`
@@ -99,7 +106,7 @@ const Footer = () => (
       <Padding top={3} bottom={3}>
         <Grid>
           <Row>
-            <Col width={1}>
+            <Col width={[1, 1, 1, 1, 1, 1, 1 / 2]}>
               <Social>
                 {social.map(s => (
                   <li key={s.label}>
@@ -110,7 +117,7 @@ const Footer = () => (
                 ))}
               </Social>
             </Col>
-            <Col width={1}>
+            <Col width={[1, 1, 1, 1, 1, 1, 1 / 2]}>
               <GDPR>{gdprLinksElement}</GDPR>
             </Col>
           </Row>
