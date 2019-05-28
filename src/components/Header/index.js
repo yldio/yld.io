@@ -60,6 +60,7 @@ const Header = ({ path, blue }) => {
                   onClick={() => toggleSideNav(false)}
                 />
                 <SideNav
+                  path={path}
                   links={navLinks}
                   themeVariation="dark"
                   isOpen={isSideNavOpen}

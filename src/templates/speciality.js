@@ -24,7 +24,7 @@ const Speciality = ({
     contentfulSpeciality: speciality,
     allContentfulMeetupEvent: { edges: events },
     videoIcon,
-    filteredPosts: { edges: filteredPosts }
+    filteredPosts
   },
   location
 }) => {
@@ -39,7 +39,8 @@ const Speciality = ({
     contactText
   } = speciality
 
-  const posts = filteredPosts.map(({ node }) => node)
+  const { edges: postEdges = [] } = filteredPosts
+  const posts = postEdges.map(({ node }) => node)
   const talks = getExternalType(speciality, `Talk`)
   const tutorials = getExternalType(speciality, `Tutorial`)
   const books = getExternalType(speciality, `Book`)

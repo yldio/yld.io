@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 
 import StyledLink from '../Common/StyledLink'
 import { SectionTitle, Subtitle } from '../Typography'
-import Jobs from '../JobsByLocation'
+import JobsByLocation from '../JobsByLocation'
 import JobLink from '../Common/JobLink'
 
 const JobContainer = styled.ul`
@@ -19,7 +19,7 @@ const JobContainer = styled.ul`
   `}
 `
 
-const JobsComponent = () => (
+const Jobs = () => (
   <Grid pb={3}>
     <Row>
       <Col width={[1]}>
@@ -29,7 +29,7 @@ const JobsComponent = () => (
       </Col>
     </Row>
     <Row pt={[3, 3, 3, 3, 90]}>
-      <Jobs>
+      <JobsByLocation>
         {jobs =>
           jobs.map(({ location, jobs: jobsForLocation }) => (
             <Col
@@ -58,7 +58,7 @@ const JobsComponent = () => (
             </Col>
           ))
         }
-      </Jobs>
+      </JobsByLocation>
     </Row>
     <Row>
       <Col width={[1]}>
@@ -70,4 +70,4 @@ const JobsComponent = () => (
   </Grid>
 )
 
-export default JobsComponent
+export default Jobs

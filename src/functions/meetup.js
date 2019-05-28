@@ -158,6 +158,7 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 
 exports.handler = async (event, context, callback) => {
   const isProd = LAMBDA_ENV === 'production'
+  // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
 
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
   const space = await client.getSpace(CONTENTFUL_SPACE)
@@ -171,7 +172,7 @@ exports.handler = async (event, context, callback) => {
   })
 
   // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
-  await Map(processMeetupData(await getSelfGroups()), async (group, index) => {
+  await Map(processMeetupData(await getSelfGroups()), async group => {
     const { urlname, nextEvent } = group
     if (!nextEvent) {
       return null

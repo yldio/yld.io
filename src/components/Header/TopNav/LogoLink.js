@@ -9,8 +9,9 @@ import {
   servicesRegExp,
   logoColors,
   getSpeciality,
+  getIsServicePage,
   getService
-} from './ServicesSpecialitiesMap'
+} from '../navLinksHelper'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
@@ -23,7 +24,7 @@ const StyledLink = styled(Link)`
 `
 
 const LogoLink = ({ path = '/' }) => {
-  const isServicePage = path.search(servicesRegExp) > -1
+  const isServicePage = getIsServicePage(path)
   const isSpecialityPage = path.includes('speciality')
 
   const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
