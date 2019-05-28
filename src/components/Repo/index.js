@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const RepoWrapper = styled.div`
   ${props =>
-    Object.hasOwnProperty.call(props, 'img') &&
+    Object.prototype.hasOwnProperty.call(props, 'img') &&
     `
         color: 'black
     `}
