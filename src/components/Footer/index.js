@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import { Link } from 'gatsby'
+import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle } from '../../components/Typography'
@@ -22,16 +23,16 @@ export const FooterBanner = styled.section`
 export const Social = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 24px;
+  padding-bottom: ${remcalc(24)};
 
   @media (max-width: 500px) {
     li {
-      margin-bottom: 24px;
+      margin-bottom: ${remcalc(24)};
     }
   }
 
   li:not(:last-child) {
-    margin-right: 24px;
+    margin-right: ${remcalc(24)};
   }
 `
 
@@ -41,12 +42,12 @@ export const OfficeStyled = styled(Row)`
 
 const GDPR = styled.div`
   display: flex;
-  height: 48px;
+  height: ${remcalc(48)};
   align-items: center;
   color: white;
 
   a {
-    padding-right: 36px;
+    padding-right: ${remcalc(36)};
   }
 `
 
