@@ -4,8 +4,15 @@ const { LOCALE = 'en-US' } = process.env
 
 const getFieldValue = (obj, key) => get(obj, `fields.${key}.${LOCALE}`)
 
-const generateContentfulData = (obj, keys) =>
-  keys.reduce((acc, curr) => ({ ...acc, [curr]: { [LOCALE]: obj[curr] } }), {})
+const generateContentfulData = (obj, keys) => {
+  if (!keys && !keys.length) {
+    throw new Error('Missing key values')
+  }
+  return keys.reduce(
+    (acc, curr) => ({ ...acc, [curr]: { [LOCALE]: obj[curr] } }),
+    {}
+  )
+}
 
 const getContentfulDataFromKeys = (data, keys) =>
   keys.reduce(

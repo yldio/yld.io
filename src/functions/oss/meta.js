@@ -29,7 +29,7 @@ const Meta = async (environment, githubMetaData) => {
   if (isProd && !fieldsAreEqual) {
     await updateEntry(
       currentContentfulData,
-      generateContentfulData(githubMetaData),
+      generateContentfulData(githubMetaData, metaKeys),
       environment,
       'github meta data'
     )
