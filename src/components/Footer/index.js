@@ -4,8 +4,8 @@ import { Padding } from 'styled-components-spacing'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle } from '../../components/Typography'
-import OfficeListing from './officeListing'
-import FooterLinks from './footerLinks'
+import OfficeListing from './OfficeListing'
+import FooterLinks from './FooterLinks'
 
 export const GreyFooter = styled.footer`
   background: #232323;
