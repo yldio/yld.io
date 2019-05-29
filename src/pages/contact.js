@@ -22,30 +22,6 @@ const interests = [
   { name: 'none', label: 'None of these' }
 ]
 
-const data = {
-  title: {
-    notContacted: 'Get in touch',
-    contacted: 'We will be in touch'
-  },
-  labels: {
-    interests: 'What are you interested in?',
-    yourName: 'Your full name',
-    yourEmail: 'Your Email'
-  },
-  textArea: {
-    label: "Tell us a bit more about what you're looking for"
-  },
-  successMessage: 'Thanks for reaching out. We will be in contact shortly',
-  privacyPolicy: {
-    text: "I agree to the terms of YLD's ",
-    linkText: 'privacy policy'
-  },
-  status: {
-    notSent: 'Submit',
-    sent: 'Submitting'
-  }
-}
-
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -109,6 +85,7 @@ class ContactUs extends Component {
       location,
       data: { contentfulPage: page }
     } = this.props
+
     return (
       <Layout location={location}>
         <Head page={page} />
@@ -122,7 +99,7 @@ class ContactUs extends Component {
         >
           <input type="hidden" name="form-name" value="contact" />
           <TitleSection
-            title={data.title[success ? 'contacted' : 'notContacted']}
+            title={page[success ? 'titleContacted' : 'titleNotContacted']}
           />
           <GreyBackground>
             <Grid>
@@ -131,17 +108,17 @@ class ContactUs extends Component {
                 bottom={{ smallPhone: 3.5, tablet: 5 }}
               >
                 {success ? (
-                  <ThankYouMessage message={data.successMessage} />
+                  <ThankYouMessage message={page.successMessage} />
                 ) : (
                   <Fragment>
                     <AreasOfInterest
-                      title={data.labels.interests}
+                      title={page.labelInterests}
                       interests={interests}
                       onChange={this.handleChangeCheckbox}
                     />
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
-                        <Label htmlFor="message">{data.textArea.label}</Label>
+                        <Label htmlFor="message">{page.labelYourMessage}</Label>
                         <Input
                           as="textarea"
                           noBoxShadow={!this.state.triedSubmitting}
@@ -156,7 +133,7 @@ class ContactUs extends Component {
                     </Row>
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
-                        <Label htmlFor="name">{data.labels.yourName}</Label>
+                        <Label htmlFor="name">{page.labelYourName}</Label>
                         <Input
                           id="name"
                           type="text"
@@ -165,7 +142,7 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
-                        <Label htmlFor="email">{data.labels.yourEmail}</Label>
+                        <Label htmlFor="email">{page.labelYourEmail}</Label>
                         <Input
                           id="email"
                           type="email"
@@ -184,9 +161,9 @@ class ContactUs extends Component {
                               onChange={this.handleChangeCheckbox}
                             />
                             <label htmlFor="privacy">
-                              {data.privacyPolicy.text}
+                              {page.privacyPolicyText}
                               <LinkUnderline to={'/privacy-policy'}>
-                                {data.privacyPolicy.linkText}
+                                {page.privacyPolicyLinkText}
                               </LinkUnderline>
                             </label>
                           </section>
@@ -196,7 +173,7 @@ class ContactUs extends Component {
                           type="submit"
                           disabled={submitting}
                         >
-                          {data.status[submitting ? 'sent' : 'notSent']}
+                          {page[submitting ? 'statusSent' : 'statusNotSent']}
                         </Button>
                       </Col>
                     </Row>
@@ -216,10 +193,21 @@ const Contact = props => (
     query={graphql`
       query {
         contentfulPage(slug: { eq: "contact" }) {
-          slug
           title
+          slug
           seoTitle
           seoMetaDescription
+          titleNotContacted
+          titleContacted
+          labelInterests
+          labelYourName
+          labelYourEmail
+          labelYourMessage
+          successMessage
+          privacyPolicyText
+          privacyPolicyLinkText
+          statusNotSent
+          statusSent
         }
       }
     `}
