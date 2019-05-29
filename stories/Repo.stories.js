@@ -34,7 +34,7 @@ storiesOf('Repo', module)
               pullRequestCount={123}
               starCount={123}
               img={true}
-              imgSrc={'https://www.placecage.com/72/72'}
+              imgSrc={'https://www.placecage.com/800/1000/'}
             />
           </Col>
         </Row>

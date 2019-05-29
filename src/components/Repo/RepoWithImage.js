@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import Repo from './Repo'
+import RatioContainer from '../Common/RatioContainer'
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   padding: ${remcalc(24)};
   display: inline-block;
+  vertical-align: top;
   border-right: 1px solid ${props => props.theme.colors.secondaryText};
 `
 
@@ -22,6 +23,7 @@ const Image = styled.img`
 
 const RepoWrapper = styled.div`
   display: inline-block;
+  vertical-align: top;
   padding: ${remcalc(24)};
 `
 
@@ -29,14 +31,16 @@ const RepoWithImage = props => {
   const { url, nameWithOwner, imgSrc } = props
   return (
     <Wrapper>
-      <Link url={url} style={{ display: 'block' }}>
+      <a href={url} style={{ display: 'block' }}>
         <ImageWrapper>
-          <Image src={imgSrc} alt={`${nameWithOwner} logo`} />
+          <RatioContainer width={100} height={100}>
+            <Image src={imgSrc} alt={`${nameWithOwner} logo`} />
+          </RatioContainer>
         </ImageWrapper>
         <RepoWrapper>
           <Repo small {...props} />
         </RepoWrapper>
-      </Link>
+      </a>
     </Wrapper>
   )
 }

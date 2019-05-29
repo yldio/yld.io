@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import BodyStylised from '../Typography/BodyStylised'
 import remcalc from 'remcalc'
@@ -18,12 +17,12 @@ const Repo = ({
   small = false
 }) => (
   <Fragment>
-    <Link to={url}>
+    <a href={url}>
       <Subtitle noPadding={small}>{nameWithOwner}</Subtitle>
-    </Link>
+    </a>
     <BodyStylised noPadding>{pullRequestCount} Contributions</BodyStylised>
     <BodyStylised noPadding>{starCount} Stars</BodyStylised>
-    {!small && <StyledHr />}
+    {!small && <StyledHr short />}
   </Fragment>
 )
 
