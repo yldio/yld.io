@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
-import { Grid, Row } from '../src/components/grid'
-import Repo from '../src/components/Repo'
+import { Grid, Row, Col } from '../src/components/grid'
+import { Repo, RepoWithImage } from '../src/components/Repo'
 
 addDecorator(Theme)
 
@@ -11,12 +11,14 @@ storiesOf('Repo', module)
     return (
       <Grid>
         <Row>
-          <Repo
-            url="https://github.com/nodejs/node"
-            nameWithOwner={'nodejs/node'}
-            pullRequestCount={123}
-            starCount={123}
-          />
+          <Col>
+            <Repo
+              url="https://github.com/nodejs/node"
+              nameWithOwner={'nodejs/node'}
+              pullRequestCount={123}
+              starCount={123}
+            />
+          </Col>
         </Row>
       </Grid>
     )
@@ -25,14 +27,16 @@ storiesOf('Repo', module)
     return (
       <Grid>
         <Row>
-          <Repo
-            url="https://github.com/nodejs/node"
-            nameWithOwner={'nodejs/node'}
-            pullRequestCount={123}
-            starCount={123}
-            img={true}
-            imgSrc={'https://www.placecage.com/100/100'}
-          />
+          <Col>
+            <RepoWithImage
+              url="https://github.com/nodejs/node"
+              nameWithOwner={'nodejs/node'}
+              pullRequestCount={123}
+              starCount={123}
+              img={true}
+              imgSrc={'https://www.placecage.com/72/72'}
+            />
+          </Col>
         </Row>
       </Grid>
     )
