@@ -18,7 +18,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -223,7 +223,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -232,7 +232,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -241,7 +241,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -250,7 +250,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -727,7 +727,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -932,7 +932,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -941,7 +941,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -950,7 +950,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -959,7 +959,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1253,7 +1253,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -1534,7 +1534,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -1554,7 +1554,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -1574,7 +1574,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -1800,7 +1800,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1809,7 +1809,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1818,7 +1818,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1827,7 +1827,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1836,7 +1836,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1845,7 +1845,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c5 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1889,7 +1889,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c7 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1898,7 +1898,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c7 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1907,7 +1907,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c7 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -1916,7 +1916,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c7 {
-    width: 41.66666666666667%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2143,7 +2143,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -2163,7 +2163,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -2184,10 +2184,10 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
+  width: width;
+  position: initial;
+  top: 0;
+  left: 0;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2320,7 +2320,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2329,7 +2329,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2338,10 +2338,10 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -2382,7 +2382,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2391,7 +2391,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2400,7 +2400,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2462,25 +2462,25 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
   .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
   .c6 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2489,7 +2489,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c6 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2498,7 +2498,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:74.8125rem) {
   .c6 {
-    width: 41.66666666666667%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -2733,7 +2733,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -2753,7 +2753,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -2774,10 +2774,10 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
+  width: width;
+  position: initial;
+  top: 0;
+  left: 0;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2995,7 +2995,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3004,7 +3004,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3013,10 +3013,10 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -3057,7 +3057,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3066,7 +3066,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3075,7 +3075,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c5 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3137,25 +3137,25 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c8 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
   .c8 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    width: width;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
   .c8 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3164,7 +3164,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c8 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3173,7 +3173,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:74.8125rem) {
   .c8 {
-    width: 41.66666666666667%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3797,7 +3797,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -3908,7 +3908,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3917,7 +3917,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3926,7 +3926,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -3935,7 +3935,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4077,7 +4077,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -4187,7 +4187,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4196,7 +4196,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4205,7 +4205,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4214,7 +4214,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4356,7 +4356,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -4462,7 +4462,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4471,7 +4471,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4480,7 +4480,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4489,7 +4489,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4731,7 +4731,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -4837,7 +4837,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4846,7 +4846,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4855,7 +4855,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -4864,7 +4864,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5486,7 +5486,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -5506,7 +5506,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -5700,7 +5700,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5709,7 +5709,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5718,7 +5718,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c4 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5762,7 +5762,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c6 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5771,7 +5771,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c6 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5780,7 +5780,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c6 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5789,7 +5789,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c6 {
-    width: 41.66666666666667%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -5941,7 +5941,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -5961,67 +5961,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c6 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c7 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c9 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -6047,7 +5987,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
   display: flex;
 }
 
-.c8 {
+.c6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -6210,7 +6150,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -6219,7 +6159,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -6228,193 +6168,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c5 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    width: 66.66666666666666%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c7 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c7 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c7 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c7 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c7 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c7 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c7 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c7 {
-    width: 33.33333333333333%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c9 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c9 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c9 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c9 {
-    width: 25%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -6457,35 +6211,35 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c6 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c6 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c6 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -6553,7 +6307,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       className="c2"
     >
       <div
-        className="c6"
+        className="c5"
         width={
           Array [
             1,
@@ -6569,7 +6323,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c7"
+        className="c5"
         width={
           Array [
             1,
@@ -6586,10 +6340,10 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="c6"
     >
       <div
-        className="c7"
+        className="c5"
         width={
           Array [
             1,
@@ -6625,7 +6379,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       className="c2"
     >
       <div
-        className="c7"
+        className="c5"
         width={
           Array [
             1,
@@ -6641,7 +6395,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c7"
+        className="c5"
         width={
           Array [
             1,
@@ -6657,7 +6411,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c7"
+        className="c5"
         width={
           Array [
             1,
@@ -6677,7 +6431,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
       className="c2"
     >
       <div
-        className="c9"
+        className="c5"
         width={
           Array [
             1,
@@ -6693,7 +6447,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c9"
+        className="c5"
         width={
           Array [
             1,
@@ -6709,7 +6463,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c9"
+        className="c5"
         width={
           Array [
             1,
@@ -6725,7 +6479,7 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
         />
       </div>
       <div
-        className="c9"
+        className="c5"
         width={
           Array [
             1,
@@ -6763,7 +6517,7 @@ exports[`Storyshots Header Header itself 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -9907,7 +9661,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -10036,7 +9790,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10045,7 +9799,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10054,7 +9808,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10063,7 +9817,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10219,7 +9973,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -10347,7 +10101,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10356,7 +10110,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10365,7 +10119,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10374,7 +10128,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10530,7 +10284,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -10654,7 +10408,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10663,7 +10417,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10672,7 +10426,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10681,7 +10435,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -10941,7 +10695,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -11065,7 +10819,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11074,7 +10828,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11083,7 +10837,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11092,7 +10846,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 33.33333333333333%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11253,7 +11007,7 @@ exports[`Storyshots Statement Statement 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -11393,7 +11147,7 @@ exports[`Storyshots Statement Statement 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11402,7 +11156,7 @@ exports[`Storyshots Statement Statement 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11411,7 +11165,7 @@ exports[`Storyshots Statement Statement 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11420,7 +11174,7 @@ exports[`Storyshots Statement Statement 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 75%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11524,7 +11278,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -11663,7 +11417,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11672,7 +11426,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11681,7 +11435,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11690,7 +11444,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c2 {
-    width: 75%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11829,7 +11583,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -11969,7 +11723,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11978,7 +11732,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11987,7 +11741,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -11996,7 +11750,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c3 {
-    width: 75%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12109,7 +11863,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -12249,7 +12003,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12258,7 +12012,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12267,7 +12021,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12326,7 +12080,7 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -12462,7 +12216,7 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12471,7 +12225,7 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12480,7 +12234,7 @@ exports[`Storyshots Subtitle and Body on grey background 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12539,7 +12293,7 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -12685,7 +12439,7 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12694,7 +12448,7 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c2 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -12703,7 +12457,7 @@ exports[`Storyshots Subtitle and Body on white Background 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13192,7 +12946,7 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -13359,7 +13113,7 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13368,7 +13122,7 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13377,7 +13131,7 @@ exports[`Storyshots Title and List list in form of a string (Contentful data) 1`
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13523,7 +13277,7 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -13690,7 +13444,7 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13699,7 +13453,7 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13708,7 +13462,7 @@ exports[`Storyshots Title and List list in form of an array 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -13865,7 +13619,7 @@ exports[`Storyshots Title and List on dark background 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -14041,7 +13795,7 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14050,7 +13804,7 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14059,7 +13813,7 @@ exports[`Storyshots Title and List on dark background 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c4 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14221,7 +13975,7 @@ exports[`Storyshots Title and List on grey background 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -14392,7 +14146,7 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14401,7 +14155,7 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c4 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14410,7 +14164,7 @@ exports[`Storyshots Title and List on grey background 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c4 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14571,7 +14325,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -14785,7 +14539,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14794,7 +14548,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14803,7 +14557,7 @@ exports[`Storyshots Title and List with extra content 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -14965,7 +14719,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -14985,7 +14739,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -15005,7 +14759,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: width;
   position: initial;
   top: 0;
   left: 0;
@@ -15167,7 +14921,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c1 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15176,7 +14930,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c1 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15185,7 +14939,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c1 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15194,7 +14948,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15203,7 +14957,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c3 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15212,7 +14966,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c3 {
-    width: 83.33333333333334%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15256,7 +15010,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15265,7 +15019,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:34.5625rem) {
   .c5 {
-    width: 100%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15274,7 +15028,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c5 {
-    width: 50%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
@@ -15283,7 +15037,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c5 {
-    width: 41.66666666666667%;
+    width: width;
     position: initial;
     top: 0;
     left: 0;
