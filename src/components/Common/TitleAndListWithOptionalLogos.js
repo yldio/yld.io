@@ -17,6 +17,12 @@ const ItemBody = styled(Body)`
     padding: 0;
   }
 `
+
+const SquareImg60 = styled(Image)`
+  max-width: 60px;
+  max-height: 60px;
+`
+
 const TitleAndList = ({
   title,
   list,
@@ -59,7 +65,7 @@ const TitleAndList = ({
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
-                  {el.image && <Image image={el.image} />}
+                  {el.image && <SquareImg60 image={el.image} />}
                   <ItemSubtitle themeVariation={themeVariation}>
                     {el.title}
                   </ItemSubtitle>
