@@ -40,7 +40,7 @@ const RepoWithImage = props => {
         <ImageWrapper>
           <ImageWrapperInner>
             <RatioContainer width={100} height={100}>
-              <Image image={image} alt={`${nameWithOwner} logo`} />
+              {image && <Image image={image} alt={`${nameWithOwner} logo`} />}
             </RatioContainer>
           </ImageWrapperInner>
         </ImageWrapper>

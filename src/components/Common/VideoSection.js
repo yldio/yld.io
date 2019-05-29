@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import RatioContainer from ''
+import RatioContainer from './RatioContainer'
 
 import { Row, Col } from '../grid'
 

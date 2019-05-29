@@ -4,12 +4,17 @@ import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 
+import Contributions from '../components/OpenSource/Contributions'
+import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
+
 const OpenSource = ({ data }) => {
   return (
     <Layout>
-      <Head page={} /> 
-      <CaseStudyPreview caseStudy={} />
+      {/* <Head page={} />  */}
+      {/* <CaseStudyPreview caseStudy={} /> */}
       <p>open source page</p>
+      <OpenDeliverables {...data} />
+      <Contributions {...data} />
       {/* All the sections go herer */}
     </Layout>
   )
@@ -20,9 +25,26 @@ const OpenSourcePage = props => (
     query={graphql`
       query {
         site {
-          siteMetaData {
+          siteMetadata {
             title
           }
+        }
+        contentfulOpenSourcePage {
+          openDeliverablesSectionTitle
+          openDeliverablesClientReposSubtitle
+          openDeliverablesSectionDescription {
+            openDeliverablesSectionDescription
+          }
+          openDeliverablesClientRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+          }
+          contributionsSectionTitle
+          contributionsSectionDescription
+          contributionsSectionCtaText
+          contributionsSectionCtaLink
         }
       }
     `}
