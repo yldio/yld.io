@@ -4,7 +4,7 @@ import Theme from './theme'
 import { Grid, Col, Row } from '../src/components/grid'
 import WhyOpenSource from '../src/components/OpenSource/WhyOpenSource'
 
-import icon from '../storybook-static/static/media/community_support.svg'
+import icon from './assets/community_support.svg'
 
 addDecorator(Theme)
 
