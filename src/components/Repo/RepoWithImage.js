@@ -2,6 +2,7 @@ import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import Repo from './Repo'
+import CommonImage from '../Common/Image'
 import RatioContainer from '../Common/RatioContainer'
 
 const Wrapper = styled.div`
@@ -16,7 +17,11 @@ const ImageWrapper = styled.div`
   border-right: 1px solid ${props => props.theme.colors.secondaryText};
 `
 
-const Image = styled.img`
+const ImageWrapperInner = styled.div`
+  width: 72px;
+`
+
+const Image = styled(CommonImage)`
   display: block;
   width: 100%;
 `
@@ -28,14 +33,16 @@ const RepoWrapper = styled.div`
 `
 
 const RepoWithImage = props => {
-  const { url, nameWithOwner, imgSrc } = props
+  const { url, nameWithOwner, image } = props
   return (
     <Wrapper>
       <a href={url} style={{ display: 'block' }}>
         <ImageWrapper>
-          <RatioContainer width={100} height={100}>
-            <Image src={imgSrc} alt={`${nameWithOwner} logo`} />
-          </RatioContainer>
+          <ImageWrapperInner>
+            <RatioContainer width={100} height={100}>
+              <Image image={image} alt={`${nameWithOwner} logo`} />
+            </RatioContainer>
+          </ImageWrapperInner>
         </ImageWrapper>
         <RepoWrapper>
           <Repo small {...props} />

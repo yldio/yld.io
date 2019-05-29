@@ -34,7 +34,7 @@ storiesOf('Repo', module)
               pullRequestCount={123}
               starCount={123}
               img={true}
-              imgSrc={'https://www.placecage.com/800/1000/'}
+              image={{ file: { url: '/joyent72.svg' } }}
             />
           </Col>
         </Row>

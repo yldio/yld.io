@@ -1,1 +1,3 @@
 *.snap
+*.svg
+.prettierignore
