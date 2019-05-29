@@ -73,12 +73,31 @@ class ContactUs extends Component {
     const { name, email, message, submitting, success } = this.state
     const {
       location,
-      data: { contentfulPage: page }
+      data: {
+        contentfulPage: {
+          title,
+          slug,
+          seoTitle,
+          seoMetaDescription,
+          titleNotContacted,
+          titleContacted,
+          labelInterests,
+          interests,
+          labelYourMessage,
+          labelYourName,
+          labelYourEmail,
+          privacyPolicyText,
+          privacyPolicyLinkText,
+          statusNotSent,
+          statusSent,
+          successMessage
+        }
+      }
     } = this.props
 
     return (
       <Layout location={location}>
-        <Head page={page} />
+        <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
         <form
           name="contact"
           method="post"
@@ -88,9 +107,7 @@ class ContactUs extends Component {
           style={{ width: '100%' }}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <TitleSection
-            title={page[success ? 'titleContacted' : 'titleNotContacted']}
-          />
+          <TitleSection title={success ? titleContacted : titleNotContacted} />
           <GreyBackground>
             <Grid>
               <Padding
@@ -98,17 +115,17 @@ class ContactUs extends Component {
                 bottom={{ smallPhone: 3.5, tablet: 5 }}
               >
                 {success ? (
-                  <ThankYouMessage message={page.successMessage} />
+                  <ThankYouMessage message={successMessage} />
                 ) : (
                   <Fragment>
                     <AreasOfInterest
-                      title={page.labelInterests}
-                      interests={page.interests}
+                      title={labelInterests}
+                      interests={interests}
                       onChange={this.handleChangeCheckbox}
                     />
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
-                        <Label htmlFor="message">{page.labelYourMessage}</Label>
+                        <Label htmlFor="message">{labelYourMessage}</Label>
                         <Input
                           as="textarea"
                           noBoxShadow={!this.state.triedSubmitting}
@@ -123,7 +140,7 @@ class ContactUs extends Component {
                     </Row>
                     <Row>
                       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
-                        <Label htmlFor="name">{page.labelYourName}</Label>
+                        <Label htmlFor="name">{labelYourName}</Label>
                         <Input
                           id="name"
                           type="text"
@@ -132,7 +149,7 @@ class ContactUs extends Component {
                           onChange={this.handleChange}
                           required
                         />
-                        <Label htmlFor="email">{page.labelYourEmail}</Label>
+                        <Label htmlFor="email">{labelYourEmail}</Label>
                         <Input
                           id="email"
                           type="email"
@@ -151,9 +168,9 @@ class ContactUs extends Component {
                               onChange={this.handleChangeCheckbox}
                             />
                             <label htmlFor="privacy">
-                              {page.privacyPolicyText}
+                              {privacyPolicyText}
                               <LinkUnderline to={'/privacy-policy'}>
-                                {page.privacyPolicyLinkText}
+                                {privacyPolicyLinkText}
                               </LinkUnderline>
                             </label>
                           </section>
@@ -163,7 +180,7 @@ class ContactUs extends Component {
                           type="submit"
                           disabled={submitting}
                         >
-                          {page[submitting ? 'statusSent' : 'statusNotSent']}
+                          {submitting ? statusSent : statusNotSent}
                         </Button>
                       </Col>
                     </Row>
