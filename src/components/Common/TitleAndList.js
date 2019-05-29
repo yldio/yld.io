@@ -6,6 +6,7 @@ import { Padding } from 'styled-components-spacing'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 import theme from '../../utils/theme'
+import Image from './Image'
 
 const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
@@ -58,6 +59,7 @@ const TitleAndList = ({
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
+                  {el.image && <Image image={el.image} />}
                   <ItemSubtitle themeVariation={themeVariation}>
                     {el.title}
                   </ItemSubtitle>
