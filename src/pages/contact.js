@@ -13,20 +13,10 @@ import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
 
-const interests = [
-  { name: 'engineering', label: 'Engineering services' },
-  { name: 'design', label: 'Design services' },
-  { name: 'training', label: 'Training services' },
-  { name: 'join', label: 'Joining our team' },
-  { name: 'community', label: 'Community' },
-  { name: 'none', label: 'None of these' }
-]
-
-function encode(data) {
-  return Object.keys(data)
+const encode = data =>
+  Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
-}
 
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
@@ -113,7 +103,7 @@ class ContactUs extends Component {
                   <Fragment>
                     <AreasOfInterest
                       title={page.labelInterests}
-                      interests={interests}
+                      interests={page.interests}
                       onChange={this.handleChangeCheckbox}
                     />
                     <Row>
@@ -200,14 +190,18 @@ const Contact = props => (
           titleNotContacted
           titleContacted
           labelInterests
+          interests {
+            label
+            name
+          }
+          labelYourMessage
           labelYourName
           labelYourEmail
-          labelYourMessage
-          successMessage
           privacyPolicyText
           privacyPolicyLinkText
           statusNotSent
           statusSent
+          successMessage
         }
       }
     `}
