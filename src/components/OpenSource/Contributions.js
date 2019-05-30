@@ -6,10 +6,11 @@ import { Grid, Row, Col } from '../grid'
 import { Repo } from '../Repo'
 import { generate } from 'shortid'
 import StyledLink from '../Common/StyledLink'
+import Image from '../Common/Image'
 import { BodyPrimary } from '../Typography'
 
 const Wrapper = styled(BlueBackground)`
-  padding: ${props => props.theme.spacing[4]};
+  padding: ${props => props.theme.spacing[4]} 0;
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
@@ -20,28 +21,38 @@ const RepoWrapper = styled.div`
   padding-bottom: ${props => props.theme.spacing[3]};
 `
 
+const StyledImage = styled(Image)`
+  max-width: 54px;
+`
+
 const Contributions = ({
   contentfulOpenSourcePage: {
-    contributionsSectionTitle,
+    contributionsSectionImage,
     contributionsSectionDescription,
     contributionsSectionCtaText,
     contributionsSectionCtaLink,
     contributionsSectionGithubRepos: repos,
     contributionsSectionTitleLine1,
     contributionsSectionTitleLine2,
-    contributionsSectionTitleLine3
+    contributionsSectionTitleLine3,
+    openSourceMetaRepoCount,
+    openSourceMetaPullRequestCount
   }
 }) => {
   const contributions = {
     contributionsSectionTitleLine1,
     contributionsSectionTitleLine2,
-    contributionsSectionTitleLine3
+    contributionsSectionTitleLine3,
+    openSourceMetaRepoCount,
+    openSourceMetaPullRequestCount
   }
+
   return (
     <Wrapper>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
+            <StyledImage image={contributionsSectionImage} />
             <ContributionsCopy {...contributions} />
           </Col>
         </Row>

@@ -44,6 +44,17 @@ const OpenSourcePage = props => (
           contributionsSectionTitleLine1
           contributionsSectionTitleLine2
           contributionsSectionTitleLine3
+          openSourceMetaRepoCount
+          openSourceMetaPullRequestCount
+          contributionsSectionImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
           contributionsSectionDescription
           contributionsSectionCtaText
           contributionsSectionCtaLink
