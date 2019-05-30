@@ -47,9 +47,15 @@ const OpenSourcePage = props => (
             name
             logoLightTheme {
               title
+              file {
+                url
+              }
             }
             logoDarkTheme {
               title
+              file {
+                url
+              }
             }
             url
             membershipLevel

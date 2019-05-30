@@ -8,7 +8,10 @@ import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
   <Col key={name} width={1 / 3}>
-    <Image image={logoDarkTheme.title} alt={`Image of ${name}`} />
+    <Image
+      image={logoDarkTheme.file.url}
+      alt={`Image of ${logoDarkTheme.title}`}
+    />
     <SubtitleWithBody
       subtitle={membershipLevel}
       body={description}
