@@ -45,7 +45,7 @@ const PartnershipsSection = ({ title, partners }) => (
   <BlueBackground>
     <Grid>
       <Row>
-        <StyledSectionTitle width={[1 / 2]}>
+        <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
           <SectionTitle reverse>{title}</SectionTitle>
         </StyledSectionTitle>
       </Row>
