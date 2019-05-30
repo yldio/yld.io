@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 
 const OpenSource = ({ data }) => {
@@ -12,6 +13,7 @@ const OpenSource = ({ data }) => {
       slug,
       seoTitle,
       seoMetaDescription,
+      talksSectionTitle,
       technologyPartnersSectionTitle,
       technologyPartners
     }
@@ -21,11 +23,12 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
+      <TalksSection title={talksSectionTitle} />
+      <p>open source page</p>
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
       />
-      <p>open source page</p>
       {/* All the sections go herer */}
     </Layout>
   )
@@ -41,6 +44,7 @@ const OpenSourcePage = props => (
           seoTitle
           seoDescription
           statement
+          talksSectionTitle
           technologyPartnersSectionTitle
           technologiesSectionTitle
           technologyPartners {
