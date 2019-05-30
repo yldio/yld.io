@@ -21,7 +21,7 @@ export default function SeoLinks({ items, ...props }) {
     <PagePaths
       render={pathsById => (
         <List as="ul" {...props}>
-          {(items || []).map((item, i) => {
+          {(items || []).map(item => {
             const path = pathsById[item.id]
             if (path) {
               return (

@@ -1,5 +1,5 @@
 const got = require('got')
-const { parse, format } = require('url')
+const { URL, format } = require('url')
 const isEqual = require('lodash.isequal')
 
 /**
@@ -18,21 +18,21 @@ const isEqual = require('lodash.isequal')
  *
  */
 const {
-  URL,
+  URL: NETLIFY_URL,
   LAMBDA_ENV = 'development',
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
 
   const metaHref = format({
-    ...parse(isProd ? URL : 'http://localhost:8000'),
+    ...URL(isProd ? NETLIFY_URL : 'http://localhost:8000'),
     pathname: '/meta.json'
   })
 
   const leverHref = format({
-    ...parse('https://api.lever.co'),
+    ...URL('https://api.lever.co'),
     pathname: '/v0/postings/yld',
     query: {
       mode: 'json'

@@ -9,10 +9,10 @@ import CompactVideoLink from '../Common/CompactVideoLink'
 import StyledLink from '../Common/StyledLink'
 import theme from '../../utils/theme'
 
-const TalksSection = ({ talks: allTalks, videoIcon }) => {
-  const talks = allTalks.filter(({ type, featured, cta }) => !featured && !cta)
-  const featured = allTalks.find(({ type, featured }) => featured)
-  const cta = allTalks.find(({ type, cta }) => cta)
+const TalksSection = ({ talks: allTalks }) => {
+  const talks = allTalks.filter(({ featured, cta }) => !featured && !cta)
+  const featured = allTalks.find(({ featured }) => featured)
+  const cta = allTalks.find(({ cta }) => cta)
   return talks.length ? (
     <BlueBackground>
       <Grid>

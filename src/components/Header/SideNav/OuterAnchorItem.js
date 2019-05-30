@@ -7,7 +7,7 @@ import outlineStyles from '../outlineStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
 
-const StyledAnchor = styled(Anchor).attrs(props => ({
+const StyledAnchor = styled(Anchor).attrs(() => ({
   states: outerItemStates
 }))`
   display: block;

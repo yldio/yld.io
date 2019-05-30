@@ -7,7 +7,7 @@ require('dotenv').config()
 let server
 
 fixture`Top Nav Menu`.page`${baseUrl}`
-  .before(async t => {
+  .before(async () => {
     server = createServer(port)
   })
   .after(() => server.close())
