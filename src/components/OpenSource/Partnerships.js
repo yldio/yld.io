@@ -17,15 +17,22 @@ const StyledPartnersRow = styled(Row)`
 `
 
 const StyledImage = styled(Image)`
-  /* max-height: 50%; */
+  max-height: 100%;
+  max-width: 60%;
+`
+
+const StyledImageContainer = styled.div`
+  height: ${remcalc(108)};
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
   <Col key={name} width={1 / 3}>
-    <StyledImage
-      image={logoDarkTheme}
-      alt={`Image of ${logoDarkTheme.title}`}
-    />
+    <StyledImageContainer>
+      <StyledImage
+        image={logoDarkTheme}
+        alt={`Image of ${logoDarkTheme.title}`}
+      />
+    </StyledImageContainer>
     <SubtitleWithBody
       subtitle={membershipLevel}
       body={description}
