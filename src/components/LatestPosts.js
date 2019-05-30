@@ -24,7 +24,7 @@ const POSTS = graphql`
   }
 `
 
-const LatestPosts = ({ children }) => (
+const LatestPosts = ({ data, children }) => (
   <StaticQuery
     query={POSTS}
     render={({ allMediumPost }) => children(allMediumPost.edges)}

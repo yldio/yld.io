@@ -41,7 +41,7 @@ const getSpecialityEvents = (title, events) =>
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
-const EventSection = ({ events, title }) => {
+const EventSection = ({ events, title, eventIcon }) => {
   const specialityEvents = events ? getSpecialityEvents(title, events) : []
   const hasEvents = !!specialityEvents.length
 
