@@ -26,7 +26,7 @@ const StyledImageContainer = styled.div`
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
-  <Col key={name} width={1 / 3}>
+  <Col key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
     <StyledImageContainer>
       <StyledImage
         image={logoDarkTheme}
