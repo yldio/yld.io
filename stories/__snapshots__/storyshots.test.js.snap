@@ -7537,6 +7537,19 @@ exports[`Storyshots Header Header itself 1`] = `
                     Training
                   </a>
                 </li>
+                <li
+                  className="c12"
+                >
+                  <a
+                    className="c13"
+                    href="/open-source/"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Open Source
+                  </a>
+                </li>
               </ul>
             </li>
             <li
