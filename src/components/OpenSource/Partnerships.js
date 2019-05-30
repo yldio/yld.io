@@ -3,6 +3,7 @@ import React from 'react'
 import BlueBackground from '../Common/BlueBackground'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
+import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 // will come from Contentful
@@ -11,28 +12,36 @@ const data = {
   partners: [
     {
       name: 'Node foundation',
-      type: 'Silver member',
+      logo: '',
+      membershipLevel: 'Silver member',
       description:
         'YLD was one the first members of the Node.js Foundation, whose purpose is to support the ongoing growth and evolution of the Node.js platform, while maintaining a collaborative environment that benefits all.'
     },
     {
       name: 'Cloud native',
-      type: 'Silver member',
+      logo: '',
+      membershipLevel: 'Silver member',
       description:
         'We are members of the Cloud Native Computing Foundation, whose purpose is to foster the community by sustaining and integrating open-source technologies such as Kubernetes and orchestrating containers as part of a microservices architecture.'
     },
     {
       name: 'Docker',
-      type: 'Silver member',
+      logo: '',
+      membershipLevel: 'Silver member',
       description:
         'YLD was one the first members of the Node.js Foundation, whose purpose is to support the ongoing growth and evolution of the Node.js platform, while maintaining a collaborative environment that benefits all.'
     }
   ]
 }
 
-const PartnerCol = ({ name, type, description }) => (
+const PartnerCol = ({ name, logo, membershipLevel, description }) => (
   <Col key={name} width={1 / 3}>
-    <SubtitleWithBody subtitle={type} body={description} />
+    <Image image={logo} alt={`Image of ${name}`} />
+    <SubtitleWithBody
+      subtitle={membershipLevel}
+      body={description}
+      themeVariation="dark"
+    />
   </Col>
 )
 
