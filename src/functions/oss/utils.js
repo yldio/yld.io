@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { get } = require('lodash')
 
 const { LOCALE = 'en-US' } = process.env
@@ -21,12 +22,15 @@ const getContentfulDataFromKeys = (data, keys) =>
   )
 
 const updateEntry = async (contentfulEntry, githubEntry, environment, key) => {
-  contentfulEntry.fields = githubEntry
+  contentfulEntry.fields = { ...contentfulEntry.fields, ...githubEntry }
 
   const id = await contentfulEntry.update()
   const updatedEntry = await environment.getEntry(id.sys.id)
 
-  console.log(`Publishing updated entry for ${key}`)
+  console.log(
+    `Publishing updated entry for ${key}`,
+    JSON.stringify(contentfulEntry.fields, null, 2)
+  )
   await updatedEntry.publish()
 }
 

@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 const Reduce = require('apr-reduce')
 const { find, isEqual } = require('lodash')
 
 const {
   getFieldValue,
-  generateContentfulDataType,
+  generateContentfulData,
   updateEntry
 } = require('./utils')
 const { LAMBDA_ENV = 'development' } = process.env
@@ -40,7 +41,7 @@ const Repos = async (environment, { repos }) => {
       getFieldValue(contentfulRepo, 'url')
     ])
 
-    const contentfulRepoFromGithub = generateContentfulDataType(
+    const contentfulRepoFromGithub = generateContentfulData(
       githubRepo,
       repoKeys
     )

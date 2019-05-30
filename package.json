@@ -5,6 +5,8 @@
   "author": "YLD <hello@yld.io>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
+    "@yldio/oss-stats": "^1.0.1",
+    "apr-reduce": "^3.0.3",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",

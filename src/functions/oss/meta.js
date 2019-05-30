@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { LAMBDA_ENV = 'development' } = process.env
 const { head, isEqual } = require('lodash')
 
@@ -7,29 +8,32 @@ const {
   updateEntry
 } = require('./utils')
 
-const metaKeys = ['repoCount', 'pullRequestCount']
+const contentfulMetaKeys = [
+  'openSourceMetaRepoCount',
+  'openSourceMetaPullRequestCount'
+]
 
 const Meta = async (environment, githubMetaData) => {
   const isProd = LAMBDA_ENV === 'production'
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
-    content_type: 'githubOpenSourceMeta'
+    content_type: 'openSourcePage'
   })
 
   const currentContentfulData = head(contentfulMetas)
 
   const contentfulMetaData = getContentfulDataFromKeys(
     currentContentfulData,
-    metaKeys
+    contentfulMetaKeys
   )
 
-  const fieldsAreEqual = !isEqual(contentfulMetaData, githubMetaData)
+  const fieldsAreEqual = isEqual(contentfulMetaData, githubMetaData)
 
   if (isProd && !fieldsAreEqual) {
     await updateEntry(
       currentContentfulData,
-      generateContentfulData(githubMetaData, metaKeys),
+      generateContentfulData(githubMetaData, contentfulMetaKeys),
       environment,
       'github meta data'
     )

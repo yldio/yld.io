@@ -25,7 +25,11 @@ exports.handler = async () => {
   }
 
   // Get github data
-  const { repos, repoCount, pullRequestCount } = await getData({
+  const {
+    repos,
+    repoCount: openSourceMetaRepoCount,
+    pullRequestCount: openSourceMetaPullRequestCount
+  } = await getData({
     org,
     token: GITHUB_TOKEN
   })
@@ -37,12 +41,14 @@ exports.handler = async () => {
     accessToken: CMS_CRUD
   })
 
-  const environment = await client
-    .getSpace(CONTENTFUL_SPACE)
-    .getEnvironment('master')
+  const space = await client.getSpace(CONTENTFUL_SPACE)
+  const environment = await space.getEnvironment('master')
 
-  const [meta, updatedRepos] = Promise.all([
-    Meta(environment, { repoCount, pullRequestCount }),
+  const [meta, updatedRepos] = await Promise.all([
+    Meta(environment, {
+      openSourceMetaPullRequestCount,
+      openSourceMetaRepoCount
+    }),
     Repos(environment, { repos })
   ]).catch(err => {
     throw new Error(err)

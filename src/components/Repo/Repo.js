@@ -18,7 +18,9 @@ const Repo = ({
 }) => (
   <Fragment>
     <a href={url}>
-      <Subtitle noPadding={small}>{nameWithOwner}</Subtitle>
+      <Subtitle reverse={!small} noPadding>
+        {nameWithOwner}
+      </Subtitle>
     </a>
     <BodyStylised noPadding>{pullRequestCount} Contributions</BodyStylised>
     <BodyStylised noPadding>{starCount} Stars</BodyStylised>

@@ -1,3 +1,4 @@
 *.snap
 *.svg
 .prettierignore
+yarn.lock
