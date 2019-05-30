@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import PartnershipsSection from '../components/OpenSource/Partnerships'
 
 const OpenSource = ({ data }) => {
   const {
@@ -13,6 +14,7 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
+      <PartnershipsSection />
       <p>open source page</p>
       {/* All the sections go herer */}
     </Layout>
