@@ -9,7 +9,8 @@ import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledSectionTitle = styled(Col)`
-  padding: ${remcalc(83)} 0;
+  padding-top: ${remcalc(83)};
+  padding-bottom: ${remcalc(83)};
 `
 
 const StyledPartnersRow = styled(Row)`

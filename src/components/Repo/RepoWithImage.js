@@ -7,8 +7,6 @@ import RatioContainer from '../Common/RatioContainer'
 
 const Link = styled.a`
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 `
 
 const Wrapper = styled.div`

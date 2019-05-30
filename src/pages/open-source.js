@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
+
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 
@@ -24,12 +25,12 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
+      <OpenDeliverables {...data} />
+      <Contributions {...data} />
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
       />
-      <OpenDeliverables {...data} />
-      <Contributions {...data} />
     </Layout>
   )
 }
@@ -63,44 +64,45 @@ const OpenSourcePage = props => (
             url
             membershipLevel
             description
-            openDeliverablesSectionTitle
-            openDeliverablesClientReposSubtitle
-            openDeliverablesSectionDescription {
-              openDeliverablesSectionDescription
-            }
-            openDeliverablesClientRepos {
-              id
+          }
+          openDeliverablesSectionTitle
+          openDeliverablesClientReposSubtitle
+          openDeliverablesSectionDescription {
+            openDeliverablesSectionDescription
+          }
+          openDeliverablesClientRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
+          }
+          contributionsSectionTitleLine1
+          contributionsSectionTitleLine2
+          contributionsSectionTitleLine3
+          openSourceMetaRepoCount
+          openSourceMetaPullRequestCount
+          contributionsSectionImage {
+            title
+            file {
               url
-              nameWithOwner
-              pullRequestCount
-              starCount
             }
-            contributionsSectionTitleLine1
-            contributionsSectionTitleLine2
-            contributionsSectionTitleLine3
-            openSourceMetaRepoCount
-            openSourceMetaPullRequestCount
-            contributionsSectionImage {
-              title
-              file {
-                url
-              }
-              fluid(maxWidth: 250) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
-            }
-            contributionsSectionDescription
-            contributionsSectionCtaText
-            contributionsSectionCtaLink
-            contributionsSectionGithubRepos {
-              id
-              url
-              nameWithOwner
-              pullRequestCount
-              starCount
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
+          contributionsSectionDescription
+          contributionsSectionCtaText
+          contributionsSectionCtaLink
+          contributionsSectionGithubRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
+          }
         }
+      }
     `}
     render={data => <OpenSource data={data} {...props} />}
   />
