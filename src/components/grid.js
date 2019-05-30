@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -47,7 +48,7 @@ const rule = args => args.join(';')
 const media = (bp, body) =>
   bp ? `@media screen and (min-width:${remcalc(bp)}){${body}}` : body
 
-const width = () => n => {
+const width = scale => (key, n) => {
   if (n === 0) {
     return `
       width: 0;
@@ -86,13 +87,13 @@ const directions = {
   y: ['-top', '-bottom']
 }
 
-const block = n => dec(['display', n ? 'block' : 'flex'])
-const wrap = n => dec(['flex-wrap', n ? 'wrap' : 'nowrap'])
-const auto = () => dec(['flex', '1 1 auto'])
-const column = n => dec(['flex-direction', n ? 'column' : 'row'])
-const align = n => dec(['align-items', n])
-const justify = n => dec(['justify-content', n])
-const order = n => dec(['order', n])
+const block = (key, n) => dec(['display', n ? 'block' : 'flex'])
+const wrap = (key, n) => dec(['flex-wrap', n ? 'wrap' : 'nowrap'])
+const auto = (key, n) => dec(['flex', '1 1 auto'])
+const column = (key, n) => dec(['flex-direction', n ? 'column' : 'row'])
+const align = (key, n) => dec(['align-items', n])
+const justify = (key, n) => dec(['justify-content', n])
+const order = (key, n) => dec(['order', n])
 
 const stylers = () => ({
   m: space(spacing),
