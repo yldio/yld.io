@@ -21,6 +21,11 @@ const ItemBody = styled(Body)`
 const SquareImg60 = styled(Image)`
   max-width: 60px;
   max-height: 60px;
+  padding-bottom: 12px;
+
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
 `
 
 const TitleAndList = ({
@@ -35,6 +40,8 @@ const TitleAndList = ({
     )
     titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
   }, [])
+
+  // there is no image in the `typeof list === 'string'` because that would come from a textarea input from contentful as a bullet list, so if we want an image per bullet, we MUST pass the list as an array of objects.
 
   return (
     <OuterPaddings>
