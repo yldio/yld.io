@@ -34,18 +34,20 @@ const OpenDeliverables = props => {
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <BodyPrimary>{openDeliverablesSectionDescription}</BodyPrimary>
           </Col>
-          <Col width={[1, 1, 1, 1, 4 / 12]}>
+          <Col width={[1, 1, 1, 1, 5 / 12]}>
             <StyledSubtitle>
               {openDeliverablesClientReposSubtitle}
             </StyledSubtitle>
           </Col>
-          <Col width={[1, 1, 1, 1, 1]}>
-            {openDeliverablesClientRepos &&
-              openDeliverablesClientRepos.length &&
-              openDeliverablesClientRepos.map(({ id, ...props }) => (
-                <RepoWithImage key={id} {...props} />
-              ))}
-          </Col>
+        </Row>
+        <Row>
+          {openDeliverablesClientRepos &&
+            openDeliverablesClientRepos.length &&
+            openDeliverablesClientRepos.map(({ id, ...props }) => (
+              <Col key={id} width={[1, 1, 1, 6 / 12, 6 / 12, 6 / 12, 4 / 12]}>
+                <RepoWithImage {...props} />
+              </Col>
+            ))}
         </Row>
       </Grid>
     </Wrapper>

@@ -40,6 +40,7 @@ const OpenSourcePage = props => (
             url
             nameWithOwner
             pullRequestCount
+            starCount
           }
           contributionsSectionTitleLine1
           contributionsSectionTitleLine2
@@ -63,6 +64,7 @@ const OpenSourcePage = props => (
             url
             nameWithOwner
             pullRequestCount
+            starCount
           }
         }
       }

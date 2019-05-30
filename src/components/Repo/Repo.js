@@ -22,8 +22,12 @@ const Repo = ({
         {nameWithOwner}
       </Subtitle>
     </a>
-    <BodyStylised noPadding>{pullRequestCount} Contributions</BodyStylised>
-    <BodyStylised noPadding>{starCount} Stars</BodyStylised>
+    <BodyStylised small={small} noPadding>
+      {pullRequestCount} Contributions
+    </BodyStylised>
+    <BodyStylised small={small} noPadding>
+      {starCount} Stars
+    </BodyStylised>
     {!small && <StyledHr short />}
   </Fragment>
 )
