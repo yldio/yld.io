@@ -41,10 +41,18 @@ const OpenSourcePage = props => (
             nameWithOwner
             pullRequestCount
           }
-          contributionsSectionTitle
+          contributionsSectionTitleLine1
+          contributionsSectionTitleLine2
+          contributionsSectionTitleLine3
           contributionsSectionDescription
           contributionsSectionCtaText
           contributionsSectionCtaLink
+          contributionsSectionGithubRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+          }
         }
       }
     `}

@@ -17,7 +17,8 @@ const Contributions = ({
     contributionsSectionTitle,
     contributionsSectionDescription,
     contributionsSectionCtaText,
-    contributionsSectionCtaLink
+    contributionsSectionCtaLink,
+    contributionsSectionGithubRepos: repos
   }
 }) => {
   return (
@@ -39,13 +40,13 @@ const Contributions = ({
           </Col>
         </Row>
         <Row>
-          {/* {repos &&
+          {repos &&
             repos.length &&
             repos.map(repo => (
-              <Col width={[1, 1, 1, 1]}>
-                <Repo key={generate()} {...repo} />
+              <Col key={generate()} width={[1, 1, 1, 1]}>
+                <Repo {...repo} />
               </Col>
-            ))} */}
+            ))}
         </Row>
         <Row>
           <Col width={[1, 1, 1, 1, 1]}>
