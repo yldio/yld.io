@@ -13,6 +13,10 @@ const navLinks = [
       {
         label: 'Training',
         to: '/training/'
+      },
+      {
+        label: 'Open Source',
+        to: '/open-source/'
       }
     ]
   },
