@@ -7,14 +7,24 @@ import PartnershipsSection from '../components/OpenSource/Partnerships'
 
 const OpenSource = ({ data }) => {
   const {
-    contentfulOpenSourcePage: { title, slug, seoTitle, seoMetaDescription }
+    contentfulOpenSourcePage: {
+      title,
+      slug,
+      seoTitle,
+      seoMetaDescription,
+      technologyPartnersSectionTitle,
+      technologyPartners
+    }
   } = data
 
   return (
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
-      <PartnershipsSection />
+      <PartnershipsSection
+        title={technologyPartnersSectionTitle}
+        partners={technologyPartners}
+      />
       <p>open source page</p>
       {/* All the sections go herer */}
     </Layout>
@@ -32,6 +42,7 @@ const OpenSourcePage = props => (
           seoDescription
           statement
           technologyPartnersSectionTitle
+          technologiesSectionTitle
           technologyPartners {
             name
             logoLightTheme {
@@ -44,7 +55,6 @@ const OpenSourcePage = props => (
             membershipLevel
             description
           }
-          technologiesSectionTitle
         }
       }
     `}
