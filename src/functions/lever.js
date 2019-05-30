@@ -27,8 +27,7 @@ exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
 
   const metaHref = new URL(
-    '/meta.json',
-    isProd ? NETLIFY_URL : 'http://localhost:8000'
+    `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`
   )
 
   const leverHref = new URL(
