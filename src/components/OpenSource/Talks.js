@@ -1,13 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
+import CompactVideoLink from '../Common/CompactVideoLink'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
 const StyledSectionTitle = styled(Col)`
-  padding: ${remcalc(83)} 0;
+  padding: ${remcalc(83)} 0 ${remcalc(41)};
+
+  ${breakpoint('smallTablet')`
+    padding-left: ${remcalc(21)};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-left: ${remcalc(24)};
+  `}
 `
 
 const StyledTalksRow = styled(Row)`
@@ -23,12 +33,14 @@ const TalkCol = ({
   additionalInfo,
   colorCode
 }) => (
-  <Col key={title} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
+  <CompactVideoLink
+    key={title}
+    href={link}
+    themeVariation="dark"
+    mode="standalone"
+  >
     {title}
-    <br />
-    <br />
-    {link}
-  </Col>
+  </CompactVideoLink>
 )
 
 const TalksSection = ({ title, talks }) => (
