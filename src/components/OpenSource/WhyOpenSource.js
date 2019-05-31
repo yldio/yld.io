@@ -7,7 +7,7 @@ import LogoGrid from '../Common/LogoGrid'
 
 const WhyOpenSource = ({ title, list, subtitle, extraContent, companies }) => {
   return (
-    <Padding>
+    <div>
       <TitleAndListWithOptionalLogos
         title={title}
         list={list}
@@ -15,7 +15,7 @@ const WhyOpenSource = ({ title, list, subtitle, extraContent, companies }) => {
       />
       <Subtitle>{subtitle}</Subtitle>
       <LogoGrid companies={companies} />
-    </Padding>
+    </div>
   )
 }
 
