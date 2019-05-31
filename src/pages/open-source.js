@@ -26,11 +26,7 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, seoTitle, seoMetaDescription }} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
-      <GreyBackground>
-        <Grid>
-          <Statement>{statement}</Statement>
-        </Grid>
-      </GreyBackground>
+      <Statement>{statement}</Statement>
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
