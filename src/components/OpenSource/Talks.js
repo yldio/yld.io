@@ -10,7 +10,28 @@ const StyledSectionTitle = styled(Col)`
   padding: ${remcalc(83)} 0;
 `
 
-const TalksSection = ({ title }) => (
+const StyledTalksRow = styled(Row)`
+  padding-bottom: ${remcalc(60)};
+`
+
+const TalkCol = ({
+  title,
+  type,
+  link,
+  cta,
+  featured,
+  additionalInfo,
+  colorCode
+}) => (
+  <Col key={title} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
+    {title}
+    <br />
+    <br />
+    {link}
+  </Col>
+)
+
+const TalksSection = ({ title, talks }) => (
   <BlueBackground>
     <Grid>
       <Row>
@@ -18,6 +39,9 @@ const TalksSection = ({ title }) => (
           <SectionTitle reverse>{title}</SectionTitle>
         </StyledSectionTitle>
       </Row>
+      <StyledTalksRow>
+        {talks && talks.length && talks.map(talk => TalkCol(talk))}
+      </StyledTalksRow>
     </Grid>
   </BlueBackground>
 )

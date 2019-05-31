@@ -14,6 +14,7 @@ const OpenSource = ({ data }) => {
       seoTitle,
       seoMetaDescription,
       talksSectionTitle,
+      talksSectionTalks,
       technologyPartnersSectionTitle,
       technologyPartners
     }
@@ -23,7 +24,7 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
-      <TalksSection title={talksSectionTitle} />
+      <TalksSection title={talksSectionTitle} talks={talksSectionTalks} />
       <p>open source page</p>
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
@@ -45,6 +46,11 @@ const OpenSourcePage = props => (
           seoDescription
           statement
           talksSectionTitle
+          talksSectionTalks {
+            title
+            type
+            link
+          }
           technologyPartnersSectionTitle
           technologiesSectionTitle
           technologyPartners {
