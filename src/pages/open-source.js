@@ -37,7 +37,6 @@ const OpenSource = ({ data }) => {
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
       />
-      {/* All the sections go herer */}
     </Layout>
   )
 }
@@ -46,9 +45,8 @@ const OpenSourcePage = props => (
   <StaticQuery
     query={graphql`
       query {
-        contentfulOpenSourcePage(slug: { eq: "open-source" }) {
+        contentfulOpenSourcePage {
           title
-          slug
           seoTitle
           seoDescription
           statement

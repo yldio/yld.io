@@ -7537,19 +7537,6 @@ exports[`Storyshots Header Header itself 1`] = `
                     Training
                   </a>
                 </li>
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/open-source/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                  >
-                    Open Source
-                  </a>
-                </li>
               </ul>
             </li>
             <li
@@ -7562,6 +7549,18 @@ exports[`Storyshots Header Header itself 1`] = `
                 onMouseEnter={[Function]}
               >
                 Our work
+              </a>
+            </li>
+            <li
+              className="c14"
+            >
+              <a
+                className="c15"
+                href="/open-source/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Open Source
               </a>
             </li>
             <li
@@ -7772,6 +7771,34 @@ exports[`Storyshots Header Header itself 1`] = `
                 }
               >
                 Our work
+              </a>
+            </li>
+            <li
+              className="c22"
+            >
+              <a
+                className="c23"
+                href="/open-source/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                states={
+                  Object {
+                    "default": Array [
+                      "
+  color: #858196;
+",
+                    ],
+                    "hoverActive": Array [
+                      "
+  color: ",
+                      [Function],
+                      ";
+",
+                    ],
+                  }
+                }
+              >
+                Open Source
               </a>
             </li>
             <li
