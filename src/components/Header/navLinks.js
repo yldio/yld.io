@@ -13,16 +13,16 @@ const navLinks = [
       {
         label: 'Training',
         to: '/training/'
-      },
-      {
-        label: 'Open Source',
-        to: '/open-source/'
       }
     ]
   },
   {
     label: 'Our work',
     to: '/our-work/'
+  },
+  {
+    label: 'Open Source',
+    to: '/open-source/'
   },
   {
     label: 'Blog',
