@@ -35,7 +35,6 @@ const OpenSourcePage = props => (
       query {
         contentfulOpenSourcePage {
           title
-          slug
           seoTitle
           seoDescription
           statement
