@@ -121,9 +121,9 @@ The aim of this lammbda is to have up to date metrics of yld's open source contr
   We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enyzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value edtiable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
 
 - Meta
-  Meta data is used a summary of all the repositories that yldio organisation has contributed to. We have created a content type named `githubOpenSourceMeta` where we will store all of the
+  Meta data is used a summary of all the repositories that yldio organisation has contributed to. This data is written directly to the Open Source content type.
 
-Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all opern source contributions for `yldio` organization memembers.
+Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
 
 ## Content Model notes
 
