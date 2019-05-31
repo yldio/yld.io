@@ -9,7 +9,6 @@ const OpenSource = ({ data }) => {
   const {
     contentfulOpenSourcePage: {
       title,
-      slug,
       seoTitle,
       seoMetaDescription,
       technologyPartnersSectionTitle,
@@ -19,7 +18,7 @@ const OpenSource = ({ data }) => {
 
   return (
     <Layout>
-      <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
+      <Head page={{ title, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
