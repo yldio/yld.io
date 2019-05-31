@@ -8,7 +8,7 @@ import { Subtitle } from '../Typography'
 
 import { Section, Separator, TitleAndBody } from './elements'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import TitleAndList from '../Common/TitleAndList'
+import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
 
 const InsightAnchor = styled(ExternalAnchor)`
   display: flex;
