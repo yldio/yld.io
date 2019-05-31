@@ -5,8 +5,7 @@ const specialitiesMap = {
   design: [],
   training: [],
   delivery: [],
-  dedicatedTeams: [],
-  openSource: []
+  dedicatedTeams: []
 }
 
 const logoColors = {
@@ -24,7 +23,6 @@ const logoColors = {
   training: {},
   delivery: {},
   dedicatedTeams: {},
-  openSource: {},
   specialityText: theme.colors.blueBg,
   specialityHover: theme.colors.white
 }
