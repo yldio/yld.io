@@ -3,7 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import styled from 'styled-components'
 import BlueBackground from '../src/components/Common/BlueBackground'
-import { Repo, RepoWithImage } from '../src/components/Repo'
+import { Repo, RepoWithImage } from '../src/components/Common/Repo'
 
 addDecorator(Theme)
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 import GreyBackground from '../Common/GreyBackground'
-import RepoWithImage from '../Repo/RepoWithImage'
+import RepoWithImage from '../Common/Repo/RepoWithImage'
 
 const Wrapper = styled(GreyBackground)`
   padding: ${props => props.theme.spacing[4]} 0;

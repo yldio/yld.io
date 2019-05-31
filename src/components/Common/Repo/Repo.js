@@ -1,13 +1,19 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import BodyStylised from '../Typography/BodyStylised'
+import BodyStylised from '../../Typography/BodyStylised'
 import remcalc from 'remcalc'
-import Subtitle from '../Typography/Subtitle'
-import Hr from '../Common/Hr'
-import ExternalAnchor from '../Common/ExternalAnchor'
+import Subtitle from '../../Typography/Subtitle'
+import Hr from '../Hr'
+import ExternalAnchor from '../ExternalAnchor'
 
 const StyledHr = styled(Hr)`
   margin-top: ${remcalc(30)};
+`
+
+const RepoNameEllipsis = styled.div`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 const Repo = ({
@@ -23,7 +29,7 @@ const Repo = ({
     <Fragment>
       <ExternalAnchor href={url}>
         <Subtitle reverse={isDark} noPaddingBottom={!small} noPadding={small}>
-          {nameWithOwner}
+          <RepoNameEllipsis>{nameWithOwner}</RepoNameEllipsis>
         </Subtitle>
       </ExternalAnchor>
       <BodyStylised small={small} noPadding>
