@@ -16538,9 +16538,7 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
   }
 }
 
-<div
-  className=""
->
+<div>
   <div
     className="c0"
   >
