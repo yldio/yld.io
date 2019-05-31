@@ -43,20 +43,18 @@ const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
 )
 
 const PartnershipsSection = ({ title, partners }) => (
-  <BlueBackground>
-    <Grid>
-      <Row>
-        <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
-          <SectionTitle reverse>{title}</SectionTitle>
-        </StyledSectionTitle>
-      </Row>
-      <StyledPartnersRow>
-        {partners &&
-          partners.length &&
-          partners.map(partner => PartnerCol(partner))}
-      </StyledPartnersRow>
-    </Grid>
-  </BlueBackground>
+  <Grid>
+    <Row>
+      <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
+        <SectionTitle reverse>{title}</SectionTitle>
+      </StyledSectionTitle>
+    </Row>
+    <StyledPartnersRow>
+      {partners &&
+        partners.length &&
+        partners.map(partner => PartnerCol(partner))}
+    </StyledPartnersRow>
+  </Grid>
 )
 
 export default PartnershipsSection

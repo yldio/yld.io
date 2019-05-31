@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import Repo from './Repo'
 import CommonImage from '../Common/Image'
 import RatioContainer from '../Common/RatioContainer'
+import ExternalAnchor from '../Common/ExternalAnchor'
 
-const Link = styled.a`
+const Link = styled(ExternalAnchor)`
   display: flex;
 `
 

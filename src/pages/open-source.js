@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
+import BlueBackground from '../components/Common/BlueBackground'
 
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
@@ -13,7 +14,6 @@ const OpenSource = ({ data }) => {
   const {
     contentfulOpenSourcePage: {
       title,
-      slug,
       seoTitle,
       seoMetaDescription,
       technologyPartnersSectionTitle,
@@ -23,14 +23,16 @@ const OpenSource = ({ data }) => {
 
   return (
     <Layout>
-      <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
+      <Head page={{ title, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
       <OpenDeliverables {...data} />
-      <Contributions {...data} />
-      <PartnershipsSection
-        title={technologyPartnersSectionTitle}
-        partners={technologyPartners}
-      />
+      <BlueBackground>
+        <Contributions {...data} />
+        <PartnershipsSection
+          title={technologyPartnersSectionTitle}
+          partners={technologyPartners}
+        />
+      </BlueBackground>
     </Layout>
   )
 }
@@ -39,9 +41,8 @@ const OpenSourcePage = props => (
   <StaticQuery
     query={graphql`
       query {
-        contentfulOpenSourcePage(slug: { eq: "open-source" }) {
+        contentfulOpenSourcePage {
           title
-          slug
           seoTitle
           seoDescription
           statement
