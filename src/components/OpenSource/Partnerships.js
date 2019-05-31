@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
@@ -9,7 +10,15 @@ import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledSectionTitle = styled(Col)`
-  padding: ${remcalc(83)} 0;
+  padding: ${remcalc(83)} 0 ${remcalc(60)};
+
+  ${breakpoint('smallTablet')`
+    padding-left: ${remcalc(21)};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-left: ${remcalc(24)};
+  `}
 `
 
 const StyledPartnersRow = styled(Row)`
