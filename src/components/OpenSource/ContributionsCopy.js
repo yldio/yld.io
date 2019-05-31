@@ -12,7 +12,9 @@ const ContributionsCopy = props => {
   return (
     <Fragment>
       <SectionTitle reverse>
-        {first} {contributions} {second} {projects} {third}
+        {first} <br />
+        {contributions} {second} <br />
+        {projects} {third}
       </SectionTitle>
     </Fragment>
   )
