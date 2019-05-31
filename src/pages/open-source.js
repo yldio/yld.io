@@ -25,8 +25,6 @@ const OpenSource = ({ data }) => {
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
       />
-      <p>open source page</p>
-      {/* All the sections go herer */}
     </Layout>
   )
 }
