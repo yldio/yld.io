@@ -4,6 +4,7 @@ import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
+import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
 
 const OpenSource = ({ data }) => {
   const {
@@ -11,15 +12,51 @@ const OpenSource = ({ data }) => {
       title,
       seoTitle,
       seoMetaDescription,
+      whyOsSectionTitle,
+      whyOsSectionReason1Image,
+      whyOsSectionReason1Title,
+      whyOsSectionReason1Body,
+      whyOsSectionReason2Image,
+      whyOsSectionReason2Title,
+      whyOsSectionReason2Body,
+      whyOsSectionReason3Image,
+      whyOsSectionReason3Title,
+      whyOsSectionReason3Body,
+      whyOsSectionClientsSubtitle,
+      whyOsSectionClients,
       technologyPartnersSectionTitle,
       technologyPartners
     }
   } = data
 
+  const whyOsReasons = [
+    {
+      image: whyOsSectionReason1Image,
+      title: whyOsSectionReason1Title,
+      body: whyOsSectionReason1Body.whyOsSectionReason1Body
+    },
+    {
+      image: whyOsSectionReason2Image,
+      title: whyOsSectionReason2Title,
+      body: whyOsSectionReason2Body.whyOsSectionReason2Body
+    },
+    {
+      image: whyOsSectionReason3Image,
+      title: whyOsSectionReason3Title,
+      body: whyOsSectionReason3Body.whyOsSectionReason3Body
+    }
+  ]
+
   return (
     <Layout>
       <Head page={{ title, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
+      <WhyOpenSource
+        title={whyOsSectionTitle}
+        list={whyOsReasons}
+        subtitle={whyOsSectionClientsSubtitle}
+        companies={whyOsSectionClients}
+      />
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
@@ -37,6 +74,57 @@ const OpenSourcePage = props => (
           seoTitle
           seoDescription
           statement
+          whyOsSectionTitle
+          whyOsSectionReason1Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason1Title
+          whyOsSectionReason1Body {
+            whyOsSectionReason1Body
+          }
+          whyOsSectionReason2Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason2Title
+          whyOsSectionReason2Body {
+            whyOsSectionReason2Body
+          }
+          whyOsSectionReason3Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason3Title
+          whyOsSectionReason3Body {
+            whyOsSectionReason3Body
+          }
+          whyOsSectionClientsSubtitle
+          whyOsSectionClients {
+            id
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
           technologyPartnersSectionTitle
           technologiesSectionTitle
           technologyPartners {
