@@ -13,6 +13,7 @@ const OpenSource = ({ data }) => {
       slug,
       seoTitle,
       seoMetaDescription,
+      talksSectionImage,
       talksSectionTitle,
       talksSectionTalks,
       talkSectionCtaText,
@@ -27,6 +28,7 @@ const OpenSource = ({ data }) => {
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
       <TalksSection
+        icon={talksSectionImage}
         title={talksSectionTitle}
         talks={talksSectionTalks}
         ctaText={talkSectionCtaText}
@@ -50,6 +52,12 @@ const OpenSourcePage = props => (
           seoTitle
           seoDescription
           statement
+          talksSectionImage {
+            title
+            file {
+              url
+            }
+          }
           talksSectionTitle
           talksSectionTalks {
             title

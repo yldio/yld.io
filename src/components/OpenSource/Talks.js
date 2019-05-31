@@ -9,8 +9,12 @@ import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
+const StyledImage = styled.img`
+  padding: ${remcalc(83)} 0 ${remcalc(15)};
+`
+
 const StyledSectionTitle = styled(Col)`
-  padding: ${remcalc(83)} 0 ${remcalc(41)};
+  padding: 0 0 ${remcalc(35)};
 
   ${breakpoint('smallTablet')`
     padding-left: ${remcalc(21)};
@@ -22,7 +26,7 @@ const StyledSectionTitle = styled(Col)`
 `
 
 const StyledTalksRow = styled(Row)`
-  padding-bottom: ${remcalc(60)};
+  padding-bottom: ${remcalc(35)};
 `
 
 const StyledTalksLink = styled(StyledLink)`
@@ -48,9 +52,10 @@ const TalkCol = ({
   </CompactVideoLink>
 )
 
-const TalksSection = ({ title, talks, ctaText, ctaLink }) => (
+const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
   <BlueBackground>
     <Grid>
+      <StyledImage src={icon.file.url} alt={icon.title} />
       <Row>
         <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
           <SectionTitle reverse>{title}</SectionTitle>
