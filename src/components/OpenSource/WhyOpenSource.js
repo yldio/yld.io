@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react'
 
 import TitleAndListWithOptionalLogos from '../Common/TitleAndListWithOptionalLogos'
 import Subtitle from '../Typography/Subtitle'
