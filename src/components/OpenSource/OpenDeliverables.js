@@ -55,6 +55,3 @@ const OpenDeliverables = props => {
 }
 
 export default OpenDeliverables
-// export default styled(OpenDeliverables)`
-//   padding: ${props => props.theme.spacing};
-// `
