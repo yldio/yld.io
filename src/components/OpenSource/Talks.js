@@ -5,6 +5,7 @@ import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
 import CompactVideoLink from '../Common/CompactVideoLink'
+import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
@@ -22,6 +23,10 @@ const StyledSectionTitle = styled(Col)`
 
 const StyledTalksRow = styled(Row)`
   padding-bottom: ${remcalc(60)};
+`
+
+const StyledTalksLink = styled(StyledLink)`
+  padding-bottom: ${remcalc(90)};
 `
 
 const TalkCol = ({
@@ -43,7 +48,7 @@ const TalkCol = ({
   </CompactVideoLink>
 )
 
-const TalksSection = ({ title, talks }) => (
+const TalksSection = ({ title, talks, ctaText, ctaLink }) => (
   <BlueBackground>
     <Grid>
       <Row>
@@ -54,6 +59,9 @@ const TalksSection = ({ title, talks }) => (
       <StyledTalksRow>
         {talks && talks.length && talks.map(talk => TalkCol(talk))}
       </StyledTalksRow>
+      <StyledTalksLink reverse external aria-label={ctaText} href={ctaLink}>
+        {ctaText}
+      </StyledTalksLink>
     </Grid>
   </BlueBackground>
 )
