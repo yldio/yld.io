@@ -1,11 +1,19 @@
 import React from 'react'
-
 import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+
 import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
 import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
+
+const PaddedGrid = styled(Grid)`
+  padding: ${props => props.theme.space[4]} 0;
+
+  ${breakpoint('tablet')`
+    padding: ${props => props.theme.space[6]} 0;
+  `}
+`
 
 const Link = styled(StyledLink)`
   margin-bottom: 0;
@@ -16,41 +24,34 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ richText, children, noPadding }) => (
+const Statement = ({ richText, children }) => (
   <GreyBackground>
-    <Grid>
+    <PaddedGrid>
       <Row>
         <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-          <Padding
-            vertical={{
-              smallPhone: noPadding ? 0 : 3,
-              smallTablet: noPadding ? 0 : 4
-            }}
-          >
-            <DisplayTitle as="h1" textLight>
-              {children}
-              {richText &&
-                richText.map(content => {
-                  if (content.nodeType === 'text') return content.value
+          <DisplayTitle as="h1" textLight>
+            {children}
+            {richText &&
+              richText.map(content => {
+                if (content.nodeType === 'text') return content.value
 
-                  if (content.nodeType === 'hyperlink') {
-                    return (
-                      <Link
-                        key={content.data.uri}
-                        noafter="true"
-                        to={`/${content.data.uri}`}
-                      >
-                        {content.content[0].value}
-                      </Link>
-                    )
-                  }
-                  return ''
-                })}
-            </DisplayTitle>
-          </Padding>
+                if (content.nodeType === 'hyperlink') {
+                  return (
+                    <Link
+                      key={content.data.uri}
+                      noafter="true"
+                      to={`/${content.data.uri}`}
+                    >
+                      {content.content[0].value}
+                    </Link>
+                  )
+                }
+                return ''
+              })}
+          </DisplayTitle>
         </Col>
       </Row>
-    </Grid>
+    </PaddedGrid>
   </GreyBackground>
 )
 
