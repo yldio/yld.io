@@ -75,16 +75,16 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   font-weight: 700;
 }
 
-.c7 {
-  padding-bottom: 2.25rem;
-}
-
 .c3 {
   padding-bottom: 2.25rem;
 }
 
 .c4 {
   padding-bottom: 1.5rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
 }
 
 .c11 {
@@ -784,16 +784,16 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   font-weight: 700;
 }
 
-.c7 {
-  padding-bottom: 2.25rem;
-}
-
 .c3 {
   padding-bottom: 2.25rem;
 }
 
 .c4 {
   padding-bottom: 1.5rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
 }
 
 .c11 {
@@ -13224,7 +13224,7 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -13266,15 +13266,6 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -13283,6 +13274,14 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
   padding: 0.75rem 0;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding: 2.25rem 0;
 }
 
 .c7 {
@@ -13363,42 +13362,42 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -13407,7 +13406,7 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -13416,7 +13415,7 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -13469,8 +13468,7 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -13478,13 +13476,13 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c0"
   >
     <div
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 c4"
         width={
           Array [
             1,
@@ -13495,18 +13493,14 @@ exports[`Storyshots Title and List with optional logos list in form of a string 
           ]
         }
       >
-        <div
-          className="c4"
+        <h2
+          className="c5"
         >
-          <h2
-            className="c5"
-          >
-            This is the Title
-          </h2>
-        </div>
+          This is the Title
+        </h2>
       </div>
       <div
-        className="c3"
+        className="c4"
         width={
           Array [
             1,
@@ -13555,7 +13549,7 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -13597,15 +13591,6 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -13614,6 +13599,14 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
   padding: 0.75rem 0;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding: 2.25rem 0;
 }
 
 .c7 {
@@ -13694,42 +13687,42 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -13738,7 +13731,7 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -13747,7 +13740,7 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -13800,8 +13793,7 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -13809,13 +13801,13 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c0"
   >
     <div
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 c4"
         width={
           Array [
             1,
@@ -13826,18 +13818,14 @@ exports[`Storyshots Title and List with optional logos list in form of an array 
           ]
         }
       >
-        <div
-          className="c4"
+        <h2
+          className="c5"
         >
-          <h2
-            className="c5"
-          >
-            This is the Title
-          </h2>
-        </div>
+          This is the Title
+        </h2>
       </div>
       <div
-        className="c3"
+        className="c4"
         width={
           Array [
             1,
@@ -13897,7 +13885,7 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
   padding-right: 0;
 }
 
-.c4 {
+.c5 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -13945,15 +13933,6 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
   color: #fff;
 }
 
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -13963,6 +13942,14 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
   color: #fff;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c2 {
+  padding: 2.25rem 0;
 }
 
 .c8 {
@@ -14045,42 +14032,42 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14089,7 +14076,7 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14098,7 +14085,7 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -14152,8 +14139,7 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -14164,13 +14150,13 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c1"
     >
       <div
         className="c3"
       >
         <div
-          className="c4"
+          className="c4 c5"
           width={
             Array [
               1,
@@ -14181,18 +14167,14 @@ exports[`Storyshots Title and List with optional logos on dark background 1`] = 
             ]
           }
         >
-          <div
-            className="c5"
+          <h2
+            className="c6"
           >
-            <h2
-              className="c6"
-            >
-              This is the Title
-            </h2>
-          </div>
+            This is the Title
+          </h2>
         </div>
         <div
-          className="c4"
+          className="c5"
           width={
             Array [
               1,
@@ -14253,7 +14235,7 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
   padding-right: 0;
 }
 
-.c4 {
+.c5 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -14295,15 +14277,6 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c5 {
-  padding-bottom: 2.25rem;
-}
-
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -14312,6 +14285,14 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
   padding: 0.75rem 0;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c4 {
+  padding-bottom: 2.25rem;
+}
+
+.c2 {
+  padding: 2.25rem 0;
 }
 
 .c8 {
@@ -14396,42 +14377,42 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14440,7 +14421,7 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14449,7 +14430,7 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -14502,8 +14483,7 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -14514,13 +14494,13 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c1"
     >
       <div
         className="c3"
       >
         <div
-          className="c4"
+          className="c4 c5"
           width={
             Array [
               1,
@@ -14531,18 +14511,14 @@ exports[`Storyshots Title and List with optional logos on grey background 1`] = 
             ]
           }
         >
-          <div
-            className="c5"
+          <h2
+            className="c6"
           >
-            <h2
-              className="c6"
-            >
-              This is the Title
-            </h2>
-          </div>
+            This is the Title
+          </h2>
         </div>
         <div
-          className="c4"
+          className="c5"
           width={
             Array [
               1,
@@ -14603,7 +14579,7 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -14643,15 +14619,6 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
   font-size: 2rem;
   line-height: 2.25rem;
   padding: 0.8125rem 0 0.6875rem 0;
-}
-
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
 }
 
 .c8 {
@@ -14709,6 +14676,14 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
   padding: 0.75rem 0;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding: 2.25rem 0;
 }
 
 .c7 {
@@ -14789,42 +14764,42 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14833,7 +14808,7 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -14842,7 +14817,7 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -14895,8 +14870,7 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -14904,13 +14878,13 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c0"
   >
     <div
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 c4"
         width={
           Array [
             1,
@@ -14921,18 +14895,14 @@ exports[`Storyshots Title and List with optional logos with extra content 1`] = 
           ]
         }
       >
-        <div
-          className="c4"
+        <h2
+          className="c5"
         >
-          <h2
-            className="c5"
-          >
-            This is the Title
-          </h2>
-        </div>
+          This is the Title
+        </h2>
       </div>
       <div
-        className="c3"
+        className="c4"
         width={
           Array [
             1,
@@ -15006,7 +14976,7 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -15048,15 +15018,6 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c1 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 2.25rem;
-}
-
 .c7 {
   color: #333333;
   font-weight: 400;
@@ -15065,6 +15026,14 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
   padding: 0.75rem 0;
   font-weight: 700;
   padding-bottom: 0;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c1 {
+  padding: 2.25rem 0;
 }
 
 .c8 {
@@ -15157,42 +15126,42 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -15201,7 +15170,7 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -15210,7 +15179,7 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 50%;
     position: initial;
     top: 0;
@@ -15263,8 +15232,7 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding: 4.5rem 0;
   }
 }
 
@@ -15272,13 +15240,13 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c0"
   >
     <div
       className="c2"
     >
       <div
-        className="c3"
+        className="c3 c4"
         width={
           Array [
             1,
@@ -15289,18 +15257,14 @@ exports[`Storyshots Title and List with optional logos with logos 1`] = `
           ]
         }
       >
-        <div
-          className="c4"
+        <h2
+          className="c5"
         >
-          <h2
-            className="c5"
-          >
-            This is the Title
-          </h2>
-        </div>
+          This is the Title
+        </h2>
       </div>
       <div
-        className="c3"
+        className="c4"
         width={
           Array [
             1,
@@ -16257,7 +16221,17 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 `;
 
 exports[`Storyshots Why Open Source Why Open Source component 1`] = `
-.c2 {
+Array [
+  .c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -16277,7 +16251,337 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
   display: block;
 }
 
-.c10 {
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  padding: 2.25rem 0;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c8 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8:last-child {
+  padding: 0;
+}
+
+.c6 {
+  width: 100%;
+  height: auto;
+  max-width: 60px;
+  max-height: 60px;
+  padding-bottom: 12px;
+}
+
+.c6:not(:first-child) {
+  margin-top: 12px;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    padding: 4.5rem 0;
+  }
+}
+
+<div
+    className="c0 c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3 c4"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <h2
+          className="c5"
+        >
+          Why use Open Source?
+        </h2>
+      </div>
+      <div
+        className="c4"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <img
+          alt="Community Support Logo"
+          className="c6"
+          src="/community_support.svg"
+        />
+        <h3
+          className="c7"
+        />
+        <p
+          className="c8"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+        <img
+          alt="Community Support Logo"
+          className="c6"
+          src="/community_support.svg"
+        />
+        <h3
+          className="c7"
+        />
+        <p
+          className="c8"
+          muted={false}
+        >
+          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+        </p>
+        <img
+          alt="Community Support Logo"
+          className="c6"
+          src="/community_support.svg"
+        />
+        <h3
+          className="c7"
+        />
+        <p
+          className="c8"
+          muted={false}
+        >
+          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+        </p>
+      </div>
+    </div>
+  </div>,
+  .c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c5 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -16297,7 +16601,7 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
   display: block;
 }
 
-.c1 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -16311,78 +16615,12 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
   display: flex;
 }
 
-.c11 {
+.c6 {
   width: 100%;
   height: auto;
 }
 
 .c4 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  padding: 0.8125rem 0 0.6875rem 0;
-}
-
-.c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-}
-
-.c0 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c3 {
-  padding-bottom: 2.25rem;
-}
-
-.c6 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 0;
-}
-
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
-}
-
-.c7 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c7:last-child {
-  padding: 0;
-}
-
-.c5 {
-  width: 100%;
-  height: auto;
-  max-width: 60px;
-  max-height: 60px;
-  padding-bottom: 12px;
-}
-
-.c5:not(:first-child) {
-  margin-top: 12px;
-}
-
-.c9 {
   max-height: 108px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -16395,105 +16633,116 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
   padding-bottom: 0.75rem;
 }
 
+.c0 {
+  padding-bottom: 4.5rem;
+}
+
+.c2 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c10 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c10 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c10 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c10 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c10 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c10 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -16502,7 +16751,7 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c10 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -16511,7 +16760,7 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c10 {
+  .c5 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -16520,7 +16769,7 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c10 {
+  .c5 {
     width: 25%;
     position: initial;
     top: 0;
@@ -16529,299 +16778,202 @@ exports[`Storyshots Why Open Source Why Open Source component 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
-@media (min-width:56.3125em) {
-  .c4 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-}
-
-<div>
-  <div
-    className="c0"
+<div
+    className="c0 c1"
   >
+    <h3
+      className="c2"
+    >
+      Clients we helped with open source
+    </h3>
     <div
-      className="c1"
+      className="c3"
     >
       <div
-        className="c2"
+        className="c4 c5"
         width={
           Array [
-            1,
-            1,
-            1,
-            1,
             0.5,
-          ]
-        }
-      >
-        <div
-          className="c3"
-        >
-          <h2
-            className="c4"
-          >
-            Why use Open Source?
-          </h2>
-        </div>
-      </div>
-      <div
-        className="c2"
-        width={
-          Array [
-            1,
-            1,
-            1,
-            1,
             0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
           ]
         }
       >
         <img
-          alt="Community Support Logo"
-          className="c5"
-          src="/community_support.svg"
-        />
-        <h3
+          alt="Elife logo"
           className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
         />
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+      </div>
+      <div
+        className="c4 c5"
+        width={
+          Array [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
+          ]
+        }
+      >
         <img
-          alt="Community Support Logo"
-          className="c5"
-          src="/community_support.svg"
-        />
-        <h3
+          alt="Elife logo"
           className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
         />
-        <p
-          className="c7"
-          muted={false}
-        >
-          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-        </p>
+      </div>
+      <div
+        className="c4 c5"
+        width={
+          Array [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
+          ]
+        }
+      >
         <img
-          alt="Community Support Logo"
-          className="c5"
-          src="/community_support.svg"
-        />
-        <h3
+          alt="Elife logo"
           className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
         />
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+      </div>
+      <div
+        className="c4 c5"
+        width={
+          Array [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
+          ]
+        }
+      >
+        <img
+          alt="Elife logo"
+          className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
+        />
+      </div>
+      <div
+        className="c4 c5"
+        width={
+          Array [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
+          ]
+        }
+      >
+        <img
+          alt="Elife logo"
+          className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
+        />
+      </div>
+      <div
+        className="c4 c5"
+        width={
+          Array [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.3333333333333333,
+            0.25,
+          ]
+        }
+      >
+        <img
+          alt="Elife logo"
+          className="c6"
+          src="elife.png"
+          style={
+            Object {
+              "filter": "grayscale(1)",
+              "saturate": "0",
+            }
+          }
+        />
       </div>
     </div>
-  </div>
-  <h3
-    className="c8"
-  >
-    Clients we helped with open source
-  </h3>
-  <div
-    className="c1"
-  >
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c9 c10"
-      width={
-        Array [
-          0.5,
-          0.5,
-          0.5,
-          0.5,
-          0.3333333333333333,
-          0.25,
-        ]
-      }
-    >
-      <img
-        alt="Elife logo"
-        className="c11"
-        src="elife.png"
-        style={
-          Object {
-            "filter": "grayscale(1)",
-            "saturate": "0",
-          }
-        }
-      />
-    </div>
-  </div>
-</div>
+  </div>,
+]
 `;
