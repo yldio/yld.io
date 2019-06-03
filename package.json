@@ -5,6 +5,7 @@
   "author": "YLD <hello@yld.io>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
+    "airbnb-prop-types": "^2.13.2",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
