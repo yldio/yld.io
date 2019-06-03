@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+import getIntroSentence from '../utils/getIntroSentence'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import BlueBackground from '../components/Common/BlueBackground'
@@ -107,6 +108,7 @@ const OpenSourcePage = props => (
           seoDescription
           featuredCaseStudy {
             title
+            slug
             posterColor
             posterImage {
               title
