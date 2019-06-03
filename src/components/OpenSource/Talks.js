@@ -4,10 +4,12 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
-import StandAloneVideoLink from '../Common/StandAloneVideoLink'
+import StandaloneVideoLink from '../Common/StandaloneVideoLink'
 import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
+
+const MAX_VIDEOS = 3
 
 const StyledImage = styled.img`
   padding: ${remcalc(83)} 0 ${remcalc(15)};
@@ -33,17 +35,6 @@ const StyledTalksLink = styled(StyledLink)`
   padding-bottom: ${remcalc(90)};
 `
 
-const TalkCol = ({ title, link }) => (
-  <StandAloneVideoLink
-    key={title}
-    href={link}
-    themeVariation="dark"
-    mode="standalone"
-  >
-    {title}
-  </StandAloneVideoLink>
-)
-
 const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
   <BlueBackground>
     <Grid>
@@ -53,7 +44,13 @@ const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
           <SectionTitle reverse>{title}</SectionTitle>
         </StyledCol>
       </Row>
-      <StyledTalksRow>{talks.map(talk => TalkCol(talk))}</StyledTalksRow>
+      <StyledTalksRow>
+        {talks.slice(0, MAX_VIDEOS).map(({ title, link }, idx) => (
+          <StandaloneVideoLink href={link} key={idx} themeVariation="dark">
+            {title}
+          </StandaloneVideoLink>
+        ))}{' '}
+      </StyledTalksRow>
       <StyledTalksLink reverse external aria-label={ctaText} href={ctaLink}>
         {ctaText}
       </StyledTalksLink>
