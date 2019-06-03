@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 import { Grid } from '../grid'
-import TitleAndListWithOptionalLogos from '../Common/TitleAndListWithOptionalLogos'
+import TitleAndList from '../Common/TitleAndList'
 import Subtitle from '../Typography/Subtitle'
 import LogoGrid from '../Common/LogoGrid'
 import StyledLink from '../Common/StyledLink'
@@ -17,7 +17,7 @@ const StyledSubtitle = styled(Subtitle)`
 
 const WhyOpenSource = ({ title, list, subtitle, companies }) => (
   <Fragment>
-    <TitleAndListWithOptionalLogos title={title} list={list} />
+    <TitleAndList title={title} list={list} />
     <StyledGrid>
       <StyledSubtitle>{subtitle}</StyledSubtitle>
       <LogoGrid companies={companies} />

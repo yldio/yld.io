@@ -6,7 +6,7 @@ import { Grid, Row, Col } from '../grid'
 import Hr from '../Common/Hr'
 import BlueBackground from '../Common/BlueBackground'
 import BackgroundGraphic from '../Common/BackgroundGraphic'
-import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
+import TitleAndList from '../Common/TitleAndList'
 import theme from '../../utils/theme'
 import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 
