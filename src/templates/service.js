@@ -37,15 +37,12 @@ const Service = ({ data: { contentfulService: service }, location }) => {
   return (
     <Layout location={location}>
       <Head page={service} />
+
       <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
 
-      <GreyBackground>
-        <Grid>
-          <Statement>
-            {service.mainPageIntroSentence.mainPageIntroSentence}
-          </Statement>
-        </Grid>
-      </GreyBackground>
+      <Statement>
+        {service.mainPageIntroSentence.mainPageIntroSentence}
+      </Statement>
 
       <BlueBackground>
         <WorkStages

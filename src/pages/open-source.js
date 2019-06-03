@@ -1,8 +1,11 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
-// import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import { Grid } from '../components/grid'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import Statement from '../components/Common/Statement'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 
 const OpenSource = ({ data }) => {
@@ -11,6 +14,8 @@ const OpenSource = ({ data }) => {
       title,
       seoTitle,
       seoMetaDescription,
+      featuredCaseStudy,
+      statement,
       technologyPartnersSectionTitle,
       technologyPartners
     }
@@ -19,7 +24,8 @@ const OpenSource = ({ data }) => {
   return (
     <Layout>
       <Head page={{ title, seoTitle, seoMetaDescription }} />
-      {/* <CaseStudyPreview caseStudy={} /> */}
+      <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
+      <Statement>{statement}</Statement>
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
@@ -36,6 +42,22 @@ const OpenSourcePage = props => (
           title
           seoTitle
           seoDescription
+          featuredCaseStudy {
+            title
+            posterColor
+            posterImage {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 550) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+            introSentence {
+              introSentence
+            }
+          }
           statement
           technologyPartnersSectionTitle
           technologiesSectionTitle

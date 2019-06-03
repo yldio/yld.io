@@ -11343,7 +11343,7 @@ exports[`Storyshots Statement Statement 1`] = `
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11363,7 +11363,7 @@ exports[`Storyshots Statement Statement 1`] = `
   display: block;
 }
 
-.c2 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11386,13 +11386,12 @@ exports[`Storyshots Statement Statement 1`] = `
   color: #828282;
 }
 
-.c4 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .c1 {
   background: #f9f9f9;
+}
+
+.c2 {
+  padding: 2.25rem 0;
 }
 
 @media (min-width:29.4375em) {
@@ -11455,42 +11454,42 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11499,7 +11498,7 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -11508,7 +11507,7 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -11517,7 +11516,7 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     width: 75%;
     position: initial;
     top: 0;
@@ -11526,35 +11525,35 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -11569,10 +11568,9 @@ exports[`Storyshots Statement Statement 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c4 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+@media (min-width:56.3125em) {
+  .c2 {
+    padding: 4.5rem 0;
   }
 }
 
@@ -11583,23 +11581,23 @@ exports[`Storyshots Statement Statement 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c0"
     >
       <div
         className="c3"
-        width={
-          Array [
-            1,
-            1,
-            1,
-            0.8333333333333334,
-            0.8333333333333334,
-            0.75,
-          ]
-        }
       >
         <div
           className="c4"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.8333333333333334,
+              0.8333333333333334,
+              0.75,
+            ]
+          }
         >
           <h2
             className="c5"
@@ -11615,6 +11613,15 @@ exports[`Storyshots Statement Statement 1`] = `
 
 exports[`Storyshots Statement Statement Rich Text 1`] = `
 .c2 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11634,7 +11641,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   display: block;
 }
 
-.c1 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11648,7 +11655,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   display: flex;
 }
 
-.c4 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
@@ -11657,12 +11664,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   color: #828282;
 }
 
-.c3 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c6 {
+.c7 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -11678,7 +11680,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   transition-property: background,color;
 }
 
-.c6:after {
+.c7:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -11689,24 +11691,24 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   content: none;
 }
 
-.c6:hover {
+.c7:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c6:focus {
+.c7:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c6:active {
+.c7:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c6:active:after {
+.c7:active:after {
   background: #333333;
 }
 
@@ -11714,7 +11716,11 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   background: #f9f9f9;
 }
 
-.c5 {
+.c1 {
+  padding: 2.25rem 0;
+}
+
+.c6 {
   margin-bottom: 0;
   margin-left: 0;
   padding: 0;
@@ -11724,6 +11730,30 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   display: initial;
 }
 
+@media (min-width:29.4375em) {
+  .c2 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c2 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    max-width: 1100px;
+  }
+}
+
 @media screen and (min-width:29.4375rem) {
   .c2 {
     padding-left: 0;
@@ -11740,27 +11770,62 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11769,7 +11834,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -11778,7 +11843,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -11787,7 +11852,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c4 {
     width: 75%;
     position: initial;
     top: 0;
@@ -11796,42 +11861,42 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c4 {
+  .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
@@ -11839,10 +11904,9 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c3 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+@media (min-width:56.3125em) {
+  .c1 {
+    padding: 4.5rem 0;
   }
 }
 
@@ -11850,30 +11914,30 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c2"
   >
     <div
-      className="c2"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          0.8333333333333334,
-          0.8333333333333334,
-          0.75,
-        ]
-      }
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            0.8333333333333334,
+            0.8333333333333334,
+            0.75,
+          ]
+        }
       >
-        <h2
-          className="c4"
+        <h1
+          className="c5"
         >
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
           <a
-            className="c5 c6"
+            className="c6 c7"
             href="/engineering"
             noafter="true"
             onClick={[Function]}
@@ -11883,7 +11947,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           </a>
           , 
           <a
-            className="c5 c6"
+            className="c6 c7"
             href="/design"
             noafter="true"
             onClick={[Function]}
@@ -11893,7 +11957,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           </a>
           , 
           <a
-            className="c5 c6"
+            className="c6 c7"
             href="/training"
             noafter="true"
             onClick={[Function]}
@@ -11919,7 +11983,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   padding-right: 0;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11939,7 +12003,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   display: block;
 }
 
-.c2 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11962,13 +12026,12 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   color: #828282;
 }
 
-.c4 {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .c1 {
   background: #f9f9f9;
+}
+
+.c2 {
+  padding: 2.25rem 0;
 }
 
 @media (min-width:29.4375em) {
@@ -12031,42 +12094,42 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c4 {
     width: 100%;
     position: initial;
     top: 0;
@@ -12075,7 +12138,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -12084,7 +12147,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c4 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -12093,7 +12156,7 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c4 {
     width: 75%;
     position: initial;
     top: 0;
@@ -12102,35 +12165,35 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c3 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -12145,10 +12208,9 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c4 {
-    padding-top: 0;
-    padding-bottom: 0;
+@media (min-width:56.3125em) {
+  .c2 {
+    padding: 4.5rem 0;
   }
 }
 
@@ -12159,23 +12221,23 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c0"
     >
       <div
         className="c3"
-        width={
-          Array [
-            1,
-            1,
-            1,
-            0.8333333333333334,
-            0.8333333333333334,
-            0.75,
-          ]
-        }
       >
         <div
           className="c4"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.8333333333333334,
+              0.8333333333333334,
+              0.75,
+            ]
+          }
         >
           <h2
             className="c5"
