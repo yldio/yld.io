@@ -16,29 +16,41 @@ const RepoNameEllipsis = styled.div`
   text-overflow: ellipsis;
 `
 
+/**
+ *
+ * Repo component is used within RepoWithImage component, having
+ * an anchor as a parent of another anchor is a no no and write a
+ * warning to the console. Passing a conditional link allows us to
+ * conditionally render an external anchor or not.
+ *
+ */
+const ConditionalLink = ({ titleLink, url, children }) =>
+  titleLink ? <ExternalAnchor href={url}>{children}</ExternalAnchor> : children
+
 const Repo = ({
   url,
   nameWithOwner,
   pullRequestCount,
   starCount,
-  small = false,
+  small = 'false',
+  titleLink = true,
   theme
 }) => {
   const isDark = theme === 'dark'
   return (
     <Fragment>
-      <ExternalAnchor href={url}>
+      <ConditionalLink titleLink={titleLink} url={url}>
         <Subtitle reverse={isDark} noPaddingBottom={!small} noPadding={small}>
           <RepoNameEllipsis>{nameWithOwner}</RepoNameEllipsis>
         </Subtitle>
-      </ExternalAnchor>
+      </ConditionalLink>
       <BodyStylised small={small} noPadding>
         {pullRequestCount} Contributions
       </BodyStylised>
       <BodyStylised small={small} noPadding>
         {starCount} Stars
       </BodyStylised>
-      {!small && <StyledHr muted={isDark} short />}
+      {small && <StyledHr muted={isDark} short />}
     </Fragment>
   )
 }

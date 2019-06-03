@@ -35,6 +35,7 @@ const Image = styled(CommonImage)`
 
 const RepoWrapper = styled.div`
   display: inline-block;
+  overflow: hidden;
   flex-grow: 2;
   vertical-align: top;
   padding: ${remcalc(24)};
@@ -54,7 +55,7 @@ const RepoWithImage = props => {
           </ImageWrapperInner>
         </ImageWrapper>
         <RepoWrapper>
-          <Repo small {...props} />
+          <Repo small {...props} titleLink={false} />
         </RepoWrapper>
       </Link>
     </Wrapper>
