@@ -15,11 +15,11 @@ const OpenSource = ({ data }) => {
       seoMetaDescription,
       talksSectionImage,
       talksSectionTitle,
-      talksSectionTalks,
+      talksSectionTalks: talks,
       talkSectionCtaText,
       talksSectionCtaLink,
       technologyPartnersSectionTitle,
-      technologyPartners
+      technologyPartners: partners
     }
   } = data
 
@@ -27,18 +27,22 @@ const OpenSource = ({ data }) => {
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
       {/* <CaseStudyPreview caseStudy={} /> */}
-      <TalksSection
-        icon={talksSectionImage}
-        title={talksSectionTitle}
-        talks={talksSectionTalks}
-        ctaText={talkSectionCtaText}
-        ctaLink={talksSectionCtaLink}
-      />
+      {talks && talks.length && (
+        <TalksSection
+          icon={talksSectionImage}
+          title={talksSectionTitle}
+          talks={talks}
+          ctaText={talkSectionCtaText}
+          ctaLink={talksSectionCtaLink}
+        />
+      )}
       <p>open source page</p>
-      <PartnershipsSection
-        title={technologyPartnersSectionTitle}
-        partners={technologyPartners}
-      />
+      {partners && partners.length && (
+        <PartnershipsSection
+          title={technologyPartnersSectionTitle}
+          partners={partners}
+        />
+      )}
     </Layout>
   )
 }

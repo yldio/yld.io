@@ -59,9 +59,7 @@ const PartnershipsSection = ({ title, partners }) => (
         </StyledCol>
       </Row>
       <StyledPartnersRow>
-        {partners &&
-          partners.length &&
-          partners.map(partner => PartnerCol(partner))}
+        {partners.map(partner => PartnerCol(partner))}
       </StyledPartnersRow>
     </Grid>
   </BlueBackground>

@@ -53,9 +53,7 @@ const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
           <SectionTitle reverse>{title}</SectionTitle>
         </StyledCol>
       </Row>
-      <StyledTalksRow>
-        {talks && talks.length && talks.map(talk => TalkCol(talk))}
-      </StyledTalksRow>
+      <StyledTalksRow>{talks.map(talk => TalkCol(talk))}</StyledTalksRow>
       <StyledTalksLink reverse external aria-label={ctaText} href={ctaLink}>
         {ctaText}
       </StyledTalksLink>
