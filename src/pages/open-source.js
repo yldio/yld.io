@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
@@ -55,6 +56,22 @@ const OpenSourcePage = props => (
           title
           seoTitle
           seoDescription
+          featuredCaseStudy {
+            title
+            posterColor
+            posterImage {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 550) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+            introSentence {
+              introSentence
+            }
+          }
           statement
           talksSectionImage {
             title
