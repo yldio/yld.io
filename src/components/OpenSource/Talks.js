@@ -4,7 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
-import CompactVideoLink from '../Common/CompactVideoLink'
+import StandAloneVideoLink from '../Common/StandAloneVideoLink'
 import StyledLink from '../Common/StyledLink'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
@@ -13,7 +13,7 @@ const StyledImage = styled.img`
   padding: ${remcalc(83)} 0 ${remcalc(15)};
 `
 
-const StyledSectionTitle = styled(Col)`
+const StyledCol = styled(Col)`
   padding: 0 0 ${remcalc(35)};
 
   ${breakpoint('smallTablet')`
@@ -34,14 +34,14 @@ const StyledTalksLink = styled(StyledLink)`
 `
 
 const TalkCol = ({ title, link }) => (
-  <CompactVideoLink
+  <StandAloneVideoLink
     key={title}
     href={link}
     themeVariation="dark"
     mode="standalone"
   >
     {title}
-  </CompactVideoLink>
+  </StandAloneVideoLink>
 )
 
 const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
@@ -49,9 +49,9 @@ const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
     <Grid>
       <StyledImage src={icon.file.url} alt={icon.title} />
       <Row>
-        <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
+        <StyledCol width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
           <SectionTitle reverse>{title}</SectionTitle>
-        </StyledSectionTitle>
+        </StyledCol>
       </Row>
       <StyledTalksRow>
         {talks && talks.length && talks.map(talk => TalkCol(talk))}
