@@ -33,15 +33,7 @@ const StyledTalksLink = styled(StyledLink)`
   padding-bottom: ${remcalc(90)};
 `
 
-const TalkCol = ({
-  title,
-  type,
-  link,
-  cta,
-  featured,
-  additionalInfo,
-  colorCode
-}) => (
+const TalkCol = ({ title, link }) => (
   <CompactVideoLink
     key={title}
     href={link}
