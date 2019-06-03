@@ -69,7 +69,9 @@ CaseStudyPreview.propTypes = {
     posterImage: PropTypes.object,
     introSentence: or([
       PropTypes.string.isRequired,
-      PropTypes.objectOf(PropTypes.string.isRequired).isRequired
+      PropTypes.shape({
+        introSentence: PropTypes.string.isRequired
+      }).isRequired
     ])
   })
 }
