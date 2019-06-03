@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import styled from 'styled-components'
 
 import { Grid } from '../grid'
 import TitleAndListWithOptionalLogos from '../Common/TitleAndListWithOptionalLogos'
@@ -6,12 +7,22 @@ import Subtitle from '../Typography/Subtitle'
 import LogoGrid from '../Common/LogoGrid'
 import StyledLink from '../Common/StyledLink'
 
+const StyledGrid = styled(Grid)`
+  padding-bottom: ${props => props.theme.space[6]};
+`
+
+const StyledSubtitle = styled(Subtitle)`
+  margin-bottom: ${props => props.theme.space[3]};
+`
+
 const WhyOpenSource = ({ title, list, subtitle, companies }) => (
-  <Grid>
+  <Fragment>
     <TitleAndListWithOptionalLogos title={title} list={list} />
-    <Subtitle>{subtitle}</Subtitle>
-    <LogoGrid companies={companies} />
-  </Grid>
+    <StyledGrid>
+      <StyledSubtitle>{subtitle}</StyledSubtitle>
+      <LogoGrid companies={companies} />
+    </StyledGrid>
+  </Fragment>
 )
 
 export default WhyOpenSource
