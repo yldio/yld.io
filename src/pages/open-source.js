@@ -24,6 +24,8 @@ const OpenSource = ({ data }) => {
     }
   } = data
 
+  const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
+
   return (
     <Layout>
       <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
