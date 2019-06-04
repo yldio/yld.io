@@ -18,9 +18,10 @@ const OpenSource = ({ data }) => {
       featuredCaseStudy,
       statement,
       technologyPartnersSectionTitle,
-      technologyPartners
+      technologyPartners,
+      eventsSectionImage
     },
-    allContentfulMeetupEvent
+    allContentfulMeetupEvent: { edges: events }
   } = data
 
   return (
@@ -29,9 +30,9 @@ const OpenSource = ({ data }) => {
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement>{statement}</Statement>
       <EventSection
-        events={allContentfulMeetupEvent.edges}
+        events={events}
         title={title}
-        eventIcon={eventIcon}
+        eventIcon={eventsSectionImage.file.url}
       />
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
@@ -59,6 +60,14 @@ const OpenSourcePage = props => (
           title
           seoTitle
           seoDescription
+          eventsSectionImage {
+            id
+            title
+            file {
+              fileName
+              url
+            }
+          }
           featuredCaseStudy {
             title
             posterColor
