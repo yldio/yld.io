@@ -9580,56 +9580,16 @@ exports[`Storyshots JobLink JobLink 1`] = `
 
 exports[`Storyshots Repo Repo 1`] = `
 .c0 {
-  max-width: calc(100% - 48px);
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c1 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #fff;
-  padding: 0;
+  padding-bottom: 0;
   font-weight: 700;
 }
 
-.c4 {
+.c2 {
   color: #757575;
   font-family: 'PT Mono',sans-serif;
   font-weight: 400;
@@ -9639,7 +9599,7 @@ exports[`Storyshots Repo Repo 1`] = `
   padding: 0;
 }
 
-.c5 {
+.c3 {
   height: 0.0625rem;
   padding: 0 0 1.125rem 0;
   border: none;
@@ -9649,224 +9609,158 @@ exports[`Storyshots Repo Repo 1`] = `
   margin-top: 1.875rem;
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    max-width: calc(100% - 72px);
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    max-width: 480px;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    max-width: none;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    max-width: 1100px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c0 {
-    padding-left: 2.625rem;
-    padding-right: 2.625rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c0 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c1 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
+.c1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 <div
-  className="c0"
+  style={
+    Object {
+      "padding": "1rem 0",
+    }
+  }
 >
-  <div
-    className="c1"
+  <a
+    href="https://github.com/nodejs/node"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <h3
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        nodejs/node
+      </div>
+    </h3>
+  </a>
+  <p
+    className="c2"
   >
     <div
-      className="c2"
+      className="c1"
     >
-      <a
-        href="https://github.com/nodejs/node"
-      >
-        <h3
-          className="c3"
-        >
-          nodejs/node
-        </h3>
-      </a>
-      <p
-        className="c4"
-      >
-        123
-         Contributions
-      </p>
-      <p
-        className="c4"
-      >
-        123
-         Stars
-      </p>
-      <hr
-        className="c5"
-      />
+      123
+       Contributions
     </div>
-  </div>
+  </p>
+  <p
+    className="c2"
+  >
+    123
+     Stars
+  </p>
+  <hr
+    className="c3"
+    muted={false}
+  />
 </div>
 `;
 
-exports[`Storyshots Repo Repo w/ Image 1`] = `
-.c0 {
-  max-width: calc(100% - 48px);
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
+exports[`Storyshots Repo Repo Dark 1`] = `
 .c1 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  padding: 0;
+  color: #fff;
+  padding-bottom: 0;
   font-weight: 700;
 }
 
-.c11 {
+.c3 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
+.c4 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  opacity: .5;
+  width: 60px;
+  margin-top: 1.875rem;
+}
+
+.c2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+  padding: 1rem 3rem;
+}
+
+<section
+  className="c0"
+>
+  <div>
+    <a
+      href="https://github.com/nodejs/node"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <h3
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          nodejs/node
+        </div>
+      </h3>
+    </a>
+    <p
+      className="c3"
+    >
+      <div
+        className="c2"
+      >
+        123
+         Contributions
+      </div>
+    </p>
+    <p
+      className="c3"
+    >
+      123
+       Stars
+    </p>
+    <hr
+      className="c4"
+      muted={true}
+    />
+  </div>
+</section>
+`;
+
+exports[`Storyshots Repo Repo w/ Image 1`] = `
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.c9 {
   color: #757575;
   font-family: 'PT Mono',sans-serif;
   font-weight: 400;
@@ -9876,7 +9770,13 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   padding: 0;
 }
 
-.c7 {
+.c8 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c4 {
   position: relative;
   height: 0;
   width: 100%;
@@ -9884,20 +9784,20 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3 {
+.c0 {
   display: inline-block;
-  margin-bottom: 2.25rem;
+  margin: 1.125rem 0;
   width: 100%;
 }
 
-.c5 {
+.c2 {
   padding: 1.5rem;
   display: inline-block;
   vertical-align: top;
@@ -9905,19 +9805,30 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   border-right: none;
 }
 
-.c6 {
+.c3 {
   width: 72px;
 }
 
-.c8 {
+.c5 {
   width: 100%;
   height: auto;
   display: block;
   width: 100%;
 }
 
-.c9 {
-  display: inline-block;
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
@@ -9927,198 +9838,65 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   border: 1px solid #757575;
 }
 
-@media (min-width:29.4375em) {
-  .c0 {
-    max-width: calc(100% - 72px);
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    max-width: 480px;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    max-width: none;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    max-width: 1100px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c0 {
-    padding-left: 2.625rem;
-    padding-right: 2.625rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c0 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c1 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
+    className="c0"
   >
-    <div
-      className="c2"
+    <a
+      className="c1"
+      href="https://github.com/nodejs/node"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <div
-        className="c3"
+        className="c2"
       >
-        <a
-          className="c4"
-          href="https://github.com/nodejs/node"
+        <div
+          className="c3"
         >
           <div
-            className="c5"
+            className="c4"
+            height={100}
+            width={100}
           >
-            <div
-              className="c6"
-            >
-              <div
-                className="c7"
-                height={100}
-                width={100}
-              >
-                <img
-                  alt="nodejs/node logo"
-                  className="c8"
-                  src="/joyent72.svg"
-                />
-              </div>
-            </div>
+            <img
+              alt="nodejs/node logo"
+              className="c5"
+              src="/joyent72.svg"
+            />
           </div>
-          <div
-            className="c9"
-          >
-            <a
-              href="https://github.com/nodejs/node"
-            >
-              <h3
-                className="c10"
-              >
-                nodejs/node
-              </h3>
-            </a>
-            <p
-              className="c11"
-            >
-              123
-               Contributions
-            </p>
-            <p
-              className="c11"
-            >
-              123
-               Stars
-            </p>
-          </div>
-        </a>
+        </div>
       </div>
-    </div>
+      <div
+        className="c6"
+      >
+        <h3
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            nodejs/node
+          </div>
+        </h3>
+        <p
+          className="c9"
+        >
+          <div
+            className="c8"
+          >
+            123
+             Contributions
+          </div>
+        </p>
+        <p
+          className="c9"
+        >
+          123
+           Stars
+        </p>
+      </div>
+    </a>
   </div>
 </div>
 `;
