@@ -9,7 +9,8 @@ import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledSectionTitle = styled(Col)`
-  padding: ${remcalc(83)} 0;
+  padding-top: ${remcalc(83)};
+  padding-bottom: ${remcalc(83)};
 `
 
 const StyledPartnersRow = styled(Row)`
@@ -42,20 +43,18 @@ const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
 )
 
 const PartnershipsSection = ({ title, partners }) => (
-  <BlueBackground>
-    <Grid>
-      <Row>
-        <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
-          <SectionTitle reverse>{title}</SectionTitle>
-        </StyledSectionTitle>
-      </Row>
-      <StyledPartnersRow>
-        {partners &&
-          partners.length &&
-          partners.map(partner => PartnerCol(partner))}
-      </StyledPartnersRow>
-    </Grid>
-  </BlueBackground>
+  <Grid>
+    <Row>
+      <StyledSectionTitle width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
+        <SectionTitle reverse>{title}</SectionTitle>
+      </StyledSectionTitle>
+    </Row>
+    <StyledPartnersRow>
+      {partners &&
+        partners.length &&
+        partners.map(partner => PartnerCol(partner))}
+    </StyledPartnersRow>
+  </Grid>
 )
 
 export default PartnershipsSection

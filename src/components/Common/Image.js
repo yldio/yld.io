@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-const Image = ({ image, alt, className, ...props }) =>
-  (image.fluid || {}).src ? (
+const Image = ({ image, alt, className, ...props }) => {
+  return (image.fluid || {}).src ? (
     <Img
       alt={alt || image.title}
       fluid={image.fluid}
@@ -18,6 +18,7 @@ const Image = ({ image, alt, className, ...props }) =>
       {...props}
     />
   )
+}
 
 export default styled(Image)`
   width: ${props => (props.width ? `${props.width}` : '100%')};
