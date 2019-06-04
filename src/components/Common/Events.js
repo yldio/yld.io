@@ -5,9 +5,9 @@ import { Padding } from 'styled-components-spacing'
 import specialityEventIcon from './assets/events-icon.svg'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import StyledLink from '../Common/StyledLink'
-import Hr from '../Common/Hr'
+import ExternalAnchor from './ExternalAnchor'
+import StyledLink from './StyledLink'
+import Hr from './Hr'
 
 const CTA = {
   link: {
