@@ -2,7 +2,7 @@ import React from 'react'
 import { format, isAfter, endOfYesterday } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
 
-import specialityEventIcon from './assets/events-icon.svg'
+import specialityEventIcon from '../Speciality/assets/events-icon.svg'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import ExternalAnchor from './ExternalAnchor'

@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import { Grid } from '../components/grid'
+import EventSection from '../components/Common/Events'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
@@ -18,7 +19,8 @@ const OpenSource = ({ data }) => {
       statement,
       technologyPartnersSectionTitle,
       technologyPartners
-    }
+    },
+    allContentfulMeetupEvent
   } = data
 
   return (
@@ -26,6 +28,11 @@ const OpenSource = ({ data }) => {
       <Head page={{ title, seoTitle, seoMetaDescription }} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement>{statement}</Statement>
+      <EventSection
+        events={allContentfulMeetupEvent.edges}
+        title={title}
+        eventIcon={eventIcon}
+      />
       <PartnershipsSection
         title={technologyPartnersSectionTitle}
         partners={technologyPartners}
@@ -38,6 +45,16 @@ const OpenSourcePage = props => (
   <StaticQuery
     query={graphql`
       query {
+        allContentfulMeetupEvent {
+          edges {
+            node {
+              id
+              eventTitle
+              date
+              linkToEvent
+            }
+          }
+        }
         contentfulOpenSourcePage {
           title
           seoTitle
