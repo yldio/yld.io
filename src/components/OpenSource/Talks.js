@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
 import StandaloneVideoLink from '../Common/StandaloneVideoLink'
@@ -11,22 +10,23 @@ import { SectionTitle } from '../Typography'
 
 const MAX_VIDEOS = 3
 
-const StyledImage = styled.img`
-  padding-bottom: ${remcalc(14)};
-`
-
 const StyledGrid = styled(Grid)`
-  padding-top: ${remcalc(36)};
-  padding-bottom: ${remcalc(54)};
+  padding-top: ${props => props.theme.spacing[2]};
+  padding-bottom: ${props => props.theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${remcalc(72)};
-    padding-bottom: ${remcalc(108)};
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[7]};
   `}
 `
 
+const StyledImage = styled.img`
+  padding-bottom: ${props => props.theme.spacing[2]};
+`
+
 const StyledTalksRow = styled(Row)`
-  padding: ${remcalc(28)} 0 ${remcalc(36)};
+  padding-top: ${props => props.theme.spacing[3]};
+  padding-bottom: ${props => props.theme.spacing[3]};
 `
 
 const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (

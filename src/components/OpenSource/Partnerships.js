@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 
 import BlueBackground from '../Common/BlueBackground'
 import { Grid, Row, Col } from '../grid'
@@ -10,21 +9,21 @@ import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledGrid = styled(Grid)`
-  padding-top: ${remcalc(36)};
-  padding-bottom: ${remcalc(54)};
+  padding-top: ${props => props.theme.space[4]};
+  padding-bottom: ${props => props.theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${remcalc(72)};
-    padding-bottom: ${remcalc(108)};
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[7]};
   `}
 `
 
 const StyledRow = styled(Row)`
-  padding-bottom: ${remcalc(72)};
+  padding-bottom: ${props => props.theme.space[6]};
 `
 
 const StyledSubtitleWithBodyContainer = styled.div`
-  padding-top: ${remcalc(12)};
+  padding-top: ${props => props.theme.spacing[1]};
 `
 
 const StyledImage = styled(Image)`
@@ -33,7 +32,7 @@ const StyledImage = styled(Image)`
 `
 
 const StyledImageContainer = styled.div`
-  height: ${remcalc(108)};
+  height: ${props => props.theme.space[7]};
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
