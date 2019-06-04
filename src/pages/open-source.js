@@ -3,20 +3,26 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
-// import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import BlueBackground from '../components/Common/BlueBackground'
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import Statement from '../components/Common/Statement'
+
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
+
+import Contributions from '../components/OpenSource/Contributions'
 
 const OpenSource = ({ data }) => {
   const {
     contentfulOpenSourcePage: {
       title,
-      slug,
       seoTitle,
       seoMetaDescription,
+      featuredCaseStudy,
+      statement,
       talksSectionImage,
       talksSectionTitle,
-      talksSectionTalks: talks,
+      talksSectionTalks,
       talkSectionCtaText,
       talksSectionCtaLink,
       technologyPartnersSectionTitle,
@@ -28,24 +34,27 @@ const OpenSource = ({ data }) => {
 
   return (
     <Layout>
-      <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
-      {/* <CaseStudyPreview caseStudy={} /> */}
-      {talks && talks.length && (
-        <TalksSection
-          icon={talksSectionImage}
-          title={talksSectionTitle}
-          talks={talks}
-          ctaText={talkSectionCtaText}
-          ctaLink={talksSectionCtaLink}
-        />
-      )}
-      <p>open source page</p>
-      {partners && partners.length && (
-        <PartnershipsSection
-          title={technologyPartnersSectionTitle}
-          partners={partners}
-        />
-      )}
+      <Head page={{ title, seoTitle, seoMetaDescription }} />
+      <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
+      <Statement>{statement}</Statement>
+      <BlueBackground>
+        <Contributions {...data} />
+        {talks && talks.length && (
+          <TalksSection
+            icon={talksSectionImage}
+            title={talksSectionTitle}
+            talks={talks}
+            ctaText={talkSectionCtaText}
+            ctaLink={talksSectionCtaLink}
+          />
+        )}
+        {partners && partners.length && (
+          <PartnershipsSection
+            title={technologyPartnersSectionTitle}
+            partners={partners}
+          />
+        )}
+      </BlueBackground>
     </Layout>
   )
 }
@@ -108,6 +117,42 @@ const OpenSourcePage = props => (
             url
             membershipLevel
             description
+          }
+          openDeliverablesSectionTitle
+          openDeliverablesClientReposSubtitle
+          openDeliverablesSectionDescription {
+            openDeliverablesSectionDescription
+          }
+          openDeliverablesClientRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
+          }
+          contributionsSectionTitleLine1
+          contributionsSectionTitleLine2
+          contributionsSectionTitleLine3
+          openSourceMetaRepoCount
+          openSourceMetaPullRequestCount
+          contributionsSectionImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          contributionsSectionDescription
+          contributionsSectionCtaText
+          contributionsSectionCtaLink
+          contributionsSectionGithubRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
           }
         }
       }
