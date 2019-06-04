@@ -1,5 +1,6 @@
 import remcalc from 'remcalc'
 
+// slowly being deprecated
 export const spacing = {
   0: '0',
   0.5: remcalc(6),
@@ -22,6 +23,7 @@ export const spacing = {
   90: remcalc(90)
 }
 
+// use this instead of the 'spacing' object - 'space' is a keyword in styled-system
 export const space = [
   '0', // 0
   remcalc(6), // 1

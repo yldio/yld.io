@@ -4,8 +4,9 @@ import { Row } from '../grid'
 import { Section, Separator, TitleAndBody } from './elements'
 import StandaloneVideoLink from '../Common/StandaloneVideoLink'
 import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
+
 import { generate } from 'shortid'
-import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
+import TitleAndList from '../Common/TitleAndList'
 
 const MAX_VIDEOS = 3
 

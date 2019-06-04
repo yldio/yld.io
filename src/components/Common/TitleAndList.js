@@ -1,16 +1,25 @@
 import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
-import { Col, Row } from '../grid'
-import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+
+import { Grid, Col, Row } from '../grid'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 import theme from '../../utils/theme'
 import Image from './Image'
 
-const OuterPaddings = ({ children }) => (
-  <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
-)
+const StyledCol = styled(Col)`
+  padding-bottom: ${props => props.theme.space[4]};
+`
+
+const PaddedGrid = styled(Grid)`
+  padding: ${props => props.theme.space[4]} 0;
+
+  ${breakpoint('tablet')`
+    padding: ${props => props.theme.space[6]} 0;
+  `}
+`
 
 const ItemBody = styled(Body)`
   &:last-child {
@@ -44,15 +53,13 @@ const TitleAndList = ({
   // there is no image in the `typeof list === 'string'` because that would come from a textarea input from contentful as a bullet list, so if we want an image per bullet, we MUST pass the list as an array of objects.
 
   return (
-    <OuterPaddings>
+    <PaddedGrid>
       <Row>
-        <Col width={[1, 1, 1, 1, 6 / 12]}>
-          <Padding bottom={3}>
-            <SectionTitle reverse={themeVariation === theme.variations.dark}>
-              {title}
-            </SectionTitle>
-          </Padding>
-        </Col>
+        <StyledCol width={[1, 1, 1, 1, 6 / 12]}>
+          <SectionTitle reverse={themeVariation === theme.variations.dark}>
+            {title}
+          </SectionTitle>
+        </StyledCol>
         <Col width={[1, 1, 1, 1, 6 / 12]}>
           {typeof list === 'string' ? (
             <ReactMarkdown
@@ -83,7 +90,7 @@ const TitleAndList = ({
           {extraContent}
         </Col>
       </Row>
-    </OuterPaddings>
+    </PaddedGrid>
   )
 }
 
