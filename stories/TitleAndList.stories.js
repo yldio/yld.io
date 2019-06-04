@@ -4,7 +4,7 @@ import Theme from './theme'
 import BlueBackground from '../src/components/Common/BlueBackground'
 import GreyBackground from '../src/components/Common/GreyBackground'
 import { Grid } from '../src/components/grid'
-import TitleAndList from '../src/components/Common/TitleAndListWithOptionalLogos'
+import TitleAndList from '../src/components/Common/TitleAndList'
 import StyledLink from '../src/components/Common/StyledLink'
 
 addDecorator(Theme)
@@ -56,7 +56,7 @@ const arrayListWithLogos = [
   }
 ]
 
-storiesOf('Title and List with optional logos', module)
+storiesOf('Title and List (with optional logos)', module)
   .add('list in form of a string (Contentful data)', () => {
     return (
       <Grid>

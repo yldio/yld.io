@@ -9,6 +9,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import Statement from '../components/Common/Statement'
 
 import PartnershipsSection from '../components/OpenSource/Partnerships'
+import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
 
 import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
@@ -21,16 +22,52 @@ const OpenSource = ({ data }) => {
       seoMetaDescription,
       featuredCaseStudy,
       statement,
+      whyOsSectionTitle,
+      whyOsSectionReason1Image,
+      whyOsSectionReason1Title,
+      whyOsSectionReason1Body,
+      whyOsSectionReason2Image,
+      whyOsSectionReason2Title,
+      whyOsSectionReason2Body,
+      whyOsSectionReason3Image,
+      whyOsSectionReason3Title,
+      whyOsSectionReason3Body,
+      whyOsSectionClientsSubtitle,
+      whyOsSectionClients,
       technologyPartnersSectionTitle,
       technologyPartners
     }
   } = data
+
+  const whyOsReasons = [
+    {
+      image: whyOsSectionReason1Image,
+      title: whyOsSectionReason1Title,
+      body: whyOsSectionReason1Body.whyOsSectionReason1Body
+    },
+    {
+      image: whyOsSectionReason2Image,
+      title: whyOsSectionReason2Title,
+      body: whyOsSectionReason2Body.whyOsSectionReason2Body
+    },
+    {
+      image: whyOsSectionReason3Image,
+      title: whyOsSectionReason3Title,
+      body: whyOsSectionReason3Body.whyOsSectionReason3Body
+    }
+  ]
 
   return (
     <Layout>
       <Head page={{ title, seoTitle, seoMetaDescription }} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement>{statement}</Statement>
+      <WhyOpenSource
+        title={whyOsSectionTitle}
+        list={whyOsReasons}
+        subtitle={whyOsSectionClientsSubtitle}
+        companies={whyOsSectionClients}
+      />
       <OpenDeliverables {...data} />
       <BlueBackground>
         <Contributions {...data} />
@@ -68,6 +105,57 @@ const OpenSourcePage = props => (
             }
           }
           statement
+          whyOsSectionTitle
+          whyOsSectionReason1Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason1Title
+          whyOsSectionReason1Body {
+            whyOsSectionReason1Body
+          }
+          whyOsSectionReason2Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason2Title
+          whyOsSectionReason2Body {
+            whyOsSectionReason2Body
+          }
+          whyOsSectionReason3Image {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 30) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          whyOsSectionReason3Title
+          whyOsSectionReason3Body {
+            whyOsSectionReason3Body
+          }
+          whyOsSectionClientsSubtitle
+          whyOsSectionClients {
+            id
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
           technologyPartnersSectionTitle
           technologiesSectionTitle
           technologyPartners {
