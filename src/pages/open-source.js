@@ -9,8 +9,8 @@ import Statement from '../components/Common/Statement'
 
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
-
 import Contributions from '../components/OpenSource/Contributions'
+import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
 const OpenSource = ({ data }) => {
   const {
@@ -55,6 +55,7 @@ const OpenSource = ({ data }) => {
           />
         )}
       </BlueBackground>
+      <OpenDeliverables {...data} />
     </Layout>
   )
 }
