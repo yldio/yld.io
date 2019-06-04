@@ -76,9 +76,9 @@ const StandaloneWrapper = styled(Margin)`
   justify-content: center;
   border: 1px solid
     ${props =>
-      props.themeVariation === 'white'
-        ? props.theme.colors.border
-        : 'rgba(255, 255, 255, 0.3)'};
+      props.themeVariation === 'dark'
+        ? 'rgba(255, 255, 255, 0.3)'
+        : props.theme.colors.border};
 `
 
 const BaseVideoLink = ({

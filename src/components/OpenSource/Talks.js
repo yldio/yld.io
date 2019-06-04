@@ -43,7 +43,7 @@ const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
           <StandaloneVideoLink href={link} key={idx} themeVariation="dark">
             {title}
           </StandaloneVideoLink>
-        ))}{' '}
+        ))}
       </StyledTalksRow>
       <StyledLink reverse external aria-label={ctaText} href={ctaLink}>
         {ctaText}
