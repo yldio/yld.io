@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+import { or } from 'airbnb-prop-types'
 import React, { Fragment } from 'react'
 import { Padding } from 'styled-components-spacing'
 
@@ -60,6 +62,21 @@ const CaseStudyPreview = ({ isTop, caseStudy, as }) => {
       }
     />
   )
+}
+
+CaseStudyPreview.propTypes = {
+  isTop: PropTypes.bool,
+  caseStudy: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    posterImage: PropTypes.object,
+    introSentence: or([
+      PropTypes.string.isRequired,
+      PropTypes.shape({
+        introSentence: PropTypes.string.isRequired
+      }).isRequired
+    ])
+  })
 }
 
 export default CaseStudyPreview
