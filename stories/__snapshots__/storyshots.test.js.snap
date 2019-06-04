@@ -4050,7 +4050,9 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <div>
+        <div
+          themeVariation="dark"
+        >
           <div
             className="c4"
           >
@@ -4329,7 +4331,9 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <div>
+        <div
+          themeVariation="grey"
+        >
           <div
             className="c4"
           >
@@ -4601,7 +4605,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div>
+      <div
+        themeVariation="white"
+      >
         <div
           className="c3"
         >
@@ -4653,7 +4659,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div>
+      <div
+        themeVariation="white"
+      >
         <div
           className="c3"
         >
@@ -4705,7 +4713,9 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div>
+      <div
+        themeVariation="white"
+      >
         <div
           className="c3"
         >
@@ -4976,7 +4986,9 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div>
+      <div
+        themeVariation="white"
+      >
         <div
           className="c3"
         >
@@ -10417,7 +10429,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border: 1px solid #e6e6e6;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 @media screen and (min-width:29.4375rem) {

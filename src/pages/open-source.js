@@ -4,13 +4,12 @@ import { StaticQuery, graphql } from 'gatsby'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import BlueBackground from '../components/Common/BlueBackground'
-import { Grid } from '../components/grid'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
 
+import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
-
 import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
@@ -22,6 +21,11 @@ const OpenSource = ({ data }) => {
       seoMetaDescription,
       featuredCaseStudy,
       statement,
+      talksSectionImage,
+      talksSectionTitle,
+      talksSectionTalks,
+      talkSectionCtaText,
+      talksSectionCtaLink,
       whyOsSectionTitle,
       whyOsSectionReason1Image,
       whyOsSectionReason1Title,
@@ -35,9 +39,11 @@ const OpenSource = ({ data }) => {
       whyOsSectionClientsSubtitle,
       whyOsSectionClients,
       technologyPartnersSectionTitle,
-      technologyPartners
+      technologyPartners: partners
     }
   } = data
+
+  const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
 
   const whyOsReasons = [
     {
@@ -71,10 +77,21 @@ const OpenSource = ({ data }) => {
       <OpenDeliverables {...data} />
       <BlueBackground>
         <Contributions {...data} />
-        <PartnershipsSection
-          title={technologyPartnersSectionTitle}
-          partners={technologyPartners}
-        />
+        {talks && talks.length && (
+          <TalksSection
+            icon={talksSectionImage}
+            title={talksSectionTitle}
+            talks={talks}
+            ctaText={talkSectionCtaText}
+            ctaLink={talksSectionCtaLink}
+          />
+        )}
+        {partners && partners.length && (
+          <PartnershipsSection
+            title={technologyPartnersSectionTitle}
+            partners={partners}
+          />
+        )}
       </BlueBackground>
     </Layout>
   )
@@ -105,6 +122,20 @@ const OpenSourcePage = props => (
             }
           }
           statement
+          talksSectionImage {
+            title
+            file {
+              url
+            }
+          }
+          talksSectionTitle
+          talksSectionTalks {
+            title
+            type
+            link
+          }
+          talkSectionCtaText
+          talksSectionCtaLink
           whyOsSectionTitle
           whyOsSectionReason1Image {
             title
