@@ -26,23 +26,9 @@ const StyledSubtitleWithBodyContainer = styled.div`
   padding-top: ${props => props.theme.spacing[1]};
 `
 
-const StyledImage = styled(Image)`
-  max-height: 100%;
-  max-width: 60%;
-`
-
-const StyledImageContainer = styled.div`
-  height: ${props => props.theme.space[7]};
-`
-
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
   <Col key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
-    <StyledImageContainer>
-      <StyledImage
-        image={logoDarkTheme}
-        alt={`Image of ${logoDarkTheme.title}`}
-      />
-    </StyledImageContainer>
+    <Image image={logoDarkTheme} alt={`Image of ${logoDarkTheme.title}`} />
     <StyledSubtitleWithBodyContainer>
       <SubtitleWithBody
         subtitle={membershipLevel}
