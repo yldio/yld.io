@@ -22,11 +22,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
     <Layout>
       <Head page={content} />
       <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
-      <GreyBackground>
-        <Grid>
-          <Statement richText={content.seoText.content[0].content} />
-        </Grid>
-      </GreyBackground>
+      <Statement richText={content.seoText.content[0].content} />
       <Approach
         title={content.trainingApproachTitle}
         content={trainingApproachesContent}

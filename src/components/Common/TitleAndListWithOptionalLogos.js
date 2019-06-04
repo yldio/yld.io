@@ -6,6 +6,7 @@ import { Padding } from 'styled-components-spacing'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 import theme from '../../utils/theme'
+import Image from './Image'
 
 const OuterPaddings = ({ children }) => (
   <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
@@ -16,6 +17,17 @@ const ItemBody = styled(Body)`
     padding: 0;
   }
 `
+
+const SquareImg60 = styled(Image)`
+  max-width: 60px;
+  max-height: 60px;
+  padding-bottom: 12px;
+
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
+`
+
 const TitleAndList = ({
   title,
   list,
@@ -28,6 +40,8 @@ const TitleAndList = ({
     )
     titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
   }, [])
+
+  // there is no image in the `typeof list === 'string'` because that would come from a textarea input from contentful as a bullet list, so if we want an image per bullet, we MUST pass the list as an array of objects.
 
   return (
     <OuterPaddings>
@@ -58,6 +72,7 @@ const TitleAndList = ({
           {Array.isArray(list)
             ? list.map((el, idx) => (
                 <React.Fragment key={idx}>
+                  {el.image && <SquareImg60 image={el.image} />}
                   <ItemSubtitle themeVariation={themeVariation}>
                     {el.title}
                   </ItemSubtitle>

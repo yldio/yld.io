@@ -9,7 +9,7 @@ import { CardTitle, BodyPrimary } from '../Typography'
 import colorLuminance from 'color-luminance'
 
 import { Section, Separator, TitleAndBody } from './elements'
-import TitleAndList from '../Common/TitleAndList'
+import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
 
 const MAX_CASE_STUDIES = 3
 

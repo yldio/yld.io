@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import { Row, Col } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import getSections from './getSections'
-import TitleAndList from '../Common/TitleAndList'
+import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
 import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import theme from '../../utils/theme'
 
