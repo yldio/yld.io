@@ -9663,6 +9663,329 @@ exports[`Storyshots JobLink JobLink 1`] = `
 </a>
 `;
 
+exports[`Storyshots Repo Repo 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.c2 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
+.c3 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin-top: 1.875rem;
+}
+
+.c1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+<div
+  style={
+    Object {
+      "padding": "1rem 0",
+    }
+  }
+>
+  <a
+    href="https://github.com/nodejs/node"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <h3
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        nodejs/node
+      </div>
+    </h3>
+  </a>
+  <p
+    className="c2"
+  >
+    <div
+      className="c1"
+    >
+      123
+       Contributions
+    </div>
+  </p>
+  <p
+    className="c2"
+  >
+    123
+     Stars
+  </p>
+  <hr
+    className="c3"
+    muted={false}
+  />
+</div>
+`;
+
+exports[`Storyshots Repo Repo Dark 1`] = `
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.c3 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
+.c4 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  opacity: .5;
+  width: 60px;
+  margin-top: 1.875rem;
+}
+
+.c2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+  padding: 1rem 3rem;
+}
+
+<section
+  className="c0"
+>
+  <div>
+    <a
+      href="https://github.com/nodejs/node"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <h3
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          nodejs/node
+        </div>
+      </h3>
+    </a>
+    <p
+      className="c3"
+    >
+      <div
+        className="c2"
+      >
+        123
+         Contributions
+      </div>
+    </p>
+    <p
+      className="c3"
+    >
+      123
+       Stars
+    </p>
+    <hr
+      className="c4"
+      muted={true}
+    />
+  </div>
+</section>
+`;
+
+exports[`Storyshots Repo Repo w/ Image 1`] = `
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.c9 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding: 0.375rem 0;
+  padding: 0;
+}
+
+.c8 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c4 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  display: inline-block;
+  margin: 1.125rem 0;
+  width: 100%;
+}
+
+.c2 {
+  padding: 1.5rem;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #757575;
+  border-right: none;
+}
+
+.c3 {
+  width: 72px;
+}
+
+.c5 {
+  width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  vertical-align: top;
+  padding: 1.5rem;
+  border: 1px solid #757575;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <a
+      className="c1"
+      href="https://github.com/nodejs/node"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+            height={100}
+            width={100}
+          >
+            <img
+              alt="nodejs/node logo"
+              className="c5"
+              src="/joyent72.svg"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+      >
+        <h3
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            nodejs/node
+          </div>
+        </h3>
+        <p
+          className="c9"
+        >
+          <div
+            className="c8"
+          >
+            123
+             Contributions
+          </div>
+        </p>
+        <p
+          className="c9"
+        >
+          123
+           Stars
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Spaces Spaces 1`] = `
 <div>
   <div

@@ -2678,6 +2678,14 @@ apr-map@3.0.3:
     apr-engine-sum "^3.0.3"
     lodash.defaults "^4.2.0"
 
+apr-reduce@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-reduce/-/apr-reduce-3.0.3.tgz#be875cf29cdb80a4d47eaeb0f92b4de2857c13d7"
+  integrity sha1-vodc8pzbgKTUfq6w+StN4oV8E9c=
+  dependencies:
+    apr-engine-each "^3.0.3"
+    lodash.defaults "^4.2.0"
+
 apr@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/apr/-/apr-2.0.2.tgz#22b897bb81c5fa96a3b1475c15406f87fdec3c30"
