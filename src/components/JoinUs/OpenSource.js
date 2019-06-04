@@ -2,7 +2,7 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
 
 import { Section, Separator, TitleAndBody } from './elements'
-import TitleAndList from '../Common/TitleAndListWithOptionalLogos'
+import TitleAndList from '../Common/TitleAndList'
 import VideoGrid from '../Common/VideoGrid'
 
 const OpenSource = ({
