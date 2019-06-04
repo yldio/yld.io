@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 require('dotenv').config()
 
 const { createClient } = require('contentful-management')
@@ -260,7 +261,6 @@ exports.handler = async (event, context, callback) => {
       console.log(
         `Not prod so not creating contentful event for ${meetup.eventName}`
       )
-      return
     }
   })
 

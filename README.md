@@ -103,6 +103,28 @@ Lever webhooks are extremely limited so we have to write our own lambda to check
 
 The zap is within the zapier account registered to `apis@yld.io`
 
+#### Github
+
+Local development requires:
+
+`GITHUB_TOKEN` - A personal access token generated on your personal github account. Create one [here](https://github.com/settings/tokens) with the following scopes: `public_repo`, `read:org`, `read:user`
+
+`CONTENTFUL_SPACE` - see [How to run](#how-to-run) section
+
+`CMS_CRUD` - see [How to run](#how-to-run) section
+
+`./src/functions/github.js`
+
+The aim of this lammbda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating data on a lambda and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
+
+- Repos
+  We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enyzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value edtiable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
+
+- Meta
+  Meta data is used a summary of all the repositories that yldio organisation has contributed to. This data is written directly to the Open Source content type.
+
+Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
+
 ## Content Model notes
 
 This section serves as a information repository for some of our content models, stating what they represent and explaining some of their fields, if needed.

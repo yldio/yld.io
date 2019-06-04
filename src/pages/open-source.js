@@ -3,11 +3,16 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
+import BlueBackground from '../components/Common/BlueBackground'
 import { Grid } from '../components/grid'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
+
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
+
+import Contributions from '../components/OpenSource/Contributions'
+import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
 const OpenSource = ({ data }) => {
   const {
@@ -63,10 +68,14 @@ const OpenSource = ({ data }) => {
         subtitle={whyOsSectionClientsSubtitle}
         companies={whyOsSectionClients}
       />
-      <PartnershipsSection
-        title={technologyPartnersSectionTitle}
-        partners={technologyPartners}
-      />
+      <OpenDeliverables {...data} />
+      <BlueBackground>
+        <Contributions {...data} />
+        <PartnershipsSection
+          title={technologyPartnersSectionTitle}
+          partners={technologyPartners}
+        />
+      </BlueBackground>
     </Layout>
   )
 }
@@ -166,6 +175,42 @@ const OpenSourcePage = props => (
             url
             membershipLevel
             description
+          }
+          openDeliverablesSectionTitle
+          openDeliverablesClientReposSubtitle
+          openDeliverablesSectionDescription {
+            openDeliverablesSectionDescription
+          }
+          openDeliverablesClientRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
+          }
+          contributionsSectionTitleLine1
+          contributionsSectionTitleLine2
+          contributionsSectionTitleLine3
+          openSourceMetaRepoCount
+          openSourceMetaPullRequestCount
+          contributionsSectionImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 250) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          contributionsSectionDescription
+          contributionsSectionCtaText
+          contributionsSectionCtaLink
+          contributionsSectionGithubRepos {
+            id
+            url
+            nameWithOwner
+            pullRequestCount
+            starCount
           }
         }
       }
