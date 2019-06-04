@@ -95,7 +95,7 @@ const Contributions = ({
                   key={generate()}
                   width={[1, 1, 6 / 12, 6 / 12, 6 / 12, 4 / 12]}
                 >
-                  <Repo theme="dark" {...repo} />
+                  <Repo theme="dark" small {...repo} />
                 </Col>
               ))}
           </Row>

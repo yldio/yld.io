@@ -10,7 +10,7 @@ const StyledHr = styled(Hr)`
   margin-top: ${remcalc(30)};
 `
 
-const RepoNameEllipsis = styled.div`
+const Ellipsis = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -32,7 +32,7 @@ const Repo = ({
   nameWithOwner,
   pullRequestCount,
   starCount,
-  small = 'false',
+  isImage = false,
   titleLink = true,
   theme
 }) => {
@@ -40,17 +40,17 @@ const Repo = ({
   return (
     <Fragment>
       <ConditionalLink titleLink={titleLink} url={url}>
-        <Subtitle reverse={isDark} noPaddingBottom={!small} noPadding={small}>
-          <RepoNameEllipsis>{nameWithOwner}</RepoNameEllipsis>
+        <Subtitle reverse={isDark} noPaddingBottom noPaddingTop={isImage}>
+          <Ellipsis>{nameWithOwner}</Ellipsis>
         </Subtitle>
       </ConditionalLink>
-      <BodyStylised small={small} noPadding>
-        {pullRequestCount} Contributions
+      <BodyStylised small={isImage} noPadding>
+        <Ellipsis>{pullRequestCount} Contributions</Ellipsis>
       </BodyStylised>
-      <BodyStylised small={small} noPadding>
+      <BodyStylised small={isImage} noPadding>
         {starCount} Stars
       </BodyStylised>
-      {small && <StyledHr muted={isDark} short />}
+      {!isImage && <StyledHr muted={isDark} short />}
     </Fragment>
   )
 }

@@ -1,16 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 import GreyBackground from '../Common/GreyBackground'
 import RepoWithImage from '../Common/Repo/RepoWithImage'
 
 const Wrapper = styled(GreyBackground)`
-  padding: ${props => props.theme.spacing[4]} 0;
+  padding: ${props => props.theme.spacing[1.5]} 0;
+  padding-bottom: ${props => props.theme.spacing[3.5]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: ${props => props.theme.spacing[3.5]};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${props => props.theme.spacing[4]};
+  `}
 `
 
 const StyledSubtitle = styled(Subtitle)`
-  padding: ${({ theme: { spacing } }) => `${spacing[4]} 0 ${spacing[3.5]} 0`};
+  padding: ${props =>
+    `${props.theme.spacing[3]} 0 ${props.theme.spacing[3]} 0`};
+
+  ${breakpoint('smallTablet')`
+    padding: ${props =>
+      `${props.theme.spacing[3]} 0 ${props.theme.spacing[3]} 0`};
+  `}
+
+  ${breakpoint('tablet')`
+    padding: ${props =>
+      `${props.theme.spacing[4]} 0 ${props.theme.spacing[3]} 0`};
+  `}
 `
 
 const OpenDeliverables = props => {
