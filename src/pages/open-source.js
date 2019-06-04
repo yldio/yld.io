@@ -107,6 +107,7 @@ const OpenSourcePage = props => (
           seoDescription
           featuredCaseStudy {
             title
+            slug
             posterColor
             posterImage {
               title
