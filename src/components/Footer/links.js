@@ -52,6 +52,10 @@ const social = [
 
 const gdpr = [
   {
+    label: 'Contact Us',
+    to: '/contact'
+  },
+  {
     label: 'Cookies',
     to: '/cookie-policy'
   },

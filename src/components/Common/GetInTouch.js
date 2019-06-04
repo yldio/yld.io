@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
-import GreyBackground from './GreyBackground'
 import StyledLink from './StyledLink'
 
 const RowLayout = styled(Row)`
@@ -13,8 +12,8 @@ const RowLayout = styled(Row)`
   `}
 `
 
-const GetInTouch = ({ title, contactText }) => (
-  <GreyBackground>
+const GetInTouch = ({ title, contactText, ctaText = 'Get in touch' }) => (
+  <div>
     <Grid>
       <Padding
         top={{ smallPhone: 3.5, tablet: 5 }}
@@ -26,12 +25,12 @@ const GetInTouch = ({ title, contactText }) => (
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
             <BodyPrimary>{contactText}</BodyPrimary>
-            <StyledLink to="/contact/">Get in touch</StyledLink>
+            <StyledLink to="/contact/">{ctaText}</StyledLink>
           </Col>
         </RowLayout>
       </Padding>
     </Grid>
-  </GreyBackground>
+  </div>
 )
 
 export default GetInTouch
