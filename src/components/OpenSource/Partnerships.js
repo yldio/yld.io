@@ -9,20 +9,22 @@ import { SectionTitle } from '../Typography'
 import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
-const StyledCol = styled(Col)`
-  padding: ${remcalc(83)} 0 ${remcalc(60)};
+const StyledGrid = styled(Grid)`
+  padding-top: ${remcalc(36)};
+  padding-bottom: ${remcalc(54)};
 
   ${breakpoint('smallTablet')`
-    padding-left: ${remcalc(21)};
-  `}
-
-  ${breakpoint('tablet')`
-    padding-left: ${remcalc(24)};
+    padding-top: ${remcalc(72)};
+    padding-bottom: ${remcalc(108)};
   `}
 `
 
-const StyledPartnersRow = styled(Row)`
-  padding-bottom: ${remcalc(60)};
+const StyledRow = styled(Row)`
+  padding-bottom: ${remcalc(72)};
+`
+
+const StyledSubtitleWithBodyContainer = styled.div`
+  padding-top: ${remcalc(12)};
 `
 
 const StyledImage = styled(Image)`
@@ -42,26 +44,26 @@ const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
         alt={`Image of ${logoDarkTheme.title}`}
       />
     </StyledImageContainer>
-    <SubtitleWithBody
-      subtitle={membershipLevel}
-      body={description}
-      themeVariation="dark"
-    />
+    <StyledSubtitleWithBodyContainer>
+      <SubtitleWithBody
+        subtitle={membershipLevel}
+        body={description}
+        themeVariation="dark"
+      />
+    </StyledSubtitleWithBodyContainer>
   </Col>
 )
 
 const PartnershipsSection = ({ title, partners }) => (
   <BlueBackground>
-    <Grid>
-      <Row>
-        <StyledCol width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
+    <StyledGrid>
+      <StyledRow>
+        <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
           <SectionTitle reverse>{title}</SectionTitle>
-        </StyledCol>
-      </Row>
-      <StyledPartnersRow>
-        {partners.map(partner => PartnerCol(partner))}
-      </StyledPartnersRow>
-    </Grid>
+        </Col>
+      </StyledRow>
+      <Row>{partners.map(partner => PartnerCol(partner))}</Row>
+    </StyledGrid>
   </BlueBackground>
 )
 
