@@ -15,8 +15,10 @@ export const GreyFooter = styled.footer`
 
 const showGetInTouch = pathname => {
   const path = pathname.replace(/^\/|\/$/gi, '')
-  return !['contact', 'training', 'speciality/node-js', 'join-us'].includes(
-    path
+
+  return (
+    !['contact', 'training', 'join-us'].includes(path) &&
+    !path.startsWith('speciality/')
   )
 }
 
