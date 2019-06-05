@@ -66,10 +66,12 @@ const OpenSource = ({ data }) => {
     }
   ]
 
-  const specialities = technologiesSectionTechnologies.map(tech => ({
-    title: tech.name,
-    items: tech.specialities
-  }))
+  const specialities = technologiesSectionTechnologies.map(
+    ({ name, specialities }) => ({
+      title: name,
+      items: specialities
+    })
+  )
 
   return (
     <Layout>
@@ -101,10 +103,12 @@ const OpenSource = ({ data }) => {
           />
         )}
       </BlueBackground>
-      <SeoLinksContainer
-        specialities={specialities}
-        sectionTitle={technologiesSectionTitle}
-      />
+      {specialities && specialities.length && (
+        <SeoLinksContainer
+          specialities={specialities}
+          sectionTitle={technologiesSectionTitle}
+        />
+      )}
     </Layout>
   )
 }
