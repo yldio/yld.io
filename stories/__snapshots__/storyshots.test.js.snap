@@ -5856,61 +5856,59 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   }
 }
 
-<div>
+<div
+  className="c0"
+>
   <div
-    className="c0"
+    className="c1"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <div
-        className="c2"
+        className="c3"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
       >
-        <div
-          className="c3"
-          width={
-            Array [
-              1,
-              1,
-              1,
-              1,
-              0.5,
-            ]
-          }
+        <h2
+          className="c4"
         >
-          <h2
-            className="c4"
-          >
-            Talk to us about Node.js 
-          </h2>
-        </div>
-        <div
-          className="c5"
-          width={
-            Array [
-              1,
-              1,
-              1,
-              1,
-              0.5,
-              0.4166666666666667,
-            ]
-          }
+          Talk to us about Node.js 
+        </h2>
+      </div>
+      <div
+        className="c5"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+            0.4166666666666667,
+          ]
+        }
+      >
+        <p
+          className="c6"
         >
-          <p
-            className="c6"
-          >
-             Whether you need help with a project or are interested in training, we love to talk about all things Node.
-          </p>
-          <a
-            className="c7"
-            href="/contact/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Get in touch
-          </a>
-        </div>
+           Whether you need help with a project or are interested in training, we love to talk about all things Node.
+        </p>
+        <a
+          className="c7"
+          href="/contact/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Get in touch
+        </a>
       </div>
     </div>
   </div>
