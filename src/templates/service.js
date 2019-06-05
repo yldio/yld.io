@@ -1,105 +1,39 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-import { SectionTitle, Subtitle } from '../components/Typography'
+
 import { Padding } from 'styled-components-spacing'
-import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import SeoLinks from '../components/Common/seoLinks'
+import SeoLinksContainer from '../components/Common/seoLinksContainer'
 import WorkStages from '../components/Service/WorkStages'
 import GreyBackground from '../components/Common/GreyBackground'
 import BlueBackground from '../components/Common/BlueBackground'
 import Head from '../components/Common/Head'
 import Statement from '../components/Common/Statement'
 
-const WeWorkWithPadding = styled.div`
-  padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
-  ${breakpoint('tablet')`
-    padding-top: ${props => remcalc(props.index * 72)};
-  `}
-`
+const Service = ({ data: { contentfulService: service }, location }) => (
+  <Layout location={location}>
+    <Head page={service} />
+    <CaseStudyPreview caseStudy={service.caseStudies[0]} />
+    <Statement>{service.mainPageIntroSentence.mainPageIntroSentence}</Statement>
 
-const Service = ({ data: { contentfulService: service }, location }) => {
-  const {
-    specialityAreaTitle1,
-    specialityAreaItems1,
-    specialityAreaTitle2,
-    specialityAreaItems2,
-    specialityAreaTitle3,
-    specialityAreaItems3,
-    specialityAreaTitle4,
-    specialityAreaItems4
-  } = service
-
-  return (
-    <Layout location={location}>
-      <Head page={service} />
-      <CaseStudyPreview caseStudy={service.caseStudies[0]} />
-      <Statement>
-        {service.mainPageIntroSentence.mainPageIntroSentence}
-      </Statement>
-
-      <BlueBackground>
-        <WorkStages
-          title={service.workStagesTitle}
-          workStages={service.workStages}
-        />
-      </BlueBackground>
-      <GreyBackground>
-        <Padding
-          top={{ smallPhone: 3, tablet: 4 }}
-          bottom={{ smallTablet: 3.5, tablet: 5 }}
-        >
-          <Grid>
-            <Row>
-              <Col width={[1]}>
-                <SectionTitle>We work with</SectionTitle>
-              </Col>
-            </Row>
-            <Row>
-              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                <WeWorkWithPadding index={1}>
-                  {specialityAreaTitle1 ? (
-                    <Subtitle>{specialityAreaTitle1}</Subtitle>
-                  ) : null}
-                  <SeoLinks items={specialityAreaItems1} />
-                </WeWorkWithPadding>
-              </Col>
-              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                {specialityAreaItems2 && (
-                  <WeWorkWithPadding index={2}>
-                    <Subtitle>{specialityAreaTitle2}</Subtitle>
-                    <SeoLinks items={specialityAreaItems2} />
-                  </WeWorkWithPadding>
-                )}
-              </Col>
-              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                {specialityAreaItems3 && (
-                  <WeWorkWithPadding index={3}>
-                    <Subtitle>{specialityAreaTitle3}</Subtitle>
-                    <SeoLinks items={specialityAreaItems3} />
-                  </WeWorkWithPadding>
-                )}
-              </Col>
-              <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
-                {specialityAreaItems4 && (
-                  <WeWorkWithPadding index={4}>
-                    <Subtitle>{specialityAreaTitle4}</Subtitle>
-                    <SeoLinks items={specialityAreaItems4} />
-                  </WeWorkWithPadding>
-                )}
-              </Col>
-            </Row>
-          </Grid>
-        </Padding>
-      </GreyBackground>
-      <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
-    </Layout>
-  )
-}
+    <BlueBackground>
+      <WorkStages
+        title={service.workStagesTitle}
+        workStages={service.workStages}
+      />
+    </BlueBackground>
+    <GreyBackground>
+      <Padding
+        top={{ smallPhone: 3, tablet: 4 }}
+        bottom={{ smallTablet: 3.5, tablet: 5 }}
+      >
+        <SeoLinksContainer service={service} />
+      </Padding>
+    </GreyBackground>
+    <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
+  </Layout>
+)
 
 export default Service
 
