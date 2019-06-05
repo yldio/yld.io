@@ -1,14 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import remcalc from 'remcalc'
+import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
 import { SectionTitle, Subtitle } from '../Typography'
 import { Grid, Row, Col } from '../grid'
 import SeoLinks from './seoLinks'
 
-const WeWorkWithPadding = styled.div`
-  padding-top: ${props => (props.index === 1 ? remcalc(36) : remcalc(24))};
+const StyledLinksColumn = styled.div`
+  padding-top: ${props => props.theme.spacing[props.index === 1 ? 3 : 2]};
   ${breakpoint('tablet')`
     padding-top: ${props => remcalc(props.index * 72)};
   `}
@@ -17,15 +17,15 @@ const WeWorkWithPadding = styled.div`
 const SeoLinksColumn = ({ speciality: { title, item } }, index) => (
   <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={index}>
     {item && (
-      <WeWorkWithPadding index={index + 1}>
+      <StyledLinksColumn index={index + 1}>
         <Subtitle>{title}</Subtitle>
         <SeoLinks items={item} />
-      </WeWorkWithPadding>
+      </StyledLinksColumn>
     )}
   </Col>
 )
 
-const SeoLinksContainer = ({ service }) => {
+const SeoLinksContainer = ({ service, sectionTitle }) => {
   const services = [
     {
       title: service.specialityAreaTitle1,
@@ -49,7 +49,7 @@ const SeoLinksContainer = ({ service }) => {
     <Grid>
       <Row>
         <Col width={[1]}>
-          <SectionTitle>We work with</SectionTitle>
+          <SectionTitle>{sectionTitle}</SectionTitle>
         </Col>
       </Row>
       <Row>

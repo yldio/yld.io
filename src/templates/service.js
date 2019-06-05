@@ -28,7 +28,7 @@ const Service = ({ data: { contentfulService: service }, location }) => (
         top={{ smallPhone: 3, tablet: 4 }}
         bottom={{ smallTablet: 3.5, tablet: 5 }}
       >
-        <SeoLinksContainer service={service} />
+        <SeoLinksContainer service={service} sectionTitle="We work with" />
       </Padding>
     </GreyBackground>
     <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
