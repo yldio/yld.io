@@ -1900,7 +1900,6 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.132.tgz#8ce45ca8745ff2e004fac0de0ab46f61e390ffa0"
   integrity sha512-RNUU1rrh85NgUJcjOOr96YXr+RHwInGbaQCZmlitqOaCKXffj8bh+Zxwuq5rjDy5OgzFldDVoqk4pyLEDiwxIw==
 
-
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1915,7 +1914,6 @@
   version "12.0.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.3.tgz#5d8d24e0033fc6393efadc85cb59c1f638095c9a"
   integrity sha512-zkOxCS/fA+3SsdA+9Yun0iANxzhQRiNwTvJSr6N95JhuJ/x27z9G2URx1Jpt3zYFfCGUXZGL5UDxt5eyLE7wgw==
-
 
 "@types/node@^10.12.19":
   version "10.14.7"
@@ -5587,7 +5585,6 @@ core-js-compat@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.1.3.tgz#0cc3ba4c7f62928c2837e1cffbe8dc78b4f1ae14"
   integrity sha512-EP018pVhgwsKHz3YoN1hTq49aRe+h017Kjz0NQz3nXV0cCRMvH3fLQl+vEPGr4r4J5sk4sU3tUC7U1aqTCeJeA==
-
   dependencies:
     browserslist "^4.6.0"
     core-js-pure "3.1.3"
@@ -5597,7 +5594,6 @@ core-js-pure@3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.1.3.tgz#4c90752d5b9471f641514f3728f51c1e0783d0b5"
   integrity sha512-k3JWTrcQBKqjkjI0bkfXS0lbpWPxYuHWfMMjC1VDmzU4Q58IwSbuXSo99YO/hUHlw/EB4AlfA2PVxOGkrIq6dA==
-
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -7547,7 +7543,6 @@ express@^4.16.3, express@^4.17.0:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g==
-
   dependencies:
     accepts "~1.3.7"
     array-flatten "1.1.1"
@@ -8103,7 +8098,6 @@ focus-lock@^0.6.3:
   resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.6.4.tgz#066af3ed5875d85745ab45ef4fbbb43e8a73514a"
   integrity sha512-+waElh6m7dbNmEabXQIblZjJMIRQOoHMNqB8RZkyemK+vN1XQ9uHLi740DVwTcK5fzAq3g+tBglLjIqUDHX/Og==
 
-
 follow-redirects@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.0.0.tgz#8e34298cbd2e176f254effec75a1c78cc849fd37"
@@ -8347,7 +8341,6 @@ gatsby-cli@^2.4.9:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.6.2.tgz#d3c74e324afdc604e86caab8ab6c62c33d4a4df4"
   integrity sha512-ihTDocclnshQP0RY05esU/FqCBbEiVW/UGL/4nP58E+UPWo3IezWSheLka20fCdOld5SckcKupdPgEE8OeN7nA==
-
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -8565,7 +8558,7 @@ gatsby-source-medium@2.0.1:
     "@babel/runtime" "^7.0.0"
     axios "^0.18.0"
 
-gatsby-telemetry@^1.0.9:
+gatsby-telemetry@^1.0.10:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.0.11.tgz#18b7fd03080db189f63265637cee333d2b811af8"
   integrity sha512-pEGt8lpjB52KF2ekdL7TvARTpE+iHzx31f8ILS7r7ZqgCp2v+MhaLGIDh4SiCM801mFYGgsp87mx4q8DCqPeDQ==
@@ -16443,7 +16436,6 @@ semver@^6.0.0, semver@^6.1.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.1.tgz#53f53da9b30b2103cd4f15eab3a18ecbcb210c9b"
   integrity sha512-rWYq2e5iYW+fFe/oPPtYJxYgjBm8sC4rmoGdUOgBB7VnwKt6HrL793l2voH1UlsyYZpJ4g0wfjnTEO1s1NP2eQ==
 
-
 send@0.17.1:
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/send/-/send-0.17.1.tgz#c1d8b059f7900f7466dd4938bdc44e11ddb376c8"
@@ -17766,7 +17758,6 @@ synchronous-promise@^2.0.6:
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.9.tgz#b83db98e9e7ae826bf9c8261fd8ac859126c780a"
   integrity sha512-LO95GIW16x69LuND1nuuwM4pjgFGupg7pZ/4lU86AmchPKrhk0o2tpMU2unXRrqo81iAFe1YJ0nAGEVwsrZAgg==
-
 
 table@^5.0.0, table@^5.2.3:
   version "5.4.0"

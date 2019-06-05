@@ -11668,7 +11668,8 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 .c2 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -11847,7 +11848,8 @@ exports[`Storyshots Statement Statement 1`] = `
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -11994,7 +11996,8 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 }
 
 .c1 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .c6 {
@@ -12183,7 +12186,8 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -12308,7 +12312,8 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 .c2 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -12487,7 +12492,8 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -13663,6 +13669,20 @@ exports[`Storyshots Title and List (with optional logos) list in form of a strin
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c7 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -13678,25 +13698,8 @@ exports[`Storyshots Title and List (with optional logos) list in form of a strin
 }
 
 .c1 {
-  padding: 2.25rem 0;
-}
-
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
-}
-
-.c7 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c7:last-child {
-  padding: 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -13865,7 +13868,8 @@ exports[`Storyshots Title and List (with optional logos) list in form of a strin
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -13988,7 +13992,21 @@ exports[`Storyshots Title and List (with optional logos) list in form of an arra
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c6 {
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c8 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -14003,24 +14021,15 @@ exports[`Storyshots Title and List (with optional logos) list in form of an arra
 }
 
 .c1 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
+.c6 {
+  padding-bottom: 2.25rem;
 }
 
-.c7 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c7:last-child {
+.c6:last-child {
   padding: 0;
 }
 
@@ -14190,7 +14199,8 @@ exports[`Storyshots Title and List (with optional logos) list in form of an arra
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -14233,39 +14243,51 @@ exports[`Storyshots Title and List (with optional logos) list in form of an arra
           ]
         }
       >
-        <h3
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
-        <h3
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-        </p>
-        <h3
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+        </div>
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -14330,7 +14352,23 @@ exports[`Storyshots Title and List (with optional logos) on dark background 1`] 
   color: #fff;
 }
 
-.c7 {
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  opacity: .5;
+  padding-top: 0;
+}
+
+.c9 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -14346,26 +14384,15 @@ exports[`Storyshots Title and List (with optional logos) on dark background 1`] 
 }
 
 .c2 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-.c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #fff;
-  opacity: .5;
-  padding-top: 0;
+.c7 {
+  padding-bottom: 2.25rem;
 }
 
-.c8 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c8:last-child {
+.c7:last-child {
   padding: 0;
 }
 
@@ -14536,7 +14563,8 @@ exports[`Storyshots Title and List (with optional logos) on dark background 1`] 
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -14582,39 +14610,51 @@ exports[`Storyshots Title and List (with optional logos) on dark background 1`] 
             ]
           }
         >
-          <h3
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={true}
-          >
-            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-          </p>
-          <h3
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={true}
+            >
+              Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+            </p>
+          </div>
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={true}
-          >
-            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-          </p>
-          <h3
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={true}
+            >
+              Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+            </p>
+          </div>
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={true}
-          >
-            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-          </p>
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={true}
+            >
+              Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -14678,7 +14718,21 @@ exports[`Storyshots Title and List (with optional logos) on grey background 1`] 
   background: #f9f9f9;
 }
 
-.c7 {
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c9 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -14693,24 +14747,15 @@ exports[`Storyshots Title and List (with optional logos) on grey background 1`] 
 }
 
 .c2 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-.c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
+.c7 {
+  padding-bottom: 2.25rem;
 }
 
-.c8 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c8:last-child {
+.c7:last-child {
   padding: 0;
 }
 
@@ -14880,7 +14925,8 @@ exports[`Storyshots Title and List (with optional logos) on grey background 1`] 
 
 @media (min-width:56.3125em) {
   .c2 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -14926,39 +14972,51 @@ exports[`Storyshots Title and List (with optional logos) on grey background 1`] 
             ]
           }
         >
-          <h3
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={false}
-          >
-            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-          </p>
-          <h3
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={false}
+            >
+              Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+            </p>
+          </div>
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={false}
-          >
-            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-          </p>
-          <h3
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={false}
+            >
+              Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+            </p>
+          </div>
+          <div
             className="c7"
           >
-            Community support
-          </h3>
-          <p
-            className="c8"
-            muted={false}
-          >
-            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-          </p>
+            <h3
+              className="c8"
+            >
+              Community support
+            </h3>
+            <p
+              className="c9"
+              muted={false}
+            >
+              Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -15018,7 +15076,7 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c8 {
+.c9 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -15034,7 +15092,7 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
   transition-property: background,color;
 }
 
-.c8:after {
+.c9:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -15044,28 +15102,42 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
   box-sizing: border-box;
 }
 
-.c8:hover {
+.c9:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c8:focus {
+.c9:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c8:active {
+.c9:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c8:active:after {
+.c9:active:after {
   background: #333333;
 }
 
-.c6 {
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c8 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -15080,24 +15152,15 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
 }
 
 .c1 {
-  padding: 2.25rem 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
+.c6 {
+  padding-bottom: 2.25rem;
 }
 
-.c7 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c7:last-child {
+.c6:last-child {
   padding: 0;
 }
 
@@ -15267,7 +15330,8 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -15310,41 +15374,53 @@ exports[`Storyshots Title and List (with optional logos) with extra content 1`] 
           ]
         }
       >
-        <h3
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
-        <h3
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-        </p>
-        <h3
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+        </div>
+        <div
           className="c6"
         >
-          Community support
-        </h3>
-        <p
-          className="c7"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+          <h3
+            className="c7"
+          >
+            Community support
+          </h3>
+          <p
+            className="c8"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
         <a
-          className="c8"
+          className="c9"
           href="/#"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -15415,7 +15491,29 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c7 {
+.c8 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c11 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -15430,37 +15528,32 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
 }
 
 .c1 {
-  padding: 2.25rem 0;
-}
-
-.c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
-}
-
-.c8 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c8:last-child {
-  padding: 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .c6 {
-  width: 100%;
-  height: auto;
-  max-width: 60px;
-  max-height: 60px;
-  padding-bottom: 12px;
+  padding-bottom: 2.25rem;
 }
 
-.c6:not(:first-child) {
-  margin-top: 12px;
+.c6:last-child {
+  padding: 0;
+}
+
+.c7 {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.75rem;
+}
+
+.c9 {
+  width: 100%;
+  height: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 @media (min-width:29.4375em) {
@@ -15629,7 +15722,8 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
 
 @media (min-width:56.3125em) {
   .c1 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -15672,54 +15766,96 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
           ]
         }
       >
-        <img
-          alt="Community Support Logo"
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
         >
-          Community support
-        </h3>
-        <p
-          className="c8"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
-        <img
-          alt="Community Support Logo"
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          >
+            Community support
+          </h3>
+          <p
+            className="c11"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
         >
-          Community support
-        </h3>
-        <p
-          className="c8"
-          muted={false}
-        >
-          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-        </p>
-        <img
-          alt="Community Support Logo"
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          >
+            Community support
+          </h3>
+          <p
+            className="c11"
+            muted={false}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+        </div>
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
         >
-          Community support
-        </h3>
-        <p
-          className="c8"
-          muted={false}
-        >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          >
+            Community support
+          </h3>
+          <p
+            className="c11"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -16670,7 +16806,29 @@ Array [
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c7 {
+.c8 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+.c11 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c11 > a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -16685,37 +16843,32 @@ Array [
 }
 
 .c0 {
-  padding: 2.25rem 0;
-}
-
-.c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
-}
-
-.c8 > a {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c8:last-child {
-  padding: 0;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .c6 {
-  width: 100%;
-  height: auto;
-  max-width: 60px;
-  max-height: 60px;
-  padding-bottom: 12px;
+  padding-bottom: 2.25rem;
 }
 
-.c6:not(:first-child) {
-  margin-top: 12px;
+.c6:last-child {
+  padding: 0;
+}
+
+.c7 {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.75rem;
+}
+
+.c9 {
+  width: 100%;
+  height: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 @media (min-width:29.4375em) {
@@ -16884,7 +17037,8 @@ Array [
 
 @media (min-width:56.3125em) {
   .c0 {
-    padding: 4.5rem 0;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -16924,48 +17078,90 @@ Array [
           ]
         }
       >
-        <img
-          alt="Community Support Logo"
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
-        />
-        <p
-          className="c8"
-          muted={false}
         >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
-        <img
-          alt="Community Support Logo"
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          />
+          <p
+            className="c11"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
-        />
-        <p
-          className="c8"
-          muted={false}
         >
-          Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
-        </p>
-        <img
-          alt="Community Support Logo"
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          />
+          <p
+            className="c11"
+            muted={false}
+          >
+            Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.
+          </p>
+        </div>
+        <div
           className="c6"
-          src="/community_support.svg"
-        />
-        <h3
-          className="c7"
-        />
-        <p
-          className="c8"
-          muted={false}
         >
-          Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
-        </p>
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+              height={100}
+              width={100}
+            >
+              <img
+                alt="Community Support Logo"
+                className="c9"
+                src="/community_support.svg"
+              />
+            </div>
+          </div>
+          <h3
+            className="c10"
+          />
+          <p
+            className="c11"
+            muted={false}
+          >
+            Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.
+          </p>
+        </div>
       </div>
     </div>
   </div>,
@@ -16978,7 +17174,27 @@ Array [
   padding-right: 0;
 }
 
-.c5 {
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c6 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -16998,7 +17214,7 @@ Array [
   display: block;
 }
 
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -17012,12 +17228,12 @@ Array [
   display: flex;
 }
 
-.c6 {
+.c7 {
   width: 100%;
   height: auto;
 }
 
-.c4 {
+.c5 {
   max-height: 108px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -17034,7 +17250,7 @@ Array [
   padding-bottom: 4.5rem;
 }
 
-.c2 {
+.c4 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -17104,42 +17320,77 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c5 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c6 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -17148,7 +17399,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -17157,7 +17408,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c6 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -17166,7 +17417,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c5 {
+  .c6 {
     width: 25%;
     position: initial;
     top: 0;
@@ -17175,35 +17426,35 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -17212,163 +17463,185 @@ Array [
 <div
     className="c0 c1"
   >
-    <h3
+    <div
       className="c2"
     >
-      Clients we helped with open source
-    </h3>
-    <div
-      className="c3"
-    >
       <div
-        className="c4 c5"
+        className="c3"
         width={
           Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
+            1,
           ]
         }
       >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
-            }
-          }
-        />
+        <h3
+          className="c4"
+        >
+          Clients we helped with open source
+        </h3>
       </div>
       <div
-        className="c4 c5"
+        className="c3"
         width={
           Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
+            1,
           ]
         }
       >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
+        <div
+          className="c2"
+        >
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
             }
-          }
-        />
-      </div>
-      <div
-        className="c4 c5"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
-      >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
             }
-          }
-        />
-      </div>
-      <div
-        className="c4 c5"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
-      >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
             }
-          }
-        />
-      </div>
-      <div
-        className="c4 c5"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
-      >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
             }
-          }
-        />
-      </div>
-      <div
-        className="c4 c5"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
-      >
-        <img
-          alt="Elife logo"
-          className="c6"
-          src="elife.png"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
             }
-          }
-        />
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+          <div
+            className="c5 c6"
+            width={
+              Array [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.3333333333333333,
+                0.25,
+              ]
+            }
+          >
+            <img
+              alt="Elife logo"
+              className="c7"
+              src="elife.png"
+              style={
+                Object {
+                  "filter": "grayscale(1)",
+                  "saturate": "0",
+                }
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>,
