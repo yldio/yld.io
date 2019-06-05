@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import BlueBackground from '../components/Common/BlueBackground'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
+import SeoLinksContainer from '../components/Common/seoLinksContainer'
 
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
@@ -39,7 +40,9 @@ const OpenSource = ({ data }) => {
       whyOsSectionClientsSubtitle,
       whyOsSectionClients,
       technologyPartnersSectionTitle,
-      technologyPartners: partners
+      technologyPartners: partners,
+      technologiesSectionTitle,
+      technologiesSectionTechnologies
     }
   } = data
 
@@ -62,6 +65,11 @@ const OpenSource = ({ data }) => {
       body: whyOsSectionReason3Body.whyOsSectionReason3Body
     }
   ]
+
+  const specialities = technologiesSectionTechnologies.map(tech => ({
+    title: tech.name,
+    items: tech.specialities
+  }))
 
   return (
     <Layout>
@@ -93,6 +101,10 @@ const OpenSource = ({ data }) => {
           />
         )}
       </BlueBackground>
+      <SeoLinksContainer
+        specialities={specialities}
+        sectionTitle={technologiesSectionTitle}
+      />
     </Layout>
   )
 }
@@ -188,7 +200,6 @@ const OpenSourcePage = props => (
             }
           }
           technologyPartnersSectionTitle
-          technologiesSectionTitle
           technologyPartners {
             name
             logoLightTheme {
@@ -242,6 +253,14 @@ const OpenSourcePage = props => (
             nameWithOwner
             pullRequestCount
             starCount
+          }
+          technologiesSectionTitle
+          technologiesSectionTechnologies {
+            referenceName
+            name
+            specialities {
+              title
+            }
           }
         }
       }
