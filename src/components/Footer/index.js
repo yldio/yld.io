@@ -14,8 +14,7 @@ export const GreyFooter = styled.footer`
 `
 
 const Wrapper = styled.div`
-  background-color: ${({ theme, bgColor = 'white' }) =>
-    theme.colors[bgColor || 'white']};
+  background-color: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
 `
 
 const getPathnameWithSlashes = pathname => pathname.replace(/^\/|\/$/gi, '')
