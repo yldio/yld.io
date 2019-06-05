@@ -52,7 +52,7 @@ const social = [
 
 const gdpr = [
   {
-    label: 'Contact Us',
+    label: 'Contact',
     to: '/contact'
   },
   {
