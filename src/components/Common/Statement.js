@@ -8,10 +8,12 @@ import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
 
 const PaddedGrid = styled(Grid)`
-  padding: ${props => props.theme.space[4]} 0;
+  padding-top: ${props => props.theme.space[4]};
+  padding-bottom: ${props => props.theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding: ${props => props.theme.space[6]} 0;
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[6]};
   `}
 `
 

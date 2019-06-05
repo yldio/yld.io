@@ -7,6 +7,7 @@ import { Grid, Col, Row } from '../grid'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 import theme from '../../utils/theme'
+import RatioContainer from './RatioContainer'
 import Image from './Image'
 
 const StyledCol = styled(Col)`
@@ -14,27 +15,35 @@ const StyledCol = styled(Col)`
 `
 
 const PaddedGrid = styled(Grid)`
-  padding: ${props => props.theme.space[4]} 0;
+  padding-top: ${props => props.theme.space[4]};
+  padding-bottom: ${props => props.theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding: ${props => props.theme.space[6]} 0;
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[6]};
   `}
 `
 
-const ItemBody = styled(Body)`
+const Wrapper = styled.div`
+  padding-bottom: ${props => props.theme.spacing[3]};
+
   &:last-child {
     padding: 0;
   }
 `
 
-const SquareImg60 = styled(Image)`
-  max-width: 60px;
-  max-height: 60px;
-  padding-bottom: 12px;
+const ImageWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  margin-bottom: ${props => props.theme.space[2]};
+`
 
-  &:not(:first-child) {
-    margin-top: 12px;
-  }
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 `
 
 const TitleAndList = ({
@@ -70,7 +79,7 @@ const TitleAndList = ({
                 ),
                 // eslint-disable-next-line
                 paragraph: props => (
-                  <ItemBody themeVariation={themeVariation} {...props} />
+                  <Body themeVariation={themeVariation} {...props} />
                 )
               }}
               source={list}
@@ -78,13 +87,19 @@ const TitleAndList = ({
           ) : null}
           {Array.isArray(list)
             ? list.map((el, idx) => (
-                <React.Fragment key={idx}>
-                  {el.image && <SquareImg60 image={el.image} />}
+                <Wrapper key={idx}>
+                  {el.image && (
+                    <ImageWrapper>
+                      <RatioContainer width={100} height={100}>
+                        <StyledImage image={el.image} />
+                      </RatioContainer>
+                    </ImageWrapper>
+                  )}
                   <ItemSubtitle themeVariation={themeVariation}>
                     {el.title}
                   </ItemSubtitle>
-                  <ItemBody themeVariation={themeVariation}>{el.body}</ItemBody>
-                </React.Fragment>
+                  <Body themeVariation={themeVariation}>{el.body}</Body>
+                </Wrapper>
               ))
             : null}
           {extraContent}
