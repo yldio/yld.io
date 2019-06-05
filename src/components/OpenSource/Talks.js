@@ -9,22 +9,22 @@ import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
 const StyledGrid = styled(Grid)`
-  padding-top: ${props => props.theme.spacing[2]};
-  padding-bottom: ${props => props.theme.space[5]};
+  padding-top: ${({ theme }) => theme.spacing[2]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${props => props.theme.space[6]};
-    padding-bottom: ${props => props.theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
 const StyledImage = styled.img`
-  padding-bottom: ${props => props.theme.spacing[2]};
+  padding-bottom: ${({ theme }) => theme.spacing[2]};
 `
 
 const StyledVideoGridWrapper = styled.div`
-  padding-top: ${props => props.theme.spacing[3]};
-  padding-bottom: ${props => props.theme.spacing[3]};
+  padding-top: ${({ theme }) => theme.spacing[3]};
+  padding-bottom: ${({ theme }) => theme.spacing[3]};
 `
 
 const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (

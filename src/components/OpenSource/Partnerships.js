@@ -9,21 +9,21 @@ import Image from '../Common/Image'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledGrid = styled(Grid)`
-  padding-top: ${props => props.theme.space[4]};
-  padding-bottom: ${props => props.theme.space[5]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${props => props.theme.space[6]};
-    padding-bottom: ${props => props.theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
 const StyledRow = styled(Row)`
-  padding-bottom: ${props => props.theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
 const StyledSubtitleWithBodyContainer = styled.div`
-  padding-top: ${props => props.theme.spacing[1]};
+  padding-top: ${({ theme }) => theme.spacing[1]};
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
