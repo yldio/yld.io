@@ -3,6 +3,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
+import { Grid } from '../components/grid'
+import EventSection from '../components/Common/Events'
 import BlueBackground from '../components/Common/BlueBackground'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
@@ -39,11 +41,13 @@ const OpenSource = ({ data }) => {
       whyOsSectionReason3Body,
       whyOsSectionClientsSubtitle,
       whyOsSectionClients,
+      technologiesSectionTitle,
+      technologiesSectionTechnologies,
       technologyPartnersSectionTitle,
       technologyPartners: partners,
-      technologiesSectionTitle,
-      technologiesSectionTechnologies
-    }
+      eventsSectionImage
+    },
+    allContentfulMeetupEvent: { edges: events }
   } = data
 
   const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
@@ -96,6 +100,13 @@ const OpenSource = ({ data }) => {
             ctaLink={talksSectionCtaLink}
           />
         )}
+      </BlueBackground>
+      <EventSection
+        events={events}
+        title={title}
+        eventIcon={eventsSectionImage.file.url}
+      />
+      <BlueBackground>
         {partners && partners.length && (
           <PartnershipsSection
             title={technologyPartnersSectionTitle}
@@ -103,6 +114,7 @@ const OpenSource = ({ data }) => {
           />
         )}
       </BlueBackground>
+
       {specialities && specialities.length && (
         <SeoLinksContainer
           specialities={specialities}
@@ -117,10 +129,28 @@ const OpenSourcePage = props => (
   <StaticQuery
     query={graphql`
       query {
+        allContentfulMeetupEvent {
+          edges {
+            node {
+              id
+              eventTitle
+              date
+              linkToEvent
+            }
+          }
+        }
         contentfulOpenSourcePage {
           title
           seoTitle
           seoDescription
+          eventsSectionImage {
+            id
+            title
+            file {
+              fileName
+              url
+            }
+          }
           featuredCaseStudy {
             title
             slug
