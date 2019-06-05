@@ -14,51 +14,30 @@ const StyledLinksColumn = styled.div`
   `}
 `
 
-const SeoLinksColumn = ({ speciality: { title, item } }, index) => (
+const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
   <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={index}>
-    {item && (
+    {items && items.length && (
       <StyledLinksColumn index={index + 1}>
         <Subtitle>{title}</Subtitle>
-        <SeoLinks items={item} />
+        <SeoLinks items={items} />
       </StyledLinksColumn>
     )}
   </Col>
 )
 
-const SeoLinksContainer = ({ service, sectionTitle }) => {
-  const services = [
-    {
-      title: service.specialityAreaTitle1,
-      item: service.specialityAreaItems1
-    },
-    {
-      title: service.specialityAreaTitle2,
-      item: service.specialityAreaItems2
-    },
-    {
-      title: service.specialityAreaTitle3,
-      item: service.specialityAreaItems3
-    },
-    {
-      title: service.specialityAreaTitle4,
-      item: service.specialityAreaItems4
-    }
-  ]
-
-  return (
-    <Grid>
-      <Row>
-        <Col width={[1]}>
-          <SectionTitle>{sectionTitle}</SectionTitle>
-        </Col>
-      </Row>
-      <Row>
-        {services.map((speciality, index) =>
-          SeoLinksColumn({ speciality }, index)
-        )}
-      </Row>
-    </Grid>
-  )
-}
+const SeoLinksContainer = ({ specialities, sectionTitle }) => (
+  <Grid>
+    <Row>
+      <Col width={[1]}>
+        <SectionTitle>{sectionTitle}</SectionTitle>
+      </Col>
+    </Row>
+    <Row>
+      {specialities.map((speciality, index) =>
+        SeoLinksColumn({ speciality }, index)
+      )}
+    </Row>
+  </Grid>
+)
 
 export default SeoLinksContainer

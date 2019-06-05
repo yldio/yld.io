@@ -11,29 +11,55 @@ import BlueBackground from '../components/Common/BlueBackground'
 import Head from '../components/Common/Head'
 import Statement from '../components/Common/Statement'
 
-const Service = ({ data: { contentfulService: service }, location }) => (
-  <Layout location={location}>
-    <Head page={service} />
-    <CaseStudyPreview caseStudy={service.caseStudies[0]} />
-    <Statement>{service.mainPageIntroSentence.mainPageIntroSentence}</Statement>
+const Service = ({ data: { contentfulService: service }, location }) => {
+  const specialities = [
+    {
+      title: service.specialityAreaTitle1,
+      items: service.specialityAreaItems1
+    },
+    {
+      title: service.specialityAreaTitle2,
+      items: service.specialityAreaItems2
+    },
+    {
+      title: service.specialityAreaTitle3,
+      items: service.specialityAreaItems3
+    },
+    {
+      title: service.specialityAreaTitle4,
+      items: service.specialityAreaItems4
+    }
+  ]
 
-    <BlueBackground>
-      <WorkStages
-        title={service.workStagesTitle}
-        workStages={service.workStages}
-      />
-    </BlueBackground>
-    <GreyBackground>
-      <Padding
-        top={{ smallPhone: 3, tablet: 4 }}
-        bottom={{ smallTablet: 3.5, tablet: 5 }}
-      >
-        <SeoLinksContainer service={service} sectionTitle="We work with" />
-      </Padding>
-    </GreyBackground>
-    <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
-  </Layout>
-)
+  return (
+    <Layout location={location}>
+      <Head page={service} />
+      <CaseStudyPreview caseStudy={service.caseStudies[0]} />
+      <Statement>
+        {service.mainPageIntroSentence.mainPageIntroSentence}
+      </Statement>
+
+      <BlueBackground>
+        <WorkStages
+          title={service.workStagesTitle}
+          workStages={service.workStages}
+        />
+      </BlueBackground>
+      <GreyBackground>
+        <Padding
+          top={{ smallPhone: 3, tablet: 4 }}
+          bottom={{ smallTablet: 3.5, tablet: 5 }}
+        >
+          <SeoLinksContainer
+            specialities={specialities}
+            sectionTitle="We work with"
+          />
+        </Padding>
+      </GreyBackground>
+      <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
+    </Layout>
+  )
+}
 
 export default Service
 
