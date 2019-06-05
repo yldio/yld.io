@@ -14,7 +14,7 @@ export const GreyFooter = styled.footer`
 `
 
 const Wrapper = styled.div`
-  background-color: ${({ theme, bgColor = 'greyBg' }) =>
+  background-color: ${({ theme, bgColor = 'white' }) =>
     theme.colors[bgColor || 'white']};
 `
 
