@@ -8,6 +8,7 @@ import EventSection from '../components/Common/Events'
 import BlueBackground from '../components/Common/BlueBackground'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
+import SeoLinksContainer from '../components/Common/seoLinksContainer'
 
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
@@ -40,6 +41,8 @@ const OpenSource = ({ data }) => {
       whyOsSectionReason3Body,
       whyOsSectionClientsSubtitle,
       whyOsSectionClients,
+      technologiesSectionTitle,
+      technologiesSectionTechnologies,
       technologyPartnersSectionTitle,
       technologyPartners: partners,
       eventsSectionImage
@@ -67,6 +70,13 @@ const OpenSource = ({ data }) => {
     }
   ]
 
+  const specialities = technologiesSectionTechnologies.map(
+    ({ name, specialities }) => ({
+      title: name,
+      items: specialities
+    })
+  )
+
   return (
     <Layout>
       <Head page={{ title, seoTitle, seoMetaDescription }} />
@@ -90,6 +100,13 @@ const OpenSource = ({ data }) => {
             ctaLink={talksSectionCtaLink}
           />
         )}
+      </BlueBackground>
+      <EventSection
+        events={events}
+        title={title}
+        eventIcon={eventsSectionImage.file.url}
+      />
+      <BlueBackground>
         {partners && partners.length && (
           <PartnershipsSection
             title={technologyPartnersSectionTitle}
@@ -97,11 +114,13 @@ const OpenSource = ({ data }) => {
           />
         )}
       </BlueBackground>
-      <EventSection
-        events={events}
-        title={title}
-        eventIcon={eventsSectionImage.file.url}
-      />
+
+      {specialities && specialities.length && (
+        <SeoLinksContainer
+          specialities={specialities}
+          sectionTitle={technologiesSectionTitle}
+        />
+      )}
     </Layout>
   )
 }
@@ -216,7 +235,6 @@ const OpenSourcePage = props => (
             }
           }
           technologyPartnersSectionTitle
-          technologiesSectionTitle
           technologyPartners {
             name
             logoLightTheme {
@@ -270,6 +288,14 @@ const OpenSourcePage = props => (
             nameWithOwner
             pullRequestCount
             starCount
+          }
+          technologiesSectionTitle
+          technologiesSectionTechnologies {
+            referenceName
+            name
+            specialities {
+              title
+            }
           }
         }
       }
