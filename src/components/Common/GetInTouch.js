@@ -13,24 +13,22 @@ const RowLayout = styled(Row)`
 `
 
 const GetInTouch = ({ title, contactText, ctaText = 'Get in touch' }) => (
-  <div>
-    <Grid>
-      <Padding
-        top={{ smallPhone: 3.5, tablet: 5 }}
-        bottom={{ smallPhone: 3.5, tablet: 5 }}
-      >
-        <RowLayout>
-          <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle>{title}</SectionTitle>
-          </Col>
-          <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-            <BodyPrimary>{contactText}</BodyPrimary>
-            <StyledLink to="/contact/">{ctaText}</StyledLink>
-          </Col>
-        </RowLayout>
-      </Padding>
-    </Grid>
-  </div>
+  <Grid>
+    <Padding
+      top={{ smallPhone: 3.5, tablet: 5 }}
+      bottom={{ smallPhone: 3.5, tablet: 5 }}
+    >
+      <RowLayout>
+        <Col width={[1, 1, 1, 1, 6 / 12]}>
+          <SectionTitle>{title}</SectionTitle>
+        </Col>
+        <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+          <BodyPrimary>{contactText}</BodyPrimary>
+          <StyledLink to="/contact/">{ctaText}</StyledLink>
+        </Col>
+      </RowLayout>
+    </Padding>
+  </Grid>
 )
 
 export default GetInTouch
