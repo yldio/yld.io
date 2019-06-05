@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { Padding } from 'styled-components-spacing'
 import Layout from '../components/layout'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import SeoLinksContainer from '../components/Common/seoLinksContainer'
@@ -46,15 +45,10 @@ const Service = ({ data: { contentfulService: service }, location }) => {
         />
       </BlueBackground>
       <GreyBackground>
-        <Padding
-          top={{ smallPhone: 3, tablet: 4 }}
-          bottom={{ smallTablet: 3.5, tablet: 5 }}
-        >
-          <SeoLinksContainer
-            specialities={specialities}
-            sectionTitle="We work with"
-          />
-        </Padding>
+        <SeoLinksContainer
+          specialities={specialities}
+          sectionTitle="We work with"
+        />
       </GreyBackground>
       <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
     </Layout>
