@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import { isAfter, endOfYesterday } from 'date-fns'
 
 import IntroSection from '../components/Speciality/Intro'
 import ProjectsSection from '../components/Speciality/Projects'
@@ -18,6 +19,24 @@ const getExternalType = (speciality, type) =>
   speciality.externalResources.filter(
     additionalInfo => additionalInfo.type === type
   ) || []
+
+const isSpecialityEvent = (eventTitle, title) => {
+  const formattedTitle = title
+    .toLowerCase()
+    .replace(/(\.|js)/gi, '')
+    .trim()
+
+  return eventTitle.toLowerCase().includes(formattedTitle)
+}
+
+const getSpecialityEvents = (title, events) =>
+  events
+    .filter(
+      ({ node: { eventTitle, date } }) =>
+        isSpecialityEvent(eventTitle, title) && isAfter(date, endOfYesterday())
+    )
+    .sort((a, b) => (a.date <= b.date ? -1 : 1))
+    .slice(0, 5)
 
 const Speciality = ({
   data: {
@@ -44,6 +63,7 @@ const Speciality = ({
   const talks = getExternalType(speciality, `Talk`)
   const tutorials = getExternalType(speciality, `Tutorial`)
   const books = getExternalType(speciality, `Book`)
+  const specialityEvents = events ? getSpecialityEvents(title, events) : []
 
   return (
     <Layout backgroundColor="blue" location={location}>
@@ -61,7 +81,11 @@ const Speciality = ({
         text={communityText}
         title={title}
       />
-      <EventSection events={events} title={title} eventIcon={eventIcon} />
+      <EventSection
+        events={specialityEvents}
+        title={title}
+        eventIcon={eventIcon}
+      />
       <TalksSection talks={talks} videoIcon={videoIcon} />
       <BlogListing
         title="Blog posts"

@@ -23,33 +23,21 @@ const CTA = {
 const noEventsMessage = title =>
   `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`
 
-const isSpecialityEvent = (eventTitle, title) => {
-  const formattedTitle = title
-    .toLowerCase()
-    .replace(/(\.|js)/gi, '')
-    .trim()
-
-  return eventTitle.toLowerCase().includes(formattedTitle)
-}
-
-const getSpecialityEvents = (title, events) =>
+const getAllUpcomingEvents = events =>
   events
-    .filter(
-      ({ node: { eventTitle, date } }) =>
-        isSpecialityEvent(eventTitle, title) && isAfter(date, endOfYesterday())
-    )
+    .filter(({ node: { eventTitle, date } }) => isAfter(date, endOfYesterday()))
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
 const EventSection = ({ events, title, eventIcon }) => {
-  const specialityEvents = events ? getSpecialityEvents(title, events) : []
-  const hasEvents = !!specialityEvents.length
+  const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
+  const hasEvents = !!displayedEvents.length
 
   return (
     <Grid>
       <Padding top={6} bottom={6}>
         <Row>
-          <Col width={[1, 1, 1, 1, 6 / 12]}>
+          <Col width={[1, 1, 1, 1, 7 / 12]}>
             <div>
               <Padding bottom={1}>
                 <img src={specialityEventIcon} alt="events icon" />
@@ -57,10 +45,10 @@ const EventSection = ({ events, title, eventIcon }) => {
               <SectionTitle>{`Upcoming ${title.trim()} events`}</SectionTitle>
             </div>
           </Col>
-          <Col width={[1, 1, 1, 1, 6 / 12]}>
+          <Col width={[1, 1, 1, 1, 5 / 12]}>
             {hasEvents ? (
               <ul>
-                {specialityEvents.map(
+                {displayedEvents.map(
                   ({ node: { id, eventTitle, date, linkToEvent } }) => (
                     <li key={`${id}`}>
                       <Subtitle noPaddingBottom>
