@@ -62,7 +62,7 @@ const FooterLinks = () => (
     <Padding top={3} bottom={3}>
       <Grid>
         <Row>
-          <Col width={[1, 1, 1, 1, 1, 1, 1 / 2]}>
+          <Col width={[1, 1, 1, 1, 1, 1, 5 / 12]}>
             <Social>
               {social.map(link => (
                 <li key={link.label}>
@@ -73,7 +73,7 @@ const FooterLinks = () => (
               ))}
             </Social>
           </Col>
-          <Col width={[1, 1, 1, 1, 1, 1, 1 / 2]}>
+          <Col width={[1, 1, 1, 1, 1, 1, 7 / 12]}>
             <GDPR>
               {gdpr.map(link => (
                 <LinkUnderline key={link.label} to={link.to}>

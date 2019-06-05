@@ -32,14 +32,14 @@ const navLinks = [
         to: '/about-us/'
       },
       {
-        label: 'Contact',
-        to: '/contact/'
+        label: 'Join us',
+        to: '/join-us/'
       }
     ]
   },
   {
-    label: 'Join us',
-    to: '/join-us/'
+    label: 'Contact',
+    to: '/contact'
   }
 ]
 

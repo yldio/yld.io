@@ -5469,7 +5469,7 @@ exports[`Storyshots Form Label 1`] = `
 `;
 
 exports[`Storyshots GetInTouch GetInTouch 1`] = `
-.c1 {
+.c0 {
   max-width: calc(100% - 48px);
   position: relative;
   margin-left: auto;
@@ -5478,27 +5478,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding-right: 0;
 }
 
-.c4 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c6 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -5519,6 +5499,26 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 .c5 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c4 {
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -5526,7 +5526,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c7 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -5534,12 +5534,12 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   padding: 0.75rem 0;
 }
 
-.c2 {
+.c1 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
 
-.c8 {
+.c7 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -5555,7 +5555,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   transition-property: background,color;
 }
 
-.c8:after {
+.c7:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -5565,32 +5565,28 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   box-sizing: border-box;
 }
 
-.c8:hover {
+.c7:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c8:focus {
+.c7:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c8:active {
+.c7:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c8:active:after {
+.c7:active:after {
   background: #333333;
 }
 
-.c0 {
-  background: #f9f9f9;
-}
-
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -5605,101 +5601,101 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media (min-width:29.4375em) {
-  .c1 {
+  .c0 {
     max-width: calc(100% - 72px);
   }
 }
 
 @media (min-width:34.5625em) {
-  .c1 {
+  .c0 {
     max-width: 480px;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c1 {
+  .c0 {
     max-width: none;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c1 {
+  .c0 {
     max-width: 1100px;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c1 {
+  .c0 {
     padding-left: 2.625rem;
     padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c1 {
+  .c0 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c1 {
+  .c0 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5708,7 +5704,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5717,7 +5713,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -5726,42 +5722,42 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c5 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c5 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5770,7 +5766,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c5 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5779,7 +5775,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -5788,7 +5784,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c5 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -5797,7 +5793,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c5 {
+  .c4 {
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
@@ -5805,54 +5801,54 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c2 {
+  .c1 {
     padding-top: 6.75rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c2 {
+  .c1 {
     padding-bottom: 6.75rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c2 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c3 {
+  .c2 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -5860,7 +5856,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   }
 }
 
-<section
+<div
   className="c0"
 >
   <div
@@ -5871,56 +5867,52 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
     >
       <div
         className="c3"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
       >
-        <div
+        <h2
           className="c4"
-          width={
-            Array [
-              1,
-              1,
-              1,
-              1,
-              0.5,
-            ]
-          }
         >
-          <h2
-            className="c5"
-          >
-            Talk to us about Node.js 
-          </h2>
-        </div>
-        <div
+          Talk to us about Node.js 
+        </h2>
+      </div>
+      <div
+        className="c5"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+            0.4166666666666667,
+          ]
+        }
+      >
+        <p
           className="c6"
-          width={
-            Array [
-              1,
-              1,
-              1,
-              1,
-              0.5,
-              0.4166666666666667,
-            ]
-          }
         >
-          <p
-            className="c7"
-          >
-             Whether you need help with a project or are interested in training, we love to talk about all things Node.
-          </p>
-          <a
-            className="c8"
-            href="/contact/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Get in touch
-          </a>
-        </div>
+           Whether you need help with a project or are interested in training, we love to talk about all things Node.
+        </p>
+        <a
+          className="c7"
+          href="/contact/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Get in touch
+        </a>
       </div>
     </div>
   </div>
-</section>
+</div>
 `;
 
 exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
@@ -7613,12 +7605,12 @@ exports[`Storyshots Header Header itself 1`] = `
                 >
                   <a
                     className="c13"
-                    href="/contact/"
+                    href="/join-us/"
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
                   >
-                    Contact
+                    Join us
                   </a>
                 </li>
               </ul>
@@ -7628,11 +7620,11 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
-                href="/join-us/"
+                href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Join us
+                Contact
               </a>
             </li>
           </ul>
@@ -7821,7 +7813,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
-                href="/join-us/"
+                href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
                 states={
@@ -7841,7 +7833,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   }
                 }
               >
-                Join us
+                Contact
               </a>
             </li>
           </ul>

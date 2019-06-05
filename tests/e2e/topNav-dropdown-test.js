@@ -35,12 +35,12 @@ test('a dropdown dropdownContainer opens on desktop and redirects correctly', as
 })
 
 test('An outerAnchorItem redirects to a page', async t => {
-  const joinUs = await Selector('li').withText('Join us')
+  const joinUs = await Selector('li').withText('Contact')
   await t.expect(joinUs.exists).ok()
   await t.click(joinUs)
 
   const location = await getWindowLocation()
-  await t.expect(location.href).contains(`${baseUrl}/join-us`)
+  await t.expect(location.href).contains(`${baseUrl}/contact`)
 })
 
 test('opens and close a dropdown', async t => {

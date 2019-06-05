@@ -50,11 +50,11 @@ test('clicking a side Nav link redirects to the correct url and closes the side 
   await openSideNav(t)
   const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
 
-  const joinUsLink = sideNavPanel.find('a').withText('Join us')
+  const joinUsLink = sideNavPanel.find('a').withText('Contact')
   await t.click(joinUsLink)
 
   const location = await getWindowLocation()
-  await t.expect(location.href).contains(`${baseUrl}/join-us`)
+  await t.expect(location.href).contains(`${baseUrl}/contact`)
   await t.expect(sideNavPanel.exists).notOk()
 })
 
