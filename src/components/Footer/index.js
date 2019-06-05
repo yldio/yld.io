@@ -13,8 +13,15 @@ export const GreyFooter = styled.footer`
   background: #232323;
 `
 
+const Wrapper = styled.div`
+  background-color: ${({ theme, bgColor = 'greyBg' }) =>
+    theme.colors[bgColor || 'white']};
+`
+
+const getPathnameWithSlashes = pathname => pathname.replace(/^\/|\/$/gi, '')
+
 const showGetInTouch = pathname => {
-  const path = pathname.replace(/^\/|\/$/gi, '')
+  const path = getPathnameWithSlashes(pathname)
 
   return (
     !['contact', 'training', 'join-us'].includes(path) &&
@@ -22,16 +29,29 @@ const showGetInTouch = pathname => {
   )
 }
 
+const getBackgroundColor = pathname => {
+  const path = getPathnameWithSlashes(pathname)
+  /**
+   * These pages all have a final white component so we make sure
+   * to add a grey background to give them some distinction
+   */
+  const colors = { greyBg: ['engineering', 'design', 'training ', 'about-us'] }
+
+  return Object.keys(colors).find(key => colors[key].includes(path))
+}
+
 const Footer = () => (
   <Fragment>
     <Location>
       {({ location: { pathname } }) =>
         showGetInTouch(pathname) ? (
-          <GetInTouch
-            title="We're here to help"
-            contactText="Our experts work with you to understand your goals and help you build the capabilties you need to succeed"
-            ctaText="Contact Us"
-          />
+          <Wrapper bgColor={getBackgroundColor(pathname)}>
+            <GetInTouch
+              title="We're here to help"
+              contactText="Our experts work with you to understand your goals and help you build the capabilties you need to succeed"
+              ctaText="Contact Us"
+            />
+          </Wrapper>
         ) : null
       }
     </Location>
