@@ -47,8 +47,8 @@ const Footer = () => (
           <Wrapper bgColor={getBackgroundColor(pathname)}>
             <GetInTouch
               title="We're here to help"
-              contactText="Our experts work with you to understand your goals and help you build the capabilties you need to succeed"
-              ctaText="Contact Us"
+              contactText="Our experts work with you to understand your goals and help you build the capabilities you need to succeed"
+              ctaText="Contact us"
             />
           </Wrapper>
         ) : null
