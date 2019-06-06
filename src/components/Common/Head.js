@@ -5,13 +5,7 @@ import { hotjar } from 'react-hotjar'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import yldLogo from 'file-loader!../../images/logo.png'
 
-const {
-  NODE_ENV = 'development',
-  HOTJAR_SCRIPT_VERSION = 6,
-  HOTJAR_ID
-} = process.env
-
-const isProd = NODE_ENV === 'production'
+const { HOTJAR_ID, HOTJAR_SCRIPT_VERSION = 6 } = process.env
 
 const TITLE = graphql`
   query SITE_TITLE {
@@ -42,7 +36,7 @@ const Head = ({ page }) => (
         ]}
       >
         <html lang="en" />
-        {isProd ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION) : null}
+        {HOTJAR_ID ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION) : null}
       </Helmet>
     )}
   />
