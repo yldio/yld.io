@@ -3,12 +3,13 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import EventSection from '../components/Common/Events'
 import BlueBackground from '../components/Common/BlueBackground'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Statement from '../components/Common/Statement'
 import SeoLinksContainer from '../components/Common/seoLinksContainer'
+import Hr from '../components/Common/Hr'
 
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
@@ -91,6 +92,13 @@ const OpenSource = ({ data }) => {
       <OpenDeliverables {...data} />
       <BlueBackground>
         <Contributions {...data} />
+        <Grid>
+          <Row>
+            <Col width={[1]}>
+              <Hr muted />
+            </Col>
+          </Row>
+        </Grid>
         {talks && talks.length && (
           <TalksSection
             icon={talksSectionImage}
