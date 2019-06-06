@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql, Link, navigate } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
-import queryString from 'query-string'
+import { navigate } from '@reach/router'
 
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -33,11 +33,14 @@ class ContactUs extends Component {
     triedSubmitting: false
   }
 
-  handleChangeCheckbox = e => {
+  handleChangeCheckbox = (e, branch) => {
     const target = e.target
     this.setState(prevState => ({
       ...prevState,
-      [target.name]: target.checked
+      [target.name]: {
+        checked: target.checked,
+        branch: branch
+      }
     }))
   }
 
@@ -59,7 +62,25 @@ class ContactUs extends Component {
     delete strippedState.triedSubmitting
     delete strippedState.privacy
 
-    const stringified = queryString.stringify(strippedState)
+    // if you tick and untick a field, it remains in state as 'false'; we want ot filter those out
+    const strippedFilteredState =
+      Object.keys(strippedState).length > 0
+        ? Object.keys(strippedState).filter(item => {
+            return strippedState[item]
+          })
+        : []
+
+    const branches =
+      strippedFilteredState.length > 0
+        ? strippedFilteredState.reduce((acc, current) => {
+            return (acc = [...acc, this.state[current].branch])
+          }, [])
+        : ['engineering']
+
+    const uniqueBranches = Array.from(new Set(branches))
+
+    const chosenBranch =
+      uniqueBranches.length > 1 ? 'engineering' : uniqueBranches[0]
 
     fetch('/', {
       method: 'POST',
@@ -72,7 +93,7 @@ class ContactUs extends Component {
       })
     }).then(() => {
       this.setState({ success: true, submitting: false })
-      navigate(`contact?${stringified}`, {
+      navigate(`?branch=${chosenBranch}`, {
         state: {
           ...this.state
         }
@@ -229,6 +250,7 @@ const Contact = props => (
           interests {
             label
             name
+            branch
           }
           labelYourMessage
           labelYourName
