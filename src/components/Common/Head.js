@@ -7,8 +7,8 @@ import yldLogo from 'file-loader!../../images/logo.png'
 
 const {
   NODE_ENV = 'development',
-  HOTJAR_ID,
-  HOTJAR_SCRIPT_VERSION
+  HOTJAR_SCRIPT_VERSION = 6,
+  HOTJAR_ID
 } = process.env
 
 const isProd = NODE_ENV === 'production'
@@ -42,7 +42,7 @@ const Head = ({ page }) => (
         ]}
       >
         <html lang="en" />
-        {isProd && hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)}
+        {isProd ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION) : null}
       </Helmet>
     )}
   />
