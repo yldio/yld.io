@@ -16,8 +16,8 @@ const StyledLinksColumn = styled.div`
   `}
 `
 
-const SeoLinksColumn = ({ speciality: { title, items }, index }) => (
-  <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]}>
+const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
+  <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={generate()}>
     {items && items.length && (
       <StyledLinksColumn index={index + 1}>
         <Subtitle>{title}</Subtitle>
@@ -39,13 +39,9 @@ const SeoLinksContainer = ({ specialities, sectionTitle }) => (
         </Col>
       </Row>
       <Row>
-        {specialities.map((speciality, index) => (
-          <SeoLinksColumn
-            key={generate()}
-            index={index}
-            speciality={speciality}
-          />
-        ))}
+        {specialities.map((speciality, index) =>
+          SeoLinksColumn({ speciality }, index)
+        )}
       </Row>
     </Grid>
   </Padding>

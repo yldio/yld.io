@@ -18,8 +18,12 @@ const Ellipsis = styled.div`
 `
 
 const StyledBodyStylised = styled(BodyStylised)`
-  opacity: 0.5;
-  color: ${props => props.theme.colors.white};
+  ${({ isDark }) =>
+    isDark
+      ? `
+      opacity: 0.5;
+      color: ${props => props.theme.colors.white};`
+      : null}
 `
 
 /**

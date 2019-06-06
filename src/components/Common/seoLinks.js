@@ -24,17 +24,18 @@ export default function SeoLinks({ items, ...props }) {
         <List as="ul" {...props}>
           {(items || []).map(item => {
             const path = pathsById[item.id]
-            if (path) {
-              return (
-                <ListItem key={generate()}>
+
+            return (
+              <ListItem key={generate()}>
+                {path ? (
                   <Link to={path} style={{ textDecoration: 'underline' }}>
                     {item.title.trim()}
                   </Link>
-                </ListItem>
-              )
-            }
-
-            return <ListItem key={generate()}>{item.title}</ListItem>
+                ) : (
+                  item.title.trim()
+                )}
+              </ListItem>
+            )
           })}
         </List>
       )}

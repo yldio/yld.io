@@ -305,6 +305,7 @@ const OpenSourcePage = props => (
             name
             specialities {
               title
+              id
             }
           }
         }
