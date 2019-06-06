@@ -6,7 +6,6 @@ import { Grid, Row, Col } from '../grid'
 import { Repo } from '../Common/Repo'
 import { generate } from 'shortid'
 import StyledLink from '../Common/StyledLink'
-import Hr from '../Common/Hr'
 import Image from '../Common/Image'
 import { BodyPrimary } from '../Typography'
 
@@ -112,11 +111,6 @@ const Contributions = ({
           </Col>
         </Row>
       </Wrapper>
-      <Row>
-        <Col width={[1]}>
-          <Hr muted />
-        </Col>
-      </Row>
     </Grid>
   )
 }
