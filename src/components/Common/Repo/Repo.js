@@ -8,12 +8,18 @@ import ExternalAnchor from '../ExternalAnchor'
 
 const StyledHr = styled(Hr)`
   margin-top: ${remcalc(30)};
+  border-color: rgba(255, 255, 255, 0.5);
 `
 
 const Ellipsis = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`
+
+const StyledBodyStylised = styled(BodyStylised)`
+  opacity: 0.5;
+  color: ${props => props.theme.colors.white};
 `
 
 /**
@@ -44,12 +50,14 @@ const Repo = ({
           <Ellipsis>{nameWithOwner}</Ellipsis>
         </Subtitle>
       </ConditionalLink>
-      <BodyStylised small={isImage} noPadding>
-        <Ellipsis>{pullRequestCount} Contributions</Ellipsis>
-      </BodyStylised>
-      <BodyStylised small={isImage} noPadding>
+      <Ellipsis>
+        <StyledBodyStylised small={isImage} noPadding>
+          {pullRequestCount} Contributions
+        </StyledBodyStylised>
+      </Ellipsis>
+      <StyledBodyStylised small={isImage} noPadding>
         {starCount} Stars
-      </BodyStylised>
+      </StyledBodyStylised>
       {!isImage && <StyledHr muted={isDark} short />}
     </Fragment>
   )

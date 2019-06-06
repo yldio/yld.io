@@ -38,12 +38,12 @@ const StyledImage = styled(Image)`
 `
 
 const ReposWrapper = styled.div`
-  ${breakpoint('tablet')`  
-    padding-bottom: ${props => props.theme.spacing[4]};
-  `}
-
   ${breakpoint('smallTablet')`
     padding-bottom: ${props => props.theme.spacing[3]};
+  `}
+
+  ${breakpoint('tablet')`  
+    padding-bottom: ${props => props.theme.spacing[4]};
   `}
 `
 
