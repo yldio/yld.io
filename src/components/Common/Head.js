@@ -1,8 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { hotjar } from 'react-hotjar'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import yldLogo from 'file-loader!../../images/logo.png'
+
+const {
+  NODE_ENV = 'development',
+  HOTJAR_ID,
+  HOTJAR_SCRIPT_VERSION
+} = process.env
+
+const isProd = NODE_ENV === 'production'
 
 const TITLE = graphql`
   query SITE_TITLE {
@@ -33,6 +42,7 @@ const Head = ({ page }) => (
         ]}
       >
         <html lang="en" />
+        {isProd && hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)}
       </Helmet>
     )}
   />

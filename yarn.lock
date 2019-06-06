@@ -15399,6 +15399,11 @@ react-hot-loader@^4.8.4:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-hotjar@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-2.0.0.tgz#b97bb439d9b057eb07da46f234527128e13f593c"
+  integrity sha512-aveuMW8aGrpJbmK8+uwK9Vwx8Rk4mo7NHEz/OmSm80tE11/laDBk1zkJHzWfwcduUCYZnbXvt16Gt5b9qILamQ==
+
 react-hotkeys@2.0.0-pre4:
   version "2.0.0-pre4"
   resolved "https://registry.yarnpkg.com/react-hotkeys/-/react-hotkeys-2.0.0-pre4.tgz#a1c248a51bdba4282c36bf3204f80d58abc73333"
