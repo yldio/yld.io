@@ -9653,8 +9653,6 @@ exports[`Storyshots Repo Repo 1`] = `
   line-height: 1.5rem;
   padding: 0.8125rem 0 0.6875rem 0;
   padding: 0;
-  opacity: 0.5;
-  color: #fff;
 }
 
 <div
@@ -9740,8 +9738,6 @@ exports[`Storyshots Repo Repo Dark 1`] = `
   line-height: 1.5rem;
   padding: 0.8125rem 0 0.6875rem 0;
   padding: 0;
-  opacity: 0.5;
-  color: #fff;
 }
 
 .c0 {
@@ -9819,8 +9815,6 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   line-height: 1.125rem;
   padding: 0.375rem 0;
   padding: 0;
-  opacity: 0.5;
-  color: #fff;
 }
 
 .c4 {
