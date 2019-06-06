@@ -23,6 +23,24 @@ const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
 
+const getBranch = branch => {
+  switch (branch) {
+    case 'community':
+      return (
+        <Fragment>
+          <p>community</p>
+        </Fragment>
+      )
+
+    default:
+      return (
+        <Fragment>
+          <p>engineering</p>
+        </Fragment>
+      )
+  }
+}
+
 // NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
 class ContactUs extends Component {
   state = {
@@ -92,11 +110,9 @@ class ContactUs extends Component {
         ...this.state
       })
     }).then(() => {
-      this.setState({ success: true, submitting: false })
+      this.setState({ success: true, submitting: false, branch: chosenBranch })
       navigate(`?branch=${chosenBranch}`, {
-        state: {
-          ...this.state
-        }
+        replace: true
       })
       window.scrollTo(0, 0)
     })
@@ -107,7 +123,7 @@ class ContactUs extends Component {
   }
 
   render() {
-    const { name, email, message, submitting, success } = this.state
+    const { name, email, message, submitting, success, branch } = this.state
     const {
       location,
       data: {
@@ -152,7 +168,11 @@ class ContactUs extends Component {
                 bottom={{ smallPhone: 3.5, tablet: 5 }}
               >
                 {success ? (
-                  <ThankYouMessage message={successMessage} />
+                  // call a function getBranch, written outside the class, to show the correct branch
+                  <Fragment>
+                    <ThankYouMessage message={successMessage} />
+                    {getBranch(branch)}
+                  </Fragment>
                 ) : (
                   <Fragment>
                     <AreasOfInterest
