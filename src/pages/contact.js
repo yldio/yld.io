@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { StaticQuery, graphql, Link, navigate } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import queryString from 'query-string'
 
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -50,6 +51,16 @@ class ContactUs extends Component {
     e.preventDefault()
     this.setState({ submitting: true })
 
+    const strippedState = Object.assign({}, this.state)
+    delete strippedState.name
+    delete strippedState.email
+    delete strippedState.message
+    delete strippedState.submitting
+    delete strippedState.triedSubmitting
+    delete strippedState.privacy
+
+    const stringified = queryString.stringify(strippedState)
+
     fetch('/', {
       method: 'POST',
       headers: {
@@ -61,6 +72,11 @@ class ContactUs extends Component {
       })
     }).then(() => {
       this.setState({ success: true, submitting: false })
+      navigate(`contact?${stringified}`, {
+        state: {
+          ...this.state
+        }
+      })
       window.scrollTo(0, 0)
     })
   }
