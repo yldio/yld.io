@@ -1,13 +1,21 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-
+import breakpoint from 'styled-components-breakpoint'
 import { Grid, Row, Col } from '../grid'
 import TitleAndList from '../Common/TitleAndList'
 import Subtitle from '../Typography/Subtitle'
 import LogoGrid from '../Common/LogoGrid'
 
 const StyledGrid = styled(Grid)`
-  padding-bottom: ${props => props.theme.space[6]};
+  padding-bottom: ${props => props.theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${props => props.theme.space[6]}
+  `}
+
+  ${breakpoint('desktop')`
+    padding-bottom: ${props => props.theme.space[7]}
+  `};
 `
 
 const StyledSubtitle = styled(Subtitle)`

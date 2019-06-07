@@ -46,7 +46,8 @@ const OpenSource = ({ data }) => {
       technologiesSectionTechnologies,
       technologyPartnersSectionTitle,
       technologyPartners: partners,
-      eventsSectionImage
+      eventsSectionImage,
+      eventsSectionDescription
     },
     allContentfulMeetupEvent: { edges: events }
   } = data
@@ -111,7 +112,7 @@ const OpenSource = ({ data }) => {
       </BlueBackground>
       <EventSection
         events={events}
-        title={title}
+        description={eventsSectionDescription}
         eventIcon={eventsSectionImage.file.url}
       />
       <BlueBackground>
@@ -297,12 +298,14 @@ const OpenSourcePage = props => (
             pullRequestCount
             starCount
           }
+          eventsSectionDescription
           technologiesSectionTitle
           technologiesSectionTechnologies {
             referenceName
             name
             specialities {
               title
+              id
             }
           }
         }
