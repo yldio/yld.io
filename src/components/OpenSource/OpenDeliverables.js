@@ -7,30 +7,27 @@ import GreyBackground from '../Common/GreyBackground'
 import RepoWithImage from '../Common/Repo/RepoWithImage'
 
 const Wrapper = styled(GreyBackground)`
-  padding: ${props => props.theme.spacing[3]} 0;
-  padding-bottom: ${props => props.theme.spacing[3.5]};
+  padding: ${({ theme }) => theme.spacing[3]} 0;
+  padding-bottom: ${({ theme }) => theme.spacing[3.5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${props => props.theme.spacing[3]};
+    padding-top: ${({ theme }) => theme.spacing[3]};
   `}
 
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.spacing[4]};
+    padding-top: ${({ theme }) => theme.spacing[4]};
   `}
 `
 
 const StyledSubtitle = styled(Subtitle)`
-  padding: ${props =>
-    `${props.theme.spacing[3]} 0 ${props.theme.spacing[3]} 0`};
+  padding: ${({ theme }) => `${theme.spacing[3]} 0 ${theme.spacing[3]} 0`};
 
   ${breakpoint('smallTablet')`
-    padding: ${props =>
-      `${props.theme.spacing[3]} 0 ${props.theme.spacing[3]} 0`};
+    padding: ${({ theme }) => `${theme.spacing[3]} 0 ${theme.spacing[3]} 0`};
   `}
 
   ${breakpoint('tablet')`
-    padding: ${props =>
-      `${props.theme.spacing[4]} 0 ${props.theme.spacing[3]} 0`};
+    padding: ${({ theme }) => `${theme.spacing[4]} 0 ${theme.spacing[3]} 0`};
   `}
 `
 

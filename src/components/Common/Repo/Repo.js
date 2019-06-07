@@ -18,12 +18,7 @@ const Ellipsis = styled.div`
 `
 
 const StyledBodyStylised = styled(BodyStylised)`
-  ${({ isDark }) =>
-    isDark
-      ? `
-      opacity: 0.5;
-      color: ${props => props.theme.colors.white};`
-      : null}
+  color: ${({ isDark, theme }) => (isDark ? theme.colors.white : null)};
 `
 
 /**
@@ -62,7 +57,7 @@ const Repo = ({
       <StyledBodyStylised small={isImage} noPadding>
         {starCount} Stars
       </StyledBodyStylised>
-      {!isImage && <StyledHr muted={isDark} short />}
+      {!isImage && <StyledHr short />}
     </Fragment>
   )
 }

@@ -75,10 +75,10 @@ const StandaloneWrapper = styled(Margin)`
   flex-direction: column;
   justify-content: center;
   border: 1px solid
-    ${props =>
-      props.themeVariation === 'dark'
-        ? 'rgba(255, 255, 255, 0.3)'
-        : props.theme.colors.border};
+    ${({ themeVariation, theme }) =>
+      themeVariation === 'dark'
+        ? 'rgba(255, 255, 255, 0.5)'
+        : theme.colors.border};
 `
 
 const BaseVideoLink = ({
