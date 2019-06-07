@@ -16,12 +16,24 @@ import GreyBackground from './Common/GreyBackground'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
-const { GATSBY_ENVIRONMENT, HOTJAR_ID, HOTJAR_SCRIPT_VERSION = 6 } = process.env
+const { GATSBY_ENVIRONMENT } = process.env
 
 const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =
   GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
+
+/**
+ * These are not destructured as the values are replaced inline
+ * by webpack at compile time to then be picked up in runtime.
+ *
+ * const { HOTJAR_ID } = process.env ----> will not work
+ * const HOTJAR_ID = process.env.HOTJAR_ID
+ *
+ * These variables are stored on netlify settings
+ */
+const HOTJAR_ID = process.env.HOTJAR_ID
+const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6
 
 const StyledMain = styled.main`
   padding-top: ${remcalc(120)};
