@@ -5,6 +5,8 @@ import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
 const TitleSection = ({ title }) => (
+
+  // TODO: make title accept an array so that we can pass in array of Rich tech box and give it a conditional of string vs array to send the array to do node<br>node to have new line for new sentende
   <Grid>
     <Padding
       top={{ smallPhone: 3, tablet: 4 }}
