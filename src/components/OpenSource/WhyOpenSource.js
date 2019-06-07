@@ -7,19 +7,19 @@ import Subtitle from '../Typography/Subtitle'
 import LogoGrid from '../Common/LogoGrid'
 
 const StyledGrid = styled(Grid)`
-  padding-bottom: ${props => props.theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-bottom: ${props => props.theme.space[6]}
+    padding-bottom: ${({ theme }) => theme.space[6]}
   `}
 
   ${breakpoint('desktop')`
-    padding-bottom: ${props => props.theme.space[7]}
+    padding-bottom: ${({ theme }) => theme.space[7]}
   `};
 `
 
 const StyledSubtitle = styled(Subtitle)`
-  margin-bottom: ${props => props.theme.space[3]};
+  margin-bottom: ${({ theme }) => theme.space[3]};
 `
 
 const WhyOpenSource = ({ title, list, subtitle, companies }) => (

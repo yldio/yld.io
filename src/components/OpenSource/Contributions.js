@@ -10,22 +10,22 @@ import Image from '../Common/Image'
 import { BodyPrimary } from '../Typography'
 
 const Wrapper = styled.div`
-  padding-top: ${props => props.theme.spacing[3]};
-  padding-bottom: ${props => props.theme.spacing[3]};
+  padding-top: ${({ theme }) => theme.spacing[3]};
+  padding-bottom: ${({ theme }) => theme.spacing[3]};
 
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.spacing[4]};
-    padding-bottom: ${props => props.theme.spacing[4]};
+    padding-top: ${({ theme }) => theme.spacing[4]};
+    padding-bottom: ${({ theme }) => theme.spacing[4]};
   `}
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${props => props.theme.spacing[3]};
-  padding-top: ${props => props.theme.spacing[2]};
+  padding-bottom: ${({ theme }) => theme.spacing[3]};
+  padding-top: ${({ theme }) => theme.spacing[2]};
 
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.spacing[2]};
-    padding-bottom: ${props => props.theme.spacing[4]};
+    padding-top: ${({ theme }) => theme.spacing[2]};
+    padding-bottom: ${({ theme }) => theme.spacing[4]};
   `}
 `
 
@@ -33,17 +33,17 @@ const StyledImage = styled(Image)`
   max-width: 54px;
 
   ${breakpoint('smallTablet')`
-    padding-bottom: ${props => props.theme.spacing[2]};
+    padding-bottom: ${({ theme }) => theme.spacing[2]};
   `}
 `
 
 const ReposWrapper = styled.div`
   ${breakpoint('smallTablet')`
-    padding-bottom: ${props => props.theme.spacing[3]};
+    padding-bottom: ${({ theme }) => theme.spacing[3]};
   `}
 
   ${breakpoint('tablet')`  
-    padding-bottom: ${props => props.theme.spacing[4]};
+    padding-bottom: ${({ theme }) => theme.spacing[4]};
   `}
 `
 

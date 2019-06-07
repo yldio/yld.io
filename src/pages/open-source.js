@@ -101,7 +101,7 @@ const OpenSource = ({ data }) => {
         <Grid>
           <Row>
             <Col width={[1]}>
-              <StyledHr muted />
+              <StyledHr />
             </Col>
           </Row>
         </Grid>
