@@ -35,6 +35,9 @@ const isDevEnvironment =
 const HOTJAR_ID = process.env.HOTJAR_ID
 const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6
 
+const addHotJar =
+  !isDevEnvironment && typeof window !== `undefined` && HOTJAR_ID
+
 const StyledMain = styled.main`
   padding-top: ${remcalc(120)};
 `
@@ -102,7 +105,7 @@ class Layout extends Component {
             `}</script>
                 <html lang="en" />
 
-                {typeof window !== `undefined` && HOTJAR_ID
+                {addHotJar
                   ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
                   : null}
               </Helmet>
