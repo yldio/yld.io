@@ -9753,7 +9753,6 @@ exports[`Storyshots Repo Repo 1`] = `
   </p>
   <hr
     className="c3"
-    muted={false}
   />
 </div>
 `;
@@ -9776,7 +9775,6 @@ exports[`Storyshots Repo Repo Dark 1`] = `
   border: none;
   margin: 1.0625rem 0 0 0;
   border-top: 1px solid #e6e6e6;
-  opacity: .5;
   width: 60px;
   margin-top: 1.875rem;
   border-color: rgba(255,255,255,0.5);
@@ -9841,7 +9839,6 @@ exports[`Storyshots Repo Repo Dark 1`] = `
     </p>
     <hr
       className="c4"
-      muted={true}
     />
   </div>
 </section>
@@ -10431,7 +10428,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
 @media screen and (min-width:29.4375rem) {
