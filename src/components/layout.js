@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import remcalc from 'remcalc'
+import { hotjar } from 'react-hotjar'
 
 import Header from './Header'
 import './layout.css'
@@ -15,7 +16,8 @@ import GreyBackground from './Common/GreyBackground'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
-const { GATSBY_ENVIRONMENT } = process.env
+const { GATSBY_ENVIRONMENT, HOTJAR_ID, HOTJAR_SCRIPT_VERSION = 6 } = process.env
+
 const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =
@@ -87,6 +89,10 @@ class Layout extends Component {
                 ${googleJson}
             `}</script>
                 <html lang="en" />
+
+                {HOTJAR_ID
+                  ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
+                  : null}
               </Helmet>
               <Location>
                 {({ location }) => (
