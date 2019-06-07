@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { navigate } from '@reach/router'
+import { SectionTitle } from '../components/Typography'
 
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -13,6 +14,7 @@ import ThankYouMessage from '../components/ContactUs/ThankYouMessage'
 import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
+import Statement from '../components/Common/Statement'
 
 const encode = data =>
   Object.keys(data)
@@ -23,19 +25,19 @@ const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
 
-const getBranch = branch => {
+const getBranch = (branch, engineeringMsg, communityMsg) => {
   switch (branch) {
     case 'community':
       return (
         <Fragment>
-          <p>community</p>
+          <Statement noPadding richText={communityMsg.content[0].content} />
         </Fragment>
       )
 
     default:
       return (
         <Fragment>
-          <p>engineering</p>
+          <Statement noPadding richText={engineeringMsg.content[0].content} />
         </Fragment>
       )
   }
@@ -143,7 +145,9 @@ class ContactUs extends Component {
           privacyPolicyLinkText,
           statusNotSent,
           statusSent,
-          successMessage
+          successMessage,
+          customMessage1,
+          customMessage2
         }
       }
     } = this.props
@@ -160,7 +164,13 @@ class ContactUs extends Component {
           style={{ width: '100%' }}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <TitleSection title={success ? titleContacted : titleNotContacted} />
+          {success ? (
+            <SectionTitle as="h1">{titleContacted}</SectionTitle>
+          ) : (
+            <TitleSection title={titleNotContacted} />
+          )}
+          {/* <TitleSection title={success ? titleContacted : titleNotContacted} /> */}
+          {success && <ThankYouMessage message={successMessage} />}
           <GreyBackground>
             <Grid>
               <Padding
@@ -169,10 +179,7 @@ class ContactUs extends Component {
               >
                 {success ? (
                   // call a function getBranch, written outside the class, to show the correct branch
-                  <Fragment>
-                    <ThankYouMessage message={successMessage} />
-                    {getBranch(branch)}
-                  </Fragment>
+                  getBranch(branch, customMessage1, customMessage2)
                 ) : (
                   <Fragment>
                     <AreasOfInterest
@@ -280,6 +287,36 @@ const Contact = props => (
           statusNotSent
           statusSent
           successMessage
+          customMessage1 {
+            content {
+              content {
+                data {
+                  uri
+                }
+                value
+                content {
+                  value
+                  nodeType
+                }
+                nodeType
+              }
+            }
+          }
+          customMessage2 {
+            content {
+              content {
+                data {
+                  uri
+                }
+                value
+                content {
+                  value
+                  nodeType
+                }
+                nodeType
+              }
+            }
+          }
         }
       }
     `}
