@@ -3039,6 +3039,14 @@ axios@^0.18.0:
     follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
 
+axios@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
+
 axobject-query@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
@@ -6265,7 +6273,7 @@ debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.3, de
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0, debug@~3.1.0:
+debug@3.1.0, debug@=3.1.0, debug@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
@@ -8260,6 +8268,13 @@ follow-redirects@1.0.0:
   dependencies:
     debug "^2.2.0"
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0, follow-redirects@^1.2.3, follow-redirects@^1.2.5, follow-redirects@^1.3.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
@@ -8550,6 +8565,11 @@ gatsby-link@^2.1.1:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
+gatsby-plugin-env-variables@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-env-variables/-/gatsby-plugin-env-variables-1.0.1.tgz#89cdf43b03d46105521bb7d0f09d0d5b92ad83c8"
+  integrity sha512-TnXU+IjvM3iHcaNOa+alqP3Wk19+pmxvXwMyoPaUZIDKNwvpXRz8klsag2AwNlsqD17949/m8I80z8plZRyE1w==
+
 gatsby-plugin-favicon@3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-favicon/-/gatsby-plugin-favicon-3.1.4.tgz#68e0fc5c99935e27935e2af9f92f7b1dde1ec232"
@@ -8703,13 +8723,13 @@ gatsby-source-lever@2.0.1:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.10"
 
-gatsby-source-medium@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-medium/-/gatsby-source-medium-2.0.1.tgz#1b45a3e6ddfc58edd300d42abd8b88d3704135ba"
-  integrity sha512-oUskLxB7s3vl2+lnmVJmQeDmyfLuEkiVH1TfQNd7r2L+YNTWN2wof1hVOO8X1NuTDV1rk1CKWg5HfU9UGn5+nw==
+gatsby-source-medium@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-source-medium/-/gatsby-source-medium-2.0.8.tgz#b9c8743e0635a05c0e600ff25b6b263f3f34fb1c"
+  integrity sha512-XyzrYC7CJdpSM1TdOlPBt/8rO+p2JzV7hfe7uUkfOsTHrwQQwtoyDorSrwKfW+sCm7yXviNKBeoJcY/oFJW9vg==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    axios "^0.18.0"
+    axios "^0.19.0"
 
 gatsby-telemetry@^1.0.11:
   version "1.0.11"
@@ -10373,7 +10393,7 @@ is-buffer@^1.0.2, is-buffer@^1.1.4, is-buffer@^1.1.5, is-buffer@~1.1.1:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-buffer@^2.0.0, is-buffer@~2.0.3:
+is-buffer@^2.0.0, is-buffer@^2.0.2, is-buffer@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
   integrity sha512-U15Q7MXTuZlrbymiz95PJpZxu8IlipAp4dtS3wOdgPXx3mqBnslrWU14kxfHB+Py/+2PVKSr37dMAgM2A4uArw==
@@ -15398,6 +15418,11 @@ react-hot-loader@^4.8.4:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
     source-map "^0.7.3"
+
+react-hotjar@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-2.0.0.tgz#b97bb439d9b057eb07da46f234527128e13f593c"
+  integrity sha512-aveuMW8aGrpJbmK8+uwK9Vwx8Rk4mo7NHEz/OmSm80tE11/laDBk1zkJHzWfwcduUCYZnbXvt16Gt5b9qILamQ==
 
 react-hotkeys@2.0.0-pre4:
   version "2.0.0-pre4"

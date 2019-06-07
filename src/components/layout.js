@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import remcalc from 'remcalc'
+import { hotjar } from 'react-hotjar'
 
 import Header from './Header'
 import './layout.css'
@@ -16,10 +17,26 @@ import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
 const { GATSBY_ENVIRONMENT } = process.env
+
 const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =
   GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
+
+/**
+ * These are not destructured as the values are replaced inline
+ * by webpack at compile time to then be picked up in runtime.
+ *
+ * const { HOTJAR_ID } = process.env ----> will not work
+ * const HOTJAR_ID = process.env.HOTJAR_ID
+ *
+ * These variables are stored on netlify settings
+ */
+const HOTJAR_ID = process.env.HOTJAR_ID
+const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6
+
+const addHotJar =
+  !isDevEnvironment && typeof window !== `undefined` && HOTJAR_ID
 
 const StyledMain = styled.main`
   padding-top: ${remcalc(120)};
@@ -87,6 +104,10 @@ class Layout extends Component {
                 ${googleJson}
             `}</script>
                 <html lang="en" />
+
+                {addHotJar
+                  ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
+                  : null}
               </Helmet>
               <Location>
                 {({ location }) => (
