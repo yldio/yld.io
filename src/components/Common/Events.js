@@ -6,19 +6,7 @@ import specialityEventIcon from '../Speciality/assets/events-icon.svg'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import ExternalAnchor from './ExternalAnchor'
-import StyledLink from './StyledLink'
 import Hr from './Hr'
-
-const CTA = {
-  link: {
-    withEvents: 'https://www.meetup.com/',
-    withoutEvents: '/contact/'
-  },
-  text: {
-    withEvents: 'More events',
-    withoutEvents: 'Get in touch'
-  }
-}
 
 const noEventsMessage = title =>
   `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`
@@ -29,7 +17,7 @@ const getAllUpcomingEvents = events =>
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
-const EventSection = ({ events, title, eventIcon }) => {
+const EventSection = ({ events, title, description }) => {
   const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
   const hasEvents = !!displayedEvents.length
 
@@ -42,13 +30,27 @@ const EventSection = ({ events, title, eventIcon }) => {
     <Grid>
       <Padding top={6} bottom={6}>
         <Row>
-          <Col width={[1, 1, 1, 1, 7 / 12]}>
+          <Col width={[1]}>
             <div>
               <Padding bottom={1}>
                 <img src={specialityEventIcon} alt="events icon" />
               </Padding>
-              <SectionTitle>{`Upcoming ${title.trim()} events`}</SectionTitle>
             </div>
+          </Col>
+          <Col width={[1, 1, 1, 1, 7 / 12]}>
+            <Row>
+              <Col width={[1]}>
+                <SectionTitle>{`Upcoming ${
+                  title ? title.trim() : ''
+                } events`}</SectionTitle>
+              </Col>
+
+              {description ? (
+                <Col width={[1, 1, 1, 1, 10 / 12, 7 / 12]}>
+                  <BodyPrimary>{description}</BodyPrimary>
+                </Col>
+              ) : null}
+            </Row>
           </Col>
           <Col width={[1, 1, 1, 1, 5 / 12]}>
             {hasEvents ? (
@@ -72,11 +74,6 @@ const EventSection = ({ events, title, eventIcon }) => {
             ) : (
               noEventsMessage(title)
             )}
-            <Padding top={3}>
-              <StyledLink external href={ctaLink} title={ctaText}>
-                {ctaText}
-              </StyledLink>
-            </Padding>
           </Col>
         </Row>
       </Padding>

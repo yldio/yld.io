@@ -3,6 +3,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Padding } from 'styled-components-spacing'
+import { generate } from 'shortid'
 
 import { SectionTitle, Subtitle } from '../Typography'
 import { Grid, Row, Col } from '../grid'
@@ -16,7 +17,7 @@ const StyledLinksColumn = styled.div`
 `
 
 const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
-  <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={index}>
+  <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={generate()}>
     {items && items.length && (
       <StyledLinksColumn index={index + 1}>
         <Subtitle>{title}</Subtitle>
