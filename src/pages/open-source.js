@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
@@ -16,6 +17,10 @@ import PartnershipsSection from '../components/OpenSource/Partnerships'
 import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
 import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
+
+const StyledHr = styled(Hr)`
+  border-color: rgba(255, 255, 255, 0.5);
+`
 
 const OpenSource = ({ data }) => {
   const {
@@ -96,7 +101,7 @@ const OpenSource = ({ data }) => {
         <Grid>
           <Row>
             <Col width={[1]}>
-              <Hr muted />
+              <StyledHr muted />
             </Col>
           </Row>
         </Grid>
