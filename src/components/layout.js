@@ -102,7 +102,7 @@ class Layout extends Component {
             `}</script>
                 <html lang="en" />
 
-                {HOTJAR_ID
+                {typeof window !== `undefined` && HOTJAR_ID
                   ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
                   : null}
               </Helmet>
