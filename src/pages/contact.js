@@ -14,6 +14,8 @@ import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
 import Statement from '../components/Common/Statement'
+import LatestPosts from '../components/LatestPosts'
+import BlogListing from '../components/Common/BlogListing'
 
 const encode = data =>
   Object.keys(data)
@@ -27,10 +29,17 @@ const LinkUnderline = styled(Link)`
 const getBranch = (branch, engineeringMsg, communityMsg, events, eventsSectionDescription, eventsSectionImage) => {
   switch (branch) {
     case 'community':
-      return (
-        <Fragment>
-          <Statement noPadding richText={communityMsg.content[0].content} />
-        </Fragment>
+      return (<Fragment>
+        <Statement noPadding richText={communityMsg.content[0].content} />
+        <LatestPosts>
+          {posts => (
+            <BlogListing
+              title="From the blog"
+              posts={posts.map(({ node }) => node).slice(0, 3)}
+            />
+          )}
+        </LatestPosts>
+      </Fragment>
       )
 
     default:
@@ -134,7 +143,6 @@ class ContactUs extends Component {
           seoTitle,
           seoMetaDescription,
           titleNotContacted,
-          titleContacted,
           labelInterests,
           interests,
           labelYourMessage,
@@ -144,7 +152,6 @@ class ContactUs extends Component {
           privacyPolicyLinkText,
           statusNotSent,
           statusSent,
-          successMessage,
           customMessage1,
           customMessage2,
           thankYouMessage
