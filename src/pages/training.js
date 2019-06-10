@@ -21,7 +21,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   return (
     <Layout>
       <Head page={content} />
-      <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
+      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <GreyBackground>
         <Grid>
           <Statement richText={content.seoText.content[0].content} />
