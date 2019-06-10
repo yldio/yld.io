@@ -146,7 +146,8 @@ class ContactUs extends Component {
           statusSent,
           successMessage,
           customMessage1,
-          customMessage2
+          customMessage2,
+          thankYouMessage
         },
         contentfulOpenSourcePage: {
           eventsSectionImage,
@@ -168,7 +169,7 @@ class ContactUs extends Component {
           style={{ width: '100%' }}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <TitleSection title={success ? titleContacted : titleNotContacted} />
+          <TitleSection title={success ? thankYouMessage : titleNotContacted} />
           <GreyBackground>
             <Grid>
               <Padding
@@ -406,6 +407,16 @@ const Contact = props => (
                 nodeType
               }
             }
+          }
+          thankYouMessage {
+            content {
+              content {
+                nodeType
+                value
+              }
+              nodeType
+            }
+            nodeType
           }
         }
       }
