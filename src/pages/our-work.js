@@ -13,6 +13,8 @@ import Hr from '../components/Common/Hr'
 import Head from '../components/Common/Head'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
+import { futureContentfulDoctorLinkData } from './case-study/doctorlink-setting-up-a-design-system'
+
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
@@ -43,9 +45,12 @@ const OurWork = ({ data }) => {
   const engineeringCaseStudies = formatCaseStudies(
     allContentfulTemplatedCaseStudy
   )
+  allContentfulNonTemplatedCaseStudy.edges.push(futureContentfulDoctorLinkData)
+
   const designCaseStudies = formatCaseStudies(
     allContentfulNonTemplatedCaseStudy
   )
+
   const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
