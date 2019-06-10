@@ -13,6 +13,8 @@ import Hr from '../components/Common/Hr'
 import Head from '../components/Common/Head'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
+import { futureContentfulDoctorLinkData } from './case-study/doctorlink-setting-up-a-design-system'
+
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
