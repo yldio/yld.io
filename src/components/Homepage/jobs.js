@@ -63,7 +63,9 @@ const Jobs = () => (
     <Row>
       <Col width={[1]}>
         <Padding top={{ smallPhone: 3, smallTablet: 4 }}>
-          <StyledLink to="/join-us">View all openings</StyledLink>
+          <StyledLink to="/join-us" title="View all openings">
+            View all openings
+          </StyledLink>
         </Padding>
       </Col>
     </Row>

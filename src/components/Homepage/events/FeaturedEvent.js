@@ -53,7 +53,12 @@ const FeaturedEvent = ({ event }) => (
         <FixedWidthBodyPrimary muted reverse>
           {event.blurb.blurb}
         </FixedWidthBodyPrimary>
-        <StyledLink external reverse href={event.linkToEvent}>
+        <StyledLink
+          external
+          reverse
+          href={event.linkToEvent}
+          title={`${event.eventTitle} - ${event.ctaText}`}
+        >
           {event.ctaText}
         </StyledLink>
       </EventWrapper>

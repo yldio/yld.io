@@ -20,7 +20,7 @@ const DesktopMeetups = ({ events }) => (
         {events.map(event => (
           <li key={`${event.id}`}>
             <Subtitle noPaddingBottom>
-              <ExternalAnchor href={event.linkToEvent}>
+              <ExternalAnchor href={event.linkToEvent} title={event.eventTitle}>
                 {event.eventTitle}
               </ExternalAnchor>
             </Subtitle>

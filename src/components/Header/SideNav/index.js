@@ -47,9 +47,12 @@ const SideNavItem = ({ item, path }) => {
   } else {
     const { label, to, href } = item
     return (
-      <OuterAnchorItem activeClassName="active" to={to} href={href}>
-        {label}
-      </OuterAnchorItem>
+      <OuterAnchorItem
+        activeClassName="active"
+        to={to}
+        href={href}
+        label={label}
+      />
     )
   }
 }
@@ -60,12 +63,11 @@ const SideNav = ({ links, isOpen, onClose, path }) => (
       <CloseButton onClick={onClose} />
     </Flex>
     <ul>
-      <OuterAnchorItem activeClassName="active" to="/">
-        Home
-      </OuterAnchorItem>
-      {links.map((link, idx) => (
-        <SideNavItem item={link} key={idx} path={path} />
-      ))}
+      <OuterAnchorItem activeClassName="active" to="/" label="Home" />
+      {links &&
+        links.map((link, idx) => (
+          <SideNavItem item={link} key={idx} path={path} />
+        ))}
     </ul>
   </SideNavPanel>
 )

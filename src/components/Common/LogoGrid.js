@@ -19,7 +19,7 @@ const LogoGrid = ({ companies }) => (
         key={company.id}
       >
         {company.url ? (
-          <ExternalAnchor href={company.url}>
+          <ExternalAnchor href={company.url} title={company.title}>
             <Image
               image={company.image}
               width="250px"
@@ -29,6 +29,7 @@ const LogoGrid = ({ companies }) => (
         ) : (
           <Image
             image={company}
+            title={company.title}
             style={{ filter: 'grayscale(1)', saturate: '0' }}
           />
         )}

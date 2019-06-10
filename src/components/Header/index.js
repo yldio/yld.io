@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import styled from 'styled-components'
-
 import navLinks from './navLinks'
 import { Row, Col, Grid } from '../grid'
 import Hamburger from './Hamburger'

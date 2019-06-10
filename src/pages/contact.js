@@ -169,7 +169,10 @@ class ContactUs extends Component {
                             />
                             <label htmlFor="privacy">
                               {privacyPolicyText}
-                              <LinkUnderline to={'/privacy-policy'}>
+                              <LinkUnderline
+                                to={'/privacy-policy'}
+                                title="yld Privacy Policy"
+                              >
                                 {privacyPolicyLinkText}
                               </LinkUnderline>
                             </label>

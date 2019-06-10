@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
@@ -104,6 +105,10 @@ const StyledLink = ({ external, to, href, children, ...props }) => {
       {children}
     </Anchor>
   )
+}
+
+StyledLink.propTypes = {
+  title: PropTypes.string.isRequired
 }
 
 export default StyledLink

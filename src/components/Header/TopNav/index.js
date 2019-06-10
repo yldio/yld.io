@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
+import generate from 'shortid'
 
 import LogoLink from './LogoLink'
 import ServiceLink from './ServiceLink'
@@ -41,33 +42,33 @@ const TopNav = ({ links, themeVariation, path }) => (
       <ServiceLink path={path} />
     </StyledLinksContainer>
     <TopNavList>
-      {links.map((link, idx) => {
-        if (link.dropdownItems) {
-          const { label, dropdownItems } = link
-          return (
-            <Dropdown
-              key={idx}
-              themeVariation={themeVariation}
-              items={dropdownItems}
-            >
-              {label}
-            </Dropdown>
-          )
-        } else {
-          const { label, to, href } = link
-          return (
-            <OuterAnchorItem
-              key={idx}
-              themeVariation={themeVariation}
-              activeClassName="active"
-              to={to}
-              href={href}
-            >
-              {label}
-            </OuterAnchorItem>
-          )
-        }
-      })}
+      {links &&
+        links.map(link => {
+          if (link.dropdownItems) {
+            const { label, dropdownItems } = link
+            return (
+              <Dropdown
+                key={generate()}
+                themeVariation={themeVariation}
+                items={dropdownItems}
+              >
+                {label}
+              </Dropdown>
+            )
+          } else {
+            const { label, to, href } = link
+            return (
+              <OuterAnchorItem
+                key={generate()}
+                themeVariation={themeVariation}
+                activeClassName="active"
+                to={to}
+                href={href}
+                label={label}
+              />
+            )
+          }
+        })}
     </TopNavList>
   </StyledTopNavContainer>
 )

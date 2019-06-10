@@ -64,7 +64,7 @@ const CaseStudyTitle = styled(CardTitle)`
 `
 
 const CaseStudy = ({ title, ...props }) => (
-  <CaseStudyLink {...props}>
+  <CaseStudyLink {...props} title={title}>
     <Padding
       vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
       horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}

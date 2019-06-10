@@ -33,7 +33,7 @@ const AboutUsHero = ({ statementText, supportingStatements }) => (
       <Row>
         <Padding bottom={{ smallPhone: 3, tablet: 4 }}>
           <Col width={[1, 1, 1, 1, 8 / 12, 10 / 12, 8 / 12]}>
-            <SectionTitle>{statementText}</SectionTitle>
+            <SectionTitle as="h1">{statementText}</SectionTitle>
           </Col>
         </Padding>
       </Row>

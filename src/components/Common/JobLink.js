@@ -4,8 +4,13 @@ import ExternalAnchor from '../Common/ExternalAnchor'
 import { BodyPrimary } from '../Typography'
 import Hr from '../Common/Hr'
 
-const JobLink = ({ position, hostedUrl, contractType }) => (
-  <ExternalAnchor href={hostedUrl}>
+const JobLink = ({ position, hostedUrl, contractType, location }) => (
+  <ExternalAnchor
+    href={hostedUrl}
+    title={`${position} role ${
+      location ? `in ${location} for yld` : 'for yld'
+    }`}
+  >
     <BodyPrimary noPaddingBottom>{position}</BodyPrimary>
     <BodyPrimary noPaddingTop muted>
       {contractType}

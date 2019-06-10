@@ -50,7 +50,7 @@ const TrainingSection = ({ speciality }) => (
         </Row>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <StyledLink to="/contact">{`Request ${
+            <StyledLink to="/contact" title={speciality.title}>{`Request ${
               speciality.title
             } training`}</StyledLink>
           </Col>

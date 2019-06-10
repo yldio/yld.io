@@ -18,7 +18,7 @@ const ViewPositions = ({ text, description }) => (
       <Row>
         <Col width={[1, 1, 1, 1, 8 / 12]}>
           <Padding bottom={{ smallPhone: 2, tablet: 3 }}>
-            <SectionTitle>{text}</SectionTitle>
+            <SectionTitle as="h1">{text}</SectionTitle>
             {description && (
               <Padding top={1}>
                 <FixedWidthBodyPrimary muted>

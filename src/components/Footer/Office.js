@@ -19,7 +19,9 @@ const Office = ({ name, telephone, email, streetAddress }) => (
       <StyledBodyPrimary itemProp="telephone">{telephone}</StyledBodyPrimary>
       {email ? (
         <StyledBodyPrimary>
-          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`mailto:${email}`} title={`Email yld ${name} Office`}>
+            {email}
+          </a>
         </StyledBodyPrimary>
       ) : null}
     </Padding>

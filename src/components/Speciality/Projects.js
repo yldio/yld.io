@@ -11,7 +11,7 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => (
-  <AnimatedLink to={`/case-study/${project.slug}`}>
+  <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
     <section
       style={{
         background: `#${project.posterColor}`

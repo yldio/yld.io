@@ -16,7 +16,7 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ richText, children, noPadding }) => (
+const Statement = ({ richText, children, noPadding, as = 'h2' }) => (
   <GreyBackground>
     <Row>
       <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
@@ -26,7 +26,7 @@ const Statement = ({ richText, children, noPadding }) => (
             smallTablet: noPadding ? 0 : 4
           }}
         >
-          <DisplayTitle as="h1" textLight>
+          <DisplayTitle as={as} textLight>
             {children}
             {richText &&
               richText.map(content => {
@@ -37,7 +37,7 @@ const Statement = ({ richText, children, noPadding }) => (
                     <Link
                       key={content.data.uri}
                       noafter="true"
-                      to={`/${content.data.uri}`}
+                      to={`${content.data.uri}`}
                     >
                       {content.content[0].value}
                     </Link>

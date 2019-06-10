@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -15,6 +16,10 @@ export const AnimatedLink = styled(Link)`
     }
   }
 `
+
+AnimatedLink.propType = {
+  title: PropTypes.string.isRequired
+}
 
 export const PosterImage = styled(Flex)`
   background: #${props => props.color};

@@ -26,22 +26,23 @@ const InnerAnchor = styled(Anchor)`
 `
 
 export const InnerAnchorItem = ({
-  children,
   to,
   href,
   activeClassName,
   themeVariation,
   onMouseDown,
+  label,
   ...props
 }) => (
   <InnerListItem themeVariation={themeVariation} {...props}>
     <InnerAnchor
       href={href}
       to={to}
+      title={label}
       activeClassName={activeClassName}
       onMouseDown={onMouseDown}
     >
-      {children}
+      {label}
     </InnerAnchor>
   </InnerListItem>
 )

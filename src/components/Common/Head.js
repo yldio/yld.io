@@ -18,9 +18,9 @@ const Head = ({ page }) => (
     query={TITLE}
     render={({ site: { siteMetadata } }) => (
       <Helmet
-        title={`${siteMetadata.title}  ${page.title ? '- ' + page.title : ''} ${
-          page.seoTitle ? '- ' + page.seoTitle : ''
-        } `}
+        title={`${siteMetadata.title}  ${
+          page.title !== 'YLD' ? '- ' + page.title : ''
+        } ${page.seoTitle ? '- ' + page.seoTitle : ''} `}
         meta={[
           {
             name: 'description',

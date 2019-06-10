@@ -9,6 +9,7 @@ import headerItemStyles from '../headerItemStyles'
 import outlineStyles from '../outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
 import TopNavItem from './TopNavItem'
+import generate from 'shortid'
 
 const DropdownContainer = styled(TopNavItem)`
   position: relative;
@@ -159,17 +160,16 @@ export default class Dropdown extends PureComponent {
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
-          {items.map(({ to, href, label }, idx) => (
+          {items.map(({ to, href, label }) => (
             <InnerAnchorItem
-              key={idx}
+              key={generate()}
               themeVariation={themeVariation}
               href={href}
               to={to}
               activeClassName="active"
               onMouseDown={this.handleItemMouseDown}
-            >
-              {label}
-            </InnerAnchorItem>
+              label={label}
+            />
           ))}
         </DropdownList>
       </DropdownContainer>

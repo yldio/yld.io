@@ -30,7 +30,7 @@ const CaseStudy = ({
           socialLogo: (caseStudy.posterImage.file || {}).url
         }}
       />
-      <CaseStudyHero caseStudy={caseStudy} />
+      <CaseStudyHero as="h1" caseStudy={caseStudy} />
       <Grid>
         <FirstTextSection text={firstTextBlock} />
       </Grid>
