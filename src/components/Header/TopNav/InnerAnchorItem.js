@@ -26,6 +26,7 @@ const InnerAnchor = styled(Anchor)`
 `
 
 export const InnerAnchorItem = ({
+  children,
   to,
   href,
   activeClassName,
@@ -42,7 +43,7 @@ export const InnerAnchorItem = ({
       activeClassName={activeClassName}
       onMouseDown={onMouseDown}
     >
-      {label}
+      {children}
     </InnerAnchor>
   </InnerListItem>
 )

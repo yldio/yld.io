@@ -113,7 +113,7 @@ export default class Dropdown extends PureComponent {
 
   handleItemMouseDown = e => {
     e.preventDefault()
-    e.stopPropagation()
+    // e.stopPropagation()
     this.setState({ clicked: false })
   }
 
@@ -169,7 +169,9 @@ export default class Dropdown extends PureComponent {
               activeClassName="active"
               onMouseDown={this.handleItemMouseDown}
               label={label}
-            />
+            >
+              {label}
+            </InnerAnchorItem>
           ))}
         </DropdownList>
       </DropdownContainer>
