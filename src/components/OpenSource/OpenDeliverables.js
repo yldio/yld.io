@@ -9,7 +9,7 @@ import RepoWithImage from '../Common/Repo/RepoWithImage'
 
 const Wrapper = styled(GreyBackground)`
   padding: ${({ theme }) => theme.spacing[3]} 0;
-  padding-bottom: ${({ theme }) => theme.spacing[3.5]};
+  padding-bottom: ${({ theme }) => theme.space[7]};
 
   ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.spacing[3]};
