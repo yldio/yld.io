@@ -7,9 +7,7 @@ import Hr from '../Common/Hr'
 const JobLink = ({ position, hostedUrl, contractType, location }) => (
   <ExternalAnchor
     href={hostedUrl}
-    title={`${position} role ${
-      location ? `in ${location} for yld` : 'for yld'
-    }`}
+    title={`${position} role ${location ? `in ${location}` : ''} for yld`}
   >
     <BodyPrimary noPaddingBottom>{position}</BodyPrimary>
     <BodyPrimary noPaddingTop muted>

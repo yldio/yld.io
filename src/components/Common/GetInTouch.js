@@ -24,7 +24,7 @@ const GetInTouch = ({ title, contactText, ctaText = 'Get in touch' }) => (
         </Col>
         <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
           <BodyPrimary>{contactText}</BodyPrimary>
-          <StyledLink to="/contact/" title={`${ctaText}`}>
+          <StyledLink to="/contact/" title={ctaText}>
             {ctaText}
           </StyledLink>
         </Col>

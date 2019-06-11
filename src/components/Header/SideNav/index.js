@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
+import generate from 'shortid'
 
 import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
@@ -65,8 +66,9 @@ const SideNav = ({ links, isOpen, onClose, path }) => (
     <ul>
       <OuterAnchorItem activeClassName="active" to="/" label="Home" />
       {links &&
-        links.map((link, idx) => (
-          <SideNavItem item={link} key={idx} path={path} />
+        links.length &&
+        links.map(link => (
+          <SideNavItem item={link} key={generate()} path={path} />
         ))}
     </ul>
   </SideNavPanel>
