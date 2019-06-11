@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { navigate } from '@reach/router'
 
-import { Grid, Row, Col } from '../components/grid'
+import { Grid, Row, Col, ColumnLayout } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import TitleSection from '../components/ContactUs/TitleSection'
@@ -16,6 +16,13 @@ import Button from '../components/Common/Button'
 import Statement from '../components/Common/Statement'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
+import { CaseStudyWrapper, CaseStudy } from '../components/Common/CaseStudy'
+import { Section } from '../components/JoinUs/elements'
+import colorLuminance from 'color-luminance'
+
+
+const MAX_CASE_STUDIES = 3
+
 
 const encode = data =>
   Object.keys(data)
@@ -25,8 +32,27 @@ const encode = data =>
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
+/* Utility function to convert an HEX color into the RGB format */
+const hexToRgb = hex => {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result
+    ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    }
+    : null
+}
 
-const getBranch = (branch, engineeringMsg, communityMsg, events, eventsSectionDescription, eventsSectionImage) => {
+
+/* Returns the luminance (in a 0-255 range) of a color in the HEX format */
+const getColorLuminance = hexColor => {
+  const rgbValue = hexToRgb(`#${hexColor}`)
+
+  return colorLuminance(rgbValue.r, rgbValue.g, rgbValue.b)
+}
+
+const getBranch = (branch, engineeringMsg, communityMsg, caseStudies, events, eventsSectionDescription, eventsSectionImage) => {
   switch (branch) {
     case 'community':
       return (<Fragment>
@@ -46,10 +72,44 @@ const getBranch = (branch, engineeringMsg, communityMsg, events, eventsSectionDe
       return (
         <Fragment>
           <Statement noPadding richText={engineeringMsg.content[0].content} />
+          <Section>
+            <ColumnLayout
+              cols={3}
+              items={caseStudies.slice(0, MAX_CASE_STUDIES)}
+              compensated
+            >
+              {({ Col, item: cs }) => (
+                <Col block={false}>
+                  <CaseStudyWrapper top={2}>
+                    <CaseStudy
+                      bg={`#${cs.posterColor}`}
+                      to={`/case-study/${cs.slug}`}
+                      lightText={getColorLuminance(cs.posterColor) < 127.5}
+                      title={cs.title}
+                      services={cs.services}
+                    />
+                  </CaseStudyWrapper>
+                </Col>
+              )}
+            </ColumnLayout>
+
+          </Section>
+
         </Fragment>
       )
   }
 }
+
+const formatCaseStudies = caseStudies =>
+  caseStudies.edges.map(caseStudyObject => {
+    const caseStudy = caseStudyObject.node
+    return {
+      ...caseStudy,
+      services: caseStudy.services
+        .filter(service => service.title)
+        .map(service => service.title)
+    }
+  })
 
 // NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
 class ContactUs extends Component {
@@ -160,9 +220,20 @@ class ContactUs extends Component {
           eventsSectionImage,
           eventsSectionDescription
         },
-        allContentfulMeetupEvent: { edges: events }
+        allContentfulMeetupEvent: { edges: events },
+        allContentfulTemplatedCaseStudy,
+        allContentfulNonTemplatedCaseStudy
+
 
       } } = this.props
+
+    const engineeringCaseStudies = formatCaseStudies(
+      allContentfulTemplatedCaseStudy
+    )
+    const designCaseStudies = formatCaseStudies(
+      allContentfulNonTemplatedCaseStudy
+    )
+    const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
 
     return (
       <Layout location={location}>
@@ -185,7 +256,7 @@ class ContactUs extends Component {
               >
                 {success ? (
                   // call a function getBranch, written outside the class, to show the correct branch
-                  getBranch(branch, customMessage1, customMessage2,
+                  getBranch(branch, customMessage1, customMessage2, caseStudies,
                     events, eventsSectionDescription, eventsSectionImage)
                 ) : (
 <<<<<<< 7d4def8bbe9cd4362374be780b30aa2ee820c0a6
@@ -345,6 +416,37 @@ const Contact = props => (
   <StaticQuery
     query={graphql`
       query {
+        allContentfulTemplatedCaseStudy {
+          edges {
+            node {
+              slug
+              title
+              seoTitle
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
+              posterColor
+            }
+          }
+        }
+        allContentfulNonTemplatedCaseStudy {
+          edges {
+            node {
+              slug
+              title
+              seoTitle
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
+              posterColor
+            }
+          }
+        }
+
         allContentfulMeetupEvent {
           edges {
             node {
