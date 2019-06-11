@@ -176,7 +176,7 @@ class ContactUs extends Component {
           style={{ width: '100%' }}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <TitleSection title={success ? thankYouMessage : titleNotContacted} />
+          <TitleSection title={success ? thankYouMessage.content[0].content[0].value : titleNotContacted} />
           <GreyBackground>
             <Grid>
               <Padding
