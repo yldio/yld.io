@@ -13,8 +13,8 @@ const StyledGrid = styled(Grid)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[4]};
+    padding-bottom: ${({ theme }) => theme.space[5]};
   `}
 `
 
