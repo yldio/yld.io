@@ -19,6 +19,10 @@ const StyledGrid = styled(Grid)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]}
   `}
+
+  ${breakpoint('desktop')`
+    padding-bottom: ${({ theme }) => theme.space[7]}
+  `}
 `
 
 const StyledImage = styled.img`
