@@ -278,12 +278,17 @@ const OpenSourcePage = props => (
             nameWithOwner
             pullRequestCount
             starCount
+            clientLogo {
+              fluid(maxWidth: 30) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
           contributionsSectionTitleLine1
           contributionsSectionTitleLine2
           contributionsSectionTitleLine3
-          openSourceMetaRepoCount
-          openSourceMetaPullRequestCount
+          openSourceMetaReposCount
+          openSourceMetaPullRequestsCount
           contributionsSectionImage {
             title
             file {
