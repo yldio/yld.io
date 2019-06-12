@@ -19,7 +19,7 @@ import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
 const StyledHr = styled(Hr)`
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: #848194;
 `
 
 const OpenSource = ({ data }) => {
