@@ -20,9 +20,7 @@ import { CaseStudyWrapper, CaseStudy } from '../components/Common/CaseStudy'
 import { Section } from '../components/JoinUs/elements'
 import colorLuminance from 'color-luminance'
 
-
 const MAX_CASE_STUDIES = 3
-
 
 const encode = data =>
   Object.keys(data)
@@ -37,13 +35,12 @@ const hexToRgb = hex => {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
     ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      }
     : null
 }
-
 
 /* Returns the luminance (in a 0-255 range) of a color in the HEX format */
 const getColorLuminance = hexColor => {
@@ -52,27 +49,36 @@ const getColorLuminance = hexColor => {
   return colorLuminance(rgbValue.r, rgbValue.g, rgbValue.b)
 }
 
-const getBranch = (branch, engineeringMsg, communityMsg, caseStudies, events, eventsSectionDescription, eventsSectionImage) => {
+const getBranch = (
+  branch,
+  engineeringMsg,
+  communityMsg,
+  caseStudies,
+  events,
+  eventsSectionDescription,
+  eventsSectionImage
+) => {
   switch (branch) {
     case 'community':
-      return (<Fragment>
-        <Statement noPadding richText={communityMsg.content[0].content} />
-        <LatestPosts>
-          {posts => (
-            <BlogListing
-              title="From the blog"
-              posts={posts.map(({ node }) => node).slice(0, 3)}
-            />
-          )}
-        </LatestPosts>
-      </Fragment>
+      return (
+        <Fragment>
+          <Statement noPadding richText={communityMsg.content[0].content} />
+          <LatestPosts>
+            {posts => (
+              <BlogListing
+                title="From the blog"
+                posts={posts.map(({ node }) => node).slice(0, 3)}
+              />
+            )}
+          </LatestPosts>
+        </Fragment>
       )
 
     default:
       return (
         <Fragment>
           <Statement noPadding richText={engineeringMsg.content[0].content} />
-          <Section>
+          <Section px={[0, 0, 0, 0, 0, 0, 0]}>
             <ColumnLayout
               cols={3}
               items={caseStudies.slice(0, MAX_CASE_STUDIES)}
@@ -80,7 +86,7 @@ const getBranch = (branch, engineeringMsg, communityMsg, caseStudies, events, ev
             >
               {({ Col, item: cs }) => (
                 <Col block={false}>
-                  <CaseStudyWrapper top={2}>
+                  <CaseStudyWrapper top={3}>
                     <CaseStudy
                       bg={`#${cs.posterColor}`}
                       to={`/case-study/${cs.slug}`}
@@ -92,9 +98,7 @@ const getBranch = (branch, engineeringMsg, communityMsg, caseStudies, events, ev
                 </Col>
               )}
             </ColumnLayout>
-
           </Section>
-
         </Fragment>
       )
   }
@@ -154,15 +158,15 @@ class ContactUs extends Component {
     const strippedFilteredState =
       Object.keys(strippedState).length > 0
         ? Object.keys(strippedState).filter(item => {
-          return strippedState[item]
-        })
+            return strippedState[item]
+          })
         : []
 
     const branches =
       strippedFilteredState.length > 0
         ? strippedFilteredState.reduce((acc, current) => {
-          return (acc = [...acc, this.state[current].branch])
-        }, [])
+            return (acc = [...acc, this.state[current].branch])
+          }, [])
         : ['engineering']
 
     const uniqueBranches = Array.from(new Set(branches))
@@ -223,9 +227,8 @@ class ContactUs extends Component {
         allContentfulMeetupEvent: { edges: events },
         allContentfulTemplatedCaseStudy,
         allContentfulNonTemplatedCaseStudy
-
-
-      } } = this.props
+      }
+    } = this.props
 
     const engineeringCaseStudies = formatCaseStudies(
       allContentfulTemplatedCaseStudy
@@ -247,7 +250,13 @@ class ContactUs extends Component {
           style={{ width: '100%' }}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <TitleSection title={success ? thankYouMessage.content[0].content[0].value : titleNotContacted} />
+          <TitleSection
+            title={
+              success
+                ? thankYouMessage.content[0].content[0].value
+                : titleNotContacted
+            }
+          />
           <GreyBackground>
             <Grid>
               <Padding
@@ -256,10 +265,16 @@ class ContactUs extends Component {
               >
                 {success ? (
                   // call a function getBranch, written outside the class, to show the correct branch
-                  getBranch(branch, customMessage1, customMessage2, caseStudies,
-                    events, eventsSectionDescription, eventsSectionImage)
+                  getBranch(
+                    branch,
+                    customMessage1,
+                    customMessage2,
+                    caseStudies,
+                    events,
+                    eventsSectionDescription,
+                    eventsSectionImage
+                  )
                 ) : (
-<<<<<<< 7d4def8bbe9cd4362374be780b30aa2ee820c0a6
                   <Fragment>
                     <AreasOfInterest
                       title={labelInterests}
@@ -332,6 +347,7 @@ class ContactUs extends Component {
                     </Row>
                   </Fragment>
                 )}
+<<<<<<< 2a0309f60fa835734118b1f5548f669176da2ebf
 =======
                     <Fragment>
                       <AreasOfInterest
@@ -403,6 +419,8 @@ class ContactUs extends Component {
                     </Fragment>
                   )}
 >>>>>>> prepped for working on TitleSection
+=======
+>>>>>>> made the styling like James wants
               </Padding>
             </Grid>
           </GreyBackground>
@@ -459,13 +477,14 @@ const Contact = props => (
         }
         contentfulOpenSourcePage {
           eventsSectionImage {
-          id
-          title
-          file {
-            fileName
-            url
+            id
+            title
+            file {
+              fileName
+              url
+            }
           }
-        }}
+        }
         contentfulPage(slug: { eq: "contact" }) {
           title
           slug
