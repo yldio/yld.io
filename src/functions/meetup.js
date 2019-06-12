@@ -160,8 +160,6 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
-
-  // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
@@ -193,7 +191,7 @@ exports.handler = async () => {
 
     const generatedEvent = generateContentfulEvent({ ...meetup, ...group })
 
-    if (generatedEvent) {
+    if (generatedEvent && contentfulEvent) {
       // iterates through the generatedEvent, returns an array of differing keys.
       const { fields: generatedEventFields } = generatedEvent
       const { fields: contentfulEventFields } = contentfulEvent
