@@ -21,9 +21,7 @@ const Wrapper = styled(GreyBackground)`
 `
 
 const StyledSectionTitle = styled(SectionTitle)`
-  ${breakpoint('mobile')`
-    padding-bottom: ${({ theme }) => theme.space[4]}
-  `}
+  padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
 const StyledSubtitle = styled(Subtitle)`
