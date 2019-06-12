@@ -9,12 +9,15 @@ import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
 const StyledGrid = styled(Grid)`
-  padding-top: ${({ theme }) => theme.spacing[2]};
+  padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[4]};
     padding-bottom: ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]}
   `}
 `
 
