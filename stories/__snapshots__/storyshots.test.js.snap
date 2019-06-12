@@ -9618,7 +9618,7 @@ exports[`Storyshots JobLink JobLink 1`] = `
 `;
 
 exports[`Storyshots Repo Repo 1`] = `
-.c0 {
+.c1 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9628,7 +9628,7 @@ exports[`Storyshots Repo Repo 1`] = `
   font-weight: 700;
 }
 
-.c3 {
+.c4 {
   height: 0.0625rem;
   padding: 0 0 1.125rem 0;
   border: none;
@@ -9639,13 +9639,17 @@ exports[`Storyshots Repo Repo 1`] = `
   border-color: rgba(255,255,255,0.5);
 }
 
-.c1 {
+.c0 {
+  padding-bottom: 1.5rem;
+}
+
+.c2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c2 {
+.c3 {
   color: #757575;
   font-family: 'PT Mono',sans-serif;
   font-weight: 400;
@@ -9662,92 +9666,9 @@ exports[`Storyshots Repo Repo 1`] = `
     }
   }
 >
-  <a
-    href="https://github.com/nodejs/node"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    <h3
-      className="c0"
-    >
-      <div
-        className="c1"
-      >
-        nodejs/node
-      </div>
-    </h3>
-  </a>
   <div
-    className="c1"
+    className="c0"
   >
-    <p
-      className="c2"
-    >
-      123
-       Contributions
-    </p>
-  </div>
-  <p
-    className="c2"
-  >
-    123
-     Stars
-  </p>
-  <hr
-    className="c3"
-  />
-</div>
-`;
-
-exports[`Storyshots Repo Repo Dark 1`] = `
-.c1 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #fff;
-  padding-bottom: 0;
-  font-weight: 700;
-}
-
-.c4 {
-  height: 0.0625rem;
-  padding: 0 0 1.125rem 0;
-  border: none;
-  margin: 1.0625rem 0 0 0;
-  border-top: 1px solid #e6e6e6;
-  width: 60px;
-  margin-top: 1.875rem;
-  border-color: rgba(255,255,255,0.5);
-}
-
-.c2 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.c3 {
-  color: #757575;
-  font-family: 'PT Mono',sans-serif;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.5rem;
-  padding: 0.8125rem 0 0.6875rem 0;
-  padding: 0;
-}
-
-.c0 {
-  background: #090329;
-  color: #fff;
-  padding: 1rem 3rem;
-}
-
-<section
-  className="c0"
->
-  <div>
     <a
       href="https://github.com/nodejs/node"
       rel="noopener noreferrer"
@@ -9783,11 +9704,106 @@ exports[`Storyshots Repo Repo Dark 1`] = `
       className="c4"
     />
   </div>
+</div>
+`;
+
+exports[`Storyshots Repo Repo Dark 1`] = `
+.c2 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.c5 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin-top: 1.875rem;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.c1 {
+  padding-bottom: 1.5rem;
+}
+
+.c3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c4 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+  padding: 0;
+}
+
+.c0 {
+  background: #090329;
+  color: #fff;
+  padding: 1rem 3rem;
+}
+
+<section
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="https://github.com/nodejs/node"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h3
+          className="c2"
+        >
+          <div
+            className="c3"
+          >
+            nodejs/node
+          </div>
+        </h3>
+      </a>
+      <div
+        className="c3"
+      >
+        <p
+          className="c4"
+        >
+          123
+           Contributions
+        </p>
+      </div>
+      <p
+        className="c4"
+      >
+        123
+         Stars
+      </p>
+      <hr
+        className="c5"
+      />
+    </div>
+  </div>
 </section>
 `;
 
 exports[`Storyshots Repo Repo w/ Image 1`] = `
-.c7 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9798,13 +9814,17 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   font-weight: 700;
 }
 
-.c8 {
+.c7 {
+  padding-bottom: 1.5rem;
+}
+
+.c9 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.c9 {
+.c10 {
   color: #757575;
   font-family: 'PT Mono',sans-serif;
   font-weight: 400;
@@ -9839,7 +9859,7 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   padding: 1.5rem;
   display: inline-block;
   vertical-align: top;
-  border: 1px solid #757575;
+  border: 1px solid #DBDBDB;
   border-right: none;
 }
 
@@ -9873,7 +9893,7 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   flex-grow: 2;
   vertical-align: top;
   padding: 1.5rem;
-  border: 1px solid #757575;
+  border: 1px solid #DBDBDB;
 }
 
 <div>
@@ -9908,31 +9928,35 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
       <div
         className="c6"
       >
-        <h3
+        <div
           className="c7"
         >
-          <div
+          <h3
             className="c8"
           >
-            nodejs/node
-          </div>
-        </h3>
-        <div
-          className="c8"
-        >
-          <p
+            <div
+              className="c9"
+            >
+              nodejs/node
+            </div>
+          </h3>
+          <div
             className="c9"
           >
+            <p
+              className="c10"
+            >
+              123
+               Contributions
+            </p>
+          </div>
+          <p
+            className="c10"
+          >
             123
-             Contributions
+             Stars
           </p>
         </div>
-        <p
-          className="c9"
-        >
-          123
-           Stars
-        </p>
       </div>
     </a>
   </div>
@@ -17462,12 +17486,6 @@ Array [
 @media (min-width:56.3125em) {
   .c0 {
     padding-bottom: 4.5rem;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    padding-bottom: 6.75rem;
   }
 }
 
