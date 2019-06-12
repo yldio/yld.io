@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import BodyStylised from '../../Typography/BodyStylised'
 import remcalc from 'remcalc'
@@ -9,6 +9,10 @@ import ExternalAnchor from '../ExternalAnchor'
 const StyledHr = styled(Hr)`
   margin-top: ${remcalc(30)};
   border-color: rgba(255, 255, 255, 0.5);
+`
+
+const Wrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[3]};
 `
 
 const Ellipsis = styled.div`
@@ -43,7 +47,7 @@ const Repo = ({
 }) => {
   const isDark = theme === 'dark'
   return (
-    <Fragment>
+    <Wrapper>
       <ConditionalLink titleLink={titleLink} url={url}>
         <Subtitle reverse={isDark} noPaddingBottom noPaddingTop={isImage}>
           <Ellipsis>{nameWithOwner}</Ellipsis>
@@ -58,7 +62,7 @@ const Repo = ({
         {starCount} Stars
       </StyledBodyStylised>
       {!isImage && <StyledHr short />}
-    </Fragment>
+    </Wrapper>
   )
 }
 

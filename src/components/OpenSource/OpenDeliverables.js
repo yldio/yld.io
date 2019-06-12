@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 import GreyBackground from '../Common/GreyBackground'
@@ -16,7 +17,11 @@ const Wrapper = styled(GreyBackground)`
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.spacing[4]};
-  `}
+    `}
+`
+
+const StyledSectionTitle = styled(SectionTitle)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
 const StyledSubtitle = styled(Subtitle)`
@@ -42,17 +47,26 @@ const OpenDeliverables = props => {
       openDeliverablesClientRepos
     }
   } = props
+
   return (
     <Wrapper>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <SectionTitle>{openDeliverablesSectionTitle}</SectionTitle>
+            <StyledSectionTitle>
+              {openDeliverablesSectionTitle}
+            </StyledSectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <BodyPrimary>{openDeliverablesSectionDescription}</BodyPrimary>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line react/display-name
+                paragraph: props => <BodyPrimary {...props} />
+              }}
+              source={openDeliverablesSectionDescription}
+            />
           </Col>
-          <Col width={[1, 1, 1, 1, 5 / 12]}>
+          <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
             <StyledSubtitle>
               {openDeliverablesClientReposSubtitle}
             </StyledSubtitle>
@@ -62,7 +76,7 @@ const OpenDeliverables = props => {
           {openDeliverablesClientRepos &&
             openDeliverablesClientRepos.length &&
             openDeliverablesClientRepos.map(({ id, ...props }) => (
-              <Col key={id} width={[1, 1, 1, 6 / 12, 6 / 12, 6 / 12, 4 / 12]}>
+              <Col key={id} width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}>
                 <RepoWithImage {...props} />
               </Col>
             ))}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { format, isAfter, endOfYesterday } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
 import specialityEventIcon from '../Speciality/assets/events-icon.svg'
 import { Row, Col, Grid } from '../grid'
@@ -17,6 +19,17 @@ const getAllUpcomingEvents = events =>
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
+const Wrapper = styled.div`
+  padding: ${({ theme }) => theme.space[4]} 0 ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+      padding: 
+        ${({ theme }) => theme.space[6]} 
+        0 
+        ${({ theme }) => theme.space[7]};
+  `}
+`
+
 const EventSection = ({ events, title, description }) => {
   const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
   const hasEvents = !!displayedEvents.length
@@ -28,7 +41,7 @@ const EventSection = ({ events, title, description }) => {
 
   return (
     <Grid>
-      <Padding top={6} bottom={6}>
+      <Wrapper>
         <Row>
           <Col width={[1]}>
             <div>
@@ -76,7 +89,7 @@ const EventSection = ({ events, title, description }) => {
             )}
           </Col>
         </Row>
-      </Padding>
+      </Wrapper>
     </Grid>
   )
 }

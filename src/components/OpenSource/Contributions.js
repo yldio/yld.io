@@ -10,22 +10,22 @@ import Image from '../Common/Image'
 import { BodyPrimary } from '../Typography'
 
 const Wrapper = styled.div`
-  padding-top: ${({ theme }) => theme.spacing[3]};
-  padding-bottom: ${({ theme }) => theme.spacing[3]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.spacing[4]};
-    padding-bottom: ${({ theme }) => theme.spacing[4]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${({ theme }) => theme.spacing[3]};
-  padding-top: ${({ theme }) => theme.spacing[2]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.spacing[2]};
-    padding-bottom: ${({ theme }) => theme.spacing[4]};
+    padding-top: ${({ theme }) => theme.space[3]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
@@ -33,24 +33,23 @@ const StyledImage = styled(Image)`
   max-width: 54px;
 
   ${breakpoint('smallTablet')`
-    padding-bottom: ${({ theme }) => theme.spacing[2]};
+    padding-bottom: ${({ theme }) => theme.space[3]};
   `}
 `
 
 const ReposWrapper = styled.div`
-  ${breakpoint('smallTablet')`
-    padding-bottom: ${({ theme }) => theme.spacing[3]};
-  `}
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`  
-    padding-bottom: ${({ theme }) => theme.spacing[4]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
 const Contributions = ({
   contentfulOpenSourcePage: {
     contributionsSectionImage,
-    contributionsSectionDescription,
+    contributionsSectionDescriptionLine1,
+    contributionsSectionDescriptionLine2,
     contributionsSectionCtaText,
     contributionsSectionCtaLink,
     contributionsSectionGithubRepos: repos,
@@ -81,7 +80,9 @@ const Contributions = ({
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <StyledBodyPrimary textLight>
-              {contributionsSectionDescription}
+              {contributionsSectionDescriptionLine1}
+              <br />
+              {contributionsSectionDescriptionLine2}
             </StyledBodyPrimary>
           </Col>
         </Row>
@@ -92,7 +93,7 @@ const Contributions = ({
               repos.map(repo => (
                 <Col
                   key={generate()}
-                  width={[1, 1, 6 / 12, 6 / 12, 6 / 12, 4 / 12]}
+                  width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
                 >
                   <Repo theme="dark" small {...repo} />
                 </Col>
