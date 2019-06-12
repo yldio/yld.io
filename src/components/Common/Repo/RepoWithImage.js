@@ -59,7 +59,7 @@ const RepoWithImage = props => {
           </ImageWrapperInner>
         </ImageWrapper>
         <RepoWrapper>
-          <Repo isImage small={false} {...props} titleLink={false} />
+          <Repo isImage {...props} titleLink={false} />
         </RepoWrapper>
       </Link>
     </Wrapper>
