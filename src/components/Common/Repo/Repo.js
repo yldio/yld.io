@@ -12,7 +12,8 @@ const StyledHr = styled(Hr)`
 `
 
 const Wrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  ${({ theme, isImage }) =>
+    isImage ? `` : `padding-bottom: ${theme.space[3]};`}
 `
 
 const Ellipsis = styled.div`
@@ -47,7 +48,7 @@ const Repo = ({
 }) => {
   const isDark = theme === 'dark'
   return (
-    <Wrapper>
+    <Wrapper isImage={isImage}>
       <ConditionalLink titleLink={titleLink} url={url}>
         <Subtitle reverse={isDark} noPaddingBottom noPaddingTop={isImage}>
           <Ellipsis>{nameWithOwner}</Ellipsis>
