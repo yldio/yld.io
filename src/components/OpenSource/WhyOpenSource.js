@@ -12,10 +12,6 @@ const StyledGrid = styled(Grid)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]}
   `}
-
-  ${breakpoint('desktop')`
-    padding-bottom: ${({ theme }) => theme.space[7]}
-  `};
 `
 
 const StyledSubtitle = styled(Subtitle)`

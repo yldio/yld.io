@@ -293,7 +293,8 @@ const OpenSourcePage = props => (
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
-          contributionsSectionDescription
+          contributionsSectionDescriptionLine1
+          contributionsSectionDescriptionLine2
           contributionsSectionCtaText
           contributionsSectionCtaLink
           contributionsSectionGithubRepos {

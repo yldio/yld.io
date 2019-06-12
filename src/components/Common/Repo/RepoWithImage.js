@@ -1,7 +1,6 @@
 import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import Repo from './Repo'
 import CommonImage from '../Image'
 import RatioContainer from '../RatioContainer'
@@ -11,21 +10,19 @@ const Link = styled(ExternalAnchor)`
   display: flex;
 `
 
+const borderGrey = '#DBDBDB'
+
 const Wrapper = styled.div`
   display: inline-block;
   margin: ${props => props.theme.spacing[1.5]} 0;
   width: 100%;
-
-  /* ${breakpoint('smallTablet')`
-    margin-bottom: ${props => props.theme.spacing[3]};
-  `} */
 `
 
 const ImageWrapper = styled.div`
   padding: ${remcalc(24)};
   display: inline-block;
   vertical-align: top;
-  border: 1px solid ${props => props.theme.colors.secondaryText};
+  border: 1px solid ${borderGrey};
   border-right: none;
 `
 
@@ -46,7 +43,7 @@ const RepoWrapper = styled.div`
   flex-grow: 2;
   vertical-align: top;
   padding: ${remcalc(24)};
-  border: 1px solid ${props => props.theme.colors.secondaryText};
+  border: 1px solid ${borderGrey};
 `
 
 const RepoWithImage = props => {
