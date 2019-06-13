@@ -34,7 +34,9 @@ const getBackgroundColor = pathname => {
    * These pages all have a final white component so we make sure
    * to add a grey background to give them some distinction
    */
-  const colors = { greyBg: ['engineering', 'design', 'training ', 'about-us'] }
+  const colors = {
+    greyBg: ['engineering', 'design', 'training ', 'about-us', 'open-source']
+  }
 
   return Object.keys(colors).find(key => colors[key].includes(path))
 }

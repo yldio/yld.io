@@ -2329,6 +2329,14 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+"@yldio/oss-stats@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@yldio/oss-stats/-/oss-stats-1.0.1.tgz#27ea289207699bb5fd1888180acde9d42fdb4af4"
+  integrity sha512-l3W/tvldz6B50jRSegsH++oJrUMy8Doy36zkS+1CbSldhgElpvfpAtlQkB8ED5bvUIkZi5yP0TB///0kLTb1fw==
+  dependencies:
+    github-graphql-api "^1.0.6"
+    lodash "^4.17.11"
+
 "@zeit/schemas@2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@zeit/schemas/-/schemas-2.6.0.tgz#004e8e553b4cd53d538bd38eac7bcbf58a867fe3"
@@ -9078,6 +9086,11 @@ github-from-package@0.0.0:
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
   integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
+github-graphql-api@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/github-graphql-api/-/github-graphql-api-1.0.6.tgz#43eb1423198975ee91fa0682bfe1a9452c8ba8e5"
+  integrity sha512-Oe/+7WQup22g0aIv+S7YyIbXvOujfVl6I1t8+NFfwjfcEarDXWDOup3VplOiRs/ezDP+uB/WTEk7p4cVWAGXSQ==
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -13078,7 +13091,7 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-netlify-lambda@^1.4.11:
+netlify-lambda@^1.4.13:
   version "1.4.13"
   resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.13.tgz#a324615133b8f1a3aaeec8c5dfc825cf07aaddf1"
   integrity sha512-f8CeAt8iGeORFn6fcNn3UXNSjGPL8vWaLm3yZH6I7txENOOdKMp7SdwvNL5YEN3s5h9+GAQ05qy3Ems0nle2JQ==
