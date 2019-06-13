@@ -9,8 +9,8 @@ const {
 } = require('./utils')
 
 const contentfulMetaKeys = [
-  'openSourceMetaRepoCount',
-  'openSourceMetaPullRequestCount'
+  'openSourceMetaReposCount',
+  'openSourceMetaPullRequestsCount'
 ]
 
 const Meta = async (environment, githubMetaData) => {

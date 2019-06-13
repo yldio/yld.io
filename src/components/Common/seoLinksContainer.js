@@ -2,7 +2,6 @@ import React from 'react'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Padding } from 'styled-components-spacing'
 import { generate } from 'shortid'
 
 import { SectionTitle, Subtitle } from '../Typography'
@@ -13,6 +12,16 @@ const StyledLinksColumn = styled.div`
   padding-top: ${({ theme, index }) => theme.spacing[index === 1 ? 3 : 2]};
   ${breakpoint('tablet')`
     padding-top: ${({ index }) => remcalc(index * 72)};
+  `}
+`
+
+const Wrapper = styled.div`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
@@ -28,10 +37,7 @@ const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
 )
 
 const SeoLinksContainer = ({ specialities, sectionTitle }) => (
-  <Padding
-    top={{ smallPhone: 3, tablet: 4 }}
-    bottom={{ smallTablet: 3.5, tablet: 5 }}
-  >
+  <Wrapper>
     <Grid>
       <Row>
         <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 2]}>
@@ -44,7 +50,7 @@ const SeoLinksContainer = ({ specialities, sectionTitle }) => (
         )}
       </Row>
     </Grid>
-  </Padding>
+  </Wrapper>
 )
 
 export default SeoLinksContainer

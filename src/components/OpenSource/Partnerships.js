@@ -13,14 +13,18 @@ const StyledGrid = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
 
-  ${breakpoint('smallTablet')`
+  ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
 const StyledRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallTablet')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const StyledSubtitleWithBodyContainer = styled.div`
