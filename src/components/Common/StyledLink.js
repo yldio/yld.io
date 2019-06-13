@@ -81,6 +81,10 @@ export const StyledLinkCss = css`
   `};
 `
 
+export const FakeLink = styled.p`
+  ${StyledLinkCss}
+`
+
 const Anchor = styled(Link)`
   ${StyledLinkCss};
 `
