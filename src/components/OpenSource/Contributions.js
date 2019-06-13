@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
+  color: #848194;
   padding-bottom: ${({ theme }) => theme.space[4]};
   padding-top: ${({ theme }) => theme.space[3]};
 

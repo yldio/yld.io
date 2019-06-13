@@ -23,7 +23,7 @@ const Ellipsis = styled.div`
 `
 
 const StyledBodyStylised = styled(BodyStylised)`
-  color: ${({ isDark, theme }) => (isDark ? theme.colors.white : null)};
+  color: ${({ isDark }) => (isDark ? '#848194' : null)};
 `
 
 /**
@@ -55,11 +55,11 @@ const Repo = ({
         </Subtitle>
       </ConditionalLink>
       <Ellipsis>
-        <StyledBodyStylised small={isImage} noPadding>
+        <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
           {pullRequestCount} Contributions
         </StyledBodyStylised>
       </Ellipsis>
-      <StyledBodyStylised small={isImage} noPadding>
+      <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
         {starCount} Stars
       </StyledBodyStylised>
       {!isImage && <StyledHr short />}
