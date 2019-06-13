@@ -7,6 +7,7 @@ import BlueBackground from '../Common/BlueBackground'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 import Image from '../Common/Image'
+import RatioContainer from '../Common/RatioContainer'
 import SubtitleWithBody from '../Common/SubtitleWithBody'
 
 const StyledGrid = styled(Grid)`
@@ -31,26 +32,24 @@ const StyledSubtitleWithBodyContainer = styled.div`
   padding-top: ${({ theme }) => theme.spacing[1]};
 `
 
-const StyledImageContainer = styled.div`
-  width: ${remcalc(200)};
-  height: ${remcalc(90)};
+const ImageContainer = styled.div`
+  max-width: ${remcalc(238)};
+`
 
-  ${breakpoint('tablet')`
-    width: ${remcalc(165)};
-    height: ${remcalc(75)};
-  `}
-
-  ${breakpoint('desktop')`
-    width: ${remcalc(239)};
-    height: ${remcalc(108)};
-  `}
+const StyledImage = styled(Image)`
+  position: absolute;
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
   <Col key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
-    <StyledImageContainer>
-      <Image image={logoDarkTheme} alt={`Image of ${logoDarkTheme.title}`} />
-    </StyledImageContainer>
+    <ImageContainer>
+      <RatioContainer width="238" height="108">
+        <StyledImage
+          image={logoDarkTheme}
+          alt={`Image of ${logoDarkTheme.title}`}
+        />
+      </RatioContainer>
+    </ImageContainer>
     <StyledSubtitleWithBodyContainer>
       <SubtitleWithBody
         subtitle={membershipLevel}
