@@ -28,6 +28,14 @@ const StyledRow = styled(Row)`
   `}
 `
 
+const StyledCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('desktop')`
+    padding-bottom: 0;
+  `}
+`
+
 const StyledSubtitleWithBodyContainer = styled.div`
   padding-top: ${({ theme }) => theme.spacing[1]};
 `
@@ -41,7 +49,7 @@ const StyledImage = styled(Image)`
 `
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
-  <Col key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
+  <StyledCol key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
     <ImageContainer>
       <RatioContainer width="238" height="108">
         <StyledImage
@@ -57,7 +65,7 @@ const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
         themeVariation="dark"
       />
     </StyledSubtitleWithBodyContainer>
-  </Col>
+  </StyledCol>
 )
 
 const PartnershipsSection = ({ title, partners }) => (
