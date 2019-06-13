@@ -20,7 +20,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-modal-routing`,
+    {
+      resolve: `gatsby-plugin-modal-routing`,
+      modalProps: {
+        style: {
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
