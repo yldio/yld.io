@@ -15,7 +15,7 @@ const noEventsMessage = title =>
 
 const getAllUpcomingEvents = events =>
   events
-    .filter(({ node: { eventTitle, date } }) => isAfter(date, endOfYesterday()))
+    .filter(({ node: { date } }) => isAfter(date, endOfYesterday()))
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
