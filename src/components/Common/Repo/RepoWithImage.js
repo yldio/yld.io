@@ -33,6 +33,8 @@ const ImageWrapperInner = styled.div`
 const Image = styled(CommonImage)`
   display: block;
   width: 100%;
+  position: absolute;
+  height: 100%;
 `
 
 const RepoWrapper = styled.div`
@@ -47,14 +49,17 @@ const RepoWrapper = styled.div`
 `
 
 const RepoWithImage = props => {
-  const { url, nameWithOwner, image } = props
+  const { url, nameWithOwner, clientLogo } = props
+
   return (
     <Wrapper>
       <Link href={url}>
         <ImageWrapper>
           <ImageWrapperInner>
             <RatioContainer width={100} height={100}>
-              {image && <Image image={image} alt={`${nameWithOwner} logo`} />}
+              {clientLogo && (
+                <Image image={clientLogo} alt={`${nameWithOwner} logo`} />
+              )}
             </RatioContainer>
           </ImageWrapperInner>
         </ImageWrapper>

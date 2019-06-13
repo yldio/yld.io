@@ -56,16 +56,16 @@ const Contributions = ({
     contributionsSectionTitleLine1,
     contributionsSectionTitleLine2,
     contributionsSectionTitleLine3,
-    openSourceMetaRepoCount,
-    openSourceMetaPullRequestCount
+    openSourceMetaReposCount,
+    openSourceMetaPullRequestsCount
   }
 }) => {
   const contributions = {
     contributionsSectionTitleLine1,
     contributionsSectionTitleLine2,
     contributionsSectionTitleLine3,
-    openSourceMetaRepoCount,
-    openSourceMetaPullRequestCount
+    openSourceMetaReposCount,
+    openSourceMetaPullRequestsCount
   }
 
   return (

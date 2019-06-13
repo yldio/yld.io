@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { SectionTitle } from '../Typography'
 const ContributionsCopy = props => {
   const {
-    openSourceMetaRepoCount: projects,
-    openSourceMetaPullRequestCount: contributions,
+    openSourceMetaReposCount: projects,
+    openSourceMetaPullRequestsCount: contributions,
     contributionsSectionTitleLine1: first,
     contributionsSectionTitleLine2: second,
     contributionsSectionTitleLine3: third

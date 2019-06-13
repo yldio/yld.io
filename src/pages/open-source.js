@@ -19,7 +19,7 @@ import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
 const StyledHr = styled(Hr)`
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: #848194;
 `
 
 const OpenSource = ({ data }) => {
@@ -278,19 +278,23 @@ const OpenSourcePage = props => (
             nameWithOwner
             pullRequestCount
             starCount
+            clientLogo {
+              file {
+                url
+                fileName
+                contentType
+              }
+            }
           }
           contributionsSectionTitleLine1
           contributionsSectionTitleLine2
           contributionsSectionTitleLine3
-          openSourceMetaRepoCount
-          openSourceMetaPullRequestCount
+          openSourceMetaReposCount
+          openSourceMetaPullRequestsCount
           contributionsSectionImage {
             title
             file {
               url
-            }
-            fluid(maxWidth: 250) {
-              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           contributionsSectionDescriptionLine1

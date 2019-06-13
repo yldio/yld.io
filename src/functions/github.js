@@ -27,8 +27,8 @@ exports.handler = async () => {
   // Get github data
   const {
     repos,
-    repoCount: openSourceMetaRepoCount,
-    pullRequestCount: openSourceMetaPullRequestCount
+    repoCount: openSourceMetaReposCount,
+    pullRequestCount: openSourceMetaPullRequestsCount
   } = await getData({
     org,
     token: GITHUB_TOKEN
@@ -46,8 +46,8 @@ exports.handler = async () => {
 
   const [meta, updatedRepos] = await Promise.all([
     Meta(environment, {
-      openSourceMetaPullRequestCount,
-      openSourceMetaRepoCount
+      openSourceMetaPullRequestsCount,
+      openSourceMetaReposCount
     }),
     Repos(environment, { repos })
   ]).catch(err => {
