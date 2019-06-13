@@ -279,8 +279,10 @@ const OpenSourcePage = props => (
             pullRequestCount
             starCount
             clientLogo {
-              fluid(maxWidth: 30) {
-                ...GatsbyContentfulFluid_withWebp
+              file {
+                url
+                fileName
+                contentType
               }
             }
           }
@@ -293,9 +295,6 @@ const OpenSourcePage = props => (
             title
             file {
               url
-            }
-            fluid(maxWidth: 250) {
-              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           contributionsSectionDescriptionLine1

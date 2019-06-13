@@ -33,6 +33,8 @@ const ImageWrapperInner = styled.div`
 const Image = styled(CommonImage)`
   display: block;
   width: 100%;
+  position: absolute;
+  height: 100%;
 `
 
 const RepoWrapper = styled.div`
@@ -48,6 +50,7 @@ const RepoWrapper = styled.div`
 
 const RepoWithImage = props => {
   const { url, nameWithOwner, clientLogo } = props
+
   return (
     <Wrapper>
       <Link href={url}>
