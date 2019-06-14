@@ -1,6 +1,5 @@
 import React from 'react'
 import { format, isAfter, endOfYesterday } from 'date-fns'
-import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
@@ -29,6 +28,14 @@ const Wrapper = styled.div`
         ${({ theme }) => theme.space[7]};
   `}
 `
+const ImageWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+  padding-top: ${({ theme }) => theme.space[2]};
+`
+
+const StyledBodyPrimary = styled(BodyPrimary)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
 
 const EventSection = ({ events, title, description }) => {
   const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
@@ -44,11 +51,9 @@ const EventSection = ({ events, title, description }) => {
       <Wrapper>
         <Row>
           <Col width={[1]}>
-            <div>
-              <Padding bottom={1}>
-                <img src={specialityEventIcon} alt="events icon" />
-              </Padding>
-            </div>
+            <ImageWrapper>
+              <img src={specialityEventIcon} alt="events icon" />
+            </ImageWrapper>
           </Col>
           <Col width={[1, 1, 1, 1, 7 / 12]}>
             <Row>
@@ -60,7 +65,7 @@ const EventSection = ({ events, title, description }) => {
 
               {description ? (
                 <Col width={[1, 1, 1, 1, 10 / 12, 7 / 12]}>
-                  <BodyPrimary>{description}</BodyPrimary>
+                  <StyledBodyPrimary>{description}</StyledBodyPrimary>
                 </Col>
               ) : null}
             </Row>
