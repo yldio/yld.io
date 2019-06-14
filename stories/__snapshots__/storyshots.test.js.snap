@@ -9806,6 +9806,7 @@ exports[`Storyshots Repo Repo Dark 1`] = `
   line-height: 1.5rem;
   padding: 0.8125rem 0 0.6875rem 0;
   padding: 0;
+  color: #848194;
 }
 
 .c0 {
