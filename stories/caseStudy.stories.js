@@ -4,16 +4,6 @@ import Theme from './theme'
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview'
 import CaseStudyLayout from '../src/components/Common/CaseStudyCards/CaseStudyLayout'
 
-window.matchMedia = jest.fn().mockImplementation(query => {
-  return {
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn()
-  }
-})
-
 const TrainlineCaseStudy = {
   title: 'Future-proofing Trainline',
   slug: 'future-proofing-trainline',
