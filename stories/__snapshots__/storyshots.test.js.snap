@@ -2163,6 +2163,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   position: initial;
   top: 0;
   left: 0;
+  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2171,7 +2172,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2183,7 +2184,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2192,36 +2192,9 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c6 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c4 {
+.c3 {
   width: 100%;
   height: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c1 {
@@ -2354,68 +2327,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2424,108 +2335,82 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c7 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+  .c4 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 }
 
@@ -2594,26 +2479,12 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
           1,
           1,
           1,
-          0,
-        ]
-      }
-    >
-      Headings
-    </div>
-    <div
-      className="c3"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
           0.5,
         ]
       }
     >
       <div
-        className="c4 gatsby-image-wrapper"
+        className="c3 gatsby-image-wrapper"
         style={
           Object {
             "overflow": "hidden",
@@ -2694,27 +2565,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
       </div>
     </div>
     <div
-      className="c5 c6"
-      width={
-        Array [
-          0,
-          0,
-          0,
-          0,
-          0.5,
-          0.5,
-          0.4166666666666667,
-        ]
-      }
-    >
-      <div
-        className="c7"
-      >
-        RightText
-      </div>
-    </div>
-    <div
-      className="c2"
+      className="c4"
       width={
         Array [
           1,
@@ -2753,6 +2604,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   position: initial;
   top: 0;
   left: 0;
+  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2761,7 +2613,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c5 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2773,7 +2625,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2782,40 +2633,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c8 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c6 {
+.c3 {
   width: 100%;
   height: auto;
 }
 
-.c4 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  padding: 0.8125rem 0 0.6875rem 0;
-}
-
-.c13 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -2823,29 +2646,11 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
-.c3 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #757575;
-  padding: 0;
-}
-
-.c10 {
-  padding-bottom: 0.375rem;
-}
-
-.c11 {
-  padding-bottom: 0.75rem;
-}
-
-.c12 {
+.c5 {
   padding-top: 0;
 }
 
-.c14 {
+.c7 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -2861,7 +2666,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition-property: background,color;
 }
 
-.c14:after {
+.c7:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -2871,32 +2676,25 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   box-sizing: border-box;
 }
 
-.c14:hover {
+.c7:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c14:focus {
+.c7:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c14:active {
+.c7:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c14:active:after {
+.c7:active:after {
   background: #333333;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c1 {
@@ -3029,68 +2827,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c5 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c5 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c5 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c5 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c5 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -3099,69 +2835,78 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -3169,52 +2914,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   }
 }
 
-@media screen and (min-width:43.8125rem) {
-  .c8 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c8 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c8 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
 @media (min-width:56.3125em) {
-  .c4 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c12 {
+  .c5 {
     padding-top: 0.375rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c9 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
   }
 }
 
@@ -3283,35 +2985,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
           1,
           1,
           1,
-          0,
-        ]
-      }
-    >
-      <p
-        className="c3"
-      >
-        Featured work
-      </p>
-      <h2
-        className="c4"
-      >
-        Future-proofing Trainline
-      </h2>
-    </div>
-    <div
-      className="c5"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
           0.5,
         ]
       }
     >
       <div
-        className="c6 gatsby-image-wrapper"
+        className="c3 gatsby-image-wrapper"
         style={
           Object {
             "overflow": "hidden",
@@ -3392,61 +3071,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       </div>
     </div>
     <div
-      className="c7 c8"
-      width={
-        Array [
-          0,
-          0,
-          0,
-          0,
-          0.5,
-          0.5,
-          0.4166666666666667,
-        ]
-      }
-    >
-      <div
-        className="c9"
-      >
-        <div
-          className="c10"
-        >
-          <p
-            className="c3"
-          >
-            Featured work
-          </p>
-          <h2
-            className="c4"
-          >
-            Future-proofing Trainline
-          </h2>
-        </div>
-        <div
-          className="c11"
-        >
-          <div
-            className="c12"
-          >
-            <p
-              className="c13"
-            >
-              We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-            </p>
-            <a
-              className="c14"
-              href="/case-study/future-proofing-trainline"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c2"
+      className="c4"
       width={
         Array [
           1,
@@ -3458,18 +3083,19 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       }
     >
       <div
-        className="c12"
+        className="c5"
       >
         <p
-          className="c13"
+          className="c6"
         >
           We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
         </p>
         <a
-          className="c14"
+          className="c7"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Learn more"
         >
           Learn more
         </a>
