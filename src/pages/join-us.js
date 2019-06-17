@@ -10,7 +10,6 @@ import OpenPositions from '../components/JoinUs/OpenPositions'
 import Head from '../components/Common/Head'
 import scrollToComponent from 'react-scroll-to-component'
 
-// const JoinUs = function({ data: { contentfulJoinUsPage: content } }) {
 class JoinUs extends React.Component {
   constructor(props) {
     super(props)
