@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
-import Media from 'react-media'
-import { breakpoints } from '../../../utils/theme'
 
 import { Grid, Row, Col } from '../../grid'
 import Image from '../Image'
@@ -47,21 +45,13 @@ const CaseStudyLayout = ({
 }) => (
   <Grid>
     <RowLayout isTop={isTop}>
-      <Media query={`(max-width: ${breakpoints.smallTablet}px)`}>
-        <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
-      </Media>
+      <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
       <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
         <Image image={posterImage} width="100%" />
       </Col>
-      <Media query={`(min-width: ${breakpoints.smallTablet}px)`}>
-        {matches =>
-          matches ? (
-            <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
-              <TextWrapper>{rightHandText}</TextWrapper>
-            </FlexCol>
-          ) : null
-        }
-      </Media>
+      <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
+        <TextWrapper>{rightHandText}</TextWrapper>
+      </FlexCol>
       <Col width={[1, 1, 1, 1, 0]}>{textBelowImage}</Col>
     </RowLayout>
   </Grid>
