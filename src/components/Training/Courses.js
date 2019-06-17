@@ -32,6 +32,7 @@ const Courses = ({ categories, sectionTitle }) => {
                   <StyledLink
                     style={{ cursor: 'pointer' }}
                     to={`/training/${cat.slug}/${course.slug}`}
+                    title={course.name}
                     key={course.id}
                     state={{
                       modal: true

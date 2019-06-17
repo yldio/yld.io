@@ -45,6 +45,11 @@ const EventSection = ({ events, title }) => {
   const specialityEvents = events ? getSpecialityEvents(title, events) : []
   const hasEvents = !!specialityEvents.length
 
+  const ctaKey = hasEvents ? 'withEvents' : 'withoutEvents'
+
+  const ctaText = CTA.text[ctaKey]
+  const ctaLink = CTA.link[ctaKey]
+
   return (
     <Grid>
       <Padding top={6} bottom={6}>
@@ -64,7 +69,7 @@ const EventSection = ({ events, title }) => {
                   ({ node: { id, eventTitle, date, linkToEvent } }) => (
                     <li key={`${id}`}>
                       <Subtitle noPaddingBottom>
-                        <ExternalAnchor href={linkToEvent}>
+                        <ExternalAnchor href={linkToEvent} title={eventTitle}>
                           {eventTitle}
                         </ExternalAnchor>
                       </Subtitle>
@@ -80,11 +85,8 @@ const EventSection = ({ events, title }) => {
               noEventsMessage(title)
             )}
             <Padding top={3}>
-              <StyledLink
-                external
-                href={CTA.link[hasEvents ? 'withEvents' : 'withoutEvents']}
-              >
-                {CTA.text[hasEvents ? 'withEvents' : 'withoutEvents']}
+              <StyledLink external href={ctaLink} title={ctaText}>
+                {ctaText}
               </StyledLink>
             </Padding>
           </Col>

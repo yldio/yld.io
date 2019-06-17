@@ -27,6 +27,7 @@ const renderJobsForlocation = (jobs, location, key) => {
                 width={[1, 1, 1, 1, 4 / 12, 3 / 12]}
               >
                 <JobLink
+                  location={location}
                   position={text}
                   hostedUrl={hostedUrl}
                   contractType={commitment}

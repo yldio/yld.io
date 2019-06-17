@@ -363,6 +363,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -377,6 +378,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -442,6 +444,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -456,6 +459,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -521,6 +525,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -535,6 +540,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -600,6 +606,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -614,6 +621,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -679,6 +687,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -693,6 +702,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -1072,6 +1082,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -1086,6 +1097,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -2051,6 +2063,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Security Trivia Series: Understanding CSP’s Reporting"
               >
                 Security Trivia Series: Understanding CSP’s Reporting
               </a>
@@ -2072,6 +2085,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Serverless: It’s not all a FaaS"
               >
                 Serverless: It’s not all a FaaS
               </a>
@@ -2093,6 +2107,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/under-the-with-kubernetes-c1ea1a82c61f"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Under the 🔬 with Kubernetes"
               >
                 Under the 🔬 with Kubernetes
               </a>
@@ -2115,6 +2130,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             href="https://medium.com/yld-engineering-blog"
             rel="noopener noreferrer"
             target="_blank"
+            title="Visit our blog"
           >
             Visit our blog
           </a>
@@ -2147,6 +2163,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   position: initial;
   top: 0;
   left: 0;
+  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2155,7 +2172,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2167,7 +2184,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2176,36 +2192,9 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
   display: block;
 }
 
-.c6 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c4 {
+.c3 {
   width: 100%;
   height: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c1 {
@@ -2338,68 +2327,6 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2408,108 +2335,82 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c7 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+  .c4 {
+    width: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 }
 
@@ -2578,26 +2479,12 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
           1,
           1,
           1,
-          0,
-        ]
-      }
-    >
-      Headings
-    </div>
-    <div
-      className="c3"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
           0.5,
         ]
       }
     >
       <div
-        className="c4 gatsby-image-wrapper"
+        className="c3 gatsby-image-wrapper"
         style={
           Object {
             "overflow": "hidden",
@@ -2678,27 +2565,7 @@ exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
       </div>
     </div>
     <div
-      className="c5 c6"
-      width={
-        Array [
-          0,
-          0,
-          0,
-          0,
-          0.5,
-          0.5,
-          0.4166666666666667,
-        ]
-      }
-    >
-      <div
-        className="c7"
-      >
-        RightText
-      </div>
-    </div>
-    <div
-      className="c2"
+      className="c4"
       width={
         Array [
           1,
@@ -2737,6 +2604,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   position: initial;
   top: 0;
   left: 0;
+  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2745,7 +2613,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c5 {
+.c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -2757,7 +2625,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  padding-bottom: 2.25rem;
   display: block;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2766,40 +2633,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c8 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c6 {
+.c3 {
   width: 100%;
   height: auto;
 }
 
-.c4 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  padding: 0.8125rem 0 0.6875rem 0;
-}
-
-.c13 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -2807,29 +2646,11 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.75rem 0;
 }
 
-.c3 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #757575;
-  padding: 0;
-}
-
-.c10 {
-  padding-bottom: 0.375rem;
-}
-
-.c11 {
-  padding-bottom: 0.75rem;
-}
-
-.c12 {
+.c5 {
   padding-top: 0;
 }
 
-.c14 {
+.c7 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -2845,7 +2666,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition-property: background,color;
 }
 
-.c14:after {
+.c7:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -2855,32 +2676,25 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   box-sizing: border-box;
 }
 
-.c14:hover {
+.c7:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c14:focus {
+.c7:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c14:active {
+.c7:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c14:active:after {
+.c7:active:after {
   background: #333333;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c1 {
@@ -3013,68 +2827,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 @media screen and (min-width:43.8125rem) {
   .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c5 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c5 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c5 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c5 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c5 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c5 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c5 {
     width: 50%;
     position: initial;
     top: 0;
@@ -3083,69 +2835,78 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c5 {
+  .c2 {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c4 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c4 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c4 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c4 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -3153,52 +2914,9 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   }
 }
 
-@media screen and (min-width:43.8125rem) {
-  .c8 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c8 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c8 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
 @media (min-width:56.3125em) {
-  .c4 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c12 {
+  .c5 {
     padding-top: 0.375rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c9 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
   }
 }
 
@@ -3267,35 +2985,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
           1,
           1,
           1,
-          0,
-        ]
-      }
-    >
-      <p
-        className="c3"
-      >
-        Featured work
-      </p>
-      <h2
-        className="c4"
-      >
-        Future-proofing Trainline
-      </h2>
-    </div>
-    <div
-      className="c5"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
           0.5,
         ]
       }
     >
       <div
-        className="c6 gatsby-image-wrapper"
+        className="c3 gatsby-image-wrapper"
         style={
           Object {
             "overflow": "hidden",
@@ -3376,61 +3071,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       </div>
     </div>
     <div
-      className="c7 c8"
-      width={
-        Array [
-          0,
-          0,
-          0,
-          0,
-          0.5,
-          0.5,
-          0.4166666666666667,
-        ]
-      }
-    >
-      <div
-        className="c9"
-      >
-        <div
-          className="c10"
-        >
-          <p
-            className="c3"
-          >
-            Featured work
-          </p>
-          <h2
-            className="c4"
-          >
-            Future-proofing Trainline
-          </h2>
-        </div>
-        <div
-          className="c11"
-        >
-          <div
-            className="c12"
-          >
-            <p
-              className="c13"
-            >
-              We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-            </p>
-            <a
-              className="c14"
-              href="/case-study/future-proofing-trainline"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c2"
+      className="c4"
       width={
         Array [
           1,
@@ -3442,18 +3083,19 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       }
     >
       <div
-        className="c12"
+        className="c5"
       >
         <p
-          className="c13"
+          className="c6"
         >
           We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
         </p>
         <a
-          className="c14"
+          className="c7"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Learn more"
         >
           Learn more
         </a>
@@ -5906,6 +5548,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
           href="/contact/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Get in touch"
         >
           Get in touch
         </a>
@@ -7446,6 +7089,7 @@ exports[`Storyshots Header Header itself 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
               style={Object {}}
+              title="Return to Homepage"
             >
               <img
                 alt="yld logo"
@@ -7499,6 +7143,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Engineering"
                   >
                     Engineering
                   </a>
@@ -7512,6 +7157,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Design"
                   >
                     Design
                   </a>
@@ -7525,6 +7171,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Training"
                   >
                     Training
                   </a>
@@ -7539,6 +7186,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="/our-work/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Our work"
               >
                 Our work
               </a>
@@ -7551,6 +7199,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="https://medium.com/yld-engineering-blog/"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Blog"
               >
                 Blog
               </a>
@@ -7596,6 +7245,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Our team"
                   >
                     Our team
                   </a>
@@ -7609,6 +7259,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Join us"
                   >
                     Join us
                   </a>
@@ -7623,6 +7274,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Contact"
               >
                 Contact
               </a>
@@ -7694,6 +7346,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   }
                 }
                 style={Object {}}
+                title="Home"
               >
                 Home
               </a>
@@ -7749,6 +7402,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
+                title="Our work"
               >
                 Our work
               </a>
@@ -7777,6 +7431,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   }
                 }
                 target="_blank"
+                title="Blog"
               >
                 Blog
               </a>
@@ -7832,6 +7487,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
+                title="Contact"
               >
                 Contact
               </a>
@@ -8137,6 +7793,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <svg
         viewBox="0 0 54 54"
@@ -8171,6 +7828,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       href="/engineering"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      title="engineering"
     >
       Engineering
     </a>
@@ -8219,6 +7877,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 1"
           >
             Item 1
           </a>
@@ -8232,6 +7891,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 2"
           >
             Item 2
           </a>
@@ -8245,6 +7905,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 3"
           >
             Item 3
           </a>
@@ -8259,6 +7920,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 1"
       >
         Anchor 1
       </a>
@@ -8271,6 +7933,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="External anchor"
       >
         External anchor
       </a>
@@ -8316,6 +7979,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go here"
           >
             Go here
           </a>
@@ -8329,6 +7993,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go there"
           >
             Go there
           </a>
@@ -8343,6 +8008,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 2"
       >
         Anchor 2
       </a>
@@ -8653,6 +8319,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         style={Object {}}
+        title="Return to Homepage"
       >
         <svg
           viewBox="0 0 54 54"
@@ -8686,6 +8353,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         href="/engineering"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="engineering"
       >
         Engineering
       </a>
@@ -8734,6 +8402,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 1"
             >
               Item 1
             </a>
@@ -8747,6 +8416,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 2"
             >
               Item 2
             </a>
@@ -8760,6 +8430,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 3"
             >
               Item 3
             </a>
@@ -8774,6 +8445,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="/anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 1"
         >
           Anchor 1
         </a>
@@ -8786,6 +8458,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="https://uk.linkedin.com/"
           rel="noopener noreferrer"
           target="_blank"
+          title="External anchor"
         >
           External anchor
         </a>
@@ -8831,6 +8504,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Go here"
             >
               Go here
             </a>
@@ -8844,6 +8518,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Go there"
             >
               Go there
             </a>
@@ -8858,6 +8533,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="/last-anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 2"
         >
           Anchor 2
         </a>
@@ -8993,6 +8669,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <img
         alt="yld logo"
@@ -9015,6 +8692,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
         style={Object {}}
+        title="Here"
       >
         Here
       </a>
@@ -9027,6 +8705,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="There"
       >
         There
       </a>
@@ -9039,6 +8718,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9309,6 +8989,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <img
         alt="yld logo"
@@ -9362,6 +9043,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 1"
           >
             Item 1
           </a>
@@ -9375,6 +9057,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 2"
           >
             Item 2
           </a>
@@ -9388,6 +9071,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 3"
           >
             Item 3
           </a>
@@ -9402,6 +9086,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="First anchor"
       >
         First anchor
       </a>
@@ -9414,6 +9099,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9459,6 +9145,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go here"
           >
             Go here
           </a>
@@ -9472,6 +9159,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go there"
           >
             Go there
           </a>
@@ -9486,6 +9174,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Last anchor"
       >
         Last anchor
       </a>
@@ -9539,6 +9228,7 @@ exports[`Storyshots JobLink JobLink 1`] = `
   href="http://www.lever.com"
   rel="noopener noreferrer"
   target="_blank"
+  title="Software Engineer role  for yld"
 >
   <p
     className="c0"
@@ -11495,11 +11185,11 @@ exports[`Storyshots Statement Statement 1`] = `
         <div
           className="c4"
         >
-          <h1
+          <h2
             className="c5"
           >
             We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development.
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -11762,7 +11452,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
       <div
         className="c3"
       >
-        <h1
+        <h2
           className="c4"
         >
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
@@ -11796,7 +11486,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
             training
           </a>
            and open-source.
-        </h1>
+        </h2>
       </div>
     </div>
   </div>
@@ -12071,11 +11761,11 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
         <div
           className="c4"
         >
-          <h1
+          <h2
             className="c5"
           >
             We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development.
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -15397,6 +15087,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="https://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="Tutorial name"
           >
             Tutorial name
           </a>
@@ -15418,6 +15109,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://nodetuts.com/series"
             rel="noopener noreferrer"
             target="_blank"
+            title="Article name"
           >
             Article name
           </a>
@@ -15439,6 +15131,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="A third one"
           >
             A third one
           </a>
@@ -15461,6 +15154,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         href="https://yld.io"
         rel="noopener noreferrer"
         target="_blank"
+        title="Head to yld.io for more"
       >
         Head to yld.io for more
       </a>

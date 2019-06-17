@@ -26,7 +26,11 @@ export default function SeoLinks({ items, ...props }) {
             if (path) {
               return (
                 <ListItem key={item.id}>
-                  <Link to={path} style={{ textDecoration: 'underline' }}>
+                  <Link
+                    to={path}
+                    style={{ textDecoration: 'underline' }}
+                    title={`Speciality - ${item.title.trim()}`}
+                  >
                     {item.title.trim()}
                   </Link>
                 </ListItem>

@@ -47,7 +47,7 @@ const IndexPage = ({
   return (
     <Layout location={location}>
       <Head page={content} />
-      <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
+      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <GreyBackground>
         <Grid>
           <Padding top={{ smallPhone: 4 }} bottom={3}>

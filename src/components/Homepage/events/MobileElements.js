@@ -19,7 +19,7 @@ export const MobileMeetups = ({ events }) => (
         {events.map(conf => (
           <li key={`${conf.id}`}>
             <Subtitle noPaddingBottom>
-              <ExternalAnchor href={conf.linkToEvent}>
+              <ExternalAnchor href={conf.linkToEvent} title={conf.eventTitle}>
                 {conf.eventTitle}
               </ExternalAnchor>
             </Subtitle>

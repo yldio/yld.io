@@ -5,14 +5,15 @@ import { Section, Separator, TitleAndBody } from './elements'
 import StandaloneVideoLink from '../Common/StandaloneVideoLink'
 import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
 import TitleAndList from '../Common/TitleAndList'
+import { generate } from 'shortid'
 
 const MAX_VIDEOS = 3
 
 const Talks = ({ data }) => (
   <Row>
-    {data.slice(0, MAX_VIDEOS).map(({ title, link }, idx) => (
-      <StandaloneVideoLink href={link} key={idx}>
-        {title}
+    {data.slice(0, MAX_VIDEOS).map(({ title, link }) => (
+      <StandaloneVideoLink title={title.trim()} href={link} key={generate()}>
+        {title.trim()}
       </StandaloneVideoLink>
     ))}
   </Row>

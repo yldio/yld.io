@@ -41,6 +41,7 @@ const LogoLink = ({ path = '/' }) => {
       {isSpecialityPage || isServicePage ? (
         <StyledLink
           to="/"
+          title="Return to Homepage"
           onMouseEnter={() =>
             setFillColor(
               logoColors[isServicePage ? 'defaultHover' : 'specialityHover']
@@ -56,7 +57,7 @@ const LogoLink = ({ path = '/' }) => {
           />
         </StyledLink>
       ) : (
-        <Link to="/">
+        <Link to="/" title="Return to Homepage">
           <img role="link" height="48" src={logo} alt="yld logo" />
         </Link>
       )}

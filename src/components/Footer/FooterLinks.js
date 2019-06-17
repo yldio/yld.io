@@ -66,7 +66,10 @@ const FooterLinks = () => (
             <Social>
               {social.map(link => (
                 <li key={link.label}>
-                  <ExternalAnchor href={link.to}>
+                  <ExternalAnchor
+                    href={link.to}
+                    title={`yld ${link.label} Account`}
+                  >
                     <img src={link.img} alt={link.label} />
                   </ExternalAnchor>
                 </li>
@@ -76,7 +79,7 @@ const FooterLinks = () => (
           <Col width={[1, 1, 1, 1, 1, 1, 7 / 12]}>
             <GDPR>
               {gdpr.map(link => (
-                <LinkUnderline key={link.label} to={link.to}>
+                <LinkUnderline key={link.label} to={link.to} title={link.label}>
                   {link.label}
                 </LinkUnderline>
               ))}
