@@ -363,6 +363,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -377,6 +378,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -442,6 +444,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -456,6 +459,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -521,6 +525,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -535,6 +540,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -600,6 +606,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -614,6 +621,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -679,6 +687,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -693,6 +702,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -1072,6 +1082,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
             href="twitter.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="twitter account"
           >
             <img
               alt="twitter"
@@ -1086,6 +1097,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
             href="linkedin.com/etc"
             rel="noopener noreferrer"
             target="_blank"
+            title="linkedin account"
           >
             <img
               alt="linkedin"
@@ -2051,6 +2063,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Security Trivia Series: Understanding CSP’s Reporting"
               >
                 Security Trivia Series: Understanding CSP’s Reporting
               </a>
@@ -2072,6 +2085,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Serverless: It’s not all a FaaS"
               >
                 Serverless: It’s not all a FaaS
               </a>
@@ -2093,6 +2107,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
                 href="https://medium.com/yld-engineering-blog/under-the-with-kubernetes-c1ea1a82c61f"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Under the 🔬 with Kubernetes"
               >
                 Under the 🔬 with Kubernetes
               </a>
@@ -2115,6 +2130,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             href="https://medium.com/yld-engineering-blog"
             rel="noopener noreferrer"
             target="_blank"
+            title="Visit our blog"
           >
             Visit our blog
           </a>
@@ -5906,6 +5922,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
           href="/contact/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Get in touch"
         >
           Get in touch
         </a>
@@ -7446,6 +7463,7 @@ exports[`Storyshots Header Header itself 1`] = `
               onClick={[Function]}
               onMouseEnter={[Function]}
               style={Object {}}
+              title="Return to Homepage"
             >
               <img
                 alt="yld logo"
@@ -7499,6 +7517,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Engineering"
                   >
                     Engineering
                   </a>
@@ -7512,6 +7531,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Design"
                   >
                     Design
                   </a>
@@ -7525,6 +7545,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Training"
                   >
                     Training
                   </a>
@@ -7539,6 +7560,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="/our-work/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Our work"
               >
                 Our work
               </a>
@@ -7551,6 +7573,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="https://medium.com/yld-engineering-blog/"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Blog"
               >
                 Blog
               </a>
@@ -7596,6 +7619,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Our team"
                   >
                     Our team
                   </a>
@@ -7609,6 +7633,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseEnter={[Function]}
+                    title="Join us"
                   >
                     Join us
                   </a>
@@ -7623,6 +7648,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Contact"
               >
                 Contact
               </a>
@@ -7694,6 +7720,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   }
                 }
                 style={Object {}}
+                title="Home"
               >
                 Home
               </a>
@@ -7749,6 +7776,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
+                title="Our work"
               >
                 Our work
               </a>
@@ -7777,6 +7805,7 @@ exports[`Storyshots Header Header itself 1`] = `
                   }
                 }
                 target="_blank"
+                title="Blog"
               >
                 Blog
               </a>
@@ -7832,6 +7861,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
+                title="Contact"
               >
                 Contact
               </a>
@@ -8137,6 +8167,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <svg
         viewBox="0 0 54 54"
@@ -8171,6 +8202,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       href="/engineering"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      title="engineering"
     >
       Engineering
     </a>
@@ -8219,6 +8251,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 1"
           >
             Item 1
           </a>
@@ -8232,6 +8265,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 2"
           >
             Item 2
           </a>
@@ -8245,6 +8279,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 3"
           >
             Item 3
           </a>
@@ -8259,6 +8294,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 1"
       >
         Anchor 1
       </a>
@@ -8271,6 +8307,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="External anchor"
       >
         External anchor
       </a>
@@ -8316,6 +8353,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go here"
           >
             Go here
           </a>
@@ -8329,6 +8367,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go there"
           >
             Go there
           </a>
@@ -8343,6 +8382,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 2"
       >
         Anchor 2
       </a>
@@ -8653,6 +8693,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         style={Object {}}
+        title="Return to Homepage"
       >
         <svg
           viewBox="0 0 54 54"
@@ -8686,6 +8727,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         href="/engineering"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="engineering"
       >
         Engineering
       </a>
@@ -8734,6 +8776,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 1"
             >
               Item 1
             </a>
@@ -8747,6 +8790,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 2"
             >
               Item 2
             </a>
@@ -8760,6 +8804,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Item 3"
             >
               Item 3
             </a>
@@ -8774,6 +8819,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="/anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 1"
         >
           Anchor 1
         </a>
@@ -8786,6 +8832,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="https://uk.linkedin.com/"
           rel="noopener noreferrer"
           target="_blank"
+          title="External anchor"
         >
           External anchor
         </a>
@@ -8831,6 +8878,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Go here"
             >
               Go here
             </a>
@@ -8844,6 +8892,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
+              title="Go there"
             >
               Go there
             </a>
@@ -8858,6 +8907,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
           href="/last-anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 2"
         >
           Anchor 2
         </a>
@@ -8993,6 +9043,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <img
         alt="yld logo"
@@ -9015,6 +9066,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
         style={Object {}}
+        title="Here"
       >
         Here
       </a>
@@ -9027,6 +9079,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="There"
       >
         There
       </a>
@@ -9039,6 +9092,7 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9309,6 +9363,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       style={Object {}}
+      title="Return to Homepage"
     >
       <img
         alt="yld logo"
@@ -9362,6 +9417,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 1"
           >
             Item 1
           </a>
@@ -9375,6 +9431,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 2"
           >
             Item 2
           </a>
@@ -9388,6 +9445,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Item 3"
           >
             Item 3
           </a>
@@ -9402,6 +9460,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="First anchor"
       >
         First anchor
       </a>
@@ -9414,6 +9473,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9459,6 +9519,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go here"
           >
             Go here
           </a>
@@ -9472,6 +9533,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
+            title="Go there"
           >
             Go there
           </a>
@@ -9486,6 +9548,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Last anchor"
       >
         Last anchor
       </a>
@@ -9539,6 +9602,7 @@ exports[`Storyshots JobLink JobLink 1`] = `
   href="http://www.lever.com"
   rel="noopener noreferrer"
   target="_blank"
+  title="Software Engineer role  for yld"
 >
   <p
     className="c0"
@@ -11495,11 +11559,11 @@ exports[`Storyshots Statement Statement 1`] = `
         <div
           className="c4"
         >
-          <h1
+          <h2
             className="c5"
           >
             We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development.
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -11762,7 +11826,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
       <div
         className="c3"
       >
-        <h1
+        <h2
           className="c4"
         >
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
@@ -11796,7 +11860,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
             training
           </a>
            and open-source.
-        </h1>
+        </h2>
       </div>
     </div>
   </div>
@@ -12071,11 +12135,11 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
         <div
           className="c4"
         >
-          <h1
+          <h2
             className="c5"
           >
             We enable you to adopt emerging technologies and grow powerful engineering teams with a strong focus on open source development.
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -15397,6 +15461,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="https://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="Tutorial name"
           >
             Tutorial name
           </a>
@@ -15418,6 +15483,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://nodetuts.com/series"
             rel="noopener noreferrer"
             target="_blank"
+            title="Article name"
           >
             Article name
           </a>
@@ -15439,6 +15505,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="A third one"
           >
             A third one
           </a>
@@ -15461,6 +15528,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         href="https://yld.io"
         rel="noopener noreferrer"
         target="_blank"
+        title="Head to yld.io for more"
       >
         Head to yld.io for more
       </a>
