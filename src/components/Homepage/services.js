@@ -109,7 +109,7 @@ const Services = ({ services }) => (
                 <Padding bottom={1.5}>
                   <StyledLink
                     to={`/${service.slug}`}
-                    title={`Learn more - ${service.title}`}
+                    title={`Learn more about our ${service.title} service`}
                   >
                     Learn more
                   </StyledLink>
