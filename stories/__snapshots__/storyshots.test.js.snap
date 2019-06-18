@@ -7587,6 +7587,7 @@ exports[`Storyshots Header Header itself 1`] = `
                 href="/open-source/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Open Source"
               >
                 Open Source
               </a>
@@ -7831,6 +7832,7 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
+                title="Open Source"
               >
                 Open Source
               </a>
@@ -12278,7 +12280,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           ]
         }
       >
-        <h1
+        <h2
           className="c5"
         >
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
@@ -16376,6 +16378,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="https://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="Tutorial name"
           >
             Tutorial name
           </a>
@@ -16397,6 +16400,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://nodetuts.com/series"
             rel="noopener noreferrer"
             target="_blank"
+            title="Article name"
           >
             Article name
           </a>
@@ -16418,6 +16422,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
             href="http://www.google.com"
             rel="noopener noreferrer"
             target="_blank"
+            title="A third one"
           >
             A third one
           </a>
@@ -16440,6 +16445,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         href="https://yld.io"
         rel="noopener noreferrer"
         target="_blank"
+        title="Head to yld.io for more"
       >
         Head to yld.io for more
       </a>
@@ -17585,6 +17591,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
           <div
@@ -17610,6 +17617,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
           <div
@@ -17635,6 +17643,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
           <div
@@ -17660,6 +17669,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
           <div
@@ -17685,6 +17695,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
           <div
@@ -17710,6 +17721,7 @@ Array [
                   "saturate": "0",
                 }
               }
+              title="Elife logo"
             />
           </div>
         </div>
