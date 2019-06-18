@@ -106,7 +106,7 @@ const Contributions = ({
             <StyledLink
               reverse="true"
               external
-              to={contributionsSectionCtaLink}
+              href={contributionsSectionCtaLink}
             >
               {contributionsSectionCtaText}
             </StyledLink>
