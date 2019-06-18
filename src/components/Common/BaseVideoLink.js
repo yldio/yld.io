@@ -74,7 +74,9 @@ const StandaloneWrapper = styled(Margin)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid ${props => props.theme.colors.border};
+  border: 1px solid
+    ${({ themeVariation, theme }) =>
+      themeVariation === 'dark' ? '#848194' : theme.colors.border};
 `
 
 const BaseVideoLink = ({
@@ -93,6 +95,7 @@ const BaseVideoLink = ({
     <Wrapper width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
       <ExternalAnchor href={href} color={color} opacity={opacity} {...props}>
         <InnerWrapper
+          themeVariation={themeVariation}
           top={
             mode === 'standalone'
               ? { smallPhone: 2, smallTablet: 1.5 }

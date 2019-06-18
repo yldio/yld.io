@@ -1,21 +1,51 @@
 import React, { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
-import { Col, Row } from '../grid'
-import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+
+import { Grid, Col, Row } from '../grid'
 import { SectionTitle } from '../Typography'
 import { ItemBody as Body, ItemSubtitle } from './SubtitleWithBody'
 import theme from '../../utils/theme'
+import RatioContainer from './RatioContainer'
+import Image from './Image'
 
-const OuterPaddings = ({ children }) => (
-  <Padding vertical={{ smallPhone: 3, tablet: 4 }}>{children}</Padding>
-)
+const StyledCol = styled(Col)`
+  padding-bottom: ${props => props.theme.space[4]};
+`
 
-const ItemBody = styled(Body)`
+const PaddedGrid = styled(Grid)`
+  padding-top: ${props => props.theme.space[4]};
+  padding-bottom: ${props => props.theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[6]};
+  `}
+`
+
+const Wrapper = styled.div`
+  padding-bottom: ${props => props.theme.spacing[3]};
+
   &:last-child {
     padding: 0;
   }
 `
+
+const ImageWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  margin-bottom: ${props => props.theme.space[2]};
+`
+
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+`
+
 const TitleAndList = ({
   title,
   list,
@@ -29,16 +59,16 @@ const TitleAndList = ({
     titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
   }, [])
 
+  // there is no image in the `typeof list === 'string'` because that would come from a textarea input from contentful as a bullet list, so if we want an image per bullet, we MUST pass the list as an array of objects.
+
   return (
-    <OuterPaddings>
+    <PaddedGrid>
       <Row>
-        <Col width={[1, 1, 1, 1, 6 / 12]}>
-          <Padding bottom={3}>
-            <SectionTitle reverse={themeVariation === theme.variations.dark}>
-              {title}
-            </SectionTitle>
-          </Padding>
-        </Col>
+        <StyledCol width={[1, 1, 1, 1, 6 / 12]}>
+          <SectionTitle reverse={themeVariation === theme.variations.dark}>
+            {title}
+          </SectionTitle>
+        </StyledCol>
         <Col width={[1, 1, 1, 1, 6 / 12]}>
           {typeof list === 'string' ? (
             <ReactMarkdown
@@ -49,7 +79,7 @@ const TitleAndList = ({
                 ),
                 // eslint-disable-next-line
                 paragraph: props => (
-                  <ItemBody themeVariation={themeVariation} {...props} />
+                  <Body themeVariation={themeVariation} {...props} />
                 )
               }}
               source={list}
@@ -57,18 +87,25 @@ const TitleAndList = ({
           ) : null}
           {Array.isArray(list)
             ? list.map((el, idx) => (
-                <React.Fragment key={idx}>
+                <Wrapper key={idx}>
+                  {el.image && (
+                    <ImageWrapper>
+                      <RatioContainer width={100} height={100}>
+                        <StyledImage image={el.image} />
+                      </RatioContainer>
+                    </ImageWrapper>
+                  )}
                   <ItemSubtitle themeVariation={themeVariation}>
                     {el.title}
                   </ItemSubtitle>
-                  <ItemBody themeVariation={themeVariation}>{el.body}</ItemBody>
-                </React.Fragment>
+                  <Body themeVariation={themeVariation}>{el.body}</Body>
+                </Wrapper>
               ))
             : null}
           {extraContent}
         </Col>
       </Row>
-    </OuterPaddings>
+    </PaddedGrid>
   )
 }
 
