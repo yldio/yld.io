@@ -46,7 +46,7 @@ We have some docs to make it easier to get you started:
 
 - [Jest](https://jestjs.io/)
 - [Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/)
-- [Tescafe](https://devexpress.github.io/testcafe/)
+- [Testcafe](https://devexpress.github.io/testcafe/)
 
 ## Content in
 
