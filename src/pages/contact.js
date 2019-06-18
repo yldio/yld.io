@@ -9,7 +9,6 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import TitleSection from '../components/ContactUs/TitleSection'
 import GreyBackground from '../components/Common/GreyBackground'
-import ThankYouMessage from '../components/ContactUs/ThankYouMessage'
 import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
@@ -17,6 +16,7 @@ import Statement from '../components/Common/Statement'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import { CaseStudyWrapper, CaseStudy } from '../components/Common/CaseStudy'
+import EventSection from '../components/Common/Events'
 import { Section } from '../components/JoinUs/elements'
 import colorLuminance from 'color-luminance'
 
@@ -63,6 +63,11 @@ const getBranch = (
       return (
         <Fragment>
           <Statement noPadding richText={communityMsg.content[0].content} />
+          <EventSection
+            events={events}
+            description={eventsSectionDescription}
+            eventIcon={eventsSectionImage.file.url}
+          />
           <LatestPosts>
             {posts => (
               <BlogListing
