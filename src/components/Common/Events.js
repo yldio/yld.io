@@ -41,11 +41,6 @@ const EventSection = ({ events, title, description }) => {
   const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
   const hasEvents = !!displayedEvents.length
 
-  const ctaKey = hasEvents ? 'withEvents' : 'withoutEvents'
-
-  const ctaText = CTA.text[ctaKey]
-  const ctaLink = CTA.link[ctaKey]
-
   return (
     <Grid>
       <Wrapper>
