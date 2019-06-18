@@ -68,43 +68,52 @@ const getBranch = (
             description={eventsSectionDescription}
             eventIcon={eventsSectionImage.file.url}
           />
-          <LatestPosts>
-            {posts => (
-              <BlogListing
-                title="From the blog"
-                posts={posts.map(({ node }) => node).slice(0, 3)}
-              />
-            )}
-          </LatestPosts>
+          <GreyBackground>
+            <LatestPosts>
+              {posts => (
+                <BlogListing
+                  title="From the blog"
+                  posts={posts.map(({ node }) => node).slice(0, 3)}
+                />
+              )}
+            </LatestPosts>
+          </GreyBackground>
         </Fragment>
       )
 
     default:
       return (
-        <Fragment>
-          <Statement noPadding richText={engineeringMsg.content[0].content} />
-          <Section px={[0, 0, 0, 0, 0, 0, 0]}>
-            <ColumnLayout
-              cols={3}
-              items={caseStudies.slice(0, MAX_CASE_STUDIES)}
-              compensated
-            >
-              {({ Col, item: cs }) => (
-                <Col block={false}>
-                  <CaseStudyWrapper top={3}>
-                    <CaseStudy
-                      bg={`#${cs.posterColor}`}
-                      to={`/case-study/${cs.slug}`}
-                      lightText={getColorLuminance(cs.posterColor) < 127.5}
-                      title={cs.title}
-                      services={cs.services}
-                    />
-                  </CaseStudyWrapper>
-                </Col>
-              )}
-            </ColumnLayout>
-          </Section>
-        </Fragment>
+        <GreyBackground>
+          <Grid>
+            <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
+              <Statement
+                noPadding
+                richText={engineeringMsg.content[0].content}
+              />
+              <Section px={[0, 0, 0, 0, 0, 0, 0]}>
+                <ColumnLayout
+                  cols={3}
+                  items={caseStudies.slice(0, MAX_CASE_STUDIES)}
+                  compensated
+                >
+                  {({ Col, item: cs }) => (
+                    <Col block={false}>
+                      <CaseStudyWrapper top={3}>
+                        <CaseStudy
+                          bg={`#${cs.posterColor}`}
+                          to={`/case-study/${cs.slug}`}
+                          lightText={getColorLuminance(cs.posterColor) < 127.5}
+                          title={cs.title}
+                          services={cs.services}
+                        />
+                      </CaseStudyWrapper>
+                    </Col>
+                  )}
+                </ColumnLayout>
+              </Section>
+            </Padding>
+          </Grid>
+        </GreyBackground>
       )
   }
 }
@@ -262,99 +271,98 @@ class ContactUs extends Component {
                 : titleNotContacted
             }
           />
-          <GreyBackground>
-            <Grid>
-              <Padding
-                top={{ smallPhone: 3, tablet: 4 }}
-                bottom={{ smallPhone: 3.5, tablet: 5 }}
-              >
-                {success ? (
-                  // call a function getBranch, written outside the class, to show the correct branch
-                  getBranch(
-                    branch,
-                    customMessage1,
-                    customMessage2,
-                    caseStudies,
-                    events,
-                    eventsSectionDescription,
-                    eventsSectionImage
-                  )
-                ) : (
-                  <Fragment>
-                    <AreasOfInterest
-                      title={labelInterests}
-                      interests={interests}
-                      onChange={this.handleChangeCheckbox}
-                    />
-                    <Row>
-                      <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
-                        <Label htmlFor="message">{labelYourMessage}</Label>
-                        <Input
-                          as="textarea"
-                          noBoxShadow={!this.state.triedSubmitting}
-                          rows="4"
-                          value={message}
-                          onChange={this.handleChange}
-                          id="message"
-                          name="message"
-                          required
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
-                        <Label htmlFor="name">{labelYourName}</Label>
-                        <Input
-                          id="name"
-                          type="text"
-                          name="name"
-                          value={name}
-                          onChange={this.handleChange}
-                          required
-                        />
-                        <Label htmlFor="email">{labelYourEmail}</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          name="email"
-                          value={email}
-                          onChange={this.handleChange}
-                          required
-                        />
-                        <Field>
-                          <section key="privacy">
-                            <Checkbox
-                              required
-                              type="checkbox"
-                              id="privacy"
-                              name="privacy"
-                              onChange={this.handleChangeCheckbox}
-                            />
-                            <label htmlFor="privacy">
-                              {privacyPolicyText}
-                              <LinkUnderline
-                                to={'/privacy-policy'}
-                                title="yld Privacy Policy"
-                              >
-                                {privacyPolicyLinkText}
-                              </LinkUnderline>
-                            </label>
-                          </section>
-                        </Field>
-                        <Button
-                          onClick={this.handleButtonClick}
-                          type="submit"
-                          disabled={submitting}
-                        >
-                          {submitting ? statusSent : statusNotSent}
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Fragment>
-                )}
-              </Padding>
-            </Grid>
-          </GreyBackground>
+
+          {success ? (
+            // call a function getBranch, written outside the class, to show the correct branch
+            getBranch(
+              branch,
+              customMessage1,
+              customMessage2,
+              caseStudies,
+              events,
+              eventsSectionDescription,
+              eventsSectionImage
+            )
+          ) : (
+            <GreyBackground>
+              <Grid>
+                <Padding
+                  top={{ smallPhone: 3, tablet: 4 }}
+                  bottom={{ smallPhone: 3.5, tablet: 5 }}
+                >
+                  <AreasOfInterest
+                    title={labelInterests}
+                    interests={interests}
+                    onChange={this.handleChangeCheckbox}
+                  />
+                  <Row>
+                    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
+                      <Label htmlFor="message">{labelYourMessage}</Label>
+                      <Input
+                        as="textarea"
+                        noBoxShadow={!this.state.triedSubmitting}
+                        rows="4"
+                        value={message}
+                        onChange={this.handleChange}
+                        id="message"
+                        name="message"
+                        required
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
+                      <Label htmlFor="name">{labelYourName}</Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={this.handleChange}
+                        required
+                      />
+                      <Label htmlFor="email">{labelYourEmail}</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}
+                        required
+                      />
+                      <Field>
+                        <section key="privacy">
+                          <Checkbox
+                            required
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            onChange={this.handleChangeCheckbox}
+                          />
+                          <label htmlFor="privacy">
+                            {privacyPolicyText}
+                            <LinkUnderline
+                              to={'/privacy-policy'}
+                              title="yld Privacy Policy"
+                            >
+                              {privacyPolicyLinkText}
+                            </LinkUnderline>
+                          </label>
+                        </section>
+                      </Field>
+                      <Button
+                        onClick={this.handleButtonClick}
+                        type="submit"
+                        disabled={submitting}
+                      >
+                        {submitting ? statusSent : statusNotSent}
+                      </Button>
+                    </Col>
+                  </Row>
+                </Padding>
+              </Grid>
+            </GreyBackground>
+          )}
         </form>
       </Layout>
     )
