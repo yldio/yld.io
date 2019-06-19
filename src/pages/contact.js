@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import { Padding } from 'styled-components-spacing'
 import { navigate } from '@reach/router'
 
 import { Grid, Row, Col, ColumnLayout } from '../components/grid'
@@ -15,9 +14,10 @@ import Button from '../components/Common/Button'
 import Statement from '../components/Common/Statement'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
-import { CaseStudyWrapper, CaseStudy } from '../components/Common/CaseStudy'
+import { CaseStudy } from '../components/Common/CaseStudy'
 import EventSection from '../components/Common/Events'
 import { Section } from '../components/JoinUs/elements'
+import breakpoint from 'styled-components-breakpoint'
 
 import getColorLuminance from '../utils/getColorLuminance'
 
@@ -30,6 +30,37 @@ const encode = data =>
 
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
+`
+
+const EngineeringBranchPadding = styled.div`
+  ${breakpoint('smallPhone')`
+      padding-bottom:  ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('tablet')`
+      padding-bottom:
+        ${({ theme }) => theme.space[7]};
+  `}
+`
+
+const CaseStudyWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding-top: ${({ theme }) => theme.space[4]};
+`
+
+const FormPadding = styled.div`
+  ${breakpoint('smallPhone')`
+      padding-top:  ${({ theme }) => theme.space[4]};
+      padding-bottom:  ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('tablet')`
+      padding-top:
+        ${({ theme }) => theme.space[6]} ;
+      padding-bottom:
+        ${({ theme }) => theme.space[7]};
+  `}
 `
 
 const getBranch = (
@@ -68,7 +99,7 @@ const getBranch = (
       return (
         <GreyBackground>
           <Grid>
-            <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
+            <EngineeringBranchPadding>
               <Statement
                 noPadding
                 richText={engineeringMsg.content[0].content}
@@ -81,7 +112,7 @@ const getBranch = (
                 >
                   {({ Col, item: cs }) => (
                     <Col block={false}>
-                      <CaseStudyWrapper top={3}>
+                      <CaseStudyWrapper>
                         <CaseStudy
                           bg={`#${cs.posterColor}`}
                           to={`/case-study/${cs.slug}`}
@@ -94,7 +125,7 @@ const getBranch = (
                   )}
                 </ColumnLayout>
               </Section>
-            </Padding>
+            </EngineeringBranchPadding>
           </Grid>
         </GreyBackground>
       )
@@ -269,10 +300,7 @@ class ContactUs extends Component {
           ) : (
             <GreyBackground>
               <Grid>
-                <Padding
-                  top={{ smallPhone: 3, tablet: 4 }}
-                  bottom={{ smallPhone: 3.5, tablet: 5 }}
-                >
+                <FormPadding>
                   <AreasOfInterest
                     title={labelInterests}
                     interests={interests}
@@ -342,7 +370,7 @@ class ContactUs extends Component {
                       </Button>
                     </Col>
                   </Row>
-                </Padding>
+                </FormPadding>
               </Grid>
             </GreyBackground>
           )}
