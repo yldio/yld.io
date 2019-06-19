@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
@@ -9,7 +8,6 @@ import Courses from '../components/Training/Courses'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
-import GreyBackground from '../components/Common/GreyBackground'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   const trainingApproachesContent = [
@@ -22,11 +20,8 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
     <Layout>
       <Head page={content} />
       <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
-      <GreyBackground>
-        <Grid>
-          <Statement richText={content.seoText.content[0].content} />
-        </Grid>
-      </GreyBackground>
+      <Statement richText={content.seoText.content[0].content} />
+
       <Approach
         title={content.trainingApproachTitle}
         content={trainingApproachesContent}

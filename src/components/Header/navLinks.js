@@ -21,6 +21,10 @@ const navLinks = [
     to: '/our-work/'
   },
   {
+    label: 'Open Source',
+    to: '/open-source/'
+  },
+  {
     label: 'Blog',
     href: 'https://medium.com/yld-engineering-blog/'
   },
