@@ -5,17 +5,13 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import { Link } from 'gatsby'
 import { CardTitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
 
 const CaseStudyLink = styled(Link)`
   background: ${props => props.bg};
   color: ${props => props.color || props.theme.colors.white};
   flex: 1;
 `
-const CaseStudyWrapper = styled(Padding)`
-  display: flex;
-  width: 100%;
-`
+
 const CaseStudyTitle = styled(CardTitle)`
   font-size: ${remcalc(21)};
   line-height: ${remcalc(24)};
@@ -76,4 +72,4 @@ const CaseStudy = ({ title, services, ...props }) => (
   </CaseStudyLink>
 )
 
-export { CaseStudyWrapper, CaseStudy }
+export { CaseStudy }

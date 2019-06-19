@@ -1,14 +1,33 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import { Padding } from 'styled-components-spacing'
 import { ColumnLayout } from '../grid'
-import { CaseStudyWrapper, CaseStudy } from '../Common/CaseStudy'
+import { CaseStudy } from '../Common/CaseStudy'
 import { Section, Separator, TitleAndBody } from './elements'
 import TitleAndList from '../Common/TitleAndList'
+import breakpoint from 'styled-components-breakpoint'
 
 import getColorLuminance from '../../utils/getColorLuminance'
 
 const MAX_CASE_STUDIES = 3
+
+const CaseStudyWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding-top: ${({ theme }) => theme.space[3]};
+`
+
+const SpaceFiller = styled.div`
+  ${breakpoint('tablet')`
+      padding-bottom: 
+        ${({ theme }) => theme.space[7]};
+  `}
+
+  ${breakpoint('smallPhone')`
+      padding-bottom: 
+        ${({ theme }) => theme.space[5]};
+  `}
+`
 
 const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
   <Section>
@@ -22,7 +41,7 @@ const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
     >
       {({ Col, item: cs }) => (
         <Col block={false}>
-          <CaseStudyWrapper top={2}>
+          <CaseStudyWrapper>
             <CaseStudy
               bg={`#${cs.posterColor}`}
               to={`/case-study/${cs.slug}`}
@@ -33,7 +52,7 @@ const Work = ({ data: { title, subtitle, list, text, someWork } }) => (
         </Col>
       )}
     </ColumnLayout>
-    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
+    <SpaceFiller />
   </Section>
 )
 
