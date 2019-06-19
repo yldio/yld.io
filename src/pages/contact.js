@@ -18,7 +18,8 @@ import BlogListing from '../components/Common/BlogListing'
 import { CaseStudyWrapper, CaseStudy } from '../components/Common/CaseStudy'
 import EventSection from '../components/Common/Events'
 import { Section } from '../components/JoinUs/elements'
-import colorLuminance from 'color-luminance'
+
+import getColorLuminance from '../utils/getColorLuminance'
 
 const MAX_CASE_STUDIES = 3
 
@@ -30,24 +31,6 @@ const encode = data =>
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
 `
-/* Utility function to convert an HEX color into the RGB format */
-const hexToRgb = hex => {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-      }
-    : null
-}
-
-/* Returns the luminance (in a 0-255 range) of a color in the HEX format */
-const getColorLuminance = hexColor => {
-  const rgbValue = hexToRgb(`#${hexColor}`)
-
-  return colorLuminance(rgbValue.r, rgbValue.g, rgbValue.b)
-}
 
 const getBranch = (
   branch,

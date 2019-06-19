@@ -31,7 +31,6 @@
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
     "polished": "2.3.0",
-    "query-string": "^6.6.0",
     "raf": "^3.4.1",
     "react": "16.8.1",
     "react-dom": "16.8.1",

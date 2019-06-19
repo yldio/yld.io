@@ -44,19 +44,35 @@ const servicesList = services => {
   )
 }
 
+const Wrapper = styled.div`
+
+  ${breakpoint('tablet')`
+      padding: 
+        ${({ theme }) => theme.space[4]} 
+        ${({ theme }) => theme.space[3]};
+  `}
+
+  ${breakpoint('smallTablet', 'tablet')`
+        padding: 
+          ${remcalc(18)};
+    `}
+
+  ${breakpoint('smallPhone')`
+        padding: 
+          ${({ theme }) => theme.space[3]} ;
+    `}
+`
+
 const CaseStudy = ({ title, services, ...props }) => (
   <CaseStudyLink {...props}>
-    <Padding
-      vertical={{ smallPhone: 2, smallTablet: 1.5, tablet: 3 }}
-      horizontal={{ smallPhone: 2, smallTablet: 1.5, tablet: 2 }}
-    >
+    <Wrapper>
       <BodyPrimary muted reverse noPadding>
         {services && services.length > 0
           ? servicesList(services)
           : 'Case Study'}
       </BodyPrimary>
       <CaseStudyTitle reverse>{title}</CaseStudyTitle>
-    </Padding>
+    </Wrapper>
   </CaseStudyLink>
 )
 
