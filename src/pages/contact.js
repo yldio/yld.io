@@ -46,7 +46,6 @@ const EngineeringBranchPadding = styled.div`
 const CaseStudyWrapper = styled.div`
   display: flex;
   width: 100%;
-  padding-top: ${({ theme }) => theme.space[4]};
 `
 
 const FormPadding = styled.div`
