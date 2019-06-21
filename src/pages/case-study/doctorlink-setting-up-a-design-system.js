@@ -155,16 +155,6 @@ const GenericText5Row = styled(Row)`
   `}
 `
 
-const Block0 = ({ text }) => {
-  return (
-    <GreyBackground>
-      <Grid>
-        <Statement>{text}</Statement>
-      </Grid>
-    </GreyBackground>
-  )
-}
-
 const Block1 = ({ text }) => {
   const BlockRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
@@ -228,9 +218,7 @@ const IndexPage = props => {
             'https://www.yld.io/static/logo_animated-832020608244057f6a9d73e80994ac4a.gif'
         }}
       />
-
       <CaseStudyHero caseStudy={caseStudy} />
-
       {shouldRenderBlock(caseStudy.genericBlock1) && (
         <Block1 data={normalise(caseStudy.genericBlock1)} />
       )}
@@ -271,7 +259,6 @@ const IndexPage = props => {
           </Col>
         </GenericText4Row>
       </Grid>
-
       <BlueBackground>
         <Grid>
           <GenericText4Row>
@@ -311,12 +298,10 @@ const IndexPage = props => {
           </Col>
         </GenericText5Row>
       </Grid>
-
       <img
         alt=""
         src="https://images.ctfassets.net/22g1lenhck4z/4M3h74EWpWw8AosOCIemoc/e13a13eefedf4ecd5edf26b596d2b3e0/thomas_cook_export.svg"
       />
-
       <Grid>
         <Padding
           top={{ smallPhone: 4, smallTablet: 1 }}
@@ -349,12 +334,10 @@ const IndexPage = props => {
           </Row>
         </Padding>
       </Grid>
-
       <img
         alt=""
         src="https://images.ctfassets.net/22g1lenhck4z/27ChKj8ZNCeQYc2QSUoiiO/f7c9f93f62a8cd07b0972788c5059619/joyent_export.svg"
       />
-
       <Grid>
         <Padding
           top={{ smallPhone: 4, smallTablet: 1 }}
@@ -375,7 +358,6 @@ const IndexPage = props => {
         alt=""
         src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png"
       />
-
       <Grid>
         <Padding
           top={{ smallPhone: 4, smallTablet: 1 }}
