@@ -2,21 +2,21 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Padding } from 'styled-components-spacing'
+// import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
-import generate from 'shortid'
+// import generate from 'shortid'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../../components/layout'
-import { makeText } from '../../utils/makeText'
+// import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
-import VideoSection from '../../components/Common/VideoSection'
-import BlueBackground from '../../components/Common/BlueBackground'
-import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
-import Statement from '../../components/Common/Statement'
-import GreyBackground from '../../components/Common/GreyBackground'
+// import VideoSection from '../../components/Common/VideoSection'
+// import BlueBackground from '../../components/Common/BlueBackground'
+// import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
+// import Statement from '../../components/Common/Statement'
+// import GreyBackground from '../../components/Common/GreyBackground'
 
 // const futureContentfulDoctorLinkData = {
 //   node: {
@@ -115,47 +115,47 @@ import GreyBackground from '../../components/Common/GreyBackground'
 //   }
 // }
 
-const GenericText4Row = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+// const GenericText4Row = styled(Row)`
+//   padding-top: ${({ theme }) => theme.space[4]};
+//   padding-bottom: ${({ theme }) => theme.space[4]};
 
-  ${breakpoint('smallTablet')`
-      padding-top: ${({ theme }) => theme.space[5]};
-      padding-bottom: ${({ theme }) => theme.space[5]};
-  `}
+//   ${breakpoint('smallTablet')`
+//       padding-top: ${({ theme }) => theme.space[5]};
+//       padding-bottom: ${({ theme }) => theme.space[5]};
+//   `}
 
-  ${breakpoint('tablet')`
-      padding-top: ${({ theme }) => theme.space[6]};
-      padding-bottom: ${({ theme }) => theme.space[6]};
-      `}
+//   ${breakpoint('tablet')`
+//       padding-top: ${({ theme }) => theme.space[6]};
+//       padding-bottom: ${({ theme }) => theme.space[6]};
+//       `}
 
-  ${breakpoint('desktop')`
-      padding-top: ${({ theme }) => theme.space[7]};
-      padding-bottom: ${({ theme }) => theme.space[7]};
-  `}
-`
+//   ${breakpoint('desktop')`
+//       padding-top: ${({ theme }) => theme.space[7]};
+//       padding-bottom: ${({ theme }) => theme.space[7]};
+//   `}
+// `
 
-const GenericText5Row = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+// const GenericText5Row = styled(Row)`
+//   padding-top: ${({ theme }) => theme.space[4]};
+//   padding-bottom: ${({ theme }) => theme.space[4]};
 
-  ${breakpoint('smallTablet')`
-      padding-top: ${({ theme }) => theme.space[5]};
-      padding-bottom: ${({ theme }) => theme.space[5]};
-  `}
+//   ${breakpoint('smallTablet')`
+//       padding-top: ${({ theme }) => theme.space[5]};
+//       padding-bottom: ${({ theme }) => theme.space[5]};
+//   `}
 
-  ${breakpoint('tablet')`
-      padding-top: ${({ theme }) => theme.space[6]};
-      padding-bottom: ${({ theme }) => theme.space[6]};
-      `}
+//   ${breakpoint('tablet')`
+//       padding-top: ${({ theme }) => theme.space[6]};
+//       padding-bottom: ${({ theme }) => theme.space[6]};
+//       `}
 
-  ${breakpoint('desktop')`
-      padding-top: ${({ theme }) => theme.space[7]};
-      padding-bottom: ${({ theme }) => theme.space[7]};
-  `}
-`
+//   ${breakpoint('desktop')`
+//       padding-top: ${({ theme }) => theme.space[7]};
+//       padding-bottom: ${({ theme }) => theme.space[7]};
+//   `}
+// `
 
-const Block1 = ({ text }) => {
+const Block = ({ data: { text } }) => {
   const BlockRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[5]};
@@ -195,11 +195,16 @@ const Block1 = ({ text }) => {
   )
 }
 
-const normalise = (arr = []) =>
-  arr.map(({ genericBlockText, ...props }) => ({
+const normalise = (arr = []) => {
+  return arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
+    image:
+      genericBlockImages &&
+      genericBlockImages[0] &&
+      genericBlockImages[0].file.url,
     text: genericBlockText && genericBlockText.genericBlockText, // thanks contentful
     ...props
   }))
+}
 
 const shouldRenderBlock = data => data && data.length
 
@@ -219,21 +224,22 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
+
       {shouldRenderBlock(caseStudy.genericBlock1) && (
-        <Block1 data={normalise(caseStudy.genericBlock1)} />
+        <Block data={normalise(caseStudy.genericBlock1)[0]} />
       )}
 
       {shouldRenderBlock(caseStudy.genericBlock2) && (
-        <Block2 data={normalise(caseStudy.genericBlock2)} />
+        <Block data={normalise(caseStudy.genericBlock2)[0]} />
       )}
 
-      <GreyBackground>
+      {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
         </Grid>
-      </GreyBackground>
+      </GreyBackground> */}
 
-      <Grid>
+      {/* <Grid>
         <GenericText4Row>
           <ReactMarkdown
             renderers={{
@@ -374,7 +380,7 @@ const IndexPage = props => {
             </Col>
           </Row>
         </Padding>
-      </Grid>
+      </Grid> */}
     </Layout>
   )
 }
