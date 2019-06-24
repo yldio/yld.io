@@ -62,6 +62,7 @@ const TopNav = ({ links, themeVariation, path }) => (
               activeClassName="active"
               to={to}
               href={href}
+              title={label}
             >
               {label}
             </OuterAnchorItem>
