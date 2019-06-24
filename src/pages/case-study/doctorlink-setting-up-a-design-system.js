@@ -12,6 +12,7 @@ import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../../components/layout'
 // import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
+// import Image from '../../components/Common/Image'
 // import VideoSection from '../../components/Common/VideoSection'
 // import BlueBackground from '../../components/Common/BlueBackground'
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
@@ -155,7 +156,7 @@ import Head from '../../components/Common/Head'
 //   `}
 // `
 
-const Block = ({ data: { text } }) => {
+const Block = ({ data: { text, image } }) => {
   const BlockRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[5]};
@@ -189,6 +190,7 @@ const Block = ({ data: { text } }) => {
             source={text}
           />
         </Col>
+        {image && <img src={image} alt={image} />}
       </BlockRow>
     </Grid>
   )
