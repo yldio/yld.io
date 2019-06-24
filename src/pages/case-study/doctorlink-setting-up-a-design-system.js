@@ -171,7 +171,6 @@ const Block = ({ data: { text } }) => {
     `}
 
     ${breakpoint('desktop')`
-        
         padding-bottom: ${({ theme }) => theme.space[8]};
     `}
   `
@@ -206,13 +205,23 @@ const normalise = (arr = []) => {
   }))
 }
 
-const shouldRenderBlock = data => data && data.length
+const renderBlock = data =>
+  data && data.length && <Block data={normalise(data)[0]} />
 
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location
   } = props
+
+  const {
+    genericBlock1,
+    genericBlock2,
+    genericBlock3,
+    genericBlock4,
+    genericBlock5,
+    genericBlock6
+  } = caseStudy
 
   return (
     <Layout location={location}>
@@ -225,29 +234,12 @@ const IndexPage = props => {
       />
       <CaseStudyHero caseStudy={caseStudy} />
 
-      {shouldRenderBlock(caseStudy.genericBlock1) && (
-        <Block data={normalise(caseStudy.genericBlock1)[0]} />
-      )}
-
-      {shouldRenderBlock(caseStudy.genericBlock2) && (
-        <Block data={normalise(caseStudy.genericBlock2)[0]} />
-      )}
-
-      {shouldRenderBlock(caseStudy.genericBlock3) && (
-        <Block data={normalise(caseStudy.genericBlock3)[0]} />
-      )}
-
-      {shouldRenderBlock(caseStudy.genericBlock4) && (
-        <Block data={normalise(caseStudy.genericBlock4)[0]} />
-      )}
-
-      {shouldRenderBlock(caseStudy.genericBlock5) && (
-        <Block data={normalise(caseStudy.genericBlock5)[0]} />
-      )}
-
-      {shouldRenderBlock(caseStudy.genericBlock6) && (
-        <Block data={normalise(caseStudy.genericBlock6)[0]} />
-      )}
+      {renderBlock(genericBlock1)}
+      {renderBlock(genericBlock2)}
+      {renderBlock(genericBlock3)}
+      {renderBlock(genericBlock4)}
+      {renderBlock(genericBlock5)}
+      {renderBlock(genericBlock6)}
 
       {/* <GreyBackground>
         <Grid>
