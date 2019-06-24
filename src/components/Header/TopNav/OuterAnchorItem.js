@@ -46,6 +46,7 @@ const OuterAnchorItem = ({
   activeClassName,
   themeVariation,
   onClick,
+  label,
   ...props
 }) => (
   <StyledListItem themeVariation={themeVariation} {...props}>
@@ -54,6 +55,7 @@ const OuterAnchorItem = ({
       to={to}
       activeClassName={activeClassName}
       onClick={onClick}
+      title={label}
     >
       {children}
     </StyledAnchor>
