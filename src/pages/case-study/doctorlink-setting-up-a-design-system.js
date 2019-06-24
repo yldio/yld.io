@@ -233,6 +233,10 @@ const IndexPage = props => {
         <Block data={normalise(caseStudy.genericBlock2)[0]} />
       )}
 
+      {shouldRenderBlock(caseStudy.genericBlock3) && (
+        <Block data={normalise(caseStudy.genericBlock3)[0]} />
+      )}
+
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
@@ -425,6 +429,9 @@ export const query = graphql`
         ...GenericFragment
       }
       genericBlock2 {
+        ...GenericFragment
+      }
+      genericBlock3 {
         ...GenericFragment
       }
       specialities {
