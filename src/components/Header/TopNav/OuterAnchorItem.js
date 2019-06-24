@@ -40,12 +40,12 @@ const StyledListItem = styled(TopNavItem)`
 `
 
 const OuterAnchorItem = ({
+  children,
   to,
   href,
   activeClassName,
   themeVariation,
   onClick,
-  label,
   ...props
 }) => (
   <StyledListItem themeVariation={themeVariation} {...props}>
@@ -54,9 +54,8 @@ const OuterAnchorItem = ({
       to={to}
       activeClassName={activeClassName}
       onClick={onClick}
-      title={label}
     >
-      {label}
+      {children}
     </StyledAnchor>
   </StyledListItem>
 )
