@@ -7568,39 +7568,39 @@ exports[`Storyshots Header Header itself 1`] = `
             </li>
             <li
               className="c14"
-              title="Our work"
             >
               <a
                 className="c15"
                 href="/our-work/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Our work"
               >
                 Our work
               </a>
             </li>
             <li
               className="c14"
-              title="Open Source"
             >
               <a
                 className="c15"
                 href="/open-source/"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Open Source"
               >
                 Open Source
               </a>
             </li>
             <li
               className="c14"
-              title="Blog"
             >
               <a
                 className="c15"
                 href="https://medium.com/yld-engineering-blog/"
                 rel="noopener noreferrer"
                 target="_blank"
+                title="Blog"
               >
                 Blog
               </a>
@@ -7669,13 +7669,13 @@ exports[`Storyshots Header Header itself 1`] = `
             </li>
             <li
               className="c14"
-              title="Contact"
             >
               <a
                 className="c15"
                 href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                title="Contact"
               >
                 Contact
               </a>
@@ -8344,26 +8344,26 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
     </li>
     <li
       className="c12"
-      title="Anchor 1"
     >
       <a
         className="c13"
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 1"
       >
         Anchor 1
       </a>
     </li>
     <li
       className="c12"
-      title="External anchor"
     >
       <a
         className="c13"
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="External anchor"
       >
         External anchor
       </a>
@@ -8432,13 +8432,13 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
     </li>
     <li
       className="c12"
-      title="Anchor 2"
     >
       <a
         className="c13"
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Anchor 2"
       >
         Anchor 2
       </a>
@@ -8869,26 +8869,26 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
       </li>
       <li
         className="c13"
-        title="Anchor 1"
       >
         <a
           className="c14"
           href="/anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 1"
         >
           Anchor 1
         </a>
       </li>
       <li
         className="c13"
-        title="External anchor"
       >
         <a
           className="c14"
           href="https://uk.linkedin.com/"
           rel="noopener noreferrer"
           target="_blank"
+          title="External anchor"
         >
           External anchor
         </a>
@@ -8957,13 +8957,13 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
       </li>
       <li
         className="c13"
-        title="Anchor 2"
       >
         <a
           className="c14"
           href="/last-anchor/"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          title="Anchor 2"
         >
           Anchor 2
         </a>
@@ -9114,7 +9114,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
   >
     <li
       className="c3"
-      title="Here"
     >
       <a
         aria-current="page"
@@ -9123,32 +9122,33 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
         style={Object {}}
+        title="Here"
       >
         Here
       </a>
     </li>
     <li
       className="c3"
-      title="There"
     >
       <a
         className="c4"
         href="/there"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="There"
       >
         There
       </a>
     </li>
     <li
       className="c3"
-      title="LinkedIn (external anchor)"
     >
       <a
         className="c4"
         href="/https:/uk.linkedin.com/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9510,26 +9510,26 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     </li>
     <li
       className="c10"
-      title="First anchor"
     >
       <a
         className="c11"
         href="/anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="First anchor"
       >
         First anchor
       </a>
     </li>
     <li
       className="c10"
-      title="LinkedIn (external anchor)"
     >
       <a
         className="c11"
         href="https://uk.linkedin.com/"
         rel="noopener noreferrer"
         target="_blank"
+        title="LinkedIn (external anchor)"
       >
         LinkedIn (external anchor)
       </a>
@@ -9598,13 +9598,13 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
     </li>
     <li
       className="c10"
-      title="Last anchor"
     >
       <a
         className="c11"
         href="/last-anchor/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        title="Last anchor"
       >
         Last anchor
       </a>
