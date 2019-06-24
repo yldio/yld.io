@@ -237,6 +237,18 @@ const IndexPage = props => {
         <Block data={normalise(caseStudy.genericBlock3)[0]} />
       )}
 
+      {shouldRenderBlock(caseStudy.genericBlock4) && (
+        <Block data={normalise(caseStudy.genericBlock4)[0]} />
+      )}
+
+      {shouldRenderBlock(caseStudy.genericBlock5) && (
+        <Block data={normalise(caseStudy.genericBlock5)[0]} />
+      )}
+
+      {shouldRenderBlock(caseStudy.genericBlock6) && (
+        <Block data={normalise(caseStudy.genericBlock6)[0]} />
+      )}
+
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
@@ -432,6 +444,15 @@ export const query = graphql`
         ...GenericFragment
       }
       genericBlock3 {
+        ...GenericFragment
+      }
+      genericBlock4 {
+        ...GenericFragment
+      }
+      genericBlock5 {
+        ...GenericFragment
+      }
+      genericBlock6 {
         ...GenericFragment
       }
       specialities {
