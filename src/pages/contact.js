@@ -149,10 +149,11 @@ class ContactUs extends Component {
     email: '',
     message: '',
     submitting: false,
+    privacy: false,
     triedSubmitting: false
   }
 
-  handleChangeCheckbox = (e, branch) => {
+  handleInterestCheckboxChange = (e, branch) => {
     const target = e.target
     this.setState(prevState => ({
       ...prevState,
@@ -160,6 +161,13 @@ class ContactUs extends Component {
         checked: target.checked,
         branch: branch
       }
+    }))
+  }
+
+  handlePrivacyCheckboxChange = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      privacy: !prevState.privacy
     }))
   }
 
@@ -171,7 +179,7 @@ class ContactUs extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.setState({ submitting: true })
+    // this.setState({ submitting: true })
 
     const strippedState = Object.assign({}, this.state)
     delete strippedState.name
@@ -201,15 +209,30 @@ class ContactUs extends Component {
     const chosenBranch =
       uniqueBranches.length > 1 ? 'engineering' : uniqueBranches[0]
 
+    const chosenInterests = this.props.data.contentfulPage.interests.reduce(
+      (acc, { name }) => ({
+        ...acc,
+        [name]:
+          this.state[name] &&
+          Object.prototype.hasOwnProperty.call(this.state[name], 'checked')
+            ? this.state[name].checked
+            : false
+      }),
+      {}
+    )
+
+    const body = encode({
+      'form-name': 'contact',
+      ...this.state,
+      ...chosenInterests
+    })
+
     fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: encode({
-        'form-name': 'contact',
-        ...this.state
-      })
+      body
     }).then(() => {
       this.setState({ success: true, submitting: false, branch: chosenBranch })
       navigate(`?branch=${chosenBranch}`, {
@@ -303,7 +326,7 @@ class ContactUs extends Component {
                   <AreasOfInterest
                     title={labelInterests}
                     interests={interests}
-                    onChange={this.handleChangeCheckbox}
+                    onChange={this.handleInterestCheckboxChange}
                   />
                   <Row>
                     <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
