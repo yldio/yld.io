@@ -16,7 +16,6 @@ import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import { CaseStudy } from '../components/Common/CaseStudy'
 import EventSection from '../components/Common/Events'
-import { Section } from '../components/JoinUs/elements'
 import breakpoint from 'styled-components-breakpoint'
 
 import getColorLuminance from '../utils/getColorLuminance'
@@ -46,6 +45,11 @@ const EngineeringBranchPadding = styled.div`
 const CaseStudyWrapper = styled.div`
   display: flex;
   width: 100%;
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: 0;
+  `}
 `
 
 const FormPadding = styled.div`
@@ -97,35 +101,31 @@ const getBranch = (
     default:
       return (
         <GreyBackground>
-          <Grid>
-            <EngineeringBranchPadding>
-              <Statement
-                noPadding
-                richText={engineeringMsg.content[0].content}
-              />
-              <Section px={[0, 0, 0, 0, 0, 0, 0]}>
-                <ColumnLayout
-                  cols={3}
-                  items={caseStudies.slice(0, MAX_CASE_STUDIES)}
-                  compensated
-                >
-                  {({ Col, item: cs }) => (
-                    <Col block={false}>
-                      <CaseStudyWrapper>
-                        <CaseStudy
-                          bg={`#${cs.posterColor}`}
-                          to={`/case-study/${cs.slug}`}
-                          lightText={getColorLuminance(cs.posterColor) < 127.5}
-                          title={cs.title}
-                          services={cs.services}
-                        />
-                      </CaseStudyWrapper>
-                    </Col>
-                  )}
-                </ColumnLayout>
-              </Section>
-            </EngineeringBranchPadding>
-          </Grid>
+          <Statement noPadding richText={engineeringMsg.content[0].content} />
+
+          <EngineeringBranchPadding>
+            <Grid>
+              <ColumnLayout
+                cols={3}
+                items={caseStudies.slice(0, MAX_CASE_STUDIES)}
+                compensated
+              >
+                {({ Col, item: cs }) => (
+                  <Col block={false}>
+                    <CaseStudyWrapper>
+                      <CaseStudy
+                        bg={`#${cs.posterColor}`}
+                        to={`/case-study/${cs.slug}`}
+                        lightText={getColorLuminance(cs.posterColor) < 127.5}
+                        title={cs.title}
+                        services={cs.services}
+                      />
+                    </CaseStudyWrapper>
+                  </Col>
+                )}
+              </ColumnLayout>
+            </Grid>
+          </EngineeringBranchPadding>
         </GreyBackground>
       )
   }

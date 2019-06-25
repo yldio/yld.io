@@ -2,13 +2,11 @@ import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
 
-
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle } from '../Typography'
 
 // title must be a string!!
 const TitleSection = ({ title }) => {
-
   return (
     <Grid>
       <Padding
@@ -16,13 +14,11 @@ const TitleSection = ({ title }) => {
         bottom={{ smallPhone: 3, tablet: 4 }}
       >
         <Row>
-          <Col width={[1, 1, 1, 8 / 12, 7 / 12]}>
+          <Col width={[1, 1, 1, 1, 7 / 12]}>
             <ReactMarkdown
               renderers={{
                 // eslint-disable-next-line
-                paragraph: props => (
-                  <SectionTitle {...props} />
-                )
+                paragraph: props => <SectionTitle {...props} />
               }}
               source={title}
             />
@@ -31,9 +27,6 @@ const TitleSection = ({ title }) => {
       </Padding>
     </Grid>
   )
-
-
 }
-
 
 export default TitleSection
