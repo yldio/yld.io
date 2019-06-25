@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -14,10 +14,10 @@ import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 // import Image from '../../components/Common/Image'
 // import VideoSection from '../../components/Common/VideoSection'
-// import BlueBackground from '../../components/Common/BlueBackground'
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
 // import Statement from '../../components/Common/Statement'
-// import GreyBackground from '../../components/Common/GreyBackground'
+import BlueBackground from '../../components/Common/BlueBackground'
+import GreyBackground from '../../components/Common/GreyBackground'
 
 // const futureContentfulDoctorLinkData = {
 //   node: {
@@ -156,7 +156,7 @@ import Head from '../../components/Common/Head'
 //   `}
 // `
 
-const Block = ({ data: { text, image } }) => {
+const Block = ({ data: { text, image, columns } }) => {
   const BlockRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[5]};
@@ -179,36 +179,59 @@ const Block = ({ data: { text, image } }) => {
   return (
     <Grid>
       <BlockRow>
-        <Col width={[1, 1, 1, 1, 6 / 12]}>
-          <ReactMarkdown
-            renderers={{
-              // eslint-disable-next-line
-              heading: props => <SectionTitle {...props} />,
-              // eslint-disable-next-line
-              paragraph: props => <BodyPrimary {...props} />
-            }}
-            source={text}
-          />
-        </Col>
-        {image && <img src={image} alt={image} />}
+        {columns === 1 ? (
+          <Col width={[1]}>
+            {text && (
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle {...props} />,
+                  // eslint-disable-next-line
+                  paragraph: props => <BodyPrimary {...props} />
+                }}
+                source={text}
+              />
+            )}
+            {image && <img src={image} alt={image} />}
+          </Col>
+        ) : (
+          <Fragment>
+            <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
+              {text && (
+                <ReactMarkdown
+                  renderers={{
+                    // eslint-disable-next-line
+                    heading: props => <SectionTitle {...props} />,
+                    // eslint-disable-next-line
+                    paragraph: props => <BodyPrimary {...props} />
+                  }}
+                  source={text}
+                />
+              )}
+            </Col>
+            <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
+              {image && <img src={image} alt={image} />}
+            </Col>
+          </Fragment>
+        )}
       </BlockRow>
     </Grid>
   )
 }
 
-const normalise = (arr = []) => {
-  return arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
+const normalise = (arr = [], columns) =>
+  arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
     image:
       genericBlockImages &&
       genericBlockImages[0] &&
       genericBlockImages[0].file.url,
-    text: genericBlockText && genericBlockText.genericBlockText, // thanks contentful
+    text: genericBlockText && genericBlockText.genericBlockText,
+    columns: columns,
     ...props
   }))
-}
 
-const renderBlock = data =>
-  data && data.length && <Block data={normalise(data)[0]} />
+const renderBlock = (data, columns = 1) =>
+  data && data.length && <Block data={normalise(data, columns)[0]} />
 
 const IndexPage = props => {
   const {
@@ -260,37 +283,43 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
-      {renderBlock(genericBlock1)}
-      {renderBlock(genericBlock2)}
+      <GreyBackground>{renderBlock(genericBlock1)}</GreyBackground>
+      {renderBlock(genericBlock2, 2)}
       {renderBlock(genericBlock3)}
-      {renderBlock(genericBlock4)}
-      {renderBlock(genericBlock5)}
-      {renderBlock(genericBlock6)}
+      {renderBlock(genericBlock4, 2)}
+      <BlueBackground>{renderBlock(genericBlock5, 2)}</BlueBackground>
+      {renderBlock(genericBlock6, 2)}
       {renderBlock(genericBlock7)}
-      {renderBlock(genericBlock8)}
-      {renderBlock(genericBlock9)}
+      {renderBlock(genericBlock8, 2)}
+      {renderBlock(genericBlock9, 2)}
       {renderBlock(genericBlock10)}
-      {renderBlock(genericBlock11)}
+      {renderBlock(genericBlock11, 2)}
       {renderBlock(genericBlock12)}
-      {renderBlock(genericBlock13)}
-      {renderBlock(genericBlock14)}
+      <GreyBackground>
+        {renderBlock(genericBlock13, 2)}
+        {renderBlock(genericBlock14)}
+      </GreyBackground>
       {renderBlock(genericBlock15)}
-      {renderBlock(genericBlock16)}
-      {renderBlock(genericBlock17)}
-      {renderBlock(genericBlock18)}
+      {renderBlock(genericBlock16, 2)}
+      {renderBlock(genericBlock17, 2)}
+      {renderBlock(genericBlock18, 2)}
       {renderBlock(genericBlock19)}
       {renderBlock(genericBlock20)}
       {renderBlock(genericBlock21)}
       {renderBlock(genericBlock22)}
-      {renderBlock(genericBlock23)}
-      {renderBlock(genericBlock24)}
-      {renderBlock(genericBlock25)}
-      {renderBlock(genericBlock26)}
+      <BlueBackground>
+        {renderBlock(genericBlock23, 2)}
+        {renderBlock(genericBlock24, 2)}
+      </BlueBackground>
+      <GreyBackground>
+        {renderBlock(genericBlock25, 2)}
+        {renderBlock(genericBlock26)}
+      </GreyBackground>
       {renderBlock(genericBlock27)}
       {renderBlock(genericBlock28)}
       {renderBlock(genericBlock29)}
-      {renderBlock(genericBlock30)}
-      {renderBlock(genericBlock31)}
+      <GreyBackground>{renderBlock(genericBlock30, 2)}</GreyBackground>
+      {renderBlock(genericBlock31, 2)}
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
