@@ -101,6 +101,8 @@ const PropertiesAndTokensBlock = ({
     width: 314px;
   `
 
+  const splittedText = text ? text.split('/2nd Column/') : null
+
   return (
     <PropertiesAndTokensBlockRow
       mobile={{ bottom: '4' }}
