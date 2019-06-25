@@ -238,7 +238,16 @@ const IndexPage = props => {
     genericBlock19,
     genericBlock20,
     genericBlock21,
-    genericBlock22
+    genericBlock22,
+    genericBlock23,
+    genericBlock24,
+    genericBlock25,
+    genericBlock26,
+    genericBlock27,
+    genericBlock28,
+    genericBlock29,
+    genericBlock30,
+    genericBlock31
   } = caseStudy
 
   return (
@@ -253,39 +262,35 @@ const IndexPage = props => {
       <CaseStudyHero caseStudy={caseStudy} />
       {renderBlock(genericBlock1)}
       {renderBlock(genericBlock2)}
-      {'Embedded Video goes here -->'}
       {renderBlock(genericBlock3)}
       {renderBlock(genericBlock4)}
       {renderBlock(genericBlock5)}
-      {'Image with "Continue"/"Back" buttons goes here -->'}
       {renderBlock(genericBlock6)}
       {renderBlock(genericBlock7)}
-      {'Image with Colors goes here -->'}
       {renderBlock(genericBlock8)}
-      {'4 colored Images go here -->'}
       {renderBlock(genericBlock9)}
-      {'Prototyped Image with "Welcome to DoctorLink" goes here -->'}
       {renderBlock(genericBlock10)}
-      {'Grided Image with "Sign in" goes above'}
       {renderBlock(genericBlock11)}
-      {'Grided Image with "Text" and "Choose" units goes above'}
       {renderBlock(genericBlock12)}
-      {'Grided Image with Automated Design and "Sign up" goes above'}
       {renderBlock(genericBlock13)}
-      {'Image with "Text Styles" goes here -->'}
       {renderBlock(genericBlock14)}
-      {'Documented Image with "Password Text field" goes here -->'}
       {renderBlock(genericBlock15)}
       {renderBlock(genericBlock16)}
       {renderBlock(genericBlock17)}
-      {'Rewards Image with "Check Symptoms" goes here -->'}
       {renderBlock(genericBlock18)}
       {renderBlock(genericBlock19)}
-      {'Documented content layout Image goes here -->'}
       {renderBlock(genericBlock20)}
-      {'Product implementation Image goes here -->'}
       {renderBlock(genericBlock21)}
       {renderBlock(genericBlock22)}
+      {renderBlock(genericBlock23)}
+      {renderBlock(genericBlock24)}
+      {renderBlock(genericBlock25)}
+      {renderBlock(genericBlock26)}
+      {renderBlock(genericBlock27)}
+      {renderBlock(genericBlock28)}
+      {renderBlock(genericBlock29)}
+      {renderBlock(genericBlock30)}
+      {renderBlock(genericBlock31)}
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
@@ -537,6 +542,33 @@ export const query = graphql`
         ...GenericFragment
       }
       genericBlock22 {
+        ...GenericFragment
+      }
+      genericBlock23 {
+        ...GenericFragment
+      }
+      genericBlock24 {
+        ...GenericFragment
+      }
+      genericBlock25 {
+        ...GenericFragment
+      }
+      genericBlock26 {
+        ...GenericFragment
+      }
+      genericBlock27 {
+        ...GenericFragment
+      }
+      genericBlock28 {
+        ...GenericFragment
+      }
+      genericBlock29 {
+        ...GenericFragment
+      }
+      genericBlock30 {
+        ...GenericFragment
+      }
+      genericBlock31 {
         ...GenericFragment
       }
       specialities {
