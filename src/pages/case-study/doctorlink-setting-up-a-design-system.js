@@ -176,12 +176,14 @@ const Block = ({ data: { text, image, columns } }) => {
     `}
   `
 
+  const splittedText = text ? text.split('/2nd Column/') : null
+
   return (
     <Grid>
       <BlockRow>
         {columns === 1 ? (
           <Col width={[1]}>
-            {text && (
+            {splittedText && (
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
@@ -189,7 +191,7 @@ const Block = ({ data: { text, image, columns } }) => {
                   // eslint-disable-next-line
                   paragraph: props => <BodyPrimary {...props} />
                 }}
-                source={text}
+                source={splittedText[0]}
               />
             )}
             {image && <img src={image} alt={image} />}
@@ -197,7 +199,7 @@ const Block = ({ data: { text, image, columns } }) => {
         ) : (
           <Fragment>
             <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
-              {text && (
+              {splittedText[0] && (
                 <ReactMarkdown
                   renderers={{
                     // eslint-disable-next-line
@@ -205,12 +207,28 @@ const Block = ({ data: { text, image, columns } }) => {
                     // eslint-disable-next-line
                     paragraph: props => <BodyPrimary {...props} />
                   }}
-                  source={text}
+                  source={splittedText[0]}
                 />
+              )}
+              {splittedText[0] === '' && image && (
+                <img src={image} alt={image} />
               )}
             </Col>
             <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
-              {image && <img src={image} alt={image} />}
+              {splittedText[1] && (
+                <ReactMarkdown
+                  renderers={{
+                    // eslint-disable-next-line
+                    heading: props => <SectionTitle {...props} />,
+                    // eslint-disable-next-line
+                    paragraph: props => <BodyPrimary {...props} />
+                  }}
+                  source={splittedText[1]}
+                />
+              )}
+              {splittedText[0] !== '' && image && (
+                <img src={image} alt={image} />
+              )}
             </Col>
           </Fragment>
         )}
@@ -294,6 +312,7 @@ const IndexPage = props => {
       {renderBlock(genericBlock9, 2)}
       {renderBlock(genericBlock10)}
       {renderBlock(genericBlock11, 2)}
+      {/* need to handle multiple images - So far uploaded 1 in Contentful */}
       {renderBlock(genericBlock12)}
       <GreyBackground>
         {renderBlock(genericBlock13, 2)}
@@ -303,9 +322,9 @@ const IndexPage = props => {
       {renderBlock(genericBlock16, 2)}
       {renderBlock(genericBlock17, 2)}
       {renderBlock(genericBlock18, 2)}
-      {renderBlock(genericBlock19)}
+      {renderBlock(genericBlock19, 2)}
       {renderBlock(genericBlock20)}
-      {renderBlock(genericBlock21)}
+      {renderBlock(genericBlock21, 2)}
       {renderBlock(genericBlock22)}
       <BlueBackground>
         {renderBlock(genericBlock23, 2)}
@@ -315,7 +334,7 @@ const IndexPage = props => {
         {renderBlock(genericBlock25, 2)}
         {renderBlock(genericBlock26)}
       </GreyBackground>
-      {renderBlock(genericBlock27)}
+      {renderBlock(genericBlock27, 2)}
       {renderBlock(genericBlock28)}
       {renderBlock(genericBlock29)}
       <GreyBackground>{renderBlock(genericBlock30, 2)}</GreyBackground>
