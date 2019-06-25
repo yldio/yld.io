@@ -141,6 +141,8 @@ const ImagesBlock = ({ data }) => {
   const l = data.length
   const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
 
+  const splittedText = text ? text.split('/2nd Column/') : null
+
   return (
     <Fragment>
       {data.map(imageUrl => (
