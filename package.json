@@ -6,8 +6,8 @@
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
     "@yldio/oss-stats": "^1.0.1",
-    "apr-reduce": "^3.0.3",
     "airbnb-prop-types": "^2.13.2",
+    "apr-reduce": "^3.0.3",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",
@@ -85,7 +85,7 @@
     "@storybook/addon-links": "5.0.11",
     "@storybook/addon-storyshots": "^5.0.11",
     "@storybook/addons": "5.0.11",
-    "@storybook/react": "5.0.11",
+    "@storybook/react": "^5.1.9",
     "apr": "2.0.2",
     "apr-intercept": "3.0.3",
     "apr-main": "4.0.3",
