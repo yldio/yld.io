@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
