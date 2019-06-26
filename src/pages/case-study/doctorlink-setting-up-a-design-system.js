@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -156,7 +156,7 @@ import GreyBackground from '../../components/Common/GreyBackground'
 //   `}
 // `
 
-const Block = ({ data: { text, image, columns } }) => {
+const Block = ({ data: { text, image } }) => {
   const BlockRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[5]};
@@ -175,81 +175,40 @@ const Block = ({ data: { text, image, columns } }) => {
         padding-bottom: ${({ theme }) => theme.space[8]};
     `}
   `
-
-  const splittedText = text ? text.split('/2nd Column/') : null
-
+  // width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}
   return (
     <Grid>
       <BlockRow>
-        {columns === 1 ? (
-          <Col width={[1]}>
-            {splittedText && (
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />,
-                  // eslint-disable-next-line
-                  paragraph: props => <BodyPrimary {...props} />
-                }}
-                source={splittedText[0]}
-              />
-            )}
-            {image && <img src={image} alt={image} />}
-          </Col>
-        ) : (
-          <Fragment>
-            <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
-              {splittedText[0] && (
-                <ReactMarkdown
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => <SectionTitle {...props} />,
-                    // eslint-disable-next-line
-                    paragraph: props => <BodyPrimary {...props} />
-                  }}
-                  source={splittedText[0]}
-                />
-              )}
-              {splittedText[0] === '' && image && (
-                <img src={image} alt={image} />
-              )}
-            </Col>
-            <Col width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}>
-              {splittedText[1] && (
-                <ReactMarkdown
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => <SectionTitle {...props} />,
-                    // eslint-disable-next-line
-                    paragraph: props => <BodyPrimary {...props} />
-                  }}
-                  source={splittedText[1]}
-                />
-              )}
-              {splittedText[0] !== '' && image && (
-                <img src={image} alt={image} />
-              )}
-            </Col>
-          </Fragment>
-        )}
+        <Col width={[1]}>
+          {text && (
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => <SectionTitle {...props} />,
+                // eslint-disable-next-line
+                paragraph: props => <BodyPrimary {...props} />
+              }}
+              source={text}
+            />
+          )}
+          {image && <img src={image} alt={image} />}
+        </Col>
       </BlockRow>
     </Grid>
   )
 }
 
-const normalise = (arr = [], columns) =>
+const normalise = (arr = []) =>
   arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
     image:
       genericBlockImages &&
       genericBlockImages[0] &&
       genericBlockImages[0].file.url,
     text: genericBlockText && genericBlockText.genericBlockText,
-    columns: columns,
     ...props
   }))
 
-const renderBlock = (data, columns = 1) =>
-  data && data.length && <Block data={normalise(data, columns)[0]} />
+const shouldRender = data => data && data.length
 
 const IndexPage = props => {
   const {
@@ -301,44 +260,142 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
-      <GreyBackground>{renderBlock(genericBlock1)}</GreyBackground>
-      {renderBlock(genericBlock2, 2)}
-      {renderBlock(genericBlock3)}
-      {renderBlock(genericBlock4, 2)}
-      <BlueBackground>{renderBlock(genericBlock5, 2)}</BlueBackground>
-      {renderBlock(genericBlock6, 2)}
-      {renderBlock(genericBlock7)}
-      {renderBlock(genericBlock8, 2)}
-      {renderBlock(genericBlock9, 2)}
-      {renderBlock(genericBlock10)}
-      {renderBlock(genericBlock11, 2)}
-      {/* need to handle multiple images - So far uploaded 1 in Contentful */}
-      {renderBlock(genericBlock12)}
       <GreyBackground>
-        {renderBlock(genericBlock13, 2)}
-        {renderBlock(genericBlock14)}
+        {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
+        {shouldRender(genericBlock1) && (
+          <Block data={normalise(genericBlock1)[0]} />
+        )}
       </GreyBackground>
-      {renderBlock(genericBlock15)}
-      {renderBlock(genericBlock16, 2)}
-      {renderBlock(genericBlock17, 2)}
-      {renderBlock(genericBlock18, 2)}
-      {renderBlock(genericBlock19, 2)}
-      {renderBlock(genericBlock20)}
-      {renderBlock(genericBlock21, 2)}
-      {renderBlock(genericBlock22)}
+      {/* The prologue */}
+      {shouldRender(genericBlock2) && (
+        <Block data={normalise(genericBlock2)[0]} />
+      )}
+      {/* Youtube Video */}
+      {shouldRender(genericBlock3) && (
+        <Block data={normalise(genericBlock3)[0]} />
+      )}
+      {/* Finding common ground */}
+      {shouldRender(genericBlock4) && (
+        <Block data={normalise(genericBlock4)[0]} />
+      )}
       <BlueBackground>
-        {renderBlock(genericBlock23, 2)}
-        {renderBlock(genericBlock24, 2)}
+        {/* Seamless */}
+        {shouldRender(genericBlock5) && (
+          <Block data={normalise(genericBlock5)[0]} />
+        )}
+      </BlueBackground>
+      {/* A new visual language */}
+      {shouldRender(genericBlock6) && (
+        <Block data={normalise(genericBlock6)[0]} />
+      )}
+      {/* Image - Continue / back */}
+      {shouldRender(genericBlock7) && (
+        <Block data={normalise(genericBlock7)[0]} />
+      )}
+      {/* Hi I am Noto sans */}
+      {shouldRender(genericBlock8) && (
+        <Block data={normalise(genericBlock8)[0]} />
+      )}
+      {/* Colour */}
+      {shouldRender(genericBlock9) && (
+        <Block data={normalise(genericBlock9)[0]} />
+      )}
+      {/* Image - Colour */}
+      {shouldRender(genericBlock10) && (
+        <Block data={normalise(genericBlock10)[0]} />
+      )}
+      {/* Illustrations */}
+      {shouldRender(genericBlock11) && (
+        <Block data={normalise(genericBlock11)[0]} />
+      )}
+      {/* images - 4 images block */}
+      {shouldRender(genericBlock12) && (
+        <Block data={normalise(genericBlock12)[0]} />
+      )}
+      <GreyBackground>
+        {/* Prototyping and fast iteration */}
+        {shouldRender(genericBlock13) && (
+          <Block data={normalise(genericBlock13)[0]} />
+        )}
+        {/* Image - Welcome to DoctorLink */}
+        {shouldRender(genericBlock14) && (
+          <Block data={normalise(genericBlock14)[0]} />
+        )}
+      </GreyBackground>
+      {/* New design methodology */}
+      {shouldRender(genericBlock15) && (
+        <Block data={normalise(genericBlock15)[0]} />
+      )}
+      {/* Baseline grid */}
+      {shouldRender(genericBlock16) && (
+        <Block data={normalise(genericBlock16)[0]} />
+      )}
+      {/* Base unit */}
+      {shouldRender(genericBlock17) && (
+        <Block data={normalise(genericBlock17)[0]} />
+      )}
+      {/* Automated design */}
+      {shouldRender(genericBlock18) && (
+        <Block data={normalise(genericBlock18)[0]} />
+      )}
+      {/* Documentation */}
+      {shouldRender(genericBlock19) && (
+        <Block data={normalise(genericBlock19)[0]} />
+      )}
+      {/* Image - Text styles */}
+      {shouldRender(genericBlock20) && (
+        <Block data={normalise(genericBlock20)[0]} />
+      )}
+      {/* Extensive documentation */}
+      {shouldRender(genericBlock21) && (
+        <Block data={normalise(genericBlock21)[0]} />
+      )}
+      {/* Image - Password text field */}
+      {shouldRender(genericBlock22) && (
+        <Block data={normalise(genericBlock22)[0]} />
+      )}
+      <BlueBackground>
+        {/* Aligning design and engineering */}
+        {shouldRender(genericBlock23) && (
+          <Block data={normalise(genericBlock23)[0]} />
+        )}
+        {/* Properties / Tokens */}
+        {shouldRender(genericBlock24) && (
+          <Block data={normalise(genericBlock24)[0]} />
+        )}
       </BlueBackground>
       <GreyBackground>
-        {renderBlock(genericBlock25, 2)}
-        {renderBlock(genericBlock26)}
+        {/* Reaping the immediate rewards */}
+        {shouldRender(genericBlock25) && (
+          <Block data={normalise(genericBlock25)[0]} />
+        )}
+        {/* Image - Check symptoms */}
+        {shouldRender(genericBlock26) && (
+          <Block data={normalise(genericBlock26)[0]} />
+        )}
       </GreyBackground>
-      {renderBlock(genericBlock27, 2)}
-      {renderBlock(genericBlock28)}
-      {renderBlock(genericBlock29)}
-      <GreyBackground>{renderBlock(genericBlock30, 2)}</GreyBackground>
-      {renderBlock(genericBlock31, 2)}
+      {/* The product blueprint */}
+      {shouldRender(genericBlock27) && (
+        <Block data={normalise(genericBlock27)[0]} />
+      )}
+      {/* Documented content layout */}
+      {shouldRender(genericBlock28) && (
+        <Block data={normalise(genericBlock28)[0]} />
+      )}
+      {/* Product implementation */}
+      {shouldRender(genericBlock29) && (
+        <Block data={normalise(genericBlock29)[0]} />
+      )}
+      <GreyBackground>
+        {/* Improving our process */}
+        {shouldRender(genericBlock30) && (
+          <Block data={normalise(genericBlock30)[0]} />
+        )}
+      </GreyBackground>
+      {/* Leaving in good health */}
+      {shouldRender(genericBlock31) && (
+        <Block data={normalise(genericBlock31)[0]} />
+      )}
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
@@ -363,7 +420,7 @@ const IndexPage = props => {
               disallowedTypes={['heading']}
               renderers={{
                 // eslint-disable-next-line
-                paragraph: props => <BodyPrimary key={generate()} {...props} />
+                paragraph: props => <BodyPrimary key={generate() && <Block data={normalise(data)[0]} />} {...props} />
               }}
               source={genericText3}
             />
