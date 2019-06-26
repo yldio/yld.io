@@ -152,6 +152,7 @@ const ImagesBlock = ({ data }) => {
       ))}
     </Fragment>
   )
+  return normalised[0]
 }
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
