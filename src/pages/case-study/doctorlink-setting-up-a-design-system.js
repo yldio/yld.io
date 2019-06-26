@@ -157,6 +157,21 @@ const ImagesBlock = ({ data }) => {
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
+const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
+  <Grid>
+    <BlockRow>
+      {[image1, image2, image3, image4].map(image => (
+        <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
+          <img src={image} alt={image} />
+        </Col>
+      ))}
+    </BlockRow>
+  </Grid>
+)
+
+const getImage = (blockImages, index) =>
+  blockImages && blockImages[index] && blockImages[index].file.url
+
 const normalise = (arr = []) => {
   const normalised = arr.map(
     ({ genericBlockText, genericBlockImages, ...props }) => ({
