@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
@@ -100,9 +100,7 @@ const PropertiesAndTokensBlock = ({
   const PropertiesAndTokensImage = styled(Image)`
     width: 314px;
   `
-
-  const splittedText = text ? text.split('/2nd Column/') : null
-
+  // width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}
   return (
     <PropertiesAndTokensBlockRow
       mobile={{ bottom: '4' }}
