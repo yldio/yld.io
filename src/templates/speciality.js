@@ -95,7 +95,27 @@ const flattenSpeciality = speciality => {
       speciality,
       'trainingTextBody3.content[0].content[0].value',
       null
-    ) // required
+    ), // required
+    communityText: _.get(
+      speciality,
+      'communityText.content[0].content[0].value',
+      null
+    ),
+    communityLogoTitle: _.get(speciality, 'communityLogo.title', null),
+    communityLogoUrl: _.get(speciality, 'communityLogo.file.url', null),
+    communityBackgroundTitle: _.get(
+      speciality,
+      'communityBackground.title',
+      null
+    ),
+    communityBackgroundUrl: _.get(
+      speciality,
+      'communityBackground.file.url',
+      null
+    ),
+    eventIconTitle: _.get(speciality, 'eventIcon.title', null),
+    eventIconUrl: _.get(speciality, 'eventIcon.file.url', null),
+    contactText: _.get(speciality, 'contactText', null) // required
   }
 }
 
@@ -108,16 +128,19 @@ const Speciality = ({
   },
   location
 }) => {
+  const { relatedProjects, clients, eventIcon } = speciality
+
+  const flattenedSpeciality = flattenSpeciality(speciality)
+
   const {
-    relatedProjects,
     title,
-    clients,
-    communityBackground,
-    communityLogo,
+    communityBackgroundTitle,
+    communityBackgroundUrl,
     communityText,
-    eventIcon,
+    communityLogoTitle,
+    communityLogoUrl,
     contactText
-  } = speciality
+  } = flattenedSpeciality
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
@@ -125,7 +148,6 @@ const Speciality = ({
   const tutorials = getExternalType(speciality, `Tutorial`)
   const books = getExternalType(speciality, `Book`)
   const specialityEvents = events ? getSpecialityEvents(title, events) : []
-  const flattenedSpeciality = flattenSpeciality(speciality)
 
   return (
     <Layout backgroundColor="blue" location={location}>
@@ -138,8 +160,10 @@ const Speciality = ({
       />
       <TrainingSection speciality={flattenedSpeciality} />
       <CommunitySection
-        background={communityBackground}
-        logo={communityLogo}
+        backgroundTitle={communityBackgroundTitle}
+        backgroundUrl={communityBackgroundUrl}
+        logoTitle={communityLogoTitle}
+        logoUrl={communityLogoUrl}
         text={communityText}
         title={title}
       />

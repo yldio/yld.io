@@ -26,18 +26,26 @@ const ImgContainerCol = styled(Col)`
   justify-content: center;
 `
 
-const CommunitySection = ({ logo, text, background, title }) =>
+const CommunitySection = ({
+  logo,
+  text,
+  backgroundTitle,
+  backgroundUrl,
+  logoTitle,
+  logoUrl,
+  title
+}) =>
   text ? (
     <BlueBackground>
       <Trimmer>
-        <TrimmedImage alt={background.title} src={background.file.url} />
+        <TrimmedImage alt={backgroundTitle} src={backgroundUrl} />
         <Padding top={5} bottom={5}>
           <Row>
             <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
               {logo ? (
                 <img
-                  alt={logo.title}
-                  src={logo.file.url}
+                  alt={logoTitle}
+                  src={logoUrl}
                   style={{ maxHeight: '100px' }}
                 />
               ) : null}
@@ -48,7 +56,7 @@ const CommunitySection = ({ logo, text, background, title }) =>
                 reverse
               >{`${title.trim()} community`}</SectionTitle>
               <BodyPrimary reverse muted>
-                {text.content[0].content[0].value}
+                {text}
               </BodyPrimary>
             </Col>
           </Row>
