@@ -22,12 +22,13 @@ test('we are on the homepage', async t => {
 
 test('a dropdown dropdownContainer opens on desktop and redirects correctly', async t => {
   const services = await Selector('li').withText('Services')
-  await t.expect(services.exists).ok()
+  await t.expect(services.exists).ok({ timeout: 5000 })
   await t.click(services)
 
   const engineeringSubItem = await Selector('li[class^="InnerAnchorItem"]').nth(
     0
   )
+  await t.expect(engineeringSubItem.exists).ok({ timeout: 5000 })
   await t.click(engineeringSubItem)
 
   const location = await getWindowLocation()
