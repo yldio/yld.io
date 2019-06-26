@@ -159,6 +159,7 @@ import GreyBackground from '../../components/Common/GreyBackground'
 const BlockRow = styled(Row)`
 padding-top: ${({ theme }) => theme.space[5]};
 padding-bottom: ${({ theme }) => theme.space[5]};
+flex-direction: ${({ reverse }) => `row${reverse ? '-reverse' : null}`};
 
 ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[6]};
@@ -201,9 +202,9 @@ const Block = ({ data: { text, image } }) => (
   </Grid>
 )
 
-const BlockTextAndImage = ({ data: { text, image } }) => (
+const BlockTextAndImage = ({ data: { text, image }, reverse = null }) => (
   <Grid>
-    <BlockRow>
+    <BlockRow reverse={reverse}>
       <Col width={[1, 1, 1, 1 / 2]}>{renderText(text)}</Col>
       <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
     </BlockRow>
@@ -326,13 +327,17 @@ const IndexPage = props => {
       {/* Image - Continue / back */}
       {shouldRender(data7) && <BlockImage data={normalise(data7)} />}
       {/* Hi I am Noto sans */}
-      {shouldRender(data8) && <Block data={normalise(data8)} />}
+      {shouldRender(data8) && (
+        <BlockTextAndImage data={normalise(data8)} reverse />
+      )}
       {/* Colour */}
       {shouldRender(data9) && <BlockTextAndImage data={normalise(data9)} />}
       {/* Image - Colour */}
       {shouldRender(data10) && <BlockImage data={normalise(data10)} />}
       {/* Illustrations */}
-      {shouldRender(data11) && <Block data={normalise(data11)} />}
+      {shouldRender(data11) && (
+        <BlockTextAndImage data={normalise(data11)} reverse />
+      )}
       {/* images - 4 images block */}
       {shouldRender(data12) && <BlockImages data={normaliseImages(data12)} />}
       <GreyBackground>
@@ -344,9 +349,13 @@ const IndexPage = props => {
       {/* New design methodology */}
       {shouldRender(data15) && <BlockTextAndImage data={normalise(data15)} />}
       {/* Baseline grid */}
-      {shouldRender(data16) && <Block data={normalise(data16)} />}
+      {shouldRender(data16) && (
+        <BlockTextAndImage data={normalise(data16)} reverse />
+      )}
       {/* Base unit */}
-      {shouldRender(data17) && <Block data={normalise(data17)} />}
+      {shouldRender(data17) && (
+        <BlockTextAndImage data={normalise(data17)} reverse />
+      )}
       {/* Automated design */}
       {shouldRender(data18) && <BlockTextAndImage data={normalise(data18)} />}
       {/* Documentation */}
@@ -361,7 +370,9 @@ const IndexPage = props => {
         {/* Aligning design and engineering */}
         {shouldRender(data23) && <Block data={normalise(data23)} />}
         {/* Properties / Tokens */}
-        {shouldRender(data24) && <Block data={normalise(data24)} />}
+        {shouldRender(data24) && (
+          <BlockTextAndImage data={normalise(data24)} reverse />
+        )}
       </BlueBackground>
       <GreyBackground>
         {/* Reaping the immediate rewards */}
