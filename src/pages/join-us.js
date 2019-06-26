@@ -20,7 +20,7 @@ class JoinUs extends React.Component {
     scrollToComponent(this.vacanciesRef.current, {
       offset: -84,
       align: 'top',
-      duration: 400
+      duration: 800
     })
 
   render() {
