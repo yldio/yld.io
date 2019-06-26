@@ -204,17 +204,40 @@ const BlockImage = ({ data: { image } }) => (
   </Grid>
 )
 
+const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
+  <Grid>
+    <BlockRow>
+      {[image1, image2, image3, image4].map(image => (
+        <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
+          <img src={image} alt={image} />
+        </Col>
+      ))}
+    </BlockRow>
+  </Grid>
+)
+
+const getImage = (blockImages, index) =>
+  blockImages && blockImages[index] && blockImages[index].file.url
+
 const normalise = (arr = []) => {
   const normalised = arr.map(
     ({ genericBlockText, genericBlockImages, ...props }) => ({
-      image:
-        genericBlockImages &&
-        genericBlockImages[0] &&
-        genericBlockImages[0].file.url,
+      image: getImage(genericBlockImages, 0),
       text: genericBlockText && genericBlockText.genericBlockText,
       ...props
     })
   )
+  return normalised[0]
+}
+
+const normaliseImages = (arr = []) => {
+  const normalised = arr.map(({ genericBlockImages, ...props }) => ({
+    image1: getImage(genericBlockImages, 0),
+    image2: getImage(genericBlockImages, 1),
+    image3: getImage(genericBlockImages, 2),
+    image4: getImage(genericBlockImages, 3),
+    ...props
+  }))
   return normalised[0]
 }
 
@@ -297,7 +320,7 @@ const IndexPage = props => {
       {/* Illustrations */}
       {shouldRender(data11) && <Block data={normalise(data11)} />}
       {/* images - 4 images block */}
-      {shouldRender(data12) && <Block data={normalise(data12)} />}
+      {shouldRender(data12) && <BlockImages data={normaliseImages(data12)} />}
       <GreyBackground>
         {/* Prototyping and fast iteration */}
         {shouldRender(data13) && <Block data={normalise(data13)} />}
