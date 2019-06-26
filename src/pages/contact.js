@@ -181,35 +181,9 @@ class ContactUs extends Component {
     e.preventDefault()
     this.setState({ submitting: true })
 
-    const strippedState = Object.assign({}, this.state)
-    delete strippedState.name
-    delete strippedState.email
-    delete strippedState.message
-    delete strippedState.submitting
-    delete strippedState.triedSubmitting
-    delete strippedState.privacy
+    const { interests } = this.props.data.contentfulPage
 
-    // if you tick and untick a field, it remains in state as 'false'; we want ot filter those out
-    const strippedFilteredState =
-      Object.keys(strippedState).length > 0
-        ? Object.keys(strippedState).filter(item => {
-            return strippedState[item]
-          })
-        : []
-
-    const branches =
-      strippedFilteredState.length > 0
-        ? strippedFilteredState.reduce((acc, current) => {
-            return (acc = [...acc, this.state[current].branch])
-          }, [])
-        : ['services']
-
-    const uniqueBranches = Array.from(new Set(branches))
-
-    const chosenBranch =
-      uniqueBranches.length > 1 ? 'services' : uniqueBranches[0]
-
-    const chosenInterests = this.props.data.contentfulPage.interests.reduce(
+    const chosenInterests = interests.reduce(
       (acc, { name }) => ({
         ...acc,
         [name]:
@@ -234,8 +208,18 @@ class ContactUs extends Component {
       },
       body
     }).then(() => {
-      this.setState({ success: true, submitting: false, branch: chosenBranch })
-      navigate(`?branch=${chosenBranch}`, {
+      const chosenInterestsBranches = interests.reduce(
+        (acc, { name, branch }) =>
+          chosenInterests[name] ? acc.concat(branch) : acc,
+        []
+      )
+
+      const branch = chosenInterestsBranches.includes('services')
+        ? 'services'
+        : 'community'
+
+      // this.setState({ success: true, submitting: false, branch })
+      navigate(`?branch=${branch}`, {
         replace: true
       })
       window.scrollTo(0, 0)
