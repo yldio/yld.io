@@ -140,7 +140,7 @@ const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
     <BlockRow>
       {[image1, image2, image3, image4].map(image => (
         <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
-          <img src={image} alt={image} />
+          {renderImage(image)}
         </Col>
       ))}
     </BlockRow>
