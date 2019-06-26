@@ -156,57 +156,67 @@ import GreyBackground from '../../components/Common/GreyBackground'
 //   `}
 // `
 
-const Block = ({ data: { text, image } }) => {
-  const BlockRow = styled(Row)`
-    padding-top: ${({ theme }) => theme.space[5]};
-    padding-bottom: ${({ theme }) => theme.space[5]};
+const BlockRow = styled(Row)`
+padding-top: ${({ theme }) => theme.space[5]};
+padding-bottom: ${({ theme }) => theme.space[5]};
 
-    ${breakpoint('smallTablet')`
-        padding-top: ${({ theme }) => theme.space[6]};
-        padding-bottom: ${({ theme }) => theme.space[6]};
-    `}
+${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+`}
 
-    ${breakpoint('tablet')`
-        padding-top: ${({ theme }) => theme.space[7]};
-        padding-bottom: ${({ theme }) => theme.space[7]};
-    `}
+${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+`}
 
-    ${breakpoint('desktop')`
-        padding-bottom: ${({ theme }) => theme.space[8]};
-    `}
-  `
-  // width={[0.5, 0.5, 0.5, 0.5, 1 / 2]}
-  return (
-    <Grid>
-      <BlockRow>
-        <Col width={[1]}>
-          {text && (
-            <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                heading: props => <SectionTitle {...props} />,
-                // eslint-disable-next-line
-                paragraph: props => <BodyPrimary {...props} />
-              }}
-              source={text}
-            />
-          )}
-          {image && <img src={image} alt={image} />}
-        </Col>
-      </BlockRow>
-    </Grid>
+${breakpoint('desktop')`
+    padding-bottom: ${({ theme }) => theme.space[8]};
+`}
+`
+
+const Block = ({ data: { text, image } }) => (
+  <Grid>
+    <BlockRow>
+      <Col width={[1]}>
+        {text && (
+          <ReactMarkdown
+            renderers={{
+              // eslint-disable-next-line
+              heading: props => <SectionTitle {...props} />,
+              // eslint-disable-next-line
+              paragraph: props => <BodyPrimary {...props} />
+            }}
+            source={text}
+          />
+        )}
+        {image && <img src={image} alt={image} />}
+      </Col>
+    </BlockRow>
+  </Grid>
+)
+
+const BlockImage = ({ data: { image } }) => (
+  <Grid>
+    <BlockRow>
+      <Col width={[1]}>{image && <img src={image} alt={image} />}</Col>
+    </BlockRow>
+  </Grid>
+)
+
+const normalise = (arr = []) => {
+  const normalised = arr.map(
+    ({ genericBlockText, genericBlockImages, ...props }) => ({
+      image:
+        genericBlockImages &&
+        genericBlockImages[0] &&
+        genericBlockImages[0].file.url,
+      text: genericBlockText && genericBlockText.genericBlockText,
+      ...props
+    })
   )
+  return normalised[0]
 }
-
-const normalise = (arr = []) =>
-  arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
-    image:
-      genericBlockImages &&
-      genericBlockImages[0] &&
-      genericBlockImages[0].file.url,
-    text: genericBlockText && genericBlockText.genericBlockText,
-    ...props
-  }))
 
 const shouldRender = data => data && data.length
 
@@ -217,37 +227,37 @@ const IndexPage = props => {
   } = props
 
   const {
-    genericBlock1,
-    genericBlock2,
-    genericBlock3,
-    genericBlock4,
-    genericBlock5,
-    genericBlock6,
-    genericBlock7,
-    genericBlock8,
-    genericBlock9,
-    genericBlock10,
-    genericBlock11,
-    genericBlock12,
-    genericBlock13,
-    genericBlock14,
-    genericBlock15,
-    genericBlock16,
-    genericBlock17,
-    genericBlock18,
-    genericBlock19,
-    genericBlock20,
-    genericBlock21,
-    genericBlock22,
-    genericBlock23,
-    genericBlock24,
-    genericBlock25,
-    genericBlock26,
-    genericBlock27,
-    genericBlock28,
-    genericBlock29,
-    genericBlock30,
-    genericBlock31
+    genericBlock1: data1,
+    genericBlock2: data2,
+    genericBlock3: data3,
+    genericBlock4: data4,
+    genericBlock5: data5,
+    genericBlock6: data6,
+    genericBlock7: data7,
+    genericBlock8: data8,
+    genericBlock9: data9,
+    genericBlock10: data10,
+    genericBlock11: data11,
+    genericBlock12: data12,
+    genericBlock13: data13,
+    genericBlock14: data14,
+    genericBlock15: data15,
+    genericBlock16: data16,
+    genericBlock17: data17,
+    genericBlock18: data18,
+    genericBlock19: data19,
+    genericBlock20: data20,
+    genericBlock21: data21,
+    genericBlock22: data22,
+    genericBlock23: data23,
+    genericBlock24: data24,
+    genericBlock25: data25,
+    genericBlock26: data26,
+    genericBlock27: data27,
+    genericBlock28: data28,
+    genericBlock29: data29,
+    genericBlock30: data30,
+    genericBlock31: data31
   } = caseStudy
 
   return (
@@ -262,140 +272,78 @@ const IndexPage = props => {
       <CaseStudyHero caseStudy={caseStudy} />
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
-        {shouldRender(genericBlock1) && (
-          <Block data={normalise(genericBlock1)[0]} />
-        )}
+        {shouldRender(data1) && <Block data={normalise(data1)} />}
       </GreyBackground>
       {/* The prologue */}
-      {shouldRender(genericBlock2) && (
-        <Block data={normalise(genericBlock2)[0]} />
-      )}
+      {shouldRender(data2) && <Block data={normalise(data2)} />}
       {/* Youtube Video */}
-      {shouldRender(genericBlock3) && (
-        <Block data={normalise(genericBlock3)[0]} />
-      )}
+      {shouldRender(data3) && <Block data={normalise(data3)} />}
       {/* Finding common ground */}
-      {shouldRender(genericBlock4) && (
-        <Block data={normalise(genericBlock4)[0]} />
-      )}
+      {shouldRender(data4) && <Block data={normalise(data4)} />}
       <BlueBackground>
         {/* Seamless */}
-        {shouldRender(genericBlock5) && (
-          <Block data={normalise(genericBlock5)[0]} />
-        )}
+        {shouldRender(data5) && <Block data={normalise(data5)} />}
       </BlueBackground>
       {/* A new visual language */}
-      {shouldRender(genericBlock6) && (
-        <Block data={normalise(genericBlock6)[0]} />
-      )}
+      {shouldRender(data6) && <Block data={normalise(data6)} />}
       {/* Image - Continue / back */}
-      {shouldRender(genericBlock7) && (
-        <Block data={normalise(genericBlock7)[0]} />
-      )}
+      {shouldRender(data7) && <BlockImage data={normalise(data7)} />}
       {/* Hi I am Noto sans */}
-      {shouldRender(genericBlock8) && (
-        <Block data={normalise(genericBlock8)[0]} />
-      )}
+      {shouldRender(data8) && <Block data={normalise(data8)} />}
       {/* Colour */}
-      {shouldRender(genericBlock9) && (
-        <Block data={normalise(genericBlock9)[0]} />
-      )}
+      {shouldRender(data9) && <Block data={normalise(data9)} />}
       {/* Image - Colour */}
-      {shouldRender(genericBlock10) && (
-        <Block data={normalise(genericBlock10)[0]} />
-      )}
+      {shouldRender(data10) && <BlockImage data={normalise(data10)} />}
       {/* Illustrations */}
-      {shouldRender(genericBlock11) && (
-        <Block data={normalise(genericBlock11)[0]} />
-      )}
+      {shouldRender(data11) && <Block data={normalise(data11)} />}
       {/* images - 4 images block */}
-      {shouldRender(genericBlock12) && (
-        <Block data={normalise(genericBlock12)[0]} />
-      )}
+      {shouldRender(data12) && <Block data={normalise(data12)} />}
       <GreyBackground>
         {/* Prototyping and fast iteration */}
-        {shouldRender(genericBlock13) && (
-          <Block data={normalise(genericBlock13)[0]} />
-        )}
+        {shouldRender(data13) && <Block data={normalise(data13)} />}
         {/* Image - Welcome to DoctorLink */}
-        {shouldRender(genericBlock14) && (
-          <Block data={normalise(genericBlock14)[0]} />
-        )}
+        {shouldRender(data14) && <BlockImage data={normalise(data14)} />}
       </GreyBackground>
       {/* New design methodology */}
-      {shouldRender(genericBlock15) && (
-        <Block data={normalise(genericBlock15)[0]} />
-      )}
+      {shouldRender(data15) && <Block data={normalise(data15)} />}
       {/* Baseline grid */}
-      {shouldRender(genericBlock16) && (
-        <Block data={normalise(genericBlock16)[0]} />
-      )}
+      {shouldRender(data16) && <Block data={normalise(data16)} />}
       {/* Base unit */}
-      {shouldRender(genericBlock17) && (
-        <Block data={normalise(genericBlock17)[0]} />
-      )}
+      {shouldRender(data17) && <Block data={normalise(data17)} />}
       {/* Automated design */}
-      {shouldRender(genericBlock18) && (
-        <Block data={normalise(genericBlock18)[0]} />
-      )}
+      {shouldRender(data18) && <Block data={normalise(data18)} />}
       {/* Documentation */}
-      {shouldRender(genericBlock19) && (
-        <Block data={normalise(genericBlock19)[0]} />
-      )}
+      {shouldRender(data19) && <Block data={normalise(data19)} />}
       {/* Image - Text styles */}
-      {shouldRender(genericBlock20) && (
-        <Block data={normalise(genericBlock20)[0]} />
-      )}
+      {shouldRender(data20) && <BlockImage data={normalise(data20)} />}
       {/* Extensive documentation */}
-      {shouldRender(genericBlock21) && (
-        <Block data={normalise(genericBlock21)[0]} />
-      )}
+      {shouldRender(data21) && <Block data={normalise(data21)} />}
       {/* Image - Password text field */}
-      {shouldRender(genericBlock22) && (
-        <Block data={normalise(genericBlock22)[0]} />
-      )}
+      {shouldRender(data22) && <BlockImage data={normalise(data22)} />}
       <BlueBackground>
         {/* Aligning design and engineering */}
-        {shouldRender(genericBlock23) && (
-          <Block data={normalise(genericBlock23)[0]} />
-        )}
+        {shouldRender(data23) && <Block data={normalise(data23)} />}
         {/* Properties / Tokens */}
-        {shouldRender(genericBlock24) && (
-          <Block data={normalise(genericBlock24)[0]} />
-        )}
+        {shouldRender(data24) && <Block data={normalise(data24)} />}
       </BlueBackground>
       <GreyBackground>
         {/* Reaping the immediate rewards */}
-        {shouldRender(genericBlock25) && (
-          <Block data={normalise(genericBlock25)[0]} />
-        )}
+        {shouldRender(data25) && <Block data={normalise(data25)} />}
         {/* Image - Check symptoms */}
-        {shouldRender(genericBlock26) && (
-          <Block data={normalise(genericBlock26)[0]} />
-        )}
+        {shouldRender(data26) && <BlockImage data={normalise(data26)} />}
       </GreyBackground>
       {/* The product blueprint */}
-      {shouldRender(genericBlock27) && (
-        <Block data={normalise(genericBlock27)[0]} />
-      )}
+      {shouldRender(data27) && <Block data={normalise(data27)} />}
       {/* Documented content layout */}
-      {shouldRender(genericBlock28) && (
-        <Block data={normalise(genericBlock28)[0]} />
-      )}
+      {shouldRender(data28) && <Block data={normalise(data28)} />}
       {/* Product implementation */}
-      {shouldRender(genericBlock29) && (
-        <Block data={normalise(genericBlock29)[0]} />
-      )}
+      {shouldRender(data29) && <Block data={normalise(data29)} />}
       <GreyBackground>
         {/* Improving our process */}
-        {shouldRender(genericBlock30) && (
-          <Block data={normalise(genericBlock30)[0]} />
-        )}
+        {shouldRender(data30) && <Block data={normalise(data30)} />}
       </GreyBackground>
       {/* Leaving in good health */}
-      {shouldRender(genericBlock31) && (
-        <Block data={normalise(genericBlock31)[0]} />
-      )}
+      {shouldRender(data31) && <Block data={normalise(data31)} />}
       {/* <GreyBackground>
         <Grid>
           <Statement>{genericText1.genericText1}</Statement>
