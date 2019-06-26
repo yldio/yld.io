@@ -179,7 +179,7 @@ class ContactUs extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    // this.setState({ submitting: true })
+    this.setState({ submitting: true })
 
     const strippedState = Object.assign({}, this.state)
     delete strippedState.name
