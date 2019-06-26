@@ -47,7 +47,7 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
     .expect(location.href)
     .contains(trainingPageUrl)
     .expect(firstModalLink.visible)
-    .ok()
+    .ok({ timeout: 5000 })
 })
 
 test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {
