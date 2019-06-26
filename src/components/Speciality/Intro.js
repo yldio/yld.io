@@ -24,7 +24,7 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
         {introTextTitle}
       </Subtitle>
       <BodyPrimary muted reverse>
-        {introTextBody.content[0].content[0].value}
+        {introTextBody}
       </BodyPrimary>
     </Padding>
   </IntroBorder>
@@ -41,14 +41,14 @@ const IntroSection = ({ speciality }) => (
                 {speciality.title}
               </SectionTitle>
               <BodyPrimary reverse muted>
-                {speciality.seoText.content[0].content[0].value}
+                {speciality.seoText}
               </BodyPrimary>
             </Flex>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <img
-              alt={speciality.introGraphic.title}
-              src={speciality.introGraphic.file.url}
+              alt={speciality.introGraphicTitle}
+              src={speciality.introGraphicFileUrl}
               style={{ maxHeight: '100%' }}
             />
           </Col>

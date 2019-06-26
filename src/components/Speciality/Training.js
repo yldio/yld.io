@@ -5,14 +5,14 @@ import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../Common/GreyBackground'
 import StyledLink from '../Common/StyledLink'
 
-const TrainingStage = ({ title, body, icon }) => (
+const TrainingStage = ({ title, body, iconTitle, iconUrl }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
     <Padding top={4} bottom={4}>
       <Padding bottom={1.5}>
-        <img src={`https://${icon.file.url}`} alt={icon.title} />
+        <img src={`https://${iconUrl}`} alt={iconTitle} />
       </Padding>
       <Subtitle>{title}</Subtitle>
-      <BodyPrimary>{body.content[0].content[0].value}</BodyPrimary>
+      <BodyPrimary>{body}</BodyPrimary>
     </Padding>
   </Col>
 )
@@ -26,26 +26,27 @@ const TrainingSection = ({ speciality }) => (
             <SectionTitle
               small
             >{`${speciality.title.trim()} training`}</SectionTitle>
-            <BodyPrimary>
-              {speciality.trainingIntroText.content[0].content[0].value}
-            </BodyPrimary>
+            <BodyPrimary>{speciality.trainingIntroText}</BodyPrimary>
           </Col>
         </Row>
         <Row>
           <TrainingStage
             title={speciality.trainingTextTitle1}
             body={speciality.trainingTextBody1}
-            icon={speciality.trainingTextIcon1}
+            iconTitle={speciality.trainingTextIcon1Title}
+            iconUrl={speciality.trainingTextIcon1Url}
           />
           <TrainingStage
             title={speciality.trainingTextTitle2}
             body={speciality.trainingTextBody2}
-            icon={speciality.trainingTextIcon2}
+            iconTitle={speciality.trainingTextIcon2Title}
+            iconUrl={speciality.trainingTextIcon2Url}
           />
           <TrainingStage
             title={speciality.trainingTextTitle3}
             body={speciality.trainingTextBody3}
-            icon={speciality.trainingTextIcon3}
+            iconTitle={speciality.trainingTextIcon3Title}
+            iconUrl={speciality.trainingTextIcon3Url}
           />
         </Row>
         <Row>

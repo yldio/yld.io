@@ -38,6 +38,38 @@ const getSpecialityEvents = (title, events) =>
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
+const flattenSpeciality = speciality => {
+  return {
+    slug: speciality.slug,
+    title: speciality.title,
+    seoTitle: speciality.seoTitle,
+    seoMetaDescription: speciality.seoMetaDescription,
+    seoText: speciality.seoText.content[0].content[0].value,
+    introGraphicTitle: speciality.introGraphic.title,
+    introGraphicFileUrl: speciality.introGraphic.file.url,
+    introTitle: speciality.introTitle,
+    introTextTitle1: speciality.introTextTitle1,
+    introTextBody1: speciality.introTextBody1.content[0].content[0].value,
+    introTextTitle2: speciality.introTextTitle2,
+    introTextBody2: speciality.introTextBody2.content[0].content[0].value,
+    introTextTitle3: speciality.introTextTitle3,
+    introTextBody3: speciality.introTextBody3.content[0].content[0].value,
+    trainingIntroText: speciality.trainingIntroText.content[0].content[0].value,
+    trainingTextIcon1Title: speciality.trainingTextIcon1.title,
+    trainingTextIcon1Url: speciality.trainingTextIcon1.file.url,
+    trainingTextTitle1: speciality.trainingTextTitle1,
+    trainingTextBody1: speciality.trainingTextBody1.content[0].content[0].value,
+    trainingTextIcon2Title: speciality.trainingTextIcon2.title,
+    trainingTextIcon2Url: speciality.trainingTextIcon2.file.url,
+    trainingTextTitle2: speciality.trainingTextTitle2,
+    trainingTextBody2: speciality.trainingTextBody2.content[0].content[0].value,
+    trainingTextIcon3Title: speciality.trainingTextIcon3.title,
+    trainingTextIcon3Url: speciality.trainingTextIcon3.file.url,
+    trainingTextTitle3: speciality.trainingTextTitle3,
+    trainingTextBody3: speciality.trainingTextBody3.content[0].content[0].value
+  }
+}
+
 const Speciality = ({
   data: {
     contentfulSpeciality: speciality,
@@ -64,17 +96,18 @@ const Speciality = ({
   const tutorials = getExternalType(speciality, `Tutorial`)
   const books = getExternalType(speciality, `Book`)
   const specialityEvents = events ? getSpecialityEvents(title, events) : []
+  const flattenedSpeciality = flattenSpeciality(speciality)
 
   return (
     <Layout backgroundColor="blue" location={location}>
       <Head page={speciality} />
-      <IntroSection speciality={speciality} />
+      <IntroSection speciality={flattenedSpeciality} />
       <ProjectsSection
         related={relatedProjects}
         title={title}
         clients={clients}
       />
-      <TrainingSection speciality={speciality} />
+      <TrainingSection speciality={flattenedSpeciality} />
       <CommunitySection
         background={communityBackground}
         logo={communityLogo}
