@@ -175,23 +175,37 @@ ${breakpoint('desktop')`
 `}
 `
 
+const renderImage = image => image && <img src={image} alt={image} />
+
+const renderText = text =>
+  text && (
+    <ReactMarkdown
+      renderers={{
+        // eslint-disable-next-line
+        heading: props => <SectionTitle {...props} />,
+        // eslint-disable-next-line
+        paragraph: props => <BodyPrimary {...props} />
+      }}
+      source={text}
+    />
+  )
+
 const Block = ({ data: { text, image } }) => (
   <Grid>
     <BlockRow>
       <Col width={[1]}>
-        {text && (
-          <ReactMarkdown
-            renderers={{
-              // eslint-disable-next-line
-              heading: props => <SectionTitle {...props} />,
-              // eslint-disable-next-line
-              paragraph: props => <BodyPrimary {...props} />
-            }}
-            source={text}
-          />
-        )}
-        {image && <img src={image} alt={image} />}
+        {renderText(text)}
+        {renderImage(image)}
       </Col>
+    </BlockRow>
+  </Grid>
+)
+
+const BlockTextAndImage = ({ data: { text, image } }) => (
+  <Grid>
+    <BlockRow>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text)}</Col>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
     </BlockRow>
   </Grid>
 )
@@ -199,7 +213,7 @@ const Block = ({ data: { text, image } }) => (
 const BlockImage = ({ data: { image } }) => (
   <Grid>
     <BlockRow>
-      <Col width={[1]}>{image && <img src={image} alt={image} />}</Col>
+      <Col width={[1]}>{renderImage(image)}</Col>
     </BlockRow>
   </Grid>
 )
@@ -209,7 +223,7 @@ const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
     <BlockRow>
       {[image1, image2, image3, image4].map(image => (
         <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
-          <img src={image} alt={image} />
+          {renderImage(image)}
         </Col>
       ))}
     </BlockRow>
@@ -298,7 +312,7 @@ const IndexPage = props => {
         {shouldRender(data1) && <Block data={normalise(data1)} />}
       </GreyBackground>
       {/* The prologue */}
-      {shouldRender(data2) && <Block data={normalise(data2)} />}
+      {shouldRender(data2) && <BlockTextAndImage data={normalise(data2)} />}
       {/* Youtube Video */}
       {shouldRender(data3) && <Block data={normalise(data3)} />}
       {/* Finding common ground */}
@@ -314,7 +328,7 @@ const IndexPage = props => {
       {/* Hi I am Noto sans */}
       {shouldRender(data8) && <Block data={normalise(data8)} />}
       {/* Colour */}
-      {shouldRender(data9) && <Block data={normalise(data9)} />}
+      {shouldRender(data9) && <BlockTextAndImage data={normalise(data9)} />}
       {/* Image - Colour */}
       {shouldRender(data10) && <BlockImage data={normalise(data10)} />}
       {/* Illustrations */}
@@ -328,19 +342,19 @@ const IndexPage = props => {
         {shouldRender(data14) && <BlockImage data={normalise(data14)} />}
       </GreyBackground>
       {/* New design methodology */}
-      {shouldRender(data15) && <Block data={normalise(data15)} />}
+      {shouldRender(data15) && <BlockTextAndImage data={normalise(data15)} />}
       {/* Baseline grid */}
       {shouldRender(data16) && <Block data={normalise(data16)} />}
       {/* Base unit */}
       {shouldRender(data17) && <Block data={normalise(data17)} />}
       {/* Automated design */}
-      {shouldRender(data18) && <Block data={normalise(data18)} />}
+      {shouldRender(data18) && <BlockTextAndImage data={normalise(data18)} />}
       {/* Documentation */}
-      {shouldRender(data19) && <Block data={normalise(data19)} />}
+      {shouldRender(data19) && <BlockTextAndImage data={normalise(data19)} />}
       {/* Image - Text styles */}
       {shouldRender(data20) && <BlockImage data={normalise(data20)} />}
       {/* Extensive documentation */}
-      {shouldRender(data21) && <Block data={normalise(data21)} />}
+      {shouldRender(data21) && <BlockTextAndImage data={normalise(data21)} />}
       {/* Image - Password text field */}
       {shouldRender(data22) && <BlockImage data={normalise(data22)} />}
       <BlueBackground>
@@ -356,7 +370,7 @@ const IndexPage = props => {
         {shouldRender(data26) && <BlockImage data={normalise(data26)} />}
       </GreyBackground>
       {/* The product blueprint */}
-      {shouldRender(data27) && <Block data={normalise(data27)} />}
+      {shouldRender(data27) && <BlockTextAndImage data={normalise(data27)} />}
       {/* Documented content layout */}
       {shouldRender(data28) && <Block data={normalise(data28)} />}
       {/* Product implementation */}
