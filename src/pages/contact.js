@@ -97,7 +97,7 @@ const getBranch = (
           </GreyBackground>
         </Fragment>
       )
-
+    case 'services':
     default:
       return (
         <GreyBackground>
@@ -202,12 +202,12 @@ class ContactUs extends Component {
         ? strippedFilteredState.reduce((acc, current) => {
             return (acc = [...acc, this.state[current].branch])
           }, [])
-        : ['engineering']
+        : ['services']
 
     const uniqueBranches = Array.from(new Set(branches))
 
     const chosenBranch =
-      uniqueBranches.length > 1 ? 'engineering' : uniqueBranches[0]
+      uniqueBranches.length > 1 ? 'services' : uniqueBranches[0]
 
     const chosenInterests = this.props.data.contentfulPage.interests.reduce(
       (acc, { name }) => ({
