@@ -1,8 +1,8 @@
 {
-  "presets": ["@babel/preset-env"],
-  "env": {
-    "test": {
-      "plugins": ["require-context-hook"]
-    }
-  }
+  "plugins": ["@babel/plugin-syntax-dynamic-import"]
+  // "env": {
+  //   "test": {
+  //     "plugins": ["require-context-hook", "@babel/plugin-syntax-dynamic-import"]
+  //   }
+  // }
 }

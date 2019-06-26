@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 
-import Speciality from '../src/templates/speciality'
+import { SpecialityView } from '../src/templates/speciality-component'
+class StorySpecialityWrapper extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
 
-import Books from '../src/components/Speciality/Books'
-import Community from '../src/components/Speciality/Community'
-import Events from '../src/components/Speciality/Events'
-import Intro from '../src/components/Speciality/Intro'
-import Projects from '../src/components/Speciality/Projects'
-import Talks from '../src/components/Speciality/Talks'
-import Training from '../src/components/Speciality/Training'
-import Tutorials from '../src/components/Speciality/Tutorials'
+  componentDidCatch(_, info) {
+    this.setState({ hasError: true, info })
+  }
+
+  render() {
+    const { hasError, info } = this.state
+    if (hasError) {
+      console.log({ info })
+      return (
+        <Fragment>
+          <h1>Something went wrong.</h1>
+        </Fragment>
+      )
+    }
+    return this.props.children
+  }
+}
+
+addDecorator(Theme)
+
+storiesOf('Speciality', module).add('Speciality', () => (
+  <StorySpecialityWrapper>
+    <SpecialityView />
+    {/* <h1>hoo</h1> */}
+  </StorySpecialityWrapper>
+))
