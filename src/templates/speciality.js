@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { isAfter, endOfYesterday } from 'date-fns'
+import _ from 'lodash'
 
 import IntroSection from '../components/Speciality/Intro'
 import ProjectsSection from '../components/Speciality/Projects'
@@ -40,33 +41,61 @@ const getSpecialityEvents = (title, events) =>
 
 const flattenSpeciality = speciality => {
   return {
-    slug: speciality.slug,
-    title: speciality.title,
-    seoTitle: speciality.seoTitle,
-    seoMetaDescription: speciality.seoMetaDescription,
-    seoText: speciality.seoText.content[0].content[0].value,
-    introGraphicTitle: speciality.introGraphic.title,
-    introGraphicFileUrl: speciality.introGraphic.file.url,
-    introTitle: speciality.introTitle,
-    introTextTitle1: speciality.introTextTitle1,
-    introTextBody1: speciality.introTextBody1.content[0].content[0].value,
-    introTextTitle2: speciality.introTextTitle2,
-    introTextBody2: speciality.introTextBody2.content[0].content[0].value,
-    introTextTitle3: speciality.introTextTitle3,
-    introTextBody3: speciality.introTextBody3.content[0].content[0].value,
-    trainingIntroText: speciality.trainingIntroText.content[0].content[0].value,
-    trainingTextIcon1Title: speciality.trainingTextIcon1.title,
-    trainingTextIcon1Url: speciality.trainingTextIcon1.file.url,
-    trainingTextTitle1: speciality.trainingTextTitle1,
-    trainingTextBody1: speciality.trainingTextBody1.content[0].content[0].value,
-    trainingTextIcon2Title: speciality.trainingTextIcon2.title,
-    trainingTextIcon2Url: speciality.trainingTextIcon2.file.url,
-    trainingTextTitle2: speciality.trainingTextTitle2,
-    trainingTextBody2: speciality.trainingTextBody2.content[0].content[0].value,
-    trainingTextIcon3Title: speciality.trainingTextIcon3.title,
-    trainingTextIcon3Url: speciality.trainingTextIcon3.file.url,
-    trainingTextTitle3: speciality.trainingTextTitle3,
-    trainingTextBody3: speciality.trainingTextBody3.content[0].content[0].value
+    slug: _.get(speciality, 'slug', null),
+    title: _.get(speciality, 'title', null), // required
+    seoTitle: _.get(speciality, 'seoTitle', null), // required
+    seoMetaDescription: _.get(speciality, 'seoMetaDescription', null), // required
+    seoText: _.get(speciality, 'seoText.content[0].content[0].value', null), // required
+    introGraphicTitle: _.get(speciality, 'introGraphic.title', null), // required
+    introGraphicFileUrl: _.get(speciality, 'introGraphic.file.url', null), // required
+    introTitle: _.get(speciality, 'introTitle', null), // required
+    introTextTitle1: _.get(speciality, 'introTextTitle1', null), // required
+    introTextBody1: _.get(
+      speciality,
+      'introTextBody1.content[0].content[0].value',
+      null
+    ), // required
+    introTextTitle2: _.get(speciality, 'introTextTitle2', null), // required
+    introTextBody2: _.get(
+      speciality,
+      'introTextBody2.content[0].content[0].value',
+      null
+    ), // required
+    introTextTitle3: _.get(speciality, 'introTextTitle3', null), // required
+    introTextBody3: _.get(
+      speciality,
+      'introTextBody3.content[0].content[0].value',
+      null
+    ), // required
+    trainingIntroText: _.get(
+      speciality,
+      'trainingIntroText.content[0].content[0].value',
+      null
+    ), // required
+    trainingTextIcon1Title: _.get(speciality, 'trainingTextIcon1.title', null), // required
+    trainingTextIcon1Url: _.get(speciality, 'trainingTextIcon1.file.url', null), // required
+    trainingTextTitle1: _.get(speciality, 'trainingTextTitle1', null), // required
+    trainingTextBody1: _.get(
+      speciality,
+      'trainingTextBody1.content[0].content[0].value',
+      null
+    ), // required
+    trainingTextIcon2Title: _.get(speciality, 'trainingTextIcon2.title', null), // required
+    trainingTextIcon2Url: _.get(speciality, 'trainingTextIcon2.file.url', null), // required
+    trainingTextTitle2: _.get(speciality, 'trainingTextTitle2', null), // required
+    trainingTextBody2: _.get(
+      speciality,
+      'trainingTextBody2.content[0].content[0].value',
+      null
+    ), // required
+    trainingTextIcon3Title: _.get(speciality, 'trainingTextIcon3.title', null), // required
+    trainingTextIcon3Url: _.get(speciality, 'trainingTextIcon3.file.url', null), // required
+    trainingTextTitle3: _.get(speciality, 'trainingTextTitle3', null), // required
+    trainingTextBody3: _.get(
+      speciality,
+      'trainingTextBody3.content[0].content[0].value',
+      null
+    ) // required
   }
 }
 
