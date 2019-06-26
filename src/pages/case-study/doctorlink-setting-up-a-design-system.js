@@ -215,6 +215,7 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
+
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company */}
         {shouldRender(data1) && <Statement>{normalise(data1).text}</Statement>}
