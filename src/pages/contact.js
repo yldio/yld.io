@@ -218,7 +218,7 @@ class ContactUs extends Component {
         ? 'services'
         : 'community'
 
-      // this.setState({ success: true, submitting: false, branch })
+      this.setState({ success: true, submitting: false, branch })
       navigate(`?branch=${branch}`, {
         replace: true
       })
