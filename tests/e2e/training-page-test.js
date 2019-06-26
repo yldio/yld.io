@@ -43,7 +43,9 @@ test('should be redirected to the course catalog on the training page when the m
 })
 
 test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async t => {
+  await t.expect(firstModalLink.exists).ok({ timeout: 5000 })
   await t.click(firstModalLink)
+
   await t.pressKey('esc')
 
   const location = await getWindowLocation()
@@ -51,7 +53,7 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
     .expect(location.href)
     .contains(trainingPageUrl)
     .expect(firstModalLink.visible)
-    .ok()
+    .ok({ timeout: 500 })
 })
 
 test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {
