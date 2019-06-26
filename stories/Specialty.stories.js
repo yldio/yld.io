@@ -1,29 +1,83 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 
 import { SpecialityView } from '../src/templates/speciality-component'
+
+const initialRenderingOptions = {
+  intro: true,
+  projects: true,
+  training: true,
+  community: true,
+  events: true,
+  talks: true,
+  books: true,
+  tutorials: true,
+  getintouch: true
+}
+
+const ToggleForm = ({ handleToggle, renderOptions }) => (
+  <form action="">
+    {renderOptions &&
+      Object.keys(renderOptions).length &&
+      Object.keys(renderOptions).map(option => (
+        <div key={option}>
+          <label htmlFor={option}>{option}</label>
+          <input
+            type="checkbox"
+            checked={renderOptions[option]}
+            onChange={() => handleToggle(option)}
+            name={option}
+            id={option}
+          />
+        </div>
+      ))}
+  </form>
+)
+
+const Error = ({ info: { componentStack }, message }) => {
+  return (
+    <div>
+      <h1>Hmm there is an error in the speciality props</h1>
+      <pre style={{ color: 'red' }}>{message}</pre>
+      <pre>{componentStack}</pre>
+    </div>
+  )
+}
+
 class StorySpecialityWrapper extends Component {
   constructor(props) {
     super(props)
-    this.state = { hasError: false }
+    this.state = { hasError: false, renderOptions: initialRenderingOptions }
   }
 
-  componentDidCatch(_, info) {
-    this.setState({ hasError: true, info })
+  componentDidCatch({ message }, info) {
+    this.setState({ hasError: true, error: { info, message } })
+  }
+
+  handleToggle = option => {
+    this.setState(prevState => ({
+      ...prevState,
+      renderOptions: {
+        ...prevState.renderOptions,
+        [option]: !prevState.renderOptions[option]
+      }
+    }))
   }
 
   render() {
-    const { hasError, info } = this.state
-    if (hasError) {
-      console.log({ info })
-      return (
-        <Fragment>
-          <h1>Something went wrong.</h1>
-        </Fragment>
-      )
-    }
-    return this.props.children
+    const { hasError, error, renderOptions } = this.state
+    const { children } = this.props
+
+    return (
+      <div>
+        <ToggleForm
+          renderOptions={renderOptions}
+          handleToggle={this.handleToggle}
+        />
+        {hasError ? <Error {...error} /> : children}
+      </div>
+    )
   }
 }
 
@@ -32,6 +86,5 @@ addDecorator(Theme)
 storiesOf('Speciality', module).add('Speciality', () => (
   <StorySpecialityWrapper>
     <SpecialityView />
-    {/* <h1>hoo</h1> */}
   </StorySpecialityWrapper>
 ))
