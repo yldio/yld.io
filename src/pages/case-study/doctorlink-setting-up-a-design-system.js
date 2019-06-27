@@ -23,6 +23,7 @@ const BlockRow = styled(Row)`
 padding-top: ${({ theme }) => theme.space[5]};
 padding-bottom: ${({ theme }) => theme.space[5]};
 flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
+align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
 
 ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[6]};
@@ -180,7 +181,7 @@ const IndexPage = props => {
       <Grid>
         {/* The prologue */}
         {shouldRender(data2) && (
-          <BlockRow>
+          <BlockRow alignCenter>
             <TextAndImageBlock data={normalise(data2)} />
           </BlockRow>
         )}
@@ -228,7 +229,7 @@ const IndexPage = props => {
 
         {/* Hi I am Noto sans */}
         {shouldRender(data8) && (
-          <BlockRow rowReverse>
+          <BlockRow rowReverse alignCenter>
             <TextAndImageBlock data={normalise(data8)} />
           </BlockRow>
         )}
@@ -290,21 +291,21 @@ const IndexPage = props => {
 
         {/* Baseline grid */}
         {shouldRender(data16) && (
-          <BlockRow rowReverse>
+          <BlockRow rowReverse alignCenter>
             <TextAndImageBlock data={normalise(data16)} />
           </BlockRow>
         )}
 
         {/* Base unit */}
         {shouldRender(data17) && (
-          <BlockRow rowReverse>
+          <BlockRow rowReverse alignCenter>
             <TextAndImageBlock data={normalise(data17)} />
           </BlockRow>
         )}
 
         {/* Automated design */}
         {shouldRender(data18) && (
-          <BlockRow>
+          <BlockRow alignCenter>
             <TextAndImageBlock data={normalise(data18)} />
           </BlockRow>
         )}
