@@ -6859,7 +6859,6 @@ exports[`Storyshots Header Header itself 1`] = `
 .c15 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -6934,7 +6933,6 @@ exports[`Storyshots Header Header itself 1`] = `
 .c13 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -6992,7 +6990,6 @@ exports[`Storyshots Header Header itself 1`] = `
   z-index: 2;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -7135,7 +7132,6 @@ exports[`Storyshots Header Header itself 1`] = `
   cursor: pointer;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.3125rem;
@@ -7171,7 +7167,6 @@ exports[`Storyshots Header Header itself 1`] = `
   display: block;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.3125rem;
@@ -7951,7 +7946,6 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
 .c13 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8026,7 +8020,6 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
 .c11 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8084,7 +8077,6 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
   z-index: 2;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8468,7 +8460,6 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
 .c14 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8544,7 +8535,6 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
 .c12 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8602,7 +8592,6 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
   z-index: 2;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -8977,7 +8966,6 @@ exports[`Storyshots Header TopNavbar - light theme 1`] = `
 .c4 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9161,7 +9149,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 .c11 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9236,7 +9223,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
 .c9 {
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -9294,7 +9280,6 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
   z-index: 2;
   -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
   transition: opacity 200ms ease-out, color 200ms ease-out;
-  background: linear-gradient(to right,#616161 0%,transparent 0);
   outline: none;
   font-weight: 400;
   font-size: 1.0625rem;
