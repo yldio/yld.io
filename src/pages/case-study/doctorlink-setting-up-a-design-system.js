@@ -135,17 +135,22 @@ const PropertiesAndTokensBlock = ({
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
-const ImagesBlock = ({ data: { image1, image2, image3, image4 } }) => (
-  <Grid>
-    <BlockRow>
-      {[image1, image2, image3, image4].map(image => (
-        <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
-          {renderImage(image)}
-        </Col>
-      ))}
-    </BlockRow>
-  </Grid>
-)
+const ImagesBlock = ({ data }) => {
+  const l = data.length
+  const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
+
+  return (
+    <Grid>
+      <BlockRow>
+        {data.map(imageUrl => (
+          <Col width={colWidth} key={imageUrl}>
+            {renderImage(imageUrl)}
+          </Col>
+        ))}
+      </BlockRow>
+    </Grid>
+  )
+}
 
 const getImage = (blockImages, index) =>
   blockImages && blockImages[index] && blockImages[index].file.url
