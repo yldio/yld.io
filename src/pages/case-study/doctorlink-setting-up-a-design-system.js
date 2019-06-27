@@ -13,7 +13,7 @@ import Layout from '../../components/layout'
 // import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
 // import Image from '../../components/Common/Image'
-// import VideoSection from '../../components/Common/VideoSection'
+import VideoSection from '../../components/Common/VideoSection'
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
 // import Statement from '../../components/Common/Statement'
 import BlueBackground from '../../components/Common/BlueBackground'
@@ -82,6 +82,8 @@ const FullWidthBlock = ({ data: { text, image } }) => (
     {renderImage(image)}
   </Col>
 )
+
+const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
 
 const ImagesBlock = ({ data }) => {
   const l = data.length
@@ -188,11 +190,7 @@ const IndexPage = props => {
         )}
 
         {/* Youtube Video */}
-        {shouldRender(data3) && (
-          <BlockRow>
-            <FullWidthBlock data={normalise(data3)} />
-          </BlockRow>
-        )}
+        {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
 
         {/* Finding common ground */}
         {shouldRender(data4) && (
