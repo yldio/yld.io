@@ -18,7 +18,7 @@ const TitleSection = ({ title }) => {
             <ReactMarkdown
               renderers={{
                 // eslint-disable-next-line
-                paragraph: props => <SectionTitle {...props} />
+                paragraph: props => <SectionTitle {...props} as="h1" />
               }}
               source={title}
             />

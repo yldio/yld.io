@@ -94,6 +94,7 @@ const JoinUsPage = props => (
         contentfulJoinUsPage {
           title
           seoTitle
+          seoDescription
           introductionText {
             introductionText
           }

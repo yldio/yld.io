@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { graphql, navigate } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
-
+import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import CourseInfo from '../components/Training/course/CourseInfo'
 import CourseContent from '../components/Training/course/CourseContent'
@@ -46,6 +46,13 @@ const ModalContent = ({ modal, closeTo, course, category, location }) => {
 
   return (
     <Layout location={location}>
+      <Head
+        page={{
+          title: `Training - ${course.name}`,
+          seoMetaDescription: course.description.description,
+          keywords: `training ${course.level} ${course.name}`
+        }}
+      />
       <Wrapper>
         <Padding top={{ smallPhone: 3 }} bottom={{ smallPhone: 5 }}>
           <Grid>
