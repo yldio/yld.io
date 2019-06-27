@@ -55,7 +55,25 @@ const renderText = (text, disallowed = []) =>
     />
   )
 
-const Block = ({ data: { text, image } }) => (
+const TextColumnsBlock = ({ data: { text } }) => (
+  <Grid>
+    <BlockRow>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['paragraph'])}</Col>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['heading'])}</Col>
+    </BlockRow>
+  </Grid>
+)
+
+const TextAndImageBlock = ({ data: { text, image }, reverse = null }) => (
+  <Grid>
+    <BlockRow reverse={reverse}>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text)}</Col>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+    </BlockRow>
+  </Grid>
+)
+
+const FullWidthBlock = ({ data: { text, image } }) => (
   <Grid>
     <BlockRow>
       <Col width={[1]}>
@@ -66,33 +84,7 @@ const Block = ({ data: { text, image } }) => (
   </Grid>
 )
 
-const BlockTextColumns = ({ data: { text } }) => (
-  <Grid>
-    <BlockRow>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['paragraph'])}</Col>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['heading'])}</Col>
-    </BlockRow>
-  </Grid>
-)
-
-const BlockTextAndImage = ({ data: { text, image }, reverse = null }) => (
-  <Grid>
-    <BlockRow reverse={reverse}>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text)}</Col>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
-    </BlockRow>
-  </Grid>
-)
-
-const BlockImage = ({ data: { image } }) => (
-  <Grid>
-    <BlockRow>
-      <Col width={[1]}>{renderImage(image)}</Col>
-    </BlockRow>
-  </Grid>
-)
-
-const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
+const ImagesBlock = ({ data: { image1, image2, image3, image4 } }) => (
   <Grid>
     <BlockRow>
       {[image1, image2, image3, image4].map(image => (
@@ -184,118 +176,118 @@ const IndexPage = props => {
 
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
-        {shouldRender(data1) && <Block data={normalise(data1)} />}
+        {shouldRender(data1) && <FullWidthBlock data={normalise(data1)} />}
       </GreyBackground>
 
       {/* The prologue */}
-      {shouldRender(data2) && <BlockTextAndImage data={normalise(data2)} />}
+      {shouldRender(data2) && <TextAndImageBlock data={normalise(data2)} />}
 
       {/* Youtube Video */}
-      {shouldRender(data3) && <Block data={normalise(data3)} />}
+      {shouldRender(data3) && <FullWidthBlock data={normalise(data3)} />}
 
       {/* Finding common ground */}
-      {shouldRender(data4) && <BlockTextColumns data={normalise(data4)} />}
+      {shouldRender(data4) && <TextColumnsBlock data={normalise(data4)} />}
 
       <BlueBackground>
         {/* Seamless */}
-        {shouldRender(data5) && <BlockTextColumns data={normalise(data5)} />}
+        {shouldRender(data5) && <TextColumnsBlock data={normalise(data5)} />}
       </BlueBackground>
 
       {/* A new visual language */}
-      {shouldRender(data6) && <BlockTextColumns data={normalise(data6)} />}
+      {shouldRender(data6) && <TextColumnsBlock data={normalise(data6)} />}
 
       {/* Image - Continue / back */}
-      {shouldRender(data7) && <BlockImage data={normalise(data7)} />}
+      {shouldRender(data7) && <FullWidthBlock data={normalise(data7)} />}
 
       {/* Hi I am Noto sans */}
       {shouldRender(data8) && (
-        <BlockTextAndImage data={normalise(data8)} reverse />
+        <TextAndImageBlock data={normalise(data8)} reverse />
       )}
 
       {/* Colour */}
-      {shouldRender(data9) && <BlockTextAndImage data={normalise(data9)} />}
+      {shouldRender(data9) && <TextAndImageBlock data={normalise(data9)} />}
 
       {/* Image - Colour */}
-      {shouldRender(data10) && <BlockImage data={normalise(data10)} />}
+      {shouldRender(data10) && <FullWidthBlock data={normalise(data10)} />}
 
       {/* Illustrations */}
       {shouldRender(data11) && (
-        <BlockTextAndImage data={normalise(data11)} reverse />
+        <TextAndImageBlock data={normalise(data11)} reverse />
       )}
 
       {/* images - 4 images block */}
-      {shouldRender(data12) && <BlockImages data={normaliseImages(data12)} />}
+      {shouldRender(data12) && <ImagesBlock data={normaliseImages(data12)} />}
 
       <GreyBackground>
         {/* Prototyping and fast iteration */}
-        {shouldRender(data13) && <BlockTextColumns data={normalise(data13)} />}
+        {shouldRender(data13) && <TextColumnsBlock data={normalise(data13)} />}
 
         {/* Image - Welcome to DoctorLink */}
-        {shouldRender(data14) && <BlockImage data={normalise(data14)} />}
+        {shouldRender(data14) && <FullWidthBlock data={normalise(data14)} />}
       </GreyBackground>
 
       {/* New design methodology */}
-      {shouldRender(data15) && <BlockTextAndImage data={normalise(data15)} />}
+      {shouldRender(data15) && <TextAndImageBlock data={normalise(data15)} />}
 
       {/* Baseline grid */}
       {shouldRender(data16) && (
-        <BlockTextAndImage data={normalise(data16)} reverse />
+        <TextAndImageBlock data={normalise(data16)} reverse />
       )}
 
       {/* Base unit */}
       {shouldRender(data17) && (
-        <BlockTextAndImage data={normalise(data17)} reverse />
+        <TextAndImageBlock data={normalise(data17)} reverse />
       )}
 
       {/* Automated design */}
-      {shouldRender(data18) && <BlockTextAndImage data={normalise(data18)} />}
+      {shouldRender(data18) && <TextAndImageBlock data={normalise(data18)} />}
 
       {/* Documentation */}
-      {shouldRender(data19) && <BlockTextAndImage data={normalise(data19)} />}
+      {shouldRender(data19) && <TextAndImageBlock data={normalise(data19)} />}
 
       {/* Image - Text styles */}
-      {shouldRender(data20) && <BlockImage data={normalise(data20)} />}
+      {shouldRender(data20) && <FullWidthBlock data={normalise(data20)} />}
 
       {/* Extensive documentation */}
-      {shouldRender(data21) && <BlockTextAndImage data={normalise(data21)} />}
+      {shouldRender(data21) && <TextAndImageBlock data={normalise(data21)} />}
 
       {/* Image - Password text field */}
-      {shouldRender(data22) && <BlockImage data={normalise(data22)} />}
+      {shouldRender(data22) && <FullWidthBlock data={normalise(data22)} />}
 
       <BlueBackground>
         {/* Aligning design and engineering */}
-        {shouldRender(data23) && <BlockTextColumns data={normalise(data23)} />}
+        {shouldRender(data23) && <TextColumnsBlock data={normalise(data23)} />}
 
         {/* Properties / Tokens */}
         {shouldRender(data24) && (
-          <BlockTextAndImage data={normalise(data24)} reverse />
+          <TextAndImageBlock data={normalise(data24)} reverse />
         )}
       </BlueBackground>
 
       <GreyBackground>
         {/* Reaping the immediate rewards */}
-        {shouldRender(data25) && <BlockTextColumns data={normalise(data25)} />}
+        {shouldRender(data25) && <TextColumnsBlock data={normalise(data25)} />}
 
         {/* Image - Check symptoms */}
-        {shouldRender(data26) && <BlockImage data={normalise(data26)} />}
+        {shouldRender(data26) && <FullWidthBlock data={normalise(data26)} />}
       </GreyBackground>
 
       {/* The product blueprint */}
-      {shouldRender(data27) && <BlockTextAndImage data={normalise(data27)} />}
+      {shouldRender(data27) && <TextAndImageBlock data={normalise(data27)} />}
 
       {/* Documented content layout */}
-      {shouldRender(data28) && <Block data={normalise(data28)} />}
+      {shouldRender(data28) && <FullWidthBlock data={normalise(data28)} />}
 
       {/* Product implementation */}
-      {shouldRender(data29) && <Block data={normalise(data29)} />}
+      {shouldRender(data29) && <FullWidthBlock data={normalise(data29)} />}
 
       <GreyBackground>
         {/* Improving our process */}
-        {shouldRender(data30) && <BlockTextColumns data={normalise(data30)} />}
+        {shouldRender(data30) && <TextColumnsBlock data={normalise(data30)} />}
       </GreyBackground>
 
       {/* Leaving in good health */}
-      {shouldRender(data31) && <BlockTextColumns data={normalise(data31)} />}
+      {shouldRender(data31) && <TextColumnsBlock data={normalise(data31)} />}
     </Layout>
   )
 }
