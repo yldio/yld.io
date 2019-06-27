@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { isAfter, endOfYesterday } from 'date-fns'
-import _ from 'lodash'
+import Get from 'lodash.get'
+import Ajv from 'ajv'
 
 import IntroSection from '../components/Speciality/Intro'
 import ProjectsSection from '../components/Speciality/Projects'
@@ -15,6 +16,8 @@ import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
+
+const ajv = new Ajv({ allErrors: true })
 
 const getExternalType = (speciality, type) =>
   speciality.externalResources.filter(
@@ -41,82 +44,119 @@ const getSpecialityEvents = (title, events) =>
 
 const flattenSpeciality = speciality => {
   return {
-    slug: _.get(speciality, 'slug', null),
-    title: _.get(speciality, 'title', null), // required
-    seoTitle: _.get(speciality, 'seoTitle', null), // required
-    seoMetaDescription: _.get(speciality, 'seoMetaDescription', null), // required
-    seoText: _.get(speciality, 'seoText.content[0].content[0].value', null), // required
-    introGraphicTitle: _.get(speciality, 'introGraphic.title', null), // required
-    introGraphicFileUrl: _.get(speciality, 'introGraphic.file.url', null), // required
-    introTitle: _.get(speciality, 'introTitle', null), // required
-    introTextTitle1: _.get(speciality, 'introTextTitle1', null), // required
-    introTextBody1: _.get(
+    slug: Get(speciality, 'slug', null),
+    title: Get(speciality, 'title', null), // required
+    seoTitle: Get(speciality, 'seoTitle', null), // required
+    seoMetaDescription: Get(speciality, 'seoMetaDescription', null), // required
+    seoText: Get(speciality, 'seoText.content[0].content[0].value', null), // required
+    introGraphicTitle: Get(speciality, 'introGraphic.title', null), // required
+    introGraphicFileUrl: Get(speciality, 'introGraphic.file.url', null), // required
+    introTitle: Get(speciality, 'introTitle', null), // required
+    introTextTitle1: Get(speciality, 'introTextTitle1', null), // required
+    introTextBody1: Get(
       speciality,
       'introTextBody1.content[0].content[0].value',
       null
     ), // required
-    introTextTitle2: _.get(speciality, 'introTextTitle2', null), // required
-    introTextBody2: _.get(
+    introTextTitle2: Get(speciality, 'introTextTitle2', null), // required
+    introTextBody2: Get(
       speciality,
       'introTextBody2.content[0].content[0].value',
       null
     ), // required
-    introTextTitle3: _.get(speciality, 'introTextTitle3', null), // required
-    introTextBody3: _.get(
+    introTextTitle3: Get(speciality, 'introTextTitle3', null), // required
+    introTextBody3: Get(
       speciality,
       'introTextBody3.content[0].content[0].value',
       null
     ), // required
-    trainingIntroText: _.get(
+    trainingIntroText: Get(
       speciality,
       'trainingIntroText.content[0].content[0].value',
       null
     ), // required
-    trainingTextIcon1Title: _.get(speciality, 'trainingTextIcon1.title', null), // required
-    trainingTextIcon1Url: _.get(speciality, 'trainingTextIcon1.file.url', null), // required
-    trainingTextTitle1: _.get(speciality, 'trainingTextTitle1', null), // required
-    trainingTextBody1: _.get(
+    trainingTextIcon1Title: Get(speciality, 'trainingTextIcon1.title', null), // required
+    trainingTextIcon1Url: Get(speciality, 'trainingTextIcon1.file.url', null), // required
+    trainingTextTitle1: Get(speciality, 'trainingTextTitle1', null), // required
+    trainingTextBody1: Get(
       speciality,
       'trainingTextBody1.content[0].content[0].value',
       null
     ), // required
-    trainingTextIcon2Title: _.get(speciality, 'trainingTextIcon2.title', null), // required
-    trainingTextIcon2Url: _.get(speciality, 'trainingTextIcon2.file.url', null), // required
-    trainingTextTitle2: _.get(speciality, 'trainingTextTitle2', null), // required
-    trainingTextBody2: _.get(
+    trainingTextIcon2Title: Get(speciality, 'trainingTextIcon2.title', null), // required
+    trainingTextIcon2Url: Get(speciality, 'trainingTextIcon2.file.url', null), // required
+    trainingTextTitle2: Get(speciality, 'trainingTextTitle2', null), // required
+    trainingTextBody2: Get(
       speciality,
       'trainingTextBody2.content[0].content[0].value',
       null
     ), // required
-    trainingTextIcon3Title: _.get(speciality, 'trainingTextIcon3.title', null), // required
-    trainingTextIcon3Url: _.get(speciality, 'trainingTextIcon3.file.url', null), // required
-    trainingTextTitle3: _.get(speciality, 'trainingTextTitle3', null), // required
-    trainingTextBody3: _.get(
+    trainingTextIcon3Title: Get(speciality, 'trainingTextIcon3.title', null), // required
+    trainingTextIcon3Url: Get(speciality, 'trainingTextIcon3.file.url', null), // required
+    trainingTextTitle3: Get(speciality, 'trainingTextTitle3', null), // required
+    trainingTextBody3: Get(
       speciality,
       'trainingTextBody3.content[0].content[0].value',
       null
     ), // required
-    communityText: _.get(
+    communityText: Get(
       speciality,
       'communityText.content[0].content[0].value',
       null
     ),
-    communityLogoTitle: _.get(speciality, 'communityLogo.title', null),
-    communityLogoUrl: _.get(speciality, 'communityLogo.file.url', null),
-    communityBackgroundTitle: _.get(
+    communityLogoTitle: Get(speciality, 'communityLogo.title', null),
+    communityLogoUrl: Get(speciality, 'communityLogo.file.url', null),
+    communityBackgroundTitle: Get(
       speciality,
       'communityBackground.title',
       null
     ),
-    communityBackgroundUrl: _.get(
+    communityBackgroundUrl: Get(
       speciality,
       'communityBackground.file.url',
       null
     ),
-    eventIconTitle: _.get(speciality, 'eventIcon.title', null),
-    eventIconUrl: _.get(speciality, 'eventIcon.file.url', null),
-    contactText: _.get(speciality, 'contactText', null) // required
+    eventIconTitle: Get(speciality, 'eventIcon.title', null),
+    eventIconUrl: Get(speciality, 'eventIcon.file.url', null),
+    contactText: Get(speciality, 'contactText', null) // required
   }
+}
+
+const communitySchema = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  $id: 'http://example.com/product.schema.json',
+  type: 'object',
+  properties: {
+    title: {
+      type: 'string'
+    },
+    communityText: {
+      type: 'string'
+    },
+    // "communityLogoTitle": {
+    //   "type": "string"
+    // },
+    // "communityLogoUrl": {
+    //   "type": "string"
+    // },
+    communityBackgroundTitle: {
+      type: 'string'
+    },
+    communityBackgroundUrl: {
+      type: 'string',
+      format: 'uri-template'
+    }
+  },
+  dependencies: {
+    communityBackgroundTitle: ['communityBackgroundUrl'],
+    communityBackgroundUrl: ['communityBackgroundTitle']
+  },
+  required: [
+    'title',
+    'communityText',
+    'communityBackgroundTitle',
+    'communityBackgroundUrl'
+  ]
 }
 
 const Speciality = ({
@@ -132,7 +172,7 @@ const Speciality = ({
 
   const flattenedSpeciality = flattenSpeciality(speciality)
 
-  const {
+  let {
     title,
     communityBackgroundTitle,
     communityBackgroundUrl,
@@ -141,6 +181,10 @@ const Speciality = ({
     communityLogoUrl,
     contactText
   } = flattenedSpeciality
+
+  // communityBackgroundTitle = 0
+
+  const validateCommunity = ajv.compile(communitySchema)
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
@@ -159,14 +203,16 @@ const Speciality = ({
         clients={clients}
       />
       <TrainingSection speciality={flattenedSpeciality} />
-      <CommunitySection
-        backgroundTitle={communityBackgroundTitle}
-        backgroundUrl={communityBackgroundUrl}
-        logoTitle={communityLogoTitle}
-        logoUrl={communityLogoUrl}
-        text={communityText}
-        title={title}
-      />
+      {validateCommunity(flattenedSpeciality) && (
+        <CommunitySection
+          backgroundTitle={communityBackgroundTitle}
+          backgroundUrl={communityBackgroundUrl}
+          logoTitle={communityLogoTitle}
+          logoUrl={communityLogoUrl}
+          text={communityText}
+          title={title}
+        />
+      )}
       <EventSection
         events={specialityEvents}
         title={title}
