@@ -135,6 +135,8 @@ const PropertiesAndTokensBlock = ({
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
+const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
+
 const ImagesBlock = ({ data }) => {
   const l = data.length
   const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
