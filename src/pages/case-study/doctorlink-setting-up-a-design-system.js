@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
@@ -162,15 +162,13 @@ const ImagesBlock = ({ data }) => {
   const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
 
   return (
-    <Grid>
-      <BlockRow>
-        {data.map(imageUrl => (
-          <Col width={colWidth} key={imageUrl}>
-            {renderImage(imageUrl)}
-          </Col>
-        ))}
-      </BlockRow>
-    </Grid>
+    <Fragment>
+      {data.map(imageUrl => (
+        <Col width={colWidth} key={imageUrl}>
+          {renderImage(imageUrl)}
+        </Col>
+      ))}
+    </Fragment>
   )
 }
 
