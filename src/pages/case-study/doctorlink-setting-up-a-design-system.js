@@ -22,7 +22,7 @@ import GreyBackground from '../../components/Common/GreyBackground'
 const BlockRow = styled(Row)`
 padding-top: ${({ theme }) => theme.space[5]};
 padding-bottom: ${({ theme }) => theme.space[5]};
-flex-direction: ${({ reverse }) => `row${reverse ? '-reverse' : null}`};
+flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
 
 ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[6]};
@@ -41,33 +41,41 @@ ${breakpoint('desktop')`
 
 const renderImage = image => image && <img src={image} alt={image} />
 
-const renderText = (text, disallowed = []) =>
+const renderText = (text, colorReverse, disallowed = []) =>
   text && (
     <ReactMarkdown
       disallowedTypes={disallowed}
       renderers={{
         // eslint-disable-next-line
-        heading: props => <SectionTitle {...props} />,
+        heading: props => <SectionTitle reverse={colorReverse} {...props} />,
         // eslint-disable-next-line
-        paragraph: props => <BodyPrimary {...props} />
+        paragraph: props => <BodyPrimary reverse={colorReverse} {...props} />
       }}
       source={text}
     />
   )
 
-const TextColumnsBlock = ({ data: { text } }) => (
+const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   <Grid>
     <BlockRow>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['paragraph'])}</Col>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, ['heading'])}</Col>
+      <Col width={[1, 1, 1, 1 / 2]}>
+        {renderText(text, colorReverse, ['paragraph'])}
+      </Col>
+      <Col width={[1, 1, 1, 1 / 2]}>
+        {renderText(text, colorReverse, ['heading'])}
+      </Col>
     </BlockRow>
   </Grid>
 )
 
-const TextAndImageBlock = ({ data: { text, image }, reverse = null }) => (
+const TextAndImageBlock = ({
+  data: { text, image },
+  rowReverse = null,
+  colorReverse = false
+}) => (
   <Grid>
-    <BlockRow reverse={reverse}>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text)}</Col>
+    <BlockRow rowReverse={rowReverse}>
+      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
       <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
     </BlockRow>
   </Grid>
@@ -190,7 +198,9 @@ const IndexPage = props => {
 
       <BlueBackground>
         {/* Seamless */}
-        {shouldRender(data5) && <TextColumnsBlock data={normalise(data5)} />}
+        {shouldRender(data5) && (
+          <TextColumnsBlock data={normalise(data5)} colorReverse />
+        )}
       </BlueBackground>
 
       {/* A new visual language */}
@@ -201,7 +211,7 @@ const IndexPage = props => {
 
       {/* Hi I am Noto sans */}
       {shouldRender(data8) && (
-        <TextAndImageBlock data={normalise(data8)} reverse />
+        <TextAndImageBlock data={normalise(data8)} rowReverse />
       )}
 
       {/* Colour */}
@@ -212,7 +222,7 @@ const IndexPage = props => {
 
       {/* Illustrations */}
       {shouldRender(data11) && (
-        <TextAndImageBlock data={normalise(data11)} reverse />
+        <TextAndImageBlock data={normalise(data11)} rowReverse />
       )}
 
       {/* images - 4 images block */}
@@ -231,12 +241,12 @@ const IndexPage = props => {
 
       {/* Baseline grid */}
       {shouldRender(data16) && (
-        <TextAndImageBlock data={normalise(data16)} reverse />
+        <TextAndImageBlock data={normalise(data16)} rowReverse />
       )}
 
       {/* Base unit */}
       {shouldRender(data17) && (
-        <TextAndImageBlock data={normalise(data17)} reverse />
+        <TextAndImageBlock data={normalise(data17)} rowReverse />
       )}
 
       {/* Automated design */}
@@ -256,11 +266,13 @@ const IndexPage = props => {
 
       <BlueBackground>
         {/* Aligning design and engineering */}
-        {shouldRender(data23) && <TextColumnsBlock data={normalise(data23)} />}
+        {shouldRender(data23) && (
+          <TextColumnsBlock data={normalise(data23)} colorReverse />
+        )}
 
         {/* Properties / Tokens */}
         {shouldRender(data24) && (
-          <TextAndImageBlock data={normalise(data24)} reverse />
+          <TextAndImageBlock data={normalise(data24)} rowReverse colorReverse />
         )}
       </BlueBackground>
 
