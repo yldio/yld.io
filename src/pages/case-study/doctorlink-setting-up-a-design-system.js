@@ -39,7 +39,8 @@ ${breakpoint('desktop')`
 `}
 `
 
-const renderImage = image => image && <img src={image} alt={image} />
+const renderImage = imageUrl =>
+  imageUrl && <img src={imageUrl} alt={imageUrl} />
 
 const renderText = (text, colorReverse, disallowed = []) =>
   text && (
@@ -92,17 +93,22 @@ const FullWidthBlock = ({ data: { text, image } }) => (
   </Grid>
 )
 
-const ImagesBlock = ({ data: { image1, image2, image3, image4 } }) => (
-  <Grid>
-    <BlockRow>
-      {[image1, image2, image3, image4].map(image => (
-        <Col width={[1, 1, 1 / 2, 1 / 2, 1 / 4]} key={image}>
-          {renderImage(image)}
-        </Col>
-      ))}
-    </BlockRow>
-  </Grid>
-)
+const ImagesBlock = ({ data }) => {
+  const l = data.length
+  const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
+
+  return (
+    <Grid>
+      <BlockRow>
+        {data.map(imageUrl => (
+          <Col width={colWidth} key={imageUrl}>
+            {renderImage(imageUrl)}
+          </Col>
+        ))}
+      </BlockRow>
+    </Grid>
+  )
+}
 
 const getImage = (blockImages, index) =>
   blockImages && blockImages[index] && blockImages[index].file.url
@@ -118,16 +124,8 @@ const normalise = (arr = []) => {
   return normalised[0]
 }
 
-const normaliseImages = (arr = []) => {
-  const normalised = arr.map(({ genericBlockImages, ...props }) => ({
-    image1: getImage(genericBlockImages, 0),
-    image2: getImage(genericBlockImages, 1),
-    image3: getImage(genericBlockImages, 2),
-    image4: getImage(genericBlockImages, 3),
-    ...props
-  }))
-  return normalised[0]
-}
+const normaliseImages = ({ genericBlockImages = [] }) =>
+  genericBlockImages.map(imageData => imageData.file && imageData.file.url)
 
 const shouldRender = data => data && data.length
 
@@ -226,7 +224,9 @@ const IndexPage = props => {
       )}
 
       {/* images - 4 images block */}
-      {shouldRender(data12) && <ImagesBlock data={normaliseImages(data12)} />}
+      {shouldRender(data12) && (
+        <ImagesBlock data={normaliseImages(data12[0])} />
+      )}
 
       <GreyBackground>
         {/* Prototyping and fast iteration */}
