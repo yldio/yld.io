@@ -135,7 +135,7 @@ const PropertiesAndTokensBlock = ({
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
-const BlockImages = ({ data: { image1, image2, image3, image4 } }) => (
+const ImagesBlock = ({ data: { image1, image2, image3, image4 } }) => (
   <Grid>
     <BlockRow>
       {[image1, image2, image3, image4].map(image => (
