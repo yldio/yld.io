@@ -26,8 +26,11 @@ test('clicking a link on the training page should open up a modal with informati
 })
 
 test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
+  await t.expect(firstModalLink.exists).ok({ timeout: 5000 })
+
   await t.click(firstModalLink)
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]')
+  await t.expect(modalCloseButton.exists).ok({ timeout: 5000 })
   await t.click(modalCloseButton)
 
   const location = await getWindowLocation()
