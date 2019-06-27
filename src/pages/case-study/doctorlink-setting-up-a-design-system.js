@@ -18,6 +18,7 @@ import Head from '../../components/Common/Head'
 // import Statement from '../../components/Common/Statement'
 import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const BlockRow = styled(Row)`
 padding-top: ${({ theme }) => theme.space[5]};
@@ -416,6 +417,11 @@ const IndexPage = props => {
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
         )}
+
+        <CaseStudyPreview
+          isTop={false}
+          caseStudy={caseStudy.relatedCaseStudy}
+        />
       </Grid>
     </Layout>
   )
