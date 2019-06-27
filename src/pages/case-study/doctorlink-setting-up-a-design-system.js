@@ -20,13 +20,20 @@ import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
-const BlockRow = styled(Row)`
-padding-top: ${({ theme }) => theme.space[5]};
-padding-bottom: ${({ theme }) => theme.space[5]};
-flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
-align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
+// const PaddingBottomGrid = styled(Grid)`
+//   padding-bottom: ${({ theme }) => theme.space[7]};
+// `
 
-${breakpoint('smallTablet')`
+const BlockRow = styled(Row)`
+  padding-top: ${({ theme, topIndex }) =>
+    topIndex ? theme.space[topIndex] : null};
+  padding-bottom: ${({ theme, bottomIndex }) =>
+    bottomIndex ? theme.space[bottomIndex] : null};
+  flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
+  align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
+  width: ${({ widthPerc }) => widthPerc};
+
+/* ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
 `}
@@ -38,7 +45,7 @@ ${breakpoint('tablet')`
 
 ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[8]};
-`}
+`} */
 `
 
 const renderImage = imageUrl =>
@@ -174,7 +181,7 @@ const IndexPage = props => {
         <Grid>
           {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
           {shouldRender(data1) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'6'} widthPerc="75%">
               <FullWidthBlock data={normalise(data1)} />
             </BlockRow>
           )}
@@ -184,7 +191,7 @@ const IndexPage = props => {
       <Grid>
         {/* The prologue */}
         {shouldRender(data2) && (
-          <BlockRow alignCenter>
+          <BlockRow alignCenter topIndex={'7'} bottomIndex={'8'}>
             <TextAndImageBlock data={normalise(data2)} />
           </BlockRow>
         )}
@@ -194,7 +201,7 @@ const IndexPage = props => {
 
         {/* Finding common ground */}
         {shouldRender(data4) && (
-          <BlockRow>
+          <BlockRow topIndex={'7'} bottomIndex={'7'}>
             <TextColumnsBlock data={normalise(data4)} />
           </BlockRow>
         )}
@@ -204,7 +211,7 @@ const IndexPage = props => {
         <Grid>
           {/* Seamless */}
           {shouldRender(data5) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'6'}>
               <TextColumnsBlock data={normalise(data5)} colorReverse />
             </BlockRow>
           )}
@@ -214,7 +221,7 @@ const IndexPage = props => {
       <Grid>
         {/* A new visual language */}
         {shouldRender(data6) && (
-          <BlockRow>
+          <BlockRow topIndex={'7'} bottomIndex={'6'}>
             <TextColumnsBlock data={normalise(data6)} />
           </BlockRow>
         )}
@@ -228,14 +235,14 @@ const IndexPage = props => {
 
         {/* Hi I am Noto sans */}
         {shouldRender(data8) && (
-          <BlockRow rowReverse alignCenter>
+          <BlockRow rowReverse alignCenter topIndex={'8'} bottomIndex={'8'}>
             <TextAndImageBlock data={normalise(data8)} />
           </BlockRow>
         )}
 
         {/* Colour */}
         {shouldRender(data9) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data9)} />
           </BlockRow>
         )}
@@ -249,14 +256,14 @@ const IndexPage = props => {
 
         {/* Illustrations */}
         {shouldRender(data11) && (
-          <BlockRow rowReverse>
+          <BlockRow rowReverse topIndex={'8'} bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data11)} />
           </BlockRow>
         )}
 
         {/* images - 4 images block */}
         {shouldRender(data12) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'7'}>
             <ImagesBlock data={normaliseImages(data12[0])} />
           </BlockRow>
         )}
@@ -266,14 +273,14 @@ const IndexPage = props => {
         <Grid>
           {/* Prototyping and fast iteration */}
           {shouldRender(data13) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'6'}>
               <TextColumnsBlock data={normalise(data13)} />
             </BlockRow>
           )}
 
           {/* Image - Welcome to DoctorLink */}
           {shouldRender(data14) && (
-            <BlockRow>
+            <BlockRow bottomIndex={'7'}>
               <FullWidthBlock data={normalise(data14)} />
             </BlockRow>
           )}
@@ -283,56 +290,56 @@ const IndexPage = props => {
       <Grid>
         {/* New design methodology */}
         {shouldRender(data15) && (
-          <BlockRow>
+          <BlockRow topIndex={'6'} bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data15)} />
           </BlockRow>
         )}
 
         {/* Baseline grid */}
         {shouldRender(data16) && (
-          <BlockRow rowReverse alignCenter>
+          <BlockRow rowReverse alignCenter bottomIndex={'8'}>
             <TextAndImageBlock data={normalise(data16)} />
           </BlockRow>
         )}
 
         {/* Base unit */}
         {shouldRender(data17) && (
-          <BlockRow rowReverse alignCenter>
+          <BlockRow rowReverse alignCenter bottomIndex={'7'}>
             <TextAndImageBlock data={normalise(data17)} />
           </BlockRow>
         )}
 
         {/* Automated design */}
         {shouldRender(data18) && (
-          <BlockRow alignCenter>
+          <BlockRow alignCenter bottomIndex={'7'}>
             <TextAndImageBlock data={normalise(data18)} />
           </BlockRow>
         )}
 
         {/* Documentation */}
         {shouldRender(data19) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data19)} />
           </BlockRow>
         )}
 
         {/* Image - Text styles */}
         {shouldRender(data20) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'7'}>
             <FullWidthBlock data={normalise(data20)} />
           </BlockRow>
         )}
 
         {/* Extensive documentation */}
         {shouldRender(data21) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data21)} />
           </BlockRow>
         )}
 
         {/* Image - Password text field */}
         {shouldRender(data22) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'7'}>
             <FullWidthBlock data={normalise(data22)} />
           </BlockRow>
         )}
@@ -342,14 +349,14 @@ const IndexPage = props => {
         <Grid>
           {/* Aligning design and engineering */}
           {shouldRender(data23) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'6'}>
               <TextColumnsBlock data={normalise(data23)} colorReverse />
             </BlockRow>
           )}
 
           {/* Properties / Tokens */}
           {shouldRender(data24) && (
-            <BlockRow rowReverse>
+            <BlockRow rowReverse bottomIndex={'6'}>
               <TextAndImageBlock data={normalise(data24)} colorReverse />
             </BlockRow>
           )}
@@ -360,7 +367,7 @@ const IndexPage = props => {
         <Grid>
           {/* Reaping the immediate rewards */}
           {shouldRender(data25) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'6'}>
               <TextColumnsBlock data={normalise(data25)} />
             </BlockRow>
           )}
@@ -377,21 +384,21 @@ const IndexPage = props => {
       <Grid>
         {/* The product blueprint */}
         {shouldRender(data27) && (
-          <BlockRow>
+          <BlockRow topIndex={'7'} bottomIndex={'6'}>
             <TextAndImageBlock data={normalise(data27)} />
           </BlockRow>
         )}
 
         {/* Documented content layout */}
         {shouldRender(data28) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'6'}>
             <FullWidthBlock data={normalise(data28)} />
           </BlockRow>
         )}
 
         {/* Product implementation */}
         {shouldRender(data29) && (
-          <BlockRow>
+          <BlockRow bottomIndex={'7'}>
             <FullWidthBlock data={normalise(data29)} />
           </BlockRow>
         )}
@@ -401,7 +408,7 @@ const IndexPage = props => {
         <Grid>
           {/* Improving our process */}
           {shouldRender(data30) && (
-            <BlockRow>
+            <BlockRow topIndex={'6'} bottomIndex={'7'}>
               <TextColumnsBlock data={normalise(data30)} />
             </BlockRow>
           )}
@@ -411,7 +418,7 @@ const IndexPage = props => {
       <Grid>
         {/* Leaving in good health */}
         {shouldRender(data31) && (
-          <BlockRow>
+          <BlockRow topIndex={'6'} bottomIndex={'7'}>
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
         )}
