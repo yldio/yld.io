@@ -26,8 +26,7 @@ const OpenSource = ({ data }) => {
   const {
     contentfulOpenSourcePage: {
       title,
-      seoTitle,
-      seoMetaDescription,
+      seoDescription,
       featuredCaseStudy,
       statement,
       talksSectionImage,
@@ -86,9 +85,9 @@ const OpenSource = ({ data }) => {
 
   return (
     <Layout>
-      <Head page={{ title, seoTitle, seoMetaDescription }} />
+      <Head page={{ title, seoDescription }} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
-      <Statement>{statement}</Statement>
+      <Statement as="h1">{statement}</Statement>
       <WhyOpenSource
         title={whyOsSectionTitle}
         list={whyOsReasons}
@@ -155,7 +154,6 @@ const OpenSourcePage = props => (
         }
         contentfulOpenSourcePage {
           title
-          seoTitle
           seoDescription
           eventsSectionImage {
             id

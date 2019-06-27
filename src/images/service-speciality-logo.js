@@ -2,6 +2,10 @@ import React from 'react'
 
 const ServiceSpecialityLogo = ({ fillColor, textColor }) => (
   <svg viewBox="0 0 54 54">
+    {/*
+      If you're here to delete this SVG title for SEO reasons, turn back now. 
+      This is used for accessibility and wont affect SEO rankings
+    */}
     <title>service speciality logo</title>
     <g id="yld-service-speciality-logo" stroke="none" fill="none">
       <rect
