@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -57,40 +57,28 @@ const renderText = (text, colorReverse, disallowed = []) =>
   )
 
 const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
-  <Grid>
-    <BlockRow>
-      <Col width={[1, 1, 1, 1 / 2]}>
-        {renderText(text, colorReverse, ['paragraph'])}
-      </Col>
-      <Col width={[1, 1, 1, 1 / 2]}>
-        {renderText(text, colorReverse, ['heading'])}
-      </Col>
-    </BlockRow>
-  </Grid>
+  <Fragment>
+    <Col width={[1, 1, 1, 1 / 2]}>
+      {renderText(text, colorReverse, ['paragraph'])}
+    </Col>
+    <Col width={[1, 1, 1, 1 / 2]}>
+      {renderText(text, colorReverse, ['heading'])}
+    </Col>
+  </Fragment>
 )
 
-const TextAndImageBlock = ({
-  data: { text, image },
-  rowReverse = null,
-  colorReverse = false
-}) => (
-  <Grid>
-    <BlockRow rowReverse={rowReverse}>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
-      <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
-    </BlockRow>
-  </Grid>
+const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
+  <Fragment>
+    <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+  </Fragment>
 )
 
 const FullWidthBlock = ({ data: { text, image } }) => (
-  <Grid>
-    <BlockRow>
-      <Col width={[1]}>
-        {renderText(text)}
-        {renderImage(image)}
-      </Col>
-    </BlockRow>
-  </Grid>
+  <Col width={[1]}>
+    {renderText(text)}
+    {renderImage(image)}
+  </Col>
 )
 
 const ImagesBlock = ({ data }) => {
@@ -98,15 +86,13 @@ const ImagesBlock = ({ data }) => {
   const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
 
   return (
-    <Grid>
-      <BlockRow>
-        {data.map(imageUrl => (
-          <Col width={colWidth} key={imageUrl}>
-            {renderImage(imageUrl)}
-          </Col>
-        ))}
-      </BlockRow>
-    </Grid>
+    <Fragment>
+      {data.map(imageUrl => (
+        <Col width={colWidth} key={imageUrl}>
+          {renderImage(imageUrl)}
+        </Col>
+      ))}
+    </Fragment>
   )
 }
 
@@ -181,125 +167,255 @@ const IndexPage = props => {
       <CaseStudyHero caseStudy={caseStudy} />
 
       <GreyBackground>
-        {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
-        {shouldRender(data1) && <FullWidthBlock data={normalise(data1)} />}
+        <Grid>
+          {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
+          {shouldRender(data1) && (
+            <BlockRow>
+              <FullWidthBlock data={normalise(data1)} />
+            </BlockRow>
+          )}
+        </Grid>
       </GreyBackground>
 
-      {/* The prologue */}
-      {shouldRender(data2) && <TextAndImageBlock data={normalise(data2)} />}
+      <Grid>
+        {/* The prologue */}
+        {shouldRender(data2) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data2)} />
+          </BlockRow>
+        )}
 
-      {/* Youtube Video */}
-      {shouldRender(data3) && <FullWidthBlock data={normalise(data3)} />}
+        {/* Youtube Video */}
+        {shouldRender(data3) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data3)} />
+          </BlockRow>
+        )}
 
-      {/* Finding common ground */}
-      {shouldRender(data4) && <TextColumnsBlock data={normalise(data4)} />}
+        {/* Finding common ground */}
+        {shouldRender(data4) && (
+          <BlockRow>
+            <TextColumnsBlock data={normalise(data4)} />
+          </BlockRow>
+        )}
+      </Grid>
 
       <BlueBackground>
-        {/* Seamless */}
-        {shouldRender(data5) && (
-          <TextColumnsBlock data={normalise(data5)} colorReverse />
-        )}
+        <Grid>
+          {/* Seamless */}
+          {shouldRender(data5) && (
+            <BlockRow>
+              <TextColumnsBlock data={normalise(data5)} colorReverse />
+            </BlockRow>
+          )}
+        </Grid>
       </BlueBackground>
 
-      {/* A new visual language */}
-      {shouldRender(data6) && <TextColumnsBlock data={normalise(data6)} />}
+      <Grid>
+        {/* A new visual language */}
+        {shouldRender(data6) && (
+          <BlockRow>
+            <TextColumnsBlock data={normalise(data6)} />
+          </BlockRow>
+        )}
 
-      {/* Image - Continue / back */}
-      {shouldRender(data7) && <FullWidthBlock data={normalise(data7)} />}
+        {/* Image - Continue / back */}
+        {shouldRender(data7) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data7)} />
+          </BlockRow>
+        )}
 
-      {/* Hi I am Noto sans */}
-      {shouldRender(data8) && (
-        <TextAndImageBlock data={normalise(data8)} rowReverse />
-      )}
+        {/* Hi I am Noto sans */}
+        {shouldRender(data8) && (
+          <BlockRow rowReverse>
+            <TextAndImageBlock data={normalise(data8)} />
+          </BlockRow>
+        )}
 
-      {/* Colour */}
-      {shouldRender(data9) && <TextAndImageBlock data={normalise(data9)} />}
+        {/* Colour */}
+        {shouldRender(data9) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data9)} />
+          </BlockRow>
+        )}
 
-      {/* Image - Colour */}
-      {shouldRender(data10) && <FullWidthBlock data={normalise(data10)} />}
+        {/* Image - Colour */}
+        {shouldRender(data10) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data10)} />
+          </BlockRow>
+        )}
 
-      {/* Illustrations */}
-      {shouldRender(data11) && (
-        <TextAndImageBlock data={normalise(data11)} rowReverse />
-      )}
+        {/* Illustrations */}
+        {shouldRender(data11) && (
+          <BlockRow rowReverse>
+            <TextAndImageBlock data={normalise(data11)} />
+          </BlockRow>
+        )}
 
-      {/* images - 4 images block */}
-      {shouldRender(data12) && (
-        <ImagesBlock data={normaliseImages(data12[0])} />
-      )}
+        {/* images - 4 images block */}
+        {shouldRender(data12) && (
+          <BlockRow>
+            <ImagesBlock data={normaliseImages(data12[0])} />
+          </BlockRow>
+        )}
+      </Grid>
 
       <GreyBackground>
-        {/* Prototyping and fast iteration */}
-        {shouldRender(data13) && <TextColumnsBlock data={normalise(data13)} />}
+        <Grid>
+          {/* Prototyping and fast iteration */}
+          {shouldRender(data13) && (
+            <BlockRow>
+              <TextColumnsBlock data={normalise(data13)} />
+            </BlockRow>
+          )}
 
-        {/* Image - Welcome to DoctorLink */}
-        {shouldRender(data14) && <FullWidthBlock data={normalise(data14)} />}
+          {/* Image - Welcome to DoctorLink */}
+          {shouldRender(data14) && (
+            <BlockRow>
+              <FullWidthBlock data={normalise(data14)} />
+            </BlockRow>
+          )}
+        </Grid>
       </GreyBackground>
 
-      {/* New design methodology */}
-      {shouldRender(data15) && <TextAndImageBlock data={normalise(data15)} />}
+      <Grid>
+        {/* New design methodology */}
+        {shouldRender(data15) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data15)} />
+          </BlockRow>
+        )}
 
-      {/* Baseline grid */}
-      {shouldRender(data16) && (
-        <TextAndImageBlock data={normalise(data16)} rowReverse />
-      )}
+        {/* Baseline grid */}
+        {shouldRender(data16) && (
+          <BlockRow rowReverse>
+            <TextAndImageBlock data={normalise(data16)} />
+          </BlockRow>
+        )}
 
-      {/* Base unit */}
-      {shouldRender(data17) && (
-        <TextAndImageBlock data={normalise(data17)} rowReverse />
-      )}
+        {/* Base unit */}
+        {shouldRender(data17) && (
+          <BlockRow rowReverse>
+            <TextAndImageBlock data={normalise(data17)} />
+          </BlockRow>
+        )}
 
-      {/* Automated design */}
-      {shouldRender(data18) && <TextAndImageBlock data={normalise(data18)} />}
+        {/* Automated design */}
+        {shouldRender(data18) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data18)} />
+          </BlockRow>
+        )}
 
-      {/* Documentation */}
-      {shouldRender(data19) && <TextAndImageBlock data={normalise(data19)} />}
+        {/* Documentation */}
+        {shouldRender(data19) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data19)} />
+          </BlockRow>
+        )}
 
-      {/* Image - Text styles */}
-      {shouldRender(data20) && <FullWidthBlock data={normalise(data20)} />}
+        {/* Image - Text styles */}
+        {shouldRender(data20) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data20)} />
+          </BlockRow>
+        )}
 
-      {/* Extensive documentation */}
-      {shouldRender(data21) && <TextAndImageBlock data={normalise(data21)} />}
+        {/* Extensive documentation */}
+        {shouldRender(data21) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data21)} />
+          </BlockRow>
+        )}
 
-      {/* Image - Password text field */}
-      {shouldRender(data22) && <FullWidthBlock data={normalise(data22)} />}
+        {/* Image - Password text field */}
+        {shouldRender(data22) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data22)} />
+          </BlockRow>
+        )}
+      </Grid>
 
       <BlueBackground>
-        {/* Aligning design and engineering */}
-        {shouldRender(data23) && (
-          <TextColumnsBlock data={normalise(data23)} colorReverse />
-        )}
+        <Grid>
+          {/* Aligning design and engineering */}
+          {shouldRender(data23) && (
+            <BlockRow>
+              <TextColumnsBlock data={normalise(data23)} colorReverse />
+            </BlockRow>
+          )}
 
-        {/* Properties / Tokens */}
-        {shouldRender(data24) && (
-          <TextAndImageBlock data={normalise(data24)} rowReverse colorReverse />
-        )}
+          {/* Properties / Tokens */}
+          {shouldRender(data24) && (
+            <BlockRow rowReverse>
+              <TextAndImageBlock data={normalise(data24)} colorReverse />
+            </BlockRow>
+          )}
+        </Grid>
       </BlueBackground>
 
       <GreyBackground>
-        {/* Reaping the immediate rewards */}
-        {shouldRender(data25) && <TextColumnsBlock data={normalise(data25)} />}
+        <Grid>
+          {/* Reaping the immediate rewards */}
+          {shouldRender(data25) && (
+            <BlockRow>
+              <TextColumnsBlock data={normalise(data25)} />
+            </BlockRow>
+          )}
 
-        {/* Image - Check symptoms */}
-        {shouldRender(data26) && <FullWidthBlock data={normalise(data26)} />}
+          {/* Image - Check symptoms */}
+          {shouldRender(data26) && (
+            <BlockRow>
+              <FullWidthBlock data={normalise(data26)} />
+            </BlockRow>
+          )}
+        </Grid>
       </GreyBackground>
 
-      {/* The product blueprint */}
-      {shouldRender(data27) && <TextAndImageBlock data={normalise(data27)} />}
+      <Grid>
+        {/* The product blueprint */}
+        {shouldRender(data27) && (
+          <BlockRow>
+            <TextAndImageBlock data={normalise(data27)} />
+          </BlockRow>
+        )}
 
-      {/* Documented content layout */}
-      {shouldRender(data28) && <FullWidthBlock data={normalise(data28)} />}
+        {/* Documented content layout */}
+        {shouldRender(data28) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data28)} />
+          </BlockRow>
+        )}
 
-      {/* Product implementation */}
-      {shouldRender(data29) && <FullWidthBlock data={normalise(data29)} />}
+        {/* Product implementation */}
+        {shouldRender(data29) && (
+          <BlockRow>
+            <FullWidthBlock data={normalise(data29)} />
+          </BlockRow>
+        )}
+      </Grid>
 
       <GreyBackground>
-        {/* Improving our process */}
-        {shouldRender(data30) && <TextColumnsBlock data={normalise(data30)} />}
+        <Grid>
+          {/* Improving our process */}
+          {shouldRender(data30) && (
+            <BlockRow>
+              <TextColumnsBlock data={normalise(data30)} />
+            </BlockRow>
+          )}
+        </Grid>
       </GreyBackground>
 
-      {/* Leaving in good health */}
-      {shouldRender(data31) && <TextColumnsBlock data={normalise(data31)} />}
+      <Grid>
+        {/* Leaving in good health */}
+        {shouldRender(data31) && (
+          <BlockRow>
+            <TextColumnsBlock data={normalise(data31)} />
+          </BlockRow>
+        )}
+      </Grid>
     </Layout>
   )
 }
