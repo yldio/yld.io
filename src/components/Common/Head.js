@@ -40,7 +40,7 @@ const Head = ({ page }) => {
             {page.keywords && <meta name="keywords" content={page.keywords} />}
 
             {/* Open Graph  */}
-            <meta name="og:image" content={imageUrl} />
+            <meta property="og:image" content={imageUrl} />
             <meta property="og:type" content="website" />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
