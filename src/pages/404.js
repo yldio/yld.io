@@ -19,7 +19,7 @@ const HomePageLink = styled(Button)`
 const NotFoundPage = ({ data: { site }, location }) => (
   <Layout location={location}>
     <Helmet
-      title={`${site.siteMetadata.title} - Not Found`}
+      title={`${site.siteMetadata.siteTitle} - Not Found`}
       meta={[
         {
           name: 'description',
@@ -56,7 +56,7 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        title
+        siteTitle
       }
     }
   }
