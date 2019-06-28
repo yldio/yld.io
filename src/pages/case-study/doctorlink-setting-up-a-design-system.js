@@ -152,8 +152,7 @@ const ImagesBlock = ({ data }) => {
   )
 }
 
-const getImage = (blockImages, index) =>
-  blockImages && blockImages[index] && blockImages[index].file.url
+const getImage = (blockImages, index) => blockImages && blockImages[index]
 
 const normalise = (arr = []) => {
   const normalised = arr.map(
