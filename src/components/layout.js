@@ -88,7 +88,7 @@ class Layout extends Component {
           query SiteTitleQuery {
             site {
               siteMetadata {
-                title
+                siteTitle
               }
             }
           }
@@ -97,7 +97,7 @@ class Layout extends Component {
           <ThemeProvider theme={theme}>
             <Fragment>
               <Helmet
-                title={`${data.site.siteMetadata.title}`}
+                title={`${data.site.siteMetadata.siteTitle}`}
                 meta={[{ name: 'description', content: '' }]}
               >
                 <script type="application/ld+json">{`

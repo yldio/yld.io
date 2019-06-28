@@ -86,11 +86,6 @@ const JoinUsPage = props => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
         contentfulJoinUsPage {
           title
           seoTitle
