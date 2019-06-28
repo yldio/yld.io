@@ -2,27 +2,20 @@ import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-// import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
-// import generate from 'shortid'
 
 import { Grid, Row, Col } from '../../components/grid'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import Layout from '../../components/layout'
-// import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
-// import Image from '../../components/Common/Image'
+import Image from '../../components/Common/Image'
 import VideoSection from '../../components/Common/VideoSection'
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
 // import Statement from '../../components/Common/Statement'
 import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-
-// const PaddingBottomGrid = styled(Grid)`
-//   padding-bottom: ${({ theme }) => theme.space[7]};
-// `
 
 const BlockRow = styled(Row)`
   padding-top: ${({ theme, topIndex }) =>
@@ -48,8 +41,7 @@ ${breakpoint('desktop')`
 `} */
 `
 
-const renderImage = imageUrl =>
-  imageUrl && <img src={imageUrl} alt={imageUrl} />
+const renderImage = data => data && <Image image={data} />
 
 const renderText = (text, colorReverse, disallowed = []) =>
   text && (
@@ -107,8 +99,7 @@ const ImagesBlock = ({ data }) => {
   )
 }
 
-const getImage = (blockImages, index) =>
-  blockImages && blockImages[index] && blockImages[index].file.url
+const getImage = (blockImages, index) => blockImages && blockImages[index]
 
 const normalise = (arr = []) => {
   const normalised = arr.map(
@@ -435,8 +426,9 @@ const IndexPage = props => {
 export const query = graphql`
   fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
     genericBlockImages {
-      file {
-        url
+      title
+      fluid {
+        ...GatsbyContentfulFluid_withWebp
       }
     }
     genericBlockText {
