@@ -1,20 +1,24 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
 
-import { Grid, Row, Col } from '../../components/grid'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
-import Layout from '../../components/layout'
-import Head from '../../components/Common/Head'
-import Image from '../../components/Common/Image'
-import VideoSection from '../../components/Common/VideoSection'
-// import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
-// import Statement from '../../components/Common/Statement'
+import { Grid, Row } from '../../components/grid'
 import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
+import Layout from '../../components/layout'
+import Head from '../../components/Common/Head'
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
+import {
+  TextColumnsBlock,
+  TextAndImageBlock,
+  FullWidthBlock,
+  VideoBlock,
+  ImagesBlock
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+
+// import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
+// import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const BlockRow = styled(Row)`
@@ -40,64 +44,6 @@ ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[8]};
 `} */
 `
-
-const renderImage = data => data && <Image image={data} />
-
-const renderText = (text, colorReverse, disallowed = []) =>
-  text && (
-    <ReactMarkdown
-      disallowedTypes={disallowed}
-      renderers={{
-        // eslint-disable-next-line
-        heading: props => <SectionTitle reverse={colorReverse} {...props} />,
-        // eslint-disable-next-line
-        paragraph: props => <BodyPrimary reverse={colorReverse} {...props} />
-      }}
-      source={text}
-    />
-  )
-
-const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
-  <Fragment>
-    <Col width={[1, 1, 1, 1 / 2]}>
-      {renderText(text, colorReverse, ['paragraph'])}
-    </Col>
-    <Col width={[1, 1, 1, 1 / 2]}>
-      {renderText(text, colorReverse, ['heading'])}
-    </Col>
-  </Fragment>
-)
-
-const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
-  <Fragment>
-    <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
-    <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
-  </Fragment>
-)
-
-const FullWidthBlock = ({ data: { text, image } }) => (
-  <Col width={[1]}>
-    {renderText(text)}
-    {renderImage(image)}
-  </Col>
-)
-
-const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
-
-const ImagesBlock = ({ data }) => {
-  const l = data.length
-  const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
-
-  return (
-    <Fragment>
-      {data.map(imageUrl => (
-        <Col width={colWidth} key={imageUrl}>
-          {renderImage(imageUrl)}
-        </Col>
-      ))}
-    </Fragment>
-  )
-}
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
