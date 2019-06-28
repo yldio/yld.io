@@ -24,6 +24,10 @@ import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPr
 const BlockRow = styled(Row)`
   flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
   align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
+  padding-top: ${({ theme, mobile }) =>
+    mobile && mobile.top ? theme.space[mobile.top] : null};
+  padding-bottom: ${({ theme, mobile }) =>
+    mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
   width: ${({ widthPerc }) => widthPerc};
 
 ${breakpoint('smallTablet')`
@@ -127,6 +131,7 @@ const IndexPage = props => {
           {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
           {shouldRender(data1) && (
             <BlockRow
+              mobile={addPaddings('4', '4')}
               smallTablet={addPaddings('4', '4')}
               tablet={addPaddings('4', '4')}
               desktop={addPaddings('6', '6')}
@@ -143,6 +148,7 @@ const IndexPage = props => {
         {shouldRender(data2) && (
           <BlockRow
             alignCenter
+            mobile={addPaddings('5', '5')}
             smallTablet={addPaddings('7', '7')}
             tablet={addPaddings('7', '7')}
             desktop={addPaddings('7', '8')}
@@ -157,6 +163,7 @@ const IndexPage = props => {
         {/* Finding common ground */}
         {shouldRender(data4) && (
           <BlockRow
+            mobile={addPaddings('4', '4')}
             smallTablet={addPaddings('5', '5')}
             tablet={addPaddings('6', '6')}
             desktop={addPaddings('7', '7')}
@@ -171,6 +178,7 @@ const IndexPage = props => {
           {/* Seamless */}
           {shouldRender(data5) && (
             <BlockRow
+              mobile={addPaddings('4', '4')}
               smallTablet={addPaddings('5', '5')}
               tablet={addPaddings('6', '6')}
               desktop={addPaddings('6', '6')}
@@ -185,6 +193,7 @@ const IndexPage = props => {
         {/* A new visual language */}
         {shouldRender(data6) && (
           <BlockRow
+            mobile={addPaddings('4', '4')}
             smallTablet={addPaddings('5', '5')}
             tablet={addPaddings('6', '6')}
             desktop={addPaddings('7', '6')}
@@ -205,6 +214,7 @@ const IndexPage = props => {
           <BlockRow
             rowReverse
             alignCenter
+            mobile={addPaddings('5', '5')}
             smallTablet={addPaddings('6', '6')}
             tablet={addPaddings('7', '7')}
             desktop={addPaddings('8', '8')}
@@ -216,6 +226,7 @@ const IndexPage = props => {
         {/* Colour */}
         {shouldRender(data9) && (
           <BlockRow
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '5' }}
             tablet={{ bottom: '6' }}
             desktop={{ bottom: '6' }}
@@ -223,6 +234,8 @@ const IndexPage = props => {
             <TextAndImageBlock data={normalise(data9)} />
           </BlockRow>
         )}
+
+        {/* ASK JAMES - ARE THESE 2 SECTIONS INVERTED ON MOBILE? */}
 
         {/* Image - Colour */}
         {shouldRender(data10) && (
@@ -235,6 +248,7 @@ const IndexPage = props => {
         {shouldRender(data11) && (
           <BlockRow
             rowReverse
+            mobile={addPaddings('4', '5')}
             smallTablet={addPaddings('6', '5')}
             tablet={addPaddings('7', '6')}
             desktop={addPaddings('8', '6')}
@@ -243,9 +257,12 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
+        {/* ASK JAMES - ARE THESE 2 SECTIONS INVERTED ON MOBILE? */}
+
         {/* images - 4 images block */}
         {shouldRender(data12) && (
           <BlockRow
+            mobile={{ bottom: '4' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -260,6 +277,7 @@ const IndexPage = props => {
           {/* Prototyping and fast iteration */}
           {shouldRender(data13) && (
             <BlockRow
+              mobile={addPaddings('4', '4')}
               smallTablet={addPaddings('5', '5')}
               tablet={addPaddings('6', '6')}
               desktop={addPaddings('6', '6')}
@@ -271,6 +289,7 @@ const IndexPage = props => {
           {/* Image - Welcome to DoctorLink */}
           {shouldRender(data14) && (
             <BlockRow
+              mobile={{ bottom: '5' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
               desktop={{ bottom: '7' }}
@@ -285,6 +304,7 @@ const IndexPage = props => {
         {/* New design methodology */}
         {shouldRender(data15) && (
           <BlockRow
+            mobile={addPaddings('4', '4')}
             smallTablet={addPaddings('5', '5')}
             tablet={addPaddings('6', '6')}
             desktop={addPaddings('6', '6')}
@@ -298,6 +318,7 @@ const IndexPage = props => {
           <BlockRow
             rowReverse
             alignCenter
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '8' }}
@@ -311,6 +332,7 @@ const IndexPage = props => {
           <BlockRow
             rowReverse
             alignCenter
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -323,6 +345,7 @@ const IndexPage = props => {
         {shouldRender(data18) && (
           <BlockRow
             alignCenter
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -334,6 +357,7 @@ const IndexPage = props => {
         {/* Documentation */}
         {shouldRender(data19) && (
           <BlockRow
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '5' }}
             tablet={{ bottom: '6' }}
             desktop={{ bottom: '6' }}
@@ -345,6 +369,7 @@ const IndexPage = props => {
         {/* Image - Text styles */}
         {shouldRender(data20) && (
           <BlockRow
+            mobile={{ bottom: '4' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -356,6 +381,7 @@ const IndexPage = props => {
         {/* Extensive documentation */}
         {shouldRender(data21) && (
           <BlockRow
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '5' }}
             tablet={{ bottom: '6' }}
             desktop={{ bottom: '6' }}
@@ -367,6 +393,7 @@ const IndexPage = props => {
         {/* Image - Password text field */}
         {shouldRender(data22) && (
           <BlockRow
+            mobile={{ bottom: '6' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -381,6 +408,7 @@ const IndexPage = props => {
           {/* Aligning design and engineering */}
           {shouldRender(data23) && (
             <BlockRow
+              mobile={addPaddings('4', '4')}
               smallTablet={addPaddings('5', '5')}
               tablet={addPaddings('6', '6')}
               desktop={addPaddings('6', '6')}
@@ -393,6 +421,7 @@ const IndexPage = props => {
           {shouldRender(data24) && (
             <BlockRow
               rowReverse
+              mobile={{ bottom: '0' }}
               smallTablet={{ bottom: '5' }}
               tablet={{ bottom: '6' }}
               desktop={{ bottom: '6' }}
@@ -408,6 +437,7 @@ const IndexPage = props => {
           {/* Reaping the immediate rewards */}
           {shouldRender(data25) && (
             <BlockRow
+              mobile={addPaddings('4', '4')}
               smallTablet={addPaddings('5', '5')}
               tablet={addPaddings('6', '6')}
               desktop={addPaddings('6', '6')}
@@ -429,6 +459,7 @@ const IndexPage = props => {
         {/* The product blueprint */}
         {shouldRender(data27) && (
           <BlockRow
+            mobile={addPaddings('5', '4')}
             smallTablet={addPaddings('6', '5')}
             tablet={addPaddings('7', '6')}
             desktop={addPaddings('7', '6')}
@@ -440,6 +471,7 @@ const IndexPage = props => {
         {/* Documented content layout */}
         {shouldRender(data28) && (
           <BlockRow
+            mobile={{ bottom: '4' }}
             smallTablet={{ bottom: '5' }}
             tablet={{ bottom: '6' }}
             desktop={{ bottom: '6' }}
@@ -451,6 +483,7 @@ const IndexPage = props => {
         {/* Product implementation */}
         {shouldRender(data29) && (
           <BlockRow
+            mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '7' }}
@@ -465,6 +498,7 @@ const IndexPage = props => {
           {/* Improving our process */}
           {shouldRender(data30) && (
             <BlockRow
+              mobile={addPaddings('4', '5')}
               smallTablet={addPaddings('5', '6')}
               tablet={addPaddings('6', '7')}
               desktop={addPaddings('6', '7')}
@@ -479,9 +513,10 @@ const IndexPage = props => {
         {/* Leaving in good health */}
         {shouldRender(data31) && (
           <BlockRow
-            desktop={addPaddings('5', '6')}
-            smallTablet={addPaddings('6', '7')}
+            mobile={addPaddings('4', '5')}
+            smallTablet={addPaddings('5', '6')}
             tablet={addPaddings('6', '7')}
+            desktop={addPaddings('6', '7')}
           >
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
