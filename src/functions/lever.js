@@ -1,5 +1,5 @@
 const got = require('got')
-const { URL, format } = require('url')
+const { URL } = require('url')
 const isEqual = require('lodash.isequal')
 
 /**
@@ -26,18 +26,11 @@ const {
 exports.handler = async () => {
   const isProd = LAMBDA_ENV === 'production'
 
-  const metaHref = format({
-    ...URL(isProd ? NETLIFY_URL : 'http://localhost:8000'),
-    pathname: '/meta.json'
-  })
+  const metaHref = new URL(
+    `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`
+  )
 
-  const leverHref = format({
-    ...URL('https://api.lever.co'),
-    pathname: '/v0/postings/yld',
-    query: {
-      mode: 'json'
-    }
-  })
+  const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json')
 
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })
