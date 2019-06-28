@@ -27,25 +27,27 @@ const ImgContainerCol = styled(Col)`
 `
 
 const CommunitySection = ({
-  logo,
-  text,
-  backgroundTitle,
-  backgroundUrl,
-  logoTitle,
-  logoUrl,
+  communityText,
+  communityBackgroundTitle,
+  communityBackgroundUrl,
+  communityLogoTitle,
+  communityLogoUrl,
   title
 }) =>
-  text ? (
+  communityText ? (
     <BlueBackground>
       <Trimmer>
-        <TrimmedImage alt={backgroundTitle} src={backgroundUrl} />
+        <TrimmedImage
+          alt={communityBackgroundTitle}
+          src={communityBackgroundUrl}
+        />
         <Padding top={5} bottom={5}>
           <Row>
             <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
-              {logo ? (
+              {communityLogoTitle ? (
                 <img
-                  alt={logoTitle}
-                  src={logoUrl}
+                  alt={communityLogoTitle}
+                  src={communityLogoUrl}
                   style={{ maxHeight: '100px' }}
                 />
               ) : null}
@@ -56,7 +58,7 @@ const CommunitySection = ({
                 reverse
               >{`${title.trim()} community`}</SectionTitle>
               <BodyPrimary reverse muted>
-                {text}
+                {communityText}
               </BodyPrimary>
             </Col>
           </Row>

@@ -17,7 +17,7 @@ import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
 
-const ajv = new Ajv({ allErrors: true })
+const ajv = new Ajv({ allErrors: true, verbose: true })
 
 const getExternalType = (speciality, type) =>
   speciality.externalResources.filter(
@@ -44,81 +44,105 @@ const getSpecialityEvents = (title, events) =>
 
 const flattenSpeciality = speciality => {
   return {
-    slug: Get(speciality, 'slug', null),
-    title: Get(speciality, 'title', null), // required
-    seoTitle: Get(speciality, 'seoTitle', null), // required
-    seoMetaDescription: Get(speciality, 'seoMetaDescription', null), // required
-    seoText: Get(speciality, 'seoText.content[0].content[0].value', null), // required
-    introGraphicTitle: Get(speciality, 'introGraphic.title', null), // required
-    introGraphicFileUrl: Get(speciality, 'introGraphic.file.url', null), // required
-    introTitle: Get(speciality, 'introTitle', null), // required
-    introTextTitle1: Get(speciality, 'introTextTitle1', null), // required
+    slug: Get(speciality, 'slug', undefined),
+    title: Get(speciality, 'title', undefined), // required
+    seoTitle: Get(speciality, 'seoTitle', undefined), // required
+    seoMetaDescription: Get(speciality, 'seoMetaDescription', undefined), // required
+    seoText: Get(speciality, 'seoText.content[0].content[0].value', undefined), // required
+    introGraphicTitle: Get(speciality, 'introGraphic.title', undefined), // required
+    introGraphicFileUrl: Get(speciality, 'introGraphic.file.url', undefined), // required
+    introTitle: Get(speciality, 'introTitle', undefined), // required
+    introTextTitle1: Get(speciality, 'introTextTitle1', undefined), // required
     introTextBody1: Get(
       speciality,
       'introTextBody1.content[0].content[0].value',
-      null
+      undefined
     ), // required
-    introTextTitle2: Get(speciality, 'introTextTitle2', null), // required
+    introTextTitle2: Get(speciality, 'introTextTitle2', undefined), // required
     introTextBody2: Get(
       speciality,
       'introTextBody2.content[0].content[0].value',
-      null
+      undefined
     ), // required
-    introTextTitle3: Get(speciality, 'introTextTitle3', null), // required
+    introTextTitle3: Get(speciality, 'introTextTitle3', undefined), // required
     introTextBody3: Get(
       speciality,
       'introTextBody3.content[0].content[0].value',
-      null
+      undefined
     ), // required
     trainingIntroText: Get(
       speciality,
       'trainingIntroText.content[0].content[0].value',
-      null
+      undefined
     ), // required
-    trainingTextIcon1Title: Get(speciality, 'trainingTextIcon1.title', null), // required
-    trainingTextIcon1Url: Get(speciality, 'trainingTextIcon1.file.url', null), // required
-    trainingTextTitle1: Get(speciality, 'trainingTextTitle1', null), // required
+    trainingTextIcon1Title: Get(
+      speciality,
+      'trainingTextIcon1.title',
+      undefined
+    ), // required
+    trainingTextIcon1Url: Get(
+      speciality,
+      'trainingTextIcon1.file.url',
+      undefined
+    ), // required
+    trainingTextTitle1: Get(speciality, 'trainingTextTitle1', undefined), // required
     trainingTextBody1: Get(
       speciality,
       'trainingTextBody1.content[0].content[0].value',
-      null
+      undefined
     ), // required
-    trainingTextIcon2Title: Get(speciality, 'trainingTextIcon2.title', null), // required
-    trainingTextIcon2Url: Get(speciality, 'trainingTextIcon2.file.url', null), // required
-    trainingTextTitle2: Get(speciality, 'trainingTextTitle2', null), // required
+    trainingTextIcon2Title: Get(
+      speciality,
+      'trainingTextIcon2.title',
+      undefined
+    ), // required
+    trainingTextIcon2Url: Get(
+      speciality,
+      'trainingTextIcon2.file.url',
+      undefined
+    ), // required
+    trainingTextTitle2: Get(speciality, 'trainingTextTitle2', undefined), // required
     trainingTextBody2: Get(
       speciality,
       'trainingTextBody2.content[0].content[0].value',
-      null
+      undefined
     ), // required
-    trainingTextIcon3Title: Get(speciality, 'trainingTextIcon3.title', null), // required
-    trainingTextIcon3Url: Get(speciality, 'trainingTextIcon3.file.url', null), // required
-    trainingTextTitle3: Get(speciality, 'trainingTextTitle3', null), // required
+    trainingTextIcon3Title: Get(
+      speciality,
+      'trainingTextIcon3.title',
+      undefined
+    ), // required
+    trainingTextIcon3Url: Get(
+      speciality,
+      'trainingTextIcon3.file.url',
+      undefined
+    ), // required
+    trainingTextTitle3: Get(speciality, 'trainingTextTitle3', undefined), // required
     trainingTextBody3: Get(
       speciality,
       'trainingTextBody3.content[0].content[0].value',
-      null
+      undefined
     ), // required
     communityText: Get(
       speciality,
       'communityText.content[0].content[0].value',
-      null
+      undefined
     ),
-    communityLogoTitle: Get(speciality, 'communityLogo.title', null),
-    communityLogoUrl: Get(speciality, 'communityLogo.file.url', null),
+    communityLogoTitle: Get(speciality, 'communityLogo.title', undefined),
+    communityLogoUrl: Get(speciality, 'communityLogo.file.url', undefined),
     communityBackgroundTitle: Get(
       speciality,
       'communityBackground.title',
-      null
+      undefined
     ),
     communityBackgroundUrl: Get(
       speciality,
       'communityBackground.file.url',
-      null
+      undefined
     ),
-    eventIconTitle: Get(speciality, 'eventIcon.title', null),
-    eventIconUrl: Get(speciality, 'eventIcon.file.url', null),
-    contactText: Get(speciality, 'contactText', null) // required
+    eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
+    eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
+    contactText: Get(speciality, 'contactText', undefined) // required
   }
 }
 
@@ -133,23 +157,22 @@ const communitySchema = {
     communityText: {
       type: 'string'
     },
-    // "communityLogoTitle": {
-    //   "type": "string"
-    // },
-    // "communityLogoUrl": {
-    //   "type": "string"
-    // },
+    communityLogoTitle: {
+      type: 'string'
+    },
+    communityLogoUrl: {
+      type: 'string'
+    },
     communityBackgroundTitle: {
       type: 'string'
     },
     communityBackgroundUrl: {
-      type: 'string',
-      format: 'uri-template'
+      type: 'string'
     }
   },
   dependencies: {
-    communityBackgroundTitle: ['communityBackgroundUrl'],
-    communityBackgroundUrl: ['communityBackgroundTitle']
+    communityLogoTitle: ['communityLogoUrl'],
+    communityLogoUrl: ['communityLogoTitle']
   },
   required: [
     'title',
@@ -172,19 +195,9 @@ const Speciality = ({
 
   const flattenedSpeciality = flattenSpeciality(speciality)
 
-  let {
-    title,
-    communityBackgroundTitle,
-    communityBackgroundUrl,
-    communityText,
-    communityLogoTitle,
-    communityLogoUrl,
-    contactText
-  } = flattenedSpeciality
-
-  // communityBackgroundTitle = 0
-
   const validateCommunity = ajv.compile(communitySchema)
+
+  const { title, contactText } = flattenedSpeciality
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
@@ -204,14 +217,7 @@ const Speciality = ({
       />
       <TrainingSection speciality={flattenedSpeciality} />
       {validateCommunity(flattenedSpeciality) && (
-        <CommunitySection
-          backgroundTitle={communityBackgroundTitle}
-          backgroundUrl={communityBackgroundUrl}
-          logoTitle={communityLogoTitle}
-          logoUrl={communityLogoUrl}
-          text={communityText}
-          title={title}
-        />
+        <CommunitySection {...flattenedSpeciality} />
       )}
       <EventSection
         events={specialityEvents}
@@ -226,7 +232,9 @@ const Speciality = ({
       />
       {tutorials && tutorials.length ? (
         <TutorialsSection speciality={title} tutorials={tutorials} />
-      ) : null}
+      ) : (
+        undefined
+      )}
       <BooksSection title={title} books={books} />
       <GetInTouch
         title={`Talk to us about ${title}`}
