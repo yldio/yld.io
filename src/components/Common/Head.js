@@ -28,19 +28,14 @@ const Head = ({ page }) => {
         }`
 
         const description = page.seoMetaDescription || page.seoDescription
-        const imageUrl = page.socialLogo
-          ? page.socialLogo
-          : `${siteUrl}${image}`
+        const imageUrl = page.socialLogo || `${siteUrl}${image}`
 
         return (
           <Helmet>
             <html lang="en" />
             <title>{title}</title>
 
-            <meta
-              name="description"
-              content={page.seoMetaDescription || page.seoDescription}
-            />
+            <meta name="description" content={description} />
 
             {page.keywords && <meta name="keywords" content={page.keywords} />}
 
