@@ -1,12 +1,12 @@
 import React from 'react'
+import { Padding } from 'styled-components-spacing'
 import { Col, Row } from '../grid'
 import JobsByLocation from '../JobsByLocation'
-import { Padding } from 'styled-components-spacing'
 import { SectionTitle, Subtitle } from '../Typography'
-import { Section } from './elements'
-import Hr from '../Common/Hr'
-import GetInTouch from '../Common/GetInTouch'
-import JobLink from '../Common/JobLink'
+import { Section } from '../JoinUs/elements'
+import Hr from './Hr'
+import GetInTouch from './GetInTouch'
+import JobLink from './JobLink'
 
 const renderJobsForlocation = (jobs, location, key) => {
   return (
@@ -42,7 +42,7 @@ const renderJobsForlocation = (jobs, location, key) => {
 }
 
 const OpenPositions = React.forwardRef(
-  ({ data: { title, getInTouchText, getInTouchTitle } }, ref) => (
+  ({ data: { title, getInTouchText, getInTouchTitle } }, ref = null) => (
     <div ref={ref}>
       <Section greyBg id="open-positions">
         <Padding top={{ smallPhone: 3, tablet: 4 }}>
@@ -59,7 +59,9 @@ const OpenPositions = React.forwardRef(
           </Padding>
         </Padding>
       </Section>
-      <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+      {getInTouchText && getInTouchTitle && (
+        <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+      )}
     </div>
   )
 )

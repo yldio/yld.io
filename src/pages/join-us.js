@@ -6,7 +6,7 @@ import Learning from '../components/JoinUs/Learning'
 import Work from '../components/JoinUs/Work'
 import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
-import OpenPositions from '../components/JoinUs/OpenPositions'
+import OpenPositions from '../components/Common/OpenPositions'
 import Head from '../components/Common/Head'
 import scrollToComponent from 'react-scroll-to-component'
 
