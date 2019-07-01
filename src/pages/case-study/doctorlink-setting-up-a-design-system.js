@@ -29,6 +29,8 @@ const BlockRow = styled(Row)`
   padding-bottom: ${({ theme, mobile }) =>
     mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
   width: ${({ widthPerc }) => widthPerc};
+  justify-content: ${({ spaceEvenly }) =>
+    spaceEvenly ? 'space-evenly' : null};
 
 ${breakpoint('smallTablet')`
   padding-top: ${({ theme, smallTablet }) =>
@@ -257,7 +259,7 @@ const IndexPage = props => {
           {shouldRender(data11) && (
             <BlockRow
               rowReverse
-              mobile={addPaddings('4', '5')}
+              mobile={addPaddings('0', '5')}
               smallTablet={addPaddings('6', '5')}
               tablet={addPaddings('7', '6')}
               desktop={addPaddings('8', '6')}
@@ -269,10 +271,11 @@ const IndexPage = props => {
           {/* images - 4 images block */}
           {shouldRender(data12) && (
             <BlockRow
-              mobile={{ bottom: '4' }}
+              mobile={{ bottom: '2' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
               desktop={{ bottom: '7' }}
+              spaceEvenly
             >
               <ImagesBlock data={normaliseImages(data12[0])} />
             </BlockRow>
