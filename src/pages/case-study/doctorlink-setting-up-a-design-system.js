@@ -70,8 +70,7 @@ const normalise = (arr = []) => {
   return normalised[0]
 }
 
-const normaliseImages = ({ genericBlockImages = [] }) =>
-  genericBlockImages.map(imageData => imageData.file && imageData.file.url)
+const normaliseImages = ({ genericBlockImages = [] }) => genericBlockImages
 
 const shouldRender = data => data && data.length
 

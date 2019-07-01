@@ -55,9 +55,9 @@ const ImagesBlock = ({ data }) => {
 
   return (
     <Fragment>
-      {data.map(imageUrl => (
-        <Col width={colWidth} key={imageUrl}>
-          {renderImage(imageUrl)}
+      {data.map(image => (
+        <Col width={colWidth} key={image}>
+          {renderImage(image)}
         </Col>
       ))}
     </Fragment>
