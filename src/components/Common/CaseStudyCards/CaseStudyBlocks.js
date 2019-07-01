@@ -22,12 +22,19 @@ const renderText = (text, colorReverse, disallowed = []) =>
     />
   )
 
+//   smallPhone: 0,
+//   phone: 471,
+//   largePhone: 553,
+//   smallTablet: 701, // sharon
+//   tablet: 901,
+//   desktop: 1197
+
 const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   <Fragment>
-    <Col width={[1, 1, 1, 1 / 2]}>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
       {renderText(text, colorReverse, ['paragraph'])}
     </Col>
-    <Col width={[1, 1, 1, 1 / 2]}>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
       {renderText(text, colorReverse, ['heading'])}
     </Col>
   </Fragment>
@@ -35,8 +42,8 @@ const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
 
 const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
   <Fragment>
-    <Col width={[1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
-    <Col width={[1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
   </Fragment>
 )
 
@@ -51,7 +58,7 @@ const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
 
 const ImagesBlock = ({ data }) => {
   const l = data.length
-  const colWidth = [1, 1, 2 / l, 2 / l, 1 / l]
+  const colWidth = [2 / l, 2 / l, 2 / l, 1 / l, 1 / l, 1 / l]
 
   return (
     <Fragment>
