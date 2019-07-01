@@ -52,6 +52,15 @@ ${breakpoint('desktop')`
 `}
 `
 
+const ReversableDiv = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+
+  ${breakpoint('smallTablet')`
+    flex-direction: column;
+  `}
+`
+
 const addPaddings = (top, bottom) => ({
   top,
   bottom
@@ -222,53 +231,53 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        {/* Colour */}
-        {shouldRender(data9) && (
-          <BlockRow
-            mobile={{ bottom: '5' }}
-            smallTablet={{ bottom: '5' }}
-            tablet={{ bottom: '6' }}
-            desktop={{ bottom: '6' }}
-          >
-            <TextAndImageBlock data={normalise(data9)} />
-          </BlockRow>
-        )}
+        <ReversableDiv>
+          {/* Colour */}
+          {shouldRender(data9) && (
+            <BlockRow
+              mobile={{ bottom: '5' }}
+              smallTablet={{ bottom: '5' }}
+              tablet={{ bottom: '6' }}
+              desktop={{ bottom: '6' }}
+            >
+              <TextAndImageBlock data={normalise(data9)} />
+            </BlockRow>
+          )}
 
-        {/* ASK JAMES - ARE THESE 2 SECTIONS INVERTED ON MOBILE? */}
+          {/* Image - Colour */}
+          {shouldRender(data10) && (
+            <BlockRow>
+              <FullWidthBlock data={normalise(data10)} />
+            </BlockRow>
+          )}
+        </ReversableDiv>
 
-        {/* Image - Colour */}
-        {shouldRender(data10) && (
-          <BlockRow>
-            <FullWidthBlock data={normalise(data10)} />
-          </BlockRow>
-        )}
+        <ReversableDiv>
+          {/* Illustrations */}
+          {shouldRender(data11) && (
+            <BlockRow
+              rowReverse
+              mobile={addPaddings('4', '5')}
+              smallTablet={addPaddings('6', '5')}
+              tablet={addPaddings('7', '6')}
+              desktop={addPaddings('8', '6')}
+            >
+              <TextAndImageBlock data={normalise(data11)} />
+            </BlockRow>
+          )}
 
-        {/* Illustrations */}
-        {shouldRender(data11) && (
-          <BlockRow
-            rowReverse
-            mobile={addPaddings('4', '5')}
-            smallTablet={addPaddings('6', '5')}
-            tablet={addPaddings('7', '6')}
-            desktop={addPaddings('8', '6')}
-          >
-            <TextAndImageBlock data={normalise(data11)} />
-          </BlockRow>
-        )}
-
-        {/* ASK JAMES - ARE THESE 2 SECTIONS INVERTED ON MOBILE? */}
-
-        {/* images - 4 images block */}
-        {shouldRender(data12) && (
-          <BlockRow
-            mobile={{ bottom: '4' }}
-            smallTablet={{ bottom: '6' }}
-            tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
-          >
-            <ImagesBlock data={normaliseImages(data12[0])} />
-          </BlockRow>
-        )}
+          {/* images - 4 images block */}
+          {shouldRender(data12) && (
+            <BlockRow
+              mobile={{ bottom: '4' }}
+              smallTablet={{ bottom: '6' }}
+              tablet={{ bottom: '7' }}
+              desktop={{ bottom: '7' }}
+            >
+              <ImagesBlock data={normaliseImages(data12[0])} />
+            </BlockRow>
+          )}
+        </ReversableDiv>
       </Grid>
 
       <GreyBackground>
