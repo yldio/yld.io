@@ -1,10 +1,20 @@
 import React, { Fragment } from 'react'
 import ReactMarkdown from 'react-markdown'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Col } from '../../../components/grid'
 import { SectionTitle, BodyPrimary } from '../../../components/Typography'
 import Image from '../../../components/Common/Image'
 import VideoSection from '../../../components/Common/VideoSection'
+
+const StyledColumnImage = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+  `}
+`
 
 const renderImage = data => data && <Image image={data} />
 
@@ -21,13 +31,6 @@ const renderText = (text, colorReverse, disallowed = []) =>
       source={text}
     />
   )
-
-//   smallPhone: 0,
-//   phone: 471,
-//   largePhone: 553,
-//   smallTablet: 701, // sharon
-//   tablet: 901,
-//   desktop: 1197
 
 const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   <Fragment>
@@ -58,14 +61,22 @@ const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
 
 const ImagesBlock = ({ data }) => {
   const l = data.length
-  const colWidth = [2 / l, 2 / l, 2 / l, 1 / l, 1 / l, 1 / l]
+  const lWithGap = l + 1
+  const colWidth = [
+    2 / lWithGap,
+    2 / lWithGap,
+    1 / lWithGap,
+    1 / lWithGap,
+    1 / l,
+    1 / l
+  ]
 
   return (
     <Fragment>
       {data.map((image, index) => (
-        <Col width={colWidth} key={index}>
+        <StyledColumnImage width={colWidth} key={index}>
           {renderImage(image)}
-        </Col>
+        </StyledColumnImage>
       ))}
     </Fragment>
   )
