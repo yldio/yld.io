@@ -13,7 +13,8 @@ const TalksSection = ({ talks: allTalks }) => {
   const talks = allTalks.filter(({ featured, cta }) => !featured && !cta)
   const featured = allTalks.find(({ featured }) => featured)
   const cta = allTalks.find(({ cta }) => cta)
-  return talks.length ? (
+
+  return talks && talks.length ? (
     <BlueBackground>
       <Grid>
         <Padding top={4} bottom={5}>

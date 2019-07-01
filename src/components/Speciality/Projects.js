@@ -52,7 +52,7 @@ const CompaniesHelped = ({ clients, noOther }) => (
 const ProjectsSection = ({ related, title, clients }) => (
   <Grid>
     <Padding top={5} bottom={5}>
-      {related ? (
+      {related && related.length ? (
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
@@ -84,7 +84,7 @@ const ProjectsSection = ({ related, title, clients }) => (
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
       ) : null}
-      {clients ? <CompaniesHelped clients={clients} /> : null}
+      {clients && clients.length ? <CompaniesHelped clients={clients} /> : null}
     </Padding>
   </Grid>
 )
