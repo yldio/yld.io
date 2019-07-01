@@ -26,6 +26,14 @@ const StyledColumnImage = styled(Col)`
   `}
 `
 
+const StyledColumnImage = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+  `}
+`
+
 const renderImage = data => data && <Image image={data} />
 
 /* The reason for this is to solve inconsistent CSS Styling Between gatsby develop and build.
