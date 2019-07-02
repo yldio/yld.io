@@ -16,9 +16,8 @@ import {
   VideoBlock,
   ImagesBlock
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
-
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
-// import Statement from '../../components/Common/Statement'
+import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const BlockRow = styled(Row)`
@@ -28,7 +27,6 @@ const BlockRow = styled(Row)`
     mobile && mobile.top ? theme.space[mobile.top] : null};
   padding-bottom: ${({ theme, mobile }) =>
     mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
-  width: ${({ widthPerc }) => widthPerc};
   justify-content: ${({ spaceEvenly }) =>
     spaceEvenly ? 'space-evenly' : null};
 
@@ -140,15 +138,7 @@ const IndexPage = props => {
         <Grid>
           {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
           {shouldRender(data1) && (
-            <BlockRow
-              mobile={addPaddings('4', '4')}
-              smallTablet={addPaddings('4', '4')}
-              tablet={addPaddings('4', '4')}
-              desktop={addPaddings('6', '6')}
-              widthPerc="75%"
-            >
-              <FullWidthBlock data={normalise(data1)} />
-            </BlockRow>
+            <Statement>{normalise(data1).text}</Statement>
           )}
         </Grid>
       </GreyBackground>
