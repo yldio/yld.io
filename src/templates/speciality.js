@@ -510,7 +510,7 @@ export const pageQuery = graphql`
       trainingTextIcon1 {
         id
         title
-        fluid(maxWidth: 600) {
+        fluid {
           ...GatsbyContentfulFluid_withWebp
         }
         file {
@@ -532,7 +532,7 @@ export const pageQuery = graphql`
       trainingTextIcon2 {
         id
         title
-        fluid(maxWidth: 600) {
+        fluid {
           ...GatsbyContentfulFluid_withWebp
         }
         file {
@@ -554,7 +554,7 @@ export const pageQuery = graphql`
       trainingTextIcon3 {
         id
         title
-        fluid(maxWidth: 600) {
+        fluid {
           ...GatsbyContentfulFluid_withWebp
         }
         file {

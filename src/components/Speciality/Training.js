@@ -13,7 +13,7 @@ const TrainingStageContainer = styled.div`
   padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
-const StyledImage = styled(Image)`
+const StyledImageBorder = styled.div`
   padding-bottom: ${remcalc(18)};
 `
 
@@ -25,7 +25,13 @@ const TrainingSectionContainer = styled.div`
 const TrainingStage = ({ title, body, iconTitle, icon }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
     <TrainingStageContainer>
-      <StyledImage alt={iconTitle} image={icon} />
+      <StyledImageBorder>
+        <Image
+          alt={iconTitle}
+          image={icon}
+          style={{ height: '50px', width: 'auto' }}
+        />
+      </StyledImageBorder>
       <Subtitle>{title}</Subtitle>
       <BodyPrimary>{body}</BodyPrimary>
     </TrainingStageContainer>
