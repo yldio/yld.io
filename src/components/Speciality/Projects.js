@@ -36,12 +36,12 @@ const PosterLinks = ({ project }) => (
   </AnimatedLink>
 )
 
-const CompaniesHelped = ({ clients, noOther }) => (
+const CompaniesHelped = ({ clients }) => (
   <Fragment>
     <Row>
       <Col width={[1, 1, 1, 1, 1 / 2]}>
         <Padding top={5} bottom={3}>
-          <Subtitle>{noOther ? 'C' : 'Other c'}lients we helped</Subtitle>
+          <Subtitle>Other clients we helped</Subtitle>
         </Padding>
       </Col>
     </Row>
