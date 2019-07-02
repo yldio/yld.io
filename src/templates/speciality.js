@@ -51,7 +51,7 @@ const flattenSpeciality = speciality => {
     seoMetaDescription: Get(speciality, 'seoMetaDescription', undefined), // required
     seoText: Get(speciality, 'seoText.content[0].content[0].value', undefined), // required
     introGraphicTitle: Get(speciality, 'introGraphic.title', undefined), // required
-    introGraphicFileUrl: Get(speciality, 'introGraphic.file.url', undefined), // required
+    introGraphicFile: Get(speciality, 'introGraphic', undefined), // required
     introTitle: Get(speciality, 'introTitle', undefined), // required
     introTextTitle1: Get(speciality, 'introTextTitle1', undefined), // required
     introTextBody1: Get(
@@ -782,9 +782,11 @@ export const pageQuery = graphql`
       }
       introGraphic {
         id
+        fluid(maxWidth: 600) {
+          ...GatsbyContentfulFluid_withWebp
+        }
         title
         file {
-          fileName
           url
         }
       }

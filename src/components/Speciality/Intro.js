@@ -7,6 +7,7 @@ import remcalc from 'remcalc'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import BlueBackground from '../Common/BlueBackground'
+import Image from '../Common/Image'
 
 const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -46,9 +47,9 @@ const IntroSection = ({ speciality }) => (
             </Flex>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <img
+            <Image
               alt={speciality.introGraphicTitle}
-              src={speciality.introGraphicFileUrl}
+              image={speciality.introGraphicFile}
               style={{ maxHeight: '100%' }}
             />
           </Col>
