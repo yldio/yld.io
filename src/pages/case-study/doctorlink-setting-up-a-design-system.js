@@ -459,7 +459,6 @@ const IndexPage = props => {
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <TextAndResizedImageBlock data={normalise(data17)} />
           </BlockRow>
@@ -473,7 +472,6 @@ const IndexPage = props => {
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <TextAndResizedImageBlock data={normalise(data18)} />
           </BlockRow>
