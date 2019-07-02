@@ -79,7 +79,8 @@ const normalise = (arr = []) => {
   return normalised[0]
 }
 
-const normaliseImages = ({ genericBlockImages = [] }) => genericBlockImages
+const getImages = data =>
+  data.genericBlockImages ? data.genericBlockImages : []
 
 const shouldRender = data => data && data.length
 
@@ -267,7 +268,7 @@ const IndexPage = props => {
               desktop={{ bottom: '7' }}
               spaceEvenly
             >
-              <ImagesBlock data={normaliseImages(data12[0])} />
+              <ImagesBlock data={getImages(data12[0])} />
             </BlockRow>
           )}
         </ReversableDiv>
