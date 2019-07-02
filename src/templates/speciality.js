@@ -81,11 +81,7 @@ const flattenSpeciality = speciality => {
       'trainingTextIcon1.title',
       undefined
     ), // required
-    trainingTextIcon1Url: Get(
-      speciality,
-      'trainingTextIcon1.file.url',
-      undefined
-    ), // required
+    trainingTextIcon1: Get(speciality, 'trainingTextIcon1', undefined), // required
     trainingTextTitle1: Get(speciality, 'trainingTextTitle1', undefined), // required
     trainingTextBody1: Get(
       speciality,
@@ -97,11 +93,7 @@ const flattenSpeciality = speciality => {
       'trainingTextIcon2.title',
       undefined
     ), // required
-    trainingTextIcon2Url: Get(
-      speciality,
-      'trainingTextIcon2.file.url',
-      undefined
-    ), // required
+    trainingTextIcon2: Get(speciality, 'trainingTextIcon2', undefined), // required
     trainingTextTitle2: Get(speciality, 'trainingTextTitle2', undefined), // required
     trainingTextBody2: Get(
       speciality,
@@ -113,11 +105,7 @@ const flattenSpeciality = speciality => {
       'trainingTextIcon3.title',
       undefined
     ), // required
-    trainingTextIcon3Url: Get(
-      speciality,
-      'trainingTextIcon3.file.url',
-      undefined
-    ), // required
+    trainingTextIcon3: Get(speciality, 'trainingTextIcon3', undefined), // required
     trainingTextTitle3: Get(speciality, 'trainingTextTitle3', undefined), // required
     trainingTextBody3: Get(
       speciality,
@@ -870,6 +858,9 @@ export const pageQuery = graphql`
       trainingTextIcon1 {
         id
         title
+        fluid(maxWidth: 600) {
+          ...GatsbyContentfulFluid_withWebp
+        }
         file {
           url
           fileName
@@ -889,6 +880,9 @@ export const pageQuery = graphql`
       trainingTextIcon2 {
         id
         title
+        fluid(maxWidth: 600) {
+          ...GatsbyContentfulFluid_withWebp
+        }
         file {
           url
           fileName
@@ -908,6 +902,9 @@ export const pageQuery = graphql`
       trainingTextIcon3 {
         id
         title
+        fluid(maxWidth: 600) {
+          ...GatsbyContentfulFluid_withWebp
+        }
         file {
           url
           fileName
