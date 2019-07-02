@@ -59,28 +59,18 @@ const FullWidthBlock = ({ data: { text, image } }) => (
 
 const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
 
-const ImagesBlock = ({ data }) => {
-  const l = data.length
-  const lWithGap = l + 1
-  const colWidth = [
-    2 / lWithGap,
-    2 / lWithGap,
-    1 / lWithGap,
-    1 / lWithGap,
-    1 / l,
-    1 / l
-  ]
-
-  return (
-    <Fragment>
-      {data.map((image, index) => (
-        <StyledColumnImage width={colWidth} key={index}>
-          {renderImage(image)}
-        </StyledColumnImage>
-      ))}
-    </Fragment>
-  )
-}
+const ImagesBlock = ({ data }) => (
+  <Fragment>
+    {data.map((image, index) => (
+      <StyledColumnImage
+        width={[2 / 5, 2 / 5, 1 / 5, 1 / 5, 1 / 4, 1 / 4]}
+        key={index}
+      >
+        {renderImage(image)}
+      </StyledColumnImage>
+    ))}
+  </Fragment>
+)
 
 export {
   TextColumnsBlock,
