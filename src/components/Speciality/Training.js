@@ -1,25 +1,38 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../Common/GreyBackground'
 import StyledLink from '../Common/StyledLink'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
+
+const TrainingStageContainer = styled.div`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
+`
+
+const StyledImage = styled.img`
+  padding-bottom: ${remcalc(18)};
+`
+
+const TrainingSectionContainer = styled.div`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[8]};
+`
 
 const TrainingStage = ({ title, body, iconTitle, iconUrl }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
-    <Padding top={4} bottom={4}>
-      <Padding bottom={1.5}>
-        <img src={`https://${iconUrl}`} alt={iconTitle} />
-      </Padding>
+    <TrainingStageContainer>
+      <StyledImage src={`https://${iconUrl}`} alt={iconTitle} />
       <Subtitle>{title}</Subtitle>
       <BodyPrimary>{body}</BodyPrimary>
-    </Padding>
+    </TrainingStageContainer>
   </Col>
 )
 
 const TrainingSection = ({ speciality }) => (
   <GreyBackground>
-    <Padding top={4} bottom={6}>
+    <TrainingSectionContainer>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -57,7 +70,7 @@ const TrainingSection = ({ speciality }) => (
           </Col>
         </Row>
       </Grid>
-    </Padding>
+    </TrainingSectionContainer>
   </GreyBackground>
 )
 
