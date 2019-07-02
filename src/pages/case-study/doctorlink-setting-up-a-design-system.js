@@ -61,11 +61,6 @@ const ReversableDiv = styled.div`
   `}
 `
 
-const addPaddings = (top, bottom) => ({
-  top,
-  bottom
-})
-
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
 const normalise = (arr = []) => {
@@ -149,10 +144,9 @@ const IndexPage = props => {
         {shouldRender(data2) && (
           <BlockRow
             alignCenter
-            mobile={addPaddings('5', '5')}
-            smallTablet={addPaddings('7', '7')}
-            tablet={addPaddings('7', '7')}
-            desktop={addPaddings('7', '8')}
+            mobile={{ bottom: '5', top: '5' }}
+            smallTablet={{ bottom: '7', top: '7' }}
+            desktop={{ bottom: '8', top: '7' }}
           >
             <TextAndImageBlock data={normalise(data2)} />
           </BlockRow>
@@ -164,10 +158,10 @@ const IndexPage = props => {
         {/* Finding common ground */}
         {shouldRender(data4) && (
           <BlockRow
-            mobile={addPaddings('4', '4')}
-            smallTablet={addPaddings('5', '5')}
-            tablet={addPaddings('6', '6')}
-            desktop={addPaddings('7', '7')}
+            mobile={{ bottom: '4', top: '4' }}
+            smallTablet={{ bottom: '5', top: '5' }}
+            tablet={{ bottom: '6', top: '6' }}
+            desktop={{ bottom: '7', top: '7' }}
           >
             <TextColumnsBlock data={normalise(data4)} />
           </BlockRow>
@@ -179,10 +173,9 @@ const IndexPage = props => {
           {/* Seamless */}
           {shouldRender(data5) && (
             <BlockRow
-              mobile={addPaddings('4', '4')}
-              smallTablet={addPaddings('5', '5')}
-              tablet={addPaddings('6', '6')}
-              desktop={addPaddings('6', '6')}
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '5', top: '5' }}
+              tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock data={normalise(data5)} colorReverse />
             </BlockRow>
@@ -194,10 +187,10 @@ const IndexPage = props => {
         {/* A new visual language */}
         {shouldRender(data6) && (
           <BlockRow
-            mobile={addPaddings('4', '4')}
-            smallTablet={addPaddings('5', '5')}
-            tablet={addPaddings('6', '6')}
-            desktop={addPaddings('7', '6')}
+            mobile={{ bottom: '4', top: '4' }}
+            smallTablet={{ bottom: '5', top: '5' }}
+            tablet={{ bottom: '6', top: '6' }}
+            desktop={{ bottom: '6', top: '7' }}
           >
             <TextColumnsBlock data={normalise(data6)} />
           </BlockRow>
@@ -215,10 +208,10 @@ const IndexPage = props => {
           <BlockRow
             rowReverse
             alignCenter
-            mobile={addPaddings('5', '5')}
-            smallTablet={addPaddings('6', '6')}
-            tablet={addPaddings('7', '7')}
-            desktop={addPaddings('8', '8')}
+            mobile={{ bottom: '5', top: '5' }}
+            smallTablet={{ bottom: '6', top: '6' }}
+            tablet={{ bottom: '7', top: '7' }}
+            desktop={{ bottom: '8', top: '8' }}
           >
             <TextAndImageBlock data={normalise(data8)} />
           </BlockRow>
@@ -227,12 +220,7 @@ const IndexPage = props => {
         <ReversableDiv>
           {/* Colour */}
           {shouldRender(data9) && (
-            <BlockRow
-              mobile={{ bottom: '5' }}
-              smallTablet={{ bottom: '5' }}
-              tablet={{ bottom: '6' }}
-              desktop={{ bottom: '6' }}
-            >
+            <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
               <TextAndImageBlock data={normalise(data9)} />
             </BlockRow>
           )}
@@ -250,10 +238,10 @@ const IndexPage = props => {
           {shouldRender(data11) && (
             <BlockRow
               rowReverse
-              mobile={addPaddings('0', '5')}
-              smallTablet={addPaddings('6', '5')}
-              tablet={addPaddings('7', '6')}
-              desktop={addPaddings('8', '6')}
+              mobile={{ bottom: '5', top: '0' }}
+              smallTablet={{ bottom: '5', top: '6' }}
+              tablet={{ bottom: '6', top: '7' }}
+              desktop={{ bottom: '6', top: '8' }}
             >
               <TextAndImageBlock data={normalise(data11)} />
             </BlockRow>
@@ -265,7 +253,6 @@ const IndexPage = props => {
               mobile={{ bottom: '2' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
-              desktop={{ bottom: '7' }}
               spaceEvenly
             >
               <ImagesBlock data={getImages(data12[0])} />
@@ -279,10 +266,9 @@ const IndexPage = props => {
           {/* Prototyping and fast iteration */}
           {shouldRender(data13) && (
             <BlockRow
-              mobile={addPaddings('4', '4')}
-              smallTablet={addPaddings('5', '5')}
-              tablet={addPaddings('6', '6')}
-              desktop={addPaddings('6', '6')}
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '5', top: '5' }}
+              tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock data={normalise(data13)} />
             </BlockRow>
@@ -294,7 +280,6 @@ const IndexPage = props => {
               mobile={{ bottom: '5' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
-              desktop={{ bottom: '7' }}
             >
               <FullWidthBlock data={normalise(data14)} />
             </BlockRow>
@@ -306,10 +291,9 @@ const IndexPage = props => {
         {/* New design methodology */}
         {shouldRender(data15) && (
           <BlockRow
-            mobile={addPaddings('4', '4')}
-            smallTablet={addPaddings('5', '5')}
-            tablet={addPaddings('6', '6')}
-            desktop={addPaddings('6', '6')}
+            mobile={{ bottom: '4', top: '4' }}
+            smallTablet={{ bottom: '5', top: '5' }}
+            tablet={{ bottom: '6', top: '6' }}
           >
             <TextAndImageBlock data={normalise(data15)} />
           </BlockRow>
@@ -337,7 +321,6 @@ const IndexPage = props => {
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <TextAndImageBlock data={normalise(data17)} />
           </BlockRow>
@@ -350,7 +333,6 @@ const IndexPage = props => {
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <TextAndImageBlock data={normalise(data18)} />
           </BlockRow>
@@ -358,12 +340,7 @@ const IndexPage = props => {
 
         {/* Documentation */}
         {shouldRender(data19) && (
-          <BlockRow
-            mobile={{ bottom: '5' }}
-            smallTablet={{ bottom: '5' }}
-            tablet={{ bottom: '6' }}
-            desktop={{ bottom: '6' }}
-          >
+          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
             <TextAndImageBlock data={normalise(data19)} />
           </BlockRow>
         )}
@@ -374,7 +351,6 @@ const IndexPage = props => {
             mobile={{ bottom: '4' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <FullWidthBlock data={normalise(data20)} />
           </BlockRow>
@@ -382,24 +358,14 @@ const IndexPage = props => {
 
         {/* Extensive documentation */}
         {shouldRender(data21) && (
-          <BlockRow
-            mobile={{ bottom: '5' }}
-            smallTablet={{ bottom: '5' }}
-            tablet={{ bottom: '6' }}
-            desktop={{ bottom: '6' }}
-          >
+          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
             <TextAndImageBlock data={normalise(data21)} />
           </BlockRow>
         )}
 
         {/* Image - Password text field */}
         {shouldRender(data22) && (
-          <BlockRow
-            mobile={{ bottom: '6' }}
-            smallTablet={{ bottom: '6' }}
-            tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
-          >
+          <BlockRow mobile={{ bottom: '6' }} tablet={{ bottom: '7' }}>
             <FullWidthBlock data={normalise(data22)} />
           </BlockRow>
         )}
@@ -410,10 +376,9 @@ const IndexPage = props => {
           {/* Aligning design and engineering */}
           {shouldRender(data23) && (
             <BlockRow
-              mobile={addPaddings('4', '4')}
-              smallTablet={addPaddings('5', '5')}
-              tablet={addPaddings('6', '6')}
-              desktop={addPaddings('6', '6')}
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '5', top: '5' }}
+              tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock data={normalise(data23)} colorReverse />
             </BlockRow>
@@ -426,7 +391,6 @@ const IndexPage = props => {
               mobile={{ bottom: '0' }}
               smallTablet={{ bottom: '5' }}
               tablet={{ bottom: '6' }}
-              desktop={{ bottom: '6' }}
             >
               <TextAndImageBlock data={normalise(data24)} colorReverse />
             </BlockRow>
@@ -439,10 +403,9 @@ const IndexPage = props => {
           {/* Reaping the immediate rewards */}
           {shouldRender(data25) && (
             <BlockRow
-              mobile={addPaddings('4', '4')}
-              smallTablet={addPaddings('5', '5')}
-              tablet={addPaddings('6', '6')}
-              desktop={addPaddings('6', '6')}
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '5', top: '5' }}
+              tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock data={normalise(data25)} />
             </BlockRow>
@@ -461,10 +424,9 @@ const IndexPage = props => {
         {/* The product blueprint */}
         {shouldRender(data27) && (
           <BlockRow
-            mobile={addPaddings('5', '4')}
-            smallTablet={addPaddings('6', '5')}
-            tablet={addPaddings('7', '6')}
-            desktop={addPaddings('7', '6')}
+            mobile={{ bottom: '4', top: '5' }}
+            smallTablet={{ bottom: '5', top: '6' }}
+            tablet={{ bottom: '6', top: '7' }}
           >
             <TextAndImageBlock data={normalise(data27)} />
           </BlockRow>
@@ -476,7 +438,6 @@ const IndexPage = props => {
             mobile={{ bottom: '4' }}
             smallTablet={{ bottom: '5' }}
             tablet={{ bottom: '6' }}
-            desktop={{ bottom: '6' }}
           >
             <FullWidthBlock data={normalise(data28)} />
           </BlockRow>
@@ -488,7 +449,6 @@ const IndexPage = props => {
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
-            desktop={{ bottom: '7' }}
           >
             <FullWidthBlock data={normalise(data29)} />
           </BlockRow>
@@ -500,10 +460,9 @@ const IndexPage = props => {
           {/* Improving our process */}
           {shouldRender(data30) && (
             <BlockRow
-              mobile={addPaddings('4', '5')}
-              smallTablet={addPaddings('5', '6')}
-              tablet={addPaddings('6', '7')}
-              desktop={addPaddings('6', '7')}
+              mobile={{ bottom: '5', top: '4' }}
+              smallTablet={{ bottom: '6', top: '5' }}
+              tablet={{ bottom: '7', top: '6' }}
             >
               <TextColumnsBlock data={normalise(data30)} />
             </BlockRow>
@@ -515,10 +474,9 @@ const IndexPage = props => {
         {/* Leaving in good health */}
         {shouldRender(data31) && (
           <BlockRow
-            mobile={addPaddings('4', '5')}
-            smallTablet={addPaddings('5', '6')}
-            tablet={addPaddings('6', '7')}
-            desktop={addPaddings('6', '7')}
+            mobile={{ bottom: '5', top: '4' }}
+            smallTablet={{ bottom: '6', top: '5' }}
+            tablet={{ bottom: '7', top: '6' }}
           >
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
