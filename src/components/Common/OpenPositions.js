@@ -4,8 +4,6 @@ import { Col, Row } from '../grid'
 import JobsByLocation from '../JobsByLocation'
 import { SectionTitle, Subtitle } from '../Typography'
 import { Section } from '../JoinUs/elements'
-import Hr from './Hr'
-import GetInTouch from './GetInTouch'
 import JobLink from './JobLink'
 
 const renderJobsForlocation = (jobs, location, key) => {
@@ -41,28 +39,20 @@ const renderJobsForlocation = (jobs, location, key) => {
   )
 }
 
-const OpenPositions = React.forwardRef(
-  ({ data: { title, getInTouchText, getInTouchTitle } }, ref = null) => (
-    <div ref={ref}>
-      <Section greyBg id="open-positions">
-        <Padding top={{ smallPhone: 3, tablet: 4 }}>
-          <SectionTitle>{title}</SectionTitle>
-          <JobsByLocation>
-            {jobs =>
-              jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-                renderJobsForlocation(jobsForLocation, location, idx)
-              )
-            }
-          </JobsByLocation>
-          <Padding top={{ smallPhone: 3, tablet: 4 }}>
-            <Hr />
-          </Padding>
-        </Padding>
-      </Section>
-      {getInTouchText && getInTouchTitle && (
-        <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
-      )}
-    </div>
-  )
-)
+const OpenPositions = React.forwardRef(({ data: { title } }, ref = null) => (
+  <div ref={ref}>
+    <Section greyBg id="open-positions">
+      <Padding top={{ smallPhone: 3, tablet: 4 }}>
+        <SectionTitle>{title}</SectionTitle>
+        <JobsByLocation>
+          {jobs =>
+            jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+              renderJobsForlocation(jobsForLocation, location, idx)
+            )
+          }
+        </JobsByLocation>
+      </Padding>
+    </Section>
+  </div>
+))
 export default OpenPositions

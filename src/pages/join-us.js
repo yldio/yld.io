@@ -71,9 +71,7 @@ class JoinUs extends React.Component {
         />
         <OpenPositions
           data={{
-            title: content.openPositionsTitle,
-            getInTouchTitle: content.directApplicationTitle,
-            getInTouchText: content.directApplicationText.directApplicationText
+            title: content.openPositionsTitle
           }}
           ref={this.vacanciesRef}
         />
