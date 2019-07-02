@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Flex from 'styled-flex-component'
 import { Padding } from 'styled-components-spacing'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
@@ -18,22 +19,39 @@ const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(36)};
 `
 
+const StyledIntroRectangleInner = styled.div`
+  padding-top: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+      padding-top: ${({ theme }) => theme.space[2]};
+      padding-bottom: ${({ theme }) => theme.space[3]};
+      padding-left: ${({ theme }) => theme.space[4]};
+      padding-right: ${({ theme }) => theme.space[4]};
+  `}
+`
+
+const IntroSectionPadding = styled.div`
+  padding-top: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[7]};
+`
+
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
-    <Padding top={2} bottom={2}>
+    <StyledIntroRectangleInner>
       <Subtitle reverse noPadding>
         {introTextTitle}
       </Subtitle>
       <BodyPrimary muted reverse>
         {introTextBody}
       </BodyPrimary>
-    </Padding>
+    </StyledIntroRectangleInner>
   </IntroBorder>
 )
 
 const IntroSection = ({ speciality }) => (
   <StyledBlueBackground>
-    <Padding top={2} bottom={5}>
+    <IntroSectionPadding>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -81,7 +99,7 @@ const IntroSection = ({ speciality }) => (
           </Row>
         </Col>
       </Grid>
-    </Padding>
+    </IntroSectionPadding>
   </StyledBlueBackground>
 )
 export default IntroSection
