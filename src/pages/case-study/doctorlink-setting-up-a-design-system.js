@@ -132,7 +132,7 @@ const IndexPage = props => {
 
       <GreyBackground>
         <Grid>
-          {/* DoctorLink is a healthcare technology company with a mission to simplify the route to health and wellbeing for patients globally... */}
+          {/* DoctorLink is a healthcare technology company */}
           {shouldRender(data1) && (
             <Statement>{normalise(data1).text}</Statement>
           )}
@@ -170,7 +170,7 @@ const IndexPage = props => {
 
       <BlueBackground>
         <Grid>
-          {/* Seamless */}
+          {/* Seamless. Empowering. Universal. */}
           {shouldRender(data5) && (
             <BlockRow
               mobile={{ bottom: '4', top: '4' }}
@@ -196,14 +196,14 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        {/* Image - Continue / back */}
+        {/* Image for new visual language - Continue & back buttons / Name of GP practice */}
         {shouldRender(data7) && (
           <BlockRow>
             <FullWidthBlock data={normalise(data7)} />
           </BlockRow>
         )}
 
-        {/* Hi I am Noto sans */}
+        {/* Hi, I am Noto Sans */}
         {shouldRender(data8) && (
           <BlockRow
             rowReverse
@@ -225,7 +225,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
 
-          {/* Image - Colour */}
+          {/* Image for Colour */}
           {shouldRender(data10) && (
             <BlockRow>
               <FullWidthBlock data={normalise(data10)} />
@@ -247,7 +247,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
 
-          {/* images - 4 images block */}
+          {/* images for illustrations - 4 images block */}
           {shouldRender(data12) && (
             <BlockRow
               mobile={{ bottom: '2' }}
@@ -274,7 +274,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
 
-          {/* Image - Welcome to DoctorLink */}
+          {/* Image for Prototyping - Welcome to DoctorLink */}
           {shouldRender(data14) && (
             <BlockRow
               mobile={{ bottom: '5' }}
@@ -345,7 +345,7 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        {/* Image - Text styles */}
+        {/* Image for Documentation - Text styles */}
         {shouldRender(data20) && (
           <BlockRow
             mobile={{ bottom: '4' }}
@@ -363,7 +363,7 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        {/* Image - Password text field */}
+        {/* Image for Extensive documentation - Password text field */}
         {shouldRender(data22) && (
           <BlockRow mobile={{ bottom: '6' }} tablet={{ bottom: '7' }}>
             <FullWidthBlock data={normalise(data22)} />
@@ -384,7 +384,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
 
-          {/* Properties / Tokens */}
+          {/* Save your details button image / Properties & Tokens */}
           {shouldRender(data24) && (
             <BlockRow
               rowReverse
@@ -411,7 +411,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
 
-          {/* Image - Check symptoms */}
+          {/* Image for reaping the immediate rewards - Check symptoms */}
           {shouldRender(data26) && (
             <BlockRow>
               <FullWidthBlock data={normalise(data26)} />
