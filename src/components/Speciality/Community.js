@@ -32,7 +32,7 @@ const CommunitySection = ({
   communityBackgroundTitle,
   communityBackground,
   communityLogoTitle,
-  communityLogoUrl,
+  communityLogo,
   title
 }) =>
   communityText ? (
@@ -46,9 +46,9 @@ const CommunitySection = ({
           <Row>
             <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
               {communityLogoTitle ? (
-                <img
+                <Image
                   alt={communityLogoTitle}
-                  src={communityLogoUrl}
+                  image={communityLogo}
                   style={{ maxHeight: '100px' }}
                 />
               ) : null}

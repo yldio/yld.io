@@ -118,7 +118,7 @@ const flattenSpeciality = speciality => {
       undefined
     ),
     communityLogoTitle: Get(speciality, 'communityLogo.title', undefined),
-    communityLogoUrl: Get(speciality, 'communityLogo.file.url', undefined),
+    communityLogo: Get(speciality, 'communityLogo', undefined),
     communityBackgroundTitle: Get(
       speciality,
       'communityBackground.title',
@@ -584,6 +584,9 @@ export const pageQuery = graphql`
       communityLogo {
         id
         title
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
         file {
           fileName
           url
