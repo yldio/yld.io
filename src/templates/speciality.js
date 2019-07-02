@@ -124,11 +124,7 @@ const flattenSpeciality = speciality => {
       'communityBackground.title',
       undefined
     ),
-    communityBackgroundUrl: Get(
-      speciality,
-      'communityBackground.file.url',
-      undefined
-    ),
+    communityBackground: Get(speciality, 'communityBackground', undefined),
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined) // required
@@ -154,21 +150,13 @@ const communitySchema = {
     },
     communityBackgroundTitle: {
       type: 'string'
-    },
-    communityBackgroundUrl: {
-      type: 'string'
     }
   },
   dependencies: {
     communityLogoTitle: ['communityLogoUrl'],
     communityLogoUrl: ['communityLogoTitle']
   },
-  required: [
-    'title',
-    'communityText',
-    'communityBackgroundTitle',
-    'communityBackgroundUrl'
-  ]
+  required: ['title', 'communityText', 'communityBackgroundTitle']
 }
 
 const projectsSchema = {
@@ -604,6 +592,9 @@ export const pageQuery = graphql`
       communityBackground {
         id
         title
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
         file {
           fileName
           url

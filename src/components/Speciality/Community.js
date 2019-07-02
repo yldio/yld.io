@@ -4,8 +4,9 @@ import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import BlueBackground from '../Common/BlueBackground'
 import styled from 'styled-components'
+import Image from '../Common/Image'
 
-const TrimmedImage = styled.img`
+const TrimmedImage = styled(Image)`
   position: absolute;
   height: 125%;
   max-height: 125%;
@@ -29,7 +30,7 @@ const ImgContainerCol = styled(Col)`
 const CommunitySection = ({
   communityText,
   communityBackgroundTitle,
-  communityBackgroundUrl,
+  communityBackground,
   communityLogoTitle,
   communityLogoUrl,
   title
@@ -39,7 +40,7 @@ const CommunitySection = ({
       <Trimmer>
         <TrimmedImage
           alt={communityBackgroundTitle}
-          src={communityBackgroundUrl}
+          image={communityBackground}
         />
         <Padding top={5} bottom={5}>
           <Row>
