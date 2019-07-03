@@ -64,10 +64,10 @@ const ReversableDiv = styled.div`
 `
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
-  flex-direction: column-reverse;
+  flex-direction: column;
 
   ${breakpoint('largePhone')`
-    flex-direction: row-reverse;
+    flex-direction: row;
   `}
 `
 
@@ -88,14 +88,14 @@ const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
       smallTablet={{ bottom: '5' }}
       tablet={{ bottom: '6' }}
     >
-      <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textTwo, colorReverse)}
-      </Col>
+      <Col width={[0, 0, 0, 0, 0, 3 / 8]}>{renderImage(image)}</Col>
+      <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textOne, colorReverse)}
       </Col>
-      <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
-      <Col width={[0, 0, 0, 0, 0, 3 / 8]}>{renderImage(image)}</Col>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
+        {renderText(textTwo, colorReverse)}
+      </Col>
     </PropertiesAndTokensBlockRow>
   )
 }
