@@ -16,7 +16,6 @@ import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
-// import NotFoundPage from '../pages/404'
 
 const ajv = new Ajv({ allErrors: true, verbose: true })
 
