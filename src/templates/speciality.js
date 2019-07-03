@@ -20,8 +20,8 @@ import Head from '../components/Common/Head'
 
 const ajv = new Ajv({ allErrors: true, verbose: true })
 
-const getExternalType = (speciality, type) =>
-  speciality.externalResources.filter(
+const getExternalType = (flattenedSpeciality, type) =>
+  flattenedSpeciality.externalResources.filter(
     additionalInfo => additionalInfo.type === type
   ) || []
 
@@ -127,7 +127,8 @@ const flattenSpeciality = speciality => {
     communityBackground: Get(speciality, 'communityBackground', undefined),
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
-    contactText: Get(speciality, 'contactText', undefined) // required
+    contactText: Get(speciality, 'contactText', undefined), // required
+    externalResources: Get(speciality, 'externalResources', [])
   }
 }
 
@@ -336,9 +337,9 @@ const Speciality = ({
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
-  const talks = getExternalType(speciality, `Talk`)
-  const tutorials = getExternalType(speciality, `Tutorial`)
-  const books = getExternalType(speciality, `Book`)
+  const talks = getExternalType(flattenedSpeciality, `Talk`)
+  const tutorials = getExternalType(flattenedSpeciality, `Tutorial`)
+  const books = getExternalType(flattenedSpeciality, `Book`)
   const specialityEvents = events ? getSpecialityEvents(title, events) : []
 
   // required: Head, IntroSection, TrainingSection, GetInTouch
