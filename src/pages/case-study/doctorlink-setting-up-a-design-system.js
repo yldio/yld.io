@@ -76,14 +76,14 @@ const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
 
   return (
     <Fragment>
-      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textTwo, colorReverse)}
       </Col>
-      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textOne, colorReverse)}
       </Col>
-      <Col width={[1, 1, 1, 1 / 2, 1 / 4]} />
-      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>{renderImage(image)}</Col>
+      <Col width={[0, 0, 0, 0, 0, 1 / 4]} />
+      <Col width={[0, 0, 0, 0, 0, 1 / 4]}>{renderImage(image)}</Col>
     </Fragment>
   )
 }
