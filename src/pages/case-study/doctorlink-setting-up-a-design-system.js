@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
-import { Grid, Row } from '../../components/grid'
+import { Grid, Row, Col } from '../../components/grid'
 import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import {
+  renderImage,
+  renderText,
   TextColumnsBlock,
   TextAndImageBlock,
   FullWidthBlock,
@@ -60,6 +62,16 @@ const ReversableDiv = styled.div`
     flex-direction: column;
   `}
 `
+
+const PropertiesAndTokensBlock = ({
+  data: { text, image },
+  colorReverse = false
+}) => (
+  <Fragment>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+  </Fragment>
+)
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
@@ -392,7 +404,7 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5' }}
               tablet={{ bottom: '6' }}
             >
-              <TextAndImageBlock data={normalise(data24)} colorReverse />
+              <PropertiesAndTokensBlock data={normalise(data24)} colorReverse />
             </BlockRow>
           )}
         </Grid>

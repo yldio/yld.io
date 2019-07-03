@@ -73,6 +73,8 @@ const ImagesBlock = ({ data }) => (
 )
 
 export {
+  renderImage,
+  renderText,
   TextColumnsBlock,
   TextAndImageBlock,
   FullWidthBlock,
