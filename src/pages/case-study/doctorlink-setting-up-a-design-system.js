@@ -63,15 +63,30 @@ const ReversableDiv = styled.div`
   `}
 `
 
-const PropertiesAndTokensBlock = ({
-  data: { text, image },
-  colorReverse = false
-}) => (
-  <Fragment>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
-  </Fragment>
-)
+const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
+  const {
+    genericBlockImages,
+    genericBlockText: { genericBlockText: textOne }
+  } = data[0]
+
+  const image = getImage(genericBlockImages, 0)
+  const {
+    genericBlockText: { genericBlockText: textTwo }
+  } = data[1]
+
+  return (
+    <Fragment>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>
+        {renderText(textTwo, colorReverse)}
+      </Col>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>
+        {renderText(textOne, colorReverse)}
+      </Col>
+      <Col width={[1, 1, 1, 1 / 2, 1 / 4]} />
+      <Col width={[1, 1, 1, 1 / 2, 1 / 4]}>{renderImage(image)}</Col>
+    </Fragment>
+  )
+}
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
@@ -404,7 +419,7 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5' }}
               tablet={{ bottom: '6' }}
             >
-              <PropertiesAndTokensBlock data={normalise(data24)} colorReverse />
+              <PropertiesAndTokensBlock data={data24} colorReverse />
             </BlockRow>
           )}
         </Grid>
