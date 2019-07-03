@@ -46,7 +46,7 @@ We have some docs to make it easier to get you started:
 
 - [Jest](https://jestjs.io/)
 - [Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/)
-- [Tescafe](https://devexpress.github.io/testcafe/)
+- [Testcafe](https://devexpress.github.io/testcafe/)
 
 ## Content in
 
@@ -102,6 +102,28 @@ Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./g
 Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lmabda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
 
 The zap is within the zapier account registered to `apis@yld.io`
+
+#### Github
+
+Local development requires:
+
+`GITHUB_TOKEN` - A personal access token generated on your personal github account. Create one [here](https://github.com/settings/tokens) with the following scopes: `public_repo`, `read:org`, `read:user`
+
+`CONTENTFUL_SPACE` - see [How to run](#how-to-run) section
+
+`CMS_CRUD` - see [How to run](#how-to-run) section
+
+`./src/functions/github.js`
+
+The aim of this lammbda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating data on a lambda and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
+
+- Repos
+  We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enyzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value edtiable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
+
+- Meta
+  Meta data is used a summary of all the repositories that yldio organisation has contributed to. This data is written directly to the Open Source content type.
+
+Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
 
 ## Content Model notes
 

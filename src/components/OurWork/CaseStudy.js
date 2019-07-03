@@ -49,6 +49,7 @@ const InfoSection = ({ introSentence, title, slug }) => (
     <StyledLink
       aria-label={`Learn more about ${title}`}
       to={`/case-study/${slug}`}
+      title={`Learn more about ${title}`}
     >
       Learn more
     </StyledLink>
@@ -71,7 +72,7 @@ const CaseStudy = ({ caseStudy }) => {
       </Col>
       <NonMobileCol width={[0, 0, 0, 0, 7 / 12, 6 / 12]}>
         <TitleSection services={services} title={title} />
-        <InfoSection introSentence={introSentence} slug={slug} />
+        <InfoSection introSentence={introSentence} title={title} slug={slug} />
       </NonMobileCol>
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
         <InfoSection introSentence={introSentence} title={title} slug={slug} />

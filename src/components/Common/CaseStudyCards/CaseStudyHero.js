@@ -15,7 +15,7 @@ const FlexCol = styled(Col)`
 const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
     <Subtitle noPaddingBottom>{heading}</Subtitle>
-    <Flex alignCenter wrap>
+    <Flex alignCenter wrap="true">
       <SeoLinks noPadding items={items} />
     </Flex>
   </Padding>
@@ -28,10 +28,10 @@ const SpecialitiesAndServices = ({ specialities, services }) => (
   </Padding>
 )
 
-const RightHandText = ({ title, specialities, services }) => (
+const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
   <Fragment>
     <Padding bottom={0.5}>
-      <SectionTitle>{title}</SectionTitle>
+      <SectionTitle as={as}>{title}</SectionTitle>
     </Padding>
     <FlexCol px={[0, 0, 0, 0, 0, 0, 0]} width={[0, 0, 0, 0, 1, 5 / 6, 5 / 6]}>
       <Padding bottom={1}>
@@ -44,12 +44,12 @@ const RightHandText = ({ title, specialities, services }) => (
   </Fragment>
 )
 
-const CaseStudyHero = ({ caseStudy }) => {
+const CaseStudyHero = ({ caseStudy, as }) => {
   const { posterImage, title, specialities, services } = caseStudy
   return (
     <CaseStudyLayout
       posterImage={posterImage}
-      headings={<SectionTitle>{title}</SectionTitle>}
+      headings={<SectionTitle as={as}>{title}</SectionTitle>}
       textBelowImage={
         <SpecialitiesAndServices
           specialities={specialities}
@@ -59,6 +59,7 @@ const CaseStudyHero = ({ caseStudy }) => {
       rightHandText={
         <RightHandText
           title={title}
+          as={as}
           specialities={specialities}
           services={services}
         />

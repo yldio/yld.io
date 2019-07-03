@@ -33,7 +33,7 @@ const StyledListItem = styled.li`
 `
 
 const OuterAnchorItem = ({
-  children,
+  label,
   to,
   href,
   activeClassName,
@@ -46,8 +46,9 @@ const OuterAnchorItem = ({
       to={to}
       activeClassName={activeClassName}
       onClick={onClick}
+      title={label}
     >
-      {children}
+      {label}
     </StyledAnchor>
   </StyledListItem>
 )

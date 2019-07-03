@@ -26,7 +26,9 @@ const RowLayout = styled(Row)`
 const MediaItem = ({ id, title, href, body }) => (
   <li key={`${id}`}>
     <PaddedSubtitle noPaddingBottom>
-      <ExternalAnchor href={href}>{title}</ExternalAnchor>
+      <ExternalAnchor href={href} title={title}>
+        {title}
+      </ExternalAnchor>
     </PaddedSubtitle>
     <BodyPrimary noPaddingTop>{body}</BodyPrimary>
     <Hr />
@@ -57,7 +59,7 @@ const TitleAndMediaList = ({
       </MediaItems>
       {CTALink && CTAText ? (
         <Padding top={3}>
-          <StyledLink external href={CTALink}>
+          <StyledLink external href={CTALink} title={CTAText}>
             {CTAText}
           </StyledLink>
         </Padding>

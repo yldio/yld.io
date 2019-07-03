@@ -19,6 +19,7 @@ fixture`Training page`.page`${trainingPageUrl}`
   .after(() => server.close())
 
 test('clicking a link on the training page should open up a modal with information on the correct training course', async t => {
+  await t.expect(firstModalLink.exists).ok({ timeout: 5000 })
   const courseLinkText = await firstModalLink.textContent
   await t.click(firstModalLink)
   const modalTitle = await Selector('[data-testid="modal-title"]').textContent
@@ -26,8 +27,12 @@ test('clicking a link on the training page should open up a modal with informati
 })
 
 test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
+  await t.expect(firstModalLink.exists).ok({ timeout: 5000 })
+
   await t.click(firstModalLink)
-  const modalCloseButton = Selector('a[data-testid="modal-close-button"]')
+  const modalCloseButton = await Selector('a[data-testid="modal-close-button"]')
+
+  await t.expect(modalCloseButton.exists).ok({ timeout: 5000 })
   await t.click(modalCloseButton)
 
   const location = await getWindowLocation()
@@ -35,11 +40,13 @@ test('should be redirected to the course catalog on the training page when the m
     .expect(location.href)
     .contains(trainingPageUrl)
     .expect(firstModalLink.visible)
-    .ok()
+    .ok({ timeout: 5000 })
 })
 
 test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async t => {
+  await t.expect(firstModalLink.exists).ok({ timeout: 5000 })
   await t.click(firstModalLink)
+
   await t.pressKey('esc')
 
   const location = await getWindowLocation()
@@ -47,7 +54,7 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
     .expect(location.href)
     .contains(trainingPageUrl)
     .expect(firstModalLink.visible)
-    .ok()
+    .ok({ timeout: 5000 })
 })
 
 test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {

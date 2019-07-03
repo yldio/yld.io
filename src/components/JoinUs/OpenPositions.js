@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Col, Row } from '../grid'
 import JobsByLocation from '../JobsByLocation'
 import { Padding } from 'styled-components-spacing'
@@ -27,6 +27,7 @@ const renderJobsForlocation = (jobs, location, key) => {
                 width={[1, 1, 1, 1, 4 / 12, 3 / 12]}
               >
                 <JobLink
+                  location={location}
                   position={text}
                   hostedUrl={hostedUrl}
                   contractType={commitment}
@@ -40,27 +41,26 @@ const renderJobsForlocation = (jobs, location, key) => {
   )
 }
 
-const OpenPositions = ({
-  data: { title, getInTouchText, getInTouchTitle }
-}) => (
-  <Fragment>
-    <Section greyBg id="open-positions">
-      <Padding top={{ smallPhone: 3, tablet: 4 }}>
-        <SectionTitle>{title}</SectionTitle>
-        <JobsByLocation>
-          {jobs =>
-            jobs.map(({ location, jobs: jobsForLocation }, idx) =>
-              renderJobsForlocation(jobsForLocation, location, idx)
-            )
-          }
-        </JobsByLocation>
+const OpenPositions = React.forwardRef(
+  ({ data: { title, getInTouchText, getInTouchTitle } }, ref) => (
+    <div ref={ref}>
+      <Section greyBg id="open-positions">
         <Padding top={{ smallPhone: 3, tablet: 4 }}>
-          <Hr />
+          <SectionTitle>{title}</SectionTitle>
+          <JobsByLocation>
+            {jobs =>
+              jobs.map(({ location, jobs: jobsForLocation }, idx) =>
+                renderJobsForlocation(jobsForLocation, location, idx)
+              )
+            }
+          </JobsByLocation>
+          <Padding top={{ smallPhone: 3, tablet: 4 }}>
+            <Hr />
+          </Padding>
         </Padding>
-      </Padding>
-    </Section>
-    <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
-  </Fragment>
+      </Section>
+      <GetInTouch title={getInTouchTitle} contactText={getInTouchText} />
+    </div>
+  )
 )
-
 export default OpenPositions

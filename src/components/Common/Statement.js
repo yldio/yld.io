@@ -1,11 +1,21 @@
 import React from 'react'
-
 import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
+
 import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
-import { Row, Col } from '../grid'
+import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
+
+const PaddedGrid = styled(Grid)`
+  padding-top: ${props => props.theme.space[4]};
+  padding-bottom: ${props => props.theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${props => props.theme.space[6]};
+    padding-bottom: ${props => props.theme.space[6]};
+  `}
+`
 
 const Link = styled(StyledLink)`
   margin-bottom: 0;
@@ -16,17 +26,12 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ richText, children, noPadding }) => (
+const Statement = ({ richText, children, as = 'h2' }) => (
   <GreyBackground>
-    <Row>
-      <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-        <Padding
-          vertical={{
-            smallPhone: noPadding ? 0 : 3,
-            smallTablet: noPadding ? 0 : 4
-          }}
-        >
-          <DisplayTitle as="h1" textLight>
+    <PaddedGrid>
+      <Row>
+        <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
+          <DisplayTitle as={as} textLight>
             {children}
             {richText &&
               richText.map(content => {
@@ -37,7 +42,7 @@ const Statement = ({ richText, children, noPadding }) => (
                     <Link
                       key={content.data.uri}
                       noafter="true"
-                      to={`/${content.data.uri}`}
+                      to={`${content.data.uri}`}
                     >
                       {content.content[0].value}
                     </Link>
@@ -46,9 +51,9 @@ const Statement = ({ richText, children, noPadding }) => (
                 return ''
               })}
           </DisplayTitle>
-        </Padding>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </PaddedGrid>
   </GreyBackground>
 )
 

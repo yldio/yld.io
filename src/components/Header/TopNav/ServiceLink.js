@@ -33,6 +33,7 @@ const ServiceLink = ({ path = '/' }) => {
       {isServicePage || isSpecialityPage ? (
         <StyledServiceLink
           to={`/${service}`}
+          title={service}
           color={isServicePage ? 'text' : 'white'}
         >
           {capitalize(service)}

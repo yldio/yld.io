@@ -9,11 +9,18 @@ import StyledLink from '../src/components/Common/StyledLink'
 
 addDecorator(Theme)
 
+const ExampleImage = {
+  title: 'Community Support Logo',
+  file: { url: '/community_support.svg' },
+  className: 'logo'
+}
+
 const title = 'Community support'
 const body =
   'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
 
 const stringList = `### ${title}\n${body}\n### ${title}\n${body}`
+
 const arrayList = [
   {
     title,
@@ -30,7 +37,26 @@ const arrayList = [
   }
 ]
 
-storiesOf('Title and List', module)
+const arrayListWithLogos = [
+  {
+    image: ExampleImage,
+    title,
+    body
+  },
+  {
+    image: ExampleImage,
+    title,
+    body:
+      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.'
+  },
+  {
+    image: ExampleImage,
+    title,
+    body
+  }
+]
+
+storiesOf('Title and List (with optional logos)', module)
   .add('list in form of a string (Contentful data)', () => {
     return (
       <Grid>
@@ -93,5 +119,16 @@ storiesOf('Title and List', module)
           />
         </Grid>
       </GreyBackground>
+    )
+  })
+  .add('with logos', () => {
+    return (
+      <Grid>
+        <TitleAndList
+          title="This is the Title"
+          list={arrayListWithLogos}
+          themeVariation="white"
+        />
+      </Grid>
     )
   })

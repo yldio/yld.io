@@ -37,7 +37,7 @@ const SocialLink = ({ name, url, image }) => {
   const size = `${IMAGE_SIZE}px`
 
   return (
-    <TappableAnchor href={url}>
+    <TappableAnchor title={`${name} account`} href={url}>
       <Image image={image} alt={name} width={size} height={size} />
     </TappableAnchor>
   )

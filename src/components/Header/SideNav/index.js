@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
+import generate from 'shortid'
 
 import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
@@ -47,9 +48,12 @@ const SideNavItem = ({ item, path }) => {
   } else {
     const { label, to, href } = item
     return (
-      <OuterAnchorItem activeClassName="active" to={to} href={href}>
-        {label}
-      </OuterAnchorItem>
+      <OuterAnchorItem
+        activeClassName="active"
+        to={to}
+        href={href}
+        label={label}
+      />
     )
   }
 }
@@ -60,12 +64,12 @@ const SideNav = ({ links, isOpen, onClose, path }) => (
       <CloseButton onClick={onClose} />
     </Flex>
     <ul>
-      <OuterAnchorItem activeClassName="active" to="/">
-        Home
-      </OuterAnchorItem>
-      {links.map((link, idx) => (
-        <SideNavItem item={link} key={idx} path={path} />
-      ))}
+      <OuterAnchorItem activeClassName="active" to="/" label="Home" />
+      {links &&
+        links.length &&
+        links.map(link => (
+          <SideNavItem item={link} key={generate()} path={path} />
+        ))}
     </ul>
   </SideNavPanel>
 )

@@ -30,10 +30,7 @@ exports.handler = async () => {
     `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`
   )
 
-  const leverHref = new URL(
-    '/v0/postings/yld?mode=json',
-    'https://api.lever.co'
-  )
+  const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json')
 
   const { body: metaBody } = await got(metaHref, { json: true })
   const { body: leverBody } = await got(leverHref, { json: true })

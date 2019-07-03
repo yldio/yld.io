@@ -47,15 +47,11 @@ const IndexPage = ({
   return (
     <Layout location={location}>
       <Head page={content} />
-      <CaseStudyPreview caseStudy={content.featuredCaseStudy} />
+      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
+      <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
-          <Padding top={{ smallPhone: 4 }} bottom={3}>
-            <Statement
-              noPadding
-              richText={content.seoText.content[0].content}
-            />
-            <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }} />
+          <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>
             <LogoGrid companies={content.companies} />
           </Padding>
         </Grid>

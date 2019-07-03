@@ -8,70 +8,88 @@ import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
 import OpenPositions from '../components/JoinUs/OpenPositions'
 import Head from '../components/Common/Head'
+import scrollToComponent from 'react-scroll-to-component'
 
-const JoinUs = ({ data: { contentfulJoinUsPage: content } }) => (
-  <Layout>
-    <Head page={content} />
-    <ViewPositions
-      text={content.introductionText.introductionText}
-      description={content.introductionDescription.introductionDescription}
-    />
-    <Learning
-      data={{
-        title: content.learningTitle,
-        list: content.learningText.learningText,
-        subtitle: content.insightsTitle,
-        text: content.insightsDescriptionText.insightsDescriptionText,
-        featuredInsights: content.insights
-      }}
-    />
-    <Work
-      data={{
-        title: content.challengingTitle,
-        list: content.challengingText.challengingText,
-        subtitle: content.someOfOurWorkTitle,
-        text: content.someOfOurWorkDescription.someOfOurWorkDescription,
-        someWork: content.someWork
-      }}
-    />
-    <OSS
-      data={{
-        title: content.ossTitle,
-        list: content.ossText.ossText,
-        subtitle: content.talksTitle,
-        text: content.talksText.talksText,
-        featuredTalks: content.talks
-      }}
-    />
-    <Perks
-      data={{
-        title: content.perksTitle,
-        text: content.perksText.perksText,
-        perks: content.perks
-      }}
-    />
-    <OpenPositions
-      data={{
-        title: content.openPositionsTitle,
-        getInTouchTitle: content.directApplicationTitle,
-        getInTouchText: content.directApplicationText.directApplicationText
-      }}
-    />
-  </Layout>
-)
+class JoinUs extends React.Component {
+  constructor(props) {
+    super(props)
+    this.vacanciesRef = React.createRef()
+  }
+
+  scrollToVacancies = () =>
+    scrollToComponent(this.vacanciesRef.current, {
+      offset: -84,
+      align: 'top',
+      duration: 800
+    })
+
+  render() {
+    const {
+      data: { contentfulJoinUsPage: content }
+    } = this.props
+    return (
+      <Layout>
+        <Head page={content} />
+        <ViewPositions
+          text={content.introductionText.introductionText}
+          description={content.introductionDescription.introductionDescription}
+          scrollToVacancies={this.scrollToVacancies}
+        />
+        <Learning
+          data={{
+            title: content.learningTitle,
+            list: content.learningText.learningText,
+            subtitle: content.insightsTitle,
+            text: content.insightsDescriptionText.insightsDescriptionText,
+            featuredInsights: content.insights
+          }}
+        />
+        <Work
+          data={{
+            title: content.challengingTitle,
+            list: content.challengingText.challengingText,
+            subtitle: content.someOfOurWorkTitle,
+            text: content.someOfOurWorkDescription.someOfOurWorkDescription,
+            someWork: content.someWork
+          }}
+        />
+        <OSS
+          data={{
+            title: content.ossTitle,
+            list: content.ossText.ossText,
+            subtitle: content.talksTitle,
+            text: content.talksText.talksText,
+            featuredTalks: content.talks
+          }}
+        />
+        <Perks
+          data={{
+            title: content.perksTitle,
+            text: content.perksText.perksText,
+            perks: content.perks
+          }}
+        />
+        <OpenPositions
+          data={{
+            title: content.openPositionsTitle,
+            getInTouchTitle: content.directApplicationTitle,
+            getInTouchText: content.directApplicationText.directApplicationText
+          }}
+          ref={this.vacanciesRef}
+        />
+      </Layout>
+    )
+  }
+}
 
 const JoinUsPage = props => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
         contentfulJoinUsPage {
           title
           seoTitle
+          seoDescription
           introductionText {
             introductionText
           }

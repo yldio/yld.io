@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import generate from 'shortid'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
@@ -80,12 +81,13 @@ export default class Dropdown extends PureComponent {
         </DropdownNameWrapper>
         {isExpanded && (
           <DropdownList>
-            {items.map(({ to, href, label }, idx) => (
+            {items.map(({ to, href, label }) => (
               <InnerAnchorItem
-                key={idx}
+                key={generate()}
                 href={href}
                 to={to}
                 activeClassName="active"
+                label={label}
               >
                 {label}
               </InnerAnchorItem>

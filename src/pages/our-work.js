@@ -52,9 +52,18 @@ const OurWork = ({ data }) => {
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
+  const description =
+    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left"
   return (
     <Layout>
-      <Head page={page} />
+      <Head
+        page={{
+          ...page,
+          title: 'Our Work',
+          seoTitle: 'A collection of case studies',
+          seoMetaDescription: description
+        }}
+      />
       <Grid>
         <Row>
           <Col>
@@ -70,8 +79,7 @@ const OurWork = ({ data }) => {
             >
               <SectionTitle as="h1">Our work</SectionTitle>
               <FixedWidthDisplayTitle regular textLight>
-                We make work that we’re proud to stand behind and celebrate.
-                That way we’re sure our clients love it too.
+                {description}
               </FixedWidthDisplayTitle>
             </Padding>
           </Col>

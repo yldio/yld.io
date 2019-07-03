@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { BodyStylised } from '../Typography'
 import { Link } from 'gatsby'
+import { generate } from 'shortid'
 import PagePaths from '../pagePaths'
 
 const List = props => React.createElement(BodyStylised, props)
@@ -23,17 +24,22 @@ export default function SeoLinks({ items, ...props }) {
         <List as="ul" {...props}>
           {(items || []).map(item => {
             const path = pathsById[item.id]
-            if (path) {
-              return (
-                <ListItem key={item.id}>
-                  <Link to={path} style={{ textDecoration: 'underline' }}>
+
+            return (
+              <ListItem key={generate()}>
+                {path ? (
+                  <Link
+                    to={path}
+                    style={{ textDecoration: 'underline' }}
+                    title={`Speciality - ${item.title.trim()}`}
+                  >
                     {item.title.trim()}
                   </Link>
-                </ListItem>
-              )
-            }
-
-            return <ListItem key={item.id}>{item.title}</ListItem>
+                ) : (
+                  item.title.trim()
+                )}
+              </ListItem>
+            )
           })}
         </List>
       )}

@@ -11,8 +11,9 @@ const {
 
 module.exports = {
   siteMetadata: {
-    title: 'YLD',
-    siteUrl: `https://yld.io`
+    siteTitle: 'YLD',
+    siteUrl: `https://yld.io`,
+    image: '/images/logo.png'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

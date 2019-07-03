@@ -167,6 +167,7 @@ export default class Dropdown extends PureComponent {
               to={to}
               activeClassName="active"
               onMouseDown={this.handleItemMouseDown}
+              label={label}
             >
               {label}
             </InnerAnchorItem>

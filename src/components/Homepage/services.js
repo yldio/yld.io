@@ -107,13 +107,21 @@ const Services = ({ services }) => (
 
               {service.pageReady ? (
                 <Padding bottom={1.5}>
-                  <StyledLink to={`/${service.slug}`}>Learn more</StyledLink>
+                  <StyledLink
+                    to={`/${service.slug}`}
+                    title={`Learn more about our ${service.title} service`}
+                  >
+                    Learn more
+                  </StyledLink>
                 </Padding>
               ) : (
                 <Padding bottom={1.5} />
               )}
 
-              <AnimatedLink to={`/case-study/${service.caseStudies[0].slug}`}>
+              <AnimatedLink
+                to={`/case-study/${service.caseStudies[0].slug}`}
+                title={service.caseStudies[0].title}
+              >
                 <section
                   style={{
                     background: `#${service.caseStudies[0].posterColor}`

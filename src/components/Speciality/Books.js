@@ -49,7 +49,7 @@ const BooksBox = styled(ExternalAnchor)`
 `
 
 const BooksSection = ({ books, title }) =>
-  books.length ? (
+  books && books.length ? (
     <Grid>
       <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>

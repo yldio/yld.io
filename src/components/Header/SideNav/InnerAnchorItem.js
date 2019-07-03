@@ -28,9 +28,20 @@ const InnerAnchor = styled(Anchor)`
   }
 `
 
-export const InnerAnchorItem = ({ children, to, href, activeClassName }) => (
+export const InnerAnchorItem = ({
+  children,
+  to,
+  href,
+  activeClassName,
+  label
+}) => (
   <InnerListItem>
-    <InnerAnchor href={href} to={to} activeClassName={activeClassName}>
+    <InnerAnchor
+      href={href}
+      to={to}
+      activeClassName={activeClassName}
+      title={label}
+    >
       {children}
     </InnerAnchor>
   </InnerListItem>

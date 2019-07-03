@@ -98,7 +98,7 @@ const IndexPage = ({
           socialLogo: (caseStudy.posterImage.file || {}).url
         }}
       />
-      <CaseStudyHero caseStudy={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
