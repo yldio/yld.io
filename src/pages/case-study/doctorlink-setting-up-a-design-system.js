@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -63,6 +63,14 @@ const ReversableDiv = styled.div`
   `}
 `
 
+const PropertiesAndTokensBlockRow = styled(BlockRow)`
+  flex-direction: column-reverse;
+
+  ${breakpoint('largePhone')`
+    flex-direction: row-reverse;
+  `}
+`
+
 const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
   const {
     genericBlockImages,
@@ -75,16 +83,20 @@ const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
   } = data[1]
 
   return (
-    <Fragment>
+    <PropertiesAndTokensBlockRow
+      mobile={{ bottom: '4' }}
+      smallTablet={{ bottom: '5' }}
+      tablet={{ bottom: '6' }}
+    >
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textTwo, colorReverse)}
       </Col>
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textOne, colorReverse)}
       </Col>
-      <Col width={[0, 0, 0, 0, 0, 1 / 4]} />
-      <Col width={[0, 0, 0, 0, 0, 1 / 4]}>{renderImage(image)}</Col>
-    </Fragment>
+      <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
+      <Col width={[0, 0, 0, 0, 0, 3 / 8]}>{renderImage(image)}</Col>
+    </PropertiesAndTokensBlockRow>
   )
 }
 
@@ -413,14 +425,7 @@ const IndexPage = props => {
 
           {/* Save your details button image / Properties & Tokens */}
           {shouldRender(data24) && (
-            <BlockRow
-              rowReverse
-              mobile={{ bottom: '0' }}
-              smallTablet={{ bottom: '5' }}
-              tablet={{ bottom: '6' }}
-            >
-              <PropertiesAndTokensBlock data={data24} colorReverse />
-            </BlockRow>
+            <PropertiesAndTokensBlock data={data24} colorReverse />
           )}
         </Grid>
       </BlueBackground>
