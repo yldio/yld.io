@@ -5,9 +5,8 @@ import { Row, Col, Grid } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import OpenPositions from '../Common/OpenPositions'
 
-//{ smallPhone: 3, smallTablet: 4, desktop: 3.5 }
 const StyledGrid = styled(Grid)`
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
 const Jobs = () => (

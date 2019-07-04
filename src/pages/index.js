@@ -79,7 +79,6 @@ const IndexPage = ({
       </LatestPosts>
       <GreyBackground>
         <Jobs />
-        <Padding bottom={{ smallPhone: 1.5, smallTablet: 0 }} />
       </GreyBackground>
     </Layout>
   )
