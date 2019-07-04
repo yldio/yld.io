@@ -13,10 +13,11 @@ import {
   renderImage,
   renderText,
   TextColumnsBlock,
-  TextAndImageBlock,
   FullWidthBlock,
   VideoBlock,
-  ImagesBlock
+  ImagesBlock,
+  TextAndImageBlock,
+  TextAndResizedImageBlock
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 // import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
 import Statement from '../../components/Common/Statement'
@@ -252,7 +253,7 @@ const IndexPage = props => {
             tablet={{ bottom: '7', top: '7' }}
             desktop={{ bottom: '8', top: '8' }}
           >
-            <TextAndImageBlock data={normalise(data8)} />
+            <TextAndResizedImageBlock data={normalise(data8)} />
           </BlockRow>
         )}
 
@@ -361,7 +362,7 @@ const IndexPage = props => {
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
           >
-            <TextAndImageBlock data={normalise(data17)} />
+            <TextAndResizedImageBlock data={normalise(data17)} />
           </BlockRow>
         )}
 
@@ -373,7 +374,7 @@ const IndexPage = props => {
             smallTablet={{ bottom: '6' }}
             tablet={{ bottom: '7' }}
           >
-            <TextAndImageBlock data={normalise(data18)} />
+            <TextAndResizedImageBlock data={normalise(data18)} />
           </BlockRow>
         )}
 

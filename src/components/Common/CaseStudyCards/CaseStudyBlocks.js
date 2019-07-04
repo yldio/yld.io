@@ -53,13 +53,6 @@ const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   </Fragment>
 )
 
-const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
-  <Fragment>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
-  </Fragment>
-)
-
 const FullWidthBlock = ({ data: { text, image } }) => (
   <Col width={[1]}>
     {renderText(text)}
@@ -82,12 +75,28 @@ const ImagesBlock = ({ data }) => (
   </Fragment>
 )
 
+const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
+  <Fragment>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+  </Fragment>
+)
+
+const TextAndResizedImageBlock = ({ data: { text, image } }) => (
+  <Fragment>
+    <Col width={[1, 1, 1, 1, 4 / 8]}>{renderText(text)}</Col>
+    <Col width={[0, 0, 0, 0, 1 / 8]} />
+    <Col width={[1, 1, 1, 1, 3 / 8]}>{renderImage(image)}</Col>
+  </Fragment>
+)
+
 export {
   renderImage,
   renderText,
   TextColumnsBlock,
-  TextAndImageBlock,
   FullWidthBlock,
   VideoBlock,
-  ImagesBlock
+  ImagesBlock,
+  TextAndImageBlock,
+  TextAndResizedImageBlock
 }
