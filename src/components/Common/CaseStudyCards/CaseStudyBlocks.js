@@ -18,6 +18,14 @@ const StyledColumnImage = styled(Col)`
 
 const renderImage = data => data && <Image image={data} />
 
+/* The reason for this is to solve inconsistent CSS Styling Between gatsby develop and build.
+This solution ensures that strong is always bold for any environment */
+const StyledBodyPrimary = styled(BodyPrimary)`
+  > strong {
+    font-weight: bold;
+  }
+`
+
 const renderText = (text, colorReverse, disallowed = []) =>
   text && (
     <ReactMarkdown
@@ -26,7 +34,9 @@ const renderText = (text, colorReverse, disallowed = []) =>
         // eslint-disable-next-line
         heading: props => <SectionTitle reverse={colorReverse} {...props} />,
         // eslint-disable-next-line
-        paragraph: props => <BodyPrimary reverse={colorReverse} {...props} />
+        paragraph: props => (
+          <StyledBodyPrimary reverse={colorReverse} {...props} />
+        )
       }}
       source={text}
     />
