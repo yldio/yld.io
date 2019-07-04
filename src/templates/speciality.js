@@ -355,12 +355,10 @@ const Speciality = ({
     <Layout backgroundColor="blue" location={location}>
       <Head page={flattenedSpeciality} />
       <IntroSection speciality={flattenedSpeciality} />
-      {!!(
-        (relatedProjects &&
-          relatedProjects.length &&
-          validateProjects(relatedProjects)) ||
-        (clients && clients.length && validateClients(clients))
-      ) && (
+      {((relatedProjects &&
+        relatedProjects.length > 0 &&
+        validateProjects(relatedProjects)) ||
+        (clients && clients.length > 0 && validateClients(clients))) && (
         <ProjectsSection
           related={relatedProjects}
           title={title}
@@ -382,10 +380,8 @@ const Speciality = ({
         description={`${title} articles created by members of YLD for the community.`}
         posts={posts}
       />
-      {tutorials && tutorials.length ? (
+      {tutorials && tutorials.length > 0 && (
         <TutorialsSection speciality={title} tutorials={tutorials} />
-      ) : (
-        undefined
       )}
       <BooksSection title={title} books={books} />
       <GetInTouch
