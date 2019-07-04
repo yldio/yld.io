@@ -15,8 +15,8 @@ export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
 ))
 
 const StyledOpenPositions = styled(GreyBackground)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
 const OpenPositions = ({ data: { title } }) => (
