@@ -84,9 +84,23 @@ const ImagesBlock = ({ data }) => (
   </Fragment>
 )
 
+// const StyledCol = styled(Col)`
+//   background: red;
+// `
+const StyledMobilePadding = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const StyledBreakpointMobilePadding = styled(StyledMobilePadding)`
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
 const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
   <Fragment>
     <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <StyledBreakpointMobilePadding width={[1]} />
     <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
   </Fragment>
 )
@@ -94,7 +108,7 @@ const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
 const TextAndResizedImageBlock = ({ data: { text, image } }) => (
   <Fragment>
     <Col width={[1, 1, 1, 1, 4 / 8]}>{renderText(text)}</Col>
-    <Col width={[0, 0, 0, 0, 1 / 8]} />
+    <StyledMobilePadding width={[1, 1, 1, 1, 1 / 8]} />
     <Col width={[1, 1, 1, 1, 3 / 8]}>{renderImage(image)}</Col>
   </Fragment>
 )
