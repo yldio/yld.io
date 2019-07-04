@@ -12,6 +12,7 @@ import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import {
   renderImage,
   renderText,
+  MobileReverseOrderWrapper,
   TextColumnsBlock,
   FullWidthBlock,
   VideoBlock,
@@ -58,15 +59,6 @@ ${breakpoint('desktop')`
   padding-bottom: ${({ theme, desktop }) =>
     desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
 `}
-`
-
-const MobileReverseOrderWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-
-  ${breakpoint('smallTablet')`
-    flex-direction: column;
-  `}
 `
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`

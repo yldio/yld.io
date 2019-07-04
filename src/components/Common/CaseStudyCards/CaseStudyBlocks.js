@@ -42,6 +42,15 @@ const renderText = (text, colorReverse, disallowed = []) =>
     />
   )
 
+const MobileReverseOrderWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+
+  ${breakpoint('smallTablet')`
+    flex-direction: column;
+  `}
+`
+
 const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   <Fragment>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -93,6 +102,7 @@ const TextAndResizedImageBlock = ({ data: { text, image } }) => (
 export {
   renderImage,
   renderText,
+  MobileReverseOrderWrapper,
   TextColumnsBlock,
   FullWidthBlock,
   VideoBlock,
