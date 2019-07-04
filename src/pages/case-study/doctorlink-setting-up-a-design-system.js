@@ -30,8 +30,11 @@ const BlockRow = styled(Row)`
     mobile && mobile.top ? theme.space[mobile.top] : null};
   padding-bottom: ${({ theme, mobile }) =>
     mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
-  justify-content: ${({ spaceEvenly }) =>
-    spaceEvenly ? 'space-evenly' : null};
+  justify-content: ${({ spaced }) => spaced && 'space-evenly'};
+
+  ${breakpoint('phone')`
+    justify-content: ${({ spaced }) => spaced && 'space-between'};
+  `}
 
 ${breakpoint('smallTablet')`
   padding-top: ${({ theme, smallTablet }) =>
@@ -293,7 +296,7 @@ const IndexPage = props => {
               mobile={{ bottom: '2' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
-              spaceEvenly
+              spaced
             >
               <ImagesBlock data={getImages(data12[0])} />
             </BlockRow>
