@@ -24,7 +24,8 @@ import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
 const BlockRow = styled(Row)`
-  flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
+  flex-direction: ${({ columnReverse }) =>
+    `column${columnReverse ? '-reverse' : null}`};
   align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
   padding-top: ${({ theme, mobile }) =>
     mobile && mobile.top ? theme.space[mobile.top] : null};
@@ -37,6 +38,7 @@ const BlockRow = styled(Row)`
   `}
 
 ${breakpoint('smallTablet')`
+  flex-direction: ${({ rowReverse }) => (rowReverse ? 'row-reverse' : 'row')};
   padding-top: ${({ theme, smallTablet }) =>
     smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
   padding-bottom: ${({ theme, smallTablet }) =>
@@ -58,7 +60,7 @@ ${breakpoint('desktop')`
 `}
 `
 
-const ReversableDiv = styled.div`
+const MobileReverseOrderWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
 
@@ -250,6 +252,7 @@ const IndexPage = props => {
         {shouldRender(data8) && (
           <BlockRow
             rowReverse
+            columnReverse
             alignCenter
             mobile={{ bottom: '5', top: '5' }}
             smallTablet={{ bottom: '6', top: '6' }}
@@ -260,7 +263,7 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        <ReversableDiv>
+        <MobileReverseOrderWrapper>
           {/* Colour */}
           {shouldRender(data9) && (
             <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
@@ -274,9 +277,9 @@ const IndexPage = props => {
               <FullWidthBlock data={normalise(data10)} />
             </BlockRow>
           )}
-        </ReversableDiv>
+        </MobileReverseOrderWrapper>
 
-        <ReversableDiv>
+        <MobileReverseOrderWrapper>
           {/* Illustrations */}
           {shouldRender(data11) && (
             <BlockRow
@@ -301,7 +304,7 @@ const IndexPage = props => {
               <ImagesBlock data={getImages(data12[0])} />
             </BlockRow>
           )}
-        </ReversableDiv>
+        </MobileReverseOrderWrapper>
       </Grid>
 
       <GreyBackground>
@@ -346,6 +349,7 @@ const IndexPage = props => {
         {shouldRender(data16) && (
           <BlockRow
             rowReverse
+            columnReverse
             alignCenter
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
@@ -360,6 +364,7 @@ const IndexPage = props => {
         {shouldRender(data17) && (
           <BlockRow
             rowReverse
+            columnReverse
             alignCenter
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
@@ -372,6 +377,7 @@ const IndexPage = props => {
         {/* Automated design */}
         {shouldRender(data18) && (
           <BlockRow
+            columnReverse
             alignCenter
             mobile={{ bottom: '5' }}
             smallTablet={{ bottom: '6' }}
@@ -381,37 +387,41 @@ const IndexPage = props => {
           </BlockRow>
         )}
 
-        {/* Documentation */}
-        {shouldRender(data19) && (
-          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
-            <TextAndImageBlock data={normalise(data19)} />
-          </BlockRow>
-        )}
+        <MobileReverseOrderWrapper>
+          {/* Documentation */}
+          {shouldRender(data19) && (
+            <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
+              <TextAndImageBlock data={normalise(data19)} />
+            </BlockRow>
+          )}
 
-        {/* Image for Documentation - Text styles */}
-        {shouldRender(data20) && (
-          <BlockRow
-            mobile={{ bottom: '4' }}
-            smallTablet={{ bottom: '6' }}
-            tablet={{ bottom: '7' }}
-          >
-            <FullWidthBlock data={normalise(data20)} />
-          </BlockRow>
-        )}
+          {/* Image for Documentation - Text styles */}
+          {shouldRender(data20) && (
+            <BlockRow
+              mobile={{ bottom: '4' }}
+              smallTablet={{ bottom: '6' }}
+              tablet={{ bottom: '7' }}
+            >
+              <FullWidthBlock data={normalise(data20)} />
+            </BlockRow>
+          )}
+        </MobileReverseOrderWrapper>
 
-        {/* Extensive documentation */}
-        {shouldRender(data21) && (
-          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
-            <TextAndImageBlock data={normalise(data21)} />
-          </BlockRow>
-        )}
+        <MobileReverseOrderWrapper>
+          {/* Extensive documentation */}
+          {shouldRender(data21) && (
+            <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
+              <TextAndImageBlock data={normalise(data21)} />
+            </BlockRow>
+          )}
 
-        {/* Image for Extensive documentation - Password text field */}
-        {shouldRender(data22) && (
-          <BlockRow mobile={{ bottom: '6' }} tablet={{ bottom: '7' }}>
-            <FullWidthBlock data={normalise(data22)} />
-          </BlockRow>
-        )}
+          {/* Image for Extensive documentation - Password text field */}
+          {shouldRender(data22) && (
+            <BlockRow mobile={{ bottom: '6' }} tablet={{ bottom: '7' }}>
+              <FullWidthBlock data={normalise(data22)} />
+            </BlockRow>
+          )}
+        </MobileReverseOrderWrapper>
       </Grid>
 
       <BlueBackground>
