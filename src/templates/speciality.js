@@ -127,7 +127,10 @@ const flattenSpeciality = speciality => {
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined), // required
-    externalResources: Get(speciality, 'externalResources', [])
+    externalResources: Get(speciality, 'externalResources', []),
+    relatedProjects: Get(speciality, 'relatedProjects', []),
+    clients: Get(speciality, 'clients', []),
+    eventIcon: Get(speciality, 'eventIcon', undefined)
   }
 }
 
@@ -324,15 +327,19 @@ const Speciality = ({
   },
   location
 }) => {
-  const { relatedProjects, clients, eventIcon } = speciality
-
   const flattenedSpeciality = flattenSpeciality(speciality)
 
   const validateCommunity = ajv.compile(communitySchema)
   const validateProjects = ajv.compile(projectsSchema)
   const validateClients = ajv.compile(clientSchema)
 
-  const { title, contactText } = flattenedSpeciality
+  const {
+    title,
+    contactText,
+    eventIcon,
+    relatedProjects,
+    clients
+  } = flattenedSpeciality
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
