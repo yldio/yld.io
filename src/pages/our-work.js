@@ -41,21 +41,17 @@ const OurWork = ({ data }) => {
     allContentfulNonTemplatedCaseStudyV2
   } = data
 
-  const engineeringCaseStudies = formatCaseStudies({
-    ...allContentfulTemplatedCaseStudy,
-    ...allContentfulNonTemplatedCaseStudyV2
-  })
-
-  const designCaseStudies = formatCaseStudies(
-    allContentfulNonTemplatedCaseStudy
-  )
-
-  const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
+  const caseStudies = [
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy),
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2)
+  ]
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
   const description =
     "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left"
+
   return (
     <Layout>
       <Head
