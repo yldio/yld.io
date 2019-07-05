@@ -34,6 +34,13 @@ const formatCaseStudies = caseStudies =>
     }
   })
 
+const ourWork = {
+  title: 'Our Work',
+  description:
+    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left",
+  seoTitle: 'A collection of case studies'
+}
+
 const OurWork = ({ data }) => {
   const {
     allContentfulTemplatedCaseStudy,
@@ -49,17 +56,14 @@ const OurWork = ({ data }) => {
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
-  const description =
-    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left"
-
   return (
     <Layout>
       <Head
         page={{
           ...page,
-          title: 'Our Work',
-          seoTitle: 'A collection of case studies',
-          seoMetaDescription: description
+          title: ourWork.title,
+          seoTitle: ourWork.seoTitle,
+          seoMetaDescription: ourWork.description
         }}
       />
       <Grid>
@@ -75,9 +79,9 @@ const OurWork = ({ data }) => {
                 tablet: 5
               }}
             >
-              <SectionTitle as="h1">Our work</SectionTitle>
+              <SectionTitle as="h1">{ourWork.title}</SectionTitle>
               <FixedWidthDisplayTitle regular textLight>
-                {description}
+                {ourWork.description}
               </FixedWidthDisplayTitle>
             </Padding>
           </Col>
