@@ -101,7 +101,7 @@ Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./g
 
 Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lmabda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
 
-The zap is within the zapier account registered to `apis@yld.io`
+The zap is within the zapier account registered to `apis@yld.io`.
 
 #### Github
 
