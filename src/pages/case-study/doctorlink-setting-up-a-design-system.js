@@ -20,7 +20,7 @@ import {
   TextAndImageBlock,
   TextAndResizedImageBlock
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
-// import SubtitleWithBody from '../../components/Common/SubtitleWithBody'
+import Hr from '../../components/Common/Hr'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 
@@ -519,7 +519,7 @@ const IndexPage = props => {
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
         )}
-
+        <Hr />
         <CaseStudyPreview
           isTop={false}
           caseStudy={caseStudy.relatedCaseStudy}
