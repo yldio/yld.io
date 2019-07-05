@@ -265,7 +265,7 @@ const IndexPage = props => {
 
           {/* Image for Colour */}
           {shouldRender(data10) && (
-            <BlockRow>
+            <BlockRow mobile={{ bottom: '4' }} smallTablet={{ bottom: '0' }}>
               <FullWidthBlock data={normalise(data10)} />
             </BlockRow>
           )}
@@ -409,7 +409,7 @@ const IndexPage = props => {
 
           {/* Image for Extensive documentation - Password text field */}
           {shouldRender(data22) && (
-            <BlockRow mobile={{ bottom: '6' }} tablet={{ bottom: '7' }}>
+            <BlockRow mobile={{ bottom: '4' }} tablet={{ bottom: '7' }}>
               <FullWidthBlock data={normalise(data22)} />
             </BlockRow>
           )}
