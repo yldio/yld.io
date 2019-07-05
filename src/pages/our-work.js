@@ -37,12 +37,14 @@ const formatCaseStudies = caseStudies =>
 const OurWork = ({ data }) => {
   const {
     allContentfulTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudy
+    allContentfulNonTemplatedCaseStudy,
+    allContentfulNonTemplatedCaseStudyV2
   } = data
 
-  const engineeringCaseStudies = formatCaseStudies(
-    allContentfulTemplatedCaseStudy
-  )
+  const engineeringCaseStudies = formatCaseStudies({
+    ...allContentfulTemplatedCaseStudy,
+    ...allContentfulNonTemplatedCaseStudyV2
+  })
 
   const designCaseStudies = formatCaseStudies(
     allContentfulNonTemplatedCaseStudy
