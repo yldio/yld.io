@@ -543,12 +543,14 @@ export const query = graphql`
   }
 
   {
-    contentfulNonTemplatedCaseStudyV2(slug: { eq: "doctorlink-case-study" }) {
+    contentfulNonTemplatedCaseStudyV2(
+      slug: { eq: "doctorlink-setting-up-a-design-system" }
+    ) {
       relatedCaseStudy {
         title
         slug
         introSentence {
-          id
+          introSentence
         }
         posterImage {
           title
