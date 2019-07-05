@@ -48,11 +48,17 @@ const OurWork = ({ data }) => {
     allContentfulNonTemplatedCaseStudyV2
   } = data
 
-  const caseStudies = [
+  const allCaseStudies = [
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudy),
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2)
   ]
+
+  const nonDisplayed = ['central-working']
+
+  const caseStudies = allCaseStudies.filter(cs =>
+    nonDisplayed.some(nd => !cs.slug.includes(nd))
+  )
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
