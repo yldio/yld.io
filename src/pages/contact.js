@@ -354,7 +354,7 @@ class ContactUs extends Component {
                             type="checkbox"
                             id="privacy"
                             name="privacy"
-                            onChange={this.handleChangeCheckbox}
+                            onChange={this.handlePrivacyCheckboxChange}
                           />
                           <label htmlFor="privacy">
                             {privacyPolicyText}
