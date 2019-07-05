@@ -95,6 +95,7 @@ export default {
     text: colorsVariables.black,
     secondaryText: colorsVariables.mediumGrey,
     placeholder: colorsVariables.mediumGrey,
-    textLight: colorsVariables.darkGrey
+    textLight: colorsVariables.darkGrey,
+    tanBg: colorsVariables.tan
   }
 }
