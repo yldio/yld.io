@@ -10,7 +10,7 @@ import GreyBackground from './GreyBackground'
 
 export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
   <div ref={ref}>
-    <OpenPositions {...props} />
+    <OpenPositions {...props} limit={4} />
   </div>
 ))
 
@@ -19,11 +19,11 @@ const StyledOpenPositions = styled(GreyBackground)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
-const OpenPositions = ({ data: { title } }) => (
+const OpenPositions = ({ data: { title }, limit = 40 }) => (
   <StyledOpenPositions>
     <Grid>
       <SectionTitle>{title}</SectionTitle>
-      <JobsByLocation>
+      <JobsByLocation limit={limit}>
         {jobs =>
           jobs.map(({ location, jobs }, idx) => (
             <Padding top={3} key={idx}>
