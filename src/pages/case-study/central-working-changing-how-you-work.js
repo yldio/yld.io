@@ -9,6 +9,7 @@ import { Grid, Row, Col } from '../../components/grid'
 import GreyBackground from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
+import Hr from '../../components/Common/Hr'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import {
@@ -43,6 +44,12 @@ const Block6ImageCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
 `
 
+const Block7ImageCol = styled(Col)`
+  ${breakpoint('smallPhone', 'phone')`
+    padding-top: ${({ theme }) => theme.space[4]};
+  `}
+`
+
 const BrownBackground = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
 `
@@ -51,6 +58,23 @@ const TanBackground = styled.div`
   background-color: ${({ theme }) => theme.colors.tanBg};
 `
 
+const StyledHr = styled(Hr)`
+  margin-left: auto;
+  margin-right: auto;
+
+  ${breakpoint('smallTablet')`
+    display: none
+  ;`}
+`
+const Block4ImageCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[4]};
+`
+
+const Block9ImageCol = styled(Col)`
+  ${breakpoint('smallPhone')`
+    padding-top: ${({ theme }) => theme.space[4]}
+  `}
+`
 const BlockRow = styled(Row)`
   flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
   align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
@@ -100,7 +124,9 @@ const IndexPage = props => {
     genericBlock9: data9
   } = caseStudy
 
-  const outComesData = normaliseAll(data2)
+  const outComesDataText = normalise(data2, 0).text
+  const outComesDataFigures = normaliseAll(data2.slice(1))
+
   return (
     <Layout location={location}>
       <Head
@@ -152,18 +178,25 @@ const IndexPage = props => {
                       </Col>
                     )
                   }}
-                  source={outComesData[0].text}
+                  source={outComesDataText}
                 />
               </Fragment>
             )}
           </BlockRow>
-          <BlockRow mobile={{ bottom: '4' }} tablet={{ bottom: '6' }}>
-            {outComesData.slice(1).map(({ text }) => {
+          <BlockRow
+            mobile={{ bottom: '5' }}
+            smallTablet={{ bottom: '4' }}
+            tablet={{ bottom: '6' }}
+          >
+            {outComesDataFigures.map(({ text }, index) => {
               return (
-                // eslint-disable-next-line react/jsx-key
                 <Col
                   width={[1, 1, 1, 1, 4 / 12]}
-                  style={{ textAlign: 'center' }}
+                  style={{
+                    textAlign: 'center',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}
                   key={generate()}
                 >
                   <ReactMarkdown
@@ -175,6 +208,7 @@ const IndexPage = props => {
                     }}
                     source={text}
                   />
+                  {index + 1 < outComesDataFigures.length && <StyledHr short />}
                 </Col>
               )
             })}
@@ -183,8 +217,7 @@ const IndexPage = props => {
       </GreyBackground>
       <Grid>
         <BlockRow
-          mobile={{ bottom: '4', top: '4' }}
-          smallTablet={{ bottom: '5' }}
+          mobile={{ bottom: '5', top: '4' }}
           tablet={{ bottom: '6', top: '6' }}
           flexEnd
         >
@@ -198,8 +231,7 @@ const IndexPage = props => {
       <BrownBackground>
         <Grid>
           <BlockRow
-            mobile={{ bottom: '4', top: '4' }}
-            smallTablet={{ bottom: '5', top: '4' }}
+            mobile={{ bottom: '5', top: '4' }}
             tablet={{ bottom: '7', top: '6' }}
           >
             <Col width={[1]}>
@@ -212,9 +244,9 @@ const IndexPage = props => {
               />
             </Col>
 
-            <Col width={[1]}>
+            <Block4ImageCol width={[1]}>
               <Image image={normalise(data4).image} />
-            </Col>
+            </Block4ImageCol>
           </BlockRow>
         </Grid>
       </BrownBackground>
@@ -273,9 +305,9 @@ const IndexPage = props => {
               />
             </Col>
 
-            <Col width={[1, 1, 1, 8 / 12]}>
+            <Block7ImageCol width={[1, 1, 1, 8 / 12]}>
               <Image image={normalise(data7).image} />
-            </Col>
+            </Block7ImageCol>
           </BlockRow>
         </Grid>
       </TanBackground>
@@ -294,7 +326,7 @@ const IndexPage = props => {
             </Col>
           </BlockRow>
           <BlockRow style={{ justifyContent: 'center' }}>
-            <Col width={[10 / 12]} style={{ alignSelf: 'center' }}>
+            <Col width={[1, 1, 1, 1, 10 / 12]} style={{ alignSelf: 'center' }}>
               <Image image={normalise(data8).image} />
             </Col>
           </BlockRow>
@@ -316,19 +348,14 @@ const IndexPage = props => {
           </Col>
         </BlockRow>
 
-        <BlockRow mobile={{ bottom: '4' }} tablet={{ bottom: '6' }}>
-          <Col width={[1]}>
+        <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
+          <Block9ImageCol width={[1]}>
             <Image image={normalise(data9).image} />
-          </Col>
+          </Block9ImageCol>
         </BlockRow>
       </Grid>
 
-      <Grid>
-        <CaseStudyPreview
-          isTop={false}
-          caseStudy={caseStudy.relatedCaseStudy}
-        />
-      </Grid>
+      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
 }
