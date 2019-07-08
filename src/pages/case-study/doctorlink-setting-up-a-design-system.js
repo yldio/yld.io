@@ -168,12 +168,8 @@ const IndexPage = props => {
       <CaseStudyHero caseStudy={caseStudy} />
 
       <GreyBackground>
-        <Grid>
-          {/* DoctorLink is a healthcare technology company */}
-          {shouldRender(data1) && (
-            <Statement>{normalise(data1).text}</Statement>
-          )}
-        </Grid>
+        {/* DoctorLink is a healthcare technology company */}
+        {shouldRender(data1) && <Statement>{normalise(data1).text}</Statement>}
       </GreyBackground>
 
       <Grid>
@@ -520,11 +516,8 @@ const IndexPage = props => {
           </BlockRow>
         )}
         <Hr />
-        <CaseStudyPreview
-          isTop={false}
-          caseStudy={caseStudy.relatedCaseStudy}
-        />
       </Grid>
+      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
 }
