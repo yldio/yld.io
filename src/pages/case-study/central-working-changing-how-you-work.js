@@ -6,7 +6,6 @@ import ReactMarkdown from 'react-markdown'
 import { generate } from 'shortid'
 
 import { Grid, Row, Col } from '../../components/grid'
-import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
@@ -14,14 +13,9 @@ import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import {
   TextColumnsBlock,
-  TextAndImageBlock,
-  FullWidthBlock,
-  VideoBlock,
-  ImagesBlock,
   renderImage
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
-import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
 
@@ -38,12 +32,11 @@ const normaliseAll = (arr = []) =>
 
 const normalise = (arr = [], index = 0) => normaliseAll(arr, index)[index]
 
+const GreyBodyPrimary = styled(BodyPrimary)`
+  color: ${({ theme }) => theme.colors.secondaryText};
+`
 const Block3Image = styled.div`
   padding-top: ${({ theme }) => theme.space[3]};
-`
-
-const Block4ImageCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
 const Block6ImageCol = styled(Col)`
@@ -123,59 +116,75 @@ const IndexPage = props => {
         {/* Intro  */}
         <BlockRow
           flexEnd
-          mobile={{ bottom: '4', top: '0' }}
-          tablet={{ bottom: '6', top: '0' }}
+          mobile={{ bottom: '4', top: '3' }}
+          tablet={{ bottom: '6', top: '3' }}
         >
           {shouldRender(data1) && (
             <Col width={[1, 1, 1, 1, 6 / 12]}>{normalise(data1, 0).text}</Col>
           )}
         </BlockRow>
-
-        {/* Outcomes */}
-        <BlockRow
-          flexEnd
-          mobile={{ bottom: '4', top: '0' }}
-          tablet={{ bottom: '6', top: '0' }}
-        >
-          {shouldRender(data2) && (
-            <Fragment>
-              <Col width={[1]} style={{ textAlign: 'center' }}>
+      </Grid>
+      <GreyBackground>
+        <Grid>
+          {/* Outcomes */}
+          <BlockRow
+            style={{ flexDirection: 'column', alignItems: 'center' }}
+            mobile={{ bottom: '4', top: '4' }}
+            tablet={{ top: '6' }}
+          >
+            {shouldRender(data2) && (
+              <Fragment>
                 <ReactMarkdown
                   renderers={{
                     // eslint-disable-next-line
-                    heading: props => <SectionTitle {...props} />,
+                    heading: props => (
+                      <Col width={[1]} style={{ textAlign: 'center' }}>
+                        <SectionTitle {...props} />
+                      </Col>
+                    ),
                     // eslint-disable-next-line
-                    paragraph: props => <BodyPrimary {...props} />
+                    paragraph: props => (
+                      <Col
+                        width={[1, 1, 1, 1, 9 / 12, 6 / 12]}
+                        style={{ textAlign: 'center' }}
+                      >
+                        <BodyPrimary {...props} />
+                      </Col>
+                    )
                   }}
                   source={outComesData[0].text}
                 />
-              </Col>
-              {outComesData.slice(1).map(({ text }) => {
-                return (
-                  // eslint-disable-next-line react/jsx-key
-                  <Col
-                    width={[1, 1, 1, 1, 4 / 12]}
-                    style={{ textAlign: 'center' }}
-                    key={generate()}
-                  >
-                    <ReactMarkdown
-                      renderers={{
-                        // eslint-disable-next-line
-                        heading: props => <SectionTitle {...props} />,
-                        // eslint-disable-next-line
-                        paragraph: props => <BodyPrimary {...props} />
-                      }}
-                      source={text}
-                    />
-                  </Col>
-                )
-              })}
-            </Fragment>
-          )}
-        </BlockRow>
+              </Fragment>
+            )}
+          </BlockRow>
+          <BlockRow mobile={{ bottom: '4' }} tablet={{ bottom: '6' }}>
+            {outComesData.slice(1).map(({ text }) => {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <Col
+                  width={[1, 1, 1, 1, 4 / 12]}
+                  style={{ textAlign: 'center' }}
+                  key={generate()}
+                >
+                  <ReactMarkdown
+                    renderers={{
+                      // eslint-disable-next-line
+                      heading: props => <SectionTitle {...props} />,
+                      // eslint-disable-next-line
+                      paragraph: props => <GreyBodyPrimary {...props} />
+                    }}
+                    source={text}
+                  />
+                </Col>
+              )
+            })}
+          </BlockRow>
+        </Grid>
+      </GreyBackground>
+      <Grid>
         <BlockRow
           mobile={{ bottom: '4', top: '4' }}
-          smallTablet={{ bottom: '5', top: '5' }}
+          smallTablet={{ bottom: '5' }}
           tablet={{ bottom: '6', top: '6' }}
           flexEnd
         >
@@ -190,8 +199,8 @@ const IndexPage = props => {
         <Grid>
           <BlockRow
             mobile={{ bottom: '4', top: '4' }}
-            smallTablet={{ bottom: '5', top: '5' }}
-            tablet={{ bottom: '7', top: '7' }}
+            smallTablet={{ bottom: '5', top: '4' }}
+            tablet={{ bottom: '7', top: '6' }}
           >
             <Col width={[1]}>
               <ReactMarkdown
@@ -203,25 +212,30 @@ const IndexPage = props => {
               />
             </Col>
 
-            <Block4ImageCol width={[1]}>
+            <Col width={[1]}>
               <Image image={normalise(data4).image} />
-            </Block4ImageCol>
+            </Col>
           </BlockRow>
         </Grid>
       </BrownBackground>
 
+      {/* Cities */}
       <Grid>
         {shouldRender(data2) && (
-          <BlockRow
-            mobile={{ bottom: '4', top: '4' }}
-            smallTablet={{ bottom: '5', top: '5' }}
-            tablet={{ bottom: '7', top: '7' }}
-          >
-            <TextColumnsBlock data={normalise(data5)} />
-            <Col width={[1]}>
-              <Image image={normalise(data5).image} />
-            </Col>
-          </BlockRow>
+          <Fragment>
+            <BlockRow
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '4', top: '4' }}
+              tablet={{ bottom: '6', top: '6' }}
+            >
+              <TextColumnsBlock data={normalise(data5)} />
+            </BlockRow>
+            <BlockRow mobile={{ bottom: '5' }}>
+              <Col width={[1]}>
+                <Image image={normalise(data5).image} />
+              </Col>
+            </BlockRow>
+          </Fragment>
         )}
       </Grid>
 
@@ -243,7 +257,10 @@ const IndexPage = props => {
             </Block6ImageCol>
           </BlockRow>
 
-          <BlockRow mobile={{ bottom: '6', top: '0' }}>
+          <BlockRow
+            mobile={{ bottom: '4', top: '0' }}
+            tablet={{ bottom: '6', top: '0' }}
+          >
             <Col width={[1, 1, 1, 4 / 12]}>
               <ReactMarkdown
                 renderers={{
@@ -252,6 +269,7 @@ const IndexPage = props => {
                   // eslint-disable-next-line react/display-name
                   paragraph: props => <BodyPrimary reverse {...props} />
                 }}
+                source={normalise(data7).text}
               />
             </Col>
 
@@ -264,8 +282,8 @@ const IndexPage = props => {
 
       <BrownBackground>
         <Grid>
-          <BlockRow mobile={{ bottom: '4', top: '4' }}>
-            <Col width={[1]}>
+          <BlockRow mobile={{ top: '4', bottom: '4' }}>
+            <Col width={[1, 1, 1, 1, 6 / 12]}>
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
@@ -274,19 +292,43 @@ const IndexPage = props => {
                 source={normalise(data8).text}
               />
             </Col>
-
-            <Block4ImageCol width={[1]}>
+          </BlockRow>
+          <BlockRow style={{ justifyContent: 'center' }}>
+            <Col width={[10 / 12]} style={{ alignSelf: 'center' }}>
               <Image image={normalise(data8).image} />
-            </Block4ImageCol>
+            </Col>
           </BlockRow>
         </Grid>
       </BrownBackground>
-      {/* <Grid>
+
+      <Grid>
+        <BlockRow mobile={{ top: '4' }} tablet={{ top: '6' }} flexEnd>
+          <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} flexEnd>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => <SectionTitle {...props} />,
+                // eslint-disable-next-line react/display-name
+                paragraph: props => <BodyPrimary {...props} />
+              }}
+              source={normalise(data9).text}
+            />
+          </Col>
+        </BlockRow>
+
+        <BlockRow mobile={{ bottom: '4' }} tablet={{ bottom: '6' }}>
+          <Col width={[1]}>
+            <Image image={normalise(data9).image} />
+          </Col>
+        </BlockRow>
+      </Grid>
+
+      <Grid>
         <CaseStudyPreview
           isTop={false}
           caseStudy={caseStudy.relatedCaseStudy}
         />
-      </Grid> */}
+      </Grid>
     </Layout>
   )
 }
