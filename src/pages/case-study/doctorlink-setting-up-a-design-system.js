@@ -515,8 +515,9 @@ const IndexPage = props => {
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
         )}
-        <Hr />
       </Grid>
+      <Hr />
+
       <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
