@@ -7,15 +7,15 @@ import { generate } from 'shortid'
 
 import { Grid, Row, Col } from '../../components/grid'
 import GreyBackground from '../../components/Common/GreyBackground'
+import BrownBackground from '../../components/Common/BrownBackground'
+import TanBackground from '../../components/Common/TanBackground'
+
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import Hr from '../../components/Common/Hr'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import {
-  TextColumnsBlock,
-  renderImage
-} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+import { TextColumnsBlock } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
@@ -36,8 +36,13 @@ const normalise = (arr = [], index = 0) => normaliseAll(arr, index)[index]
 const GreyBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme }) => theme.colors.secondaryText};
 `
-const Block3Image = styled.div`
+
+const Block3Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[3]};
+`
+
+const Block4ImageCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[4]};
 `
 
 const Block6ImageCol = styled(Col)`
@@ -50,12 +55,10 @@ const Block7ImageCol = styled(Col)`
   `}
 `
 
-const BrownBackground = styled.div`
-  background-color: ${({ theme }) => theme.colors.black};
-`
-
-const TanBackground = styled.div`
-  background-color: ${({ theme }) => theme.colors.tanBg};
+const Block9ImageCol = styled(Col)`
+  ${breakpoint('smallPhone')`
+      padding-top: ${({ theme }) => theme.space[4]}
+  `}
 `
 
 const StyledHr = styled(Hr)`
@@ -66,15 +69,7 @@ const StyledHr = styled(Hr)`
     display: none
   ;`}
 `
-const Block4ImageCol = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[4]};
-`
 
-const Block9ImageCol = styled(Col)`
-  ${breakpoint('smallPhone')`
-    padding-top: ${({ theme }) => theme.space[4]}
-  `}
-`
 const BlockRow = styled(Row)`
   flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
   align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
@@ -85,27 +80,30 @@ const BlockRow = styled(Row)`
   justify-content: ${({ spaceEvenly }) =>
     spaceEvenly ? 'space-evenly' : null};
 
-${breakpoint('smallTablet')`
-  padding-top: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
-  padding-bottom: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.bottom ? theme.space[smallTablet.bottom] : null};
-`}
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
+    padding-bottom: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.bottom
+        ? theme.space[smallTablet.bottom]
+        : null};
+  `}
 
-${breakpoint('tablet')`
-  padding-top: ${({ theme, tablet }) =>
-    tablet && tablet.top ? theme.space[tablet.top] : null};
-  padding-bottom: ${({ theme, tablet }) =>
-    tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
-`}
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme, tablet }) =>
+      tablet && tablet.top ? theme.space[tablet.top] : null};
+    padding-bottom: ${({ theme, tablet }) =>
+      tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
+  `}
 
-${breakpoint('desktop')`
-  padding-top: ${({ theme, desktop }) =>
-    desktop && desktop.top ? theme.space[desktop.top] : null};
-  padding-bottom: ${({ theme, desktop }) =>
-    desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
-`}
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme, desktop }) =>
+      desktop && desktop.top ? theme.space[desktop.top] : null};
+    padding-bottom: ${({ theme, desktop }) =>
+      desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
+  `}
 `
+
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
@@ -121,7 +119,8 @@ const IndexPage = props => {
     genericBlock6: data6,
     genericBlock7: data7,
     genericBlock8: data8,
-    genericBlock9: data9
+    genericBlock9: data9,
+    relatedCaseStudy
   } = caseStudy
 
   const outComesDataText = normalise(data2, 0).text
@@ -132,8 +131,7 @@ const IndexPage = props => {
       <Head
         page={{
           ...caseStudy,
-          socialLogo:
-            'https://www.yld.io/static/logo_animated-832020608244057f6a9d73e80994ac4a.gif'
+          socialLogo: caseStudy.posterImage.file.url
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
@@ -188,30 +186,28 @@ const IndexPage = props => {
             smallTablet={{ bottom: '4' }}
             tablet={{ bottom: '6' }}
           >
-            {outComesDataFigures.map(({ text }, index) => {
-              return (
-                <Col
-                  width={[1, 1, 1, 1, 4 / 12]}
-                  style={{
-                    textAlign: 'center',
-                    flexDirection: 'column',
-                    alignItems: 'center'
+            {outComesDataFigures.map(({ text }, index) => (
+              <Col
+                width={[1, 1, 1, 1, 4 / 12]}
+                style={{
+                  textAlign: 'center',
+                  flexDirection: 'column',
+                  alignItems: 'center'
+                }}
+                key={generate()}
+              >
+                <ReactMarkdown
+                  renderers={{
+                    // eslint-disable-next-line
+                    heading: props => <SectionTitle {...props} />,
+                    // eslint-disable-next-line
+                    paragraph: props => <GreyBodyPrimary {...props} />
                   }}
-                  key={generate()}
-                >
-                  <ReactMarkdown
-                    renderers={{
-                      // eslint-disable-next-line
-                      heading: props => <SectionTitle {...props} />,
-                      // eslint-disable-next-line
-                      paragraph: props => <GreyBodyPrimary {...props} />
-                    }}
-                    source={text}
-                  />
-                  {index + 1 < outComesDataFigures.length && <StyledHr short />}
-                </Col>
-              )
-            })}
+                  source={text}
+                />
+                {index + 1 < outComesDataFigures.length && <StyledHr short />}
+              </Col>
+            ))}
           </BlockRow>
         </Grid>
       </GreyBackground>
@@ -222,10 +218,9 @@ const IndexPage = props => {
           flexEnd
         >
           <TextColumnsBlock data={normalise(data3)} />
-
-          <Col width={[1, 1, 1, 8 / 12]}>
-            <Block3Image>{renderImage(normalise(data3).image)}</Block3Image>
-          </Col>
+          <Block3Col width={[1, 1, 1, 8 / 12]}>
+            <Image image={normalise(data3).image} />
+          </Block3Col>
         </BlockRow>
       </Grid>
       <BrownBackground>
@@ -333,29 +328,31 @@ const IndexPage = props => {
         </Grid>
       </BrownBackground>
 
-      <Grid>
-        <BlockRow mobile={{ top: '4' }} tablet={{ top: '6' }} flexEnd>
-          <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} flexEnd>
-            <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                heading: props => <SectionTitle {...props} />,
-                // eslint-disable-next-line react/display-name
-                paragraph: props => <BodyPrimary {...props} />
-              }}
-              source={normalise(data9).text}
-            />
-          </Col>
-        </BlockRow>
+      <GreyBackground>
+        <Grid>
+          <BlockRow mobile={{ top: '4' }} tablet={{ top: '6' }} flexEnd>
+            <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} flexEnd>
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle {...props} />,
+                  // eslint-disable-next-line react/display-name
+                  paragraph: props => <BodyPrimary {...props} />
+                }}
+                source={normalise(data9).text}
+              />
+            </Col>
+          </BlockRow>
 
-        <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
-          <Block9ImageCol width={[1]}>
-            <Image image={normalise(data9).image} />
-          </Block9ImageCol>
-        </BlockRow>
-      </Grid>
+          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
+            <Block9ImageCol width={[1]}>
+              <Image image={normalise(data9).image} />
+            </Block9ImageCol>
+          </BlockRow>
+        </Grid>
+      </GreyBackground>
 
-      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
+      <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
   )
 }
@@ -369,7 +366,7 @@ export const query = graphql`
         title
         slug
         introSentence {
-          id
+          introSentence
         }
         posterImage {
           title
