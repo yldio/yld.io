@@ -75,6 +75,7 @@ class JoinUs extends React.Component {
             title: content.openPositionsTitle
           }}
           ref={this.vacanciesRef}
+          limit={40}
         />
       </Layout>
     )

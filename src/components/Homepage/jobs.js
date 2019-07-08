@@ -15,6 +15,7 @@ const Jobs = () => (
       data={{
         title: 'Join our team'
       }}
+      limit={4}
     />
     <StyledGrid>
       <Row>
