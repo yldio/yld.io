@@ -7,7 +7,7 @@ import { generate } from 'shortid'
 
 import { Grid, Row, Col } from '../../components/grid'
 import GreyBackground from '../../components/Common/GreyBackground'
-import BrownBackground from '../../components/Common/BrownBackground'
+import BlackBackground from '../../components/Common/BlackBackground'
 import TanBackground from '../../components/Common/TanBackground'
 
 import Layout from '../../components/layout'
@@ -157,28 +157,26 @@ const IndexPage = props => {
             tablet={{ top: '6' }}
           >
             {shouldRender(data2) && (
-              <Fragment>
-                <ReactMarkdown
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => (
-                      <Col width={[1]} style={{ textAlign: 'center' }}>
-                        <SectionTitle {...props} />
-                      </Col>
-                    ),
-                    // eslint-disable-next-line
-                    paragraph: props => (
-                      <Col
-                        width={[1, 1, 1, 1, 9 / 12, 6 / 12]}
-                        style={{ textAlign: 'center' }}
-                      >
-                        <BodyPrimary {...props} />
-                      </Col>
-                    )
-                  }}
-                  source={outComesDataText}
-                />
-              </Fragment>
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => (
+                    <Col width={[1]} style={{ textAlign: 'center' }}>
+                      <SectionTitle {...props} />
+                    </Col>
+                  ),
+                  // eslint-disable-next-line
+                  paragraph: props => (
+                    <Col
+                      width={[1, 1, 1, 1, 9 / 12, 6 / 12]}
+                      style={{ textAlign: 'center' }}
+                    >
+                      <BodyPrimary {...props} />
+                    </Col>
+                  )
+                }}
+                source={outComesDataText}
+              />
             )}
           </BlockRow>
           <BlockRow
@@ -223,7 +221,7 @@ const IndexPage = props => {
           </Block3Col>
         </BlockRow>
       </Grid>
-      <BrownBackground>
+      <BlackBackground>
         <Grid>
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
@@ -244,7 +242,7 @@ const IndexPage = props => {
             </Block4ImageCol>
           </BlockRow>
         </Grid>
-      </BrownBackground>
+      </BlackBackground>
 
       {/* Cities */}
       <Grid>
@@ -307,7 +305,7 @@ const IndexPage = props => {
         </Grid>
       </TanBackground>
 
-      <BrownBackground>
+      <BlackBackground>
         <Grid>
           <BlockRow mobile={{ top: '4', bottom: '4' }}>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
@@ -326,7 +324,7 @@ const IndexPage = props => {
             </Col>
           </BlockRow>
         </Grid>
-      </BrownBackground>
+      </BlackBackground>
 
       <GreyBackground>
         <Grid>
