@@ -19,7 +19,7 @@ const StyledOpenPositions = styled(GreyBackground)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
-const OpenPositions = ({ data: { title }, limit }) => (
+const OpenPositions = ({ data: { title }, limit = 4 }) => (
   <StyledOpenPositions>
     <Grid>
       <SectionTitle>{title}</SectionTitle>
