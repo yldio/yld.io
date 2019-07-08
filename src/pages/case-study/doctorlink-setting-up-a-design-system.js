@@ -527,7 +527,7 @@ export const query = graphql`
     genericBlockImages {
       title
       fluid {
-        ...GatsbyContentfulFluid_withWebp
+        ...GatsbyContentfulFluid
       }
     }
     genericBlockText {
