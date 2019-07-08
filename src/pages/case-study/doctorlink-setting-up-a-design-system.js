@@ -161,8 +161,7 @@ const IndexPage = props => {
       <Head
         page={{
           ...caseStudy,
-          socialLogo:
-            'https://www.yld.io/static/logo_animated-832020608244057f6a9d73e80994ac4a.gif'
+          socialLogo: (caseStudy.posterImage.file || {}).url
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
