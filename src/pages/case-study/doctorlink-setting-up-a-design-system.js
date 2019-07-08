@@ -5,7 +5,9 @@ import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../../components/grid'
 import BlueBackground from '../../components/Common/BlueBackground'
-import GreyBackground from '../../components/Common/GreyBackground'
+import GreyBackground, {
+  GreyBackgroundOffset
+} from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
@@ -183,22 +185,25 @@ const IndexPage = props => {
             <TextAndImageBlock data={normalise(data2)} />
           </BlockRow>
         )}
-
-        {/* Youtube Video */}
-        {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
-
-        {/* Finding common ground */}
-        {shouldRender(data4) && (
-          <BlockRow
-            mobile={{ bottom: '4', top: '4' }}
-            smallTablet={{ bottom: '5', top: '5' }}
-            tablet={{ bottom: '6', top: '6' }}
-            desktop={{ bottom: '7', top: '7' }}
-          >
-            <TextColumnsBlock data={normalise(data4)} />
-          </BlockRow>
-        )}
       </Grid>
+      <GreyBackgroundOffset topMargin topOffset={-122.5}>
+        <Grid>
+          {/* Youtube Video */}
+          {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
+
+          {/* Finding common ground */}
+          {shouldRender(data4) && (
+            <BlockRow
+              mobile={{ bottom: '4', top: '4' }}
+              smallTablet={{ bottom: '5', top: '5' }}
+              tablet={{ bottom: '6', top: '6' }}
+              desktop={{ bottom: '7', top: '7' }}
+            >
+              <TextColumnsBlock data={normalise(data4)} />
+            </BlockRow>
+          )}
+        </Grid>
+      </GreyBackgroundOffset>
 
       <BlueBackground>
         <Grid>
