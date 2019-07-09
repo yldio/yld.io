@@ -58,6 +58,8 @@ jobs:
       - run:
           command: npm run test:e2e
           name: Testcafe
+      - store_artifacts:
+          path: ~/repo/artifacts/screenshots
     working_directory: ~/repo
 version: 2
 workflows:
