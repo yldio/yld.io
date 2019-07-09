@@ -371,7 +371,12 @@ const IndexPage = props => {
             tablet={{ bottom: '7' }}
             desktop={{ bottom: '8' }}
           >
-            <TextAndImageBlock data={normalise(data16)} />
+            <TextAndImageBlock
+              data={normalise(data16)}
+              colWidthOne={[1, 1, 1, 1, 5 / 12]}
+              colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              middleColWidth={[0, 0, 0, 0, 1 / 12]}
+            />
           </BlockRow>
         )}
 
