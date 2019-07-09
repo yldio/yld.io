@@ -5,9 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../../components/grid'
 import BlueBackground from '../../components/Common/BlueBackground'
-import GreyBackground, {
-  GreyBackgroundOffset
-} from '../../components/Common/GreyBackground'
+import GreyBackground from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
@@ -63,19 +61,12 @@ ${breakpoint('desktop')`
 `}
 `
 
-const NonMobileDisplayVideoSection = styled(GreyBackgroundOffset)`
-  display: none;
+const HalfGreyBackground = styled(GreyBackground)`
+  display: ${({ mobile }) => (mobile ? 'inherit' : 'none')};
+  background-image: linear-gradient(white 50%, transparent 50%);
 
   ${breakpoint('smallTablet')`
-      display: inherit;
-  `}
-`
-
-const MobileDisplayVideoSection = styled.div`
-  display: inherit;
-
-  ${breakpoint('smallTablet')`
-    display: none;
+      display: ${({ mobile }) => (mobile ? 'none' : 'inherit')};
   `}
 `
 
@@ -213,16 +204,16 @@ const IndexPage = props => {
         )}
       </Grid>
 
-      <NonMobileDisplayVideoSection>
+      <HalfGreyBackground>
         <Grid>
           {/* Youtube Video */}
           {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
         </Grid>
-      </NonMobileDisplayVideoSection>
+      </HalfGreyBackground>
 
-      <MobileDisplayVideoSection>
+      <HalfGreyBackground mobile>
         {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
-      </MobileDisplayVideoSection>
+      </HalfGreyBackground>
 
       <GreyBackground>
         <Grid>
