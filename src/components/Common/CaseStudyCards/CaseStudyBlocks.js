@@ -51,6 +51,10 @@ const MobileReverseOrderWrapper = styled.div`
   `}
 `
 
+const FullWidthBlockDesktopPadding = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
 const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
   <Fragment>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -65,6 +69,7 @@ const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
 const FullWidthBlock = ({ data: { text, image } }) => (
   <Col width={[1]}>
     {renderText(text)}
+    {text && image && <FullWidthBlockDesktopPadding />}
     {renderImage(image)}
   </Col>
 )
