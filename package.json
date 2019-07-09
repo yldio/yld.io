@@ -57,7 +57,7 @@
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "npm run build:app && testcafe chrome:headless ./tests/e2e",
-    "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\"",
+    "test:lighthouse": "npm run build:app && jest --testPathPattern=\"lighthouse.test.js\" -s artifacts/screenshots",
     "develop": "npm start",
     "start": "gatsby develop",
     "dev:clean": "rm -rf .cache && yarn develop",
