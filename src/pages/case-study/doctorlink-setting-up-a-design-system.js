@@ -14,6 +14,7 @@ import {
   MobileReverseOrderWrapper,
   TextColumnsBlock,
   FullWidthBlock,
+  HalfGreyBackground,
   VideoBlock,
   ImagesBlock,
   TextAndImageBlock,
@@ -59,15 +60,6 @@ ${breakpoint('desktop')`
   padding-bottom: ${({ theme, desktop }) =>
     desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
 `}
-`
-
-const HalfGreyBackground = styled(GreyBackground)`
-  display: ${({ mobile }) => (mobile ? 'inherit' : 'none')};
-  background-image: linear-gradient(white 50%, transparent 50%);
-
-  ${breakpoint('smallTablet')`
-      display: ${({ mobile }) => (mobile ? 'none' : 'inherit')};
-  `}
 `
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`

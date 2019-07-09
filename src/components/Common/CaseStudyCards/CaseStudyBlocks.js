@@ -7,6 +7,7 @@ import { Col } from '../../../components/grid'
 import { SectionTitle, BodyPrimary } from '../../../components/Typography'
 import Image from '../../../components/Common/Image'
 import VideoSection from '../../../components/Common/VideoSection'
+import GreyBackground from '../../../components/Common/GreyBackground'
 
 const StyledColumnImage = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
@@ -96,6 +97,15 @@ const FullWidthBlock = ({ data: { text, image } }) => (
   </Col>
 )
 
+const HalfGreyBackground = styled(GreyBackground)`
+  display: ${({ mobile }) => (mobile ? 'inherit' : 'none')};
+  background-image: linear-gradient(white 50%, transparent 50%);
+
+  ${breakpoint('smallTablet')`
+      display: ${({ mobile }) => (mobile ? 'none' : 'inherit')};
+  `}
+`
+
 const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
 
 const ImagesBlock = ({ data }) => (
@@ -143,6 +153,7 @@ export {
   MobileReverseOrderWrapper,
   TextColumnsBlock,
   FullWidthBlock,
+  HalfGreyBackground,
   VideoBlock,
   ImagesBlock,
   TextAndImageBlock,
