@@ -30,7 +30,6 @@
     "lodash.isequal": "^4.5.0",
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
-    "parse-bearer-token": "^1.0.1",
     "polished": "2.3.0",
     "raf": "^3.4.1",
     "react": "16.8.1",

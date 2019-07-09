@@ -1,9 +1,31 @@
-const { default: parseToken } = require('parse-bearer-token')
-
 const { LAMBDA_AUTH_TOKEN } = process.env
 
+const parseBasicToken = req => {
+  const auth = req.headers ? req.headers.authorization || null : null
+
+  if (!auth) {
+    return null
+  }
+
+  const parts = auth.split(' ')
+
+  // Malformed header.
+  if (parts.length < 2) {
+    return null
+  }
+
+  const schema = parts.shift().toLowerCase()
+  const token = parts.join(' ')
+
+  if (schema !== 'basic') {
+    return null
+  }
+
+  return token
+}
+
 const auth = (event, cb) => {
-  const token = parseToken(event)
+  const token = parseBasicToken(event)
 
   if (!token) {
     throw new Error('Unable to read auth token')
