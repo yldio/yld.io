@@ -25,9 +25,9 @@ test('a dropdown dropdownContainer opens on desktop and redirects correctly', as
   await t.expect(services.exists).ok({ timeout: 5000 })
   await t.click(services)
 
-  const engineeringSubItem = await Selector(
-    'li[class^="FAKETESTInnerAnchorItem"]'
-  ).nth(0)
+  const engineeringSubItem = await Selector('li[class^="InnerAnchorItem"]').nth(
+    0
+  )
   await t.expect(engineeringSubItem.exists).ok({ timeout: 5000 })
   await t.click(engineeringSubItem)
 
