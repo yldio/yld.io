@@ -22,11 +22,12 @@ const renderImage = data => data && <Image image={data} />
 This solution ensures that strong is always bold and white for any environment */
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme, bpColorReverse }) =>
-    theme.colors[bpColorReverse ? 'opacityWhite' : 'white']};
+    bpColorReverse ? theme.colors.opacityWhite : null};
 
   > strong {
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme, bpColorReverse }) =>
+      bpColorReverse ? theme.colors.white : null};
   }
 `
 

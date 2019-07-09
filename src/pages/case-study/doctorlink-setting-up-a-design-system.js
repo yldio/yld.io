@@ -207,7 +207,7 @@ const IndexPage = props => {
         )}
       </Grid>
 
-      <NonMobileDisplayVideoSection topMargin topOffset={-150}>
+      <NonMobileDisplayVideoSection>
         <Grid>
           {/* Youtube Video */}
           {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
