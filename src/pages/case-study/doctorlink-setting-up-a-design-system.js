@@ -63,6 +63,22 @@ ${breakpoint('desktop')`
 `}
 `
 
+const NonMobileDisplayVideoSection = styled(GreyBackgroundOffset)`
+  display: none;
+
+  ${breakpoint('smallTablet')`
+      display: inherit;
+  `}
+`
+
+const MobileDisplayVideoSection = styled.div`
+  display: inherit;
+
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
 
@@ -186,11 +202,20 @@ const IndexPage = props => {
           </BlockRow>
         )}
       </Grid>
-      <GreyBackgroundOffset topMargin topOffset={-122.5}>
+
+      <NonMobileDisplayVideoSection>
         <Grid>
           {/* Youtube Video */}
           {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
+        </Grid>
+      </NonMobileDisplayVideoSection>
 
+      <MobileDisplayVideoSection>
+        {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
+      </MobileDisplayVideoSection>
+
+      <GreyBackground>
+        <Grid>
           {/* Finding common ground */}
           {shouldRender(data4) && (
             <BlockRow
@@ -203,7 +228,7 @@ const IndexPage = props => {
             </BlockRow>
           )}
         </Grid>
-      </GreyBackgroundOffset>
+      </GreyBackground>
 
       <BlueBackground>
         <Grid>
