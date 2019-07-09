@@ -191,7 +191,12 @@ const IndexPage = props => {
             smallTablet={{ bottom: '7', top: '7' }}
             desktop={{ bottom: '8', top: '7' }}
           >
-            <TextAndImageBlock data={normalise(data2)} />
+            <TextAndImageBlock
+              data={normalise(data2)}
+              colWidthOne={[1, 1, 1, 1, 5 / 12]}
+              colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              middleColWidth={[0, 0, 0, 0, 1 / 12]}
+            />
           </BlockRow>
         )}
       </Grid>

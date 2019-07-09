@@ -131,11 +131,18 @@ const StyledBreakpointMobilePadding = styled(StyledMobilePadding)`
   `}
 `
 
-const TextAndImageBlock = ({ data: { text, image }, colorReverse = false }) => (
+const TextAndImageBlock = ({
+  data: { text, image },
+  colWidthOne = [1, 1, 1, 1, 1 / 2],
+  colWidthTwo = [1, 1, 1, 1, 1 / 2],
+  middleColWidth = null,
+  colorReverse = false
+}) => (
   <Fragment>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderText(text, colorReverse)}</Col>
+    <Col width={colWidthOne}>{renderText(text, colorReverse)}</Col>
     {text && image && <StyledBreakpointMobilePadding width={[1]} />}
-    <Col width={[1, 1, 1, 1, 1 / 2]}>{renderImage(image)}</Col>
+    {middleColWidth && <Col width={middleColWidth} />}
+    <Col width={colWidthTwo}>{renderImage(image)}</Col>
   </Fragment>
 )
 
