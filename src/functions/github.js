@@ -12,6 +12,7 @@ const {
 } = require('@yldio/oss-stats')
 const { createClient } = require('contentful-management')
 
+const Auth = require('./utils/auth')
 const Meta = require('./oss/meta')
 const Repos = require('./oss/repos')
 
@@ -19,7 +20,14 @@ const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
 
 const org = 'yldio'
 
-exports.handler = async () => {
+exports.handler = async evt => {
+  if (!Auth(evt)) {
+    return {
+      statusCode: 401,
+      body: 'Not authenticated'
+    }
+  }
+
   if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
     throw new Error(`Missing env variables, check set up`)
   }

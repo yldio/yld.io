@@ -2,6 +2,8 @@ const got = require('got')
 const { URL } = require('url')
 const isEqual = require('lodash.isequal')
 
+const Auth = require('./utils/auth')
+
 /**
  *
  * This lambda is used to check for any differences in roles listed on yld.io
@@ -23,7 +25,14 @@ const {
   LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
 } = process.env
 
-exports.handler = async () => {
+exports.handler = async evt => {
+  if (!Auth(evt)) {
+    return {
+      statusCode: 401,
+      body: 'Not authenticated'
+    }
+  }
+
   const isProd = LAMBDA_ENV === 'production'
 
   const metaHref = new URL(

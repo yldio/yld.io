@@ -8,6 +8,8 @@ const find = require('lodash.find')
 const striptags = require('striptags')
 const isEqual = require('lodash.isequal')
 
+const Auth = require('./utils/auth')
+
 // Set up dot-env variables
 const {
   CONTENTFUL_SPACE,
@@ -157,7 +159,14 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 //
 // space.getEntries() will be depreciated, use space -> environment -> entries
 
-exports.handler = async () => {
+exports.handler = async evt => {
+  if (!Auth(evt)) {
+    return {
+      statusCode: 401,
+      body: 'Not authenticated'
+    }
+  }
+
   const isProd = LAMBDA_ENV === 'production'
   // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
   const space = await client.getSpace(CONTENTFUL_SPACE)
