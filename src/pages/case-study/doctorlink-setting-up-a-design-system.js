@@ -481,7 +481,12 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5', top: '5' }}
               tablet={{ bottom: '6', top: '6' }}
             >
-              <TextColumnsBlock data={normalise(data25)} />
+              <TextColumnsBlock
+                data={normalise(data25)}
+                colWidthOne={[1, 1, 1, 1, 5 / 12]}
+                colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+                middleColWidth={[0, 0, 0, 0, 1 / 12]}
+              />
             </BlockRow>
           )}
 

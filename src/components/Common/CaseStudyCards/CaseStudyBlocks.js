@@ -76,14 +76,18 @@ const TextAndImagePaddingSeparator = styled.div`
 
 const TextColumnsBlock = ({
   data: { text },
+  colWidthOne = [1, 1, 1, 1, 1 / 2],
+  colWidthTwo = [1, 1, 1, 1, 1 / 2],
+  middleColWidth = null,
   colorReverse = false,
   bpColorReverse = false
 }) => (
   <Fragment>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
+    <Col width={colWidthOne}>
       {renderText(text, colorReverse, bpColorReverse, ['paragraph'])}
     </Col>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
+    {middleColWidth && <Col width={middleColWidth} />}
+    <Col width={colWidthTwo}>
       {renderText(text, colorReverse, bpColorReverse, ['heading'])}
     </Col>
   </Fragment>
