@@ -19,14 +19,23 @@ const StyledColumnImage = styled(Col)`
 const renderImage = data => data && <Image image={data} />
 
 /* The reason for this is to solve inconsistent CSS Styling Between gatsby develop and build.
-This solution ensures that strong is always bold for any environment */
+This solution ensures that strong is always bold and white for any environment */
 const StyledBodyPrimary = styled(BodyPrimary)`
+  color: ${({ theme, bpColorReverse }) =>
+    theme.colors[bpColorReverse ? 'opacityWhite' : 'white']};
+
   > strong {
     font-weight: bold;
+    color: ${({ theme }) => theme.colors.white};
   }
 `
 
-const renderText = (text, colorReverse, disallowed = []) =>
+const renderText = (
+  text,
+  colorReverse,
+  bpColorReverse = false,
+  disallowed = []
+) =>
   text && (
     <ReactMarkdown
       disallowedTypes={disallowed}
@@ -35,7 +44,11 @@ const renderText = (text, colorReverse, disallowed = []) =>
         heading: props => <SectionTitle reverse={colorReverse} {...props} />,
         // eslint-disable-next-line
         paragraph: props => (
-          <StyledBodyPrimary reverse={colorReverse} {...props} />
+          <StyledBodyPrimary
+            reverse={colorReverse}
+            bpColorReverse={bpColorReverse}
+            {...props}
+          />
         )
       }}
       source={text}
@@ -55,13 +68,17 @@ const TextAndImagePaddingSeparator = styled.div`
   padding-bottom: ${({ theme }) => theme.space[2]};
 `
 
-const TextColumnsBlock = ({ data: { text }, colorReverse = false }) => (
+const TextColumnsBlock = ({
+  data: { text },
+  colorReverse = false,
+  bpColorReverse = false
+}) => (
   <Fragment>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
-      {renderText(text, colorReverse, ['paragraph'])}
+      {renderText(text, colorReverse, bpColorReverse, ['paragraph'])}
     </Col>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
-      {renderText(text, colorReverse, ['heading'])}
+      {renderText(text, colorReverse, bpColorReverse, ['heading'])}
     </Col>
   </Fragment>
 )

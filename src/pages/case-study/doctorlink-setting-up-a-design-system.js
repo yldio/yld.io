@@ -87,7 +87,11 @@ const PropertiesAndTokensBlockRow = styled(BlockRow)`
   `}
 `
 
-const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
+const PropertiesAndTokensBlock = ({
+  data = [],
+  colorReverse = false,
+  bpColorReverse = false
+}) => {
   const {
     genericBlockImages,
     genericBlockText: { genericBlockText: textOne }
@@ -107,10 +111,10 @@ const PropertiesAndTokensBlock = ({ data = [], colorReverse = false }) => {
       <Col width={[0, 0, 0, 0, 0, 3 / 8]}>{renderImage(image)}</Col>
       <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textOne, colorReverse)}
+        {renderText(textOne, colorReverse, bpColorReverse)}
       </Col>
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textTwo, colorReverse)}
+        {renderText(textTwo, colorReverse, bpColorReverse)}
       </Col>
     </PropertiesAndTokensBlockRow>
   )
@@ -203,7 +207,7 @@ const IndexPage = props => {
         )}
       </Grid>
 
-      <NonMobileDisplayVideoSection>
+      <NonMobileDisplayVideoSection topMargin topOffset={-150}>
         <Grid>
           {/* Youtube Video */}
           {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
@@ -450,13 +454,21 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5', top: '5' }}
               tablet={{ bottom: '6', top: '6' }}
             >
-              <TextColumnsBlock data={normalise(data23)} colorReverse />
+              <TextColumnsBlock
+                data={normalise(data23)}
+                colorReverse
+                bpColorReverse
+              />
             </BlockRow>
           )}
 
           {/* Save your details button image / Properties & Tokens */}
           {shouldRender(data24) && (
-            <PropertiesAndTokensBlock data={data24} colorReverse />
+            <PropertiesAndTokensBlock
+              data={data24}
+              colorReverse
+              bpColorReverse
+            />
           )}
         </Grid>
       </BlueBackground>
