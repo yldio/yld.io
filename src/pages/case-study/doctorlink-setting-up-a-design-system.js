@@ -12,7 +12,6 @@ import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import {
-  renderImage,
   renderText,
   MobileReverseOrderWrapper,
   TextColumnsBlock,
@@ -25,6 +24,7 @@ import {
 import Hr from '../../components/Common/Hr'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
+import Image from '../../components/Common/Image'
 
 const BlockRow = styled(Row)`
   flex-direction: ${({ columnReverse }) =>
@@ -102,13 +102,19 @@ const PropertiesAndTokensBlock = ({
     genericBlockText: { genericBlockText: textTwo }
   } = data[1]
 
+  const PropertiesAndTokensImage = styled(Image)`
+    width: 314px;
+  `
+
   return (
     <PropertiesAndTokensBlockRow
       mobile={{ bottom: '4' }}
       smallTablet={{ bottom: '5' }}
       tablet={{ bottom: '6' }}
     >
-      <Col width={[0, 0, 0, 0, 0, 3 / 8]}>{renderImage(image)}</Col>
+      <Col width={[0, 0, 0, 0, 0, 3 / 8]}>
+        {image && <PropertiesAndTokensImage image={image} />}
+      </Col>
       <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
         {renderText(textOne, colorReverse, bpColorReverse)}
