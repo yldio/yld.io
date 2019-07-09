@@ -117,10 +117,10 @@ const PropertiesAndTokensBlock = ({
       </Col>
       <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textOne, colorReverse, bpColorReverse)}
+        {renderText(textOne, colorReverse, bpColorReverse, [], 'PTMono')}
       </Col>
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textTwo, colorReverse, bpColorReverse)}
+        {renderText(textTwo, colorReverse, bpColorReverse, [], 'PTMono')}
       </Col>
     </PropertiesAndTokensBlockRow>
   )

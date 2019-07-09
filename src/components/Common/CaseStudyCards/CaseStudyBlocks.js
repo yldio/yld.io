@@ -23,11 +23,13 @@ This solution ensures that strong is always bold and white for any environment *
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme, bpColorReverse }) =>
     bpColorReverse ? theme.colors.opacityWhite : null};
+  font-family: ${({ bpFont }) => bpFont};
 
   > strong {
     font-weight: bold;
     color: ${({ theme, bpColorReverse }) =>
       bpColorReverse ? theme.colors.white : null};
+    font-family: 'Roboto', sans-serif;
   }
 `
 
@@ -35,7 +37,8 @@ const renderText = (
   text,
   colorReverse,
   bpColorReverse = false,
-  disallowed = []
+  disallowed = [],
+  bpFont = null
 ) =>
   text && (
     <ReactMarkdown
@@ -48,6 +51,7 @@ const renderText = (
           <StyledBodyPrimary
             reverse={colorReverse}
             bpColorReverse={bpColorReverse}
+            bpFont={bpFont}
             {...props}
           />
         )
