@@ -30,15 +30,19 @@ const showGetInTouch = pathname => {
 
 const getBackgroundColor = pathname => {
   const path = getPathnameWithSlashes(pathname)
-  /**
-   * These pages all have a final white component so we make sure
-   * to add a grey background to give them some distinction
-   */
-  const colors = {
-    greyBg: ['engineering', 'design', 'training ', 'about-us', 'open-source']
-  }
 
-  return Object.keys(colors).find(key => colors[key].includes(path))
+  const greyBgSubPaths = [
+    'engineering',
+    'design',
+    'training ',
+    'about-us',
+    'open-source',
+    'case-study'
+  ]
+
+  return greyBgSubPaths.some(subPath => path.includes(subPath))
+    ? 'greyBg'
+    : 'white'
 }
 
 const Footer = () => (
