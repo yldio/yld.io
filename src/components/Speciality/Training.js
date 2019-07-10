@@ -9,8 +9,13 @@ import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 
 const TrainingStageContainer = styled.div`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const StyledImageBorder = styled.div`
@@ -18,7 +23,10 @@ const StyledImageBorder = styled.div`
 `
 
 const TrainingSectionContainer = styled.div`
-  ${breakpoint('desktop')`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}

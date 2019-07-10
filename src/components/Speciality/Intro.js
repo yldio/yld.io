@@ -33,7 +33,11 @@ const StyledIntroRectangleInner = styled.div`
 
 const IntroSectionPadding = styled.div`
   padding-top: ${({ theme }) => theme.space[3]};
-  padding-bottom: ${({ theme }) => theme.space[7]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
 `
 
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (

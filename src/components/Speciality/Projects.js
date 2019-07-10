@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import LogoGrid from '../Common/LogoGrid'
 
@@ -36,22 +37,40 @@ const PosterLinks = ({ project }) => (
   </AnimatedLink>
 )
 
+const CompainesHelpedCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
+`
+
 const CompaniesHelped = ({ clients }) => (
   <Fragment>
     <Row>
-      <Col width={[1, 1, 1, 1, 1 / 2]}>
-        <Padding top={5} bottom={3}>
-          <Subtitle>Other clients we helped</Subtitle>
-        </Padding>
-      </Col>
+      <CompainesHelpedCol width={[1, 1, 1, 1, 1 / 2]}>
+        <Subtitle>Other clients we helped</Subtitle>
+      </CompainesHelpedCol>
     </Row>
     <LogoGrid companies={clients} />
   </Fragment>
 )
 
+const SectionWrap = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-top: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[7]};
+  `}
+`
+
 const ProjectsSection = ({ related, title, clients }) => (
   <Grid>
-    <Padding top={5} bottom={5}>
+    <SectionWrap>
       {related && related.length > 0 && (
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
@@ -85,7 +104,7 @@ const ProjectsSection = ({ related, title, clients }) => (
         </Row>
       )}
       {clients && clients.length > 0 && <CompaniesHelped clients={clients} />}
-    </Padding>
+    </SectionWrap>
   </Grid>
 )
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import BlueBackground from '../Common/BlueBackground'
 import styled from 'styled-components'
 import Image from '../Common/Image'
@@ -22,9 +22,18 @@ const Trimmer = styled(Grid)`
 `
 
 const ImgContainerCol = styled(Col)`
-  display: flex !important; /* sorry */
   align-items: center;
   justify-content: center;
+`
+
+const Wrapper = styled.div`
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
 `
 
 const CommunitySection = ({
@@ -42,7 +51,7 @@ const CommunitySection = ({
           alt={communityBackgroundTitle}
           image={communityBackground}
         />
-        <Padding top={5} bottom={5}>
+        <Wrapper>
           <Row>
             <ImgContainerCol width={[1, 1, 1, 1, 6 / 12]}>
               {communityLogoTitle ? (
@@ -63,7 +72,7 @@ const CommunitySection = ({
               </BodyPrimary>
             </Col>
           </Row>
-        </Padding>
+        </Wrapper>
       </Trimmer>
     </BlueBackground>
   ) : null

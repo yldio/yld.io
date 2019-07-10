@@ -17,7 +17,10 @@ const TalksSection = ({ talks: allTalks }) => {
   return talks && talks.length ? (
     <BlueBackground>
       <Grid>
-        <Padding top={4} bottom={5}>
+        <Padding
+          top={{ smallTablet: 3, tablet: 4 }}
+          bottom={{ smallTablet: 3.5, tablet: 5 }}
+        >
           <Row>
             <Col width={[1]}>
               <SectionTitle reverse>{`Talks`}</SectionTitle>
@@ -28,7 +31,10 @@ const TalksSection = ({ talks: allTalks }) => {
               <VideoSection src={featured.link} />
             </Padding>
           )}
-          <Padding top={4} bottom={4}>
+          <Padding
+            top={{ smallTablet: 4 }}
+            bottom={{ smallTablet: 3, tablet: 4 }}
+          >
             <Row>
               {talks.map(({ title, link, id }) => (
                 <CompactVideoLink
