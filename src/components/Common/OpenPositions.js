@@ -1,6 +1,7 @@
 import React from 'react'
-import { Padding } from 'styled-components-spacing'
 import styled from 'styled-components'
+import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Col, Row, Grid } from '../grid'
 import JobsByLocation from './JobsByLocation'
@@ -15,8 +16,12 @@ export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
 ))
 
 const StyledOpenPositions = styled(GreyBackground)`
-  padding-top: ${({ theme }) => theme.space[5]};
-  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
+  ${breakpoint('smallPhone', 'tablet')`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]}
+`}
 `
 
 const OpenPositions = ({ data: { title }, limit = 4 }) => (

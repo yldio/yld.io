@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col, Grid } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import OpenPositions from '../Common/OpenPositions'
 
 const StyledGrid = styled(Grid)`
-  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[7]};
+  ${breakpoint('smallPhone', 'tablet')`
+  padding-bottom: ${({ theme }) => theme.space[5]}
+`}
 `
 
 const Jobs = () => (
