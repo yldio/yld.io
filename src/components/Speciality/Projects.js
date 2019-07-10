@@ -68,6 +68,10 @@ const SectionWrap = styled.div`
   `}
 `
 
+const MobileTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+`
+
 const ProjectsSection = ({ related, title, clients }) => (
   <Grid>
     <SectionWrap>
@@ -83,13 +87,13 @@ const ProjectsSection = ({ related, title, clients }) => (
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
-          <Col width={[1, 1, 1, 1, 0]}>
+          <MobileTitleCol width={[1, 1, 1, 1, 0]}>
             <SectionTitle>
               {title}
               <br />
               <Emphasis>related projects</Emphasis>
             </SectionTitle>
-          </Col>
+          </MobileTitleCol>
           {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               <PosterLinks project={related[0]} />

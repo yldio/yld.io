@@ -12,6 +12,12 @@ const TrainingStageContainer = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[4]};
 
+  ${breakpoint('smallPhone', 'smallTablet')`
+    // :not(:first-child) wouldn't work in this instance as its all nested
+    // so have to throw a prop in there to maintain padding
+    ${props => (props.first ? '' : 'padding-top: 0;')}
+  `}
+
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
@@ -36,9 +42,9 @@ const TrainingStageSubtitle = styled(Subtitle)`
   padding-bottom: 0;
 `
 
-const TrainingStage = ({ title, body, iconTitle, icon }) => (
+const TrainingStage = ({ title, body, iconTitle, icon, first = false }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
-    <TrainingStageContainer>
+    <TrainingStageContainer first={first}>
       <StyledImageBorder>
         <Image
           alt={iconTitle}
@@ -66,6 +72,7 @@ const TrainingSection = ({ speciality }) => (
         </Row>
         <Row>
           <TrainingStage
+            first
             title={speciality.trainingTextTitle1}
             body={speciality.trainingTextBody1}
             iconTitle={speciality.trainingTextIcon1Title}

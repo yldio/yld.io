@@ -20,11 +20,11 @@ const StyledBlueBackground = styled(BlueBackground)`
 `
 
 const StyledIntroRectangleInner = styled.div`
-  padding-top: ${({ theme }) => theme.space[3]};
+  padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('smallPhone', 'smallTablet')`
-      padding-top: ${({ theme }) => theme.space[2]};
+      padding-top: ${({ theme }) => theme.space[3]};
       padding-bottom: ${({ theme }) => theme.space[3]};
       padding-left: ${({ theme }) => theme.space[4]};
       padding-right: ${({ theme }) => theme.space[4]};
@@ -53,11 +53,17 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   </IntroBorder>
 )
 
+const TopSectionRow = styled(Row)`
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
+`
+
 const IntroSection = ({ speciality }) => (
   <StyledBlueBackground>
     <IntroSectionPadding>
       <Grid>
-        <Row>
+        <TopSectionRow>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <Flex full column justifyCenter>
               <SectionTitle reverse as="h1">
@@ -75,7 +81,7 @@ const IntroSection = ({ speciality }) => (
               style={{ maxHeight: '100%' }}
             />
           </Col>
-        </Row>
+        </TopSectionRow>
         <Row>
           <Col width={[1]}>
             <Padding top={2} bottom={2}>
