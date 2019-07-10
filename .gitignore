@@ -12,3 +12,4 @@ yarn-error.log
 hint-report
 storybook-static/
 package-lock.json
+artifacts/
