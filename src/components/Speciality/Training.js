@@ -4,7 +4,7 @@ import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import GreyBackground from '../Common/GreyBackground'
 import StyledLink from '../Common/StyledLink'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 
 import Image from '../Common/Image'
 
@@ -14,12 +14,18 @@ const TrainingStageContainer = styled.div`
 `
 
 const StyledImageBorder = styled.div`
-  padding-bottom: ${remcalc(18)};
+  padding-bottom: ${({ theme }) => theme.space[2]};
 `
 
 const TrainingSectionContainer = styled.div`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[8]};
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
+`
+
+const TrainingStageSubtitle = styled(Subtitle)`
+  padding-bottom: 0;
 `
 
 const TrainingStage = ({ title, body, iconTitle, icon }) => (
@@ -32,7 +38,7 @@ const TrainingStage = ({ title, body, iconTitle, icon }) => (
           style={{ height: '50px', width: 'auto' }}
         />
       </StyledImageBorder>
-      <Subtitle>{title}</Subtitle>
+      <TrainingStageSubtitle>{title}</TrainingStageSubtitle>
       <BodyPrimary>{body}</BodyPrimary>
     </TrainingStageContainer>
   </Col>

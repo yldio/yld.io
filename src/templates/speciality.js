@@ -16,6 +16,7 @@ import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
 import Head from '../components/Common/Head'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const ajv = new Ajv({ allErrors: true, verbose: true })
 
@@ -384,10 +385,13 @@ const Speciality = ({
         <TutorialsSection speciality={title} tutorials={tutorials} />
       )}
       <BooksSection title={title} books={books} />
-      <GetInTouch
-        title={`Talk to us about ${title}`}
-        contactText={contactText}
-      />
+
+      <GreyBackground>
+        <GetInTouch
+          title={`Talk to us about ${title}`}
+          contactText={contactText}
+        />
+      </GreyBackground>
     </Layout>
   )
 }
