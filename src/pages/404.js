@@ -21,13 +21,15 @@ const StyledBodyPrimary = styled(BodyPrimary)`
 `
 
 const StyledCol = styled(Col)`
+  margin: ${({ theme }) => theme.space[5]} 0;
+
   ${breakpoint('tablet')`
-    margin: ${({ theme }) => theme.space[8]}
+    margin: ${({ theme }) => theme.space[8]} 0
   `}
 `
 
 const NotFoundPage = ({ data: { site }, location }) => (
-  <Layout location={location}>
+  <Layout location={location} is404>
     <Helmet
       title={`${site.siteMetadata.siteTitle} - Not Found`}
       meta={[
@@ -40,8 +42,8 @@ const NotFoundPage = ({ data: { site }, location }) => (
       <html lang="en" />
     </Helmet>
     <Grid>
-      <Row style={{ justifyContent: 'center' }}>
-        <StyledCol width={[1, 1, 1, 1, 1, 8 / 12]}>
+      <Row>
+        <StyledCol width={[1]}>
           <SectionTitle as="h1">Oops, nothing to see here</SectionTitle>
           <StyledBodyPrimary>
             The link is broken or the page has been removed. You might find what
