@@ -92,7 +92,7 @@ export const StyledLinkCss = css`
   `}
 `
 
-export const FakeLink = styled.p`
+export const FakeLink = styled.button`
   ${StyledLinkCss}
 `
 
