@@ -28,29 +28,32 @@ const showGetInTouch = pathname => {
   )
 }
 
-const getBackgroundColor = pathname => {
+const getBackgroundColor = (pathname, contactUsBg) => {
+  /**
+   * A bit of a hacky override, sorry
+   */
+  if (contactUsBg) {
+    return contactUsBg
+  }
+
   const path = getPathnameWithSlashes(pathname)
+  /**
+   * These pages all have a final white component so we make sure
+   * to add a grey background to give them some distinction
+   */
+  const colors = {
+    greyBg: ['engineering', 'design', 'training ', 'about-us', 'open-source']
+  }
 
-  const greyBgSubPaths = [
-    'engineering',
-    'design',
-    'training ',
-    'about-us',
-    'open-source',
-    'case-study'
-  ]
-
-  return greyBgSubPaths.some(subPath => path.includes(subPath))
-    ? 'greyBg'
-    : 'white'
+  return Object.keys(colors).find(key => colors[key].includes(path))
 }
 
-const Footer = () => (
+const Footer = ({ contactUsBg }) => (
   <Fragment>
     <Location>
       {({ location: { pathname } }) =>
         showGetInTouch(pathname) ? (
-          <Wrapper bgColor={getBackgroundColor(pathname)}>
+          <Wrapper bgColor={getBackgroundColor(pathname, contactUsBg)}>
             <GetInTouch
               title="We're here to help"
               contactText="Our experts work with you to understand your goals and help you build the capabilities you need to succeed"

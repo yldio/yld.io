@@ -179,7 +179,7 @@ const IndexPage = props => {
   } = caseStudy
 
   return (
-    <Layout location={location}>
+    <Layout location={location} contactUsBg={'greyBg'}>
       <Head
         page={{
           ...caseStudy,
