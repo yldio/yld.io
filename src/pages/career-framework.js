@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Get from 'lodash.get'
 
 import Layout from '../components/layout'
+import GetInTouch from '../components/Common/GetInTouch'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Discipline } from '../components/CareerFramework'
@@ -14,14 +15,13 @@ import GreyBackground from '../components/Common/GreyBackground'
 
 const DisciplineTitle = styled(FakeLink)`
   margin-right: ${({ theme }) => theme.space[4]};
+  cursor: pointer;
+  /* color: ${({ active, theme }) => (active ? null : theme.colors.textLight)};
 
-  ${({ active }) => {
-    return active
-      ? `
-    colour: ${({ theme }) => theme.colors.textLight}
-  `
-      : ''
-  }}
+  &:after {
+    background: ${({ active, theme }) =>
+      active ? null : theme.colors.textLight};
+  } */
 `
 
 const StyledIntroHeaderCol = styled(Col)`
@@ -34,11 +34,6 @@ const StyledIntroIntroCol = styled(Col)`
 
 const DisciplineTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
-`
-
-const DisciplineCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
 const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
@@ -86,7 +81,7 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
                     aria-controls={`panel-${title}`}
                     id={`discipline-tab-${idx}`}
                     key={title}
-                    active={currentDiscipline === title}
+                    muted={currentDiscipline !== title}
                     onClick={() => toggleDiscipline(title)}
                   >
                     {title}
@@ -97,17 +92,20 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
           <Row />
         </Grid>
       </GreyBackground>
-      {/* <DisciplineCol width={[1]}> */}
       {disciplines &&
         disciplines.length &&
-        disciplines.map(d => (
+        disciplines.map(discipline => (
           <Discipline
-            isActive={currentDiscipline === d.title}
+            isActive={currentDiscipline === discipline.title}
             key={generate()}
-            {...d}
+            {...discipline}
           />
         ))}
-      {/* </DisciplineCol> */}
+      <GetInTouch
+        title="Want to build your career with us?"
+        contactText="With the focus on learning and growth dynamic work environment, devotion to open source communities and epic perks, we hope for talent to feel as home with us."
+        ctaText="Get in touch"
+      />
     </Layout>
   )
 }
@@ -129,8 +127,17 @@ export const query = graphql`
           title
           ctaTitle
           ctaUrl
+          image {
+            fluid(maxWidth: 450) {
+              ...GatsbyContentfulFluid
+            }
+          }
           content {
-            content
+            content {
+              content {
+                value
+              }
+            }
           }
         }
         groups {

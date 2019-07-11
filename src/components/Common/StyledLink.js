@@ -26,17 +26,31 @@ export const StyledLinkCss = css`
     margin-top: ${remcalc(6)};
     background: ${({ theme }) => theme.colors.text};
     box-sizing: border-box;
+    transition: all ${props => props.theme.animations.fast} ease-out;
+    transition-property: background;
+
     ${is('noafter')`
       content: none;
     `}
+
     ${is('reverse')`
       background: ${({ theme }) => theme.colors.white};
-  `};
+    `};
+
+    ${is('muted')`
+      background: ${({ theme }) => theme.colors.textLight};
+    `};
   }
 
   &:hover {
     background: ${({ theme }) => theme.colors.greyBg};
     color: ${({ theme }) => theme.colors.text};
+
+    &:after {
+      ${is('muted')`
+        background: ${({ theme }) => theme.colors.text};
+      `};
+    }
   }
 
   &:focus {
@@ -54,6 +68,10 @@ export const StyledLinkCss = css`
       background: ${({ theme }) => theme.colors.text};
     }
   }
+
+  ${is('muted')`
+    color: ${props => props.theme.colors.textLight};
+  `}
 
   ${is('reverse')`
     color: ${({ theme }) => theme.colors.white};
