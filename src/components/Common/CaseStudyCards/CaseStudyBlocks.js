@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
+import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Col } from '../../../components/grid'
@@ -25,6 +26,7 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme, bpColorReverse }) =>
     bpColorReverse ? theme.colors.opacityWhite : null};
   font-family: ${({ bpFont }) => bpFont};
+  font-size: ${({ bpFontSmall }) => (bpFontSmall ? remcalc(16) : null)};
 
   > strong {
     font-weight: bold;
@@ -40,7 +42,8 @@ const renderText = ({
   bpColorReverse = false,
   disallowed = [],
   bpFont = null,
-  noHeaderPadding = false
+  noHeaderPadding = false,
+  bpFontSmall = false
 }) =>
   text && (
     <ReactMarkdown
@@ -60,6 +63,7 @@ const renderText = ({
             reverse={colorReverse}
             bpColorReverse={bpColorReverse}
             bpFont={bpFont}
+            bpFontSmall={bpFontSmall}
             {...props}
           />
         )
@@ -89,10 +93,11 @@ const TextColumnsBlock = ({
   colorReverse = false,
   bpColorReverse = false,
   noHeaderPadding = false,
+  headerBlock = true,
   headerColCss = undefined
 }) => (
   <Fragment>
-    <Col width={colWidthOne} {...headerColCss}>
+    <Col width={colWidthOne} block={headerBlock} {...headerColCss}>
       {renderText({
         text,
         colorReverse,

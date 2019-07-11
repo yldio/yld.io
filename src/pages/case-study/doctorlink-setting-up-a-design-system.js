@@ -20,7 +20,6 @@ import {
   TextAndImageBlock,
   TextAndResizedImageBlock
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
-import Hr from '../../components/Common/Hr'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
@@ -100,10 +99,22 @@ const PropertiesAndTokensBlock = ({
       </Col>
       <Col width={[0, 0, 0, 0, 0, 1 / 8]} />
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textOne, colorReverse, bpColorReverse, [], 'PTMono')}
+        {renderText({
+          text: textOne,
+          colorReverse,
+          bpColorReverse,
+          bpFont: 'PT Mono, sans-serif',
+          bpFontSmall: true
+        })}
       </Col>
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-        {renderText(textTwo, colorReverse, bpColorReverse, [], 'PTMono')}
+        {renderText({
+          text: textTwo,
+          colorReverse,
+          bpColorReverse,
+          bpFont: 'PT Mono, sans-serif',
+          bpFontSmall: true
+        })}
       </Col>
     </PropertiesAndTokensBlockRow>
   )
@@ -243,9 +254,14 @@ const IndexPage = props => {
               tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock
-                noHeaderPadding
                 data={normalise(data5)}
                 colorReverse
+                noHeaderPadding
+                headerBlock={false}
+                headerColCss={{
+                  flexDirection: 'column',
+                  justifyContent: 'center'
+                }}
               />
             </BlockRow>
           )}
@@ -570,8 +586,6 @@ const IndexPage = props => {
           </BlockRow>
         )}
       </Grid>
-      <Hr />
-
       <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
   )
@@ -581,7 +595,7 @@ export const query = graphql`
   fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
     genericBlockImages {
       title
-      fluid {
+      fluid(maxWidth: 1100) {
         ...GatsbyContentfulFluid
       }
     }
