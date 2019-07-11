@@ -11,7 +11,7 @@ const LevelInfo = ({ ctaTitle, ctaUrl, info, title }) => {
   const infoContent = Get(info, 'content[0].content[0].value', undefined)
   return (
     <LevelInfoWrapper>
-      <BodyPrimary noPadding bold>
+      <BodyPrimary noPaddingBottom bold>
         {title}
       </BodyPrimary>
       {infoContent && <BodyPrimary noPaddingTop>{infoContent}</BodyPrimary>}

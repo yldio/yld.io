@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import generate from 'shortid'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import Get from 'lodash.get'
 
 import Layout from '../components/layout'
@@ -16,24 +17,30 @@ import GreyBackground from '../components/Common/GreyBackground'
 const DisciplineTitle = styled(FakeLink)`
   margin-right: ${({ theme }) => theme.space[4]};
   cursor: pointer;
-  /* color: ${({ active, theme }) => (active ? null : theme.colors.textLight)};
-
-  &:after {
-    background: ${({ active, theme }) =>
-      active ? null : theme.colors.textLight};
-  } */
 `
 
 const StyledIntroHeaderCol = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[7]};
+  padding-top: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+  `}
 `
 
 const StyledIntroIntroCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const DisciplineTitleCol = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
