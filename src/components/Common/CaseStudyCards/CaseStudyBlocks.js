@@ -34,19 +34,26 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   }
 `
 
-const renderText = (
+const renderText = ({
   text,
   colorReverse,
   bpColorReverse = false,
   disallowed = [],
-  bpFont = null
-) =>
+  bpFont = null,
+  noHeaderPadding = false
+}) =>
   text && (
     <ReactMarkdown
       disallowedTypes={disallowed}
       renderers={{
         // eslint-disable-next-line
-        heading: props => <SectionTitle reverse={colorReverse} {...props} />,
+        heading: props => (
+          <SectionTitle
+            noPadding={noHeaderPadding}
+            reverse={colorReverse}
+            {...props}
+          />
+        ),
         // eslint-disable-next-line
         paragraph: props => (
           <StyledBodyPrimary
@@ -80,22 +87,35 @@ const TextColumnsBlock = ({
   colWidthTwo = [1, 1, 1, 1, 1 / 2],
   middleColWidth = null,
   colorReverse = false,
-  bpColorReverse = false
+  bpColorReverse = false,
+  noHeaderPadding = false,
+  headerColCss = undefined
 }) => (
   <Fragment>
-    <Col width={colWidthOne}>
-      {renderText(text, colorReverse, bpColorReverse, ['paragraph'])}
+    <Col width={colWidthOne} {...headerColCss}>
+      {renderText({
+        text,
+        colorReverse,
+        bpColorReverse,
+        disallowed: ['paragraph'],
+        noHeaderPadding
+      })}
     </Col>
     {middleColWidth && <Col width={middleColWidth} />}
     <Col width={colWidthTwo}>
-      {renderText(text, colorReverse, bpColorReverse, ['heading'])}
+      {renderText({
+        text,
+        colorReverse,
+        bpColorReverse,
+        disallowed: ['heading']
+      })}
     </Col>
   </Fragment>
 )
 
 const FullWidthBlock = ({ data: { text, image } }) => (
   <Col width={[1]}>
-    {renderText(text)}
+    {renderText({ text })}
     {text && image && <TextAndImagePaddingSeparator />}
     {renderImage(image)}
   </Col>
@@ -143,7 +163,7 @@ const TextAndImageBlock = ({
   colorReverse = false
 }) => (
   <Fragment>
-    <Col width={colWidthOne}>{renderText(text, colorReverse)}</Col>
+    <Col width={colWidthOne}>{renderText({ text, colorReverse })}</Col>
     {text && image && <StyledBreakpointMobilePadding width={[1]} />}
     {middleColWidth && <Col width={middleColWidth} />}
     <Col width={colWidthTwo}>{renderImage(image)}</Col>
@@ -152,7 +172,7 @@ const TextAndImageBlock = ({
 
 const TextAndResizedImageBlock = ({ data: { text, image } }) => (
   <Fragment>
-    <Col width={[1, 1, 1, 1, 4 / 8]}>{renderText(text)}</Col>
+    <Col width={[1, 1, 1, 1, 4 / 8]}>{renderText({ text })}</Col>
     {text && image && <StyledMobilePadding width={[1, 1, 1, 1, 1 / 8]} />}
     <Col width={[1, 1, 1, 1, 3 / 8]}>{renderImage(image)}</Col>
   </Fragment>

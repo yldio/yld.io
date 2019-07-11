@@ -213,7 +213,7 @@ const IndexPage = props => {
       </HalfGreyBackground>
 
       <GreyBackground>
-        <Grid>
+        <Grid flex>
           {/* Finding common ground */}
           {shouldRender(data4) && (
             <BlockRow
@@ -222,7 +222,12 @@ const IndexPage = props => {
               tablet={{ bottom: '6', top: '6' }}
               desktop={{ bottom: '7', top: '7' }}
             >
-              <TextColumnsBlock data={normalise(data4)} />
+              <TextColumnsBlock
+                data={normalise(data4)}
+                headerColCss={{
+                  alignContent: 'center'
+                }}
+              />
             </BlockRow>
           )}
         </Grid>
@@ -237,7 +242,11 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5', top: '5' }}
               tablet={{ bottom: '6', top: '6' }}
             >
-              <TextColumnsBlock data={normalise(data5)} colorReverse />
+              <TextColumnsBlock
+                noHeaderPadding
+                data={normalise(data5)}
+                colorReverse
+              />
             </BlockRow>
           )}
         </Grid>
