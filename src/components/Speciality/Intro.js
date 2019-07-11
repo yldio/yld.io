@@ -46,7 +46,7 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
       <Subtitle reverse noPadding>
         {introTextTitle}
       </Subtitle>
-      <BodyPrimary muted reverse>
+      <BodyPrimary muted reverse noPaddingTop>
         {introTextBody}
       </BodyPrimary>
     </StyledIntroRectangleInner>
