@@ -194,7 +194,9 @@ const OurWorkPage = props => (
             }
           }
         }
-        allContentfulNonTemplatedCaseStudyV2 {
+        allContentfulNonTemplatedCaseStudyV2(
+          filter: { publish: { eq: true } }
+        ) {
           edges {
             node {
               slug
