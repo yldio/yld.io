@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Row, Col } from '../components/grid'
-import { Margin } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
@@ -16,8 +16,20 @@ const HomePageLink = styled(Button)`
   justify-content: center;
 `
 
+const StyledBodyPrimary = styled(BodyPrimary)`
+  padding-bottom: ${({ theme }) => theme.space[6]};
+`
+
+const StyledCol = styled(Col)`
+  margin: ${({ theme }) => theme.space[5]} 0;
+
+  ${breakpoint('tablet')`
+    margin: ${({ theme }) => theme.space[8]} 0
+  `}
+`
+
 const NotFoundPage = ({ data: { site }, location }) => (
-  <Layout location={location}>
+  <Layout location={location} is404>
     <Helmet
       title={`${site.siteMetadata.siteTitle} - Not Found`}
       meta={[
@@ -30,22 +42,18 @@ const NotFoundPage = ({ data: { site }, location }) => (
       <html lang="en" />
     </Helmet>
     <Grid>
-      <Margin top={6} bottom={7}>
-        <Row>
-          <Col xs={12} sm={8} md={6}>
-            <SectionTitle as="h1">Oops, nothing to see here</SectionTitle>
-            <BodyPrimary>
-              The link is broken or the page has been removed. You might find
-              what you are looking for from our home page.
-            </BodyPrimary>
-            <Margin top={1}>
-              <HomePageLink as={Link} to={'/'}>
-                Home
-              </HomePageLink>
-            </Margin>
-          </Col>
-        </Row>
-      </Margin>
+      <Row>
+        <StyledCol width={[1]}>
+          <SectionTitle as="h1">Oops, nothing to see here</SectionTitle>
+          <StyledBodyPrimary>
+            The link is broken or the page has been removed. You might find what
+            you are looking for from our home page.
+          </StyledBodyPrimary>
+          <HomePageLink as={Link} to={'/'}>
+            Home
+          </HomePageLink>
+        </StyledCol>
+      </Row>
     </Grid>
   </Layout>
 )
