@@ -1,14 +1,15 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import scrollToComponent from 'react-scroll-to-component'
+
 import Layout from '../components/layout'
 import ViewPositions from '../components/JoinUs/ViewOpenPositions'
 import Learning from '../components/JoinUs/Learning'
 import Work from '../components/JoinUs/Work'
 import OSS from '../components/JoinUs/OpenSource'
 import Perks from '../components/JoinUs/Perks'
-import OpenPositions from '../components/JoinUs/OpenPositions'
+import { OpenPositionsWithRef } from '../components/Common/OpenPositions'
 import Head from '../components/Common/Head'
-import scrollToComponent from 'react-scroll-to-component'
 
 class JoinUs extends React.Component {
   constructor(props) {
@@ -69,13 +70,12 @@ class JoinUs extends React.Component {
             perks: content.perks
           }}
         />
-        <OpenPositions
+        <OpenPositionsWithRef
           data={{
-            title: content.openPositionsTitle,
-            getInTouchTitle: content.directApplicationTitle,
-            getInTouchText: content.directApplicationText.directApplicationText
+            title: content.openPositionsTitle
           }}
           ref={this.vacanciesRef}
+          limit={40}
         />
       </Layout>
     )

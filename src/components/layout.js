@@ -72,7 +72,8 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, backgroundColor, blue, contactUsBg } = this.props
+    const { children, backgroundColor, blue, is404, contactUsBg } = this.props
+
     const Component = (() => {
       if (backgroundColor === 'blue' || blue) return BlueBackground
       if (backgroundColor === 'grey') return GreyBackground
@@ -128,7 +129,7 @@ class Layout extends Component {
                 />
               )}
               <StyledMain>{children}</StyledMain>
-              <Footer contactUsBg={contactUsBg} />
+              <Footer contactUsBg={contactUsBg} is404={is404}/>
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
                 <Cookie onClick={this.handleClick} />
