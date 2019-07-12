@@ -3590,6 +3590,38 @@ exports[`Storyshots Colors Colors 1`] = `
     <div
       style={
         Object {
+          "background": "#848194",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      opacityWhite
+    </p>
+    <p>
+      #848194
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
           "background": "#f9f9f9",
           "border": "1px solid #444",
           "height": 160,

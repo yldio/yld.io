@@ -34,32 +34,42 @@ const formatCaseStudies = caseStudies =>
     }
   })
 
+const ourWork = {
+  title: 'Our Work',
+  description:
+    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left",
+  seoTitle: 'A collection of case studies'
+}
+
 const OurWork = ({ data }) => {
   const {
     allContentfulTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudy
+    allContentfulNonTemplatedCaseStudy,
+    allContentfulNonTemplatedCaseStudyV2
   } = data
 
-  const engineeringCaseStudies = formatCaseStudies(
-    allContentfulTemplatedCaseStudy
+  const allCaseStudies = [
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy),
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2)
+  ]
+
+  const nonDisplayed = ['central-working']
+
+  const caseStudies = allCaseStudies.filter(cs =>
+    nonDisplayed.some(nd => !cs.slug.includes(nd))
   )
-  const designCaseStudies = formatCaseStudies(
-    allContentfulNonTemplatedCaseStudy
-  )
-  const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
-  const description =
-    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left"
   return (
     <Layout>
       <Head
         page={{
           ...page,
-          title: 'Our Work',
-          seoTitle: 'A collection of case studies',
-          seoMetaDescription: description
+          title: ourWork.title,
+          seoTitle: ourWork.seoTitle,
+          seoMetaDescription: ourWork.description
         }}
       />
       <Grid>
@@ -75,9 +85,9 @@ const OurWork = ({ data }) => {
                 tablet: 5
               }}
             >
-              <SectionTitle as="h1">Our work</SectionTitle>
+              <SectionTitle as="h1">{ourWork.title}</SectionTitle>
               <FixedWidthDisplayTitle regular textLight>
-                {description}
+                {ourWork.description}
               </FixedWidthDisplayTitle>
             </Padding>
           </Col>
@@ -158,6 +168,35 @@ const OurWorkPage = props => (
           }
         }
         allContentfulNonTemplatedCaseStudy {
+          edges {
+            node {
+              slug
+              title
+              seoTitle
+              seoMetaDescription
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
+              introSentence {
+                introSentence
+              }
+              posterImage {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+        allContentfulNonTemplatedCaseStudyV2(
+          filter: { publish: { eq: true } }
+        ) {
           edges {
             node {
               slug

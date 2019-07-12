@@ -64,6 +64,7 @@ const colorsVariables = {
   lightGrey: '#f9f9f9',
   grey: '#e6e6e6',
   white: '#fff',
+  opacityWhite: '#848194',
   mediumGrey: '#757575'
 }
 
@@ -87,6 +88,7 @@ export default {
     blueBg: colorsVariables.darkBlue,
     vibrant: colorsVariables.neonGreen,
     white: colorsVariables.white,
+    opacityWhite: colorsVariables.opacityWhite,
     greyBg: colorsVariables.lightGrey,
     border: colorsVariables.grey,
     black: colorsVariables.darkBlack,
