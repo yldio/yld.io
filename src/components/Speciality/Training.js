@@ -1,50 +1,93 @@
 import React from 'react'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
 import GreyBackground from '../Common/GreyBackground'
 import StyledLink from '../Common/StyledLink'
+import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 
-const TrainingStage = ({ title, body, icon }) => (
+import Image from '../Common/Image'
+
+const TrainingStageContainer = styled.div`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    // :not(:first-child) wouldn't work in this instance as its all nested
+    // so have to throw a prop in there to maintain padding
+    ${props => (props.first ? '' : 'padding-top: 0;')}
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+`
+
+const StyledImageBorder = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
+const TrainingSectionContainer = styled.div`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
+`
+
+const TrainingStageSubtitle = styled(Subtitle)`
+  padding-bottom: 0;
+`
+
+const TrainingStage = ({ title, body, iconTitle, icon, first = false }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
-    <Padding top={4} bottom={4}>
-      <Padding bottom={1.5}>
-        <img src={`https://${icon.file.url}`} alt={icon.title} />
-      </Padding>
-      <Subtitle>{title}</Subtitle>
-      <BodyPrimary>{body.content[0].content[0].value}</BodyPrimary>
-    </Padding>
+    <TrainingStageContainer first={first}>
+      <StyledImageBorder>
+        <Image
+          alt={iconTitle}
+          image={icon}
+          style={{ height: '50px', width: 'auto' }}
+        />
+      </StyledImageBorder>
+      <TrainingStageSubtitle>{title}</TrainingStageSubtitle>
+      <BodyPrimary>{body}</BodyPrimary>
+    </TrainingStageContainer>
   </Col>
 )
 
 const TrainingSection = ({ speciality }) => (
   <GreyBackground>
-    <Padding top={4} bottom={6}>
+    <TrainingSectionContainer>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <SectionTitle
               small
             >{`${speciality.title.trim()} training`}</SectionTitle>
-            <BodyPrimary>
-              {speciality.trainingIntroText.content[0].content[0].value}
-            </BodyPrimary>
+            <BodyPrimary>{speciality.trainingIntroText}</BodyPrimary>
           </Col>
         </Row>
         <Row>
           <TrainingStage
+            first
             title={speciality.trainingTextTitle1}
             body={speciality.trainingTextBody1}
+            iconTitle={speciality.trainingTextIcon1Title}
             icon={speciality.trainingTextIcon1}
           />
           <TrainingStage
             title={speciality.trainingTextTitle2}
             body={speciality.trainingTextBody2}
+            iconTitle={speciality.trainingTextIcon2Title}
             icon={speciality.trainingTextIcon2}
           />
           <TrainingStage
             title={speciality.trainingTextTitle3}
             body={speciality.trainingTextBody3}
+            iconTitle={speciality.trainingTextIcon3Title}
             icon={speciality.trainingTextIcon3}
           />
         </Row>
@@ -56,7 +99,7 @@ const TrainingSection = ({ speciality }) => (
           </Col>
         </Row>
       </Grid>
-    </Padding>
+    </TrainingSectionContainer>
   </GreyBackground>
 )
 
