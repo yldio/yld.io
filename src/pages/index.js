@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
-import { format, isAfter, endOfYesterday } from 'date-fns'
+import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
@@ -28,13 +28,21 @@ const getHomepageMeetups = (events = []) =>
       date: format(n.node.date, 'MMMM DD[,] dddd')
     }))
 
+const getFeaturedEventDate = ({ node: { date, endTime } }) => {
+  const dateFormat = 'MMMM DD[,] dddd'
+
+  return !isSameDay(date, endTime) && isAfter(endTime, date)
+    ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
+    : format(date, 'MMMM DD[,] dddd')
+}
+
 const getHomepageConferences = (events = []) =>
   events
     .filter(n => n.node.homepageFeatured)
     .slice(0, 1)
     .map(n => ({
       ...n.node,
-      date: format(n.node.date, 'MMMM DD[,] dddd')
+      date: getFeaturedEventDate(n)
     }))
 
 const IndexPage = ({
@@ -209,6 +217,7 @@ export const query = graphql`
           id
           eventTitle
           date
+          endTime
           ctaText
           linkToEvent
           blurb {
