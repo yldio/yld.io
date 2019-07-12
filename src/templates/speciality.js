@@ -151,16 +151,9 @@ const communitySchema = {
     },
     communityLogoUrl: {
       type: 'string'
-    },
-    communityBackgroundTitle: {
-      type: 'string'
     }
   },
-  dependencies: {
-    communityLogoTitle: ['communityLogoUrl'],
-    communityLogoUrl: ['communityLogoTitle']
-  },
-  required: ['title', 'communityText', 'communityBackgroundTitle']
+  required: ['title', 'communityText']
 }
 
 const projectsSchema = {
@@ -591,8 +584,8 @@ export const pageQuery = graphql`
       communityLogo {
         id
         title
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
+        fluid(maxHeight: 250) {
+          ...GatsbyContentfulFluid
         }
         file {
           fileName
