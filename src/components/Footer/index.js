@@ -28,13 +28,13 @@ const showGetInTouch = pathname => {
   )
 }
 
-const getBackgroundColor = ({pathname, contactUsBg, is404 = false}) => {
+const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
   /**
    * A bit of a hacky override, sorry
    */
   if (contactUsBg) {
     return contactUsBg
-
+  }
   /**
    * This is pretty horrible I know but as "pathname" is
    * one of the only semi-reliable ways to know our exact
@@ -63,7 +63,9 @@ const Footer = ({ contactUsBg, is404 }) => (
     <Location>
       {({ location: { pathname } }) =>
         showGetInTouch(pathname) ? (
-          <Wrapper bgColor={getBackgroundColor({pathname, is404, contactUsBg})}>
+          <Wrapper
+            bgColor={getBackgroundColor({ pathname, is404, contactUsBg })}
+          >
             <GetInTouch
               title="We're here to help"
               contactText="Our experts work with you to understand your goals and help you build the capabilities you need to succeed"
