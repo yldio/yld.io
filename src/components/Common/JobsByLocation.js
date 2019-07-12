@@ -26,21 +26,21 @@ const JOBS_BY_LOCATION = graphql`
  * The current sorting brought from the query is alphabetical but
  * it seems London is suppposed to come first in the list.
  */
-const sortJobs = jobsByLocation => {
+const sortJobs = (jobsByLocation, limit) => {
   const sortedJobs = []
-
   jobsByLocation.forEach(group => {
     const location = group.edges[0].node.categories.location
+    const limitedJobs = group.edges.slice(0, limit)
 
     if (location === 'London') {
       sortedJobs.unshift({
         location,
-        jobs: group.edges
+        jobs: limitedJobs
       })
     } else {
       sortedJobs.push({
         location,
-        jobs: group.edges
+        jobs: limitedJobs
       })
     }
   })
@@ -48,10 +48,10 @@ const sortJobs = jobsByLocation => {
   return sortedJobs
 }
 
-const JobsByLocation = ({ children, sort = sortJobs }) => (
+const JobsByLocation = ({ children, sort = sortJobs, limit }) => (
   <StaticQuery
     query={JOBS_BY_LOCATION}
-    render={({ allLever }) => children(sort(allLever.group))}
+    render={({ allLever }) => children(sort(allLever.group, limit))}
   />
 )
 
