@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import LogoGrid from '../Common/LogoGrid'
 
@@ -36,23 +37,45 @@ const PosterLinks = ({ project }) => (
   </AnimatedLink>
 )
 
-const CompaniesHelped = ({ clients, noOther }) => (
+const CompainesHelpedCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
+`
+
+const CompaniesHelped = ({ clients }) => (
   <Fragment>
     <Row>
-      <Col width={[1, 1, 1, 1, 1 / 2]}>
-        <Padding top={5} bottom={3}>
-          <Subtitle>{noOther ? 'C' : 'Other c'}lients we helped</Subtitle>
-        </Padding>
-      </Col>
+      <CompainesHelpedCol width={[1, 1, 1, 1, 1 / 2]}>
+        <Subtitle>Other clients we helped</Subtitle>
+      </CompainesHelpedCol>
     </Row>
     <LogoGrid companies={clients} />
   </Fragment>
 )
 
+const SectionWrap = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-top: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[7]};
+  `}
+`
+
+const MobileTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+`
+
 const ProjectsSection = ({ related, title, clients }) => (
   <Grid>
-    <Padding top={5} bottom={5}>
-      {related ? (
+    <SectionWrap>
+      {related && related.length > 0 && (
         <Row>
           <Col width={[0, 0, 0, 0, 1 / 2]}>
             <Padding top={7} bottom={5}>
@@ -64,13 +87,13 @@ const ProjectsSection = ({ related, title, clients }) => (
             </Padding>
             {related[0] && related[1] && <PosterLinks project={related[0]} />}
           </Col>
-          <Col width={[1, 1, 1, 1, 0]}>
+          <MobileTitleCol width={[1, 1, 1, 1, 0]}>
             <SectionTitle>
               {title}
               <br />
               <Emphasis>related projects</Emphasis>
             </SectionTitle>
-          </Col>
+          </MobileTitleCol>
           {!related[1] && (
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               <PosterLinks project={related[0]} />
@@ -83,9 +106,9 @@ const ProjectsSection = ({ related, title, clients }) => (
           )}
           <Col width={[1, 1, 1, 1, 1 / 2]} />
         </Row>
-      ) : null}
-      {clients ? <CompaniesHelped clients={clients} /> : null}
-    </Padding>
+      )}
+      {clients && clients.length > 0 && <CompaniesHelped clients={clients} />}
+    </SectionWrap>
   </Grid>
 )
 
