@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
@@ -8,6 +9,7 @@ import BlueBackground from '../../components/Common/BlueBackground'
 import GreyBackground from '../../components/Common/GreyBackground'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
+import Hr from '../../components/Common/Hr'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import {
   renderText,
@@ -20,6 +22,7 @@ import {
   TextAndImageBlock,
   TextAndResizedImageBlock
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
@@ -67,6 +70,16 @@ const PropertiesAndTokensBlockRow = styled(BlockRow)`
   ${breakpoint('largePhone')`
     flex-direction: row;
   `}
+`
+
+const SeamlessStyledBodyPrimary = styled(BodyPrimary)`
+  ${breakpoint('smallPhone', 'phone')`
+    padding-top ${({ theme }) => theme.space[3]}
+  `}
+
+  > strong {
+    font-weight: bold;
+  }
 `
 
 const PropertiesAndTokensBlock = ({
@@ -187,12 +200,10 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} />
-
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company */}
         {shouldRender(data1) && <Statement>{normalise(data1).text}</Statement>}
       </GreyBackground>
-
       <Grid>
         {/* The prologue */}
         {shouldRender(data2) && (
@@ -211,18 +222,15 @@ const IndexPage = props => {
           </BlockRow>
         )}
       </Grid>
-
       <HalfGreyBackground>
         <Grid>
           {/* Youtube Video */}
           {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
         </Grid>
       </HalfGreyBackground>
-
       <HalfGreyBackground mobile>
         {shouldRender(data3) && <VideoBlock data={normalise(data3)} />}
       </HalfGreyBackground>
-
       <GreyBackground>
         <Grid flex>
           {/* Finding common ground */}
@@ -243,7 +251,6 @@ const IndexPage = props => {
           )}
         </Grid>
       </GreyBackground>
-
       <BlueBackground>
         <Grid>
           {/* Seamless. Empowering. Universal. */}
@@ -253,21 +260,41 @@ const IndexPage = props => {
               smallTablet={{ bottom: '5', top: '5' }}
               tablet={{ bottom: '6', top: '6' }}
             >
-              <TextColumnsBlock
-                data={normalise(data5)}
-                colorReverse
-                noHeaderPadding
-                headerBlock={false}
-                headerColCss={{
+              <Col
+                width={[1, 1, 1, 1, 1 / 2]}
+                block={false}
+                style={{
                   flexDirection: 'column',
                   justifyContent: 'center'
                 }}
-              />
+              >
+                <ReactMarkdown
+                  disallowedTypes={['paragraph']}
+                  renderers={{
+                    // eslint-disable-next-line
+                    heading: props => (
+                      <SectionTitle noPadding reverse {...props} />
+                    )
+                  }}
+                  source={normalise(data5).text}
+                />
+              </Col>
+              <Col width={[1, 1, 1, 1, 1 / 2]}>
+                <ReactMarkdown
+                  disallowedTypes={['heading']}
+                  renderers={{
+                    // eslint-disable-next-line
+                    paragraph: props => (
+                      <SeamlessStyledBodyPrimary reverse {...props} />
+                    )
+                  }}
+                  source={normalise(data5).text}
+                />
+              </Col>
             </BlockRow>
           )}
         </Grid>
       </BlueBackground>
-
       <Grid>
         {/* A new visual language */}
         {shouldRender(data6) && (
@@ -346,7 +373,6 @@ const IndexPage = props => {
           )}
         </MobileReverseOrderWrapper>
       </Grid>
-
       <GreyBackground>
         <Grid>
           {/* Prototyping and fast iteration */}
@@ -372,7 +398,6 @@ const IndexPage = props => {
           )}
         </Grid>
       </GreyBackground>
-
       <Grid>
         {/* New design methodology */}
         {shouldRender(data15) && (
@@ -468,7 +493,6 @@ const IndexPage = props => {
           )}
         </MobileReverseOrderWrapper>
       </Grid>
-
       <BlueBackground>
         <Grid>
           {/* Aligning design and engineering */}
@@ -496,7 +520,6 @@ const IndexPage = props => {
           )}
         </Grid>
       </BlueBackground>
-
       <GreyBackground>
         <Grid>
           {/* Reaping the immediate rewards */}
@@ -523,7 +546,6 @@ const IndexPage = props => {
           )}
         </Grid>
       </GreyBackground>
-
       <Grid>
         {/* The product blueprint */}
         {shouldRender(data27) && (
@@ -558,7 +580,6 @@ const IndexPage = props => {
           </BlockRow>
         )}
       </Grid>
-
       <GreyBackground>
         <Grid>
           {/* Improving our process */}
@@ -573,7 +594,6 @@ const IndexPage = props => {
           )}
         </Grid>
       </GreyBackground>
-
       <Grid>
         {/* Leaving in good health */}
         {shouldRender(data31) && (
@@ -585,6 +605,11 @@ const IndexPage = props => {
             <TextColumnsBlock data={normalise(data31)} />
           </BlockRow>
         )}
+        <Row>
+          <Col width={[1]}>
+            <Hr />
+          </Col>
+        </Row>
       </Grid>
       <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
     </Layout>
