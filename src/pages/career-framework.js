@@ -140,11 +140,7 @@ export const query = graphql`
             }
           }
           content {
-            content {
-              content {
-                value
-              }
-            }
+            content
           }
         }
         groups {
@@ -154,12 +150,8 @@ export const query = graphql`
             info
             levelInfo {
               title
-              info {
-                content {
-                  content {
-                    value
-                  }
-                }
+              infoContent {
+                infoContent
               }
               ctaTitle
               ctaUrl

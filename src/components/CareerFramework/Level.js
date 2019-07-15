@@ -2,25 +2,23 @@ import React from 'react'
 import generate from 'shortid'
 import StyledLink from '../Common/StyledLink'
 import styled from 'styled-components'
-import Get from 'lodash.get'
 
 import { Row, Col } from '../grid'
 import { BodyPrimary, SectionTitle } from '../Typography'
 
-const LevelInfo = ({ ctaTitle, ctaUrl, info, title }) => {
-  const infoContent = Get(info, 'content[0].content[0].value', undefined)
-  return (
-    <LevelInfoWrapper>
-      <BodyPrimary noPaddingBottom bold>
-        {title}
-      </BodyPrimary>
-      {infoContent && <BodyPrimary noPaddingTop>{infoContent}</BodyPrimary>}
-      <StyledLink to={ctaUrl} title={`Learn More about ${title}`}>
-        {ctaTitle}
-      </StyledLink>
-    </LevelInfoWrapper>
-  )
-}
+const LevelInfo = ({ ctaTitle, ctaUrl, infoContent, title }) => (
+  <LevelInfoWrapper>
+    <BodyPrimary noPaddingBottom bold>
+      {title}
+    </BodyPrimary>
+    {infoContent.infoContent && (
+      <BodyPrimary noPaddingTop>{infoContent.infoContent}</BodyPrimary>
+    )}
+    <StyledLink to={ctaUrl} title={`Learn More about ${title}`}>
+      {ctaTitle}
+    </StyledLink>
+  </LevelInfoWrapper>
+)
 
 const LevelOrder = styled.div`
   border: 3px solid ${({ theme }) => theme.colors.black};

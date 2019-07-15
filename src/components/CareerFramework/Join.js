@@ -1,7 +1,6 @@
 import React from 'react'
 import StyledLink from '../Common/StyledLink'
 import styled from 'styled-components'
-import Get from 'lodash.get'
 
 import { Grid, Row, Col } from '../grid'
 import { BodyPrimary, SectionTitle } from '../Typography'
@@ -16,14 +15,14 @@ const JoinContentCol = styled(Col)`
 const Join = props => {
   const { title, ctaTitle, ctaUrl, content, image } = props
 
-  const contentValue = Get(content, 'content[0].content[0].value')
-
   return (
     <Grid>
       <Row>
         <JoinContentCol width={[1, 1, 1, 1, 6 / 12]}>
           <SectionTitle reverse>{title}</SectionTitle>
-          {contentValue && <BodyPrimary reverse>{contentValue}</BodyPrimary>}
+          {content.content && (
+            <BodyPrimary reverse>{content.content}</BodyPrimary>
+          )}
           <StyledLink to={ctaUrl} reverse>
             {ctaTitle}
           </StyledLink>
