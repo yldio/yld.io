@@ -86,5 +86,6 @@ addDecorator(Theme)
 storiesOf('Speciality', module).add('Speciality', () => (
   <StorySpecialityWrapper>
     <SpecialityView />
+    hello world
   </StorySpecialityWrapper>
 ))
