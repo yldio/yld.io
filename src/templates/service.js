@@ -34,7 +34,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
     <Layout location={location}>
       <Head page={service} />
 
-      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
+      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[1]} />
 
       <Statement>
         {service.mainPageIntroSentence.mainPageIntroSentence}
@@ -130,6 +130,20 @@ export const pageQuery = graphql`
             fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid_withWebp
             }
+            title
+            file {
+              url
+            }
+          }
+        }
+        ... on ContentfulNonTemplatedCaseStudyV2 {
+          title
+          slug
+          intro: introSentence {
+            introSentence
+          }
+          posterColor
+          posterImage {
             title
             file {
               url
