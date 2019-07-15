@@ -65,7 +65,8 @@ const colorsVariables = {
   grey: '#e6e6e6',
   white: '#fff',
   opacityWhite: '#848194',
-  mediumGrey: '#757575'
+  mediumGrey: '#757575',
+  tan: '#a08162'
 }
 
 export default {
