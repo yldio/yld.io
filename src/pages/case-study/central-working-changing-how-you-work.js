@@ -5,7 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 import { generate } from 'shortid'
 
-import { Grid, Row, Col } from '../../components/grid'
+import { Grid, Col } from '../../components/grid'
 import GreyBackground from '../../components/Common/GreyBackground'
 import BlackBackground from '../../components/Common/BlackBackground'
 import TanBackground from '../../components/Common/TanBackground'
@@ -15,23 +15,16 @@ import Head from '../../components/Common/Head'
 import Hr from '../../components/Common/Hr'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import { TextColumnsBlock } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+import {
+  TextColumnsBlock,
+  shouldRender,
+  normalise,
+  normaliseAll,
+  BlockRow
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
-
-const shouldRender = data => data && data.length
-
-const getImage = (blockImages, index) => blockImages && blockImages[index]
-
-const normaliseAll = (arr = []) =>
-  arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
-    image: getImage(genericBlockImages, 0),
-    text: genericBlockText && genericBlockText.genericBlockText,
-    ...props
-  }))
-
-const normalise = (arr = [], index = 0) => normaliseAll(arr, index)[index]
 
 const GreyBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme }) => theme.colors.secondaryText};
@@ -70,40 +63,6 @@ const StyledHr = styled(Hr)`
   ;`}
 `
 
-const BlockRow = styled(Row)`
-  flex-direction: ${({ rowReverse }) => `row${rowReverse ? '-reverse' : null}`};
-  align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
-  padding-top: ${({ theme, mobile }) =>
-    mobile && mobile.top ? theme.space[mobile.top] : null};
-  padding-bottom: ${({ theme, mobile }) =>
-    mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
-  justify-content: ${({ spaceEvenly }) =>
-    spaceEvenly ? 'space-evenly' : null};
-
-  ${breakpoint('smallTablet')`
-    padding-top: ${({ theme, smallTablet }) =>
-      smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
-    padding-bottom: ${({ theme, smallTablet }) =>
-      smallTablet && smallTablet.bottom
-        ? theme.space[smallTablet.bottom]
-        : null};
-  `}
-
-  ${breakpoint('tablet')`
-    padding-top: ${({ theme, tablet }) =>
-      tablet && tablet.top ? theme.space[tablet.top] : null};
-    padding-bottom: ${({ theme, tablet }) =>
-      tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
-  `}
-
-  ${breakpoint('desktop')`
-    padding-top: ${({ theme, desktop }) =>
-      desktop && desktop.top ? theme.space[desktop.top] : null};
-    padding-bottom: ${({ theme, desktop }) =>
-      desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
-  `}
-`
-
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
@@ -134,7 +93,7 @@ const IndexPage = props => {
           socialLogo: caseStudy.posterImage.file.url
         }}
       />
-      <CaseStudyHero caseStudy={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
       <Grid>
         {/* Intro  */}
