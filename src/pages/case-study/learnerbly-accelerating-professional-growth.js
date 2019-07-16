@@ -22,6 +22,7 @@ const IndexPage = props => {
     genericBlock6: data6,
     genericBlock7: data7,
     genericBlock8: data8,
+    genericBlock9: data9,
     relatedCaseStudy
   } = caseStudy
 
@@ -34,23 +35,32 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
+      {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
       <div>{JSON.stringify(normalise(data1))}</div>
       <br />
+      {/* "Following our initial engagement with Learnerbly" */}
       <div>{JSON.stringify(normalise(data2))}</div>
       <br />
+      {/* "What was the problem we were tackling?" */}
       <div>{JSON.stringify(normalise(data3))}</div>
       <br />
+      {/* Image - "We curate the best learning to accelerate your growth" */}
       <div>{JSON.stringify(normalise(data4))}</div>
       <br />
+      {/* "How did we go about solving it?" */}
       <div>{JSON.stringify(normalise(data5))}</div>
       <br />
+      {/* "On-boarding" */}
       <div>{JSON.stringify(normalise(data6))}</div>
       <br />
-      <div>{JSON.stringify(normalise(data6))}</div>
-      <br />
+      {/* "Staying on target" */}
       <div>{JSON.stringify(normalise(data7))}</div>
       <br />
+      {/* "Curated courses" */}
       <div>{JSON.stringify(normalise(data8))}</div>
+      <br />
+      {/* "The bigger picture" */}
+      <div>{JSON.stringify(normalise(data9))}</div>
       <br />
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
@@ -65,9 +75,7 @@ export const query = graphql`
       relatedCaseStudy {
         title
         slug
-        introSentence {
-          introSentence
-        }
+        introSentence
         posterImage {
           title
           file {
@@ -106,6 +114,9 @@ export const query = graphql`
         ...GenericFragment
       }
       genericBlock8 {
+        ...GenericFragment
+      }
+      genericBlock9 {
         ...GenericFragment
       }
       specialities {
