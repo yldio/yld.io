@@ -24,6 +24,7 @@ const projectsSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
   type: 'array',
   title: 'The Root Schema',
+  required: ['items'],
   items: {
     $id: '#/items',
     type: 'object',

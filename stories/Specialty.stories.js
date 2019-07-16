@@ -18,14 +18,14 @@ import {
 // ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
 const initialRenderingOptions = {
-  projects: true,
+  caseStudies: true,
+  clients: true,
   community: true,
   events: true,
   talks: true,
   blogs: true,
   books: true,
-  tutorials: true,
-  getintouch: true
+  tutorials: true
 }
 
 const Form = styled.form`
@@ -110,7 +110,15 @@ class StorySpecialityWrapper extends Component {
   generateProps = () => {
     const { renderOptions } = this.state
 
-    const { talks, books, tutorials, events, community } = renderOptions
+    const {
+      talks,
+      books,
+      tutorials,
+      events,
+      community,
+      caseStudies,
+      clients
+    } = renderOptions
 
     const externalResources = [
       [talks, talkData],
@@ -118,12 +126,15 @@ class StorySpecialityWrapper extends Component {
       [tutorials, tutorialData]
     ].reduce((acc, [render, data]) => (render ? acc.concat(data) : acc), [])
 
-    console.log({ eventsData })
     return {
       ...data,
       contentfulSpeciality: {
         ...data.contentfulSpeciality,
         ...(!community && { communityText: [] }),
+        relatedProjects: caseStudies
+          ? data.contentfulSpeciality.relatedProjects
+          : undefined,
+        clients: clients ? data.contentfulSpeciality.clients : undefined,
         externalResources
       },
       allContentfulMeetupEvent: {

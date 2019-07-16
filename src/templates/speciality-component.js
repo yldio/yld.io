@@ -28,8 +28,6 @@ import GreyBackground from '../components/Common/GreyBackground'
 const ajv = new Ajv({ allErrors: true })
 
 export const SpecialityView = props => {
-  console.log({ props })
-
   const {
     data: {
       contentfulSpeciality: speciality,

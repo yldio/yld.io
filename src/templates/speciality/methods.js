@@ -110,8 +110,8 @@ const flattenSpeciality = speciality => {
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined), // required
     externalResources: Get(speciality, 'externalResources', []),
-    relatedProjects: Get(speciality, 'relatedProjects', []),
-    clients: Get(speciality, 'clients', []),
+    relatedProjects: Get(speciality, 'relatedProjects', undefined),
+    clients: Get(speciality, 'clients', undefined),
     eventIcon: Get(speciality, 'eventIcon', undefined)
   }
 }
