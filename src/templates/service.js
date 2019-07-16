@@ -102,6 +102,23 @@ export const pageQuery = graphql`
           }
           posterColor
         }
+        ... on ContentfulNonTemplatedCaseStudyV2 {
+          title
+          slug
+          intro: introSentence {
+            introSentence
+          }
+          posterImage {
+            title
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+            }
+          }
+          posterColor
+        }
       }
       caseStudies {
         ... on ContentfulTemplatedCaseStudy {
