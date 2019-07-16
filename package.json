@@ -9,6 +9,7 @@
     "airbnb-prop-types": "^2.13.2",
     "apr-intercept": "^3.0.3",
     "apr-reduce": "^3.0.3",
+    "capitalize": "^2.0.0",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
     "event-stream": "3.3.4",

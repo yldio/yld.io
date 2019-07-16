@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import styled from 'styled-components'
+import capitalize from 'capitalize'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
+import { Row, Col } from '../src/components/grid'
 
+import { Checkbox } from '../src/components/Common/Forms'
 import { SpecialityView } from '../src/templates/speciality-component'
 import data from './assets/speciality-data'
 
@@ -20,11 +23,12 @@ const initialRenderingOptions = {
 
 const Form = styled.form`
   margin: 0 auto;
-  /* transform: scale(5); */
+  width: 250px;
   display: inline-block;
   position: fixed;
+  z-index: 2;
   left: 0;
-  /* right: 0; */
+  top: 0;
   box-shadow: 3px 3px 16px 0px;
   padding: 2rem;
   background: white;
@@ -32,30 +36,44 @@ const Form = styled.form`
 
 const ToggleForm = ({ handleToggle, renderOptions }) => (
   <Form>
-    {renderOptions &&
-      Object.keys(renderOptions).length &&
-      Object.keys(renderOptions).map(option => (
-        <div key={option}>
-          <label htmlFor={option}>{option}</label>
-          <input
-            type="checkbox"
-            checked={renderOptions[option]}
-            onChange={() => handleToggle(option)}
-            name={option}
-            id={option}
-          />
-        </div>
-      ))}
+    <Row>
+      {renderOptions &&
+        Object.keys(renderOptions).length &&
+        Object.keys(renderOptions).map(option => (
+          <Col
+            width={[1]}
+            key={option}
+            block={false}
+            style={{ paddingBottom: '1rem' }}
+          >
+            <Checkbox
+              type="checkbox"
+              checked={renderOptions[option]}
+              onChange={() => handleToggle(option)}
+              name={option}
+              id={option}
+            />
+            <label style={{ cursor: 'pointer' }} htmlFor={option}>
+              {capitalize(option)}
+            </label>
+          </Col>
+        ))}
+    </Row>
   </Form>
 )
 
+const ErrorWrapper = styled.div`
+  margin: 0 auto;
+  width: 500px;
+`
+
 const Error = ({ info: { componentStack }, message }) => {
   return (
-    <div>
+    <ErrorWrapper>
       <h1>Hmm there is an error in the speciality props</h1>
       <pre style={{ color: 'red' }}>{message}</pre>
       <pre>{componentStack}</pre>
-    </div>
+    </ErrorWrapper>
   )
 }
 
@@ -88,17 +106,26 @@ class StorySpecialityWrapper extends Component {
     const { children } = this.props
 
     return (
-      <div style={{ width: '100%' }}>
+      <Fragment>
         <ToggleForm
           renderOptions={renderOptions}
           handleToggle={this.handleToggle}
         />
-        {hasError ? (
-          <Error {...error} />
-        ) : (
-          <div>{React.cloneElement(children, { data: componentProps })}</div>
-        )}
-      </div>
+        <div
+          style={{
+            width: '195.312%',
+            height: '195.312%',
+            transform: 'scale(0.512)',
+            transformOrigin: 'top'
+          }}
+        >
+          {hasError ? (
+            <Error {...error} />
+          ) : (
+            React.cloneElement(children, { data: componentProps })
+          )}
+        </div>
+      </Fragment>
     )
   }
 }

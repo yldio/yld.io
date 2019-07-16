@@ -175,8 +175,4 @@ const clientSchema = {
   }
 }
 
-export default {
-  communitySchema,
-  projectsSchema,
-  clientSchema
-}
+export { communitySchema, projectsSchema, clientSchema }

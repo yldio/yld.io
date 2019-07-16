@@ -116,8 +116,4 @@ const flattenSpeciality = speciality => {
   }
 }
 
-export default {
-  getExternalType,
-  getSpecialityEvents,
-  flattenSpeciality
-}
+export { getExternalType, getSpecialityEvents, flattenSpeciality }
