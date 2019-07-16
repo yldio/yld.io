@@ -34,7 +34,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
     <Layout location={location}>
       <Head page={service} />
 
-      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[1]} />
+      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
 
       <Statement>
         {service.mainPageIntroSentence.mainPageIntroSentence}
