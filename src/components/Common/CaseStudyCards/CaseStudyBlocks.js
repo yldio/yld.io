@@ -222,14 +222,15 @@ ${breakpoint('desktop')`
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
 
-const normaliseAll = (arr = []) =>
-  arr.map(({ genericBlockText, genericBlockImages, ...props }) => ({
+const normaliseAll = (genericBlocks = []) =>
+  genericBlocks.map(({ genericBlockText, genericBlockImages, ...props }) => ({
     image: getImage(genericBlockImages, 0),
     text: genericBlockText && genericBlockText.genericBlockText,
     ...props
   }))
 
-const normalise = (arr = [], index = 0) => normaliseAll(arr, index)[index]
+const normalise = (genericBlocks = [], index = 0) =>
+  normaliseAll(genericBlocks, index)[index]
 
 const getImages = data =>
   data.genericBlockImages ? data.genericBlockImages : []
