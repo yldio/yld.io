@@ -6,6 +6,7 @@ import { Grid, Col } from '../../components/grid'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/Common/GreyBackground'
 import RegalBlueBackground from '../../components/Common/RegalBlueBackground'
+import MountainMeadowBackground from '../../components/Common/MountainMeadowBackground'
 import Statement from '../../components/Common/Statement'
 import Head from '../../components/Common/Head'
 import Image from '../../components/Common/Image'
@@ -159,8 +160,38 @@ const IndexPage = props => {
       )}
 
       {/* "Curated courses" */}
-      <div>{JSON.stringify(normalise(data8))}</div>
-      <br />
+      {shouldRender(data8) && (
+        <MountainMeadowBackground>
+          <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
+            {shouldRender(data6) && (
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle reverse {...props} />,
+                  // eslint-disable-next-line
+                  paragraph: props => (
+                    <Col
+                      width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
+                      style={{ textAlign: 'center' }}
+                    >
+                      <BodyPrimary reverse {...props} />
+                    </Col>
+                  )
+                }}
+                source={normalise(data8).text}
+              />
+            )}
+          </BlockRow>
+          <Grid flex>
+            <BlockRow flexEnd>
+              <Col width={[1]}>
+                <Image image={normalise(data6).image} />
+              </Col>
+            </BlockRow>
+          </Grid>
+        </MountainMeadowBackground>
+      )}
+
       {/* "The bigger picture" */}
       <div>{JSON.stringify(normalise(data9))}</div>
       <br />
