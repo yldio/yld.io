@@ -12,7 +12,7 @@ import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Discipline } from '../components/CareerFramework'
 import FakeLink from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
-// import Head from '../components/Common/Head'
+import Head from '../components/Common/Head'
 
 const DisciplineTitle = styled(FakeLink)`
   margin-right: ${({ theme }) => theme.space[4]};
@@ -59,11 +59,11 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
 
   return (
     <Layout>
-      {/* <Head /> */}
+      <Head page={content} />
       <Grid>
         <Row>
           <StyledIntroHeaderCol width={[1, 1, 1, 1, 5 / 12]}>
-            <SectionTitle>{introHeader}</SectionTitle>
+            <SectionTitle as="h1">{introHeader}</SectionTitle>
           </StyledIntroHeaderCol>
         </Row>
         <Row>
@@ -120,6 +120,8 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
 export const query = graphql`
   {
     contentfulCareerFramework {
+      seoTitle
+      seoMetaDescription
       introContent {
         content {
           content {
