@@ -15,50 +15,53 @@ const TalksSection = ({ talks: allTalks }) => {
   const cta = allTalks.find(({ cta }) => cta)
 
   return (
-    <BlueBackground>
-      <Grid>
-        <Padding
-          top={{ smallTablet: 3, tablet: 4 }}
-          bottom={{ smallTablet: 3.5, tablet: 5 }}
-        >
-          <Row>
-            <Col width={[1]}>
-              <SectionTitle reverse>{`Talks`}</SectionTitle>
-            </Col>
-          </Row>
-          {featured && (
-            <Padding top={3}>
-              <VideoSection src={featured.link} />
-            </Padding>
-          )}
+    talks &&
+    talks.length > 0 && (
+      <BlueBackground>
+        <Grid>
           <Padding
-            top={{ smallTablet: 4 }}
-            bottom={{ smallTablet: 3, tablet: 4 }}
+            top={{ smallTablet: 3, tablet: 4 }}
+            bottom={{ smallTablet: 3.5, tablet: 5 }}
           >
             <Row>
-              {talks.map(({ title, link, id }) => (
-                <CompactVideoLink
-                  href={link}
-                  key={id}
-                  themeVariation={theme.variations.dark}
-                >
-                  {title}
-                </CompactVideoLink>
-              ))}
-            </Row>
-          </Padding>
-          {cta && (
-            <Row>
               <Col width={[1]}>
-                <StyledLink reverse href={cta.link} external>
-                  {cta.title}
-                </StyledLink>
+                <SectionTitle reverse>{`Talks`}</SectionTitle>
               </Col>
             </Row>
-          )}
-        </Padding>
-      </Grid>
-    </BlueBackground>
+            {featured && (
+              <Padding top={3}>
+                <VideoSection src={featured.link} />
+              </Padding>
+            )}
+            <Padding
+              top={{ smallTablet: 4 }}
+              bottom={{ smallTablet: 3, tablet: 4 }}
+            >
+              <Row>
+                {talks.map(({ title, link, id }) => (
+                  <CompactVideoLink
+                    href={link}
+                    key={id}
+                    themeVariation={theme.variations.dark}
+                  >
+                    {title}
+                  </CompactVideoLink>
+                ))}
+              </Row>
+            </Padding>
+            {cta && (
+              <Row>
+                <Col width={[1]}>
+                  <StyledLink reverse href={cta.link} external>
+                    {cta.title}
+                  </StyledLink>
+                </Col>
+              </Row>
+            )}
+          </Padding>
+        </Grid>
+      </BlueBackground>
+    )
   )
 }
 
