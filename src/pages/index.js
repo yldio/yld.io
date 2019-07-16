@@ -127,31 +127,47 @@ export const query = graphql`
         slug
         pageReady
         caseStudies {
-          ... on ContentfulNonTemplatedCaseStudy {
-            title
-            slug
-            posterColor
-            posterImage {
+          ... on Node {
+            ... on ContentfulNonTemplatedCaseStudy {
               title
-              file {
-                url
-              }
-              fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_withWebp
+              slug
+              posterColor
+              posterImage {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 550) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
               }
             }
-          }
-          ... on ContentfulTemplatedCaseStudy {
-            title
-            slug
-            posterColor
-            posterImage {
+            ... on ContentfulNonTemplatedCaseStudyV2 {
               title
-              file {
-                url
+              slug
+              posterColor
+              posterImage {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 550) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
               }
-              fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_withWebp
+            }
+            ... on ContentfulTemplatedCaseStudy {
+              title
+              slug
+              posterColor
+              posterImage {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 550) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
               }
             }
           }
