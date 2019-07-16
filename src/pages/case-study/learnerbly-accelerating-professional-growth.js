@@ -1,11 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import { Grid, Col } from '../../components/grid'
 import Layout from '../../components/layout'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import { normalise } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+import {
+  shouldRender,
+  normalise,
+  BlockRow
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
 const IndexPage = props => {
   const {
@@ -35,9 +40,16 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
+
       {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
-      <div>{JSON.stringify(normalise(data1))}</div>
-      <br />
+      <Grid>
+        <BlockRow flexEnd>
+          {shouldRender(data1) && (
+            <Col width={[1, 1, 1, 1, 1 / 2]}>{normalise(data1, 0).text}</Col>
+          )}
+        </BlockRow>
+      </Grid>
+
       {/* "Following our initial engagement with Learnerbly" */}
       <div>{JSON.stringify(normalise(data2))}</div>
       <br />
