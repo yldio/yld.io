@@ -49,23 +49,25 @@ const IndexPage = props => {
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
       {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
-      <Grid>
-        <BlockRow flexEnd>
-          {shouldRender(data1) && (
+      {shouldRender(data1) && (
+        <Grid>
+          <BlockRow flexEnd>
             <Col width={[1, 1, 1, 1, 1 / 2]}>{normalise(data1, 0).text}</Col>
-          )}
-        </BlockRow>
-      </Grid>
+          </BlockRow>
+        </Grid>
+      )}
 
       {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
-      <GreyBackground>
-        {shouldRender(data2) && <Statement>{normalise(data2).text}</Statement>}
-      </GreyBackground>
+      {shouldRender(data2) && (
+        <GreyBackground>
+          <Statement>{normalise(data2).text}</Statement>
+        </GreyBackground>
+      )}
 
       {/* "What was the problem we were tackling?" */}
-      <Grid flex>
-        {shouldRender(data3) && (
+      {shouldRender(data3) && (
+        <Grid flex>
           <BlockRow>
             <TextColumnsBlock
               data={normalise(data3)}
@@ -74,23 +76,23 @@ const IndexPage = props => {
               middleColWidth={[0, 0, 0, 0, 1 / 12]}
             />
           </BlockRow>
-        )}
-      </Grid>
+        </Grid>
+      )}
 
       {/* Image - "We curate the best learning to accelerate your growth" */}
-      <Grid>
-        {shouldRender(data4) && (
+      {shouldRender(data4) && (
+        <Grid>
           <BlockRow flexEnd>
             <Col width={[1, 1, 1, 2 / 3]}>
               <Image image={normalise(data4).image} />
             </Col>
           </BlockRow>
-        )}
-      </Grid>
+        </Grid>
+      )}
 
       {/* "How did we go about solving it?" */}
-      <Grid flex>
-        {shouldRender(data5) && (
+      {shouldRender(data5) && (
+        <Grid flex>
           <BlockRow>
             <TextColumnsBlock
               data={normalise(data5)}
@@ -99,43 +101,63 @@ const IndexPage = props => {
               middleColWidth={[0, 0, 0, 0, 1 / 12]}
             />
           </BlockRow>
-        )}
-      </Grid>
+        </Grid>
+      )}
 
       {/* "On-boarding" */}
-      <RegalBlueBackground>
-        <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
-          {shouldRender(data6) && (
-            <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                heading: props => <SectionTitle reverse {...props} />,
-                // eslint-disable-next-line
-                paragraph: props => (
-                  <Col
-                    width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
-                    style={{ textAlign: 'center' }}
-                  >
-                    <BodyPrimary reverse {...props} />
-                  </Col>
-                )
-              }}
-              source={normalise(data6).text}
-            />
-          )}
-        </BlockRow>
-        <Grid flex>
-          <BlockRow flexEnd>
-            <Col width={[1]}>
-              <Image image={normalise(data6).image} />
+      {shouldRender(data6) && (
+        <RegalBlueBackground>
+          <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
+            {shouldRender(data6) && (
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle reverse {...props} />,
+                  // eslint-disable-next-line
+                  paragraph: props => (
+                    <Col
+                      width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
+                      style={{ textAlign: 'center' }}
+                    >
+                      <BodyPrimary reverse {...props} />
+                    </Col>
+                  )
+                }}
+                source={normalise(data6).text}
+              />
+            )}
+          </BlockRow>
+          <Grid flex>
+            <BlockRow flexEnd>
+              <Col width={[1]}>
+                <Image image={normalise(data6).image} />
+              </Col>
+            </BlockRow>
+          </Grid>
+        </RegalBlueBackground>
+      )}
+
+      {/* "Staying on target" */}
+      {shouldRender(data7) && (
+        <Grid>
+          <BlockRow mobile={{ bottom: '4', top: '4' }}>
+            <Col width={[1, 1, 1, 4 / 12]}>
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle {...props} />
+                }}
+                source={normalise(data7).text}
+              />
+            </Col>
+
+            <Col width={[1, 1, 1, 8 / 12]}>
+              <Image image={normalise(data7).image} />
             </Col>
           </BlockRow>
         </Grid>
-      </RegalBlueBackground>
+      )}
 
-      {/* "Staying on target" */}
-      <div>{JSON.stringify(normalise(data7))}</div>
-      <br />
       {/* "Curated courses" */}
       <div>{JSON.stringify(normalise(data8))}</div>
       <br />
