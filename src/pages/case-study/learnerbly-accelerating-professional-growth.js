@@ -11,6 +11,7 @@ import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPr
 import {
   shouldRender,
   normalise,
+  TextColumnsBlock,
   BlockRow
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
@@ -55,14 +56,23 @@ const IndexPage = props => {
       {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
       <GreyBackground>
-        {shouldRender(data1) && <Statement>{normalise(data2).text}</Statement>}
+        {shouldRender(data2) && <Statement>{normalise(data2).text}</Statement>}
       </GreyBackground>
 
-      <div>{JSON.stringify(normalise(data2).text)}</div>
-      <br />
       {/* "What was the problem we were tackling?" */}
-      <div>{JSON.stringify(normalise(data3))}</div>
-      <br />
+      <Grid flex>
+        {shouldRender(data3) && (
+          <BlockRow>
+            <TextColumnsBlock
+              data={normalise(data3)}
+              colWidthOne={[1, 1, 1, 1, 5 / 12]}
+              colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              middleColWidth={[0, 0, 0, 0, 1 / 12]}
+            />
+          </BlockRow>
+        )}
+      </Grid>
+
       {/* Image - "We curate the best learning to accelerate your growth" */}
       <div>{JSON.stringify(normalise(data4))}</div>
       <br />
