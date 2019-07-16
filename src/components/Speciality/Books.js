@@ -48,66 +48,65 @@ const BooksBox = styled(ExternalAnchor)`
   `}
 `
 
-const BooksSection = ({ books, title }) =>
-  books && books.length ? (
-    <Grid>
-      <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
-        <Row>
-          <Padding top={4} />
-          <CenteredCol width={[1]}>
-            <SectionTitle small>{`${title.trim()} books`}</SectionTitle>
-            <BodyPrimary>
-              {`${title.trim()} books written by members of YLD for our community.`}
-            </BodyPrimary>
-          </CenteredCol>
-        </Row>
-        <Row>
-          {books.slice(0, 3).map(externalResource => (
-            <BookCol
-              width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
-              key={`${externalResource.id}`}
-            >
-              <Padding top={4}>
-                <BooksBox
-                  style={{
-                    borderColor: `${externalResource.colorCode}`
-                  }}
-                  href={externalResource.link}
-                >
-                  <Padding top={2} left={2} right={2}>
-                    <CardTitle
-                      normal
-                      style={{
-                        color: `${externalResource.colorCode}`
-                      }}
-                    >
-                      {externalResource.title}
-                    </CardTitle>
-                    <BottomBodyPrimary>{`By ${
-                      externalResource.additionalInfo
-                    }`}</BottomBodyPrimary>
-                  </Padding>
-                </BooksBox>
-              </Padding>
-            </BookCol>
-          ))}
-        </Row>
-        <Row>
-          <Col width={[1]}>
+const BooksSection = ({ books, title }) => (
+  <Grid>
+    <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
+      <Row>
+        <Padding top={4} />
+        <CenteredCol width={[1]}>
+          <SectionTitle small>{`${title.trim()} books`}</SectionTitle>
+          <BodyPrimary>
+            {`${title.trim()} books written by members of YLD for our community.`}
+          </BodyPrimary>
+        </CenteredCol>
+      </Row>
+      <Row>
+        {books.slice(0, 3).map(externalResource => (
+          <BookCol
+            width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
+            key={`${externalResource.id}`}
+          >
             <Padding top={4}>
-              <Flex justifyCenter alignCenter>
-                <FlexItem>
-                  <StyledLink href={moreBooksLink} external>
-                    More Books
-                  </StyledLink>
-                </FlexItem>
-              </Flex>
+              <BooksBox
+                style={{
+                  borderColor: `${externalResource.colorCode}`
+                }}
+                href={externalResource.link}
+              >
+                <Padding top={2} left={2} right={2}>
+                  <CardTitle
+                    normal
+                    style={{
+                      color: `${externalResource.colorCode}`
+                    }}
+                  >
+                    {externalResource.title}
+                  </CardTitle>
+                  <BottomBodyPrimary>{`By ${
+                    externalResource.additionalInfo
+                  }`}</BottomBodyPrimary>
+                </Padding>
+              </BooksBox>
             </Padding>
-          </Col>
-          <Padding bottom={5} />
-        </Row>
-      </Padding>
-    </Grid>
-  ) : null
+          </BookCol>
+        ))}
+      </Row>
+      <Row>
+        <Col width={[1]}>
+          <Padding top={4}>
+            <Flex justifyCenter alignCenter>
+              <FlexItem>
+                <StyledLink href={moreBooksLink} external>
+                  More Books
+                </StyledLink>
+              </FlexItem>
+            </Flex>
+          </Padding>
+        </Col>
+        <Padding bottom={5} />
+      </Row>
+    </Padding>
+  </Grid>
+)
 
 export default BooksSection

@@ -14,7 +14,7 @@ const TalksSection = ({ talks: allTalks }) => {
   const featured = allTalks.find(({ featured }) => featured)
   const cta = allTalks.find(({ cta }) => cta)
 
-  return talks && talks.length ? (
+  return (
     <BlueBackground>
       <Grid>
         <Padding
@@ -59,7 +59,7 @@ const TalksSection = ({ talks: allTalks }) => {
         </Padding>
       </Grid>
     </BlueBackground>
-  ) : null
+  )
 }
 
 export default TalksSection

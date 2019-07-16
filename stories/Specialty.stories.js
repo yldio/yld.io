@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 
 import { SpecialityView } from '../src/templates/speciality-component'
+import data from './assets/speciality-data'
 
 const initialRenderingOptions = {
   intro: true,
@@ -16,8 +18,20 @@ const initialRenderingOptions = {
   getintouch: true
 }
 
+const Form = styled.form`
+  margin: 0 auto;
+  /* transform: scale(5); */
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  /* right: 0; */
+  box-shadow: 3px 3px 16px 0px;
+  padding: 2rem;
+  background: white;
+`
+
 const ToggleForm = ({ handleToggle, renderOptions }) => (
-  <form action="">
+  <Form>
     {renderOptions &&
       Object.keys(renderOptions).length &&
       Object.keys(renderOptions).map(option => (
@@ -32,7 +46,7 @@ const ToggleForm = ({ handleToggle, renderOptions }) => (
           />
         </div>
       ))}
-  </form>
+  </Form>
 )
 
 const Error = ({ info: { componentStack }, message }) => {
@@ -45,20 +59,13 @@ const Error = ({ info: { componentStack }, message }) => {
   )
 }
 
-const initialProps = {
-  contentfulSpeciality: { foo: 'bar' },
-  allContentfulMeetupEvent: { edges: [] }
-  // videoIcon:,
-  // filteredPosts
-}
-
 class StorySpecialityWrapper extends Component {
   constructor(props) {
     super(props)
     this.state = {
       hasError: false,
       renderOptions: initialRenderingOptions,
-      componentProps: initialProps
+      componentProps: data
     }
   }
 
@@ -79,9 +86,9 @@ class StorySpecialityWrapper extends Component {
   render() {
     const { hasError, error, renderOptions, componentProps } = this.state
     const { children } = this.props
-    console.log({ componentProps })
+
     return (
-      <div>
+      <div style={{ width: '100%' }}>
         <ToggleForm
           renderOptions={renderOptions}
           handleToggle={this.handleToggle}
@@ -89,7 +96,7 @@ class StorySpecialityWrapper extends Component {
         {hasError ? (
           <Error {...error} />
         ) : (
-          React.cloneElement(children, { data: componentProps })
+          <div>{React.cloneElement(children, { data: componentProps })}</div>
         )}
       </div>
     )
