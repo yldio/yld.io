@@ -76,16 +76,29 @@ const IndexPage = props => {
 
       {/* Image - "We curate the best learning to accelerate your growth" */}
       <Grid>
-        <BlockRow flexEnd>
-          <Col width={[1, 1, 1, 2 / 3]}>
-            <Image image={normalise(data4).image} />
-          </Col>
-        </BlockRow>
+        {shouldRender(data4) && (
+          <BlockRow flexEnd>
+            <Col width={[1, 1, 1, 2 / 3]}>
+              <Image image={normalise(data4).image} />
+            </Col>
+          </BlockRow>
+        )}
       </Grid>
-      <br />
+
       {/* "How did we go about solving it?" */}
-      <div>{JSON.stringify(normalise(data5))}</div>
-      <br />
+      <Grid flex>
+        {shouldRender(data5) && (
+          <BlockRow>
+            <TextColumnsBlock
+              data={normalise(data5)}
+              colWidthOne={[1, 1, 1, 1, 5 / 12]}
+              colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              middleColWidth={[0, 0, 0, 0, 1 / 12]}
+            />
+          </BlockRow>
+        )}
+      </Grid>
+
       {/* "On-boarding" */}
       <div>{JSON.stringify(normalise(data6))}</div>
       <br />
