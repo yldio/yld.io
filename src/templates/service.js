@@ -59,6 +59,16 @@ const Service = ({ data: { contentfulService: service }, location }) => {
 
 export default Service
 
+/**
+ *
+ * The use of `... on Node` within the relatedCaseStudy and caseStudies
+ * schema is to prevent builds breaking if any of the content-types are
+ * removed from contentful. Previously without the `... on Node` fragment,
+ * the build would break due to type X not being present in any of the
+ * entries. This meant graphql schema would not generate the union type of
+ * all the different case study templates and gatsby build would error.
+ * more info: https://medium.com/@Zepro/contentful-reference-fields-with-gatsby-js-graphql-9f14ed90bdf9
+ */
 export const pageQuery = graphql`
   query($id: String) {
     contentfulService(id: { eq: $id }) {
@@ -70,100 +80,104 @@ export const pageQuery = graphql`
         mainPageIntroSentence
       }
       relatedCaseStudy {
-        ... on ContentfulTemplatedCaseStudy {
-          title
-          slug
-          introSentence
-          posterImage {
+        ... on Node {
+          ... on ContentfulTemplatedCaseStudy {
             title
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            file {
-              url
-            }
-          }
-          posterColor
-        }
-        ... on ContentfulNonTemplatedCaseStudy {
-          title
-          slug
-          intro: introSentence {
+            slug
             introSentence
+            posterImage {
+              title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              file {
+                url
+              }
+            }
+            posterColor
           }
-          posterImage {
+          ... on ContentfulNonTemplatedCaseStudy {
             title
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
+            slug
+            intro: introSentence {
+              introSentence
             }
-            file {
-              url
+            posterImage {
+              title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              file {
+                url
+              }
             }
+            posterColor
           }
-          posterColor
-        }
-        ... on ContentfulNonTemplatedCaseStudyV2 {
-          title
-          slug
-          intro: introSentence {
-            introSentence
-          }
-          posterImage {
+          ... on ContentfulNonTemplatedCaseStudyV2 {
             title
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
+            slug
+            intro: introSentence {
+              introSentence
             }
-            file {
-              url
+            posterImage {
+              title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              file {
+                url
+              }
             }
+            posterColor
           }
-          posterColor
         }
       }
       caseStudies {
-        ... on ContentfulTemplatedCaseStudy {
-          title
-          slug
-          introSentence
-          posterColor
-          posterImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+        ... on Node {
+          ... on ContentfulTemplatedCaseStudy {
             title
-            file {
-              url
-            }
-          }
-        }
-        ... on ContentfulNonTemplatedCaseStudy {
-          title
-          slug
-          intro: introSentence {
+            slug
             introSentence
-          }
-          posterColor
-          posterImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
+            posterColor
+            posterImage {
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              title
+              file {
+                url
+              }
             }
+          }
+          ... on ContentfulNonTemplatedCaseStudy {
             title
-            file {
-              url
+            slug
+            intro: introSentence {
+              introSentence
+            }
+            posterColor
+            posterImage {
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              title
+              file {
+                url
+              }
             }
           }
-        }
-        ... on ContentfulNonTemplatedCaseStudyV2 {
-          title
-          slug
-          intro: introSentence {
-            introSentence
-          }
-          posterColor
-          posterImage {
+          ... on ContentfulNonTemplatedCaseStudyV2 {
             title
-            file {
-              url
+            slug
+            intro: introSentence {
+              introSentence
+            }
+            posterColor
+            posterImage {
+              title
+              file {
+                url
+              }
             }
           }
         }
