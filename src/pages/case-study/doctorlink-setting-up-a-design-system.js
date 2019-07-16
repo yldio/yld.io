@@ -199,7 +199,7 @@ const IndexPage = props => {
           socialLogo: (caseStudy.posterImage.file || {}).url
         }}
       />
-      <CaseStudyHero caseStudy={caseStudy} />
+      <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company */}
         {shouldRender(data1) && <Statement>{normalise(data1).text}</Statement>}
