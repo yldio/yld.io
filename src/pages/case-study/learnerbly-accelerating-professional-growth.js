@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 
 import { Grid, Col } from '../../components/grid'
 import Layout from '../../components/layout'
+import GreyBackground from '../../components/Common/GreyBackground'
+import Statement from '../../components/Common/Statement'
 import Head from '../../components/Common/Head'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
@@ -50,8 +52,13 @@ const IndexPage = props => {
         </BlockRow>
       </Grid>
 
+      {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
-      <div>{JSON.stringify(normalise(data2))}</div>
+      <GreyBackground>
+        {shouldRender(data1) && <Statement>{normalise(data2).text}</Statement>}
+      </GreyBackground>
+
+      <div>{JSON.stringify(normalise(data2).text)}</div>
       <br />
       {/* "What was the problem we were tackling?" */}
       <div>{JSON.stringify(normalise(data3))}</div>
