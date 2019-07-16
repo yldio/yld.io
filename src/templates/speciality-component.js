@@ -13,7 +13,6 @@ import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
-import Head from '../components/Common/Head'
 import GreyBackground from '../components/Common/GreyBackground'
 
 const ajv = new Ajv({ allErrors: true, verbose: true })
@@ -310,14 +309,17 @@ const clientSchema = {
   }
 }
 
-export const SpecialityView = ({
-  data: {
-    contentfulSpeciality: speciality,
-    allContentfulMeetupEvent: { edges: events },
-    videoIcon,
-    filteredPosts
-  }
-}) => {
+export const SpecialityView = props => {
+  console.log({ props })
+  const {
+    data: {
+      contentfulSpeciality: speciality,
+      allContentfulMeetupEvent: { edges: events },
+      videoIcon,
+      filteredPosts = []
+    }
+  } = props
+
   const flattenedSpeciality = flattenSpeciality(speciality)
 
   const validateCommunity = ajv.compile(communitySchema)
@@ -337,14 +339,14 @@ export const SpecialityView = ({
   const talks = getExternalType(flattenedSpeciality, `Talk`)
   const tutorials = getExternalType(flattenedSpeciality, `Tutorial`)
   const books = getExternalType(flattenedSpeciality, `Book`)
-  const specialityEvents = events ? getSpecialityEvents(title, events) : []
+  const specialityEvents =
+    events && events.length > 0 ? getSpecialityEvents(title, events) : []
 
   // required: Head, IntroSection, TrainingSection, GetInTouch
   // optional: ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
   return (
     <Fragment>
-      <Head page={flattenedSpeciality} />
       <IntroSection speciality={flattenedSpeciality} />
       {((relatedProjects &&
         relatedProjects.length > 0 &&

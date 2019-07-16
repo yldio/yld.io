@@ -45,10 +45,21 @@ const Error = ({ info: { componentStack }, message }) => {
   )
 }
 
+const initialProps = {
+  contentfulSpeciality: { foo: 'bar' },
+  allContentfulMeetupEvent: { edges: [] }
+  // videoIcon:,
+  // filteredPosts
+}
+
 class StorySpecialityWrapper extends Component {
   constructor(props) {
     super(props)
-    this.state = { hasError: false, renderOptions: initialRenderingOptions }
+    this.state = {
+      hasError: false,
+      renderOptions: initialRenderingOptions,
+      componentProps: initialProps
+    }
   }
 
   componentDidCatch({ message }, info) {
@@ -66,16 +77,20 @@ class StorySpecialityWrapper extends Component {
   }
 
   render() {
-    const { hasError, error, renderOptions } = this.state
+    const { hasError, error, renderOptions, componentProps } = this.state
     const { children } = this.props
-
+    console.log({ componentProps })
     return (
       <div>
         <ToggleForm
           renderOptions={renderOptions}
           handleToggle={this.handleToggle}
         />
-        {hasError ? <Error {...error} /> : children}
+        {hasError ? (
+          <Error {...error} />
+        ) : (
+          React.cloneElement(children, { data: componentProps })
+        )}
       </div>
     )
   }
@@ -83,9 +98,8 @@ class StorySpecialityWrapper extends Component {
 
 addDecorator(Theme)
 
-storiesOf('Speciality', module).add('Speciality', () => (
+storiesOf('Speciality ', module).add('Speciality', () => (
   <StorySpecialityWrapper>
     <SpecialityView />
-    hello world
   </StorySpecialityWrapper>
 ))
