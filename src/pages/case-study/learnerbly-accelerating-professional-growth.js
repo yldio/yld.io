@@ -193,8 +193,26 @@ const IndexPage = props => {
       )}
 
       {/* "The bigger picture" */}
-      <div>{JSON.stringify(normalise(data9))}</div>
-      <br />
+      {shouldRender(data9) && (
+        <Grid>
+          <BlockRow mobile={{ bottom: '4', top: '4' }}>
+            <Col width={[1, 1, 1, 4 / 12]}>
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <SectionTitle {...props} />
+                }}
+                source={normalise(data9).text}
+              />
+            </Col>
+
+            <Col width={[1, 1, 1, 8 / 12]}>
+              <Image image={normalise(data9).image} />
+            </Col>
+          </BlockRow>
+        </Grid>
+      )}
+
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
   )
