@@ -1,10 +1,10 @@
 const data = {
   contentfulSpeciality: {
-    slug: 'react-js',
-    title: 'React.js',
-    seoTitle: 'React.js engineering, projects and react community | YLD',
+    slug: 'node-js',
+    title: 'Node.js',
+    seoTitle: 'Node.js web development, projects and node community | YLD',
     seoMetaDescription:
-      'React.js development projects with London based consultancy YLD. Our React.js developers offer expert consultancy and management of any project.',
+      'Node.js web development projects and training in London. See our latest Node.js projects with Trainline and The Economist',
     seoText: {
       nodeType: 'document',
       content: [
@@ -14,14 +14,14 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'React.js makes it painless to create and build encapsulated components that manage their own state, then compose them to make complex, interactive UIs.'
+                'Node.js is the fastest growing open source platform in the world. It empowers us to increase our iteration speed and the quality of our work, using a known language that underpins the entire web: JavaScript.'
             }
           ]
         }
       ]
     },
     introGraphic: {
-      id: '8da10b1d-8e5c-5060-8844-b1614aa9b869',
+      id: '09ad8e0f-b1f0-5ab6-a1d9-5a9e33ce340e',
       fluid: {
         base64: null,
         aspectRatio: null,
@@ -31,14 +31,14 @@ const data = {
         srcSetWebp: null,
         sizes: null
       },
-      title: 'react logo',
+      title: 'node',
       file: {
         url:
-          '//images.ctfassets.net/22g1lenhck4z/3vFvX0N0kwAiwEIIyQUIw0/0321aa9f6f6bf647b2456d8a165777ac/React.svg'
+          '//images.ctfassets.net/22g1lenhck4z/C7Xq53muc0ywWQ6OKUMoE/df06c6567c2756ebf08413a2a8291ab2/node.svg'
       }
     },
-    introTitle: 'Why use React.js?',
-    introTextTitle1: 'Maintainable',
+    introTitle: 'Why use Node.js?',
+    introTextTitle1: 'Performance',
     introTextBody1: {
       nodeType: 'document',
       content: [
@@ -48,13 +48,13 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'The way React.js incentivises you to build applications makes them highly maintainable.'
+                'Node.js allows us to manage high loads, making it perfect for handling peak demand.'
             }
           ]
         }
       ]
     },
-    introTextTitle2: 'Reusable',
+    introTextTitle2: 'Customer experience',
     introTextBody2: {
       nodeType: 'document',
       content: [
@@ -64,13 +64,13 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'Due to its component-based approach, all its elements are reusable and adaptable.'
+                'With Node.js we can manage very complex API layers and offer a seamless customer experience.'
             }
           ]
         }
       ]
     },
-    introTextTitle3: 'Fast',
+    introTextTitle3: 'Productivity',
     introTextBody3: {
       nodeType: 'document',
       content: [
@@ -80,7 +80,7 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'React.js is fast. Whether it’s for UI rendering or server-side rendering, it supports both with ease.'
+                'Developers love using Node.js and that’s reflected directly in their productivity and job satisfaction.'
             }
           ]
         }
@@ -156,15 +156,6 @@ const data = {
         }
       },
       {
-        id: 'ea3e6848-43a1-5c13-9fbf-b2893ed64c50',
-        title: 'logo joyent',
-        file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/4lDpIAChXaeMsuQYE0CoWK/fa14cd9ead4f02a388088ad75b82e9f2/logo_joyent.png',
-          fileName: 'logo_joyent.png'
-        }
-      },
-      {
         id: 'd0fdff30-e2cd-5584-8344-35a19da0ff78',
         title: 'elife logo grid',
         file: {
@@ -207,7 +198,7 @@ const data = {
         fileName: 'icon_on_prem.svg'
       }
     },
-    trainingTextTitle1: 'On-premise classes',
+    trainingTextTitle1: 'Workshops',
     trainingTextBody1: {
       nodeType: 'document',
       content: [
@@ -217,7 +208,7 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'Instructor-led, hands-on classes that cover open source technologies like, React.js, Node.js and Docker.'
+                'Instructor-led, hands-on classes that cover open source technologies like Node.js, React.js and Docker.'
             }
           ]
         }
@@ -291,48 +282,6 @@ const data = {
         }
       ]
     },
-    externalResources: [
-      {
-        type: 'Talk',
-        title: ' The Dark and Lonely Road to Styling in React | Sara Vieira',
-        link: 'https://www.youtube.com/embed/Q249u4W_IZQ',
-        cta: null,
-        featured: true,
-        additionalInfo: null,
-        id: 'e9c28043-ca70-5aa2-bd9b-55511ec27506',
-        colorCode: null
-      },
-      {
-        type: 'Talk',
-        title: 'Controlling your home with React |  Kimberley Cook ',
-        link: 'https://www.youtube.com/watch?v=amqSRs2pSyc',
-        cta: null,
-        featured: null,
-        additionalInfo: null,
-        id: 'fbbb73cd-0cf0-51fd-84e1-e528c08921b1',
-        colorCode: null
-      },
-      {
-        type: 'Talk',
-        title: "What's new in React 16? | Agata Krzywda",
-        link: 'https://www.youtube.com/watch?v=22OhlPeUIZ4&t=52s',
-        cta: null,
-        featured: null,
-        additionalInfo: null,
-        id: '3e3427f3-bc1f-5bed-826d-4fae39b97818',
-        colorCode: null
-      },
-      {
-        type: 'Talk',
-        title: 'See all talks',
-        link: 'https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg',
-        cta: true,
-        featured: true,
-        additionalInfo: null,
-        id: '37f8901e-9cb0-50e0-bb5d-0900b5bdc0b7',
-        colorCode: null
-      }
-    ],
     communityText: {
       nodeType: 'document',
       content: [
@@ -342,40 +291,34 @@ const data = {
             {
               nodeType: 'text',
               value:
-                'At YLD we’re passionate about React.js and always look ways to give back to the community of React.js technology. We support many React.js initiatives, conferences and open source tools and have started our own communities - ReactFest conference and React.js Girls organisation. '
-            }
-          ]
-        },
-        {
-          nodeType: 'paragraph',
-          content: [
-            {
-              nodeType: 'text',
-              value: ''
+                'YLD was one the first members of the Node.js Foundation, whose purpose is to support the ongoing growth and evolution of the Node.js platform, while maintaining a collaborative environment that benefits all.'
             }
           ]
         }
       ]
     },
     communityLogo: {
-      id: 'e32a0556-5c90-568b-bacf-82ae7573bd10',
-      title: 'React Girls Community Graphic',
+      id: '615090ab-ef66-5846-902a-45442ed1121b',
+      title: 'Node.js Foundation Icon - dark theme',
       fluid: {
-        base64: null,
-        aspectRatio: null,
-        src: null,
-        srcSet: null,
-        sizes: null
+        base64:
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAMAAAA/FZ0KAAAAt1BMVEUAAAD///////////////96ul9yq2H////////////////////////////o8eZwt1NrpVyWvpH////////////////////////////r9OlWnUlloFeQuo7///////////////9EjkG00qv///////////////////////////////////////////////////////////////////////////////////////////////////////8oCtXJAAAAPXRSTlMAhCAXPRwwJLcyMB7fwmbz/GDU3Gvg2QxScvH7X17dQAQYUjhQLxkREDRdA0czPCFLREk7RkNfGi46IzkibVQTEAAAAAlwSFlzAAAXEQAAFxEByibzPwAAAAd0SU1FB+MHAg44Fq3487cAAABiSURBVAjXY2CAAEYmBgRgZGb8w8r4i50RCL7CBXkYEeAlVJDljwCI++0/FyPjQ5hKJokX7EAgJPyWnR3IVWfQEAdqB8lo3tCE6P/MByL/gC39Y8p8lZub+xYXAwsn+wUWbgAR3BHVw30LrwAAAABJRU5ErkJggg==',
+        aspectRatio: 2.98,
+        src:
+          '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=745&h=250&q=50',
+        srcSet:
+          '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=186&h=62&q=50 186w,\n//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=373&h=125&q=50 373w,\n//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=602&h=202&q=50 602w',
+        sizes: '(max-width: 745px) 100vw, 745px'
       },
       file: {
-        fileName: 'reacjscommunity.svg',
+        fileName: 'node_foundation.png',
         url:
-          '//images.ctfassets.net/22g1lenhck4z/19m4v6UdJB0GjcboCtZhzU/f643d5d554a59a749ed7f9bde0baefe3/reacjscommunity.svg'
+          '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png'
       }
     },
     communityBackground: {
-      id: '8da10b1d-8e5c-5060-8844-b1614aa9b869',
-      title: 'react logo',
+      id: 'eefb0a54-0246-5d65-b277-f8c8067727ca',
+      title: 'image',
       fluid: {
         base64: null,
         aspectRatio: null,
@@ -386,9 +329,9 @@ const data = {
         sizes: null
       },
       file: {
-        fileName: 'React.svg',
+        fileName: 'image.svg',
         url:
-          '//images.ctfassets.net/22g1lenhck4z/3vFvX0N0kwAiwEIIyQUIw0/0321aa9f6f6bf647b2456d8a165777ac/React.svg'
+          '//images.ctfassets.net/22g1lenhck4z/55yfft0RYQ4WiIMA6wMgWE/395df3ff28686ce7b2aed7828b50d5f3/image.svg'
       }
     },
     eventIcon: {
@@ -401,7 +344,7 @@ const data = {
       }
     },
     contactText:
-      'Whether you need help with a project or are interested in training, we love to talk about all things React.'
+      'Whether you need help with a project or are interested in training, we love to talk about all things Node.'
   },
   allContentfulMeetupEvent: {
     edges: [
@@ -709,92 +652,237 @@ const data = {
     edges: [
       {
         node: {
-          id: '005b5fd3-fd06-5d0e-954b-7566e9058bf7',
-          title:
-            'Demystifying the GraphGL dataloader utility: there is no magic!',
-          firstPublishedAt: '2019-06-05',
+          id: 'a5ad7708-03ca-5178-8b97-b2f5b5fadecc',
+          title: 'CPU and I/O performance diagnostics in Node.js',
+          firstPublishedAt: '2019-02-11',
           virtuals: {
             tags: [
               {
-                slug: 'javascript'
+                slug: 'nodejs'
               },
               {
-                slug: 'graphql'
+                slug: 'software-development'
               },
               {
-                slug: 'react'
+                slug: 'engineering'
               },
               {
-                slug: 'dataloader'
+                slug: 'performance'
               },
               {
-                slug: 'security'
+                slug: 'linux'
               }
             ]
           },
           uniqueSlug:
-            'demystifying-the-graphgl-dataloader-utility-there-is-no-magic-72a691dcaaca'
+            'cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb'
         }
       },
       {
         node: {
-          id: '3ef63cd8-44a5-595f-9063-549237c11a96',
-          title:
-            'Cloud Deep Dive: Part 3 — The Extremely Scalable Pizza Menu with Serverless SSR',
-          firstPublishedAt: '2019-01-28',
+          id: '01dcaa79-773f-553a-a91f-e8108b51eb31',
+          title: 'QUIC(k) HTTP/3',
+          firstPublishedAt: '2018-11-29',
           virtuals: {
             tags: [
               {
                 slug: 'javascript'
               },
               {
-                slug: 'aws'
+                slug: 'http-request'
               },
               {
-                slug: 'react'
+                slug: 'nodejs'
               },
               {
-                slug: 'cloud-computing'
+                slug: 'quic'
               },
               {
-                slug: 'serverless'
+                slug: 'software-development'
               }
             ]
           },
-          uniqueSlug:
-            'cloud-deep-dive-part-3-the-extremely-scalable-pizza-menu-with-serverless-ssr-4275b538c2f1'
+          uniqueSlug: 'quic-k-http-3-c6a4fbc7b947'
         }
       },
       {
         node: {
-          id: 'f7fb0d2e-2f60-57dc-a5fc-f33d240af64c',
-          title: 'Rolling your own Redux with React Hooks and Context',
-          firstPublishedAt: '2019-01-07',
+          id: '326d4b0e-bfb6-537a-961b-6193efe36dbc',
+          title: 'Culture of Learning',
+          firstPublishedAt: '2018-11-15',
           virtuals: {
             tags: [
+              {
+                slug: 'nodejs'
+              },
+              {
+                slug: 'design-systems'
+              },
               {
                 slug: 'react'
               },
               {
-                slug: 'redux'
+                slug: 'agile'
               },
               {
-                slug: 'context'
-              },
-              {
-                slug: 'javascript'
-              },
-              {
-                slug: 'redux-thunk'
+                slug: 'digital-transformation'
               }
             ]
           },
-          uniqueSlug:
-            'rolling-your-own-redux-with-react-hooks-and-context-bbeea18b1253'
+          uniqueSlug: 'culture-of-learning-a25081435ce8'
         }
       }
     ]
   }
 }
 
-export default data
+const bookData = [
+  {
+    type: 'Book',
+    title: 'Databases Volume I - LevelDB, Redis and CouchDB',
+    link: 'http://nodepatternsbooks.com/books/database-patterns.html',
+    cta: null,
+    featured: null,
+    additionalInfo: 'Pedro Teixeira',
+    id: 'a271a02c-c17c-50dd-ad75-c58499d1a314',
+    colorCode: '#e92c2c'
+  },
+  {
+    type: 'Book',
+    title: 'Flow Control Mastering asynchronous flow control in Node',
+    link: 'http://nodepatternsbooks.com/books/flow-control.html',
+    cta: null,
+    featured: null,
+    additionalInfo: 'Pedro Teixeira',
+    id: 'b855da73-1d9b-5a52-b6f7-3f117d4a6c36',
+    colorCode: '#2c49e9'
+  },
+  {
+    type: 'Book',
+    title: 'Work Queues Master Deferred and Distributed Work in Node',
+    link: 'http://nodepatternsbooks.com/books/work-queues.html',
+    cta: null,
+    featured: null,
+    additionalInfo: 'Pedro Teixeira',
+    id: '54134a44-c283-54b9-ab5e-dd148d11d36b',
+    colorCode: '#9500de'
+  },
+  {
+    type: 'Book',
+    title: 'More books',
+    link: 'http://nodepatternsbooks.com/index.html',
+    cta: true,
+    featured: null,
+    additionalInfo: null,
+    id: 'c317ca9f-7577-5383-98f6-ec2468aeb33c',
+    colorCode: null
+  }
+]
+
+const tutorialData = [
+  {
+    type: 'Tutorial',
+    title: 'Asynchronous programming',
+    link: 'http://nodetuts.com/series/asynchronous-programming.html',
+    cta: null,
+    featured: null,
+    additionalInfo: '9 video tutorials',
+    id: '7bf6bd16-ad20-59e7-8f04-8f842478af78',
+    colorCode: null
+  },
+  {
+    type: 'Tutorial',
+    title: 'TCP servers',
+    link: 'http://nodetuts.com/series/tcp-servers.html',
+    cta: null,
+    featured: null,
+    additionalInfo: '2 video tutorials',
+    id: '742dc5d9-81e8-5b55-bb3b-b3eb4e9cd10e',
+    colorCode: null
+  },
+  {
+    type: 'Tutorial',
+    title: 'HTTP API Servers',
+    link: 'http://nodetuts.com/series/http-api-servers.html',
+    cta: null,
+    featured: null,
+    additionalInfo: '2 video tutorials',
+    id: '46e48aef-e45e-5c79-8123-82357f66244c',
+    colorCode: null
+  },
+  {
+    type: 'Tutorial',
+    title: 'More tutorials',
+    link: 'http://nodetuts.com/',
+    cta: true,
+    featured: null,
+    additionalInfo: null,
+    id: '86ade8de-f6e7-58d0-b52e-81af80c94ac5',
+    colorCode: null
+  }
+]
+
+const talkData = [
+  {
+    type: 'Talk',
+    title: 'The rise of HTTP2 | Daniela Matos de Carvalho',
+    link: 'https://www.youtube.com/embed/yToHjxhCeYM',
+    cta: null,
+    featured: true,
+    additionalInfo: null,
+    id: '216d3781-3800-591c-9a43-2a19683489c2',
+    colorCode: null
+  },
+  {
+    type: 'Talk',
+    title: 'Node10 - Francesco Lentini - London NodeJS Meetup',
+    link:
+      'https://www.youtube.com/watch?v=sbe_2N5urMs&index=2&list=PLfrHCOIcmSuqQPa00ZEtfx7-v4RNkFAmY',
+    cta: null,
+    featured: null,
+    additionalInfo: null,
+    id: '35894445-79c4-5e49-b2de-ef1899e77451',
+    colorCode: null
+  },
+  {
+    type: 'Talk',
+    title: '#LNM Tom Gallacher - Async / Await (no more)',
+    link: 'https://www.youtube.com/watch?v=9cq8O5_R1ao&t=11s',
+    cta: null,
+    featured: null,
+    additionalInfo: null,
+    id: 'f3f4cf02-4d34-518a-8341-6aad12d2db12',
+    colorCode: null
+  },
+  {
+    type: 'Talk',
+    title: 'See all talks',
+    link: 'https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg',
+    cta: true,
+    featured: true,
+    additionalInfo: null,
+    id: '37f8901e-9cb0-50e0-bb5d-0900b5bdc0b7',
+    colorCode: null
+  }
+]
+
+const eventsData = [
+  {
+    node: {
+      id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
+      eventTitle: 'This is a FAKE Node event',
+      date: '2030-01-15T09:30',
+      linkToEvent: 'https://fakelink.com'
+    }
+  },
+  {
+    node: {
+      id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
+      eventTitle: 'This is a second fake Node event',
+      date: '2030-09-15T09:30',
+      linkToEvent: 'https://fakelink.com'
+    }
+  }
+]
+
+export { talkData, bookData, tutorialData, data, eventsData }

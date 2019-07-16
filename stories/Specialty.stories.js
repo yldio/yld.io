@@ -7,15 +7,22 @@ import { Row, Col } from '../src/components/grid'
 
 import { Checkbox } from '../src/components/Common/Forms'
 import { SpecialityView } from '../src/templates/speciality-component'
-import data from './assets/speciality-data'
+import {
+  talkData,
+  bookData,
+  tutorialData,
+  eventsData,
+  data
+} from './assets/speciality-data'
+
+// ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
 const initialRenderingOptions = {
-  intro: true,
   projects: true,
-  training: true,
   community: true,
   events: true,
   talks: true,
+  blogs: true,
   books: true,
   tutorials: true,
   getintouch: true
@@ -82,8 +89,7 @@ class StorySpecialityWrapper extends Component {
     super(props)
     this.state = {
       hasError: false,
-      renderOptions: initialRenderingOptions,
-      componentProps: data
+      renderOptions: initialRenderingOptions
     }
   }
 
@@ -101,9 +107,36 @@ class StorySpecialityWrapper extends Component {
     }))
   }
 
+  generateProps = () => {
+    const { renderOptions } = this.state
+
+    const { talks, books, tutorials, events, community } = renderOptions
+
+    const externalResources = [
+      [talks, talkData],
+      [books, bookData],
+      [tutorials, tutorialData]
+    ].reduce((acc, [render, data]) => (render ? acc.concat(data) : acc), [])
+
+    console.log({ eventsData })
+    return {
+      ...data,
+      contentfulSpeciality: {
+        ...data.contentfulSpeciality,
+        ...(!community && { communityText: [] }),
+        externalResources
+      },
+      allContentfulMeetupEvent: {
+        edges: events ? eventsData : []
+      }
+    }
+  }
+
   render() {
-    const { hasError, error, renderOptions, componentProps } = this.state
+    const { hasError, error, renderOptions } = this.state
     const { children } = this.props
+
+    const data = this.generateProps()
 
     return (
       <Fragment>
@@ -122,7 +155,7 @@ class StorySpecialityWrapper extends Component {
           {hasError ? (
             <Error {...error} />
           ) : (
-            React.cloneElement(children, { data: componentProps })
+            React.cloneElement(children, { data })
           )}
         </div>
       </Fragment>
