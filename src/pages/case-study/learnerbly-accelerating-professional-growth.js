@@ -6,6 +6,7 @@ import Layout from '../../components/layout'
 import GreyBackground from '../../components/Common/GreyBackground'
 import Statement from '../../components/Common/Statement'
 import Head from '../../components/Common/Head'
+import Image from '../../components/Common/Image'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import {
@@ -74,7 +75,13 @@ const IndexPage = props => {
       </Grid>
 
       {/* Image - "We curate the best learning to accelerate your growth" */}
-      <div>{JSON.stringify(normalise(data4))}</div>
+      <Grid>
+        <BlockRow flexEnd>
+          <Col width={[1, 1, 1, 2 / 3]}>
+            <Image image={normalise(data4).image} />
+          </Col>
+        </BlockRow>
+      </Grid>
       <br />
       {/* "How did we go about solving it?" */}
       <div>{JSON.stringify(normalise(data5))}</div>
