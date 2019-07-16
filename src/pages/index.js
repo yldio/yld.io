@@ -16,6 +16,8 @@ import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 
+const dateFormat = 'dddd[,] MMMM DD'
+
 const getHomepageMeetups = (events = []) =>
   events
     .filter(
@@ -25,16 +27,13 @@ const getHomepageMeetups = (events = []) =>
     .slice(0, 5)
     .map(n => ({
       ...n.node,
-      date: format(n.node.date, 'MMMM DD[,] dddd')
+      date: format(n.node.date, dateFormat)
     }))
 
-const getFeaturedEventDate = ({ node: { date, endTime } }) => {
-  const dateFormat = 'MMMM DD[,] dddd'
-
-  return !isSameDay(date, endTime) && isAfter(endTime, date)
+const getFeaturedEventDate = ({ node: { date, endTime } }) =>
+  !isSameDay(date, endTime) && isAfter(endTime, date)
     ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
-    : format(date, 'MMMM DD[,] dddd')
-}
+    : format(date, dateFormat)
 
 const getHomepageConferences = (events = []) =>
   events
