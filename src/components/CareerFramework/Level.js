@@ -14,9 +14,11 @@ const LevelInfo = ({ ctaTitle, ctaUrl, infoContent, title }) => (
     {infoContent.infoContent && (
       <BodyPrimary noPaddingTop>{infoContent.infoContent}</BodyPrimary>
     )}
-    <StyledLink to={ctaUrl} title={`Learn More about ${title}`}>
-      {ctaTitle}
-    </StyledLink>
+    {ctaUrl && ctaTitle && (
+      <StyledLink external href={ctaUrl} title={`Learn More about ${title}`}>
+        {ctaTitle}
+      </StyledLink>
+    )}
   </LevelInfoWrapper>
 )
 
