@@ -1,14 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import ReactMarkdown from 'react-markdown'
 
 import { Grid, Col } from '../../components/grid'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/Common/GreyBackground'
+import RegalBlueBackground from '../../components/Common/RegalBlueBackground'
 import Statement from '../../components/Common/Statement'
 import Head from '../../components/Common/Head'
 import Image from '../../components/Common/Image'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
+import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import {
   shouldRender,
   normalise,
@@ -100,8 +103,36 @@ const IndexPage = props => {
       </Grid>
 
       {/* "On-boarding" */}
-      <div>{JSON.stringify(normalise(data6))}</div>
-      <br />
+      <RegalBlueBackground>
+        <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
+          {shouldRender(data6) && (
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => <SectionTitle reverse {...props} />,
+                // eslint-disable-next-line
+                paragraph: props => (
+                  <Col
+                    width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
+                    style={{ textAlign: 'center' }}
+                  >
+                    <BodyPrimary reverse {...props} />
+                  </Col>
+                )
+              }}
+              source={normalise(data6).text}
+            />
+          )}
+        </BlockRow>
+        <Grid flex>
+          <BlockRow flexEnd>
+            <Col width={[1]}>
+              <Image image={normalise(data6).image} />
+            </Col>
+          </BlockRow>
+        </Grid>
+      </RegalBlueBackground>
+
       {/* "Staying on target" */}
       <div>{JSON.stringify(normalise(data7))}</div>
       <br />
