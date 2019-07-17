@@ -3867,6 +3867,70 @@ exports[`Storyshots Colors Colors 1`] = `
       #a08162
     </p>
   </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#153d53",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      regalBlueBg
+    </p>
+    <p>
+      #153d53
+    </p>
+  </div>
+  <div
+    style={
+      Object {
+        "float": "left",
+        "margin": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#14B48F",
+          "border": "1px solid #444",
+          "height": 160,
+          "width": 160,
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "#444",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      mountainMeadowBg
+    </p>
+    <p>
+      #14B48F
+    </p>
+  </div>
 </div>
 `;
 
