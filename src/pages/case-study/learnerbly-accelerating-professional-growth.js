@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
 
 import { Grid, Col } from '../../components/grid'
@@ -19,6 +20,11 @@ import {
   TextColumnsBlock,
   BlockRow
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+
+const Block1Col = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
+`
 
 const IndexPage = props => {
   const {
@@ -52,8 +58,14 @@ const IndexPage = props => {
       {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
       {shouldRender(data1) && (
         <Grid>
-          <BlockRow flexEnd>
-            <Col width={[1, 1, 1, 1, 1 / 2]}>{normalise(data1, 0).text}</Col>
+          <BlockRow
+            flexEnd
+            mobile={{ bottom: '4', top: '5' }}
+            tablet={{ bottom: '6', top: '7' }}
+          >
+            <Block1Col width={[1, 1, 1, 1, 1 / 2]}>
+              {normalise(data1, 0).text}
+            </Block1Col>
           </BlockRow>
         </Grid>
       )}
