@@ -182,8 +182,12 @@ const IndexPage = props => {
       {/* "Curated courses" */}
       {shouldRender(data8) && (
         <MountainMeadowBackground>
-          <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
-            {shouldRender(data6) && (
+          <Grid flex>
+            <BlockRow
+              style={{ flexDirection: 'column', alignItems: 'center' }}
+              mobile={{ top: '4', bottom: '4' }}
+              tablet={{ top: '6' }}
+            >
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
@@ -191,7 +195,7 @@ const IndexPage = props => {
                   // eslint-disable-next-line
                   paragraph: props => (
                     <Col
-                      width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
+                      width={[1, 1, 1, 3 / 4, 3 / 4, 1 / 2]}
                       style={{ textAlign: 'center' }}
                     >
                       <BodyPrimary reverse {...props} />
@@ -200,12 +204,12 @@ const IndexPage = props => {
                 }}
                 source={normalise(data8).text}
               />
-            )}
-          </BlockRow>
+            </BlockRow>
+          </Grid>
           <Grid flex>
-            <BlockRow flexEnd>
+            <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
-                <Image image={normalise(data6).image} />
+                <Image image={normalise(data8).image} />
               </Col>
             </BlockRow>
           </Grid>
