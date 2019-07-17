@@ -81,7 +81,7 @@ const IndexPage = props => {
       {/* "What was the problem we were tackling?" */}
       {shouldRender(data3) && (
         <Grid flex>
-          <BlockRow>
+          <BlockRow mobile={{ bottom: '4', top: '4' }} tablet={{ top: '6' }}>
             <TextColumnsBlock
               data={normalise(data3)}
               colWidthOne={[1, 1, 1, 1, 5 / 12]}
