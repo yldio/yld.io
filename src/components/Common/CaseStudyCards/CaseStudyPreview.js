@@ -17,27 +17,41 @@ const Headings = ({ title, as }) => (
   </Fragment>
 )
 
-const TextBelowImage = ({ introSentence, slug }) => (
+const TextBelowImage = ({ introSentence, slug, ctaDataEventLabel }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <BodyPrimary>{introSentence}</BodyPrimary>
-    <StyledLink title="Learn more" to={`/case-study/${slug}`}>
+    <StyledLink
+      title="Learn more"
+      to={`/case-study/${slug}`}
+      data-event={ctaDataEventLabel}
+    >
       Learn more
     </StyledLink>
   </Padding>
 )
 
-const RightHandText = ({ title, introSentence, slug, as }) => (
+const RightHandText = ({
+  title,
+  introSentence,
+  ctaDataEventLabel,
+  slug,
+  as
+}) => (
   <Fragment>
     <Padding bottom={0.5}>
       <Headings as={as} title={title} />
     </Padding>
     <Padding bottom={1}>
-      <TextBelowImage introSentence={introSentence} slug={slug} />
+      <TextBelowImage
+        introSentence={introSentence}
+        ctaDataEventLabel={ctaDataEventLabel}
+        slug={slug}
+      />
     </Padding>
   </Fragment>
 )
 
-const CaseStudyPreview = ({ isTop, caseStudy, as }) => {
+const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
   if (!caseStudy) {
     return null
   }
@@ -50,10 +64,15 @@ const CaseStudyPreview = ({ isTop, caseStudy, as }) => {
       posterImage={posterImage}
       headings={<Headings title={title} as={as} />}
       textBelowImage={
-        <TextBelowImage introSentence={introSentence} slug={slug} />
+        <TextBelowImage
+          ctaDataEventLabel={ctaDataEventLabel}
+          introSentence={introSentence}
+          slug={slug}
+        />
       }
       rightHandText={
         <RightHandText
+          ctaDataEventLabel={ctaDataEventLabel}
           title={title}
           introSentence={introSentence}
           slug={slug}

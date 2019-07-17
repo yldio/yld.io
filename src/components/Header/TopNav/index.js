@@ -54,7 +54,7 @@ const TopNav = ({ links, themeVariation, path }) => (
             </Dropdown>
           )
         } else {
-          const { label, to, href } = link
+          const { label, to, href, attributes } = link
           return (
             <OuterAnchorItem
               key={idx}
@@ -63,6 +63,7 @@ const TopNav = ({ links, themeVariation, path }) => (
               to={to}
               href={href}
               title={label}
+              attributes={attributes}
             >
               {label}
             </OuterAnchorItem>

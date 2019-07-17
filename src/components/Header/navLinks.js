@@ -1,3 +1,5 @@
+import eventLabels from '../../utils/eventLabels'
+
 const navLinks = [
   {
     label: 'Services',
@@ -26,7 +28,10 @@ const navLinks = [
   },
   {
     label: 'Blog',
-    href: 'https://medium.com/yld-engineering-blog/'
+    href: 'https://medium.com/yld-engineering-blog/',
+    attributes: {
+      'data-event': eventLabels.navigationBlog
+    }
   },
   {
     label: 'About',

@@ -15,6 +15,7 @@ import Events from '../components/Homepage/events/index'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
+import eventLabels from '../utils/eventLabels'
 
 const getHomepageMeetups = (events = []) =>
   events
@@ -47,7 +48,11 @@ const IndexPage = ({
   return (
     <Layout location={location}>
       <Head page={content} />
-      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
+      <CaseStudyPreview
+        as="h1"
+        caseStudy={content.featuredCaseStudy}
+        ctaDataEventLabel={eventLabels.homepageCaseStudyCTA}
+      />
       <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
