@@ -26,7 +26,7 @@ const navLinks = [
   },
   {
     label: 'Blog',
-    href: 'https://medium.com/yld-engineering-blog/'
+    to: '/blog/'
   },
   {
     label: 'About',
