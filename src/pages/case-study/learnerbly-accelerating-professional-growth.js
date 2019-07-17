@@ -193,6 +193,7 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
+
       {/* "Curated courses" */}
       {shouldRender(data8) && (
         <MountainMeadowBackground>
@@ -229,7 +230,7 @@ const IndexPage = props => {
           </Grid>
         </MountainMeadowBackground>
       )}
-      {/* TODO - handle specific display - same as data7 */}
+
       {/* "The bigger picture" */}
       {shouldRender(data9) && (
         <Grid>
@@ -237,22 +238,36 @@ const IndexPage = props => {
             mobile={{ bottom: '5', top: '4' }}
             tablet={{ bottom: '6', top: '6' }}
           >
-            <Col width={[1, 1, 1, 4 / 12]}>
+            <Col width={[1, 1, 1, 1, 1 / 2, 4 / 12]}>
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />
+                  heading: props => <SectionTitle {...props} />,
+                  // eslint-disable-next-line
+                  paragraph: props => <StyledBodyPrimary {...props} />
                 }}
                 source={normalise(data9).text}
               />
             </Col>
 
-            <Col width={[1, 1, 1, 8 / 12]}>
+            <Col width={[1, 1, 1, 1, 1 / 2, 0]}>
+              <ReactMarkdown
+                disallowedTypes={['heading']}
+                renderers={{
+                  // eslint-disable-next-line
+                  paragraph: props => <BodyPrimary {...props} />
+                }}
+                source={normalise(data9).text}
+              />
+            </Col>
+
+            <Col width={[1, 1, 1, 1, 1, 8 / 12]}>
               <Image image={normalise(data9).image} />
             </Col>
           </BlockRow>
         </Grid>
       )}
+
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
   )
