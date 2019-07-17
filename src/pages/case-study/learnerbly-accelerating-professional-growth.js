@@ -216,10 +216,14 @@ const IndexPage = props => {
         </MountainMeadowBackground>
       )}
 
+      {/* TODO - handle specific display - same as data7 */}
       {/* "The bigger picture" */}
       {shouldRender(data9) && (
         <Grid>
-          <BlockRow mobile={{ bottom: '4', top: '4' }}>
+          <BlockRow
+            mobile={{ bottom: '5', top: '4' }}
+            tablet={{ bottom: '6', top: '6' }}
+          >
             <Col width={[1, 1, 1, 4 / 12]}>
               <ReactMarkdown
                 renderers={{
