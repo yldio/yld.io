@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 
 import { Grid, Col } from '../../components/grid'
@@ -24,6 +25,14 @@ import {
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
+const StyledBodyPrimary = styled(BodyPrimary)`
+  display: none;
+
+  ${breakpoint('tablet')`
+    display: inherit;
+  `}
 `
 
 const IndexPage = props => {
@@ -54,7 +63,6 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
-
       {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
       {shouldRender(data1) && (
         <Grid>
@@ -69,7 +77,6 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
-
       {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
       {shouldRender(data2) && (
@@ -77,7 +84,6 @@ const IndexPage = props => {
           <Statement>{normalise(data2).text}</Statement>
         </GreyBackground>
       )}
-
       {/* "What was the problem we were tackling?" */}
       {shouldRender(data3) && (
         <Grid flex>
@@ -91,7 +97,6 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
-
       {/* Image - "We curate the best learning to accelerate your growth" */}
       {shouldRender(data4) && (
         <Grid>
@@ -102,7 +107,6 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
-
       {/* "How did we go about solving it?" */}
       {shouldRender(data5) && (
         <Grid flex>
@@ -116,7 +120,6 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
-
       {/* "On-boarding" */}
       {shouldRender(data6) && (
         <RegalBlueBackground>
@@ -154,7 +157,6 @@ const IndexPage = props => {
         </RegalBlueBackground>
       )}
 
-      {/* TODO - handle specific display */}
       {/* "Staying on target" */}
       {shouldRender(data7) && (
         <Grid>
@@ -162,23 +164,35 @@ const IndexPage = props => {
             mobile={{ bottom: '5', top: '4' }}
             tablet={{ bottom: '6', top: '6' }}
           >
-            <Col width={[1, 1, 1, 4 / 12]}>
+            <Col width={[1, 1, 1, 1, 1 / 2, 4 / 12]}>
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />
+                  heading: props => <SectionTitle {...props} />,
+                  // eslint-disable-next-line
+                  paragraph: props => <StyledBodyPrimary {...props} />
                 }}
                 source={normalise(data7).text}
               />
             </Col>
 
-            <Col width={[1, 1, 1, 8 / 12]}>
+            <Col width={[1, 1, 1, 1, 1 / 2, 0]}>
+              <ReactMarkdown
+                disallowedTypes={['heading']}
+                renderers={{
+                  // eslint-disable-next-line
+                  paragraph: props => <BodyPrimary {...props} />
+                }}
+                source={normalise(data7).text}
+              />
+            </Col>
+
+            <Col width={[1, 1, 1, 1, 1, 8 / 12]}>
               <Image image={normalise(data7).image} />
             </Col>
           </BlockRow>
         </Grid>
       )}
-
       {/* "Curated courses" */}
       {shouldRender(data8) && (
         <MountainMeadowBackground>
@@ -215,7 +229,6 @@ const IndexPage = props => {
           </Grid>
         </MountainMeadowBackground>
       )}
-
       {/* TODO - handle specific display - same as data7 */}
       {/* "The bigger picture" */}
       {shouldRender(data9) && (
@@ -240,7 +253,6 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
-
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
   )
@@ -254,7 +266,9 @@ export const query = graphql`
       relatedCaseStudy {
         title
         slug
-        introSentence
+        introSentence {
+          introSentence
+        }
         posterImage {
           title
           file {
