@@ -33,41 +33,38 @@ const StyledStrong = styled.span`
 
 const makeStrong = text => <StyledStrong>{text}</StyledStrong>
 
-const Statement = ({ richText, children, as = 'h2' }) => {
-  const childrenArray = children
-    .split('__')
-    .map((child, i) => (i % 2 === 1 ? makeStrong(child) : child))
+const mapWithBold = arr =>
+  arr.split('__').map((el, i) => (i % 2 === 1 ? makeStrong(el) : el))
 
-  return (
-    <GreyBackground>
-      <PaddedGrid>
-        <Row>
-          <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-            <DisplayTitle as={as} textLight>
-              {childrenArray}
-              {richText &&
-                richText.map(content => {
-                  if (content.nodeType === 'text') return content.value
+const Statement = ({ richText, children, as = 'h2' }) => (
+  <GreyBackground>
+    <PaddedGrid>
+      <Row>
+        <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
+          <DisplayTitle as={as} textLight>
+            {children && mapWithBold(children)}
+            {richText &&
+              richText.map(content => {
+                if (content.nodeType === 'text') return content.value
 
-                  if (content.nodeType === 'hyperlink') {
-                    return (
-                      <Link
-                        key={content.data.uri}
-                        noafter="true"
-                        to={`${content.data.uri}`}
-                      >
-                        {content.content[0].value}
-                      </Link>
-                    )
-                  }
-                  return ''
-                })}
-            </DisplayTitle>
-          </Col>
-        </Row>
-      </PaddedGrid>
-    </GreyBackground>
-  )
-}
+                if (content.nodeType === 'hyperlink') {
+                  return (
+                    <Link
+                      key={content.data.uri}
+                      noafter="true"
+                      to={`${content.data.uri}`}
+                    >
+                      {content.content[0].value}
+                    </Link>
+                  )
+                }
+                return ''
+              })}
+          </DisplayTitle>
+        </Col>
+      </Row>
+    </PaddedGrid>
+  </GreyBackground>
+)
 
 export default Statement
