@@ -120,7 +120,11 @@ const IndexPage = props => {
       {/* "On-boarding" */}
       {shouldRender(data6) && (
         <RegalBlueBackground>
-          <BlockRow style={{ flexDirection: 'column', alignItems: 'center' }}>
+          <BlockRow
+            style={{ flexDirection: 'column', alignItems: 'center' }}
+            mobile={{ top: '4' }}
+            tablet={{ top: '6' }}
+          >
             {shouldRender(data6) && (
               <ReactMarkdown
                 renderers={{
@@ -141,7 +145,7 @@ const IndexPage = props => {
             )}
           </BlockRow>
           <Grid flex>
-            <BlockRow flexEnd>
+            <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
                 <Image image={normalise(data6).image} />
               </Col>
