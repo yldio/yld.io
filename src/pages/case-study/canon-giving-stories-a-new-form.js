@@ -235,7 +235,9 @@ export const query = graphql`
       relatedCaseStudy {
         title
         slug
-        introSentence
+        introSentence {
+          introSentence
+        }
         posterImage {
           fluid(maxWidth: 550) {
             ...GatsbyContentfulFluid_withWebp

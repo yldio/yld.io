@@ -84,7 +84,9 @@ export const pageQuery = graphql`
           ... on ContentfulTemplatedCaseStudy {
             title
             slug
-            introSentence
+            introSentence {
+              introSentence
+            }
             posterImage {
               title
               fluid(maxWidth: 600) {
@@ -137,7 +139,9 @@ export const pageQuery = graphql`
           ... on ContentfulTemplatedCaseStudy {
             title
             slug
-            introSentence
+            introSentence {
+              introSentence
+            }
             posterColor
             posterImage {
               fluid(maxWidth: 600) {

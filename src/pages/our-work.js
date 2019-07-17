@@ -153,7 +153,9 @@ const OurWorkPage = props => (
                   title
                 }
               }
-              introSentence
+              introSentence {
+                introSentence
+              }
               posterImage {
                 title
                 file {

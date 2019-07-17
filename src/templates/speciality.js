@@ -456,7 +456,9 @@ export const pageQuery = graphql`
         ... on ContentfulTemplatedCaseStudy {
           title
           slug
-          introSentence
+          introSentence {
+            introSentence
+          }
           posterColor
           posterImage {
             title
@@ -469,6 +471,9 @@ export const pageQuery = graphql`
           title
           slug
           posterColor
+          introSentence {
+            introSentence
+          }
           posterImage {
             title
             file {

@@ -70,7 +70,9 @@ export const pageQuery = graphql`
           }
         }
         posterColor
-        introSentence
+        introSentence {
+          introSentence
+        }
       }
       specialities {
         title
