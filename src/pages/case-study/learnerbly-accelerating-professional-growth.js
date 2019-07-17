@@ -63,13 +63,14 @@ const IndexPage = props => {
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
+
       {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
       {shouldRender(data1) && (
         <Grid>
           <BlockRow
             flexEnd
-            mobile={{ bottom: '4', top: '5' }}
-            tablet={{ bottom: '6', top: '7' }}
+            mobile={{ bottom: '4', top: '3' }}
+            tablet={{ bottom: '6', top: '3' }}
           >
             <Block1Col width={[1, 1, 1, 1, 1 / 2]}>
               {normalise(data1, 0).text}
@@ -77,6 +78,7 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
+
       {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
       {shouldRender(data2) && (
@@ -84,6 +86,7 @@ const IndexPage = props => {
           <Statement>{normalise(data2).text}</Statement>
         </GreyBackground>
       )}
+
       {/* "What was the problem we were tackling?" */}
       {shouldRender(data3) && (
         <Grid flex>
@@ -97,6 +100,7 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
+
       {/* Image - "We curate the best learning to accelerate your growth" */}
       {shouldRender(data4) && (
         <Grid>
@@ -107,6 +111,7 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
+
       {/* "How did we go about solving it?" */}
       {shouldRender(data5) && (
         <Grid flex>
@@ -120,6 +125,7 @@ const IndexPage = props => {
           </BlockRow>
         </Grid>
       )}
+
       {/* "On-boarding" */}
       {shouldRender(data6) && (
         <RegalBlueBackground>
