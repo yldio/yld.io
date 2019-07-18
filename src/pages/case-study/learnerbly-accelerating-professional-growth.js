@@ -126,31 +126,32 @@ const IndexPage = props => {
       {/* "On-boarding" */}
       {shouldRender(data6) && (
         <RegalBlueBackground>
-          <BlockRow
-            style={{ flexDirection: 'column', alignItems: 'center' }}
-            mobile={{ top: '4' }}
-            tablet={{ top: '6' }}
-          >
-            {shouldRender(data6) && (
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
-                  // eslint-disable-next-line
-                  paragraph: props => (
-                    <Col
-                      width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
-                      style={{ textAlign: 'center' }}
-                    >
-                      <BodyPrimary reverse {...props} />
-                    </Col>
-                  )
-                }}
-                source={normalise(data6).text}
-              />
-            )}
-          </BlockRow>
           <Grid flex>
+            <BlockRow
+              style={{ flexDirection: 'column', alignItems: 'center' }}
+              mobile={{ top: '4' }}
+              tablet={{ top: '6' }}
+            >
+              {shouldRender(data6) && (
+                <ReactMarkdown
+                  renderers={{
+                    // eslint-disable-next-line
+                    heading: props => <SectionTitle reverse {...props} />,
+                    // eslint-disable-next-line
+                    paragraph: props => (
+                      <Col
+                        width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
+                        style={{ textAlign: 'center' }}
+                      >
+                        <BodyPrimary reverse {...props} />
+                      </Col>
+                    )
+                  }}
+                  source={normalise(data6).text}
+                />
+              )}
+            </BlockRow>
+
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
                 <Image image={normalise(data6).image} />
@@ -170,7 +171,7 @@ const IndexPage = props => {
           >
             <Col width={[1, 1, 1, 1, 1, 4 / 12]}>
               <Row>
-                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['paragraph']}
                     renderers={{
@@ -180,7 +181,7 @@ const IndexPage = props => {
                     source={normalise(data7).text}
                   />
                 </Col>
-                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['heading']}
                     renderers={{
@@ -247,7 +248,7 @@ const IndexPage = props => {
           >
             <Col width={[1, 1, 1, 1, 1, 4 / 12]}>
               <Row>
-                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['paragraph']}
                     renderers={{
@@ -257,7 +258,7 @@ const IndexPage = props => {
                     source={normalise(data9).text}
                   />
                 </Col>
-                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['heading']}
                     renderers={{
