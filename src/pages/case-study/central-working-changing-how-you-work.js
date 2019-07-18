@@ -111,7 +111,7 @@ const IndexPage = props => {
         <Grid>
           {/* Outcomes */}
           <BlockRow
-            style={{ flexDirection: 'column', alignItems: 'center' }}
+            style={{ flexDirection: 'column' }}
             mobile={{ bottom: '4', top: '4' }}
             tablet={{ top: '6' }}
           >
@@ -120,16 +120,13 @@ const IndexPage = props => {
                 renderers={{
                   // eslint-disable-next-line
                   heading: props => (
-                    <Col width={[1]} style={{ textAlign: 'center' }}>
+                    <Col width={[1]}>
                       <SectionTitle {...props} />
                     </Col>
                   ),
                   // eslint-disable-next-line
                   paragraph: props => (
-                    <Col
-                      width={[1, 1, 1, 1, 9 / 12, 6 / 12]}
-                      style={{ textAlign: 'center' }}
-                    >
+                    <Col width={[1, 1, 1, 1, 9 / 12, 6 / 12]}>
                       <BodyPrimary {...props} />
                     </Col>
                   )
