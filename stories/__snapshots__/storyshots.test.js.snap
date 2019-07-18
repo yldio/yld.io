@@ -13479,9 +13479,7 @@ Array [
                   <p
                     className="c7"
                     muted={true}
-                  >
-                    We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.
-                  </p>
+                  />
                 </header>
                 <div
                   className="c26"
@@ -13561,9 +13559,7 @@ Array [
                   <p
                     className="c7"
                     muted={true}
-                  >
-                    We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-                  </p>
+                  />
                 </header>
                 <div
                   className="c29"
