@@ -228,7 +228,7 @@ const IndexPage = props => {
                   // eslint-disable-next-line
                   paragraph: props => (
                     <Col
-                      width={[1, 1, 1, 3 / 4, 3 / 4, 1 / 2]}
+                      width={[1, 1, 1, 1, 5 / 6, 3 / 4, 1 / 2]}
                       style={{ textAlign: 'center' }}
                     >
                       <BodyPrimary reverse {...props} />
