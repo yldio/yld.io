@@ -42,34 +42,32 @@ const StyledImage = styled(Image)`
   display: block;
 `
 
-const FeaturedEvent = ({ event }) => {
-  return (
-    <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
-      <FeaturedEventWrapper key={event.id} color={event.color}>
-        <EventWrapper>
-          <PaddedBodyPrimary muted reverse noPadding>
-            Featured event
-          </PaddedBodyPrimary>
-          <DisplayTitle reverse noPaddingTop>
-            {event.eventTitle}
-          </DisplayTitle>
-          <BodyPrimary reverse>{event.date}</BodyPrimary>
-          <FixedWidthBodyPrimary muted reverse>
-            {event.blurb.blurb}
-          </FixedWidthBodyPrimary>
-          <StyledLink
-            external
-            reverse
-            href={event.linkToEvent}
-            title={`${event.eventTitle} - ${event.ctaText}`}
-          >
-            {event.ctaText}
-          </StyledLink>
-        </EventWrapper>
-        <StyledImage image={event.posterImage} />
-      </FeaturedEventWrapper>
-    </Col>
-  )
-}
+const FeaturedEvent = ({ event }) => (
+  <Col width={[1, 1, 1, 1, 6 / 12, 7 / 12]}>
+    <FeaturedEventWrapper key={event.id} color={event.color}>
+      <EventWrapper>
+        <PaddedBodyPrimary muted reverse noPadding>
+          Featured event
+        </PaddedBodyPrimary>
+        <DisplayTitle reverse noPaddingTop>
+          {event.eventTitle}
+        </DisplayTitle>
+        <BodyPrimary reverse>{event.date}</BodyPrimary>
+        <FixedWidthBodyPrimary muted reverse>
+          {event.blurb.blurb}
+        </FixedWidthBodyPrimary>
+        <StyledLink
+          external
+          reverse
+          href={event.linkToEvent}
+          title={`${event.eventTitle} - ${event.ctaText}`}
+        >
+          {event.ctaText}
+        </StyledLink>
+      </EventWrapper>
+      <StyledImage image={event.posterImage} />
+    </FeaturedEventWrapper>
+  </Col>
+)
 
 export default FeaturedEvent
