@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
 
 import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
@@ -26,41 +27,48 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const StyledStrong = styled.span`
-  color: ${({ theme }) => theme.colors.text};
-  font-weight: 500;
+const StyledDisplayTitle = styled(DisplayTitle)`
+  > strong {
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: 500;
+  }
 `
-
-const makeStrong = text => <StyledStrong>{text}</StyledStrong>
-
-const mapWithBold = arr =>
-  arr.split('__').map((el, i) => (i % 2 === 1 ? makeStrong(el) : el))
 
 const Statement = ({ richText, children, as = 'h2' }) => (
   <GreyBackground>
     <PaddedGrid>
       <Row>
         <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-          <DisplayTitle as={as} textLight>
-            {children && mapWithBold(children)}
-            {richText &&
-              richText.map(content => {
-                if (content.nodeType === 'text') return content.value
+          {richText ? (
+            <DisplayTitle textLight>
+              {richText.map(({ nodeType, data, value, content }) => {
+                if (nodeType === 'text') return value
 
-                if (content.nodeType === 'hyperlink') {
+                if (nodeType === 'hyperlink') {
                   return (
-                    <Link
-                      key={content.data.uri}
-                      noafter="true"
-                      to={`${content.data.uri}`}
-                    >
-                      {content.content[0].value}
+                    <Link key={data.uri} noafter="true" to={`${data.uri}`}>
+                      {content[0].value}
                     </Link>
                   )
                 }
                 return ''
               })}
-          </DisplayTitle>
+            </DisplayTitle>
+          ) : (
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                headings: props => (
+                  <StyledDisplayTitle as={as} textLight {...props} />
+                ),
+                // eslint-disable-next-line react/display-name
+                paragraph: props => (
+                  <StyledDisplayTitle as={as} textLight {...props} />
+                )
+              }}
+              source={children}
+            />
+          )}
         </Col>
       </Row>
     </PaddedGrid>
