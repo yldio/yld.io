@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 
-import { Grid, Col } from '../../components/grid'
+import { Grid, Row, Col } from '../../components/grid'
 import Layout from '../../components/layout'
 import GreyBackground from '../../components/Common/GreyBackground'
 import RegalBlueBackground from '../../components/Common/RegalBlueBackground'
@@ -25,14 +24,6 @@ import {
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[2]};
-`
-
-const StyledBodyPrimary = styled(BodyPrimary)`
-  display: none;
-
-  ${breakpoint('tablet')`
-    display: inherit;
-  `}
 `
 
 const IndexPage = props => {
@@ -90,12 +81,15 @@ const IndexPage = props => {
       {/* "What was the problem we were tackling?" */}
       {shouldRender(data3) && (
         <Grid flex>
-          <BlockRow mobile={{ bottom: '4', top: '4' }} tablet={{ top: '6' }}>
+          <BlockRow
+            mobile={{ bottom: '4', top: '4' }}
+            tablet={{ top: '6' }}
+            style={{ justifyContent: 'space-between' }}
+          >
             <TextColumnsBlock
               data={normalise(data3)}
               colWidthOne={[1, 1, 1, 1, 5 / 12]}
               colWidthTwo={[1, 1, 1, 1, 6 / 12]}
-              middleColWidth={[0, 0, 0, 0, 1 / 12]}
             />
           </BlockRow>
         </Grid>
@@ -115,12 +109,15 @@ const IndexPage = props => {
       {/* "How did we go about solving it?" */}
       {shouldRender(data5) && (
         <Grid flex>
-          <BlockRow mobile={{ bottom: '5', top: '4' }} tablet={{ bottom: '6' }}>
+          <BlockRow
+            mobile={{ bottom: '5', top: '4' }}
+            tablet={{ bottom: '6' }}
+            style={{ justifyContent: 'space-between' }}
+          >
             <TextColumnsBlock
               data={normalise(data5)}
               colWidthOne={[1, 1, 1, 1, 5 / 12]}
               colWidthTwo={[1, 1, 1, 1, 6 / 12]}
-              middleColWidth={[0, 0, 0, 0, 1 / 12]}
             />
           </BlockRow>
         </Grid>
@@ -169,31 +166,34 @@ const IndexPage = props => {
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
             tablet={{ bottom: '6', top: '6' }}
+            style={{ justifyContent: 'flex-end' }}
           >
-            <Col width={[1, 1, 1, 1, 1 / 2, 4 / 12]}>
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />,
-                  // eslint-disable-next-line
-                  paragraph: props => <StyledBodyPrimary {...props} />
-                }}
-                source={normalise(data7).text}
-              />
+            <Col width={[1, 1, 1, 1, 1, 4 / 12]}>
+              <Row>
+                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                  <ReactMarkdown
+                    disallowedTypes={['paragraph']}
+                    renderers={{
+                      // eslint-disable-next-line
+                      heading: props => <SectionTitle {...props} />
+                    }}
+                    source={normalise(data7).text}
+                  />
+                </Col>
+                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                  <ReactMarkdown
+                    disallowedTypes={['heading']}
+                    renderers={{
+                      // eslint-disable-next-line
+                      paragraph: props => <BodyPrimary {...props} />
+                    }}
+                    source={normalise(data7).text}
+                  />
+                </Col>
+              </Row>
             </Col>
 
-            <Col width={[1, 1, 1, 1, 1 / 2, 0]}>
-              <ReactMarkdown
-                disallowedTypes={['heading']}
-                renderers={{
-                  // eslint-disable-next-line
-                  paragraph: props => <BodyPrimary {...props} />
-                }}
-                source={normalise(data7).text}
-              />
-            </Col>
-
-            <Col width={[1, 1, 1, 1, 1, 8 / 12]}>
+            <Col width={[1, 1, 1, 8 / 12]} block={false}>
               <Image image={normalise(data7).image} />
             </Col>
           </BlockRow>
@@ -243,31 +243,34 @@ const IndexPage = props => {
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
             tablet={{ bottom: '6', top: '6' }}
+            style={{ justifyContent: 'flex-end' }}
           >
-            <Col width={[1, 1, 1, 1, 1 / 2, 4 / 12]}>
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />,
-                  // eslint-disable-next-line
-                  paragraph: props => <StyledBodyPrimary {...props} />
-                }}
-                source={normalise(data9).text}
-              />
+            <Col width={[1, 1, 1, 1, 1, 4 / 12]}>
+              <Row>
+                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                  <ReactMarkdown
+                    disallowedTypes={['paragraph']}
+                    renderers={{
+                      // eslint-disable-next-line
+                      heading: props => <SectionTitle {...props} />
+                    }}
+                    source={normalise(data9).text}
+                  />
+                </Col>
+                <Col width={[1, 1 / 2, 1 / 2, 1 / 2, 1 / 2, 1]}>
+                  <ReactMarkdown
+                    disallowedTypes={['heading']}
+                    renderers={{
+                      // eslint-disable-next-line
+                      paragraph: props => <BodyPrimary {...props} />
+                    }}
+                    source={normalise(data9).text}
+                  />
+                </Col>
+              </Row>
             </Col>
 
-            <Col width={[1, 1, 1, 1, 1 / 2, 0]}>
-              <ReactMarkdown
-                disallowedTypes={['heading']}
-                renderers={{
-                  // eslint-disable-next-line
-                  paragraph: props => <BodyPrimary {...props} />
-                }}
-                source={normalise(data9).text}
-              />
-            </Col>
-
-            <Col width={[1, 1, 1, 1, 1, 8 / 12]}>
+            <Col width={[1, 1, 1, 8 / 12]} block={false}>
               <Image image={normalise(data9).image} />
             </Col>
           </BlockRow>
