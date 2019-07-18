@@ -145,7 +145,7 @@ const IndexPage = props => {
           <Grid flex>
             <BlockRow
               style={{ flexDirection: 'column', alignItems: 'center' }}
-              mobile={{ top: '4' }}
+              mobile={{ bottom: '4', top: '4' }}
               tablet={{ top: '6' }}
             >
               {shouldRender(data6) && (
