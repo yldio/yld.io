@@ -10,6 +10,7 @@ import { BodyPrimary, DisplayTitle } from '../../Typography'
 
 const FeaturedEventWrapper = styled.section`
   background-color: #${props => props.color};
+
   ${breakpoint('smallTablet')`
     margin-top: ${remcalc(175)}
   `}
@@ -20,7 +21,9 @@ const EventWrapper = styled.header`
 
   ${breakpoint('tablet')`
     padding: ${remcalc(24)} ${remcalc(36)} 0;
-  `} ${breakpoint('desktop')`
+  `}
+
+  ${breakpoint('desktop')`
     padding-top: ${remcalc(24)};
     padding-left: ${remcalc(36)};
   `};
