@@ -27,7 +27,7 @@ const Block1Col = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[2]};
 `
 
-const StyledParagraphCol7 = styled(Col)`
+const StyledParagraphCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[4]};
 
@@ -192,7 +192,7 @@ const IndexPage = props => {
                     source={normalise(data7).text}
                   />
                 </Col>
-                <StyledParagraphCol7 width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
+                <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['heading']}
                     renderers={{
@@ -201,7 +201,7 @@ const IndexPage = props => {
                     }}
                     source={normalise(data7).text}
                   />
-                </StyledParagraphCol7>
+                </StyledParagraphCol>
               </Row>
             </Col>
 
@@ -269,7 +269,7 @@ const IndexPage = props => {
                     source={normalise(data9).text}
                   />
                 </Col>
-                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
+                <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['heading']}
                     renderers={{
@@ -278,7 +278,7 @@ const IndexPage = props => {
                     }}
                     source={normalise(data9).text}
                   />
-                </Col>
+                </StyledParagraphCol>
               </Row>
             </Col>
 
