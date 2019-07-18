@@ -31,7 +31,7 @@ const GreyBodyPrimary = styled(BodyPrimary)`
 `
 
 const Block3Col = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[3]};
+  padding-top: ${({ theme }) => theme.space[4]};
 `
 
 const Block4ImageCol = styled(Col)`
@@ -86,7 +86,7 @@ const IndexPage = props => {
   const outComesDataFigures = normaliseAll(data2.slice(1))
 
   return (
-    <Layout location={location}>
+    <Layout location={location} contactUsBg={'greyBg'}>
       <Head
         page={{
           ...caseStudy,
@@ -156,7 +156,9 @@ const IndexPage = props => {
                 <ReactMarkdown
                   renderers={{
                     // eslint-disable-next-line
-                    heading: props => <SectionTitle {...props} />,
+                    heading: props => (
+                      <SectionTitle noPaddingBottom {...props} />
+                    ),
                     // eslint-disable-next-line
                     paragraph: props => <GreyBodyPrimary {...props} />
                   }}
@@ -214,7 +216,7 @@ const IndexPage = props => {
             >
               <TextColumnsBlock data={normalise(data5)} />
             </BlockRow>
-            <BlockRow mobile={{ bottom: '5' }}>
+            <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
                 <Image image={normalise(data5).image} />
               </Col>
