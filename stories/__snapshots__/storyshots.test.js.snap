@@ -11834,6 +11834,15 @@ exports[`Storyshots Statement Statement 1`] = `
   display: flex;
 }
 
+.c1 {
+  background: #f9f9f9;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
 .c5 {
   color: #333333;
   font-weight: 400;
@@ -11843,13 +11852,9 @@ exports[`Storyshots Statement Statement 1`] = `
   color: #828282;
 }
 
-.c1 {
-  background: #f9f9f9;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+.c5 > strong {
+  color: #333333;
+  font-weight: 500;
 }
 
 @media (min-width:29.4375em) {
@@ -12018,18 +12023,18 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
   .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
   }
 }
 
@@ -12478,6 +12483,15 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   display: flex;
 }
 
+.c1 {
+  background: #f9f9f9;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
 .c5 {
   color: #333333;
   font-weight: 400;
@@ -12487,13 +12501,9 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   color: #828282;
 }
 
-.c1 {
-  background: #f9f9f9;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+.c5 > strong {
+  color: #333333;
+  font-weight: 500;
 }
 
 @media (min-width:29.4375em) {
@@ -12662,18 +12672,18 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
   .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
   }
 }
 
