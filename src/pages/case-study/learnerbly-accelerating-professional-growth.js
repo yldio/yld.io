@@ -37,6 +37,10 @@ const StyledParagraphCol = styled(Col)`
   `}
 `
 
+const StyledColTwo5 = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[2]};
+`
+
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
@@ -129,6 +133,7 @@ const IndexPage = props => {
               data={normalise(data5)}
               colWidthOne={[1, 1, 1, 1, 5 / 12]}
               colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              StyledColTwo={StyledColTwo5}
             />
           </BlockRow>
         </Grid>

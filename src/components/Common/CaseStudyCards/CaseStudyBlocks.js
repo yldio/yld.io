@@ -88,7 +88,9 @@ const TextAndImagePaddingSeparator = styled.div`
 const TextColumnsBlock = ({
   data: { text },
   colWidthOne = [1, 1, 1, 1, 1 / 2],
+  StyledColOne = Col,
   colWidthTwo = [1, 1, 1, 1, 1 / 2],
+  StyledColTwo = Col,
   middleColWidth = null,
   colorReverse = false,
   bpColorReverse = false,
@@ -97,7 +99,7 @@ const TextColumnsBlock = ({
   headerColCss = undefined
 }) => (
   <Fragment>
-    <Col width={colWidthOne} block={headerBlock} {...headerColCss}>
+    <StyledColOne width={colWidthOne} block={headerBlock} {...headerColCss}>
       {renderText({
         text,
         colorReverse,
@@ -105,16 +107,16 @@ const TextColumnsBlock = ({
         disallowed: ['paragraph'],
         noHeaderPadding
       })}
-    </Col>
+    </StyledColOne>
     {middleColWidth && <Col width={middleColWidth} />}
-    <Col width={colWidthTwo}>
+    <StyledColTwo width={colWidthTwo}>
       {renderText({
         text,
         colorReverse,
         bpColorReverse,
         disallowed: ['heading']
       })}
-    </Col>
+    </StyledColTwo>
   </Fragment>
 )
 
