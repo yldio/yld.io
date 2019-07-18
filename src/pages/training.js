@@ -94,7 +94,9 @@ export const query = graphql`
           }
         }
         posterColor
-        introSentence
+        introSentence {
+          introSentence
+        }
       }
       seoText {
         content {
@@ -129,7 +131,9 @@ export const query = graphql`
           }
         }
         posterColor
-        introSentence
+        introSentence {
+          introSentence
+        }
       }
     }
   }

@@ -33,19 +33,9 @@ const AnimatedLink = styled(Link)`
   }
 `
 
-const PosterImage = styled.div`
+const ImageWrapper = styled.div`
   background: #${props => props.color};
-
   max-width: 100%;
-
-  ${breakpoint('tablet')`
-    height: 45vw;
-  `}
-
-  ${breakpoint('desktop')`
-    width: 475px;
-    height: 473px;
-  `}
 `
 
 const MasonryContainer = styled(Col)`
@@ -137,9 +127,9 @@ const Services = ({ services }) => (
                       </CardTitle>
                     </section>
                   </CardHeader>
-                  <PosterImage color={service.caseStudies[0].posterColor}>
+                  <ImageWrapper color={service.caseStudies[0].posterColor}>
                     <Image image={service.caseStudies[0].posterImage} />
-                  </PosterImage>
+                  </ImageWrapper>
                 </section>
               </AnimatedLink>
               <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} />
