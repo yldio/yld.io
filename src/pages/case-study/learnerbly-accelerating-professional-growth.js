@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 
 import { Grid, Row, Col } from '../../components/grid'
@@ -24,6 +25,16 @@ import {
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
+const StyledParagraphCol7 = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: 0;
+    padding-bottom: 0;
+  `}
 `
 
 const IndexPage = props => {
@@ -181,7 +192,7 @@ const IndexPage = props => {
                     source={normalise(data7).text}
                   />
                 </Col>
-                <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
+                <StyledParagraphCol7 width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
                     disallowedTypes={['heading']}
                     renderers={{
@@ -190,7 +201,7 @@ const IndexPage = props => {
                     }}
                     source={normalise(data7).text}
                   />
-                </Col>
+                </StyledParagraphCol7>
               </Row>
             </Col>
 
