@@ -208,31 +208,21 @@ const IndexPage = props => {
         <MountainMeadowBackground>
           <Grid flex>
             <BlockRow
-              style={{ flexDirection: 'column', alignItems: 'center' }}
-              mobile={{ top: '4', bottom: '4' }}
+              mobile={{ bottom: '4', top: '4' }}
               tablet={{ top: '6' }}
+              style={{ justifyContent: 'space-between' }}
             >
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
-                  // eslint-disable-next-line
-                  paragraph: props => (
-                    <Col
-                      width={[1, 1, 1, 1, 5 / 6, 3 / 4, 1 / 2]}
-                      style={{ textAlign: 'center' }}
-                    >
-                      <BodyPrimary reverse {...props} />
-                    </Col>
-                  )
-                }}
-                source={normalise(data7).text}
+              <TextColumnsBlock
+                colorReverse
+                data={normalise(data7)}
+                colWidthOne={[1, 1, 1, 1, 5 / 12]}
+                colWidthTwo={[1, 1, 1, 1, 6 / 12]}
               />
             </BlockRow>
           </Grid>
-          <Grid flex>
+          <Grid>
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
-              <Col width={[1]}>
+              <Col width={[1, 1, 1, 2 / 3]}>
                 <Image image={normalise(data7).image} />
               </Col>
             </BlockRow>
