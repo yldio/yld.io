@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -56,7 +56,6 @@ const IndexPage = props => {
     genericBlock6: data6,
     genericBlock7: data7,
     genericBlock8: data8,
-    genericBlock9: data9,
     relatedCaseStudy
   } = caseStudy
 
@@ -95,34 +94,32 @@ const IndexPage = props => {
 
       {/* "What was the problem we were tackling?" */}
       {shouldRender(data3) && (
-        <Grid flex>
-          <BlockRow
-            mobile={{ bottom: '4', top: '4' }}
-            tablet={{ top: '6' }}
-            style={{ justifyContent: 'space-between' }}
-          >
-            <TextColumnsBlock
-              data={normalise(data3)}
-              colWidthOne={[1, 1, 1, 1, 5 / 12]}
-              colWidthTwo={[1, 1, 1, 1, 6 / 12]}
-            />
-          </BlockRow>
-        </Grid>
-      )}
-
-      {/* Image - "We curate the best learning to accelerate your growth" */}
-      {shouldRender(data4) && (
-        <Grid>
-          <BlockRow flexEnd>
-            <Col width={[1, 1, 1, 2 / 3]}>
-              <Image image={normalise(data4).image} />
-            </Col>
-          </BlockRow>
-        </Grid>
+        <Fragment>
+          <Grid flex>
+            <BlockRow
+              mobile={{ bottom: '4', top: '4' }}
+              tablet={{ top: '6' }}
+              style={{ justifyContent: 'space-between' }}
+            >
+              <TextColumnsBlock
+                data={normalise(data3)}
+                colWidthOne={[1, 1, 1, 1, 5 / 12]}
+                colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              />
+            </BlockRow>
+          </Grid>
+          <Grid>
+            <BlockRow flexEnd>
+              <Col width={[1, 1, 1, 2 / 3]}>
+                <Image image={normalise(data3).image} />
+              </Col>
+            </BlockRow>
+          </Grid>
+        </Fragment>
       )}
 
       {/* "How did we go about solving it?" */}
-      {shouldRender(data5) && (
+      {shouldRender(data4) && (
         <Grid flex>
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
@@ -130,7 +127,7 @@ const IndexPage = props => {
             style={{ justifyContent: 'space-between' }}
           >
             <TextColumnsBlock
-              data={normalise(data5)}
+              data={normalise(data4)}
               colWidthOne={[1, 1, 1, 1, 5 / 12]}
               colWidthTwo={[1, 1, 1, 1, 6 / 12]}
               StyledColTwo={StyledColTwo5}
@@ -140,7 +137,7 @@ const IndexPage = props => {
       )}
 
       {/* "On-boarding" */}
-      {shouldRender(data6) && (
+      {shouldRender(data5) && (
         <RegalBlueBackground>
           <Grid flex>
             <BlockRow
@@ -148,7 +145,7 @@ const IndexPage = props => {
               mobile={{ bottom: '4', top: '4' }}
               tablet={{ top: '6' }}
             >
-              {shouldRender(data6) && (
+              {shouldRender(data5) && (
                 <ReactMarkdown
                   renderers={{
                     // eslint-disable-next-line
@@ -163,14 +160,14 @@ const IndexPage = props => {
                       </Col>
                     )
                   }}
-                  source={normalise(data6).text}
+                  source={normalise(data5).text}
                 />
               )}
             </BlockRow>
 
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
-                <Image image={normalise(data6).image} />
+                <Image image={normalise(data5).image} />
               </Col>
             </BlockRow>
           </Grid>
@@ -178,7 +175,7 @@ const IndexPage = props => {
       )}
 
       {/* "Staying on target" */}
-      {shouldRender(data7) && (
+      {shouldRender(data6) && (
         <Grid>
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
@@ -194,7 +191,7 @@ const IndexPage = props => {
                       // eslint-disable-next-line
                       heading: props => <SectionTitle {...props} />
                     }}
-                    source={normalise(data7).text}
+                    source={normalise(data6).text}
                   />
                 </Col>
                 <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
@@ -204,21 +201,21 @@ const IndexPage = props => {
                       // eslint-disable-next-line
                       paragraph: props => <BodyPrimary {...props} />
                     }}
-                    source={normalise(data7).text}
+                    source={normalise(data6).text}
                   />
                 </StyledParagraphCol>
               </Row>
             </Col>
 
             <Col width={[1, 1, 1, 8 / 12]} block={false}>
-              <Image image={normalise(data7).image} />
+              <Image image={normalise(data6).image} />
             </Col>
           </BlockRow>
         </Grid>
       )}
 
       {/* "Curated courses" */}
-      {shouldRender(data8) && (
+      {shouldRender(data7) && (
         <MountainMeadowBackground>
           <Grid flex>
             <BlockRow
@@ -240,14 +237,14 @@ const IndexPage = props => {
                     </Col>
                   )
                 }}
-                source={normalise(data8).text}
+                source={normalise(data7).text}
               />
             </BlockRow>
           </Grid>
           <Grid flex>
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
               <Col width={[1]}>
-                <Image image={normalise(data8).image} />
+                <Image image={normalise(data7).image} />
               </Col>
             </BlockRow>
           </Grid>
@@ -255,7 +252,7 @@ const IndexPage = props => {
       )}
 
       {/* "The bigger picture" */}
-      {shouldRender(data9) && (
+      {shouldRender(data8) && (
         <Grid>
           <BlockRow
             mobile={{ bottom: '5', top: '4' }}
@@ -271,7 +268,7 @@ const IndexPage = props => {
                       // eslint-disable-next-line
                       heading: props => <SectionTitle {...props} />
                     }}
-                    source={normalise(data9).text}
+                    source={normalise(data8).text}
                   />
                 </Col>
                 <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
@@ -281,14 +278,14 @@ const IndexPage = props => {
                       // eslint-disable-next-line
                       paragraph: props => <BodyPrimary {...props} />
                     }}
-                    source={normalise(data9).text}
+                    source={normalise(data8).text}
                   />
                 </StyledParagraphCol>
               </Row>
             </Col>
 
             <Col width={[1, 1, 1, 8 / 12]} block={false}>
-              <Image image={normalise(data9).image} />
+              <Image image={normalise(data8).image} />
             </Col>
           </BlockRow>
         </Grid>
@@ -348,9 +345,6 @@ export const query = graphql`
         ...GenericFragment
       }
       genericBlock8 {
-        ...GenericFragment
-      }
-      genericBlock9 {
         ...GenericFragment
       }
       specialities {
