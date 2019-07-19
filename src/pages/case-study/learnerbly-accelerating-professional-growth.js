@@ -141,32 +141,21 @@ const IndexPage = props => {
         <RegalBlueBackground>
           <Grid flex>
             <BlockRow
-              style={{ flexDirection: 'column', alignItems: 'center' }}
               mobile={{ bottom: '4', top: '4' }}
               tablet={{ top: '6' }}
+              style={{ justifyContent: 'space-between' }}
             >
-              {shouldRender(data5) && (
-                <ReactMarkdown
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => <SectionTitle reverse {...props} />,
-                    // eslint-disable-next-line
-                    paragraph: props => (
-                      <Col
-                        width={[1, 1, 1, 1, 3 / 4, 1 / 2]}
-                        style={{ textAlign: 'center' }}
-                      >
-                        <BodyPrimary reverse {...props} />
-                      </Col>
-                    )
-                  }}
-                  source={normalise(data5).text}
-                />
-              )}
+              <TextColumnsBlock
+                colorReverse
+                data={normalise(data5)}
+                colWidthOne={[1, 1, 1, 1, 5 / 12]}
+                colWidthTwo={[1, 1, 1, 1, 6 / 12]}
+              />
             </BlockRow>
-
+          </Grid>
+          <Grid>
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
-              <Col width={[1]}>
+              <Col width={[1, 1, 1, 2 / 3]}>
                 <Image image={normalise(data5).image} />
               </Col>
             </BlockRow>
