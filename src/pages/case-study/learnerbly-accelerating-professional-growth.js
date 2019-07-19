@@ -69,7 +69,7 @@ const IndexPage = props => {
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
-      {/* "In early 2016 Make Us Proud began working with Learnerbly" */}
+      {/* "Connecting with the startup Learnerbly" */}
       {shouldRender(data1) && (
         <Grid>
           <BlockRow
@@ -84,7 +84,6 @@ const IndexPage = props => {
         </Grid>
       )}
 
-      {/* TODO  - render 1.6million as black and bold. Not handled by Statement */}
       {/* "Following our initial engagement with Learnerbly" */}
       {shouldRender(data2) && (
         <GreyBackground>
@@ -92,7 +91,7 @@ const IndexPage = props => {
         </GreyBackground>
       )}
 
-      {/* "What was the problem we were tackling?" */}
+      {/* "The problem" */}
       {shouldRender(data3) && (
         <Fragment>
           <Grid flex>
@@ -118,7 +117,7 @@ const IndexPage = props => {
         </Fragment>
       )}
 
-      {/* "How did we go about solving it?" */}
+      {/* "The solution" */}
       {shouldRender(data4) && (
         <Grid flex>
           <BlockRow
@@ -230,7 +229,7 @@ const IndexPage = props => {
         </MountainMeadowBackground>
       )}
 
-      {/* "The bigger picture" */}
+      {/* "A clear perspective" */}
       {shouldRender(data8) && (
         <Grid>
           <BlockRow
