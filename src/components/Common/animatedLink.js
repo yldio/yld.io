@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
 import Flex from 'styled-flex-component'
 
 export const AnimatedLink = styled(Link)`
@@ -23,23 +22,13 @@ AnimatedLink.propType = {
 
 export const PosterImage = styled(Flex)`
   background: #${props => props.color};
-
   max-width: 100%;
 
-  ${breakpoint('tablet')`
-    height: 528px;
-  `}
-  ${breakpoint('desktop')`
-    width: 100%;
-    height: 473px;
-  `}
   > img {
     align-self: center;
     justify-self: center;
-    ${breakpoint('tablet')`
-      max-width: 100%
-      width: 100%;
-    `}
+    max-width: 100%
+    width: 100%;
   }
 `
 
