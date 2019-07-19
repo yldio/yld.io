@@ -96,10 +96,16 @@ const StyledLink = ({ external, to, href, children, ...props }) => {
       }
     : {}
 
-  const redirectProps = to ? { to } : { as: 'a', href }
+  if (to) {
+    return (
+      <Anchor {...externalProps} to={to} {...props}>
+        {children}
+      </Anchor>
+    )
+  }
 
   return (
-    <Anchor {...externalProps} {...props} {...redirectProps}>
+    <Anchor {...externalProps} as="a" href={href} {...props}>
       {children}
     </Anchor>
   )
