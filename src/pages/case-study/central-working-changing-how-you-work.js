@@ -26,10 +26,6 @@ import {
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
 
-const GreyBodyPrimary = styled(BodyPrimary)`
-  color: ${({ theme }) => theme.colors.secondaryText};
-`
-
 const Block3Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
 `
@@ -153,7 +149,7 @@ const IndexPage = props => {
                       <SectionTitle noPaddingBottom {...props} />
                     ),
                     // eslint-disable-next-line
-                    paragraph: props => <GreyBodyPrimary {...props} />
+                    paragraph: props => <BodyPrimary {...props} />
                   }}
                   source={text}
                 />
