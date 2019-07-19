@@ -110,23 +110,19 @@ const IndexPage = props => {
       <GreyBackground>
         <Grid>
           {/* Outcomes */}
-          <BlockRow
-            style={{ flexDirection: 'column' }}
-            mobile={{ bottom: '4', top: '4' }}
-            tablet={{ top: '6' }}
-          >
+          <BlockRow mobile={{ bottom: '4', top: '4' }} tablet={{ top: '6' }}>
             {shouldRender(data2) && (
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
                   heading: props => (
-                    <Col width={[1]}>
+                    <Col width={[1, 1, 1, 1 / 2]}>
                       <SectionTitle {...props} />
                     </Col>
                   ),
                   // eslint-disable-next-line
                   paragraph: props => (
-                    <Col width={[1, 1, 1, 1, 9 / 12, 6 / 12]}>
+                    <Col width={[1, 1, 1, 1 / 2]}>
                       <BodyPrimary {...props} />
                     </Col>
                   )
