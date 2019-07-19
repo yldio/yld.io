@@ -149,7 +149,7 @@ const IndexPage = props => {
                       <SectionTitle noPaddingBottom {...props} />
                     ),
                     // eslint-disable-next-line
-                    paragraph: props => <BodyPrimary {...props} />
+                    paragraph: props => <BodyPrimary bold {...props} />
                   }}
                   source={text}
                 />
