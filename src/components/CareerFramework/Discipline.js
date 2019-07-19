@@ -10,7 +10,7 @@ import Group from './Group'
 import Join from './Join'
 
 const Wrapper = styled.div`
-  ${({ isActive }) => (isActive ? 'display: block' : 'display: none')}
+  display: ${({ isActive }) => (isActive ? 'block' : ' none')};
 `
 
 const Discipline = ({ isActive, groups, joins = [] }) => {
