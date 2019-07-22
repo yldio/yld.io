@@ -26,17 +26,17 @@ const AuthorAndDate = styled.p`
 
 const ExternalImage = styled.div`
   display: flex;
+  width: 296px;
+  height: 296px;
   align-items: center;
   justify-content: center;
-  width: 335px;
-  height: 335px;
   background-image: url(${props => props.imageUrl});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  ${breakpoint('smallPhone', 'smallTablet')`
-  width: 261px;
-  height: 261px;
+  ${breakpoint('tablet')`
+  width: 335px;
+  height: 335px;
   `}
 `
 
@@ -47,11 +47,11 @@ const BlogPostPreview = styled.div`
 `
 
 const StyledMediumIcon = styled(MediumLogo)`
-  width: 100px;
-  height: 100px;
-  ${breakpoint('smallPhone', 'smallTablet')`
-    width: 80px;
-    height: 80px;
+  width: 98px;
+  height: 98px;
+  ${breakpoint('tablet')`
+    width: 100px;
+    height: 100px;
   `}
 `
 
@@ -65,7 +65,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
 
   return (
     <Row>
-      <Col width={[3 / 12, 4 / 12, 4 / 12]}>
+      <Col width={[4 / 12, 4.4 / 12]}>
         <ExternalImage
           imageUrl={`https://cdn-images-1.medium.com/max/2000/${
             virtuals.previewImage.imageId
@@ -74,7 +74,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
           <StyledMediumIcon />
         </ExternalImage>
       </Col>
-      <Col width={[7 / 12]}>
+      <Col width={[6 / 12]}>
         <BlogPostPreview>
           <BlogTitle>{title}</BlogTitle>
           <AuthorAndDate>
