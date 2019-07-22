@@ -44,9 +44,39 @@ const Block7ImageCol = styled(Col)`
   `}
 `
 
-const Block9ImageCol = styled(Col)`
-  ${breakpoint('smallPhone')`
-      padding-top: ${({ theme }) => theme.space[4]}
+const Block9Grid = styled(Grid)`
+  padding-top: ${({ theme }) => theme.space[4]};
+`
+
+const Block9BlockRow = styled(BlockRow)`
+  /* 
+    This set up is used to bring this Row down to be nested 
+    within a square image.
+
+    The important part here is the "transform: translateY(100%);"
+
+    Without below CSS:
+        _____
+        |    | <--- Row
+        |___ |
+    __________
+    |         | 
+    |         | <--- image
+    |         | 
+    |_________| 
+
+    With below CSS:
+    __________
+    |    |    | <--- Row - brought down to be sitting on top of image
+    |    |___ |
+    |         | 
+    |_________| <--- image
+  */
+  ${breakpoint('smallTablet')`
+    height: 0;
+    overflow: visible;
+    transform: translateY(100%);
+    padding-top: 0;
   `}
 `
 
@@ -138,8 +168,10 @@ const IndexPage = props => {
                 style={{
                   textAlign: 'center',
                   flexDirection: 'column',
+                  justifyContent: 'space-around',
                   alignItems: 'center'
                 }}
+                block={false}
                 key={generate()}
               >
                 <ReactMarkdown
@@ -277,9 +309,9 @@ const IndexPage = props => {
       </BlackBackground>
 
       <GreyBackground>
-        <Grid>
-          <BlockRow mobile={{ top: '4' }} tablet={{ top: '6' }} flexEnd>
-            <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} flexEnd>
+        <Block9Grid>
+          <Block9BlockRow mobile={{ top: '0', bottom: '4' }} flexEnd>
+            <Col width={[1, 1, 1, 1, 7 / 12, 6 / 12, 5 / 12]} flexEnd>
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
@@ -290,14 +322,15 @@ const IndexPage = props => {
                 source={normalise(data9).text}
               />
             </Col>
-          </BlockRow>
+            <Col width={[0, 0, 0, 0, 0, 0, 1 / 12]} />
+          </Block9BlockRow>
 
-          <BlockRow mobile={{ bottom: '5' }} tablet={{ bottom: '6' }}>
-            <Block9ImageCol width={[1]}>
+          <BlockRow mobile={{ top: '0', bottom: '5' }} tablet={{ bottom: '6' }}>
+            <Col width={[1]}>
               <Image image={normalise(data9).image} />
-            </Block9ImageCol>
+            </Col>
           </BlockRow>
-        </Grid>
+        </Block9Grid>
       </GreyBackground>
 
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />

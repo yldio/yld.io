@@ -197,27 +197,29 @@ const BlockRow = styled(Row)`
     justify-content: ${({ spaced }) => spaced && 'space-between'};
   `}
 
-${breakpoint('smallTablet')`
-  flex-direction: ${({ rowReverse }) => (rowReverse ? 'row-reverse' : 'row')};
-  padding-top: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
-  padding-bottom: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.bottom ? theme.space[smallTablet.bottom] : null};
-`}
+  ${breakpoint('smallTablet')`
+    flex-direction: ${({ rowReverse }) => (rowReverse ? 'row-reverse' : 'row')};
+    padding-top: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
+    padding-bottom: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.bottom
+        ? theme.space[smallTablet.bottom]
+        : null};
+  `}
 
-${breakpoint('tablet')`
-  padding-top: ${({ theme, tablet }) =>
-    tablet && tablet.top ? theme.space[tablet.top] : null};
-  padding-bottom: ${({ theme, tablet }) =>
-    tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
-`}
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme, tablet }) =>
+      tablet && tablet.top ? theme.space[tablet.top] : null};
+    padding-bottom: ${({ theme, tablet }) =>
+      tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
+  `}
 
-${breakpoint('desktop')`
-  padding-top: ${({ theme, desktop }) =>
-    desktop && desktop.top ? theme.space[desktop.top] : null};
-  padding-bottom: ${({ theme, desktop }) =>
-    desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
-`}
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme, desktop }) =>
+      desktop && desktop.top ? theme.space[desktop.top] : null};
+    padding-bottom: ${({ theme, desktop }) =>
+      desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
+  `}
 `
 
 const getImage = (blockImages, index) => blockImages && blockImages[index]
