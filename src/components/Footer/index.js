@@ -35,6 +35,7 @@ const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
   if (contactUsBg) {
     return contactUsBg
   }
+
   /**
    * This is pretty horrible I know but as "pathname" is
    * one of the only semi-reliable ways to know our exact
@@ -46,16 +47,22 @@ const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
     return 'greyBg'
   }
 
-  const path = getPathnameWithSlashes(pathname)
-  /**
-   * These pages all have a final white component so we make sure
-   * to add a grey background to give them some distinction
-   */
-  const colors = {
-    greyBg: ['engineering', 'design', 'training ', 'about-us', 'open-source']
-  }
+  const GreyBgSubUrls = [
+    'engineering',
+    'design',
+    'training ',
+    'about-us',
+    'open-source',
+    'case-study'
+  ]
 
-  return Object.keys(colors).find(key => colors[key].includes(path))
+  const path = getPathnameWithSlashes(pathname)
+
+  const isGreySubUrl = GreyBgSubUrls.some(subUrl => path.includes(subUrl))
+
+  if (isGreySubUrl) {
+    return 'greyBg'
+  }
 }
 
 const Footer = ({ contactUsBg, is404 }) => (
