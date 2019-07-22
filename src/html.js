@@ -24,7 +24,7 @@ const HTML = ({
           href="https://fonts.gstatic.com/"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=PT+Mono|Roboto:400,500,700"
+          href="https://fonts.googleapis.com/css?family=PT+Mono|Roboto:400,500,700&display=swap"
           rel="stylesheet"
         />
         {headComponents}
