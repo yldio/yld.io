@@ -11,8 +11,10 @@ const app = express()
 
 app.get('/', async (req, res) => {
   const contentType = req.param('contentType')
-  if (!contentType) {
-    res.send('Missing contentType')
+  const entryId = req.param('entryId')
+
+  if ([entryId, contentType].every(q => !q)) {
+    res.send('Missing query params')
   }
 
   const space = await client.getSpace(CONTENTFUL_SPACE)
