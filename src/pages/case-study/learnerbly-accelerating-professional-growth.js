@@ -11,6 +11,7 @@ import RegalBlueBackground from '../../components/Common/RegalBlueBackground'
 import MountainMeadowBackground from '../../components/Common/MountainMeadowBackground'
 import Statement from '../../components/Common/Statement'
 import Head from '../../components/Common/Head'
+import Hr from '../../components/Common/Hr'
 import Image from '../../components/Common/Image'
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
@@ -266,6 +267,12 @@ const IndexPage = props => {
               <Image image={normalise(data8).image} />
             </Col>
           </BlockRow>
+
+          <Row>
+            <Col width={[1]}>
+              <Hr />
+            </Col>
+          </Row>
         </Grid>
       )}
 
