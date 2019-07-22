@@ -155,7 +155,7 @@ const IndexPage = props => {
           </Grid>
           <Grid>
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
-              <Col width={[1, 1, 1, 2 / 3]}>
+              <Col width={[1]}>
                 <Image image={normalise(data5).image} />
               </Col>
             </BlockRow>
@@ -222,7 +222,7 @@ const IndexPage = props => {
           </Grid>
           <Grid>
             <BlockRow flexEnd mobile={{ bottom: '5' }} tablet={{ bottom: '7' }}>
-              <Col width={[1, 1, 1, 2 / 3]}>
+              <Col width={[1]}>
                 <Image image={normalise(data7).image} />
               </Col>
             </BlockRow>
