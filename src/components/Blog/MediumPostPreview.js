@@ -2,19 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { format } from 'date-fns'
 import { Padding } from 'styled-components-spacing'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import { CardTitle, BodyPrimary } from '../Typography'
 import MediumLogo from '../../images/medium-logo'
 
-const TitleSection = ({ title }) => {
-  return (
-    <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-      <CardTitle as="h2">{title}</CardTitle>
-    </Padding>
-  )
-}
+const BlogTitle = styled(CardTitle)`
+  ${breakpoint('smallPhone')`
+  padding-bottom: ${({ theme }) => theme.space[1]}
+`}
+`
 
 const AuthorLinkToMedium = styled.a`
   color: ${({ theme }) => theme.colors.textLight};
@@ -27,14 +26,33 @@ const AuthorAndDate = styled.p`
 
 const ExternalImage = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 335px;
   height: 335px;
   background-image: url(${props => props.imageUrl});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  align-items: center;
-  justify-content: center;
+  ${breakpoint('smallPhone', 'smallTablet')`
+  width: 261px;
+  height: 261px;
+  `}
+`
+
+const BlogPostPreview = styled.div`
+  ${breakpoint('tablet')`
+    margin-top: ${({ theme }) => theme.space[3]};
+`}
+`
+
+const StyledMediumIcon = styled(MediumLogo)`
+  width: 100px;
+  height: 100px;
+  ${breakpoint('smallPhone', 'smallTablet')`
+    width: 80px;
+    height: 80px;
+  `}
 `
 
 const MediumPostPreview = ({ mediumPostData }) => {
@@ -47,37 +65,39 @@ const MediumPostPreview = ({ mediumPostData }) => {
 
   return (
     <Row>
-      <Col>
+      <Col width={[3 / 12, 4 / 12, 4 / 12]}>
         <ExternalImage
           imageUrl={`https://cdn-images-1.medium.com/max/2000/${
             virtuals.previewImage.imageId
           }`}
         >
-          <MediumLogo />
+          <StyledMediumIcon />
         </ExternalImage>
       </Col>
-      <Col width={[6 / 12]}>
-        <TitleSection title={title} />
-        <AuthorAndDate>
-          <AuthorLinkToMedium
+      <Col width={[7 / 12]}>
+        <BlogPostPreview>
+          <BlogTitle>{title}</BlogTitle>
+          <AuthorAndDate>
+            <AuthorLinkToMedium
+              target="_blank"
+              href={`https://medium.com/@${author.username}`}
+            >
+              {author.name}
+            </AuthorLinkToMedium>
+            {' • '}
+            {formattedDate}
+          </AuthorAndDate>
+          <Padding bottom={2} top={1}>
+            <BodyPrimary>{previewText}</BodyPrimary>
+          </Padding>
+          <StyledLink
+            title={uniqueSlug}
             target="_blank"
-            href={`https://medium.com/@${author.username}`}
+            href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
           >
-            {author.name}
-          </AuthorLinkToMedium>
-          {' • '}
-          {formattedDate}
-        </AuthorAndDate>
-        <Padding bottom={2} top={1}>
-          <BodyPrimary>{previewText}</BodyPrimary>
-        </Padding>
-        <StyledLink
-          title={uniqueSlug}
-          target="_blank"
-          href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
-        >
-          Read more
-        </StyledLink>
+            Read more
+          </StyledLink>
+        </BlogPostPreview>
       </Col>
     </Row>
   )

@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
 
 import Layout from '../components/layout'
 import MediumPostPreview from '../components/Blog/MediumPostPreview'
@@ -30,13 +29,27 @@ const FixedWidthDisplayTitle = styled(DisplayTitle)`
   `}
 `
 
+const PageDescription = styled.div`
+  ${breakpoint('smallPhone')`
+  padding-top: ${({ theme }) => theme.space[5]}
+  padding-bottom: ${({ theme }) => theme.space[5]}
+`}
+  ${breakpoint('tablet')`
+padding-top: ${({ theme }) => theme.space[6]}
+padding-bottom: ${({ theme }) => theme.space[7]}
+`}
+`
+
 const MediumLink = styled(StyledLink)`
   margin-top: ${({ theme }) => theme.space[6]};
-  margin-bottom: ${({ theme }) => theme.space[4]};
+  margin-bottom: ${({ theme }) => theme.space[6]};
 `
 
 const StyledDisplayTitleWrapper = styled.div`
-  padding-top: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[5]};
+  ${breakpoint('tablet')`
+  padding-top: ${({ theme }) => theme.space[6]}
+  `}
 `
 
 const StyledPostPreviewWrapper = styled.div`
@@ -59,21 +72,12 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
       <Grid>
         <Row>
           <Col>
-            <Padding
-              top={{
-                smallPhone: 3.5,
-                tablet: 4
-              }}
-              bottom={{
-                smallPhone: 3.5,
-                tablet: 5
-              }}
-            >
+            <PageDescription>
               <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
               <FixedWidthDisplayTitle regular textLight>
                 {blogPageMeta.description}
               </FixedWidthDisplayTitle>
-            </Padding>
+            </PageDescription>
           </Col>
         </Row>
       </Grid>
