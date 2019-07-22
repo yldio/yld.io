@@ -1,4 +1,3 @@
-const Main = require('apr-main')
 const { createClient } = require('contentful-management')
 
 const { PORT = 3000, CONTENTFUL_SPACE, CMS_CRUD } = process.env
@@ -7,7 +6,6 @@ const client = createClient({
   accessToken: CMS_CRUD
 })
 
-Main(async () => {})
 const express = require('express')
 const app = express()
 
