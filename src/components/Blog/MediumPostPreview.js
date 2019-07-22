@@ -6,6 +6,7 @@ import { Padding } from 'styled-components-spacing'
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import { CardTitle, BodyPrimary } from '../Typography'
+import MediumLogo from '../../images/medium-logo'
 
 const TitleSection = ({ title }) => {
   return (
@@ -25,17 +26,20 @@ const AuthorAndDate = styled.p`
 `
 
 const ExternalImage = styled.div`
+  display: flex;
   width: 335px;
   height: 335px;
   background-image: url(${props => props.imageUrl});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  align-items: center;
+  justify-content: center;
 `
 
 const MediumPostPreview = ({ mediumPostData }) => {
   const { title, createdAt, uniqueSlug, author, virtuals } = mediumPostData.node
-  const introSentence =
+  const previewText =
     virtuals.subtitle.length < 145
       ? virtuals.subtitle
       : virtuals.subtitle.slice(0, 145) + '...'
@@ -48,7 +52,9 @@ const MediumPostPreview = ({ mediumPostData }) => {
           imageUrl={`https://cdn-images-1.medium.com/max/2000/${
             virtuals.previewImage.imageId
           }`}
-        />
+        >
+          <MediumLogo />
+        </ExternalImage>
       </Col>
       <Col width={[6 / 12]}>
         <TitleSection title={title} />
@@ -63,7 +69,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
           {formattedDate}
         </AuthorAndDate>
         <Padding bottom={2} top={1}>
-          <BodyPrimary>{introSentence}</BodyPrimary>
+          <BodyPrimary>{previewText}</BodyPrimary>
         </Padding>
         <StyledLink
           title={uniqueSlug}
