@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
