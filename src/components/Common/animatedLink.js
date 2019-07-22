@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
@@ -6,7 +5,7 @@ import Flex from 'styled-flex-component'
 
 export const AnimatedLink = styled(Link)`
   > section {
-    transition: all ${props => props.theme.animations.normal} ease;
+    transition: all ${({ theme }) => theme.animations.normal} ease;
   }
 
   &:hover {
@@ -16,12 +15,8 @@ export const AnimatedLink = styled(Link)`
   }
 `
 
-AnimatedLink.propType = {
-  title: PropTypes.string.isRequired
-}
-
 export const PosterImage = styled(Flex)`
-  background: #${props => props.color};
+  background: #${({ color }) => color};
   max-width: 100%;
 
   > img {

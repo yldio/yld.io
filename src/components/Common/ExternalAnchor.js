@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 const ExternalAnchor = ({ children, openInNewWindow = true, ...props }) => {
   return (
@@ -11,10 +10,6 @@ const ExternalAnchor = ({ children, openInNewWindow = true, ...props }) => {
       {children}
     </a>
   )
-}
-
-ExternalAnchor.propTypes = {
-  title: PropTypes.string.isRequired
 }
 
 export default ExternalAnchor
