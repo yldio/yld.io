@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { isAfter, endOfYesterday } from 'date-fns'
 import Get from 'lodash.get'
-import IsNull from 'lodash.isnull'
+import isNull from 'lodash.isnull'
 import Ajv from 'ajv'
 
 import IntroSection from '../components/Speciality/Intro'
@@ -129,13 +129,13 @@ const flattenSpeciality = speciality => {
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined), // required
-    externalResources: IsNull(speciality.externalResources)
+    externalResources: isNull(speciality.externalResources)
       ? []
       : Get(speciality, 'externalResources', []),
-    relatedProjects: IsNull(speciality.relatedProjects)
+    relatedProjects: isNull(speciality.relatedProjects)
       ? []
       : Get(speciality, 'relatedProjects', []),
-    clients: IsNull(speciality.clients) ? [] : Get(speciality, 'clients', []),
+    clients: isNull(speciality.clients) ? [] : Get(speciality, 'clients', []),
     eventIcon: Get(speciality, 'eventIcon', undefined)
   }
 }
