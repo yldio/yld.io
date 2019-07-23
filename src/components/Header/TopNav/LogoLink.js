@@ -5,14 +5,8 @@ import styled from 'styled-components'
 
 import logo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
-import {
-  servicesRegExp,
-  logoColors,
-  getSpeciality,
-  getIsServicePage,
-  getService
-} from '../navLinksHelper'
-import theme from '../../../utils/theme'
+
+import { logoColors } from '../navLinksHelper'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
@@ -24,44 +18,31 @@ const StyledLink = styled(Link)`
   }
 `
 
-const LogoLink = ({ path = '/' }) => {
-  const isServicePage = getIsServicePage(path)
-  const isSpecialityPage = path.includes('speciality')
+const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
+  const renderSvg = isServicePage || isSpecialityPage || isHomePage
 
-  const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
-  const service = isSpecialityPage ? getService(path) : serviceTitle
-  const speciality = isSpecialityPage ? getSpeciality(path) : null
+  const fillColorInitial = logoColors[slug] || logoColors['default']
 
-  let originalFillColor = theme.colors.white
+  const fillColorHover = isSpecialityPage
+    ? logoColors.specialityHover
+    : logoColors.defaultHover
 
-  if (isServicePage) {
-    originalFillColor = logoColors['default']
-  }
-  if (isSpecialityPage && logoColors[service][speciality]) {
-    originalFillColor = logoColors[service][speciality]
-  }
+  const textColor = isSpecialityPage
+    ? logoColors['specialityText']
+    : logoColors['defaultText']
 
-  const [fillColor, setFillColor] = useState(originalFillColor)
+  const [fillColor, setFillColor] = useState(fillColorInitial)
 
   return (
     <Fragment>
-      {isSpecialityPage || isServicePage ? (
+      {renderSvg ? (
         <StyledLink
           to="/"
           title="Return to Homepage"
-          onMouseEnter={() =>
-            setFillColor(
-              logoColors[isServicePage ? 'defaultHover' : 'specialityHover']
-            )
-          }
-          onMouseLeave={() => setFillColor(originalFillColor)}
+          onMouseEnter={() => setFillColor(fillColorHover)}
+          onMouseLeave={() => setFillColor(fillColorInitial)}
         >
-          <ServiceSpecialityLogo
-            fillColor={fillColor}
-            textColor={
-              logoColors[isServicePage ? 'defaultText' : 'specialityText']
-            }
-          />
+          <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
         </StyledLink>
       ) : (
         <Link to="/" title="Return to Homepage">

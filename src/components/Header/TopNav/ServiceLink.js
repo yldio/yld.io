@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import { servicesRegExp, getIsServicePage, getService } from '../navLinksHelper'
+import { specialitiesMap } from '../navLinksHelper'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -21,26 +21,23 @@ const StyledServiceLink = styled(Link)`
   }
 `
 
-const ServiceLink = ({ path = '/' }) => {
-  const isServicePage = getIsServicePage(path)
-  const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
-
-  const isSpecialityPage = path.includes('speciality')
-  const service = isSpecialityPage ? getService(path) : serviceTitle
-
-  return (
-    <Fragment>
-      {isServicePage || isSpecialityPage ? (
-        <StyledServiceLink
-          to={`/${service}`}
-          title={service}
-          color={isServicePage ? 'text' : 'white'}
-        >
-          {capitalize(service)}
-        </StyledServiceLink>
-      ) : null}
-    </Fragment>
+const getServiceFromSlug = slug =>
+  Object.keys(specialitiesMap).find(speciality =>
+    specialitiesMap[speciality].includes(slug)
   )
+
+const ServiceLink = ({ slug, isServicePage, isSpecialityPage }) => {
+  const service = isServicePage ? slug : getServiceFromSlug(slug)
+
+  return isServicePage || isSpecialityPage ? (
+    <StyledServiceLink
+      to={`/${service}`}
+      title={service}
+      color={isServicePage ? 'text' : 'white'}
+    >
+      {capitalize(service)}
+    </StyledServiceLink>
+  ) : null
 }
 
 export default ServiceLink

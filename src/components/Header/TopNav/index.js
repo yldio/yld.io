@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
+import { StaticQuery, graphql } from 'gatsby'
 import LogoLink from './LogoLink'
 import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
@@ -34,12 +35,56 @@ const TopNavList = styled.ul`
   }
 `
 
-const TopNav = ({ links, themeVariation, path }) => (
+const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
+
+const TopNavBranding = ({ path, slug }) => (
+  <StaticQuery
+    query={graphql`
+      {
+        services: allContentfulService {
+          nodes {
+            slug
+          }
+        }
+        specialities: allContentfulSpeciality {
+          nodes {
+            slug
+          }
+        }
+      }
+    `}
+    render={({ services, specialities }) => {
+      const serviceSlugs = getSlugs(services.nodes)
+      const specialitySlugs = getSlugs(specialities.nodes)
+
+      const isServicePage = serviceSlugs.includes(slug) || slug === 'training'
+      const isSpecialityPage = specialitySlugs.includes(slug)
+      const isHomePage = path === '/'
+
+      return (
+        <StyledLinksContainer>
+          <LogoLink
+            isSpecialityPage={isSpecialityPage}
+            isServicePage={isServicePage}
+            isHomePage={isHomePage}
+            path={path}
+            slug={slug}
+          />
+          <ServiceLink
+            isSpecialityPage={isSpecialityPage}
+            isServicePage={isServicePage}
+            slug={slug}
+            path={path}
+          />
+        </StyledLinksContainer>
+      )
+    }}
+  />
+)
+
+const TopNav = ({ links, themeVariation, path, slug }) => (
   <StyledTopNavContainer>
-    <StyledLinksContainer>
-      <LogoLink path={path} />
-      <ServiceLink path={path} />
-    </StyledLinksContainer>
+    <TopNavBranding slug={slug} path={path} />
     <TopNavList>
       {links.map((link, idx) => {
         if (link.dropdownItems) {

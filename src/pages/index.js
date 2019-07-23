@@ -60,7 +60,7 @@ const IndexPage = ({
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} bgColor="blueBg">
       <Head page={content} />
       <CaseStudyPreview
         as="h1"

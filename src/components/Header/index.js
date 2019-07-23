@@ -9,8 +9,7 @@ import SideNav from './SideNav'
 
 const StyledContainer = styled.div`
   position: fixed;
-  background: ${props =>
-    props.theme.colors[props.isSpecialityPage ? 'blueBg' : 'white']};
+  background: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
   width: 100%;
   max-width: unset;
   z-index: ${props => props.theme.zIndexes.header};
@@ -21,10 +20,17 @@ const StyledContainer = styled.div`
 // nb: at the moment only the training service has modals pages. Modals match this RegExp:
 const trainingModalRegExp = /training\/[a-zA-Z]/
 
-const Header = ({ path, blue }) => {
+const getThemeVariation = bgColor => {
+  const map = {
+    dark: ['blueBg']
+  }
+
+  return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white'
+}
+
+const Header = ({ path, bgColor, slug }) => {
   const [isSideNavOpen, toggleSideNav] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const isSpecialityPage = path.includes('speciality')
   const isModalPage = !!path.match(trainingModalRegExp)
 
   useEffect(() => {
@@ -35,24 +41,24 @@ const Header = ({ path, blue }) => {
   const handleScroll = () =>
     setIsScrolled(document.documentElement.scrollTop !== 0)
 
+  const themeVariation = getThemeVariation(bgColor)
+
   return (
     <Fragment>
       {!isModalPage ? (
-        <StyledContainer
-          isSpecialityPage={isSpecialityPage}
-          hasShadow={isScrolled}
-        >
+        <StyledContainer bgColor={bgColor} hasShadow={isScrolled}>
           <Grid>
             <Row style={{ overflow: 'visible' }}>
               <Col width={[1]} style={{ overflow: 'visible' }}>
                 <TopNav
                   path={path}
+                  slug={slug}
                   links={navLinks}
-                  themeVariation={blue ? 'dark' : 'light'}
+                  themeVariation={themeVariation}
                 />
                 <Hamburger
                   onClick={() => toggleSideNav(true)}
-                  themeVariation={blue ? 'dark' : 'light'}
+                  themeVariation={themeVariation}
                 />
                 <Overlay
                   visible={isSideNavOpen}
