@@ -43,22 +43,16 @@ const ourWork = {
 
 const OurWork = ({ data }) => {
   const {
+    allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudyV2
+    allContentfulNonTemplatedCaseStudy
   } = data
 
   const allCaseStudies = [
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
-    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy),
-    ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2)
+    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
   ]
-
-  const nonDisplayed = ['central-working']
-
-  const caseStudies = allCaseStudies.filter(cs =>
-    nonDisplayed.some(nd => !cs.slug.includes(nd))
-  )
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
@@ -95,9 +89,9 @@ const OurWork = ({ data }) => {
       </Grid>
       <GreyBackground>
         <Grid>
-          {caseStudies.map((caseStudy, index) => {
+          {allCaseStudies.map((caseStudy, index, arr) => {
             const isFirstCaseStudy = index === 0
-            const isLastCaseStudy = index === caseStudies.length - 1
+            const isLastCaseStudy = index === arr.length - 1
             const isMiddleCaseStudy = !!(!isFirstCaseStudy && !isLastCaseStudy)
             return (
               <Fragment key={index}>
@@ -141,6 +135,35 @@ const OurWorkPage = props => (
   <StaticQuery
     query={graphql`
       query {
+        allContentfulNonTemplatedCaseStudyV2(
+          filter: { publish: { eq: true } }
+        ) {
+          edges {
+            node {
+              slug
+              title
+              seoTitle
+              seoMetaDescription
+              services {
+                ... on ContentfulService {
+                  title
+                }
+              }
+              introSentence {
+                introSentence
+              }
+              posterImage {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+              }
+            }
+          }
+        }
         allContentfulTemplatedCaseStudy {
           edges {
             node {
@@ -170,35 +193,6 @@ const OurWorkPage = props => (
           }
         }
         allContentfulNonTemplatedCaseStudy {
-          edges {
-            node {
-              slug
-              title
-              seoTitle
-              seoMetaDescription
-              services {
-                ... on ContentfulService {
-                  title
-                }
-              }
-              introSentence {
-                introSentence
-              }
-              posterImage {
-                title
-                file {
-                  url
-                }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-        allContentfulNonTemplatedCaseStudyV2(
-          filter: { publish: { eq: true } }
-        ) {
           edges {
             node {
               slug
