@@ -1,13 +1,17 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React, { useState } from 'react'
+import { graphql, Link } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
+import styled from 'styled-components'
+import remcalc from 'remcalc'
 
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+// import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import StyledLink from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
+import BlueBackground from '../components/Common/BlueBackground'
 import Statement from '../components/Common/Statement'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
@@ -23,6 +27,7 @@ import eventLabels from '../utils/eventLabels'
  */
 // eslint-disable-next-line no-unused-vars
 import { fragments } from '../fragments'
+import { SectionTitle, CardTitle, Subtitle } from '../components/Typography'
 
 const dateFormat = 'dddd[,] MMMM DD'
 
@@ -52,25 +57,85 @@ const getHomepageConferences = (events = []) =>
       date: getFeaturedEventDate(n)
     }))
 
+const StyledBlueBackground = styled(BlueBackground)`
+  padding-top: ${remcalc(36)};
+  margin-top: -${remcalc(36)};
+`
+
+const IntroRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[8]};
+`
+
+const StyledCardTitle = styled(CardTitle)`
+  display: inline-block;
+  text-decoration: underline;
+`
+
+const IntroLinkWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const IntroSectionTitleWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
 const IndexPage = ({
   data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
   location
 }) => {
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
+  const [first, toggle] = useState(true)
 
+  const introCopy = first
+    ? "We're a technology company that builds great technology  companies"
+    : 'Creating technology capabilities for you, that lasts beyond us.'
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <CaseStudyPreview
-        as="h1"
-        caseStudy={content.featuredCaseStudy}
-        ctaDataEventLabel={eventLabels.homepageCaseStudyCTA}
-      />
-      <Statement
-        richText={content.seoText.content[0].content}
-        dataEvents={eventLabels.homepageStatementService}
-      />
+      {/* <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} /> */}
+      <StyledBlueBackground>
+        <Grid>
+          <IntroRow>
+            <Col width={(1, 1, 1, 1, 1, 7 / 12)}>
+              <IntroSectionTitleWrapper>
+                <SectionTitle reverse>{introCopy}</SectionTitle>
+              </IntroSectionTitleWrapper>
+              <Subtitle reverse muted>
+                What we offer
+              </Subtitle>
+              <IntroLinkWrapper>
+                <StyledCardTitle
+                  noPaddingTop
+                  as={Link}
+                  reverse
+                  to="/engineering"
+                >
+                  Software engineering consultancy
+                </StyledCardTitle>
+                <br />
+                <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
+                  Design consultancy
+                </StyledCardTitle>
+                <br />
+                <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
+                  Training
+                </StyledCardTitle>
+              </IntroLinkWrapper>
+              <StyledLink
+                as="p"
+                reverse
+                to="/our-work"
+                onClick={() => toggle(!first)}
+              >
+                See our work
+              </StyledLink>
+            </Col>
+          </IntroRow>
+        </Grid>
+      </StyledBlueBackground>
+      <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>
