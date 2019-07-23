@@ -47,18 +47,22 @@ const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
     return 'greyBg'
   }
 
-  const GreyBgSubUrls = [
-    'engineering',
-    'design',
-    'training ',
-    'about-us',
-    'open-source',
-    'case-study'
-  ]
+  const GreyBgSubUrls = {
+    greyBg: [
+      'engineering',
+      'design',
+      'training ',
+      'about-us',
+      'open-source',
+      'case-study'
+    ]
+  }
 
   const path = getPathnameWithSlashes(pathname)
 
-  const isGreySubUrl = GreyBgSubUrls.some(subUrl => path.includes(subUrl))
+  const isGreySubUrl = Object.keys(GreyBgSubUrls).find(key =>
+    GreyBgSubUrls[key].some(subUrl => path.includes(subUrl))
+  )
 
   if (isGreySubUrl) {
     return 'greyBg'
