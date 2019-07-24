@@ -6,6 +6,7 @@ import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
 import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
+import eventLabels from '../../utils/eventLabels'
 
 const PaddedGrid = styled(Grid)`
   padding-top: ${props => props.theme.space[4]};
@@ -43,6 +44,9 @@ const Statement = ({ richText, children, as = 'h2' }) => (
                       key={content.data.uri}
                       noafter="true"
                       to={`${content.data.uri}`}
+                      data-event={`${
+                        eventLabels.homepageStatementService
+                      }-${content.content[0].value.split(' ').join('-')}`}
                     >
                       {content.content[0].value}
                     </Link>
