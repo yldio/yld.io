@@ -29,15 +29,16 @@ const FixedWidthDisplayTitle = styled(DisplayTitle)`
   `}
 `
 
-const PageDescription = styled.div`
+const PageDescriptionCol = styled(Col)`
   ${breakpoint('smallPhone')`
-  padding-top: ${({ theme }) => theme.space[5]}
-  padding-bottom: ${({ theme }) => theme.space[5]}
-`}
+    padding-top: ${({ theme }) => theme.space[5]}
+    padding-bottom: ${({ theme }) => theme.space[5]}
+  `}
+
   ${breakpoint('tablet')`
-padding-top: ${({ theme }) => theme.space[6]}
-padding-bottom: ${({ theme }) => theme.space[7]}
-`}
+    padding-top: ${({ theme }) => theme.space[6]}
+    padding-bottom: ${({ theme }) => theme.space[7]}
+  `}
 `
 
 const MediumLink = styled(StyledLink)`
@@ -45,16 +46,12 @@ const MediumLink = styled(StyledLink)`
   margin-bottom: ${({ theme }) => theme.space[6]};
 `
 
-const StyledDisplayTitleWrapper = styled.div`
+const DisplayTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
-  ${breakpoint('tablet')`
-  padding-top: ${({ theme }) => theme.space[6]}
-  `}
-`
 
-const StyledPostPreviewWrapper = styled.div`
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]}
+  `}
 `
 
 const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
@@ -71,39 +68,40 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
       />
       <Grid>
         <Row>
-          <Col>
-            <PageDescription>
-              <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
-              <FixedWidthDisplayTitle regular textLight>
-                {blogPageMeta.description}
-              </FixedWidthDisplayTitle>
-            </PageDescription>
-          </Col>
+          <PageDescriptionCol width={[1]}>
+            <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
+            <FixedWidthDisplayTitle regular textLight>
+              {blogPageMeta.description}
+            </FixedWidthDisplayTitle>
+          </PageDescriptionCol>
         </Row>
         <Row>
-          <StyledDisplayTitleWrapper>
+          <DisplayTitleCol width={[1]}>
             <DisplayTitle>Recent articles</DisplayTitle>
-          </StyledDisplayTitleWrapper>
-          {mediumPosts &&
-            mediumPosts.length > 0 &&
-            mediumPosts.map((mediumPostData, idx) => {
-              const isLastPost = idx === mediumPosts.length - 1
-              return (
-                <Fragment key={idx}>
-                  <StyledPostPreviewWrapper>
-                    <MediumPostPreview mediumPostData={mediumPostData} />
-                  </StyledPostPreviewWrapper>
-                  {!isLastPost && <Hr />}
-                </Fragment>
-              )
-            })}
-          <MediumLink
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://medium.com/yld-engineering-blog"
-          >
-            View more on Medium
-          </MediumLink>
+          </DisplayTitleCol>
+        </Row>
+        {mediumPosts &&
+          mediumPosts.length > 0 &&
+          mediumPosts.map((mediumPostData, idx) => {
+            const isLastPost = idx === mediumPosts.length - 1
+
+            return (
+              <Fragment key={idx}>
+                <MediumPostPreview mediumPostData={mediumPostData} />
+                {!isLastPost && <Hr />}
+              </Fragment>
+            )
+          })}
+        <Row>
+          <Col width={[1]}>
+            <MediumLink
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://medium.com/yld-engineering-blog"
+            >
+              View more on Medium
+            </MediumLink>
+          </Col>
         </Row>
       </Grid>
     </Layout>

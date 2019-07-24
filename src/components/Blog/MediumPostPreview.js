@@ -6,6 +6,8 @@ import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
+import RatioContainer from '../Common/RatioContainer'
+import Image from '../Common/Image'
 import { CardTitle, BodyPrimary } from '../Typography'
 import MediumLogo from '../../images/medium-logo'
 
@@ -24,42 +26,43 @@ const AuthorAndDate = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
 `
 
-const ExternalImage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(${props => props.imageUrl});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 327px;
-  width: 327px;
-
-  ${breakpoint('tablet')`
-  height: 335px;
-  width: 335px;
-  `}
-`
-
 const BlogPostPreview = styled.div`
-  ${breakpoint('tablet')`
-    margin-top: ${({ theme }) => theme.space[3]};
-`}
+  margin-top: ${({ theme }) => theme.space[3]};
 `
 
 const StyledMediumIcon = styled(MediumLogo)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
 
   ${breakpoint('smallTablet')`
-  width: 98px;
-  height: 98px;
+      width: 98px;
+      height: 98px;
   `}
 
   ${breakpoint('tablet')`
     width: 100px;
     height: 100px;
   `}
+`
+
+const MediumPostImage = styled(Image)`
+  position: absolute;
+  max-width: unset;
+  width: auto;
+  height: 100%;
+`
+
+const MediumRow = styled(Row)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[4]};
+`
+
+const ImageWrapper = styled.div`
+  position: relative;
 `
 
 const MediumPostPreview = ({ mediumPostData }) => {
@@ -70,18 +73,29 @@ const MediumPostPreview = ({ mediumPostData }) => {
       : virtuals.subtitle.slice(0, 145) + '...'
   const formattedDate = format(createdAt, 'MMMM DD')
 
+  const imageUrl = `https://cdn-images-1.medium.com/max/2000/${
+    virtuals.previewImage.imageId
+  }`
+
+  const image = {
+    file: { url: imageUrl }
+  }
+
   return (
-    <Row>
+    <MediumRow>
       <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
-        <ExternalImage
-          imageUrl={`https://cdn-images-1.medium.com/max/2000/${
-            virtuals.previewImage.imageId
-          }`}
-        >
+        <ImageWrapper>
+          <RatioContainer width={100} height={100}>
+            <MediumPostImage image={image} />
+          </RatioContainer>
           <StyledMediumIcon />
-        </ExternalImage>
+        </ImageWrapper>
       </Col>
-      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12]}>
+      <Col
+        width={[1, 1, 1, 1, 6 / 12, 6 / 12]}
+        block={false}
+        style={{ alignItems: 'center' }}
+      >
         <BlogPostPreview>
           <BlogTitle>{title}</BlogTitle>
           <AuthorAndDate>
@@ -106,7 +120,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
           </StyledLink>
         </BlogPostPreview>
       </Col>
-    </Row>
+    </MediumRow>
   )
 }
 
