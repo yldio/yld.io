@@ -1,6 +1,18 @@
 import { graphql } from 'gatsby'
 
 export const fragments = graphql`
+  fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
+    genericBlockImages {
+      title
+      fluid(maxWidth: 1100) {
+        ...GatsbyContentfulFluid
+      }
+    }
+    genericBlockText {
+      genericBlockText
+    }
+  }
+
   fragment NonTemplatedCaseStudyV2 on ContentfulNonTemplatedCaseStudyV2 {
     title
     slug
