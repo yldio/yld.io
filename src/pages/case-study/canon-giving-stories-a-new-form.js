@@ -235,7 +235,7 @@ export const query = graphql`
     contentfulNonTemplatedCaseStudy(
       slug: { eq: "canon-giving-stories-a-new-form" }
     ) {
-      ...NonTemplatedCaseStudy
+      ...NonTemplatedCaseStudyRelated
       slug
       title
       posterImage {
