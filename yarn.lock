@@ -3108,11 +3108,6 @@ apr-engine-until@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-until/-/apr-engine-until-3.0.3.tgz#0168a429e1f6ad054cc8fbe2edff65663f92e9cb"
 
-apr-intercept@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/apr-intercept/-/apr-intercept-3.0.3.tgz#421666a55753c4ed0e571494cf8895b721c01369"
-  integrity sha1-QhZmpVdTxO0OVxSUz4iVtyHAE2k=
-
 apr-main@4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/apr-main/-/apr-main-4.0.3.tgz#a069262ab87110ccadb61c0252754d2a1c01503a"
