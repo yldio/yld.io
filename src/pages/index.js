@@ -10,6 +10,7 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 // import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import StyledLink from '../components/Common/StyledLink'
+import Image from '../components/Common/Image'
 import GreyBackground from '../components/Common/GreyBackground'
 import BlueBackground from '../components/Common/BlueBackground'
 import Statement from '../components/Common/Statement'
@@ -80,10 +81,21 @@ const IntroSectionTitleWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
-const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
-  location
-}) => {
+const IntroImage = styled(Image)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+`
+
+const IndexPage = ({ data, location }) => {
+  const {
+    intro_illustration,
+    contentfulHomepage: content,
+    allContentfulMeetupEvent: events
+  } = data
+  console.log({ data })
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
   const [first, toggle] = useState(true)
@@ -94,13 +106,15 @@ const IndexPage = ({
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      {/* <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} /> */}
       <StyledBlueBackground>
         <Grid>
-          <IntroRow>
+          <IntroRow style={{ position: 'relative' }}>
+            <IntroImage image={intro_illustration.childImageSharp} />
             <Col width={(1, 1, 1, 1, 1, 7 / 12)}>
               <IntroSectionTitleWrapper>
-                <SectionTitle reverse>{introCopy}</SectionTitle>
+                <SectionTitle reverse as="h1">
+                  {introCopy}
+                </SectionTitle>
               </IntroSectionTitleWrapper>
               <Subtitle reverse muted>
                 What we offer
@@ -173,6 +187,16 @@ const IndexPage = ({
 
 export const query = graphql`
   query {
+    intro_illustration: file(
+      relativePath: { eq: "landing_page_illustration.png" }
+    ) {
+      publicURL
+      childImageSharp {
+        fluid(maxWidth: 1100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     contentfulHomepage {
       title
       seoTitle
