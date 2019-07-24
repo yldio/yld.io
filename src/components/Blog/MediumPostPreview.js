@@ -26,17 +26,18 @@ const AuthorAndDate = styled.p`
 
 const ExternalImage = styled.div`
   display: flex;
-  width: 296px;
-  height: 296px;
   align-items: center;
   justify-content: center;
   background-image: url(${props => props.imageUrl});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 327px;
+  width: 327px;
+
   ${breakpoint('tablet')`
-  width: 335px;
   height: 335px;
+  width: 335px;
   `}
 `
 
@@ -47,8 +48,14 @@ const BlogPostPreview = styled.div`
 `
 
 const StyledMediumIcon = styled(MediumLogo)`
+  width: 80px;
+  height: 80px;
+
+  ${breakpoint('smallTablet')`
   width: 98px;
   height: 98px;
+  `}
+
   ${breakpoint('tablet')`
     width: 100px;
     height: 100px;
@@ -65,7 +72,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
 
   return (
     <Row>
-      <Col width={[4 / 12, 4.4 / 12]}>
+      <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
         <ExternalImage
           imageUrl={`https://cdn-images-1.medium.com/max/2000/${
             virtuals.previewImage.imageId
@@ -74,7 +81,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
           <StyledMediumIcon />
         </ExternalImage>
       </Col>
-      <Col width={[6 / 12]}>
+      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12]}>
         <BlogPostPreview>
           <BlogTitle>{title}</BlogTitle>
           <AuthorAndDate>

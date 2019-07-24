@@ -80,31 +80,31 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
             </PageDescription>
           </Col>
         </Row>
-      </Grid>
-      <Grid>
-        <StyledDisplayTitleWrapper>
-          <DisplayTitle>Recent articles</DisplayTitle>
-        </StyledDisplayTitleWrapper>
-        {mediumPosts &&
-          mediumPosts.length > 0 &&
-          mediumPosts.map((mediumPostData, idx) => {
-            const isLastPost = idx === mediumPosts.length - 1
-            return (
-              <Fragment key={idx}>
-                <StyledPostPreviewWrapper>
-                  <MediumPostPreview mediumPostData={mediumPostData} />
-                </StyledPostPreviewWrapper>
-                {!isLastPost && <Hr />}
-              </Fragment>
-            )
-          })}
-        <MediumLink
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://medium.com/yld-engineering-blog"
-        >
-          View more on Medium
-        </MediumLink>
+        <Row>
+          <StyledDisplayTitleWrapper>
+            <DisplayTitle>Recent articles</DisplayTitle>
+          </StyledDisplayTitleWrapper>
+          {mediumPosts &&
+            mediumPosts.length > 0 &&
+            mediumPosts.map((mediumPostData, idx) => {
+              const isLastPost = idx === mediumPosts.length - 1
+              return (
+                <Fragment key={idx}>
+                  <StyledPostPreviewWrapper>
+                    <MediumPostPreview mediumPostData={mediumPostData} />
+                  </StyledPostPreviewWrapper>
+                  {!isLastPost && <Hr />}
+                </Fragment>
+              )
+            })}
+          <MediumLink
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://medium.com/yld-engineering-blog"
+          >
+            View more on Medium
+          </MediumLink>
+        </Row>
       </Grid>
     </Layout>
   )
