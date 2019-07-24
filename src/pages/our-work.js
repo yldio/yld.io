@@ -13,6 +13,22 @@ import Hr from '../components/Common/Hr'
 import Head from '../components/Common/Head'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
+// 'Thomas-Cook` slug is uppercased in Contentful
+const caseStudiesOrder = [
+  'doctorlink',
+  'central-working',
+  'learnerbly',
+  'trainline',
+  'the-economist',
+  'kingfisher',
+  'Thomas-Cook',
+  'joyent',
+  'canon'
+]
+
+const getCSOrderIndex = slug =>
+  caseStudiesOrder.indexOf(caseStudiesOrder.find(cs => slug.includes(cs)))
+
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
   ${breakpoint('smallTablet')`
@@ -52,7 +68,9 @@ const OurWork = ({ data }) => {
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
-  ]
+  ].sort((a, b) =>
+    getCSOrderIndex(a.slug) <= getCSOrderIndex(b.slug) ? -1 : 1
+  )
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
