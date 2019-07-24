@@ -16,7 +16,10 @@ const navLinks = [
         label: 'Training',
         to: '/training/'
       }
-    ]
+    ],
+    attributes: {
+      dataEvent: eventLabels.navigationServices
+    }
   },
   {
     label: 'Our work',

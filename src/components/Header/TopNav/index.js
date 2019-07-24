@@ -43,12 +43,13 @@ const TopNav = ({ links, themeVariation, path }) => (
     <TopNavList>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
-          const { label, dropdownItems } = link
+          const { label, dropdownItems, attributes } = link
           return (
             <Dropdown
               key={idx}
               themeVariation={themeVariation}
               items={dropdownItems}
+              dataEvent={attributes ? attributes.dataEvent : null}
             >
               {label}
             </Dropdown>
