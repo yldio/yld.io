@@ -91,7 +91,7 @@
     "@storybook/addons": "5.0.11",
     "@storybook/react": "^5.1.9",
     "apr": "2.0.2",
-    "apr-intercept": "3.0.3",
+    "apr-intercept": "^3.0.3",
     "apr-main": "4.0.3",
     "apr-map": "3.0.3",
     "babel-core": "^7.0.0-0",
