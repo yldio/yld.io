@@ -5,11 +5,12 @@ import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
+import MediumLogo from '../../images/medium-logo'
+import { CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
 import RatioContainer from '../Common/RatioContainer'
 import Image from '../Common/Image'
-import { CardTitle, BodyPrimary } from '../Typography'
-import MediumLogo from '../../images/medium-logo'
+import Anchor from '../Common/Anchor'
 
 const BlogTitle = styled(CardTitle)`
   ${breakpoint('smallPhone')`
@@ -17,7 +18,7 @@ const BlogTitle = styled(CardTitle)`
 `}
 `
 
-const AuthorLinkToMedium = styled.a`
+const AuthorMediumLink = styled(Anchor)`
   color: ${({ theme }) => theme.colors.textLight};
   text-decoration: underline;
 `
@@ -26,21 +27,17 @@ const AuthorAndDate = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
 `
 
-const BlogPostPreview = styled.div`
-  margin-top: ${({ theme }) => theme.space[3]};
-`
-
 const StyledMediumIcon = styled(MediumLogo)`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 
   ${breakpoint('smallTablet')`
-      width: 98px;
-      height: 98px;
+      width: 80px;
+      height: 80px;
   `}
 
   ${breakpoint('tablet')`
@@ -65,17 +62,21 @@ const ImageWrapper = styled.div`
   position: relative;
 `
 
-const TitleAndAuthor = ({ title, author, formattedDate, className }) => {
+const TitleAndAuthor = ({
+  title,
+  author,
+  formattedDate,
+  postUrl,
+  authorUrl,
+  className
+}) => {
   return (
     <div className={className}>
-      <BlogTitle>{title}</BlogTitle>
+      <Anchor href={postUrl}>
+        <BlogTitle>{title}</BlogTitle>
+      </Anchor>
       <AuthorAndDate>
-        <AuthorLinkToMedium
-          target="_blank"
-          href={`https://medium.com/@${author.username}`}
-        >
-          {author.name}
-        </AuthorLinkToMedium>
+        <AuthorMediumLink href={authorUrl}>{author.name}</AuthorMediumLink>
         {' • '}
         {formattedDate}
       </AuthorAndDate>
@@ -93,8 +94,8 @@ const TitleAndAuthorSmallTablet = styled(TitleAndAuthor)`
   display: none;
 
   ${breakpoint('smallTablet')`
-    display: block;
-  `}
+  display: block;
+`}
 `
 
 const MediumPostPreview = ({ mediumPostData }) => {
@@ -109,6 +110,10 @@ const MediumPostPreview = ({ mediumPostData }) => {
     virtuals.previewImage.imageId
   }`
 
+  const postUrl = `https://medium.com/yld-engineering-blog/${uniqueSlug}`
+
+  const authorUrl = `https://medium.com/@${author.username}`
+
   const image = {
     file: { url: imageUrl }
   }
@@ -121,37 +126,37 @@ const MediumPostPreview = ({ mediumPostData }) => {
           title={title}
           author={author}
           formattedDate={formattedDate}
+          authorUrl={authorUrl}
+          postUrl={postUrl}
         />
-        <ImageWrapper>
-          <RatioContainer width={100} height={100}>
-            <MediumPostImage image={image} />
-          </RatioContainer>
-          <StyledMediumIcon />
-        </ImageWrapper>
+        <Anchor href={postUrl}>
+          <ImageWrapper>
+            <RatioContainer width={100} height={100}>
+              <MediumPostImage image={image} />
+            </RatioContainer>
+            <StyledMediumIcon />
+          </ImageWrapper>
+        </Anchor>
       </Col>
       <Col
         width={[1, 1, 1, 1, 6 / 12, 6 / 12]}
         block={false}
         style={{ alignItems: 'center' }}
       >
-        <BlogPostPreview>
-          <TitleAndAuthorSmallTablet
-            hide=""
-            title={title}
-            author={author}
-            formattedDate={formattedDate}
-          />
-          <Padding bottom={2} top={1}>
-            <BodyPrimary>{previewText}</BodyPrimary>
-          </Padding>
-          <StyledLink
-            title={uniqueSlug}
-            target="_blank"
-            href={`https://medium.com/yld-engineering-blog/${uniqueSlug}`}
-          >
-            Read more
-          </StyledLink>
-        </BlogPostPreview>
+        <TitleAndAuthorSmallTablet
+          hide=""
+          title={title}
+          author={author}
+          formattedDate={formattedDate}
+          authorUrl={authorUrl}
+          postUrl={postUrl}
+        />
+        <Padding bottom={2} top={1}>
+          <BodyPrimary>{previewText}</BodyPrimary>
+        </Padding>
+        <StyledLink external href={postUrl}>
+          Read more
+        </StyledLink>
       </Col>
     </MediumRow>
   )
