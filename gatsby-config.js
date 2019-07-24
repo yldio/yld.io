@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
@@ -55,6 +56,20 @@ module.exports = {
         spaceId: CONTENTFUL_SPACE,
         accessToken: CONTENTFUL_TOKEN,
         environment: ENV === 'dev' ? 'development' : 'master'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `PT+Mono`
+          },
+          {
+            family: `Roboto`,
+            variants: [`400`, `500`, `700`]
+          }
+        ]
       }
     },
     {
