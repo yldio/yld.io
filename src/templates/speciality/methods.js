@@ -1,5 +1,6 @@
 import { isAfter, endOfYesterday } from 'date-fns'
 import Get from 'lodash.get'
+import IsNull from 'lodash.isnull'
 
 const getExternalType = (flattenedSpeciality, type) =>
   flattenedSpeciality.externalResources.filter(
@@ -109,10 +110,14 @@ const flattenSpeciality = speciality => {
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined), // required
-    externalResources: Get(speciality, 'externalResources', []),
-    relatedProjects: Get(speciality, 'relatedProjects', undefined),
-    clients: Get(speciality, 'clients', undefined),
-    eventIcon: Get(speciality, 'eventIcon', undefined)
+    eventIcon: Get(speciality, 'eventIcon', undefined),
+    externalResources: IsNull(speciality.externalResources)
+      ? []
+      : Get(speciality, 'externalResources', []),
+    relatedProjects: IsNull(speciality.relatedProjects)
+      ? []
+      : Get(speciality, 'relatedProjects', []),
+    clients: IsNull(speciality.clients) ? [] : Get(speciality, 'clients', [])
   }
 }
 
