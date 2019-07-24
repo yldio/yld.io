@@ -361,6 +361,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -376,6 +377,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -442,6 +444,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -457,6 +460,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -523,6 +527,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -538,6 +543,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -604,6 +610,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -619,6 +626,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -685,6 +693,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -700,6 +709,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -1080,6 +1090,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="twitter account"
@@ -1095,6 +1106,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="linkedin account"
@@ -2043,6 +2055,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             >
               <a
                 href="https://medium.com/yld-engineering-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Security Trivia Series: Understanding CSP’s Reporting"
@@ -2065,6 +2078,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             >
               <a
                 href="https://medium.com/yld-engineering-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Serverless: It’s not all a FaaS"
@@ -2087,6 +2101,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             >
               <a
                 href="https://medium.com/yld-engineering-blog/under-the-with-kubernetes-c1ea1a82c61f"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Under the 🔬 with Kubernetes"
@@ -2110,6 +2125,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
           <a
             className="c13"
             href="https://medium.com/yld-engineering-blog"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="Visit our blog"
@@ -3849,70 +3865,6 @@ exports[`Storyshots Colors Colors 1`] = `
       #a08162
     </p>
   </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#153d53",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      regalBlueBg
-    </p>
-    <p>
-      #153d53
-    </p>
-  </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#14B48F",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      mountainMeadowBg
-    </p>
-    <p>
-      #14B48F
-    </p>
-  </div>
 </div>
 `;
 
@@ -4156,6 +4108,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
       <a
         color="#fff"
         href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        onClick={[Function]}
         opacity={0.5}
         rel="noopener noreferrer"
         target="_blank"
@@ -4437,6 +4390,7 @@ exports[`Storyshots Compact Video Link Grey theme 1`] = `
       <a
         color="#333333"
         href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        onClick={[Function]}
         opacity={1}
         rel="noopener noreferrer"
         target="_blank"
@@ -4711,6 +4665,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -4765,6 +4720,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -4819,6 +4775,7 @@ exports[`Storyshots Compact Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -5092,6 +5049,7 @@ exports[`Storyshots Compact Video Link Single component 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -6020,7 +5978,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
         <h2
           className="c4"
         >
-          Talk to us about Node.js 
+          Talk to us about Node.js 
         </h2>
       </div>
       <div
@@ -7703,6 +7661,7 @@ exports[`Storyshots Header Header itself 1`] = `
               <a
                 className="c15"
                 href="https://medium.com/yld-engineering-blog/"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Blog"
@@ -7948,6 +7907,7 @@ exports[`Storyshots Header Header itself 1`] = `
               <a
                 className="c23"
                 href="https://medium.com/yld-engineering-blog/"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 states={
                   Object {
@@ -8463,6 +8423,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       <a
         className="c13"
         href="https://uk.linkedin.com/"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
         title="External anchor"
@@ -8985,6 +8946,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         <a
           className="c14"
           href="https://uk.linkedin.com/"
+          onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
           title="External anchor"
@@ -9622,6 +9584,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       <a
         className="c11"
         href="https://uk.linkedin.com/"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
         title="LinkedIn (external anchor)"
@@ -9751,6 +9714,7 @@ exports[`Storyshots JobLink JobLink 1`] = `
 
 <a
   href="http://www.lever.com"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
   title="Software Engineer role  for yld"
@@ -9826,6 +9790,7 @@ exports[`Storyshots Repo Repo 1`] = `
   >
     <a
       href="https://github.com/nodejs/node"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -9921,6 +9886,7 @@ exports[`Storyshots Repo Repo Dark 1`] = `
     >
       <a
         href="https://github.com/nodejs/node"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -10048,6 +10014,7 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
     <a
       className="c1"
       href="https://github.com/nodejs/node"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -10705,6 +10672,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
       <a
         color="#fff"
         href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        onClick={[Function]}
         opacity={0.5}
         rel="noopener noreferrer"
         target="_blank"
@@ -11016,6 +10984,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
       <a
         color="#333333"
         href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+        onClick={[Function]}
         opacity={1}
         rel="noopener noreferrer"
         target="_blank"
@@ -11320,6 +11289,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -11374,6 +11344,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -11428,6 +11399,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -11731,6 +11703,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
     <a
       color="#333333"
       href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
+      onClick={[Function]}
       opacity={1}
       rel="noopener noreferrer"
       target="_blank"
@@ -11816,15 +11789,6 @@ exports[`Storyshots Statement Statement 1`] = `
   display: flex;
 }
 
-.c1 {
-  background: #f9f9f9;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .c5 {
   color: #333333;
   font-weight: 400;
@@ -11834,9 +11798,13 @@ exports[`Storyshots Statement Statement 1`] = `
   color: #828282;
 }
 
-.c5 > strong {
-  color: #333333;
-  font-weight: 500;
+.c1 {
+  background: #f9f9f9;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -12005,18 +11973,18 @@ exports[`Storyshots Statement Statement 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-}
-
-@media (min-width:56.3125em) {
   .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -12465,15 +12433,6 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   display: flex;
 }
 
-.c1 {
-  background: #f9f9f9;
-}
-
-.c2 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .c5 {
   color: #333333;
   font-weight: 400;
@@ -12483,9 +12442,13 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
   color: #828282;
 }
 
-.c5 > strong {
-  color: #333333;
-  font-weight: 500;
+.c1 {
+  background: #f9f9f9;
+}
+
+.c2 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -12654,18 +12617,18 @@ exports[`Storyshots Statement Statement noPadding 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c2 {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-}
-
-@media (min-width:56.3125em) {
   .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #828282;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -16481,6 +16444,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         >
           <a
             href="https://www.google.com"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="Tutorial name"
@@ -16503,6 +16467,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         >
           <a
             href="http://nodetuts.com/series"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="Article name"
@@ -16525,6 +16490,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
         >
           <a
             href="http://www.google.com"
+            onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
             title="A third one"
@@ -16548,6 +16514,7 @@ exports[`Storyshots Title and Media List Title and Media List 1`] = `
       <a
         className="c11"
         href="https://yld.io"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
         title="Head to yld.io for more"
