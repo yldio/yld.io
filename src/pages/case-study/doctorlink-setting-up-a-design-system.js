@@ -20,49 +20,17 @@ import {
   VideoBlock,
   ImagesBlock,
   TextAndImageBlock,
-  TextAndResizedImageBlock
+  TextAndResizedImageBlock,
+  BlockRow,
+  shouldRender,
+  getImage,
+  getImages,
+  normalise
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
-
-const BlockRow = styled(Row)`
-  flex-direction: ${({ columnReverse }) =>
-    `column${columnReverse ? '-reverse' : null}`};
-  align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
-  padding-top: ${({ theme, mobile }) =>
-    mobile && mobile.top ? theme.space[mobile.top] : null};
-  padding-bottom: ${({ theme, mobile }) =>
-    mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
-  justify-content: ${({ spaced }) => spaced && 'space-evenly'};
-
-  ${breakpoint('phone')`
-    justify-content: ${({ spaced }) => spaced && 'space-between'};
-  `}
-
-${breakpoint('smallTablet')`
-  flex-direction: ${({ rowReverse }) => (rowReverse ? 'row-reverse' : 'row')};
-  padding-top: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
-  padding-bottom: ${({ theme, smallTablet }) =>
-    smallTablet && smallTablet.bottom ? theme.space[smallTablet.bottom] : null};
-`}
-
-${breakpoint('tablet')`
-  padding-top: ${({ theme, tablet }) =>
-    tablet && tablet.top ? theme.space[tablet.top] : null};
-  padding-bottom: ${({ theme, tablet }) =>
-    tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
-`}
-
-${breakpoint('desktop')`
-  padding-top: ${({ theme, desktop }) =>
-    desktop && desktop.top ? theme.space[desktop.top] : null};
-  padding-bottom: ${({ theme, desktop }) =>
-    desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
-`}
-`
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
@@ -132,24 +100,6 @@ const PropertiesAndTokensBlock = ({
     </PropertiesAndTokensBlockRow>
   )
 }
-
-const getImage = (blockImages, index) => blockImages && blockImages[index]
-
-const normalise = (arr = []) => {
-  const normalised = arr.map(
-    ({ genericBlockText, genericBlockImages, ...props }) => ({
-      image: getImage(genericBlockImages, 0),
-      text: genericBlockText && genericBlockText.genericBlockText,
-      ...props
-    })
-  )
-  return normalised[0]
-}
-
-const getImages = data =>
-  data.genericBlockImages ? data.genericBlockImages : []
-
-const shouldRender = data => data && data.length
 
 const IndexPage = props => {
   const {

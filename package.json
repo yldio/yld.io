@@ -4,7 +4,6 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
-    "@rebass/grid": "^6.0.0-4",
     "@yldio/oss-stats": "^1.0.1",
     "airbnb-prop-types": "^2.13.2",
     "apr-reduce": "^3.0.3",
@@ -30,6 +29,7 @@
     "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "lodash": "^4.17.11",
     "lodash.isequal": "^4.5.0",
+    "lodash.isnull": "^3.0.0",
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
     "polished": "2.3.0",

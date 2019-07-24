@@ -4,7 +4,8 @@
   "alias": ["yld-storybook"],
   "version": 2,
   "github": {
-    "autoAlias": true
+    "autoAlias": true,
+    "silent": true
   },
   "builds": [
     {
