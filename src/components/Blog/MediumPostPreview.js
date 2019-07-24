@@ -65,6 +65,38 @@ const ImageWrapper = styled.div`
   position: relative;
 `
 
+const TitleAndAuthor = ({ title, author, formattedDate, className }) => {
+  return (
+    <div className={className}>
+      <BlogTitle>{title}</BlogTitle>
+      <AuthorAndDate>
+        <AuthorLinkToMedium
+          target="_blank"
+          href={`https://medium.com/@${author.username}`}
+        >
+          {author.name}
+        </AuthorLinkToMedium>
+        {' • '}
+        {formattedDate}
+      </AuthorAndDate>
+    </div>
+  )
+}
+
+const TitleAndAuthorMobile = styled(TitleAndAuthor)`
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
+const TitleAndAuthorSmallTablet = styled(TitleAndAuthor)`
+  display: none;
+
+  ${breakpoint('smallTablet')`
+    display: block;
+  `}
+`
+
 const MediumPostPreview = ({ mediumPostData }) => {
   const { title, createdAt, uniqueSlug, author, virtuals } = mediumPostData.node
   const previewText =
@@ -84,6 +116,12 @@ const MediumPostPreview = ({ mediumPostData }) => {
   return (
     <MediumRow>
       <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
+        <TitleAndAuthorMobile
+          hide="smallTablet"
+          title={title}
+          author={author}
+          formattedDate={formattedDate}
+        />
         <ImageWrapper>
           <RatioContainer width={100} height={100}>
             <MediumPostImage image={image} />
@@ -97,17 +135,12 @@ const MediumPostPreview = ({ mediumPostData }) => {
         style={{ alignItems: 'center' }}
       >
         <BlogPostPreview>
-          <BlogTitle>{title}</BlogTitle>
-          <AuthorAndDate>
-            <AuthorLinkToMedium
-              target="_blank"
-              href={`https://medium.com/@${author.username}`}
-            >
-              {author.name}
-            </AuthorLinkToMedium>
-            {' • '}
-            {formattedDate}
-          </AuthorAndDate>
+          <TitleAndAuthorSmallTablet
+            hide=""
+            title={title}
+            author={author}
+            formattedDate={formattedDate}
+          />
           <Padding bottom={2} top={1}>
             <BodyPrimary>{previewText}</BodyPrimary>
           </Padding>
