@@ -47,7 +47,7 @@ const CaseStudy = ({
       </GreyBackgroundOffset>
       <CaseStudyPreview
         isTop={false}
-        caseStudy={caseStudy.relatedCaseStudy[0]}
+        caseStudy={caseStudy.relatedCaseStudies[0]}
       />
     </Layout>
   )
