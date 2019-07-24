@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 import remcalc from 'remcalc'
 import is from 'styled-is'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 export const StyledLinkCss = css`
   padding: ${remcalc(8)} ${remcalc(6)};
@@ -88,6 +89,10 @@ const Anchor = styled(Link)`
   ${StyledLinkCss};
 `
 
+const ExternalAnchor = styled(OutboundLink)`
+  ${StyledLinkCss};
+`
+
 const StyledLink = ({ external, to, href, children, ...props }) => {
   const externalProps = external
     ? {
@@ -105,9 +110,9 @@ const StyledLink = ({ external, to, href, children, ...props }) => {
   }
 
   return (
-    <Anchor {...externalProps} as="a" href={href} {...props}>
+    <ExternalAnchor {...externalProps} href={href} {...props}>
       {children}
-    </Anchor>
+    </ExternalAnchor>
   )
 }
 
