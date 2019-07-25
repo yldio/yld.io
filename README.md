@@ -125,6 +125,53 @@ The aim of this lammbda is to have up to date metrics of yld's open source contr
 
 Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
 
+## Styling
+
+### theme
+
+The whole application is wrapped in a theme file `src/utils/theme.js` that contains the official breakpoints, spacing and colors that can be used within the app. It's always available within a styled component as `theme` prop.
+
+### Grid
+
+We often use a system of Grid, Row and Column; all defined within `src/components/grid.js` to style sections. They can be confusing at first. The Grid component is a div that automatically defines how a section behaves accoding to the official breakpoints of the app.
+
+### Row
+
+The Row component is simply a row.
+
+### Col
+
+The Col component defined within row, is a column and accepts a `width` prop which is an array. This array correspond to the width of the column depending on the breakpoints defined in theme. Each value is between 0 and 1.
+
+examples:
+In this example, the ReactComponent will take the full width of the row regardless of the breakpoints:
+
+```
+<Grid>
+  <Row>
+    <Col width={[1]}>
+      <ReactComponent />
+    </Col>
+  </Row>
+</Grid>
+```
+
+In this example, the ReactComponentOne and ReactComponentTwo will take the full width of the row until they reach the smallTablet view where each Col takes half of the row:
+
+```
+<Grid>
+  <Row>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
+      <ReactComponentOne />
+    </Col>
+    <Col width={[1, 1, 1, 1, 1 / 2]}>
+      <ReactComponentTwo />
+    </Col>
+  </Row>
+</Grid>
+
+```
+
 ## Content Model notes
 
 This section serves as a information repository for some of our content models, stating what they represent and explaining some of their fields, if needed.
