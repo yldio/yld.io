@@ -7,6 +7,7 @@ import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
 import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
+import Anchor from '../Common/Anchor'
 
 const MobileOnlyCol = styled(Col)`
   ${breakpoint('smallTablet')`
@@ -26,7 +27,7 @@ const NonMobileCol = styled(Col)`
   `}
 `
 
-const TitleSection = ({ services, title }) => {
+const TitleSection = ({ services, title, link }) => {
   const commaSeparatedServices = [
     services.slice(0, -1).join(', '),
     services.slice(-1)[0]
@@ -36,19 +37,21 @@ const TitleSection = ({ services, title }) => {
       <BodyPrimary muted noPadding>
         {commaSeparatedServices}
       </BodyPrimary>
-      <CardTitle as="h2">{title}</CardTitle>
+      <Anchor to={link}>
+        <CardTitle as="h2">{title}</CardTitle>
+      </Anchor>
     </Padding>
   )
 }
 
-const InfoSection = ({ introSentence, title, slug }) => (
+const InfoSection = ({ introSentence, title, link }) => (
   <Fragment>
     <Padding bottom={{ smallPhone: 0.5, tablet: 1 }}>
       <BodyPrimary>{introSentence}</BodyPrimary>
     </Padding>
     <StyledLink
       aria-label={`Learn more about ${title}`}
-      to={`/case-study/${slug}`}
+      to={link}
       title={`Learn more about ${title}`}
     >
       Learn more
@@ -59,23 +62,34 @@ const InfoSection = ({ introSentence, title, slug }) => (
 const CaseStudy = ({ caseStudy }) => {
   const { title, services, posterImage, slug } = caseStudy
   const introSentence = getIntroSentence(caseStudy)
+  const caseStudyLink = `/case-study/${slug}`
 
   return (
     <Row>
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
-        <TitleSection services={services} title={title} />
+        <TitleSection services={services} title={title} link={caseStudyLink} />
       </MobileOnlyCol>
       <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
         <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-          <Image alt={posterImage.title} image={posterImage} />
+          <Anchor to={caseStudyLink}>
+            <Image alt={posterImage.title} image={posterImage} />
+          </Anchor>
         </Padding>
       </Col>
       <NonMobileCol width={[0, 0, 0, 0, 7 / 12, 6 / 12]}>
-        <TitleSection services={services} title={title} />
-        <InfoSection introSentence={introSentence} title={title} slug={slug} />
+        <TitleSection services={services} title={title} link={caseStudyLink} />
+        <InfoSection
+          introSentence={introSentence}
+          title={title}
+          link={caseStudyLink}
+        />
       </NonMobileCol>
       <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
-        <InfoSection introSentence={introSentence} title={title} slug={slug} />
+        <InfoSection
+          introSentence={introSentence}
+          title={title}
+          link={caseStudyLink}
+        />
       </MobileOnlyCol>
     </Row>
   )
