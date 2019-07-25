@@ -561,42 +561,19 @@ const IndexPage = props => {
           </Col>
         </Row>
       </Grid>
-      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
+      <CaseStudyPreview
+        isTop={false}
+        caseStudy={caseStudy.relatedCaseStudies[0]}
+      />
     </Layout>
   )
 }
 
 export const query = graphql`
-  fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
-    genericBlockImages {
-      title
-      fluid(maxWidth: 1100) {
-        ...GatsbyContentfulFluid
-      }
-    }
-    genericBlockText {
-      genericBlockText
-    }
-  }
-
   {
     contentfulNonTemplatedCaseStudyV2(
       slug: { eq: "doctorlink-setting-up-a-design-system" }
     ) {
-      relatedCaseStudy {
-        title
-        slug
-        introSentence {
-          introSentence
-        }
-        posterImage {
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-      }
       slug
       title
       posterImage {
@@ -605,6 +582,7 @@ export const query = graphql`
           url
         }
       }
+      ...NonTemplatedCaseStudyV2Related
       genericBlock1 {
         ...GenericFragment
       }
