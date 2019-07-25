@@ -30,7 +30,7 @@ You can now run:
   yarn develop
 ```
 
-We have some docs to make it easier to get you started:
+We have some docs to make it easier for you to get started:
 
 - [Scripts Overview](./docs/scripts.md)
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
-import { Col } from '../../../components/grid'
+import { Col, Row } from '../../../components/grid'
 import { SectionTitle, BodyPrimary } from '../../../components/Typography'
 import Image from '../../../components/Common/Image'
 import VideoSection from '../../../components/Common/VideoSection'
@@ -183,7 +183,64 @@ const TextAndResizedImageBlock = ({ data: { text, image } }) => (
   </Fragment>
 )
 
+const BlockRow = styled(Row)`
+  flex-direction: ${({ columnReverse }) =>
+    `column${columnReverse ? '-reverse' : null}`};
+  align-items: ${({ alignCenter }) => (alignCenter ? 'center' : null)};
+  padding-top: ${({ theme, mobile }) =>
+    mobile && mobile.top ? theme.space[mobile.top] : null};
+  padding-bottom: ${({ theme, mobile }) =>
+    mobile && mobile.bottom ? theme.space[mobile.bottom] : null};
+  justify-content: ${({ spaced }) => spaced && 'space-evenly'};
+
+  ${breakpoint('phone')`
+    justify-content: ${({ spaced }) => spaced && 'space-between'};
+  `}
+
+  ${breakpoint('smallTablet')`
+    flex-direction: ${({ rowReverse }) => (rowReverse ? 'row-reverse' : 'row')};
+    padding-top: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.top ? theme.space[smallTablet.top] : null};
+    padding-bottom: ${({ theme, smallTablet }) =>
+      smallTablet && smallTablet.bottom
+        ? theme.space[smallTablet.bottom]
+        : null};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme, tablet }) =>
+      tablet && tablet.top ? theme.space[tablet.top] : null};
+    padding-bottom: ${({ theme, tablet }) =>
+      tablet && tablet.bottom ? theme.space[tablet.bottom] : null};
+  `}
+
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme, desktop }) =>
+      desktop && desktop.top ? theme.space[desktop.top] : null};
+    padding-bottom: ${({ theme, desktop }) =>
+      desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
+  `}
+`
+
+const getImage = (blockImages, index) => blockImages && blockImages[index]
+
+const normaliseAll = (genericBlocks = []) =>
+  genericBlocks.map(({ genericBlockText, genericBlockImages, ...props }) => ({
+    image: getImage(genericBlockImages, 0),
+    text: genericBlockText && genericBlockText.genericBlockText,
+    ...props
+  }))
+
+const normalise = (genericBlocks = [], index = 0) =>
+  normaliseAll(genericBlocks, index)[index]
+
+const getImages = data =>
+  data.genericBlockImages ? data.genericBlockImages : []
+
+const shouldRender = data => data && data.length
+
 export {
+  BlockRow,
   renderImage,
   renderText,
   MobileReverseOrderWrapper,
@@ -193,5 +250,10 @@ export {
   VideoBlock,
   ImagesBlock,
   TextAndImageBlock,
-  TextAndResizedImageBlock
+  TextAndResizedImageBlock,
+  shouldRender,
+  getImages,
+  getImage,
+  normalise,
+  normaliseAll
 }

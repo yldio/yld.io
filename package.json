@@ -4,7 +4,6 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
-    "@rebass/grid": "^6.0.0-4",
     "@yldio/oss-stats": "^1.0.1",
     "airbnb-prop-types": "^2.13.2",
     "apr-intercept": "^3.0.3",

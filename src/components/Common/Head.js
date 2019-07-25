@@ -58,6 +58,7 @@ const Head = ({ page }) => {
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="yldio" />
+            <meta name="twitter:img" content={imageUrl} />
 
             <link rel="image_src" type="image/png" href={imageUrl} />
           </Helmet>
