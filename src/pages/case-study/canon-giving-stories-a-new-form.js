@@ -214,7 +214,10 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GreyBackgroundOffset>
-      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
+      <CaseStudyPreview
+        isTop={false}
+        caseStudy={caseStudy.relatedCaseStudies[0]}
+      />
     </Layout>
   )
 }
@@ -232,23 +235,7 @@ export const query = graphql`
     contentfulNonTemplatedCaseStudy(
       slug: { eq: "canon-giving-stories-a-new-form" }
     ) {
-      relatedCaseStudy {
-        title
-        slug
-        introSentence {
-          introSentence
-        }
-        posterImage {
-          fluid(maxWidth: 550) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-      }
+      ...NonTemplatedCaseStudyRelated
       slug
       title
       posterImage {

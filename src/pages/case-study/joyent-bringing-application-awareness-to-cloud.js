@@ -304,7 +304,10 @@ const IndexPage = ({
         </Grid>
       </Padding>
       <Divider />
-      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
+      <CaseStudyPreview
+        isTop={false}
+        caseStudy={caseStudy.relatedCaseStudies[0]}
+      />
     </Layout>
   )
 }
@@ -401,23 +404,6 @@ export const query = graphql`
     contentfulNonTemplatedCaseStudy(
       slug: { eq: "joyent-bringing-application-awareness-to-cloud" }
     ) {
-      relatedCaseStudy {
-        title
-        slug
-        introSentence {
-          introSentence
-        }
-        posterImage {
-          fluid(maxWidth: 550) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-      }
       slug
       title
       posterImage {
@@ -429,6 +415,7 @@ export const query = graphql`
           url
         }
       }
+      ...NonTemplatedCaseStudyRelated
       genericText1 {
         id
         genericText1
