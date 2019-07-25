@@ -133,7 +133,7 @@ The whole application is wrapped in a theme file `src/utils/theme.js` that conta
 
 ### Grid
 
-We often use a system of Grid, Row and Column; all defined within `src/components/grid.js` to style sections. They can be confusing at first. The Grid component is a div that automatically defines how a section behaves accoding to the official breakpoints of the app.
+The site is designed using a grid system (`src/components/grid.js`). It can be confusing at first. The Grid component is a div that automatically defines how a section behaves accoding to the official breakpoints of the app.
 
 ### Row
 
