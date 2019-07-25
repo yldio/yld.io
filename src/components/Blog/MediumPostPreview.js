@@ -68,34 +68,29 @@ const TitleAndAuthor = ({
   formattedDate,
   postUrl,
   authorUrl,
-  className
+  visible
 }) => {
   return (
-    <div className={className}>
+    <TitleAndAuthorWrapper visible={visible}>
       <Anchor href={postUrl}>
         <BlogTitle>{title}</BlogTitle>
       </Anchor>
       <AuthorAndDate>
-        <AuthorMediumLink href={authorUrl}>{author.name}</AuthorMediumLink>
+        {author && (
+          <AuthorMediumLink href={authorUrl}>{author.name}</AuthorMediumLink>
+        )}
         {' • '}
         {formattedDate}
       </AuthorAndDate>
-    </div>
+    </TitleAndAuthorWrapper>
   )
 }
 
-const TitleAndAuthorMobile = styled(TitleAndAuthor)`
-  ${breakpoint('smallTablet')`
-    display: none;
-  `}
-`
-
-const TitleAndAuthorSmallTablet = styled(TitleAndAuthor)`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-  display: block;
-`}
+const TitleAndAuthorWrapper = styled.div`
+  display: ${props => (props.visible === 'smallTablet' ? 'block;' : 'none;')}
+    ${breakpoint('smallTablet')`
+    display: ${props => (props.visible === 'desktop' ? 'block;' : 'none;')}
+  `};
 `
 
 const MediumPostPreview = ({ mediumPostData }) => {
@@ -121,8 +116,8 @@ const MediumPostPreview = ({ mediumPostData }) => {
   return (
     <MediumRow>
       <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
-        <TitleAndAuthorMobile
-          hide="smallTablet"
+        <TitleAndAuthor
+          visible="smallTablet"
           title={title}
           author={author}
           formattedDate={formattedDate}
@@ -143,8 +138,8 @@ const MediumPostPreview = ({ mediumPostData }) => {
         block={false}
         style={{ alignItems: 'center' }}
       >
-        <TitleAndAuthorSmallTablet
-          hide=""
+        <TitleAndAuthor
+          visible="desktop"
           title={title}
           author={author}
           formattedDate={formattedDate}
