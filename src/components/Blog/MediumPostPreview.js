@@ -158,7 +158,9 @@ const MediumPostPreview = ({
           authorUrl={authorUrl}
           postUrl={postUrl}
         />
-        <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
+        <Col width={[1]} style={{ paddingLeft: 0 }}>
+          <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
+        </Col>
         <StyledLink external href={postUrl} title={`Read more about ${title}`}>
           Read more
         </StyledLink>
