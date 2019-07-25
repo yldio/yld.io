@@ -22,7 +22,7 @@ const BlogListing = ({ title, description, posts }) => {
           title={title}
           description={description}
           mediaItems={mediaItems}
-          CTALink="https://medium.com/yld-engineering-blog"
+          CTALink="/blog/"
           CTAText="Visit our blog"
         />
       </Padding>

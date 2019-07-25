@@ -59,7 +59,7 @@ const TitleAndMediaList = ({
       </MediaItems>
       {CTALink && CTAText ? (
         <Padding top={3}>
-          <StyledLink external href={CTALink} title={CTAText}>
+          <StyledLink to={CTALink} title={CTAText}>
             {CTAText}
           </StyledLink>
         </Padding>
