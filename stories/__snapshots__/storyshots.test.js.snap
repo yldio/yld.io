@@ -11087,7 +11087,7 @@ Array [
   display: block;
 }
 
-.c79 {
+.c80 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11163,7 +11163,7 @@ Array [
   padding: 0;
 }
 
-.c82 {
+.c83 {
   color: #333333;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -11279,26 +11279,26 @@ Array [
   padding-bottom: 0.75rem;
 }
 
-.c75 {
+.c76 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
 
-.c76 {
+.c77 {
   padding-top: 4.5rem;
 }
 
-.c81 {
+.c82 {
   padding-top: 1.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
 
-.c86 {
+.c87 {
   padding-bottom: 6.75rem;
 }
 
-.c87 {
+.c88 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
@@ -11347,6 +11347,53 @@ Array [
 }
 
 .c41:active:after {
+  background: #333333;
+}
+
+.c75 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background,color;
+  transition-property: background,color;
+}
+
+.c75:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c75:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c75:focus {
+  background: transparent;
+  outline: 0.25rem solid #65FFCD;
+  color: #333333;
+}
+
+.c75:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c75:active:after {
   background: #333333;
 }
 
@@ -11489,7 +11536,7 @@ Array [
   flex-basis: 100%;
 }
 
-.c84 {
+.c85 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11517,7 +11564,7 @@ Array [
   align-items: center;
 }
 
-.c85 {
+.c86 {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -11820,7 +11867,7 @@ Array [
   display: flex;
 }
 
-.c88 {
+.c89 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -11834,7 +11881,7 @@ Array [
   display: flex;
 }
 
-.c83 {
+.c84 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -11844,15 +11891,15 @@ Array [
   bottom: 1.625rem;
 }
 
-.c77 {
+.c78 {
   text-align: center;
 }
 
-.c78 {
+.c79 {
   position: relative;
 }
 
-.c80 {
+.c81 {
   border: 1px solid;
   height: 13.875rem;
   display: inline-block;
@@ -12680,42 +12727,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c79 {
+  .c80 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c79 {
+  .c80 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c79 {
+  .c80 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c79 {
+  .c80 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c79 {
+  .c80 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c79 {
+  .c80 {
     width: 100%;
     position: initial;
     top: 0;
@@ -12724,7 +12771,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c79 {
+  .c80 {
     width: 50%;
     position: initial;
     top: 0;
@@ -12733,7 +12780,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c79 {
+  .c80 {
     width: 50%;
     position: initial;
     top: 0;
@@ -12742,7 +12789,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c79 {
+  .c80 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -12825,7 +12872,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c82 {
+  .c83 {
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
@@ -12889,20 +12936,20 @@ Array [
 }
 
 @media (min-width:74.8125em) {
-  .c75 {
+  .c76 {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c87 {
+  .c88 {
     padding-top: 6.75rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c87 {
+  .c88 {
     padding-bottom: 6.75rem;
   }
 }
@@ -13125,42 +13172,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c88 {
+  .c89 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c88 {
+  .c89 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c88 {
+  .c89 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c88 {
+  .c89 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c88 {
+  .c89 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c88 {
+  .c89 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -13169,19 +13216,19 @@ Array [
 }
 
 @media (min-width:43.8125em) {
-  .c78:last-child {
+  .c79:last-child {
     display: none;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c78:last-child {
+  .c79:last-child {
     display: block;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c80 {
+  .c81 {
     height: 22.5rem;
   }
 }
@@ -14106,6 +14153,7 @@ Array [
                 >
                   <a
                     href="https://fakelink.com"
+                    onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
                     title="This is a FAKE Node event"
@@ -14128,6 +14176,7 @@ Array [
                 >
                   <a
                     href="https://fakelink.com"
+                    onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
                     title="This is a second fake Node event"
@@ -14231,6 +14280,7 @@ Array [
                 <a
                   color="#fff"
                   href="https://www.youtube.com/watch?v=sbe_2N5urMs&index=2&list=PLfrHCOIcmSuqQPa00ZEtfx7-v4RNkFAmY"
+                  onClick={[Function]}
                   opacity={0.5}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -14285,6 +14335,7 @@ Array [
                 <a
                   color="#fff"
                   href="https://www.youtube.com/watch?v=9cq8O5_R1ao&t=11s"
+                  onClick={[Function]}
                   opacity={0.5}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -14339,7 +14390,9 @@ Array [
               <a
                 className="c68"
                 href="https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg"
+                onClick={[Function]}
                 rel="noopener noreferrer"
+                reverse={true}
                 target="_blank"
               >
                 See all talks
@@ -14419,6 +14472,7 @@ Array [
                   >
                     <a
                       href="http://nodetuts.com/series/asynchronous-programming.html"
+                      onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
                       title="Asynchronous programming"
@@ -14441,6 +14495,7 @@ Array [
                   >
                     <a
                       href="http://nodetuts.com/series/tcp-servers.html"
+                      onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
                       title="TCP servers"
@@ -14463,6 +14518,7 @@ Array [
                   >
                     <a
                       href="http://nodetuts.com/series/http-api-servers.html"
+                      onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
                       title="HTTP API Servers"
@@ -14484,8 +14540,9 @@ Array [
                 className="c54"
               >
                 <a
-                  className="c41"
+                  className="c75"
                   href="http://nodetuts.com/"
+                  onClick={[Function]}
                   rel="noopener noreferrer"
                   target="_blank"
                   title="More tutorials"
@@ -14502,16 +14559,16 @@ Array [
       className="c2"
     >
       <div
-        className="c75"
+        className="c76"
       >
         <div
           className="c9"
         >
           <div
-            className="c76"
+            className="c77"
           />
           <div
-            className="c77 c10"
+            className="c78 c10"
             width={
               Array [
                 1,
@@ -14534,7 +14591,7 @@ Array [
           className="c9"
         >
           <div
-            className="c78 c79"
+            className="c79 c80"
             width={
               Array [
                 1,
@@ -14547,11 +14604,12 @@ Array [
             }
           >
             <div
-              className="c76"
+              className="c77"
             >
               <a
-                className="c80"
+                className="c81"
                 href="http://nodepatternsbooks.com/books/database-patterns.html"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 style={
                   Object {
@@ -14561,10 +14619,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c81"
+                  className="c82"
                 >
                   <h3
-                    className="c82"
+                    className="c83"
                     style={
                       Object {
                         "color": "#e92c2c",
@@ -14574,7 +14632,7 @@ Array [
                     Databases Volume I - LevelDB, Redis and CouchDB
                   </h3>
                   <p
-                    className="c83"
+                    className="c84"
                   >
                     By Pedro Teixeira
                   </p>
@@ -14583,7 +14641,7 @@ Array [
             </div>
           </div>
           <div
-            className="c78 c79"
+            className="c79 c80"
             width={
               Array [
                 1,
@@ -14596,11 +14654,12 @@ Array [
             }
           >
             <div
-              className="c76"
+              className="c77"
             >
               <a
-                className="c80"
+                className="c81"
                 href="http://nodepatternsbooks.com/books/flow-control.html"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 style={
                   Object {
@@ -14610,10 +14669,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c81"
+                  className="c82"
                 >
                   <h3
-                    className="c82"
+                    className="c83"
                     style={
                       Object {
                         "color": "#2c49e9",
@@ -14623,7 +14682,7 @@ Array [
                     Flow Control Mastering asynchronous flow control in Node
                   </h3>
                   <p
-                    className="c83"
+                    className="c84"
                   >
                     By Pedro Teixeira
                   </p>
@@ -14632,7 +14691,7 @@ Array [
             </div>
           </div>
           <div
-            className="c78 c79"
+            className="c79 c80"
             width={
               Array [
                 1,
@@ -14645,11 +14704,12 @@ Array [
             }
           >
             <div
-              className="c76"
+              className="c77"
             >
               <a
-                className="c80"
+                className="c81"
                 href="http://nodepatternsbooks.com/books/work-queues.html"
+                onClick={[Function]}
                 rel="noopener noreferrer"
                 style={
                   Object {
@@ -14659,10 +14719,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c81"
+                  className="c82"
                 >
                   <h3
-                    className="c82"
+                    className="c83"
                     style={
                       Object {
                         "color": "#9500de",
@@ -14672,7 +14732,7 @@ Array [
                     Work Queues Master Deferred and Distributed Work in Node
                   </h3>
                   <p
-                    className="c83"
+                    className="c84"
                   >
                     By Pedro Teixeira
                   </p>
@@ -14693,17 +14753,18 @@ Array [
             }
           >
             <div
-              className="c76"
+              className="c77"
             >
               <div
-                className="c84"
+                className="c85"
               >
                 <div
-                  className="c85"
+                  className="c86"
                 >
                   <a
-                    className="c41"
+                    className="c75"
                     href="http://nodepatternsbooks.com/index.html"
+                    onClick={[Function]}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -14714,7 +14775,7 @@ Array [
             </div>
           </div>
           <div
-            className="c86"
+            className="c87"
           />
         </div>
       </div>
@@ -14726,10 +14787,10 @@ Array [
         className="c2"
       >
         <div
-          className="c87"
+          className="c88"
         >
           <div
-            className="c88"
+            className="c89"
           >
             <div
               className="c4"
