@@ -81,7 +81,7 @@ const IntroSectionTitleWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
-const IntroImage = styled(Image)`
+const IntroImageWrapper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -95,7 +95,7 @@ const IndexPage = ({ data, location }) => {
     contentfulHomepage: content,
     allContentfulMeetupEvent: events
   } = data
-  console.log({ data })
+
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
   const [first, toggle] = useState(true)
@@ -109,8 +109,13 @@ const IndexPage = ({ data, location }) => {
       <StyledBlueBackground>
         <Grid>
           <IntroRow style={{ position: 'relative' }}>
-            <IntroImage image={intro_illustration.childImageSharp} />
-            <Col width={(1, 1, 1, 1, 1, 7 / 12)}>
+            <IntroImageWrapper image={intro_illustration.childImageSharp}>
+              <Image image={intro_illustration.childImageSharp} />
+            </IntroImageWrapper>
+            <Col
+              width={(1, 1, 1, 1, 1, 7 / 12)}
+              style={{ position: 'relative' }}
+            >
               <IntroSectionTitleWrapper>
                 <SectionTitle reverse as="h1">
                   {introCopy}
@@ -188,7 +193,7 @@ const IndexPage = ({ data, location }) => {
 export const query = graphql`
   query {
     intro_illustration: file(
-      relativePath: { eq: "landing_page_illustration.png" }
+      relativePath: { eq: "landing_page_illustration_v2.png" }
     ) {
       publicURL
       childImageSharp {
