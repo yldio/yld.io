@@ -12,6 +12,7 @@ export const Checkbox = styled.input`
   margin-right: ${remcalc(9)};
   margin-left: ${remcalc(0)};
   position: relative;
+  cursor: pointer;
 
   &:checked:after {
     content: '';

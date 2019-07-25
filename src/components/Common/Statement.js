@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
 
 import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
@@ -8,12 +9,12 @@ import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
 
 const PaddedGrid = styled(Grid)`
-  padding-top: ${props => props.theme.space[4]};
-  padding-bottom: ${props => props.theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.space[6]};
-    padding-bottom: ${props => props.theme.space[6]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
@@ -26,31 +27,48 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
+const StyledDisplayTitle = styled(DisplayTitle)`
+  > strong {
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: 500;
+  }
+`
+
 const Statement = ({ richText, children, as = 'h2' }) => (
   <GreyBackground>
     <PaddedGrid>
       <Row>
         <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
-          <DisplayTitle as={as} textLight>
-            {children}
-            {richText &&
-              richText.map(content => {
-                if (content.nodeType === 'text') return content.value
+          {richText ? (
+            <DisplayTitle textLight>
+              {richText.map(({ nodeType, data, value, content }) => {
+                if (nodeType === 'text') return value
 
-                if (content.nodeType === 'hyperlink') {
+                if (nodeType === 'hyperlink') {
                   return (
-                    <Link
-                      key={content.data.uri}
-                      noafter="true"
-                      to={`${content.data.uri}`}
-                    >
-                      {content.content[0].value}
+                    <Link key={data.uri} noafter="true" to={`${data.uri}`}>
+                      {content[0].value}
                     </Link>
                   )
                 }
                 return ''
               })}
-          </DisplayTitle>
+            </DisplayTitle>
+          ) : (
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                headings: props => (
+                  <StyledDisplayTitle as={as} textLight {...props} />
+                ),
+                // eslint-disable-next-line react/display-name
+                paragraph: props => (
+                  <StyledDisplayTitle as={as} textLight {...props} />
+                )
+              }}
+              source={children}
+            />
+          )}
         </Col>
       </Row>
     </PaddedGrid>

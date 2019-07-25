@@ -16,6 +16,13 @@ import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 
+/**
+ * Importing fragments here to have them available to the entire
+ * GraphQL schema
+ */
+// eslint-disable-next-line no-unused-vars
+import { fragments } from '../fragments'
+
 const dateFormat = 'dddd[,] MMMM DD'
 
 const getHomepageMeetups = (events = []) =>
