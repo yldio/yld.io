@@ -12,22 +12,6 @@ import Hr from '../components/Common/Hr'
 import Head from '../components/Common/Head'
 import CaseStudy from '../components/OurWork/CaseStudy'
 
-// 'Thomas-Cook` slug is uppercased in Contentful
-const caseStudiesOrder = [
-  'doctorlink',
-  'central-working',
-  'learnerbly',
-  'trainline',
-  'the-economist',
-  'kingfisher',
-  'Thomas-Cook',
-  'joyent',
-  'canon'
-]
-
-const getCSOrderIndex = slug =>
-  caseStudiesOrder.indexOf(caseStudiesOrder.find(cs => slug.includes(cs)))
-
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
     const caseStudy = caseStudyObject.node
@@ -70,19 +54,18 @@ const OurWork = ({ data }) => {
     contentfulOurWork: { caseStudies }
   } = data
 
-  const ids = caseStudies
+  const displayOrderByIDs = caseStudies
     .filter(({ publish }) => publish)
-    .map(({ id, title }) => ({ id, title }))
+    .map(({ id }) => id)
 
-  console.log({ ids })
+  const getCSOrderIndex = id =>
+    displayOrderByIDs.indexOf(displayOrderByIDs.find(cs => id.includes(cs)))
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
-  ].sort((a, b) =>
-    getCSOrderIndex(a.slug) <= getCSOrderIndex(b.slug) ? -1 : 1
-  )
+  ].sort((a, b) => (getCSOrderIndex(a.id) <= getCSOrderIndex(b.id) ? -1 : 1))
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
@@ -180,6 +163,7 @@ const OurWorkPage = props => (
             node {
               slug
               title
+              id
               seoTitle
               seoMetaDescription
               services {
@@ -207,6 +191,7 @@ const OurWorkPage = props => (
             node {
               slug
               title
+              id
               seoTitle
               seoMetaDescription
               services {
@@ -235,6 +220,7 @@ const OurWorkPage = props => (
             node {
               slug
               title
+              id
               seoTitle
               seoMetaDescription
               services {
