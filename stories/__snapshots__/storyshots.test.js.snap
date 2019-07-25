@@ -7725,10 +7725,16 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
+<<<<<<< Updated upstream
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
+=======
+                href="/blog/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+>>>>>>> Stashed changes
                 title="Blog"
               >
                 Blog
@@ -7971,9 +7977,15 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
+<<<<<<< Updated upstream
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
+=======
+                href="/blog/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+>>>>>>> Stashed changes
                 states={
                   Object {
                     "default": Array [
@@ -7990,7 +8002,6 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
-                target="_blank"
                 title="Blog"
               >
                 Blog
