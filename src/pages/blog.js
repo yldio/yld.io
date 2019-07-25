@@ -47,10 +47,10 @@ const MediumLink = styled(StyledLink)`
 `
 
 const DisplayTitleCol = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[5]};
+  padding-top: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]}
+    padding-top: ${({ theme }) => theme.space[5]}
   `}
 `
 
@@ -86,8 +86,8 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
             const isLastPost = idx === mediumPosts.length - 1
 
             return (
-              <Fragment key={idx}>
-                <MediumPostPreview mediumPostData={mediumPostData} />
+              <Fragment key={mediumPostData.node.id}>
+                <MediumPostPreview {...mediumPostData.node} />
                 {!isLastPost && <Hr />}
               </Fragment>
             )

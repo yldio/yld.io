@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { format } from 'date-fns'
-import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
@@ -11,12 +10,6 @@ import StyledLink from '../Common/StyledLink'
 import RatioContainer from '../Common/RatioContainer'
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
-
-const BlogTitle = styled(CardTitle)`
-  ${breakpoint('smallPhone')`
-  padding-bottom: ${({ theme }) => theme.space[1]}
-`}
-`
 
 const AuthorMediumLink = styled(Anchor)`
   color: ${({ theme }) => theme.colors.textLight};
@@ -54,12 +47,35 @@ const MediumPostImage = styled(Image)`
 `
 
 const MediumRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
   padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  ${breakpoint('smallTablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const ImageWrapper = styled.div`
   position: relative;
+  padding-top: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+    padding-top: 0;
+  `};
+`
+
+const StyledBodyPrimary = styled(BodyPrimary)`
+  padding-bottom: ${({ theme }) => theme.space[1]};
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+  `};
+`
+
+const TitleAndAuthorWrapper = styled.div`
+  display: ${props => (props.visible === 'smallTablet' ? 'block;' : 'none;')}
+    ${breakpoint('smallTablet')`
+    display: ${props => (props.visible === 'desktop' ? 'block;' : 'none;')}
+  `};
 `
 
 const TitleAndAuthor = ({
@@ -73,7 +89,7 @@ const TitleAndAuthor = ({
   return (
     <TitleAndAuthorWrapper visible={visible}>
       <Anchor href={postUrl}>
-        <BlogTitle>{title}</BlogTitle>
+        <CardTitle>{title}</CardTitle>
       </Anchor>
       <AuthorAndDate>
         {author && (
@@ -86,15 +102,13 @@ const TitleAndAuthor = ({
   )
 }
 
-const TitleAndAuthorWrapper = styled.div`
-  display: ${props => (props.visible === 'smallTablet' ? 'block;' : 'none;')}
-    ${breakpoint('smallTablet')`
-    display: ${props => (props.visible === 'desktop' ? 'block;' : 'none;')}
-  `};
-`
-
-const MediumPostPreview = ({ mediumPostData }) => {
-  const { title, createdAt, uniqueSlug, author, virtuals } = mediumPostData.node
+const MediumPostPreview = ({
+  title,
+  createdAt,
+  uniqueSlug,
+  author,
+  virtuals
+}) => {
   const previewText =
     virtuals.subtitle.length < 145
       ? virtuals.subtitle
@@ -104,9 +118,7 @@ const MediumPostPreview = ({ mediumPostData }) => {
   const imageUrl = `https://cdn-images-1.medium.com/max/2000/${
     virtuals.previewImage.imageId
   }`
-
   const postUrl = `https://medium.com/yld-engineering-blog/${uniqueSlug}`
-
   const authorUrl = `https://medium.com/@${author.username}`
 
   const image = {
@@ -146,10 +158,8 @@ const MediumPostPreview = ({ mediumPostData }) => {
           authorUrl={authorUrl}
           postUrl={postUrl}
         />
-        <Padding bottom={2} top={1}>
-          <BodyPrimary>{previewText}</BodyPrimary>
-        </Padding>
-        <StyledLink external href={postUrl}>
+        <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
+        <StyledLink external href={postUrl} title={`Read more about ${title}`}>
           Read more
         </StyledLink>
       </Col>

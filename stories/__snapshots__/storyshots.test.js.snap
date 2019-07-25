@@ -7725,10 +7725,9 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
-                href="https://medium.com/yld-engineering-blog/"
+                href="/blog/"
                 onClick={[Function]}
-                rel="noopener noreferrer"
-                target="_blank"
+                onMouseEnter={[Function]}
                 title="Blog"
               >
                 Blog
@@ -7971,9 +7970,9 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
-                href="https://medium.com/yld-engineering-blog/"
+                href="/blog/"
                 onClick={[Function]}
-                rel="noopener noreferrer"
+                onMouseEnter={[Function]}
                 states={
                   Object {
                     "default": Array [
@@ -7990,7 +7989,6 @@ exports[`Storyshots Header Header itself 1`] = `
                     ],
                   }
                 }
-                target="_blank"
                 title="Blog"
               >
                 Blog
