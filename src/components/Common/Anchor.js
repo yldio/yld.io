@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import ExternalAnchor from './ExternalAnchor'
 
@@ -9,10 +8,6 @@ const Anchor = ({ to, href, activeClassName, ...props }) => {
   } else {
     return <ExternalAnchor href={href} {...props} />
   }
-}
-
-Anchor.propTypes = {
-  title: PropTypes.string.isRequired
 }
 
 export default Anchor

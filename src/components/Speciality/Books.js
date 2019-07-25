@@ -49,7 +49,8 @@ const BooksBox = styled(ExternalAnchor)`
 `
 
 const BooksSection = ({ books, title }) =>
-  books && books.length ? (
+  books &&
+  books.length > 0 && (
     <Grid>
       <Padding vertical={{ desktop: 4, smallPhone: 3.5 }}>
         <Row>
@@ -108,6 +109,6 @@ const BooksSection = ({ books, title }) =>
         </Row>
       </Padding>
     </Grid>
-  ) : null
+  )
 
 export default BooksSection

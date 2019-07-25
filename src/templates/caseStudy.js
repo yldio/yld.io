@@ -45,7 +45,10 @@ const CaseStudy = ({
           </Padding>
         </Grid>
       </GreyBackgroundOffset>
-      <CaseStudyPreview isTop={false} caseStudy={caseStudy.relatedCaseStudy} />
+      <CaseStudyPreview
+        isTop={false}
+        caseStudy={caseStudy.relatedCaseStudies[0]}
+      />
     </Layout>
   )
 }
@@ -57,23 +60,7 @@ export const pageQuery = graphql`
     contentfulTemplatedCaseStudy(id: { eq: $id }) {
       slug
       title
-      relatedCaseStudy {
-        title
-        slug
-        posterImage {
-          fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-        introSentence {
-          introSentence
-        }
-      }
+      ...TemplatedCaseStudyRelated
       specialities {
         title
         id
