@@ -106,12 +106,12 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <StyledBlueBackground>
+      <StyledBlueBackground style={{ position: 'relative' }}>
+        <IntroImageWrapper image={intro_illustration.childImageSharp}>
+          <Image image={intro_illustration.childImageSharp} />
+        </IntroImageWrapper>
         <Grid>
           <IntroRow style={{ position: 'relative' }}>
-            <IntroImageWrapper image={intro_illustration.childImageSharp}>
-              <Image image={intro_illustration.childImageSharp} />
-            </IntroImageWrapper>
             <Col
               width={(1, 1, 1, 1, 1, 7 / 12)}
               style={{ position: 'relative' }}
