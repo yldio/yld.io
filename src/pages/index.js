@@ -108,68 +108,71 @@ const IntroImage = styled(Image)`
   left: -50%;
 `
 
+const IntroSection = ({ illustration }) => {
+  const [first, toggle] = useState(true)
+
+  const introCopy = first
+    ? "We're a technology company that builds great technology  companies"
+    : 'Creating technology capabilities for you, that lasts beyond us.'
+
+  return (
+    <StyledBlueBackground style={{ position: 'relative' }}>
+      <IntroImageWrapper>
+        <IntroImage image={illustration.childImageSharp} />
+      </IntroImageWrapper>
+      <Grid>
+        <IntroRow style={{ position: 'relative' }}>
+          <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
+            <IntroSectionTitleWrapper>
+              <SectionTitle reverse as="h1">
+                {introCopy}
+              </SectionTitle>
+            </IntroSectionTitleWrapper>
+            <Subtitle reverse muted>
+              What we offer
+            </Subtitle>
+            <IntroLinkWrapper>
+              <StyledCardTitle noPaddingTop as={Link} reverse to="/engineering">
+                Software engineering consultancy
+              </StyledCardTitle>
+              <br />
+              <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
+                Design consultancy
+              </StyledCardTitle>
+              <br />
+              <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
+                Training
+              </StyledCardTitle>
+            </IntroLinkWrapper>
+            <StyledLink
+              as="p"
+              reverse
+              to="/our-work"
+              onClick={() => toggle(!first)}
+            >
+              See our work
+            </StyledLink>
+          </Col>
+        </IntroRow>
+      </Grid>
+    </StyledBlueBackground>
+  )
+}
+
 const IndexPage = ({ data, location }) => {
   const {
-    intro_illustration,
+    introIllustration,
     contentfulHomepage: content,
     allContentfulMeetupEvent: events
   } = data
 
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
-  const [first, toggle] = useState(true)
 
-  const introCopy = first
-    ? "We're a technology company that builds great technology  companies"
-    : 'Creating technology capabilities for you, that lasts beyond us.'
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <StyledBlueBackground style={{ position: 'relative' }}>
-        <IntroImageWrapper image={intro_illustration.childImageSharp}>
-          <IntroImage image={intro_illustration.childImageSharp} />
-        </IntroImageWrapper>
-        <Grid>
-          <IntroRow style={{ position: 'relative' }}>
-            <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
-              <IntroSectionTitleWrapper>
-                <SectionTitle reverse as="h1">
-                  {introCopy}
-                </SectionTitle>
-              </IntroSectionTitleWrapper>
-              <Subtitle reverse muted>
-                What we offer
-              </Subtitle>
-              <IntroLinkWrapper>
-                <StyledCardTitle
-                  noPaddingTop
-                  as={Link}
-                  reverse
-                  to="/engineering"
-                >
-                  Software engineering consultancy
-                </StyledCardTitle>
-                <br />
-                <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
-                  Design consultancy
-                </StyledCardTitle>
-                <br />
-                <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
-                  Training
-                </StyledCardTitle>
-              </IntroLinkWrapper>
-              <StyledLink
-                as="p"
-                reverse
-                to="/our-work"
-                onClick={() => toggle(!first)}
-              >
-                See our work
-              </StyledLink>
-            </Col>
-          </IntroRow>
-        </Grid>
-      </StyledBlueBackground>
+      <IntroSection illustration={introIllustration} />
       <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
@@ -208,7 +211,7 @@ const IndexPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    intro_illustration: file(
+    introIllustration: file(
       relativePath: { eq: "landing_page_illustration_v2.png" }
     ) {
       publicURL
