@@ -54,17 +54,26 @@ const OurWork = ({ data }) => {
     contentfulOurWork: { caseStudies }
   } = data
 
-  const displayOrderByIDs = caseStudies
-    .filter(({ publish }) => publish)
-    .map(({ id }) => id)
-
-  const getCSOrderIndex = id => displayOrderByIDs.indexOf(id)
-
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
-  ].sort((a, b) => (getCSOrderIndex(a.id) <= getCSOrderIndex(b.id) ? -1 : 1))
+  ]
+
+  const displayOrderByIDs = caseStudies
+    .filter(({ publish }) => publish)
+    .map(({ id }) => id)
+
+  const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
+    allCaseStudies.find(cs => cs.id === orderedId)
+  )
+  const missingFromContentfulOrder = allCaseStudies.filter(
+    cs => !displayOrderByIDs.includes(cs.id)
+  )
+  const orderedCaseStudies = [
+    ...mappedFromContentfulOrder,
+    ...missingFromContentfulOrder
+  ]
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
@@ -92,7 +101,7 @@ const OurWork = ({ data }) => {
       </Grid>
       <GreyBackground>
         <Grid>
-          {allCaseStudies.map((caseStudy, index, arr) => {
+          {orderedCaseStudies.map((caseStudy, index, arr) => {
             const isFirstCaseStudy = index === 0
             const isLastCaseStudy = index === arr.length - 1
             const isMiddleCaseStudy = !!(!isFirstCaseStudy && !isLastCaseStudy)
