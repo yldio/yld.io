@@ -21,6 +21,7 @@ const StyledLink = styled(Link)`
 const HomepageLogo = styled.img`
   width: 49px;
   height: 36px;
+  margin-top: ${remcalc(6)};
 `
 
 const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
