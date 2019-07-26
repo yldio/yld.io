@@ -12315,7 +12315,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
           <a
             className="c6 c7"
-            data-event="homepage-statement-software-engineering"
             href="/engineering"
             noafter="true"
             onClick={[Function]}
@@ -12326,7 +12325,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           , 
           <a
             className="c6 c7"
-            data-event="homepage-statement-design"
             href="/design"
             noafter="true"
             onClick={[Function]}
@@ -12337,7 +12335,6 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           , 
           <a
             className="c6 c7"
-            data-event="homepage-statement-training"
             href="/training"
             noafter="true"
             onClick={[Function]}
