@@ -58,8 +58,7 @@ const OurWork = ({ data }) => {
     .filter(({ publish }) => publish)
     .map(({ id }) => id)
 
-  const getCSOrderIndex = id =>
-    displayOrderByIDs.indexOf(displayOrderByIDs.find(cs => id.includes(cs)))
+  const getCSOrderIndex = id => displayOrderByIDs.indexOf(id)
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
