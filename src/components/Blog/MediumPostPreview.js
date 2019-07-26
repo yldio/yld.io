@@ -74,11 +74,10 @@ const StyledBodyPrimary = styled(BodyPrimary)`
 const TitleAndAuthorWrapper = styled.div`
   display: none;
 
-  ${({ show, hide }) => {
+  ${({ show, hide }) =>
     breakpoint(show, hide)`
       display: block;
-    `
-  }}
+    `}
 `
 
 const TitleAndAuthor = ({
