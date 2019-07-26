@@ -40,7 +40,8 @@ const TitleAndMediaList = ({
   description,
   mediaItems,
   CTAText,
-  CTALink
+  CTALink,
+  external = true
 }) => (
   <RowLayout>
     <Col width={[1, 1, 1, 1, 1 / 2]}>
@@ -59,7 +60,7 @@ const TitleAndMediaList = ({
       </MediaItems>
       {CTALink && CTAText ? (
         <Padding top={3}>
-          <StyledLink to={CTALink} title={CTAText}>
+          <StyledLink external={external} href={CTALink} title={CTAText}>
             {CTAText}
           </StyledLink>
         </Padding>

@@ -14,7 +14,6 @@ const BlogListing = ({ title, description, posts }) => {
       body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
     })
   )
-
   return (
     <Grid>
       <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
@@ -22,6 +21,7 @@ const BlogListing = ({ title, description, posts }) => {
           title={title}
           description={description}
           mediaItems={mediaItems}
+          external={false}
           CTALink="/blog/"
           CTAText="Visit our blog"
         />
