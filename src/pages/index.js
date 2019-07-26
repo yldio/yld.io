@@ -97,10 +97,15 @@ const IntroSectionTitleWrapper = styled.div`
 
 const IntroImageWrapper = styled.div`
   position: absolute;
+  max-width: 1500px;
   bottom: 0;
-  left: 0;
+  left: 50%;
   right: 0;
   width: 100%;
+`
+
+const IntroImage = styled(Image)`
+  left: -50%;
 `
 
 const IndexPage = ({ data, location }) => {
@@ -122,7 +127,7 @@ const IndexPage = ({ data, location }) => {
       <Head page={content} />
       <StyledBlueBackground style={{ position: 'relative' }}>
         <IntroImageWrapper image={intro_illustration.childImageSharp}>
-          <Image image={intro_illustration.childImageSharp} />
+          <IntroImage image={intro_illustration.childImageSharp} />
         </IntroImageWrapper>
         <Grid>
           <IntroRow style={{ position: 'relative' }}>
