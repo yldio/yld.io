@@ -5,34 +5,37 @@ import { Padding } from 'styled-components-spacing'
 
 import CaseStudyLayout from './CaseStudyLayout'
 import { SectionTitle, BodyPrimary } from '../../Typography'
+import Anchor from '../Anchor'
 import StyledLink from '../StyledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
-const Headings = ({ title, as }) => (
+const Headings = ({ title, as, link }) => (
   <Fragment>
     <BodyPrimary noPadding secondary>
       Featured work
     </BodyPrimary>
-    <SectionTitle as={as}>{title}</SectionTitle>
+    <Anchor to={link}>
+      <SectionTitle as={as}>{title}</SectionTitle>
+    </Anchor>
   </Fragment>
 )
 
-const TextBelowImage = ({ introSentence, slug }) => (
+const TextBelowImage = ({ introSentence, link }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <BodyPrimary>{introSentence}</BodyPrimary>
-    <StyledLink title="Learn more" to={`/case-study/${slug}`}>
+    <StyledLink title="Learn more" to={link}>
       Learn more
     </StyledLink>
   </Padding>
 )
 
-const RightHandText = ({ title, introSentence, slug, as }) => (
+const RightHandText = ({ title, introSentence, link, as }) => (
   <Fragment>
     <Padding bottom={0.5}>
-      <Headings as={as} title={title} />
+      <Headings as={as} title={title} link={link} />
     </Padding>
     <Padding bottom={1}>
-      <TextBelowImage introSentence={introSentence} slug={slug} />
+      <TextBelowImage introSentence={introSentence} link={link} />
     </Padding>
   </Fragment>
 )
@@ -44,19 +47,22 @@ const CaseStudyPreview = ({ isTop, caseStudy, as }) => {
 
   const introSentence = getIntroSentence(caseStudy)
   const { posterImage, title, slug } = caseStudy
+  const caseStudyLink = `/case-study/${slug}`
+
   return (
     <CaseStudyLayout
       isTop={isTop}
+      link={caseStudyLink}
       posterImage={posterImage}
       headings={<Headings title={title} as={as} />}
       textBelowImage={
-        <TextBelowImage introSentence={introSentence} slug={slug} />
+        <TextBelowImage introSentence={introSentence} link={caseStudyLink} />
       }
       rightHandText={
         <RightHandText
           title={title}
           introSentence={introSentence}
-          slug={slug}
+          link={caseStudyLink}
           as={as}
         />
       }
