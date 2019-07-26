@@ -4,6 +4,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 
 import logo from '../../../images/logo_animated.gif'
+import HomepageSvg from '../../../images/yld-white.svg'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
 
 import { logoColors } from '../navLinksHelper'
@@ -16,6 +17,10 @@ const StyledLink = styled(Link)`
     height: ${remcalc(54)};
     width: ${remcalc(54)};
   }
+`
+const HomepageLogo = styled.img`
+  width: 49px;
+  height: 36px;
 `
 
 const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
@@ -36,14 +41,21 @@ const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
   return (
     <Fragment>
       {renderSvg ? (
-        <StyledLink
-          to="/"
-          title="Return to Homepage"
-          onMouseEnter={() => setFillColor(fillColorHover)}
-          onMouseLeave={() => setFillColor(fillColorInitial)}
-        >
-          <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
-        </StyledLink>
+        isServicePage || isSpecialityPage ? (
+          <StyledLink
+            to="/"
+            title="Return to Homepage"
+            onMouseEnter={() => setFillColor(fillColorHover)}
+            onMouseLeave={() => setFillColor(fillColorInitial)}
+          >
+            <ServiceSpecialityLogo
+              fillColor={fillColor}
+              textColor={textColor}
+            />
+          </StyledLink>
+        ) : (
+          <HomepageLogo src={HomepageSvg} alt="yld logo" />
+        )
       ) : (
         <Link to="/" title="Return to Homepage">
           <img role="link" height="48" src={logo} alt="yld logo" />

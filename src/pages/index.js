@@ -60,14 +60,21 @@ const getHomepageConferences = (events = []) =>
     }))
 
 const StyledBlueBackground = styled(BlueBackground)`
-  padding-top: ${remcalc(36)};
   margin-top: -${remcalc(36)};
 `
 
 const IntroRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[8]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
