@@ -4,6 +4,7 @@ import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -64,8 +65,10 @@ const StyledBlueBackground = styled(BlueBackground)`
 `
 
 const IntroRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[8]};
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[8]};
+  `}
 `
 
 const StyledCardTitle = styled(CardTitle)`
@@ -74,11 +77,15 @@ const StyledCardTitle = styled(CardTitle)`
 `
 
 const IntroLinkWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const IntroSectionTitleWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const IntroImageWrapper = styled.div`
@@ -112,10 +119,7 @@ const IndexPage = ({ data, location }) => {
         </IntroImageWrapper>
         <Grid>
           <IntroRow style={{ position: 'relative' }}>
-            <Col
-              width={(1, 1, 1, 1, 1, 7 / 12)}
-              style={{ position: 'relative' }}
-            >
+            <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
               <IntroSectionTitleWrapper>
                 <SectionTitle reverse as="h1">
                   {introCopy}
