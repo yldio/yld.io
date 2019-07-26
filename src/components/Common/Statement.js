@@ -27,7 +27,7 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ richText, children, as = 'h2' }) => (
+const Statement = ({ richText, children, as = 'h2', gaHomeTag = false }) => (
   <GreyBackground>
     <PaddedGrid>
       <Row>
@@ -38,7 +38,7 @@ const Statement = ({ richText, children, as = 'h2' }) => (
               richText.map(content => {
                 if (content.nodeType === 'text') return content.value
 
-                if (content.nodeType === 'hyperlink') {
+                if (content.nodeType === 'hyperlink' && gaHomeTag) {
                   return (
                     <Link
                       key={content.data.uri}
@@ -52,6 +52,19 @@ const Statement = ({ richText, children, as = 'h2' }) => (
                     </Link>
                   )
                 }
+
+                if (content.nodeType === 'hyperlink') {
+                  return (
+                    <Link
+                      key={content.data.uri}
+                      noafter="true"
+                      to={`${content.data.uri}`}
+                    >
+                      {content.content[0].value}
+                    </Link>
+                  )
+                }
+
                 return ''
               })}
           </DisplayTitle>

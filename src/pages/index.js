@@ -53,7 +53,10 @@ const IndexPage = ({
         caseStudy={content.featuredCaseStudy}
         ctaDataEventLabel={eventLabels.homepageCaseStudyCTA}
       />
-      <Statement richText={content.seoText.content[0].content} />
+      <Statement
+        richText={content.seoText.content[0].content}
+        gaHomeTag={true}
+      />
       <GreyBackground>
         <Grid>
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>
