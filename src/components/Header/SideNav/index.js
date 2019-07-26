@@ -51,13 +51,14 @@ const SideNavItem = ({ item, path }) => {
       </Dropdown>
     )
   } else {
-    const { label, to, href } = item
+    const { label, to, href, attributes } = item
     return (
       <OuterAnchorItem
         activeClassName="active"
         to={to}
         href={href}
         label={label}
+        attributes={attributes}
       />
     )
   }

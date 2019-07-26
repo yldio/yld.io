@@ -1,12 +1,10 @@
 export default {
-  // homepageCaseStudyCTA: 'homepage-casestudy-cta',
-  navigationBlog: 'navigation-blog',
-  // learnMoreCTA: 'learn-more-cta',
   homepageStatementService: 'homepage-statement',
   aboutTeam: 'about-team',
-  // aboutAdvisory: 'about-team-advisory',
-  // aboutClient: 'about-team-client',
-  // aboutExecustive: 'about-team-executive',
+  navigationServices: 'navigation-services',
+  navigationBlog: 'navigation-blog'
+  // the following are "Learn more", which are parked for the time being
+  // homepageCaseStudyCTA: 'homepage-casestudy-cta',
+  // learnMoreCTA: 'learn-more-cta',
   // 'homepage-engineering-learn-more',
-  navigationServices: 'navigation-services'
 }
