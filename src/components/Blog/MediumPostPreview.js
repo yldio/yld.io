@@ -72,10 +72,12 @@ const StyledBodyPrimary = styled(BodyPrimary)`
 `
 
 const TitleAndAuthorWrapper = styled.div`
-  display: ${props => (props.visible === 'smallTablet' ? 'block;' : 'none;')}
-    ${breakpoint('smallTablet')`
-    display: ${props => (props.visible === 'desktop' ? 'block;' : 'none;')}
-  `};
+  display: none;
+
+  ${({ show, hide }) =>
+    breakpoint(show, hide)`
+      display: block;
+    `}
 `
 
 const TitleAndAuthor = ({
@@ -84,10 +86,11 @@ const TitleAndAuthor = ({
   formattedDate,
   postUrl,
   authorUrl,
-  visible
+  show,
+  hide
 }) => {
   return (
-    <TitleAndAuthorWrapper visible={visible}>
+    <TitleAndAuthorWrapper show={show} hide={hide}>
       <Anchor href={postUrl}>
         <CardTitle>{title}</CardTitle>
       </Anchor>
@@ -129,7 +132,8 @@ const MediumPostPreview = ({
     <MediumRow>
       <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
         <TitleAndAuthor
-          visible="smallTablet"
+          show="smallPhone"
+          hide="smallTablet"
           title={title}
           author={author}
           formattedDate={formattedDate}
@@ -146,12 +150,12 @@ const MediumPostPreview = ({
         </Anchor>
       </Col>
       <Col
-        width={[1, 1, 1, 1, 6 / 12, 6 / 12]}
+        width={[1, 1, 1, 1, 8 / 12, 6 / 12]}
         block={false}
         style={{ alignItems: 'center' }}
       >
         <TitleAndAuthor
-          visible="desktop"
+          show="smallTablet"
           title={title}
           author={author}
           formattedDate={formattedDate}
