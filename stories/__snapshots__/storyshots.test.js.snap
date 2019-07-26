@@ -7532,6 +7532,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event="navigation-services"
                 >
                   Services
                 </span>
@@ -7624,6 +7625,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -7647,6 +7649,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event={null}
                 >
                   About
                 </span>
@@ -7785,6 +7788,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event="navigation-services"
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -7869,6 +7873,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 rel="noopener noreferrer"
                 states={
@@ -7899,6 +7904,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event={null}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -8305,6 +8311,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 1
         </span>
@@ -8407,6 +8414,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 2
         </span>
@@ -8827,6 +8835,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 1
           </span>
@@ -8929,6 +8938,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 2
           </span>
@@ -9464,6 +9474,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           First dropdown
         </span>
@@ -9566,6 +9577,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           Second dropdown
         </span>
@@ -12303,6 +12315,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           We help our clients move from a culture of delivery to a culture of learning through our expertise in 
           <a
             className="c6 c7"
+            data-event="homepage-statement-software-engineering"
             href="/engineering"
             noafter="true"
             onClick={[Function]}
@@ -12313,6 +12326,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           , 
           <a
             className="c6 c7"
+            data-event="homepage-statement-design"
             href="/design"
             noafter="true"
             onClick={[Function]}
@@ -12323,6 +12337,7 @@ exports[`Storyshots Statement Statement Rich Text 1`] = `
           , 
           <a
             className="c6 c7"
+            data-event="homepage-statement-training"
             href="/training"
             noafter="true"
             onClick={[Function]}
