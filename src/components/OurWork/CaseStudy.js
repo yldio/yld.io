@@ -27,15 +27,35 @@ const NonMobileCol = styled(Col)`
   `}
 `
 
+const serviceLinkMapper = {
+  Engineering: '/engineering',
+  Design: '/design',
+  Training: '/training'
+}
+
 const TitleSection = ({ services, title, link }) => {
-  const commaSeparatedServices = [
-    services.slice(0, -1).join(', '),
-    services.slice(-1)[0]
-  ].join(services.length < 2 ? '' : ' & ')
+  const serviceElems = services.map((service, index) => {
+    const isPenultimate = index === services.length - 2
+    const isLast = index === services.length - 1
+    const link = serviceLinkMapper[service]
+    const element = link ? <Anchor to={link}>{service}</Anchor> : service
+
+    switch (true) {
+      case isLast:
+        return <Fragment key={index}>{element}</Fragment>
+      case isPenultimate:
+        // anchor/text + ampersand
+        return <Fragment key={index}>{element} &amp; </Fragment>
+      default:
+        // anchor/text + comma
+        return <Fragment key={index}>{element} &#44; </Fragment>
+    }
+  })
+
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
       <BodyPrimary muted noPadding>
-        {commaSeparatedServices}
+        {serviceElems}
       </BodyPrimary>
       <Anchor to={link}>
         <CardTitle as="h2">{title}</CardTitle>
