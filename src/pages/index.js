@@ -74,7 +74,6 @@ const IntroRow = styled(Row)`
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
@@ -97,11 +96,18 @@ const IntroSectionTitleWrapper = styled.div`
 
 const IntroImageWrapper = styled.div`
   position: absolute;
-  max-width: 1500px;
+  width: 1000px;
   bottom: 0;
   left: 50%;
   right: 0;
-  width: 100%;
+
+  ${breakpoint('smallPhone', 'phone')`
+    opacity: 0.5;
+  `}
+
+  ${breakpoint('tablet')`
+    width: 1500px;
+  `}
 `
 
 const IntroImage = styled(Image)`
@@ -145,8 +151,8 @@ const IntroSection = ({ illustration }) => {
               </StyledCardTitle>
             </IntroLinkWrapper>
             <StyledLink
-              as="p"
               reverse
+              vibrant
               to="/our-work"
               onClick={() => toggle(!first)}
             >
