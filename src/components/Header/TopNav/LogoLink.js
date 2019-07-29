@@ -31,10 +31,16 @@ const LogoLink = ({ path = '/' }) => {
   const service = isSpecialityPage ? getService(path) : serviceTitle
   const speciality = isSpecialityPage ? getSpeciality(path) : null
 
-  let originalFillColor = isSpecialityPage
-    ? logoColors[service][speciality]
-    : logoColors['default']
-  const [fillColor, setFillColor] = useState(originalFillColor)
+  let metaFillColor = '#fff'
+
+  if (isServicePage) {
+    metaFillColor = logoColors['default']
+  }
+  if (isSpecialityPage && logoColors[service][speciality]) {
+    metaFillColor = logoColors[service][speciality]
+  }
+
+  const [fillColor, setFillColor] = useState(metaFillColor)
 
   return (
     <Fragment>
@@ -47,7 +53,7 @@ const LogoLink = ({ path = '/' }) => {
               logoColors[isServicePage ? 'defaultHover' : 'specialityHover']
             )
           }
-          onMouseLeave={() => setFillColor(originalFillColor)}
+          onMouseLeave={() => setFillColor(metaFillColor)}
         >
           <ServiceSpecialityLogo
             fillColor={fillColor}
