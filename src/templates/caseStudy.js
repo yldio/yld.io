@@ -36,11 +36,13 @@ const CaseStudy = ({
       </Grid>
       <GreyBackgroundOffset topMargin topOffset={-150}>
         <Grid>
-          <VideoSection src={videoInfo[0]} />
           <Padding
             top={{ smallPhone: 3, tablet: 4 }}
-            bottom={{ smallPhone: 3.5, tablet: 4 }}
+            bottom={{ smallPhone: 3, tablet: 4 }}
           >
+            <VideoSection src={videoInfo[0]} />
+          </Padding>
+          <Padding bottom={{ smallPhone: 3.5, tablet: 4 }}>
             <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
           </Padding>
         </Grid>
