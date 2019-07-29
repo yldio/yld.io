@@ -24,7 +24,11 @@ const Jobs = () => (
     <StyledGrid>
       <Row>
         <Col width={[1]}>
-          <StyledLink to="/join-us" title="Learn more">
+          <StyledLink
+            to="/join-us"
+            title="Learn more"
+            data-event="learn-more-cta"
+          >
             Learn more
           </StyledLink>
         </Col>

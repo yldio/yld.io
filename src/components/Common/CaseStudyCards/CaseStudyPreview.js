@@ -23,7 +23,7 @@ const Headings = ({ title, as, link }) => (
 const TextBelowImage = ({ introSentence, link }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <BodyPrimary>{introSentence}</BodyPrimary>
-    <StyledLink title="Learn more" to={link}>
+    <StyledLink title="Learn more" to={link} data-event="learn-more-cta">
       Learn more
     </StyledLink>
   </Padding>

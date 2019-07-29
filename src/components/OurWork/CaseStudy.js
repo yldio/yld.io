@@ -73,6 +73,7 @@ const InfoSection = ({ introSentence, title, link }) => (
       aria-label={`Learn more about ${title}`}
       to={link}
       title={`Learn more about ${title}`}
+      data-event="learn-more-cta"
     >
       Learn more
     </StyledLink>
