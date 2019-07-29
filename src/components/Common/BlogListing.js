@@ -22,7 +22,7 @@ const BlogListing = ({ title, description, posts }) => {
           description={description}
           mediaItems={mediaItems}
           CTALink="/blog/"
-          internal
+          external
           CTAText="Visit our blog"
         />
       </Padding>

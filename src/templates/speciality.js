@@ -116,6 +116,9 @@ export const pageQuery = graphql`
           url
           fileName
         }
+        fluid(maxWidth: 250) {
+          ...GatsbyContentfulFluid_withWebp_noBase64
+        }
       }
       trainingIntroText {
         nodeType
