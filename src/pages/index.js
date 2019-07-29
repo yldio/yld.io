@@ -65,7 +65,6 @@ const StyledBlueBackground = styled(BlueBackground)`
 
 const IntroRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[5]};
@@ -74,6 +73,7 @@ const IntroRow = styled(Row)`
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
@@ -95,26 +95,37 @@ const IntroSectionTitleWrapper = styled.div`
 `
 
 const IntroImageWrapper = styled.div`
-  position: absolute;
-  width: 1000px;
-  bottom: 0;
-  left: 50%;
-  right: 0;
+  width: 100%;
 
-  ${breakpoint('smallPhone', 'phone')`
-    opacity: 0.5;
+  ${breakpoint('phone')`
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    position: absolute;
+    width: 1000px;
   `}
 
-  ${breakpoint('tablet')`
+  ${breakpoint('desktop')`
     width: 1500px;
   `}
 `
 
-const IntroImage = styled(Image)`
-  left: -50%;
+const IntroImageDesktop = styled(Image)`
+  display: none;
+
+  ${breakpoint('phone')`
+      left: -50%;
+      display: block;
+  `}
 `
 
-const IntroSection = ({ illustration }) => {
+const IntroImageMobile = styled(Image)`
+  ${breakpoint('phone')`
+      display: none;
+  `}
+`
+
+const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
   const [first, toggle] = useState(true)
 
   const introCopy = first
@@ -123,9 +134,6 @@ const IntroSection = ({ illustration }) => {
 
   return (
     <StyledBlueBackground style={{ position: 'relative' }}>
-      <IntroImageWrapper>
-        <IntroImage image={illustration.childImageSharp} />
-      </IntroImageWrapper>
       <Grid>
         <IntroRow style={{ position: 'relative' }}>
           <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
@@ -135,19 +143,19 @@ const IntroSection = ({ illustration }) => {
               </SectionTitle>
             </IntroSectionTitleWrapper>
             <Subtitle reverse muted>
-              What we offer
+              Consultancy services we offer
             </Subtitle>
             <IntroLinkWrapper>
               <StyledCardTitle noPaddingTop as={Link} reverse to="/engineering">
-                Software engineering consultancy
+                Software engineering
               </StyledCardTitle>
               <br />
               <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
-                Design consultancy
+                Digital product design
               </StyledCardTitle>
               <br />
               <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
-                Training
+                Training programs
               </StyledCardTitle>
             </IntroLinkWrapper>
             <StyledLink
@@ -161,13 +169,22 @@ const IntroSection = ({ illustration }) => {
           </Col>
         </IntroRow>
       </Grid>
+      <IntroImageWrapper>
+        {illustrationDesktop && (
+          <IntroImageDesktop image={illustrationDesktop.childImageSharp} />
+        )}{' '}
+        {illustrationMobile && (
+          <IntroImageMobile image={illustrationMobile.childImageSharp} />
+        )}{' '}
+      </IntroImageWrapper>
     </StyledBlueBackground>
   )
 }
 
 const IndexPage = ({ data, location }) => {
   const {
-    introIllustration,
+    illustrationMobile,
+    illustrationDesktop,
     contentfulHomepage: content,
     allContentfulMeetupEvent: events
   } = data
@@ -178,7 +195,10 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <IntroSection illustration={introIllustration} />
+      <IntroSection
+        illustrationDesktop={illustrationDesktop}
+        illustrationMobile={illustrationMobile}
+      />
       <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
@@ -217,12 +237,23 @@ const IndexPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    introIllustration: file(
-      relativePath: { eq: "landing_page_illustration_v2.png" }
+    illustrationDesktop: file(
+      relativePath: { eq: "landing_page_illustration_desktop.png" }
     ) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    illustrationMobile: file(
+      relativePath: { eq: "landing_page_illustration_mobile.png" }
+    ) {
+      publicURL
+      childImageSharp {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
