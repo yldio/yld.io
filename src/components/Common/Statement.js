@@ -6,7 +6,6 @@ import StyledLink from './StyledLink'
 import GreyBackground from './GreyBackground'
 import { Row, Col, Grid } from '../grid'
 import { DisplayTitle } from '../Typography'
-import eventLabels from '../../utils/eventLabels'
 
 const PaddedGrid = styled(Grid)`
   padding-top: ${props => props.theme.space[4]};
@@ -27,7 +26,7 @@ const Link = styled(StyledLink)`
   display: initial;
 `
 
-const Statement = ({ richText, children, as = 'h2', gaHomeTag = false }) => (
+const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
   <GreyBackground>
     <PaddedGrid>
       <Row>
@@ -38,27 +37,19 @@ const Statement = ({ richText, children, as = 'h2', gaHomeTag = false }) => (
               richText.map(content => {
                 if (content.nodeType === 'text') return content.value
 
-                if (content.nodeType === 'hyperlink' && gaHomeTag) {
-                  return (
-                    <Link
-                      key={content.data.uri}
-                      noafter="true"
-                      to={`${content.data.uri}`}
-                      data-event={`${
-                        eventLabels.homepageStatementService
-                      }-${content.content[0].value.split(' ').join('-')}`}
-                    >
-                      {content.content[0].value}
-                    </Link>
-                  )
-                }
-
                 if (content.nodeType === 'hyperlink') {
+                  const label = content.content[0].value.split(' ').join('-')
+
+                  const dataEvent = dataEvents && {
+                    'data-event': `${dataEvents}-${label}`
+                  }
+
                   return (
                     <Link
                       key={content.data.uri}
                       noafter="true"
                       to={`${content.data.uri}`}
+                      {...dataEvent}
                     >
                       {content.content[0].value}
                     </Link>

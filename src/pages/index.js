@@ -55,7 +55,7 @@ const IndexPage = ({
       />
       <Statement
         richText={content.seoText.content[0].content}
-        gaHomeTag={true}
+        dataEvents={eventLabels.homepageStatementService}
       />
       <GreyBackground>
         <Grid>
