@@ -2126,6 +2126,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             className="c13"
             href="/blog/"
             onClick={[Function]}
+            onMouseEnter={[Function]}
             title="Visit our blog"
           >
             Visit our blog
@@ -11428,53 +11429,6 @@ Array [
   background: #333333;
 }
 
-.c75 {
-  padding: 0.5rem 0.375rem;
-  margin-top: 0.1875rem;
-  margin-bottom: 1.5rem;
-  margin-left: -0.375rem;
-  line-height: 1.5rem;
-  color: #333333;
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  -webkit-transition-property: background,color;
-  transition-property: background,color;
-}
-
-.c75:after {
-  content: '';
-  display: block;
-  height: 0.125rem;
-  width: 100%;
-  margin-top: 0.375rem;
-  background: #333333;
-  box-sizing: border-box;
-}
-
-.c75:hover {
-  background: #f9f9f9;
-  color: #333333;
-}
-
-.c75:focus {
-  background: transparent;
-  outline: 0.25rem solid #65FFCD;
-  color: #333333;
-}
-
-.c75:active {
-  outline: none;
-  background: #00edbf;
-  color: #333333;
-}
-
-.c75:active:after {
-  background: #333333;
-}
-
 .c68 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
@@ -11542,6 +11496,53 @@ Array [
 }
 
 .c68:active:after {
+  background: #333333;
+}
+
+.c75 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background,color;
+  transition-property: background,color;
+}
+
+.c75:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c75:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c75:focus {
+  background: transparent;
+  outline: 0.25rem solid #65FFCD;
+  color: #333333;
+}
+
+.c75:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c75:active:after {
   background: #333333;
 }
 
