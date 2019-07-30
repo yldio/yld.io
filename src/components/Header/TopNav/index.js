@@ -43,18 +43,19 @@ const TopNav = ({ links, themeVariation, path }) => (
     <TopNavList>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
-          const { label, dropdownItems } = link
+          const { label, dropdownItems, attributes } = link
           return (
             <Dropdown
               key={idx}
               themeVariation={themeVariation}
               items={dropdownItems}
+              dataEvent={attributes ? attributes.dataEvent : null}
             >
               {label}
             </Dropdown>
           )
         } else {
-          const { label, to, href } = link
+          const { label, to, href, attributes } = link
           return (
             <OuterAnchorItem
               key={idx}
@@ -63,6 +64,7 @@ const TopNav = ({ links, themeVariation, path }) => (
               to={to}
               href={href}
               title={label}
+              attributes={attributes}
             >
               {label}
             </OuterAnchorItem>
