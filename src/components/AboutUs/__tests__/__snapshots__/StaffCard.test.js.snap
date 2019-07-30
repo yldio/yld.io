@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaffCard renders correctly 1`] = `
+<div
+  className="sc-bwzfXH llXZFL"
+  width={
+    Array [
+      1,
+      1,
+      1,
+      1,
+      0.5,
+      0.3333333333333333,
+    ]
+  }
+>
+  <div
+    className="sc-ifAKCX glTJYn"
+  >
+    <div
+      className="sc-ifAKCX iSGemK"
+    >
+      <img
+        className="sc-gZMcBi dhwgne"
+        src="img1.jpg"
+        width="100%"
+      />
+    </div>
+    <h3
+      className="sc-htoDjs hHzTme"
+    >
+      Nuno Job
+    </h3>
+    <div
+      className="sc-ifAKCX cCGtBF"
+    >
+      <h3
+        className="sc-htoDjs lnaRzG"
+        muted={true}
+      >
+        Co-founder & Chief Executive Officer - YLD
+      </h3>
+    </div>
+    <p
+      className="sc-jTzLTM hhhpkm"
+    >
+      Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+    </p>
+    <div
+      className="sc-VigVT fkYcKR"
+    >
+      <a
+        className="sc-gqjmRU kqkEpH"
+        href="https://www.linkedin.com/in/nunojob/"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Nuno Job Linkedin account"
+      >
+        <img
+          alt="Nuno Job Linkedin"
+          className="sc-gZMcBi gUkkRN"
+          height="24px"
+          src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+          width="24px"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;
