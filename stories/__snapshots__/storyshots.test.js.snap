@@ -8906,6 +8906,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
             stroke="none"
           >
             <rect
+              fill="#fff"
               height="54"
               id="Logo-rectangle"
               width="54"
