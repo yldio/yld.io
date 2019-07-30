@@ -71,18 +71,26 @@ const MasonryElement = styled.div`
 const Services = ({ services }) => (
   <Row pt={[3.5, 3.5, 3.5, 5]}>
     <MasonryContainer width={[1]}>
-      {services.map((service, index, arr) => {
-        return (
+      {services.map(
+        (service, index, arr) =>
           service.introSentence && (
             <MasonryElement key={service.id} index={index}>
-              {(arr.length === 2 && index === 1) ||
-              (arr.length !== 2 && index === 2) ? (
+              {((arr.length === 2 && index === 1) ||
+                (arr.length !== 2 && index === 2)) && (
                 <Padding
                   top={{ smallPhone: 0, smallTablet: 6.5 }}
                   bottom={{ smallPhone: 0, smallTablet: 2 }}
                 />
-              ) : null}
-              <SectionTitle>{service.title}</SectionTitle>
+              )}
+
+              <SectionTitle>
+                {service.pageReady ? (
+                  <Link to={`/${service.slug}`}>{service.title}</Link>
+                ) : (
+                  service.title
+                )}
+              </SectionTitle>
+
               <Padding top={1.5} bottom={0.5}>
                 <BodyPrimary>{service.introSentence.introSentence}</BodyPrimary>
               </Padding>
@@ -133,11 +141,11 @@ const Services = ({ services }) => (
                   </ImageWrapper>
                 </section>
               </AnimatedLink>
+
               <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} />
             </MasonryElement>
           )
-        )
-      })}
+      )}
     </MasonryContainer>
   </Row>
 )

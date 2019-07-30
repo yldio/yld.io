@@ -7651,6 +7651,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event="navigation-services"
                 >
                   Services
                 </span>
@@ -7743,6 +7744,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -7767,6 +7769,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event={null}
                 >
                   About
                 </span>
@@ -7905,6 +7908,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event="navigation-services"
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -7989,6 +7993,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -8020,6 +8025,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event={null}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -8426,6 +8432,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 1
         </span>
@@ -8529,6 +8536,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 2
         </span>
@@ -8906,6 +8914,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
             stroke="none"
           >
             <rect
+              fill="#fff"
               height="54"
               id="Logo-rectangle"
               width="54"
@@ -8949,6 +8958,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 1
           </span>
@@ -9052,6 +9062,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 2
           </span>
@@ -9587,6 +9598,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           First dropdown
         </span>
@@ -9690,6 +9702,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           Second dropdown
         </span>
