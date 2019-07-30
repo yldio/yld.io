@@ -118,7 +118,7 @@ const MediumPostPreview = ({
       : virtuals.subtitle.slice(0, 145) + '...'
   const formattedDate = format(createdAt, 'MMMM DD')
 
-  const imageUrl = `https://cdn-images-1.medium.com/max/500/${
+  const imageUrl = `https://cdn-images-1.medium.com/max/1000/${
     virtuals.previewImage.imageId
   }`
   const postUrl = `https://medium.com/yld-engineering-blog/${uniqueSlug}`
