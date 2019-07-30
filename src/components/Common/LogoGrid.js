@@ -28,7 +28,7 @@ const LogoGrid = ({ companies }) => (
           </ExternalAnchor>
         ) : (
           <Image
-            image={company}
+            image={company.image}
             title={company.title}
             style={{ filter: 'grayscale(1)', saturate: '0' }}
           />
