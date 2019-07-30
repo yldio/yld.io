@@ -12,7 +12,7 @@ import {
   getIsServicePage,
   getService
 } from '../navLinksHelper'
-import themeHelper from '../../../utils/theme'
+import theme from '../../../utils/theme'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
@@ -32,16 +32,16 @@ const LogoLink = ({ path = '/' }) => {
   const service = isSpecialityPage ? getService(path) : serviceTitle
   const speciality = isSpecialityPage ? getSpeciality(path) : null
 
-  let metaFillColor = themeHelper.colors.white
+  let originalFillColor = theme.colors.white
 
   if (isServicePage) {
-    metaFillColor = logoColors['default']
+    originalFillColor = logoColors['default']
   }
   if (isSpecialityPage && logoColors[service][speciality]) {
-    metaFillColor = logoColors[service][speciality]
+    originalFillColor = logoColors[service][speciality]
   }
 
-  const [fillColor, setFillColor] = useState(metaFillColor)
+  const [fillColor, setFillColor] = useState(originalFillColor)
 
   return (
     <Fragment>
@@ -54,7 +54,7 @@ const LogoLink = ({ path = '/' }) => {
               logoColors[isServicePage ? 'defaultHover' : 'specialityHover']
             )
           }
-          onMouseLeave={() => setFillColor(metaFillColor)}
+          onMouseLeave={() => setFillColor(originalFillColor)}
         >
           <ServiceSpecialityLogo
             fillColor={fillColor}
