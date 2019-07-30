@@ -31,6 +31,7 @@ import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
+import getSocialLogo from '../../utils/getSocialLogo'
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
@@ -141,12 +142,14 @@ const IndexPage = props => {
     genericBlock31: data31
   } = caseStudy
 
+  const socialLogo = getSocialLogo({ ...caseStudy })
+
   return (
     <Layout location={location} contactUsBg={'greyBg'}>
       <Head
         page={{
           ...caseStudy,
-          socialLogo: (caseStudy.posterImage.file || {}).url
+          socialLogo
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
@@ -578,6 +581,11 @@ export const query = graphql`
       title
       posterImage {
         title
+        file {
+          url
+        }
+      }
+      ogImageMeta {
         file {
           url
         }
