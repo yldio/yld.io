@@ -57,6 +57,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-s test:**",
+    "test:unit": "jest",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "npm run build:app && testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 500000",
@@ -89,6 +90,7 @@
     "@storybook/addon-storyshots": "^5.0.11",
     "@storybook/addons": "5.0.11",
     "@storybook/react": "^5.1.9",
+    "@testing-library/react": "^8.0.7",
     "apr": "2.0.2",
     "apr-main": "4.0.3",
     "apr-map": "3.0.3",

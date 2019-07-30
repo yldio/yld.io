@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaseStudy renders correctly 1`] = `
+<div
+  className="sc-htpNat bwUsJ"
+>
+  <div
+    className="sc-fjdhpX jtYOHt sc-bwzfXH bUbEwm"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+      ]
+    }
+  >
+    <div
+      className="sc-ifAKCX MQggx"
+    >
+      <p
+        className="sc-jTzLTM gZBukD"
+        muted={true}
+      >
+        <a
+          href="/engineering"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Engineering
+        </a>
+         & 
+        <a
+          href="/design"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Design
+        </a>
+      </p>
+      <a
+        href="/case-study/reinforcing-the-Thomas-Cook-architecture"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <h2
+          className="sc-gZMcBi ifjIgb"
+        >
+          Example Case Study
+        </h2>
+      </a>
+    </div>
+  </div>
+  <div
+    className="sc-bwzfXH kCZvll"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0.4166666666666667,
+        0.3333333333333333,
+        0.3333333333333333,
+      ]
+    }
+  >
+    <div
+      className="sc-ifAKCX MQggx"
+    >
+      <a
+        href="/case-study/reinforcing-the-Thomas-Cook-architecture"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt="example"
+          className="sc-htoDjs bXrisP"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="sc-jzJRlG hBZnoa sc-bwzfXH epgmCt"
+    width={
+      Array [
+        0,
+        0,
+        0,
+        0,
+        0.5833333333333334,
+        0.5,
+      ]
+    }
+  >
+    <div
+      className="sc-ifAKCX MQggx"
+    >
+      <p
+        className="sc-jTzLTM gZBukD"
+        muted={true}
+      >
+        <a
+          href="/engineering"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Engineering
+        </a>
+         & 
+        <a
+          href="/design"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Design
+        </a>
+      </p>
+      <a
+        href="/case-study/reinforcing-the-Thomas-Cook-architecture"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <h2
+          className="sc-gZMcBi ifjIgb"
+        >
+          Example Case Study
+        </h2>
+      </a>
+    </div>
+    <div
+      className="sc-ifAKCX kEdiyc"
+    >
+      <p
+        className="sc-jTzLTM lfyrei"
+      >
+        This is a case-study example
+      </p>
+    </div>
+    <a
+      aria-label="Learn more about Example Case Study"
+      className="sc-bZQynM gofqbW"
+      href="/case-study/reinforcing-the-Thomas-Cook-architecture"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      title="Learn more about Example Case Study"
+    >
+      Learn more
+    </a>
+  </div>
+  <div
+    className="sc-fjdhpX jtYOHt sc-bwzfXH bUbEwm"
+    width={
+      Array [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+      ]
+    }
+  >
+    <div
+      className="sc-ifAKCX kEdiyc"
+    >
+      <p
+        className="sc-jTzLTM lfyrei"
+      >
+        This is a case-study example
+      </p>
+    </div>
+    <a
+      aria-label="Learn more about Example Case Study"
+      className="sc-bZQynM gofqbW"
+      href="/case-study/reinforcing-the-Thomas-Cook-architecture"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      title="Learn more about Example Case Study"
+    >
+      Learn more
+    </a>
+  </div>
+</div>
+`;
