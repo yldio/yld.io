@@ -8,6 +8,7 @@ import { SectionTitle, BodyPrimary } from '../../Typography'
 import Anchor from '../Anchor'
 import StyledLink from '../StyledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
+import eventLabels from '../../../utils/eventLabels'
 
 const Headings = ({ title, as, link }) => (
   <Fragment>
@@ -23,7 +24,11 @@ const Headings = ({ title, as, link }) => (
 const TextBelowImage = ({ introSentence, link, ctaDataEventLabel }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <BodyPrimary>{introSentence}</BodyPrimary>
-    <StyledLink title="Learn more" data-event={ctaDataEventLabel} to={link}>
+    <StyledLink
+      title="Learn more"
+      data-event={ctaDataEventLabel || eventLabels.learnMoreCTA}
+      to={link}
+    >
       Learn more
     </StyledLink>
   </Padding>

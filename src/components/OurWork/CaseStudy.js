@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
+import Anchor from '../Common/Anchor'
 import { CardTitle, BodyPrimary } from '../Typography'
 import getIntroSentence from '../../utils/getIntroSentence'
-import Anchor from '../Common/Anchor'
+import eventLabels from '../../utils/eventLabels'
 
 const MobileOnlyCol = styled(Col)`
   ${breakpoint('smallTablet')`
@@ -73,7 +75,7 @@ const InfoSection = ({ introSentence, title, link }) => (
       aria-label={`Learn more about ${title}`}
       to={link}
       title={`Learn more about ${title}`}
-      data-event="learn-more-cta"
+      data-event={eventLabels.learnMoreCTA}
     >
       Learn more
     </StyledLink>

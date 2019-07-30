@@ -5,6 +5,7 @@ import breakpoint from 'styled-components-breakpoint'
 import { Row, Col, Grid } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import OpenPositions from '../Common/OpenPositions'
+import eventLabels from '../../utils/eventLabels'
 
 const StyledGrid = styled(Grid)`
   padding-bottom: ${({ theme }) => theme.space[7]};
@@ -27,7 +28,7 @@ const Jobs = () => (
           <StyledLink
             to="/join-us"
             title="Learn more"
-            data-event="learn-more-cta"
+            data-event={eventLabels.learnMoreCTA}
           >
             Learn more
           </StyledLink>
