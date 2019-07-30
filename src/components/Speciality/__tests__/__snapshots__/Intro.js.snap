@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro renders correctly 1`] = `
+<section
+  className="sc-jTzLTM kEjvE"
+>
+  <div
+    className="sc-jzJRlG joTOfB"
+  >
+    <div
+      className="sc-htpNat toUCL"
+    >
+      <div
+        className="sc-cSHVUG kneMEB"
+      >
+        <div
+          className="sc-bxivhb bNSQFJ"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <div
+            className="flex-citwDR iycZHW"
+          >
+            <h1
+              className="sc-EHOje kbeHcN"
+            >
+              Node.js
+            </h1>
+            <p
+              className="sc-iwsKbI jZrHPG"
+              muted={true}
+            >
+              Node.js is the fastest growing open source platform in the world. It empowers us to increase our iteration speed and the quality of our work, using a known language that underpins the entire web: JavaScript.
+            </p>
+          </div>
+        </div>
+        <div
+          className="sc-bxivhb bNSQFJ"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <img
+            alt="node"
+            className="sc-gqjmRU kBVRHJ"
+            style={
+              Object {
+                "maxHeight": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="sc-ifAKCX dJZmHe"
+      >
+        <div
+          className="sc-bxivhb dabrRZ"
+          width={
+            Array [
+              1,
+            ]
+          }
+        >
+          <div
+            className="sc-bwzfXH eXQzNB"
+          >
+            <h3
+              className="sc-gzVnrw ISMEH"
+            >
+              Why use Node.js?
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-bxivhb dabrRZ"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <div
+          className="sc-ifAKCX dJZmHe"
+        >
+          <div
+            className="sc-VigVT lamdPP sc-bxivhb ekqGfg"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.3333333333333333,
+              ]
+            }
+          >
+            <div
+              className="sc-fjdhpX ftlTcS"
+            >
+              <h3
+                className="sc-htoDjs bPZptn"
+              >
+                Performance
+              </h3>
+              <p
+                className="sc-iwsKbI cfIwHc"
+                muted={true}
+              >
+                Node.js allows us to manage high loads, making it perfect for handling peak demand.
+              </p>
+            </div>
+          </div>
+          <div
+            className="sc-VigVT lamdPP sc-bxivhb ekqGfg"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.3333333333333333,
+              ]
+            }
+          >
+            <div
+              className="sc-fjdhpX ftlTcS"
+            >
+              <h3
+                className="sc-htoDjs bPZptn"
+              >
+                Customer experience
+              </h3>
+              <p
+                className="sc-iwsKbI cfIwHc"
+                muted={true}
+              >
+                With Node.js we can manage very complex API layers and offer a seamless customer experience.
+              </p>
+            </div>
+          </div>
+          <div
+            className="sc-VigVT lamdPP sc-bxivhb ekqGfg"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.3333333333333333,
+              ]
+            }
+          >
+            <div
+              className="sc-fjdhpX ftlTcS"
+            >
+              <h3
+                className="sc-htoDjs bPZptn"
+              >
+                Productivity
+              </h3>
+              <p
+                className="sc-iwsKbI cfIwHc"
+                muted={true}
+              >
+                Developers love using Node.js and that’s reflected directly in their productivity and job satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

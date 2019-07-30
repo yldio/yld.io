@@ -1,6 +1,6 @@
 import React from 'react'
 import renderComponent from '../../../utils/tests/renderComponent'
-import CaseStudy from '../CaseStudy'
+import { CaseStudy, ServiceList } from '../CaseStudy'
 
 describe('CaseStudy', () => {
   it('renders correctly', () => {
@@ -17,6 +17,15 @@ describe('CaseStudy', () => {
     }
 
     const tree = renderComponent(<CaseStudy caseStudy={caseStudy} />)
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders ServiceList correctly', () => {
+    //should create 2 anchors and a text element with separators
+    const services = ['Engineering', 'Design', 'Untracked']
+    const tree = renderComponent(<ServiceList services={services} />)
+
     expect(tree).toMatchSnapshot()
   })
 })
