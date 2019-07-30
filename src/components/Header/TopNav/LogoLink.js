@@ -12,6 +12,7 @@ import {
   getIsServicePage,
   getService
 } from '../navLinksHelper'
+import theme from '../../../utils/theme'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
@@ -31,9 +32,15 @@ const LogoLink = ({ path = '/' }) => {
   const service = isSpecialityPage ? getService(path) : serviceTitle
   const speciality = isSpecialityPage ? getSpeciality(path) : null
 
-  let originalFillColor = isSpecialityPage
-    ? logoColors[service][speciality]
-    : logoColors['default']
+  let originalFillColor = theme.colors.white
+
+  if (isServicePage) {
+    originalFillColor = logoColors['default']
+  }
+  if (isSpecialityPage && logoColors[service][speciality]) {
+    originalFillColor = logoColors[service][speciality]
+  }
+
   const [fillColor, setFillColor] = useState(originalFillColor)
 
   return (
