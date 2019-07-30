@@ -18,6 +18,7 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
 import VideoSection from '../../components/Common/VideoSection'
+import getSocialLogo from '../../utils/getSocialLogo'
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -96,12 +97,14 @@ const IndexPage = ({
   data: { contentfulNonTemplatedCaseStudy: caseStudy, travel },
   location
 }) => {
+  const socialLogo = getSocialLogo({ ...caseStudy })
+
   return (
     <Layout location={location}>
       <Head
         page={{
           ...caseStudy,
-          socialLogo: (caseStudy.posterImage.file || {}).url
+          socialLogo
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
@@ -238,6 +241,11 @@ export const query = graphql`
       ...NonTemplatedCaseStudyRelated
       slug
       title
+      ogImageMeta {
+        file {
+          url
+        }
+      }
       posterImage {
         fluid(maxWidth: 550) {
           ...GatsbyContentfulFluid_withWebp

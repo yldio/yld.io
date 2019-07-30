@@ -22,6 +22,7 @@ import {
   TextColumnsBlock,
   BlockRow
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+import getSocialLogo from '../../utils/getSocialLogo'
 
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -60,12 +61,14 @@ const IndexPage = props => {
     relatedCaseStudy
   } = caseStudy
 
+  const socialLogo = getSocialLogo({ ...caseStudy })
+
   return (
     <Layout location={location}>
       <Head
         page={{
           ...caseStudy,
-          socialLogo: caseStudy.posterImage.file.url
+          socialLogo
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
@@ -304,6 +307,11 @@ export const query = graphql`
       title
       posterImage {
         title
+        file {
+          url
+        }
+      }
+      ogImageMeta {
         file {
           url
         }
