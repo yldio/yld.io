@@ -35,7 +35,6 @@ const StyledDisplayTitle = styled(DisplayTitle)`
 `
 
 const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
-
   <GreyBackground>
     <PaddedGrid>
       <Row>
@@ -46,7 +45,7 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
                 if (nodeType === 'text') return value
 
                 if (nodeType === 'hyperlink') {
-                  const label = content.content[0].value.split(' ').join('-')
+                  const label = content[0].value.split(' ').join('-')
 
                   const dataEvent = dataEvents && {
                     'data-event': `${dataEvents}-${label}`
