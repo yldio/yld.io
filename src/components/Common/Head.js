@@ -28,7 +28,15 @@ const Head = ({ page }) => {
         }`
 
         const description = page.seoMetaDescription || page.seoDescription
-        const imageUrl = page.socialLogo || `${siteUrl}${image}`
+
+        /**
+         * Contentful doesn't give us https: in the image urls so
+         * we have to prefix them here for twitter et al to pick
+         * up the image properly
+         */
+        const imageUrl = page.socialLogo
+          ? `https://${page.socialLogo}`
+          : `${siteUrl}${image}`
 
         return (
           <Helmet>
@@ -50,6 +58,7 @@ const Head = ({ page }) => {
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="yldio" />
+            <meta name="twitter:img" content={imageUrl} />
 
             <link rel="image_src" type="image/png" href={imageUrl} />
           </Helmet>

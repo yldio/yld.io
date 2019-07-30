@@ -4,6 +4,7 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../grid'
+import Anchor from '../Anchor'
 import Image from '../Image'
 
 const TextWrapper = styled.div`
@@ -35,19 +36,25 @@ const RowLayout = styled(Row)`
   `}
 `
 
+const AnchorWrapper = ({ to, children }) =>
+  to ? <Anchor to={to}>{children}</Anchor> : children
+
 // headings, textBelowImage & rightHandText should be sub-components (rather than a string, for example)
 const CaseStudyLayout = ({
   isTop = true,
   posterImage,
   headings,
   textBelowImage,
-  rightHandText
+  rightHandText,
+  link
 }) => (
   <Grid>
     <RowLayout isTop={isTop}>
       <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
       <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
-        <Image image={posterImage} width="100%" />
+        <AnchorWrapper to={link}>
+          <Image image={posterImage} width="100%" />
+        </AnchorWrapper>
       </Col>
       <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>
         <TextWrapper>{rightHandText}</TextWrapper>

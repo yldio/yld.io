@@ -5,15 +5,18 @@ import { Padding } from 'styled-components-spacing'
 
 import CaseStudyLayout from './CaseStudyLayout'
 import { SectionTitle, BodyPrimary } from '../../Typography'
+import Anchor from '../Anchor'
 import StyledLink from '../StyledLink'
 import getIntroSentence from '../../../utils/getIntroSentence'
 
-const Headings = ({ title, as }) => (
+const Headings = ({ title, as, link }) => (
   <Fragment>
     <BodyPrimary noPadding secondary>
       Featured work
     </BodyPrimary>
-    <SectionTitle as={as}>{title}</SectionTitle>
+    <Anchor to={link}>
+      <SectionTitle as={as}>{title}</SectionTitle>
+    </Anchor>
   </Fragment>
 )
 
@@ -22,8 +25,8 @@ const TextBelowImage = ({ introSentence, slug, ctaDataEventLabel }) => (
     <BodyPrimary>{introSentence}</BodyPrimary>
     <StyledLink
       title="Learn more"
-      to={`/case-study/${slug}`}
       data-event={ctaDataEventLabel}
+      to={link}
     >
       Learn more
     </StyledLink>
@@ -34,18 +37,18 @@ const RightHandText = ({
   title,
   introSentence,
   ctaDataEventLabel,
-  slug,
+  link,
   as
 }) => (
   <Fragment>
     <Padding bottom={0.5}>
-      <Headings as={as} title={title} />
+      <Headings as={as} title={title} link={link} />
     </Padding>
     <Padding bottom={1}>
       <TextBelowImage
         introSentence={introSentence}
         ctaDataEventLabel={ctaDataEventLabel}
-        slug={slug}
+        link={link}
       />
     </Padding>
   </Fragment>
@@ -58,16 +61,19 @@ const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
 
   const introSentence = getIntroSentence(caseStudy)
   const { posterImage, title, slug } = caseStudy
+  const caseStudyLink = `/case-study/${slug}`
+
   return (
     <CaseStudyLayout
       isTop={isTop}
+      link={caseStudyLink}
       posterImage={posterImage}
       headings={<Headings title={title} as={as} />}
       textBelowImage={
         <TextBelowImage
           ctaDataEventLabel={ctaDataEventLabel}
           introSentence={introSentence}
-          slug={slug}
+          link={caseStudyLink}
         />
       }
       rightHandText={
@@ -75,7 +81,7 @@ const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
           ctaDataEventLabel={ctaDataEventLabel}
           title={title}
           introSentence={introSentence}
-          slug={slug}
+          link={caseStudyLink}
           as={as}
         />
       }

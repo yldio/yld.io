@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
-import { format, isAfter, endOfYesterday } from 'date-fns'
+import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
@@ -17,6 +17,15 @@ import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 import eventLabels from '../utils/eventLabels'
 
+/**
+ * Importing fragments here to have them available to the entire
+ * GraphQL schema
+ */
+// eslint-disable-next-line no-unused-vars
+import { fragments } from '../fragments'
+
+const dateFormat = 'dddd[,] MMMM DD'
+
 const getHomepageMeetups = (events = []) =>
   events
     .filter(
@@ -26,8 +35,13 @@ const getHomepageMeetups = (events = []) =>
     .slice(0, 5)
     .map(n => ({
       ...n.node,
-      date: format(n.node.date, 'MMMM DD[,] dddd')
+      date: format(n.node.date, dateFormat)
     }))
+
+const getFeaturedEventDate = ({ node: { date, endTime } }) =>
+  !isSameDay(date, endTime) && isAfter(endTime, date)
+    ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
+    : format(date, dateFormat)
 
 const getHomepageConferences = (events = []) =>
   events
@@ -35,7 +49,7 @@ const getHomepageConferences = (events = []) =>
     .slice(0, 1)
     .map(n => ({
       ...n.node,
-      date: format(n.node.date, 'MMMM DD[,] dddd')
+      date: getFeaturedEventDate(n)
     }))
 
 const IndexPage = ({
@@ -219,6 +233,7 @@ export const query = graphql`
           id
           eventTitle
           date
+          endTime
           ctaText
           linkToEvent
           blurb {

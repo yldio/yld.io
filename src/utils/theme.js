@@ -65,7 +65,10 @@ const colorsVariables = {
   grey: '#e6e6e6',
   white: '#fff',
   opacityWhite: '#848194',
-  mediumGrey: '#757575'
+  mediumGrey: '#757575',
+  tan: '#a08162',
+  regalBlue: '#153d53',
+  mountainMeadow: '#14B48F'
 }
 
 export default {
@@ -95,6 +98,9 @@ export default {
     text: colorsVariables.black,
     secondaryText: colorsVariables.mediumGrey,
     placeholder: colorsVariables.mediumGrey,
-    textLight: colorsVariables.darkGrey
+    textLight: colorsVariables.darkGrey,
+    tanBg: colorsVariables.tan,
+    regalBlueBg: colorsVariables.regalBlue,
+    mountainMeadowBg: colorsVariables.mountainMeadow
   }
 }
