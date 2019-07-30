@@ -64,6 +64,7 @@ const StyledBlueBackground = styled(BlueBackground)`
 `
 
 const IntroRow = styled(Row)`
+  z-index: 1;
   padding-top: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('smallTablet')`
