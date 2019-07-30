@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClientTestimonial renders correctly 1`] = `
+<section
+  className="sc-gZMcBi fwbGBT"
+>
+  <div
+    className="sc-htpNat toUCL"
+  >
+    <div
+      className="sc-bwzfXH egEeOi"
+    >
+      <div
+        className="sc-bwzfXH bXntSd"
+      >
+        <div
+          className="sc-ifAKCX dJZmHe"
+        >
+          <div
+            className="sc-bxivhb ljCSNa"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.5,
+                0.5,
+                0.4166666666666667,
+              ]
+            }
+          >
+            <h2
+              className="sc-EHOje hObgUw"
+            >
+              Testimonial Video Title
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-fjdhpX gNHsWM"
+      >
+        <div
+          className="sc-bxivhb bXsrfg"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              0.8333333333333334,
+            ]
+          }
+        >
+          <div
+            className="sc-VigVT jFeVeN"
+            height={480}
+            width={854}
+          >
+            <iframe
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen={true}
+              className="sc-jTzLTM kxEMrN"
+              frameBorder="0"
+              src="https://www.youtube.com/watch?v=Jv5J6a7QJug"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

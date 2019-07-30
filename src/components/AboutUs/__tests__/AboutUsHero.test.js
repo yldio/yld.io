@@ -2,7 +2,7 @@ import React from 'react'
 import renderComponent from '../../../utils/tests/renderComponent'
 import AboutUsHero from '../AboutUsHero'
 
-describe('Intro', () => {
+describe('AboutUsHero', () => {
   it('renders correctly', () => {
     const statementText =
       'We’re a software engineering and design consultancy, helping you succeed by moving your team from a culture of delivery to a culture of learning.'
