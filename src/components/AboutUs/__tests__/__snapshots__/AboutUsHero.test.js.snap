@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro renders correctly 1`] = `
+<div
+  className="sc-htpNat toUCL"
+>
+  <div
+    className="sc-bwzfXH bWPNqi"
+  >
+    <div
+      className="sc-ifAKCX dJZmHe"
+    >
+      <div
+        className="sc-bwzfXH bXntSd"
+      >
+        <div
+          className="sc-bxivhb eDqrlH"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              1,
+              0.6666666666666666,
+              0.8333333333333334,
+              0.6666666666666666,
+            ]
+          }
+        >
+          <h1
+            className="sc-gzVnrw eYyxOG"
+          >
+            We’re a software engineering and design consultancy, helping you succeed by moving your team from a culture of delivery to a culture of learning.
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-ifAKCX dJZmHe"
+    >
+      <div
+        className="sc-EHOje jtjVwe sc-bxivhb ieaGqb"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="sc-bwzfXH gFuZoT"
+        >
+          <div
+            className="sc-VigVT kKPPLH"
+          >
+            <img
+              className="sc-bZQynM kgJRdo"
+              src="//images.ctfassets.net/22g1lenhck4z/3nY47YCXwddZVLJrujz7hR/bf332f4e48512cb3d284e382401d49a3/icon_outperform.svg"
+              width="50px"
+            />
+          </div>
+        </div>
+        <p
+          className="sc-gqjmRU cJxUtl"
+        >
+          Offering some of the best engineers and designers in Europe, we augment your talent and deliver solutions so that you out-perform in your market.
+        </p>
+      </div>
+      <div
+        className="sc-EHOje jtjVwe sc-bxivhb ieaGqb"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+            0.3333333333333333,
+          ]
+        }
+      >
+        <div
+          className="sc-bwzfXH gFuZoT"
+        >
+          <div
+            className="sc-VigVT kKPPLH"
+          >
+            <img
+              className="sc-bZQynM kgJRdo"
+              src="//images.ctfassets.net/22g1lenhck4z/2x8pYI2nw4JkmsY28MXyNG/fff47431227f3b10c26645cd2a8aa995/icon_continuous_innovation.svg"
+              width="50px"
+            />
+          </div>
+        </div>
+        <p
+          className="sc-gqjmRU cJxUtl"
+        >
+          With newly elevated skills and knowledge, you’re able to continuously innovate long after YLD’s involvement has ended.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
