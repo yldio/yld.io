@@ -15,6 +15,7 @@ import Events from '../components/Homepage/events/index'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
+import eventLabels from '../utils/eventLabels'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -61,8 +62,15 @@ const IndexPage = ({
   return (
     <Layout location={location}>
       <Head page={content} />
-      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
-      <Statement richText={content.seoText.content[0].content} />
+      <CaseStudyPreview
+        as="h1"
+        caseStudy={content.featuredCaseStudy}
+        ctaDataEventLabel={eventLabels.homepageCaseStudyCTA}
+      />
+      <Statement
+        richText={content.seoText.content[0].content}
+        dataEvents={eventLabels.homepageStatementService}
+      />
       <GreyBackground>
         <Grid>
           <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>

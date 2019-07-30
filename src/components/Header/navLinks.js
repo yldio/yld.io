@@ -1,3 +1,5 @@
+import eventLabels from '../../utils/eventLabels'
+
 const navLinks = [
   {
     label: 'Services',
@@ -14,7 +16,10 @@ const navLinks = [
         label: 'Training',
         to: '/training/'
       }
-    ]
+    ],
+    attributes: {
+      dataEvent: eventLabels.navigationServices
+    }
   },
   {
     label: 'Our work',
@@ -26,7 +31,10 @@ const navLinks = [
   },
   {
     label: 'Blog',
-    to: '/blog/'
+    to: '/blog/',
+    attributes: {
+      'data-event': eventLabels.navigationBlog
+    }
   },
   {
     label: 'About',

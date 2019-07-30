@@ -39,20 +39,26 @@ const SideNavPanel = styled.nav`
 
 const SideNavItem = ({ item, path }) => {
   if (item.dropdownItems) {
-    const { label, dropdownItems } = item
+    const { label, dropdownItems, attributes } = item
+
     return (
-      <Dropdown items={dropdownItems} path={path}>
+      <Dropdown
+        items={dropdownItems}
+        path={path}
+        dataEvent={attributes ? attributes.dataEvent : null}
+      >
         {label}
       </Dropdown>
     )
   } else {
-    const { label, to, href } = item
+    const { label, to, href, attributes } = item
     return (
       <OuterAnchorItem
         activeClassName="active"
         to={to}
         href={href}
         label={label}
+        attributes={attributes}
       />
     )
   }
