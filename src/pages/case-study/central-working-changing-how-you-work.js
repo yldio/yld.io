@@ -25,6 +25,7 @@ import {
 
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
+import getSocialLogo from '../../utils/getSocialLogo'
 
 const Block3Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -111,12 +112,14 @@ const IndexPage = props => {
   const outComesDataText = normalise(data2, 0).text
   const outComesDataFigures = normaliseAll(data2.slice(1))
 
+  const socialLogo = getSocialLogo({ ...caseStudy })
+
   return (
     <Layout location={location} contactUsBg={'greyBg'}>
       <Head
         page={{
           ...caseStudy,
-          socialLogo: caseStudy.posterImage.file.url
+          socialLogo
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
@@ -361,6 +364,11 @@ export const query = graphql`
       title
       posterImage {
         title
+        file {
+          url
+        }
+      }
+      ogImageMeta {
         file {
           url
         }
