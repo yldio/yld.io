@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subsidiaries renders correctly 1`] = `
+<section
+  className="sc-htpNat kTITTC"
+>
+  <div
+    className="sc-ifAKCX fNdEAU"
+  >
+    <div
+      className="sc-bwzfXH egEeOi"
+    >
+      <div
+        className="sc-bwzfXH bXntSd"
+      >
+        <h2
+          className="sc-gzVnrw fVwVDk"
+        >
+          Subsidiary list
+        </h2>
+      </div>
+      <div
+        className="sc-bZQynM bpRocm"
+      >
+        <div
+          className="sc-jzJRlG eJgUio sc-EHOje hrXkuj"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              1,
+              0.5,
+            ]
+          }
+        >
+          <div
+            className="sc-jzJRlG eJgUio sc-EHOje gpWbXn"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                1,
+                0.8333333333333334,
+              ]
+            }
+          >
+            <img
+              className="sc-bxivhb jCFvnb"
+              src="img1.jpg"
+              width="250px"
+            />
+            <p
+              className="sc-gqjmRU dWgBql"
+              muted={true}
+            />
+            <a
+              className="sc-fjdhpX iUQXyR"
+              href="https://www.subs1.com"
+              onClick={[Function]}
+              rel="noopener noreferrer"
+              reverse={true}
+              target="_blank"
+            >
+              Subs1
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
