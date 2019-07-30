@@ -38,6 +38,7 @@ const OuterAnchorItem = ({
   href,
   activeClassName,
   onClick,
+  attributes,
   ...props
 }) => (
   <StyledListItem {...props}>
@@ -47,6 +48,7 @@ const OuterAnchorItem = ({
       activeClassName={activeClassName}
       onClick={onClick}
       title={label}
+      {...attributes}
     >
       {label}
     </StyledAnchor>

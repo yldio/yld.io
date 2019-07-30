@@ -135,7 +135,7 @@ export default class Dropdown extends PureComponent {
   }
 
   render() {
-    const { items, themeVariation, children } = this.props
+    const { items, themeVariation, children, dataEvent } = this.props
     const { isExpanded, clicked } = this.state
 
     return (
@@ -155,7 +155,7 @@ export default class Dropdown extends PureComponent {
           clicked={clicked}
           themeVariation={themeVariation}
         >
-          <DropdownName>{children}</DropdownName>
+          <DropdownName data-event={dataEvent}>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
