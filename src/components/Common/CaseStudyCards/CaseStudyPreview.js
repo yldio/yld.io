@@ -20,14 +20,10 @@ const Headings = ({ title, as, link }) => (
   </Fragment>
 )
 
-const TextBelowImage = ({ introSentence, slug, ctaDataEventLabel }) => (
+const TextBelowImage = ({ introSentence, link, ctaDataEventLabel }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <BodyPrimary>{introSentence}</BodyPrimary>
-    <StyledLink
-      title="Learn more"
-      data-event={ctaDataEventLabel}
-      to={link}
-    >
+    <StyledLink title="Learn more" data-event={ctaDataEventLabel} to={link}>
       Learn more
     </StyledLink>
   </Padding>
