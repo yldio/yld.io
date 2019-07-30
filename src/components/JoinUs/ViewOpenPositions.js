@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
-import FakeLink from '../Common/StyledLink'
+import { FakeLink } from '../Common/StyledLink'
 
 const FixedWidthBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(525)};
