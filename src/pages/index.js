@@ -1,26 +1,18 @@
-import React, { useState } from 'react'
-import { graphql, Link } from 'gatsby'
+import React from 'react'
+import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-
-import { Grid, Row, Col } from '../components/grid'
+import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-// import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import StyledLink from '../components/Common/StyledLink'
-import Image from '../components/Common/Image'
 import GreyBackground from '../components/Common/GreyBackground'
-import BlueBackground from '../components/Common/BlueBackground'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
+import Intro from '../components/Homepage/Intro'
 import Events from '../components/Homepage/events/index'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
-import eventLabels from '../utils/eventLabels'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -58,140 +50,6 @@ const getHomepageConferences = (events = []) =>
       date: getFeaturedEventDate(n)
     }))
 
-const StyledBlueBackground = styled(BlueBackground)`
-  margin-top: -${remcalc(36)};
-  position: relative;
-`
-
-const IntroRow = styled(Row)`
-  z-index: 1;
-  padding-top: ${({ theme }) => theme.space[4]};
-  position: relative;
-
-  ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[5]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
-  `}
-
-  ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[7]};
-  `}
-`
-
-const StyledCardTitle = styled(CardTitle)`
-  display: inline-block;
-  text-decoration: underline;
-`
-
-const IntroLinkWrapper = styled.div`
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[4]};
-  `}
-`
-
-const IntroSectionTitleWrapper = styled.div`
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[4]};
-  `}
-`
-
-const IntroImageWrapper = styled.div`
-  width: 100%;
-  
-  ${breakpoint('smallPhone', 'smallTablet')`
-    width: 135%;
-    margin-top: -30%;
-  `}
-
-  ${breakpoint('smallTablet')`
-    bottom: 0;
-    left: 50%;
-    right: 0;
-    position: absolute;
-    width: 1000px;
-  `}
-
-  ${breakpoint('tablet')`
-    width: 1500px;
-  `}
-`
-
-const IntroImageDesktop = styled(Image)`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-      left: -50%;
-      display: block;
-  `}
-
-  ${breakpoint('desktop')`
-      left: calc(-50% + 60px);
-  `}
-`
-
-const IntroImageMobile = styled(Image)`
-  ${breakpoint('smallTablet')`
-      display: none;
-  `}
-`
-
-const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
-  const [first, toggle] = useState(true)
-
-  const introCopy = first
-    ? "We're a technology company that builds great technology  companies"
-    : 'Creating technology capabilities for you, that lasts beyond us.'
-
-  return (
-    <StyledBlueBackground>
-      <Grid>
-        <IntroRow>
-          <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
-            <IntroSectionTitleWrapper>
-              <SectionTitle reverse as="h1">
-                {introCopy}
-              </SectionTitle>
-            </IntroSectionTitleWrapper>
-            <Subtitle reverse muted>
-              Consultancy services we offer
-            </Subtitle>
-            <IntroLinkWrapper>
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/engineering">
-                Software engineering
-              </StyledCardTitle>
-              <br />
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
-                Digital product design
-              </StyledCardTitle>
-              <br />
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
-                Training programs
-              </StyledCardTitle>
-            </IntroLinkWrapper>
-            <StyledLink
-              reverse
-              vibrant
-              to="/our-work"
-              onClick={() => toggle(!first)}
-            >
-              See our work
-            </StyledLink>
-          </Col>
-        </IntroRow>
-      </Grid>
-      <IntroImageWrapper>
-        {illustrationDesktop && (
-          <IntroImageDesktop image={illustrationDesktop.childImageSharp} />
-        )}{' '}
-        {illustrationMobile && (
-          <IntroImageMobile image={illustrationMobile.childImageSharp} />
-        )}{' '}
-      </IntroImageWrapper>
-    </StyledBlueBackground>
-  )
-}
-
 const IndexPage = ({ data, location }) => {
   const {
     illustrationMobile,
@@ -206,7 +64,7 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <IntroSection
+      <Intro
         illustrationDesktop={illustrationDesktop}
         illustrationMobile={illustrationMobile}
       />
