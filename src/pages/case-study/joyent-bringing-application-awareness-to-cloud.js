@@ -15,6 +15,8 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
 
+import getSocialLogo from '../../utils/getSocialLogo'
+
 const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
   ${breakpoint('smallTablet')`
@@ -90,12 +92,14 @@ const IndexPage = ({
     topology
   }
 }) => {
+  const socialLogo = getSocialLogo({ ...caseStudy })
+
   return (
     <Layout>
       <Head
         page={{
           ...caseStudy,
-          socialLogo: (caseStudy.posterImage.file || {}).url
+          socialLogo
         }}
       />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
@@ -411,6 +415,11 @@ export const query = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
         title
+        file {
+          url
+        }
+      }
+      ogImageMeta {
         file {
           url
         }
