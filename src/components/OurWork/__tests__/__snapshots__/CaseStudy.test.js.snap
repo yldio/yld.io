@@ -106,6 +106,7 @@ exports[`<CaseStudy /> renders correctly 1`] = `
     <a
       aria-label="Learn more about Example Case Study"
       class="sc-bZQynM gofqbW"
+      data-event="learn-more-cta"
       href="/case-study/reinforcing-the-Thomas-Cook-architecture"
       title="Learn more about Example Case Study"
     >
@@ -128,6 +129,7 @@ exports[`<CaseStudy /> renders correctly 1`] = `
     <a
       aria-label="Learn more about Example Case Study"
       class="sc-bZQynM gofqbW"
+      data-event="learn-more-cta"
       href="/case-study/reinforcing-the-Thomas-Cook-architecture"
       title="Learn more about Example Case Study"
     >

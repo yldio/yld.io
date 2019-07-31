@@ -34,6 +34,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             >
               <button
                 class="sc-fjdhpX dTgqKF"
+                data-event="about-team-executive"
               >
                 <h3
                   class="sc-jTzLTM ZyBYu"
@@ -47,6 +48,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             >
               <button
                 class="sc-fjdhpX dJqnNu"
+                data-event="about-team-client"
               >
                 <h3
                   class="sc-jTzLTM kgdgDb"
