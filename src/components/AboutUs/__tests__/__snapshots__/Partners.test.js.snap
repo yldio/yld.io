@@ -60,8 +60,8 @@ exports[`<Partners /> renders correctly 1`] = `
         width="0.5,0.5,0.5,0.5,0.3333333333333333,0.25"
       >
         <img
+          alt="another partner"
           class="sc-gZMcBi dhwgne"
-          src="img3.jpg"
           style="filter: grayscale(1);"
           title="another partner"
         />
