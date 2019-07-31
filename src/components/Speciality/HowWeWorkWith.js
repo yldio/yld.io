@@ -8,16 +8,16 @@ import { SectionTitle, BodyPrimary } from '../Typography'
 import Hr from '../Common/Hr'
 
 const StyledRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[5]};
+    padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
     `}
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
+    padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
