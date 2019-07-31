@@ -22,7 +22,7 @@ export const PosterImage = styled(Flex)`
   > img {
     align-self: center;
     justify-self: center;
-    max-width: 100%
+    max-width: 100%;
     width: 100%;
   }
 `
