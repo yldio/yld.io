@@ -10,7 +10,7 @@ import GetInTouch from '../components/Common/GetInTouch'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Discipline } from '../components/CareerFramework'
-import FakeLink from '../components/Common/StyledLink'
+import { FakeLink } from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
 import Head from '../components/Common/Head'
 
