@@ -110,7 +110,9 @@ const Services = ({ services }) => (
                   <StyledLink
                     to={`/${service.slug}`}
                     title={`Learn more about our ${service.title} service`}
-                    data-event={eventLabels.learnMoreCTA}
+                    data-event={`${eventLabels.homepageLearnMore}-${
+                      service.title
+                    }`}
                   >
                     Learn more
                   </StyledLink>
