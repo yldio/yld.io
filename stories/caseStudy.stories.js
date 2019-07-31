@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview'
-import CaseStudyLayout from '../src/components/Common/CaseStudyCards/CaseStudyLayout'
 
 const TrainlineCaseStudy = {
   title: 'Future-proofing Trainline',
@@ -35,15 +34,6 @@ const TrainlineCaseStudy = {
 
 addDecorator(Theme)
 
-storiesOf('CaseStudy', module)
-  .add('CaseStudyPreview', () => (
-    <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
-  ))
-  .add('CaseStudyLayout', () => (
-    <CaseStudyLayout
-      headings={'Headings'}
-      textBelowImage={'textBelowImage'}
-      rightHandText={'RightText'}
-      posterImage={TrainlineCaseStudy.posterImage}
-    />
-  ))
+storiesOf('CaseStudy', module).add('CaseStudyPreview', () => (
+  <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
+))
