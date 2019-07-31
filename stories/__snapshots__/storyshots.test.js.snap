@@ -2861,6 +2861,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
             </p>
             <a
               className="c14"
+              data-event="learn-more-cta"
               href="/case-study/future-proofing-trainline"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -2894,6 +2895,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         </p>
         <a
           className="c14"
+          data-event="learn-more-cta"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
           onMouseEnter={[Function]}
