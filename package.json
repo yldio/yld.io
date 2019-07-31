@@ -41,7 +41,7 @@
     "react": "16.8.1",
     "react-dom": "16.8.1",
     "react-grid-debugger": "^1.0.1",
-    "react-helmet": "5.2.0",
+    "react-helmet": "^5.2.1",
     "react-hotjar": "^2.0.0",
     "react-markdown": "^4.0.6",
     "react-scroll-to-component": "^1.0.2",

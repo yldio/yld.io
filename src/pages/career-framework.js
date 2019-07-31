@@ -17,6 +17,11 @@ import Head from '../components/Common/Head'
 const DisciplineTitle = styled(FakeLink)`
   margin-right: ${({ theme }) => theme.space[4]};
   cursor: pointer;
+  -webkit-appearance: none;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
 `
 
 const StyledIntroHeaderCol = styled(Col)`
@@ -84,6 +89,7 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
                 disciplineTitles.map((title, idx) => (
                   <DisciplineTitle
                     role="tab"
+                    as="button"
                     aria-selected={currentDiscipline === title}
                     aria-controls={`panel-${title}`}
                     id={`discipline-tab-${idx}`}
