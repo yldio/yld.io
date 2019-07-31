@@ -108,6 +108,20 @@ export const pageQuery = graphql`
             }
           }
         }
+        ... on ContentfulNonTemplatedCaseStudyV2 {
+          title
+          slug
+          posterColor
+          introSentence {
+            introSentence
+          }
+          posterImage {
+            title
+            file {
+              url
+            }
+          }
+        }
       }
       clients {
         id
