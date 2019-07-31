@@ -14,7 +14,6 @@ import StyledLink from '../components/Common/StyledLink'
 import Image from '../components/Common/Image'
 import GreyBackground from '../components/Common/GreyBackground'
 import BlueBackground from '../components/Common/BlueBackground'
-import Statement from '../components/Common/Statement'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
 import Events from '../components/Homepage/events/index'
@@ -61,11 +60,13 @@ const getHomepageConferences = (events = []) =>
 
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(36)};
+  position: relative;
 `
 
 const IntroRow = styled(Row)`
   z-index: 1;
   padding-top: ${({ theme }) => theme.space[4]};
+  position: relative;
 
   ${breakpoint('smallTablet')`
     padding-top: ${({ theme }) => theme.space[5]};
@@ -97,8 +98,13 @@ const IntroSectionTitleWrapper = styled.div`
 
 const IntroImageWrapper = styled.div`
   width: 100%;
+  
+  ${breakpoint('smallPhone', 'smallTablet')`
+    width: 135%;
+    margin-top: -30%;
+  `}
 
-  ${breakpoint('phone')`
+  ${breakpoint('smallTablet')`
     bottom: 0;
     left: 50%;
     right: 0;
@@ -106,7 +112,7 @@ const IntroImageWrapper = styled.div`
     width: 1000px;
   `}
 
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
     width: 1500px;
   `}
 `
@@ -114,14 +120,18 @@ const IntroImageWrapper = styled.div`
 const IntroImageDesktop = styled(Image)`
   display: none;
 
-  ${breakpoint('phone')`
+  ${breakpoint('smallTablet')`
       left: -50%;
       display: block;
+  `}
+
+  ${breakpoint('desktop')`
+      left: calc(-50% + 60px);
   `}
 `
 
 const IntroImageMobile = styled(Image)`
-  ${breakpoint('phone')`
+  ${breakpoint('smallTablet')`
       display: none;
   `}
 `
@@ -134,9 +144,9 @@ const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
     : 'Creating technology capabilities for you, that lasts beyond us.'
 
   return (
-    <StyledBlueBackground style={{ position: 'relative' }}>
+    <StyledBlueBackground>
       <Grid>
-        <IntroRow style={{ position: 'relative' }}>
+        <IntroRow>
           <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
             <IntroSectionTitleWrapper>
               <SectionTitle reverse as="h1">
@@ -200,10 +210,12 @@ const IndexPage = ({ data, location }) => {
         illustrationDesktop={illustrationDesktop}
         illustrationMobile={illustrationMobile}
       />
-      <Statement richText={content.seoText.content[0].content} />
       <GreyBackground>
         <Grid>
-          <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>
+          <Padding
+            top={{ smallPhone: 3, smallTablet: 4.5 }}
+            bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}
+          >
             <LogoGrid companies={content.companies} />
           </Padding>
         </Grid>
