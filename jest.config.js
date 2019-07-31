@@ -21,5 +21,9 @@ module.exports = {
   setupFiles: [
     '<rootDir>/.jest/registerContext.js',
     '<rootDir>/.jest/loaderShim.js'
+  ],
+  setupFilesAfterEnv: [
+    '@testing-library/react/cleanup-after-each',
+    '@testing-library/jest-dom/extend-expect'
   ]
 }

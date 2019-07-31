@@ -1,0 +1,577 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Teams /> allows the user to change tabs 1`] = `
+<section
+  class="sc-cSHVUG fqoGmG"
+>
+  <div
+    class="sc-htpNat toUCL"
+  >
+    <div
+      class="sc-bwzfXH NFpCV"
+    >
+      <div
+        class="sc-bwzfXH jtBXGl"
+      >
+        <h2
+          class="sc-EHOje hObgUw"
+        >
+          Our teams
+        </h2>
+      </div>
+      <div
+        class="sc-ifAKCX dJZmHe"
+      >
+        <div
+          class="sc-bxivhb dabrRZ"
+          width="1"
+        >
+          <ul
+            class="sc-jzJRlG lcmWQN"
+          >
+            <li
+              class="sc-VigVT iuqzRG"
+            >
+              <button
+                class="sc-fjdhpX dTgqKF"
+              >
+                <h3
+                  class="sc-jTzLTM ZyBYu"
+                >
+                  Executive
+                </h3>
+              </button>
+            </li>
+            <li
+              class="sc-VigVT iuqzRG"
+            >
+              <button
+                class="sc-fjdhpX dJqnNu"
+              >
+                <h3
+                  class="sc-jTzLTM kgdgDb"
+                >
+                  Client
+                </h3>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sc-bxivhb inplxz"
+        />
+      </div>
+      <div
+        class="sc-bwzfXH iFpCpg"
+      >
+        <div
+          class="sc-ifAKCX dJZmHe"
+        >
+          <div
+            class="sc-bxivhb kAVjsC"
+            data-testid="staff-card-0"
+            width="1,1,1,1,0.5,0.3333333333333333"
+          >
+            <div
+              class="sc-bwzfXH eyRolI"
+            >
+              <div
+                class="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  class="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                class="sc-htoDjs hHzTme"
+              >
+                Nuno Job
+              </h3>
+              <div
+                class="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  class="sc-htoDjs lnaRzG"
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                class="sc-kpOJdX ePdNNx"
+              />
+              <div
+                class="sc-kGXeez kKXJK"
+              >
+                <a
+                  class="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    class="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb kAVjsC"
+            data-testid="staff-card-1"
+            width="1,1,1,1,0.5,0.3333333333333333"
+          >
+            <div
+              class="sc-bwzfXH eyRolI"
+            >
+              <div
+                class="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  class="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                class="sc-htoDjs hHzTme"
+              >
+                Anthony Mann
+              </h3>
+              <div
+                class="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  class="sc-htoDjs lnaRzG"
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                class="sc-kpOJdX ePdNNx"
+              />
+              <div
+                class="sc-kGXeez kKXJK"
+              >
+                <a
+                  class="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    class="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Teams renders correctly 1`] = `
+<section
+  className="sc-cSHVUG fqoGmG"
+>
+  <div
+    className="sc-htpNat toUCL"
+  >
+    <div
+      className="sc-bwzfXH NFpCV"
+    >
+      <div
+        className="sc-bwzfXH jtBXGl"
+      >
+        <h2
+          className="sc-EHOje hObgUw"
+        >
+          Our teams
+        </h2>
+      </div>
+      <div
+        className="sc-ifAKCX dJZmHe"
+      >
+        <div
+          className="sc-bxivhb dabrRZ"
+          width={1}
+        >
+          <ul
+            className="sc-jzJRlG lcmWQN"
+          >
+            <li
+              className="sc-VigVT iuqzRG"
+            >
+              <button
+                className="sc-fjdhpX dTgqKF"
+                onClick={[Function]}
+              >
+                <h3
+                  className="sc-jTzLTM ZyBYu"
+                  muted={false}
+                >
+                  Executive
+                </h3>
+              </button>
+            </li>
+            <li
+              className="sc-VigVT iuqzRG"
+            >
+              <button
+                className="sc-fjdhpX dJqnNu"
+                onClick={[Function]}
+              >
+                <h3
+                  className="sc-jTzLTM kgdgDb"
+                  muted={true}
+                >
+                  Client
+                </h3>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="sc-bxivhb inplxz"
+        />
+      </div>
+      <div
+        className="sc-bwzfXH iFpCpg"
+      >
+        <div
+          className="sc-ifAKCX dJZmHe"
+        >
+          <div
+            className="sc-bxivhb kAVjsC"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.5,
+                0.3333333333333333,
+              ]
+            }
+          >
+            <div
+              className="sc-bwzfXH eyRolI"
+            >
+              <div
+                className="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  className="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                className="sc-htoDjs hHzTme"
+              >
+                Nuno Job
+              </h3>
+              <div
+                className="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  className="sc-htoDjs lnaRzG"
+                  muted={true}
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                className="sc-kpOJdX ePdNNx"
+              />
+              <div
+                className="sc-kGXeez kKXJK"
+              >
+                <a
+                  className="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  onClick={[Function]}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    className="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-bxivhb kAVjsC"
+            width={
+              Array [
+                1,
+                1,
+                1,
+                1,
+                0.5,
+                0.3333333333333333,
+              ]
+            }
+          >
+            <div
+              className="sc-bwzfXH eyRolI"
+            >
+              <div
+                className="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  className="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                className="sc-htoDjs hHzTme"
+              >
+                Anthony Mann
+              </h3>
+              <div
+                className="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  className="sc-htoDjs lnaRzG"
+                  muted={true}
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                className="sc-kpOJdX ePdNNx"
+              />
+              <div
+                className="sc-kGXeez kKXJK"
+              >
+                <a
+                  className="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  onClick={[Function]}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    className="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`allows the user to change tabs 1`] = `
+<section
+  class="sc-cSHVUG fqoGmG"
+>
+  <div
+    class="sc-htpNat toUCL"
+  >
+    <div
+      class="sc-bwzfXH NFpCV"
+    >
+      <div
+        class="sc-bwzfXH jtBXGl"
+      >
+        <h2
+          class="sc-EHOje hObgUw"
+        >
+          Our teams
+        </h2>
+      </div>
+      <div
+        class="sc-ifAKCX dJZmHe"
+      >
+        <div
+          class="sc-bxivhb dabrRZ"
+          width="1"
+        >
+          <ul
+            class="sc-jzJRlG lcmWQN"
+          >
+            <li
+              class="sc-VigVT iuqzRG"
+            >
+              <button
+                class="sc-fjdhpX dTgqKF"
+              >
+                <h3
+                  class="sc-jTzLTM ZyBYu"
+                >
+                  Executive
+                </h3>
+              </button>
+            </li>
+            <li
+              class="sc-VigVT iuqzRG"
+            >
+              <button
+                class="sc-fjdhpX dJqnNu"
+              >
+                <h3
+                  class="sc-jTzLTM kgdgDb"
+                >
+                  Client
+                </h3>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sc-bxivhb inplxz"
+        />
+      </div>
+      <div
+        class="sc-bwzfXH iFpCpg"
+      >
+        <div
+          class="sc-ifAKCX dJZmHe"
+        >
+          <div
+            class="sc-bxivhb kAVjsC"
+            data-testid="staff-card-0"
+            width="1,1,1,1,0.5,0.3333333333333333"
+          >
+            <div
+              class="sc-bwzfXH eyRolI"
+            >
+              <div
+                class="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  class="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                class="sc-htoDjs hHzTme"
+              >
+                Nuno Job
+              </h3>
+              <div
+                class="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  class="sc-htoDjs lnaRzG"
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                class="sc-kpOJdX ePdNNx"
+              />
+              <div
+                class="sc-kGXeez kKXJK"
+              >
+                <a
+                  class="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    class="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-bxivhb kAVjsC"
+            data-testid="staff-card-1"
+            width="1,1,1,1,0.5,0.3333333333333333"
+          >
+            <div
+              class="sc-bwzfXH eyRolI"
+            >
+              <div
+                class="sc-bwzfXH jtBXGl"
+              >
+                <img
+                  class="sc-chPdSV leCFpY"
+                  src="img1.jpg"
+                  width="100%"
+                />
+              </div>
+              <h3
+                class="sc-htoDjs hHzTme"
+              >
+                Anthony Mann
+              </h3>
+              <div
+                class="sc-bwzfXH kSnLsz"
+              >
+                <h3
+                  class="sc-htoDjs lnaRzG"
+                >
+                  Co-founder & Chief Executive Officer - YLD
+                </h3>
+              </div>
+              <p
+                class="sc-kpOJdX ePdNNx"
+              />
+              <div
+                class="sc-kGXeez kKXJK"
+              >
+                <a
+                  class="sc-kgoBCf fSowWp"
+                  href="https://www.linkedin.com/in/nunojob/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Nuno Job Linkedin account"
+                >
+                  <img
+                    alt="Nuno Job Linkedin"
+                    class="sc-chPdSV hoLgGD"
+                    height="24px"
+                    src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+                    width="24px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -58,9 +58,16 @@ const SocialLinks = ({ data }) => {
   ) : null
 }
 
-const StaffCard = ({ name, image, role, description, socialLinks = [] }) => {
+const StaffCard = ({
+  name,
+  image,
+  role,
+  description,
+  socialLinks = [],
+  ...props
+}) => {
   return (
-    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
+    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]} {...props}>
       <Padding bottom={{ smallPhone: 3, smallTablet: 3.5, tablet: 5 }}>
         <Padding bottom={2}>
           <Image image={image} width="100%" />
