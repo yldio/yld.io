@@ -1,112 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClientTestimonial renders correctly 1`] = `
+exports[`<Partners /> renders correctly 1`] = `
 <div
-  className="sc-htpNat toUCL"
+  class="sc-htpNat toUCL"
 >
   <div
-    className="sc-bwzfXH egEeOi"
+    class="sc-bwzfXH egEeOi"
   >
     <div
-      className="sc-bwzfXH bXntSd"
+      class="sc-bwzfXH bXntSd"
     >
       <h2
-        className="sc-EHOje hObgUw"
+        class="sc-EHOje hObgUw"
       >
         Technology partnerships
       </h2>
     </div>
     <div
-      className="sc-ifAKCX dJZmHe"
+      class="sc-ifAKCX dJZmHe"
     >
       <div
-        className="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
+        class="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
+        width="0.5,0.5,0.5,0.5,0.3333333333333333,0.25"
       >
         <a
           href="https://foundation.nodejs.org/"
-          onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
           title="nodeJS"
         >
           <img
-            className="sc-gZMcBi eFAVvK"
+            class="sc-gZMcBi eFAVvK"
             src="img1.jpg"
-            style={
-              Object {
-                "filter": "grayscale(1)",
-                "saturate": "0",
-              }
-            }
+            style="filter: grayscale(1);"
             width="250px"
           />
         </a>
       </div>
       <div
-        className="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
+        class="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
+        width="0.5,0.5,0.5,0.5,0.3333333333333333,0.25"
       >
         <a
           href="https://aws.amazon.com/pt/"
-          onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
           title="aws"
         >
           <img
-            className="sc-gZMcBi eFAVvK"
+            class="sc-gZMcBi eFAVvK"
             src="img2.jpg"
-            style={
-              Object {
-                "filter": "grayscale(1)",
-                "saturate": "0",
-              }
-            }
+            style="filter: grayscale(1);"
             width="250px"
           />
         </a>
       </div>
       <div
-        className="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
-        width={
-          Array [
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.3333333333333333,
-            0.25,
-          ]
-        }
+        class="sc-gqjmRU jgkcLp sc-bxivhb bvhjTU"
+        width="0.5,0.5,0.5,0.5,0.3333333333333333,0.25"
       >
         <img
-          className="sc-gZMcBi dhwgne"
+          class="sc-gZMcBi dhwgne"
           src="img3.jpg"
-          style={
-            Object {
-              "filter": "grayscale(1)",
-              "saturate": "0",
-            }
-          }
+          style="filter: grayscale(1);"
           title="another partner"
         />
       </div>

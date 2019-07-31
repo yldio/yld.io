@@ -1,31 +1,20 @@
 import React from 'react'
-import renderComponent from '../../../utils/tests/renderComponent'
+import { render } from '../../../utils/tests/test-utils'
 import { CaseStudy, ServiceList } from '../CaseStudy'
+import { caseStudy } from './__fixtures__'
 
-describe('CaseStudy', () => {
+describe('<CaseStudy />', () => {
   it('renders correctly', () => {
-    const caseStudy = {
-      title: 'Example Case Study',
-      services: ['Engineering', 'Design'],
-      posterImage: {
-        title: 'example',
-        file:
-          'https://images.ctfassets.net/22g1lenhck4z/4M3h74EWpWw8AosOCIemoc/e13a13eefedf4ecd5edf26b596d2b3e0/thomas_cook_export.svg'
-      },
-      slug: 'reinforcing-the-Thomas-Cook-architecture',
-      introSentence: 'This is a case-study example'
-    }
+    const { container } = render(<CaseStudy caseStudy={caseStudy} />)
 
-    const tree = renderComponent(<CaseStudy caseStudy={caseStudy} />)
-
-    expect(tree).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('renders ServiceList correctly', () => {
     //should create 2 anchors and a text element with separators
     const services = ['Engineering', 'Design', 'Untracked']
-    const tree = renderComponent(<ServiceList services={services} />)
+    const { container } = render(<ServiceList services={services} />)
 
-    expect(tree).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

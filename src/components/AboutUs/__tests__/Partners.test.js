@@ -1,43 +1,15 @@
 import React from 'react'
-import renderComponent from '../../../utils/tests/renderComponent'
+import { render } from '../../../utils/tests/test-utils'
 import Partners from '../Partners'
+import { partners } from './__fixtures__'
 
-describe('ClientTestimonial', () => {
+describe('<Partners />', () => {
   it('renders correctly', () => {
-    const title = 'Technology partnerships'
-    const partners = [
-      {
-        id: 0,
-        title: 'nodeJS',
-        url: 'https://foundation.nodejs.org/',
-        image: {
-          file: {
-            url: 'img1.jpg'
-          }
-        }
-      },
-      {
-        id: 1,
-        title: 'aws',
-        url: 'https://aws.amazon.com/pt/',
-        image: {
-          file: {
-            url: 'img2.jpg'
-          }
-        }
-      },
-      {
-        id: 2,
-        title: 'another partner',
-        image: {
-          file: {
-            url: 'img3.jpg'
-          }
-        }
-      }
-    ]
-    const tree = renderComponent(<Partners title={title} partners={partners} />)
+    const { title, partnerList } = partners
+    const { container } = render(
+      <Partners title={title} partners={partnerList} />
+    )
 
-    expect(tree).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

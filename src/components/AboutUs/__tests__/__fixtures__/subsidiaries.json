@@ -1,0 +1,16 @@
+{
+  "title": "Subsidiary list",
+  "subsidiaries": [
+    {
+      "image": {
+        "file": {
+          "title": "subsidiary1",
+          "url": "img1.jpg"
+        }
+      },
+      "description": "this is a subsidiary",
+      "linkUrl": "https://www.subs1.com",
+      "linkText": "Subs1"
+    }
+  ]
+}

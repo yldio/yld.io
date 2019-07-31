@@ -17,7 +17,7 @@ module.exports = {
     __PATH_PREFIX__: ''
   },
   testURL: 'http://localhost',
-  testMatch: ['**/__tests__/**/*.js'],
+  testMatch: ['**/__tests__/*.js'],
   setupFiles: [
     '<rootDir>/.jest/registerContext.js',
     '<rootDir>/.jest/loaderShim.js'

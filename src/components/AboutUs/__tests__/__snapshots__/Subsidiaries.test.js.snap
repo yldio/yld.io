@@ -1,67 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Subsidiaries renders correctly 1`] = `
+exports[`<Subsidiaries /> renders correctly 1`] = `
 <section
-  className="sc-htpNat kTITTC"
+  class="sc-htpNat kTITTC"
 >
   <div
-    className="sc-ifAKCX fNdEAU"
+    class="sc-ifAKCX fNdEAU"
   >
     <div
-      className="sc-bwzfXH egEeOi"
+      class="sc-bwzfXH egEeOi"
     >
       <div
-        className="sc-bwzfXH bXntSd"
+        class="sc-bwzfXH bXntSd"
       >
         <h2
-          className="sc-gzVnrw fVwVDk"
+          class="sc-gzVnrw fVwVDk"
         >
           Subsidiary list
         </h2>
       </div>
       <div
-        className="sc-bZQynM bpRocm"
+        class="sc-bZQynM bpRocm"
       >
         <div
-          className="sc-jzJRlG eJgUio sc-EHOje hrXkuj"
-          width={
-            Array [
-              1,
-              1,
-              1,
-              1,
-              0.5,
-            ]
-          }
+          class="sc-jzJRlG eJgUio sc-EHOje hrXkuj"
+          width="1,1,1,1,0.5"
         >
           <div
-            className="sc-jzJRlG eJgUio sc-EHOje gpWbXn"
-            width={
-              Array [
-                1,
-                1,
-                1,
-                1,
-                1,
-                0.8333333333333334,
-              ]
-            }
+            class="sc-jzJRlG eJgUio sc-EHOje gpWbXn"
+            width="1,1,1,1,1,0.8333333333333334"
           >
             <img
-              className="sc-bxivhb jCFvnb"
+              class="sc-bxivhb jCFvnb"
               src="img1.jpg"
               width="250px"
             />
             <p
-              className="sc-gqjmRU dWgBql"
-              muted={true}
+              class="sc-gqjmRU dWgBql"
             />
             <a
-              className="sc-fjdhpX iUQXyR"
+              class="sc-fjdhpX iUQXyR"
               href="https://www.subs1.com"
-              onClick={[Function]}
               rel="noopener noreferrer"
-              reverse={true}
               target="_blank"
             >
               Subs1
