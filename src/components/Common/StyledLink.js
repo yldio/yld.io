@@ -110,7 +110,7 @@ export const StyledLinkCss = css`
   `}
 `
 
-export const FakeLink = styled.button`
+export const FakeLink = styled.p`
   ${StyledLinkCss}
 `
 
