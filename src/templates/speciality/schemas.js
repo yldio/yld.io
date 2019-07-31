@@ -19,6 +19,17 @@ const communitySchema = {
   required: ['title', 'communityText']
 }
 
+const trainingSchema = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  type: 'object',
+  properties: {
+    trainingIntroText: {
+      type: 'string'
+    }
+  },
+  required: ['trainingIntroText']
+}
+
 const projectsSchema = {
   definitions: {},
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -176,4 +187,4 @@ const clientSchema = {
   }
 }
 
-export { communitySchema, projectsSchema, clientSchema }
+export { communitySchema, projectsSchema, clientSchema, trainingSchema }

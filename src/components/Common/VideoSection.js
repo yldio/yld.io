@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import RatioContainer from './RatioContainer'
-
+import { Padding } from 'styled-components-spacing'
 import { Row, Col } from '../grid'
+import RatioContainer from './RatioContainer'
 
 const Video = styled.iframe`
   position: absolute;
@@ -23,18 +23,20 @@ const CenteredRow = styled(Row)`
  * Since iframes can't set their height to auto, we're using a RatioContainer
  * container with the padding bottom equal to the video width/height ratio.
  */
-const VideoSection = ({ src }) => (
+const VideoSection = ({ src, padding = {} }) => (
   <CenteredRow>
     <Col width={[1, 1, 1, 10 / 12]}>
-      <RatioContainer height={480} width={854}>
-        <Video
-          align="middle"
-          src={src}
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </RatioContainer>
+      <Padding top={padding.top} bottom={padding.bottom}>
+        <RatioContainer height={480} width={854}>
+          <Video
+            align="middle"
+            src={src}
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </RatioContainer>
+      </Padding>
     </Col>
   </CenteredRow>
 )

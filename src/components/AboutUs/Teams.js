@@ -6,6 +6,7 @@ import { SectionTitle } from '../Typography'
 import Tab, { Tabs } from '../Common/Tab'
 import GreyBackground from '../Common/GreyBackground'
 import StaffCard from './StaffCard'
+import eventLabels from '../../utils/eventLabels'
 
 const Team = ({ members }) => {
   return (
@@ -50,6 +51,9 @@ const Teams = ({ title, teams }) => {
                   <Tab
                     key={idx}
                     active={currentTab === idx}
+                    data-event={`${
+                      eventLabels.aboutTeam
+                    }-${team.name.toLowerCase()}`}
                     onClick={() => setCurrentTab(idx)}
                   >
                     {team.name}

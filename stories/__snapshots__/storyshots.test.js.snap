@@ -2139,596 +2139,6 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 </div>
 `;
 
-exports[`Storyshots CaseStudy CaseStudyLayout 1`] = `
-.c0 {
-  max-width: calc(100% - 48px);
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c3 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  padding-bottom: 2.25rem;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c6 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c4 {
-  width: 100%;
-  height: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c1 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 0;
-  padding-bottom: 2.25rem;
-}
-
-@media (min-width:29.4375em) {
-  .c0 {
-    max-width: calc(100% - 72px);
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c0 {
-    max-width: 480px;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c0 {
-    max-width: none;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c0 {
-    max-width: 1100px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c0 {
-    padding-left: 2.625rem;
-    padding-right: 2.625rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c0 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-bottom: 2.25rem;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-bottom: 2.25rem;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-bottom: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c7 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c1 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-top: 0;
-    padding-bottom: 5.375rem;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c1 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
-          0,
-        ]
-      }
-    >
-      Headings
-    </div>
-    <div
-      className="c3"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
-          0.5,
-        ]
-      }
-    >
-      <div
-        className="c4 gatsby-image-wrapper"
-        style={
-          Object {
-            "overflow": "hidden",
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "paddingBottom": "100%",
-              "width": "100%",
-            }
-          }
-        />
-        <img
-          alt=""
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
-          style={
-            Object {
-              "height": "100%",
-              "left": 0,
-              "objectFit": "cover",
-              "objectPosition": "center",
-              "opacity": 0,
-              "position": "absolute",
-              "top": 0,
-              "transition": "opacity 0.5s",
-              "transitionDelay": "0.5s",
-              "width": "100%",
-            }
-          }
-        />
-        <picture>
-          <source
-            sizes="(max-width: 600px) 100vw, 600px"
-            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
-            type="image/webp"
-          />
-          <source
-            sizes="(max-width: 600px) 100vw, 600px"
-            srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
-          />
-          <img
-            alt="Trainline case study featured image "
-            onLoad={[Function]}
-            src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 1,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "width": "100%",
-              }
-            }
-          />
-        </picture>
-        <noscript
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="c5 c6"
-      width={
-        Array [
-          0,
-          0,
-          0,
-          0,
-          0.5,
-          0.5,
-          0.4166666666666667,
-        ]
-      }
-    >
-      <div
-        className="c7"
-      >
-        RightText
-      </div>
-    </div>
-    <div
-      className="c2"
-      width={
-        Array [
-          1,
-          1,
-          1,
-          1,
-          0,
-        ]
-      }
-    >
-      textBelowImage
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 .c0 {
   max-width: calc(100% - 48px);
@@ -3451,6 +2861,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
             </p>
             <a
               className="c14"
+              data-event="learn-more-cta"
               href="/case-study/future-proofing-trainline"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -3484,6 +2895,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         </p>
         <a
           className="c14"
+          data-event="learn-more-cta"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -7651,6 +7063,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event="navigation-services"
                 >
                   Services
                 </span>
@@ -7743,6 +7156,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c15"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -7767,6 +7181,7 @@ exports[`Storyshots Header Header itself 1`] = `
               >
                 <span
                   className="c9"
+                  data-event={null}
                 >
                   About
                 </span>
@@ -7905,6 +7320,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event="navigation-services"
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -7989,6 +7405,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <a
                 className="c23"
+                data-event="navigation-blog"
                 href="https://medium.com/yld-engineering-blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -8020,6 +7437,7 @@ exports[`Storyshots Header Header itself 1`] = `
             >
               <span
                 className="c24"
+                data-event={null}
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 tabIndex="0"
@@ -8426,6 +7844,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 1
         </span>
@@ -8529,6 +7948,7 @@ exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
       >
         <span
           className="c7"
+          data-event={null}
         >
           Dropdown 2
         </span>
@@ -8906,6 +8326,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
             stroke="none"
           >
             <rect
+              fill="#fff"
               height="54"
               id="Logo-rectangle"
               width="54"
@@ -8949,6 +8370,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 1
           </span>
@@ -9052,6 +8474,7 @@ exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
         >
           <span
             className="c8"
+            data-event={null}
           >
             Dropdown 2
           </span>
@@ -9587,6 +9010,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           First dropdown
         </span>
@@ -9690,6 +9114,7 @@ exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
       >
         <span
           className="c5"
+          data-event={null}
         >
           Second dropdown
         </span>
@@ -14325,17 +13750,21 @@ Array [
                 }
               >
                 <div
-                  className="c57"
-                  height={480}
-                  width={854}
+                  className=""
                 >
-                  <iframe
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen={true}
-                    className="c58"
-                    frameBorder="0"
-                    src="https://www.youtube.com/embed/yToHjxhCeYM"
-                  />
+                  <div
+                    className="c57"
+                    height={480}
+                    width={854}
+                  >
+                    <iframe
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen={true}
+                      className="c58"
+                      frameBorder="0"
+                      src="https://www.youtube.com/embed/yToHjxhCeYM"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
