@@ -11,11 +11,13 @@ import StyledLink from '../components/Common/StyledLink'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
+import Anchor from '../components/Common/Anchor'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const blogPageMeta = {
   title: 'Blog',
   description:
-    'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our Medium blog.',
+    'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our ',
   seoTitle: 'A collection of medium blog posts created by YLD'
 }
 
@@ -54,8 +56,14 @@ const DisplayTitleCol = styled(Col)`
   `}
 `
 
+const DescriptionMediumLink = styled(Anchor)`
+  color: ${({ theme }) => theme.colors.black};
+  text-decoration: underline;
+`
+
 const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
   const mediumPosts = mediumContent.edges || []
+  const mediumLink = 'https://medium.com/yld-engineering-blog'
 
   return (
     <Layout>
@@ -72,38 +80,46 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
             <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
             <FixedWidthDisplayTitle regular textLight>
               {blogPageMeta.description}
+              <DescriptionMediumLink href={mediumLink}>
+                Medium blog
+              </DescriptionMediumLink>
+              .
             </FixedWidthDisplayTitle>
           </PageDescriptionCol>
         </Row>
-        <Row>
-          <DisplayTitleCol width={[1]}>
-            <DisplayTitle>Recent articles</DisplayTitle>
-          </DisplayTitleCol>
-        </Row>
-        {mediumPosts &&
-          mediumPosts.length > 0 &&
-          mediumPosts.map((mediumPostData, idx) => {
-            const isLastPost = idx === mediumPosts.length - 1
-
-            return (
-              <Fragment key={mediumPostData.node.id}>
-                <MediumPostPreview {...mediumPostData.node} />
-                {!isLastPost && <Hr />}
-              </Fragment>
-            )
-          })}
-        <Row>
-          <Col width={[1]}>
-            <MediumLink
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://medium.com/yld-engineering-blog"
-            >
-              View more on Medium
-            </MediumLink>
-          </Col>
-        </Row>
       </Grid>
+      <GreyBackground>
+        <Grid>
+          <Row>
+            <DisplayTitleCol width={[1]}>
+              <DisplayTitle>Recent articles</DisplayTitle>
+            </DisplayTitleCol>
+          </Row>
+          {mediumPosts &&
+            mediumPosts.length > 0 &&
+            mediumPosts.map((mediumPostData, idx) => {
+              const isLastPost = idx === mediumPosts.length - 1
+
+              return (
+                <Fragment key={mediumPostData.node.id}>
+                  <MediumPostPreview {...mediumPostData.node} />
+                  {!isLastPost && <Hr />}
+                </Fragment>
+              )
+            })}
+          <Row>
+            <Col width={[1]}>
+              <MediumLink
+                rel="noopener noreferrer"
+                target="_blank"
+                href={mediumLink}
+              >
+                View more on Medium
+              </MediumLink>
+            </Col>
+          </Row>
+        </Grid>
+      </GreyBackground>
     </Layout>
   )
 }

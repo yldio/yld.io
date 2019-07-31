@@ -56,8 +56,7 @@ const MediumRow = styled(Row)`
 
 const ImageWrapper = styled.div`
   position: relative;
-  padding-top: ${({ theme }) => theme.space[2]};
-  padding-bottom: ${({ theme }) => theme.space[2]};
+  padding-top: ${({ theme }) => theme.space[3]};
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
     padding-top: 0;
@@ -65,19 +64,31 @@ const ImageWrapper = styled.div`
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${({ theme }) => theme.space[1]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-top: ${({ theme }) => theme.space[3]};
+  ${props =>
+    props.show === 'smallTablet' ? `display: block;` : `display: none;`}
   ${breakpoint('smallTablet')`
-    padding-bottom: 0;
+    ${props =>
+      props.show === 'smallTablet' ? `display: none;` : `display: block;`}
   `};
 `
 
 const TitleAndAuthorWrapper = styled.div`
   display: none;
-
+  padding-bottom: ${({ theme }) => theme.space[3]};
   ${({ show, hide }) =>
     breakpoint(show, hide)`
+      padding-bottom: 0;
       display: block;
     `}
+`
+
+const InfoCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `
 
 const TitleAndAuthor = ({
@@ -115,7 +126,10 @@ const MediumPostPreview = ({
   const previewText =
     virtuals.subtitle.length < 145
       ? virtuals.subtitle
-      : virtuals.subtitle.slice(0, 145) + '...'
+      : virtuals.subtitle.slice(0, 145).trim() + '...'
+
+  const previewTextSmallTablet = previewText.slice(0, 85).trim() + '...'
+
   const formattedDate = format(createdAt, 'MMMM DD')
 
   const imageUrl = `https://cdn-images-1.medium.com/max/1000/${
@@ -149,11 +163,7 @@ const MediumPostPreview = ({
           </ImageWrapper>
         </Anchor>
       </Col>
-      <Col
-        width={[1, 1, 1, 1, 8 / 12, 6 / 12]}
-        block={false}
-        style={{ alignItems: 'center' }}
-      >
+      <InfoCol width={[1, 1, 1, 1, 8 / 12, 6 / 12]} block={false}>
         <TitleAndAuthor
           show="smallTablet"
           title={title}
@@ -164,11 +174,14 @@ const MediumPostPreview = ({
         />
         <Col width={[1]} style={{ paddingLeft: 0 }}>
           <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
+          <StyledBodyPrimary show="smallTablet">
+            {previewTextSmallTablet}
+          </StyledBodyPrimary>
         </Col>
         <StyledLink external href={postUrl} title={`Read more about ${title}`}>
           Read more
         </StyledLink>
-      </Col>
+      </InfoCol>
     </MediumRow>
   )
 }
