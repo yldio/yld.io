@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+
 import { Row, Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
@@ -9,6 +10,7 @@ import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
 import SeoLinks from '../Common/seoLinks'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
+import eventLabels from '../../utils/eventLabels'
 
 const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -108,6 +110,9 @@ const Services = ({ services }) => (
                   <StyledLink
                     to={`/${service.slug}`}
                     title={`Learn more about our ${service.title} service`}
+                    data-event={`${eventLabels.homepageLearnMore}-${
+                      service.title
+                    }`}
                   >
                     Learn more
                   </StyledLink>
