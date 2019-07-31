@@ -1,7 +1,14 @@
 import theme from '../../utils/theme'
 
 const specialitiesMap = {
-  engineering: ['node-js', 'graphql', 'vue-js', 'react-js', 'kubernetes'],
+  engineering: [
+    'node-js',
+    'graphql',
+    'vue-js',
+    'react-js',
+    'kubernetes',
+    'react-native'
+  ],
   design: [],
   training: [],
   delivery: [],
@@ -38,6 +45,7 @@ const getSpeciality = path => path.split('/')[2]
 const getService = path =>
   servicesList.find(service => {
     const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
+
     return path.search(specialitiesRegExp) > -1
   })
 
