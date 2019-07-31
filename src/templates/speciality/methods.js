@@ -111,6 +111,17 @@ const flattenSpeciality = speciality => {
     eventIconUrl: Get(speciality, 'eventIcon.file.url', undefined),
     contactText: Get(speciality, 'contactText', undefined), // required
     eventIcon: Get(speciality, 'eventIcon', undefined),
+    howWeWorkWithTitle: Get(speciality, 'howWeWorkWithTitle', undefined),
+    howWeWorkWithCopy: Get(
+      speciality,
+      'howWeWorkWithCopy.howWeWorkWithCopy',
+      undefined
+    ),
+    howWeWorkWithPractises: Get(
+      speciality,
+      'howWeWorkWithPractises',
+      undefined
+    ),
     externalResources: IsNull(speciality.externalResources)
       ? []
       : Get(speciality, 'externalResources', []),

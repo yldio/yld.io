@@ -252,6 +252,11 @@ export const pageQuery = graphql`
           url
         }
       }
+      howWeWorkWithTitle
+      howWeWorkWithCopy {
+        howWeWorkWithCopy
+      }
+      howWeWorkWithPractises
       eventIcon {
         id
         title
