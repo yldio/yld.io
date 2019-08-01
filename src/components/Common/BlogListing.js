@@ -10,7 +10,7 @@ const BlogListing = ({ title, description, posts }) => {
     ({ id, title, uniqueSlug, firstPublishedAt }) => ({
       id,
       title,
-      href: `https://medium.com/yld-engineering-blog/${uniqueSlug}`,
+      href: `https://medium.com/yld-blog/${uniqueSlug}`,
       body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
     })
   )
