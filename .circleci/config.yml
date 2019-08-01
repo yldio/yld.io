@@ -12,6 +12,19 @@ jobs:
           command: npm run test:lighthouse
           name: Lighthouse
     working_directory: ~/repo
+  unit:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies
+      - run:
+          command: npm run test:unit
+          name: Unit-tests
+    working_directory: ~/repo
   lint:
     docker:
       - image: circleci/node:10
@@ -66,6 +79,7 @@ workflows:
   build_and_test:
     jobs:
       - lint
+      - unit
       - lighthouse
       - snapshots
       - testcafe
