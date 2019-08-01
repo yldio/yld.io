@@ -4,12 +4,11 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
+import illustrationDesktop from '../../images/yld_illustration_desktop.svg'
+import illustrationMobile from '../../images/yld_illustration_mobile.svg'
 import { Grid, Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
-
 import BlueBackground from '../Common/BlueBackground'
-
 import { SectionTitle, CardTitle, Subtitle } from '../Typography'
 
 const StyledBlueBackground = styled(BlueBackground)`
@@ -75,26 +74,36 @@ const IntroImageWrapper = styled.div`
   `}
   `
 
-const IntroImageDesktop = styled(Image)`
+const IntroImageDesktop = styled.div`
   display: none;
+  position: relative;
 
   ${breakpoint('smallTablet')`
     left: calc(-50% + 72px);
     display: block;
-  `}
+    `}
 
   ${breakpoint('tablet')`
     left: calc(-50% + 80px);
-  `}
+    `}
+
+  > img {
+    display: block;
+  }
 `
 
-const IntroImageMobile = styled(Image)`
+const IntroImageMobile = styled.div`
+  position: relative;
   ${breakpoint('smallTablet')`
     display: none;
   `}
+
+  > img {
+    display: block;
+  }
 `
 
-const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
+const IntroSection = () => {
   const [first, toggle] = useState(true)
 
   const introCopy = first
@@ -139,11 +148,21 @@ const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
       </Grid>
       <IntroImageWrapper>
         {illustrationDesktop && (
-          <IntroImageDesktop image={illustrationDesktop.childImageSharp} />
-        )}{' '}
+          <IntroImageDesktop>
+            <img
+              alt="YLD homepage illustration for desktop views"
+              src={illustrationDesktop}
+            />
+          </IntroImageDesktop>
+        )}
         {illustrationMobile && (
-          <IntroImageMobile image={illustrationMobile.childImageSharp} />
-        )}{' '}
+          <IntroImageMobile>
+            <img
+              alt="YLD homepage illustration for mobile views"
+              src={illustrationMobile}
+            />
+          </IntroImageMobile>
+        )}
       </IntroImageWrapper>
     </StyledBlueBackground>
   )

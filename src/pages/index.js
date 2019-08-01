@@ -51,12 +51,7 @@ const getHomepageConferences = (events = []) =>
     }))
 
 const IndexPage = ({ data, location }) => {
-  const {
-    illustrationMobile,
-    illustrationDesktop,
-    contentfulHomepage: content,
-    allContentfulMeetupEvent: events
-  } = data
+  const { contentfulHomepage: content, allContentfulMeetupEvent: events } = data
 
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
@@ -64,10 +59,7 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <Intro
-        illustrationDesktop={illustrationDesktop}
-        illustrationMobile={illustrationMobile}
-      />
+      <Intro />
       <GreyBackground>
         <Grid>
           <Padding
@@ -108,27 +100,6 @@ const IndexPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    illustrationDesktop: file(
-      relativePath: { eq: "landing_page_illustration_desktop.png" }
-    ) {
-      publicURL
-      childImageSharp {
-        fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    illustrationMobile: file(
-      relativePath: { eq: "landing_page_illustration_mobile.png" }
-    ) {
-      publicURL
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     contentfulHomepage {
       title
       seoTitle
