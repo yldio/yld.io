@@ -39,12 +39,16 @@ const StyledCardTitle = styled(CardTitle)`
 `
 
 const IntroLinkWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
 `
 
 const IntroSectionTitleWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
@@ -55,7 +59,7 @@ const IntroImageWrapper = styled.div`
 
   ${breakpoint('smallPhone', 'smallTablet')`
     width: 135%;
-    margin-top: -30%;
+    margin-top: -24%;
   `}
 
   ${breakpoint('smallTablet')`
@@ -75,12 +79,12 @@ const IntroImageDesktop = styled(Image)`
   display: none;
 
   ${breakpoint('smallTablet')`
-    left: -50%;
+    left: calc(-50% + 72px);
     display: block;
   `}
 
-  ${breakpoint('desktop')`
-    left: calc(-50% + 60px);
+  ${breakpoint('tablet')`
+    left: calc(-50% + 80px);
   `}
 `
 
@@ -95,7 +99,11 @@ const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
 
   const introCopy = first
     ? "We're a technology company that builds great technology  companies"
-    : 'Creating technology capabilities for you, that lasts beyond us.'
+    : 'Creating digital capabilities for you, that lasts beyond us.'
+
+  const titleCopy = first
+    ? 'Consultancy services we offer'
+    : 'Services we offer'
 
   return (
     <StyledBlueBackground>
@@ -108,7 +116,7 @@ const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
               </SectionTitle>
             </IntroSectionTitleWrapper>
             <Subtitle reverse muted>
-              Consultancy services we offer
+              {titleCopy}
             </Subtitle>
             <IntroLinkWrapper>
               <StyledCardTitle noPaddingTop as={Link} reverse to="/engineering">
@@ -123,12 +131,7 @@ const IntroSection = ({ illustrationDesktop, illustrationMobile }) => {
                 Training programs
               </StyledCardTitle>
             </IntroLinkWrapper>
-            <StyledLink
-              reverse
-              vibrant
-              to="/our-work"
-              onClick={() => toggle(!first)}
-            >
+            <StyledLink reverse vibrant as="p" onClick={() => toggle(!first)}>
               See our work
             </StyledLink>
           </Col>
