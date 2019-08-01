@@ -4,7 +4,8 @@ import Ajv from 'ajv'
 import {
   communitySchema,
   projectsSchema,
-  clientSchema
+  clientSchema,
+  trainingSchema
 } from './speciality/schemas'
 
 import {
@@ -42,6 +43,7 @@ export const SpecialityView = props => {
   const validateCommunity = ajv.compile(communitySchema)
   const validateProjects = ajv.compile(projectsSchema)
   const validateClients = ajv.compile(clientSchema)
+  const validateTraining = ajv.compile(trainingSchema)
 
   const {
     title,
@@ -62,6 +64,7 @@ export const SpecialityView = props => {
   const renderProjectsSection =
     validateProjects(relatedProjects) || validateClients(clients)
   const renderCommunitySection = validateCommunity(flattenedSpeciality)
+  const renderTrainingSection = validateTraining(flattenedSpeciality)
 
   const renderTalksSection = talks && talks.length > 0
   const renderBooksSection = books && books.length > 0
@@ -81,7 +84,9 @@ export const SpecialityView = props => {
           clients={clients}
         />
       )}
-      <TrainingSection speciality={flattenedSpeciality} />
+      {renderTrainingSection && (
+        <TrainingSection speciality={flattenedSpeciality} />
+      )}
       {renderCommunitySection && <CommunitySection {...flattenedSpeciality} />}
       <EventSection
         events={specialityEvents}

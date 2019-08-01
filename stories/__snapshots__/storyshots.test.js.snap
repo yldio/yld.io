@@ -2861,6 +2861,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
             </p>
             <a
               className="c14"
+              data-event="learn-more-cta"
               href="/case-study/future-proofing-trainline"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -2894,6 +2895,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         </p>
         <a
           className="c14"
+          data-event="learn-more-cta"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -13746,17 +13748,21 @@ Array [
                 }
               >
                 <div
-                  className="c57"
-                  height={480}
-                  width={854}
+                  className=""
                 >
-                  <iframe
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen={true}
-                    className="c58"
-                    frameBorder="0"
-                    src="https://www.youtube.com/embed/yToHjxhCeYM"
-                  />
+                  <div
+                    className="c57"
+                    height={480}
+                    width={854}
+                  >
+                    <iframe
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen={true}
+                      className="c58"
+                      frameBorder="0"
+                      src="https://www.youtube.com/embed/yToHjxhCeYM"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
