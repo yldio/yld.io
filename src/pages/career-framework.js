@@ -10,25 +10,15 @@ import GetInTouch from '../components/Common/GetInTouch'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Discipline } from '../components/CareerFramework'
-import { FakeLink } from '../components/Common/StyledLink'
+import Tab, { Tabs } from '../components/Common/Tab'
 import GreyBackground from '../components/Common/GreyBackground'
 import Head from '../components/Common/Head'
-
-const DisciplineTitle = styled(FakeLink)`
-  margin-right: ${({ theme }) => theme.space[4]};
-  cursor: pointer;
-  -webkit-appearance: none;
-  font-size: inherit;
-  border: none;
-  outline: none;
-  background: transparent;
-`
 
 const StyledIntroHeaderCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[7]};
+    padding-top: ${({ theme }) => theme.space[6]};
   `}
 `
 
@@ -67,7 +57,7 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
       <Head page={content} />
       <Grid>
         <Row>
-          <StyledIntroHeaderCol width={[1, 1, 1, 1, 5 / 12]}>
+          <StyledIntroHeaderCol width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
             <SectionTitle as="h1">{introHeader}</SectionTitle>
           </StyledIntroHeaderCol>
         </Row>
@@ -85,21 +75,22 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
               role="tablist"
               aria-label="discipline tabs"
             >
-              {disciplineTitles &&
-                disciplineTitles.map((title, idx) => (
-                  <DisciplineTitle
-                    role="tab"
-                    as="button"
-                    aria-selected={currentDiscipline === title}
-                    aria-controls={`panel-${title}`}
-                    id={`discipline-tab-${idx}`}
-                    key={title}
-                    muted={currentDiscipline !== title}
-                    onClick={() => toggleDiscipline(title)}
-                  >
-                    {title}
-                  </DisciplineTitle>
-                ))}
+              <Tabs>
+                {disciplineTitles &&
+                  disciplineTitles.map((title, idx) => (
+                    <Tab
+                      key={title}
+                      role="tab"
+                      id={`discipline-tab-${idx}`}
+                      active={currentDiscipline === title}
+                      aria-selected={currentDiscipline === title}
+                      aria-controls={`panel-${title}`}
+                      onClick={() => toggleDiscipline(title)}
+                    >
+                      {title}
+                    </Tab>
+                  ))}
+              </Tabs>
             </DisciplineTitleCol>
           </Row>
           <Row />

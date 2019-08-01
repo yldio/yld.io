@@ -1,17 +1,26 @@
 import React, { Fragment } from 'react'
 import generate from 'shortid'
+import styled from 'styled-components'
 
-import Hr from '../Common/Hr'
+import CommonHr from '../Common/Hr'
 
 import Level from './Level'
 
-const Group = ({ levels }) =>
+const HrWrapper = styled.div`
+  padding-top: ${({ theme }) => theme.space[4]};
+`
+
+const Group = ({ levels, orderStartFrom }) =>
   levels &&
   levels.length &&
   levels.map((level, idx, arr) => (
     <Fragment key={generate()}>
-      <Level {...level} first={idx === 0} order={idx + 1} />
-      {idx < arr.length - 1 && <Hr />}
+      <Level {...level} first={idx === 0} order={orderStartFrom + idx} />
+      {idx < arr.length - 1 && (
+        <HrWrapper>
+          <CommonHr />
+        </HrWrapper>
+      )}
     </Fragment>
   ))
 

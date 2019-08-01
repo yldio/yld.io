@@ -18,9 +18,11 @@ const Join = ({ title, ctaTitle, ctaUrl, content, image }) => (
       <JoinContentCol width={[1, 1, 1, 1, 6 / 12]}>
         <SectionTitle reverse>{title}</SectionTitle>
         {content.content && (
-          <BodyPrimary reverse>{content.content}</BodyPrimary>
+          <BodyPrimary muted reverse>
+            {content.content}
+          </BodyPrimary>
         )}
-        <StyledLink to={ctaUrl} reverse>
+        <StyledLink to={ctaUrl} reverse="true" muted>
           {ctaTitle}
         </StyledLink>
       </JoinContentCol>

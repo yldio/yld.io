@@ -106,6 +106,12 @@ export const StyledLinkCss = css`
       &::after {
         background: #007f56
       }
+    `}
+
+  ${is('reverse', 'onDarkBg')`
+    &:hover {
+      color: ${({ theme }) => theme.colors.text};
+      background: ${({ theme }) => theme.colors.vibrant};
     }
   `}
 `

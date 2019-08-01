@@ -6,8 +6,19 @@ import styled from 'styled-components'
 import { Row, Col } from '../grid'
 import { BodyPrimary, SectionTitle } from '../Typography'
 
-const LevelInfo = ({ ctaTitle, ctaUrl, infoContent, title }) => (
-  <LevelInfoWrapper>
+const LevelInfoWrapper = styled(Col)`
+  padding-bottom: ${({ theme, isLastLevelInfo }) =>
+    isLastLevelInfo ? null : theme.space[4]};
+`
+
+const LevelInfo = ({
+  ctaTitle,
+  ctaUrl,
+  infoContent,
+  title,
+  isLastLevelInfo
+}) => (
+  <LevelInfoWrapper isLastLevelInfo={isLastLevelInfo}>
     <BodyPrimary noPaddingBottom bold>
       {title}
     </BodyPrimary>
@@ -15,7 +26,7 @@ const LevelInfo = ({ ctaTitle, ctaUrl, infoContent, title }) => (
       <BodyPrimary noPaddingTop>{infoContent.infoContent}</BodyPrimary>
     )}
     {ctaUrl && ctaTitle && (
-      <StyledLink external href={ctaUrl} title={`Learn More about ${title}`}>
+      <StyledLink external href={ctaUrl} title={`Learn more about ${title}`}>
         {ctaTitle}
       </StyledLink>
     )}
@@ -34,29 +45,33 @@ const LevelOrder = styled.div`
   border-radius: 50%;
 `
 
-const LevelInfoWrapper = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
-`
-
 const LevelOrderWrapper = styled(Col)`
   padding-top: ${({ first, theme }) => theme.space[first ? 4 : 2]};
 `
 
-const Level = ({ title, info, order, levelInfo = [], first }) => (
-  <Row spaced>
-    <LevelOrderWrapper first={first} width={[1]}>
-      <LevelOrder>{order}</LevelOrder>
-    </LevelOrderWrapper>
-    <Col width={[1, 1, 1, 1, 5 / 12]}>
-      <SectionTitle>{title}</SectionTitle>
-      {info && <BodyPrimary>{info}</BodyPrimary>}
-    </Col>
-    <Col width={[1, 1, 1, 1, 6 / 12]}>
-      {levelInfo &&
-        levelInfo.length &&
-        levelInfo.map(level => <LevelInfo key={generate()} {...level} />)}
-    </Col>
-  </Row>
-)
+const Level = ({ title, info, order, levelInfo = [], first }) => {
+  return (
+    <Row spaced>
+      <LevelOrderWrapper first={first} width={[1]}>
+        <LevelOrder>{order}</LevelOrder>
+      </LevelOrderWrapper>
+      <Col width={[1, 1, 1, 1, 5 / 12]}>
+        <SectionTitle>{title}</SectionTitle>
+        {info && <BodyPrimary>{info}</BodyPrimary>}
+      </Col>
+      <Col width={[1, 1, 1, 1, 6 / 12]}>
+        {levelInfo &&
+          levelInfo.length &&
+          levelInfo.map((level, idx, levelArr) => (
+            <LevelInfo
+              key={generate()}
+              isLastLevelInfo={idx + 1 === levelArr.length}
+              {...level}
+            />
+          ))}
+      </Col>
+    </Row>
+  )
+}
 
 export default Level
