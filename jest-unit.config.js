@@ -16,9 +16,27 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ''
   },
-  testURL: 'http://localhost',
+  testMatch: ['**/__tests__/*.js'],
   setupFiles: [
     '<rootDir>/.jest/registerContext.js',
     '<rootDir>/.jest/loaderShim.js'
-  ]
+  ],
+  setupFilesAfterEnv: [
+    '@testing-library/react/cleanup-after-each',
+    '@testing-library/jest-dom/extend-expect'
+  ],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!<rootDir>/node_modules/',
+    '!<rootDir>/src/serviceWorker.js'
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 50,
+      functions: 50,
+      lines: 50,
+      statements: 50
+    }
+  },
+  coverageReporters: ['text']
 }

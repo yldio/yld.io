@@ -57,7 +57,7 @@
   "license": "MIT",
   "scripts": {
     "test": "run-s test:**",
-    "test:unit": "jest",
+    "test:unit": "jest --config jest-unit.config.js",
     "test:snapshots": "jest --testPathPattern=\"storyshots.test.js\" --silent",
     "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "npm run build:app && testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 500000",
