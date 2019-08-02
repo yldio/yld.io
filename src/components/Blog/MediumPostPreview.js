@@ -23,7 +23,7 @@ const StyledMediumIcon = styled(MediumLogo)`
   width: 63px;
   height: 63px;
 
-  ${breakpoint('largePhone')`
+  ${breakpoint('tablet')`
     top: 36px;
     left: 36px;
   `}
