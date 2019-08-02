@@ -59,7 +59,7 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <Intro />
+      <Intro {...content} />
       <GreyBackground>
         <Grid>
           <Padding
@@ -104,6 +104,12 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
+      introHeader
+      introContent {
+        introContent
+      }
+      introCtaText
+      introCtaLink
       featuredCaseStudy {
         id
         title

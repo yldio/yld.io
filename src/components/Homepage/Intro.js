@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
 
 import illustrationDesktop from '../../images/yld_illustration_desktop.svg'
 import illustrationMobile from '../../images/yld_illustration_mobile.svg'
@@ -103,17 +104,12 @@ const IntroImageMobile = styled.div`
   }
 `
 
-const IntroSection = () => {
-  const [first, toggle] = useState(true)
-
-  const introCopy = first
-    ? "We're a technology company that builds great technology  companies"
-    : 'Creating digital capabilities for you, that lasts beyond us.'
-
-  const titleCopy = first
-    ? 'Consultancy services we offer'
-    : 'Services we offer'
-
+const IntroSection = ({
+  introHeader,
+  introContent: { introContent },
+  introCtaText,
+  introCtaLink
+}) => {
   return (
     <StyledBlueBackground>
       <Grid>
@@ -121,27 +117,33 @@ const IntroSection = () => {
           <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
             <IntroSectionTitleWrapper>
               <SectionTitle reverse as="h1">
-                {introCopy}
+                {introHeader}
               </SectionTitle>
             </IntroSectionTitleWrapper>
-            <Subtitle reverse muted>
-              {titleCopy}
-            </Subtitle>
             <IntroLinkWrapper>
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/engineering">
-                Software engineering
-              </StyledCardTitle>
-              <br />
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/design">
-                Digital product design
-              </StyledCardTitle>
-              <br />
-              <StyledCardTitle noPaddingTop as={Link} reverse to="/training">
-                Training programs
-              </StyledCardTitle>
+              <ReactMarkdown
+                renderers={{
+                  // eslint-disable-next-line
+                  heading: props => <Subtitle reverse muted {...props} />,
+                  // eslint-disable-next-line
+                  link: props => (
+                    <>
+                      <StyledCardTitle
+                        noPaddingTop
+                        as={Link}
+                        reverse
+                        to="/engineering"
+                        {...props}
+                      />
+                      <br />
+                    </>
+                  )
+                }}
+                source={introContent}
+              />
             </IntroLinkWrapper>
-            <StyledLink reverse vibrant as="p" onClick={() => toggle(!first)}>
-              See our work
+            <StyledLink reverse vibrant to={introCtaLink}>
+              {introCtaText}
             </StyledLink>
           </Col>
         </IntroRow>
