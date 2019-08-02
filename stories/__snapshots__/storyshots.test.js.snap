@@ -2054,7 +2054,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-engineering-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
+                href="https://medium.com/yld-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -2077,7 +2077,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-engineering-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
+                href="https://medium.com/yld-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"
@@ -2100,7 +2100,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-engineering-blog/under-the-with-kubernetes-c1ea1a82c61f"
+                href="https://medium.com/yld-blog/under-the-with-kubernetes-c1ea1a82c61f"
                 onClick={[Function]}
                 rel="noopener noreferrer"
                 target="_blank"

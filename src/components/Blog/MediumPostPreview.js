@@ -135,7 +135,7 @@ const MediumPostPreview = ({
   const imageUrl = `https://cdn-images-1.medium.com/max/1000/${
     virtuals.previewImage.imageId
   }`
-  const postUrl = `https://medium.com/yld-engineering-blog/${uniqueSlug}`
+  const postUrl = `https://medium.com/yld-blog/${uniqueSlug}`
   const authorUrl = `https://medium.com/@${author.username}`
 
   const image = {
