@@ -16,26 +16,16 @@ const AuthorMediumLink = styled(Anchor)`
   text-decoration: underline;
 `
 
-const AuthorAndDate = styled.p`
-  color: ${({ theme }) => theme.colors.textLight};
-`
-
 const StyledMediumIcon = styled(MediumLogo)`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-
-  ${breakpoint('smallTablet')`
-      width: 80px;
-      height: 80px;
-  `}
+  top: ${({ theme }) => theme.space[3]};
+  left: ${({ theme }) => theme.space[3]};
+  width: 64px;
+  height: 64px;
 
   ${breakpoint('tablet')`
-    width: 100px;
-    height: 100px;
+    top: ${({ theme }) => theme.space[4]};
+    left: ${({ theme }) => theme.space[4]};
   `}
 `
 
@@ -56,10 +46,8 @@ const MediumRow = styled(Row)`
 
 const ImageWrapper = styled.div`
   position: relative;
-  padding-top: ${({ theme }) => theme.space[3]};
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
-    padding-top: 0;
   `};
 `
 
@@ -74,14 +62,20 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   `};
 `
 
+const AuthorAndDate = styled.p`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  color: ${({ theme }) => theme.colors.textLight};
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+  `}
+`
+
 const TitleAndAuthorWrapper = styled.div`
   display: none;
-  padding-bottom: ${({ theme }) => theme.space[3]};
   ${({ show, hide }) =>
     breakpoint(show, hide)`
-      padding-bottom: 0;
       display: block;
-    `}
+    `};
 `
 
 const InfoCol = styled(Col)`
