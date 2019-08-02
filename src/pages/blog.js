@@ -63,7 +63,7 @@ const DescriptionMediumLink = styled(Anchor)`
 
 const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
   const mediumPosts = mediumContent.edges || []
-  const mediumLink = 'https://medium.com/yld-engineering-blog'
+  const mediumLink = 'https://medium.com/yld-blog'
 
   return (
     <Layout>
