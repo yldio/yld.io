@@ -18,14 +18,14 @@ const AuthorMediumLink = styled(Anchor)`
 
 const StyledMediumIcon = styled(MediumLogo)`
   position: absolute;
-  top: 24px;
-  left: 24px;
-  width: 63px;
-  height: 63px;
+  top: ${({ theme }) => theme.space[3]};
+  left: ${({ theme }) => theme.space[3]};
+  width: 64px;
+  height: 64px;
 
   ${breakpoint('tablet')`
-    top: 36px;
-    left: 36px;
+    top: ${({ theme }) => theme.space[4]};
+    left: ${({ theme }) => theme.space[4]};
   `}
 `
 
