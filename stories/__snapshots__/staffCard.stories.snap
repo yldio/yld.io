@@ -1,0 +1,1127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
+.c4 {
+  padding-bottom: 1.5rem;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
+.c11 {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11:first-child {
+  margin-left: -0.75rem;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -0.75rem;
+  padding-bottom: 0.375rem;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  padding-bottom: 1.875rem;
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots About Us Page Components StaffCard 1`] = `
+.c4 {
+  padding-bottom: 1.5rem;
+}
+
+.c3 {
+  padding-bottom: 2.25rem;
+}
+
+.c7 {
+  padding-bottom: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
+.c11 {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11:first-child {
+  margin-left: -0.75rem;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -0.75rem;
+  padding-bottom: 0.375rem;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  padding-bottom: 1.875rem;
+}
+
+@media (min-width:43.8125em) {
+  .c3 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.3333333333333333,
+        ]
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className="c5"
+            src="test-file-stub"
+            width="100%"
+          />
+        </div>
+        <h3
+          className="c6"
+        >
+          Nuno Job
+        </h3>
+        <div
+          className="c7"
+        >
+          <h3
+            className="c8"
+            muted={true}
+          >
+            Chief Executive Officer
+          </h3>
+        </div>
+        <p
+          className="c9"
+        >
+          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+        </p>
+        <div
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="twitter.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="twitter account"
+          >
+            <img
+              alt="twitter"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+          <a
+            className="c11"
+            href="linkedin.com/etc"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="linkedin account"
+          >
+            <img
+              alt="linkedin"
+              className="c12"
+              height="24px"
+              src="test-file-stub"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

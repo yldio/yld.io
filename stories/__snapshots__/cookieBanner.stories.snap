@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CookieBanner CookieBanner 1`] = `
+.c0 {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fffaf1;
+  z-index: 100;
+  border-top: 1px solid #ffcd7c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
+.c1 {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.c3 {
+  color: #fff;
+  background-color: #333333;
+  font-weight: bold;
+  text-align: center;
+  font-size: 17px;
+  height: 60px;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 95%;
+    bottom: 24px;
+    left: 0%;
+    right: 0%;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid #ffcd7c;
+    padding: 18px 24px;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    display: inline;
+    margin: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    margin-left: auto;
+    width: 150px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
+    By continuing to use our site you agree to the use of cookies in accordance with our
+     
+    <a
+      className="c2"
+      href="/cookie-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Cookie
+    </a>
+    ,
+     
+    <a
+      className="c2"
+      href="/privacy-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Privacy
+    </a>
+     and
+     
+    <a
+      className="c2"
+      href="/data-retention-policy"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Data-retention
+    </a>
+     
+    policies.
+  </p>
+  <button
+    className="c3"
+  >
+    I agree
+  </button>
+</div>
+`;
