@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
@@ -39,30 +39,25 @@ const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
 
   const [fillColor, setFillColor] = useState(fillColorInitial)
 
+  if (renderSvg) {
+    return isServicePage || isSpecialityPage ? (
+      <StyledLink
+        to="/"
+        title="Return to Homepage"
+        onMouseEnter={() => setFillColor(fillColorHover)}
+        onMouseLeave={() => setFillColor(fillColorInitial)}
+      >
+        <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
+      </StyledLink>
+    ) : (
+      <HomepageLogo src={HomepageSvg} alt="yld logo" />
+    )
+  }
+
   return (
-    <Fragment>
-      {renderSvg ? (
-        isServicePage || isSpecialityPage ? (
-          <StyledLink
-            to="/"
-            title="Return to Homepage"
-            onMouseEnter={() => setFillColor(fillColorHover)}
-            onMouseLeave={() => setFillColor(fillColorInitial)}
-          >
-            <ServiceSpecialityLogo
-              fillColor={fillColor}
-              textColor={textColor}
-            />
-          </StyledLink>
-        ) : (
-          <HomepageLogo src={HomepageSvg} alt="yld logo" />
-        )
-      ) : (
-        <Link to="/" title="Return to Homepage">
-          <img role="link" height="48" src={logo} alt="yld logo" />
-        </Link>
-      )}
-    </Fragment>
+    <Link to="/" title="Return to Homepage">
+      <img role="link" height="48" src={logo} alt="yld logo" />
+    </Link>
   )
 }
 

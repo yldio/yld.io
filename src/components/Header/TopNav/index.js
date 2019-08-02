@@ -35,7 +35,7 @@ const TopNavList = styled.ul`
   }
 `
 
-const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
+const getSlugs = (arr = []) => arr.filter(({ slug }) => slug)
 
 const TopNavBranding = ({ path, slug }) => (
   <StaticQuery

@@ -29,15 +29,17 @@ const getServiceFromSlug = slug =>
 const ServiceLink = ({ slug, isServicePage, isSpecialityPage }) => {
   const service = isServicePage ? slug : getServiceFromSlug(slug)
 
-  return isServicePage || isSpecialityPage ? (
-    <StyledServiceLink
-      to={`/${service}`}
-      title={service}
-      color={isServicePage ? 'text' : 'white'}
-    >
-      {capitalize(service)}
-    </StyledServiceLink>
-  ) : null
+  return (
+    (isServicePage || isSpecialityPage) && (
+      <StyledServiceLink
+        to={`/${service}`}
+        title={service}
+        color={isServicePage ? 'text' : 'white'}
+      >
+        {capitalize(service)}
+      </StyledServiceLink>
+    )
+  )
 }
 
 export default ServiceLink
