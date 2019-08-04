@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
 
-import { specialitiesMap } from '../navLinksHelper'
-
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
@@ -21,14 +19,7 @@ const StyledServiceLink = styled(Link)`
   }
 `
 
-const getServiceFromSlug = slug =>
-  Object.keys(specialitiesMap).find(speciality =>
-    specialitiesMap[speciality].includes(slug)
-  )
-
-const ServiceLink = ({ slug, isServicePage, isSpecialityPage }) => {
-  const service = isServicePage ? slug : getServiceFromSlug(slug)
-
+const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
   return (
     (isServicePage || isSpecialityPage) && (
       <StyledServiceLink

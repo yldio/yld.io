@@ -22,7 +22,8 @@ const trainingModalRegExp = /training\/[a-zA-Z]/
 
 const getThemeVariation = bgColor => {
   const map = {
-    dark: ['blueBg']
+    dark: ['blueBg'],
+    grey: ['grey']
   }
 
   return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white'

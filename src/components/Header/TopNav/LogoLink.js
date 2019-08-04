@@ -24,10 +24,14 @@ const HomepageLogo = styled.img`
   margin-top: ${remcalc(6)};
 `
 
-const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
-  const renderSvg = isServicePage || isSpecialityPage || isHomePage
-
-  const fillColorInitial = logoColors[slug] || logoColors['default']
+const getLogoColors = ({ isSpecialityPage, slug }) => {
+  // This isn't very nice I know...
+  // In reality the specialitiesFills shouldn't be in the code
+  // but in contentful. If the content type doesn't have a fill hex
+  // set in the CMS then just fallback to white.
+  const fillColorInitial = isSpecialityPage
+    ? logoColors.specialitiesFills[slug] || logoColors.specialitiesFills.default
+    : logoColors['default']
 
   const fillColorHover = isSpecialityPage
     ? logoColors.specialityHover
@@ -36,6 +40,21 @@ const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
   const textColor = isSpecialityPage
     ? logoColors['specialityText']
     : logoColors['defaultText']
+
+  return {
+    fillColorInitial,
+    fillColorHover,
+    textColor
+  }
+}
+
+const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
+  const renderSvg = isServicePage || isSpecialityPage || isHomePage
+
+  const { fillColorInitial, fillColorHover, textColor } = getLogoColors({
+    isSpecialityPage,
+    slug
+  })
 
   const [fillColor, setFillColor] = useState(fillColorInitial)
 
