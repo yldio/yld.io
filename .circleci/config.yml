@@ -1,4 +1,21 @@
 jobs:
+  lambdas:
+      docker:
+        - image: circleci/node:10
+      steps:
+        - checkout
+        - restore_cache:
+            keys:
+              - v1-dependencies-{{ checksum "package.json" }}
+              - v1-dependencies
+        - run: 'yarn install'
+        - save_cache:
+            key: v1-dependencies-{{ checksum "package.json" }}
+            paths:
+              - node_modules
+        - run: 'yarn run test:lambdas'
+      working_directory: ~/repo
+
   lighthouse:
     docker:
       - image: circleci/node:10-browsers
