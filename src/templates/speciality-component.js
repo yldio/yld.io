@@ -88,28 +88,32 @@ export const SpecialityView = props => {
           clients={clients}
         />
       )}
+
       {renderTrainingSection && (
         <TrainingSection speciality={flattenedSpeciality} />
       )}
+
+      {renderHowWeWorkWithSection && (
+        <HowWeWorkWithSection {...flattenedSpeciality} />
+      )}
+
       {renderCommunitySection && <CommunitySection {...flattenedSpeciality} />}
       <EventSection
         events={specialityEvents}
         title={title}
         eventIcon={eventIcon}
       />
+
       {renderTalksSection && (
         <TalksSection talks={talks} videoIcon={videoIcon} />
       )}
+
       {renderBlogSection && (
         <BlogListing
           title="Blog posts"
           description={`${title} articles created by members of YLD for the community.`}
           posts={posts}
         />
-      )}
-
-      {renderHowWeWorkWithSection && (
-        <HowWeWorkWithSection {...flattenedSpeciality} />
       )}
 
       {tutorials && tutorials.length > 0 && (
