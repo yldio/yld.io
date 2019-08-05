@@ -20,7 +20,6 @@ import Jobs from '../components/Homepage/jobs'
  */
 // eslint-disable-next-line no-unused-vars
 import { fragments } from '../fragments'
-import { SectionTitle, CardTitle, Subtitle } from '../components/Typography'
 
 const dateFormat = 'dddd[,] MMMM DD'
 
