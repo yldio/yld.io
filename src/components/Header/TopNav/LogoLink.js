@@ -33,13 +33,11 @@ const getLogoColors = ({ isSpecialityPage, slug }) => {
     ? logoColors.specialitiesFills[slug] || logoColors.specialitiesFills.default
     : logoColors['default']
 
-  const fillColorHover = isSpecialityPage
-    ? logoColors.specialityHover
-    : logoColors.defaultHover
+  const fillColorHover =
+    logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover']
 
-  const textColor = isSpecialityPage
-    ? logoColors['specialityText']
-    : logoColors['defaultText']
+  const textColor =
+    logoColors[isSpecialityPage ? 'specialityText' : 'defaultText']
 
   return {
     fillColorInitial,
