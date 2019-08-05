@@ -10,11 +10,10 @@ const BlogListing = ({ title, description, posts }) => {
     ({ id, title, uniqueSlug, firstPublishedAt }) => ({
       id,
       title,
-      href: `https://medium.com/yld-engineering-blog/${uniqueSlug}`,
+      href: `https://medium.com/yld-blog/${uniqueSlug}`,
       body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
     })
   )
-
   return (
     <Grid>
       <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
@@ -22,7 +21,8 @@ const BlogListing = ({ title, description, posts }) => {
           title={title}
           description={description}
           mediaItems={mediaItems}
-          CTALink="https://medium.com/yld-engineering-blog"
+          CTALink="/blog/"
+          external
           CTAText="Visit our blog"
         />
       </Padding>

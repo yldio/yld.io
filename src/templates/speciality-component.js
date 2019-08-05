@@ -72,7 +72,7 @@ export const SpecialityView = props => {
 
   const renderTalksSection = talks && talks.length > 0
   const renderBooksSection = books && books.length > 0
-  const renderBlogSection = posts && posts.legnth > 0
+  const renderBlogSection = posts && posts.length > 0
 
   // required: IntroSection, TrainingSection, GetInTouch
   // optional: ProjectsSection, Community, Talks, BlogListing, Tutorials, Books

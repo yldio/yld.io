@@ -25,7 +25,7 @@ const social = [
   },
   {
     label: 'Medium',
-    to: 'https://medium.com/yld-engineering-blog',
+    to: 'https://medium.com/yld-blog',
     img: medium
   },
   {
