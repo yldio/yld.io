@@ -82,6 +82,7 @@ version: 2
 workflows:
   build_and_test:
     jobs:
+      - lambdas
       - lint
       - lighthouse
       - snapshots
