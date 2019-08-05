@@ -128,6 +128,7 @@
     "lint-staged": "^8.1.0",
     "lodash.find": "4.6.0",
     "meetup-api": "1.4.38",
+    "nock": "^10.0.6",
     "npm-run-all": "^4.1.3",
     "prettier": "1.15.2",
     "react-test-renderer": "^16.8.1",
