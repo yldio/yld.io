@@ -23,7 +23,9 @@ const logoColors = {
     graphql: '#EB008B',
     'vue-js': '#039328',
     'react-js': '#0BDDF9',
-    kubernetes: '#29EFEF'
+    'react-native': '#968CEA',
+    kubernetes: '#29EFEF',
+    amp: '#0097E2'
   }
 }
 
