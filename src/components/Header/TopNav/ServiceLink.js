@@ -27,7 +27,7 @@ const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
         title={service}
         color={isServicePage ? 'text' : 'white'}
       >
-        {capitalize(service)}
+        {capitalize(service.replace(/-/g, ' '))}
       </StyledServiceLink>
     )
   )
