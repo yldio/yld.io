@@ -126,7 +126,7 @@ describe('different data', () => {
     })
   })
 
-  it('Calls the lambda leaver webhook', () => {
+  it('Calls the lambda lever webhook', () => {
     expect(got.post).toHaveBeenCalledTimes(1)
   })
 
