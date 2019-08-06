@@ -6,16 +6,19 @@ process.env.GITHUB_TOKEN = 'yld_mock_Github_token'
 // need to mock environment
 const contentfulEnvironmentMock = 'mock environment'
 
-const handler = require('../src/functions/github')
+const github = require('../src/functions/github')
 
 jest.mock('../src/functions/oss/repos')
 const Repos = require('../src/functions/oss/repos')
+const repoMock = repoData => Repos.mockResolvedValue(repoData)
 
 jest.mock('../src/functions/oss/meta')
 const Meta = require('../src/functions/oss/meta')
+const metaMock = metaData => Meta.mockResolvedValue(metaData)
 
 jest.mock('@yldio/oss-stats')
-const { getData = require('@yldio/oss-stats')
+const { getData } = require('@yldio/oss-stats')
+const getDataMock = data => getData.mockResolvedValue(data)
 
 // eslint-disable-next-line
 describe('Github lambda', () => {
@@ -24,26 +27,66 @@ describe('Github lambda', () => {
   })
 
   it('should call the repo and meta scripts with the correct arguments and returns the correct data', async () => {
+    const repoResponseData = [
+      {
+        url: 'https://github.com/yldio/fake-repo',
+        nameWithOwner: 'yldio/fake-repo',
+        descriptionHTML: '<div>This is fake! It does not exist!</div>',
+        starCount: 72,
+        pullRequestCount: 3,
+        topics: [],
+        pullRequests: [
+          'MDExOlB1bGxSZXF1ZXN0Nzc1MzkzMDc=',
+          'MDExOlB1bGxSZXF1ZXN0MTM2MzY1MDU5',
+          'MDExOlB1bGxSZXF1ZXN0MTUxNjY4NzY0'
+        ],
+        contributors: ['yldio'],
+        pullRequestsRank: 85,
+        starsRank: 366,
+        rank: 451
+      },
+      {
+        url: 'https://github.com/yldio/another-fake-repo',
+        nameWithOwner: 'yldio/another-fake-repo',
+        descriptionHTML: '<div>This is fake as well! It does not exist!</div>',
+        starCount: 62,
+        pullRequestCount: 2,
+        topics: [],
+        pullRequests: [
+          'MDExOlB1bGxSZXF1ZXN0MjUzNDI2MDA1',
+          'MDExOlB1bGxSZXF1ZXN0MjUzNDU4MTUx'
+        ],
+        contributors: ['yldio'],
+        pullRequestsRank: 69,
+        starsRank: 123,
+        rank: 294
+      }
+    ]
+
+    repoMock(repoResponseData)
+
     const metaResponseData = {
       meta: {
         openSourceMetaPullRequestsCount: 4276,
         openSourceMetaReposCount: 1017
       }
     }
-    const repoResponseData = { updatedRepos: 'No repos updated' }
+    metaMock(metaResponseData)
 
     const getDataResponseData = {
-      repos: repoResponseData,
-      openSourceMetaPullRequestsCount: 4276,
-      openSourceMetaReposCount: 1017
+      repos: repoResponseData, // TypeError: Cannot destructure property `repos` of 'undefined' or 'null'.
+      //   ...metaResponseData.meta,
+      repoCount: metaResponseData.meta.openSourceMetaReposCount,
+      pullRequestCount: metaResponseData.meta.openSourceMetaPullRequestsCount
     }
+    getDataMock(getDataResponseData)
 
-    const repoMock = Repos.mockResolvedValue(repoResponseData)
-    const metaMock = Meta.mockResolvedValue(metaResponseData)
-    // const getDataMock = getData.mockResolvedValue(getDataResponseData)
-    const getDataMock = getData.mockResolvedValue(getDataResponseData)
+    const githubResponse = await github.handler({
+      headers: {
+        authorization: 'basic authorised_header'
+      }
+    })
 
-    const githubResponse = await handler()
     const { output } = JSON.parse(githubResponse)
 
     expect(repoMock).toHaveBeenCalledWith(
