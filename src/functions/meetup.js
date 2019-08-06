@@ -164,6 +164,8 @@ exports.handler = async evt =>
     const isProd = LAMBDA_ENV === 'production'
     // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
     const space = await client.getSpace(CONTENTFUL_SPACE)
+
+    console.log(space)
     const environment = await space.getEnvironment('master')
 
     // filter to return published entries that belong to a specific content model.
