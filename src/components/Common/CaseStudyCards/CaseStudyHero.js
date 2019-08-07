@@ -44,11 +44,12 @@ const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
   </Fragment>
 )
 
-const CaseStudyHero = ({ caseStudy, as }) => {
+const CaseStudyHero = ({ caseStudy, as, scaleImage }) => {
   const { posterImage, title, specialities, services } = caseStudy
   return (
     <CaseStudyLayout
       posterImage={posterImage}
+      scaleImage={scaleImage}
       headings={<SectionTitle as={as}>{title}</SectionTitle>}
       textBelowImage={
         <SpecialitiesAndServices

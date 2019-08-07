@@ -21,6 +21,7 @@ const Image = ({ image, alt, className, ...props }) => {
 }
 
 export default styled(Image)`
+  ${props => props.scaleImage && `transform: scale(2.1);`}
   width: ${props => (props.width ? `${props.width}` : '100%')};
   height: ${props => (props.height ? `${props.height}` : 'auto')};
 `

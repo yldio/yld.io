@@ -43,6 +43,7 @@ const AnchorWrapper = ({ to, children }) =>
 const CaseStudyLayout = ({
   isTop = true,
   posterImage,
+  scaleImage,
   headings,
   textBelowImage,
   rightHandText,
@@ -53,7 +54,7 @@ const CaseStudyLayout = ({
       <Col width={[1, 1, 1, 1, 0]}>{headings}</Col>
       <Col width={[1, 1, 1, 1, 1 / 2]} pb={[3, 3, 3, 3, 0]}>
         <AnchorWrapper to={link}>
-          <Image image={posterImage} width="100%" />
+          <Image scaleImage={scaleImage} image={posterImage} width="100%" />
         </AnchorWrapper>
       </Col>
       <FlexCol width={[0, 0, 0, 0, 1 / 2, 1 / 2, 5 / 12]}>

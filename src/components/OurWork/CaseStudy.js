@@ -93,9 +93,16 @@ const CaseStudy = ({ caseStudy }) => {
         <TitleSection services={services} title={title} link={caseStudyLink} />
       </MobileOnlyCol>
       <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
-        <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
+        <Padding
+          bottom={{ smallPhone: 1, smallTablet: 0 }}
+          style={{ overflow: 'hidden' }}
+        >
           <Anchor to={caseStudyLink}>
-            <Image alt={posterImage.title} image={posterImage} />
+            <Image
+              scaleImage={slug === 'central-working-changing-how-you-work'}
+              alt={posterImage.title}
+              image={posterImage}
+            />
           </Anchor>
         </Padding>
       </Col>

@@ -122,7 +122,7 @@ const IndexPage = props => {
           socialLogo
         }}
       />
-      <CaseStudyHero caseStudy={caseStudy} as="h1" />
+      <CaseStudyHero scaleImage caseStudy={caseStudy} as="h1" />
 
       <Grid>
         {/* Intro  */}
