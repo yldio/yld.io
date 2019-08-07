@@ -52,8 +52,7 @@ const IntroSectionTitleWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('tablet')`
-    max-width: ${remcalc(500)};
-    font-size: 38px;
+    max-width: ${remcalc(490)};
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
 
@@ -114,11 +113,13 @@ const IntroImageMobile = styled.div`
 
 const StyledSectionTitle = styled(SectionTitle)`
   ${breakpoint('tablet')`
-    font-size: ${remcalc(37)};
+    font-size: ${remcalc(36)};
+    line-height: ${remcalc(42)};
   `};
 
   ${breakpoint('desktop')`
     font-size: ${remcalc(42)};
+    line-height: ${remcalc(48)};
   `};
 `
 
