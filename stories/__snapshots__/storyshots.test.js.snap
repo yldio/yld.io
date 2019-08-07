@@ -10450,7 +10450,7 @@ Array [
   display: block;
 }
 
-.c28 {
+.c29 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -10470,7 +10470,7 @@ Array [
   display: block;
 }
 
-.c33 {
+.c34 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -10664,7 +10664,6 @@ Array [
   font-size: 1.3125rem;
   line-height: 1.5rem;
   padding: 0.6875rem 0 0.8125rem 0;
-  color: #fff;
   padding: 0;
 }
 
@@ -10697,7 +10696,7 @@ Array [
   font-weight: 700;
 }
 
-.c31 {
+.c32 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -10706,7 +10705,7 @@ Array [
   font-weight: 700;
 }
 
-.c36 {
+.c26 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -11140,7 +11139,7 @@ Array [
   transform: scale(0.97);
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11170,7 +11169,7 @@ Array [
   max-width: 100%;
 }
 
-.c26 > img {
+.c27 > img {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -11179,7 +11178,7 @@ Array [
   width: 100%;
 }
 
-.c29 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11209,7 +11208,7 @@ Array [
   max-width: 100%;
 }
 
-.c29 > img {
+.c30 > img {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -11228,7 +11227,7 @@ Array [
   max-width: 19.375rem;
 }
 
-.c32 {
+.c33 {
   max-height: 108px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -11245,7 +11244,7 @@ Array [
   color: #757575;
 }
 
-.c30 {
+.c31 {
   padding-top: 3.375rem;
   padding-bottom: 2.25rem;
 }
@@ -11255,11 +11254,11 @@ Array [
   padding-top: 3.375rem;
 }
 
-.c27 {
+.c28 {
   padding-bottom: 3.375rem;
 }
 
-.c34 {
+.c35 {
   background: #f9f9f9;
 }
 
@@ -11277,7 +11276,7 @@ Array [
   padding-bottom: 0.75rem;
 }
 
-.c35 {
+.c36 {
   padding-top: 2.25rem;
   padding-bottom: 3.375rem;
 }
@@ -11789,42 +11788,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c28 {
+  .c29 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c28 {
+  .c29 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c28 {
+  .c29 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11833,7 +11832,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c28 {
+  .c29 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11842,7 +11841,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c28 {
+  .c29 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -11851,42 +11850,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c33 {
+  .c34 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c33 {
+  .c34 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c33 {
+  .c34 {
     width: 50%;
     position: initial;
     top: 0;
@@ -11895,7 +11894,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c33 {
+  .c34 {
     width: 50%;
     position: initial;
     top: 0;
@@ -11904,7 +11903,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c33 {
+  .c34 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -11913,7 +11912,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c33 {
+  .c34 {
     width: 25%;
     position: initial;
     top: 0;
@@ -12369,7 +12368,6 @@ Array [
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
-    color: #fff;
     padding: 0;
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -12560,7 +12558,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c30 {
+  .c31 {
     padding-top: 6.75rem;
     padding-bottom: 2.25rem;
   }
@@ -12594,7 +12592,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c35 {
+  .c36 {
     padding-top: 4.5rem;
     padding-bottom: 6.75rem;
   }
@@ -12993,12 +12991,17 @@ Array [
                     Migrating The Economist platform
                   </h3>
                   <p
-                    className="c7"
-                    muted={true}
+                    className="c26"
+                    muted={false}
+                    style={
+                      Object {
+                        "opacity": 0.8,
+                      }
+                    }
                   />
                 </header>
                 <div
-                  className="c26"
+                  className="c27"
                   color="E02A1B"
                 >
                   <img
@@ -13015,7 +13018,7 @@ Array [
             </a>
           </div>
           <div
-            className="c27 c28"
+            className="c28 c29"
             width={
               Array [
                 1,
@@ -13073,12 +13076,17 @@ Array [
                     Future-proofing Trainline
                   </h3>
                   <p
-                    className="c7"
-                    muted={true}
+                    className="c26"
+                    muted={false}
+                    style={
+                      Object {
+                        "opacity": 0.8,
+                      }
+                    }
                   />
                 </header>
                 <div
-                  className="c29"
+                  className="c30"
                   color="051534"
                 >
                   <img
@@ -13111,7 +13119,7 @@ Array [
           className="c9"
         >
           <div
-            className="c30 c4"
+            className="c31 c4"
             width={
               Array [
                 1,
@@ -13123,7 +13131,7 @@ Array [
             }
           >
             <h3
-              className="c31"
+              className="c32"
             >
               Other clients we helped
             </h3>
@@ -13133,7 +13141,7 @@ Array [
           className="c9"
         >
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13159,7 +13167,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13185,7 +13193,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13211,7 +13219,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13237,7 +13245,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13266,10 +13274,10 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
-        className="c35"
+        className="c36"
       >
         <div
           className="c2"
@@ -13295,7 +13303,7 @@ Array [
                 Node.js training
               </h2>
               <p
-                className="c36"
+                className="c26"
               >
                 Our expert engineers offer hands-on training and practical education to help you succeed in the ever-evolving technological landscape.
               </p>
@@ -13340,7 +13348,7 @@ Array [
                   Workshops
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Instructor-led, hands-on classes that cover open source technologies like Node.js, React.js and Docker.
                 </p>
@@ -13382,7 +13390,7 @@ Array [
                   Certification programmes
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Assess the technical ability of your team with our certification programmes, designed to identify your outstanding talents.
                 </p>
@@ -13424,7 +13432,7 @@ Array [
                   Pair programming
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Your teams learn from seasoned professionals while delivering high quality, functional platforms.
                 </p>
@@ -13950,7 +13958,7 @@ Array [
               }
             >
               <p
-                className="c36"
+                className="c26"
               >
                 Node.js articles created by members of YLD for the community.
               </p>
@@ -14061,7 +14069,7 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
         className="c2"
@@ -14102,7 +14110,7 @@ Array [
                 }
               >
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Node.js tutorials created by members of YLD for the community.
                 </p>
@@ -14239,7 +14247,7 @@ Array [
               Node.js books
             </h2>
             <p
-              className="c36"
+              className="c26"
             >
               Node.js books written by members of YLD for our community.
             </p>
@@ -14439,7 +14447,7 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
         className="c2"
@@ -14482,7 +14490,7 @@ Array [
               }
             >
               <p
-                className="c36"
+                className="c26"
               >
                 Whether you need help with a project or are interested in training, we love to talk about all things Node.
               </p>

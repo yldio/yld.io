@@ -11,31 +11,38 @@ const Emphasis = styled.em`
   color: ${props => props.theme.colors.secondaryText};
 `
 
-const PosterLinks = ({ project }) => (
-  <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
-    <section
-      style={{
-        background: `#${project.posterColor}`
-      }}
-    >
-      <CardHeader>
-        <CardTitle reverse noPadding bigger>
-          {project.title}
-        </CardTitle>
-        <BodyPrimary reverse muted>
-          {project.introSentence.introSentence}
-        </BodyPrimary>
-      </CardHeader>
-      <PosterImage justifyCenter alignCenter color={project.posterColor}>
-        <img
-          alt={project.posterImage.title}
-          src={project.posterImage.file.url}
-          style={{ maxHeight: '100%' }}
-        />
-      </PosterImage>
-    </section>
-  </AnimatedLink>
-)
+const PosterLinks = ({ project }) => {
+  const backgroundIsDark = project.posterColor === 'ff4e5b' // Learnably poster color
+  return (
+    <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
+      <section
+        style={{
+          background: `#${project.posterColor}`
+        }}
+      >
+        <CardHeader>
+          <CardTitle reverse={backgroundIsDark} noPadding bigger>
+            {project.title}
+          </CardTitle>
+          <BodyPrimary
+            reverse={backgroundIsDark}
+            style={{ opacity: 0.8 }}
+            muted={backgroundIsDark}
+          >
+            {project.introSentence.introSentence}
+          </BodyPrimary>
+        </CardHeader>
+        <PosterImage justifyCenter alignCenter color={project.posterColor}>
+          <img
+            alt={project.posterImage.title}
+            src={project.posterImage.file.url}
+            style={{ maxHeight: '100%' }}
+          />
+        </PosterImage>
+      </section>
+    </AnimatedLink>
+  )
+}
 
 const CompainesHelpedCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
