@@ -47,12 +47,12 @@ exports.handler = async evt =>
         const { body } = await got.post(LAMBDA_LEVER_WEBHOOK)
 
         return {
-          status: 200,
+          statusCode: 200,
           body
         }
       } else {
         return {
-          status: 200,
+          statusCode: 200,
           body:
             'Difference in jobs found but this is not production so no deployment for you'
         }
