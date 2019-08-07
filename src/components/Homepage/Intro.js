@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
@@ -33,16 +32,18 @@ const IntroRow = styled(Row)`
   `}
 `
 
-const StyledCardTitle = styled(CardTitle)`
-  display: inline-block;
-  text-decoration: underline;
+const StyledUl = styled(CardTitle)`
+  > li {
+    list-style: none;
+    padding-bottom: ${({ theme }) => theme.space[2]};
+  }
 `
 
 const IntroLinkWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
 
   ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[4]};
+    padding-bottom: ${({ theme }) => theme.space[3]};
   `}
 `
 
@@ -126,18 +127,7 @@ const IntroSection = ({
                   // eslint-disable-next-line
                   heading: props => <Subtitle reverse muted {...props} />,
                   // eslint-disable-next-line
-                  link: props => (
-                    <>
-                      <StyledCardTitle
-                        noPaddingTop
-                        as={Link}
-                        reverse
-                        to="/engineering"
-                        {...props}
-                      />
-                      <br />
-                    </>
-                  )
+                  list: props => <StyledUl noPaddingTop reverse {...props} />
                 }}
                 source={introContent}
               />
