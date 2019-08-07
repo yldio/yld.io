@@ -48,11 +48,17 @@ const IntroLinkWrapper = styled.div`
 `
 
 const IntroSectionTitleWrapper = styled.div`
-  max-width: ${remcalc(550)};
+  max-width: ${remcalc(425)};
   padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('tablet')`
+    max-width: ${remcalc(500)};
+    font-size: 38px;
     padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
+
+  ${breakpoint('desktop')`
+    max-width: ${remcalc(550)};
   `}
 `
 
@@ -106,6 +112,16 @@ const IntroImageMobile = styled.div`
   }
 `
 
+const StyledSectionTitle = styled(SectionTitle)`
+  ${breakpoint('tablet')`
+    font-size: ${remcalc(37)};
+  `};
+
+  ${breakpoint('desktop')`
+    font-size: ${remcalc(42)};
+  `};
+`
+
 const IntroSection = ({
   introHeader,
   introContent: { introContent },
@@ -116,11 +132,11 @@ const IntroSection = ({
     <StyledBlueBackground>
       <Grid>
         <IntroRow>
-          <Col width={[1, 1, 1, 1, 7 / 12]} style={{ position: 'relative' }}>
+          <Col width={[1]} style={{ position: 'relative' }}>
             <IntroSectionTitleWrapper>
-              <SectionTitle reverse as="h1">
+              <StyledSectionTitle reverse as="h1">
                 {introHeader}
-              </SectionTitle>
+              </StyledSectionTitle>
             </IntroSectionTitleWrapper>
             <IntroLinkWrapper>
               <ReactMarkdown
