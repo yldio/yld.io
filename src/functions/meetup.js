@@ -5,10 +5,12 @@ const { createClient } = require('contentful-management')
 const { default: Map } = require('apr-map')
 const { promisify } = require('util')
 const find = require('lodash.find')
-const striptags = require('striptags')
 const isEqual = require('lodash.isequal')
 
 const Auth = require('./utils/auth')
+
+const { generateContentfulEvent, processMeetupData, processMeetupEvent } = require('./helperFiles/meetupHelpers')
+
 
 // Set up dot-env variables
 const {
@@ -19,105 +21,7 @@ const {
 } = process.env
 
 // Import helper functions
-const generateContentfulEvent = ({
-  urlname,
-  nextEvent,
-  venue,
-  link,
-  date,
-  time,
-  duration,
-  eventName,
-  description
-}) => ({
-  fields: {
-    thisMeetupCode: {
-      'en-US': `${urlname}-${nextEvent}`
-    },
-    meetupUrlName: {
-      'en-US': urlname
-    },
-    linkToEvent: {
-      'en-US': link
-    },
-    date: {
-      'en-US': date
-    },
-    startTime: {
-      'en-US': new Date(time)
-    },
-    endTime: {
-      'en-US': new Date(time + duration)
-    },
-    address: {
-      'en-US':
-        venue !== 'Venue To Be Confirmed'
-          ? `${venue.name}&&${venue.address1}&&${
-              venue.adress2 ? venue.adress2 : ''
-            }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
-          : 'Venue To Be Confirmed'
-    },
-    eventTitle: {
-      'en-US': eventName
-    },
-    blurb: {
-      'en-US': description
-    },
-    homepageFeatured: {
-      'en-US': false
-    }
-  }
-})
-const processMeetupData = arrayOfMeetups => {
-  let outputArray = []
-  arrayOfMeetups.forEach(meetup => {
-    const thisMeetup = {
-      meetupId: meetup.id,
-      name: meetup.name,
-      url: meetup.link,
-      urlname: meetup.urlname,
-      nextEvent: meetup.next_event ? meetup.next_event.id : 0
-    }
 
-    outputArray.push(thisMeetup)
-  })
-
-  return outputArray
-}
-const processMeetupEvent = eventObject => {
-  let outputObject = {
-    eventName: eventObject.name,
-    duration: eventObject.duration,
-    time: eventObject.time,
-    localTime: eventObject.local_time,
-    date: eventObject.local_date,
-    venue: eventObject.hasOwnProperty('venue')
-      ? {
-          name: eventObject.venue.name,
-          address1: eventObject.venue.address_1,
-          address2: eventObject.venue.address_2
-            ? eventObject.venue.address_2
-            : 0,
-          address3: eventObject.venue.address_3
-            ? eventObject.venue.address_3
-            : 0,
-          city: eventObject.venue.city
-        }
-      : 'Venue To Be Confirmed',
-    link: eventObject.link,
-    description:
-      eventObject.description.includes('EVENT SUMMARY') &&
-      eventObject.description.includes('EVENT DETAILS')
-        ? striptags(
-            eventObject.description
-              .split('EVENT SUMMARY:')[1]
-              .split('EVENT DETAILS')[0]
-          ).trim()
-        : 'For more information, please visit the Meetup page'
-  }
-
-  return outputObject
-}
 
 // Link API keys dot-env variables to instances
 const meetup = require('meetup-api')({
@@ -165,7 +69,6 @@ exports.handler = async evt =>
     // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
     const space = await client.getSpace(CONTENTFUL_SPACE)
 
-    console.log(space)
     const environment = await space.getEnvironment('master')
 
     // filter to return published entries that belong to a specific content model.
@@ -175,8 +78,9 @@ exports.handler = async evt =>
       // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
     })
 
-    // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
+    // Maps through Community objects. If there is an upcominig event, the script either updates the Contentful entry for that event if it exists, otherwise creates one.
     await Map(processMeetupData(await getSelfGroups()), async group => {
+
       const { urlname, nextEvent } = group
       if (!nextEvent) {
         return null
@@ -278,3 +182,4 @@ exports.handler = async evt =>
       body: 'Meetup function has finished running'
     }
   })
+
