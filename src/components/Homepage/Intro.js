@@ -48,6 +48,7 @@ const IntroLinkWrapper = styled.div`
 `
 
 const IntroSectionTitleWrapper = styled.div`
+  max-width: ${remcalc(550)};
   padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('tablet')`
