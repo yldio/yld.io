@@ -67,7 +67,9 @@ const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
         <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
       </StyledLink>
     ) : (
-      <HomepageLogo src={HomepageSvg} alt="yld logo" />
+      <Link to="/" title="Return to Homepage">
+        <HomepageLogo src={HomepageSvg} alt="yld logo" />
+      </Link>
     )
   }
 
