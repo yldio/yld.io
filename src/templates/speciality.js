@@ -7,9 +7,10 @@ import { SpecialityView } from './speciality-component'
 
 const Speciality = ({ data, location }) => {
   const { contentfulSpeciality: speciality } = data
+  const { slug, title } = speciality
 
   return (
-    <Layout backgroundColor="blue" location={location}>
+    <Layout bgColor="blueBg" slug={slug} title={title} location={location}>
       <Head page={speciality} />
       <SpecialityView data={data} />
     </Layout>

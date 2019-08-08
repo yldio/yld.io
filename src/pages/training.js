@@ -17,7 +17,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   ]
 
   return (
-    <Layout>
+    <Layout slug="training">
       <Head page={content} />
       <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <Statement richText={content.seoText.content[0].content} />

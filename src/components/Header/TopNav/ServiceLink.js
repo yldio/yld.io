@@ -1,10 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
 import { capitalize } from 'lodash'
-
-import { servicesRegExp, getIsServicePage, getService } from '../navLinksHelper'
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -21,25 +19,17 @@ const StyledServiceLink = styled(Link)`
   }
 `
 
-const ServiceLink = ({ path = '/' }) => {
-  const isServicePage = getIsServicePage(path)
-  const serviceTitle = isServicePage ? path.match(servicesRegExp)[0] : null
-
-  const isSpecialityPage = path.includes('speciality')
-  const service = isSpecialityPage ? getService(path) : serviceTitle
-
+const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
   return (
-    <Fragment>
-      {isServicePage || isSpecialityPage ? (
-        <StyledServiceLink
-          to={`/${service}`}
-          title={service}
-          color={isServicePage ? 'text' : 'white'}
-        >
-          {capitalize(service)}
-        </StyledServiceLink>
-      ) : null}
-    </Fragment>
+    (isServicePage || isSpecialityPage) && (
+      <StyledServiceLink
+        to={`/${service}`}
+        title={service}
+        color={isServicePage ? 'text' : 'white'}
+      >
+        {capitalize(service.replace(/-/g, ' '))}
+      </StyledServiceLink>
+    )
   )
 }
 
