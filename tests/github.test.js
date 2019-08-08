@@ -23,6 +23,7 @@ const repoMock = repoData => Repos.mockResolvedValue(repoData)
 jest.mock('../src/functions/oss/meta')
 const Meta = require('../src/functions/oss/meta')
 const metaMock = metaData => Meta.mockResolvedValue(metaData)
+// const YldioOssStats = require('../__mocks__/yldio-oss-stats')
 
 // jest.genMockFromModule('@yldio/oss-stats')
 // jest.mock('@yldio/oss-stats')
