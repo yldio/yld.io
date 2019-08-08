@@ -1,4 +1,12 @@
 /* eslint-env jest */
+// import ossStats, { getData } from '@yldio/oss-stats'
+// const getDataMock = data =>
+//   jest.mock('@yldio/oss-stats', () => ({
+//     getData: jest.fn(() => data)
+//   }))
+
+import YldioOssStats from '../__mocks__/yldio-oss-stats'
+
 process.env.CONTENTFUL_SPACE = 'yld_mock_contentful_space'
 process.env.CMS_CRUD = 'yld_mock_CMS_CRUD'
 process.env.GITHUB_TOKEN = 'yld_mock_Github_token'
@@ -16,9 +24,10 @@ jest.mock('../src/functions/oss/meta')
 const Meta = require('../src/functions/oss/meta')
 const metaMock = metaData => Meta.mockResolvedValue(metaData)
 
-jest.mock('@yldio/oss-stats')
-const { getData } = require('@yldio/oss-stats')
-const getDataMock = data => getData.mockResolvedValue(data)
+// jest.genMockFromModule('@yldio/oss-stats')
+// jest.mock('@yldio/oss-stats')
+// const { getData } = require('@yldio/oss-stats')
+// const getDataMock = data => getData.mockResolvedValue(data)
 
 // eslint-disable-next-line
 describe('Github lambda', () => {
@@ -79,7 +88,7 @@ describe('Github lambda', () => {
       repoCount: metaResponseData.meta.openSourceMetaReposCount,
       pullRequestCount: metaResponseData.meta.openSourceMetaPullRequestsCount
     }
-    getDataMock(getDataResponseData)
+    YldioOssStats.getData(getDataResponseData)
 
     const githubResponse = await github.handler({
       headers: {
@@ -91,12 +100,12 @@ describe('Github lambda', () => {
 
     expect(repoMock).toHaveBeenCalledWith(
       contentfulEnvironmentMock,
-      getDataMock
+      YldioOssStats.getData
     )
 
     expect(metaMock).toHaveBeenCalledWith(
       contentfulEnvironmentMock,
-      getDataMock
+      YldioOssStats.getData
     )
 
     // expect(
