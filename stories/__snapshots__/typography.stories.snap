@@ -1,0 +1,371 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Typography BodyPrimary 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+}
+
+<div>
+  <p
+    className="c0"
+  >
+    BodyPrimary
+  </p>
+  <p
+    className="c1"
+  >
+    BodyPrimary with bold modifier
+  </p>
+</div>
+`;
+
+exports[`Storyshots Typography BodyStylised 1`] = `
+.c0 {
+  color: #757575;
+  font-family: 'PT Mono',sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+<p
+  className="c0"
+>
+  BodyStylised
+</p>
+`;
+
+exports[`Storyshots Typography CardTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  font-weight: 400;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+  }
+}
+
+<div>
+  <h3
+    className="c0"
+  >
+    Card Title
+  </h3>
+  <h3
+    className="c1"
+  >
+    Card Title with regular modifier
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Typography DisplayTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+  }
+}
+
+<h2
+  className="c0"
+>
+  Display Title
+</h2>
+`;
+
+exports[`Storyshots Typography SectionTitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+<h2
+  className="c0"
+>
+  Section Title
+</h2>
+`;
+
+exports[`Storyshots Typography Subtitle 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+}
+
+<h3
+  className="c0"
+>
+  Subtitle
+</h3>
+`;
+
+exports[`Storyshots Typography Typography Modifiers 1`] = `
+.c2 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #828282;
+}
+
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #757575;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  color: #fff;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  opacity: .5;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  padding: 0;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  padding-top: 0;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  padding-bottom: 0;
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #828282;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #757575;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    color: #fff;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    opacity: .5;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    padding: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    padding-top: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    padding-bottom: 0;
+  }
+}
+
+<div>
+  <code>
+    secondary
+  </code>
+  <h2
+    className="c0"
+  >
+    modifier
+  </h2>
+  <br />
+  <div
+    style={
+      Object {
+        "background": "#090329",
+      }
+    }
+  >
+    <code
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      reverse
+    </code>
+    <h2
+      className="c1"
+    >
+      modifier
+    </h2>
+  </div>
+  <br />
+  <code>
+    textLight
+  </code>
+  <h2
+    className="c2"
+  >
+    modifier
+  </h2>
+  <br />
+  <code>
+    muted
+  </code>
+  <h2
+    className="c3"
+    muted={true}
+  >
+    modifier
+  </h2>
+  <br />
+  <code>
+    noPadding
+  </code>
+  <h2
+    className="c4"
+  >
+    modifier
+  </h2>
+  <br />
+  <code>
+    noPaddingTop
+  </code>
+  <h2
+    className="c5"
+  >
+    modifier
+  </h2>
+  <br />
+  <code>
+    noPaddingBottom
+  </code>
+  <h2
+    className="c6"
+  >
+    modifier
+  </h2>
+</div>
+`;
