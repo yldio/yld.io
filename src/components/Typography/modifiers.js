@@ -18,6 +18,11 @@ const modifiers = css`
     opacity: .5;
   `};
 
+  ${is('lightBackground')`
+    opacity: .8
+    color: ${props => props.theme.colors.black}
+  `}
+
   ${is('noPadding')`
     padding: 0;
   `};
