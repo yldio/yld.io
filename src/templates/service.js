@@ -31,7 +31,7 @@ const Service = ({ data: { contentfulService: service }, location }) => {
   ]
 
   return (
-    <Layout location={location}>
+    <Layout location={location} slug={service.slug}>
       <Head page={service} />
 
       <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
