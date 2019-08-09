@@ -8,7 +8,7 @@ import TopNav from './TopNav'
 import SideNav from './SideNav'
 
 const StyledContainer = styled.div`
-  position: fixed;
+  position: absolute;
   background: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
   width: 100%;
   max-width: unset;
