@@ -34,7 +34,7 @@ const HowWeWorkWithSection = ({
           <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
             <SectionTitle>{howWeWorkWithTitle}</SectionTitle>
           </Col>
-          <Col width={[1, 1, 1, 6 / 12]}>
+          <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
             <BodyPrimary>{howWeWorkWithCopy}</BodyPrimary>
             {howWeWorkWithPractises &&
               howWeWorkWithPractises.length > 0 &&
