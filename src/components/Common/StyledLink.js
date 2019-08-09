@@ -79,6 +79,17 @@ export const StyledLinkCss = css`
       }
     }
   `};
+
+  ${is('vibrant', 'reverse')`
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.vibrant}
+      color: #007f56;
+
+      &::after {
+        background: #007f56
+      }
+    }
+  `}
 `
 
 export const FakeLink = styled.p`

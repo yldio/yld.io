@@ -8,11 +8,9 @@ import { hotjar } from 'react-hotjar'
 
 import Header from './Header'
 import './layout.css'
-import BlueBackground from './Common/BlueBackground'
 import theme from '../utils/theme'
 import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
-import GreyBackground from './Common/GreyBackground'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
@@ -72,14 +70,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, backgroundColor, blue, is404, contactUsBg } = this.props
-
-    const Component = (() => {
-      if (backgroundColor === 'blue' || blue) return BlueBackground
-      if (backgroundColor === 'grey') return GreyBackground
-
-      return Fragment
-    })()
+    const { children, bgColor, is404, contactUsBg, slug } = this.props
 
     const { GridDebugger } = this.state
 
@@ -112,12 +103,11 @@ class Layout extends Component {
               </Helmet>
               <Location>
                 {({ location }) => (
-                  <Component>
-                    <Header
-                      path={location.pathname}
-                      blue={backgroundColor === 'blue'}
-                    />
-                  </Component>
+                  <Header
+                    slug={slug}
+                    path={location.pathname}
+                    bgColor={bgColor}
+                  />
                 )}
               </Location>
               {GridDebugger && (
@@ -129,7 +119,7 @@ class Layout extends Component {
                 />
               )}
               <StyledMain>{children}</StyledMain>
-              <Footer contactUsBg={contactUsBg} is404={is404}/>
+              <Footer contactUsBg={contactUsBg} is404={is404} />
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
                 <Cookie onClick={this.handleClick} />

@@ -6331,2852 +6331,6 @@ exports[`Storyshots Grid Rows and Colums (some combinations) 1`] = `
 </div>
 `;
 
-exports[`Storyshots Header Header itself 1`] = `
-.c1 {
-  max-width: calc(100% - 48px);
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c3 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c17 {
-  fill: #333333;
-}
-
-.c16 {
-  border: none;
-  background: transparent;
-  padding: 0;
-  min-width: 3rem;
-  min-height: 3rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 5rem;
-  height: 5rem;
-  margin: 0.25rem -1.25rem 0.25rem 0.25rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c16:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c16:active {
-  outline: none;
-}
-
-.c18 {
-  display: none;
-}
-
-.c15 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c15:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c15:active {
-  outline: none;
-}
-
-.c14 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: #fff;
-  color: #333333;
-}
-
-.c14:hover,
-.c14 > a:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c14 > a:active {
-  background: #333333;
-  color: #fff;
-}
-
-.c14 > a.active {
-  background: #fff;
-  color: #828282;
-}
-
-.c14 > a.active:active {
-  background: #fff;
-  color: #828282;
-}
-
-.c14 > a.active:hover {
-  color: #333333;
-}
-
-.c10 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c13 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-  width: 100%;
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c13:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c13:active {
-  outline: none;
-}
-
-.c13:hover,
-.c13.active {
-  color: #333333;
-}
-
-.c7 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.c7 > span {
-  background: #fff;
-  color: #333333;
-}
-
-.c7 > span:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c8:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c8:active {
-  outline: none;
-}
-
-.c9 {
-  padding-right: 0.375rem;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c11 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-  z-index: 999;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  height: 5.25rem;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6 {
-  display: none;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c21 {
-  border: none;
-  background: transparent;
-  padding: 0;
-  min-width: 3rem;
-  min-height: 3rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 5rem;
-  height: 5rem;
-  margin: 0.25rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c21:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c21:active {
-  outline: none;
-}
-
-.c24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
-  margin: 0.25rem;
-  outline: 0.25rem solid transparent;
-  color: #858196;
-}
-
-.c24:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c24:active {
-  outline: none;
-}
-
-.c24:hover,
-.c24:focus {
-  color: #fff;
-}
-
-.c25 {
-  max-width: 320px;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c23 {
-  display: block;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.5625rem 2.125rem 0.4375rem 1.25rem;
-  margin: 0.25rem;
-  color: #858196;
-}
-
-.c23:hover,
-.c23:active,
-.c23.active {
-  color: #fff;
-}
-
-.c23:focus {
-  color: #fff;
-  outline: 0.25rem solid transparent;
-}
-
-.c23:focus:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c23:focus:active {
-  outline: none;
-}
-
-.c22 {
-  list-style-type: none;
-}
-
-.c19 {
-  position: fixed;
-  background: #090329;
-  height: 100vh;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  overflow-y: auto;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  -webkit-transition: -webkit-transform 200ms ease-in-out;
-  -webkit-transition: transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
-}
-
-.c0 {
-  position: fixed;
-  background: #fff;
-  width: 100%;
-  max-width: unset;
-  z-index: 999;
-}
-
-@media (min-width:29.4375em) {
-  .c1 {
-    max-width: calc(100% - 72px);
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c1 {
-    max-width: 480px;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    max-width: none;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c1 {
-    max-width: 1100px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c1 {
-    padding-left: 2.625rem;
-    padding-right: 2.625rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c1 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c16 {
-    display: none;
-  }
-}
-
-@media screen and (max-width:959px) {
-  .c18 {
-    z-index: 9;
-    background-color: rgba(51,51,51,0.2);
-    content: '';
-    display: block;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    -webkit-transition: opacity 200ms ease-out;
-    transition: opacity 200ms ease-out;
-    opacity: 0;
-    -webkit-transform: translateX(200%);
-    -ms-transform: translateX(200%);
-    transform: translateX(200%);
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c14 {
-    margin-right: 0.375rem;
-  }
-
-  .c14:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c7 {
-    margin-right: 0.375rem;
-  }
-
-  .c7:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c6 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 0rem 1rem;
-    padding-right: 0rem;
-  }
-}
-
-@media screen and (min-width:600px) and (max-width:959px) {
-  .c19 {
-    width: 18.4375rem;
-    left: auto;
-    right: 0;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c19 {
-    display: none;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      style={
-        Object {
-          "overflow": "visible",
-        }
-      }
-    >
-      <div
-        className="c3"
-        style={
-          Object {
-            "overflow": "visible",
-          }
-        }
-        width={
-          Array [
-            1,
-          ]
-        }
-      >
-        <nav
-          className="c4"
-        >
-          <div
-            className="c5"
-          >
-            <a
-              aria-current="page"
-              className=""
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              style={Object {}}
-              title="Return to Homepage"
-            >
-              <img
-                alt="yld logo"
-                height="48"
-                role="link"
-                src="test-file-stub"
-              />
-            </a>
-          </div>
-          <ul
-            className="c6"
-          >
-            <li
-              aria-expanded={false}
-              aria-haspopup="true"
-              className="c7"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseDown={[Function]}
-            >
-              <span
-                className="c8"
-                tabIndex="0"
-              >
-                <span
-                  className="c9"
-                  data-event="navigation-services"
-                >
-                  Services
-                </span>
-                <svg
-                  className="c10"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  width="6"
-                >
-                  <polyline
-                    points="0,0 6,0 6,6"
-                  />
-                </svg>
-              </span>
-              <ul
-                className="c11"
-              >
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/engineering/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    title="Engineering"
-                  >
-                    Engineering
-                  </a>
-                </li>
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/design/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    title="Design"
-                  >
-                    Design
-                  </a>
-                </li>
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/training/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    title="Training"
-                  >
-                    Training
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                className="c15"
-                href="/our-work/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                title="Our work"
-              >
-                Our work
-              </a>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                className="c15"
-                href="/open-source/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                title="Open Source"
-              >
-                Open Source
-              </a>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                className="c15"
-                data-event="navigation-blog"
-                href="/blog/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                title="Blog"
-              >
-                Blog
-              </a>
-            </li>
-            <li
-              aria-expanded={false}
-              aria-haspopup="true"
-              className="c7"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseDown={[Function]}
-            >
-              <span
-                className="c8"
-                tabIndex="0"
-              >
-                <span
-                  className="c9"
-                  data-event={null}
-                >
-                  About
-                </span>
-                <svg
-                  className="c10"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  width="6"
-                >
-                  <polyline
-                    points="0,0 6,0 6,6"
-                  />
-                </svg>
-              </span>
-              <ul
-                className="c11"
-              >
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/about-us/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    title="Our team"
-                  >
-                    Our team
-                  </a>
-                </li>
-                <li
-                  className="c12"
-                >
-                  <a
-                    className="c13"
-                    href="/join-us/"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseEnter={[Function]}
-                    title="Join us"
-                  >
-                    Join us
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li
-              className="c14"
-            >
-              <a
-                className="c15"
-                href="/contact"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                title="Contact"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <button
-          className="c16"
-          onClick={[Function]}
-        >
-          <svg
-            className="c17"
-            height="18"
-            title="open menu"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 16h24v2H0zm0-8h24v2H0zm0-8h24v2H0z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-        <div
-          className="c18"
-          onClick={[Function]}
-        />
-        <nav
-          className="c19"
-          open={false}
-        >
-          <div
-            className="c20"
-          >
-            <button
-              className="c21"
-              onClick={[Function]}
-            >
-              <img
-                alt="Close menu"
-                src="test-file-stub"
-              />
-            </button>
-          </div>
-          <ul>
-            <li
-              className="c22"
-            >
-              <a
-                aria-current="page"
-                className="c23 active"
-                href="/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                states={
-                  Object {
-                    "default": Array [
-                      "
-  color: #858196;
-",
-                    ],
-                    "hoverActive": Array [
-                      "
-  color: ",
-                      [Function],
-                      ";
-",
-                    ],
-                  }
-                }
-                style={Object {}}
-                title="Home"
-              >
-                Home
-              </a>
-            </li>
-            <li
-              aria-expanded={false}
-              aria-haspopup="true"
-            >
-              <span
-                className="c24"
-                data-event="navigation-services"
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                tabIndex="0"
-              >
-                <span
-                  className="c25"
-                >
-                  Services
-                </span>
-                <svg
-                  className="c10"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  width="6"
-                >
-                  <polyline
-                    points="0,0 6,0 6,6"
-                  />
-                </svg>
-              </span>
-            </li>
-            <li
-              className="c22"
-            >
-              <a
-                className="c23"
-                href="/our-work/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                states={
-                  Object {
-                    "default": Array [
-                      "
-  color: #858196;
-",
-                    ],
-                    "hoverActive": Array [
-                      "
-  color: ",
-                      [Function],
-                      ";
-",
-                    ],
-                  }
-                }
-                title="Our work"
-              >
-                Our work
-              </a>
-            </li>
-            <li
-              className="c22"
-            >
-              <a
-                className="c23"
-                href="/open-source/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                states={
-                  Object {
-                    "default": Array [
-                      "
-  color: #858196;
-",
-                    ],
-                    "hoverActive": Array [
-                      "
-  color: ",
-                      [Function],
-                      ";
-",
-                    ],
-                  }
-                }
-                title="Open Source"
-              >
-                Open Source
-              </a>
-            </li>
-            <li
-              className="c22"
-            >
-              <a
-                className="c23"
-                data-event="navigation-blog"
-                href="/blog/"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                states={
-                  Object {
-                    "default": Array [
-                      "
-  color: #858196;
-",
-                    ],
-                    "hoverActive": Array [
-                      "
-  color: ",
-                      [Function],
-                      ";
-",
-                    ],
-                  }
-                }
-                title="Blog"
-              >
-                Blog
-              </a>
-            </li>
-            <li
-              aria-expanded={false}
-              aria-haspopup="true"
-            >
-              <span
-                className="c24"
-                data-event={null}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                tabIndex="0"
-              >
-                <span
-                  className="c25"
-                >
-                  About
-                </span>
-                <svg
-                  className="c10"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  width="6"
-                >
-                  <polyline
-                    points="0,0 6,0 6,6"
-                  />
-                </svg>
-              </span>
-            </li>
-            <li
-              className="c22"
-            >
-              <a
-                className="c23"
-                href="/contact"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                states={
-                  Object {
-                    "default": Array [
-                      "
-  color: #858196;
-",
-                    ],
-                    "hoverActive": Array [
-                      "
-  color: ",
-                      [Function],
-                      ";
-",
-                    ],
-                  }
-                }
-                title="Contact"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
-.c2 {
-  height: 3rem;
-  width: 3rem;
-}
-
-.c3 {
-  font-size: 1.625rem;
-  margin-left: 0.75rem;
-  color: #333333;
-}
-
-.c3:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #333333;
-}
-
-.c13 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c13:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c13:active {
-  outline: none;
-}
-
-.c12 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: #fff;
-  color: #333333;
-}
-
-.c12:hover,
-.c12 > a:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c12 > a:active {
-  background: #333333;
-  color: #fff;
-}
-
-.c12 > a.active {
-  background: #fff;
-  color: #828282;
-}
-
-.c12 > a.active:active {
-  background: #fff;
-  color: #828282;
-}
-
-.c12 > a.active:hover {
-  color: #333333;
-}
-
-.c8 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c11 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-  width: 100%;
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c11:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c11:active {
-  outline: none;
-}
-
-.c11:hover,
-.c11.active {
-  color: #333333;
-}
-
-.c5 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.c5 > span {
-  background: #fff;
-  color: #333333;
-}
-
-.c5 > span:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c6:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c6:active {
-  outline: none;
-}
-
-.c7 {
-  padding-right: 0.375rem;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c9 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-  z-index: 999;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  height: 5.25rem;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 {
-  display: none;
-}
-
-@media screen and (min-width:960px) {
-  .c2 {
-    height: 3.375rem;
-    width: 3.375rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c3 {
-    font-size: 1.875rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c12 {
-    margin-right: 0.375rem;
-  }
-
-  .c12:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c5 {
-    margin-right: 0.375rem;
-  }
-
-  .c5:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 0rem 1rem;
-    padding-right: 0rem;
-  }
-}
-
-<nav
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <a
-      aria-current="page"
-      className="c2"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      style={Object {}}
-      title="Return to Homepage"
-    >
-      <svg
-        viewBox="0 0 54 54"
-      >
-        <title>
-          service speciality logo
-        </title>
-        <g
-          fill="none"
-          id="yld-service-speciality-logo"
-          stroke="none"
-        >
-          <rect
-            fill="#333333"
-            height="54"
-            id="Logo-rectangle"
-            width="54"
-            x="0"
-            y="0"
-          />
-          <path
-            d="M16.8201464,23.2905974 C18.4977896,23.2905974 19.8575263,21.9304179 19.8575263,20.2527747 C19.8575263,18.5751314 18.4977896,17.2153947 16.8201464,17.2153947 C15.1425032,17.2153947 13.7823237,18.5751314 13.7823237,20.2527747 C13.7823237,21.9304179 15.1425032,23.2905974 16.8201464,23.2905974 L16.8201464,23.2905974 Z M38.4789676,28.2522416 C38.4789676,26.5768122 37.1165743,25.2144189 35.4415877,25.2144189 C33.7666011,25.2144189 32.403765,26.5768122 32.403765,28.2522416 C32.403765,29.9267854 33.7666011,31.2896215 35.4415877,31.2896215 C37.1165743,31.2896215 38.4789676,29.9267854 38.4789676,28.2522416 L38.4789676,28.2522416 Z M42.557735,16 L42.557735,35.1881828 L38.5073047,35.1881828 L38.5073047,34.6325105 C37.5779373,35.0810332 36.5409776,35.339609 35.4415877,35.339609 C31.5332856,35.339609 28.3537775,32.1601009 28.3537775,28.2522416 C28.3537775,24.3434967 31.5332856,21.1639886 35.4415877,21.1639886 C36.5409776,21.1639886 37.5779373,21.4230072 38.5073047,21.8715299 L38.5073047,16 L42.557735,16 Z M28.3537775,16 L28.3537775,28.2522416 L28.3537775,35.1881828 L24.3033473,35.1881828 L24.3033473,23.7931376 L16.8205892,40.632 L12.388494,40.632 L14.6244661,35.6003986 L9,23.2905974 L13.453348,23.2905974 L16.8201464,30.6595644 L20.0948493,23.2905974 L24.3033473,23.2905974 L24.3033473,16 L28.3537775,16 Z"
-            fill="#fff"
-            id="Logo-fill"
-          />
-        </g>
-      </svg>
-    </a>
-    <a
-      className="c3"
-      color="text"
-      href="/engineering"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      title="engineering"
-    >
-      Engineering
-    </a>
-  </div>
-  <ul
-    className="c4"
-  >
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c5"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c6"
-        tabIndex="0"
-      >
-        <span
-          className="c7"
-          data-event={null}
-        >
-          Dropdown 1
-        </span>
-        <svg
-          className="c8"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c9"
-      >
-        <li
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/item-1/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 1"
-          >
-            Item 1
-          </a>
-        </li>
-        <li
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/item-2/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 2"
-          >
-            Item 2
-          </a>
-        </li>
-        <li
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/item-3/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 3"
-          >
-            Item 3
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c12"
-    >
-      <a
-        className="c13"
-        href="/anchor/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="Anchor 1"
-      >
-        Anchor 1
-      </a>
-    </li>
-    <li
-      className="c12"
-    >
-      <a
-        className="c13"
-        href="https://uk.linkedin.com/"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-        title="External anchor"
-      >
-        External anchor
-      </a>
-    </li>
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c5"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c6"
-        tabIndex="0"
-      >
-        <span
-          className="c7"
-          data-event={null}
-        >
-          Dropdown 2
-        </span>
-        <svg
-          className="c8"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c9"
-      >
-        <li
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/go-here/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Go here"
-          >
-            Go here
-          </a>
-        </li>
-        <li
-          className="c10"
-        >
-          <a
-            className="c11"
-            href="/go-there/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Go there"
-          >
-            Go there
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c12"
-    >
-      <a
-        className="c13"
-        href="/last-anchor/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="Anchor 2"
-      >
-        Anchor 2
-      </a>
-    </li>
-  </ul>
-</nav>
-`;
-
-exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
-.c3 {
-  height: 3rem;
-  width: 3rem;
-}
-
-.c4 {
-  font-size: 1.625rem;
-  margin-left: 0.75rem;
-  color: #fff;
-}
-
-.c4:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-  color: #fff;
-}
-
-.c14 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c14:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c14:active {
-  outline: none;
-}
-
-.c13 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: #090329;
-  color: #fff;
-}
-
-.c13:hover,
-.c13 > a:hover {
-  background: #65FFCD;
-  color: #007f56;
-}
-
-.c13 > a:active {
-  background: #65FFCD;
-  color: #333333;
-}
-
-.c13 > a.active {
-  background: #090329;
-  color: #828282;
-}
-
-.c13 > a.active:active {
-  background: #090329;
-  color: #828282;
-}
-
-.c13 > a.active:hover {
-  background: #3a3553;
-  color: #fff;
-}
-
-.c9 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c12 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-  width: 100%;
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c12:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c12:active {
-  outline: none;
-}
-
-.c12:hover,
-.c12.active {
-  color: #333333;
-}
-
-.c6 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.c6 > span {
-  background: #090329;
-  color: #fff;
-}
-
-.c6 > span:hover {
-  background: #65FFCD;
-  color: #007f56;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c7:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c7:active {
-  outline: none;
-}
-
-.c8 {
-  padding-right: 0.375rem;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c10 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-  z-index: 999;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  height: 5.25rem;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c5 {
-  display: none;
-}
-
-.c0 {
-  background: #090329;
-  width: 100%;
-}
-
-@media screen and (min-width:960px) {
-  .c3 {
-    height: 3.375rem;
-    width: 3.375rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c4 {
-    font-size: 1.875rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c13 {
-    margin-right: 0.375rem;
-  }
-
-  .c13:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c6 {
-    margin-right: 0.375rem;
-  }
-
-  .c6:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c5 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 0rem 1rem;
-    padding-right: 0rem;
-  }
-}
-
-<header
-  className="c0"
->
-  <nav
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <a
-        aria-current="page"
-        className="c3"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={Object {}}
-        title="Return to Homepage"
-      >
-        <svg
-          viewBox="0 0 54 54"
-        >
-          <title>
-            service speciality logo
-          </title>
-          <g
-            fill="none"
-            id="yld-service-speciality-logo"
-            stroke="none"
-          >
-            <rect
-              fill="#fff"
-              height="54"
-              id="Logo-rectangle"
-              width="54"
-              x="0"
-              y="0"
-            />
-            <path
-              d="M16.8201464,23.2905974 C18.4977896,23.2905974 19.8575263,21.9304179 19.8575263,20.2527747 C19.8575263,18.5751314 18.4977896,17.2153947 16.8201464,17.2153947 C15.1425032,17.2153947 13.7823237,18.5751314 13.7823237,20.2527747 C13.7823237,21.9304179 15.1425032,23.2905974 16.8201464,23.2905974 L16.8201464,23.2905974 Z M38.4789676,28.2522416 C38.4789676,26.5768122 37.1165743,25.2144189 35.4415877,25.2144189 C33.7666011,25.2144189 32.403765,26.5768122 32.403765,28.2522416 C32.403765,29.9267854 33.7666011,31.2896215 35.4415877,31.2896215 C37.1165743,31.2896215 38.4789676,29.9267854 38.4789676,28.2522416 L38.4789676,28.2522416 Z M42.557735,16 L42.557735,35.1881828 L38.5073047,35.1881828 L38.5073047,34.6325105 C37.5779373,35.0810332 36.5409776,35.339609 35.4415877,35.339609 C31.5332856,35.339609 28.3537775,32.1601009 28.3537775,28.2522416 C28.3537775,24.3434967 31.5332856,21.1639886 35.4415877,21.1639886 C36.5409776,21.1639886 37.5779373,21.4230072 38.5073047,21.8715299 L38.5073047,16 L42.557735,16 Z M28.3537775,16 L28.3537775,28.2522416 L28.3537775,35.1881828 L24.3033473,35.1881828 L24.3033473,23.7931376 L16.8205892,40.632 L12.388494,40.632 L14.6244661,35.6003986 L9,23.2905974 L13.453348,23.2905974 L16.8201464,30.6595644 L20.0948493,23.2905974 L24.3033473,23.2905974 L24.3033473,16 L28.3537775,16 Z"
-              fill="#090329"
-              id="Logo-fill"
-            />
-          </g>
-        </svg>
-      </a>
-      <a
-        className="c4"
-        color="white"
-        href="/engineering"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="engineering"
-      >
-        Engineering
-      </a>
-    </div>
-    <ul
-      className="c5"
-    >
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c6"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-      >
-        <span
-          className="c7"
-          tabIndex="0"
-        >
-          <span
-            className="c8"
-            data-event={null}
-          >
-            Dropdown 1
-          </span>
-          <svg
-            className="c9"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
-        </span>
-        <ul
-          className="c10"
-        >
-          <li
-            className="c11"
-          >
-            <a
-              className="c12"
-              href="/item-1/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              title="Item 1"
-            >
-              Item 1
-            </a>
-          </li>
-          <li
-            className="c11"
-          >
-            <a
-              className="c12"
-              href="/item-2/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              title="Item 2"
-            >
-              Item 2
-            </a>
-          </li>
-          <li
-            className="c11"
-          >
-            <a
-              className="c12"
-              href="/item-3/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              title="Item 3"
-            >
-              Item 3
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c13"
-      >
-        <a
-          className="c14"
-          href="/anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          title="Anchor 1"
-        >
-          Anchor 1
-        </a>
-      </li>
-      <li
-        className="c13"
-      >
-        <a
-          className="c14"
-          href="https://uk.linkedin.com/"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-          title="External anchor"
-        >
-          External anchor
-        </a>
-      </li>
-      <li
-        aria-expanded={false}
-        aria-haspopup="true"
-        className="c6"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-      >
-        <span
-          className="c7"
-          tabIndex="0"
-        >
-          <span
-            className="c8"
-            data-event={null}
-          >
-            Dropdown 2
-          </span>
-          <svg
-            className="c9"
-            height="6"
-            viewBox="0 0 6 6"
-            width="6"
-          >
-            <polyline
-              points="0,0 6,0 6,6"
-            />
-          </svg>
-        </span>
-        <ul
-          className="c10"
-        >
-          <li
-            className="c11"
-          >
-            <a
-              className="c12"
-              href="/go-here/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              title="Go here"
-            >
-              Go here
-            </a>
-          </li>
-          <li
-            className="c11"
-          >
-            <a
-              className="c12"
-              href="/go-there/"
-              onClick={[Function]}
-              onMouseDown={[Function]}
-              onMouseEnter={[Function]}
-              title="Go there"
-            >
-              Go there
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li
-        className="c13"
-      >
-        <a
-          className="c14"
-          href="/last-anchor/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          title="Anchor 2"
-        >
-          Anchor 2
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
-`;
-
-exports[`Storyshots Header TopNavbar - light theme 1`] = `
-.c4 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c4:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c4:active {
-  outline: none;
-}
-
-.c3 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: #fff;
-  color: #333333;
-}
-
-.c3:hover,
-.c3 > a:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c3 > a:active {
-  background: #333333;
-  color: #fff;
-}
-
-.c3 > a.active {
-  background: #fff;
-  color: #828282;
-}
-
-.c3 > a.active:active {
-  background: #fff;
-  color: #828282;
-}
-
-.c3 > a.active:hover {
-  color: #333333;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  height: 5.25rem;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  display: none;
-}
-
-@media screen and (min-width:960px) {
-  .c3 {
-    margin-right: 0.375rem;
-  }
-
-  .c3:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c2 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 0rem 1rem;
-    padding-right: 0rem;
-  }
-}
-
-<nav
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <a
-      aria-current="page"
-      className=""
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      style={Object {}}
-      title="Return to Homepage"
-    >
-      <img
-        alt="yld logo"
-        height="48"
-        role="link"
-        src="test-file-stub"
-      />
-    </a>
-  </div>
-  <ul
-    className="c2"
-  >
-    <li
-      className="c3"
-    >
-      <a
-        aria-current="page"
-        className="c4 active"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        style={Object {}}
-        title="Here"
-      >
-        Here
-      </a>
-    </li>
-    <li
-      className="c3"
-    >
-      <a
-        className="c4"
-        href="/there"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="There"
-      >
-        There
-      </a>
-    </li>
-    <li
-      className="c3"
-    >
-      <a
-        className="c4"
-        href="/https:/uk.linkedin.com/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="LinkedIn (external anchor)"
-      >
-        LinkedIn (external anchor)
-      </a>
-    </li>
-  </ul>
-</nav>
-`;
-
-exports[`Storyshots Header TopNavbar with dropdowns - light theme 1`] = `
-.c11 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c11:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c11:active {
-  outline: none;
-}
-
-.c10 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background: #fff;
-  color: #333333;
-}
-
-.c10:hover,
-.c10 > a:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c10 > a:active {
-  background: #333333;
-  color: #fff;
-}
-
-.c10 > a.active {
-  background: #fff;
-  color: #828282;
-}
-
-.c10 > a.active:active {
-  background: #fff;
-  color: #828282;
-}
-
-.c10 > a.active:hover {
-  color: #333333;
-}
-
-.c6 {
-  stroke: currentColor;
-  stroke-width: 0.1875rem;
-  fill: none;
-  -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: -webkit-transform 0s ease 0.1s;
-  -webkit-transition: transform 0s ease 0.1s;
-  transition: transform 0s ease 0.1s;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c9 {
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-  width: 100%;
-  background: #f9f9f9;
-  color: #828282;
-}
-
-.c9:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c9:active {
-  outline: none;
-}
-
-.c9:hover,
-.c9.active {
-  color: #333333;
-}
-
-.c3 {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.c3 > span {
-  background: #fff;
-  color: #333333;
-}
-
-.c3 > span:hover {
-  background: #333333;
-  color: #a9a9a9;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: outline 300ms ease-out;
-  transition: outline 300ms ease-out;
-  z-index: 2;
-  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
-  transition: opacity 200ms ease-out, color 200ms ease-out;
-  outline: none;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.625rem 0.9375rem 0.875rem;
-  outline: 0.25rem solid transparent;
-}
-
-.c4:focus {
-  outline-color: #65FFCD;
-  z-index: 1;
-}
-
-.c4:active {
-  outline: none;
-}
-
-.c5 {
-  padding-right: 0.375rem;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c7 {
-  position: absolute;
-  width: 10rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  top: 3rem;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-  background: #f9f9f9;
-  z-index: 999;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  height: 5.25rem;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  display: none;
-}
-
-@media screen and (min-width:960px) {
-  .c10 {
-    margin-right: 0.375rem;
-  }
-
-  .c10:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c3 {
-    margin-right: 0.375rem;
-  }
-
-  .c3:last-child {
-    margin-right: 0rem;
-  }
-}
-
-@media screen and (min-width:960px) {
-  .c2 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 1.25rem 0rem 1rem;
-    padding-right: 0rem;
-  }
-}
-
-<nav
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <a
-      aria-current="page"
-      className=""
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      style={Object {}}
-      title="Return to Homepage"
-    >
-      <img
-        alt="yld logo"
-        height="48"
-        role="link"
-        src="test-file-stub"
-      />
-    </a>
-  </div>
-  <ul
-    className="c2"
-  >
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c3"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c4"
-        tabIndex="0"
-      >
-        <span
-          className="c5"
-          data-event={null}
-        >
-          First dropdown
-        </span>
-        <svg
-          className="c6"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c7"
-      >
-        <li
-          className="c8"
-        >
-          <a
-            className="c9"
-            href="/item-1/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 1"
-          >
-            Item 1
-          </a>
-        </li>
-        <li
-          className="c8"
-        >
-          <a
-            className="c9"
-            href="/item-2/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 2"
-          >
-            Item 2
-          </a>
-        </li>
-        <li
-          className="c8"
-        >
-          <a
-            className="c9"
-            href="/item-3/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Item 3"
-          >
-            Item 3
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c10"
-    >
-      <a
-        className="c11"
-        href="/anchor/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="First anchor"
-      >
-        First anchor
-      </a>
-    </li>
-    <li
-      className="c10"
-    >
-      <a
-        className="c11"
-        href="https://uk.linkedin.com/"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-        title="LinkedIn (external anchor)"
-      >
-        LinkedIn (external anchor)
-      </a>
-    </li>
-    <li
-      aria-expanded={false}
-      aria-haspopup="true"
-      className="c3"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-    >
-      <span
-        className="c4"
-        tabIndex="0"
-      >
-        <span
-          className="c5"
-          data-event={null}
-        >
-          Second dropdown
-        </span>
-        <svg
-          className="c6"
-          height="6"
-          viewBox="0 0 6 6"
-          width="6"
-        >
-          <polyline
-            points="0,0 6,0 6,6"
-          />
-        </svg>
-      </span>
-      <ul
-        className="c7"
-      >
-        <li
-          className="c8"
-        >
-          <a
-            className="c9"
-            href="/go-here/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Go here"
-          >
-            Go here
-          </a>
-        </li>
-        <li
-          className="c8"
-        >
-          <a
-            className="c9"
-            href="/go-there/"
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseEnter={[Function]}
-            title="Go there"
-          >
-            Go there
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li
-      className="c10"
-    >
-      <a
-        className="c11"
-        href="/last-anchor/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        title="Last anchor"
-      >
-        Last anchor
-      </a>
-    </li>
-  </ul>
-</nav>
-`;
-
 exports[`Storyshots Image with file url 1`] = `
 .c0 {
   width: 100%;
@@ -10450,7 +7604,7 @@ Array [
   display: block;
 }
 
-.c28 {
+.c29 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -10470,7 +7624,7 @@ Array [
   display: block;
 }
 
-.c33 {
+.c34 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -10664,7 +7818,6 @@ Array [
   font-size: 1.3125rem;
   line-height: 1.5rem;
   padding: 0.6875rem 0 0.8125rem 0;
-  color: #fff;
   padding: 0;
 }
 
@@ -10697,7 +7850,7 @@ Array [
   font-weight: 700;
 }
 
-.c31 {
+.c32 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -10706,7 +7859,7 @@ Array [
   font-weight: 700;
 }
 
-.c36 {
+.c26 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -11009,6 +8162,14 @@ Array [
   display: flex;
 }
 
+.c57 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 56.20608899297424%;
+  overflow: hidden;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -11086,14 +8247,6 @@ Array [
   display: block;
 }
 
-.c57 {
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-bottom: 56.20608899297424%;
-  overflow: hidden;
-}
-
 .c13 {
   border: 1px solid rgba(255,255,255,0.3);
 }
@@ -11140,7 +8293,7 @@ Array [
   transform: scale(0.97);
 }
 
-.c26 {
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11170,7 +8323,7 @@ Array [
   max-width: 100%;
 }
 
-.c26 > img {
+.c27 > img {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -11179,7 +8332,7 @@ Array [
   width: 100%;
 }
 
-.c29 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11209,7 +8362,7 @@ Array [
   max-width: 100%;
 }
 
-.c29 > img {
+.c30 > img {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -11228,7 +8381,7 @@ Array [
   max-width: 19.375rem;
 }
 
-.c32 {
+.c33 {
   max-height: 108px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -11245,7 +8398,7 @@ Array [
   color: #757575;
 }
 
-.c30 {
+.c31 {
   padding-top: 3.375rem;
   padding-bottom: 2.25rem;
 }
@@ -11255,11 +8408,11 @@ Array [
   padding-top: 3.375rem;
 }
 
-.c27 {
+.c28 {
   padding-bottom: 3.375rem;
 }
 
-.c34 {
+.c35 {
   background: #f9f9f9;
 }
 
@@ -11277,7 +8430,7 @@ Array [
   padding-bottom: 0.75rem;
 }
 
-.c35 {
+.c36 {
   padding-top: 2.25rem;
   padding-bottom: 3.375rem;
 }
@@ -11789,42 +8942,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c28 {
+  .c29 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c28 {
+  .c29 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c28 {
+  .c29 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c28 {
+  .c29 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11833,7 +8986,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c28 {
+  .c29 {
     width: 100%;
     position: initial;
     top: 0;
@@ -11842,7 +8995,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c28 {
+  .c29 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -11851,42 +9004,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c33 {
+  .c34 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c33 {
+  .c34 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c33 {
+  .c34 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c33 {
+  .c34 {
     width: 50%;
     position: initial;
     top: 0;
@@ -11895,7 +9048,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c33 {
+  .c34 {
     width: 50%;
     position: initial;
     top: 0;
@@ -11904,7 +9057,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c33 {
+  .c34 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -11913,7 +9066,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c33 {
+  .c34 {
     width: 25%;
     position: initial;
     top: 0;
@@ -12369,7 +9522,6 @@ Array [
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
-    color: #fff;
     padding: 0;
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -12560,7 +9712,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c30 {
+  .c31 {
     padding-top: 6.75rem;
     padding-bottom: 2.25rem;
   }
@@ -12594,7 +9746,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c35 {
+  .c36 {
     padding-top: 4.5rem;
     padding-bottom: 6.75rem;
   }
@@ -12993,12 +10145,17 @@ Array [
                     Migrating The Economist platform
                   </h3>
                   <p
-                    className="c7"
-                    muted={true}
+                    className="c26"
+                    muted={false}
+                    style={
+                      Object {
+                        "opacity": 0.8,
+                      }
+                    }
                   />
                 </header>
                 <div
-                  className="c26"
+                  className="c27"
                   color="E02A1B"
                 >
                   <img
@@ -13015,7 +10172,7 @@ Array [
             </a>
           </div>
           <div
-            className="c27 c28"
+            className="c28 c29"
             width={
               Array [
                 1,
@@ -13073,12 +10230,17 @@ Array [
                     Future-proofing Trainline
                   </h3>
                   <p
-                    className="c7"
-                    muted={true}
+                    className="c26"
+                    muted={false}
+                    style={
+                      Object {
+                        "opacity": 0.8,
+                      }
+                    }
                   />
                 </header>
                 <div
-                  className="c29"
+                  className="c30"
                   color="051534"
                 >
                   <img
@@ -13111,7 +10273,7 @@ Array [
           className="c9"
         >
           <div
-            className="c30 c4"
+            className="c31 c4"
             width={
               Array [
                 1,
@@ -13123,7 +10285,7 @@ Array [
             }
           >
             <h3
-              className="c31"
+              className="c32"
             >
               Other clients we helped
             </h3>
@@ -13133,7 +10295,7 @@ Array [
           className="c9"
         >
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13159,7 +10321,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13185,7 +10347,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13211,7 +10373,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13237,7 +10399,7 @@ Array [
             />
           </div>
           <div
-            className="c32 c33"
+            className="c33 c34"
             width={
               Array [
                 0.5,
@@ -13266,10 +10428,10 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
-        className="c35"
+        className="c36"
       >
         <div
           className="c2"
@@ -13295,7 +10457,7 @@ Array [
                 Node.js training
               </h2>
               <p
-                className="c36"
+                className="c26"
               >
                 Our expert engineers offer hands-on training and practical education to help you succeed in the ever-evolving technological landscape.
               </p>
@@ -13340,7 +10502,7 @@ Array [
                   Workshops
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Instructor-led, hands-on classes that cover open source technologies like Node.js, React.js and Docker.
                 </p>
@@ -13382,7 +10544,7 @@ Array [
                   Certification programmes
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Assess the technical ability of your team with our certification programmes, designed to identify your outstanding talents.
                 </p>
@@ -13424,7 +10586,7 @@ Array [
                   Pair programming
                 </h3>
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Your teams learn from seasoned professionals while delivering high quality, functional platforms.
                 </p>
@@ -13950,7 +11112,7 @@ Array [
               }
             >
               <p
-                className="c36"
+                className="c26"
               >
                 Node.js articles created by members of YLD for the community.
               </p>
@@ -14061,7 +11223,7 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
         className="c2"
@@ -14102,7 +11264,7 @@ Array [
                 }
               >
                 <p
-                  className="c36"
+                  className="c26"
                 >
                   Node.js tutorials created by members of YLD for the community.
                 </p>
@@ -14239,7 +11401,7 @@ Array [
               Node.js books
             </h2>
             <p
-              className="c36"
+              className="c26"
             >
               Node.js books written by members of YLD for our community.
             </p>
@@ -14439,7 +11601,7 @@ Array [
       </div>
     </div>
     <section
-      className="c34"
+      className="c35"
     >
       <div
         className="c2"
@@ -14482,7 +11644,7 @@ Array [
               }
             >
               <p
-                className="c36"
+                className="c26"
               >
                 Whether you need help with a project or are interested in training, we love to talk about all things Node.
               </p>
