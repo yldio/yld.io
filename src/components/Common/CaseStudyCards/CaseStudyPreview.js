@@ -66,7 +66,6 @@ const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
   return (
     <CaseStudyLayout
       isTop={isTop}
-      scaleImage={caseStudy.slug === 'central-working-changing-how-you-work'}
       link={caseStudyLink}
       posterImage={posterImage}
       headings={<Headings title={title} as={as} />}

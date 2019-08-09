@@ -19,10 +19,12 @@ const PosterLinks = ({ project }) => (
       }}
     >
       <CardHeader>
-        <CardTitle noPadding bigger>
+        <CardTitle reverse noPadding bigger>
           {project.title}
         </CardTitle>
-        <BodyPrimary muted>{project.introSentence.introSentence}</BodyPrimary>
+        <BodyPrimary reverse muted>
+          {project.introSentence.introSentence}
+        </BodyPrimary>
       </CardHeader>
       <PosterImage justifyCenter alignCenter color={project.posterColor}>
         <img
