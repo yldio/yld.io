@@ -46,6 +46,10 @@ const getLogoColors = ({ isSpecialityPage, slug }) => {
   }
 }
 
+const StyledHomePageLink = styled.div`
+  cursor: pointer;
+`
+
 const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
   const renderSvg = isServicePage || isSpecialityPage || isHomePage
 
@@ -67,9 +71,9 @@ const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
         <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
       </StyledLink>
     ) : (
-      <Link to="/" title="Return to Homepage">
+      <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
         <HomepageLogo src={HomepageSvg} alt="yld logo" />
-      </Link>
+      </StyledHomePageLink>
     )
   }
 
