@@ -14,6 +14,7 @@ export default createGlobalStyle`
     line-height: 1.33;
     color: ${props => props.theme.colors.text};
     overflow-x: hidden;
+    height: 100vh;
 
     * {
       -webkit-font-smoothing: antialiased;
