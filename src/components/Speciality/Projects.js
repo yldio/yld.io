@@ -12,7 +12,7 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => {
-  const isDarkBackground = project.posterColor === 'ff4e5b' // Learnably poster color
+  const isDarkBackground = project.posterColor === 'ff4e5b' // Learnerbly poster color
   return (
     <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
       <section
