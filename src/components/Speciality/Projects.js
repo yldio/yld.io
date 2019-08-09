@@ -12,7 +12,7 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => {
-  const backgroundIsDark = project.posterColor === 'ff4e5b' // Learnably poster color
+  const isDarkBackground = project.posterColor === 'ff4e5b' // Learnably poster color
   return (
     <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
       <section
@@ -21,13 +21,13 @@ const PosterLinks = ({ project }) => {
         }}
       >
         <CardHeader>
-          <CardTitle reverse={backgroundIsDark} noPadding bigger>
+          <CardTitle reverse={isDarkBackground} noPadding bigger>
             {project.title}
           </CardTitle>
           <BodyPrimary
-            reverse={backgroundIsDark}
+            reverse={isDarkBackground}
             style={{ opacity: 0.8 }}
-            muted={backgroundIsDark}
+            muted={isDarkBackground}
           >
             {project.introSentence.introSentence}
           </BodyPrimary>
