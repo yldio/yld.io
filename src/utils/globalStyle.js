@@ -15,6 +15,11 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     overflow-x: hidden;
 
+    /* prevents overscrolling on Chrome, Firefox - but is not supported by Safari */
+    height: 100vh;
+    overscroll-behavior-y: contain;
+
+
     * {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
