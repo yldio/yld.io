@@ -14,14 +14,13 @@ const modifiers = css`
     color: ${props => props.theme.colors.textLight};
   `};
 
-  ${is('muted')`
+  ${is('mute')`
     opacity: .5;
   `};
 
-  ${is('lightBackground')`
-    opacity: .8
-    color: ${props => props.theme.colors.black}
-  `}
+  ${is('mutedLight')`
+  opacity: .8
+`}
 
   ${is('noPadding')`
     padding: 0;

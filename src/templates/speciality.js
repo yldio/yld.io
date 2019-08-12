@@ -122,6 +122,12 @@ export const pageQuery = graphql`
               url
             }
           }
+          additionalPoster {
+            title
+            file {
+              url
+            }
+          }
         }
       }
       clients {

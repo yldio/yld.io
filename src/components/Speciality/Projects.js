@@ -12,32 +12,43 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => {
-  const isBackgroundColorLight = project.posterColor === 'f3f3f3' // Central Working case study
+  const isLightPosterColor = project.posterColor === 'ff4e5b' // Learnerbly case study
+  const preferAdditionalPoster =
+    project.slug === 'central-working-changing-how-you-work'
+
+  const poster = {
+    title: preferAdditionalPoster
+      ? project.additionalPoster.title
+      : project.posterImage.title,
+    url: preferAdditionalPoster
+      ? project.additionalPoster.file.url
+      : project.posterImage.file.url,
+    color: project.posterColor
+  }
 
   return (
     <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
       <section
         style={{
-          background: `#${project.posterColor}`
+          background: `#${poster.color}`
         }}
       >
         <CardHeader>
-          <CardTitle
-            reverse
-            lightBackground={isBackgroundColorLight}
-            noPadding
-            bigger
-          >
+          <CardTitle reverse={isLightPosterColor} noPadding bigger>
             {project.title}
           </CardTitle>
-          <BodyPrimary reverse lightBackground={isBackgroundColorLight} mute>
+          <BodyPrimary
+            reverse={isLightPosterColor}
+            mute={!isLightPosterColor}
+            mutedLight={isLightPosterColor}
+          >
             {project.introSentence.introSentence}
           </BodyPrimary>
         </CardHeader>
-        <PosterImage justifyCenter alignCenter color={project.posterColor}>
+        <PosterImage justifyCenter alignCenter color={poster.color}>
           <img
-            alt={project.posterImage.title}
-            src={project.posterImage.file.url}
+            alt={poster.title}
+            src={poster.url}
             style={{ maxHeight: '100%' }}
           />
         </PosterImage>
