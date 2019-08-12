@@ -7,7 +7,7 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
-import { CardTitle, BodyPrimary } from '../Typography'
+import { CardTitle, BodyPrimary, SectionTitle } from '../Typography'
 import eventLabels from '../../utils/eventLabels'
 
 
@@ -82,14 +82,50 @@ const InfoSection = ({ introSentence, title, link }) => (
     </Fragment>
 )
 
+const DateCard = ({ date }) => (
+    <Fragment>
+        <SectionTitle noPadding>
+            {date.day}
+        </SectionTitle>
+        <BodyPrimary>
+            {date.month.toUpperCase()}
+        </BodyPrimary>
+    </Fragment>
+
+
+)
+
 const EventCard = ({ event }) => {
-    const { type, date, eventName, eventLocation, startTime, endTime, attendees = 0 } = caseStudy
+    const { type, date, eventName, eventLocation, startTime, endTime, attendees = 0, link } = event
 
     return (
         <Row>
+
+            <Col width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
+                <DateCard date={date} />
+            </Col>
+
+            <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
+                <BodyPrimary>{type}</BodyPrimary>
+                <CardTitle as="h2" noPadding>{eventName}</CardTitle>
+                <BodyPrimary muted>{eventLocation} • {startTime} - {endTime} • {attendees} attending</BodyPrimary>
+            </Col>
+
+            <Col width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
+                {type === "meetup" ? <StyledLink aria-label={`More on Meetup`}
+                    to={link}
+                    title={`More on Meetup`}>More on Meetup</StyledLink> : <StyledLink aria-label={`Get tickets`}
+                        to={link}
+                        title={`Get tickets`}>Get Tickets</StyledLink>
+                }
+            </Col>
+
+            {/* 
+
             <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
                 <TitleSection services={services} title={title} link={caseStudyLink} />
             </MobileOnlyCol>
+            
             <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
                 <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
                     <Anchor to={caseStudyLink}>
@@ -97,6 +133,7 @@ const EventCard = ({ event }) => {
                     </Anchor>
                 </Padding>
             </Col>
+            
             <NonMobileCol width={[0, 0, 0, 0, 7 / 12, 6 / 12]}>
                 <TitleSection services={services} title={title} link={caseStudyLink} />
                 <InfoSection
@@ -105,13 +142,14 @@ const EventCard = ({ event }) => {
                     link={caseStudyLink}
                 />
             </NonMobileCol>
+            
             <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
                 <InfoSection
                     introSentence={introSentence}
                     title={title}
                     link={caseStudyLink}
                 />
-            </MobileOnlyCol>
+            </MobileOnlyCol> */}
         </Row>
     )
 }
