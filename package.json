@@ -33,6 +33,7 @@
     "lodash.isnull": "^3.0.0",
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
+    "nock": "^10.0.6",
     "polished": "2.3.0",
     "raf": "^3.4.1",
     "react": "16.8.1",
