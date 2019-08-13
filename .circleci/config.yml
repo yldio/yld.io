@@ -41,6 +41,8 @@ jobs:
         at: ~/
     steps:
       - checkout
+      - run: pwd
+      - run: ls -lha
       - run: 'yarn lint'
   snapshots:
     <<: *defaults
