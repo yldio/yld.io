@@ -1,52 +1,70 @@
+defaults: &defaults
+  working_directory: ~/app
+  docker:
+      - image: circleci/node:10-browsers
+      environment:
+        ## this enables colors in the output
+        TERM: xterm
+
 jobs:
   build:
-    working_directory: '~/repo'
-    docker:
-      - image: circleci/node:10-browsers
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
           keys:
             - v2-dependencies-{{ checksum "package.json" }}
-      - run: 'yarn install'
-      - run: 'yarn run build:app'
+      - run:
+          command: 'yarn install'
+          name: 'Install dependencies'
+      - run:
+          command: 'yarn run build:app'
+          name: 'Build app'
       - save_cache:
           key: v2-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-            - public/
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - .cache
+            - public
   lighthouse:
-    docker:
-      - image: circleci/node:10-browsers
+    <<: *defaults
+    - attach_workspace:
+        at: ~/
     steps:
       - checkout
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
   lint:
-    docker:
-      - image: circleci/node:10
+    <<: *defaults
+    - attach_workspace:
+        at: ~/
     steps:
       - checkout
       - run: 'yarn lint'
   snapshots:
-    docker:
-      - image: circleci/node:10
+    <<: *defaults
+    - attach_workspace:
+        at: ~/
     steps:
       - checkout
       - run:
           command: npm run test:snapshots
           name: Snapshots
   testcafe:
-    docker:
-      - image: circleci/node:10-browsers
+    <<: *defaults
+    - attach_workspace:
+        at: ~/
     steps:
       - checkout
       - run:
           command: npm run test:e2e
           name: Testcafe
       - store_artifacts:
-          path: ~/repo/artifacts/screenshots
+          path: ~/artifacts/screenshots
 version: 2
 workflows:
   build_and_test:
