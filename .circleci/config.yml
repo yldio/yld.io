@@ -38,8 +38,6 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
-      - run: pwd
-      - run: ls -lha
       - run: 'yarn lint'
   snapshots:
     <<: *defaults
