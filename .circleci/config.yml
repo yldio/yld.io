@@ -2,9 +2,6 @@ defaults: &defaults
   working_directory: ~/app
   docker:
       - image: circleci/node:10-browsers
-      environment:
-        ## this enables colors in the output
-        TERM: xterm
 
 jobs:
   build:
@@ -31,7 +28,7 @@ jobs:
             - public
   lighthouse:
     <<: *defaults
-    - attach_workspace:
+    attach_workspace:
         at: ~/
     steps:
       - checkout
@@ -40,14 +37,14 @@ jobs:
           name: Lighthouse
   lint:
     <<: *defaults
-    - attach_workspace:
+    attach_workspace:
         at: ~/
     steps:
       - checkout
       - run: 'yarn lint'
   snapshots:
     <<: *defaults
-    - attach_workspace:
+    attach_workspace:
         at: ~/
     steps:
       - checkout
@@ -56,7 +53,7 @@ jobs:
           name: Snapshots
   testcafe:
     <<: *defaults
-    - attach_workspace:
+    attach_workspace:
         at: ~/
     steps:
       - checkout
