@@ -40,32 +40,37 @@ const TitleAndMediaList = ({
   description,
   mediaItems,
   CTAText,
-  CTALink
-}) => (
-  <RowLayout>
-    <Col width={[1, 1, 1, 1, 1 / 2]}>
-      <SectionTitle>{title}</SectionTitle>
-      {description ? (
-        <Col width={[1, 1, 1, 1, 5 / 6]} px={[0]}>
-          <BodyPrimary>{description}</BodyPrimary>
-        </Col>
-      ) : null}
-    </Col>
-    <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-      <MediaItems>
-        {mediaItems.map(({ id, title, href, body }) => (
-          <MediaItem key={id} id={id} title={title} href={href} body={body} />
-        ))}
-      </MediaItems>
-      {CTALink && CTAText ? (
-        <Padding top={3}>
-          <StyledLink external href={CTALink} title={CTAText}>
-            {CTAText}
-          </StyledLink>
-        </Padding>
-      ) : null}
-    </Col>
-  </RowLayout>
-)
+  CTALink,
+  external = true
+}) => {
+  const styledLinkProps = {
+    title: CTAText,
+    ...(external ? { external: true, href: CTALink } : { to: CTALink })
+  }
+  return (
+    <RowLayout>
+      <Col width={[1, 1, 1, 1, 1 / 2]}>
+        <SectionTitle>{title}</SectionTitle>
+        {description ? (
+          <Col width={[1, 1, 1, 1, 5 / 6]} px={[0]}>
+            <BodyPrimary>{description}</BodyPrimary>
+          </Col>
+        ) : null}
+      </Col>
+      <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+        <MediaItems>
+          {mediaItems.map(({ id, title, href, body }) => (
+            <MediaItem key={id} id={id} title={title} href={href} body={body} />
+          ))}
+        </MediaItems>
+        {CTALink && CTAText ? (
+          <Padding top={3}>
+            <StyledLink {...styledLinkProps}>{CTAText}</StyledLink>
+          </Padding>
+        ) : null}
+      </Col>
+    </RowLayout>
+  )
+}
 
 export default TitleAndMediaList

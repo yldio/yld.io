@@ -2,20 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
-
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import GreyBackground from '../components/Common/GreyBackground'
-import Statement from '../components/Common/Statement'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
+import Intro from '../components/Homepage/Intro'
 import Events from '../components/Homepage/events/index'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
-import eventLabels from '../utils/eventLabels'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -52,28 +49,22 @@ const getHomepageConferences = (events = []) =>
       date: getFeaturedEventDate(n)
     }))
 
-const IndexPage = ({
-  data: { contentfulHomepage: content, allContentfulMeetupEvent: events },
-  location
-}) => {
+const IndexPage = ({ data, location }) => {
+  const { contentfulHomepage: content, allContentfulMeetupEvent: events } = data
+
   const featuredEvent = getHomepageConferences(events.edges)[0]
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} bgColor="blueBg">
       <Head page={content} />
-      <CaseStudyPreview
-        as="h1"
-        caseStudy={content.featuredCaseStudy}
-        ctaDataEventLabel={eventLabels.homepageCaseStudyCTA}
-      />
-      <Statement
-        richText={content.seoText.content[0].content}
-        dataEvents={eventLabels.homepageStatementService}
-      />
+      <Intro {...content} />
       <GreyBackground>
         <Grid>
-          <Padding bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}>
+          <Padding
+            top={{ smallPhone: 3, smallTablet: 4.5 }}
+            bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}
+          >
             <LogoGrid companies={content.companies} />
           </Padding>
         </Grid>
@@ -112,6 +103,12 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
+      introHeader
+      introContent {
+        introContent
+      }
+      introCtaText
+      introCtaLink
       featuredCaseStudy {
         id
         title
