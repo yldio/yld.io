@@ -19,6 +19,9 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
@@ -28,6 +31,9 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
       - run: 'yarn lint'
     working_directory: ~/repo
   snapshots:
@@ -35,6 +41,9 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
       - run:
           command: npm run test:snapshots
           name: Snapshots
@@ -44,6 +53,9 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
       - run:
           command: npm run test:e2e
           name: Testcafe
@@ -52,7 +64,7 @@ jobs:
     working_directory: ~/repo
 version: 2
 workflows:
-  test:
+  build_and_test:
     jobs:
       - build
       - lint:
