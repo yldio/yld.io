@@ -16,12 +16,12 @@ const Auth = require('./utils/auth')
 const Meta = require('./oss/meta')
 const Repos = require('./oss/repos')
 
-const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
-
 const org = 'yldio'
 
 exports.handler = async evt =>
   Auth(evt, async () => {
+    const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
+
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
       throw new Error(`Missing env variables, check set up`)
     }

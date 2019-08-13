@@ -1,20 +1,14 @@
 /* eslint-env jest */
-// import ossStats, { getData } from '@yldio/oss-stats'
-// const getDataMock = data =>
-//   jest.mock('@yldio/oss-stats', () => ({
-//     getData: jest.fn(() => data)
-//   }))
-
-import YldioOssStats from '../__mocks__/yldio-oss-stats'
+import { YldioOssStatsMock, mockedData } from '../__mocks__/@yldio/oss-stats'
+import GithubLambda from '../src/functions/github'
 
 process.env.CONTENTFUL_SPACE = 'yld_mock_contentful_space'
 process.env.CMS_CRUD = 'yld_mock_CMS_CRUD'
 process.env.GITHUB_TOKEN = 'yld_mock_Github_token'
 
-// need to mock environment
-const contentfulEnvironmentMock = 'mock environment'
+// jest.mock('../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
 
-const github = require('../src/functions/github')
+const contentfulEnvironmentMock = 'mock environment'
 
 jest.mock('../src/functions/oss/repos')
 const Repos = require('../src/functions/oss/repos')
@@ -23,14 +17,30 @@ const repoMock = repoData => Repos.mockResolvedValue(repoData)
 jest.mock('../src/functions/oss/meta')
 const Meta = require('../src/functions/oss/meta')
 const metaMock = metaData => Meta.mockResolvedValue(metaData)
-// const YldioOssStats = require('../__mocks__/yldio-oss-stats')
 
-// jest.genMockFromModule('@yldio/oss-stats')
-// jest.mock('@yldio/oss-stats')
-// const { getData } = require('@yldio/oss-stats')
-// const getDataMock = data => getData.mockResolvedValue(data)
+// nb: this describe will be deleted
+describe('@yldio/oss-stats mock', () => {
+  it('mocks getData properly', async () => {
+    const OssStatsMockResult = await YldioOssStatsMock.getData()
+    expect(OssStatsMockResult).toEqual(mockedData)
+  })
 
-// eslint-disable-next-line
+  it('mocks the entire function', async () => {
+    // YldioOssStatsMock.getData()
+    // const getDataMock = data => Promise.resolve(mockedValues)
+    // YldioOssStats.getData = getDataMock
+
+    // await YldioOssStatsMock.getData()
+    // YldioOssStatsMock.normalise()
+    // YldioOssStatsMock.summariseContributions()
+    const result = await GithubLambda.handler({
+      headers: { authorization: 'basic authorised_header' }
+    })
+
+    expect(result).toBe(true) // only purpose is to log
+  })
+})
+
 describe('Github lambda', () => {
   afterEach(() => {
     jest.clearAllMocks()
@@ -73,7 +83,7 @@ describe('Github lambda', () => {
       }
     ]
 
-    repoMock(repoResponseData)
+    await repoMock(repoResponseData)
 
     const metaResponseData = {
       meta: {
@@ -81,17 +91,16 @@ describe('Github lambda', () => {
         openSourceMetaReposCount: 1017
       }
     }
-    metaMock(metaResponseData)
+    await metaMock(metaResponseData)
 
-    const getDataResponseData = {
-      repos: repoResponseData, // TypeError: Cannot destructure property `repos` of 'undefined' or 'null'.
-      //   ...metaResponseData.meta,
-      repoCount: metaResponseData.meta.openSourceMetaReposCount,
-      pullRequestCount: metaResponseData.meta.openSourceMetaPullRequestsCount
-    }
-    YldioOssStats.getData(getDataResponseData)
+    // const getDataResponseData = {
+    //   repos: repoResponseData,
+    //   repoCount: metaResponseData.meta.openSourceMetaReposCount,
+    //   pullRequestCount: metaResponseData.meta.openSourceMetaPullRequestsCount
+    // }
+    // YldioOssStats.getData(getDataResponseData)
 
-    const githubResponse = await github.handler({
+    const githubResponse = await GithubLambda.handler({
       headers: {
         authorization: 'basic authorised_header'
       }
@@ -99,15 +108,9 @@ describe('Github lambda', () => {
 
     const { output } = JSON.parse(githubResponse)
 
-    expect(repoMock).toHaveBeenCalledWith(
-      contentfulEnvironmentMock,
-      YldioOssStats.getData
-    )
+    expect(repoMock).toHaveBeenCalledWith(contentfulEnvironmentMock)
 
-    expect(metaMock).toHaveBeenCalledWith(
-      contentfulEnvironmentMock,
-      YldioOssStats.getData
-    )
+    expect(metaMock).toHaveBeenCalledWith(contentfulEnvironmentMock)
 
     // expect(
     //   githubResponse.toDeepEqual({

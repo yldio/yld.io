@@ -17,4 +17,4 @@ const mockedData = {
 const getDataMock = jest.fn(() => Promise.resolve(mockedData))
 YldioOssStatsMock.getData = getDataMock
 
-module.exports = YldioOssStatsMock
+module.exports = { YldioOssStatsMock, mockedData }
