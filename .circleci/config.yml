@@ -37,7 +37,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - *attach_workspace
       - run: 'yarn lint'
   snapshots:
     <<: *defaults
@@ -62,9 +61,7 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - lint:
-          requires: 
-            - build
+      - lint
       - lighthouse:
           requires: 
             - build
