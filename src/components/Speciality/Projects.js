@@ -4,6 +4,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
+import getColorLuminance from '../../utils/getColorLuminance'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import LogoGrid from '../Common/LogoGrid'
 
@@ -12,7 +13,6 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => {
-  const isLightPosterColor = project.posterColor === 'ff4e5b' // Learnerbly case study
   const preferAdditionalPoster =
     project.slug === 'central-working-changing-how-you-work'
 
@@ -26,6 +26,8 @@ const PosterLinks = ({ project }) => {
     color: project.posterColor
   }
 
+  const isDarkPosterColor = getColorLuminance(poster.color) < 132.5
+
   return (
     <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
       <section
@@ -34,13 +36,13 @@ const PosterLinks = ({ project }) => {
         }}
       >
         <CardHeader>
-          <CardTitle reverse={isLightPosterColor} noPadding bigger>
+          <CardTitle reverse={isDarkPosterColor} noPadding bigger>
             {project.title}
           </CardTitle>
           <BodyPrimary
-            reverse={isLightPosterColor}
-            mute={!isLightPosterColor}
-            mutedLight={isLightPosterColor}
+            muted
+            reverse={isDarkPosterColor}
+            lightMuted={isDarkPosterColor}
           >
             {project.introSentence.introSentence}
           </BodyPrimary>

@@ -49,7 +49,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   height: auto;
 }
 
-.c11 {
+.c12 {
   width: 24px;
   height: 24px;
 }
@@ -60,6 +60,17 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
   padding: 0;
   font-weight: 700;
 }
@@ -76,7 +87,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c10 {
+.c11 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -93,11 +104,11 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   align-items: center;
 }
 
-.c10:first-child {
+.c11:first-child {
   margin-left: -0.75rem;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -106,7 +117,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c8 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -333,22 +344,22 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -357,14 +368,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -373,7 +384,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -416,22 +427,22 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -440,14 +451,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -456,7 +467,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -499,22 +510,22 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -523,14 +534,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -539,7 +550,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -582,22 +593,22 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -606,14 +617,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -622,7 +633,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -665,22 +676,22 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -689,14 +700,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -705,7 +716,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -767,7 +778,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   height: auto;
 }
 
-.c11 {
+.c12 {
   width: 24px;
   height: 24px;
 }
@@ -778,6 +789,17 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
   padding: 0;
   font-weight: 700;
 }
@@ -794,7 +816,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c10 {
+.c11 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -811,11 +833,11 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   align-items: center;
 }
 
-.c10:first-child {
+.c11:first-child {
   margin-left: -0.75rem;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -824,7 +846,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c8 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1051,22 +1073,22 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           className="c7"
         >
           <h3
-            className="c6"
+            className="c8"
             muted={true}
           >
             Chief Executive Officer
           </h3>
         </div>
         <p
-          className="c8"
+          className="c9"
         >
           Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
         </p>
         <div
-          className="c9"
+          className="c10"
         >
           <a
-            className="c10"
+            className="c11"
             href="twitter.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -1075,14 +1097,14 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           >
             <img
               alt="twitter"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
             />
           </a>
           <a
-            className="c10"
+            className="c11"
             href="linkedin.com/etc"
             onClick={[Function]}
             rel="noopener noreferrer"
@@ -1091,7 +1113,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           >
             <img
               alt="linkedin"
-              className="c11"
+              className="c12"
               height="24px"
               src="test-file-stub"
               width="24px"
@@ -6322,15 +6344,6 @@ exports[`Storyshots Image with file url 1`] = `
 `;
 
 exports[`Storyshots JobLink JobLink 1`] = `
-.c1 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
-}
-
 .c0 {
   color: #333333;
   font-weight: 400;
@@ -6338,6 +6351,16 @@ exports[`Storyshots JobLink JobLink 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   padding-bottom: 0;
+}
+
+.c1 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding-top: 0;
 }
 
 .c2 {
@@ -7795,6 +7818,7 @@ Array [
   font-size: 1.3125rem;
   line-height: 1.5rem;
   padding: 0.6875rem 0 0.8125rem 0;
+  color: #fff;
   padding: 0;
 }
 
@@ -7860,6 +7884,7 @@ Array [
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
+  opacity: .5;
 }
 
 .c17 {
@@ -7869,6 +7894,7 @@ Array [
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
+  opacity: .5;
   padding-top: 0;
 }
 
@@ -7878,7 +7904,9 @@ Array [
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  color: #fff;
   opacity: .5;
+  opacity: .8;
 }
 
 .c43 {
@@ -9506,6 +9534,7 @@ Array [
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
+    color: #fff;
     padding: 0;
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -10130,6 +10159,7 @@ Array [
                   </h3>
                   <p
                     className="c26"
+                    muted={true}
                   />
                 </header>
                 <div
@@ -10209,6 +10239,7 @@ Array [
                   </h3>
                   <p
                     className="c26"
+                    muted={true}
                   />
                 </header>
                 <div
@@ -13957,6 +13988,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
+  opacity: .5;
   padding-top: 0;
 }
 
@@ -14625,6 +14657,20 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   padding: 0.5625rem 0 2.125rem;
 }
 
+.c5 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+  font-weight: 700;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  padding: 0.5625rem 0 2.125rem;
+}
+
 .c2 {
   border: none;
   background: transparent;
@@ -14764,7 +14810,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
       onClick={[Function]}
     >
       <h3
-        className="c3"
+        className="c5"
         muted={true}
       >
         Second Tab
@@ -14779,7 +14825,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
       onClick={[Function]}
     >
       <h3
-        className="c3"
+        className="c5"
         muted={true}
       >
         Third Tab
@@ -14903,6 +14949,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  opacity: .5;
   padding: 0;
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
@@ -15724,6 +15771,7 @@ exports[`Storyshots Title and List (with optional logos) on dark background 1`] 
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
+  opacity: .5;
   padding-top: 0;
 }
 
@@ -17927,14 +17975,6 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   color: #828282;
 }
 
-.c3 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.625rem;
-  line-height: 1.875rem;
-  padding: 0.75rem 0 0.75rem 0;
-}
-
 .c0 {
   color: #333333;
   font-weight: 400;
@@ -17951,6 +17991,15 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   line-height: 1.875rem;
   padding: 0.75rem 0 0.75rem 0;
   color: #fff;
+}
+
+.c3 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+  opacity: .5;
 }
 
 .c4 {
@@ -17990,14 +18039,6 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c3 {
-    font-size: 2rem;
-    line-height: 2.25rem;
-    padding: 0.8125rem 0 0.6875rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
   .c0 {
     font-size: 2rem;
     line-height: 2.25rem;
@@ -18012,6 +18053,15 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
     color: #fff;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c3 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+    opacity: .5;
   }
 }
 
