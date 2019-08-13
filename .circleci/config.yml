@@ -1,13 +1,25 @@
 jobs:
+  build:
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - run: 
+        - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies
+      - run: 'yarn install'
+      - run: 'yarn run build:app'
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
   lighthouse:
     docker:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
@@ -17,15 +29,6 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run: 'yarn install'
-      - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
-          paths:
-            - node_modules
       - run: 'yarn lint'
     working_directory: ~/repo
   snapshots:
@@ -33,10 +36,6 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
       - run:
           command: npm run test:snapshots
           name: Snapshots
@@ -46,15 +45,6 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           command: npm run test:e2e
           name: Testcafe
@@ -63,10 +53,19 @@ jobs:
     working_directory: ~/repo
 version: 2
 workflows:
-  build_and_test:
+  test:
     jobs:
-      - lint
-      - lighthouse
-      - snapshots
-      - testcafe
+      - build
+      - lint:
+          requires: 
+            - build
+      - lighthouse:
+          requires: 
+            - build
+      - snapshots:
+          requires: 
+            - build
+      - testcafe:
+          requires: 
+            - build
   version: 2
