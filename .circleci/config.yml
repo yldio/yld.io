@@ -7,12 +7,11 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
+            - v2-dependencies-{{ checksum "package.json" }}
       - run: 'yarn install'
       - run: 'yarn run build:app'
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v2-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
             - public/
