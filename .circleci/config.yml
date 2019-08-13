@@ -55,13 +55,15 @@ jobs:
           command: npm run test:e2e
           name: Testcafe
       - store_artifacts:
-          path: ~/artifacts/screenshots
+          path: ~/app/artifacts/screenshots
 version: 2
 workflows:
   build_and_test:
     jobs:
       - build
-      - lint
+      - lint:
+          requires: 
+            - build
       - lighthouse:
           requires: 
             - build
