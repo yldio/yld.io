@@ -1,6 +1,5 @@
 jobs:
   build:
-    working_directory: '~/repo'
     docker:
       - image: circleci/node:10-browsers
     steps:
@@ -24,14 +23,12 @@ jobs:
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
-    working_directory: ~/repo
   lint:
     docker:
       - image: circleci/node:10
     steps:
       - checkout
       - run: 'yarn lint'
-    working_directory: ~/repo
   snapshots:
     docker:
       - image: circleci/node:10
@@ -40,7 +37,6 @@ jobs:
       - run:
           command: npm run test:snapshots
           name: Snapshots
-    working_directory: ~/repo
   testcafe:
     docker:
       - image: circleci/node:10-browsers
@@ -51,7 +47,6 @@ jobs:
           name: Testcafe
       - store_artifacts:
           path: ~/repo/artifacts/screenshots
-    working_directory: ~/repo
 version: 2
 workflows:
   build_and_test:
