@@ -24,6 +24,7 @@ jobs:
           paths:
             - .cache
             - public
+            - node_modules
   lighthouse:
     <<: *defaults
     steps:
