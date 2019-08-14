@@ -1,187 +1,121 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
-import { Padding } from 'styled-components-spacing'
 import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
-import Anchor from '../Common/Anchor'
-import { CardTitle, BodyPrimary, SectionTitle, CalendarDay } from '../Typography'
-import eventLabels from '../../utils/eventLabels'
+
+import { CardTitle, BodyPrimary, CalendarDay } from '../Typography'
 import remcalc from 'remcalc'
 
-
-const MobileOnlyCol = styled(Col)`
-  ${breakpoint('smallTablet')`
-    display: none;
-  `}
-`
-
-const NonMobileCol = styled(Col)`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  `}
-`
-
-const serviceLinkMapper = {
-    Engineering: '/engineering',
-    Design: '/design',
-    Training: '/training'
-}
-
-const TitleSection = ({ services, title, link }) => {
-    const serviceElems = services.map((service, index) => {
-        const isPenultimate = index === services.length - 2
-        const isLast = index === services.length - 1
-        const link = serviceLinkMapper[service]
-        const element = link ? <Anchor to={link}>{service}</Anchor> : service
-
-        switch (true) {
-            case isLast:
-                return <Fragment key={index}>{element}</Fragment>
-            case isPenultimate:
-                // anchor/text + ampersand
-                return <Fragment key={index}>{element} &amp; </Fragment>
-            default:
-                // anchor/text + comma
-                return <Fragment key={index}>{element} &#44; </Fragment>
-        }
-    })
-
-    return (
-        <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-            <BodyPrimary muted noPadding>
-                {serviceElems}
-            </BodyPrimary>
-            <Anchor to={link}>
-                <CardTitle as="h2">{title}</CardTitle>
-            </Anchor>
-        </Padding>
-    )
-}
-
-const InfoSection = ({ introSentence, title, link }) => (
-    <Fragment>
-        <Padding bottom={{ smallPhone: 0.5, tablet: 1 }}>
-            <BodyPrimary>{introSentence}</BodyPrimary>
-        </Padding>
-        <StyledLink
-            aria-label={`Learn more about ${title}`}
-            to={link}
-            title={`Learn more about ${title}`}
-            data-event={eventLabels.learnMoreCTA}
-        >
-            Learn more
-    </StyledLink>
-    </Fragment>
-)
-
 const CalendarPage = styled.div`
-    padding: 24px;
-    border: solid;
-    border-color: ${props => props.theme.colors.border};
-    border-width: thin;
-    width: 108px;
-    height: 108px;
-    text-align: center;
+  padding: 24px;
+  border: solid;
+  border-color: ${props => props.theme.colors.border};
+  border-width: thin;
+  width: 108px;
+  height: 108px;
+  text-align: center;
 
-
-    ${breakpoint('tablet')`
+  ${breakpoint('tablet')`
     width: 143px;
     height: 143px;
   `}
 `
 
 const CenteredBodyPrimary = styled(BodyPrimary)`
-text-align: center;
-line-height: ${remcalc(18)};
+  text-align: center;
+  line-height: ${remcalc(18)};
 
-${breakpoint('tablet')`
+  ${breakpoint('tablet')`
     line-height: ${remcalc(24)};
 
   `}
-
 `
 
 const noPaddingCol = styled(Col)`
-padding: 0;
+  padding: 0;
 `
 
 const DateCard = ({ date }) => (
-    <CalendarPage>
-        <CalendarDay noPadding>
-            {date.day}
-        </CalendarDay>
-        <CenteredBodyPrimary noPadding>
-            {date.month.toUpperCase()}
-        </CenteredBodyPrimary>
-    </CalendarPage>
+  <CalendarPage>
+    <CalendarDay noPadding>{date.day}</CalendarDay>
+    <CenteredBodyPrimary noPadding>
+      {date.month.toUpperCase()}
+    </CenteredBodyPrimary>
+  </CalendarPage>
 )
 
+const AlignRightCol = styled(Col)`
+  ${breakpoint('tablet')`
+text-align: right;
+
+  `}
+`
+
+const SelectivePaddingCardTitle = styled(CardTitle)`
+  ${breakpoint('tablet')`
+padding-top: 0;
+
+  `}
+`
+
+const selectivePaddingBodyPrimary = styled(BodyPrimary)`
+  padding-top: ${remcalc(24)} ${breakpoint('tablet')`
+padding-top: 0;
+
+  `};
+`
+
 const EventCard = ({ event }) => {
-    const { type, date, eventName, eventLocation, startTime, endTime, attendees = 0, link } = event
+  const {
+    type,
+    date,
+    eventName,
+    eventLocation,
+    startTime,
+    endTime,
+    attendees = 0,
+    link
+  } = event
 
-    return (
-        <Row>
+  return (
+    <Row>
+      <noPaddingCol width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
+        <DateCard date={date} />
+      </noPaddingCol>
 
-            <noPaddingCol width={[1, 1, 1, 1, 3 / 12, 2 / 12, 3 / 12]}>
-                <DateCard date={date} />
-            </noPaddingCol>
+      <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
+        <selectivePaddingBodyPrimary>{type}</selectivePaddingBodyPrimary>
+        <SelectivePaddingCardTitle as="h2">
+          {eventName}
+        </SelectivePaddingCardTitle>
+        <BodyPrimary muted>
+          {eventLocation} • {startTime} - {endTime} • {attendees} attending
+        </BodyPrimary>
+      </Col>
 
-            <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-                <BodyPrimary>{type}</BodyPrimary>
-                <CardTitle as="h2" noPadding>{eventName}</CardTitle>
-                <BodyPrimary muted>{eventLocation} • {startTime} - {endTime} • {attendees} attending</BodyPrimary>
-            </Col>
-
-            <Col width={[1, 1, 1, 1, 3 / 12, 4 / 12, 4 / 12]}>
-                {type === "meetup" ? <StyledLink aria-label={`More on Meetup`}
-                    to={link}
-                    title={`More on Meetup`}>More on Meetup</StyledLink> : <StyledLink aria-label={`Get tickets`}
-                        to={link}
-                        title={`Get tickets`}>Get Tickets</StyledLink>
-                }
-            </Col>
-
-            {/* 
-
-            <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
-                <TitleSection services={services} title={title} link={caseStudyLink} />
-            </MobileOnlyCol>
-            
-            <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
-                <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
-                    <Anchor to={caseStudyLink}>
-                        <Image alt={posterImage.title} image={posterImage} />
-                    </Anchor>
-                </Padding>
-            </Col>
-            
-            <NonMobileCol width={[0, 0, 0, 0, 7 / 12, 6 / 12]}>
-                <TitleSection services={services} title={title} link={caseStudyLink} />
-                <InfoSection
-                    introSentence={introSentence}
-                    title={title}
-                    link={caseStudyLink}
-                />
-            </NonMobileCol>
-            
-            <MobileOnlyCol width={[1, 1, 1, 1, 0, 0, 0]}>
-                <InfoSection
-                    introSentence={introSentence}
-                    title={title}
-                    link={caseStudyLink}
-                />
-            </MobileOnlyCol> */}
-        </Row>
-    )
+      <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
+        {type === 'meetup' ? (
+          <StyledLink
+            aria-label={`More on Meetup`}
+            to={link}
+            title={`More on Meetup`}
+          >
+            More on Meetup
+          </StyledLink>
+        ) : (
+          <StyledLink
+            aria-label={`Get tickets`}
+            to={link}
+            title={`Get tickets`}
+          >
+            Get Tickets
+          </StyledLink>
+        )}
+      </AlignRightCol>
+    </Row>
+  )
 }
 
 export default EventCard
