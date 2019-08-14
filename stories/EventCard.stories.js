@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import EventCard from '../src/components/Events/EventCard'
+import { Grid } from '../src/components/grid'
 
 addDecorator(Theme)
 
@@ -9,7 +10,7 @@ const event = {
     type: "Meetup",
     date: {
         day: 24,
-        month: "August"
+        month: "Aug"
     },
     eventName: "GraphQL helps rockstar developers",
     eventLocation: "London",
@@ -21,8 +22,11 @@ const event = {
 
 storiesOf('Event Card', module).add('Event Card', () => {
     return (
-        <EventCard event={event}
-        />
+        <Grid>
+
+            <EventCard event={event}
+            />
+        </Grid>
     )
 })
 

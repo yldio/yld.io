@@ -7,8 +7,9 @@ import { Padding } from 'styled-components-spacing'
 import StyledLink from '../Common/StyledLink'
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
-import { CardTitle, BodyPrimary, SectionTitle } from '../Typography'
+import { CardTitle, BodyPrimary, SectionTitle, CalendarDay } from '../Typography'
 import eventLabels from '../../utils/eventLabels'
+import remcalc from 'remcalc'
 
 
 const MobileOnlyCol = styled(Col)`
@@ -82,17 +83,46 @@ const InfoSection = ({ introSentence, title, link }) => (
     </Fragment>
 )
 
+const CalendarPage = styled.div`
+    padding: 24px;
+    border: solid;
+    border-color: ${props => props.theme.colors.border};
+    border-width: thin;
+    width: 108px;
+    height: 108px;
+    text-align: center;
+
+
+    ${breakpoint('tablet')`
+    width: 143px;
+    height: 143px;
+  `}
+`
+
+const CenteredBodyPrimary = styled(BodyPrimary)`
+text-align: center;
+line-height: ${remcalc(18)};
+
+${breakpoint('tablet')`
+    line-height: ${remcalc(24)};
+
+  `}
+
+`
+
+const noPaddingCol = styled(Col)`
+padding: 0;
+`
+
 const DateCard = ({ date }) => (
-    <Fragment>
-        <SectionTitle noPadding>
+    <CalendarPage>
+        <CalendarDay noPadding>
             {date.day}
-        </SectionTitle>
-        <BodyPrimary>
+        </CalendarDay>
+        <CenteredBodyPrimary noPadding>
             {date.month.toUpperCase()}
-        </BodyPrimary>
-    </Fragment>
-
-
+        </CenteredBodyPrimary>
+    </CalendarPage>
 )
 
 const EventCard = ({ event }) => {
@@ -101,9 +131,9 @@ const EventCard = ({ event }) => {
     return (
         <Row>
 
-            <Col width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
+            <noPaddingCol width={[1, 1, 1, 1, 3 / 12, 2 / 12, 3 / 12]}>
                 <DateCard date={date} />
-            </Col>
+            </noPaddingCol>
 
             <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
                 <BodyPrimary>{type}</BodyPrimary>
@@ -111,7 +141,7 @@ const EventCard = ({ event }) => {
                 <BodyPrimary muted>{eventLocation} • {startTime} - {endTime} • {attendees} attending</BodyPrimary>
             </Col>
 
-            <Col width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
+            <Col width={[1, 1, 1, 1, 3 / 12, 4 / 12, 4 / 12]}>
                 {type === "meetup" ? <StyledLink aria-label={`More on Meetup`}
                     to={link}
                     title={`More on Meetup`}>More on Meetup</StyledLink> : <StyledLink aria-label={`Get tickets`}
