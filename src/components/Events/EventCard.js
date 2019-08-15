@@ -33,7 +33,7 @@ const CenteredBodyPrimary = styled(BodyPrimary)`
   `}
 `
 
-const noPaddingCol = styled(Col)`
+const NoPaddingCol = styled(Col)`
   padding: 0;
 `
 
@@ -54,17 +54,28 @@ text-align: right;
 `
 
 const SelectivePaddingCardTitle = styled(CardTitle)`
+  padding-top: 0;
+  padding-bottom: ${remcalc(6)};
+
   ${breakpoint('tablet')`
 padding-top: 0;
 
   `}
 `
 
-const selectivePaddingBodyPrimary = styled(BodyPrimary)`
-  padding-top: ${remcalc(24)} ${breakpoint('tablet')`
+const SelectivePaddingBodyPrimary = styled(BodyPrimary)`
+  padding-top: ${remcalc(24)};
+  padding-bottom: 0;
+
+  ${breakpoint('tablet')`
 padding-top: 0;
 
   `};
+`
+
+const MeetupDetails = styled.div`
+  padding-top: ${remcalc(12)};
+  padding-bottom: ${remcalc(12)};
 `
 
 const EventCard = ({ event }) => {
@@ -81,18 +92,20 @@ const EventCard = ({ event }) => {
 
   return (
     <Row>
-      <noPaddingCol width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
+      <NoPaddingCol width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
         <DateCard date={date} />
-      </noPaddingCol>
+      </NoPaddingCol>
 
       <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-        <selectivePaddingBodyPrimary>{type}</selectivePaddingBodyPrimary>
-        <SelectivePaddingCardTitle as="h2">
-          {eventName}
-        </SelectivePaddingCardTitle>
-        <BodyPrimary muted>
-          {eventLocation} • {startTime} - {endTime} • {attendees} attending
-        </BodyPrimary>
+        <SelectivePaddingBodyPrimary>{type}</SelectivePaddingBodyPrimary>
+        <MeetupDetails>
+          <SelectivePaddingCardTitle as="h2">
+            {eventName}
+          </SelectivePaddingCardTitle>
+          <BodyPrimary muted noPadding>
+            {eventLocation} • {startTime} - {endTime} • {attendees} attending
+          </BodyPrimary>
+        </MeetupDetails>
       </Col>
 
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
