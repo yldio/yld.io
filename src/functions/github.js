@@ -5,11 +5,7 @@
  * lambda triggered --> get repo urls stored in contentful --> get current contentful data -->  get current github data --> if any differences, write new data to contentful
  */
 
-const {
-  getData,
-  normalise,
-  summariseContributions
-} = require('@yldio/oss-stats')
+const OssStats = require('@yldio/oss-stats')
 const { createClient } = require('contentful-management')
 
 const Auth = require('./utils/auth')
@@ -20,6 +16,7 @@ const org = 'yldio'
 
 exports.handler = async evt =>
   Auth(evt, async () => {
+    const { getData, normalise, summariseContributions } = OssStats
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
