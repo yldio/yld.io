@@ -17,7 +17,8 @@ const event = {
   startTime: '11am',
   endTime: '2pm',
   attendees: 20,
-  link: 'www.event.com'
+  link: 'www.event.com',
+  sponsor: 'Supported by YLD'
 }
 
 storiesOf('Event Card', module).add('Event Card', () => {
