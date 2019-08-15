@@ -133,6 +133,7 @@
     "react-test-renderer": "^16.8.1",
     "serve": "^10.1.1",
     "serve-static": "^1.13.2",
+    "storybook-addon-react-docgen": "^1.2.6",
     "storybook-addon-scissors": "^4.0.2",
     "striptags": "3.1.1",
     "stylelint": "^9.9.0",
