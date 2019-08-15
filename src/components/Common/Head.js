@@ -29,13 +29,8 @@ const Head = ({ page }) => {
 
         const description = page.seoMetaDescription || page.seoDescription
 
-        /**
-         * Contentful doesn't give us https: in the image urls so
-         * we have to prefix them here for twitter et al to pick
-         * up the image properly
-         */
         const imageUrl = page.socialLogo
-          ? `https://${page.socialLogo}`
+          ? page.socialLogo
           : `${siteUrl}${image}`
 
         return (
