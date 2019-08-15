@@ -103,7 +103,7 @@ exports.createPages = async ({ graphql, actions }) => {
   _.each(result.data.allContentfulSpeciality.edges, ({ node }) => {
     const { id, slug, title, generate, blogpostTags } = node
 
-    if (slug && (generate || slug === 'data-analysis')) {
+    if (slug && generate) {
       const titleTags = getTagsForTitle(title)
       const contentfulTags = blogpostTags
         ? blogpostTags.map(el => el.toLowerCase().trim())
