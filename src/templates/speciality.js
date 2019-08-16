@@ -122,7 +122,7 @@ export const pageQuery = graphql`
               url
             }
           }
-          additionalPoster {
+          alternativePreviewImage {
             title
             file {
               url

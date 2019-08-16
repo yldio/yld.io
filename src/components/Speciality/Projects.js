@@ -13,16 +13,14 @@ const Emphasis = styled.em`
 `
 
 const PosterLinks = ({ project }) => {
-  const preferAdditionalPoster =
-    project.slug === 'central-working-changing-how-you-work'
+  const imageKey =
+    project && project.alternativePreviewImage !== null
+      ? 'alternativePreviewImage'
+      : 'posterImage'
 
   const poster = {
-    title: preferAdditionalPoster
-      ? project.additionalPoster.title
-      : project.posterImage.title,
-    url: preferAdditionalPoster
-      ? project.additionalPoster.file.url
-      : project.posterImage.file.url,
+    title: project[imageKey].title,
+    url: project[imageKey].file.url,
     color: project.posterColor
   }
 

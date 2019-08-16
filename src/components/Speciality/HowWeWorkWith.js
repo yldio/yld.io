@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import breakpoint from 'styled-components-breakpoint'
@@ -39,10 +39,10 @@ const HowWeWorkWithSection = ({
             {howWeWorkWithPractises &&
               howWeWorkWithPractises.length > 0 &&
               howWeWorkWithPractises.map(practise => (
-                <>
-                  <BodyPrimary key={practise}>{practise}</BodyPrimary>
+                <Fragment key={practise}>
+                  <BodyPrimary>{practise}</BodyPrimary>
                   <Hr short />
-                </>
+                </Fragment>
               ))}
           </Col>
         </StyledRow>
