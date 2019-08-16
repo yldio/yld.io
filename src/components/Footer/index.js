@@ -65,21 +65,29 @@ const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
   )
 }
 
+const footerData = {
+  getInTouchTitle: "We're here to help",
+  getInTouchText:
+    'Our experts work with you to understand your goals and help you build the capabilities you need to succeed',
+  getInTouchCtaText: 'Contact us',
+  findUsTitle: 'Find us'
+}
+
 const Footer = ({ contactUsBg, is404 }) => (
   <Fragment>
     <Location>
       {({ location: { pathname } }) =>
-        showGetInTouch(pathname) ? (
+        showGetInTouch(pathname) && (
           <Wrapper
             bgColor={getBackgroundColor({ pathname, is404, contactUsBg })}
           >
             <GetInTouch
-              title="We're here to help"
-              contactText="Our experts work with you to understand your goals and help you build the capabilities you need to succeed"
-              ctaText="Contact us"
+              title={footerData.getInTouchTitle}
+              contactText={footerData.getInTouchText}
+              ctaText={footerData.getInTouchCtaText}
             />
           </Wrapper>
-        ) : null
+        )
       }
     </Location>
     <GreyFooter>
@@ -88,7 +96,7 @@ const Footer = ({ contactUsBg, is404 }) => (
           <Row>
             <Col width={1}>
               <Padding bottom={3}>
-                <SectionTitle reverse>Find us</SectionTitle>
+                <SectionTitle reverse>{footerData.findUsTitle}</SectionTitle>
               </Padding>
             </Col>
           </Row>
