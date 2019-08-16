@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AnimatedLink AnimatedLink 1`] = `
+.c0 > section {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.c0:hover section {
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
+  transform: scale(0.97);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #03183D;
+  max-width: 100%;
+}
+
+.c2 > img {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.c1 {
+  padding: 1.5rem 2.25rem 1.375rem 2.25rem;
+  max-width: 29.6875rem;
+  box-sizing: border-box;
+}
+
+.c1 > div {
+  max-width: 19.375rem;
+}
+
+<a
+  className="c0"
+  href="/#"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <section
+    style={
+      Object {
+        "background": "#03183D",
+        "maxWidth": 400,
+      }
+    }
+  >
+    <header
+      className="c1"
+    >
+      <h3
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        I am a title
+      </h3>
+      <p
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        This is an intro section
+      </p>
+    </header>
+    <div
+      className="c2"
+      color="03183D"
+    >
+      <img
+        alt="trainline graphic"
+        src="https://images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp"
+        style={
+          Object {
+            "maxHeight": "100%",
+          }
+        }
+      />
+    </div>
+  </section>
+</a>
+`;

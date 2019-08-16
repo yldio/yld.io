@@ -1,0 +1,1045 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Header TopNavbar - Service TopNavBar 1`] = `
+.c2 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.c3 {
+  font-size: 1.625rem;
+  margin-left: 0.75rem;
+  color: #333333;
+}
+
+.c3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #333333;
+}
+
+.c13 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+}
+
+.c13:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c13:active {
+  outline: none;
+}
+
+.c12 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  color: #333333;
+}
+
+.c12:hover,
+.c12 > a:hover {
+  background: #333333;
+  color: #a9a9a9;
+}
+
+.c12 > a:active {
+  background: #333333;
+  color: #fff;
+}
+
+.c12 > a.active {
+  background: #fff;
+  color: #828282;
+}
+
+.c12 > a.active:active {
+  background: #fff;
+  color: #828282;
+}
+
+.c12 > a.active:hover {
+  color: #333333;
+}
+
+.c8 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c11 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+  width: 100%;
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c11:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c11:active {
+  outline: none;
+}
+
+.c11:hover,
+.c11.active {
+  color: #333333;
+}
+
+.c5 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.c5 > span {
+  background: #fff;
+  color: #333333;
+}
+
+.c5 > span:hover {
+  background: #333333;
+  color: #a9a9a9;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+}
+
+.c6:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c6:active {
+  outline: none;
+}
+
+.c7 {
+  padding-right: 0.375rem;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c9 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+  z-index: 999;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  height: 5.25rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  display: none;
+}
+
+@media screen and (min-width:960px) {
+  .c2 {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c3 {
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c12 {
+    margin-right: 0.375rem;
+  }
+
+  .c12:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c5 {
+    margin-right: 0.375rem;
+  }
+
+  .c5:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1.25rem 0rem 1rem;
+    padding-right: 0rem;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <a
+      aria-current="page"
+      className="c2"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={Object {}}
+      title="Return to Homepage"
+    >
+      <svg
+        viewBox="0 0 54 54"
+      >
+        <title>
+          service speciality logo
+        </title>
+        <g
+          fill="none"
+          id="yld-service-speciality-logo"
+          stroke="none"
+        >
+          <rect
+            fill="#333333"
+            height="54"
+            id="Logo-rectangle"
+            width="54"
+            x="0"
+            y="0"
+          />
+          <path
+            d="M16.8201464,23.2905974 C18.4977896,23.2905974 19.8575263,21.9304179 19.8575263,20.2527747 C19.8575263,18.5751314 18.4977896,17.2153947 16.8201464,17.2153947 C15.1425032,17.2153947 13.7823237,18.5751314 13.7823237,20.2527747 C13.7823237,21.9304179 15.1425032,23.2905974 16.8201464,23.2905974 L16.8201464,23.2905974 Z M38.4789676,28.2522416 C38.4789676,26.5768122 37.1165743,25.2144189 35.4415877,25.2144189 C33.7666011,25.2144189 32.403765,26.5768122 32.403765,28.2522416 C32.403765,29.9267854 33.7666011,31.2896215 35.4415877,31.2896215 C37.1165743,31.2896215 38.4789676,29.9267854 38.4789676,28.2522416 L38.4789676,28.2522416 Z M42.557735,16 L42.557735,35.1881828 L38.5073047,35.1881828 L38.5073047,34.6325105 C37.5779373,35.0810332 36.5409776,35.339609 35.4415877,35.339609 C31.5332856,35.339609 28.3537775,32.1601009 28.3537775,28.2522416 C28.3537775,24.3434967 31.5332856,21.1639886 35.4415877,21.1639886 C36.5409776,21.1639886 37.5779373,21.4230072 38.5073047,21.8715299 L38.5073047,16 L42.557735,16 Z M28.3537775,16 L28.3537775,28.2522416 L28.3537775,35.1881828 L24.3033473,35.1881828 L24.3033473,23.7931376 L16.8205892,40.632 L12.388494,40.632 L14.6244661,35.6003986 L9,23.2905974 L13.453348,23.2905974 L16.8201464,30.6595644 L20.0948493,23.2905974 L24.3033473,23.2905974 L24.3033473,16 L28.3537775,16 Z"
+            fill="#fff"
+            id="Logo-fill"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      className="c3"
+      color="text"
+      href="/engineering"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      title="engineering"
+    >
+      Engineering
+    </a>
+  </div>
+  <ul
+    className="c4"
+  >
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c5"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c6"
+        tabIndex="0"
+      >
+        <span
+          className="c7"
+          data-event={null}
+        >
+          Dropdown 1
+        </span>
+        <svg
+          className="c8"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c9"
+      >
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/item-1/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            title="Item 1"
+          >
+            Item 1
+          </a>
+        </li>
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/item-2/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            title="Item 2"
+          >
+            Item 2
+          </a>
+        </li>
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/item-3/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            title="Item 3"
+          >
+            Item 3
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="/anchor/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        title="Anchor 1"
+      >
+        Anchor 1
+      </a>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="https://uk.linkedin.com/"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        title="External anchor"
+      >
+        External anchor
+      </a>
+    </li>
+    <li
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="c5"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="c6"
+        tabIndex="0"
+      >
+        <span
+          className="c7"
+          data-event={null}
+        >
+          Dropdown 2
+        </span>
+        <svg
+          className="c8"
+          height="6"
+          viewBox="0 0 6 6"
+          width="6"
+        >
+          <polyline
+            points="0,0 6,0 6,6"
+          />
+        </svg>
+      </span>
+      <ul
+        className="c9"
+      >
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/go-here/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            title="Go here"
+          >
+            Go here
+          </a>
+        </li>
+        <li
+          className="c10"
+        >
+          <a
+            className="c11"
+            href="/go-there/"
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseEnter={[Function]}
+            title="Go there"
+          >
+            Go there
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      className="c12"
+    >
+      <a
+        className="c13"
+        href="/last-anchor/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        title="Anchor 2"
+      >
+        Anchor 2
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots Header TopNavbar - Speciality TopNavBar 1`] = `
+.c3 {
+  height: 3rem;
+  width: 3rem;
+}
+
+.c4 {
+  font-size: 1.625rem;
+  margin-left: 0.75rem;
+  color: #fff;
+}
+
+.c4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.c14 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+}
+
+.c14:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c14:active {
+  outline: none;
+}
+
+.c13 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #090329;
+  color: #fff;
+}
+
+.c13:hover,
+.c13 > a:hover {
+  background: #65FFCD;
+  color: #007f56;
+}
+
+.c13 > a:active {
+  background: #65FFCD;
+  color: #333333;
+}
+
+.c13 > a.active {
+  background: #090329;
+  color: #828282;
+}
+
+.c13 > a.active:active {
+  background: #090329;
+  color: #828282;
+}
+
+.c13 > a.active:hover {
+  background: #3a3553;
+  color: #fff;
+}
+
+.c9 {
+  stroke: currentColor;
+  stroke-width: 0.1875rem;
+  fill: none;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0s ease 0.1s;
+  -webkit-transition: transform 0s ease 0.1s;
+  transition: transform 0s ease 0.1s;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 {
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+  width: 100%;
+  background: #f9f9f9;
+  color: #828282;
+}
+
+.c12:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c12:active {
+  outline: none;
+}
+
+.c12:hover,
+.c12.active {
+  color: #333333;
+}
+
+.c6 {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.c6 > span {
+  background: #090329;
+  color: #fff;
+}
+
+.c6 > span:hover {
+  background: #65FFCD;
+  color: #007f56;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: outline 300ms ease-out;
+  transition: outline 300ms ease-out;
+  z-index: 2;
+  -webkit-transition: opacity 200ms ease-out, color 200ms ease-out;
+  transition: opacity 200ms ease-out, color 200ms ease-out;
+  outline: none;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.625rem 0.9375rem 0.875rem;
+  outline: 0.25rem solid transparent;
+}
+
+.c7:focus {
+  outline-color: #65FFCD;
+  z-index: 1;
+}
+
+.c7:active {
+  outline: none;
+}
+
+.c8 {
+  padding-right: 0.375rem;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c10 {
+  position: absolute;
+  width: 10rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 3rem;
+  left: -9999px;
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  background: #f9f9f9;
+  z-index: 999;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  height: 5.25rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  display: none;
+}
+
+.c0 {
+  background: #090329;
+  width: 100%;
+}
+
+@media screen and (min-width:960px) {
+  .c3 {
+    height: 3.375rem;
+    width: 3.375rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c4 {
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c13 {
+    margin-right: 0.375rem;
+  }
+
+  .c13:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c6 {
+    margin-right: 0.375rem;
+  }
+
+  .c6:last-child {
+    margin-right: 0rem;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1.25rem 0rem 1rem;
+    padding-right: 0rem;
+  }
+}
+
+<header
+  className="c0"
+>
+  <nav
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <a
+        aria-current="page"
+        className="c3"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={Object {}}
+        title="Return to Homepage"
+      >
+        <svg
+          viewBox="0 0 54 54"
+        >
+          <title>
+            service speciality logo
+          </title>
+          <g
+            fill="none"
+            id="yld-service-speciality-logo"
+            stroke="none"
+          >
+            <rect
+              fill="#fff"
+              height="54"
+              id="Logo-rectangle"
+              width="54"
+              x="0"
+              y="0"
+            />
+            <path
+              d="M16.8201464,23.2905974 C18.4977896,23.2905974 19.8575263,21.9304179 19.8575263,20.2527747 C19.8575263,18.5751314 18.4977896,17.2153947 16.8201464,17.2153947 C15.1425032,17.2153947 13.7823237,18.5751314 13.7823237,20.2527747 C13.7823237,21.9304179 15.1425032,23.2905974 16.8201464,23.2905974 L16.8201464,23.2905974 Z M38.4789676,28.2522416 C38.4789676,26.5768122 37.1165743,25.2144189 35.4415877,25.2144189 C33.7666011,25.2144189 32.403765,26.5768122 32.403765,28.2522416 C32.403765,29.9267854 33.7666011,31.2896215 35.4415877,31.2896215 C37.1165743,31.2896215 38.4789676,29.9267854 38.4789676,28.2522416 L38.4789676,28.2522416 Z M42.557735,16 L42.557735,35.1881828 L38.5073047,35.1881828 L38.5073047,34.6325105 C37.5779373,35.0810332 36.5409776,35.339609 35.4415877,35.339609 C31.5332856,35.339609 28.3537775,32.1601009 28.3537775,28.2522416 C28.3537775,24.3434967 31.5332856,21.1639886 35.4415877,21.1639886 C36.5409776,21.1639886 37.5779373,21.4230072 38.5073047,21.8715299 L38.5073047,16 L42.557735,16 Z M28.3537775,16 L28.3537775,28.2522416 L28.3537775,35.1881828 L24.3033473,35.1881828 L24.3033473,23.7931376 L16.8205892,40.632 L12.388494,40.632 L14.6244661,35.6003986 L9,23.2905974 L13.453348,23.2905974 L16.8201464,30.6595644 L20.0948493,23.2905974 L24.3033473,23.2905974 L24.3033473,16 L28.3537775,16 Z"
+              fill="#090329"
+              id="Logo-fill"
+            />
+          </g>
+        </svg>
+      </a>
+      <a
+        className="c4"
+        color="white"
+        href="/engineering"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        title="engineering"
+      >
+        Engineering
+      </a>
+    </div>
+    <ul
+      className="c5"
+    >
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c6"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c7"
+          tabIndex="0"
+        >
+          <span
+            className="c8"
+            data-event={null}
+          >
+            Dropdown 1
+          </span>
+          <svg
+            className="c9"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
+          >
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
+        </span>
+        <ul
+          className="c10"
+        >
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/item-1/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              title="Item 1"
+            >
+              Item 1
+            </a>
+          </li>
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/item-2/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              title="Item 2"
+            >
+              Item 2
+            </a>
+          </li>
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/item-3/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              title="Item 3"
+            >
+              Item 3
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="/anchor/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          title="Anchor 1"
+        >
+          Anchor 1
+        </a>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="https://uk.linkedin.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+          title="External anchor"
+        >
+          External anchor
+        </a>
+      </li>
+      <li
+        aria-expanded={false}
+        aria-haspopup="true"
+        className="c6"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="c7"
+          tabIndex="0"
+        >
+          <span
+            className="c8"
+            data-event={null}
+          >
+            Dropdown 2
+          </span>
+          <svg
+            className="c9"
+            height="6"
+            viewBox="0 0 6 6"
+            width="6"
+          >
+            <polyline
+              points="0,0 6,0 6,6"
+            />
+          </svg>
+        </span>
+        <ul
+          className="c10"
+        >
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/go-here/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              title="Go here"
+            >
+              Go here
+            </a>
+          </li>
+          <li
+            className="c11"
+          >
+            <a
+              className="c12"
+              href="/go-there/"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              title="Go there"
+            >
+              Go there
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        className="c13"
+      >
+        <a
+          className="c14"
+          href="/last-anchor/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          title="Anchor 2"
+        >
+          Anchor 2
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
