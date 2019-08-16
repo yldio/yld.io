@@ -9,13 +9,21 @@ defaults: &defaults
       - image: circleci/node:10-browsers
 
 jobs:
-  build:
+  install:
     <<: *defaults
     steps:
       - checkout
       - run:
           command: 'yarn install'
           name: 'Install dependencies'
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - node_modules
+  build:
+    <<: *defaults
+    steps:
+      - checkout
       - run:
           command: 'yarn run build:app'
           name: 'Build app'
@@ -37,6 +45,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - *attach_workspace
       - run: 'yarn lint'
   snapshots:
     <<: *defaults
@@ -60,10 +69,13 @@ version: 2
 workflows:
   build_and_test:
     jobs:
-      - build
+      - install
+      - build:
+          requires:
+            - install
       - lint:
           requires: 
-            - build
+            - install
       - lighthouse:
           requires: 
             - build
