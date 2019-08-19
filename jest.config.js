@@ -12,6 +12,7 @@ module.exports = {
     '<rootDir>/.cache',
     '<rootDir>/public'
   ],
+
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   globals: {
     __PATH_PREFIX__: ''
