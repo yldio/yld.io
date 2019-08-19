@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import GithubLambda from '../src/functions/github'
+import GithubLambda from '../../../src/functions/github'
 import ossStats from '@yldio/oss-stats'
 
 /**
@@ -7,12 +7,12 @@ import ossStats from '@yldio/oss-stats'
  */
 jest.mock('@yldio/oss-stats')
 
-jest.mock('../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
-jest.mock('../src/functions/oss/repos')
-jest.mock('../src/functions/oss/meta')
+jest.mock('../../../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
+jest.mock('../../../src/functions/oss/repos')
+jest.mock('../../../src/functions/oss/meta')
 
-const Repos = require('../src/functions/oss/repos')
-const Meta = require('../src/functions/oss/meta')
+const Repos = require('../../../src/functions/oss/repos')
+const Meta = require('../../../src/functions/oss/meta')
 
 const getDataMock = jest.fn()
 ossStats.getData = getDataMock

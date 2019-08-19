@@ -19,14 +19,15 @@ const Auth = require('./utils/auth')
  * environemnt unfortunately.
  *
  */
-const {
-  URL: NETLIFY_URL,
-  LAMBDA_ENV = 'development',
-  LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
-} = process.env
 
 exports.handler = async evt =>
   Auth(evt, async () => {
+    const {
+      URL: NETLIFY_URL,
+      LAMBDA_ENV = 'development',
+      LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
+    } = process.env
+
     const isProd = LAMBDA_ENV === 'production'
 
     const metaHref = new URL(

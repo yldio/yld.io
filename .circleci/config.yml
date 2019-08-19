@@ -20,6 +20,14 @@ jobs:
           root: ~/app
           paths:
             - node_modules
+  unit:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: 'yarn run test:unit'
+          name: 'Run unit tests'
   build:
     <<: *defaults
     steps:
@@ -71,6 +79,9 @@ workflows:
   build_and_test:
     jobs:
       - install
+      - unit:
+          requires:
+            - install
       - build:
           requires:
             - install
