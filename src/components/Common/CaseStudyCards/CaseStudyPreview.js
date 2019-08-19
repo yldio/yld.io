@@ -63,6 +63,7 @@ const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
   const introSentence = getIntroSentence(caseStudy)
   const { posterImage, title, slug } = caseStudy
   const caseStudyLink = `/case-study/${slug}`
+
   return (
     <CaseStudyLayout
       isTop={isTop}
