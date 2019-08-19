@@ -1,21 +1,29 @@
 /* eslint-env jest */
 import ReposLambda from '../../../src/functions/oss/repos'
 
+/* careful: No console log can be used within the test or relevant files
+as long as console log is mocked. To log the mock needs to be disabled */
 // eslint-disable-next-line
 console.log = jest.fn()
 
-jest.mock('../../../src/functions/oss/utils', () => ({
-  getFieldValue: jest.fn(repo => repo.fields.url['en-US']),
-  generateContentfulData: jest.fn(repo => {
+jest.mock('../../../src/functions/oss/utils')
+const {
+  getFieldValue,
+  generateContentfulData
+} = require('../../../src/functions/oss/utils')
+
+const mockGetFieldValue = () =>
+  getFieldValue.mockImplementation(repo => repo.fields.url['en-US'])
+
+const mockGenerateContentfulData = samaData =>
+  generateContentfulData.mockImplementation(repo => {
     let contentfulRepo = Object.assign({}, repo)
-    const repoUrl = repo.url
+    const repoUrl = `${repo.url}${samaData ? '' : '-different'}`
     delete repo.url
     contentfulRepo.url = {}
     contentfulRepo.url['en-US'] = repoUrl
     return contentfulRepo
-  }),
-  updateEntry: jest.fn(name => name)
-}))
+  })
 
 const firstRepo = {
   url: 'https://github.com/yldio/fake-repo',
@@ -65,18 +73,30 @@ environmentRepos.forEach(repo => {
 })
 
 describe('Repos lambda', () => {
+  let newReposResponse
+
+  beforeEach(() => {
+    newReposResponse = [
+      Object.assign({}, firstRepo),
+      Object.assign({}, secondRepo)
+    ]
+  })
+
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   describe('is not production environment', () => {
-    it('with equal fields, should not update and log the have not changed fields message', async () => {
+    it(`with equal fields, should not update and log the 'Fields have not changed' message`, async () => {
+      mockGetFieldValue()
+      mockGenerateContentfulData(true)
+
       const mockedEnvironment = {
         getEntries: jest.fn().mockReturnValue({ items: environmentRepos })
       }
 
       const response = await ReposLambda(mockedEnvironment, {
-        repos: [firstRepo, secondRepo]
+        repos: newReposResponse
       })
 
       // eslint-disable-next-line
@@ -91,7 +111,29 @@ describe('Repos lambda', () => {
       expect(response).toEqual([])
     })
 
-    it.skip('with different fields, should not update and log the have not Prod message', async () => {})
+    it(`with different fields, should not update and log the 'Not Prod' message`, async () => {
+      mockGetFieldValue()
+      mockGenerateContentfulData(false)
+
+      const mockedEnvironment = {
+        getEntries: jest.fn().mockReturnValue({ items: environmentRepos })
+      }
+
+      const response = await ReposLambda(mockedEnvironment, {
+        repos: newReposResponse
+      })
+
+      // eslint-disable-next-line
+      expect(console.log.mock.calls[0][0]).toBe(
+        `Not prod so not updating contentful for ${firstRepo.nameWithOwner}`
+      )
+
+      // eslint-disable-next-line
+      expect(console.log.mock.calls[1][0]).toBe(
+        `Not prod so not updating contentful for ${secondRepo.nameWithOwner}`
+      )
+      expect(response).toEqual([])
+    })
   })
 
   describe.skip('is production environment', () => {
