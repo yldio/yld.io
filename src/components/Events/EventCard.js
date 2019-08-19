@@ -5,35 +5,43 @@ import remcalc from 'remcalc'
 
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
+import RatioContainer from '../Common/RatioContainer'
 import { CardTitle, BodyPrimary, CalendarDay } from '../Typography'
 
-const CalendarPage = styled.div`
-  display: inline-block;
-
-  padding: 24px;
+const StyledRatioContainer = styled(RatioContainer)`
   border: solid;
   border-color: ${props => props.theme.colors.border};
   border-width: thin;
-  text-align: center;
 `
 
-const CenteredBodyPrimary = styled(BodyPrimary)`
-  text-align: center;
+const CalendarMonth = styled(BodyPrimary)`
   line-height: ${remcalc(18)};
 
   ${breakpoint('tablet')`
     line-height: ${remcalc(24)};
-
   `}
 `
 
+const DateCardInner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const DateCard = ({ date }) => (
-  <CalendarPage>
-    <CalendarDay noPadding>{date.day}</CalendarDay>
-    <CenteredBodyPrimary noPadding>
-      {date.month.toUpperCase()}
-    </CenteredBodyPrimary>
-  </CalendarPage>
+  <StyledRatioContainer width={100} height={100}>
+    <DateCardInner>
+      <CalendarDay noPadding>{date.day}</CalendarDay>
+      <CalendarMonth noPadding>{date.month.toUpperCase()}</CalendarMonth>
+    </DateCardInner>
+  </StyledRatioContainer>
 )
 
 const EventTypePadding = styled.div`
@@ -41,26 +49,20 @@ const EventTypePadding = styled.div`
   padding-bottom: ${remcalc(12)};
 
   ${breakpoint('tablet')`
-padding-top: 0;
-
+    padding-top: 0;
   `};
 `
 
 const EventNamePadding = styled.div`
-  padding-top: 0;
   padding-bottom: ${remcalc(6)};
-
-  ${breakpoint('tablet')`
-padding-top: 0;
-`}
 `
 
 const SponsorInner = styled.div`
   padding-left: ${remcalc(18)};
   padding-right: ${remcalc(18)};
-
   display: inline-block;
 `
+
 const SponsorOuter = styled.div`
   border: solid;
   border-color: ${props => props.theme.colors.border};
@@ -71,8 +73,7 @@ const SponsorOuter = styled.div`
 
 const AlignRightCol = styled(Col)`
   ${breakpoint('tablet')`
-text-align: right;
-
+    text-align: right;
   `}
 `
 
@@ -91,7 +92,7 @@ const EventCard = ({ event }) => {
 
   return (
     <Row>
-      <Col width={[1, 1, 1, 1, 3 / 12, 2 / 12, 2 / 12]}>
+      <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
         <DateCard date={date} />
       </Col>
 
@@ -110,7 +111,7 @@ const EventCard = ({ event }) => {
         {sponsor && (
           <SponsorOuter>
             <SponsorInner>
-              <BodyPrimary>{sponsor}</BodyPrimary>
+              <BodyPrimary muted>{sponsor}</BodyPrimary>
             </SponsorInner>
           </SponsorOuter>
         )}

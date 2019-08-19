@@ -23,7 +23,7 @@ const event = {
 
 storiesOf('Event Card', module).add('Event Card', () => {
   return (
-    <Grid>
+    <Grid style={{ width: '100%' }}>
       <EventCard event={event} />
     </Grid>
   )
