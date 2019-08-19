@@ -32,7 +32,7 @@ const DateCardInner = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  padding: ${remcalc(24)};
 `
 
 const DateCard = ({ date }) => (
@@ -48,13 +48,18 @@ const EventTypePadding = styled.div`
   padding-top: ${remcalc(24)};
   padding-bottom: ${remcalc(12)};
 
-  ${breakpoint('tablet')`
+  ${breakpoint('smallTablet')`
     padding-top: 0;
   `};
 `
 
 const EventNamePadding = styled.div`
   padding-bottom: ${remcalc(6)};
+
+  ${breakpoint('smallTablet')`
+min-height: ${remcalc(60)};
+
+`};
 `
 
 const SponsorInner = styled.div`
