@@ -17,6 +17,7 @@ import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import {
   TextColumnsBlock,
+  FullWidthBlock,
   shouldRender,
   normalise,
   normaliseAll,
@@ -26,6 +27,11 @@ import {
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
 import getSocialLogo from '../../utils/getSocialLogo'
+
+const StyledColData2 = styled(Col)`
+  display: flex;
+  justify-content: center;
+`
 
 const Block3Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -109,7 +115,6 @@ const IndexPage = props => {
     relatedCaseStudy
   } = caseStudy
 
-  const outComesDataText = normalise(data2, 0).text
   const outComesDataFigures = normaliseAll(data2.slice(1))
 
   const socialLogo = getSocialLogo({ ...caseStudy })
@@ -136,64 +141,51 @@ const IndexPage = props => {
           )}
         </BlockRow>
       </Grid>
-      <GreyBackground>
-        <Grid>
-          {/* Outcomes */}
-          <BlockRow mobile={{ bottom: '4', top: '4' }} tablet={{ top: '6' }}>
-            {shouldRender(data2) && (
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => (
-                    <Col width={[1, 1, 1, 1 / 2]}>
-                      <SectionTitle {...props} />
-                    </Col>
-                  ),
-                  // eslint-disable-next-line
-                  paragraph: props => (
-                    <Col width={[1, 1, 1, 1 / 2]}>
-                      <BodyPrimary {...props} />
-                    </Col>
-                  )
-                }}
-                source={outComesDataText}
+      {shouldRender(data2) && (
+        <GreyBackground>
+          <Grid>
+            {/* Outcomes */}
+            <BlockRow mobile={{ bottom: '4', top: '4' }} tablet={{ top: '6' }}>
+              <FullWidthBlock
+                data={normalise(data2, 0)}
+                StyledCol={StyledColData2}
               />
-            )}
-          </BlockRow>
-          <BlockRow
-            mobile={{ bottom: '5' }}
-            smallTablet={{ bottom: '4' }}
-            tablet={{ bottom: '6' }}
-          >
-            {outComesDataFigures.map(({ text }, index) => (
-              <Col
-                width={[1, 1, 1, 1, 4 / 12]}
-                style={{
-                  textAlign: 'center',
-                  flexDirection: 'column',
-                  justifyContent: 'space-around',
-                  alignItems: 'center'
-                }}
-                block={false}
-                key={generate()}
-              >
-                <ReactMarkdown
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => (
-                      <SectionTitle noPaddingBottom {...props} />
-                    ),
-                    // eslint-disable-next-line
-                    paragraph: props => <BodyPrimary bold {...props} />
+            </BlockRow>
+            <BlockRow
+              mobile={{ bottom: '5' }}
+              smallTablet={{ bottom: '4' }}
+              tablet={{ bottom: '6' }}
+            >
+              {outComesDataFigures.map(({ text }, index) => (
+                <Col
+                  width={[1, 1, 1, 1, 4 / 12]}
+                  style={{
+                    textAlign: 'center',
+                    flexDirection: 'column',
+                    justifyContent: 'space-around',
+                    alignItems: 'center'
                   }}
-                  source={text}
-                />
-                {index + 1 < outComesDataFigures.length && <StyledHr short />}
-              </Col>
-            ))}
-          </BlockRow>
-        </Grid>
-      </GreyBackground>
+                  block={false}
+                  key={generate()}
+                >
+                  <ReactMarkdown
+                    renderers={{
+                      // eslint-disable-next-line
+                      heading: props => (
+                        <SectionTitle noPaddingBottom {...props} />
+                      ),
+                      // eslint-disable-next-line
+                      paragraph: props => <BodyPrimary bold {...props} />
+                    }}
+                    source={text}
+                  />
+                  {index + 1 < outComesDataFigures.length && <StyledHr short />}
+                </Col>
+              ))}
+            </BlockRow>
+          </Grid>
+        </GreyBackground>
+      )}
       <Grid>
         <BlockRow
           mobile={{ bottom: '5', top: '4' }}
@@ -231,7 +223,7 @@ const IndexPage = props => {
 
       {/* Cities */}
       <Grid>
-        {shouldRender(data2) && (
+        {shouldRender(data5) && (
           <Fragment>
             <BlockRow
               mobile={{ bottom: '4', top: '4' }}

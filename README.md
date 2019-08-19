@@ -32,6 +32,12 @@ You can now run:
 
 We have some docs to make it easier for you to get started:
 
+## Running Tests
+
+All tests are run through scripts within package.json so check there for details.
+
+**N.B. You need to `yarn run build` prior to running testcafe and lighthouse testing scripts.**
+
 - [Scripts Overview](./docs/scripts.md)
 
 ## Tech used

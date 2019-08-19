@@ -22,7 +22,7 @@ const StyledHr = styled(Hr)`
   border-color: #848194;
 `
 
-const OpenSource = ({ data }) => {
+const OpenSource = ({ data, location }) => {
   const {
     contentfulOpenSourcePage: {
       title,
@@ -84,7 +84,7 @@ const OpenSource = ({ data }) => {
   )
 
   return (
-    <Layout>
+    <Layout location={location} slug={'open-source'}>
       <Head page={{ title, seoDescription }} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement as="h1">{statement}</Statement>

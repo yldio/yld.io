@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
+import { StaticQuery, graphql } from 'gatsby'
 import LogoLink from './LogoLink'
 import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
@@ -34,12 +35,109 @@ const TopNavList = styled.ul`
   }
 `
 
-const TopNav = ({ links, themeVariation, path }) => (
+const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
+
+const getSpecialitiesToServices = (services = []) =>
+  services.reduce((acc, { slug, ...rest }) => {
+    const {
+      specialityAreaItems1,
+      specialityAreaItems2,
+      specialityAreaItems3,
+      specialityAreaItems4
+    } = rest
+
+    const areas = [
+      ...specialityAreaItems1,
+      ...specialityAreaItems2,
+      ...specialityAreaItems3,
+      ...specialityAreaItems4
+    ].filter(i => i)
+
+    return {
+      ...acc,
+      [slug]: areas.map(({ slug }) => slug)
+    }
+  }, {})
+
+const getService = ({ slug, map = [] }) =>
+  Object.keys(map).find(key => map[key].includes(slug))
+
+const TopNavBranding = ({ path, slug }) => (
+  <StaticQuery
+    query={graphql`
+      {
+        services: allContentfulService {
+          nodes {
+            slug
+            specialityAreaItems1 {
+              id
+              slug
+              title
+            }
+            specialityAreaItems2 {
+              id
+              slug
+              title
+            }
+            specialityAreaItems3 {
+              id
+              slug
+              title
+            }
+            specialityAreaItems4 {
+              id
+              slug
+              title
+            }
+          }
+        }
+        specialities: allContentfulSpeciality {
+          nodes {
+            slug
+          }
+        }
+      }
+    `}
+    render={({ services, specialities }) => {
+      const serviceSlugs = getSlugs(services.nodes)
+      const specialitySlugs = getSlugs(specialities.nodes)
+      const specialitiesToServicesMap = getSpecialitiesToServices(
+        services.nodes
+      )
+
+      const isServicePage = serviceSlugs.includes(slug)
+      const isSpecialityPage = specialitySlugs.includes(slug)
+      const isHomePage = path === '/'
+
+      const service = isServicePage
+        ? slug
+        : getService({ slug, map: specialitiesToServicesMap })
+
+      return (
+        <StyledLinksContainer>
+          <LogoLink
+            isSpecialityPage={isSpecialityPage}
+            isServicePage={isServicePage}
+            isHomePage={isHomePage}
+            path={path}
+            slug={slug}
+          />
+          <ServiceLink
+            isSpecialityPage={isSpecialityPage}
+            isServicePage={isServicePage}
+            service={service}
+            slug={slug}
+            path={path}
+          />
+        </StyledLinksContainer>
+      )
+    }}
+  />
+)
+
+const TopNav = ({ links, themeVariation, path, slug }) => (
   <StyledTopNavContainer>
-    <StyledLinksContainer>
-      <LogoLink path={path} />
-      <ServiceLink path={path} />
-    </StyledLinksContainer>
+    <TopNavBranding slug={slug} path={path} />
     <TopNavList>
       {links.map((link, idx) => {
         if (link.dropdownItems) {
