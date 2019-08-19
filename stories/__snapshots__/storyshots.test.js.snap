@@ -10168,12 +10168,8 @@ Array [
                 >
                   <img
                     alt="The Economist case study featured image "
+                    className="c8"
                     src="//images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg"
-                    style={
-                      Object {
-                        "maxHeight": "100%",
-                      }
-                    }
                   />
                 </div>
               </section>
@@ -10248,12 +10244,8 @@ Array [
                 >
                   <img
                     alt="Trainline case study featured image "
+                    className="c8"
                     src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png"
-                    style={
-                      Object {
-                        "maxHeight": "100%",
-                      }
-                    }
                   />
                 </div>
               </section>

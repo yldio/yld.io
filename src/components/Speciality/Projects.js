@@ -7,6 +7,7 @@ import breakpoint from 'styled-components-breakpoint'
 import getColorLuminance from '../../utils/getColorLuminance'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import LogoGrid from '../Common/LogoGrid'
+import Image from '../Common/Image'
 
 const Emphasis = styled.em`
   color: ${props => props.theme.colors.secondaryText};
@@ -46,11 +47,7 @@ const PosterLinks = ({ project }) => {
           </BodyPrimary>
         </CardHeader>
         <PosterImage justifyCenter alignCenter color={poster.color}>
-          <img
-            alt={poster.title}
-            src={poster.url}
-            style={{ maxHeight: '100%' }}
-          />
+          <Image image={project[imageKey]} />
         </PosterImage>
       </section>
     </AnimatedLink>
