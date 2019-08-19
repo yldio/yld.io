@@ -4826,6 +4826,29 @@ exports[`Storyshots CustomisedBulletpoint Multiple CustomisedBulletpoints in a u
 </ul>
 `;
 
+exports[`Storyshots Event Card Calendar Day 1`] = `
+.c0 {
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    font-size: 3.75rem;
+    line-height: 4.5rem;
+  }
+}
+
+<p
+  className="c0"
+>
+  24
+</p>
+`;
+
 exports[`Storyshots Event Card Event Card 1`] = `
 .c0 {
   max-width: calc(100% - 48px);
@@ -4836,7 +4859,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding-right: 0;
 }
 
-.c3 {
+.c2 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -4844,7 +4867,11 @@ exports[`Storyshots Event Card Event Card 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: 33.33333333333333%;
+  position: initial;
+  top: 0;
+  left: 0;
+  width: 25%;
   position: initial;
   top: 0;
   left: 0;
@@ -4876,7 +4903,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   display: block;
 }
 
-.c13 {
+.c17 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -4912,12 +4939,39 @@ exports[`Storyshots Event Card Event Card 1`] = `
 
 .c11 {
   color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  padding: 0;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+}
+
+.c12 {
+  color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
   opacity: .5;
   padding: 0;
+}
+
+.c15 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
 }
 
 .c5 {
@@ -4929,7 +4983,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding: 0;
 }
 
-.c14 {
+.c18 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -4945,7 +4999,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   transition-property: background,color;
 }
 
-.c14:after {
+.c18:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -4955,35 +5009,36 @@ exports[`Storyshots Event Card Event Card 1`] = `
   box-sizing: border-box;
 }
 
-.c14:hover {
+.c18:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c14:focus {
+.c18:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c14:active {
+.c18:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c14:active:after {
+.c18:active:after {
   background: #333333;
 }
 
-.c4 {
-  padding: 24px;
+.c3 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
   border: solid;
   border-color: #e6e6e6;
   border-width: thin;
-  width: 108px;
-  height: 108px;
-  text-align: center;
 }
 
 .c6 {
@@ -4993,37 +5048,54 @@ exports[`Storyshots Event Card Event Card 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   padding: 0;
-  text-align: center;
   line-height: 1.125rem;
 }
 
-.c2 {
-  padding: 0;
-}
-
-.c10 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.6875rem 0 0.8125rem 0;
-  padding-top: 0;
-  padding-bottom: 0.375rem;
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1.5rem;
 }
 
 .c8 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
   padding-top: 1.5rem;
-  padding-bottom: 0;
+  padding-bottom: 0.75rem;
 }
 
-.c9 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.c10 {
+  padding-bottom: 0.375rem;
+}
+
+.c14 {
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+  display: inline-block;
+}
+
+.c13 {
+  border: solid;
+  border-color: #e6e6e6;
+  border-width: thin;
+  margin-top: 0.75rem;
+  display: inline-block;
 }
 
 @media (min-width:29.4375em) {
@@ -5086,60 +5158,42 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
+  .c2 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c3 {
+  .c2 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c3 {
+  .c2 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
+  .c2 {
     width: 25%;
     position: initial;
     top: 0;
@@ -5147,17 +5201,8 @@ exports[`Storyshots Event Card Event Card 1`] = `
   }
 }
 
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    width: 16.666666666666664%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
+@media screen and (min-width:34.5625rem) {
+  .c2 {
     width: 16.666666666666664%;
     position: initial;
     top: 0;
@@ -5246,42 +5291,42 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c13 {
+  .c17 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c13 {
+  .c17 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c13 {
+  .c17 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c13 {
+  .c17 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c13 {
+  .c17 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c13 {
+  .c17 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5290,7 +5335,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c13 {
+  .c17 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5299,7 +5344,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c13 {
+  .c17 {
     width: 25%;
     position: initial;
     top: 0;
@@ -5308,7 +5353,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c13 {
+  .c17 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -5317,7 +5362,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c13 {
+  .c17 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -5361,17 +5406,19 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c5 {
-    font-size: 3.75rem;
-    line-height: 4.5rem;
+  .c11 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
     padding: 0;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c4 {
-    width: 143px;
-    height: 143px;
+  .c5 {
+    font-size: 3.75rem;
+    line-height: 4.5rem;
+    padding: 0;
   }
 }
 
@@ -5381,65 +5428,65 @@ exports[`Storyshots Event Card Event Card 1`] = `
   }
 }
 
-@media (min-width:56.3125em) {
-  .c12 {
-    text-align: right;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c10 {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
-    padding: 0.75rem 0 0.75rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c10 {
-    padding-top: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
+@media (min-width:43.8125em) {
   .c8 {
     padding-top: 0;
   }
 }
 
+@media (min-width:43.8125em) {
+  .c10 {
+    min-height: 3.75rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c16 {
+    text-align: right;
+  }
+}
+
 <div
   className="c0"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="c1"
   >
     <div
-      className="c2 c3"
+      className="c2"
       width={
         Array [
-          1,
-          1,
-          1,
-          1,
+          0.3333333333333333,
           0.25,
-          0.16666666666666666,
+          0.25,
           0.16666666666666666,
         ]
       }
     >
       <div
-        className="c4"
+        className="c3"
+        height={100}
+        width={100}
       >
-        <p
-          className="c5"
+        <div
+          className="c4"
         >
-          24
-        </p>
-        <p
-          className="c6"
-        >
-          AUG
-        </p>
+          <p
+            className="c5"
+          >
+            24
+          </p>
+          <p
+            className="c6"
+          >
+            AUG
+          </p>
+        </div>
       </div>
     </div>
     <div
@@ -5456,36 +5503,54 @@ exports[`Storyshots Event Card Event Card 1`] = `
         ]
       }
     >
-      <p
+      <div
         className="c8"
       >
-        Meetup
-      </p>
+        <p
+          className="c9"
+        >
+          Meetup
+        </p>
+      </div>
       <div
-        className="c9"
+        className="c10"
       >
         <h2
-          className="c10"
+          className="c11"
         >
           GraphQL helps rockstar developers
         </h2>
-        <p
-          className="c11"
-          muted={true}
+      </div>
+      <p
+        className="c12"
+        muted={true}
+      >
+        London
+         • 
+        11am
+         - 
+        2pm
+         • 
+        20
+         attending
+      </p>
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
         >
-          London
-           • 
-          11am
-           - 
-          2pm
-           • 
-          20
-           attending
-        </p>
+          <p
+            className="c15"
+            muted={true}
+          >
+            Supported by YLD
+          </p>
+        </div>
       </div>
     </div>
     <div
-      className="c12 c13"
+      className="c16 c17"
       width={
         Array [
           1,
@@ -5500,7 +5565,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
     >
       <a
         aria-label="Get tickets"
-        className="c14"
+        className="c18"
         href="/www.event.com"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7283,6 +7348,14 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   font-weight: 700;
 }
 
+.c4 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
 .c7 {
   white-space: nowrap;
   overflow: hidden;
@@ -7297,14 +7370,6 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   line-height: 1.125rem;
   padding: 0.375rem 0;
   padding: 0;
-}
-
-.c4 {
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
-  overflow: hidden;
 }
 
 .c1 {
