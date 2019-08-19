@@ -61,6 +61,8 @@
     "test:snapshots:update": "jest --testPathPattern=\"storyshots.test.js\" -u --silent",
     "test:e2e": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 500000",
     "test:lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
+    "test:unit": "jest tests/unit/**/*.test.js",
+    "test:unit:watch": "yarn run test:unit --watch",
     "develop": "npm start",
     "start": "gatsby develop",
     "dev:clean": "rm -rf .cache && yarn develop",
