@@ -117,12 +117,18 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
             }
           }
           alternativePreviewImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url

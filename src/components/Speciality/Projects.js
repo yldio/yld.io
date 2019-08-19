@@ -14,7 +14,7 @@ const Emphasis = styled.em`
 
 const PosterLinks = ({ project }) => {
   const imageKey =
-    project && project.alternativePreviewImage !== null
+    project && project.alternativePreviewImage
       ? 'alternativePreviewImage'
       : 'posterImage'
 
