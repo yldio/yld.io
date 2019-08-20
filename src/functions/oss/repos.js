@@ -2,11 +2,7 @@
 const Reduce = require('apr-reduce')
 const { find, isEqual } = require('lodash')
 
-const {
-  getFieldValue,
-  generateContentfulData,
-  updateEntry
-} = require('./utils')
+const ossUtils = require('./utils')
 
 const repoKeys = [
   'url',
@@ -17,6 +13,7 @@ const repoKeys = [
 ]
 
 const Repos = async (environment, { repos }) => {
+  const { getFieldValue, generateContentfulData, updateEntry } = ossUtils
   const { LAMBDA_ENV = 'development' } = process.env
   const isProd = LAMBDA_ENV === 'production'
   const { items: contentfulRepos } = await environment.getEntries({

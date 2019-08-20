@@ -1,18 +1,8 @@
 /* eslint-env jest */
 import ReposLambda from '../../../src/functions/oss/repos'
 
-/* careful: No console log can be used within the test or relevant files
-as long as console log is mocked. To log the mock needs to be disabled */
-// eslint-disable-next-line
-// console.log = jest.fn()
-
 import ossUtils from '../../../src/functions/oss/utils'
 ossUtils.updateEntry = jest.fn().mockImplementation(() => Promise.resolve(null))
-
-// console.log('---- updateEntry ------', ossUtils.updateEntry)
-// const mockUpdateEntry = () => updateEntry
-// updateEntry = jest.fn().mockImplementation(() => null)
-// jest.spyOn(ossUtils, 'updateEntry').mockImplementation(() => '')
 
 process.env.LAMBDA_ENV = 'production'
 
@@ -90,33 +80,38 @@ describe('Repos lambda', () => {
     jest.clearAllMocks()
   })
 
-  /* We know that the only two values that can change the outcome of the script
-  are the `repos` and `contentfulRepos` */
-  describe('with repos and contentfulRepos having the same values', () => {
-    it('should not call updateEntry and no changes should be returned', async () => {
-      const response = await ReposLambda(mockedEnvironment, {
-        repos: [sameRepoOne, sameRepoTwo]
-      })
-
-      expect(ossUtils.updateEntry).not.toHaveBeenCalled()
-
-      const noChangesExpected = []
-
-      expect(response).toStrictEqual(noChangesExpected)
+  it('should not call updateEntry and no changes should be returned if repos and contentfulRepos have no differences', async () => {
+    const response = await ReposLambda(mockedEnvironment, {
+      repos: [sameRepoOne, sameRepoTwo]
     })
+
+    expect(ossUtils.updateEntry).not.toHaveBeenCalled()
+
+    const emptyAcc = []
+    expect(response).toStrictEqual(emptyAcc)
   })
 
-  //   describe('with repos and contentfulRepos having different values', () => {
-  //     it('should call ossUtils.updateEntry and return the changes', async () => {
-  //       const response = await ReposLambda(mockedEnvironment, {
-  //         repos: [differentRepoOne, sameRepoTwo]
-  //       })
+  it('should call ossUtils.updateEntry and return the changes if repos and contentfulRepos are different', async () => {
+    const repoKeys = [
+      'url',
+      'nameWithOwner',
+      'descriptionHTML',
+      'pullRequestCount',
+      'starCount'
+    ]
 
-  //       expect(ossUtils.updateEntry).toHaveBeenCalled()
+    const response = await ReposLambda(mockedEnvironment, {
+      repos: [differentRepoOne, sameRepoTwo]
+    })
 
-  //       const changesExpected = [some data]
+    expect(ossUtils.updateEntry).toHaveBeenCalledWith(
+      contentfulRepoOne,
+      ossUtils.generateContentfulData(differentRepoOne, repoKeys),
+      mockedEnvironment,
+      differentRepoOne.nameWithOwner
+    )
 
-  //       expect(response).toStrictEqual(changesExpected)
-  //     })
-  //   })
+    const changedReposAcc = [differentRepoOne.nameWithOwner]
+    expect(response).toStrictEqual(changedReposAcc)
+  })
 })
