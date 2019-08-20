@@ -25,7 +25,8 @@ const logoColors = {
     'react-js': '#0BDDF9',
     'react-native': '#968CEA',
     kubernetes: '#29EFEF',
-    amp: '#0097E2'
+    amp: '#0097E2',
+    'data-analysis': '#00B7FF'
   }
 }
 

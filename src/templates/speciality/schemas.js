@@ -187,4 +187,31 @@ const clientSchema = {
   }
 }
 
-export { communitySchema, projectsSchema, clientSchema, trainingSchema }
+const howWeWorkSchema = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  type: 'object',
+  properties: {
+    howWeWorkWithTitle: {
+      type: 'string'
+    },
+    howWeWorkWithCopy: {
+      type: 'string'
+    },
+    howWeWorkWithPractises: {
+      type: 'array'
+    }
+  },
+  required: [
+    'howWeWorkWithTitle',
+    'howWeWorkWithCopy',
+    'howWeWorkWithPractises'
+  ]
+}
+
+export {
+  communitySchema,
+  projectsSchema,
+  clientSchema,
+  trainingSchema,
+  howWeWorkSchema
+}

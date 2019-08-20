@@ -4,38 +4,55 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
+import getColorLuminance from '../../utils/getColorLuminance'
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink'
 import LogoGrid from '../Common/LogoGrid'
+import Image from '../Common/Image'
 
 const Emphasis = styled.em`
   color: ${props => props.theme.colors.secondaryText};
 `
 
-const PosterLinks = ({ project }) => (
-  <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
-    <section
-      style={{
-        background: `#${project.posterColor}`
-      }}
-    >
-      <CardHeader>
-        <CardTitle reverse noPadding bigger>
-          {project.title}
-        </CardTitle>
-        <BodyPrimary reverse muted>
-          {project.introSentence.introSentence}
-        </BodyPrimary>
-      </CardHeader>
-      <PosterImage justifyCenter alignCenter color={project.posterColor}>
-        <img
-          alt={project.posterImage.title}
-          src={project.posterImage.file.url}
-          style={{ maxHeight: '100%' }}
-        />
-      </PosterImage>
-    </section>
-  </AnimatedLink>
-)
+const PosterLinks = ({ project }) => {
+  const imageKey =
+    project && project.alternativePreviewImage
+      ? 'alternativePreviewImage'
+      : 'posterImage'
+
+  const poster = {
+    title: project[imageKey].title,
+    url: project[imageKey].file.url,
+    color: project.posterColor
+  }
+
+  const isDarkPosterColor = getColorLuminance(poster.color) < 132.5
+
+  return (
+    <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
+      <section
+        style={{
+          background: `#${poster.color}`
+        }}
+      >
+        <CardHeader>
+          <CardTitle reverse={isDarkPosterColor} noPadding bigger>
+            {project.title}
+          </CardTitle>
+          <BodyPrimary
+            muted
+            reverse={isDarkPosterColor}
+            lightMuted={isDarkPosterColor}
+          >
+            {project.introSentence.introSentence}
+          </BodyPrimary>
+        </CardHeader>
+        <PosterImage justifyCenter alignCenter color={poster.color}>
+          <Image image={project[imageKey]} />
+        </PosterImage>
+      </section>
+    </AnimatedLink>
+  )
+}
 
 const CompainesHelpedCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
