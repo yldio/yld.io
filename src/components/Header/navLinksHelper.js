@@ -8,30 +8,26 @@ const specialitiesMap = {
     'react-js',
     'kubernetes',
     'react-native'
-  ],
-  design: [],
-  training: [],
-  delivery: [],
-  dedicatedTeams: []
+  ]
 }
 
 const logoColors = {
   default: theme.colors.text,
   defaultText: theme.colors.white,
   defaultHover: '#8e8e8e',
-  engineering: {
+  specialityText: theme.colors.blueBg,
+  specialityHover: theme.colors.white,
+  specialitiesFills: {
+    default: theme.colors.white,
     'node-js': '#52FFAC',
     graphql: '#EB008B',
     'vue-js': '#039328',
     'react-js': '#0BDDF9',
-    kubernetes: '#29EFEF'
-  },
-  design: {},
-  training: {},
-  delivery: {},
-  dedicatedTeams: {},
-  specialityText: theme.colors.blueBg,
-  specialityHover: theme.colors.white
+    'react-native': '#968CEA',
+    kubernetes: '#29EFEF',
+    amp: '#0097E2',
+    'data-analysis': '#00B7FF'
+  }
 }
 
 const servicesList = Object.keys(specialitiesMap)
@@ -41,13 +37,6 @@ const servicesRegExp = new RegExp(servicesList.join('|'))
 const getIsServicePage = path => path.search(servicesRegExp) > -1
 
 const getSpeciality = path => path.split('/')[2]
-
-const getService = path =>
-  servicesList.find(service => {
-    const specialitiesRegExp = new RegExp(specialitiesMap[service].join('|'))
-
-    return path.search(specialitiesRegExp) > -1
-  })
 
 const AboutUrlList = ['about-us', 'contact']
 
@@ -61,6 +50,5 @@ export {
   servicesRegExp,
   getIsServicePage,
   getSpeciality,
-  getService,
   getAboutUrl
 }

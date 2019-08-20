@@ -5,7 +5,8 @@ import {
   communitySchema,
   projectsSchema,
   clientSchema,
-  trainingSchema
+  trainingSchema,
+  howWeWorkSchema
 } from './speciality/schemas'
 
 import {
@@ -18,6 +19,7 @@ import IntroSection from '../components/Speciality/Intro'
 import ProjectsSection from '../components/Speciality/Projects'
 import TrainingSection from '../components/Speciality/Training'
 import CommunitySection from '../components/Speciality/Community'
+import HowWeWorkWithSection from '../components/Speciality/HowWeWorkWith'
 import EventSection from '../components/Common/Events'
 import TalksSection from '../components/Speciality/Talks'
 import GetInTouch from '../components/Common/GetInTouch'
@@ -44,6 +46,7 @@ export const SpecialityView = props => {
   const validateProjects = ajv.compile(projectsSchema)
   const validateClients = ajv.compile(clientSchema)
   const validateTraining = ajv.compile(trainingSchema)
+  const validateHowWeWork = ajv.compile(howWeWorkSchema)
 
   const {
     title,
@@ -65,10 +68,11 @@ export const SpecialityView = props => {
     validateProjects(relatedProjects) || validateClients(clients)
   const renderCommunitySection = validateCommunity(flattenedSpeciality)
   const renderTrainingSection = validateTraining(flattenedSpeciality)
+  const renderHowWeWorkWithSection = validateHowWeWork(flattenedSpeciality)
 
   const renderTalksSection = talks && talks.length > 0
   const renderBooksSection = books && books.length > 0
-  const renderBlogSection = posts && posts.legnth > 0
+  const renderBlogSection = posts && posts.length > 0
 
   // required: IntroSection, TrainingSection, GetInTouch
   // optional: ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
@@ -84,18 +88,26 @@ export const SpecialityView = props => {
           clients={clients}
         />
       )}
+
       {renderTrainingSection && (
         <TrainingSection speciality={flattenedSpeciality} />
       )}
+
+      {renderHowWeWorkWithSection && (
+        <HowWeWorkWithSection {...flattenedSpeciality} />
+      )}
+
       {renderCommunitySection && <CommunitySection {...flattenedSpeciality} />}
       <EventSection
         events={specialityEvents}
         title={title}
         eventIcon={eventIcon}
       />
+
       {renderTalksSection && (
         <TalksSection talks={talks} videoIcon={videoIcon} />
       )}
+
       {renderBlogSection && (
         <BlogListing
           title="Blog posts"

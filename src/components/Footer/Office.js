@@ -5,7 +5,9 @@ import PaddedCol from '../../components/AboutUs/PaddedCol'
 import { Subtitle, BodyPrimary } from '../../components/Typography'
 
 const StyledBodyPrimary = styled(BodyPrimary).attrs({ noPadding: true })`
-  color: ${props => props.theme.colors.white};
+  color: ${({ theme }) => theme.colors.white};
+  padding-top: ${({ theme, hasPaddingTop }) =>
+    theme.space[hasPaddingTop ? 3 : 0]};
   opacity: 0.5;
 `
 
@@ -16,14 +18,20 @@ const Office = ({ name, telephone, email, streetAddress }) => (
       {streetAddress.map(address => (
         <StyledBodyPrimary key={address}>{address}</StyledBodyPrimary>
       ))}
-      <StyledBodyPrimary itemProp="telephone">{telephone}</StyledBodyPrimary>
-      {email ? (
-        <StyledBodyPrimary>
+
+      {telephone && (
+        <StyledBodyPrimary itemProp="telephone" hasPaddingTop={telephone}>
+          {telephone}
+        </StyledBodyPrimary>
+      )}
+
+      {email && (
+        <StyledBodyPrimary hasPaddingTop={email && !telephone}>
           <a href={`mailto:${email}`} title={`Email yld ${name} Office`}>
             {email}
           </a>
         </StyledBodyPrimary>
-      ) : null}
+      )}
     </Padding>
   </PaddedCol>
 )

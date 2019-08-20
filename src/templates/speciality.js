@@ -7,9 +7,10 @@ import { SpecialityView } from './speciality-component'
 
 const Speciality = ({ data, location }) => {
   const { contentfulSpeciality: speciality } = data
+  const { slug, title } = speciality
 
   return (
-    <Layout backgroundColor="blue" location={location}>
+    <Layout bgColor="blueBg" slug={slug} title={title} location={location}>
       <Head page={speciality} />
       <SpecialityView data={data} />
     </Layout>
@@ -88,6 +89,9 @@ export const pageQuery = graphql`
           }
           posterColor
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -102,6 +106,9 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -116,6 +123,18 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            title
+            file {
+              url
+            }
+          }
+          alternativePreviewImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -252,6 +271,11 @@ export const pageQuery = graphql`
           url
         }
       }
+      howWeWorkWithTitle
+      howWeWorkWithCopy {
+        howWeWorkWithCopy
+      }
+      howWeWorkWithPractises
       eventIcon {
         id
         title

@@ -120,12 +120,12 @@ const TextColumnsBlock = ({
   </Fragment>
 )
 
-const FullWidthBlock = ({ data: { text, image } }) => (
-  <Col width={[1]}>
+const FullWidthBlock = ({ data: { text, image }, StyledCol = Col }) => (
+  <StyledCol width={[1]}>
     {renderText({ text })}
     {text && image && <TextAndImagePaddingSeparator />}
     {renderImage(image)}
-  </Col>
+  </StyledCol>
 )
 
 const HalfGreyBackground = styled(GreyBackground)`

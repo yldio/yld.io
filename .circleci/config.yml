@@ -1,72 +1,100 @@
-jobs:
-  lighthouse:
-    docker:
+references:
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: ~/app
+
+defaults: &defaults
+  working_directory: ~/app
+  docker:
       - image: circleci/node:10-browsers
+
+jobs:
+  install:
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
+      - run:
+          command: 'yarn install'
+          name: 'Install dependencies'
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - node_modules
+  unit:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: 'yarn run test:unit'
+          name: 'Run unit tests'
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: 'yarn run build:app'
+          name: 'Build app'
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - .cache
+            - public
+            - node_modules
+  lighthouse:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
-    working_directory: ~/repo
   lint:
-    docker:
-      - image: circleci/node:10
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run: 'yarn install'
-      - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+      - *attach_workspace
       - run: 'yarn lint'
-    working_directory: ~/repo
   snapshots:
-    docker:
-      - image: circleci/node:10
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
+      - *attach_workspace
       - run:
           command: npm run test:snapshots
           name: Snapshots
-    working_directory: ~/repo
   testcafe:
-    docker:
-      - image: circleci/node:10-browsers
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - *attach_workspace
       - run:
           command: npm run test:e2e
           name: Testcafe
       - store_artifacts:
-          path: ~/repo/artifacts/screenshots
-    working_directory: ~/repo
+          path: ~/app/artifacts/screenshots
 version: 2
 workflows:
   build_and_test:
     jobs:
-      - lint
-      - lighthouse
-      - snapshots
-      - testcafe
+      - install
+      - unit:
+          requires:
+            - install
+      - build:
+          requires:
+            - install
+      - lint:
+          requires: 
+            - install
+      - lighthouse:
+          requires: 
+            - build
+      - snapshots:
+          requires: 
+            - build
+      - testcafe:
+          requires: 
+            - build
   version: 2
