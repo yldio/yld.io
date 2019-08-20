@@ -14,7 +14,7 @@ initStoryshots({
     render: renderer
   }),
   stories2snapsConverter: new Stories2SnapsConverter({
-    snapshotExtension: '.snap',
+    snapshotExtension: '.snapshot',
     storiesExtensions: ['.stories']
   })
 })
