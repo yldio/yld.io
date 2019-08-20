@@ -7,7 +7,12 @@ as long as console log is mocked. To log the mock needs to be disabled */
 // console.log = jest.fn()
 
 import ossUtils from '../../../src/functions/oss/utils'
-const updateEntrySpy = jest.spyOn(ossUtils, 'updateEntry')
+ossUtils.updateEntry = jest.fn().mockImplementation(() => Promise.resolve(null))
+
+// console.log('---- updateEntry ------', ossUtils.updateEntry)
+// const mockUpdateEntry = () => updateEntry
+// updateEntry = jest.fn().mockImplementation(() => null)
+// jest.spyOn(ossUtils, 'updateEntry').mockImplementation(() => '')
 
 process.env.LAMBDA_ENV = 'production'
 
@@ -93,7 +98,7 @@ describe('Repos lambda', () => {
         repos: [sameRepoOne, sameRepoTwo]
       })
 
-      expect(updateEntrySpy).not.toHaveBeenCalled()
+      expect(ossUtils.updateEntry).not.toHaveBeenCalled()
 
       const noChangesExpected = []
 
@@ -101,7 +106,17 @@ describe('Repos lambda', () => {
     })
   })
 
-  describe('with repos and contentfulRepos having different values', () => {
-    it('should call updateEntry and return the changes', async () => {})
-  })
+  //   describe('with repos and contentfulRepos having different values', () => {
+  //     it('should call ossUtils.updateEntry and return the changes', async () => {
+  //       const response = await ReposLambda(mockedEnvironment, {
+  //         repos: [differentRepoOne, sameRepoTwo]
+  //       })
+
+  //       expect(ossUtils.updateEntry).toHaveBeenCalled()
+
+  //       const changesExpected = [some data]
+
+  //       expect(response).toStrictEqual(changesExpected)
+  //     })
+  //   })
 })
