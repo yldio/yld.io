@@ -7,7 +7,6 @@ const {
   generateContentfulData,
   updateEntry
 } = require('./utils')
-const { LAMBDA_ENV = 'development' } = process.env
 
 const repoKeys = [
   'url',
@@ -18,6 +17,7 @@ const repoKeys = [
 ]
 
 const Repos = async (environment, { repos }) => {
+  const { LAMBDA_ENV = 'development' } = process.env
   const isProd = LAMBDA_ENV === 'production'
   const { items: contentfulRepos } = await environment.getEntries({
     limit: 1000,
