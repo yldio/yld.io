@@ -33,5 +33,6 @@ storiesOf('Event Card', module)
     )
   })
   .add('Calendar Day', () => {
+    // This is a Typography element only used in Event CalendarDay
     return <CalendarDay>{calendarDayData}</CalendarDay>
   })
