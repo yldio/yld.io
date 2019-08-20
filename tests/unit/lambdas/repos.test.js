@@ -91,7 +91,7 @@ describe('Repos lambda', () => {
     expect(response).toStrictEqual(emptyAcc)
   })
 
-  it('should call ossUtils.updateEntry and return the changes if repos and contentfulRepos are different', async () => {
+  it('should call updateEntry and return the changes if repos and contentfulRepos are different', async () => {
     const repoKeys = [
       'url',
       'nameWithOwner',
