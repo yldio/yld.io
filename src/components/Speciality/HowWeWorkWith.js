@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
 
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import GreyBackground from '../Common/GreyBackground'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import Hr from '../Common/Hr'
+import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -22,11 +23,7 @@ const StyledRow = styled(Row)`
   `}
 `
 
-const HowWeWorkWithSection = ({
-  howWeWorkWithTitle,
-  howWeWorkWithCopy,
-  howWeWorkWithPractises
-}) => {
+const HowWeWorkWithSection = ({ howWeWorkWithTitle, howWeWorkWithCopy }) => {
   return (
     <GreyBackground>
       <Grid>
@@ -35,15 +32,17 @@ const HowWeWorkWithSection = ({
             <SectionTitle>{howWeWorkWithTitle}</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-            <BodyPrimary>{howWeWorkWithCopy}</BodyPrimary>
-            {howWeWorkWithPractises &&
-              howWeWorkWithPractises.length > 0 &&
-              howWeWorkWithPractises.map(practise => (
-                <Fragment key={practise}>
-                  <BodyPrimary>{practise}</BodyPrimary>
-                  <Hr short />
-                </Fragment>
-              ))}
+            <ReactMarkdown
+              source={howWeWorkWithCopy}
+              renderers={{
+                // eslint-disable-next-line react/display-name
+                heading: props => <Subtitle noPaddingBottom {...props} />,
+                // eslint-disable-next-line react/display-name
+                paragraph: props => <BodyPrimary {...props} />,
+                // eslint-disable-next-line react/display-name
+                listItem: props => <CustomisedBulletpoint {...props} />
+              }}
+            />
           </Col>
         </StyledRow>
       </Grid>
