@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
 import BlogListing from '../src/components/Common/BlogListing'
+import Theme from './theme'
 
 addDecorator(Theme)
 
@@ -27,12 +27,43 @@ const posts = [
   }
 ]
 
-storiesOf('Blog Listing', module).add('Blog Listing', () => {
-  return (
+storiesOf('Blog Listing', module).add(
+  'Blog Listing',
+  () => (
     <BlogListing
       title="Title about blog posts"
       description="Description about the blog posts in this section."
       posts={posts}
     />
-  )
-})
+  ),
+  {
+    propTables: [
+      {
+        property: 'title',
+        propType: 'string',
+        required: true,
+        description: 'Title about blog posts',
+        defaultValue: false
+      },
+      {
+        property: 'description',
+        propType: 'string',
+        required: true,
+        description: 'Description about the blog posts in this section.',
+        defaultValue: false
+      },
+      {
+        property: 'posts',
+        propType: `array of {
+          id: 'unique id string',
+          title: 'string',
+          uniqueSlug: 'string',
+          firstPublishedAt: 'date string'
+        }`,
+        required: true,
+        description: 'Array of blog posts',
+        defaultValue: false
+      }
+    ]
+  }
+)

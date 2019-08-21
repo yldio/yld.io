@@ -16,8 +16,22 @@ const image = {
   }
 }
 
-storiesOf('BackgroundGraphic', module).add('BackgroundGraphic', () => (
-  <BlueBackground style={{ width: '100%' }}>
-    <BackgroundGraphic title="How we work" image={image} />
-  </BlueBackground>
-))
+storiesOf('BackgroundGraphic', module).add(
+  'BackgroundGraphic',
+  () => (
+    <BlueBackground style={{ width: '100%' }}>
+      <BackgroundGraphic title="How we work" image={image} />
+    </BlueBackground>
+  ),
+  {
+    propTables: [
+      {
+        property: 'title', // The name of the prop
+        propType: 'string', // The prop type. TODO: info about what this object is...
+        required: true, // True if the prop is required
+        description: 'title of the blog', // The description of the prop
+        defaultValue: 'none' // The default value of the prop
+      }
+    ]
+  }
+)

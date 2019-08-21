@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Padding } from 'styled-components-spacing'
 import { format } from 'date-fns'
 
@@ -29,11 +28,6 @@ const BlogListing = ({ title, description, posts }) => {
       </Padding>
     </Grid>
   )
-}
-
-BlogListing.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
 }
 
 export default BlogListing
