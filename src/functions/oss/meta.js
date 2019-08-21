@@ -2,11 +2,7 @@
 const { LAMBDA_ENV = 'development' } = process.env
 const { head, isEqual } = require('lodash')
 
-const {
-  getContentfulDataFromKeys,
-  generateContentfulData,
-  updateEntry
-} = require('./utils')
+const ossUtils = require('./utils')
 
 const contentfulMetaKeys = [
   'openSourceMetaReposCount',
@@ -15,6 +11,11 @@ const contentfulMetaKeys = [
 
 const Meta = async (environment, githubMetaData) => {
   const isProd = LAMBDA_ENV === 'production'
+  const {
+    getContentfulDataFromKeys,
+    generateContentfulData,
+    updateEntry
+  } = ossUtils
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
