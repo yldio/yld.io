@@ -14,8 +14,10 @@ const sameRepoOne = {
   pullRequestCount: 4
 }
 
-const differentRepoOne = Object.assign({}, sameRepoOne)
-differentRepoOne.pullRequestCount = 6
+const differentRepoOne = {
+  ...sameRepoOne,
+  pullRequestCount: 6
+}
 
 const sameRepoTwo = {
   url: 'https://github.com/yldio/another-fake-repo',
@@ -65,14 +67,14 @@ const contentfulRepoTwo = {
   }
 }
 
-let mockedContentfulRepos = [contentfulRepoOne, contentfulRepoTwo]
-
-describe('Repos lambda', () => {
+describe('Github lambda - Repos util', () => {
   let mockedEnvironment
 
   beforeEach(() => {
     mockedEnvironment = {
-      getEntries: jest.fn().mockReturnValue({ items: mockedContentfulRepos })
+      getEntries: jest
+        .fn()
+        .mockReturnValue({ items: [contentfulRepoOne, contentfulRepoTwo] })
     }
   })
 
@@ -87,8 +89,8 @@ describe('Repos lambda', () => {
 
     expect(ossUtils.updateEntry).not.toHaveBeenCalled()
 
-    const emptyAcc = []
-    expect(response).toStrictEqual(emptyAcc)
+    const expected = []
+    expect(response).toStrictEqual(expected)
   })
 
   it('should call updateEntry and return the changes if repos and contentfulRepos are different', async () => {
@@ -111,7 +113,7 @@ describe('Repos lambda', () => {
       differentRepoOne.nameWithOwner
     )
 
-    const changedReposAcc = [differentRepoOne.nameWithOwner]
-    expect(response).toStrictEqual(changedReposAcc)
+    const expected = [differentRepoOne.nameWithOwner]
+    expect(response).toStrictEqual(expected)
   })
 })
