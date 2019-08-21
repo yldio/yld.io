@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
+  list-style: none;
+  max-width: 240px;
+}
+
+.c1 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
+}
+
+<div>
+  <li
+    className="c0"
+  >
+    I am a bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Storyshots CustomisedBulletpoint CustomisedBulletpoint with non-default width (500px) 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
+  list-style: none;
+  max-width: 500px;
+}
+
+.c1 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
+}
+
+<div>
+  <li
+    className="c0"
+  >
+    I am a bullet thingy with altered width and really loooooong text inside
+  </li>
+  <hr
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Storyshots CustomisedBulletpoint Multiple CustomisedBulletpoints in a ul 1`] = `
+.c0 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0.75rem 0 1.3125rem 0;
+  list-style: none;
+  max-width: 240px;
+}
+
+.c1 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  width: 60px;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
+}
+
+<ul>
+  <li
+    className="c0"
+  >
+    First bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+  <li
+    className="c0"
+  >
+    Second bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+  <li
+    className="c0"
+  >
+    Third bullet thingy
+  </li>
+  <hr
+    className="c1"
+  />
+</ul>
+`;

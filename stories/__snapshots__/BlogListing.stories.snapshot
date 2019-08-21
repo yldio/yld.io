@@ -1,0 +1,618 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Blog Listing Blog Listing 1`] = `
+.c1 {
+  padding-top: 3.375rem;
+  padding-bottom: 3.375rem;
+}
+
+.c12 {
+  padding-top: 2.25rem;
+}
+
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c7 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  padding: 0.8125rem 0 0.6875rem 0;
+}
+
+.c6 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c13 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background,color;
+  transition-property: background,color;
+}
+
+.c13:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c13:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c13:focus {
+  background: transparent;
+  outline: 0.25rem solid #65FFCD;
+  color: #333333;
+}
+
+.c13:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c13:active:after {
+  background: #333333;
+}
+
+.c11 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding-bottom: 0;
+  font-weight: 700;
+  padding-bottom: 0.375rem;
+}
+
+.c8 {
+  padding-top: 0.375rem;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    padding-top: 6.75rem;
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    width: 83.33333333333334%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c7 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c7 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c7 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c7 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c7 {
+    width: 41.66666666666667%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2.625rem;
+    line-height: 3rem;
+    padding: 0.625rem 0 0.5rem 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+          ]
+        }
+      >
+        <h2
+          className="c4"
+        >
+          Title about blog posts
+        </h2>
+        <div
+          className="c5"
+          width={
+            Array [
+              1,
+              1,
+              1,
+              1,
+              0.8333333333333334,
+            ]
+          }
+        >
+          <p
+            className="c6"
+          >
+            Description about the blog posts in this section.
+          </p>
+        </div>
+      </div>
+      <div
+        className="c7"
+        width={
+          Array [
+            1,
+            1,
+            1,
+            1,
+            0.5,
+            0.4166666666666667,
+          ]
+        }
+      >
+        <ul
+          className="c8"
+        >
+          <li>
+            <h3
+              className="c9"
+            >
+              <a
+                href="https://medium.com/yld-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
+                onClick={[Function]}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Security Trivia Series: Understanding CSP’s Reporting"
+              >
+                Security Trivia Series: Understanding CSP’s Reporting
+              </a>
+            </h3>
+            <p
+              className="c10"
+            >
+              April 08, Monday
+            </p>
+            <hr
+              className="c11"
+            />
+          </li>
+          <li>
+            <h3
+              className="c9"
+            >
+              <a
+                href="https://medium.com/yld-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
+                onClick={[Function]}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Serverless: It’s not all a FaaS"
+              >
+                Serverless: It’s not all a FaaS
+              </a>
+            </h3>
+            <p
+              className="c10"
+            >
+              March 14, Thursday
+            </p>
+            <hr
+              className="c11"
+            />
+          </li>
+          <li>
+            <h3
+              className="c9"
+            >
+              <a
+                href="https://medium.com/yld-blog/under-the-with-kubernetes-c1ea1a82c61f"
+                onClick={[Function]}
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Under the 🔬 with Kubernetes"
+              >
+                Under the 🔬 with Kubernetes
+              </a>
+            </h3>
+            <p
+              className="c10"
+            >
+              March 11, Monday
+            </p>
+            <hr
+              className="c11"
+            />
+          </li>
+        </ul>
+        <div
+          className="c12"
+        >
+          <a
+            className="c13"
+            href="/blog/"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Visit our blog"
+          >
+            Visit our blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
