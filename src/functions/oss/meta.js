@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const { LAMBDA_ENV = 'development' } = process.env
 const { head, isEqual } = require('lodash')
 
 const ossUtils = require('./utils')
@@ -10,7 +9,9 @@ const contentfulMetaKeys = [
 ]
 
 const Meta = async (environment, githubMetaData) => {
+  const { LAMBDA_ENV = 'development' } = process.env
   const isProd = LAMBDA_ENV === 'production'
+
   const {
     getContentfulDataFromKeys,
     generateContentfulData,
