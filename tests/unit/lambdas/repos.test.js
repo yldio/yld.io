@@ -94,21 +94,18 @@ describe('Github lambda - Repos util', () => {
   })
 
   it('should call updateEntry and return the changes if repos and contentfulRepos are different', async () => {
-    const repoKeys = [
-      'url',
-      'nameWithOwner',
-      'descriptionHTML',
-      'pullRequestCount',
-      'starCount'
-    ]
-
     const response = await ReposLambda(mockedEnvironment, {
       repos: [differentRepoOne, sameRepoTwo]
     })
 
+    const expectedContentfulRepoFromGithub = {
+      ...contentfulRepoOne.fields,
+      pullRequestCount: { 'en-US': 6 }
+    }
+
     expect(ossUtils.updateEntry).toHaveBeenCalledWith(
       contentfulRepoOne,
-      ossUtils.generateContentfulData(differentRepoOne, repoKeys),
+      expectedContentfulRepoFromGithub,
       mockedEnvironment,
       differentRepoOne.nameWithOwner
     )
