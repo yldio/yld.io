@@ -1,10 +1,8 @@
 /* eslint-env jest */
-import ReposLambda from '../../../src/functions/oss/repos'
+import ReposUtil from '../../../src/functions/oss/repos'
 
 import ossUtils from '../../../src/functions/oss/utils'
 ossUtils.updateEntry = jest.fn().mockImplementation(() => Promise.resolve(null))
-
-process.env.LAMBDA_ENV = 'production'
 
 const sameRepoOne = {
   url: 'https://github.com/yldio/fake-repo',
@@ -71,6 +69,7 @@ describe('Github lambda - Repos util', () => {
   let mockedEnvironment
 
   beforeEach(() => {
+    process.env.LAMBDA_ENV = 'production'
     mockedEnvironment = {
       getEntries: jest
         .fn()
@@ -79,11 +78,12 @@ describe('Github lambda - Repos util', () => {
   })
 
   afterEach(() => {
+    delete process.env.LAMBDA_ENV
     jest.clearAllMocks()
   })
 
   it('should not call updateEntry and no changes should be returned if repos and contentfulRepos have no differences', async () => {
-    const response = await ReposLambda(mockedEnvironment, {
+    const response = await ReposUtil(mockedEnvironment, {
       repos: [sameRepoOne, sameRepoTwo]
     })
 
@@ -94,7 +94,7 @@ describe('Github lambda - Repos util', () => {
   })
 
   it('should call updateEntry and return the changes if repos and contentfulRepos are different', async () => {
-    const response = await ReposLambda(mockedEnvironment, {
+    const response = await ReposUtil(mockedEnvironment, {
       repos: [differentRepoOne, sameRepoTwo]
     })
 
