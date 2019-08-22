@@ -94,9 +94,6 @@ workflows:
       - snapshots:
           requires: 
             - build
-      - snapshots:
-          requires: 
-            - install
       - testcafe:
           requires: 
             - build
