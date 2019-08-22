@@ -38,7 +38,7 @@ storiesOf('Blog Listing', module).add(
   ),
   {
     props: {
-      propTales: [BlogListing]
+      propTables: [BlogListing]
     }
   }
 )
