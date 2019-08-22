@@ -142,8 +142,6 @@ const TopNavBranding = ({ path, slug }) => (
             isSpecialityPage={isSpecialityPage}
             isServicePage={isServicePage}
             service={service}
-            slug={slug}
-            path={path}
           />
         </StyledLinksContainer>
       )
