@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
-
+import find from 'lodash.find'
 import { StaticQuery, graphql } from 'gatsby'
+
 import LogoLink from './LogoLink'
 import ServiceLink from './ServiceLink'
 import OuterAnchorItem from './OuterAnchorItem'
 import Dropdown from './Dropdown'
+import { logoColors } from '../navLinksHelper'
 
 const StyledTopNavContainer = styled.nav`
   display: flex;
@@ -36,6 +38,8 @@ const TopNavList = styled.ul`
 `
 
 const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
+
+const getColor = (arr, slug) => find(arr, { slug: slug }).logoColour
 
 const getSpecialitiesToServices = (services = []) =>
   services.reduce((acc, { slug, ...rest }) => {
@@ -94,6 +98,7 @@ const TopNavBranding = ({ path, slug }) => (
         specialities: allContentfulSpeciality {
           nodes {
             slug
+            logoColour
           }
         }
       }
@@ -113,14 +118,25 @@ const TopNavBranding = ({ path, slug }) => (
         ? slug
         : getService({ slug, map: specialitiesToServicesMap })
 
+      const fillColorInitial = isSpecialityPage
+        ? getColor(specialities.nodes, slug) ||
+          logoColors.specialitiesFillDefault
+        : logoColors['default']
+
+      const fillColorHover =
+        logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover']
+
+      const textColor =
+        logoColors[isSpecialityPage ? 'specialityText' : 'defaultText']
+
       return (
         <StyledLinksContainer>
           <LogoLink
-            isSpecialityPage={isSpecialityPage}
-            isServicePage={isServicePage}
             isHomePage={isHomePage}
-            path={path}
-            slug={slug}
+            isServiceOrSpecialityPage={isServicePage || isSpecialityPage}
+            fillColorInitial={fillColorInitial}
+            fillColorHover={fillColorHover}
+            textColor={textColor}
           />
           <ServiceLink
             isSpecialityPage={isSpecialityPage}
