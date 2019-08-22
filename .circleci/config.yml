@@ -50,19 +50,6 @@ jobs:
       - run:
           command: npm run test:lighthouse
           name: Lighthouse
-  interaction:
-    docker:
-      - image: circleci/node:10-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
-      - run:
-          command: npm run test:interaction
-          name: Unit-tests
-    working_directory: ~/repo
   lint:
     <<: *defaults
     steps:
@@ -75,7 +62,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm run test:snapshots
+          command: npm run test:snapshots && npm run test:interaction
           name: Snapshots
   testcafe:
     <<: *defaults

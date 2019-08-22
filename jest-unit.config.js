@@ -30,13 +30,5 @@ module.exports = {
     '!<rootDir>/node_modules/',
     '!<rootDir>/src/serviceWorker.js'
   ],
-  coverageThreshold: {
-    global: {
-      branches: 50,
-      functions: 50,
-      lines: 50,
-      statements: 50
-    }
-  },
   coverageReporters: ['text']
 }
