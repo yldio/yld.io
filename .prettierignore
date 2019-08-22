@@ -38,6 +38,7 @@ _env*ac
 *.map
 *.png
 *.snap
+*.snapshot
 *.txt
 *.sketch
 *.ttf

@@ -18,6 +18,10 @@ const modifiers = css`
     opacity: .5;
   `};
 
+  ${is('lightMuted')`
+    opacity: .8
+  `}
+
   ${is('noPadding')`
     padding: 0;
   `};

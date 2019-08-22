@@ -89,6 +89,9 @@ export const pageQuery = graphql`
           }
           posterColor
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -103,6 +106,9 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -117,6 +123,18 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            title
+            file {
+              url
+            }
+          }
+          alternativePreviewImage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
             title
             file {
               url
@@ -253,6 +271,11 @@ export const pageQuery = graphql`
           url
         }
       }
+      howWeWorkWithTitle
+      howWeWorkWithCopy {
+        howWeWorkWithCopy
+      }
+      howWeWorkWithPractises
       eventIcon {
         id
         title

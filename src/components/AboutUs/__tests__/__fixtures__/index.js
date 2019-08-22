@@ -1,6 +1,3 @@
-import teamMember from './teamMember.json'
-import statements from './statements.json'
-import partners from './partners.json'
-import subsidiaries from './subsidiaries.json'
+import teams from './teams'
 
-export { teamMember, statements, partners, subsidiaries }
+export { teams }
