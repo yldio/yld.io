@@ -37,33 +37,8 @@ storiesOf('Blog Listing', module).add(
     />
   ),
   {
-    propTables: [
-      {
-        property: 'title',
-        propType: 'string',
-        required: true,
-        description: 'Title about blog posts',
-        defaultValue: false
-      },
-      {
-        property: 'description',
-        propType: 'string',
-        required: true,
-        description: 'Description about the blog posts in this section.',
-        defaultValue: false
-      },
-      {
-        property: 'posts',
-        propType: `array of {
-          id: 'unique id string',
-          title: 'string',
-          uniqueSlug: 'string',
-          firstPublishedAt: 'date string'
-        }`,
-        required: true,
-        description: 'Array of blog posts',
-        defaultValue: false
-      }
-    ]
+    props: {
+      propTales: [BlogListing]
+    }
   }
 )
