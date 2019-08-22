@@ -4,8 +4,6 @@ import MetaUtil from '../../../src/functions/oss/meta'
 import ossUtils from '../../../src/functions/oss/utils'
 ossUtils.updateEntry = jest.fn().mockImplementation(() => Promise.resolve(null))
 
-process.env.LAMBDA_ENV = 'production'
-
 const contentfulMetasMock = [
   {
     fields: {
@@ -19,12 +17,14 @@ describe('Github lambda - Meta util', () => {
   let mockedEnvironment
 
   beforeEach(() => {
+    process.env.LAMBDA_ENV = 'production'
     mockedEnvironment = {
       getEntries: jest.fn().mockReturnValue({ items: contentfulMetasMock })
     }
   })
 
   afterEach(() => {
+    delete process.env.LAMBDA_ENV
     jest.clearAllMocks()
   })
 

@@ -4,8 +4,6 @@ import ReposUtil from '../../../src/functions/oss/repos'
 import ossUtils from '../../../src/functions/oss/utils'
 ossUtils.updateEntry = jest.fn().mockImplementation(() => Promise.resolve(null))
 
-process.env.LAMBDA_ENV = 'production'
-
 const sameRepoOne = {
   url: 'https://github.com/yldio/fake-repo',
   nameWithOwner: 'yldio/fake-repo',
@@ -71,6 +69,7 @@ describe('Github lambda - Repos util', () => {
   let mockedEnvironment
 
   beforeEach(() => {
+    process.env.LAMBDA_ENV = 'production'
     mockedEnvironment = {
       getEntries: jest
         .fn()
@@ -79,6 +78,7 @@ describe('Github lambda - Repos util', () => {
   })
 
   afterEach(() => {
+    delete process.env.LAMBDA_ENV
     jest.clearAllMocks()
   })
 
