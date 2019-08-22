@@ -1,8 +1,8 @@
+const leverLambda = require('../../../src/functions/lever')
+
 jest.mock('../../../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
 
 const { URL } = require('url')
-
-const lambda = require('../../../src/functions/lever')
 
 const got = require('got')
 jest.mock('got')
@@ -10,15 +10,20 @@ jest.mock('got')
 const LAMBDA_LEVER_WEBHOOK = 'https://webhook.netlify.com'
 const NETLIFY_URL = 'https://netlify.com'
 
-process.env.URL = NETLIFY_URL
-process.env.LAMBDA_LEVER_WEBHOOK = LAMBDA_LEVER_WEBHOOK
-process.env.LAMBDA_ENV = 'production'
-
 const metaHref = new URL(`${NETLIFY_URL}/meta.json`)
 const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json')
 
-describe('Lever', () => {
+describe('Lever lambda', () => {
+  beforeEach(() => {
+    process.env.URL = NETLIFY_URL
+    process.env.LAMBDA_LEVER_WEBHOOK = LAMBDA_LEVER_WEBHOOK
+    process.env.LAMBDA_ENV = 'production'
+  })
+
   afterEach(() => {
+    delete process.env.URL
+    delete process.env.LAMBDA_LEVER_WEBHOOK
+    delete process.env.LAMBDA_ENV
     jest.clearAllMocks()
   })
 
@@ -48,7 +53,7 @@ describe('Lever', () => {
 
     got.post.mockReturnValueOnce({ body: 'Updated' })
 
-    const response = await lambda.handler()
+    const response = await leverLambda.handler()
 
     const expected = {
       body: 'Updated',
@@ -78,7 +83,8 @@ describe('Lever', () => {
       ]
     })
 
-    const response = await lambda.handler()
+    const response = await leverLambda.handler()
+
     const expected = {
       statusCode: 200,
       body: 'No differences in jobs found, not deploying'
