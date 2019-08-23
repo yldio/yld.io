@@ -3,6 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import Statement from '../src/components/Common/Statement'
 import { Grid } from '../src/components/grid'
+import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -43,20 +44,30 @@ const richText = [
 ]
 
 storiesOf('Statement', module)
-  .add('Statement', () => (
-    <Grid>
-      <Statement>
-        We enable you to adopt emerging technologies and grow powerful
-        engineering teams with a strong focus on open source development.
-      </Statement>
-    </Grid>
-  ))
-  .add('Statement noPadding', () => (
-    <Grid>
-      <Statement noPadding>
-        We enable you to adopt emerging technologies and grow powerful
-        engineering teams with a strong focus on open source development.
-      </Statement>
-    </Grid>
-  ))
-  .add('Statement Rich Text', () => <Statement richText={richText} />)
+  .add(
+    'Statement',
+    () => (
+      <Grid>
+        <Statement>
+          We enable you to adopt emerging technologies and grow powerful
+          engineering teams with a strong focus on open source development.
+        </Statement>
+      </Grid>
+    ),
+    { props: { TableComponent } }
+  )
+  .add(
+    'Statement noPadding',
+    () => (
+      <Grid>
+        <Statement noPadding>
+          We enable you to adopt emerging technologies and grow powerful
+          engineering teams with a strong focus on open source development.
+        </Statement>
+      </Grid>
+    ),
+    { props: { TableComponent } }
+  )
+  .add('Statement Rich Text', () => <Statement richText={richText} />, {
+    props: { TableComponent }
+  })

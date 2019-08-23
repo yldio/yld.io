@@ -6,6 +6,7 @@ import GreyBackground from '../src/components/Common/GreyBackground'
 import { Grid } from '../src/components/grid'
 import TitleAndList from '../src/components/Common/TitleAndList'
 import StyledLink from '../src/components/Common/StyledLink'
+import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -57,78 +58,102 @@ const arrayListWithLogos = [
 ]
 
 storiesOf('Title and List (with optional logos)', module)
-  .add('list in form of a string (Contentful data)', () => {
-    return (
-      <Grid>
-        <TitleAndList
-          title="This is the Title"
-          list={stringList}
-          themeVariation="white"
-        />
-      </Grid>
-    )
-  })
-  .add('list in form of an array', () => {
-    return (
-      <Grid>
-        <TitleAndList
-          title="This is the Title"
-          list={arrayList}
-          themeVariation="white"
-        />
-      </Grid>
-    )
-  })
-  .add('with extra content', () => {
-    return (
-      <Grid>
-        <TitleAndList
-          title="This is the Title"
-          list={arrayList}
-          extraContent={
-            <StyledLink style={{ padding: 0, margin: 0 }} to="#">
-              Learn more
-            </StyledLink>
-          }
-          themeVariation="white"
-        />
-      </Grid>
-    )
-  })
-  .add('on dark background', () => {
-    return (
-      <BlueBackground>
+  .add(
+    'list in form of a string (Contentful data)',
+    () => {
+      return (
+        <Grid>
+          <TitleAndList
+            title="This is the Title"
+            list={stringList}
+            themeVariation="white"
+          />
+        </Grid>
+      )
+    },
+    { props: { TableComponent } }
+  )
+  .add(
+    'list in form of an array',
+    () => {
+      return (
         <Grid>
           <TitleAndList
             title="This is the Title"
             list={arrayList}
-            themeVariation="dark"
+            themeVariation="white"
           />
         </Grid>
-      </BlueBackground>
-    )
-  })
-  .add('on grey background', () => {
-    return (
-      <GreyBackground>
+      )
+    },
+    { props: { TableComponent } }
+  )
+  .add(
+    'with extra content',
+    () => {
+      return (
         <Grid>
           <TitleAndList
             title="This is the Title"
             list={arrayList}
-            themeVariation="grey"
+            extraContent={
+              <StyledLink style={{ padding: 0, margin: 0 }} to="#">
+                Learn more
+              </StyledLink>
+            }
+            themeVariation="white"
           />
         </Grid>
-      </GreyBackground>
-    )
-  })
-  .add('with logos', () => {
-    return (
-      <Grid>
-        <TitleAndList
-          title="This is the Title"
-          list={arrayListWithLogos}
-          themeVariation="white"
-        />
-      </Grid>
-    )
-  })
+      )
+    },
+    { props: { TableComponent } }
+  )
+  .add(
+    'on dark background',
+    () => {
+      return (
+        <BlueBackground>
+          <Grid>
+            <TitleAndList
+              title="This is the Title"
+              list={arrayList}
+              themeVariation="dark"
+            />
+          </Grid>
+        </BlueBackground>
+      )
+    },
+    { props: { TableComponent } }
+  )
+  .add(
+    'on grey background',
+    () => {
+      return (
+        <GreyBackground>
+          <Grid>
+            <TitleAndList
+              title="This is the Title"
+              list={arrayList}
+              themeVariation="grey"
+            />
+          </Grid>
+        </GreyBackground>
+      )
+    },
+    { props: { TableComponent } }
+  )
+  .add(
+    'with logos',
+    () => {
+      return (
+        <Grid>
+          <TitleAndList
+            title="This is the Title"
+            list={arrayListWithLogos}
+            themeVariation="white"
+          />
+        </Grid>
+      )
+    },
+    { props: { TableComponent } }
+  )

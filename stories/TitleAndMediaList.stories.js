@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import TitleAndMediaList from '../src/components/Common/TitleAndMediaList'
+import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -26,14 +27,18 @@ const mediaItems = [
   }
 ]
 
-storiesOf('Title and Media List', module).add('Title and Media List', () => {
-  return (
-    <TitleAndMediaList
-      title="Best title"
-      description="Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here."
-      mediaItems={mediaItems}
-      CTALink="https://yld.io"
-      CTAText="Head to yld.io for more"
-    />
-  )
-})
+storiesOf('Title and Media List', module).add(
+  'Title and Media List',
+  () => {
+    return (
+      <TitleAndMediaList
+        title="Best title"
+        description="Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here."
+        mediaItems={mediaItems}
+        CTALink="https://yld.io"
+        CTAText="Head to yld.io for more"
+      />
+    )
+  },
+  { props: { TableComponent } }
+)

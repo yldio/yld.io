@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import Tab, { Tabs } from '../src/components/Common/Tab'
+import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -36,12 +37,22 @@ class MultipleTabs extends PureComponent {
 }
 
 storiesOf('Tabs', module)
-  .add('Single Tab - active', () => (
-    <Tab active as="p">
-      This is a tab
-    </Tab>
-  ))
-  .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>)
-  .add('Multiple Tabs', () => {
-    return <MultipleTabs />
+  .add(
+    'Single Tab - active',
+    () => (
+      <Tab active as="p">
+        This is a tab
+      </Tab>
+    ),
+    { props: { TableComponent } }
+  )
+  .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>, {
+    props: { TableComponent }
   })
+  .add(
+    'Multiple Tabs',
+    () => {
+      return <MultipleTabs />
+    },
+    { props: { TableComponent } }
+  )
