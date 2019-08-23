@@ -39,7 +39,7 @@ const TopNavList = styled.ul`
 
 const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
 
-const getColor = (arr, slug) => (find(arr, { slug }) || {}).logoColor
+const getColour = (arr, slug) => find((arr, { slug }) || {}).logoColour
 
 const getSpecialitiesToServices = (services = []) =>
   services.reduce((acc, { slug, ...rest }) => {
@@ -119,7 +119,7 @@ const TopNavBranding = ({ path, slug }) => (
         : getService({ slug, map: specialitiesToServicesMap })
 
       const fillColorInitial = isSpecialityPage
-        ? getColor(specialities.nodes, slug) ||
+        ? getColour(specialities.nodes, slug) ||
           logoColors.specialitiesFillDefault
         : logoColors['default']
 
