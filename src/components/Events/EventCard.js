@@ -45,8 +45,8 @@ const DateCard = ({ date }) => (
 )
 
 const EventTypePadding = styled.div`
-  padding-top: ${remcalc(24)};
-  padding-bottom: ${remcalc(12)};
+  padding-top: ${props => props.theme.spacing[3]};
+  padding-bottom: ${props => props.theme.spacing[2]};
 
   ${breakpoint('smallTablet')`
     padding-top: 0;
@@ -54,7 +54,7 @@ const EventTypePadding = styled.div`
 `
 
 const EventNamePadding = styled.div`
-  padding-bottom: ${remcalc(6)};
+  padding-bottom: ${props => props.theme.spacing[1]};
 
   ${breakpoint('smallTablet')`
 min-height: ${remcalc(60)};
@@ -72,7 +72,7 @@ const SponsorOuter = styled.div`
   border: solid;
   border-color: ${props => props.theme.colors.border};
   border-width: thin;
-  margin-top: ${remcalc(12)};
+  margin-top: ${props => props.theme.spacing[2]};
   display: inline-block;
 `
 
@@ -106,7 +106,7 @@ const EventCard = ({ event }) => {
           <BodyPrimary noPadding>{type}</BodyPrimary>
         </EventTypePadding>
         <EventNamePadding>
-          <CardTitle noPadding as="h2">
+          <CardTitle noPadding as="h3">
             {eventName}
           </CardTitle>
         </EventNamePadding>
