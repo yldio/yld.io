@@ -1,5 +1,6 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
+import PropTypes from 'prop-types'
 import { format } from 'date-fns'
 
 import { Grid } from '../grid'
@@ -14,6 +15,7 @@ const BlogListing = ({ title, description, posts }) => {
       body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
     })
   )
+
   return (
     <Grid>
       <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
@@ -28,6 +30,17 @@ const BlogListing = ({ title, description, posts }) => {
       </Padding>
     </Grid>
   )
+}
+
+BlogListing.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  mediaItems: PropTypes.array.isRequired,
+  CTALink: PropTypes.string
+}
+
+BlogListing.defaultProps = {
+  CTALink: '/blog/'
 }
 
 export default BlogListing

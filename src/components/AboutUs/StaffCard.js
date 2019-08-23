@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import PropTypes from 'prop-types'
 import { Col } from '../grid'
 import { Padding } from 'styled-components-spacing'
-import { BodyPrimary, Subtitle } from '../Typography'
 
+import { BodyPrimary, Subtitle } from '../Typography'
 import ExternalAnchor from '../Common/ExternalAnchor'
 import Image from '../Common/Image'
 
@@ -76,6 +77,22 @@ const StaffCard = ({ name, image, role, description, socialLinks = [] }) => {
       </Padding>
     </Col>
   )
+}
+
+StaffCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    file: PropTypes.shape({
+      url: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired,
+  role: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  socialLinks: PropTypes.array
+}
+
+StaffCard.defaultProps = {
+  socialLinks: []
 }
 
 export default StaffCard

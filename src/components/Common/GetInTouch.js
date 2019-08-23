@@ -1,6 +1,7 @@
 import React from 'react'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { Row, Col, Grid } from '../grid'
 import { SectionTitle, BodyPrimary } from '../Typography'
 import { Padding } from 'styled-components-spacing'
@@ -32,5 +33,15 @@ const GetInTouch = ({ title, contactText, ctaText = 'Get in touch' }) => (
     </Padding>
   </Grid>
 )
+
+GetInTouch.propTypes = {
+  title: PropTypes.string.isRequired,
+  contactText: PropTypes.string.isRequired,
+  ctaText: PropTypes.string.isRequired
+}
+
+GetInTouch.defaultProps = {
+  ctaText: 'Get in touch'
+}
 
 export default GetInTouch
