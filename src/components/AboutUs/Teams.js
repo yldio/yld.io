@@ -21,7 +21,7 @@ const Team = ({ members }) => {
               role={role}
               image={image}
               socialLinks={socialLinks}
-              data-testid={`staff-card-${idx}`}
+              dataTestId={`staff-card-${idx}`}
             />
           )
         )}

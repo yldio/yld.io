@@ -64,10 +64,10 @@ const StaffCard = ({
   role,
   description,
   socialLinks = [],
-  ...props
+  dataTestId
 }) => {
   return (
-    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]} {...props}>
+    <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]} data-testid={dataTestId}>
       <Padding bottom={{ smallPhone: 3, smallTablet: 3.5, tablet: 5 }}>
         <Padding bottom={2}>
           <Image image={image} width="100%" />
