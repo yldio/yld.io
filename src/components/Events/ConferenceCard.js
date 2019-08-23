@@ -1,26 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import Image from '../Common/Image'
-
-import Anchor from '../Common/Anchor'
-
 import { Link } from 'gatsby'
 
+import Image from '../Common/Image'
+import Anchor from '../Common/Anchor'
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
 import { CardTitle, BodyPrimary } from '../Typography'
 
 const BlurbWrapper = styled.div`
   ${breakpoint('tablet')`
-    padding-top: ${remcalc(24)};
+    padding-top: ${props => props.theme.space[3]};
   `};
 `
 
 const StatusWrapper = styled.div`
-  padding-top: ${remcalc(12)};
-  padding-bottom: ${remcalc(12)};
+  padding-top: ${props => props.theme.space[2]};
+  padding-bottom: ${props => props.theme.space[2]};
 
   ${breakpoint('smallTablet')`
      padding-top: 0;
@@ -40,7 +37,7 @@ const ConferenceCard = ({ event }) => {
     blurb,
     homepage,
     ctaLink,
-    svgImage
+    image
   } = event
 
   const ctaText = status === 'Upcoming' ? 'Get tickets' : 'Watch on YouTube'
@@ -49,7 +46,7 @@ const ConferenceCard = ({ event }) => {
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
         <AnchorWrapper to={homepage}>
-          <Image image={svgImage} width="100%" />
+          <Image image={image} width="100%" />
         </AnchorWrapper>
       </Col>
 
@@ -59,7 +56,7 @@ const ConferenceCard = ({ event }) => {
             {status}
           </BodyPrimary>
         </StatusWrapper>
-        <CardTitle as="h2">{eventName}</CardTitle>
+        <CardTitle as="h3">{eventName}</CardTitle>
         <BodyPrimary>
           {date} • {eventLocation}{' '}
         </BodyPrimary>
@@ -80,7 +77,7 @@ const ConferenceCard = ({ event }) => {
       </Col>
       <Col width={[0, 0, 0, 0, 0, 3 / 12, 3 / 12]}>
         <AnchorWrapper to={homepage}>
-          <Image image={svgImage} width="100%" />
+          <Image image={image} width="100%" />
         </AnchorWrapper>
       </Col>
     </Row>
