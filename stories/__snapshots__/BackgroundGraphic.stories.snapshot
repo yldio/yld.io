@@ -49,6 +49,11 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   height: auto;
 }
 
+.c0 {
+  background: #090329;
+  color: #fff;
+}
+
 .c5 {
   position: relative;
   top: 0rem;
@@ -71,11 +76,6 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   position: relative;
   top: -71%;
   text-align: center;
-}
-
-.c0 {
-  background: #090329;
-  color: #fff;
 }
 
 @media (min-width:29.4375em) {

@@ -200,6 +200,14 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   font-weight: 700;
 }
 
+.c4 {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
 .c7 {
   white-space: nowrap;
   overflow: hidden;
@@ -214,14 +222,6 @@ exports[`Storyshots Repo Repo w/ Image 1`] = `
   line-height: 1.125rem;
   padding: 0.375rem 0;
   padding: 0;
-}
-
-.c4 {
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
-  overflow: hidden;
 }
 
 .c1 {
