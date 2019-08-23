@@ -18,8 +18,7 @@ const event = {
   startTime: '11am',
   endTime: '2pm',
   attendees: 20,
-  link: 'www.event.com',
-  sponsor: 'Supported by YLD'
+  link: 'www.event.com'
 }
 
 const calendarDayData = '24'

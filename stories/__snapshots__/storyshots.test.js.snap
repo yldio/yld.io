@@ -4903,7 +4903,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   display: block;
 }
 
-.c17 {
+.c14 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -4965,15 +4965,6 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding: 0;
 }
 
-.c15 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  opacity: .5;
-}
-
 .c5 {
   color: #333333;
   text-align: center;
@@ -4983,7 +4974,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding: 0;
 }
 
-.c18 {
+.c15 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -4999,7 +4990,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   transition-property: background,color;
 }
 
-.c18:after {
+.c15:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -5009,24 +5000,24 @@ exports[`Storyshots Event Card Event Card 1`] = `
   box-sizing: border-box;
 }
 
-.c18:hover {
+.c15:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c18:focus {
+.c15:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c18:active {
+.c15:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c18:active:after {
+.c15:active:after {
   background: #333333;
 }
 
@@ -5072,30 +5063,16 @@ exports[`Storyshots Event Card Event Card 1`] = `
   left: 0;
   right: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 2.25rem;
 }
 
 .c8 {
-  padding-top: 1.5rem;
-  padding-bottom: 0.75rem;
+  padding-top: 2.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .c10 {
-  padding-bottom: 0.375rem;
-}
-
-.c14 {
-  padding-left: 1.125rem;
-  padding-right: 1.125rem;
-  display: inline-block;
-}
-
-.c13 {
-  border: solid;
-  border-color: #e6e6e6;
-  border-width: thin;
-  margin-top: 0.75rem;
-  display: inline-block;
+  padding-bottom: 0.75rem;
 }
 
 @media (min-width:29.4375em) {
@@ -5291,42 +5268,42 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c17 {
+  .c14 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c17 {
+  .c14 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c17 {
+  .c14 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c17 {
+  .c14 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c17 {
+  .c14 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c17 {
+  .c14 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5335,7 +5312,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c17 {
+  .c14 {
     width: 100%;
     position: initial;
     top: 0;
@@ -5344,7 +5321,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c17 {
+  .c14 {
     width: 25%;
     position: initial;
     top: 0;
@@ -5353,7 +5330,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c17 {
+  .c14 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -5362,7 +5339,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c17 {
+  .c14 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -5441,7 +5418,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c16 {
+  .c13 {
     text-align: right;
   }
 }
@@ -5515,11 +5492,11 @@ exports[`Storyshots Event Card Event Card 1`] = `
       <div
         className="c10"
       >
-        <h2
+        <h3
           className="c11"
         >
           GraphQL helps rockstar developers
-        </h2>
+        </h3>
       </div>
       <p
         className="c12"
@@ -5534,23 +5511,9 @@ exports[`Storyshots Event Card Event Card 1`] = `
         20
          attending
       </p>
-      <div
-        className="c13"
-      >
-        <div
-          className="c14"
-        >
-          <p
-            className="c15"
-            muted={true}
-          >
-            Supported by YLD
-          </p>
-        </div>
-      </div>
     </div>
     <div
-      className="c16 c17"
+      className="c13 c14"
       width={
         Array [
           1,
@@ -5565,7 +5528,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
     >
       <a
         aria-label="Get tickets"
-        className="c18"
+        className="c15"
         href="/www.event.com"
         onClick={[Function]}
         onMouseEnter={[Function]}

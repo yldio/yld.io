@@ -32,7 +32,7 @@ const DateCardInner = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  padding: ${remcalc(24)};
+  padding: ${props => props.theme.spacing[3]};
 `
 
 const DateCard = ({ date }) => (
@@ -62,20 +62,6 @@ min-height: ${remcalc(60)};
 `};
 `
 
-const SponsorInner = styled.div`
-  padding-left: ${remcalc(18)};
-  padding-right: ${remcalc(18)};
-  display: inline-block;
-`
-
-const SponsorOuter = styled.div`
-  border: solid;
-  border-color: ${props => props.theme.colors.border};
-  border-width: thin;
-  margin-top: ${props => props.theme.spacing[2]};
-  display: inline-block;
-`
-
 const AlignRightCol = styled(Col)`
   ${breakpoint('tablet')`
     text-align: right;
@@ -91,8 +77,7 @@ const EventCard = ({ event }) => {
     startTime,
     endTime,
     attendees = 0,
-    link,
-    sponsor
+    link
   } = event
 
   return (
@@ -113,13 +98,6 @@ const EventCard = ({ event }) => {
         <BodyPrimary muted noPadding>
           {eventLocation} • {startTime} - {endTime} • {attendees} attending
         </BodyPrimary>
-        {sponsor && (
-          <SponsorOuter>
-            <SponsorInner>
-              <BodyPrimary muted>{sponsor}</BodyPrimary>
-            </SponsorInner>
-          </SponsorOuter>
-        )}
       </Col>
 
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
