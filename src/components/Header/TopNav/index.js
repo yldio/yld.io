@@ -39,7 +39,7 @@ const TopNavList = styled.ul`
 
 const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
 
-const getColour = (arr, slug) => find((arr, { slug }) || {}).logoColour
+const getColour = (arr, slug) => (find(arr, { slug }) || {}).logoColour
 
 const getSpecialitiesToServices = (services = []) =>
   services.reduce((acc, { slug, ...rest }) => {
