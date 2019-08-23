@@ -35,8 +35,8 @@ const serviceLinkMapper = {
   Training: '/training'
 }
 
-const TitleSection = ({ services, title, link }) => {
-  const serviceElems = services.map((service, index) => {
+const ServiceList = ({ services }) =>
+  services.map((service, index) => {
     const isPenultimate = index === services.length - 2
     const isLast = index === services.length - 1
     const link = serviceLinkMapper[service]
@@ -54,10 +54,11 @@ const TitleSection = ({ services, title, link }) => {
     }
   })
 
+const TitleSection = ({ services, title, link }) => {
   return (
     <Padding bottom={{ smallPhone: 1, smallTablet: 0 }}>
       <BodyPrimary muted noPadding>
-        {serviceElems}
+        <ServiceList services={services} />
       </BodyPrimary>
       <Anchor to={link}>
         <CardTitle as="h2">{title}</CardTitle>
@@ -119,3 +120,4 @@ const CaseStudy = ({ caseStudy }) => {
 }
 
 export default CaseStudy
+export { CaseStudy, ServiceList }

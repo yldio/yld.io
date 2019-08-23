@@ -1,15 +1,20 @@
-import initStoryshots from '@storybook/addon-storyshots'
-import 'jest-styled-components'
+import initStoryshots, {
+  multiSnapshotWithOptions,
+  Stories2SnapsConverter
+} from '@storybook/addon-storyshots'
+import styleSheetSerializer from 'jest-styled-components/src/styleSheetSerializer'
+import { addSerializer } from 'jest-specific-snapshot'
 import renderer from 'react-test-renderer'
 
-// Using this function means we'll see the change in the css in the snapshot
-// diff instead of just the change in classname
-const styledSnapshot = ({ story, context }) => {
-  const storyElement = story.render(context)
-  const tree = renderer.create(storyElement).toJSON()
-  expect(tree).toMatchSnapshot()
-}
+addSerializer(styleSheetSerializer)
 
 initStoryshots({
-  test: styledSnapshot
+  suite: 'Storyshots',
+  test: multiSnapshotWithOptions({
+    render: renderer
+  }),
+  stories2snapsConverter: new Stories2SnapsConverter({
+    snapshotExtension: '.snapshot',
+    storiesExtensions: ['.stories']
+  })
 })

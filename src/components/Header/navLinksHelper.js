@@ -17,16 +17,7 @@ const logoColors = {
   defaultHover: '#8e8e8e',
   specialityText: theme.colors.blueBg,
   specialityHover: theme.colors.white,
-  specialitiesFills: {
-    default: theme.colors.white,
-    'node-js': '#52FFAC',
-    graphql: '#EB008B',
-    'vue-js': '#039328',
-    'react-js': '#0BDDF9',
-    'react-native': '#968CEA',
-    kubernetes: '#29EFEF',
-    amp: '#0097E2'
-  }
+  specialitiesFillDefault: theme.colors.white
 }
 
 const servicesList = Object.keys(specialitiesMap)

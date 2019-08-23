@@ -3,10 +3,12 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview'
 import TableComponent from './TableComponent'
+import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy'
 
 const TrainlineCaseStudy = {
   title: 'Future-proofing Trainline',
   slug: 'future-proofing-trainline',
+  services: ['Engineering', 'Design'],
   posterImage: {
     fluid: {
       base64:
@@ -33,14 +35,35 @@ const TrainlineCaseStudy = {
     'We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.'
 }
 
+const services = ['Engineering', 'Design', 'Untracked']
+
 addDecorator(Theme)
 
-storiesOf('CaseStudy', module).add(
-  'CaseStudyPreview',
-  () => <CaseStudyPreview caseStudy={TrainlineCaseStudy} />,
-  {
-    props: {
-      TableComponent
+storiesOf('CaseStudy', module)
+  .add(
+    'CaseStudyPreview',
+    () => <CaseStudyPreview caseStudy={TrainlineCaseStudy} />,
+    {
+      props: {
+        TableComponent
+      }
     }
-  }
-)
+  )
+  .add(
+    'Our Work - CaseStudy',
+    () => <CaseStudy caseStudy={TrainlineCaseStudy} />,
+    {
+      props: {
+        TableComponent
+      }
+    }
+  )
+  .add(
+    'Our Work - CaseStudy - ServiceList',
+    () => <ServiceList services={services} />,
+    {
+      props: {
+        TableComponent
+      }
+    }
+  )
