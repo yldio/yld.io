@@ -7,8 +7,6 @@ import logo from '../../../images/logo_animated.gif'
 import HomepageSvg from '../../../images/yld-white.svg'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
 
-import { logoColors } from '../navLinksHelper'
-
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
   width: ${remcalc(48)};
@@ -24,44 +22,22 @@ const HomepageLogo = styled.img`
   margin-top: ${remcalc(6)};
 `
 
-const getLogoColors = ({ isSpecialityPage, slug }) => {
-  // This isn't very nice I know...
-  // In reality the specialitiesFills shouldn't be in the code
-  // but in contentful. If the content type doesn't have a fill hex
-  // set in the CMS then just fallback to white.
-  const fillColorInitial = isSpecialityPage
-    ? logoColors.specialitiesFills[slug] || logoColors.specialitiesFills.default
-    : logoColors['default']
-
-  const fillColorHover =
-    logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover']
-
-  const textColor =
-    logoColors[isSpecialityPage ? 'specialityText' : 'defaultText']
-
-  return {
-    fillColorInitial,
-    fillColorHover,
-    textColor
-  }
-}
-
 const StyledHomePageLink = styled.div`
   cursor: pointer;
 `
 
-const LogoLink = ({ slug, isServicePage, isSpecialityPage, isHomePage }) => {
-  const renderSvg = isServicePage || isSpecialityPage || isHomePage
-
-  const { fillColorInitial, fillColorHover, textColor } = getLogoColors({
-    isSpecialityPage,
-    slug
-  })
-
+const LogoLink = ({
+  isHomePage,
+  isServiceOrSpecialityPage,
+  fillColorInitial,
+  fillColorHover,
+  textColor
+}) => {
+  const isSvgLogo = isServiceOrSpecialityPage || isHomePage
   const [fillColor, setFillColor] = useState(fillColorInitial)
 
-  if (renderSvg) {
-    return isServicePage || isSpecialityPage ? (
+  if (isSvgLogo) {
+    return isServiceOrSpecialityPage ? (
       <StyledLink
         to="/"
         title="Return to Homepage"

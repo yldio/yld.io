@@ -284,6 +284,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      logoColour
       contactText
     }
 
