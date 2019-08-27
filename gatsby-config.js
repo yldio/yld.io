@@ -6,13 +6,19 @@ const {
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
   GTM_AUTH,
-  ENV
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://yld.io',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env
+
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
     siteTitle: 'YLD',
-    siteUrl: `https://yld.io`,
+    siteUrl,
     image: '/images/logo.png'
   },
   plugins: [
@@ -22,6 +28,27 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
@@ -55,7 +82,7 @@ module.exports = {
       options: {
         spaceId: CONTENTFUL_SPACE,
         accessToken: CONTENTFUL_TOKEN,
-        environment: ENV === 'dev' ? 'development' : 'master'
+        environment: 'master'
       }
     },
     {
