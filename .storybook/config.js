@@ -1,6 +1,7 @@
 import { configure, addDecorator } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withPropsTable } from 'storybook-addon-react-docgen'
+import TableComponent from '../stories/TableComponent'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/)
@@ -23,4 +24,8 @@ window.___navigate = pathname => {
 
 configure(loadStories, module)
 addDecorator(withA11y)
-addDecorator(withPropsTable)
+addDecorator(
+  withPropsTable({
+    TableComponent
+  })
+)
