@@ -275,7 +275,11 @@ export const pageQuery = graphql`
       howWeWorkWithCopy {
         howWeWorkWithCopy
       }
-      howWeWorkWithPractises
+      howWeWorkWithPractises {
+        content {
+          content
+        }
+      }
       eventIcon {
         id
         title
