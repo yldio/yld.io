@@ -23,8 +23,8 @@ const showGetInTouch = pathname => {
   const path = getPathnameWithSlashes(pathname)
 
   return (
-    !['contact', 'training', 'join-us', 'career-framework'].includes(path) &&
-    !path.startsWith('speciality/')
+    !['contact', 'training', 'join-us'].includes(path) &&
+    ['speciality/', 'career-framework/'].every(p => !path.startsWith(p))
   )
 }
 
