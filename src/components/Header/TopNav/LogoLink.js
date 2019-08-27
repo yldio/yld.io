@@ -55,7 +55,7 @@ const LogoLink = ({
 
   return (
     <Link to="/" title="Return to Homepage">
-      <img role="link" height="48" src={logo} alt="yld logo" />
+      <img role="link" width="49" src={logo} alt="yld logo" />
     </Link>
   )
 }
