@@ -14,7 +14,6 @@ import {
   eventsData,
   data
 } from './assets/speciality-data'
-import TableComponent from './TableComponent'
 
 // ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
@@ -177,12 +176,8 @@ class StorySpecialityWrapper extends Component {
 
 addDecorator(Theme)
 
-storiesOf('Speciality ', module).add(
-  'Speciality',
-  () => (
-    <StorySpecialityWrapper>
-      <SpecialityView />
-    </StorySpecialityWrapper>
-  ),
-  { props: { TableComponent } }
-)
+storiesOf('Speciality ', module).add('Speciality', () => (
+  <StorySpecialityWrapper>
+    <SpecialityView />
+  </StorySpecialityWrapper>
+))

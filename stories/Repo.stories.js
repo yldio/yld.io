@@ -4,7 +4,6 @@ import Theme from './theme'
 import styled from 'styled-components'
 import BlueBackground from '../src/components/Common/BlueBackground'
 import { Repo, RepoWithImage } from '../src/components/Common/Repo'
-import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -20,38 +19,26 @@ const data = {
 }
 
 storiesOf('Repo', module)
-  .add(
-    'Repo',
-    () => {
-      return (
-        <div style={{ padding: '1rem 0' }}>
-          <Repo {...data} />
-        </div>
-      )
-    },
-    { props: { TableComponent } }
-  )
-  .add(
-    'Repo Dark',
-    () => {
-      return (
-        <StyledBlueBackground>
-          <div>
-            <Repo {...data} theme="dark" />
-          </div>
-        </StyledBlueBackground>
-      )
-    },
-    { props: { TableComponent } }
-  )
-  .add(
-    'Repo w/ Image',
-    () => {
-      return (
+  .add('Repo', () => {
+    return (
+      <div style={{ padding: '1rem 0' }}>
+        <Repo {...data} />
+      </div>
+    )
+  })
+  .add('Repo Dark', () => {
+    return (
+      <StyledBlueBackground>
         <div>
-          <RepoWithImage {...data} image={{ file: { url: '/joyent72.svg' } }} />
+          <Repo {...data} theme="dark" />
         </div>
-      )
-    },
-    { props: { TableComponent } }
-  )
+      </StyledBlueBackground>
+    )
+  })
+  .add('Repo w/ Image', () => {
+    return (
+      <div>
+        <RepoWithImage {...data} image={{ file: { url: '/joyent72.svg' } }} />
+      </div>
+    )
+  })

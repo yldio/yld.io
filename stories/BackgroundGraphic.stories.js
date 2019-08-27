@@ -3,7 +3,6 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import { BackgroundGraphic } from '../src/components/Common/BackgroundGraphic'
 import BlueBackground from '../src/components/Common/BlueBackground'
-import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -25,6 +24,14 @@ storiesOf('BackgroundGraphic', module).add(
     </BlueBackground>
   ),
   {
-    props: { TableComponent }
+    propTables: [
+      {
+        property: 'title', // The name of the prop
+        propType: 'string', // The prop type. TODO: info about what this object is...
+        required: true, // True if the prop is required
+        description: 'title of the blog', // The description of the prop
+        defaultValue: 'none' // The default value of the prop
+      }
+    ]
   }
 )

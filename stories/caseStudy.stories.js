@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview'
-import TableComponent from './TableComponent'
 import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy'
 
 const TrainlineCaseStudy = {
@@ -40,30 +39,12 @@ const services = ['Engineering', 'Design', 'Untracked']
 addDecorator(Theme)
 
 storiesOf('CaseStudy', module)
-  .add(
-    'CaseStudyPreview',
-    () => <CaseStudyPreview caseStudy={TrainlineCaseStudy} />,
-    {
-      props: {
-        TableComponent
-      }
-    }
-  )
-  .add(
-    'Our Work - CaseStudy',
-    () => <CaseStudy caseStudy={TrainlineCaseStudy} />,
-    {
-      props: {
-        TableComponent
-      }
-    }
-  )
-  .add(
-    'Our Work - CaseStudy - ServiceList',
-    () => <ServiceList services={services} />,
-    {
-      props: {
-        TableComponent
-      }
-    }
-  )
+  .add('CaseStudyPreview', () => (
+    <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
+  ))
+  .add('Our Work - CaseStudy', () => (
+    <CaseStudy caseStudy={TrainlineCaseStudy} />
+  ))
+  .add('Our Work - CaseStudy - ServiceList', () => (
+    <ServiceList services={services} />
+  ))

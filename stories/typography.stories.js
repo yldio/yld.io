@@ -9,82 +9,61 @@ import {
   BodyStylised,
   BodyPrimary
 } from '../src/components/Typography'
-import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
 storiesOf('Typography', module)
-  .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>, {
-    props: { TableComponent }
-  })
-  .add('DisplayTitle', () => <DisplayTitle>Display Title</DisplayTitle>, {
-    props: { TableComponent }
-  })
-  .add(
-    'CardTitle',
-    () => (
-      <div>
-        <CardTitle>Card Title</CardTitle>
-        <CardTitle regular>Card Title with regular modifier</CardTitle>
+  .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>)
+  .add('DisplayTitle', () => <DisplayTitle>Display Title</DisplayTitle>)
+  .add('CardTitle', () => (
+    <div>
+      <CardTitle>Card Title</CardTitle>
+      <CardTitle regular>Card Title with regular modifier</CardTitle>
+    </div>
+  ))
+  .add('Subtitle', () => <Subtitle>Subtitle</Subtitle>)
+  .add('BodyStylised', () => <BodyStylised>BodyStylised</BodyStylised>)
+  .add('BodyPrimary', () => (
+    <div>
+      <BodyPrimary>BodyPrimary</BodyPrimary>
+      <BodyPrimary bold>BodyPrimary with bold modifier</BodyPrimary>
+    </div>
+  ))
+  .add('Typography Modifiers', () => (
+    <div>
+      <code>secondary</code>
+      <DisplayTitle secondary>modifier</DisplayTitle>
+
+      <br />
+
+      <div style={{ background: '#090329' }}>
+        <code style={{ color: 'white' }}>reverse</code>
+        <DisplayTitle reverse>modifier</DisplayTitle>
       </div>
-    ),
-    { props: { TableComponent } }
-  )
-  .add('Subtitle', () => <Subtitle>Subtitle</Subtitle>, {
-    props: { TableComponent }
-  })
-  .add('BodyStylised', () => <BodyStylised>BodyStylised</BodyStylised>, {
-    props: { TableComponent }
-  })
-  .add(
-    'BodyPrimary',
-    () => (
-      <div>
-        <BodyPrimary>BodyPrimary</BodyPrimary>
-        <BodyPrimary bold>BodyPrimary with bold modifier</BodyPrimary>
-      </div>
-    ),
-    { props: { TableComponent } }
-  )
-  .add(
-    'Typography Modifiers',
-    () => (
-      <div>
-        <code>secondary</code>
-        <DisplayTitle secondary>modifier</DisplayTitle>
 
-        <br />
+      <br />
 
-        <div style={{ background: '#090329' }}>
-          <code style={{ color: 'white' }}>reverse</code>
-          <DisplayTitle reverse>modifier</DisplayTitle>
-        </div>
+      <code>textLight</code>
+      <DisplayTitle textLight>modifier</DisplayTitle>
 
-        <br />
+      <br />
 
-        <code>textLight</code>
-        <DisplayTitle textLight>modifier</DisplayTitle>
+      <code>muted</code>
+      <DisplayTitle muted>modifier</DisplayTitle>
 
-        <br />
+      <br />
 
-        <code>muted</code>
-        <DisplayTitle muted>modifier</DisplayTitle>
+      <code>noPadding</code>
+      <DisplayTitle noPadding>modifier</DisplayTitle>
 
-        <br />
+      <br />
 
-        <code>noPadding</code>
-        <DisplayTitle noPadding>modifier</DisplayTitle>
+      <code>noPaddingTop</code>
+      <DisplayTitle noPaddingTop>modifier</DisplayTitle>
 
-        <br />
+      <br />
 
-        <code>noPaddingTop</code>
-        <DisplayTitle noPaddingTop>modifier</DisplayTitle>
-
-        <br />
-
-        <code>noPaddingBottom</code>
-        <DisplayTitle noPaddingBottom>modifier</DisplayTitle>
-      </div>
-    ),
-    { props: { TableComponent } }
-  )
+      <code>noPaddingBottom</code>
+      <DisplayTitle noPaddingBottom>modifier</DisplayTitle>
+    </div>
+  ))

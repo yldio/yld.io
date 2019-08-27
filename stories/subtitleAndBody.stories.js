@@ -5,7 +5,6 @@ import BlueBackground from '../src/components/Common/BlueBackground'
 import GreyBackground from '../src/components/Common/GreyBackground'
 import { Grid, Col, Row } from '../src/components/grid'
 import SubtitleWithBody from '../src/components/Common/SubtitleWithBody'
-import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -14,60 +13,48 @@ const body =
   'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
 
 storiesOf('Subtitle and Body', module)
-  .add(
-    'on white Background',
-    () => {
-      return (
+  .add('on white Background', () => {
+    return (
+      <Grid>
+        <Row>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="white"
+            />
+          </Col>
+        </Row>
+      </Grid>
+    )
+  })
+  .add('on dark background', () => {
+    return (
+      <BlueBackground>
         <Grid>
-          <Row>
-            <Col width={[1, 1, 1, 1, 0.5]}>
-              <SubtitleWithBody
-                subtitle={title}
-                body={body}
-                themeVariation="white"
-              />
-            </Col>
-          </Row>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="dark"
+            />
+          </Col>
         </Grid>
-      )
-    },
-    { props: { TableComponent } }
-  )
-  .add(
-    'on dark background',
-    () => {
-      return (
-        <BlueBackground>
-          <Grid>
-            <Col width={[1, 1, 1, 1, 0.5]}>
-              <SubtitleWithBody
-                subtitle={title}
-                body={body}
-                themeVariation="dark"
-              />
-            </Col>
-          </Grid>
-        </BlueBackground>
-      )
-    },
-    { props: { TableComponent } }
-  )
-  .add(
-    'on grey background',
-    () => {
-      return (
-        <GreyBackground>
-          <Grid>
-            <Col width={[1, 1, 1, 1, 0.5]}>
-              <SubtitleWithBody
-                subtitle={title}
-                body={body}
-                themeVariation="grey"
-              />
-            </Col>
-          </Grid>
-        </GreyBackground>
-      )
-    },
-    { props: { TableComponent } }
-  )
+      </BlueBackground>
+    )
+  })
+  .add('on grey background', () => {
+    return (
+      <GreyBackground>
+        <Grid>
+          <Col width={[1, 1, 1, 1, 0.5]}>
+            <SubtitleWithBody
+              subtitle={title}
+              body={body}
+              themeVariation="grey"
+            />
+          </Col>
+        </Grid>
+      </GreyBackground>
+    )
+  })

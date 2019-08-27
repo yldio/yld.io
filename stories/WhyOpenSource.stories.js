@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import WhyOpenSource from '../src/components/OpenSource/WhyOpenSource'
-import TableComponent from './TableComponent'
 
 addDecorator(Theme)
 
@@ -52,15 +51,11 @@ const list = [
 ]
 const subtitle = 'Clients we helped with open source'
 
-storiesOf('Why Open Source', module).add(
-  'Why Open Source component',
-  () => (
-    <WhyOpenSource
-      title={title}
-      list={list}
-      subtitle={subtitle}
-      companies={clients}
-    />
-  ),
-  { props: { TableComponent } }
-)
+storiesOf('Why Open Source', module).add('Why Open Source component', () => (
+  <WhyOpenSource
+    title={title}
+    list={list}
+    subtitle={subtitle}
+    companies={clients}
+  />
+))
