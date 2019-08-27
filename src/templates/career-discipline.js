@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { graphql } from 'gatsby'
+import React from 'react'
+import { graphql, navigate } from 'gatsby'
 import generate from 'shortid'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
@@ -38,8 +38,14 @@ const DisciplineTitleCol = styled(Col)`
   `}
 `
 
-const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
-  const { introContent, introHeader, disciplines } = content
+const CareerFramework = ({
+  data: {
+    contentfulCareerFramework: generic,
+    contentfulCareerDiscipline: discipline
+  },
+  pageContext: { slug: pageSlug }
+}) => {
+  const { introContent, introHeader, disciplines = [] } = generic
 
   const introContentSafe = Get(
     introContent,
@@ -47,14 +53,24 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
     undefined
   )
 
-  const disciplineTitles =
-    disciplines && disciplines.length && disciplines.map(({ title }) => title)
-
-  const [currentDiscipline, toggleDiscipline] = useState(disciplineTitles[0])
+  const disciplineTabData =
+    disciplines &&
+    disciplines.length &&
+    disciplines.reduce(
+      (acc, { slug, title }) =>
+        acc.concat([
+          {
+            slug: `/career-framework/${slug}`,
+            title,
+            isActive: slug === pageSlug
+          }
+        ]),
+      []
+    )
 
   return (
     <Layout>
-      <Head page={content} />
+      <Head page={generic} />
       <Grid>
         <Row>
           <StyledIntroHeaderCol width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
@@ -76,16 +92,16 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
               aria-label="discipline tabs"
             >
               <Tabs>
-                {disciplineTitles &&
-                  disciplineTitles.map((title, idx) => (
+                {disciplineTabData &&
+                  disciplineTabData.map(({ slug, title, isActive }) => (
                     <Tab
                       key={title}
                       role="tab"
-                      id={`discipline-tab-${idx}`}
-                      active={currentDiscipline === title}
-                      aria-selected={currentDiscipline === title}
+                      id={`discipline-tab-${slug}`}
+                      active={isActive}
+                      aria-selected={isActive}
                       aria-controls={`panel-${title}`}
-                      onClick={() => toggleDiscipline(title)}
+                      onClick={() => navigate(slug)}
                     >
                       {title}
                     </Tab>
@@ -96,15 +112,9 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
           <Row />
         </Grid>
       </GreyBackground>
-      {disciplines &&
-        disciplines.length &&
-        disciplines.map(discipline => (
-          <Discipline
-            isActive={currentDiscipline === discipline.title}
-            key={generate()}
-            {...discipline}
-          />
-        ))}
+
+      <Discipline key={generate()} {...discipline} />
+
       <GetInTouch
         title="Want to build your career with us?"
         contactText="With the focus on learning and growth dynamic work environment, devotion to open source communities and epic perks, we hope for talent to feel as home with us."
@@ -115,7 +125,7 @@ const CareerFramework = ({ data: { contentfulCareerFramework: content } }) => {
 }
 
 export const query = graphql`
-  {
+  query($id: String!) {
     contentfulCareerFramework {
       seoTitle
       seoMetaDescription
@@ -128,33 +138,43 @@ export const query = graphql`
       }
       introHeader
       disciplines {
+        slug
         title
-        joins {
-          title
-          ctaTitle
-          ctaUrl
-          image {
-            fluid(maxWidth: 450) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          content {
-            content
+      }
+    }
+    contentfulCareerDiscipline(id: { eq: $id }) {
+      id
+      title
+      slug
+      title
+      joins {
+        title
+        ctaTitle
+        ctaUrl
+        image {
+          fluid(maxWidth: 550) {
+            ...GatsbyContentfulFluid
           }
         }
-        groups {
+        ctaReference {
+          slug
+        }
+        content {
+          content
+        }
+      }
+      groups {
+        title
+        levels {
           title
-          levels {
+          info
+          levelInfo {
             title
-            info
-            levelInfo {
-              title
-              infoContent {
-                infoContent
-              }
-              ctaTitle
-              ctaUrl
+            infoContent {
+              infoContent
             }
+            ctaTitle
+            ctaUrl
           }
         }
       }

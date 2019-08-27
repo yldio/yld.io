@@ -9,48 +9,41 @@ import BlueBackground from '../Common/BlueBackground'
 import Group from './Group'
 import Join from './Join'
 
-const Wrapper = styled.div`
-  display: ${({ isActive }) => (isActive ? 'block' : ' none')};
-`
-
 const StyledGrid = styled(Grid)`
   padding-bottom: ${({ theme, isLastGroupWithoutJoins }) =>
     isLastGroupWithoutJoins ? theme.space[7] : null};
 `
 
-const Discipline = ({ isActive, groups, joins = [] }) => {
-  return (
-    <Wrapper isActive={isActive}>
-      {groups &&
-        groups.length &&
-        groups.map((group, idx, groupArr) => {
-          const { levels = [] } = group
-          const hasJoins = joins && joins[idx]
-          const isLastGroupWithoutJoins =
-            !hasJoins && idx + 1 === groupArr.length
-          const orderStartFrom = idx * levels.length + 1
+const Discipline = ({ groups, joins = [] }) => (
+  <>
+    {groups &&
+      groups.length &&
+      groups.map((group, idx, groupArr) => {
+        const { levels = [] } = group
+        const hasJoins = joins && joins[idx]
+        const isLastGroupWithoutJoins = !hasJoins && idx + 1 === groupArr.length
+        const orderStartFrom = idx * levels.length + 1
 
-          return (
-            <Fragment key={generate()}>
-              <GreyBackground>
-                <StyledGrid isLastGroupWithoutJoins={isLastGroupWithoutJoins}>
-                  <Group
-                    {...group}
-                    isLastGroup={isLastGroupWithoutJoins}
-                    orderStartFrom={orderStartFrom}
-                  />
-                </StyledGrid>
-              </GreyBackground>
-              {hasJoins && (
-                <BlueBackground>
-                  <Join {...joins[idx]} />
-                </BlueBackground>
-              )}
-            </Fragment>
-          )
-        })}
-    </Wrapper>
-  )
-}
+        return (
+          <Fragment key={generate()}>
+            <GreyBackground>
+              <StyledGrid isLastGroupWithoutJoins={isLastGroupWithoutJoins}>
+                <Group
+                  {...group}
+                  isLastGroup={isLastGroupWithoutJoins}
+                  orderStartFrom={orderStartFrom}
+                />
+              </StyledGrid>
+            </GreyBackground>
+            {hasJoins && (
+              <BlueBackground>
+                <Join {...joins[idx]} />
+              </BlueBackground>
+            )}
+          </Fragment>
+        )
+      })}
+  </>
+)
 
 export default Discipline

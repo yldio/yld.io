@@ -20,7 +20,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       allContentfulSpeciality {
         edges {
           node {
@@ -56,6 +55,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulCareerDiscipline {
+        edges {
+          node {
+            id
+            title
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -70,6 +78,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
   const policyTemplate = path.resolve(`./src/templates/policy.js`)
+  const careerDisciplineTemplate = path.resolve(
+    `./src/templates/career-discipline.js`
+  )
 
   _.each(result.data.allContentfulTrainingCourseCategory.edges, edge => {
     if (edge.node.slug && edge.node.courses) {
@@ -140,6 +151,19 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(policyTemplate),
         context: {
           id: edge.node.id
+        }
+      })
+    }
+  })
+
+  _.each(result.data.allContentfulCareerDiscipline.edges, edge => {
+    if (edge.node.slug) {
+      createPage({
+        path: `/career-framework/${edge.node.slug}/`,
+        component: slash(careerDisciplineTemplate),
+        context: {
+          id: edge.node.id,
+          slug: edge.node.slug
         }
       })
     }

@@ -12,25 +12,37 @@ const JoinContentCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[7]};
 `
 
-const Join = ({ title, ctaTitle, ctaUrl, content, image }) => (
-  <Grid>
-    <Row>
-      <JoinContentCol width={[1, 1, 1, 1, 6 / 12]}>
-        <SectionTitle reverse>{title}</SectionTitle>
-        {content.content && (
-          <BodyPrimary muted reverse>
-            {content.content}
-          </BodyPrimary>
-        )}
-        <StyledLink to={ctaUrl} reverse="true" muted>
-          {ctaTitle}
-        </StyledLink>
-      </JoinContentCol>
-      <Col width={[1, 1, 1, 1, 6 / 12]}>
-        <Image image={image} />
-      </Col>
-    </Row>
-  </Grid>
-)
+const getCtaLink = ({ ctaReference = {}, ctaUrl }) => {
+  return ctaReference.slug ? `/career-framework/${ctaReference.slug}` : ctaUrl
+}
+
+const Join = ({ title, ctaTitle, ctaUrl, ctaReference, content, image }) => {
+  const to = getCtaLink({ ctaReference, ctaUrl })
+
+  return (
+    <Grid>
+      <Row>
+        <JoinContentCol width={[1, 1, 1, 1, 6 / 12]}>
+          <SectionTitle reverse>{title}</SectionTitle>
+          {content.content && (
+            <BodyPrimary muted reverse>
+              {content.content}
+            </BodyPrimary>
+          )}
+          <StyledLink to={to} reverse="true" muted>
+            {ctaTitle}
+          </StyledLink>
+        </JoinContentCol>
+        <Col
+          width={[1, 1, 1, 1, 6 / 12]}
+          block={false}
+          style={{ alignItems: 'center' }}
+        >
+          <Image image={image} />
+        </Col>
+      </Row>
+    </Grid>
+  )
+}
 
 export default Join
