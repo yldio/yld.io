@@ -21,6 +21,7 @@ const Team = ({ members }) => {
               role={role}
               image={image}
               socialLinks={socialLinks}
+              dataTestId={`staff-card-${idx}`}
             />
           )
         )}

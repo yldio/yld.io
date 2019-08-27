@@ -13,3 +13,4 @@ hint-report
 storybook-static/
 package-lock.json
 artifacts/
+coverage/

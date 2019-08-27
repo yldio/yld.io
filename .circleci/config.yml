@@ -62,7 +62,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm run test:snapshots
+          command: npm run test:snapshots && npm run test:interaction
           name: Snapshots
   testcafe:
     <<: *defaults

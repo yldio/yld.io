@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
-.c4 {
-  padding-bottom: 1.5rem;
-}
-
 .c3 {
   padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 1.5rem;
 }
 
 .c7 {
@@ -56,6 +56,16 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   display: flex;
 }
 
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -75,16 +85,6 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   opacity: .5;
   padding: 0;
   font-weight: 700;
-}
-
-.c5 {
-  width: 100%;
-  height: auto;
-}
-
-.c12 {
-  width: 24px;
-  height: 24px;
 }
 
 .c11 {
@@ -730,12 +730,12 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 `;
 
 exports[`Storyshots About Us Page Components StaffCard 1`] = `
-.c4 {
-  padding-bottom: 1.5rem;
-}
-
 .c3 {
   padding-bottom: 2.25rem;
+}
+
+.c4 {
+  padding-bottom: 1.5rem;
 }
 
 .c7 {
@@ -785,6 +785,16 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   display: flex;
 }
 
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c12 {
+  width: 24px;
+  height: 24px;
+}
+
 .c6 {
   color: #333333;
   font-weight: 400;
@@ -804,16 +814,6 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   opacity: .5;
   padding: 0;
   font-weight: 700;
-}
-
-.c5 {
-  width: 100%;
-  height: auto;
-}
-
-.c12 {
-  width: 24px;
-  height: 24px;
 }
 
 .c11 {
