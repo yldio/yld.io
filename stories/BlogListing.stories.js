@@ -28,11 +28,9 @@ const posts = [
 ]
 
 storiesOf('Blog Listing', module).add('Blog Listing', () => (
-  <div>
-    <BlogListing
-      title="Title about blog posts"
-      description="Description about the blog posts in this section."
-      posts={posts}
-    />
-  </div>
+  <BlogListing
+    title="Title about blog posts"
+    description="Description about the blog posts in this section."
+    posts={posts}
+  />
 ))
