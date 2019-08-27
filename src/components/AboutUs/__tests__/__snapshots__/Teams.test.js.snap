@@ -2,7 +2,7 @@
 
 exports[`<Teams /> allows the user to change tabs 1`] = `
 <section
-  class="sc-cSHVUG fqoGmG"
+  class="sc-kAzzGY kIwROU"
 >
   <div
     class="sc-htpNat toUCL"
@@ -27,45 +27,45 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
           width="1"
         >
           <ul
-            class="sc-jzJRlG lcmWQN"
+            class="sc-cSHVUG dFwxYU"
           >
             <li
-              class="sc-VigVT iuqzRG"
+              class="sc-jTzLTM hhzFCC"
             >
               <button
-                class="sc-fjdhpX dTgqKF"
+                class="sc-jzJRlG fmoaBk"
                 data-event="about-team-executive"
               >
                 <h3
-                  class="sc-jTzLTM jlKelM"
+                  class="sc-fjdhpX zKGOv"
                 >
                   Executive
                 </h3>
               </button>
             </li>
             <li
-              class="sc-VigVT iuqzRG"
+              class="sc-jTzLTM hhzFCC"
             >
               <button
-                class="sc-fjdhpX dJqnNu"
+                class="sc-jzJRlG iEYEnh"
                 data-event="about-team-advisory"
               >
                 <h3
-                  class="sc-jTzLTM dcvwiU"
+                  class="sc-fjdhpX cSKEzM"
                 >
                   Advisory
                 </h3>
               </button>
             </li>
             <li
-              class="sc-VigVT iuqzRG"
+              class="sc-jTzLTM hhzFCC"
             >
               <button
-                class="sc-fjdhpX dJqnNu"
+                class="sc-jzJRlG iEYEnh"
                 data-event="about-team-client"
               >
                 <h3
-                  class="sc-jTzLTM dcvwiU"
+                  class="sc-fjdhpX cSKEzM"
                 >
                   Client
                 </h3>
@@ -95,7 +95,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -154,15 +154,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/nunojob/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -170,14 +170,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Nuno Job Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/dscape"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -185,7 +185,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Nuno Job Twitter"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
                     width="24px"
@@ -206,7 +206,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -265,15 +265,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/anthony-mann-11251214/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -281,14 +281,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Anthony Mann Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/objectCreate"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -296,7 +296,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Anthony Mann Twitter"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
                     width="24px"
@@ -317,7 +317,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -376,15 +376,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/tracey-bianchi-maisuria-6568651a/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -392,7 +392,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Tracey Bianchi Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
@@ -413,7 +413,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -472,15 +472,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/carlosvilhena/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -488,14 +488,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Carlos Vilhena Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/carvil_"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -503,7 +503,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Carlos Vilhena Twitter"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
                     width="24px"
@@ -524,7 +524,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -583,15 +583,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/bradleystott/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -599,7 +599,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Bradley Stott Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
@@ -620,7 +620,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -679,16 +679,16 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. 
 
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/annie-vladev-165617125/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -696,7 +696,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Annie Vladev Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
@@ -717,7 +717,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -776,15 +776,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. 
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/gretastrolyte/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -792,14 +792,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Greta Strolyte's LinkedIn"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/gretastarlight"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -807,7 +807,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Greta Strolyte's Twitter"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
                     width="24px"
@@ -828,7 +828,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -887,15 +887,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/fanoliveira/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -903,14 +903,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Fabio Oliveira Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/fanoliveira"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -918,7 +918,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Fabio Oliveira Twitter"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
                     width="24px"
@@ -939,7 +939,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 class="sc-bwzfXH jtBXGl"
               >
                 <div
-                  class="sc-chPdSV leCFpY gatsby-image-wrapper"
+                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
                   style="position: relative; overflow: hidden;"
                 >
                   <div
@@ -998,15 +998,15 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 </h3>
               </div>
               <p
-                class="sc-kpOJdX dJcAFM"
+                class="sc-dxgOiQ dliFiI"
               >
                 Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini
               </p>
               <div
-                class="sc-kGXeez kKXJK"
+                class="sc-kpOJdX bKXUig"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/garethscrivens/"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -1014,7 +1014,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Gareth Scrivens Linkedin"
-                    class="sc-chPdSV hoLgGD"
+                    class="sc-kgoBCf cxQzZ"
                     height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
                     width="24px"
