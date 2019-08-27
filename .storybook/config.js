@@ -1,6 +1,7 @@
 import { configure, addDecorator } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withPropsTable } from 'storybook-addon-react-docgen'
+import { ThemeProvider } from 'styled-components'
 import TableComponent from '../stories/TableComponent'
 
 // automatically import all files ending in *.stories.js
@@ -26,6 +27,7 @@ configure(loadStories, module)
 addDecorator(withA11y)
 addDecorator(
   withPropsTable({
-    TableComponent
+    TableComponent,
+    propTablesExclude: [ThemeProvider]
   })
 )
