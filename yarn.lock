@@ -12401,6 +12401,7 @@ jest-config@^24.9.0:
     realpath-native "^1.1.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 jest-diff@^24.0.0, jest-diff@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
@@ -12408,15 +12409,26 @@ jest-diff@^24.0.0, jest-diff@^24.9.0:
 =======
 <<<<<<< HEAD
 jest-diff@^24.0.0, jest-diff@^24.8.0:
+=======
+jest-diff@^24.0.0:
+>>>>>>> share markdown renderer, update list
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.8.0.tgz#146435e7d1e3ffdf293d53ff97e193f1d1546172"
-=======
+  dependencies:
+    chalk "^2.0.1"
+    diff-sequences "^24.3.0"
+    jest-get-type "^24.8.0"
+    pretty-format "^24.8.0"
+
 jest-diff@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
   integrity sha512-qMfrTs8AdJE2iqrTp0hzh7kTd2PQWrsFyj9tORoKmu32xjPjeE4NyjVRDz8ybYwqS2ik8N4hsIpiVTyFeo2lBQ==
+<<<<<<< HEAD
 >>>>>>> update how we work section with new typography
 >>>>>>> update how we work section with new typography
+=======
+>>>>>>> share markdown renderer, update list
   dependencies:
     chalk "^2.0.1"
     diff-sequences "^24.9.0"
@@ -12519,6 +12531,7 @@ jest-leak-detector@^24.9.0:
     pretty-format "^24.9.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.9.0.tgz#f5b3661d5e628dffe6dd65251dfdae0e87c3a073"
@@ -12526,15 +12539,26 @@ jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.9.0:
 =======
 <<<<<<< HEAD
 jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.8.0:
+=======
+jest-matcher-utils@^24.0.0:
+>>>>>>> share markdown renderer, update list
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.8.0.tgz#2bce42204c9af12bde46f83dc839efe8be832495"
-=======
+  dependencies:
+    chalk "^2.0.1"
+    jest-diff "^24.8.0"
+    jest-get-type "^24.8.0"
+    pretty-format "^24.8.0"
+
 jest-matcher-utils@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.9.0.tgz#f5b3661d5e628dffe6dd65251dfdae0e87c3a073"
   integrity sha512-OZz2IXsu6eaiMAwe67c1T+5tUAtQyQx27/EMEkbFAGiw52tB9em+uGbzpcgYVpA8wl0hlxKPZxrly4CXU/GjHA==
+<<<<<<< HEAD
 >>>>>>> update how we work section with new typography
 >>>>>>> update how we work section with new typography
+=======
+>>>>>>> share markdown renderer, update list
   dependencies:
     chalk "^2.0.1"
     jest-diff "^24.9.0"
@@ -16771,22 +16795,33 @@ pretty-error@^2.1.1:
     utila "~0.4"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 pretty-format@^24.0.0, pretty-format@^24.8.0, pretty-format@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.9.0.tgz#12fac31b37019a4eea3c11aa9a959eb7628aa7c9"
   integrity sha512-00ZMZUiHaJrNfk33guavqgvfJS30sLYf0f8+Srklv0AMPodGGHcoHgksZ3OThYnIvOd+8yMCn0YiEOogjlgsnA==
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> share markdown renderer, update list
 pretty-format@^24.0.0, pretty-format@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.8.0.tgz#8dae7044f58db7cb8be245383b565a963e3c27f2"
-=======
+  dependencies:
+    "@jest/types" "^24.8.0"
+    ansi-regex "^4.0.0"
+    ansi-styles "^3.2.0"
+    react-is "^16.8.4"
+
 pretty-format@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.9.0.tgz#12fac31b37019a4eea3c11aa9a959eb7628aa7c9"
   integrity sha512-00ZMZUiHaJrNfk33guavqgvfJS30sLYf0f8+Srklv0AMPodGGHcoHgksZ3OThYnIvOd+8yMCn0YiEOogjlgsnA==
+<<<<<<< HEAD
 >>>>>>> update how we work section with new typography
 >>>>>>> update how we work section with new typography
+=======
+>>>>>>> share markdown renderer, update list
   dependencies:
     "@jest/types" "^24.9.0"
     ansi-regex "^4.0.0"
