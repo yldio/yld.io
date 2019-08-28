@@ -164,9 +164,6 @@ const JoinUsPage = props => (
                 fileName
                 contentType
               }
-              fluid(maxWidth: 40) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
             }
           }
           openPositionsTitle
