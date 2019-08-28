@@ -46,7 +46,7 @@ const HowWeWorkWithSection = ({
   howWeWorkWithCopy: copy,
   howWeWorkWithPractises: practises = []
 }) => {
-  const hasPractises = practises && practises.length
+  const hasPractises = practises && practises.length > 0
   return (
     <GreyBackground>
       <Grid>
@@ -61,7 +61,7 @@ const HowWeWorkWithSection = ({
             <MarkDownRender source={copy} />
           </Col>
         </StyledRow>
-        {hasPractises > 0 && (
+        {hasPractises && (
           <StyledRow noPaddingTop>
             {practises.map(({ content: { content: source } }) => (
               <PractiseCol
