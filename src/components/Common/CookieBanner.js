@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const Box = styled.div`
@@ -69,5 +70,9 @@ const Cookie = ({ onClick }) => (
     <Button onClick={onClick}>I agree</Button>
   </Box>
 )
+
+Cookie.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
 
 export default Cookie
