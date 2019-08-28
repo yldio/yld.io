@@ -96,4 +96,10 @@ export const fragments = graphql`
       }
     }
   }
+
+  fragment SEOMetaFields on ContentfulSeoMetaContent {
+    title
+    description
+    keywords
+  }
 `

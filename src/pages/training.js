@@ -18,7 +18,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
 
   return (
     <Layout slug="training">
-      <Head page={content} />
+      <Head seoMetaData={content.seoMetaData} />
       <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <Statement richText={content.seoText.content[0].content} />
 
@@ -43,9 +43,9 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
 export const query = graphql`
   query {
     contentfulTrainingPage {
-      title
-      seoTitle
-      seoMetaDescription
+      seoMetaData {
+        ...SEOMetaFields
+      }
       contactUsText {
         contactUsText
       }
