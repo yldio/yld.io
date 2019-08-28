@@ -120,15 +120,6 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding: 0;
 }
 
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding: 0;
-}
-
 .c12 {
   color: #333333;
   font-weight: 400;
@@ -136,6 +127,15 @@ exports[`Storyshots Event Card Event Card 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   opacity: .5;
+  padding: 0;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
   padding: 0;
 }
 
