@@ -66,7 +66,7 @@
     "test:lighthouse": "jest --testPathPattern=\"lighthouse.test.js\"",
     "test:unit": "jest tests/unit/**/*.test.js",
     "test:unit:watch": "yarn run test:unit --watch",
-    "develop": "npm start",
+    "develop": "yarn start",
     "start": "gatsby develop",
     "dev:clean": "rm -rf .cache && yarn develop",
     "format": "prettier --write \"src/**/*.js\"",
