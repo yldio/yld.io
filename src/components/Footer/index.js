@@ -56,7 +56,8 @@ const getBackgroundColor = ({ pathname, contactUsBg, is404 = false }) => {
       'training ',
       'about-us',
       'open-source',
-      'case-study'
+      'case-study',
+      'events'
     ]
   }
 
