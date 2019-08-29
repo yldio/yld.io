@@ -11,7 +11,7 @@ const Speciality = ({ data, location }) => {
 
   return (
     <Layout bgColor="blueBg" slug={slug} title={title} location={location}>
-      <Head page={speciality} />
+      <Head seoMetaData={speciality.seoMetaData} page={speciality} />
       <SpecialityView data={data} />
     </Layout>
   )
@@ -26,6 +26,9 @@ export const pageQuery = graphql`
       title
       seoTitle
       seoMetaDescription
+      seoMetaData {
+        ...SEOMetaFields
+      }
       seoText {
         nodeType
         content {
