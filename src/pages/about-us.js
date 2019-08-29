@@ -25,7 +25,8 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     clientTestimonialTitle,
     clientTestimonialVideo,
     partnershipsTitle,
-    partners
+    partners,
+    seoMetaData
   } = content
 
   const supportingStatements = [
@@ -45,7 +46,7 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
 
   return (
     <Layout>
-      <Head page={content} />
+      <Head seoMetaData={seoMetaData} />
       <AboutUsHero
         statementText={statementText}
         supportingStatements={supportingStatements}
@@ -69,6 +70,9 @@ const AboutUsPage = props => (
           title
           seoTitle
           seoDescription
+          seoMetaData {
+            ...SEOMetaFields
+          }
           statementText
           supportingStatement1Icon {
             title
