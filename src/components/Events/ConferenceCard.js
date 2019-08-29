@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Link } from 'gatsby'
+import { format } from 'date-fns'
 
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
@@ -28,25 +29,25 @@ const StatusWrapper = styled.div`
 const AnchorWrapper = ({ to, children }) =>
   to ? <Anchor to={to}>{children}</Anchor> : children
 
-const ConferenceCard = ({ event }) => {
+const ConferenceCard = ({ conferance }) => {
   const {
-    status,
-    date,
-    eventName,
-    eventLocation,
+    status = 'status',
+    eventTitle,
     blurb,
-    homepage,
-    ctaLink,
-    image
-  } = event
+    linkToEvent,
+    posterImage,
+    ctaText
+  } = conferance
 
-  const ctaText = status === 'Upcoming' ? 'Get tickets' : 'Watch on YouTube'
+  const date = format(new Date(conferance.date), 'MMM DD[,] YYYY')
+
+  const address = conferance.address.slice(0, 15).trim()
 
   return (
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
-        <AnchorWrapper to={homepage}>
-          <Image image={image} width="100%" />
+        <AnchorWrapper to={linkToEvent}>
+          <Image image={posterImage} width="100%" />
         </AnchorWrapper>
       </Col>
 
@@ -56,28 +57,28 @@ const ConferenceCard = ({ event }) => {
             {status}
           </BodyPrimary>
         </StatusWrapper>
-        <CardTitle as="h3">{eventName}</CardTitle>
+        <CardTitle as="h3">{eventTitle}</CardTitle>
         <BodyPrimary>
-          {date} • {eventLocation}{' '}
+          {date} • {address}{' '}
         </BodyPrimary>
       </Col>
 
       <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12, 5 / 12]}>
         <BlurbWrapper>
-          <BodyPrimary noPaddingBottom>{blurb}</BodyPrimary>
+          <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <Link to={homepage} style={{ textDecoration: 'underline' }}>
+            <Link to={linkToEvent} style={{ textDecoration: 'underline' }}>
               Read more
             </Link>
           </BodyPrimary>
         </BlurbWrapper>
-        <StyledLink aria-label={ctaText} to={ctaLink} title={ctaText}>
+        <StyledLink aria-label={ctaText} to={linkToEvent} title={ctaText}>
           {ctaText}
         </StyledLink>
       </Col>
       <Col width={[0, 0, 0, 0, 0, 3 / 12, 3 / 12]}>
-        <AnchorWrapper to={homepage}>
-          <Image image={image} width="100%" />
+        <AnchorWrapper to={linkToEvent}>
+          <Image image={posterImage} height="100%" />
         </AnchorWrapper>
       </Col>
     </Row>
