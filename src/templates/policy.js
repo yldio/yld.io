@@ -32,25 +32,26 @@ const Section = styled.section`
 
 const renderParagraphs = content =>
   makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
+
 const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
+  const { seoMetaData, title, body, section } = policy
+
   return (
     <Layout location={location}>
-      <Head page={policy} />
+      <Head seoMetaData={seoMetaData} />
       <Padding top={4} bottom={5}>
         <Grid>
           <Row>
             <Col width={[1, 1, 1, 1 / 2]}>
               <Padding bottom={{ smallPhone: 2, phone: 2 }}>
-                <Title>{policy.title}</Title>
+                <Title>{title}</Title>
               </Padding>
             </Col>
             <Col>
-              {policy.body && policy.body.body && (
-                <Body>{renderParagraphs(policy.body.body)}</Body>
-              )}
-              {policy.section &&
-                policy.section.length &&
-                policy.section.map(({ title, content: { content } }) => (
+              {body && body.body && <Body>{renderParagraphs(body.body)}</Body>}
+              {section &&
+                section.length &&
+                section.map(({ title, content: { content } }) => (
                   <Section key={title}>
                     <SectionTitle>{title}</SectionTitle>
                     {renderParagraphs(content)}
@@ -79,6 +80,9 @@ export const pageQuery = graphql`
         content {
           content
         }
+      }
+      seoMetaData {
+        ...SEOMetaFields
       }
     }
   }
