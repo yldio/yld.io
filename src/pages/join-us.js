@@ -30,7 +30,7 @@ class JoinUs extends React.Component {
     } = this.props
     return (
       <Layout>
-        <Head page={content} />
+        <Head seoMetaData={content.seoMetaData} />
         <ViewPositions
           text={content.introductionText.introductionText}
           description={content.introductionDescription.introductionDescription}
@@ -90,6 +90,9 @@ const JoinUsPage = props => (
           title
           seoTitle
           seoDescription
+          seoMetaData {
+            ...SEOMetaFields
+          }
           introductionText {
             introductionText
           }
