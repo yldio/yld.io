@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
+import { format } from 'date-fns'
 
 import { Row, Col } from '../grid'
 import StyledLink from '../Common/StyledLink'
@@ -53,7 +54,7 @@ const EventTypePadding = styled.div`
   `};
 `
 
-const EventNamePadding = styled.div`
+const EventTitlePadding = styled.div`
   padding-bottom: ${props => props.theme.spacing[1]};
 
   ${breakpoint('smallTablet')`
@@ -69,34 +70,33 @@ const AlignRightCol = styled(Col)`
 `
 
 const EventCard = ({ event }) => {
-  const {
-    type,
-    date,
-    eventName,
-    eventLocation,
-    startTime,
-    endTime,
-    attendees = 0,
-    link
-  } = event
+  const dateArray = format(new Date(event.date), 'MMM DD').split(' ')
+  const formattedDate = { month: dateArray[0], day: dateArray[1] }
+  const formattedAddress = event.address.slice(0, 15).trim() // TODO use a proper format for the address
+  const formattedStartTime = format(new Date(event.startTime), 'ha')
+  const formattedEndTime = format(new Date(event.endTime), 'ha')
+
+  // TODO delete the default value for type and when you are able to get it from the query
+  const { type = 'type', eventTitle, attendees = 0, linkToEvent } = event
 
   return (
     <Row>
       <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
-        <DateCard date={date} />
+        <DateCard date={formattedDate} />
       </Col>
 
       <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
         <EventTypePadding>
           <BodyPrimary noPadding>{type}</BodyPrimary>
         </EventTypePadding>
-        <EventNamePadding>
+        <EventTitlePadding>
           <CardTitle noPadding as="h3">
-            {eventName}
+            {eventTitle}
           </CardTitle>
-        </EventNamePadding>
+        </EventTitlePadding>
         <BodyPrimary muted noPadding>
-          {eventLocation} • {startTime} - {endTime} • {attendees} attending
+          {formattedAddress} • {formattedStartTime} - {formattedEndTime} •{' '}
+          {attendees} attending
         </BodyPrimary>
       </Col>
 
@@ -104,7 +104,7 @@ const EventCard = ({ event }) => {
         {type === 'meetup' ? (
           <StyledLink
             aria-label={`More on Meetup`}
-            to={link}
+            to={linkToEvent}
             title={`More on Meetup`}
           >
             More on Meetup
@@ -112,7 +112,7 @@ const EventCard = ({ event }) => {
         ) : (
           <StyledLink
             aria-label={`Get tickets`}
-            to={link}
+            to={linkToEvent}
             title={`Get tickets`}
           >
             Get Tickets
