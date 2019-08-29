@@ -56,6 +56,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -140,6 +147,20 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(policyTemplate),
         context: {
           id: edge.node.id
+        }
+      })
+    }
+  })
+
+  _.each(result.data.allMdx.nodes, post => {
+    const { slug } = post.frontmatter
+
+    if (slug) {
+      createPage({
+        path: `/blog/${slug}/`,
+        component: require.resolve('./src/templates/post.js'),
+        context: {
+          slug: slug
         }
       })
     }
