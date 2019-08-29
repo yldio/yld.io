@@ -31,7 +31,6 @@ import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import Statement from '../../components/Common/Statement'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
-import getSocialLogo from '../../utils/getSocialLogo'
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
@@ -142,16 +141,9 @@ const IndexPage = props => {
     genericBlock31: data31
   } = caseStudy
 
-  const socialLogo = getSocialLogo({ ...caseStudy })
-
   return (
     <Layout location={location} contactUsBg={'greyBg'}>
-      <Head
-        page={{
-          ...caseStudy,
-          socialLogo
-        }}
-      />
+      <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <GreyBackground>
         {/* DoctorLink is a healthcare technology company */}
@@ -585,10 +577,8 @@ export const query = graphql`
           url
         }
       }
-      ogImageMeta {
-        file {
-          url
-        }
+      seoMetaData {
+        ...SEOMetaFields
       }
       ...NonTemplatedCaseStudyV2Related
       genericBlock1 {
@@ -693,8 +683,6 @@ export const query = graphql`
         id
       }
       posterColor
-      seoTitle
-      seoMetaDescription
     }
   }
 `

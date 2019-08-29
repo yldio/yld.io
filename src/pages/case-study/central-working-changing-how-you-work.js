@@ -26,7 +26,6 @@ import {
 
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Image from '../../components/Common/Image'
-import getSocialLogo from '../../utils/getSocialLogo'
 
 const StyledColData2 = styled(Col)`
   display: flex;
@@ -117,16 +116,9 @@ const IndexPage = props => {
 
   const outComesDataFigures = normaliseAll(data2.slice(1))
 
-  const socialLogo = getSocialLogo({ ...caseStudy })
-
   return (
     <Layout location={location} contactUsBg={'greyBg'}>
-      <Head
-        page={{
-          ...caseStudy,
-          socialLogo
-        }}
-      />
+      <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
       <Grid>
@@ -338,6 +330,9 @@ export const query = graphql`
     contentfulNonTemplatedCaseStudyV2(
       slug: { eq: "central-working-changing-how-you-work" }
     ) {
+      seoMetaData {
+        ...SEOMetaFields
+      }
       relatedCaseStudy {
         title
         slug
@@ -401,8 +396,6 @@ export const query = graphql`
         id
       }
       posterColor
-      seoTitle
-      seoMetaDescription
     }
   }
 `

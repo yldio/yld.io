@@ -48,7 +48,12 @@ const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
   if (seoMetaData)
     return {
       ...seoMetaData,
-      imageUrl: getImageUrl({ socialLogo: (seoMetaData.image || {}).url })
+      imageUrl: getImageUrl({
+        socialLogo: (
+          (seoMetaData.socialLogo && seoMetaData.socialLogo.file) ||
+          {}
+        ).url
+      })
     }
 
   const { siteTitle } = siteMetadata
