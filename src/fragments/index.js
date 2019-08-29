@@ -101,5 +101,10 @@ export const fragments = graphql`
     title
     description
     keywords
+    socialLogo {
+      file {
+        url
+      }
+    }
   }
 `
