@@ -6,11 +6,11 @@ import { Grid } from '../src/components/grid'
 
 addDecorator(Theme)
 
-const event = {
+const conferance = {
   status: 'Upcoming',
   date: '21 August 2019',
   eventName: 'GraphQL helps rockstar developers',
-  eventLocation: 'London',
+  address: 'London',
   blurb:
     'GraphQL is an easy way to consume information. It is great. It can do CRUD. It is a perfect tool for rockstar devleopers. This conferencec will feature a number of excellent talks from GraphQL gurus who will show you their tips and tricks to get the best experience possible',
   homepage: 'www.event.com',
@@ -41,7 +41,7 @@ const event = {
 storiesOf('Conference Card', module).add('Conference Card', () => {
   return (
     <Grid style={{ width: '100%' }}>
-      <ConferenceCard event={event} />
+      <ConferenceCard conferance={conferance} />
     </Grid>
   )
 })

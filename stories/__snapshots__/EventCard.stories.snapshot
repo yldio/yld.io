@@ -120,6 +120,15 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding: 0;
 }
 
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+}
+
 .c12 {
   color: #333333;
   font-weight: 400;
@@ -127,15 +136,6 @@ exports[`Storyshots Event Card Event Card 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   opacity: .5;
-  padding: 0;
-}
-
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
   padding: 0;
 }
 
@@ -611,6 +611,12 @@ exports[`Storyshots Event Card Event Card 1`] = `
 >
   <div
     className="c1"
+    style={
+      Object {
+        "paddingBottom": "36px",
+        "paddingTop": "36px",
+      }
+    }
   >
     <div
       className="c2"
@@ -634,12 +640,12 @@ exports[`Storyshots Event Card Event Card 1`] = `
           <p
             className="c5"
           >
-            24
+            Date
           </p>
           <p
             className="c6"
           >
-            AUG
+            INVALID
           </p>
         </div>
       </div>
@@ -672,9 +678,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
       >
         <h3
           className="c11"
-        >
-          GraphQL helps rockstar developers
-        </h3>
+        />
       </div>
       <p
         className="c12"
@@ -682,10 +686,11 @@ exports[`Storyshots Event Card Event Card 1`] = `
       >
         London
          • 
-        11am
+        Invalid Date
          - 
-        2pm
-         • 
+        Invalid Date
+         •
+         
         20
          attending
       </p>
@@ -707,9 +712,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
       <a
         aria-label="Get tickets"
         className="c15"
-        href="/www.event.com"
         onClick={[Function]}
-        onMouseEnter={[Function]}
         title="Get tickets"
       >
         Get Tickets

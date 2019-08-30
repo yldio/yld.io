@@ -876,14 +876,6 @@ Array [
   color: #fff;
 }
 
-.c84 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.6875rem 0 0.8125rem 0;
-}
-
 .c12 {
   color: #333333;
   font-weight: 500;
@@ -902,6 +894,14 @@ Array [
   padding: 0.6875rem 0 0.8125rem 0;
   color: #fff;
   padding: 0;
+}
+
+.c84 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
 }
 
 .c51 {
@@ -2545,14 +2545,6 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c84 {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
-    padding: 0.75rem 0 0.75rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
   .c12 {
     font-size: 1.625rem;
     line-height: 1.875rem;
@@ -2571,6 +2563,14 @@ Array [
     padding: 0;
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c84 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
   }
 }
 
