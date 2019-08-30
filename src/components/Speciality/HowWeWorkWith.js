@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Grid } from '../grid'
 import breakpoint from 'styled-components-breakpoint'
+import ReactMarkdown from 'react-markdown'
+import generate from 'shortid'
+import is from 'styled-is'
 
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import GreyBackground from '../Common/GreyBackground'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import Hr from '../Common/Hr'
+import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
 
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -20,35 +23,73 @@ const StyledRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
+
+  ${is('noPaddingBottom')`
+    padding-bottom: 0 !important;  
+    `}
+
+  ${is('noPaddingTop')`
+    padding-top: 0 !important; 
+    `}
+`
+
+const PractiseCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const HowWeWorkWithSection = ({
-  howWeWorkWithTitle,
-  howWeWorkWithCopy,
-  howWeWorkWithPractises
+  howWeWorkWithTitle: title,
+  howWeWorkWithCopy: copy,
+  howWeWorkWithPractises: practises = []
 }) => {
+  const hasPractises = practises && practises.length > 0
   return (
     <GreyBackground>
       <Grid>
-        <StyledRow style={{ justifyContent: 'space-between' }}>
-          <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-            <SectionTitle>{howWeWorkWithTitle}</SectionTitle>
+        <StyledRow
+          noPaddingBottom={hasPractises}
+          style={{ justifyContent: 'space-between' }}
+        >
+          <Col width={[1, 1, 1, 1, 5 / 12, 6 / 12, 5 / 12]}>
+            <SectionTitle>{title}</SectionTitle>
           </Col>
-          <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-            <BodyPrimary>{howWeWorkWithCopy}</BodyPrimary>
-            {howWeWorkWithPractises &&
-              howWeWorkWithPractises.length > 0 &&
-              howWeWorkWithPractises.map(practise => (
-                <Fragment key={practise}>
-                  <BodyPrimary>{practise}</BodyPrimary>
-                  <Hr short />
-                </Fragment>
-              ))}
+          <Col width={[1, 1, 1, 1, 7 / 12, 6 / 12, 5 / 12]}>
+            <MarkDownRender source={copy} />
           </Col>
         </StyledRow>
+        {hasPractises && (
+          <StyledRow noPaddingTop>
+            {practises.map(({ content: { content: source } }) => (
+              <PractiseCol
+                key={generate}
+                width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
+              >
+                <MarkDownRender source={source} />
+              </PractiseCol>
+            ))}
+          </StyledRow>
+        )}
       </Grid>
     </GreyBackground>
   )
 }
+
+const MarkDownRender = ({ source }) => (
+  <ReactMarkdown
+    source={source}
+    renderers={{
+      // eslint-disable-next-line react/display-name
+      heading: props => <Subtitle noPaddingBottom {...props} />,
+      // eslint-disable-next-line react/display-name
+      paragraph: props => <BodyPrimary noPaddingTop {...props} />,
+      // eslint-disable-next-line react/display-name
+      listItem: props => <CustomisedBulletpoint {...props} />
+    }}
+  />
+)
 
 export default HowWeWorkWithSection

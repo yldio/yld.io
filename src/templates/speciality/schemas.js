@@ -196,16 +196,9 @@ const howWeWorkSchema = {
     },
     howWeWorkWithCopy: {
       type: 'string'
-    },
-    howWeWorkWithPractises: {
-      type: 'array'
     }
   },
-  required: [
-    'howWeWorkWithTitle',
-    'howWeWorkWithCopy',
-    'howWeWorkWithPractises'
-  ]
+  required: ['howWeWorkWithTitle', 'howWeWorkWithCopy']
 }
 
 export {
