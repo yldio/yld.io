@@ -20,19 +20,21 @@ const StyledDisplayTitle = styled(DisplayTitle)`
 `
 
 const PageHeader = styled.div`
-  background-color: ${props => '#' + props.color};
-  height: 400px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 72px;
-  padding-left: 3rem;
+  justify-content: center;
+  background-color: ${props => '#' + props.color};
+  height: 500px;
+  margin-bottom: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-top: ${({ theme }) => theme.space[3]};
 `
 
 const PosterImage = styled(Image)`
   position: relative;
   right: -18%;
   margin-left: -18%;
+  flex: 1 1 0;
 `
 
 const EventWrapper = styled.div`
@@ -81,7 +83,7 @@ const EventPage = ({
   } = pageData
 
   return (
-    <Layout bgColor={pagePosterColor}>
+    <Layout>
       <Head
         page={{
           title: eventsPageMeta.title,
@@ -90,7 +92,9 @@ const EventPage = ({
         }}
       />
       <PageHeader color={pagePosterColor}>
-        <DisplayTitle reverse>{introSentence.introSentence}</DisplayTitle>
+        <DisplayTitle style={{ maxWidth: '50%' }} reverse>
+          {introSentence.introSentence}
+        </DisplayTitle>
         <PosterImage image={pagePosterImage} />
       </PageHeader>
       <Grid>
