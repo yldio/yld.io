@@ -80,7 +80,7 @@ const EventCard = ({ event }) => {
   const { type = 'type', eventTitle, attendees = 0, linkToEvent } = event
 
   return (
-    <Row>
+    <Row style={{ paddingTop: '36px', paddingBottom: '36px' }}>
       <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
         <DateCard date={formattedDate} />
       </Col>
