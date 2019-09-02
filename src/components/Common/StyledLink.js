@@ -26,7 +26,7 @@ export const StyledLinkCss = css`
     margin-top: ${remcalc(6)};
     background: ${({ theme }) => theme.colors.text};
     box-sizing: border-box;
-    transition: all ${props => props.theme.animations.fast} ease-out;
+    transition: all ${({ theme }) => theme.animations.fast} ease-out;
     transition-property: background;
 
     ${is('noafter')`
@@ -70,7 +70,7 @@ export const StyledLinkCss = css`
   }
 
   ${is('muted')`
-    color: ${props => props.theme.colors.textLight};
+    color: ${({ theme }) => theme.colors.textLight};
   `}
 
   ${is('reverse')`
