@@ -5,8 +5,8 @@ import remcalc from 'remcalc'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
-import headerItemStyles from '../headerItemStyles'
-import outlineStyles from '../outlineStyles'
+import headerItemStyles from '../utils/headerItemStyles'
+import outlineStyles from '../utils/outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
 import TopNavItem from './TopNavItem'
 
@@ -159,9 +159,9 @@ export default class Dropdown extends PureComponent {
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
-          {items.map(({ to, href, label }, idx) => (
+          {items.map(({ to, href, label }) => (
             <InnerAnchorItem
-              key={idx}
+              key={href}
               themeVariation={themeVariation}
               href={href}
               to={to}

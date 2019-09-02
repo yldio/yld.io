@@ -5,6 +5,7 @@ import Flex from 'styled-flex-component'
 import is from 'styled-is'
 import generate from 'shortid'
 
+import links from '../utils/navLinks'
 import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
@@ -64,7 +65,7 @@ const SideNavItem = ({ item, path }) => {
   }
 }
 
-const SideNav = ({ links, isOpen, onClose, path }) => (
+const SideNav = ({ isOpen, onClose, path }) => (
   <SideNavPanel open={isOpen}>
     <Flex justifyEnd>
       <CloseButton onClick={onClose} />

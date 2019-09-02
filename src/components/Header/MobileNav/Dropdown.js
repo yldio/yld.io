@@ -4,10 +4,10 @@ import generate from 'shortid'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
-import headerItemStyles from '../headerItemStyles'
+import headerItemStyles from '../utils/headerItemStyles'
 import sideNavItemStyles from './sideNavItemStyles'
 import outerItemStates from './outerItemStates'
-import outlineStyles from '../outlineStyles'
+import outlineStyles from '../utils/outlineStyles'
 
 const DropdownNameWrapper = styled.span.attrs(() => ({
   states: outerItemStates

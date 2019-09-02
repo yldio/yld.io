@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Anchor from '../../Common/Anchor'
-import headerItemStyles from '../headerItemStyles'
-import outlineStyles from '../outlineStyles'
+import headerItemStyles from '../utils/headerItemStyles'
+import outlineStyles from '../utils/outlineStyles'
 import topNavItemStyles from './topNavItemStyles'
 import TopNavItem from './TopNavItem'
 

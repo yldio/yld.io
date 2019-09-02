@@ -1,28 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import outlineStyles from '../outlineStyles'
+import outlineStyles from '../utils/outlineStyles'
 import Anchor from '../../Common/Anchor'
-import headerItemStyles from '../headerItemStyles'
-import sideNavItemStyles from './sideNavItemStyles'
+import headerItemStyles from '../utils/headerItemStyles'
+import topNavItemStyles from './topNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
-  > a:focus {
-    ${outlineStyles}
-  }
 `
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
-  ${sideNavItemStyles}
-  width: 100%;
+  ${topNavItemStyles}
+  ${outlineStyles}
 
+  width: 100%;
   background: ${props => props.theme.colors.greyBg};
   color: ${props => props.theme.colors.textLight};
 
   &:hover,
-  &:focus,
   &.active {
     color: ${props => props.theme.colors.text};
   }
@@ -33,14 +30,18 @@ export const InnerAnchorItem = ({
   to,
   href,
   activeClassName,
-  label
+  themeVariation,
+  onMouseDown,
+  label,
+  ...props
 }) => (
-  <InnerListItem>
+  <InnerListItem themeVariation={themeVariation} {...props}>
     <InnerAnchor
       href={href}
       to={to}
-      activeClassName={activeClassName}
       title={label}
+      activeClassName={activeClassName}
+      onMouseDown={onMouseDown}
     >
       {children}
     </InnerAnchor>

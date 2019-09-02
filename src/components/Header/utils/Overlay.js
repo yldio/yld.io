@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import is from 'styled-is'
 
+/**
+ * Overlay is used on tablet viewports to enable users to click
+ * off the side nav to close it.
+ */
 const Overlay = styled.div`
   display: none;
 
