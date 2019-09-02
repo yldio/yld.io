@@ -6,7 +6,7 @@ import { Grid } from '../src/components/grid'
 
 addDecorator(Theme)
 
-const conferance = {
+const conference = {
   status: 'Upcoming',
   eventName: 'GraphQL helps rockstar developers',
   eventLocation: 'London',
@@ -41,7 +41,7 @@ const conferance = {
 storiesOf('Conference Card', module).add('Conference Card', () => {
   return (
     <Grid style={{ width: '100%' }}>
-      <ConferenceCard conferance={conferance} />
+      <ConferenceCard conference={conference} />
     </Grid>
   )
 })

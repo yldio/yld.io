@@ -29,7 +29,7 @@ const StatusWrapper = styled.div`
 const AnchorWrapper = ({ to, children }) =>
   to ? <Anchor to={to}>{children}</Anchor> : children
 
-const ConferenceCard = ({ conferance }) => {
+const ConferenceCard = ({ conference }) => {
   const {
     status = 'status',
     eventTitle,
@@ -37,11 +37,11 @@ const ConferenceCard = ({ conferance }) => {
     linkToEvent,
     posterImage,
     ctaText
-  } = conferance
+  } = conference
 
-  const date = format(new Date(conferance.date), 'MMM DD[,] YYYY')
+  const date = format(new Date(conference.date), 'MMM DD[,] YYYY')
 
-  const address = conferance.address.slice(0, 15).trim()
+  const address = conference.address.slice(0, 15).trim()
 
   return (
     <Row>

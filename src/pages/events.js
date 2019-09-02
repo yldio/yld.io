@@ -63,18 +63,18 @@ const EventList = ({ events }) =>
     </EventWrapper>
   ))
 
-const ConferanceList = ({ conferances }) =>
-  conferances
+const ConferenceList = ({ conferences }) =>
+  conferences
     .slice(0, 3)
-    .map(conferance => (
-      <ConferenceCard key={generate()} conferance={conferance.node} />
+    .map(conference => (
+      <ConferenceCard key={generate()} conference={conference.node} />
     ))
 
 const EventPage = ({
   data: { allContentfulMeetupEvent: allEvents, contentfulLandingPage: pageData }
 }) => {
   const events = allEvents.edges
-  const conferances = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conferance"
+  const conferences = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conference"
 
   const {
     introSentence,
@@ -119,10 +119,10 @@ const EventPage = ({
       <Grid>
         <Row>
           <Col>
-            <StyledDisplayTitle>Our Conferances</StyledDisplayTitle>
+            <StyledDisplayTitle>Our Conferences</StyledDisplayTitle>
           </Col>
         </Row>
-        <ConferanceList conferances={conferances} />
+        <ConferenceList conferences={conferences} />
       </Grid>
     </Layout>
   )
