@@ -15,8 +15,6 @@ import Image from '../../components/Common/Image'
 import { makeText } from '../../utils/makeText'
 import Head from '../../components/Common/Head'
 
-import getSocialLogo from '../../utils/getSocialLogo'
-
 const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
   ${breakpoint('smallTablet')`
@@ -92,16 +90,9 @@ const IndexPage = ({
     topology
   }
 }) => {
-  const socialLogo = getSocialLogo({ ...caseStudy })
-
   return (
     <Layout>
-      <Head
-        page={{
-          ...caseStudy,
-          socialLogo
-        }}
-      />
+      <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <Grid>
         <Row>
@@ -410,16 +401,14 @@ export const query = graphql`
     ) {
       slug
       title
+      seoMetaData {
+        ...SEOMetaFields
+      }
       posterImage {
         fluid(maxWidth: 550) {
           ...GatsbyContentfulFluid_withWebp
         }
         title
-        file {
-          url
-        }
-      }
-      ogImageMeta {
         file {
           url
         }
@@ -470,8 +459,6 @@ export const query = graphql`
         id
       }
       posterColor
-      seoTitle
-      seoMetaDescription
     }
   }
 `

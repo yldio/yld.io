@@ -7,11 +7,11 @@ import { SpecialityView } from './speciality-component'
 
 const Speciality = ({ data, location }) => {
   const { contentfulSpeciality: speciality } = data
-  const { slug, title } = speciality
+  const { slug, title, seoMetaData } = speciality
 
   return (
     <Layout bgColor="blueBg" slug={slug} title={title} location={location}>
-      <Head page={speciality} />
+      <Head seoMetaData={seoMetaData} />
       <SpecialityView data={data} />
     </Layout>
   )
@@ -26,6 +26,9 @@ export const pageQuery = graphql`
       title
       seoTitle
       seoMetaDescription
+      seoMetaData {
+        ...SEOMetaFields
+      }
       seoText {
         nodeType
         content {

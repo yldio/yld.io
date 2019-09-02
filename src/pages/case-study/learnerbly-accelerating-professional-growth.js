@@ -22,7 +22,6 @@ import {
   TextColumnsBlock,
   BlockRow
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
-import getSocialLogo from '../../utils/getSocialLogo'
 
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -61,16 +60,9 @@ const IndexPage = props => {
     relatedCaseStudy
   } = caseStudy
 
-  const socialLogo = getSocialLogo({ ...caseStudy })
-
   return (
     <Layout location={location}>
-      <Head
-        page={{
-          ...caseStudy,
-          socialLogo
-        }}
-      />
+      <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
       {/* "Connecting with the startup Learnerbly" */}
@@ -289,6 +281,9 @@ export const query = graphql`
     contentfulNonTemplatedCaseStudyV2(
       slug: { eq: "learnerbly-accelerating-professional-growth" }
     ) {
+      seoMetaData {
+        ...SEOMetaFields
+      }
       relatedCaseStudy {
         title
         slug
@@ -349,8 +344,6 @@ export const query = graphql`
         id
       }
       posterColor
-      seoTitle
-      seoMetaDescription
     }
   }
 `

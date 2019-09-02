@@ -57,7 +57,7 @@ const IndexPage = ({ data, location }) => {
 
   return (
     <Layout location={location} bgColor="blueBg">
-      <Head page={content} />
+      <Head seoMetaData={content.seoMetaData} />
       <Intro {...content} />
       <GreyBackground>
         <Grid>
@@ -103,6 +103,9 @@ export const query = graphql`
       title
       seoTitle
       seoMetaDescription
+      seoMetaData {
+        ...SEOMetaFields
+      }
       introHeader
       introContent {
         introContent

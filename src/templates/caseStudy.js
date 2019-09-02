@@ -12,7 +12,6 @@ import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
 import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
 import VideoSection from '../components/Common/VideoSection'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import getSocialLogo from '../utils/getSocialLogo'
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
@@ -23,18 +22,9 @@ const CaseStudy = ({
   const videoInfo = body[1]
   const secondTextBlock = body[2]
 
-  const socialLogo = getSocialLogo({
-    ...caseStudy
-  })
-
   return (
     <Layout location={location}>
-      <Head
-        page={{
-          ...caseStudy,
-          socialLogo
-        }}
-      />
+      <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero as="h1" caseStudy={caseStudy} />
       <Grid>
         <FirstTextSection text={firstTextBlock} />
@@ -68,6 +58,9 @@ export const pageQuery = graphql`
     contentfulTemplatedCaseStudy(id: { eq: $id }) {
       slug
       title
+      seoMetaData {
+        ...SEOMetaFields
+      }
       ...TemplatedCaseStudyRelated
       specialities {
         title
@@ -103,13 +96,6 @@ export const pageQuery = graphql`
           url
         }
       }
-      ogImageMeta {
-        file {
-          url
-        }
-      }
-      seoTitle
-      seoMetaDescription
     }
   }
 `

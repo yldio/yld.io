@@ -25,8 +25,7 @@ const StyledHr = styled(Hr)`
 const OpenSource = ({ data, location }) => {
   const {
     contentfulOpenSourcePage: {
-      title,
-      seoDescription,
+      seoMetaData,
       featuredCaseStudy,
       statement,
       talksSectionImage,
@@ -85,7 +84,7 @@ const OpenSource = ({ data, location }) => {
 
   return (
     <Layout location={location} slug={'open-source'}>
-      <Head page={{ title, seoDescription }} />
+      <Head seoMetaData={seoMetaData} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement as="h1">{statement}</Statement>
       <WhyOpenSource
@@ -155,6 +154,9 @@ const OpenSourcePage = props => (
         contentfulOpenSourcePage {
           title
           seoDescription
+          seoMetaData {
+            ...SEOMetaFields
+          }
           eventsSectionImage {
             id
             title
