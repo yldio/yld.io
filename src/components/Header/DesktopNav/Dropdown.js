@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
+import generate from 'shortid'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../utils/headerItemStyles'
 import outlineStyles from '../utils/outlineStyles'
-import topNavItemStyles from './topNavItemStyles'
+import DesktopNavItemStyles from './desktopNavItemStyles'
 import TopNavItem from './TopNavItem'
 
 const DropdownContainer = styled(TopNavItem)`
@@ -36,30 +37,29 @@ const DropdownContainer = styled(TopNavItem)`
 `
 
 const DropdownNameWrapper = styled.span`
+  ${headerItemStyles}
+  ${DesktopNavItemStyles}
+  ${props => !props.clicked && outlineStyles}
   display: flex;
   align-items: center;
-  transition: outline ${props => props.theme.animations.normal} ease-out;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
-  ${headerItemStyles}
-  ${topNavItemStyles}
-  ${props => !props.clicked && outlineStyles}
 
-  ${props =>
+  /* ${props =>
     props.clicked &&
     props.themeVariation === props.theme.variations.dark &&
     props.expanded === true &&
     css`
       &:focus {
-        outline-color: ${props.theme.colors.white};
+        outline-color: rebeccapurple;
       }
-    `}
-`
+    `} */
 
-const DropdownName = styled.span`
-  padding-right: ${remcalc(6)};
-  outline: none;
-  user-select: none;
+  > span {
+    padding-right: ${remcalc(6)};
+    outline: none;
+    user-select: none;
+  }
 `
 
 const DropdownList = styled.ul`
@@ -67,14 +67,16 @@ const DropdownList = styled.ul`
   width: ${remcalc(160)};
   display: flex;
   flex-direction: column;
-  top: ${remcalc(48)};
-  left: -9999px;
-  opacity: 0;
+  top: 100%;
   transition: opacity ${props => props.theme.animations.normal} ease;
   background: ${props => props.theme.colors.greyBg};
   z-index: ${props => props.theme.zIndexes.header};
+
+  display: none;
+  opacity: 0;
+
   ${is('expanded')`
-    left: 0;
+    display: block;
     opacity: 1;
   `};
 `
@@ -86,6 +88,7 @@ export default class Dropdown extends PureComponent {
       isExpanded: false,
       clicked: false
     }
+    this.ref = React.createRef()
   }
 
   /**
@@ -96,24 +99,30 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
-    this.setState({ clicked: true })
+    this.setState(prevState => ({
+      ...prevState,
+      clicked: !prevState.clicked,
+      isExpanded: !prevState.isExpanded
+    }))
   }
 
   handleClick = () => {
     if (!this.hasTouch()) {
+      console.log('clicked')
       return
     }
 
     this.setState(prevState => ({
-      clicked: true,
+      clicked: !prevState.clicked,
       isExpanded: !prevState.isExpanded
     }))
   }
 
   handleItemMouseDown = e => {
-    e.preventDefault()
-    e.stopPropagation()
-    this.setState({ clicked: false })
+    console.log('on mouse item down')
+    console.log(e)
+
+    // this.setState({ clicked: false })
   }
 
   handleFocus = () => {
@@ -127,6 +136,7 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
+    console.log('blur')
     this.setState({ clicked: false, isExpanded: false })
   }
 
@@ -138,13 +148,16 @@ export default class Dropdown extends PureComponent {
     const { items, themeVariation, children, dataEvent } = this.props
     const { isExpanded, clicked } = this.state
 
+    console.log({ isExpanded, clicked })
     return (
       <DropdownContainer
+        ref={this.ref}
         expanded={isExpanded}
         aria-haspopup="true"
         aria-expanded={isExpanded}
         onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
@@ -155,13 +168,13 @@ export default class Dropdown extends PureComponent {
           clicked={clicked}
           themeVariation={themeVariation}
         >
-          <DropdownName data-event={dataEvent}>{children}</DropdownName>
+          <span data-event={dataEvent}>{children}</span>
           <Chevron direction={isExpanded ? 'up' : 'down'} />
         </DropdownNameWrapper>
         <DropdownList expanded={isExpanded}>
           {items.map(({ to, href, label }) => (
             <InnerAnchorItem
-              key={href}
+              key={generate()}
               themeVariation={themeVariation}
               href={href}
               to={to}

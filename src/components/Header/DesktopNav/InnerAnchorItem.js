@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import outlineStyles from '../utils/outlineStyles'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../utils/headerItemStyles'
-import topNavItemStyles from './topNavItemStyles'
+import topNavItemStyles from './desktopNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
@@ -31,7 +31,6 @@ export const InnerAnchorItem = ({
   href,
   activeClassName,
   themeVariation,
-  onMouseDown,
   label,
   ...props
 }) => (
@@ -41,7 +40,6 @@ export const InnerAnchorItem = ({
       to={to}
       title={label}
       activeClassName={activeClassName}
-      onMouseDown={onMouseDown}
     >
       {children}
     </InnerAnchor>
