@@ -70,7 +70,7 @@ const CareerFramework = ({
 
   return (
     <Layout>
-      <Head page={generic} />
+      <Head seoMetaData={discipline.seoMetaData} />
       <Grid>
         <Row>
           <StyledIntroHeaderCol width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
@@ -127,8 +127,6 @@ const CareerFramework = ({
 export const query = graphql`
   query($id: String!) {
     contentfulCareerFramework {
-      seoTitle
-      seoMetaDescription
       introContent {
         content {
           content {
@@ -146,6 +144,9 @@ export const query = graphql`
       id
       title
       slug
+      seoMetaData {
+        ...SEOMetaFields
+      }
       title
       joins {
         title
