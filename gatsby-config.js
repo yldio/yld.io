@@ -106,12 +106,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-medium`,
-      options: {
-        username: `yld-engineering-blog`
-      }
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: GA_TRACKING_ID
