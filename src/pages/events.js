@@ -2,39 +2,49 @@ import React from 'react'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import remcalc from 'remcalc'
 
 import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 import Hr from '../components/Common/Hr'
-import { DisplayTitle } from '../components/Typography'
+import { SectionTitle, DisplayTitle } from '../components/Typography'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import ConferenceCard from '../components/Events/ConferenceCard'
 import EventCard from '../components/Events/EventCard'
 import GreyBackground from '../components/Common/GreyBackground'
 import Image from '../components/Common/Image'
+import BlueBackground from '../components/Common/BlueBackground'
 
 const StyledDisplayTitle = styled(DisplayTitle)`
   padding-top: ${({ theme }) => theme.space[6]};
   padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
-const PageHeader = styled.div`
-  display: flex;
+const StyledRow = styled(Row)`
   align-items: center;
   justify-content: center;
-  background-color: ${props => '#' + props.color};
-  height: 500px;
+  overflow: visible;
+  height: ${remcalc(644)};
   margin-bottom: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[3]};
-  padding-top: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[6]};
 `
 
-const PosterImage = styled(Image)`
-  position: relative;
-  right: -18%;
-  margin-left: -18%;
-  flex: 1 1 0;
+const StyledPosterImage = styled(Image)`
+  height: 100%;
+  width: auto;
+  max-width: inherit;
+`
+
+const StyledSectionTitleCol = styled(Col)`
+  display: flex;
+  align-items: center;
+`
+
+const StyledPosterImageCol = styled(Col)`
+  height: 100%;
+  overflow: visible;
 `
 
 const EventWrapper = styled.div`
@@ -75,12 +85,7 @@ const EventPage = ({
 }) => {
   const events = allEvents.edges
   const conferences = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conference"
-
-  const {
-    introSentence,
-    posterImage: pagePosterImage,
-    posterColor: pagePosterColor
-  } = content
+  const { introSentence, posterImage } = content
 
   return (
     <Layout>
@@ -91,12 +96,20 @@ const EventPage = ({
           seoMetaDescription: eventsPageMeta.description
         }}
       />
-      <PageHeader color={pagePosterColor}>
-        <DisplayTitle style={{ maxWidth: '50%' }} reverse>
-          {introSentence.introSentence}
-        </DisplayTitle>
-        <PosterImage image={pagePosterImage} />
-      </PageHeader>
+      <BlueBackground>
+        <Grid>
+          <StyledRow>
+            {/* <Col width={[1, 1, 1, 1, 1 / 2]}> */}
+            <StyledSectionTitleCol width={[1 / 2]}>
+              <SectionTitle reverse>{introSentence.introSentence}</SectionTitle>
+            </StyledSectionTitleCol>
+            {/* <Col width={[1, 1, 1, 1, 1 / 2]}> */}
+            <StyledPosterImageCol width={[1 / 2]}>
+              <StyledPosterImage image={posterImage} />
+            </StyledPosterImageCol>
+          </StyledRow>
+        </Grid>
+      </BlueBackground>
       <Grid>
         <Row>
           <Col>
