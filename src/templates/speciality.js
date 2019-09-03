@@ -20,7 +20,11 @@ const Speciality = ({ data, location }) => {
 export default Speciality
 
 export const pageQuery = graphql`
-  query($id: String, $postsTags: [String], $postsLimit: Int) {
+  # This should be added back in once the medium/blog post export has
+  # been completed
+  # ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+  # query($id: String, $postsTags: [String], $postsLimit: Int) {
+  query($id: String) {
     contentfulSpeciality(id: { eq: $id }) {
       slug
       title
@@ -317,26 +321,29 @@ export const pageQuery = graphql`
       }
     }
 
-    filteredPosts: allMediumPost(
-      limit: $postsLimit
-      sort: { fields: [firstPublishedAt], order: DESC }
-      filter: {
-        virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
-      }
-    ) {
-      edges {
-        node {
-          id
-          title
-          firstPublishedAt
-          virtuals {
-            tags {
-              slug
-            }
-          }
-          uniqueSlug
-        }
-      }
-    }
+    # This should be added back in once the medium/blog post export has
+    # been completed
+    # ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+    # filteredPosts: allMediumPost(
+    #   limit: $postsLimit
+    #   sort: { fields: [firstPublishedAt], order: DESC }
+    #   filter: {
+    #     virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
+    #   }
+    # ) {
+    #   edges {
+    #     node {
+    #       id
+    #       title
+    #       firstPublishedAt
+    #       virtuals {
+    #         tags {
+    #           slug
+    #         }
+    #       }
+    #       uniqueSlug
+    #     }
+    #   }
+    # }
   }
 `

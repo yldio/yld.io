@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
-import MediumPostPreview from '../components/Blog/MediumPostPreview'
-import Head from '../components/Common/Head'
-import StyledLink from '../components/Common/StyledLink'
-import { Grid, Row, Col } from '../components/grid'
-import { SectionTitle, DisplayTitle } from '../components/Typography'
-import Hr from '../components/Common/Hr'
-import Anchor from '../components/Common/Anchor'
-import GreyBackground from '../components/Common/GreyBackground'
+import Layout from '../../components/layout'
+import MediumPostPreview from '../../components/Blog/MediumPostPreview'
+import Head from '../../components/Common/Head'
+import StyledLink from '../../components/Common/StyledLink'
+import { Grid, Row, Col } from '../../components/grid'
+import { SectionTitle, DisplayTitle } from '../../components/Typography'
+import Hr from '../../components/Common/Hr'
+import Anchor from '../../components/Common/Anchor'
+import GreyBackground from '../../components/Common/GreyBackground'
 
 const blogPageMeta = {
   title: 'Blog',
@@ -124,29 +124,35 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
   )
 }
 
-export const query = graphql`
-  {
-    allMediumPost(limit: 6, sort: { fields: [createdAt], order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          createdAt
-          uniqueSlug
-          virtuals {
-            subtitle
-            previewImage {
-              imageId
-            }
-          }
-          author {
-            username
-            name
-          }
-        }
-      }
-    }
-  }
-`
+/**
+ *
+ * This should be added back in once the medium/blog post export has
+ * been completed.
+ * ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+ */
+// export const query = graphql`
+//   {
+//     allMediumPost(limit: 6, sort: { fields: [createdAt], order: DESC }) {
+//       edges {
+//         node {
+//           id
+//           title
+//           createdAt
+//           uniqueSlug
+//           virtuals {
+//             subtitle
+//             previewImage {
+//               imageId
+//             }
+//           }
+//           author {
+//             username
+//             name
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default BlogPage

@@ -10,8 +10,8 @@ import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
 import Intro from '../components/Homepage/Intro'
 import Events from '../components/Homepage/events/index'
-import LatestPosts from '../components/LatestPosts'
-import BlogListing from '../components/Common/BlogListing'
+// import LatestPosts from '../components/LatestPosts'
+// import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 
 /**
@@ -82,14 +82,19 @@ const IndexPage = ({ data, location }) => {
           </Padding>
         </Grid>
       </GreyBackground>
-      <LatestPosts>
+      {/* 
+        This should be added back in once the medium/blog post export has
+        been completed
+        ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+      */}
+      {/* <LatestPosts>
         {posts => (
           <BlogListing
             title="From the blog"
             posts={posts.map(({ node }) => node).slice(0, 3)}
           />
         )}
-      </LatestPosts>
+      </LatestPosts> */}
       <GreyBackground>
         <Jobs />
       </GreyBackground>

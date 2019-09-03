@@ -12,8 +12,8 @@ import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
 import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
 import Button from '../components/Common/Button'
 import Statement from '../components/Common/Statement'
-import LatestPosts from '../components/LatestPosts'
-import BlogListing from '../components/Common/BlogListing'
+// import LatestPosts from '../components/LatestPosts'
+// import BlogListing from '../components/Common/BlogListing'
 import { CaseStudy } from '../components/Common/CaseStudy'
 import EventSection from '../components/Common/Events'
 import breakpoint from 'styled-components-breakpoint'
@@ -85,7 +85,12 @@ const getBranch = (
             description={eventsSectionDescription}
             eventIcon={eventsSectionImage.file.url}
           />
-          <GreyBackground>
+          {/* 
+            This should be added back in once the medium/blog post export has
+            been completed
+            ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+          */}
+          {/* <GreyBackground>
             <LatestPosts>
               {posts => (
                 <BlogListing
@@ -94,7 +99,7 @@ const getBranch = (
                 />
               )}
             </LatestPosts>
-          </GreyBackground>
+          </GreyBackground> */}
         </Fragment>
       )
     case 'services':

@@ -29,13 +29,18 @@ const navLinks = [
     label: 'Open Source',
     to: '/open-source/'
   },
-  {
-    label: 'Blog',
-    to: '/blog/',
-    attributes: {
-      'data-event': eventLabels.navigationBlog
-    }
-  },
+  /* 
+    This should be added back in once the medium/blog post export has
+    been completed
+    ticket: https://trello.com/c/ozDzAeA3/658-investigate-gatsby-medium-source-plugin-issues
+  */
+  // {
+  //   label: 'Blog',
+  //   to: '/blog/',
+  //   attributes: {
+  //     'data-event': eventLabels.navigationBlog
+  //   }
+  // },
   {
     label: 'About',
     dropdownItems: [
