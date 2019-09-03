@@ -144,7 +144,6 @@ const EventPage = ({
 export const query = graphql`
   query {
     contentfulEventsPage {
-      posterColor
       posterImage {
         fluid(maxWidth: 600) {
           ...GatsbyContentfulFluid_withWebp
