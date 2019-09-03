@@ -104,5 +104,8 @@ Main(async () => {
       return node
     })
 
+  // eslint-disable-next-line
+  console.log('total results: ', results.length)
+
   return results.map(result => publishEntry(environment, result))
 })
