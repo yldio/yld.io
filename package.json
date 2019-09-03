@@ -4,6 +4,7 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
+    "@blocks/kit": "^0.0.28",
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",
     "@yldio/oss-stats": "^1.0.1",
