@@ -71,7 +71,7 @@ const ConferenceList = ({ conferences }) =>
     ))
 
 const EventPage = ({
-  data: { allContentfulMeetupEvent: allEvents, contentfulLandingPage: pageData }
+  data: { allContentfulMeetupEvent: allEvents, contentfulEventsPage: content }
 }) => {
   const events = allEvents.edges
   const conferences = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conference"
@@ -80,7 +80,7 @@ const EventPage = ({
     introSentence,
     posterImage: pagePosterImage,
     posterColor: pagePosterColor
-  } = pageData
+  } = content
 
   return (
     <Layout>
@@ -130,7 +130,7 @@ const EventPage = ({
 
 export const query = graphql`
   query {
-    contentfulLandingPage {
+    contentfulEventsPage {
       posterColor
       posterImage {
         fluid(maxWidth: 600) {
