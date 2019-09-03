@@ -83,13 +83,6 @@ const EventPage = ({
   return (
     <Layout>
       <Head seoMetaData={seoMetaData} />
-      {/* <Head
-        page={{
-          title: eventsPageMeta.title,
-          seoTitle: eventsPageMeta.seoTitle,
-          seoMetaDescription: eventsPageMeta.description
-        }}
-      /> */}
       <BlueBackground>
         <Grid>
           <StyledRow>
