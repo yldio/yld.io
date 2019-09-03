@@ -51,13 +51,6 @@ const EventWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
-const eventsPageMeta = {
-  title: 'Events',
-  description:
-    'Building a constellation of brilliant minds, one meetup at the time',
-  seoTitle: 'A collection of events organised and sponsored by YLD'
-}
-
 const getInTouchData = {
   title: 'Interested in hosting or talking at our meetups?',
   text:
@@ -85,17 +78,18 @@ const EventPage = ({
 }) => {
   const events = allEvents.edges
   const conferences = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conference"
-  const { introSentence, posterImage } = content
+  const { introSentence, posterImage, seoMetaData } = content
 
   return (
     <Layout>
-      <Head
+      <Head seoMetaData={seoMetaData} />
+      {/* <Head
         page={{
           title: eventsPageMeta.title,
           seoTitle: eventsPageMeta.seoTitle,
           seoMetaDescription: eventsPageMeta.description
         }}
-      />
+      /> */}
       <BlueBackground>
         <Grid>
           <StyledRow>
@@ -144,6 +138,9 @@ const EventPage = ({
 export const query = graphql`
   query {
     contentfulEventsPage {
+      seoMetaData {
+        ...SEOMetaFields
+      }
       posterImage {
         fluid(maxWidth: 600) {
           ...GatsbyContentfulFluid_withWebp
