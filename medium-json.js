@@ -1,6 +1,9 @@
 const { createClient } = require('contentful-management')
 const jsonData = require('./json-file.json')
 const Main = require('apr-main')
+const dotenv = require('dotenv')
+
+dotenv.config()
 const { CMS_CRUD, CONTENTFUL_SPACE } = process.env
 const client = createClient({
   accessToken: CMS_CRUD
@@ -10,6 +13,7 @@ const publishEntry = async (environment, postData) => {
   const id = await environment.createEntry('blogPost', postData)
   const newEntry = await environment.getEntry(id.sys.id)
 
+  // eslint-disable-next-line
   console.log(`Adding blog post ${postData.fields.title['en-US']} `)
   return newEntry.publish()
 }
@@ -100,6 +104,5 @@ Main(async () => {
       return node
     })
 
-  console.log(results.length)
-  //   return results.map(result => publishEntry(environment, result))
+  return results.map(result => publishEntry(environment, result))
 })
