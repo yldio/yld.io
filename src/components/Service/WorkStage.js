@@ -42,7 +42,11 @@ const WorkStage = ({ workStage }) => {
         <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={id}>
           <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
             <Padding bottom={1}>
-              <img src={`https://${icon.file.url}`} alt={icon.title} />
+              <img
+                src={`https://${icon.file.url}`}
+                alt={icon.title}
+                height="56px"
+              />
             </Padding>
             <Subtitle noPadding reverse>
               {title}
