@@ -1,6 +1,7 @@
 import React from 'react'
-import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
+import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components'
 
 import { Row, Col } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
@@ -8,6 +9,43 @@ import getSections from './getSections'
 import TitleAndList from '../Common/TitleAndList'
 import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import theme from '../../utils/theme'
+
+const SectionTitlePadding = styled.div`
+  padding-top: 0;
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+  `}
+  
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+    `}
+  
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    `}
+`
+
+const ItemPadding = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('desktop')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+    `}
+`
+
+const ImagePadding = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
+const EmptyPaddingDiv = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('desktop')`
+  padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+`
 
 const WorkStage = ({ workStage }) => {
   const sections = getSections(workStage)
@@ -27,27 +65,20 @@ const WorkStage = ({ workStage }) => {
   return (
     <Row spaced={false}>
       <Col width={[1]}>
-        <Padding
-          top={{
-            smallPhone: 0,
-            smallTablet: 5,
-            tablet: 3.5
-          }}
-          bottom={{ smallPhone: 3, desktop: 4 }}
-        >
+        <SectionTitlePadding>
           <SectionTitle reverse>{workStage.title}</SectionTitle>
-        </Padding>
+        </SectionTitlePadding>
       </Col>
       {sections.map(({ id, title, body, icon }) => (
         <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={id}>
-          <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
-            <Padding bottom={1}>
+          <ItemPadding>
+            <ImagePadding>
               <img
                 src={`https://${icon.file.url}`}
                 alt={icon.title}
                 height="56px"
               />
-            </Padding>
+            </ImagePadding>
             <Subtitle noPadding reverse>
               {title}
             </Subtitle>
@@ -62,10 +93,10 @@ const WorkStage = ({ workStage }) => {
               }}
             />
             {/* eslint-enable react/display-name */}
-          </Padding>
+          </ItemPadding>
         </Col>
       ))}
-      <Padding bottom={{ smallPhone: 3, desktop: 4 }} />
+      <EmptyPaddingDiv />
     </Row>
   )
 }
