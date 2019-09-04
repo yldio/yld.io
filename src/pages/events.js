@@ -81,7 +81,7 @@ const EventPage = ({
   const { introSentence, posterImage, seoMetaData } = content
 
   return (
-    <Layout>
+    <Layout bgColor="blueBg">
       <Head seoMetaData={seoMetaData} />
       <BlueBackground>
         <Grid>
