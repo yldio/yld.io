@@ -56,7 +56,11 @@ const IndexPage = ({ data, location }) => {
   const nonFeaturedEvents = getHomepageMeetups(events.edges)
 
   return (
-    <Layout location={location} bgColor="blueBg">
+    <Layout
+      location={location}
+      footerContactUsId={content.footerContactUs.id}
+      bgColor="blueBg"
+    >
       <Head seoMetaData={content.seoMetaData} />
       <Intro {...content} />
       <GreyBackground>
@@ -214,6 +218,9 @@ export const query = graphql`
         fluid(maxWidth: 250) {
           ...GatsbyContentfulFluid_withWebp_noBase64
         }
+      }
+      footerContactUs {
+        id
       }
     }
     allContentfulMeetupEvent {
