@@ -16,6 +16,10 @@ import GreyBackground from '../components/Common/GreyBackground'
 import Image from '../components/Common/Image'
 import BlueBackground from '../components/Common/BlueBackground'
 
+const StyledBlueBackground = styled(BlueBackground)`
+  margin-top: -${remcalc(40)};
+`
+
 const StyledDisplayTitle = styled(DisplayTitle)`
   padding-top: ${({ theme }) => theme.space[6]};
   padding-bottom: ${({ theme }) => theme.space[6]};
@@ -83,7 +87,7 @@ const EventPage = ({
   return (
     <Layout bgColor="blueBg">
       <Head seoMetaData={seoMetaData} />
-      <BlueBackground>
+      <StyledBlueBackground>
         <Grid>
           <StyledRow>
             {/* <Col width={[1, 1, 1, 1, 1 / 2]}> */}
@@ -96,7 +100,7 @@ const EventPage = ({
             </StyledPosterImageCol>
           </StyledRow>
         </Grid>
-      </BlueBackground>
+      </StyledBlueBackground>
       <Grid>
         <Row>
           <Col>
