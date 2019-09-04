@@ -86,7 +86,8 @@ const TopNavBranding = ({ path, slug }) => (
 
       const isServicePage = serviceSlugs.includes(slug)
       const isSpecialityPage = specialitySlugs.includes(slug)
-      const isHomeOrEventsPage = path === '/' || path.includes('events')
+      const isHomePage = path === '/'
+      const isEventsPage = path.includes('events')
 
       const service = isServicePage
         ? slug
@@ -106,7 +107,8 @@ const TopNavBranding = ({ path, slug }) => (
       return (
         <StyledLinksContainer>
           <LogoLink
-            isHomePage={isHomeOrEventsPage}
+            isHomePage={isHomePage}
+            isEventsPage={isEventsPage}
             isServiceOrSpecialityPage={isServicePage || isSpecialityPage}
             fillColorInitial={fillColorInitial}
             fillColorHover={fillColorHover}
