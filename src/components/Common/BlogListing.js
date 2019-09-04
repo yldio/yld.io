@@ -7,14 +7,12 @@ import { Grid } from '../grid'
 import TitleAndMediaList from '../Common/TitleAndMediaList'
 
 const BlogListing = ({ title, description, posts }) => {
-  const mediaItems = posts.map(
-    ({ id, title, uniqueSlug, firstPublishedAt }) => ({
-      id,
-      title,
-      href: `https://medium.com/yld-blog/${uniqueSlug}`,
-      body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
-    })
-  )
+  const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
+    id,
+    title,
+    href: `https://medium.com/yld-blog/${slug}`,
+    body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
+  }))
 
   return (
     <Grid>

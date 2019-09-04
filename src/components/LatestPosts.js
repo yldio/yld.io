@@ -2,8 +2,8 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
 const POSTS = graphql`
-  query mediumPosts {
-    allMediumPost(
+  query contentfulBlogPosts {
+    allContentfulBlogPost(
       limit: 100
       sort: { fields: [firstPublishedAt], order: DESC }
     ) {
@@ -12,12 +12,8 @@ const POSTS = graphql`
           id
           title
           firstPublishedAt
-          virtuals {
-            tags {
-              slug
-            }
-          }
-          uniqueSlug
+          tags
+          slug
         }
       }
     }
@@ -27,7 +23,9 @@ const POSTS = graphql`
 const LatestPosts = ({ children }) => (
   <StaticQuery
     query={POSTS}
-    render={({ allMediumPost }) => children(allMediumPost.edges)}
+    render={({ allContentfulBlogPost }) =>
+      children(allContentfulBlogPost.edges)
+    }
   />
 )
 
