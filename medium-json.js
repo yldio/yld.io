@@ -1,3 +1,13 @@
+/*
+This script serves the purpose of fetching blog posts data from medium and upload it to contentful so it can be used on pages like blog, speciality, etc without being dependant of gatsby-source-medium.
+
+Before running the script:
+1. manually copy the content from https://medium.com/yld-engineering-blog/latest?format=json&limit=100
+2. paste it and save in a file named "json-file.json" in this directory
+3. strip the begining of the content until the respose object begins: `])}while(1);</x>`
+4. make sure you have CMS_CRUD and CONTENTFUL_SPACE defined on your .env file
+*/
+
 const { createClient } = require('contentful-management')
 const jsonData = require('./json-file.json')
 const Main = require('apr-main')
