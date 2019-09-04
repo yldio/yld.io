@@ -9,6 +9,11 @@ import StyledLink from '../Common/StyledLink'
 import RatioContainer from '../Common/RatioContainer'
 import { CardTitle, BodyPrimary, CalendarDay } from '../Typography'
 
+const StyledRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
 const StyledRatioContainer = styled(RatioContainer)`
   border: solid;
   border-color: ${({ theme }) => theme.colors.border};
@@ -58,8 +63,7 @@ const EventTitlePadding = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing[1]};
 
   ${breakpoint('smallTablet')`
-min-height: ${remcalc(60)};
-
+    min-height: ${remcalc(60)};
 `};
 `
 
@@ -70,17 +74,26 @@ const AlignRightCol = styled(Col)`
 `
 
 const EventCard = ({ event }) => {
-  const dateArray = format(new Date(event.date), 'MMM DD').split(' ')
-  const formattedDate = { month: dateArray[0], day: dateArray[1] }
-  const formattedAddress = event.address.slice(0, 15).trim() // TODO use a proper format for the address
-  const formattedStartTime = format(new Date(event.startTime), 'ha')
-  const formattedEndTime = format(new Date(event.endTime), 'ha')
+  // TODO delete the default value for type and attendees when they can be retrieved
+  const {
+    date,
+    address,
+    startTime,
+    endTime,
+    type = 'type',
+    eventTitle,
+    attendees = 0,
+    linkToEvent
+  } = event
 
-  // TODO delete the default value for type and when you are able to get it from the query
-  const { type = 'type', eventTitle, attendees = 0, linkToEvent } = event
+  const dateArray = format(new Date(date), 'MMM DD').split(' ')
+  const formattedDate = { month: dateArray[0], day: dateArray[1] }
+  const formattedAddress = address.slice(0, 15).trim() // TODO use a proper format for the address
+  const formattedStartTime = format(new Date(startTime), 'ha')
+  const formattedEndTime = format(new Date(endTime), 'ha')
 
   return (
-    <Row style={{ paddingTop: '36px', paddingBottom: '36px' }}>
+    <StyledRow>
       <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
         <DateCard date={formattedDate} />
       </Col>
@@ -119,7 +132,7 @@ const EventCard = ({ event }) => {
           </StyledLink>
         )}
       </AlignRightCol>
-    </Row>
+    </StyledRow>
   )
 }
 

@@ -21,7 +21,7 @@ const StatusWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[2]};
 
   ${breakpoint('smallTablet')`
-     padding-top: 0;
+    padding-top: 0;
     padding-bottom: 0;
   `};
 `
