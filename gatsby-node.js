@@ -55,6 +55,9 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      contentfulCareerFramework {
+        publish
+      }
       allContentfulCareerDiscipline {
         edges {
           node {
@@ -156,18 +159,20 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  _.each(result.data.allContentfulCareerDiscipline.edges, edge => {
-    if (edge.node.slug) {
-      createPage({
-        path: `/career-framework/${edge.node.slug}/`,
-        component: slash(careerDisciplineTemplate),
-        context: {
-          id: edge.node.id,
-          slug: edge.node.slug
-        }
-      })
-    }
-  })
+  if (result.data.contentfulCareerFramework.publish) {
+    _.each(result.data.allContentfulCareerDiscipline.edges, edge => {
+      if (edge.node.slug) {
+        createPage({
+          path: `/career-framework/${edge.node.slug}/`,
+          component: slash(careerDisciplineTemplate),
+          context: {
+            id: edge.node.id,
+            slug: edge.node.slug
+          }
+        })
+      }
+    })
+  }
 }
 
 exports.onPostBuild = async ({ graphql }) => {
