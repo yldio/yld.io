@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -51,10 +51,6 @@ const StyledPosterImageCol = styled(Col)`
   overflow: visible;
 `
 
-const EventWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[4]};
-`
-
 const getInTouchData = {
   title: 'Interested in hosting or talking at our meetups?',
   text:
@@ -64,10 +60,10 @@ const getInTouchData = {
 
 const EventList = ({ events }) =>
   events.slice(0, 4).map(event => (
-    <EventWrapper key={generate()}>
+    <Fragment key={generate()}>
       <Hr />
       <EventCard event={event.node} />
-    </EventWrapper>
+    </Fragment>
   ))
 
 const ConferenceList = ({ conferences }) =>

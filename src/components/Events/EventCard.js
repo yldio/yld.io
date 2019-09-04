@@ -15,9 +15,7 @@ const StyledRow = styled(Row)`
 `
 
 const StyledRatioContainer = styled(RatioContainer)`
-  border: solid;
-  border-color: ${({ theme }) => theme.colors.border};
-  border-width: thin;
+  border: ${remcalc(1)} solid ${({ theme }) => theme.colors.border};
 `
 
 const CalendarMonth = styled(BodyPrimary)`
@@ -33,21 +31,16 @@ const DateCardInner = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
   position: absolute;
-  left: 0;
-  right: 0;
+  height: 100%;
   width: 100%;
-  padding: ${({ theme }) => theme.spacing[3]};
 `
 
 const DateCard = ({ date }) => (
-  <StyledRatioContainer width={100} height={100}>
-    <DateCardInner>
-      <CalendarDay noPadding>{date.day}</CalendarDay>
-      <CalendarMonth noPadding>{date.month.toUpperCase()}</CalendarMonth>
-    </DateCardInner>
-  </StyledRatioContainer>
+  <DateCardInner>
+    <CalendarDay noPadding>{date.day}</CalendarDay>
+    <CalendarMonth noPadding>{date.month.toUpperCase()}</CalendarMonth>
+  </DateCardInner>
 )
 
 const EventTypePadding = styled.div`
@@ -95,7 +88,9 @@ const EventCard = ({ event }) => {
   return (
     <StyledRow>
       <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
-        <DateCard date={formattedDate} />
+        <StyledRatioContainer width={1} height={1}>
+          <DateCard date={formattedDate} />
+        </StyledRatioContainer>
       </Col>
 
       <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
