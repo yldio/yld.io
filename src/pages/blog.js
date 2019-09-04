@@ -61,7 +61,7 @@ const DescriptionMediumLink = styled(Anchor)`
   text-decoration: underline;
 `
 
-const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
+const BlogPage = ({ data: { allContentfulBlogPost: mediumContent } }) => {
   const mediumPosts = mediumContent.edges || []
   const mediumLink = 'https://medium.com/yld-blog'
 
@@ -126,22 +126,21 @@ const BlogPage = ({ data: { allMediumPost: mediumContent } }) => {
 
 export const query = graphql`
   {
-    allMediumPost(limit: 6, sort: { fields: [createdAt], order: DESC }) {
+    allContentfulBlogPost(
+      limit: 6
+      sort: { fields: [firstPublishedAt], order: DESC }
+    ) {
       edges {
         node {
           id
           title
-          createdAt
-          uniqueSlug
-          virtuals {
+          firstPublishedAt
+          slug
+          imageId
+          authorId
+          authorName
+          subtitle {
             subtitle
-            previewImage {
-              imageId
-            }
-          }
-          author {
-            username
-            name
           }
         }
       }

@@ -87,7 +87,7 @@ const InfoCol = styled(Col)`
 
 const TitleAndAuthor = ({
   title,
-  author,
+  authorName,
   formattedDate,
   postUrl,
   authorUrl,
@@ -100,8 +100,8 @@ const TitleAndAuthor = ({
         <CardTitle>{title}</CardTitle>
       </Anchor>
       <AuthorAndDate>
-        {author && (
-          <AuthorMediumLink href={authorUrl}>{author.name}</AuthorMediumLink>
+        {authorName && (
+          <AuthorMediumLink href={authorUrl}>{authorName}</AuthorMediumLink>
         )}
         {' • '}
         {formattedDate}
@@ -112,25 +112,25 @@ const TitleAndAuthor = ({
 
 const MediumPostPreview = ({
   title,
-  createdAt,
-  uniqueSlug,
-  author,
-  virtuals
+  firstPublishedAt,
+  slug,
+  authorName,
+  authorId,
+  subtitle,
+  imageId
 }) => {
   const previewText =
-    virtuals.subtitle.length < 145
-      ? virtuals.subtitle
-      : virtuals.subtitle.slice(0, 145).trim() + '...'
+    subtitle.subtitle.length < 145
+      ? subtitle.subtitle
+      : subtitle.subtitle.slice(0, 145).trim() + '...'
 
   const previewTextSmallTablet = previewText.slice(0, 85).trim() + '...'
 
-  const formattedDate = format(createdAt, 'MMMM DD')
+  const formattedDate = format(firstPublishedAt, 'MMMM DD')
 
-  const imageUrl = `https://cdn-images-1.medium.com/max/1000/${
-    virtuals.previewImage.imageId
-  }`
-  const postUrl = `https://medium.com/yld-blog/${uniqueSlug}`
-  const authorUrl = `https://medium.com/@${author.username}`
+  const imageUrl = `https://cdn-images-1.medium.com/max/1000/${imageId}`
+  const postUrl = `https://medium.com/yld-blog/${slug}`
+  const authorUrl = `https://medium.com/@${authorId}`
 
   const image = {
     file: { url: imageUrl }
@@ -143,9 +143,9 @@ const MediumPostPreview = ({
           show="smallPhone"
           hide="smallTablet"
           title={title}
-          author={author}
-          formattedDate={formattedDate}
+          authorName={authorName}
           authorUrl={authorUrl}
+          formattedDate={formattedDate}
           postUrl={postUrl}
         />
         <Anchor href={postUrl}>
@@ -161,9 +161,9 @@ const MediumPostPreview = ({
         <TitleAndAuthor
           show="smallTablet"
           title={title}
-          author={author}
-          formattedDate={formattedDate}
+          authorName={authorName}
           authorUrl={authorUrl}
+          formattedDate={formattedDate}
           postUrl={postUrl}
         />
         <Col width={[1]} style={{ paddingLeft: 0 }}>

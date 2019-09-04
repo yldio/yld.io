@@ -657,25 +657,14 @@ const data = {
           firstPublishedAt: '2019-02-11',
           virtuals: {
             tags: [
-              {
-                slug: 'nodejs'
-              },
-              {
-                slug: 'software-development'
-              },
-              {
-                slug: 'engineering'
-              },
-              {
-                slug: 'performance'
-              },
-              {
-                slug: 'linux'
-              }
+              'nodejs',
+              'software-development',
+              'engineering',
+              'performance',
+              'linux'
             ]
           },
-          uniqueSlug:
-            'cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb'
+          slug: 'cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb'
         }
       },
       {
@@ -685,24 +674,14 @@ const data = {
           firstPublishedAt: '2018-11-29',
           virtuals: {
             tags: [
-              {
-                slug: 'javascript'
-              },
-              {
-                slug: 'http-request'
-              },
-              {
-                slug: 'nodejs'
-              },
-              {
-                slug: 'quic'
-              },
-              {
-                slug: 'software-development'
-              }
+              'javascript',
+              'http-request',
+              'nodejs',
+              'quic',
+              'software-development'
             ]
           },
-          uniqueSlug: 'quic-k-http-3-c6a4fbc7b947'
+          slug: 'quic-k-http-3-c6a4fbc7b947'
         }
       },
       {
@@ -712,24 +691,14 @@ const data = {
           firstPublishedAt: '2018-11-15',
           virtuals: {
             tags: [
-              {
-                slug: 'nodejs'
-              },
-              {
-                slug: 'design-systems'
-              },
-              {
-                slug: 'react'
-              },
-              {
-                slug: 'agile'
-              },
-              {
-                slug: 'digital-transformation'
-              }
+              'nodejs',
+              'design-systems',
+              'react',
+              'agile',
+              'digital-transformation'
             ]
           },
-          uniqueSlug: 'culture-of-learning-a25081435ce8'
+          slug: 'culture-of-learning-a25081435ce8'
         }
       }
     ]

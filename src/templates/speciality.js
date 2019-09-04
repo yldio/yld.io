@@ -317,24 +317,18 @@ export const pageQuery = graphql`
       }
     }
 
-    filteredPosts: allMediumPost(
+    filteredPosts: allContentfulBlogPost(
       limit: $postsLimit
       sort: { fields: [firstPublishedAt], order: DESC }
-      filter: {
-        virtuals: { tags: { elemMatch: { slug: { in: $postsTags } } } }
-      }
+      filter: { tags: { in: $postsTags } }
     ) {
       edges {
         node {
           id
           title
           firstPublishedAt
-          virtuals {
-            tags {
-              slug
-            }
-          }
-          uniqueSlug
+          tags
+          slug
         }
       }
     }
