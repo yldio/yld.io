@@ -28,16 +28,24 @@ const StyledHomePageLink = styled.div`
 
 const LogoLink = ({
   isHomePage,
+  isEventsPage,
   isServiceOrSpecialityPage,
   fillColorInitial,
   fillColorHover,
   textColor
 }) => {
-  const isSvgLogo = isServiceOrSpecialityPage || isHomePage
   const [fillColor, setFillColor] = useState(fillColorInitial)
 
-  if (isSvgLogo) {
-    return isServiceOrSpecialityPage ? (
+  if (isHomePage) {
+    return (
+      <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
+        <HomepageLogo src={HomepageSvg} alt="yld logo" />
+      </StyledHomePageLink>
+    )
+  }
+
+  if (isServiceOrSpecialityPage) {
+    return (
       <StyledLink
         to="/"
         title="Return to Homepage"
@@ -46,16 +54,16 @@ const LogoLink = ({
       >
         <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
       </StyledLink>
-    ) : (
-      <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
-        <HomepageLogo src={HomepageSvg} alt="yld logo" />
-      </StyledHomePageLink>
     )
   }
 
   return (
     <Link to="/" title="Return to Homepage">
-      <img role="link" width="49" src={logo} alt="yld logo" />
+      {isEventsPage ? (
+        <HomepageLogo src={HomepageSvg} alt="yld logo" />
+      ) : (
+        <img role="link" width="49" src={logo} alt="yld logo" />
+      )}
     </Link>
   )
 }
