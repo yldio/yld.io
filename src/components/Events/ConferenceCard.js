@@ -12,13 +12,13 @@ import { CardTitle, BodyPrimary } from '../Typography'
 
 const BlurbWrapper = styled.div`
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.space[3]};
+    padding-top: ${({ theme }) => theme.space[3]};
   `};
 `
 
 const StatusWrapper = styled.div`
-  padding-top: ${props => props.theme.space[2]};
-  padding-bottom: ${props => props.theme.space[2]};
+  padding-top: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
 
   ${breakpoint('smallTablet')`
      padding-top: 0;

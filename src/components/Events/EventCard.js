@@ -11,7 +11,7 @@ import { CardTitle, BodyPrimary, CalendarDay } from '../Typography'
 
 const StyledRatioContainer = styled(RatioContainer)`
   border: solid;
-  border-color: ${props => props.theme.colors.border};
+  border-color: ${({ theme }) => theme.colors.border};
   border-width: thin;
 `
 
@@ -33,7 +33,7 @@ const DateCardInner = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-  padding: ${props => props.theme.spacing[3]};
+  padding: ${({ theme }) => theme.spacing[3]};
 `
 
 const DateCard = ({ date }) => (
@@ -46,8 +46,8 @@ const DateCard = ({ date }) => (
 )
 
 const EventTypePadding = styled.div`
-  padding-top: ${props => props.theme.spacing[3]};
-  padding-bottom: ${props => props.theme.spacing[2]};
+  padding-top: ${({ theme }) => theme.spacing[3]};
+  padding-bottom: ${({ theme }) => theme.spacing[2]};
 
   ${breakpoint('smallTablet')`
     padding-top: 0;
@@ -55,7 +55,7 @@ const EventTypePadding = styled.div`
 `
 
 const EventTitlePadding = styled.div`
-  padding-bottom: ${props => props.theme.spacing[1]};
+  padding-bottom: ${({ theme }) => theme.spacing[1]};
 
   ${breakpoint('smallTablet')`
 min-height: ${remcalc(60)};
