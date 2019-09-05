@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
 import GetInTouch from '../components/Common/GetInTouch'
@@ -29,10 +30,31 @@ const StyledRow = styled(Row)`
   align-items: center;
   justify-content: center;
   overflow: visible;
-  height: ${remcalc(644)};
-  margin-bottom: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
-  padding-top: ${({ theme }) => theme.space[6]};
+  height: ${remcalc(244)};
+  margin-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-top: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('smalltablet')`
+    height: ${remcalc(394)};
+    margin-bottom: ${({ theme }) => theme.space[4]};
+    padding-bottom: ${({ theme }) => theme.space[4]};
+    padding-top: ${({ theme }) => theme.space[4]};
+  `};
+
+  ${breakpoint('tablet')`
+    height: ${remcalc(544)};
+    margin-bottom: ${({ theme }) => theme.space[5]};
+    padding-bottom: ${({ theme }) => theme.space[5]};
+    padding-top: ${({ theme }) => theme.space[5]};
+  `};
+
+  ${breakpoint('desktop')`
+    height: ${remcalc(644)};
+    margin-bottom: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+    padding-top: ${({ theme }) => theme.space[6]};
+  `};
 `
 
 const StyledPosterImage = styled(Image)`
@@ -83,20 +105,20 @@ const EventPage = ({
   return (
     <Layout bgColor="blueBg">
       <Head seoMetaData={seoMetaData} />
+
       <StyledBlueBackground>
         <Grid>
           <StyledRow>
-            {/* <Col width={[1, 1, 1, 1, 1 / 2]}> */}
-            <StyledSectionTitleCol width={[1 / 2]}>
+            <StyledSectionTitleCol width={[1, 1, 1, 1, 1 / 2]}>
               <SectionTitle reverse>{introSentence.introSentence}</SectionTitle>
             </StyledSectionTitleCol>
-            {/* <Col width={[1, 1, 1, 1, 1 / 2]}> */}
-            <StyledPosterImageCol width={[1 / 2]}>
+            <StyledPosterImageCol width={[1, 1, 1, 1, 1 / 2]}>
               <StyledPosterImage image={posterImage} />
             </StyledPosterImageCol>
           </StyledRow>
         </Grid>
       </StyledBlueBackground>
+
       <Grid>
         <Row>
           <Col>
@@ -109,6 +131,7 @@ const EventPage = ({
           </Col>
         </Row>
       </Grid>
+
       <GreyBackground>
         <GetInTouch
           title={getInTouchData.title}
@@ -116,6 +139,7 @@ const EventPage = ({
           ctaText={getInTouchData.ctaText}
         />
       </GreyBackground>
+
       <Grid>
         <Row>
           <Col>
