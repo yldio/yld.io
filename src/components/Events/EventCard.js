@@ -36,12 +36,18 @@ const DateCardInner = styled.div`
   width: 100%;
 `
 
-const DateCard = ({ date }) => (
-  <DateCardInner>
-    <CalendarDay noPadding>{date.day}</CalendarDay>
-    <CalendarMonth noPadding>{date.month.toUpperCase()}</CalendarMonth>
-  </DateCardInner>
-)
+const DateCard = ({ date }) => {
+  const monthDayArray = format(new Date(date), 'MMM DD').split(' ')
+  const month = monthDayArray[0]
+  const day = monthDayArray[1]
+
+  return (
+    <DateCardInner>
+      <CalendarDay noPadding>{day}</CalendarDay>
+      <CalendarMonth noPadding>{month.toUpperCase()}</CalendarMonth>
+    </DateCardInner>
+  )
+}
 
 const EventTypePadding = styled.div`
   padding-top: ${({ theme }) => theme.spacing[3]};
@@ -79,9 +85,8 @@ const EventCard = ({ event }) => {
     linkToEvent
   } = event
 
-  const dateArray = format(new Date(date), 'MMM DD').split(' ')
-  const formattedDate = { month: dateArray[0], day: dateArray[1] }
   const formattedAddress = address.slice(0, 15).trim() // TODO use a proper format for the address
+
   const formattedStartTime = format(new Date(startTime), 'ha')
   const formattedEndTime = format(new Date(endTime), 'ha')
 
@@ -89,7 +94,7 @@ const EventCard = ({ event }) => {
     <StyledRow>
       <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
         <StyledRatioContainer width={1} height={1}>
-          <DateCard date={formattedDate} />
+          <DateCard date={date} />
         </StyledRatioContainer>
       </Col>
 
@@ -103,8 +108,7 @@ const EventCard = ({ event }) => {
           </CardTitle>
         </EventTitlePadding>
         <BodyPrimary muted noPadding>
-          {formattedAddress} • {formattedStartTime} - {formattedEndTime} •{' '}
-          {attendees} attending
+          {`${formattedAddress} • ${formattedStartTime} - ${formattedEndTime} • ${attendees} attending`}
         </BodyPrimary>
       </Col>
 
