@@ -39,7 +39,7 @@ const DropdownContainer = styled(TopNavItem)`
 const DropdownNameWrapper = styled.span`
   ${headerItemStyles}
   ${DesktopNavItemStyles}
-  ${props => !props.clicked && outlineStyles}
+  ${({ isExpanded }) => !isExpanded && outlineStyles}
   display: flex;
   align-items: center;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
@@ -85,10 +85,8 @@ export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      isExpanded: false,
-      clicked: false
+      isExpanded: false
     }
-    this.ref = React.createRef()
   }
 
   /**
@@ -101,28 +99,24 @@ export default class Dropdown extends PureComponent {
     }
     this.setState(prevState => ({
       ...prevState,
-      clicked: !prevState.clicked,
       isExpanded: !prevState.isExpanded
     }))
   }
 
   handleClick = () => {
     if (!this.hasTouch()) {
-      console.log('clicked')
       return
     }
 
-    this.setState(prevState => ({
-      clicked: !prevState.clicked,
-      isExpanded: !prevState.isExpanded
-    }))
+    this.setState(({ isExpanded }) => {
+      console.log({ isExpanded })
+      return { isExpanded: !isExpanded }
+    })
   }
 
   handleItemMouseDown = e => {
-    console.log('on mouse item down')
-    console.log(e)
-
-    // this.setState({ clicked: false })
+    e.preventDefault()
+    this.setState({ isExpanded: false })
   }
 
   handleFocus = () => {
@@ -132,12 +126,11 @@ export default class Dropdown extends PureComponent {
     this.setState({ isExpanded: true })
   }
 
-  handleBlur = () => {
+  handleBlur = e => {
     if (this.hasTouch()) {
       return
     }
-    console.log('blur')
-    this.setState({ clicked: false, isExpanded: false })
+    this.setState({ isExpanded: false })
   }
 
   hasTouch = () => {
@@ -146,9 +139,8 @@ export default class Dropdown extends PureComponent {
 
   render() {
     const { items, themeVariation, children, dataEvent } = this.props
-    const { isExpanded, clicked } = this.state
+    const { isExpanded } = this.state
 
-    console.log({ isExpanded, clicked })
     return (
       <DropdownContainer
         ref={this.ref}
@@ -157,15 +149,13 @@ export default class Dropdown extends PureComponent {
         aria-expanded={isExpanded}
         onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
-        onMouseUp={this.handleMouseUp}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         themeVariation={themeVariation}
       >
         <DropdownNameWrapper
           tabIndex="0"
-          expanded={isExpanded}
-          clicked={clicked}
+          isExpanded={isExpanded}
           themeVariation={themeVariation}
         >
           <span data-event={dataEvent}>{children}</span>
