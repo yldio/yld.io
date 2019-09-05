@@ -70,7 +70,7 @@ const ConferenceList = ({ conferences }) =>
   conferences
     .slice(0, 3)
     .map(conference => (
-      <ConferenceCard key={generate()} conference={conference.node} />
+      <ConferenceCard key={generate()} event={conference.node} />
     ))
 
 const EventPage = ({
