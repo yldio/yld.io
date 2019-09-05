@@ -89,6 +89,9 @@ const EventCard = ({ event }) => {
 
   const formattedStartTime = format(new Date(startTime), 'ha')
   const formattedEndTime = format(new Date(endTime), 'ha')
+  const eventInfo = `${formattedAddress} • ${formattedStartTime} - ${formattedEndTime} • ${attendees} attending`
+
+  const StyledLinkText = type === 'meetup' ? 'More on Meetup' : 'Get tickets'
 
   return (
     <StyledRow>
@@ -108,28 +111,18 @@ const EventCard = ({ event }) => {
           </CardTitle>
         </EventTitlePadding>
         <BodyPrimary muted noPadding>
-          {`${formattedAddress} • ${formattedStartTime} - ${formattedEndTime} • ${attendees} attending`}
+          {eventInfo}
         </BodyPrimary>
       </Col>
 
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
-        {type === 'meetup' ? (
-          <StyledLink
-            aria-label={`More on Meetup`}
-            to={linkToEvent}
-            title={`More on Meetup`}
-          >
-            More on Meetup
-          </StyledLink>
-        ) : (
-          <StyledLink
-            aria-label={`Get tickets`}
-            to={linkToEvent}
-            title={`Get tickets`}
-          >
-            Get Tickets
-          </StyledLink>
-        )}
+        <StyledLink
+          aria-label={StyledLinkText}
+          to={linkToEvent}
+          title={StyledLinkText}
+        >
+          {StyledLinkText}
+        </StyledLink>
       </AlignRightCol>
     </StyledRow>
   )
