@@ -79,13 +79,14 @@ const EventCard = ({ event }) => {
     address,
     startTime,
     endTime,
-    type = 'type',
+    type = 'TODO - type',
     eventTitle,
-    attendees = 0,
+    attendees = `TODO - ${0}`,
     linkToEvent
   } = event
 
-  const formattedAddress = address.slice(0, 15).trim() // TODO use a proper format for the address
+  // TODO - Still need to get properly formatted address
+  const formattedAddress = address.slice(0, 15).trim()
 
   const formattedStartTime = format(new Date(startTime), 'ha')
   const formattedEndTime = format(new Date(endTime), 'ha')

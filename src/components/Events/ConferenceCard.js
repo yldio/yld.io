@@ -16,7 +16,7 @@ const BlurbWrapper = styled.div`
   `};
 `
 
-const StatusWrapper = styled.div`
+const StyledStatusBodyPrimary = styled(BodyPrimary)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[2]};
 
@@ -29,19 +29,22 @@ const StatusWrapper = styled.div`
 const AnchorWrapper = ({ to, children }) =>
   to ? <Anchor to={to}>{children}</Anchor> : children
 
-const ConferenceCard = ({ conference }) => {
+const ConferenceCard = ({ event }) => {
   const {
-    status = 'status',
+    date,
+    address,
+    status = 'TODO - status',
     eventTitle,
     blurb,
     linkToEvent,
     posterImage,
     ctaText
-  } = conference
+  } = event
 
-  const date = format(new Date(conference.date), 'MMM DD[,] YYYY')
-
-  const address = conference.address.slice(0, 15).trim()
+  const formattedDate = format(new Date(date), 'MMM DD[,] YYYY')
+  // TODO - Still need to get properly formatted address
+  const formattedAddress = address.slice(0, 15).trim()
+  const eventInfo = `${formattedDate} • ${formattedAddress}`
 
   return (
     <Row>
@@ -52,15 +55,11 @@ const ConferenceCard = ({ conference }) => {
       </Col>
 
       <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
-        <StatusWrapper>
-          <BodyPrimary noPadding muted>
-            {status}
-          </BodyPrimary>
-        </StatusWrapper>
+        <StyledStatusBodyPrimary noPadding muted>
+          {status}
+        </StyledStatusBodyPrimary>
         <CardTitle as="h3">{eventTitle}</CardTitle>
-        <BodyPrimary>
-          {date} • {address}{' '}
-        </BodyPrimary>
+        <BodyPrimary>{eventInfo}</BodyPrimary>
       </Col>
 
       <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12, 5 / 12]}>
