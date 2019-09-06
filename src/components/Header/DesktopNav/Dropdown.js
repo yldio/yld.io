@@ -87,6 +87,8 @@ export default class Dropdown extends PureComponent {
     this.state = {
       isExpanded: false
     }
+
+    this.myRef = React.createRef()
   }
 
   /**
@@ -109,13 +111,16 @@ export default class Dropdown extends PureComponent {
     }
 
     this.setState(({ isExpanded }) => {
-      console.log({ isExpanded })
       return { isExpanded: !isExpanded }
     })
   }
 
   handleItemMouseDown = e => {
+    e.persist()
+    console.log('handleItemDown')
     e.preventDefault()
+    console.log({ e })
+    debugger
     this.setState({ isExpanded: false })
   }
 
@@ -130,7 +135,22 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
-    this.setState({ isExpanded: false })
+
+    /**
+     * Here the event gives us `relatedTarget`, this value is a
+     * DOM node of the new focused element, knowing this value
+     * and setting a ref on the DropdownContainer, we can work
+     * out if the new relatedTarget is a child of the DropdownContainer.
+     * This functionality is to make sure that users are able to
+     * tab through the navigation properly.
+     */
+    const isExpanded = this.myRef.current.contains(e.relatedTarget)
+    console.log(
+      this.myRef.current,
+      e.relatedTarget,
+      this.myRef.current.contains(e.relatedTarget)
+    )
+    this.setState({ isExpanded })
   }
 
   hasTouch = () => {
@@ -143,7 +163,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <DropdownContainer
-        ref={this.ref}
+        ref={this.myRef}
         expanded={isExpanded}
         aria-haspopup="true"
         aria-expanded={isExpanded}
