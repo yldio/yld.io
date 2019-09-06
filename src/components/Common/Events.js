@@ -14,7 +14,7 @@ const noEventsMessage = title =>
 
 const getAllUpcomingEvents = events =>
   events
-    .filter(({ node: { date } }) => isAfter(date, endOfYesterday()))
+    .filter(({ date }) => isAfter(date, endOfYesterday()))
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5)
 
@@ -38,8 +38,8 @@ const StyledBodyPrimary = styled(BodyPrimary)`
 `
 
 const EventSection = ({ events, title, description }) => {
-  const displayedEvents = events.length ? getAllUpcomingEvents(events) : []
-  const hasEvents = !!displayedEvents.length
+  const upcomingEvents = events.length ? getAllUpcomingEvents(events) : []
+  const hasEvents = !!upcomingEvents.length
 
   return (
     <Grid>
@@ -68,21 +68,19 @@ const EventSection = ({ events, title, description }) => {
           <Col width={[1, 1, 1, 1, 5 / 12]}>
             {hasEvents ? (
               <ul>
-                {displayedEvents.map(
-                  ({ node: { id, eventTitle, date, linkToEvent } }) => (
-                    <li key={`${id}`}>
-                      <Subtitle noPaddingBottom>
-                        <ExternalAnchor href={linkToEvent} title={eventTitle}>
-                          {eventTitle}
-                        </ExternalAnchor>
-                      </Subtitle>
-                      <BodyPrimary noPaddingTop>
-                        {format(date, 'MMMM DD[,] dddd')}
-                      </BodyPrimary>
-                      <Hr />
-                    </li>
-                  )
-                )}
+                {upcomingEvents.map(({ id, eventTitle, date, linkToEvent }) => (
+                  <li key={id}>
+                    <Subtitle noPaddingBottom>
+                      <ExternalAnchor href={linkToEvent} title={eventTitle}>
+                        {eventTitle}
+                      </ExternalAnchor>
+                    </Subtitle>
+                    <BodyPrimary noPaddingTop>
+                      {format(date, 'MMMM DD[,] dddd')}
+                    </BodyPrimary>
+                    <Hr />
+                  </li>
+                ))}
               </ul>
             ) : (
               noEventsMessage(title)
