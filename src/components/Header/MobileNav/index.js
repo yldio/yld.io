@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import Flex from 'styled-flex-component'
 import is from 'styled-is'
+import generate from 'shortid'
 
 import links from '../utils/navLinks'
 import CloseButton from './CloseButton'
@@ -49,6 +50,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
         links.map(({ label, dropdownItems, attributes, to, href }) =>
           dropdownItems && dropdownItems.length > 0 ? (
             <Dropdown
+              key={generate()}
               items={dropdownItems}
               path={path}
               dataEvent={attributes ? attributes.dataEvent : null}
@@ -57,6 +59,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
             </Dropdown>
           ) : (
             <OuterAnchorItem
+              key={generate()}
               activeClassName="active"
               to={to}
               href={href}

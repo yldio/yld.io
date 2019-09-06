@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
 import generate from 'shortid'
@@ -44,16 +44,6 @@ const DropdownNameWrapper = styled.span`
   align-items: center;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
-
-  /* ${props =>
-    props.clicked &&
-    props.themeVariation === props.theme.variations.dark &&
-    props.expanded === true &&
-    css`
-      &:focus {
-        outline-color: rebeccapurple;
-      }
-    `} */
 
   > span {
     padding-right: ${remcalc(6)};
