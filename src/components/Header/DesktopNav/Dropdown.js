@@ -100,7 +100,6 @@ export default class Dropdown extends PureComponent {
       return
     }
     this.setState(prevState => ({
-      ...prevState,
       isExpanded: !prevState.isExpanded
     }))
   }
@@ -110,17 +109,15 @@ export default class Dropdown extends PureComponent {
       return
     }
 
-    this.setState(({ isExpanded }) => {
-      return { isExpanded: !isExpanded }
-    })
+    this.setState(({ isExpanded }) => ({ isExpanded: !isExpanded }))
   }
 
   handleItemMouseDown = e => {
-    e.persist()
-    console.log('handleItemDown')
+    if (this.hasTouch()) {
+      return
+    }
+
     e.preventDefault()
-    console.log({ e })
-    debugger
     this.setState({ isExpanded: false })
   }
 
@@ -135,7 +132,6 @@ export default class Dropdown extends PureComponent {
     if (this.hasTouch()) {
       return
     }
-
     /**
      * Here the event gives us `relatedTarget`, this value is a
      * DOM node of the new focused element, knowing this value
@@ -145,11 +141,6 @@ export default class Dropdown extends PureComponent {
      * tab through the navigation properly.
      */
     const isExpanded = this.myRef.current.contains(e.relatedTarget)
-    console.log(
-      this.myRef.current,
-      e.relatedTarget,
-      this.myRef.current.contains(e.relatedTarget)
-    )
     this.setState({ isExpanded })
   }
 
