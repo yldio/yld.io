@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import remcalc from 'remcalc'
 
-const sideNavItemStyles = css`
+const mobileNavItemStyles = css`
   font-weight: 400;
   font-size: ${remcalc(21)};
   line-height: ${remcalc(24)};
@@ -9,4 +9,4 @@ const sideNavItemStyles = css`
   margin: ${remcalc('4')};
 `
 
-export default sideNavItemStyles
+export default mobileNavItemStyles

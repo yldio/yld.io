@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../utils/headerItemStyles'
 import outlineStyles from '../utils/outlineStyles'
-import sideNavItemStyles from './sideNavItemStyles'
+import mobileNavItemStyles from './mobileNavItemStyles'
 import outerItemStates from './outerItemStates'
 
 const StyledAnchor = styled(Anchor).attrs(() => ({
@@ -12,7 +12,7 @@ const StyledAnchor = styled(Anchor).attrs(() => ({
 }))`
   display: block;
   ${headerItemStyles}
-  ${sideNavItemStyles}
+  ${mobileNavItemStyles}
 
   ${props => props.states.default}
 

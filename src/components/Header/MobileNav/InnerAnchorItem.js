@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import outlineStyles from '../utils/outlineStyles'
 import Anchor from '../../Common/Anchor'
 import headerItemStyles from '../utils/headerItemStyles'
-import sideNavItemStyles from './sideNavItemStyles'
+import mobileNavItemStyles from './mobileNavItemStyles'
 
 const InnerListItem = styled.li`
   display: flex;
@@ -15,7 +15,7 @@ const InnerListItem = styled.li`
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
-  ${sideNavItemStyles}
+  ${mobileNavItemStyles}
   width: 100%;
 
   background: ${props => props.theme.colors.greyBg};

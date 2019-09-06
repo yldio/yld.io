@@ -38,7 +38,7 @@ const StyledTopNavContainer = styled.nav`
 `
 
 const Header = ({ path, bgColor, slug }) => {
-  const [isSideNavOpen, toggleSideNav] = useState(false)
+  const [isMobileNavOpen, toggleMobileNav] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const isModalPage = !!path.match(trainingModalRegExp)
 
@@ -63,17 +63,17 @@ const Header = ({ path, bgColor, slug }) => {
                   <Branding path={path} slug={slug} />
                   <DesktopNav themeVariation={themeVariation} />
                   <Hamburger
-                    onClick={() => toggleSideNav(true)}
+                    onClick={() => toggleMobileNav(true)}
                     themeVariation={themeVariation}
                   />
                   <Overlay
-                    visible={isSideNavOpen}
-                    onClick={() => toggleSideNav(false)}
+                    visible={isMobileNavOpen}
+                    onClick={() => toggleMobileNav(false)}
                   />
                   <MobileNav
                     path={path}
-                    isOpen={isSideNavOpen}
-                    onClose={() => toggleSideNav(false)}
+                    isOpen={isMobileNavOpen}
+                    onClose={() => toggleMobileNav(false)}
                   />
                 </StyledTopNavContainer>
               </Col>

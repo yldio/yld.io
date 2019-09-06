@@ -9,7 +9,7 @@ import CloseButton from './CloseButton'
 import Dropdown from './Dropdown'
 import OuterAnchorItem from './OuterAnchorItem'
 
-const SideNavPanel = styled.nav`
+const MobileNavPanel = styled.nav`
   position: fixed;
   background: ${props => props.theme.colors.blueBg};
   height: 100vh;
@@ -21,7 +21,7 @@ const SideNavPanel = styled.nav`
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
 
-  /* Thinner version of Sidenav for tablet devices */
+  /* Thinner version of MobileNav for tablet devices */
   @media screen and (min-width: 600px) and (max-width: 959px) {
     width: ${remcalc(295)};
     left: auto;
@@ -37,8 +37,8 @@ const SideNavPanel = styled.nav`
   }
 `
 
-const SideNav = ({ isOpen, onClose, path }) => (
-  <SideNavPanel open={isOpen}>
+const MobileNav = ({ isOpen, onClose, path }) => (
+  <MobileNavPanel open={isOpen}>
     <Flex justifyEnd>
       <CloseButton onClick={onClose} />
     </Flex>
@@ -66,7 +66,7 @@ const SideNav = ({ isOpen, onClose, path }) => (
           )
         )}
     </ul>
-  </SideNavPanel>
+  </MobileNavPanel>
 )
 
-export default SideNav
+export default MobileNav

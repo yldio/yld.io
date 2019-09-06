@@ -5,7 +5,7 @@ import generate from 'shortid'
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
 import headerItemStyles from '../utils/headerItemStyles'
-import sideNavItemStyles from './sideNavItemStyles'
+import mobileNavItemStyles from './mobileNavItemStyles'
 import outerItemStates from './outerItemStates'
 import outlineStyles from '../utils/outlineStyles'
 
@@ -16,7 +16,7 @@ const DropdownNameWrapper = styled.span.attrs(() => ({
   align-items: center;
   cursor: pointer;
   ${headerItemStyles}
-  ${sideNavItemStyles}
+  ${mobileNavItemStyles}
   ${outlineStyles}
 
   ${props => props.states.default}
