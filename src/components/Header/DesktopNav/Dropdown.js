@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import is from 'styled-is'
 import remcalc from 'remcalc'
@@ -71,55 +71,48 @@ const DropdownList = styled.ul`
   `};
 `
 
-export default class Dropdown extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isExpanded: false
-    }
+const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
+  const [isExpanded, toggleDropdown] = useState(false)
+  const dropdownRef = useRef(null)
 
-    this.myRef = React.createRef()
-  }
-
-  /**
-   * The outline is not desired when the user opens the dropdown with the mouse
-   * so we're detecting it on mouse down
-   */
-  handleMouseDown = () => {
-    if (this.hasTouch()) {
-      return
-    }
-    this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded
-    }))
-  }
-
-  handleClick = () => {
-    if (!this.hasTouch()) {
+  console.log({ isExpanded })
+  const handleMouseDown = () => {
+    console.log('handleMouseDown')
+    if (hasTouch()) {
       return
     }
 
-    this.setState(({ isExpanded }) => ({ isExpanded: !isExpanded }))
+    toggleDropdown(!isExpanded)
   }
 
-  handleItemMouseDown = e => {
-    if (this.hasTouch()) {
+  const handleClick = () => {
+    console.log('handleClick')
+    if (!hasTouch()) {
       return
     }
 
+    toggleDropdown(!isExpanded)
+  }
+
+  const handleItemMouseDown = e => {
+    console.log('handleItemMouseDown')
+    // if (hasTouch()) {
+    //   return
+    // }
     e.preventDefault()
-    this.setState({ isExpanded: false })
+    // toggleDropdown(false)
   }
 
-  handleFocus = () => {
-    if (this.hasTouch()) {
+  const handleFocus = () => {
+    if (hasTouch()) {
       return
     }
-    this.setState({ isExpanded: true })
+    toggleDropdown(true)
   }
 
-  handleBlur = e => {
-    if (this.hasTouch()) {
+  const handleBlur = e => {
+    console.log('blur')
+    if (hasTouch()) {
       return
     }
     /**
@@ -130,54 +123,51 @@ export default class Dropdown extends PureComponent {
      * This functionality is to make sure that users are able to
      * tab through the navigation properly.
      */
-    const isExpanded = this.myRef.current.contains(e.relatedTarget)
-    this.setState({ isExpanded })
+    console.log({ d: dropdownRef.current, r: e.relatedTarget })
+    toggleDropdown(dropdownRef.current.contains(e.relatedTarget))
   }
 
-  hasTouch = () => {
+  const hasTouch = () => {
     return 'ontouchstart' in window
   }
 
-  render() {
-    const { items, themeVariation, children, dataEvent } = this.props
-    const { isExpanded } = this.state
-
-    return (
-      <DropdownContainer
-        ref={this.myRef}
-        expanded={isExpanded}
-        aria-haspopup="true"
-        aria-expanded={isExpanded}
-        onClick={this.handleClick}
-        onMouseDown={this.handleMouseDown}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
+  return (
+    <DropdownContainer
+      ref={dropdownRef}
+      expanded={isExpanded}
+      aria-haspopup="true"
+      aria-expanded={isExpanded}
+      onClick={handleClick}
+      onMouseDown={handleMouseDown}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      themeVariation={themeVariation}
+    >
+      <DropdownNameWrapper
+        tabIndex="0"
+        isExpanded={isExpanded}
         themeVariation={themeVariation}
       >
-        <DropdownNameWrapper
-          tabIndex="0"
-          isExpanded={isExpanded}
-          themeVariation={themeVariation}
-        >
-          <span data-event={dataEvent}>{children}</span>
-          <Chevron direction={isExpanded ? 'up' : 'down'} />
-        </DropdownNameWrapper>
-        <DropdownList expanded={isExpanded}>
-          {items.map(({ to, href, label }) => (
-            <InnerAnchorItem
-              key={generate()}
-              themeVariation={themeVariation}
-              href={href}
-              to={to}
-              activeClassName="active"
-              onMouseDown={this.handleItemMouseDown}
-              label={label}
-            >
-              {label}
-            </InnerAnchorItem>
-          ))}
-        </DropdownList>
-      </DropdownContainer>
-    )
-  }
+        <span data-event={dataEvent}>{children}</span>
+        <Chevron direction={isExpanded ? 'up' : 'down'} />
+      </DropdownNameWrapper>
+      <DropdownList expanded={isExpanded}>
+        {items.map(({ to, href, label }) => (
+          <InnerAnchorItem
+            key={generate()}
+            themeVariation={themeVariation}
+            href={href}
+            to={to}
+            activeClassName="active"
+            onMouseDown={handleItemMouseDown}
+            label={label}
+          >
+            {label}
+          </InnerAnchorItem>
+        ))}
+      </DropdownList>
+    </DropdownContainer>
+  )
 }
+
+export default Dropdown
