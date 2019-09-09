@@ -6,19 +6,19 @@ import { port, baseUrl, getWindowLocation } from './helper'
 require('dotenv').config()
 let server
 
-fixture`Side Nav Menu`.page`${baseUrl}`
+fixture`mobile Nav Menu`.page`${baseUrl}`
   .before(async () => {
     server = createServer(port)
   })
   .after(() => server.close())
 
-const openSideNav = async t => {
+const openMobileNav = async t => {
   const hamburger = await Selector('[class^="Hamburger"')
   // 414 x 736 is the viewport of the iphone 6
   await t.resizeWindow(414, 736).click(hamburger)
 }
 
-fixture`Side Nav Menu`.page`${baseUrl}`
+fixture`mobile Nav Menu`.page`${baseUrl}`
   .before(async () => {
     server = createServer(port)
   })
@@ -34,85 +34,99 @@ test('a hamburger is present on the page', async t => {
   await t.expect(hamburger.exists).ok()
 })
 
-test('the side nav is not expanded at its initial state', async t => {
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
-  await t.expect(sideNavPanel.exists).notOk()
+test('the mobile nav is not expanded at its initial state', async t => {
+  const mobileNavPanel = Selector('nav[class^="MobileNav"').withAttribute(
+    'open'
+  )
+  await t.expect(mobileNavPanel.exists).notOk()
 })
 
-test('when the hamburger button is clicked the side nav expands', async t => {
-  await openSideNav(t)
+test('when the hamburger button is clicked the mobile nav expands', async t => {
+  await openMobileNav(t)
 
-  const sideNavPanel = Selector('nav[class^="SideNav"').withAttribute('open')
-  await t.expect(sideNavPanel.exists).ok()
+  const mobileNavPanel = Selector('nav[class^="MobileNav"').withAttribute(
+    'open'
+  )
+  await t.expect(mobileNavPanel.exists).ok()
 })
 
-test('clicking a side Nav link redirects to the correct url and closes the side Nav', async t => {
-  await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+test('clicking a mobile Nav link redirects to the correct url and closes the mobile Nav', async t => {
+  await openMobileNav(t)
+  const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
+    'open'
+  )
 
-  const joinUsLink = sideNavPanel.find('a').withText('Contact')
+  const joinUsLink = mobileNavPanel.find('a').withText('Contact')
   await t.click(joinUsLink)
 
   const location = await getWindowLocation()
   await t.expect(location.href).contains(`${baseUrl}/contact`)
-  await t.expect(sideNavPanel.exists).notOk()
+  await t.expect(mobileNavPanel.exists).notOk()
 })
 
-test('when the side nav expands for the first time no sub-item is shown by default', async t => {
-  await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+test('when the mobile nav expands for the first time no sub-item is shown by default', async t => {
+  await openMobileNav(t)
+  const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
+    'open'
+  )
 
-  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  const engineeringSubItem = mobileNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).notOk()
 })
 
 test('when an item is clicked its sub-items appear', async t => {
-  await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+  await openMobileNav(t)
+  const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
+    'open'
+  )
 
-  const servicesItem = sideNavPanel.find('span').withText('Services')
+  const servicesItem = mobileNavPanel.find('span').withText('Services')
   await t.click(servicesItem)
 
-  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  const engineeringSubItem = mobileNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).ok()
 })
 
-test('clicking a sub-item redirects to the correct url and closes the side Nav', async t => {
-  await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+test('clicking a sub-item redirects to the correct url and closes the mobile Nav', async t => {
+  await openMobileNav(t)
+  const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
+    'open'
+  )
 
-  const servicesItem = sideNavPanel.find('span').withText('Services')
+  const servicesItem = mobileNavPanel.find('span').withText('Services')
   await t.click(servicesItem)
 
-  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  const engineeringSubItem = mobileNavPanel.find('a').withText('Engineering')
   await t.click(engineeringSubItem)
 
   const location = await getWindowLocation()
   await t.expect(location.href).contains(`${baseUrl}/engineering`)
-  await t.expect(sideNavPanel.exists).notOk()
+  await t.expect(mobileNavPanel.exists).notOk()
 })
 
-test('After a sub-item has been clicked and if the sideNav is re-opened, the subitems are still visible and the selected one highlighted', async t => {
-  await openSideNav(t)
-  const sideNavPanel = Selector('nav[class^="SideNav"]').withAttribute('open')
+test('After a sub-item has been clicked and if the MobileNav is re-opened, the subitems are still visible and the selected one highlighted', async t => {
+  await openMobileNav(t)
+  const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
+    'open'
+  )
 
-  const servicesItem = sideNavPanel.find('span').withText('Services')
+  const servicesItem = mobileNavPanel.find('span').withText('Services')
   await t.click(servicesItem)
 
-  const designSubItem = sideNavPanel.find('a').withText('Design')
+  const designSubItem = mobileNavPanel.find('a').withText('Design')
   await t.click(designSubItem)
-  await openSideNav(t)
+  await openMobileNav(t)
 
-  const engineeringSubItem = sideNavPanel.find('a').withText('Engineering')
+  const engineeringSubItem = mobileNavPanel.find('a').withText('Engineering')
   await t.expect(engineeringSubItem.exists).ok()
 
-  const inactiveSubItem = sideNavPanel
+  const inactiveSubItem = mobileNavPanel
     .find('a')
     .withText('Engineering')
     .withAttribute('active')
   await t.expect(inactiveSubItem.exists).notOk()
 
-  const activeSubItem = sideNavPanel
+  const activeSubItem = mobileNavPanel
     .find('a[class$="active"]')
     .withText('Design')
   await t.expect(activeSubItem.exists).ok()

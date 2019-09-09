@@ -1,44 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 import find from 'lodash.find'
 import { StaticQuery, graphql } from 'gatsby'
 
-import LogoLink from './LogoLink'
-import ServiceLink from './ServiceLink'
-import OuterAnchorItem from './OuterAnchorItem'
-import Dropdown from './Dropdown'
-import { logoColors } from '../navLinksHelper'
-
-const StyledTopNavContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: ${remcalc(84)};
-`
+import LogoLink from './DesktopNav/LogoLink'
+import ServiceLink from './DesktopNav/ServiceLink'
+import { logoColors } from './utils/navLinksHelper'
 
 const StyledLinksContainer = styled.div`
   display: flex;
   align-items: center;
 `
 
-const TopNavList = styled.ul`
-  ${breakpoint('smallPhone')`
-    display: none;
-  `}
-
-  @media screen and (min-width: 960px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
-    padding-right: ${remcalc(0)};
-  }
-`
-
 const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i)
-
 const getColour = (arr, slug) => (find(arr, { slug }) || {}).logoColour
 
 const getSpecialitiesToServices = (services = []) =>
@@ -149,42 +123,4 @@ const TopNavBranding = ({ path, slug }) => (
   />
 )
 
-const TopNav = ({ links, themeVariation, path, slug }) => (
-  <StyledTopNavContainer>
-    <TopNavBranding slug={slug} path={path} />
-    <TopNavList>
-      {links.map((link, idx) => {
-        if (link.dropdownItems) {
-          const { label, dropdownItems, attributes } = link
-          return (
-            <Dropdown
-              key={idx}
-              themeVariation={themeVariation}
-              items={dropdownItems}
-              dataEvent={attributes ? attributes.dataEvent : null}
-            >
-              {label}
-            </Dropdown>
-          )
-        } else {
-          const { label, to, href, attributes } = link
-          return (
-            <OuterAnchorItem
-              key={idx}
-              themeVariation={themeVariation}
-              activeClassName="active"
-              to={to}
-              href={href}
-              title={label}
-              attributes={attributes}
-            >
-              {label}
-            </OuterAnchorItem>
-          )
-        }
-      })}
-    </TopNavList>
-  </StyledTopNavContainer>
-)
-
-export default TopNav
+export default TopNavBranding

@@ -4,7 +4,7 @@ import remcalc from 'remcalc'
 
 import close from '../../../images/close.svg'
 import { UnstyledButton } from '../../Common/Button'
-import outlineStyles from '../outlineStyles'
+import outlineStyles from '../utils/outlineStyles'
 
 const StyledButton = styled(UnstyledButton)`
   width: ${remcalc(80)};

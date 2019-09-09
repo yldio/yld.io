@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 
-import { UnstyledButton } from '../Common/Button'
-import outlineStyles from './outlineStyles'
+import { UnstyledButton } from '../../Common/Button'
+import outlineStyles from '../utils/outlineStyles'
 
 const HamburgerSvg = styled.svg`
   fill: ${({ themeVariation, theme }) =>
