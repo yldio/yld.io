@@ -39,6 +39,20 @@ export const InnerAnchorItem = ({
       href={href}
       to={to}
       title={label}
+      /**
+       * Tab Index here is very important! It
+       * allows e.relatedTarget in Dropdown.js to
+       * get this dropdown element to perform the
+       * dropdown.contains(e.relatedTarget) check!
+       *
+       * Without tabindex={0} to relatedTarget is the
+       * gatsby app wrapper element that wraps the
+       * entire app, i.e. not what we want!
+       *
+       * Do not remove unless with good reason, always
+       * perform cross browser testing!
+       */
+      tabindex={0}
       activeClassName={activeClassName}
     >
       {children}
