@@ -837,20 +837,16 @@ const talkData = [
 
 const eventsData = [
   {
-    node: {
-      id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
-      eventTitle: 'This is a FAKE Node event',
-      date: '2030-01-15T09:30',
-      linkToEvent: 'https://fakelink.com'
-    }
+    id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
+    eventTitle: 'This is a FAKE Node event',
+    date: '2030-01-15T09:30',
+    linkToEvent: 'https://fakelink.com'
   },
   {
-    node: {
-      id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
-      eventTitle: 'This is a second fake Node event',
-      date: '2030-09-15T09:30',
-      linkToEvent: 'https://fakelink.com'
-    }
+    id: '5de0f519-22b7-5237-977a-8a27c192ccdf',
+    eventTitle: 'This is a second fake Node event',
+    date: '2030-09-15T09:30',
+    linkToEvent: 'https://fakelink.com'
   }
 ]
 
