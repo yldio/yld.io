@@ -1,4 +1,3 @@
-import { isAfter, endOfYesterday } from 'date-fns'
 import Get from 'lodash.get'
 import IsNull from 'lodash.isnull'
 
@@ -6,24 +5,6 @@ const getExternalType = (flattenedSpeciality, type) =>
   flattenedSpeciality.externalResources.filter(
     additionalInfo => additionalInfo.type === type
   ) || []
-
-const isSpecialityEvent = (eventTitle, title) => {
-  const formattedTitle = title
-    .toLowerCase()
-    .replace(/(\.|js)/gi, '')
-    .trim()
-
-  return eventTitle.toLowerCase().includes(formattedTitle)
-}
-
-const getSpecialityEvents = (title, events) =>
-  events
-    .filter(
-      ({ node: { eventTitle, date } }) =>
-        isSpecialityEvent(eventTitle, title) && isAfter(date, endOfYesterday())
-    )
-    .sort((a, b) => (a.date <= b.date ? -1 : 1))
-    .slice(0, 5)
 
 const flattenSpeciality = speciality => {
   return {
@@ -132,4 +113,4 @@ const flattenSpeciality = speciality => {
   }
 }
 
-export { getExternalType, getSpecialityEvents, flattenSpeciality }
+export { getExternalType, flattenSpeciality }

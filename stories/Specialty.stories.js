@@ -138,7 +138,7 @@ class StorySpecialityWrapper extends Component {
         externalResources
       },
       allContentfulMeetupEvent: {
-        edges: events ? eventsData : []
+        nodes: events ? eventsData : []
       }
     }
   }
