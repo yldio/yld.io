@@ -75,32 +75,12 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
   const [isExpanded, toggleDropdown] = useState(false)
   const dropdownRef = useRef(null)
 
-  console.log({ isExpanded })
-  const handleMouseDown = () => {
-    console.log('handleMouseDown')
-    if (hasTouch()) {
-      return
-    }
-
-    toggleDropdown(!isExpanded)
-  }
-
   const handleClick = () => {
-    console.log('handleClick')
     if (!hasTouch()) {
       return
     }
 
     toggleDropdown(!isExpanded)
-  }
-
-  const handleItemMouseDown = e => {
-    console.log('handleItemMouseDown')
-    // if (hasTouch()) {
-    //   return
-    // }
-    e.preventDefault()
-    // toggleDropdown(false)
   }
 
   const handleFocus = () => {
@@ -111,7 +91,6 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
   }
 
   const handleBlur = e => {
-    console.log('blur')
     if (hasTouch()) {
       return
     }
@@ -123,7 +102,6 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
      * This functionality is to make sure that users are able to
      * tab through the navigation properly.
      */
-    console.log({ d: dropdownRef.current, r: e.relatedTarget })
     toggleDropdown(dropdownRef.current.contains(e.relatedTarget))
   }
 
@@ -138,7 +116,6 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
       aria-haspopup="true"
       aria-expanded={isExpanded}
       onClick={handleClick}
-      onMouseDown={handleMouseDown}
       onFocus={handleFocus}
       onBlur={handleBlur}
       themeVariation={themeVariation}
@@ -159,7 +136,6 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
             href={href}
             to={to}
             activeClassName="active"
-            onMouseDown={handleItemMouseDown}
             label={label}
           >
             {label}
