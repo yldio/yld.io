@@ -52,7 +52,7 @@ const OpenSource = ({ data, location }) => {
       eventsSectionImage,
       eventsSectionDescription
     },
-    allContentfulMeetupEvent: { edges: events }
+    allContentfulMeetupEvent: { nodes: events }
   } = data
 
   const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
@@ -142,13 +142,11 @@ const OpenSourcePage = props => (
     query={graphql`
       query {
         allContentfulMeetupEvent {
-          edges {
-            node {
-              id
-              eventTitle
-              date
-              linkToEvent
-            }
+          nodes {
+            id
+            eventTitle
+            date
+            linkToEvent
           }
         }
         contentfulOpenSourcePage {

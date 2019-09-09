@@ -9,11 +9,7 @@ import {
   howWeWorkSchema
 } from './speciality/schemas'
 
-import {
-  getExternalType,
-  getSpecialityEvents,
-  flattenSpeciality
-} from './speciality/methods'
+import { getExternalType, flattenSpeciality } from './speciality/methods'
 
 import IntroSection from '../components/Speciality/Intro'
 import ProjectsSection from '../components/Speciality/Projects'
@@ -34,7 +30,7 @@ export const SpecialityView = props => {
   const {
     data: {
       contentfulSpeciality: speciality,
-      allContentfulMeetupEvent: { edges: events },
+      allContentfulMeetupEvent: { nodes: events },
       videoIcon,
       filteredPosts = []
     }
@@ -61,8 +57,6 @@ export const SpecialityView = props => {
   const talks = getExternalType(flattenedSpeciality, `Talk`)
   const tutorials = getExternalType(flattenedSpeciality, `Tutorial`)
   const books = getExternalType(flattenedSpeciality, `Book`)
-  const specialityEvents =
-    events && events.length > 0 ? getSpecialityEvents(title, events) : []
 
   const renderProjectsSection =
     validateProjects(relatedProjects) || validateClients(clients)
@@ -98,11 +92,7 @@ export const SpecialityView = props => {
       )}
 
       {renderCommunitySection && <CommunitySection {...flattenedSpeciality} />}
-      <EventSection
-        events={specialityEvents}
-        title={title}
-        eventIcon={eventIcon}
-      />
+      <EventSection events={events} title={title} eventIcon={eventIcon} />
 
       {renderTalksSection && (
         <TalksSection talks={talks} videoIcon={videoIcon} />
