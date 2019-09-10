@@ -49,6 +49,7 @@ const QUERY = graphql`
             }
           }
         }
+        title
         personCopy {
           personCopy
         }

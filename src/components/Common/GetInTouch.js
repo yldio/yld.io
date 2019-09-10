@@ -3,36 +3,72 @@ import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Row, Col, Grid } from '../grid'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import { Padding } from 'styled-components-spacing'
+import { DisplayTitle, BodyPrimary } from '../Typography'
+
 import StyledLink from './StyledLink'
 
-const RowLayout = styled(Row)`
-  ${breakpoint('desktop')`
-    justify-content: space-between;
+const Profile = props => {
+  const { title, genericCopy, genericCtaText, genericCtaUrl } = props
+  return (
+    <Grid>
+      <Row>
+        <Col width={[1, 1, 1, 1, 6 / 12]}>
+          <DisplayTitle>{title}</DisplayTitle>
+        </Col>
+        <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+          <BodyPrimary>{genericCopy.genericCopy}</BodyPrimary>
+          <StyledLink to={genericCtaUrl} title={genericCtaText}>
+            {genericCtaText}
+          </StyledLink>
+        </Col>
+      </Row>
+    </Grid>
+  )
+}
+
+const GenericRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+    padding-bottom: ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
-const GetInTouch = ({ title, contactText, ctaText = 'Get in touch' }) => (
-  <Grid>
-    <Padding
-      top={{ smallPhone: 3.5, tablet: 5 }}
-      bottom={{ smallPhone: 3.5, tablet: 5 }}
-    >
-      <RowLayout>
-        <Col width={[1, 1, 1, 1, 6 / 12]}>
-          <SectionTitle>{title}</SectionTitle>
-        </Col>
-        <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-          <BodyPrimary>{contactText}</BodyPrimary>
-          <StyledLink to="/contact/" title={ctaText}>
-            {ctaText}
+const GenericCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const Generic = props => {
+  const { title, genericCopy, genericCtaText, genericCtaUrl } = props
+  return (
+    <Grid>
+      <GenericRow>
+        <GenericCol width={[1]}>
+          <DisplayTitle>{title}</DisplayTitle>
+        </GenericCol>
+        <GenericCol width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+          <BodyPrimary noPadding>{genericCopy.genericCopy}</BodyPrimary>
+        </GenericCol>
+        <Col width={[1]}>
+          <StyledLink to={genericCtaUrl} title={genericCtaText}>
+            {genericCtaText}
           </StyledLink>
         </Col>
-      </RowLayout>
-    </Padding>
-  </Grid>
-)
+      </GenericRow>
+    </Grid>
+  )
+}
+const GetInTouch = props => {
+  const { genericCopy } = props
+  return genericCopy ? <Generic {...props} /> : <Profile {...props} />
+}
 
 GetInTouch.propTypes = {
   title: PropTypes.string.isRequired,
