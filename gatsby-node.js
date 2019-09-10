@@ -167,6 +167,34 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
+exports.onPreBuild = async ({ graphql }) => {
+  const data = await graphql(`
+    allContentfulBlogPost {
+      edges {
+        node {
+          markdown
+          slug
+        }
+      }
+    }
+  `)
+
+  if (data.error) {
+    throw new Error('blogPosts.error')
+  }
+
+  // only render a limited number of blog posts in development env
+  // const blogPosts = isProd ? data.edges.node : data.edges.node[0];
+  const blogPosts = data.edges.node
+
+  // write all blog posts to local files
+  Map(blogPosts, async ({ markdown, slug }) => {
+    // eslint-disable-next-line
+    console.log('-----generating:', slug)
+    await writeFile(`${__dirname}/posts/${slug}.mdx`, markdown)
+  })
+}
+
 exports.onPostBuild = async ({ graphql }) => {
   /**
    * Grab a bunch of meta information from the site and make public
