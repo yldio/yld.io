@@ -15,7 +15,9 @@ const Speciality = ({ data, location }) => {
       slug={slug}
       title={title}
       location={location}
-      footerContactUsId={speciality.footerContactUs.id}
+      footerContactUsId={
+        speciality.footerContactUs && speciality.footerContactUs.id
+      }
     >
       <Head seoMetaData={seoMetaData} />
       <SpecialityView data={data} />
