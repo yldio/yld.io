@@ -23,7 +23,10 @@ const CaseStudy = ({
   const secondTextBlock = body[2]
 
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      footerContactUsId={caseStudy.footerContactUs.id}
+    >
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero as="h1" caseStudy={caseStudy} />
       <Grid>
@@ -95,6 +98,9 @@ export const pageQuery = graphql`
         file {
           url
         }
+      }
+      footerContactUs {
+        id
       }
     }
   }

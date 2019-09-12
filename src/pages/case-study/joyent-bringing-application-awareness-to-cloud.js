@@ -91,7 +91,7 @@ const IndexPage = ({
   }
 }) => {
   return (
-    <Layout>
+    <Layout footerContactUsId={caseStudy.footerContactUs.id}>
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <Grid>
@@ -459,6 +459,9 @@ export const query = graphql`
         id
       }
       posterColor
+      footerContactUs {
+        id
+      }
     }
   }
 `
