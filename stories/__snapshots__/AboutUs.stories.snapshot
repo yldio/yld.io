@@ -1635,6 +1635,7 @@ exports[`Storyshots AboutUs StaffCard 1`] = `
       <a
         className="c9"
         href="https://www.linkedin.com/in/nunojob/"
+        imageSize={24}
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
