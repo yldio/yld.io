@@ -16,7 +16,9 @@ export default function PagePaths(props) {
               node {
                 id
                 path
-                id
+                context {
+                  id
+                }
               }
             }
           }
