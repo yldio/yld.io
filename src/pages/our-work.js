@@ -172,8 +172,6 @@ const OurWorkPage = props => (
               slug
               title
               id
-              seoTitle
-              seoMetaDescription
               services {
                 ... on ContentfulService {
                   title
@@ -200,8 +198,6 @@ const OurWorkPage = props => (
               slug
               title
               id
-              seoTitle
-              seoMetaDescription
               services {
                 ... on ContentfulService {
                   title
@@ -229,8 +225,6 @@ const OurWorkPage = props => (
               slug
               title
               id
-              seoTitle
-              seoMetaDescription
               services {
                 ... on ContentfulService {
                   title

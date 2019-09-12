@@ -258,7 +258,7 @@ class ContactUs extends Component {
           eventsSectionImage,
           eventsSectionDescription
         },
-        allContentfulMeetupEvent: { edges: events },
+        allContentfulMeetupEvent: { nodes: events },
         allContentfulTemplatedCaseStudy,
         allContentfulNonTemplatedCaseStudy
       }
@@ -420,15 +420,12 @@ const Contact = props => (
             }
           }
         }
-
         allContentfulMeetupEvent {
-          edges {
-            node {
-              id
-              eventTitle
-              date
-              linkToEvent
-            }
+          nodes {
+            id
+            eventTitle
+            date
+            linkToEvent
           }
         }
         contentfulOpenSourcePage {

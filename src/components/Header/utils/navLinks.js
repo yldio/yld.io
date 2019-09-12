@@ -1,4 +1,4 @@
-import eventLabels from '../../utils/eventLabels'
+import eventLabels from '../../../utils/eventLabels'
 
 const navLinks = [
   {

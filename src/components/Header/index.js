@@ -1,11 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import navLinks from './navLinks'
+import remcalc from 'remcalc'
 import { Row, Col, Grid } from '../grid'
-import Hamburger from './Hamburger'
-import Overlay from './Overlay'
-import TopNav from './TopNav'
-import SideNav from './SideNav'
+import Hamburger from './MobileNav/Hamburger'
+import Overlay from './utils/Overlay'
+import Branding from './Branding'
+import DesktopNav from './DesktopNav'
+import MobileNav from './MobileNav'
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -29,8 +30,15 @@ const getThemeVariation = bgColor => {
   return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white'
 }
 
+const StyledTopNavContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: ${remcalc(84)};
+`
+
 const Header = ({ path, bgColor, slug }) => {
-  const [isSideNavOpen, toggleSideNav] = useState(false)
+  const [isMobileNavOpen, toggleMobileNav] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const isModalPage = !!path.match(trainingModalRegExp)
 
@@ -51,27 +59,23 @@ const Header = ({ path, bgColor, slug }) => {
           <Grid>
             <Row style={{ overflow: 'visible' }}>
               <Col width={[1]} style={{ overflow: 'visible' }}>
-                <TopNav
-                  path={path}
-                  slug={slug}
-                  links={navLinks}
-                  themeVariation={themeVariation}
-                />
-                <Hamburger
-                  onClick={() => toggleSideNav(true)}
-                  themeVariation={themeVariation}
-                />
-                <Overlay
-                  visible={isSideNavOpen}
-                  onClick={() => toggleSideNav(false)}
-                />
-                <SideNav
-                  path={path}
-                  links={navLinks}
-                  themeVariation="dark"
-                  isOpen={isSideNavOpen}
-                  onClose={() => toggleSideNav(false)}
-                />
+                <StyledTopNavContainer>
+                  <Branding path={path} slug={slug} />
+                  <DesktopNav themeVariation={themeVariation} />
+                  <Hamburger
+                    onClick={() => toggleMobileNav(true)}
+                    themeVariation={themeVariation}
+                  />
+                  <Overlay
+                    visible={isMobileNavOpen}
+                    onClick={() => toggleMobileNav(false)}
+                  />
+                  <MobileNav
+                    path={path}
+                    isOpen={isMobileNavOpen}
+                    onClose={() => toggleMobileNav(false)}
+                  />
+                </StyledTopNavContainer>
               </Col>
             </Row>
           </Grid>

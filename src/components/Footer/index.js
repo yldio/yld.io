@@ -24,7 +24,7 @@ const showGetInTouch = pathname => {
 
   return (
     !['contact', 'training', 'join-us'].includes(path) &&
-    !path.startsWith('speciality/')
+    ['speciality/', 'career-framework/'].every(p => !path.startsWith(p))
   )
 }
 

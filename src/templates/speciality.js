@@ -295,14 +295,14 @@ export const pageQuery = graphql`
       contactText
     }
 
-    allContentfulMeetupEvent {
-      edges {
-        node {
-          id
-          eventTitle
-          date
-          linkToEvent
-        }
+    allContentfulMeetupEvent(
+      filter: { specialities: { elemMatch: { id: { in: [$id] } } } }
+    ) {
+      nodes {
+        id
+        eventTitle
+        date
+        linkToEvent
       }
     }
 

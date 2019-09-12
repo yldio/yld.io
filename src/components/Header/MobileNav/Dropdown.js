@@ -4,10 +4,10 @@ import generate from 'shortid'
 
 import Chevron from '../../Common/Chevron'
 import InnerAnchorItem from './InnerAnchorItem'
-import headerItemStyles from '../headerItemStyles'
-import sideNavItemStyles from './sideNavItemStyles'
+import headerItemStyles from '../utils/headerItemStyles'
+import mobileNavItemStyles from './mobileNavItemStyles'
 import outerItemStates from './outerItemStates'
-import outlineStyles from '../outlineStyles'
+import outlineStyles from '../utils/outlineStyles'
 
 const DropdownNameWrapper = styled.span.attrs(() => ({
   states: outerItemStates
@@ -16,7 +16,7 @@ const DropdownNameWrapper = styled.span.attrs(() => ({
   align-items: center;
   cursor: pointer;
   ${headerItemStyles}
-  ${sideNavItemStyles}
+  ${mobileNavItemStyles}
   ${outlineStyles}
 
   ${props => props.states.default}
@@ -31,15 +31,14 @@ const DropdownName = styled.span`
   max-width: 320px;
   flex: 1;
 `
-
 const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
   background: ${props => props.theme.colors.greyBg};
-  padding: ${props => props.theme.spacing[1]} 0
-    ${props => props.theme.spacing[1]} 0;
+  padding: ${props => props.theme.spacing[1]} 0;
 `
+
 export default class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
@@ -49,8 +48,6 @@ export default class Dropdown extends PureComponent {
     this.state = {
       isExpanded: items.some(({ to }) => path === to)
     }
-
-    this.ref = React.createRef()
   }
 
   toggle = e => {
@@ -69,7 +66,7 @@ export default class Dropdown extends PureComponent {
     const { isExpanded } = this.state
 
     return (
-      <li aria-haspopup="true" aria-expanded={isExpanded} ref={this.ref}>
+      <li aria-haspopup="true" aria-expanded={isExpanded}>
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}

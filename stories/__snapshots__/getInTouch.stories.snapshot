@@ -95,6 +95,10 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   margin-top: 0.375rem;
   background: #333333;
   box-sizing: border-box;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background;
+  transition-property: background;
 }
 
 .c7:hover {
