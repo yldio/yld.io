@@ -50,7 +50,8 @@ const OpenSource = ({ data, location }) => {
       technologyPartnersSectionTitle,
       technologyPartners: partners,
       eventsSectionImage,
-      eventsSectionDescription
+      eventsSectionDescription,
+      footerContactUs: { id: footerContactId }
     },
     allContentfulMeetupEvent: { nodes: events }
   } = data
@@ -83,7 +84,11 @@ const OpenSource = ({ data, location }) => {
   )
 
   return (
-    <Layout location={location} slug={'open-source'}>
+    <Layout
+      location={location}
+      slug={'open-source'}
+      footerContactUsId={footerContactId}
+    >
       <Head seoMetaData={seoMetaData} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
       <Statement as="h1">{statement}</Statement>
@@ -315,6 +320,9 @@ const OpenSourcePage = props => (
               title
               id
             }
+          }
+          footerContactUs {
+            id
           }
         }
       }

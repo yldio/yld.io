@@ -214,6 +214,7 @@ const Generic = props => {
 }
 const GetInTouch = props => {
   const { genericCopy } = props
+
   return genericCopy ? <Generic {...props} /> : <Profile {...props} />
 }
 
