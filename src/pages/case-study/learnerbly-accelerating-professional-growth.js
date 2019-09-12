@@ -306,11 +306,7 @@ export const query = graphql`
           url
         }
       }
-      ogImageMeta {
-        file {
-          url
-        }
-      }
+
       genericBlock1 {
         ...GenericFragment
       }
