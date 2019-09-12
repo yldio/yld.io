@@ -16,6 +16,7 @@ export const GreyFooter = styled.footer`
 const Wrapper = styled.div`
   background-color: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
 `
+
 const QUERY = graphql`
   {
     profiles: allContentfulFooterContactUsProfile {
@@ -79,7 +80,7 @@ const Footer = ({ footerContactUsId }) => (
 
       return (
         <>
-          {footerContactUsId && (
+          {!!footerContactUsId && (
             <Wrapper bgColor={footerContactUsData.backgroundColor}>
               <GetInTouch {...footerContactUsData} />
             </Wrapper>

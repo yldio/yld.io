@@ -18,11 +18,9 @@ import CommunitySection from '../components/Speciality/Community'
 import HowWeWorkWithSection from '../components/Speciality/HowWeWorkWith'
 import EventSection from '../components/Common/Events'
 import TalksSection from '../components/Speciality/Talks'
-import GetInTouch from '../components/Common/GetInTouch'
 import TutorialsSection from '../components/Speciality/Tutorials'
 import BooksSection from '../components/Speciality/Books'
 import BlogListing from '../components/Common/BlogListing'
-import GreyBackground from '../components/Common/GreyBackground'
 
 const ajv = new Ajv({ allErrors: true })
 
@@ -44,13 +42,7 @@ export const SpecialityView = props => {
   const validateTraining = ajv.compile(trainingSchema)
   const validateHowWeWork = ajv.compile(howWeWorkSchema)
 
-  const {
-    title,
-    contactText,
-    eventIcon,
-    relatedProjects,
-    clients
-  } = flattenedSpeciality
+  const { title, eventIcon, relatedProjects, clients } = flattenedSpeciality
 
   const { edges: postEdges = [] } = filteredPosts
   const posts = postEdges.map(({ node }) => node)
@@ -68,7 +60,7 @@ export const SpecialityView = props => {
   const renderBooksSection = books && books.length > 0
   const renderBlogSection = posts && posts.length > 0
 
-  // required: IntroSection, TrainingSection, GetInTouch
+  // required: IntroSection, TrainingSection
   // optional: ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
   return (
@@ -111,13 +103,6 @@ export const SpecialityView = props => {
       )}
 
       {renderBooksSection && <BooksSection title={title} books={books} />}
-
-      <GreyBackground>
-        <GetInTouch
-          title={`Talk to us about ${title}`}
-          contactText={contactText}
-        />
-      </GreyBackground>
     </Fragment>
   )
 }
