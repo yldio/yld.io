@@ -22,7 +22,9 @@ const QUERY = graphql`
       nodes {
         id
         person {
-          role
+          name
+          footerRole
+          emailAddress
           description {
             description
           }
@@ -50,12 +52,13 @@ const QUERY = graphql`
           }
         }
         title
+        personCopyTitle
         personCopy {
           personCopy
         }
-        personCta {
-          personCta
-        }
+        personCtaCopy
+        personCtaLinkUrl
+        personCtaLinkCopy
         genericCopy {
           genericCopy
         }
