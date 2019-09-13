@@ -13,8 +13,16 @@ export const GreyFooter = styled.footer`
   background: #232323;
 `
 
+const colorMap = {
+  White: 'white',
+  Grey: 'greyBg'
+}
+
 const Wrapper = styled.div`
-  background-color: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
+  background-color: ${({ theme, bgColor = 'white' }) => {
+    const mappedColor = colorMap[bgColor]
+    return mappedColor ? theme.colors[mappedColor] : theme.colors[bgColor]
+  }};
 `
 
 const QUERY = graphql`
@@ -22,6 +30,7 @@ const QUERY = graphql`
     profiles: allContentfulFooterContactUsProfile {
       nodes {
         id
+        backgroundColor
         person {
           name
           footerRole

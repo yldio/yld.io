@@ -70,14 +70,7 @@ class Layout extends Component {
   }
 
   render() {
-    const {
-      children,
-      bgColor,
-      is404,
-      contactUsBg,
-      footerContactUsId,
-      slug
-    } = this.props
+    const { children, bgColor, footerContactUsId, slug } = this.props
 
     const { GridDebugger } = this.state
 
@@ -126,11 +119,7 @@ class Layout extends Component {
                 />
               )}
               <StyledMain>{children}</StyledMain>
-              <Footer
-                contactUsBg={contactUsBg}
-                footerContactUsId={footerContactUsId}
-                is404={is404}
-              />
+              <Footer footerContactUsId={footerContactUsId} />
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
                 <Cookie onClick={this.handleClick} />
