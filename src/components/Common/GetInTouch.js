@@ -18,10 +18,6 @@ const PersonProfileCol = styled(Col)`
   ${breakpoint('smallTablet')`
     flex-wrap: nowrap;
   `};
-
-  ${breakpoint('tablet')`
-    border-right: 1px solid ${({ theme }) => theme.colors.border}
-  `};
 `
 
 const IMAGE_SIZE = 24
@@ -30,6 +26,10 @@ const ProfileImageWrapper = styled.div`
   width: 100%;
   max-width: 144px;
   margin-right: ${({ theme }) => theme.space[3]};
+
+  ${breakpoint('smallPhone', 'largePhone')`
+    padding-bottom: ${({ theme }) => theme.space[2]}
+  `}
 `
 
 const LinksContainer = styled.div`
@@ -43,6 +43,7 @@ const LinksContainer = styled.div`
 `
 
 const ProfileRow = styled(Row)`
+  align-items: end;
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
 
@@ -57,7 +58,7 @@ const ProfileRow = styled(Row)`
 `
 
 const ProfileTitleCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
@@ -77,12 +78,12 @@ const PersonCopyWrapper = styled.div`
   `}
 
   ${breakpoint('desktop')`
-
-  padding-bottom: ${({ theme }) => theme.space[4]};
-`}
+    padding-bottom: 0;
+  `}
 `
 
 const PersonCta = styled.div`
+  align-self: flex-end;
   > p,
   > a {
     display: inline;
@@ -95,6 +96,23 @@ const PersonCta = styled.div`
   a {
     text-decoration: underline;
   }
+`
+
+const ProfileContentWrapper = styled.div`
+  ${breakpoint('smallPhone', 'largePhone')`
+    width: 100%;
+    padding-bottom: ${({ theme }) => theme.space[2]}
+  `}
+
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: space-between;
+
+  ${breakpoint('tablet')`
+    border-right: 1px solid ${({ theme }) => theme.colors.border}
+  `};
 `
 
 const Profile = props => {
@@ -118,13 +136,7 @@ const Profile = props => {
           <ProfileImageWrapper>
             <Image image={person.image} />
           </ProfileImageWrapper>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}
-          >
+          <ProfileContentWrapper>
             <div>
               <Subtitle noPadding>{person.name}</Subtitle>
               <Subtitle noPaddingTop muted>
@@ -152,14 +164,18 @@ const Profile = props => {
                   />
                 ))}
             </LinksContainer>
-          </div>
+          </ProfileContentWrapper>
         </PersonProfileCol>
-        <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12]}>
+        <Col
+          width={[1, 1, 1, 1, 5 / 12, 5 / 12]}
+          block={false}
+          style={{ alignSelf: 'stretch' }}
+        >
           <PersonCopyWrapper>
             <BodyPrimary bold noPadding>
               {personCopyTitle}
             </BodyPrimary>
-            <BodyPrimary noPaddingTop secondary>
+            <BodyPrimary noPadding secondary>
               {personCopy}
             </BodyPrimary>
           </PersonCopyWrapper>
