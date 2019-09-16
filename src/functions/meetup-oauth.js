@@ -8,8 +8,14 @@ const redirect = `${
 }/meetup-callback`
 
 exports.handler = async () => {
+  const searchParams = new URLSearchParams([
+    ['client_id', MEETUP_API_KEY],
+    ['redirect_uri', redirect],
+    ['response_type', 'anonymous_code']
+  ])
+
   const { body } = await Got(
-    `https://secure.meetup.com/oauth2/authorize?client_id=${MEETUP_API_KEY}&redirect_uri=${redirect}&response_type=anonymous_code`
+    `https://secure.meetup.com/oauth2/authorize?${searchParams.toString()}`
   )
 
   return {

@@ -37,6 +37,11 @@ const redirect = `${
 }/meetup-callback`
 
 const getAuthToken = async code => {
+  /**
+   * I would usually add this to { searchParams }
+   * in the Got.post options instead of .toString()
+   * on the url....but it wasn't working...
+   */
   const accessSearchParams = new URLSearchParams([
     ['client_id', MEETUP_API_KEY],
     ['client_secret', MEETUP_API_SECRET],

@@ -115,9 +115,11 @@ Flow:
 
 - Zapier triggers the `meetup-oauth.js` lambda
 - Meetup OAuth service calls the redirect URL, `https://yld.io/.netlify/functions/meetup-callback.js`
-- Within `meetup-callback.js` we get perform some authentication and include the returned session tokens within all of our meetup API requests as a Authorization header.
+- Within `meetup-callback.js` we perform some authentication and include the returned session tokens within all of our meetup API requests as an Authorization header.
 - Once all of the contentful updates and new entries have been made we return `log`, an object detailing all of the updated/created meetup events in contentful.
 - `log` is then returned back to `meetup-oauth` endpoint and the process ends.
+
+For another explanation of the flow check the meetup guides [here](https://www.meetup.com/meetup_api/auth/#oauth2servercredentials)
 
 > **WARNING** - Due to the sensitive login information that is required to develop this lambda you are encourage to exercise common sense when handling these login details.
 
