@@ -1,6 +1,6 @@
 # YLD Website
 
-## [Link](https://yldio.io/)
+## [Link](https://yld.io/)
 
 ## [Storybook](https://yld-storybook.now.sh)
 
