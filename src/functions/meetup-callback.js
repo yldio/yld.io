@@ -1,5 +1,4 @@
-const MEETUP_API_KEY = '8pp5s993ns3an32t6s4t56rjur'
-const MEETUP_API_SECRET = 'i68peb5ls5r0tcu5kcsrh77rcr'
+const { MEETUP_API_SECRET, MEETUP_API_KEY } = process.env
 
 const meetup = require('meetup-api')({
   oauth: {
