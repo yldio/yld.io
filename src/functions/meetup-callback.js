@@ -12,10 +12,11 @@ const {
 
 const {
   MEETUP_API_SECRET,
+  MEETUP_API_KEY,
+  MEETUP_EMAIL,
+  MEETUP_PASS,
   CONTENTFUL_SPACE,
   CMS_CRUD,
-  MEETUP_API_KEY,
-  MEETUP_REFRESH_TOKEN,
   LAMBDA_ENV = 'development'
 } = process.env
 
@@ -31,22 +32,60 @@ const createAuthenticatedRequest = access_token => (url, options = {}) =>
     headers: { ...options.headers, Authorization: `Bearer ${access_token}` }
   })
 
-const handleTokenRefresh = async () => {
-  const { body } = await Got.post('https://secure.meetup.com/oauth2/access', {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded '
-    },
-    body: `client_id=${MEETUP_API_KEY}&client_secret=${MEETUP_API_SECRET}&grant_type=refresh_token&refresh_token=${MEETUP_REFRESH_TOKEN}`
-  })
+const redirect = `${
+  isProd ? 'https://yld.io/.netlify/functions' : 'http://localhost:9000'
+}/meetup-callback`
 
-  return JSON.parse(body)
+const getAuthToken = async code => {
+  const accessSearchParams = new URLSearchParams([
+    ['client_id', MEETUP_API_KEY],
+    ['client_secret', MEETUP_API_SECRET],
+    ['redirect_uri', redirect],
+    ['code', code],
+    ['grant_type', 'anonymous_code']
+  ])
+
+  const { body: accessBody } = await Got.post(
+    `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`
+  )
+
+  const { access_token } = JSON.parse(accessBody)
+
+  const sessionSearchParams = new URLSearchParams([
+    ['email', MEETUP_EMAIL],
+    ['password', MEETUP_PASS]
+  ])
+
+  const { body } = await Got.post(
+    `https://api.meetup.com/sessions?${sessionSearchParams.toString()}`,
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      }
+    }
+  )
+
+  const { oauth_token } = JSON.parse(body)
+
+  return oauth_token
 }
 
-exports.handler = async () => {
-  const { access_token } = await handleTokenRefresh()
+exports.handler = async evt => {
+  const { queryStringParameters } = evt
+
+  if (!queryStringParameters.code) {
+    return {
+      statusCode: 400,
+      body: 'Missing code query parameter'
+    }
+  }
+
+  const sessionToken = await getAuthToken(queryStringParameters.code)
+
+  const AuthenticatedRequest = createAuthenticatedRequest(sessionToken)
+
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
-  const AuthenticatedRequest = createAuthenticatedRequest(access_token)
 
   const { body: groups } = await AuthenticatedRequest(
     'https://api.meetup.com/self/groups'

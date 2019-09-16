@@ -20,8 +20,11 @@ CONTENTFUL_SPACE=(see in contentful/settings/API keys "meetup > Space ID")
 GATSBY_ENVIRONMENT="development"
 
 # For local Lambda development
-MEETUP_KEY=(see in contentful/settings/API keys "gatsby > Content Delivery API - Access Token")
-CMS_CRUD=(copy from Netlify - Build & Deploy - Environment - Edit variables - CMS_CRUD. Read below why copy)
+MEETUP_API_SECRET - OAuth Secret
+MEETUP_API_KEY - OAuth Key
+MEETUP_EMAIL - See below
+MEETUP_PASS - See below
+CMS_CRUD
 ```
 
 You can now run:
@@ -91,13 +94,32 @@ Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
 
 Local development requires:
 
-`MEETUP_KEY` - Key for the lambda to get content from Contentful. Available from Contentful API Keys Settings.
+`MEETUP_API_SECRET` - OAuth secret, defined in our meetup.com account
+
+`MEETUP_API_KEY` - OAuth Client ID, defined in our meetup.com account
+
+`MEETUP_EMAIL` - Meetup account email login
+
+`MEETUP_PASS` - Meetup account password
+
+`CONTENTFUL_SPACE` - Our Contentful space ID
 
 `CMS_CRUD` - A _personal access token_ generated from your Contentful account settings (listed under the `Content management tokens` section in settings > APIs) to allow writing to the yld Contentful space. Anyone with a Contentful account can generate one of these. The token used in production is registered to the `apis@yld.io` Contentful account.
 
-`./src/functions/meetup.js`
+`./src/functions/meetup-oauth.js`
+`./src/functions/meetup-callback.js`
 
-Gets events from meetup.com and writes to Contentful which then triggers a deployment via the Contentful -> Netlify webhook.
+Due to meetups use of OAuth 2.0, the flow here requires some authentication prior to starting to work that deals with the meetup and contentful data.
+
+Flow:
+
+- Zapier triggers the `meetup-oauth.js` lambda
+- Meetup OAuth service calls the redirect URL, `https://yld.io/.netlify/functions/meetup-callback.js`
+- Within `meetup-callback.js` we get perform some authentication and include the returned session tokens within all of our meetup API requests as a Authorization header.
+- Once all of the contentful updates and new entries have been made we return `log`, an object detailing all of the updated/created meetup events in contentful.
+- `log` is then returned back to `meetup-oauth` endpoint and the process ends.
+
+> **WARNING** - Due to the sensitive login information that is required to develop this lambda you are encourage to exercise common sense when handling these login details.
 
 #### Lever
 
