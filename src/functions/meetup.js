@@ -22,6 +22,7 @@ const {
 const generateContentfulEvent = ({
   urlname,
   nextEvent,
+  id,
   venue,
   link,
   date,
@@ -33,6 +34,9 @@ const generateContentfulEvent = ({
   fields: {
     thisMeetupCode: {
       'en-US': `${urlname}-${nextEvent}`
+    },
+    id: {
+      'en-US': id
     },
     meetupUrlName: {
       'en-US': urlname
@@ -162,15 +166,13 @@ const getEvent = promisify(meetup.getEvent.bind(meetup))
 exports.handler = async evt =>
   Auth(evt, async () => {
     const isProd = LAMBDA_ENV === 'production'
-    // Contentful user have many spaces. A space can have many environments.Each environment has entries of various "content models"
+
     const space = await client.getSpace(CONTENTFUL_SPACE)
     const environment = await space.getEnvironment('master')
 
-    // filter to return published entries that belong to a specific content model.
     const { items: events } = await environment.getEntries({
       limit: 1000,
       content_type: 'meetupEven'
-      // yes, the content type name is "meetupEven" - probably a typo during creation that can't be updated without recreating the content type from scratch
     })
 
     // Maps through Community objects. If there is an upcominig event, the script either updates the Contentfu entry for that event if it exists, otherwise creates one.
@@ -187,10 +189,7 @@ exports.handler = async evt =>
         })
       )
 
-      const contentfulEvent = find(events, [
-        'fields.linkToEvent.en-US',
-        meetup.link
-      ])
+      const contentfulEvent = find(events, ['fields.id.en-US', meetup.id])
 
       const generatedEvent = generateContentfulEvent({ ...meetup, ...group })
 
