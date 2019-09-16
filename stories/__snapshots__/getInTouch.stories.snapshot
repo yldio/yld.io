@@ -471,7 +471,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   display: block;
 }
 
-.c15 {
+.c16 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -483,12 +483,14 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c8 {
@@ -496,7 +498,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   height: auto;
 }
 
-.c14 {
+.c15 {
   width: 24px;
   height: 24px;
 }
@@ -509,24 +511,13 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   padding: 0.75rem 0 0.75rem 0;
 }
 
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding: 0;
-  font-weight: 700;
-}
-
 .c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
-  padding-top: 0;
+  padding: 0;
   font-weight: 700;
 }
 
@@ -536,10 +527,31 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  opacity: .5;
+  padding-top: 0;
+  font-weight: 700;
+}
+
+.c12 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
   padding: 0;
 }
 
-.c17 {
+.c19 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+  padding: 0;
+}
+
+.c18 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -549,17 +561,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-weight: 700;
 }
 
-.c18 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #757575;
-  padding-top: 0;
-}
-
-.c20 {
+.c21 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -568,7 +570,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   opacity: .5;
 }
 
-.c13 {
+.c14 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -585,7 +587,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   align-items: center;
 }
 
-.c13:first-child {
+.c14:first-child {
   margin-left: -0.75rem;
 }
 
@@ -606,7 +608,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   margin-right: 1.5rem;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -627,31 +629,62 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
   padding-top: 2.25rem;
   padding-bottom: 3.375rem;
 }
 
 .c2 {
-  padding-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
 }
 
-.c16 {
+.c17 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c19 > p,
-.c19 > a {
+.c20 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c20 > p,
+.c20 > a {
   display: inline;
 }
 
-.c19 p {
+.c20 p {
   opacity: 0.5;
 }
 
-.c19 a {
+.c20 a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 @media (min-width:29.4375em) {
@@ -829,42 +862,42 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c15 {
+  .c16 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c15 {
+  .c16 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c15 {
+  .c16 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c15 {
+  .c16 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c15 {
+  .c16 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c15 {
+  .c16 {
     width: 100%;
     position: initial;
     top: 0;
@@ -873,7 +906,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c15 {
+  .c16 {
     width: 100%;
     position: initial;
     top: 0;
@@ -882,7 +915,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c15 {
+  .c16 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -891,7 +924,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c15 {
+  .c16 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -915,14 +948,14 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   }
 }
 
-@media (min-width:56.3125em) {
-  .c5 {
-    border-right: 1px solid #e6e6e6;
+@media (min-width:0em) and (max-width:34.5em) {
+  .c7 {
+    padding-bottom: 0.75rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c12 {
+  .c13 {
     padding-top: 0;
   }
 }
@@ -988,14 +1021,27 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c16 {
+  .c17 {
     padding-top: 0;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c16 {
-    padding-bottom: 2.25rem;
+  .c17 {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width:0em) and (max-width:34.5em) {
+  .c9 {
+    width: 100%;
+    padding-bottom: 0.75rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c9 {
+    border-right: 1px solid #e6e6e6;
   }
 }
 
@@ -1122,29 +1168,23 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
         </div>
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "justifyContent": "space-between",
-          }
-        }
+        className="c9"
       >
         <div>
           <h3
-            className="c9"
+            className="c10"
           >
             Nick Osborn
           </h3>
           <h3
-            className="c10"
+            className="c11"
             muted={true}
           >
             Talent Manager
           </h3>
           <a
             aria-current="page"
-            className="c11"
+            className="c12"
             href="/"
             noPadding={true}
             onClick={[Function]}
@@ -1159,10 +1199,10 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
           </a>
         </div>
         <div
-          className="c12"
+          className="c13"
         >
           <a
-            className="c13"
+            className="c14"
             href="https://www.linkedin.com/in/osbornnick/"
             imageSize={24}
             onClick={[Function]}
@@ -1172,7 +1212,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
           >
             <img
               alt="Nick Osborn LinkedIn"
-              className="c14"
+              className="c15"
               height="24px"
               src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
               width="24px"
@@ -1182,7 +1222,12 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
       </div>
     </div>
     <div
-      className="c15"
+      className="c16"
+      style={
+        Object {
+          "alignSelf": "stretch",
+        }
+      }
       width={
         Array [
           1,
@@ -1195,24 +1240,24 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
       }
     >
       <div
-        className="c16"
+        className="c17"
       >
         <p
-          className="c17"
+          className="c18"
         >
           Why reach out to Nick?
         </p>
         <p
-          className="c18"
+          className="c19"
         >
           Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.
         </p>
       </div>
       <div
-        className="c19"
+        className="c20"
       >
         <p
-          className="c20"
+          className="c21"
           muted={true}
         >
           Something else you want to chat about?
