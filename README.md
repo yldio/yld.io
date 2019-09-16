@@ -109,6 +109,8 @@ Local development requires:
 `./src/functions/meetup-oauth.js`
 `./src/functions/meetup-callback.js`
 
+This lambda takes our meetup event data and publishes it to Contentful.
+
 Due to meetups use of OAuth 2.0, the flow here requires some authentication prior to starting to work that deals with the meetup and contentful data.
 
 Flow:

@@ -37,42 +37,49 @@ const redirect = `${
 }/meetup-callback`
 
 const getAuthToken = async code => {
-  /**
-   * I would usually add this to { searchParams }
-   * in the Got.post options instead of .toString()
-   * on the url....but it wasn't working...
-   */
-  const accessSearchParams = new URLSearchParams([
-    ['client_id', MEETUP_API_KEY],
-    ['client_secret', MEETUP_API_SECRET],
-    ['redirect_uri', redirect],
-    ['code', code],
-    ['grant_type', 'anonymous_code']
-  ])
+  let token
+  try {
+    /**
+     * I would usually add this to { searchParams }
+     * in the Got.post options instead of .toString()
+     * on the url....but it wasn't working...
+     */
+    const accessSearchParams = new URLSearchParams([
+      ['client_id', MEETUP_API_KEY],
+      ['client_secret', MEETUP_API_SECRET],
+      ['redirect_uri', redirect],
+      ['code', code],
+      ['grant_type', 'anonymous_code']
+    ])
 
-  const { body: accessBody } = await Got.post(
-    `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`
-  )
+    const { body: accessBody } = await Got.post(
+      `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`
+    )
 
-  const { access_token } = JSON.parse(accessBody)
+    const { access_token } = JSON.parse(accessBody)
 
-  const sessionSearchParams = new URLSearchParams([
-    ['email', MEETUP_EMAIL],
-    ['password', MEETUP_PASS]
-  ])
+    const sessionSearchParams = new URLSearchParams([
+      ['email', MEETUP_EMAIL],
+      ['password', MEETUP_PASS]
+    ])
 
-  const { body } = await Got.post(
-    `https://api.meetup.com/sessions?${sessionSearchParams.toString()}`,
-    {
-      headers: {
-        Authorization: `Bearer ${access_token}`
+    const { body } = await Got.post(
+      `https://api.meetup.com/sessions?${sessionSearchParams.toString()}`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
       }
-    }
-  )
+    )
 
-  const { oauth_token } = JSON.parse(body)
+    const { oauth_token } = JSON.parse(body)
 
-  return oauth_token
+    token = oauth_token
+  } catch (error) {
+    throw new Error(error)
+  }
+
+  return token
 }
 
 exports.handler = async evt => {
