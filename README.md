@@ -4,7 +4,7 @@
 
 ## [Storybook](https://yld-storybook.now.sh)
 
-## How to run
+## How to run:
 
 ```
   git clone git@github.com:yldio/yld.io.git
