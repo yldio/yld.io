@@ -31,27 +31,23 @@ const StyledRow = styled(Row)`
   justify-content: center;
   overflow: visible;
   height: ${remcalc(244)};
-  margin-bottom: ${({ theme }) => theme.space[3]};
   padding-bottom: ${({ theme }) => theme.space[3]};
   padding-top: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('smalltablet')`
     height: ${remcalc(394)};
-    margin-bottom: ${({ theme }) => theme.space[4]};
     padding-bottom: ${({ theme }) => theme.space[4]};
     padding-top: ${({ theme }) => theme.space[4]};
   `};
 
   ${breakpoint('tablet')`
     height: ${remcalc(544)};
-    margin-bottom: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[5]};
     padding-top: ${({ theme }) => theme.space[5]};
   `};
 
   ${breakpoint('desktop')`
     height: ${remcalc(644)};
-    margin-bottom: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
     padding-top: ${({ theme }) => theme.space[6]};
   `};
@@ -80,26 +76,36 @@ const getInTouchData = {
   ctaText: 'Get in touch'
 }
 
-const EventList = ({ events }) =>
+const HrWrapper = styled.div`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const EventsRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
+`
+
+const ConferenceRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[7]};
+`
+
+const EventList = ({ events, Component }) =>
   events.slice(0, 4).map(event => (
     <Fragment key={generate()}>
-      <Hr />
-      <EventCard event={event.node} />
+      <HrWrapper>
+        <Hr />
+      </HrWrapper>
+      <Component event={event.node} />
     </Fragment>
   ))
-
-const ConferenceList = ({ conferences }) =>
-  conferences
-    .slice(0, 3)
-    .map(conference => (
-      <ConferenceCard key={generate()} event={conference.node} />
-    ))
 
 const EventPage = ({
   data: { allContentfulMeetupEvent: allEvents, contentfulEventsPage: content }
 }) => {
   const events = allEvents.edges
-  const conferences = events.filter(event => event.node.posterImage) // TODO change this filter to filter according to type === "Conference"
+  const conferences = events.filter(event => event.node.type === 'Conference')
   const { introSentence, posterImage, seoMetaData } = content
 
   return (
@@ -120,16 +126,16 @@ const EventPage = ({
       </StyledBlueBackground>
 
       <Grid>
-        <Row>
+        <EventsRow>
           <Col width={[1]}>
-            <DisplayTitle style={{ paddingBottom: '36px' }}>
-              Upcoming events
-            </DisplayTitle>
+            <DisplayTitle>Upcoming events</DisplayTitle>
           </Col>
           <Col width={[1]}>
-            {events && events.length > 0 && <EventList events={events} />}
+            {events && events.length > 0 && (
+              <EventList events={events} Component={EventCard} />
+            )}
           </Col>
-        </Row>
+        </EventsRow>
       </Grid>
 
       <GreyBackground>
@@ -141,12 +147,16 @@ const EventPage = ({
       </GreyBackground>
 
       <Grid>
-        <Row>
-          <Col>
+        <ConferenceRow>
+          <Col width={[1]}>
             <StyledDisplayTitle>Our Conferences</StyledDisplayTitle>
           </Col>
-        </Row>
-        <ConferenceList conferences={conferences} />
+          <Col width={[1]}>
+            {conferences && conferences.length > 0 && (
+              <EventList events={conferences} Component={ConferenceCard} />
+            )}
+          </Col>
+        </ConferenceRow>
       </Grid>
     </Layout>
   )

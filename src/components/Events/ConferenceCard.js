@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import { Link } from 'gatsby'
-import { format } from 'date-fns'
+import { format, isPast } from 'date-fns'
 
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
@@ -33,7 +33,6 @@ const ConferenceCard = ({ event }) => {
   const {
     date,
     address,
-    status = 'TODO - status',
     eventTitle,
     blurb,
     linkToEvent,
@@ -42,10 +41,11 @@ const ConferenceCard = ({ event }) => {
   } = event
 
   const formattedDate = format(new Date(date), 'MMM DD[,] YYYY')
-  // TODO - Still need to get properly formatted address
+
   const formattedAddress = address.slice(0, 15).trim()
   const eventInfo = `${formattedDate} • ${formattedAddress}`
 
+  const status = isPast(new Date(date)) ? 'Past' : 'Upcoming'
   return (
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
