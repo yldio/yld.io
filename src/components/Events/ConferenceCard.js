@@ -36,7 +36,7 @@ const ConferenceCard = ({ event }) => {
     eventTitle,
     blurb,
     linkToEvent,
-    posterImage,
+    eventImage,
     ctaText
   } = event
 
@@ -50,7 +50,7 @@ const ConferenceCard = ({ event }) => {
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
         <AnchorWrapper href={linkToEvent}>
-          <Image image={posterImage} width="100%" />
+          {eventImage && <Image image={eventImage} width="100%" />}
         </AnchorWrapper>
       </Col>
 
@@ -77,7 +77,7 @@ const ConferenceCard = ({ event }) => {
       </Col>
       <Col width={[0, 0, 0, 0, 0, 3 / 12, 3 / 12]}>
         <AnchorWrapper href={linkToEvent}>
-          <Image image={posterImage} height="100%" />
+          {eventImage && <Image image={eventImage} height="100%" />}
         </AnchorWrapper>
       </Col>
     </Row>

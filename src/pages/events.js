@@ -200,7 +200,7 @@ export const query = graphql`
           homepageFeatured
           linkToEvent
           ctaText
-          posterImage {
+          eventImage: eventPage {
             fluid(maxWidth: 600) {
               ...GatsbyContentfulFluid_withWebp
             }
