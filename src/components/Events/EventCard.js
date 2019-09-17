@@ -45,26 +45,26 @@ const DateCard = ({ date }) => {
 }
 
 const EventTypePadding = styled.div`
-  padding-top: ${({ theme }) => theme.spacing[3]};
-  padding-bottom: ${({ theme }) => theme.spacing[2]};
-
-  ${breakpoint('smallTablet')`
-    padding-top: 0;
+  ${breakpoint('phone', 'largePhone')`
+    padding-top: ${({ theme }) => theme.spacing[2]};
+    padding-bottom: ${({ theme }) => theme.spacing[1]}; 
   `};
 `
 
 const EventTitlePadding = styled.div`
-  padding-bottom: ${({ theme }) => theme.spacing[1]};
-
-  ${breakpoint('smallTablet')`
-    min-height: ${remcalc(60)};
-`};
+  /* ${breakpoint('phone', 'largePhone')`
+    padding-bottom: ${({ theme }) => theme.spacing[1]};
+  `}; */
 `
 
 const StyledInfoCol = styled(Col)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-bottom: ${({ theme }) => theme.spacing[3]};
+  `};
 `
 
 const AlignRightCol = styled(Col)`
@@ -98,23 +98,23 @@ const EventCard = ({ event }) => {
 
   return (
     <Row>
-      <Col width={[4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
+      <Col width={[4 / 12, 4 / 12, 5 / 12, 4 / 12, 3 / 12, 3 / 12, 2 / 12]}>
         <StyledRatioContainer width={1} height={1}>
           <DateCard date={date} />
         </StyledRatioContainer>
       </Col>
 
       <StyledInfoCol width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
-        {type && (
-          <EventTypePadding>
-            <BodyPrimary noPadding>{type}</BodyPrimary>
-          </EventTypePadding>
-        )}
-        <EventTitlePadding>
-          <CardTitle noPadding as="h3">
-            {eventTitle}
-          </CardTitle>
-        </EventTitlePadding>
+        <div>
+          {type && (
+            <EventTypePadding>
+              <BodyPrimary noPadding>{type}</BodyPrimary>
+            </EventTypePadding>
+          )}
+          <EventTitlePadding>
+            <CardTitle as="h3">{eventTitle}</CardTitle>
+          </EventTitlePadding>
+        </div>
         <BodyPrimary muted noPadding>
           {eventInfo}
         </BodyPrimary>
@@ -123,7 +123,7 @@ const EventCard = ({ event }) => {
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
         <StyledLink
           aria-label={StyledLinkText}
-          to={linkToEvent}
+          href={linkToEvent}
           title={StyledLinkText}
         >
           {StyledLinkText}
