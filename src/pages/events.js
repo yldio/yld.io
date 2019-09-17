@@ -121,12 +121,12 @@ const EventPage = ({
 
       <Grid>
         <Row>
-          <Col>
+          <Col width={[1]}>
             <DisplayTitle style={{ paddingBottom: '36px' }}>
               Upcoming events
             </DisplayTitle>
           </Col>
-          <Col>
+          <Col width={[1]}>
             {events && events.length > 0 && <EventList events={events} />}
           </Col>
         </Row>
@@ -176,8 +176,8 @@ export const query = graphql`
           startTime
           endTime
           date
-          # attendees
-          # type
+          attendees
+          type
           eventTitle
           address
           blurb {
