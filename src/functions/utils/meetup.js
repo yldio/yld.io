@@ -60,6 +60,9 @@ const generateContentfulEvent = ({
     linkToEvent: {
       'en-US': link
     },
+    type: {
+      'en-US': 'Meetup'
+    },
     date: {
       'en-US': date
     },
