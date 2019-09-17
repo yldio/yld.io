@@ -30,26 +30,20 @@ const StyledRow = styled(Row)`
   align-items: center;
   justify-content: center;
   overflow: visible;
-  height: ${remcalc(244)};
   padding-bottom: ${({ theme }) => theme.space[3]};
-  padding-top: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('smalltablet')`
-    height: ${remcalc(394)};
     padding-bottom: ${({ theme }) => theme.space[4]};
-    padding-top: ${({ theme }) => theme.space[4]};
   `};
 
   ${breakpoint('tablet')`
     height: ${remcalc(544)};
     padding-bottom: ${({ theme }) => theme.space[5]};
-    padding-top: ${({ theme }) => theme.space[5]};
   `};
 
   ${breakpoint('desktop')`
     height: ${remcalc(644)};
     padding-bottom: ${({ theme }) => theme.space[6]};
-    padding-top: ${({ theme }) => theme.space[6]};
   `};
 `
 
