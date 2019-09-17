@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import { isPast } from 'date-fns'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
@@ -109,7 +110,12 @@ const EventPage = ({
   data: { allContentfulMeetupEvent: allEvents, contentfulEventsPage: content }
 }) => {
   const events = allEvents.edges
+  const meetups = events.filter(
+    event =>
+      event.node.type === 'Meetup' && !isPast(new Date(), event.node.date)
+  )
   const conferences = events.filter(event => event.node.type === 'Conference')
+
   const { introSentence, posterImage, seoMetaData } = content
 
   return (
@@ -135,8 +141,14 @@ const EventPage = ({
             <DisplayTitle>Upcoming events</DisplayTitle>
           </Col>
           <Col width={[1]}>
-            {events && events.length > 0 && (
-              <EventList events={events} Component={EventCard} />
+            {meetups && meetups.length > 0 ? (
+              <EventList events={meetups} Component={EventCard} />
+            ) : (
+              <DisplayTitle>
+                {
+                  "We don't seem to have any upcomingn events currently, check back soon!"
+                }
+              </DisplayTitle>
             )}
           </Col>
         </EventsRow>
@@ -184,7 +196,7 @@ export const query = graphql`
         introSentence
       }
     }
-    allContentfulMeetupEvent {
+    allContentfulMeetupEvent(sort: { fields: date, order: DESC }) {
       edges {
         node {
           startTime

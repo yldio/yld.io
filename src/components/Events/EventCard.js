@@ -51,12 +51,6 @@ const EventTypePadding = styled.div`
   `};
 `
 
-const EventTitlePadding = styled.div`
-  /* ${breakpoint('phone', 'largePhone')`
-    padding-bottom: ${({ theme }) => theme.spacing[1]};
-  `}; */
-`
-
 const StyledInfoCol = styled(Col)`
   display: flex;
   flex-direction: column;
@@ -111,9 +105,8 @@ const EventCard = ({ event }) => {
               <BodyPrimary noPadding>{type}</BodyPrimary>
             </EventTypePadding>
           )}
-          <EventTitlePadding>
-            <CardTitle as="h3">{eventTitle}</CardTitle>
-          </EventTitlePadding>
+
+          <CardTitle as="h3">{eventTitle}</CardTitle>
         </div>
         <BodyPrimary muted noPadding>
           {eventInfo}
