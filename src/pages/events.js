@@ -73,11 +73,21 @@ const getInTouchData = {
 const HrWrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[4]};
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const EventsRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const ConferenceRow = styled(Row)`

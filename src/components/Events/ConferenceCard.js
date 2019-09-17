@@ -49,7 +49,7 @@ const ConferenceCard = ({ event }) => {
   return (
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
-        <AnchorWrapper to={linkToEvent}>
+        <AnchorWrapper href={linkToEvent}>
           <Image image={posterImage} width="100%" />
         </AnchorWrapper>
       </Col>
@@ -66,17 +66,17 @@ const ConferenceCard = ({ event }) => {
         <BlurbWrapper>
           <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <Link to={linkToEvent} style={{ textDecoration: 'underline' }}>
+            <Link href={linkToEvent} style={{ textDecoration: 'underline' }}>
               Read more
             </Link>
           </BodyPrimary>
         </BlurbWrapper>
-        <StyledLink aria-label={ctaText} to={linkToEvent} title={ctaText}>
+        <StyledLink aria-label={ctaText} href={linkToEvent} title={ctaText}>
           {ctaText}
         </StyledLink>
       </Col>
       <Col width={[0, 0, 0, 0, 0, 3 / 12, 3 / 12]}>
-        <AnchorWrapper to={linkToEvent}>
+        <AnchorWrapper href={linkToEvent}>
           <Image image={posterImage} height="100%" />
         </AnchorWrapper>
       </Col>
