@@ -3,8 +3,8 @@ import { Link } from 'gatsby'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 
-import logo from '../../../images/logo_animated.gif'
-import HomepageSvg from '../../../images/yld-white.svg'
+import svgLogo from '../../../images/yld-white.svg'
+import animatedLogo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
 
 const StyledLink = styled(Link)`
@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
     width: ${remcalc(54)};
   }
 `
-const HomepageLogo = styled.img`
+const Logo = styled.img`
   width: 49px;
   height: 36px;
   margin-top: ${remcalc(6)};
@@ -25,6 +25,17 @@ const HomepageLogo = styled.img`
 const StyledHomePageLink = styled.div`
   cursor: pointer;
 `
+
+const LogoWrapper = ({ isHomePage, children }) =>
+  isHomePage ? (
+    <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
+      {children}
+    </StyledHomePageLink>
+  ) : (
+    <Link to="/" title="Return to homepage">
+      {children}
+    </Link>
+  )
 
 const LogoLink = ({
   isHomePage,
@@ -36,11 +47,11 @@ const LogoLink = ({
 }) => {
   const [fillColor, setFillColor] = useState(fillColorInitial)
 
-  if (isHomePage) {
+  if (isHomePage || isEventsPage) {
     return (
-      <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
-        <HomepageLogo src={HomepageSvg} alt="yld logo" />
-      </StyledHomePageLink>
+      <LogoWrapper isHomepage={isHomePage}>
+        <Logo src={svgLogo} alt="yld logo" />
+      </LogoWrapper>
     )
   }
 
@@ -59,11 +70,7 @@ const LogoLink = ({
 
   return (
     <Link to="/" title="Return to Homepage">
-      {isEventsPage ? (
-        <HomepageLogo src={HomepageSvg} alt="yld logo" />
-      ) : (
-        <img role="link" width="49" src={logo} alt="yld logo" />
-      )}
+      <img role="link" width="49" src={animatedLogo} alt="yld logo" />
     </Link>
   )
 }
