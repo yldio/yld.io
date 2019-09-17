@@ -120,7 +120,7 @@ const EventCard = ({ event }) => {
         </BodyPrimary>
       </StyledInfoCol>
 
-      <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 4 / 12, 5 / 12]}>
+      <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 3 / 12, 5 / 12]}>
         <StyledLink
           aria-label={StyledLinkText}
           href={linkToEvent}
