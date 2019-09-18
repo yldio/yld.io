@@ -1,3 +1,4 @@
+const { URLSearchParams } = require('url')
 const Got = require('got')
 const Auth = require('./utils/auth')
 
