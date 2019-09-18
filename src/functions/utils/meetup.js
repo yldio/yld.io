@@ -1,4 +1,4 @@
-const striptags = require('striptags')
+const moment = require('moment')
 
 const transformGroups = groups =>
   groups.map(group => ({
@@ -9,99 +9,74 @@ const transformGroups = groups =>
     nextEvent: group.next_event ? group.next_event.id : 0
   }))
 
-const transformMeetupEvent = eventObject => ({
-  eventName: eventObject.name,
-  id: eventObject.id,
-  duration: eventObject.duration,
-  time: eventObject.time,
-  localTime: eventObject.local_time,
-  date: eventObject.local_date,
-  attendees: eventObject.yes_rsvp_count,
-  venue: eventObject.hasOwnProperty('venue')
-    ? {
-        name: eventObject.venue.name,
-        address1: eventObject.venue.address_1,
-        address2: eventObject.venue.address_2 ? eventObject.venue.address_2 : 0,
-        address3: eventObject.venue.address_3 ? eventObject.venue.address_3 : 0,
-        city: eventObject.venue.city
-      }
-    : 'Venue To Be Confirmed',
-  link: eventObject.link,
-  description:
-    eventObject.description.includes('EVENT SUMMARY') &&
-    eventObject.description.includes('EVENT DETAILS')
-      ? striptags(
-          eventObject.description
-            .split('EVENT SUMMARY:')[1]
-            .split('EVENT DETAILS')[0]
-        ).trim()
-      : 'For more information, please visit the Meetup page'
-})
-
 const generateContentfulEvent = ({
-  urlname,
   id,
-  venue,
   link,
-  date,
-  time,
+  name,
+  local_date,
+  local_time,
   duration,
-  eventName,
+  venue,
   description,
-  attendees
-}) => ({
-  fields: {
-    id: {
-      'en-US': id
-    },
-    meetupUrlName: {
-      'en-US': urlname
-    },
-    linkToEvent: {
-      'en-US': link
-    },
-    type: {
-      'en-US': 'Meetup'
-    },
-    date: {
-      'en-US': date
-    },
-    startTime: {
-      'en-US': new Date(time)
-    },
-    endTime: {
-      'en-US': new Date(time + duration)
-    },
-    address: {
-      'en-US':
-        venue !== 'Venue To Be Confirmed'
-          ? `${venue.name}&&${venue.address1}&&${
-              venue.adress2 ? venue.adress2 : ''
-            }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
-          : 'Venue To Be Confirmed'
-    },
-    venueName: { 'en-US': venue.name },
-    addressLine1: { 'en-US': venue.address1 },
-    addressLine2: { 'en-US': venue.adress2 },
-    addressLine3: { 'en-US': venue.address3 },
-    city: { 'en-US': venue.city },
-    eventTitle: {
-      'en-US': eventName
-    },
-    blurb: {
-      'en-US': description
-    },
-    homepageFeatured: {
-      'en-US': false
-    },
-    attendees: {
-      'en-US': attendees
+  yes_rsvp_count: attendees,
+  group: { urlname }
+}) => {
+  const startTime = moment(`${local_date} ${local_time}`)
+  const endTime = moment(startTime).add(duration, 'ms')
+
+  return {
+    fields: {
+      id: {
+        'en-US': id
+      },
+      meetupUrlName: {
+        'en-US': urlname
+      },
+      linkToEvent: {
+        'en-US': link
+      },
+      type: {
+        'en-US': 'Meetup'
+      },
+      date: {
+        'en-US': local_date
+      },
+      startTime: {
+        'en-US': startTime.format('YYYY-MM-DDTH:mm:00')
+      },
+      endTime: {
+        'en-US': endTime.format('YYYY-MM-DDTH:mm:00')
+      },
+      address: {
+        'en-US':
+          venue !== 'Venue To Be Confirmed'
+            ? `${venue.name}&&${venue.address1}&&${
+                venue.adress2 ? venue.adress2 : ''
+              }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
+            : 'Venue To Be Confirmed'
+      },
+      venueName: { 'en-US': venue.name },
+      addressLine1: venue.address_1 && { 'en-US': venue.address_1 },
+      addressLine2: venue.adress_2 && { 'en-US': venue.adress_2 },
+      addressLine3: venue.address_3 && { 'en-US': venue.address_3 },
+      city: { 'en-US': venue.city },
+      eventTitle: {
+        'en-US': name
+      },
+      blurb: {
+        'en-US': description
+      },
+      homepageFeatured: {
+        'en-US': false
+      },
+      attendees: {
+        'en-US': attendees
+      }
     }
   }
-})
+}
 
 module.exports = {
   transformGroups,
-  transformMeetupEvent,
   generateContentfulEvent
 }

@@ -4,11 +4,7 @@ const { createClient } = require('contentful-management')
 const Find = require('lodash.find')
 const { default: Map } = require('apr-map')
 const isEqual = require('lodash.isequal')
-const {
-  transformGroups,
-  transformMeetupEvent,
-  generateContentfulEvent
-} = require('./utils/meetup')
+const { transformGroups, generateContentfulEvent } = require('./utils/meetup')
 
 const {
   MEETUP_API_SECRET,
@@ -121,7 +117,8 @@ exports.handler = async evt => {
 
   const { items: events } = await environment.getEntries({
     limit: 1000,
-    content_type: 'meetupEven'
+    content_type: 'meetupEven',
+    'fields.type': 'Meetup'
   })
 
   let log = {
@@ -132,13 +129,11 @@ exports.handler = async evt => {
   }
 
   await Map(parsedEvents, async event => {
-    const meetup = transformMeetupEvent(event)
-
-    const contentfulEvent = Find(events, ['fields.id.en-US', meetup.id])
-    const generatedEvent = generateContentfulEvent(meetup)
+    const contentfulEvent = Find(events, ['fields.id.en-US', event.id])
+    const generatedEvent = generateContentfulEvent(event)
+    console.log(JSON.stringify({ contentfulEvent, generatedEvent }, null, 2))
 
     if (generatedEvent && contentfulEvent) {
-      // iterates through the generatedEvent, returns an array of differing keys.
       const { fields: generatedEventFields } = generatedEvent
       const { fields: contentfulEventFields } = contentfulEvent
 
@@ -148,22 +143,13 @@ exports.handler = async evt => {
           return acc
         }
 
-        if (['startTime', 'endTime'].includes(curr)) {
-          return new Date(contentfulEventFields[curr]['en-US']) -
-            generatedEventFields[curr]['en-US'] ===
-            0
-            ? acc
-            : [...acc, curr]
-        }
-
         return isEqual(contentfulEventFields[curr], generatedEventFields[curr])
           ? acc
           : [...acc, curr]
       }, [])
 
-      // If there are no differences then length will be 0
       if (diffVals && !diffVals.length) {
-        log.unchangedEvents.push(meetup.eventName)
+        log.unchangedEvents.push(generatedEvent.fields.eventTitle['en-US'])
         return
       }
 
@@ -178,8 +164,8 @@ exports.handler = async evt => {
 
       if (isProd) {
         log.updatedEvents.push({
-          name: meetup.eventName,
-          values: { ...diffVals }
+          name: generatedEvent.fields.eventTitle['en-US'],
+          values: [diffVals]
         })
         const id = await contentfulEvent.update()
         const updatedEntry = await environment.getEntry(id.sys.id)
@@ -192,7 +178,7 @@ exports.handler = async evt => {
 
     // create
     if (isProd) {
-      log.newEvents.push(meetup.eventName)
+      log.newEvents.push(generatedEvent.fields.eventTitle['en-US'])
       const id = await environment.createEntry('meetupEven', generatedEvent)
       const newEntry = await environment.getEntry(id.sys.id)
 
