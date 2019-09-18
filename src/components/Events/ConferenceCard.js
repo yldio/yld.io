@@ -11,8 +11,10 @@ import StyledLink from '../Common/StyledLink'
 import { CardTitle, BodyPrimary } from '../Typography'
 
 const BlurbWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[3]};
+      padding-top: ${({ theme }) => theme.space[3]};
   `};
 `
 

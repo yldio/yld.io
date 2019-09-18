@@ -2,29 +2,30 @@ import React, { Fragment } from 'react'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import { Padding } from 'styled-components-spacing'
 import { isPast } from 'date-fns'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
+import is from 'styled-is'
 
-import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 import Hr from '../components/Common/Hr'
-import { SectionTitle, DisplayTitle } from '../components/Typography'
+import {
+  BodyPrimary,
+  SectionTitle,
+  DisplayTitle
+} from '../components/Typography'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import ConferenceCard from '../components/Events/ConferenceCard'
 import EventCard from '../components/Events/EventCard'
 import GreyBackground from '../components/Common/GreyBackground'
 import Image from '../components/Common/Image'
+import StyledLink from '../components/Common/StyledLink'
 import BlueBackground from '../components/Common/BlueBackground'
 
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(40)};
-`
-
-const StyledDisplayTitle = styled(DisplayTitle)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
 const StyledRow = styled(Row)`
@@ -66,8 +67,9 @@ const StyledPosterImageCol = styled(Col)`
 
 const getInTouchData = {
   title: 'Interested in hosting or talking at our meetups?',
-  text:
-    'Bring your organisation closer to our community, Host or sponsor one of our events. Have an idea of your own? Let us know!',
+  copyHeading: 'Bring your organisation closer to our community',
+  copy:
+    'Host or sponsor one of our events. Have an idea of your own? Let us know!',
   ctaText: 'Get in touch'
 }
 
@@ -79,42 +81,74 @@ const HrWrapper = styled.div`
     padding-top: ${({ theme }) => theme.space[4]};
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
+
+  ${is('noPaddingTop')`
+    padding-top: 0;
+  `}
 `
 
 const EventsRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
   padding-bottom: ${({ theme }) => theme.space[4]};
 
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
 const ConferenceRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[7]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
 `
 
-const EventList = ({ events, Component }) =>
-  events.slice(0, 4).map(event => (
-    <Fragment key={generate()}>
-      <HrWrapper>
+const ConferenceDisplayTitle = styled(DisplayTitle)`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+`
+
+const EventListWrapper = styled.div`
+  ${is('paddingBottom')`
+    padding-bottom: ${({ theme }) => theme.space[2]}
+  `}
+`
+
+const EventList = ({ events }) =>
+  events.slice(0, 4).map((event, idx, arr) => (
+    <EventListWrapper key={generate()} paddingBottom={arr.length - 1 === idx}>
+      <HrWrapper noPaddingTop={idx === 0}>
         <Hr />
       </HrWrapper>
-      <Component event={event.node} />
+      <EventCard event={event.node} />
+    </EventListWrapper>
+  ))
+
+const ConferenceList = ({ events }) =>
+  events.slice(0, 4).map((event, idx) => (
+    <Fragment key={generate()}>
+      {idx !== 0 && (
+        <HrWrapper>
+          <Hr />
+        </HrWrapper>
+      )}
+      <ConferenceCard event={event.node} />
     </Fragment>
   ))
 
 const EventPage = ({
-  data: { allContentfulMeetupEvent: allEvents, contentfulEventsPage: content }
+  data: { events, conferences, contentfulEventsPage: content }
 }) => {
-  const events = allEvents.edges
-  const meetups = events.filter(
-    event =>
-      event.node.type === 'Meetup' && !isPast(new Date(), event.node.date)
+  const futureEvents = events.edges.filter(
+    ({ node }) => !isPast(new Date(), node.date)
   )
-  const conferences = events.filter(event => event.node.type === 'Conference')
 
   const { introSentence, posterImage, seoMetaData } = content
 
@@ -141,12 +175,12 @@ const EventPage = ({
             <DisplayTitle>Upcoming events</DisplayTitle>
           </Col>
           <Col width={[1]}>
-            {meetups && meetups.length > 0 ? (
-              <EventList events={meetups} Component={EventCard} />
+            {futureEvents && futureEvents.length > 0 ? (
+              <EventList events={futureEvents} />
             ) : (
               <DisplayTitle>
                 {
-                  "We don't seem to have any upcomingn events currently, check back soon!"
+                  "We don't seem to have any upcoming events currently, check back soon!"
                 }
               </DisplayTitle>
             )}
@@ -155,21 +189,38 @@ const EventPage = ({
       </Grid>
 
       <GreyBackground>
-        <GetInTouch
-          title={getInTouchData.title}
-          contactText={getInTouchData.text}
-          ctaText={getInTouchData.ctaText}
-        />
+        <Grid>
+          <Padding
+            top={{ smallPhone: 3.5, tablet: 5 }}
+            bottom={{ smallPhone: 3.5, tablet: 5 }}
+          >
+            <Row>
+              <Col width={[1, 1, 1, 1, 6 / 12]}>
+                <SectionTitle>{getInTouchData.title}</SectionTitle>
+              </Col>
+              <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+                <BodyPrimary noPaddingBottom bold>
+                  {getInTouchData.copyHeading}
+                </BodyPrimary>
+                <BodyPrimary noPaddingTop>{getInTouchData.copy}</BodyPrimary>
+
+                <StyledLink to="/contact/" title={getInTouchData.ctaText}>
+                  {getInTouchData.ctaText}
+                </StyledLink>
+              </Col>
+            </Row>
+          </Padding>
+        </Grid>
       </GreyBackground>
 
       <Grid>
         <ConferenceRow>
           <Col width={[1]}>
-            <StyledDisplayTitle>Our Conferences</StyledDisplayTitle>
+            <ConferenceDisplayTitle>Our Conferences</ConferenceDisplayTitle>
           </Col>
           <Col width={[1]}>
-            {conferences && conferences.length > 0 && (
-              <EventList events={conferences} Component={ConferenceCard} />
+            {conferences.edges && conferences.edges.length > 0 && (
+              <ConferenceList events={conferences.edges} />
             )}
           </Col>
         </ConferenceRow>
@@ -196,7 +247,40 @@ export const query = graphql`
         introSentence
       }
     }
-    allContentfulMeetupEvent(sort: { fields: date, order: DESC }) {
+    events: allContentfulMeetupEvent(
+      sort: { fields: date, order: ASC }
+      filter: { type: { in: ["Workshop", "Meetup"] } }
+    ) {
+      edges {
+        node {
+          startTime
+          endTime
+          date
+          attendees
+          type
+          eventTitle
+          address
+          blurb {
+            blurb
+          }
+          homepageFeatured
+          linkToEvent
+          ctaText
+          eventImage: eventPage {
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+    conferences: allContentfulMeetupEvent(
+      sort: { fields: date, order: DESC }
+      filter: { type: { eq: "Conference" } }
+    ) {
       edges {
         node {
           startTime

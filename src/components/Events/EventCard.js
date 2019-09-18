@@ -45,7 +45,7 @@ const DateCard = ({ date }) => {
 }
 
 const EventTypePadding = styled.div`
-  ${breakpoint('phone', 'largePhone')`
+  ${breakpoint('phone', 'smallTablet')`
     padding-top: ${({ theme }) => theme.spacing[2]};
     padding-bottom: ${({ theme }) => theme.spacing[1]}; 
   `};
@@ -108,9 +108,7 @@ const EventCard = ({ event }) => {
 
           <CardTitle as="h3">{eventTitle}</CardTitle>
         </div>
-        <BodyPrimary muted noPadding>
-          {eventInfo}
-        </BodyPrimary>
+        <BodyPrimary muted>{eventInfo}</BodyPrimary>
       </StyledInfoCol>
 
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 3 / 12, 5 / 12]}>
