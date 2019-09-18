@@ -111,7 +111,7 @@ const ConferenceRow = styled(Row)`
   `}
 `
 
-const ConferenceDisplayTitle = styled(DisplayTitle)`
+const ConferenceSectionTitle = styled(SectionTitle)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
@@ -216,7 +216,7 @@ const EventPage = ({
       <Grid>
         <ConferenceRow>
           <Col width={[1]}>
-            <ConferenceDisplayTitle>Our Conferences</ConferenceDisplayTitle>
+            <ConferenceSectionTitle>Our Conferences</ConferenceSectionTitle>
           </Col>
           <Col width={[1]}>
             {conferences.edges && conferences.edges.length > 0 && (
@@ -245,6 +245,9 @@ export const query = graphql`
       }
       introSentence {
         introSentence
+      }
+      footerContactUs {
+        id
       }
     }
     events: allContentfulMeetupEvent(
