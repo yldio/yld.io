@@ -972,20 +972,14 @@
     is-buffer "^1.1.5"
 
 "@emotion/cache@^10.0.17", "@emotion/cache@^10.0.9":
-<<<<<<< HEAD
-  version "10.0.19"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"
-  integrity sha512-BoiLlk4vEsGBg2dAqGSJu0vJl/PgVtCYLBFJaEO8RmQzPugXewQCXZJNXTDFaRlfCs0W+quesayav4fvaif5WQ==
-=======
   version "10.0.17"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.17.tgz#3491a035f62f276620d586677bfc3d4fad0b8472"
   integrity sha512-442/miwbuwIDfSzfMqZNxuzxSEbskcz/bZ86QBYzEjFrr/oq9w+y5kJY1BHbGhDtr91GO232PZ5NN9XYMwr/Qg==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
     "@emotion/sheet" "0.9.3"
     "@emotion/stylis" "0.8.4"
     "@emotion/utils" "0.11.2"
-    "@emotion/weak-memoize" "0.2.4"
+    "@emotion/weak-memoize" "0.2.3"
 
 "@emotion/core@^10.0.14", "@emotion/core@^10.0.7", "@emotion/core@^10.0.9":
   version "10.0.17"
@@ -1008,17 +1002,22 @@
     "@emotion/utils" "0.11.2"
     babel-plugin-emotion "^10.0.14"
 
+"@emotion/hash@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.2.tgz#53211e564604beb9befa7a4400ebf8147473eeef"
+  integrity sha512-RMtr1i6E8MXaBWwhXL3yeOU8JXRnz8GNxHvaUfVvwxokvayUY0zoBeWbKw1S9XkufmGEEdQd228pSZXFkAln8Q==
+
 "@emotion/hash@0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.7.3.tgz#a166882c81c0c6040975dd30df24fae8549bd96f"
   integrity sha512-14ZVlsB9akwvydAdaEnVnvqu6J2P6ySv39hYyl/aoB6w/V+bXX0tay8cF6paqbgZsN2n5Xh15uF4pE+GvE+itw==
 
-"@emotion/is-prop-valid@0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.3.tgz#cbe62ddbea08aa022cdf72da3971570a33190d29"
-  integrity sha512-We7VBiltAJ70KQA0dWkdPMXnYoizlxOXpvtjmu5/MBnExd+u0PGgV27WCYanmLAbCwAU30Le/xA0CQs/F/Otig==
+"@emotion/is-prop-valid@0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.2.tgz#b9692080da79041683021fcc32f96b40c54c59dc"
+  integrity sha512-ZQIMAA2kLUWiUeMZNJDTeCwYRx1l8SQL0kHktze4COT22occKpDML1GDUXP5/sxhOMrZO8vZw773ni4H5Snrsg==
   dependencies:
-    "@emotion/memoize" "0.7.3"
+    "@emotion/memoize" "0.7.2"
 
 "@emotion/is-prop-valid@^0.6.8":
   version "0.6.8"
@@ -1026,6 +1025,11 @@
   integrity sha512-IMSL7ekYhmFlILXcouA6ket3vV7u9BqStlXzbKOF9HBtpUPMMlHU+bBxrLOa2NvleVwNIxeq/zL8LafLbeUXcA==
   dependencies:
     "@emotion/memoize" "^0.6.6"
+
+"@emotion/memoize@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.2.tgz#7f4c71b7654068dfcccad29553520f984cc66b30"
+  integrity sha512-hnHhwQzvPCW1QjBWFyBtsETdllOM92BfrKWbUTmh9aeOlcVOiXvlPsK4104xH8NsaKfg86PTFsWkueQeUfMA/w==
 
 "@emotion/memoize@0.7.3":
   version "0.7.3"
@@ -1037,20 +1041,13 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.6.6.tgz#004b98298d04c7ca3b4f50ca2035d4f60d2eed1b"
   integrity sha512-h4t4jFjtm1YV7UirAFuSuFGyLa+NNxjdkq6DpFLANNQY5rHueFZHVY+8Cu1HYVP6DrheB0kv4m5xPjo7eKT7yQ==
 
-<<<<<<< HEAD
-"@emotion/serialize@^0.11.10", "@emotion/serialize@^0.11.11", "@emotion/serialize@^0.11.8":
-  version "0.11.11"
-  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.11.tgz#c92a5e5b358070a7242d10508143306524e842a4"
-  integrity sha512-YG8wdCqoWtuoMxhHZCTA+egL0RSGdHEc+YCsmiSBPBEDNuVeMWtjEWtGrhUterSChxzwnWBXvzSxIFQI/3sHLw==
-=======
 "@emotion/serialize@^0.11.10", "@emotion/serialize@^0.11.8":
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-0.11.10.tgz#53207dba7e28bd96928fc2a37e20b31b712bf9a2"
   integrity sha512-04AB+wU00vv9jLgkWn13c/GJg2yXp3w7ZR3Q1O6mBSE6mbUmYeNX3OpBhfp//6r47lFyY0hBJJue+bA30iokHQ==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
-    "@emotion/hash" "0.7.3"
-    "@emotion/memoize" "0.7.3"
+    "@emotion/hash" "0.7.2"
+    "@emotion/memoize" "0.7.2"
     "@emotion/unitless" "0.7.4"
     "@emotion/utils" "0.11.2"
     csstype "^2.5.7"
@@ -1061,15 +1058,6 @@
   integrity sha512-c3Q6V7Df7jfwSq5AzQWbXHa5soeE4F5cbqi40xn0CzXxWW9/6Mxq48WJEtqfWzbZtW9odZdnRAkwCQwN12ob4A==
 
 "@emotion/styled-base@^10.0.17":
-<<<<<<< HEAD
-  version "10.0.19"
-  resolved "https://registry.yarnpkg.com/@emotion/styled-base/-/styled-base-10.0.19.tgz#53655274797194d86453354fdb2c947b46032db6"
-  integrity sha512-Sz6GBHTbOZoeZQKvkE9gQPzaJ6/qtoQ/OPvyG2Z/6NILlYk60Es1cEcTgTkm26H8y7A0GSgp4UmXl+srvsnFPg==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@emotion/is-prop-valid" "0.8.3"
-    "@emotion/serialize" "^0.11.11"
-=======
   version "10.0.17"
   resolved "https://registry.yarnpkg.com/@emotion/styled-base/-/styled-base-10.0.17.tgz#701af0cd256be2977db8d67c33630f542e460b85"
   integrity sha512-vqQvxluZZKPByAB4zYZys0Qo/kVDP/03hAeg1K+TYpnZRwTi7WteOodc+/5669RPVNcfb93fphQpM5BYJnI1/g==
@@ -1077,7 +1065,6 @@
     "@babel/runtime" "^7.5.5"
     "@emotion/is-prop-valid" "0.8.2"
     "@emotion/serialize" "^0.11.10"
->>>>>>> remove meetup.js, update search params in oauth step
     "@emotion/utils" "0.11.2"
 
 "@emotion/styled@^10.0.14", "@emotion/styled@^10.0.7":
@@ -1102,6 +1089,11 @@
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.11.2.tgz#713056bfdffb396b0a14f1c8f18e7b4d0d200183"
   integrity sha512-UHX2XklLl3sIaP6oiMmlVzT0J+2ATTVpf0dHQVyPJHTkOITvXfaSqnRk6mdDhV9pR8T/tHc3cex78IKXssmzrA==
+
+"@emotion/weak-memoize@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
+  integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
 "@emotion/weak-memoize@0.2.4":
   version "0.2.4"
@@ -2695,14 +2687,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.7.tgz#8604623912010235185f1166c7a5a9aa7de9fcd8"
   integrity sha512-4I7+hXKyq7e1deuzX9udu0hPIYqSSkdKXtjow6fMnQ3OR9qkxIErGHbGY08YrfZJrCS1ajK8lOuzd0k3n2WM4A==
 
-<<<<<<< HEAD
-"@types/node@^8.0.7":
-  version "8.10.54"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.54.tgz#1c88eb253ac1210f1a5876953fb70f7cc4928402"
-  integrity sha512-kaYyLYf6ICn6/isAyD4K1MyWWd5Q3JgH6bnMN089LUx88+s4W8GvK9Q6JMBVu5vsFFp7pMdSxdKmlBXwH/VFRg==
-
-=======
->>>>>>> remove meetup.js, update search params in oauth step
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
@@ -4116,16 +4100,6 @@ babel-plugin-dynamic-import-node@^1.2.0:
     babel-plugin-syntax-dynamic-import "^6.18.0"
 
 babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.17:
-<<<<<<< HEAD
-  version "10.0.19"
-  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.19.tgz#67b9b213f7505c015f163a387a005c12c502b1de"
-  integrity sha512-1pJb5uKN/gx6bi3gGr588Krj49sxARI9KmxhtMUa+NRJb6lR3OfC51mh3NlWRsOqdjWlT4cSjnZpnFq5K3T5ZA==
-  dependencies:
-    "@babel/helper-module-imports" "^7.0.0"
-    "@emotion/hash" "0.7.3"
-    "@emotion/memoize" "0.7.3"
-    "@emotion/serialize" "^0.11.11"
-=======
   version "10.0.17"
   resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.17.tgz#5673fbed7b1ed61b4b98d5530f33c8a4d1b08484"
   integrity sha512-KNuBadotqYWpQexHhHOu7M9EV1j2c+Oh/JJqBfEQDusD6mnORsCZKHkl+xYwK82CPQ/23wRrsBIEYnKjtbMQJw==
@@ -4134,7 +4108,6 @@ babel-plugin-emotion@^10.0.14, babel-plugin-emotion@^10.0.17:
     "@emotion/hash" "0.7.2"
     "@emotion/memoize" "0.7.2"
     "@emotion/serialize" "^0.11.10"
->>>>>>> remove meetup.js, update search params in oauth step
     babel-plugin-macros "^2.0.0"
     babel-plugin-syntax-jsx "^6.18.0"
     convert-source-map "^1.5.0"
@@ -7932,21 +7905,12 @@ emojis-list@^2.0.0:
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
 emotion-theming@^10.0.14, emotion-theming@^10.0.7:
-<<<<<<< HEAD
-  version "10.0.19"
-  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.19.tgz#66d13db74fccaefad71ba57c915b306cf2250295"
-  integrity sha512-dQRBPLAAQ6eA8JKhkLCIWC8fdjPbiNC1zNTdFF292h9amhZXofcNGUP7axHoHX4XesqQESYwZrXp53OPInMrKw==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
-    "@emotion/weak-memoize" "0.2.4"
-=======
   version "10.0.18"
   resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.18.tgz#7d636eb465cb190590e17d815b8d318be512ef7d"
   integrity sha512-zFAax4setUIKDj+cmbl3nxXDBRIMsPmiRNpg+qDmX9wTHW2TPWpETMGaDWB67LwK63rfSIkeTH7stFFnyKd2pQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@emotion/weak-memoize" "0.2.3"
->>>>>>> remove meetup.js, update search params in oauth step
     hoist-non-react-statics "^3.3.0"
 
 encodeurl@~1.0.2:
@@ -8485,22 +8449,6 @@ event-stream@3.3.4:
     stream-combiner "~0.0.4"
     through "~2.3.1"
 
-<<<<<<< HEAD
-event-stream@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/event-stream/-/event-stream-4.0.1.tgz#4092808ec995d0dd75ea4580c1df6a74db2cde65"
-  integrity sha512-qACXdu/9VHPBzcyhdOWR5/IahhGMf0roTeZJfzz077GwylcDd90yOHLouhmv7GJ5XzPi6ekaQWd8AvPP2nOvpA==
-  dependencies:
-    duplexer "^0.1.1"
-    from "^0.1.7"
-    map-stream "0.0.7"
-    pause-stream "^0.0.11"
-    split "^1.0.1"
-    stream-combiner "^0.2.2"
-    through "^2.3.8"
-
-=======
->>>>>>> remove meetup.js, update search params in oauth step
 eventemitter3@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
@@ -8894,14 +8842,6 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-<<<<<<< HEAD
-fast-safe-stringify@^2.0.6:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
-  integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
-
-=======
->>>>>>> remove meetup.js, update search params in oauth step
 fast-url-parser@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/fast-url-parser/-/fast-url-parser-1.1.3.tgz#f4af3ea9f34d8a271cf58ad2b3759f431f0b318d"
@@ -9420,18 +9360,6 @@ fork-ts-checker-webpack-plugin@1.5.0:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
-<<<<<<< HEAD
-form-data@^2.3.3:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
-  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.6"
-    mime-types "^2.1.12"
-
-=======
->>>>>>> remove meetup.js, update search params in oauth step
 form-data@~2.3.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
@@ -9645,17 +9573,10 @@ gatsby-core-utils@^1.0.8:
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.8.tgz#e765a1338d65ff1de65238c7f0a9967e07da20fa"
   integrity sha512-080Jl8NamTbCGliKxXpMjEO1XUYU5FAow+VPR/j6hJk+Kl/gFmpE1mqa5QnHRGLZQhBP/h2T0mUwnSJn9m/Jsw==
 
-<<<<<<< HEAD
-gatsby-graphiql-explorer@^0.2.16:
-  version "0.2.16"
-  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.16.tgz#b105988f2934a4b16b7ee65a0333df4a78b55ff5"
-  integrity sha512-DtT12tkI21kB/ITUEcHtce+lQjb9x2no4gfEqKhPa7uz0EPvkIJaWYXpDNLof9T63jOC5Dnwp8wQPXWKpFXzBQ==
-=======
 gatsby-graphiql-explorer@^0.2.15:
   version "0.2.15"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.15.tgz#f6d17df8fbb70f0767fe606d49c299ba68760e17"
   integrity sha512-T4N+q8VDbivREBDRKLoxlersaYhWhEaTBKBLT0rWAd8PfPiFQPno8JIaqFTB1DLgsL421wJo9JSsLy1xPx79yA==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
     "@babel/runtime" "^7.6.0"
 
@@ -9930,15 +9851,6 @@ gatsby-transformer-sharp@^2.1.8:
     sharp "^0.23.0"
 
 gatsby@^2.8.3:
-<<<<<<< HEAD
-  version "2.15.16"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.16.tgz#b175e30a9dac100239bdc664998b11349fcd1dcd"
-  integrity sha512-34UrlZFDiws70DSLm31WvUqewEVoXuNDmCetR8Gixucsvm35a11hTQ6TDI21cyQKipTw5kgcH/sUstkxaZ3WFA==
-  dependencies:
-    "@babel/code-frame" "^7.5.5"
-    "@babel/core" "^7.6.0"
-    "@babel/parser" "^7.6.0"
-=======
   version "2.15.15"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.15.tgz#cb68d939e5074a27ee30bea12b2b007e6b94cf5f"
   integrity sha512-mOZJSBoVYd6ObEIB0sHje6BeMd7OQeGAw2XtJCPfetolkwWqYN+fUpYdVlYz5cbztuWmXIQoU6jhrxqsJu/InA==
@@ -9946,7 +9858,6 @@ gatsby@^2.8.3:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.0"
     "@babel/parser" "^7.5.5"
->>>>>>> remove meetup.js, update search params in oauth step
     "@babel/polyfill" "^7.6.0"
     "@babel/runtime" "^7.6.0"
     "@babel/traverse" "^7.6.0"
@@ -10006,22 +9917,14 @@ gatsby@^2.8.3:
     fs-extra "^8.1.0"
     gatsby-cli "^2.7.47"
     gatsby-core-utils "^1.0.8"
-<<<<<<< HEAD
-    gatsby-graphiql-explorer "^0.2.16"
-=======
     gatsby-graphiql-explorer "^0.2.15"
->>>>>>> remove meetup.js, update search params in oauth step
     gatsby-link "^2.2.13"
     gatsby-plugin-page-creator "^2.1.17"
     gatsby-react-router-scroll "^2.1.8"
     gatsby-telemetry "^1.1.23"
     glob "^7.1.4"
     got "8.3.2"
-<<<<<<< HEAD
-    graphql "^14.5.6"
-=======
     graphql "^14.5.4"
->>>>>>> remove meetup.js, update search params in oauth step
     graphql-compose "^6.3.5"
     graphql-playground-middleware-express "^1.7.12"
     invariant "^2.2.4"
@@ -10075,11 +9978,7 @@ gatsby@^2.8.3:
     util.promisify "^1.0.0"
     uuid "^3.3.3"
     v8-compile-cache "^1.1.2"
-<<<<<<< HEAD
-    webpack "~4.40.2"
-=======
     webpack "~4.40.1"
->>>>>>> remove meetup.js, update search params in oauth step
     webpack-dev-middleware "^3.7.1"
     webpack-dev-server "^3.8.0"
     webpack-hot-middleware "^2.25.0"
@@ -10695,11 +10594,7 @@ graphql-type-json@^0.2.4:
   resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.2.4.tgz#545af27903e40c061edd30840a272ea0a49992f9"
   integrity sha512-/tq02ayMQjrG4oDFDRLLrPk0KvJXue0nVXoItBe7uAdbNXjQUu+HYCBdAmPLQoseVzUKKMzrhq2P/sfI76ON6w==
 
-<<<<<<< HEAD
-graphql@^14.5.6:
-=======
 graphql@^14.5.4:
->>>>>>> remove meetup.js, update search params in oauth step
   version "14.5.6"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.5.6.tgz#3fa12173b50e6ccdef953c31c82f37c50ef58bec"
   integrity sha512-zJ6Oz8P1yptV4O4DYXdArSwvmirPetDOBnGFRBl0zQEC68vNW3Ny8qo8VzMgfr+iC8PKiRYJ+f2wub41oDCoQg==
@@ -11791,11 +11686,7 @@ is-absolute-url@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-absolute-url/-/is-absolute-url-2.1.0.tgz#50530dfb84fcc9aa7dbe7852e83a37b93b9f2aa6"
   integrity sha1-UFMN+4T8yap9vnhS6Do3uTufKqY=
 
-<<<<<<< HEAD
 is-absolute-url@^3.0.0, is-absolute-url@^3.0.2:
-=======
-is-absolute-url@^3.0.0:
->>>>>>> remove meetup.js, update search params in oauth step
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/is-absolute-url/-/is-absolute-url-3.0.2.tgz#554f2933e7385cc46e94351977ca2081170a206e"
   integrity sha512-+5g/wLlcm1AcxSP7014m6GvbPHswDx980vD/3bZaap8aGV9Yfs7Q6y6tfaupgZ5O74Byzc8dGrSCJ+bFXx0KdA==
@@ -13127,17 +13018,10 @@ jsonify@~0.0.0:
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
 jsonld@^1.5.0:
-<<<<<<< HEAD
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/jsonld/-/jsonld-1.8.0.tgz#02960df11483a35c0c2d8d72ce13ff3d0bc2a324"
-  integrity sha512-a3bwbR0wqFstxKsGoimUIIKBdfJ+yb9kWK+WK7MpVyvfYtITMpUtF3sNoN1wG/W+jGDgya0ACRh++jtTozxtyQ==
-=======
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/jsonld/-/jsonld-1.7.0.tgz#6a2b20836628a0a4bd4393a20e72ed41418b2a73"
   integrity sha512-vqdw1px6pjim4k7dQir6CyxmkVhoClmwZPM/rw3r5KZZv/zDRBvYEpR0u/NTnuwfe9xHKUIGlVTq3PRJTvLRHQ==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
-    canonicalize "^1.0.1"
     rdf-canonize "^1.0.2"
     request "^2.88.0"
     semver "^5.6.0"
@@ -13876,11 +13760,7 @@ logalot@^2.0.0, logalot@^2.1.0:
     figures "^1.3.5"
     squeak "^1.0.0"
 
-<<<<<<< HEAD
 loglevel@^1.6.4:
-=======
-loglevel@^1.6.3:
->>>>>>> remove meetup.js, update search params in oauth step
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.4.tgz#f408f4f006db8354d0577dcf6d33485b3cb90d56"
   integrity sha512-p0b6mOGKcGa+7nnmKbpzR6qloPbrgLcnio++E+14Vo/XffOGwZtRpUhr8dTH/x2oCMmEoIU0Zwm3ZauhvYD17g==
@@ -14544,17 +14424,18 @@ minimist@~0.0.1:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
   integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
-<<<<<<< HEAD
-minipass@^2.2.1, minipass@^2.3.5, minipass@^2.6.0:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.3.tgz#3ac4ae0fc8835946fdf6d2480659e98e17e88424"
-  integrity sha512-TQJDWx0rizi7qvXGydyOx+it271jnk/zxV7/mCkTecpMrSksvZ6zTXxWgJS2gSzVmYG1tBufz5r5NaBVkJEERQ==
-=======
 minipass@^2.2.1, minipass@^2.3.5:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.0.tgz#80a68c8a43257b7f744ce09733f6a9c6eef9f731"
   integrity sha512-OuNZ0OHrrI+jswzmgivYBZ+fAAGHZA4293d5q0z631/I9QSw3yumKB92njxHIHiB1eAdGRsE+3CcOPkoEyV5FQ==
->>>>>>> remove meetup.js, update search params in oauth step
+  dependencies:
+    safe-buffer "^5.1.2"
+    yallist "^3.0.0"
+
+minipass@^2.6.0:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.6.3.tgz#3ac4ae0fc8835946fdf6d2480659e98e17e88424"
+  integrity sha512-TQJDWx0rizi7qvXGydyOx+it271jnk/zxV7/mCkTecpMrSksvZ6zTXxWgJS2gSzVmYG1tBufz5r5NaBVkJEERQ==
   dependencies:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
@@ -14975,15 +14856,9 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.25, node-releases@^1.1.29:
-<<<<<<< HEAD
-  version "1.1.32"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.32.tgz#485b35c1bf9b4d8baa105d782f8ca731e518276e"
-  integrity sha512-VhVknkitq8dqtWoluagsGPn3dxTvN9fwgR59fV3D7sLBHe0JfDramsMI8n8mY//ccq/Kkrf8ZRHRpsyVZ3qw1A==
-=======
   version "1.1.30"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.30.tgz#35eebf129c63baeb6d8ddeda3c35b05abfd37f7f"
   integrity sha512-BHcr1g6NeUH12IL+X3Flvs4IOnl1TL0JczUhEZjDE+FXXPQcVCNr8NEPb01zqGxzhTpdyJL5GXemaCW7aw6Khw==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
     semver "^5.3.0"
 
@@ -16274,11 +16149,7 @@ popper.js@^1.14.4, popper.js@^1.14.7:
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
 
-<<<<<<< HEAD
 portfinder@^1.0.24:
-=======
-portfinder@^1.0.21:
->>>>>>> remove meetup.js, update search params in oauth step
   version "1.0.24"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.24.tgz#11efbc6865f12f37624b6531ead1d809ed965cfa"
   integrity sha512-ekRl7zD2qxYndYflwiryJwMioBI7LI7rVXg3EnLK3sjkouT5eOuhS3gS255XxBksa30VG8UPZYZCdgfGOfkSUg==
@@ -17872,21 +17743,7 @@ read@^1.0.7:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-<<<<<<< HEAD
-readable-stream@1.1.x, readable-stream@~1.1.9:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
-  integrity sha1-fPTFTvZI44EwhMY23SB54WbAgdk=
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
-"readable-stream@2 || 3", readable-stream@3, readable-stream@^3.0.1, readable-stream@^3.0.6, readable-stream@^3.1.1, readable-stream@^3.4.0:
-=======
 "readable-stream@2 || 3", readable-stream@^3.0.1, readable-stream@^3.0.6, readable-stream@^3.1.1:
->>>>>>> remove meetup.js, update search params in oauth step
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
   integrity sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
@@ -18751,11 +18608,7 @@ select@^1.1.2:
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
   integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
 
-<<<<<<< HEAD
 selfsigned@^1.10.6:
-=======
-selfsigned@^1.10.4:
->>>>>>> remove meetup.js, update search params in oauth step
   version "1.10.6"
   resolved "https://registry.yarnpkg.com/selfsigned/-/selfsigned-1.10.6.tgz#7b3cd37ed9c2034261a173af1a1aae27d8169b67"
   integrity sha512-i3+CeqxL7DpAazgVpAGdKMwHuL63B5nhJMh9NQ7xmChGkA3jNFflq6Jyo1LLJYcr3idWiNOPWHCrm4zMayLG4w==
@@ -19528,15 +19381,9 @@ store2@^2.7.1:
   integrity sha512-JmK+95jLX2zAP75DVAJ1HAziQ6f+f495h4P9ez2qbmxazN6fE7doWlitqx9hj2YohH3kOi6RVksJe1UH0sJfPw==
 
 storybook-addon-react-docgen@^1.2.6:
-<<<<<<< HEAD
-  version "1.2.18"
-  resolved "https://registry.yarnpkg.com/storybook-addon-react-docgen/-/storybook-addon-react-docgen-1.2.18.tgz#ce2e144fb81a27f14b73da396e142ff2abd59243"
-  integrity sha512-wc1W9iveMf2cJgtMwmQxHalfihjQgMaXLNh5hQ46uk68T3kVCwugF8HFGyq4OlQTG3m/kRi6eYpwsZMNxeHamA==
-=======
   version "1.2.15"
   resolved "https://registry.yarnpkg.com/storybook-addon-react-docgen/-/storybook-addon-react-docgen-1.2.15.tgz#da00cfdaa4abd2b842a2181392dee872879f3372"
   integrity sha512-g89Wao3Oew86AxxWuhDLaU4opwY4kvAJURnCOIvG/C2bIP5OSG5IReCxtmkTF2UCEKWFSxAPVTURrKfsIRhOtg==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
     nested-object-assign "^1.0.3"
     prop-types "^15.6.2"
@@ -21694,19 +21541,13 @@ webpack-dev-middleware@^3.7.0, webpack-dev-middleware@^3.7.1:
     webpack-log "^2.0.0"
 
 webpack-dev-server@^3.8.0:
-<<<<<<< HEAD
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.8.1.tgz#485b64c4aadc23f601e72114b40c1b1fea31d9f1"
-  integrity sha512-9F5DnfFA9bsrhpUCAfQic/AXBVHvq+3gQS+x6Zj0yc1fVVE0erKh2MV4IV12TBewuTrYeeTIRwCH9qLMvdNvTw==
-=======
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.8.0.tgz#06cc4fc2f440428508d0e9770da1fef10e5ef28d"
   integrity sha512-Hs8K9yI6pyMvGkaPTeTonhD6JXVsigXDApYk9JLW4M7viVBspQvb1WdAcWxqtmttxNW4zf2UFLsLNe0y87pIGQ==
->>>>>>> remove meetup.js, update search params in oauth step
   dependencies:
     ansi-html "0.0.7"
     bonjour "^3.5.0"
-    chokidar "^2.1.8"
+    chokidar "^2.1.6"
     compression "^1.7.4"
     connect-history-api-fallback "^1.6.0"
     debug "^4.1.1"
@@ -21717,23 +21558,23 @@ webpack-dev-server@^3.8.0:
     import-local "^2.0.0"
     internal-ip "^4.3.0"
     ip "^1.1.5"
-    is-absolute-url "^3.0.2"
+    is-absolute-url "^3.0.0"
     killable "^1.0.1"
-    loglevel "^1.6.4"
+    loglevel "^1.6.3"
     opn "^5.5.0"
     p-retry "^3.0.1"
-    portfinder "^1.0.24"
+    portfinder "^1.0.21"
     schema-utils "^1.0.0"
-    selfsigned "^1.10.6"
+    selfsigned "^1.10.4"
     semver "^6.3.0"
     serve-index "^1.9.1"
     sockjs "0.3.19"
-    sockjs-client "1.4.0"
+    sockjs-client "1.3.0"
     spdy "^4.0.1"
     strip-ansi "^3.0.1"
     supports-color "^6.1.0"
     url "^0.11.0"
-    webpack-dev-middleware "^3.7.1"
+    webpack-dev-middleware "^3.7.0"
     webpack-log "^2.0.0"
     ws "^6.2.1"
     yargs "12.0.5"
@@ -21781,11 +21622,7 @@ webpack-stats-plugin@^0.3.0:
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.3.0.tgz#6952f63feb9a5393a328d774fb3eccac78d2f51b"
   integrity sha512-4a6mEl9HLtMukVjEPY8QPCSmtX2EDFJNhDTX5ZE2CLch2adKAZf53nUrpG6m7NattwigS0AodNcwNxlu9kMSDQ==
 
-<<<<<<< HEAD
-webpack@^4.17.1, webpack@^4.33.0, webpack@^4.38.0, webpack@~4.40.2:
-=======
 webpack@^4.17.1, webpack@^4.33.0, webpack@^4.38.0, webpack@~4.40.1:
->>>>>>> remove meetup.js, update search params in oauth step
   version "4.40.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.40.2.tgz#d21433d250f900bf0facbabe8f50d585b2dc30a7"
   integrity sha512-5nIvteTDCUws2DVvP9Qe+JPla7kWPPIDFZv55To7IycHWZ+Z5qBdaBYPyuXWdhggTufZkQwfIK+5rKQTVovm2A==
@@ -22109,14 +21946,6 @@ xmlhttprequest-ssl@~1.5.4:
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
-<<<<<<< HEAD
-xregexp@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
-  integrity sha1-UqY+VsoLhKfzpfPWGHLxJq16WUM=
-
-=======
->>>>>>> remove meetup.js, update search params in oauth step
 xstate@^4.6.7:
   version "4.6.7"
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.6.7.tgz#1f325df07d75676c90d65b17a3a56692f259fd41"
