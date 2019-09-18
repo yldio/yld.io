@@ -80,6 +80,11 @@ const generateContentfulEvent = ({
             }&&${venue.address3 ? venue.address3 : ''}&&${venue.city}`
           : 'Venue To Be Confirmed'
     },
+    venueName: { 'en-US': venue.name },
+    addressLine1: { 'en-US': venue.address1 },
+    addressLine2: { 'en-US': venue.adress2 },
+    addressLine3: { 'en-US': venue.address3 },
+    city: { 'en-US': venue.city },
     eventTitle: {
       'en-US': eventName
     },
