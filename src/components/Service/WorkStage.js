@@ -1,6 +1,7 @@
 import React from 'react'
 import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
+import styled from 'styled-components'
 
 import { Row, Col } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
@@ -8,6 +9,13 @@ import getSections from './getSections'
 import TitleAndList from '../Common/TitleAndList'
 import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
 import theme from '../../utils/theme'
+
+const IconContainer = styled.div`
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: flex-end;
+`
 
 const WorkStage = ({ workStage }) => {
   const sections = getSections(workStage)
@@ -42,7 +50,9 @@ const WorkStage = ({ workStage }) => {
         <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={id}>
           <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
             <Padding bottom={1}>
-              <img src={`https://${icon.file.url}`} alt={icon.title} />
+              <IconContainer>
+                <img src={`https://${icon.file.url}`} alt={icon.title} />
+              </IconContainer>
             </Padding>
             <Subtitle noPadding reverse>
               {title}
