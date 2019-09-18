@@ -34,7 +34,6 @@ const AnchorWrapper = ({ to, children }) =>
 const ConferenceCard = ({ event }) => {
   const {
     date,
-    addressLine3,
     city,
     eventTitle,
     blurb,
@@ -44,8 +43,7 @@ const ConferenceCard = ({ event }) => {
   } = event
 
   const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY')
-  const formattedAddress = `${addressLine3 ? `${addressLine3}, ` : ''}${city}`
-  const eventInfo = `${formattedDate} • ${formattedAddress}`
+  const eventInfo = `${formattedDate} • ${city}`
 
   const status = isPast(new Date(date)) ? 'Past' : 'Upcoming'
 

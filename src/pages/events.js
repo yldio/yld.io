@@ -108,11 +108,15 @@ const ConferenceRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
-  `}
+    `}
 `
 
-const ConferenceSectionTitle = styled(SectionTitle)`
+const ConferenceTitleWrap = styled.div`
   padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const EventListWrapper = styled.div`
@@ -216,7 +220,9 @@ const EventPage = ({
       <Grid>
         <ConferenceRow>
           <Col width={[1]}>
-            <ConferenceSectionTitle>Our Conferences</ConferenceSectionTitle>
+            <ConferenceTitleWrap>
+              <SectionTitle>Our Conferences</SectionTitle>
+            </ConferenceTitleWrap>
           </Col>
           <Col width={[1]}>
             {conferences.edges && conferences.edges.length > 0 && (
