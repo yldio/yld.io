@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const { URLSearchParams } = require('url')
+const URLSearchParams = require('url').URLSearchParams
 const Got = require('got')
 const { createClient } = require('contentful-management')
 const Find = require('lodash.find')
