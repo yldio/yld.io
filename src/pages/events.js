@@ -150,10 +150,10 @@ const EventPage = ({
     ({ node }) => !isPast(new Date(), node.date)
   )
 
-  const { introSentence, posterImage, seoMetaData } = content
+  const { introSentence, posterImage, seoMetaData, footerContactUs } = content
 
   return (
-    <Layout bgColor="blueBg">
+    <Layout bgColor="blueBg" footerContactUsId={footerContactUs.id}>
       <Head seoMetaData={seoMetaData} />
 
       <StyledBlueBackground>
