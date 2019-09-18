@@ -70,7 +70,8 @@ const AlignRightCol = styled(Col)`
 const EventCard = ({ event }) => {
   const {
     date,
-    address,
+    addressLine3,
+    city,
     startTime,
     endTime,
     type,
@@ -79,12 +80,12 @@ const EventCard = ({ event }) => {
     linkToEvent
   } = event
 
-  const formattedAddress = address.slice(0, 15).trim()
-
   const formattedStartTime = format(new Date(startTime), 'ha')
   const formattedEndTime = format(new Date(endTime), 'ha')
 
-  const eventInfo = `${formattedAddress} • ${formattedStartTime} - ${formattedEndTime}${
+  const eventInfo = `${
+    addressLine3 ? `${addressLine3}, ` : ''
+  } ${city} • ${formattedStartTime} - ${formattedEndTime}${
     attendees ? ` • ${attendees} attending` : ''
   }`
 
@@ -108,7 +109,9 @@ const EventCard = ({ event }) => {
 
           <CardTitle as="h3">{eventTitle}</CardTitle>
         </div>
-        <BodyPrimary muted>{eventInfo}</BodyPrimary>
+        <BodyPrimary muted noPaddingBottom>
+          {eventInfo}
+        </BodyPrimary>
       </StyledInfoCol>
 
       <AlignRightCol width={[1, 1, 1, 1, 3 / 12, 3 / 12, 5 / 12]}>

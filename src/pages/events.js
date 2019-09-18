@@ -230,6 +230,34 @@ const EventPage = ({
 }
 
 export const query = graphql`
+  fragment Event on ContentfulMeetupEvent {
+    startTime
+    endTime
+    date
+    attendees
+    type
+    eventTitle
+    address
+    addressLine1
+    addressLine2
+    addressLine3
+    city
+    blurb {
+      blurb
+    }
+    homepageFeatured
+    linkToEvent
+    ctaText
+    eventImage: eventPage {
+      file {
+        url
+      }
+      fluid(maxWidth: 600) {
+        ...GatsbyContentfulFluid_withWebp
+      }
+    }
+  }
+
   query {
     contentfulEventsPage {
       seoMetaData {
@@ -256,27 +284,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          startTime
-          endTime
-          date
-          attendees
-          type
-          eventTitle
-          address
-          blurb {
-            blurb
-          }
-          homepageFeatured
-          linkToEvent
-          ctaText
-          eventImage: eventPage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            file {
-              url
-            }
-          }
+          ...Event
         }
       }
     }
@@ -286,27 +294,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          startTime
-          endTime
-          date
-          attendees
-          type
-          eventTitle
-          address
-          blurb {
-            blurb
-          }
-          homepageFeatured
-          linkToEvent
-          ctaText
-          eventImage: eventPage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            file {
-              url
-            }
-          }
+          ...Event
         }
       }
     }

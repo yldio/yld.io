@@ -34,7 +34,8 @@ const AnchorWrapper = ({ to, children }) =>
 const ConferenceCard = ({ event }) => {
   const {
     date,
-    address,
+    addressLine3,
+    city,
     eventTitle,
     blurb,
     linkToEvent,
@@ -42,12 +43,12 @@ const ConferenceCard = ({ event }) => {
     ctaText
   } = event
 
-  const formattedDate = format(new Date(date), 'MMM DD[,] YYYY')
-
-  const formattedAddress = address.slice(0, 15).trim()
+  const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY')
+  const formattedAddress = `${addressLine3 ? `${addressLine3}, ` : ''}${city}`
   const eventInfo = `${formattedDate} • ${formattedAddress}`
 
   const status = isPast(new Date(date)) ? 'Past' : 'Upcoming'
+
   return (
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
