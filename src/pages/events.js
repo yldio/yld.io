@@ -3,7 +3,7 @@ import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Padding } from 'styled-components-spacing'
-import { isPast } from 'date-fns'
+import { startOfToday, isAfter, isToday } from 'date-fns'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import is from 'styled-is'
@@ -159,7 +159,7 @@ const EventPage = ({
   data: { events, conferences, contentfulEventsPage: content }
 }) => {
   const futureEvents = events.edges.filter(
-    ({ node }) => !isPast(new Date(), node.date)
+    ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date)
   )
 
   const { introSentence, posterImage, seoMetaData, footerContactUs } = content
