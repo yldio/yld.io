@@ -41,12 +41,12 @@ const StyledRow = styled(Row)`
   ${breakpoint('tablet')`
     height: ${remcalc(544)};
     padding-bottom: ${({ theme }) => theme.space[5]};
-  `};
+    `};
 
   ${breakpoint('desktop')`
     height: ${remcalc(644)};
     padding-bottom: ${({ theme }) => theme.space[6]};
-  `};
+    `};
 `
 
 const StyledPosterImage = styled(Image)`
@@ -58,11 +58,19 @@ const StyledPosterImage = styled(Image)`
 const StyledSectionTitleCol = styled(Col)`
   display: flex;
   align-items: center;
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const StyledPosterImageCol = styled(Col)`
-  height: 100%;
   overflow: visible;
+  ${breakpoint('smallPhone', 'smallTablet')`
+    height: 351px;
+  `}
+
+  height: 100%;
 `
 
 const getInTouchData = {
