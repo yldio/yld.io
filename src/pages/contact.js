@@ -93,7 +93,8 @@ const MapRow = styled(Row)`
 
 const MapWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
-  ${breakpoint('smallPhone', 'largePhone')`
+
+  ${breakpoint('smallPhone', 'smallTablet')`
     display: none;
   `}
 `
@@ -172,7 +173,7 @@ const ContactUs = ({
               sortedGroups.length > 0 &&
               sortedGroups.map(({ nodes = [] }) => {
                 return (
-                  <Col key={generate()} width={[1, 1, 1, 1 / 2]}>
+                  <Col key={generate()} width={[1, 1, 1, 1, 1 / 2, 1 / 2]}>
                     <MapWrapper>
                       <MapGroup locations={nodes} />
                     </MapWrapper>
@@ -186,7 +187,10 @@ const ContactUs = ({
                           email,
                           streetAddress
                         }) => (
-                          <LocationCol key={generate()} width={[1]}>
+                          <LocationCol
+                            key={generate()}
+                            width={[1, 1, 1, 1, 1, 1, 1 / 2, 1 / 2]}
+                          >
                             <LocationWrapper>
                               <Image image={markerIcon} />
                             </LocationWrapper>
