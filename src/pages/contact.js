@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import generate from 'shortid'
-import Helmet from 'react-helmet'
 import breakpoint from 'styled-components-breakpoint'
 
 import Head from '../components/Common/Head'
@@ -114,12 +113,6 @@ const ContactUs = ({
 
   return (
     <Layout location={location} displayFooterOffices={false}>
-      <Helmet>
-        <script
-          type="text/javascript"
-          src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k`}
-        />
-      </Helmet>
       <Head seoMetaData={page.seoMetaData} />
 
       <Grid>
