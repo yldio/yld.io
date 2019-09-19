@@ -24,12 +24,15 @@ import breakpoint from 'styled-components-breakpoint'
 
 const { GMAPS_API_KEY } = process.env
 
-const MapGroup = ({ nodes = [] }) => {
-  const locations = nodes.map(({ mapLocation }) => {
+const MapGroup = ({ locations = [] }) => {
+  const mappedLocations = locations.map(({ mapLocation }) => {
     return { lng: mapLocation.lon, lat: mapLocation.lat }
   })
 
-  return <Map locations={locations} />
+  return (
+    mappedLocations &&
+    mappedLocations.length > 0 && <Map locations={mappedLocations} />
+  )
 }
 
 const LocationWrapper = styled.div`
@@ -42,17 +45,21 @@ const ContactUs = ({
   location,
   data: {
     contentfulContactUsPage: page,
-    allContentfulLocation: { group: locations }
+    allContentfulLocation: { nodes: locations }
   }
 }) => {
   const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
 
-  const flattenedLocations = locations.reduce(
-    (acc, { nodes }) => acc.concat(nodes),
-    []
-  )
+  const groupedLocations = locations
+    .sort(({ primaryLocation }) => (primaryLocation ? -1 : 1))
+    .reduce((acc, curr) => {
+      const { country } = curr
+      return {
+        ...acc,
+        [country]: acc[country] ? acc[country].concat(curr) : [curr]
+      }
+    }, [])
 
-  console.log({ flattenedLocations })
   return (
     <Layout location={location} displayFooterOffices={false}>
       <Helmet>
@@ -99,17 +106,17 @@ const ContactUs = ({
       {locations && locations.length > 0 && (
         <Grid>
           <Row>
-            {locations.map(location => {
+            {Object.keys(groupedLocations).map(group => {
               return (
                 <Col key={generate()} width={[1, 1, 1, 6 / 12]}>
-                  <MapGroup {...location} />
+                  <MapGroup locations={groupedLocations[group]} />
                 </Col>
               )
             })}
             <Col />
           </Row>
           <Row>
-            {flattenedLocations.map(
+            {locations.map(
               ({ name, telephone, markerIcon, email, streetAddress }) => (
                 <Col key={generate()} width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
                   <LocationWrapper>
@@ -187,30 +194,30 @@ const Contact = props => (
             }
           }
         }
-        allContentfulLocation {
-          group(field: country) {
-            nodes {
+        allContentfulLocation(sort: { fields: createdAt }) {
+          nodes {
+            id
+            name
+            primaryLocation
+            markerIcon {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 30) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+            mapLocation {
+              lon
+              lat
+            }
+            telephone
+            email
+            country
+            streetAddress {
               id
-              name
-              markerIcon {
-                title
-                file {
-                  url
-                }
-                fluid(maxWidth: 30) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-              }
-              mapLocation {
-                lon
-                lat
-              }
-              telephone
-              email
-              streetAddress {
-                id
-                streetAddress
-              }
+              streetAddress
             }
           }
         }
