@@ -7,6 +7,7 @@ const Marker = () => (
     viewBox="0 0 31 37"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ transform: 'translate(-50%, -50%)' }}
   >
     <title>Artboard</title>
     <desc>Created with Sketch.</desc>

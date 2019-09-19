@@ -8,6 +8,10 @@ const BodyPrimary = styled.p`
   ${is('bold')`
     font-weight: 700;
   `};
+
+  ${is('underline')`
+    text-decoration: underline;
+  `}
 `
 
 export default BodyPrimary

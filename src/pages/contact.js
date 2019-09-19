@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import generate from 'shortid'
 import Helmet from 'react-helmet'
+import breakpoint from 'styled-components-breakpoint'
 
 import Head from '../components/Common/Head'
 import Image from '../components/Common/Image'
@@ -21,9 +22,6 @@ import Layout from '../components/layout'
 import StaffCard from '../components/AboutUs/StaffCard'
 
 import Map from '../components/ContactUs/Map'
-import breakpoint from 'styled-components-breakpoint'
-
-const { GMAPS_API_KEY } = process.env
 
 const MapGroup = ({ locations = [] }) => {
   const mappedLocations = locations.map(({ mapLocation }) => {
@@ -46,28 +44,38 @@ const IntroSectionRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[6]};
   padding-bottom: ${({ theme }) => theme.space[5]};
   ${breakpoint('smallTablet')`
-  
-  padding-top: ${({ theme }) => theme.space[5]};
-  `}
+    padding-top: ${({ theme }) => theme.space[5]};
+    `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+    `}
 `
 
 const IntroSectionTitleCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
 `
 
 const TeamSectionRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: 0;
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const TeamSectionTitleCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
-`
 
-const TeamHrCol = styled(Col)`
-  ${breakpoint('desktop')`
-    display: none;
-    `}
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const LocationCol = styled(Col)`
@@ -75,42 +83,41 @@ const LocationCol = styled(Col)`
 `
 
 const MapRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+`}
+`
+
+const MapWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
   ${breakpoint('smallPhone', 'largePhone')`
     display: none;
   `}
-`
-
-const LocationsRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[2]};
 `
 
 const ContactUs = ({
   location,
   data: {
     contentfulContactUsPage: page,
-    allContentfulLocation: { nodes: locations }
+    allContentfulLocation: { group: locations }
   }
 }) => {
   const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
 
-  const groupedLocations = locations
-    .sort(({ primaryLocation }) => (primaryLocation ? -1 : 1))
-    .reduce((acc, curr) => {
-      const { country } = curr
-      return {
-        ...acc,
-        [country]: acc[country] ? acc[country].concat(curr) : [curr]
-      }
-    }, [])
+  const sortedGroups = locations.sort(({ nodes }) =>
+    nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1
+  )
 
   return (
     <Layout location={location} displayFooterOffices={false}>
       <Helmet>
         <script
           type="text/javascript"
-          src={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k'}`}
+          src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k`}
         />
       </Helmet>
       <Head seoMetaData={{ title: 'contact us' }} />
@@ -134,75 +141,95 @@ const ContactUs = ({
             {teamMembers &&
               teamMembers.length > 0 &&
               teamMembers.map(
-                ({ name, description, role, image, socialLinks }) => (
+                ({
+                  name,
+                  description,
+                  footerRole,
+                  image,
+                  socialLinks,
+                  contactUsRole,
+                  emailAddress
+                }) => (
                   <StaffCard
-                    colWidths={[1, 1, 1, 1 / 2, 1 / 2, 1 / 2, 4 / 12]}
-                    paddingBottom={{ tablet: 3, smallTablet: 3 }}
+                    colWidths={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12, 4 / 12]}
+                    paddingBottom={{
+                      smallTablet: 4,
+                      tablet: '0',
+                      desktop: '0'
+                    }}
                     key={`staff-${name}`}
                     name={name}
+                    contactUsRole={contactUsRole}
                     description={description.description}
-                    role={role}
+                    role={footerRole}
                     image={image}
+                    emailAddress={emailAddress}
                     socialLinks={socialLinks}
                   />
                 )
               )}
-            <TeamHrCol width={[1]}>
-              <Hr />
-            </TeamHrCol>
           </TeamSectionRow>
+          <Row>
+            <Col width={[1]}>
+              <Hr />
+            </Col>
+          </Row>
+          <MapRow>
+            {sortedGroups &&
+              sortedGroups.length > 0 &&
+              sortedGroups.map(({ nodes = [] }) => {
+                return (
+                  <Col key={generate()} width={[1, 1, 1, 1 / 2]}>
+                    <MapWrapper>
+                      <MapGroup locations={nodes} />
+                    </MapWrapper>
 
-          {locations && locations.length > 0 && (
-            <>
-              <MapRow>
-                {Object.keys(groupedLocations).map(group => {
-                  return (
-                    <Col key={generate()} width={[1, 1, 1, 6 / 12]}>
-                      <MapGroup locations={groupedLocations[group]} />
-                    </Col>
-                  )
-                })}
-                <Col />
-              </MapRow>
-              <LocationsRow>
-                {locations.map(
-                  ({ name, telephone, markerIcon, email, streetAddress }) => (
-                    <LocationCol
-                      key={generate()}
-                      width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 2, 1 / 4]}
-                    >
-                      <LocationWrapper>
-                        <Image image={markerIcon} />
-                      </LocationWrapper>
-                      <Subtitle bold>{name}</Subtitle>
-                      {streetAddress.streetAddress.split('\n').map(address => (
-                        <BodyPrimary noPadding key={address}>
-                          {address}
-                        </BodyPrimary>
-                      ))}
+                    <Row>
+                      {nodes.map(
+                        ({
+                          name,
+                          telephone,
+                          markerIcon,
+                          email,
+                          streetAddress
+                        }) => (
+                          <LocationCol key={generate()} width={[1]}>
+                            <LocationWrapper>
+                              <Image image={markerIcon} />
+                            </LocationWrapper>
+                            <Subtitle bold>{name}</Subtitle>
+                            {streetAddress.streetAddress
+                              .split('\n')
+                              .map(address => (
+                                <BodyPrimary noPadding key={address}>
+                                  {address}
+                                </BodyPrimary>
+                              ))}
 
-                      {telephone && (
-                        <BodyPrimary itemProp="telephone" noPaddingBottom>
-                          {telephone}
-                        </BodyPrimary>
+                            {telephone && (
+                              <BodyPrimary itemProp="telephone" noPaddingBottom>
+                                {telephone}
+                              </BodyPrimary>
+                            )}
+
+                            {email && (
+                              <BodyPrimary noPaddingTop={telephone}>
+                                <a
+                                  href={`mailto:${email}`}
+                                  title={`Email yld ${name} Office`}
+                                >
+                                  {email}
+                                </a>
+                              </BodyPrimary>
+                            )}
+                          </LocationCol>
+                        )
                       )}
-
-                      {email && (
-                        <BodyPrimary noPaddingTop={telephone}>
-                          <a
-                            href={`mailto:${email}`}
-                            title={`Email yld ${name} Office`}
-                          >
-                            {email}
-                          </a>
-                        </BodyPrimary>
-                      )}
-                    </LocationCol>
-                  )
-                )}
-              </LocationsRow>
-            </>
-          )}
+                    </Row>
+                  </Col>
+                )
+              })}
+          </MapRow>
         </Grid>
       </GreyBackground>
     </Layout>
@@ -221,6 +248,9 @@ const Contact = props => (
           teamMembers {
             name
             role
+            contactUsRole
+            footerRole
+            emailAddress
             description {
               description
             }
@@ -249,29 +279,31 @@ const Contact = props => (
           }
         }
         allContentfulLocation(sort: { fields: createdAt }) {
-          nodes {
-            id
-            name
-            primaryLocation
-            markerIcon {
-              title
-              file {
-                url
-              }
-              fluid(maxWidth: 30) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
-            mapLocation {
-              lon
-              lat
-            }
-            telephone
-            email
-            country
-            streetAddress {
+          group(field: country) {
+            nodes {
               id
-              streetAddress
+              name
+              primaryLocation
+              markerIcon {
+                title
+                file {
+                  url
+                }
+                fluid(maxWidth: 30) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+              }
+              mapLocation {
+                lon
+                lat
+              }
+              telephone
+              email
+              country
+              streetAddress {
+                id
+                streetAddress
+              }
             }
           }
         }

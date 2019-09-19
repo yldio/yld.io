@@ -28,12 +28,7 @@ const Map = ({ locations }) => {
       >
         {locations &&
           locations.map(({ lat, lng }) => (
-            <MapMarker
-              style={{ transform: 'translate(-50%, -50%)' }}
-              key={generate()}
-              lat={lat}
-              lng={lng}
-            />
+            <MapMarker key={generate()} lat={lat} lng={lng} />
           ))}
       </GoogleMapReact>
     </StyledRatioContainer>
