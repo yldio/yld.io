@@ -9,6 +9,7 @@ import GreyBackground from '../components/Common/GreyBackground'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
 import Intro from '../components/Homepage/Intro'
+import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events/index'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
@@ -65,12 +66,8 @@ const IndexPage = ({ data, location }) => {
       <Intro {...content} />
       <GreyBackground>
         <Grid>
-          <Padding
-            top={{ smallPhone: 3, smallTablet: 4.5 }}
-            bottom={{ smallPhone: 2, smallTablet: 4, desktop: 4 }}
-          >
-            <LogoGrid companies={content.companies} />
-          </Padding>
+          <OurWork />
+          <LogoGrid companies={content.companies} />
         </Grid>
       </GreyBackground>
       <Grid>
