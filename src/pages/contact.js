@@ -120,7 +120,7 @@ const ContactUs = ({
           src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k`}
         />
       </Helmet>
-      <Head seoMetaData={{ title: 'contact us' }} />
+      <Head seoMetaData={page.seoMetaData} />
 
       <Grid>
         <IntroSectionRow>
@@ -242,6 +242,9 @@ const Contact = props => (
       query {
         contentfulContactUsPage {
           title
+          seoMetaData {
+            ...SEOMetaFields
+          }
           ctaUrl
           ctaCopy
           teamMembersTitle
