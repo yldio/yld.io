@@ -125,7 +125,7 @@ const ContactUs = ({
       <Grid>
         <IntroSectionRow>
           <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
-            <SectionTitle>{title}</SectionTitle>
+            <SectionTitle as="h1">{title}</SectionTitle>
           </IntroSectionTitleCol>
           <Col width={[1]}>
             <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink>
