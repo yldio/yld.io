@@ -24,7 +24,7 @@ const Map = ({ locations }) => {
         bootstrapURLKeys={{
           key: 'AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k'
         }}
-        defaultZoom={6}
+        defaultZoom={5}
       >
         {locations &&
           locations.map(({ lat, lng }) => (

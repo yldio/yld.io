@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 
 import Head from '../components/Common/Head'
 import Image from '../components/Common/Image'
+import Hr from '../components/Common/Hr'
 import StyledLink from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
 import {
@@ -41,6 +42,50 @@ const LocationWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.space[2]};
 `
 
+const IntroSectionRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+  ${breakpoint('smallTablet')`
+  
+  padding-top: ${({ theme }) => theme.space[5]};
+  `}
+`
+
+const IntroSectionTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+`
+
+const TeamSectionRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const TeamSectionTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const TeamHrCol = styled(Col)`
+  ${breakpoint('desktop')`
+    display: none;
+    `}
+`
+
+const LocationCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const MapRow = styled(Row)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallPhone', 'largePhone')`
+    display: none;
+  `}
+`
+
+const LocationsRow = styled(Row)`
+  padding-bottom: ${({ theme }) => theme.space[2]};
+`
+
 const ContactUs = ({
   location,
   data: {
@@ -71,26 +116,28 @@ const ContactUs = ({
       <Head seoMetaData={{ title: 'contact us' }} />
 
       <Grid>
-        <Row>
-          <Col width={[1, 1, 1, 7 / 12]}>
+        <IntroSectionRow>
+          <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
             <SectionTitle>{title}</SectionTitle>
-          </Col>
+          </IntroSectionTitleCol>
           <Col width={[1]}>
             <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink>
           </Col>
-        </Row>
+        </IntroSectionRow>
       </Grid>
       <GreyBackground>
         <Grid>
-          <Row>
-            <Col width={[1]}>
+          <TeamSectionRow>
+            <TeamSectionTitleCol width={[1]}>
               <DisplayTitle>{teamMembersTitle}</DisplayTitle>
-            </Col>
+            </TeamSectionTitleCol>
             {teamMembers &&
               teamMembers.length > 0 &&
               teamMembers.map(
                 ({ name, description, role, image, socialLinks }) => (
                   <StaffCard
+                    colWidths={[1, 1, 1, 1 / 2, 1 / 2, 1 / 2, 4 / 12]}
+                    paddingBottom={{ tablet: 3, smallTablet: 3 }}
                     key={`staff-${name}`}
                     name={name}
                     description={description.description}
@@ -100,57 +147,64 @@ const ContactUs = ({
                   />
                 )
               )}
-          </Row>
+            <TeamHrCol width={[1]}>
+              <Hr />
+            </TeamHrCol>
+          </TeamSectionRow>
+
+          {locations && locations.length > 0 && (
+            <>
+              <MapRow>
+                {Object.keys(groupedLocations).map(group => {
+                  return (
+                    <Col key={generate()} width={[1, 1, 1, 6 / 12]}>
+                      <MapGroup locations={groupedLocations[group]} />
+                    </Col>
+                  )
+                })}
+                <Col />
+              </MapRow>
+              <LocationsRow>
+                {locations.map(
+                  ({ name, telephone, markerIcon, email, streetAddress }) => (
+                    <LocationCol
+                      key={generate()}
+                      width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 2, 1 / 4]}
+                    >
+                      <LocationWrapper>
+                        <Image image={markerIcon} />
+                      </LocationWrapper>
+                      <Subtitle bold>{name}</Subtitle>
+                      {streetAddress.streetAddress.split('\n').map(address => (
+                        <BodyPrimary noPadding key={address}>
+                          {address}
+                        </BodyPrimary>
+                      ))}
+
+                      {telephone && (
+                        <BodyPrimary itemProp="telephone" noPaddingBottom>
+                          {telephone}
+                        </BodyPrimary>
+                      )}
+
+                      {email && (
+                        <BodyPrimary noPaddingTop={telephone}>
+                          <a
+                            href={`mailto:${email}`}
+                            title={`Email yld ${name} Office`}
+                          >
+                            {email}
+                          </a>
+                        </BodyPrimary>
+                      )}
+                    </LocationCol>
+                  )
+                )}
+              </LocationsRow>
+            </>
+          )}
         </Grid>
       </GreyBackground>
-      {locations && locations.length > 0 && (
-        <Grid>
-          <Row>
-            {Object.keys(groupedLocations).map(group => {
-              return (
-                <Col key={generate()} width={[1, 1, 1, 6 / 12]}>
-                  <MapGroup locations={groupedLocations[group]} />
-                </Col>
-              )
-            })}
-            <Col />
-          </Row>
-          <Row>
-            {locations.map(
-              ({ name, telephone, markerIcon, email, streetAddress }) => (
-                <Col key={generate()} width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
-                  <LocationWrapper>
-                    <Image image={markerIcon} />
-                  </LocationWrapper>
-                  <Subtitle bold>{name}</Subtitle>
-                  {streetAddress.streetAddress.split('\n').map(address => (
-                    <BodyPrimary noPadding key={address}>
-                      {address}
-                    </BodyPrimary>
-                  ))}
-
-                  {telephone && (
-                    <BodyPrimary itemProp="telephone" hasPaddingTop={telephone}>
-                      {telephone}
-                    </BodyPrimary>
-                  )}
-
-                  {email && (
-                    <BodyPrimary hasPaddingTop={email && !telephone}>
-                      <a
-                        href={`mailto:${email}`}
-                        title={`Email yld ${name} Office`}
-                      >
-                        {email}
-                      </a>
-                    </BodyPrimary>
-                  )}
-                </Col>
-              )
-            )}
-          </Row>
-        </Grid>
-      )}
     </Layout>
   )
 }
