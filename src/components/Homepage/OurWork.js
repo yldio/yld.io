@@ -30,20 +30,7 @@ const TitleCol = styled(Col)`
 const CaseStudyListCol = styled(Col)`
   display: flex;
   justify-content: space-between;
-
-  > * {
-    width: 100%;
-    padding-top: ${({ theme }) => theme.space[4]};
-
-    ${breakpoint('tablet')`
-      width: 50%
-      padding-top: ${({ theme }) => theme.space[5]};
-    `}
-
-    ${breakpoint('desktop')`
-      width: calc(calc(100% / 3) - 32px);
-    `}
-  }
+  width: 100%;
 `
 
 const OurWork = ({ data }) => {
