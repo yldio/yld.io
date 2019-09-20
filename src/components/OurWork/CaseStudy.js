@@ -40,10 +40,34 @@ const InfoSection = ({ introSentence, title, link }) => (
   </Fragment>
 )
 
+const Card = styled.div`
+  width: 100%;
+  height: 0;
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-top: 75%;
+  background-color: #${({ posterColor }) => posterColor || 'FFFF00'};
+  background-image: url(${({ posterImage }) => posterImage.url});
+  background-position: center bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  ${breakpoint('tablet')`
+    width: calc(50% - ${({ theme }) => theme.space[3]});
+    margin-top: ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('desktop')`
+    width: calc(calc(100% / 3) - ${({ theme }) => theme.spacing[32]});
+  `}
+`
+
 const CaseStudy = ({ caseStudy }) => {
-  const { title, services, posterImage, slug } = caseStudy
+  console.log('caseStyudy', caseStudy)
+  const { title, services, posterImage, slug, posterColor } = caseStudy
   const introSentence = getIntroSentence(caseStudy)
   const caseStudyLink = `/case-study/${slug}`
+
+  return <Card posterColor={posterColor} posterImage={posterImage.file} />
 
   return <Image alt={posterImage.title} image={posterImage} />
 
