@@ -21,6 +21,8 @@ import Jobs from '../components/Homepage/jobs'
  */
 // eslint-disable-next-line no-unused-vars
 import { fragments } from '../fragments'
+import BlueBackground from '../components/Common/BlueBackground'
+import Contributions from '../components/Common/Contributions'
 
 const dateFormat = 'dddd[,] MMMM DD'
 
@@ -83,6 +85,9 @@ const IndexPage = ({ data, location }) => {
           </Padding>
         </Grid>
       </GreyBackground>
+      <BlueBackground>
+        <Contributions {...content.contributions} />
+      </BlueBackground>
       <LatestPosts>
         {posts => (
           <BlogListing
@@ -218,6 +223,42 @@ export const query = graphql`
       }
       footerContactUs {
         id
+      }
+      contributions: contributionsSection {
+        githubMetaData {
+          openSourceMetaPullRequestsCount
+          openSourceMetaReposCount
+        }
+        ctaCopy
+        ctaLink
+        descriptionLine1
+        descriptionLine2
+        titleSectionLine1
+        titleSectionLine2
+        titleSectionLine3
+        icon {
+          title
+          file {
+            url
+          }
+        }
+        sectionGraphic {
+          title
+          file {
+            url
+          }
+        }
+        descriptionLine1
+        descriptionLine2
+        ctaCopy
+        ctaLink
+        githubRepos {
+          id
+          url
+          nameWithOwner
+          pullRequestCount
+          starCount
+        }
       }
     }
     allContentfulMeetupEvent {
