@@ -74,7 +74,10 @@ const IndexPage = ({ data, location }) => {
         </Grid>
       </GreyBackground>
       <Grid>
-        <Services services={content.services} />
+        <Services
+          statement={content.serviceStatement}
+          services={content.services}
+        />
       </Grid>
       <GreyBackground>
         <Grid>
@@ -147,11 +150,21 @@ export const query = graphql`
           }
         }
       }
+      serviceStatement
       services {
         id
         title
         slug
         pageReady
+        icon {
+          file {
+            url
+          }
+          fluid(maxWidth: 60) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+
         caseStudies {
           ... on Node {
             ... on ContentfulNonTemplatedCaseStudy {
