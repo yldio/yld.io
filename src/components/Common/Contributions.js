@@ -91,7 +91,7 @@ const Contributions = ({
           </Col>
 
           {sectionGraphic && (
-            <Col width={[1, 1, 1, 1, 7 / 12, 8 / 12, 6 / 12]}>
+            <Col width={[1, 1, 1, 1, 5 / 12, 8 / 12, 6 / 12]}>
               <Image image={sectionGraphic} />
             </Col>
           )}
