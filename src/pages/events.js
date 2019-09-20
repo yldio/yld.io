@@ -53,6 +53,10 @@ const StyledPosterImage = styled(Image)`
   height: 100%;
   width: auto;
   max-width: inherit;
+
+  ${breakpoint('desktop')`
+    width: 200%;
+  `}
 `
 
 const StyledSectionTitleCol = styled(Col)`
@@ -211,9 +215,7 @@ const EventPage = ({
                 <SectionTitle>{getInTouchData.title}</SectionTitle>
               </Col>
               <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-                <BodyPrimary noPaddingBottom bold>
-                  {getInTouchData.copyHeading}
-                </BodyPrimary>
+                <BodyPrimary bold>{getInTouchData.copyHeading}</BodyPrimary>
                 <BodyPrimary noPaddingTop>{getInTouchData.copy}</BodyPrimary>
 
                 <StyledLink to="/contact/" title={getInTouchData.ctaText}>

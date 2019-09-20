@@ -45,7 +45,7 @@ const DateCard = ({ date }) => {
 }
 
 const EventTypePadding = styled.div`
-  ${breakpoint('phone', 'smallTablet')`
+  ${breakpoint('smallPhone', 'smallTablet')`
     padding-top: ${({ theme }) => theme.spacing[2]};
     padding-bottom: ${({ theme }) => theme.spacing[1]}; 
   `};
@@ -85,7 +85,7 @@ const EventCard = ({ event }) => {
 
   const eventInfo = `${
     addressLine3 ? `${addressLine3}, ` : ''
-  } ${city} • ${formattedStartTime} - ${formattedEndTime}${
+  }${city} • ${formattedStartTime} - ${formattedEndTime}${
     attendees ? ` • ${attendees} attending` : ''
   }`
 
