@@ -4,14 +4,14 @@ const ContributionsCopy = props => {
   const {
     openSourceMetaReposCount: projects,
     openSourceMetaPullRequestsCount: contributions,
-    contributionsSectionTitleLine1: first,
-    contributionsSectionTitleLine2: second,
-    contributionsSectionTitleLine3: third
+    titleSectionLine1: first,
+    titleSectionLine2: second,
+    titleSectionLine3: third
   } = props
 
   return (
     <Fragment>
-      <SectionTitle reverse>
+      <SectionTitle noPaddingTop reverse>
         {first} <br />
         {contributions} {second} <br />
         {projects} {third}
