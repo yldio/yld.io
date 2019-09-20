@@ -33,7 +33,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding-right: 0;
 }
 
-.c7 {
+.c8 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -62,10 +62,6 @@ exports[`Storyshots Event Card Event Card 1`] = `
   padding-left: 0;
   padding-right: 0;
   width: 33.33333333333333%;
-  position: initial;
-  top: 0;
-  left: 0;
-  width: 25%;
   position: initial;
   top: 0;
   left: 0;
@@ -117,10 +113,9 @@ exports[`Storyshots Event Card Event Card 1`] = `
   font-size: 1.3125rem;
   line-height: 1.5rem;
   padding: 0.6875rem 0 0.8125rem 0;
-  padding: 0;
 }
 
-.c9 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -136,7 +131,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   opacity: .5;
-  padding: 0;
+  padding-bottom: 0;
 }
 
 .c5 {
@@ -205,9 +200,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
   width: 100%;
   padding-bottom: 100%;
   overflow: hidden;
-  border: solid;
-  border-color: #e6e6e6;
-  border-width: thin;
+  border: 0.0625rem solid #e6e6e6;
 }
 
 .c6 {
@@ -236,21 +229,23 @@ exports[`Storyshots Event Card Event Card 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
   position: absolute;
-  left: 0;
-  right: 0;
+  height: 100%;
   width: 100%;
-  padding: 2.25rem;
 }
 
-.c8 {
-  padding-top: 2.25rem;
-  padding-bottom: 1.5rem;
-}
-
-.c10 {
-  padding-bottom: 0.75rem;
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 @media (min-width:29.4375em) {
@@ -313,42 +308,42 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c7 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c7 {
+  .c8 {
     width: 100%;
     position: initial;
     top: 0;
@@ -357,7 +352,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c7 {
+  .c8 {
     width: 100%;
     position: initial;
     top: 0;
@@ -366,7 +361,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c7 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -375,7 +370,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c7 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -384,7 +379,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c7 {
+  .c8 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -429,7 +424,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 
 @media screen and (min-width:29.4375rem) {
   .c2 {
-    width: 25%;
+    width: 41.66666666666667%;
     position: initial;
     top: 0;
     left: 0;
@@ -437,6 +432,33 @@ exports[`Storyshots Event Card Event Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
+  .c2 {
+    width: 33.33333333333333%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    width: 25%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    width: 25%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
   .c2 {
     width: 16.666666666666664%;
     position: initial;
@@ -509,7 +531,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
 
 @media screen and (min-width:56.3125rem) {
   .c14 {
-    width: 33.33333333333333%;
+    width: 25%;
     position: initial;
     top: 0;
     left: 0;
@@ -565,7 +587,6 @@ exports[`Storyshots Event Card Event Card 1`] = `
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
-    padding: 0;
   }
 }
 
@@ -583,15 +604,16 @@ exports[`Storyshots Event Card Event Card 1`] = `
   }
 }
 
-@media (min-width:43.8125em) {
-  .c8 {
-    padding-top: 0;
+@media (min-width:0em) and (max-width:43.75em) {
+  .c9 {
+    padding-top: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 }
 
-@media (min-width:43.8125em) {
-  .c10 {
-    min-height: 3.75rem;
+@media (min-width:0em) and (max-width:43.75em) {
+  .c7 {
+    padding-bottom: 2.25rem;
   }
 }
 
@@ -611,17 +633,14 @@ exports[`Storyshots Event Card Event Card 1`] = `
 >
   <div
     className="c1"
-    style={
-      Object {
-        "paddingBottom": "36px",
-        "paddingTop": "36px",
-      }
-    }
   >
     <div
       className="c2"
       width={
         Array [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.4166666666666667,
           0.3333333333333333,
           0.25,
           0.25,
@@ -631,8 +650,8 @@ exports[`Storyshots Event Card Event Card 1`] = `
     >
       <div
         className="c3"
-        height={100}
-        width={100}
+        height={1}
+        width={1}
       >
         <div
           className="c4"
@@ -651,7 +670,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c7 c8"
       width={
         Array [
           1,
@@ -664,18 +683,16 @@ exports[`Storyshots Event Card Event Card 1`] = `
         ]
       }
     >
-      <div
-        className="c8"
-      >
-        <p
+      <div>
+        <div
           className="c9"
         >
-          Meetup
-        </p>
-      </div>
-      <div
-        className="c10"
-      >
+          <p
+            className="c10"
+          >
+            Meetup
+          </p>
+        </div>
         <h3
           className="c11"
         />
@@ -684,15 +701,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
         className="c12"
         muted={true}
       >
-        London
-         • 
-        Invalid Date
-         - 
-        Invalid Date
-         •
-         
-        20
-         attending
+        undefined • Invalid Date - Invalid Date • 20 attending
       </p>
     </div>
     <div
@@ -704,7 +713,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
           1,
           1,
           0.25,
-          0.3333333333333333,
+          0.25,
           0.4166666666666667,
         ]
       }
@@ -715,7 +724,7 @@ exports[`Storyshots Event Card Event Card 1`] = `
         onClick={[Function]}
         title="Get tickets"
       >
-        Get Tickets
+        Get tickets
       </a>
     </div>
   </div>
