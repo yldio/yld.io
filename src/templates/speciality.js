@@ -10,7 +10,15 @@ const Speciality = ({ data, location }) => {
   const { slug, title, seoMetaData } = speciality
 
   return (
-    <Layout bgColor="blueBg" slug={slug} title={title} location={location}>
+    <Layout
+      bgColor="blueBg"
+      slug={slug}
+      title={title}
+      location={location}
+      footerContactUsId={
+        speciality.footerContactUs && speciality.footerContactUs.id
+      }
+    >
       <Head seoMetaData={seoMetaData} />
       <SpecialityView data={data} />
     </Layout>
@@ -293,6 +301,9 @@ export const pageQuery = graphql`
       }
       logoColour
       contactText
+      footerContactUs {
+        id
+      }
     }
 
     allContentfulMeetupEvent(

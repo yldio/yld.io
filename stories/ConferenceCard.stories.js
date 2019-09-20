@@ -8,9 +8,9 @@ addDecorator(Theme)
 
 const event = {
   status: 'Upcoming',
-  date: '21 August 2019',
   eventName: 'GraphQL helps rockstar developers',
   eventLocation: 'London',
+  date: '2019-10-21',
   blurb:
     'GraphQL is an easy way to consume information. It is great. It can do CRUD. It is a perfect tool for rockstar devleopers. This conferencec will feature a number of excellent talks from GraphQL gurus who will show you their tips and tricks to get the best experience possible',
   homepage: 'www.event.com',

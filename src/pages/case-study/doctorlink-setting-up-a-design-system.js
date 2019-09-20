@@ -142,7 +142,11 @@ const IndexPage = props => {
   } = caseStudy
 
   return (
-    <Layout location={location} contactUsBg={'greyBg'}>
+    <Layout
+      location={location}
+      contactUsBg={'greyBg'}
+      footerContactUsId={caseStudy.footerContactUs.id}
+    >
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
       <GreyBackground>
@@ -683,6 +687,9 @@ export const query = graphql`
         id
       }
       posterColor
+      footerContactUs {
+        id
+      }
     }
   }
 `

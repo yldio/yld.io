@@ -28,7 +28,7 @@ const isDevEnvironment =
  * const { HOTJAR_ID } = process.env ----> will not work
  * const HOTJAR_ID = process.env.HOTJAR_ID
  *
- * These variables are stored on netlify settings
+ * These variables are stored in netlify settings
  */
 const HOTJAR_ID = process.env.HOTJAR_ID
 const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6
@@ -70,7 +70,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, bgColor, is404, contactUsBg, slug } = this.props
+    const { children, bgColor, footerContactUsId, slug } = this.props
 
     const { GridDebugger } = this.state
 
@@ -119,7 +119,7 @@ class Layout extends Component {
                 />
               )}
               <StyledMain>{children}</StyledMain>
-              <Footer contactUsBg={contactUsBg} is404={is404} />
+              <Footer footerContactUsId={footerContactUsId} />
               <GlobalStyle />
               {!this.state.cookiesAllowed && (
                 <Cookie onClick={this.handleClick} />

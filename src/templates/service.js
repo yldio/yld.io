@@ -33,7 +33,11 @@ const Service = ({ data: { contentfulService: service }, location }) => {
   const { seoMetaData } = service
 
   return (
-    <Layout location={location} slug={service.slug}>
+    <Layout
+      location={location}
+      slug={service.slug}
+      footerContactUsId={service.footerContactUs.id}
+    >
       <Head seoMetaData={seoMetaData} />
 
       <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
@@ -272,6 +276,9 @@ export const pageQuery = graphql`
         id
         slug
         title
+      }
+      footerContactUs {
+        id
       }
     }
   }

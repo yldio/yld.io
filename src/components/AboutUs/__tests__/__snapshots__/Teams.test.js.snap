@@ -164,6 +164,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/nunojob/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Nuno Job Linkedin account"
@@ -179,6 +180,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://twitter.com/dscape"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Nuno Job Twitter account"
@@ -275,6 +277,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/anthony-mann-11251214/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Anthony Mann Linkedin account"
@@ -290,6 +293,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://twitter.com/objectCreate"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Anthony Mann Twitter account"
@@ -386,6 +390,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/tracey-bianchi-maisuria-6568651a/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Tracey Bianchi Linkedin account"
@@ -482,6 +487,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/carlosvilhena/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Carlos Vilhena Linkedin account"
@@ -497,6 +503,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://twitter.com/carvil_"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Carlos Vilhena Twitter account"
@@ -593,6 +600,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/bradleystott/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Bradley Stott Linkedin account"
@@ -690,6 +698,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/annie-vladev-165617125/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Annie Vladev Linkedin account"
@@ -786,6 +795,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/gretastrolyte/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Greta Strolyte's LinkedIn account"
@@ -801,6 +811,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://twitter.com/gretastarlight"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Greta Strolyte's Twitter account"
@@ -897,6 +908,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/fanoliveira/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Fabio Oliveira Linkedin account"
@@ -912,6 +924,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://twitter.com/fanoliveira"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Fabio Oliveira Twitter account"
@@ -1008,6 +1021,7 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 <a
                   class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/garethscrivens/"
+                  imagesize="24"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Gareth Scrivens Linkedin account"
