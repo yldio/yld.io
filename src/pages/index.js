@@ -2,19 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
-import generate from 'shortid'
 
-import { Grid, Row, Col } from '../components/grid'
+import { Grid } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
-import MediumPostPreview from '../components/Blog/MediumPostPreview'
 import GreyBackground from '../components/Common/GreyBackground'
-import Hr from '../components/Common/Hr'
 import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
 import Intro from '../components/Homepage/Intro'
 import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events/index'
+import BlogSection from '../components/Homepage/BlogSection'
 import LatestPosts from '../components/LatestPosts'
 import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
@@ -91,16 +89,7 @@ const IndexPage = ({ data, location }) => {
         </Grid>
       </GreyBackground>
       {blogPosts && blogPosts.length > 0 && (
-        <Grid>
-          <Row>
-            {blogPosts.map((mediumPostData, idx, arr) => (
-              <Col width={[1]} key={generate()}>
-                <MediumPostPreview {...mediumPostData.node} />
-                {idx < arr.length - 1 && <Hr />}
-              </Col>
-            ))}
-          </Row>
-        </Grid>
+        <BlogSection blogPosts={blogPosts} />
       )}
       <BlueBackground>
         <Contributions {...content.contributions} />
