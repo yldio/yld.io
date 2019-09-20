@@ -13,8 +13,6 @@ import Intro from '../components/Homepage/Intro'
 import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events/index'
 import BlogSection from '../components/Homepage/BlogSection'
-import LatestPosts from '../components/LatestPosts'
-import BlogListing from '../components/Common/BlogListing'
 import Jobs from '../components/Homepage/jobs'
 
 /**
@@ -98,14 +96,6 @@ const IndexPage = ({ data, location }) => {
       <BlueBackground>
         <Contributions {...content.contributions} />
       </BlueBackground>
-      <LatestPosts>
-        {posts => (
-          <BlogListing
-            title="From the blog"
-            posts={posts.map(({ node }) => node).slice(0, 3)}
-          />
-        )}
-      </LatestPosts>
       <GreyBackground>
         <Jobs />
       </GreyBackground>

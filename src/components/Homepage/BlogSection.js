@@ -10,20 +10,23 @@ import { SectionTitle } from '../Typography'
 
 const MediumLink = styled(StyledLink)`
   margin-top: ${({ theme }) => theme.space[6]};
-  margin-bottom: ${({ theme }) => theme.space[6]};
+  ${breakpoint('tablet')`
+        margin-top: ${({ theme }) => theme.space[4]};
+    `}
 `
 
 const BlogRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
-  ${breakpoint('desktop')`
-      padding-top: ${({ theme }) => theme.space[5]};
+  ${breakpoint('tablet')`
+      padding-top: ${({ theme }) => theme.space[6]};
+      padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
 const TitleCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: 0;
 
   ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[4]};
