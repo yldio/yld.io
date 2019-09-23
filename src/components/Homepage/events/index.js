@@ -2,14 +2,14 @@ import React from 'react'
 import remcalc from 'remcalc'
 import generate from 'shortid'
 import styled from 'styled-components'
-import { Grid, Row, Col } from '../../grid'
-import { DisplayTitle, Subtitle, BodyPrimary } from '../../Typography'
-import Image from '../../Common/Image'
-import StyledLink from '../../Common/StyledLink'
 import breakpoint from 'styled-components-breakpoint'
 
-import FeaturedEventRow from './FeaturedEventRow'
+import Image from '../../Common/Image'
+import StyledLink from '../../Common/StyledLink'
 import Hr from '../../Common/Hr'
+import { Grid, Row, Col } from '../../grid'
+import { DisplayTitle, Subtitle, BodyPrimary } from '../../Typography'
+import FeaturedEventRow from './FeaturedEventRow'
 
 const EventType = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -38,10 +38,6 @@ const IntroRow = styled(Row)`
   `}
 `
 
-const EventTypesRow = styled(Row)`
-  /* padding-bottom: ${({ theme }) => theme.space[6]}; */
-`
-
 const CtaRow = styled(Row)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 
@@ -64,7 +60,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
         </BodyPrimary>
       </Col>
     </IntroRow>
-    <EventTypesRow>
+    <Row>
       {eventTypes &&
         eventTypes.length > 0 &&
         eventTypes.map(({ title, copy, image }) => (
@@ -79,7 +75,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
             {image && <Image image={image} />}
           </EventType>
         ))}
-    </EventTypesRow>
+    </Row>
     <CtaRow>
       <Col width={[1]}>
         <StyledLink>See all our events</StyledLink>
