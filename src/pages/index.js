@@ -12,7 +12,7 @@ import Intro from '../components/Homepage/Intro'
 import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events/index'
 import BlogSection from '../components/Homepage/BlogSection'
-import Jobs from '../components/Homepage/jobs'
+import FooterSections from '../components/Homepage/FooterSections'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -79,7 +79,7 @@ const IndexPage = ({ data, location }) => {
         <Contributions {...content.contributions} />
       </BlueBackground>
       <GreyBackground>
-        <Jobs />
+        <FooterSections />
       </GreyBackground>
     </Layout>
   )
