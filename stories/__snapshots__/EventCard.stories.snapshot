@@ -719,12 +719,12 @@ exports[`Storyshots Event Card Event Card 1`] = `
       }
     >
       <a
-        aria-label="Get tickets"
+        aria-label="More on Meetup"
         className="c15"
         onClick={[Function]}
-        title="Get tickets"
+        title="More on Meetup"
       >
-        Get tickets
+        More on Meetup
       </a>
     </div>
   </div>

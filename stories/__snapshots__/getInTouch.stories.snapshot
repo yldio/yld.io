@@ -567,7 +567,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  color: #757575;
 }
 
 .c14 {
@@ -655,10 +655,6 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 .c20 > p,
 .c20 > a {
   display: inline;
-}
-
-.c20 p {
-  opacity: 0.5;
 }
 
 .c20 a {
@@ -1258,7 +1254,6 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
       >
         <p
           className="c21"
-          muted={true}
         >
           Something else you want to chat about?
         </p>
