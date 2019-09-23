@@ -676,6 +676,11 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       <img
         className="c3"
         src="//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
         width="100%"
       />
     </div>
@@ -736,16 +741,14 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
           className="c11"
         >
           <a
-            aria-current="page"
-            className=""
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+            href="http://reactjsgirls.com"
+            rel="noopener noreferrer"
             style={
               Object {
                 "textDecoration": "underline",
               }
             }
+            target="_blank"
           >
             Read more
           </a>
@@ -756,6 +759,8 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
         className="c12"
         href="http://reactjsgirls.com"
         onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
         title="Visit the website"
       >
         Visit the website

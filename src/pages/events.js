@@ -261,8 +261,11 @@ export const query = graphql`
     blurb {
       blurb
     }
+    blurbCtaCopy
+    blurbCtaLink
     homepageFeatured
     linkToEvent
+    linkToTickets
     ctaText
     eventImage: eventPage {
       file {

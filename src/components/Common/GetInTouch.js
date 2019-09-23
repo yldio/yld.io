@@ -89,10 +89,6 @@ const PersonCta = styled.div`
     display: inline;
   }
 
-  p {
-    opacity: 0.5;
-  }
-
   a {
     text-decoration: underline;
   }
@@ -180,7 +176,7 @@ const Profile = props => {
             </BodyPrimary>
           </PersonCopyWrapper>
           <PersonCta>
-            <BodyPrimary muted>{personCtaCopy}</BodyPrimary>{' '}
+            <BodyPrimary secondary>{personCtaCopy}</BodyPrimary>{' '}
             <Link to={personCtaLinkUrl}>{personCtaLinkCopy}</Link>
           </PersonCta>
         </Col>

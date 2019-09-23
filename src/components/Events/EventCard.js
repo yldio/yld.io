@@ -44,13 +44,6 @@ const DateCard = ({ date }) => {
   )
 }
 
-const EventTypePadding = styled.div`
-  ${breakpoint('smallPhone', 'smallTablet')`
-    padding-top: ${({ theme }) => theme.spacing[2]};
-    padding-bottom: ${({ theme }) => theme.spacing[1]}; 
-  `};
-`
-
 const StyledInfoCol = styled(Col)`
   display: flex;
   flex-direction: column;
@@ -65,6 +58,14 @@ const AlignRightCol = styled(Col)`
   ${breakpoint('tablet')`
     text-align: right;
   `}
+`
+
+const TypeBodyPrimary = styled(BodyPrimary)`
+  padding-top: ${({ theme }) => theme.space[2]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: 0;
+  `};
 `
 
 const EventCard = ({ event }) => {
@@ -89,7 +90,7 @@ const EventCard = ({ event }) => {
     attendees ? ` • ${attendees} attending` : ''
   }`
 
-  const StyledLinkText = type === 'meetup' ? 'More on Meetup' : 'Get tickets'
+  const StyledLinkText = type === 'Meetup' ? 'More on Meetup' : 'Get tickets'
 
   return (
     <Row>
@@ -101,11 +102,7 @@ const EventCard = ({ event }) => {
 
       <StyledInfoCol width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
         <div>
-          {type && (
-            <EventTypePadding>
-              <BodyPrimary noPadding>{type}</BodyPrimary>
-            </EventTypePadding>
-          )}
+          {type && <TypeBodyPrimary noPadding>{type}</TypeBodyPrimary>}
 
           <CardTitle as="h3">{eventTitle}</CardTitle>
         </div>

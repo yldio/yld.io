@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Link } from 'gatsby'
 import { format, isPast } from 'date-fns'
 
 import Image from '../Common/Image'
@@ -35,7 +34,10 @@ const ConferenceCard = ({ event }) => {
     city,
     eventTitle,
     blurb,
+    blurbCtaLink,
+    blurbCtaCopy,
     linkToEvent,
+    linkToTickets,
     eventImage,
     ctaText
   } = event
@@ -49,7 +51,13 @@ const ConferenceCard = ({ event }) => {
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
         <AnchorWrapper href={linkToEvent}>
-          {eventImage && <Image image={eventImage} width="100%" />}
+          {eventImage && (
+            <Image
+              style={{ display: 'block' }}
+              image={eventImage}
+              width="100%"
+            />
+          )}
         </AnchorWrapper>
       </Col>
 
@@ -65,12 +73,23 @@ const ConferenceCard = ({ event }) => {
         <BlurbWrapper>
           <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <Link href={linkToEvent} style={{ textDecoration: 'underline' }}>
-              Read more
-            </Link>
+            <a
+              href={blurbCtaLink || linkToEvent}
+              style={{ textDecoration: 'underline' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {blurbCtaCopy || 'Read more'}
+            </a>
           </BodyPrimary>
         </BlurbWrapper>
-        <StyledLink aria-label={ctaText} href={linkToEvent} title={ctaText}>
+        <StyledLink
+          aria-label={ctaText}
+          href={linkToTickets || linkToEvent}
+          title={ctaText}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {ctaText}
         </StyledLink>
       </Col>
