@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Padding } from 'styled-components-spacing'
 import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
 
 import { Grid } from '../components/grid'
@@ -80,14 +79,10 @@ const IndexPage = ({ data, location }) => {
         />
       </Grid>
       <GreyBackground>
-        <Grid>
-          <Padding bottom={{ smallPhone: 4, smallTablet: 5 }} top={4}>
-            <Events
-              nonFeaturedEvents={nonFeaturedEvents}
-              featuredEvent={featuredEvent}
-            />
-          </Padding>
-        </Grid>
+        <Events
+          nonFeaturedEvents={nonFeaturedEvents}
+          featuredEvent={featuredEvent}
+        />
       </GreyBackground>
       {blogPosts && blogPosts.length > 0 && (
         <BlogSection blogPosts={blogPosts} />
