@@ -36,7 +36,7 @@ const FixedWidthBodyPrimary = styled(BodyPrimary)`
 `
 
 const StyledImage = styled(Image)`
-  // to remove extra space below SVG
+  /* to remove extra space below SVG */
   display: block;
 `
 
@@ -57,54 +57,70 @@ const StyledRatioContainer = styled.div`
     position: absolute;
   }
 `
-const StyledRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+const IntroRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+      padding-top: ${({ theme }) => theme.space[6]};
+  `}
+`
+
+const EventRow = styled(Row)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[5]};
+  `}
 `
 
 const FeaturedEvent = ({ event }) => (
-  <StyledRow>
-    <Col>
-      <SectionTitle>Events we run</SectionTitle>
-      <BodyPrimary>
-        We pride ourselves on offering informative, inclusive and fun
-        get-togethers for our ever growing tech community.
-      </BodyPrimary>
-    </Col>
-    <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} block={false}>
-      <InfoInner key={event.id} color={event.color}>
-        <EventWrapper>
-          <PaddedBodyPrimary muted reverse noPadding>
-            Featured event
-          </PaddedBodyPrimary>
-          <DisplayTitle reverse noPaddingTop>
-            {event.eventTitle}
-          </DisplayTitle>
-          <BodyPrimary reverse>{event.date}</BodyPrimary>
-          <FixedWidthBodyPrimary muted reverse>
-            {event.blurb.blurb}
-          </FixedWidthBodyPrimary>
-          <StyledLink
-            external
-            reverse
-            href={event.linkToEvent}
-            title={`${event.eventTitle} - ${event.ctaText}`}
-          >
-            {event.ctaText}
-          </StyledLink>
-        </EventWrapper>
-      </InfoInner>
-    </Col>
-    <Col width={[1, 1, 1, 1, 5 / 12, 7 / 12]}>
-      <StyledRatioContainer
-        sizing={{ desktop: { width: 1, height: 1 } }}
-        width={1}
-        height={1}
-      >
-        <StyledImage image={event.posterImage} />
-      </StyledRatioContainer>
-    </Col>
-  </StyledRow>
+  <>
+    <IntroRow>
+      <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12, 5 / 12]}>
+        <SectionTitle>Events we run</SectionTitle>
+        <BodyPrimary>
+          We pride ourselves on offering informative, inclusive and fun
+          get-togethers for our ever growing tech community.
+        </BodyPrimary>
+      </Col>
+    </IntroRow>
+    <EventRow>
+      <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} block={false}>
+        <InfoInner key={event.id} color={event.color}>
+          <EventWrapper>
+            <PaddedBodyPrimary muted reverse noPadding>
+              Featured event
+            </PaddedBodyPrimary>
+            <DisplayTitle reverse noPaddingTop>
+              {event.eventTitle}
+            </DisplayTitle>
+            <BodyPrimary reverse>{event.date}</BodyPrimary>
+            <FixedWidthBodyPrimary muted reverse>
+              {event.blurb.blurb}
+            </FixedWidthBodyPrimary>
+            <StyledLink
+              external
+              reverse
+              href={event.linkToEvent}
+              title={`${event.eventTitle} - ${event.ctaText}`}
+            >
+              {event.ctaText}
+            </StyledLink>
+          </EventWrapper>
+        </InfoInner>
+      </Col>
+      <Col width={[1, 1, 1, 1, 5 / 12, 7 / 12]}>
+        <StyledRatioContainer
+          sizing={{ desktop: { width: 1, height: 1 } }}
+          width={1}
+          height={1}
+        >
+          <StyledImage image={event.posterImage} />
+        </StyledRatioContainer>
+      </Col>
+    </EventRow>
+  </>
 )
 
 export default FeaturedEvent
