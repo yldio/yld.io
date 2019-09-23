@@ -4,7 +4,6 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../grid'
-import { mt } from 'styled-components-spacing'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
 
@@ -89,8 +88,31 @@ const ImageWrapper = styled.div`
 const Card = styled.section`
   height: 100%;
   background-color: #${props => props.color};
-  ${mt({ smallPhone: 4, tablet: 5 })};
+  margin-top: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    margin-top: ${({ theme }) => theme.space[5]};
+  `}
 `
+// //fixed height
+// const Card = styled.section`
+//   height: ${({ theme }) => theme.spacing[430]};
+//   background-color: #${props => props.color};
+//   margin-top: ${({ theme }) => theme.space[4]};
+
+//   ${breakpoint('smallTablet')`
+//     height: ${({ theme }) => theme.spacing[422]};
+//   `}
+
+//   ${breakpoint('tablet')`
+//     height: ${({ theme }) => theme.spacing[432]};
+//     margin-top: ${({ theme }) => theme.space[5]};
+//   `}
+
+//   ${breakpoint('desktop')`
+//     height: ${({ theme }) => theme.spacing[438]};
+//   `}
+// `
 
 const CaseStudy = ({ caseStudy }) => {
   const { title, posterImage, slug, posterColor, client } = caseStudy
@@ -213,6 +235,7 @@ const OurWorkSection = props => (
             node {
               slug
               title
+              client
               id
               services {
                 ... on ContentfulService {
@@ -231,6 +254,7 @@ const OurWorkSection = props => (
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
+              posterColor
             }
           }
         }
@@ -267,6 +291,7 @@ const OurWorkSection = props => (
             node {
               slug
               title
+              client
               id
               services {
                 ... on ContentfulService {
@@ -285,6 +310,7 @@ const OurWorkSection = props => (
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
+              posterColor
             }
           }
         }
