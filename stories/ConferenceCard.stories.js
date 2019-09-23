@@ -7,9 +7,9 @@ import { Grid } from '../src/components/grid'
 addDecorator(Theme)
 
 const event = {
-  startTime: '2019-05-03T18:00+00:00',
-  endTime: '2019-05-03T20:30+00:00',
-  date: '2019-05-03T00:00+01:00',
+  startTime: '2019-05-03T18:00',
+  endTime: '2019-05-03T20:30',
+  date: '2019-05-03T00:00',
   attendees: null,
   type: 'Conference',
   eventTitle: 'ReactJS Girls Conference',
