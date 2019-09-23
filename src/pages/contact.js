@@ -137,7 +137,7 @@ const ContactUs = ({
               teamMembers.map(
                 ({
                   name,
-                  description,
+                  contactUsDescription,
                   footerRole,
                   image,
                   socialLinks,
@@ -154,7 +154,7 @@ const ContactUs = ({
                     key={`staff-${name}`}
                     name={name}
                     contactUsRole={contactUsRole}
-                    description={description.description}
+                    description={contactUsDescription.contactUsDescription}
                     role={footerRole}
                     image={image}
                     emailAddress={emailAddress}
@@ -251,8 +251,8 @@ const Contact = props => (
             contactUsRole
             footerRole
             emailAddress
-            description {
-              description
+            contactUsDescription {
+              contactUsDescription
             }
             image {
               title
