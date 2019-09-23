@@ -14,7 +14,7 @@ const event = {
     month: 'Aug'
   },
   eventName: 'GraphQL helps rockstar developers',
-  eventLocation: 'London',
+  address: 'London',
   startTime: '11am',
   endTime: '2pm',
   attendees: 20,
