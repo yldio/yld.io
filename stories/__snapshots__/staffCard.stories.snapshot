@@ -1,15 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
-.c3 {
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 1.5rem;
-}
-
-.c7 {
+.c6 {
   padding-bottom: 2.25rem;
 }
 
@@ -22,7 +14,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding-right: 0;
 }
 
-.c2 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -34,12 +26,15 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
+  padding: [object Object];
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1 {
@@ -56,27 +51,23 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   display: flex;
 }
 
-.c5 {
-  width: 100%;
-  height: auto;
-}
-
 .c12 {
   width: 24px;
   height: 24px;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   font-weight: 700;
 }
 
-.c8 {
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -117,7 +108,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -125,18 +116,27 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   padding: 0.75rem 0;
   padding: 0;
   padding-bottom: 1.875rem;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
 }
 
-@media (min-width:43.8125em) {
-  .c3 {
-    padding-bottom: 3.375rem;
-  }
+.c2 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 2.25rem;
 }
 
-@media (min-width:56.3125em) {
-  .c3 {
-    padding-bottom: 6.75rem;
-  }
+.c9 {
+  justify-self: end;
+}
+
+.c4 {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width:29.4375em) {
@@ -199,42 +199,42 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -243,7 +243,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -252,7 +252,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -261,7 +261,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -304,6 +304,24 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
   }
 }
 
+@media (min-width:43.8125em) {
+  .c2 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    padding-bottom: 6.75rem;
+  }
+}
+
 <div
   className="c0"
 >
@@ -311,7 +329,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -323,38 +341,34 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
@@ -396,7 +410,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -408,38 +422,34 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
@@ -481,7 +491,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -493,38 +503,34 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
@@ -566,7 +572,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -578,38 +584,34 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
@@ -651,7 +653,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
       </div>
     </div>
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -663,38 +665,34 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
@@ -740,15 +738,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
 `;
 
 exports[`Storyshots About Us Page Components StaffCard 1`] = `
-.c3 {
-  padding-bottom: 2.25rem;
-}
-
-.c4 {
-  padding-bottom: 1.5rem;
-}
-
-.c7 {
+.c6 {
   padding-bottom: 2.25rem;
 }
 
@@ -761,7 +751,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding-right: 0;
 }
 
-.c2 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -773,12 +763,15 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   position: initial;
   top: 0;
   left: 0;
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  display: block;
+  padding: [object Object];
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1 {
@@ -795,27 +788,23 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   display: flex;
 }
 
-.c5 {
-  width: 100%;
-  height: auto;
-}
-
 .c12 {
   width: 24px;
   height: 24px;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   font-weight: 700;
 }
 
-.c8 {
+.c7 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -856,7 +845,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding-bottom: 0.375rem;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -864,18 +853,27 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   padding: 0.75rem 0;
   padding: 0;
   padding-bottom: 1.875rem;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
 }
 
-@media (min-width:43.8125em) {
-  .c3 {
-    padding-bottom: 3.375rem;
-  }
+.c2 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 2.25rem;
 }
 
-@media (min-width:56.3125em) {
-  .c3 {
-    padding-bottom: 6.75rem;
-  }
+.c9 {
+  justify-self: end;
+}
+
+.c4 {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width:29.4375em) {
@@ -938,42 +936,42 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -982,7 +980,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -991,7 +989,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c3 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1000,7 +998,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c3 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -1043,6 +1041,24 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
   }
 }
 
+@media (min-width:43.8125em) {
+  .c2 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c2 {
+    padding-bottom: 6.75rem;
+  }
+}
+
 <div
   className="c0"
 >
@@ -1050,7 +1066,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c3"
       width={
         Array [
           1,
@@ -1062,38 +1078,34 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
         ]
       }
     >
-      <div
-        className="c3"
+      <img
+        className="c4"
+        src="test-file-stub"
+        width="100%"
+      />
+      <h3
+        className="c5"
       >
-        <div
-          className="c4"
-        >
-          <img
-            className="c5"
-            src="test-file-stub"
-            width="100%"
-          />
-        </div>
+        Nuno Job
+      </h3>
+      <div
+        className="c6"
+      >
         <h3
-          className="c6"
-        >
-          Nuno Job
-        </h3>
-        <div
           className="c7"
+          muted={true}
         >
-          <h3
-            className="c8"
-            muted={true}
-          >
-            Chief Executive Officer
-          </h3>
-        </div>
-        <p
-          className="c9"
-        >
-          Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-        </p>
+          Chief Executive Officer
+        </h3>
+      </div>
+      <p
+        className="c8"
+      >
+        Nuno is the founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+      </p>
+      <div
+        className="c9"
+      >
         <div
           className="c10"
         >
