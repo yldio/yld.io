@@ -89,7 +89,7 @@ const EventCard = ({ event }) => {
     attendees ? ` • ${attendees} attending` : ''
   }`
 
-  const StyledLinkText = type === 'meetup' ? 'More on Meetup' : 'Get tickets'
+  const StyledLinkText = type === 'Meetup' ? 'More on Meetup' : 'Get tickets'
 
   return (
     <Row>

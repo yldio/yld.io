@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Link } from 'gatsby'
 import { format, isPast } from 'date-fns'
 
 import Image from '../Common/Image'
@@ -36,6 +35,7 @@ const ConferenceCard = ({ event }) => {
     eventTitle,
     blurb,
     linkToEvent,
+    linkToTickets,
     eventImage,
     ctaText
   } = event
@@ -65,12 +65,16 @@ const ConferenceCard = ({ event }) => {
         <BlurbWrapper>
           <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <Link href={linkToEvent} style={{ textDecoration: 'underline' }}>
+            <a href={linkToEvent} style={{ textDecoration: 'underline' }}>
               Read more
-            </Link>
+            </a>
           </BodyPrimary>
         </BlurbWrapper>
-        <StyledLink aria-label={ctaText} href={linkToEvent} title={ctaText}>
+        <StyledLink
+          aria-label={ctaText}
+          href={linkToTickets || linkToEvent}
+          title={ctaText}
+        >
           {ctaText}
         </StyledLink>
       </Col>

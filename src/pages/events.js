@@ -263,6 +263,7 @@ export const query = graphql`
     }
     homepageFeatured
     linkToEvent
+    linkToTickets
     ctaText
     eventImage: eventPage {
       file {
