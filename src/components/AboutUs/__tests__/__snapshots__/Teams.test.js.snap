@@ -84,82 +84,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
           class="sc-ifAKCX dJZmHe"
         >
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-0"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMFBgcI/8QAKRAAAgEEAAMHBQAAAAAAAAAAAQIDAAQFEQchQQYSIjFRcbETFyORof/EABgBAAIDAAAAAAAAAAAAAAAAAAIEAAUG/8QAHREBAAICAgMAAAAAAAAAAAAAAQACAxEEEiFRYf/aAAwDAQACEQMRAD8A8q43CT5zNWGJWQB7y4jtlnm2I4wza2fbe/atVxT4f/bu+tYosxaZK2dNJLZDaq2gefpsEHzPWsvgnyGOyFteY+SF7mxmWaOVifxOp2G/Y6eldF4q9oR28nsmsrxbogG4kUwvFHG7jZXxsSWBLbPJR061KcfNkTpXYwK3wmO3d8k5JFdM4J+nOx3zKEa+KVMcTOrFSxBU6IBB/opQtNOmBuvuSYhu5qVQAZCVI1y5Aa+assndyw23gIGx6UpWg4anEdfYlmBzEpnlI7u1U8vMjdKUqvyB2YwT/9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMFBgcI/8QAKRAAAgEEAAMHBQAAAAAAAAAAAQIDAAQFEQchQQYSIjFRcbETFyORof/EABgBAAIDAAAAAAAAAAAAAAAAAAIEAAUG/8QAHREBAAICAgMAAAAAAAAAAAAAAQACAxEEEiFRYf/aAAwDAQACEQMRAD8A8q43CT5zNWGJWQB7y4jtlnm2I4wza2fbe/atVxT4f/bu+tYosxaZK2dNJLZDaq2gefpsEHzPWsvgnyGOyFteY+SF7mxmWaOVifxOp2G/Y6eldF4q9oR28nsmsrxbogG4kUwvFHG7jZXxsSWBLbPJR061KcfNkTpXYwK3wmO3d8k5JFdM4J+nOx3zKEa+KVMcTOrFSxBU6IBB/opQtNOmBuvuSYhu5qVQAZCVI1y5Aa+assndyw23gIGx6UpWg4anEdfYlmBzEpnlI7u1U8vMjdKUqvyB2YwT/9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Nuno Job"
-                      src="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Nuno Job"
+                  src="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&q=50" alt="Nuno Job" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Nuno Job
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Nuno Job
+                Co-founder & Chief Executive Officer - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Co-founder & Chief Executive Officer - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -197,82 +193,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-1"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABQcIAQP/xAApEAACAQMDAwIHAQAAAAAAAAABAgMEBREAEiEGBzETUQgiI2FxgZGh/8QAGQEAAgMBAAAAAAAAAAAAAAAAAwQAAgUB/8QAIREAAgEEAgIDAAAAAAAAAAAAAAECAwQRQRITIjEhMmH/2gAMAwEAAhEDEQA/AIHobFJe7nb7TFFsqKmaOCCFCSSWYDcSeBxpfOMsHTTnJJbGh387CUPZVLWtD1Xb+plm3GdqeFk9EkYAbLNkEg4OB4+41SE1N4Hbi2dJckJ9rklThpKowMAFCBCQAB75P4/Wr8MaEeOPSDXTN8qbde7fXtUSWyenqEqY6ulVd8RDBgcecDzjjVulyXiSPjJOOhwfFZ3DtfX90hay9UpfqCWQTNFFTzwkfTChn9XOG4wQMeBx7Co0Jxk20at3cdsUoyJ+joptgKxKVPIJB03x/TMyjrLI4rZFLFgoCjPsOB/g0Sm/hHF6MeVhE/8ANF0TYQs884ogFqJUG4/KjkDWfV+wOaWT/9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABQcIAQP/xAApEAACAQMDAwIHAQAAAAAAAAABAgMEBREAEiEGBzETUQgiI2FxgZGh/8QAGQEAAgMBAAAAAAAAAAAAAAAAAwQAAgUB/8QAIREAAgEEAgIDAAAAAAAAAAAAAAECAwQRQRITIjEhMmH/2gAMAwEAAhEDEQA/AIHobFJe7nb7TFFsqKmaOCCFCSSWYDcSeBxpfOMsHTTnJJbGh387CUPZVLWtD1Xb+plm3GdqeFk9EkYAbLNkEg4OB4+41SE1N4Hbi2dJckJ9rklThpKowMAFCBCQAB75P4/Wr8MaEeOPSDXTN8qbde7fXtUSWyenqEqY6ulVd8RDBgcecDzjjVulyXiSPjJOOhwfFZ3DtfX90hay9UpfqCWQTNFFTzwkfTChn9XOG4wQMeBx7Co0Jxk20at3cdsUoyJ+joptgKxKVPIJB03x/TMyjrLI4rZFLFgoCjPsOB/g0Sm/hHF6MeVhE/8ANF0TYQs884ogFqJUG4/KjkDWfV+wOaWT/9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Anthony"
-                      src="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Anthony"
+                  src="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&q=50" alt="Anthony" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Anthony Mann
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Anthony Mann
+                Co-founder - YLD & YLD Labs
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Co-founder - YLD & YLD Labs
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -310,82 +302,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-2"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGgABAAMAAwAAAAAAAAAAAAAAAAIFBgQHCP/EACkQAAIBAwMCBQUBAAAAAAAAAAECAwAEEQUSIQYUByIxYYFBUXGRwaH/xAAXAQEBAQEAAAAAAAAAAAAAAAADBAAC/8QAHBEAAwACAwEAAAAAAAAAAAAAAAECETEDEiFB/9oADAMBAAIRAxEAPwDyrb6Zca3qdvp8KG4u7iVYwVU4G7hQoB5PPzW08TukR0HqVlZd/HInbBw0UbgKx4KlWAYEZyfz6VmLG+v9Muba+37LyzlSSBywZS4bdkrjB+far7xQ6gterOqZ57eV20yNSsW5Sm4k7mwpyQMn/PeplNukkvDuIh8Tdb+HX7aikp3TNLv9PIqkfylR7STAIRSrcjK/SlP0CwjldzLGyrvLEnO5uT+6i0jStIWPPm/lKU06Ri4t7+6uFZu4kjAYqFQ4UAfalKVGHhH/2Q=="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGgABAAMAAwAAAAAAAAAAAAAAAAIFBgQHCP/EACkQAAIBAwMCBQUBAAAAAAAAAAECAwAEEQUSIQYUByIxYYFBUXGRwaH/xAAXAQEBAQEAAAAAAAAAAAAAAAADBAAC/8QAHBEAAwACAwEAAAAAAAAAAAAAAAECETEDEiFB/9oADAMBAAIRAxEAPwDyrb6Zca3qdvp8KG4u7iVYwVU4G7hQoB5PPzW08TukR0HqVlZd/HInbBw0UbgKx4KlWAYEZyfz6VmLG+v9Muba+37LyzlSSBywZS4bdkrjB+far7xQ6gterOqZ57eV20yNSsW5Sm4k7mwpyQMn/PeplNukkvDuIh8Tdb+HX7aikp3TNLv9PIqkfylR7STAIRSrcjK/SlP0CwjldzLGyrvLEnO5uT+6i0jStIWPPm/lKU06Ri4t7+6uFZu4kjAYqFQ4UAfalKVGHhH/2Q=="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Tracey Bianchi"
-                      src="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Tracey Bianchi"
+                  src="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&q=50" alt="Tracey Bianchi" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Tracey Bianchi
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Tracey Bianchi
+                Chief Financial Officer - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Chief Financial Officer - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -407,82 +395,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-3"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBgj/xAAmEAABAwQBAwQDAAAAAAAAAAABAgMEAAURIQYSEzEHFFFhQYGx/8QAFgEBAQEAAAAAAAAAAAAAAAAABAID/8QAHREAAgICAwEAAAAAAAAAAAAAAAECAyEyERITQf/aAAwDAQACEQMRAD8A8z8Pskfk1/jWphbUZMl9LKpLjhV204OVAJ2fGc41XS+o3p7G4FyVi3w7qqYwhGRJLRa7jucdIUSc7GfOP7XD8fuFyt90jXSC6zHmRHQ93mlkLSRnWj9EVev14uPJn5j8y7FxvpS2w64hWEpBOkhRJG1Hf3R/Kcng3rq71vhZ+EGZGAkuKelPl1aipXt3EKSDn5yM0qLIkSA8tMgNvOp0XF7J/f5pVebWA3VootK9tFSttICnMhX3vzWUqQ446wySAgEHQpSlx1Gx1Rsl3tZT0JI15J+B8GlKUOzZhJ7M/9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBgj/xAAmEAABAwQBAwQDAAAAAAAAAAABAgMEAAURIQYSEzEHFFFhQYGx/8QAFgEBAQEAAAAAAAAAAAAAAAAABAID/8QAHREAAgICAwEAAAAAAAAAAAAAAAECAyEyERITQf/aAAwDAQACEQMRAD8A8z8Pskfk1/jWphbUZMl9LKpLjhV204OVAJ2fGc41XS+o3p7G4FyVi3w7qqYwhGRJLRa7jucdIUSc7GfOP7XD8fuFyt90jXSC6zHmRHQ93mlkLSRnWj9EVev14uPJn5j8y7FxvpS2w64hWEpBOkhRJG1Hf3R/Kcng3rq71vhZ+EGZGAkuKelPl1aipXt3EKSDn5yM0qLIkSA8tMgNvOp0XF7J/f5pVebWA3VootK9tFSttICnMhX3vzWUqQ446wySAgEHQpSlx1Gx1Rsl3tZT0JI15J+B8GlKUOzZhJ7M/9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Carlos Vilhena"
-                      src="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Carlos Vilhena"
+                  src="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&q=50" alt="Carlos Vilhena" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Carlos Vilhena
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Carlos Vilhena
+                Chief Technology Officer - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Chief Technology Officer - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -520,82 +504,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-4"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAgEBgf/xAAsEAACAAYCAQIDCQAAAAAAAAABAgADBAYREgUhBxQxCBNxFSIyUWKRsdHh/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EAB8RAAIBAgcAAAAAAAAAAAAAAAABAgMyERITITFRcf/aAAwDAQACEQMRAD8Aly2rZNx3FxvBl1phVTQocKztqRktqAT0O+hHWeUfHEqwK6npqWpWsp3yJlQ4ddXXog7qMDr+Y0eL7Sunm+Qpbk4+mlyKbj56zWqW1UOFIJQAHY5Bx0B74yI9F8ieMbov3jvU8fq6UWx9JgoJi5yPl7n8Q76OM7HH5RJQqNrBbDwUHSk5ck2fajSlVFbRVGAvviEZKiiennzZM2UyTJbFGVshlIOCCD7GENprojlRXPw/VMxLL1yCoboEfqb/ACOvva467jeVt2ipmRJFU7iYNe+gv9n94QjThavEFEy+Z6SVxd5F5CjNbTpVTdgD99mYEj665+pMIQjPq3sB/9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAgEBgf/xAAsEAACAAYCAQIDCQAAAAAAAAABAgADBAYREgUhBxQxCBNxFSIyUWKRsdHh/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBf/EAB8RAAIBAgcAAAAAAAAAAAAAAAABAgMyERITITFRcf/aAAwDAQACEQMRAD8Aly2rZNx3FxvBl1phVTQocKztqRktqAT0O+hHWeUfHEqwK6npqWpWsp3yJlQ4ddXXog7qMDr+Y0eL7Sunm+Qpbk4+mlyKbj56zWqW1UOFIJQAHY5Bx0B74yI9F8ieMbov3jvU8fq6UWx9JgoJi5yPl7n8Q76OM7HH5RJQqNrBbDwUHSk5ck2fajSlVFbRVGAvviEZKiiennzZM2UyTJbFGVshlIOCCD7GENprojlRXPw/VMxLL1yCoboEfqb/ACOvva467jeVt2ipmRJFU7iYNe+gv9n94QjThavEFEy+Z6SVxd5F5CjNbTpVTdgD99mYEj665+pMIQjPq3sB/9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Bradley Stott"
-                      src="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Bradley Stott"
+                  src="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&q=50" alt="Bradley Stott" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Bradley Stott
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Bradley Stott
+                Chief Operations Officer - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Chief Operations Officer - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -617,83 +597,79 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-5"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYHCAT/xAAoEAABAwMDAwMFAAAAAAAAAAABAgMEAAURBiFBBxIxEyJRcZGhsfD/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAAL/xAAgEQACAgEDBQAAAAAAAAAAAAABAgADERIhwTEyQVFh/9oADAMBAAIRAxEAPwDk202V+8XaFbWUkLlOhsKO6lZOPxVt1a6fMaDnx22JypiVMgrX2KbIVncYIG4BHA3zsPFT2jG58S7szYiUlcRK1Nugbtq7SAd+MqFa51mtc98s3G4oQh+Rb0ONRPTKUtuOn3g5J32zn6UZ3K2KvuIppVqWY9ZzoXyPKMn5JIzSvYILw4WDyKUrTDZEttGOKj6fujzR7HQUshQ8hKg5n9D7VTz9WXbVFrvdwukn15MlKUqJSMISnGAn4H9yaUrLAaSfOV4iKycAfDzMrW2HHXSrJPcR5pSlT9xgid5//9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYHCAT/xAAoEAABAwMDAwMFAAAAAAAAAAABAgMEAAURBiFBBxIxEyJRcZGhsfD/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAAL/xAAgEQACAgEDBQAAAAAAAAAAAAABAgADERIhwTEyQVFh/9oADAMBAAIRAxEAPwDk202V+8XaFbWUkLlOhsKO6lZOPxVt1a6fMaDnx22JypiVMgrX2KbIVncYIG4BHA3zsPFT2jG58S7szYiUlcRK1Nugbtq7SAd+MqFa51mtc98s3G4oQh+Rb0ONRPTKUtuOn3g5J32zn6UZ3K2KvuIppVqWY9ZzoXyPKMn5JIzSvYILw4WDyKUrTDZEttGOKj6fujzR7HQUshQ8hKg5n9D7VTz9WXbVFrvdwukn15MlKUqJSMISnGAn4H9yaUrLAaSfOV4iKycAfDzMrW2HHXSrJPcR5pSlT9xgid5//9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Annie Vladev"
-                      src="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Annie Vladev"
+                  src="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&q=50" alt="Annie Vladev" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Annie Vladev
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Annie Vladev
+                Head of Commercial - YLD
               </h3>
-              <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Head of Commercial - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. 
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. 
 
-              </p>
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -715,82 +691,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-6"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAACAcJBf/EACsQAAEDAgUCBAcAAAAAAAAAAAECAwQFEQAGByExElEIIkFxCRMUFUKBof/EABgBAQEBAQEAAAAAAAAAAAAAAAMFAgAE/8QAIREAAgIBBAIDAAAAAAAAAAAAAQIAAwQREhMxIUEiUYH/2gAMAwEAAhEDEQA/ABJl/Lkqu5ip8EuLQqQpKGG20cJJsCOQPy77njE4sEWdQnNYE+5Q9e9MmtHsxwo0KRJfQ7EDxkhLjIWq5C0hLnISSB7c73GDRuT4yhl4i1AFZNHGZ9QS26wGFtdACVKFr97etr3539uMMoCyRqBOto3lzMWc82xItEjvy6opxLMVbKR1pdWq4PV6AAKUVHYBJJxq5N21E9mU8TRGLn0Is9TPDLmrULV6Ll+bV4kJcSg/Uvy40VYjsPdHmsbJ6itzpOx2BHa2Crx2WzYZQyLhkVhvyCCdTJdIqEuE+G/nx3ltOXQlXnSbHcjuMUOPWQdBNEPhlUeJE03zRWm2UfcnqoI6pCkgqDaWm1BIPIF1q/nbD0+V1mx1E/XZ8iVWpDTjpU2iK5ZP7Thz1FTwZjPnBxT2b684o+ZdQkKNu5cVgT3POe5//9k="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAUABQDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAACAcJBf/EACsQAAEDAgUCBAcAAAAAAAAAAAECAwQFEQAGByExElEIIkFxCRMUFUKBof/EABgBAQEBAQEAAAAAAAAAAAAAAAMFAgAE/8QAIREAAgIBBAIDAAAAAAAAAAAAAQIAAwQREhMxIUEiUYH/2gAMAwEAAhEDEQA/ABJl/Lkqu5ip8EuLQqQpKGG20cJJsCOQPy77njE4sEWdQnNYE+5Q9e9MmtHsxwo0KRJfQ7EDxkhLjIWq5C0hLnISSB7c73GDRuT4yhl4i1AFZNHGZ9QS26wGFtdACVKFr97etr3539uMMoCyRqBOto3lzMWc82xItEjvy6opxLMVbKR1pdWq4PV6AAKUVHYBJJxq5N21E9mU8TRGLn0Is9TPDLmrULV6Ll+bV4kJcSg/Uvy40VYjsPdHmsbJ6itzpOx2BHa2Crx2WzYZQyLhkVhvyCCdTJdIqEuE+G/nx3ltOXQlXnSbHcjuMUOPWQdBNEPhlUeJE03zRWm2UfcnqoI6pCkgqDaWm1BIPIF1q/nbD0+V1mx1E/XZ8iVWpDTjpU2iK5ZP7Thz1FTwZjPnBxT2b684o+ZdQkKNu5cVgT3POe5//9k="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Greta Strolyte"
-                      src="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Greta Strolyte"
+                  src="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&q=50" alt="Greta Strolyte" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Greta Strolyte
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Greta Strolyte
+                Marketing and Community Manager - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. 
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Marketing and Community Manager - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. 
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -828,82 +800,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-7"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAQFAQYH/8QAJxAAAQQBAwMDBQAAAAAAAAAAAgEDBBEABQYhEjFBExVRIjJhcZH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgUE/8QAHxEBAAEEAQUAAAAAAAAAAAAAAQACAxESEwQUMTJB/9oADAMBAAIRAxEAPwDlcHacgo7TckJ3uOpkUeMyzFUhatxOTc8qKCpUva+OUvK/eWjydB3F7NN1GfNhttq5EKQ16Rk4SgpAREq/1FWqVOMqIm5JEtllmOjseKExH3DjvWSl1opKPm6ROVLumNy6sb25ndT01+WIuIaJ6rQNICL2oQVUv5Xzzk+30lxpXHmGko43PtITj2lNuONtxZLggZJ93R0cqvTVjVX8JjLvb21dC1rS2pOq7ilDKtR6GXkoBReB+sb4tU/SJjD2z9Yus1GA6cQ32WysKQ7Lva3eRdanPtRS6TW184xlWheMizOiTDahqnQBWd2V/CfnGMZguLsxVcz/2Q=="
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAQFAQYH/8QAJxAAAQQBAwMDBQAAAAAAAAAAAgEDBBEABQYhEjFBExVRIjJhcZH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgUE/8QAHxEBAAEEAQUAAAAAAAAAAAAAAQACAxESEwQUMTJB/9oADAMBAAIRAxEAPwDlcHacgo7TckJ3uOpkUeMyzFUhatxOTc8qKCpUva+OUvK/eWjydB3F7NN1GfNhttq5EKQ16Rk4SgpAREq/1FWqVOMqIm5JEtllmOjseKExH3DjvWSl1opKPm6ROVLumNy6sb25ndT01+WIuIaJ6rQNICL2oQVUv5Xzzk+30lxpXHmGko43PtITj2lNuONtxZLggZJ93R0cqvTVjVX8JjLvb21dC1rS2pOq7ilDKtR6GXkoBReB+sb4tU/SJjD2z9Yus1GA6cQ32WysKQ7Lva3eRdanPtRS6TW184xlWheMizOiTDahqnQBWd2V/CfnGMZguLsxVcz/2Q=="
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Fabio Oliveira"
-                      src="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Fabio Oliveira"
+                  src="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&q=50" alt="Fabio Oliveira" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Fabio Oliveira
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Fabio Oliveira
+                Managing Director - YLD Portugal, CEO - AddCode
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Managing Director - YLD Portugal, CEO - AddCode
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
@@ -941,82 +909,78 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
             </div>
           </div>
           <div
-            class="sc-bxivhb kAVjsC"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-8"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-bwzfXH eyRolI"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
-                class="sc-bwzfXH jtBXGl"
-              >
-                <div
-                  class="sc-kgoBCf bHjTTW gatsby-image-wrapper"
-                  style="position: relative; overflow: hidden;"
-                >
-                  <div
-                    style="width: 100%; padding-bottom: 100.29850746268657%;"
-                  />
-                  <img
-                    alt=""
-                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAcBBAj/xAAoEAACAQMDAgUFAAAAAAAAAAABAgMABBEFEiEHMQYTFSJBIyRRYXH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAgT/xAAcEQACAgMBAQAAAAAAAAAAAAAAAQIRAyExQRP/2gAMAwEAAhEDEQA/APLuj6MNZ1XTNJJSMX08cERSPn6jAbmOPgNmqP1h6V6T04tbL0jU2u0ZvuGljZSCAR3PfkEYHepjpOpML+CW8lmt4/NSQz2gUSxqGzlf388kcgVSeuXjrT/F9xaemai93byIsjkLtYkAj35J5AJHZf5QOM7WtCYoweKbl3wkvqpj9u8YHA2AYI/PPNK547VpAWjUbM8blyaUnzQFIyZzHcMq8KCRisDHLUpTLhXh122q3UUEaJJtVRjApSlZ2lYdI//Z"
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50&fm=webp 125w,
+                style="width: 100%; padding-bottom: 100.29850746268657%;"
+              />
+              <img
+                alt=""
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAcBBAj/xAAoEAACAQMDAgUFAAAAAAAAAAABAgMABBEFEiEHMQYTFSJBIyRRYXH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAgT/xAAcEQACAgMBAQAAAAAAAAAAAAAAAQIRAyExQRP/2gAMAwEAAhEDEQA/APLuj6MNZ1XTNJJSMX08cERSPn6jAbmOPgNmqP1h6V6T04tbL0jU2u0ZvuGljZSCAR3PfkEYHepjpOpML+CW8lmt4/NSQz2gUSxqGzlf388kcgVSeuXjrT/F9xaemai93byIsjkLtYkAj35J5AJHZf5QOM7WtCYoweKbl3wkvqpj9u8YHA2AYI/PPNK547VpAWjUbM8blyaUnzQFIyZzHcMq8KCRisDHLUpTLhXh122q3UUEaJJtVRjApSlZ2lYdI//Z"
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s; transition-delay: 0.5s;"
+              />
+              <picture>
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=670&h=672&q=50&fm=webp 670w"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 500px) 100vw, 500px"
-                      srcset="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50 125w,
+                  type="image/webp"
+                />
+                <source
+                  sizes="(max-width: 500px) 100vw, 500px"
+                  srcset="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=670&h=672&q=50 670w"
-                    />
-                    <img
-                      alt="Gareth Scrivens"
-                      src="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&q=50"
-                      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
-                    />
-                  </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50&fm=webp 125w,
+                />
+                <img
+                  alt="Gareth Scrivens"
+                  src="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&q=50"
+                  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition: opacity 0.5s;"
+                />
+              </picture>
+              <noscript>
+                &lt;picture&gt;&lt;source type='image/webp' srcSet="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50&fm=webp 125w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=250&h=251&q=50&fm=webp 250w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&h=501&q=50&fm=webp 500w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=670&h=672&q=50&fm=webp 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;source srcSet="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50 125w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=250&h=251&q=50 250w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&h=501&q=50 500w,
 //images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=670&h=672&q=50 670w" sizes="(max-width: 500px) 100vw, 500px" /&gt;&lt;img src="//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&q=50" alt="Gareth Scrivens" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
-                  </noscript>
-                </div>
-              </div>
+              </noscript>
+            </div>
+            <h3
+              class="sc-htoDjs KIdsY"
+            >
+              Gareth Scrivens
+            </h3>
+            <div
+              class="sc-bwzfXH kSnLsz"
+            >
               <h3
-                class="sc-htoDjs elLXsO"
+                class="sc-htoDjs iVVFbG"
               >
-                Gareth Scrivens
+                Associate Partner - YLD
               </h3>
+            </div>
+            <p
+              class="sc-dxgOiQ hbmCkh"
+            >
+              Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini
+            </p>
+            <div
+              class="sc-jKJlTe fXqLSs"
+            >
               <div
-                class="sc-bwzfXH kSnLsz"
-              >
-                <h3
-                  class="sc-htoDjs iVVFbG"
-                >
-                  Associate Partner - YLD
-                </h3>
-              </div>
-              <p
-                class="sc-dxgOiQ dliFiI"
-              >
-                Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini
-              </p>
-              <div
-                class="sc-kpOJdX bKXUig"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
                   class="sc-kGXeez RalHl"
