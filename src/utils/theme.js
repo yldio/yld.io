@@ -21,13 +21,7 @@ export const spacing = {
   60: remcalc(60),
   42: remcalc(42),
   48: remcalc(48),
-  90: remcalc(90),
-  310: remcalc(310),
-  422: remcalc(422),
-  430: remcalc(430),
-  432: remcalc(432),
-  438: remcalc(438),
-  475: remcalc(475)
+  90: remcalc(90)
 }
 
 // use this instead of the 'spacing' object - 'space' is a keyword in styled-system
