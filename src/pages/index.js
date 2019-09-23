@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { format, isAfter, isSameDay, endOfYesterday } from 'date-fns'
+import { format, isAfter, isSameDay } from 'date-fns'
 
 import { Grid } from '../components/grid'
 import Layout from '../components/layout'
@@ -25,18 +25,6 @@ import Contributions from '../components/Common/Contributions'
 
 const dateFormat = 'dddd[,] MMMM DD'
 
-const getHomepageMeetups = (events = []) =>
-  events
-    .filter(
-      n => !n.node.homepageFeatured && isAfter(n.node.date, endOfYesterday())
-    )
-    .sort((a, b) => (a.node.date <= b.node.date ? -1 : 1))
-    .slice(0, 5)
-    .map(n => ({
-      ...n.node,
-      date: format(n.node.date, dateFormat)
-    }))
-
 const getFeaturedEventDate = ({ node: { date, endTime } }) =>
   !isSameDay(date, endTime) && isAfter(endTime, date)
     ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
@@ -60,7 +48,6 @@ const IndexPage = ({ data, location }) => {
 
   const blogPosts = blogData.edges || []
   const featuredEvent = getHomepageConferences(events.edges)[0]
-  const nonFeaturedEvents = getHomepageMeetups(events.edges)
 
   return (
     <Layout
@@ -83,10 +70,7 @@ const IndexPage = ({ data, location }) => {
         />
       </Grid>
       <GreyBackground>
-        <Events
-          nonFeaturedEvents={nonFeaturedEvents}
-          featuredEvent={featuredEvent}
-        />
+        <Events featuredEvent={featuredEvent} eventTypes={content.eventTypes} />
       </GreyBackground>
       {blogPosts && blogPosts.length > 0 && (
         <BlogSection blogPosts={blogPosts} />
@@ -266,6 +250,15 @@ export const query = graphql`
           nameWithOwner
           pullRequestCount
           starCount
+        }
+      }
+      eventTypes {
+        title
+        copy
+        image {
+          fluid(maxWidth: 250) {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
