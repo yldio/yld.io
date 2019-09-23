@@ -676,6 +676,11 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       <img
         className="c3"
         src="//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
         width="100%"
       />
     </div>
