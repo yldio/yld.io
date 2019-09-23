@@ -34,6 +34,8 @@ const ConferenceCard = ({ event }) => {
     city,
     eventTitle,
     blurb,
+    blurbCtaLink,
+    blurbCtaCopy,
     linkToEvent,
     linkToTickets,
     eventImage,
@@ -65,8 +67,13 @@ const ConferenceCard = ({ event }) => {
         <BlurbWrapper>
           <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <a href={linkToEvent} style={{ textDecoration: 'underline' }}>
-              Read more
+            <a
+              href={blurbCtaLink || linkToEvent}
+              style={{ textDecoration: 'underline' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {blurbCtaCopy || 'Read more'}
             </a>
           </BodyPrimary>
         </BlurbWrapper>
@@ -74,6 +81,8 @@ const ConferenceCard = ({ event }) => {
           aria-label={ctaText}
           href={linkToTickets || linkToEvent}
           title={ctaText}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {ctaText}
         </StyledLink>
