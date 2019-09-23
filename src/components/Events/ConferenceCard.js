@@ -51,7 +51,13 @@ const ConferenceCard = ({ event }) => {
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
         <AnchorWrapper href={linkToEvent}>
-          {eventImage && <Image image={eventImage} width="100%" />}
+          {eventImage && (
+            <Image
+              style={{ display: 'block' }}
+              image={eventImage}
+              width="100%"
+            />
+          )}
         </AnchorWrapper>
       </Col>
 
