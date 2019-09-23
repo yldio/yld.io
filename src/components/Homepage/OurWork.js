@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import breakpoint from 'styled-components-breakpoint'
+import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../grid'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
+import StyledLink from '../Common/StyledLink'
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
@@ -52,11 +54,11 @@ const DesktopOnlyRow = styled(Row)`
 
 const CardHeader = styled.header`
   padding: ${({ theme }) => `${theme.spacing[1.5]} ${theme.spacing[2]}`};
-  max-width: ${({ theme }) => theme.spacing[475]};
+  max-width: ${remcalc(475)};
   box-sizing: border-box;
 
   > div {
-    max-width: ${({ theme }) => theme.spacing[310]};
+    max-width: ${remcalc(310)};
   }
 
   ${breakpoint('tablet')`
@@ -96,36 +98,43 @@ const Card = styled.section`
 `
 // //fixed height
 // const Card = styled.section`
-//   height: ${({ theme }) => theme.spacing[430]};
+//   height: ${remcalc(430)};
 //   background-color: #${props => props.color};
 //   margin-top: ${({ theme }) => theme.space[4]};
 
 //   ${breakpoint('smallTablet')`
-//     height: ${({ theme }) => theme.spacing[422]};
+//     height: ${remcalc(422)};
 //   `}
 
 //   ${breakpoint('tablet')`
-//     height: ${({ theme }) => theme.spacing[432]};
+//     height: ${remcalc(432)};
 //     margin-top: ${({ theme }) => theme.space[5]};
 //   `}
 
 //   ${breakpoint('desktop')`
-//     height: ${({ theme }) => theme.spacing[438]};
+//     height: ${remcalc(438)};
 //   `}
 // `
 
 const CaseStudy = ({ caseStudy }) => {
-  const { title, posterImage, slug, posterColor, client } = caseStudy
+  const {
+    title,
+    client,
+    posterImage,
+    slug,
+    posterColor,
+    reverseColor
+  } = caseStudy
 
   return (
     <AnimatedLink to={`/case-study/${slug}`} title={title}>
       <Card color={posterColor}>
         <CardHeader>
           <section>
-            <BodyPrimary reverse muted>
+            <BodyPrimary reverse={reverseColor} muted>
               {client}
             </BodyPrimary>
-            <CardTitle reverse noPadding>
+            <CardTitle reverse={reverseColor} noPadding>
               {title}
             </CardTitle>
           </section>
@@ -137,6 +146,10 @@ const CaseStudy = ({ caseStudy }) => {
     </AnimatedLink>
   )
 }
+
+const MoreWorkLink = styled(StyledLink)`
+  font-weight: ${remcalc(18)};
+`
 
 const OurWork = ({ data }) => {
   const {
@@ -178,7 +191,7 @@ const OurWork = ({ data }) => {
   return (
     <Grid>
       <Row>
-        <TitleCol width={[1]}>
+        <TitleCol width={1}>
           <SectionTitle as="h1">Our Work</SectionTitle>
         </TitleCol>
       </Row>
@@ -203,6 +216,13 @@ const OurWork = ({ data }) => {
           </Col>
         ))}
       </DesktopOnlyRow>
+      <Row>
+        <Col width={1}>
+          <MoreWorkLink vibrant to="/our-work">
+            More of our work
+          </MoreWorkLink>
+        </Col>
+      </Row>
     </Grid>
   )
 }
@@ -255,6 +275,7 @@ const OurWorkSection = props => (
                 }
               }
               posterColor
+              reverseColor
             }
           }
         }
@@ -283,6 +304,7 @@ const OurWorkSection = props => (
                 }
               }
               posterColor
+              reverseColor
             }
           }
         }
@@ -311,6 +333,7 @@ const OurWorkSection = props => (
                 }
               }
               posterColor
+              reverseColor
             }
           }
         }
