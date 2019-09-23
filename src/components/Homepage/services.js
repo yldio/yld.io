@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
 
-import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 
 import SeoLinks from '../Common/seoLinks'
-import Statement from '../Common/Statement'
 import { DisplayTitle, CardTitle, BodyPrimary } from '../Typography'
 
 const ImageWrapper = styled.div`
@@ -20,12 +18,25 @@ const ImageWrapper = styled.div`
 `
 
 const StyledRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[6]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const ServiceRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallTablet')`
+    padding-bottom: 0;
+  `}
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[5]};
+  `}
 `
 
 const ServiceTitle = styled(CardTitle)`
@@ -40,7 +51,7 @@ const Services = ({ statement, services }) => (
   <>
     <StyledRow>
       {statement && (
-        <Col width={[1, 1, 1, 7 / 12]}>
+        <Col width={[1, 1, 1, 1, 1, 10 / 12, 7 / 12]}>
           <DisplayTitle>{statement}</DisplayTitle>
         </Col>
       )}
