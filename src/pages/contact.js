@@ -1,503 +1,310 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import { navigate } from '@reach/router'
-
-import { Grid, Row, Col, ColumnLayout } from '../components/grid'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
-import TitleSection from '../components/ContactUs/TitleSection'
-import GreyBackground from '../components/Common/GreyBackground'
-import AreasOfInterest from '../components/ContactUs/AreasOfInterest'
-import { Checkbox, Input, Label, Field } from '../components/Common/Forms'
-import Button from '../components/Common/Button'
-import Statement from '../components/Common/Statement'
-import LatestPosts from '../components/LatestPosts'
-import BlogListing from '../components/Common/BlogListing'
-import { CaseStudy } from '../components/Common/CaseStudy'
-import EventSection from '../components/Common/Events'
+import { StaticQuery, graphql } from 'gatsby'
+import generate from 'shortid'
 import breakpoint from 'styled-components-breakpoint'
 
-import getColorLuminance from '../utils/getColorLuminance'
+import Head from '../components/Common/Head'
+import Image from '../components/Common/Image'
+import Hr from '../components/Common/Hr'
+import StyledLink from '../components/Common/StyledLink'
+import GreyBackground from '../components/Common/GreyBackground'
+import {
+  SectionTitle,
+  BodyPrimary,
+  Subtitle,
+  DisplayTitle
+} from '../components/Typography'
 
-const MAX_CASE_STUDIES = 3
+import { Grid, Row, Col } from '../components/grid'
+import Layout from '../components/layout'
+import StaffCard from '../components/AboutUs/StaffCard'
 
-const encode = data =>
-  Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+import Map from '../components/ContactUs/Map'
 
-const LinkUnderline = styled(Link)`
-  text-decoration: underline;
-`
-
-const EngineeringBranchPadding = styled.div`
-  ${breakpoint('smallPhone')`
-      padding-bottom:  ${({ theme }) => theme.space[5]};
-  `}
-
-  ${breakpoint('tablet')`
-      padding-bottom:
-        ${({ theme }) => theme.space[7]};
-  `}
-`
-
-const CaseStudyWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  padding-bottom: ${({ theme }) => theme.space[3]};
-
-  ${breakpoint('tablet')`
-    padding-bottom: 0;
-  `}
-`
-
-const FormPadding = styled.div`
-  ${breakpoint('smallPhone')`
-      padding-top:  ${({ theme }) => theme.space[4]};
-      padding-bottom:  ${({ theme }) => theme.space[5]};
-  `}
-
-  ${breakpoint('tablet')`
-      padding-top:
-        ${({ theme }) => theme.space[6]} ;
-      padding-bottom:
-        ${({ theme }) => theme.space[7]};
-  `}
-`
-
-const getBranch = (
-  branch,
-  engineeringMsg,
-  communityMsg,
-  caseStudies,
-  events,
-  eventsSectionDescription,
-  eventsSectionImage
-) => {
-  switch (branch) {
-    case 'community':
-      return (
-        <Fragment>
-          <Statement noPadding richText={communityMsg.content[0].content} />
-          <EventSection
-            events={events}
-            description={eventsSectionDescription}
-            eventIcon={eventsSectionImage.file.url}
-          />
-          <GreyBackground>
-            <LatestPosts>
-              {posts => (
-                <BlogListing
-                  title="From the blog"
-                  posts={posts.map(({ node }) => node).slice(0, 3)}
-                />
-              )}
-            </LatestPosts>
-          </GreyBackground>
-        </Fragment>
-      )
-    case 'services':
-    default:
-      return (
-        <GreyBackground>
-          <Statement noPadding richText={engineeringMsg.content[0].content} />
-
-          <EngineeringBranchPadding>
-            <Grid>
-              <ColumnLayout
-                cols={3}
-                items={caseStudies.slice(0, MAX_CASE_STUDIES)}
-                compensated
-              >
-                {({ Col, item: cs }) => (
-                  <Col block={false}>
-                    <CaseStudyWrapper>
-                      <CaseStudy
-                        bg={`#${cs.posterColor}`}
-                        to={`/case-study/${cs.slug}`}
-                        lightText={getColorLuminance(cs.posterColor) < 127.5}
-                        title={cs.title}
-                        services={cs.services}
-                      />
-                    </CaseStudyWrapper>
-                  </Col>
-                )}
-              </ColumnLayout>
-            </Grid>
-          </EngineeringBranchPadding>
-        </GreyBackground>
-      )
-  }
-}
-
-const formatCaseStudies = caseStudies =>
-  caseStudies.edges.map(caseStudyObject => {
-    const caseStudy = caseStudyObject.node
-    return {
-      ...caseStudy,
-      services: caseStudy.services
-        .filter(service => service.title)
-        .map(service => service.title)
-    }
+const MapGroup = ({ locations = [] }) => {
+  const mappedLocations = locations.map(({ mapLocation }) => {
+    return { lng: mapLocation.lon, lat: mapLocation.lat }
   })
 
-// NOT CHANGED TO HOOKS BECAUSE YOU DONT WIN ANYTHING
-class ContactUs extends Component {
-  state = {
-    name: '',
-    email: '',
-    message: '',
-    submitting: false,
-    privacy: false,
-    triedSubmitting: false
+  return (
+    mappedLocations &&
+    mappedLocations.length > 0 && <Map locations={mappedLocations} />
+  )
+}
+
+const LocationWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  margin-bottom: ${({ theme }) => theme.space[2]};
+`
+
+const IntroSectionRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[6]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+    `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+    `}
+`
+
+const IntroSectionTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[3]};
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
+  `}
+`
+
+const TeamSectionRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[5]};
+  padding-bottom: 0;
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+`
+
+const TeamSectionTitleCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+`
+
+const LocationCol = styled(Col)`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+`
+
+const MapRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+`}
+`
+
+const MapWrapper = styled.div`
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    display: none;
+  `}
+`
+
+const ContactUs = ({
+  location,
+  data: {
+    contentfulContactUsPage: page,
+    allContentfulLocation: { group: locations }
   }
+}) => {
+  const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
 
-  handleInterestCheckboxChange = (e, branch) => {
-    const target = e.target
-    this.setState(prevState => ({
-      ...prevState,
-      [target.name]: {
-        checked: target.checked,
-        branch: branch
-      }
-    }))
-  }
+  const sortedGroups = locations.sort(({ nodes }) =>
+    nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1
+  )
 
-  handlePrivacyCheckboxChange = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      privacy: !prevState.privacy
-    }))
-  }
+  return (
+    <Layout location={location} displayFooterOffices={false}>
+      <Head seoMetaData={page.seoMetaData} />
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
-
-  handleSubmit = e => {
-    e.preventDefault()
-    this.setState({ submitting: true })
-
-    const { interests } = this.props.data.contentfulPage
-
-    const chosenInterests = interests.reduce(
-      (acc, { name }) => ({
-        ...acc,
-        [name]:
-          this.state[name] &&
-          Object.prototype.hasOwnProperty.call(this.state[name], 'checked')
-            ? this.state[name].checked
-            : false
-      }),
-      {}
-    )
-
-    const body = encode({
-      'form-name': 'contact',
-      ...this.state,
-      ...chosenInterests
-    })
-
-    fetch('/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body
-    }).then(() => {
-      const chosenInterestsBranches = interests.reduce(
-        (acc, { name, branch }) =>
-          chosenInterests[name] ? acc.concat(branch) : acc,
-        []
-      )
-
-      const branch = chosenInterestsBranches.includes('services')
-        ? 'services'
-        : 'community'
-
-      this.setState({ success: true, submitting: false, branch })
-      navigate(`?branch=${branch}`, {
-        replace: true
-      })
-      window.scrollTo(0, 0)
-    })
-  }
-
-  handleButtonClick = () => {
-    this.setState({ triedSubmitting: true })
-  }
-
-  render() {
-    const { name, email, message, submitting, success, branch } = this.state
-    const {
-      location,
-      data: {
-        contentfulPage: {
-          title,
-          slug,
-          seoTitle,
-          seoMetaDescription,
-          titleNotContacted,
-          labelInterests,
-          interests,
-          labelYourMessage,
-          labelYourName,
-          labelYourEmail,
-          privacyPolicyText,
-          privacyPolicyLinkText,
-          statusNotSent,
-          statusSent,
-          customMessage1,
-          customMessage2,
-          thankYouMessage
-        },
-        contentfulOpenSourcePage: {
-          eventsSectionImage,
-          eventsSectionDescription
-        },
-        allContentfulMeetupEvent: { nodes: events },
-        allContentfulTemplatedCaseStudy,
-        allContentfulNonTemplatedCaseStudy
-      }
-    } = this.props
-
-    const engineeringCaseStudies = formatCaseStudies(
-      allContentfulTemplatedCaseStudy
-    )
-    const designCaseStudies = formatCaseStudies(
-      allContentfulNonTemplatedCaseStudy
-    )
-    const caseStudies = engineeringCaseStudies.concat(designCaseStudies)
-
-    return (
-      <Layout location={location}>
-        <Head page={{ title, slug, seoTitle, seoMetaDescription }} />
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-          style={{ width: '100%' }}
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <TitleSection
-            title={
-              success
-                ? thankYouMessage.content[0].content[0].value
-                : titleNotContacted
-            }
-          />
-
-          {success ? (
-            // call a function getBranch, written outside the class, to show the correct branch
-            getBranch(
-              branch,
-              customMessage1,
-              customMessage2,
-              caseStudies,
-              events,
-              eventsSectionDescription,
-              eventsSectionImage
-            )
-          ) : (
-            <GreyBackground>
-              <Grid>
-                <FormPadding>
-                  <AreasOfInterest
-                    title={labelInterests}
-                    interests={interests}
-                    onChange={this.handleInterestCheckboxChange}
+      <Grid>
+        <IntroSectionRow>
+          <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
+            <SectionTitle as="h1">{title}</SectionTitle>
+          </IntroSectionTitleCol>
+          <Col width={[1]}>
+            <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink>
+          </Col>
+        </IntroSectionRow>
+      </Grid>
+      <GreyBackground>
+        <Grid>
+          <TeamSectionRow>
+            <TeamSectionTitleCol width={[1]}>
+              <DisplayTitle>{teamMembersTitle}</DisplayTitle>
+            </TeamSectionTitleCol>
+            {teamMembers &&
+              teamMembers.length > 0 &&
+              teamMembers.map(
+                ({
+                  name,
+                  contactUsDescription,
+                  footerRole,
+                  image,
+                  socialLinks,
+                  contactUsRole,
+                  emailAddress
+                }) => (
+                  <StaffCard
+                    colWidths={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12, 4 / 12]}
+                    paddingBottom={{
+                      smallTablet: 4,
+                      tablet: '0',
+                      desktop: '0'
+                    }}
+                    key={`staff-${name}`}
+                    name={name}
+                    contactUsRole={contactUsRole}
+                    description={contactUsDescription.contactUsDescription}
+                    role={footerRole}
+                    image={image}
+                    emailAddress={emailAddress}
+                    socialLinks={socialLinks}
                   />
-                  <Row>
-                    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
-                      <Label htmlFor="message">{labelYourMessage}</Label>
-                      <Input
-                        as="textarea"
-                        noBoxShadow={!this.state.triedSubmitting}
-                        rows="4"
-                        value={message}
-                        onChange={this.handleChange}
-                        id="message"
-                        name="message"
-                        required
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
-                      <Label htmlFor="name">{labelYourName}</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        name="name"
-                        value={name}
-                        onChange={this.handleChange}
-                        required
-                      />
-                      <Label htmlFor="email">{labelYourEmail}</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={this.handleChange}
-                        required
-                      />
-                      <Field>
-                        <section key="privacy">
-                          <Checkbox
-                            required
-                            type="checkbox"
-                            id="privacy"
-                            name="privacy"
-                            onChange={this.handlePrivacyCheckboxChange}
-                          />
-                          <label htmlFor="privacy">
-                            {privacyPolicyText}
-                            <LinkUnderline
-                              to={'/privacy-policy'}
-                              title="yld Privacy Policy"
-                            >
-                              {privacyPolicyLinkText}
-                            </LinkUnderline>
-                          </label>
-                        </section>
-                      </Field>
-                      <Button
-                        onClick={this.handleButtonClick}
-                        type="submit"
-                        disabled={submitting}
-                      >
-                        {submitting ? statusSent : statusNotSent}
-                      </Button>
-                    </Col>
-                  </Row>
-                </FormPadding>
-              </Grid>
-            </GreyBackground>
-          )}
-        </form>
-      </Layout>
-    )
-  }
+                )
+              )}
+          </TeamSectionRow>
+          <Row>
+            <Col width={[1]}>
+              <Hr />
+            </Col>
+          </Row>
+          <MapRow>
+            {sortedGroups &&
+              sortedGroups.length > 0 &&
+              sortedGroups.map(({ nodes = [] }) => {
+                return (
+                  <Col key={generate()} width={[1, 1, 1, 1, 1 / 2, 1 / 2]}>
+                    <MapWrapper>
+                      <MapGroup locations={nodes} />
+                    </MapWrapper>
+
+                    <Row>
+                      {nodes.map(
+                        ({
+                          name,
+                          telephone,
+                          markerIcon,
+                          email,
+                          streetAddress
+                        }) => (
+                          <LocationCol
+                            key={generate()}
+                            width={[1, 1, 1, 1, 1, 1, 1 / 2, 1 / 2]}
+                          >
+                            <LocationWrapper>
+                              <Image image={markerIcon} />
+                            </LocationWrapper>
+                            <Subtitle bold>{name}</Subtitle>
+                            {streetAddress.streetAddress
+                              .split('\n')
+                              .map(address => (
+                                <BodyPrimary noPadding key={address}>
+                                  {address}
+                                </BodyPrimary>
+                              ))}
+
+                            {telephone && (
+                              <BodyPrimary itemProp="telephone" noPaddingBottom>
+                                {telephone}
+                              </BodyPrimary>
+                            )}
+
+                            {email && (
+                              <BodyPrimary noPaddingTop={telephone}>
+                                <a
+                                  href={`mailto:${email}`}
+                                  title={`Email yld ${name} Office`}
+                                >
+                                  {email}
+                                </a>
+                              </BodyPrimary>
+                            )}
+                          </LocationCol>
+                        )
+                      )}
+                    </Row>
+                  </Col>
+                )
+              })}
+          </MapRow>
+        </Grid>
+      </GreyBackground>
+    </Layout>
+  )
 }
 
 const Contact = props => (
   <StaticQuery
     query={graphql`
       query {
-        allContentfulTemplatedCaseStudy {
-          edges {
-            node {
-              slug
-              title
-              seoTitle
-              services {
-                ... on ContentfulService {
-                  title
-                }
-              }
-              posterColor
-            }
-          }
-        }
-        allContentfulNonTemplatedCaseStudy {
-          edges {
-            node {
-              slug
-              title
-              seoTitle
-              services {
-                ... on ContentfulService {
-                  title
-                }
-              }
-              posterColor
-            }
-          }
-        }
-        allContentfulMeetupEvent {
-          nodes {
-            id
-            eventTitle
-            date
-            linkToEvent
-          }
-        }
-        contentfulOpenSourcePage {
-          eventsSectionImage {
-            id
-            title
-            file {
-              fileName
-              url
-            }
-          }
-        }
-        contentfulPage(slug: { eq: "contact" }) {
+        contentfulContactUsPage {
           title
-          slug
-          seoTitle
-          seoMetaDescription
-          titleNotContacted
-          titleContacted
-          labelInterests
-          interests {
-            label
+          seoMetaData {
+            ...SEOMetaFields
+          }
+          ctaUrl
+          ctaCopy
+          teamMembersTitle
+          teamMembers {
             name
-            branch
-          }
-          labelYourMessage
-          labelYourName
-          labelYourEmail
-          privacyPolicyText
-          privacyPolicyLinkText
-          statusNotSent
-          statusSent
-          successMessage
-          customMessage1 {
-            content {
-              content {
-                data {
-                  uri
+            role
+            contactUsRole
+            footerRole
+            emailAddress
+            contactUsDescription {
+              contactUsDescription
+            }
+            image {
+              title
+              file {
+                url
+              }
+              fluid(maxWidth: 500) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
+            socialLinks {
+              name
+              url
+              image {
+                title
+                file {
+                  url
                 }
-                value
-                content {
-                  value
-                  nodeType
+                fluid(maxWidth: 30) {
+                  ...GatsbyContentfulFluid_withWebp
                 }
-                nodeType
               }
             }
           }
-          customMessage2 {
-            content {
-              content {
-                data {
-                  uri
+        }
+        allContentfulLocation(sort: { fields: createdAt }) {
+          group(field: country) {
+            nodes {
+              id
+              name
+              primaryLocation
+              markerIcon {
+                title
+                file {
+                  url
                 }
-                value
-                content {
-                  value
-                  nodeType
+                fluid(maxWidth: 30) {
+                  ...GatsbyContentfulFluid_withWebp
                 }
-                nodeType
+              }
+              mapLocation {
+                lon
+                lat
+              }
+              telephone
+              email
+              country
+              streetAddress {
+                id
+                streetAddress
               }
             }
-          }
-          thankYouMessage {
-            content {
-              content {
-                nodeType
-                value
-              }
-              nodeType
-            }
-            nodeType
           }
         }
       }

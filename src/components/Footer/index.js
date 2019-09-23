@@ -79,7 +79,7 @@ const QUERY = graphql`
   }
 `
 
-const Footer = ({ footerContactUsId }) => (
+const Footer = ({ footerContactUsId, displayFooterOffices = true }) => (
   <StaticQuery
     query={QUERY}
     render={({ profiles }) => {
@@ -95,18 +95,20 @@ const Footer = ({ footerContactUsId }) => (
             </Wrapper>
           )}
           <GreyFooter>
-            <Padding top={{ smallPhone: 3, tablet: 4 }}>
-              <Grid>
-                <Row>
-                  <Col width={1}>
-                    <Padding bottom={3}>
-                      <SectionTitle reverse>Find us</SectionTitle>
-                    </Padding>
-                  </Col>
-                </Row>
-                <OfficeListing />
-              </Grid>
-            </Padding>
+            {displayFooterOffices && (
+              <Padding top={{ smallPhone: 3, tablet: 4 }}>
+                <Grid>
+                  <Row>
+                    <Col width={1}>
+                      <Padding bottom={3}>
+                        <SectionTitle reverse>Find us</SectionTitle>
+                      </Padding>
+                    </Col>
+                  </Row>
+                  <OfficeListing />
+                </Grid>
+              </Padding>
+            )}
             <FooterLinks />
           </GreyFooter>
         </>
