@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Grid, Row, Col } from '../grid'
+import { mt } from 'styled-components-spacing'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
 
@@ -82,8 +83,13 @@ const AnimatedLink = styled(Link)`
 `
 
 const ImageWrapper = styled.div`
-  background: #${props => props.color};
   max-width: 100%;
+`
+
+const Card = styled.section`
+  height: 100%;
+  background-color: #${props => props.color};
+  ${mt({ smallPhone: 4, tablet: 5 })};
 `
 
 const CaseStudy = ({ caseStudy }) => {
@@ -91,11 +97,7 @@ const CaseStudy = ({ caseStudy }) => {
 
   return (
     <AnimatedLink to={`/case-study/${slug}`} title={title}>
-      <section
-        style={{
-          background: `#${posterColor}`
-        }}
-      >
+      <Card color={posterColor}>
         <CardHeader>
           <section>
             <BodyPrimary reverse muted>
@@ -106,10 +108,10 @@ const CaseStudy = ({ caseStudy }) => {
             </CardTitle>
           </section>
         </CardHeader>
-        <ImageWrapper color={posterColor}>
+        <ImageWrapper>
           <Image image={posterImage} />
         </ImageWrapper>
-      </section>
+      </Card>
     </AnimatedLink>
   )
 }
@@ -128,8 +130,12 @@ const OurWork = ({ data }) => {
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
   ]
 
+  // remove thomas cook and unpublished case studies
   const displayOrderByIDs = caseStudies
-    .filter(({ publish }) => publish)
+    .filter(
+      ({ publish, id }) =>
+        publish && id !== 'bb2bc84d-c03e-5605-b2fa-041a674a1e94'
+    )
     .map(({ id }) => id)
 
   const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
