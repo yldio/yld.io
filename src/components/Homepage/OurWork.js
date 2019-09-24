@@ -66,7 +66,7 @@ const CardHeader = styled.header`
   `}
 
   ${breakpoint('desktop')`
-    padding-bottom: ${({ theme }) => theme.spacing[30]};
+    padding: ${remcalc(24)} ${remcalc(25)} ${remcalc(24)} ${remcalc(31)};
   `}
 `
 
@@ -96,7 +96,7 @@ const Card = styled.section`
     margin-top: ${({ theme }) => theme.space[5]};
   `}
 `
-// //fixed height
+// //fixed height - alternative: use max-height on image wrapper
 // const Card = styled.section`
 //   height: ${remcalc(430)};
 //   background-color: #${props => props.color};
@@ -150,6 +150,9 @@ const CaseStudy = ({ caseStudy }) => {
 const MoreWorkLink = styled(StyledLink)`
   font-size: ${remcalc(18)};
   padding: ${({ theme }) => theme.space[4]} 0;
+  line-height: ${remcalc(30)};
+  margin-top: ${remcalc(10)};
+  margin-bottom: ${remcalc(24)};
 
   ${breakpoint('tablet')`
     padding: ${({ theme }) => theme.space[6]} 0;
