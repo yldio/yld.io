@@ -7,7 +7,6 @@ import ReactMarkdown from 'react-markdown'
 import illustrationDesktop from '../../images/yld_illustration_desktop.svg'
 import illustrationMobile from '../../images/yld_illustration_mobile.svg'
 import { Grid, Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
 import BlueBackground from '../Common/BlueBackground'
 import { SectionTitle, CardTitle, Subtitle } from '../Typography'
 
@@ -123,12 +122,7 @@ const StyledSectionTitle = styled(SectionTitle)`
   `};
 `
 
-const IntroSection = ({
-  introHeader,
-  introContent: { introContent },
-  introCtaText,
-  introCtaLink
-}) => {
+const IntroSection = ({ introHeader, introContent: { introContent } }) => {
   return (
     <StyledBlueBackground>
       <Grid>
@@ -152,9 +146,6 @@ const IntroSection = ({
                 source={introContent}
               />
             </IntroLinkWrapper>
-            <StyledLink reverse vibrant to={introCtaLink}>
-              {introCtaText}
-            </StyledLink>
           </Col>
         </IntroRow>
       </Grid>

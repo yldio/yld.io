@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import { Grid, Row, Col } from '../grid'
+import { Row, Col } from '../grid'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
@@ -148,7 +148,12 @@ const CaseStudy = ({ caseStudy }) => {
 }
 
 const MoreWorkLink = styled(StyledLink)`
-  font-weight: ${remcalc(18)};
+  font-size: ${remcalc(18)};
+  padding-top: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+  `}
 `
 
 const OurWork = ({ data }) => {
@@ -189,7 +194,7 @@ const OurWork = ({ data }) => {
   const desktopCaseStudies = orderedCaseStudies.slice(0, 6)
 
   return (
-    <Grid>
+    <>
       <Row>
         <TitleCol width={1}>
           <SectionTitle as="h1">Our Work</SectionTitle>
@@ -223,7 +228,7 @@ const OurWork = ({ data }) => {
           </MoreWorkLink>
         </Col>
       </Row>
-    </Grid>
+    </>
   )
 }
 
