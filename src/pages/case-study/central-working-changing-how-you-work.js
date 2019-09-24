@@ -117,7 +117,11 @@ const IndexPage = props => {
   const outComesDataFigures = normaliseAll(data2.slice(1))
 
   return (
-    <Layout location={location} contactUsBg={'greyBg'}>
+    <Layout
+      location={location}
+      contactUsBg={'greyBg'}
+      footerContactUsId={caseStudy.footerContactUs.id}
+    >
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero caseStudy={caseStudy} as="h1" />
 
@@ -391,6 +395,9 @@ export const query = graphql`
         id
       }
       posterColor
+      footerContactUs {
+        id
+      }
     }
   }
 `

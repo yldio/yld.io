@@ -29,7 +29,7 @@ class JoinUs extends React.Component {
       data: { contentfulJoinUsPage: content }
     } = this.props
     return (
-      <Layout>
+      <Layout footerContactUsId={content.footerContactUs.id}>
         <Head seoMetaData={content.seoMetaData} />
         <ViewPositions
           text={content.introductionText.introductionText}
@@ -173,6 +173,9 @@ const JoinUsPage = props => (
           directApplicationTitle
           directApplicationText {
             directApplicationText
+          }
+          footerContactUs {
+            id
           }
         }
       }

@@ -12,7 +12,7 @@ import Intro from '../components/Homepage/Intro'
 import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events/index'
 import BlogSection from '../components/Homepage/BlogSection'
-import Jobs from '../components/Homepage/jobs'
+import FooterSections from '../components/Homepage/FooterSections'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -50,7 +50,11 @@ const IndexPage = ({ data, location }) => {
   const featuredEvent = getHomepageConferences(events.edges)[0]
 
   return (
-    <Layout location={location} bgColor="blueBg">
+    <Layout
+      location={location}
+      footerContactUsId={content.footerContactUs.id}
+      bgColor="blueBg"
+    >
       <Head seoMetaData={content.seoMetaData} />
       <Intro {...content} />
       <GreyBackground>
@@ -75,7 +79,7 @@ const IndexPage = ({ data, location }) => {
         <Contributions {...content.contributions} />
       </BlueBackground>
       <GreyBackground>
-        <Jobs />
+        <FooterSections />
       </GreyBackground>
     </Layout>
   )
@@ -208,6 +212,9 @@ export const query = graphql`
         fluid(maxWidth: 250) {
           ...GatsbyContentfulFluid_withWebp_noBase64
         }
+      }
+      footerContactUs {
+        id
       }
       contributions: contributionsSection {
         githubMetaData {

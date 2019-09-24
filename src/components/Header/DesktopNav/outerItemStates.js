@@ -21,7 +21,7 @@ const activeLight = css`
 `
 
 const activeAndHoverLight = css`
-  background: ${props => props.theme.colors.greyBG};
+  background: ${props => props.theme.colors.greyBg};
   color: ${props => props.theme.colors.text};
 `
 

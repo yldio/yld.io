@@ -78,7 +78,7 @@ const OurWork = ({ data }) => {
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
   return (
-    <Layout>
+    <Layout footerContactUsId={data.contentfulOurWork.footerContactUs.id}>
       <Head
         page={{
           ...page,
@@ -161,6 +161,9 @@ const OurWorkPage = props => (
               id
               publish
             }
+          }
+          footerContactUs {
+            id
           }
         }
 

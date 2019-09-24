@@ -52,7 +52,7 @@ export const InnerAnchorItem = ({
        * Do not remove unless with good reason, always
        * perform cross browser testing!
        */
-      tabindex={0}
+      tabIndex={0}
       activeClassName={activeClassName}
     >
       {children}

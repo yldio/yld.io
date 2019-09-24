@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots GetInTouch GetInTouch 1`] = `
-.c1 {
-  padding-top: 3.375rem;
-  padding-bottom: 3.375rem;
-}
-
+exports[`Storyshots GetInTouch GetInTouch - Generic 1`] = `
 .c0 {
   max-width: calc(100% - 48px);
   position: relative;
@@ -57,10 +52,10 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 .c4 {
   color: #333333;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.25rem;
-  padding: 0.8125rem 0 0.6875rem 0;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
 }
 
 .c6 {
@@ -69,6 +64,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  padding: 0;
 }
 
 .c7 {
@@ -122,7 +118,7 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   background: #333333;
 }
 
-.c2 {
+.c1 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -134,18 +130,12 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-top: 6.75rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c1 {
-    padding-bottom: 6.75rem;
-  }
+.c2 {
+  padding-bottom: 2.25rem;
 }
 
 @media (min-width:29.4375em) {
@@ -243,33 +233,6 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
   .c5 {
     padding-left: 0;
     padding-right: 0;
@@ -342,53 +305,58 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
 
 @media (min-width:56.3125em) {
   .c4 {
-    font-size: 2.625rem;
-    line-height: 3rem;
-    padding: 0.625rem 0 0.5rem 0;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c2 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c2 {
+  .c1 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c2 {
+  .c1 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c2 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c2 {
+  .c1 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
-@media (min-width:74.8125em) {
-  .c2 {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+@media (min-width:43.8125em) {
+  .c1 {
+    padding-top: 3.375rem;
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -399,50 +367,901 @@ exports[`Storyshots GetInTouch GetInTouch 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c3"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <h2
+        className="c4"
+      >
+        Want to talk to someone about this?
+      </h2>
+    </div>
+    <div
+      className="c2 c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.4166666666666667,
+        ]
+      }
+    >
+      <p
+        className="c6"
+      >
+        Our experts work with you to understand your goals and help you build the capabilities you need to succeed
+      </p>
+    </div>
+    <div
+      className="c3"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <a
+        className="c7"
+        href="/contact"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        title="Get in touch"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c6 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c16 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c8 {
+  width: 100%;
+  height: auto;
+}
+
+.c15 {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c11 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding-top: 0;
+  font-weight: 700;
+}
+
+.c19 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+  padding: 0;
+}
+
+.c12 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+}
+
+.c18 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.c21 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
+}
+
+.c14 {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c14:first-child {
+  margin-left: -0.75rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+}
+
+.c7 {
+  width: 100%;
+  max-width: 144px;
+  margin-right: 1.5rem;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: -0.75rem;
+  padding-top: 0.75rem;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+  padding-top: 2.25rem;
+  padding-bottom: 3.375rem;
+}
+
+.c2 {
+  padding-bottom: 1.5rem;
+}
+
+.c17 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c20 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c20 > p,
+.c20 > a {
+  display: inline;
+}
+
+.c20 a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c6 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c6 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c6 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c6 {
+    width: 58.333333333333336%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c6 {
+    width: 58.333333333333336%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c6 {
+    width: 50%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c16 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c16 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c16 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c16 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c16 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c16 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c16 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c16 {
+    width: 41.66666666666667%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c16 {
+    width: 41.66666666666667%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c5 {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width:0em) and (max-width:34.5em) {
+  .c7 {
+    padding-bottom: 0.75rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c13 {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    padding-top: 3.375rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c1 {
+    padding-top: 4.5rem;
+    padding-bottom: 6.75rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c2 {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c2 {
+    padding-bottom: 3.375rem;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c17 {
+    padding-top: 0;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c17 {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width:0em) and (max-width:34.5em) {
+  .c9 {
+    width: 100%;
+    padding-bottom: 0.75rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c9 {
+    border-right: 1px solid #e6e6e6;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2 c3"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <h2
+        className="c4"
+      >
+        Want to talk to someone about this?
+      </h2>
+    </div>
+    <div
+      className="c5 c6"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.5833333333333334,
+          0.5833333333333334,
+          0.5,
+        ]
+      }
     >
       <div
-        className="c3"
-        width={
-          Array [
-            1,
-            1,
-            1,
-            1,
-            0.5,
-          ]
-        }
+        className="c7"
       >
-        <h2
-          className="c4"
+        <div
+          className="c8 gatsby-image-wrapper"
+          style={
+            Object {
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
         >
-          Talk to us about Node.js 
-        </h2>
+          <div
+            style={
+              Object {
+                "paddingBottom": "100.29850746268657%",
+                "width": "100%",
+              }
+            }
+          />
+          <img
+            alt=""
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wkMCDgW9ppGVwAABElJREFUOMsFwVtvFFUAAOBzzpy578zsdHdmr6WhZUGBAtYIBpWgJkLxBR64ibcH1MQH/TUaY4zBoMbEEBKDMRbUYAzWh7ZArVsotNuWsu1Sprs7Ozu3c/H7YGnQ0S25vRFKKrIcCQLY8SKacM6gnMGKJoZdAgWORU4oFEWBMhr3iYARFrGQK1pRNxUEqFsYIgQ5AxBiAWMopoSmMWGMZ10RY6QZOsacEZbGjMYMACAYlo4EkK9aAyUdSzB8yjJcHx0aHttV87wgJok2AN2SnneLreYWZ0SQIEkZhBAwhDkFxWGr64VBJ+R9IBDRKdtxFCdhpAhYFzXd7q+v+FHQY4zZJdnbCBnlCEGSUsF2Tc6ovxnFfSpj+dXnDpx7c/y906ePHTtuqXJ7qw2M3tpSJOtSGtO4TzgFgANOoWrKwtjR3YxTWZUZpbkB89ThI3uHh61cXrOzhVLZNrQfr/3FIE9CwimAAOoDiMaQpiCJiDA0UmmtPNUtzcwpUgbBQHLzuX+mb+dsy3Vyg4XSnYXZHvQQFhRdKo/o/TZJQgY4EBWMHs4tU8YHHCeNWHOp4/tBysCe4e2GgIjfhrLYaG10mlQSJUnG60th3OdpwhAG2YKG3cEsJaTnt7xWR9Gxa5uCKIqi8HD1kWvJ08urW92OXcwohtT1eiSmHAG7aDKeyIosbN9VMS3FsrOKnoY94vtBr7W1Z8fwSvPR3P26VSo9RX7Oyfe8CMEYilCUxXzZclwlTlO01ngSBMxrbQEIsSJ1cJRz7IyeAZB63eDw3jHqaXPT88UhTc4IfT9FEG6uthf/81brnmDnDJrS5upWeyOCHGWycrMVLi4vRlFy4cz5dYJVo6pphsj0BwtL1e3lbrsTBkkUpLopCrKsUEI5BYIIRVl0C9tEbr7x8ouHDoz9NHn3h2t/1Gq1mzcnx0+cfOng69NTk05VSmI69EzOMHXBLdkkYYDz4ZGd2wZHy25NNewjR15pdkOf4U8/+VBRJCNjnRh/zXVdUXR4Cu7V62ZW5wSifiehCYcQvnXuozTi+0ZHF+brX1y+8ufUnGVmFx40Ll36XpJwzw9mZ+eftDbfPvvxgF15vOQ9qDcRwoBzYGazExM3Ar97e2ZmudEgKZmb+1dTtZ+v/Tp56+8kIbduTX32+ZeVUmnP3pELZ9/vdWKacMwZgBCahqMq2sUPLlJKK9XBQ4cOztfrx48dVVVp9+5nT50cn7j++zvvnltcaNy/3ygUtyEkpJQgSgBCwDAtAKHj5Ovz99bWHt+ZnaWMtZ5sNpaXVVWxrEzWshYfLl29crVeX5yeuisrCoQAZ11FNYR+P5i9OzNx3f3u8rduodButwUEDd36+qtvisUChOjGb9d7fvD8wRf2je4iJFJ+sbo8wIwA73FU3Z+XxUTV1P0H9pcqVTtrZXRdyyjVaqW2s4YQXF15dP78GUlSdtSGwiislIudzfX/AVpAJfBS2j6IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg=="
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "transitionDelay": "0.5s",
+                "width": "100%",
+              }
+            }
+          />
+          <picture>
+            <source
+              sizes="(max-width: 500px) 100vw, 500px"
+              srcSet="//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=125&h=125&q=50&fm=webp 125w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=250&h=251&q=50&fm=webp 250w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&h=501&q=50&fm=webp 500w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=670&h=672&q=50&fm=webp 670w"
+              type="image/webp"
+            />
+            <source
+              sizes="(max-width: 500px) 100vw, 500px"
+              srcSet="//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=125&h=125&q=50 125w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=250&h=251&q=50 250w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&h=501&q=50 500w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=670&h=672&q=50 670w"
+            />
+            <img
+              alt="Nick Image"
+              onLoad={[Function]}
+              src="//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&q=50"
+              style={
+                Object {
+                  "height": "100%",
+                  "left": 0,
+                  "objectFit": "cover",
+                  "objectPosition": "center",
+                  "opacity": 1,
+                  "position": "absolute",
+                  "top": 0,
+                  "transition": "opacity 0.5s",
+                  "width": "100%",
+                }
+              }
+            />
+          </picture>
+          <noscript
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=125&h=125&q=50&fm=webp 125w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=250&h=251&q=50&fm=webp 250w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&h=501&q=50&fm=webp 500w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=670&h=672&q=50&fm=webp 670w\\" sizes=\\"(max-width: 500px) 100vw, 500px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=125&h=125&q=50 125w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=250&h=251&q=50 250w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&h=501&q=50 500w,
+//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=670&h=672&q=50 670w\\" sizes=\\"(max-width: 500px) 100vw, 500px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&q=50\\" alt=\\"Nick Image\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+              }
+            }
+          />
+        </div>
       </div>
       <div
-        className="c5"
-        width={
-          Array [
-            1,
-            1,
-            1,
-            1,
-            0.5,
-            0.4166666666666667,
-          ]
+        className="c9"
+      >
+        <div>
+          <h3
+            className="c10"
+          >
+            Nick Osborn
+          </h3>
+          <h3
+            className="c11"
+            muted={true}
+          >
+            Talent Manager
+          </h3>
+          <a
+            aria-current="page"
+            className="c12"
+            href="/"
+            noPadding={true}
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "textDecoration": "underline",
+              }
+            }
+          >
+            nick@yld.io
+          </a>
+        </div>
+        <div
+          className="c13"
+        >
+          <a
+            className="c14"
+            href="https://www.linkedin.com/in/osbornnick/"
+            imageSize={24}
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Nick Osborn LinkedIn account"
+          >
+            <img
+              alt="Nick Osborn LinkedIn"
+              className="c15"
+              height="24px"
+              src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
+              width="24px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c16"
+      style={
+        Object {
+          "alignSelf": "stretch",
         }
+      }
+      width={
+        Array [
+          1,
+          1,
+          1,
+          1,
+          0.4166666666666667,
+          0.4166666666666667,
+        ]
+      }
+    >
+      <div
+        className="c17"
       >
         <p
-          className="c6"
+          className="c18"
         >
-           Whether you need help with a project or are interested in training, we love to talk about all things Node.
+          Why reach out to Nick?
         </p>
+        <p
+          className="c19"
+        >
+          Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.
+        </p>
+      </div>
+      <div
+        className="c20"
+      >
+        <p
+          className="c21"
+        >
+          Something else you want to chat about?
+        </p>
+         
         <a
-          className="c7"
-          href="/contact/"
+          href="/contact"
           onClick={[Function]}
           onMouseEnter={[Function]}
-          title="Get in touch"
         >
           Get in touch
         </a>

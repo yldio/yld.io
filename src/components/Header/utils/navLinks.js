@@ -30,11 +30,17 @@ const navLinks = [
     to: '/open-source/'
   },
   {
-    label: 'Blog',
-    to: '/blog/',
-    attributes: {
-      'data-event': eventLabels.navigationBlog
-    }
+    label: 'Community',
+    dropdownItems: [
+      {
+        label: 'Blog',
+        to: '/blog/'
+      },
+      {
+        label: 'Events',
+        to: '/events/'
+      }
+    ]
   },
   {
     label: 'About',

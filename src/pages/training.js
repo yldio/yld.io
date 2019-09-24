@@ -6,7 +6,6 @@ import Statement from '../components/Common/Statement'
 import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import GetInTouch from '../components/Common/GetInTouch'
 import Head from '../components/Common/Head'
 
 const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
@@ -17,7 +16,7 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
   ]
 
   return (
-    <Layout slug="training">
+    <Layout slug="training" footerContactUsId={content.footerContactUs.id}>
       <Head seoMetaData={content.seoMetaData} />
       <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <Statement richText={content.seoText.content[0].content} />
@@ -30,10 +29,6 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
       <Courses
         categories={content.courseCategories}
         sectionTitle={content.courseSectionTitle}
-      />
-      <GetInTouch
-        title={`${content.contactUsTitle}`}
-        contactText={content.contactUsText.contactUsText}
       />
       <CaseStudyPreview isTop={false} caseStudy={content.relatedCaseStudy} />
     </Layout>
@@ -134,6 +129,9 @@ export const query = graphql`
         introSentence {
           introSentence
         }
+      }
+      footerContactUs {
+        id
       }
     }
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import { Link } from 'gatsby'
+import { format, isPast } from 'date-fns'
 
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
@@ -10,18 +10,18 @@ import StyledLink from '../Common/StyledLink'
 import { CardTitle, BodyPrimary } from '../Typography'
 
 const BlurbWrapper = styled.div`
-  ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
+
+  ${breakpoint('smallTablet')`
+      padding-top: ${({ theme }) => theme.space[3]};
   `};
 `
 
-const StatusWrapper = styled.div`
-  padding-top: ${props => props.theme.space[2]};
-  padding-bottom: ${props => props.theme.space[2]};
+const StyledStatusBodyPrimary = styled(BodyPrimary)`
+  padding-top: ${({ theme }) => theme.space[2]};
 
   ${breakpoint('smallTablet')`
-     padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0;
   `};
 `
 
@@ -30,54 +30,72 @@ const AnchorWrapper = ({ to, children }) =>
 
 const ConferenceCard = ({ event }) => {
   const {
-    status,
     date,
-    eventName,
-    eventLocation,
+    city,
+    eventTitle,
     blurb,
-    homepage,
-    ctaLink,
-    image
+    blurbCtaLink,
+    blurbCtaCopy,
+    linkToEvent,
+    linkToTickets,
+    eventImage,
+    ctaText
   } = event
 
-  const ctaText = status === 'Upcoming' ? 'Get tickets' : 'Watch on YouTube'
+  const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY')
+  const eventInfo = `${formattedDate} • ${city}`
+
+  const status = isPast(new Date(date)) ? 'Past' : 'Upcoming'
 
   return (
     <Row>
       <Col width={[8 / 12, 8 / 12, 8 / 12, 8 / 12, 0, 0, 0]}>
-        <AnchorWrapper to={homepage}>
-          <Image image={image} width="100%" />
+        <AnchorWrapper href={linkToEvent}>
+          {eventImage && (
+            <Image
+              style={{ display: 'block' }}
+              image={eventImage}
+              width="100%"
+            />
+          )}
         </AnchorWrapper>
       </Col>
 
       <Col width={[1, 1, 1, 1, 5 / 12, 4 / 12, 4 / 12]}>
-        <StatusWrapper>
-          <BodyPrimary noPadding muted>
-            {status}
-          </BodyPrimary>
-        </StatusWrapper>
-        <CardTitle as="h3">{eventName}</CardTitle>
-        <BodyPrimary>
-          {date} • {eventLocation}{' '}
-        </BodyPrimary>
+        <StyledStatusBodyPrimary noPadding muted>
+          {status}
+        </StyledStatusBodyPrimary>
+        <CardTitle as="h3">{eventTitle}</CardTitle>
+        <BodyPrimary>{eventInfo}</BodyPrimary>
       </Col>
 
       <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12, 5 / 12]}>
         <BlurbWrapper>
-          <BodyPrimary noPaddingBottom>{blurb}</BodyPrimary>
+          <BodyPrimary noPaddingBottom>{blurb.blurb}</BodyPrimary>
           <BodyPrimary noPaddingTop>
-            <Link to={homepage} style={{ textDecoration: 'underline' }}>
-              Read more
-            </Link>
+            <a
+              href={blurbCtaLink || linkToEvent}
+              style={{ textDecoration: 'underline' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {blurbCtaCopy || 'Read more'}
+            </a>
           </BodyPrimary>
         </BlurbWrapper>
-        <StyledLink aria-label={ctaText} to={ctaLink} title={ctaText}>
+        <StyledLink
+          aria-label={ctaText}
+          href={linkToTickets || linkToEvent}
+          title={ctaText}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {ctaText}
         </StyledLink>
       </Col>
       <Col width={[0, 0, 0, 0, 0, 3 / 12, 3 / 12]}>
-        <AnchorWrapper to={homepage}>
-          <Image image={image} width="100%" />
+        <AnchorWrapper href={linkToEvent}>
+          {eventImage && <Image image={eventImage} height="100%" />}
         </AnchorWrapper>
       </Col>
     </Row>
