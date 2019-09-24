@@ -3,6 +3,7 @@ import { Row, Col } from '../grid'
 import styled from 'styled-components'
 import Image from '../Common/Image'
 import ExternalAnchor from '../Common/ExternalAnchor'
+import { Subtitle } from '../Typography'
 
 const Column = styled(Col)`
   max-height: 108px;
@@ -13,6 +14,9 @@ const Column = styled(Col)`
 
 const LogoGrid = ({ companies }) => (
   <Row>
+    <Column width={1}>
+      <Subtitle>Some of the companies we&apos;ve worked with</Subtitle>
+    </Column>
     {companies.map(company => (
       <Column
         width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 3, 1 / 4]}
