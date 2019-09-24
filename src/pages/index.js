@@ -79,7 +79,7 @@ const IndexPage = ({ data, location }) => {
         <Contributions {...content.contributions} />
       </BlueBackground>
       <GreyBackground>
-        <FooterSections />
+        <FooterSections {...content} />
       </GreyBackground>
     </Layout>
   )
@@ -252,6 +252,24 @@ export const query = graphql`
           starCount
         }
       }
+      footerSection1Icon {
+        file {
+          url
+        }
+      }
+      footerSection1Title
+      footerSection1Copy
+      footerSection1CtaCopy
+      footerSection1CtaLink
+      footerSection2Icon {
+        file {
+          url
+        }
+      }
+      footerSection2Title
+      footerSection2Copy
+      footerSection2CtaCopy
+      footerSection2CtaLink
       eventTypes {
         title
         copy
