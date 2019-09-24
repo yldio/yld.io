@@ -39,16 +39,8 @@ const IntroRow = styled(Row)`
 const StyledCardTitle = styled(CardTitle)`
   > li {
     list-style: none;
-    padding-bottom: ${({ theme }) => theme.space[2]};
+    padding-bottom: ${remcalc(8)};
   }
-`
-
-const IntroLinkWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[2]};
-
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[3]};
-  `}
 `
 
 const IntroSectionTitleWrapper = styled.div`
@@ -138,19 +130,17 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
                 {introHeader}
               </StyledSectionTitle>
             </IntroSectionTitleWrapper>
-            <IntroLinkWrapper>
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => (
-                    <Subtitle noPadding reverse muted {...props} />
-                  ),
-                  // eslint-disable-next-line
-                  list: props => <StyledCardTitle reverse {...props} />
-                }}
-                source={introContent}
-              />
-            </IntroLinkWrapper>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => (
+                  <Subtitle noPadding reverse muted {...props} />
+                ),
+                // eslint-disable-next-line
+                list: props => <StyledCardTitle reverse {...props} />
+              }}
+              source={introContent}
+            />
           </Col>
         </IntroRow>
       </Grid>
