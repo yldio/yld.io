@@ -29,6 +29,11 @@ const IntroRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
+
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[8]};
+    padding-bottom: ${({ theme }) => theme.space[9]};
+  `}
 `
 
 const StyledCardTitle = styled(CardTitle)`
@@ -137,11 +142,11 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <Subtitle reverse muted {...props} />,
+                  heading: props => (
+                    <Subtitle noPadding reverse muted {...props} />
+                  ),
                   // eslint-disable-next-line
-                  list: props => (
-                    <StyledCardTitle noPaddingTop reverse {...props} />
-                  )
+                  list: props => <StyledCardTitle reverse {...props} />
                 }}
                 source={introContent}
               />
