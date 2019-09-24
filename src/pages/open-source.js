@@ -51,11 +51,8 @@ const OpenSource = ({ data, location }) => {
       technologyPartners: partners,
       eventsSectionImage,
       eventsSectionDescription,
-<<<<<<< HEAD
-      footerContactUs: { id: footerContactId }
-=======
+      footerContactUs: { id: footerContactId },
       contributionsSection: contributions
->>>>>>> add contributions section to homepage, move contributions to common
     },
     allContentfulMeetupEvent: { nodes: events }
   } = data
