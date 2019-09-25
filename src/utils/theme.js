@@ -34,7 +34,8 @@ export const space = [
   remcalc(54), // 5
   remcalc(72), // 6
   remcalc(108), // 7
-  remcalc(144) // 8
+  remcalc(144), // 8
+  remcalc(176) // 9
 ]
 
 export const breakpoints = {

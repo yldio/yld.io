@@ -7,7 +7,6 @@ import ReactMarkdown from 'react-markdown'
 import illustrationDesktop from '../../images/yld_illustration_desktop.svg'
 import illustrationMobile from '../../images/yld_illustration_mobile.svg'
 import { Grid, Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
 import BlueBackground from '../Common/BlueBackground'
 import { SectionTitle, CardTitle, Subtitle } from '../Typography'
 
@@ -30,21 +29,18 @@ const IntroRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
+
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[8]};
+    padding-bottom: ${({ theme }) => theme.space[9]};
+  `}
 `
 
 const StyledCardTitle = styled(CardTitle)`
   > li {
     list-style: none;
-    padding-bottom: ${({ theme }) => theme.space[2]};
+    padding-bottom: ${remcalc(8)};
   }
-`
-
-const IntroLinkWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[2]};
-
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[3]};
-  `}
 `
 
 const IntroSectionTitleWrapper = styled.div`
@@ -123,12 +119,7 @@ const StyledSectionTitle = styled(SectionTitle)`
   `};
 `
 
-const IntroSection = ({
-  introHeader,
-  introContent: { introContent },
-  introCtaText,
-  introCtaLink
-}) => {
+const IntroSection = ({ introHeader, introContent: { introContent } }) => {
   return (
     <StyledBlueBackground>
       <Grid>
@@ -139,22 +130,17 @@ const IntroSection = ({
                 {introHeader}
               </StyledSectionTitle>
             </IntroSectionTitleWrapper>
-            <IntroLinkWrapper>
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <Subtitle reverse muted {...props} />,
-                  // eslint-disable-next-line
-                  list: props => (
-                    <StyledCardTitle noPaddingTop reverse {...props} />
-                  )
-                }}
-                source={introContent}
-              />
-            </IntroLinkWrapper>
-            <StyledLink reverse vibrant to={introCtaLink}>
-              {introCtaText}
-            </StyledLink>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => (
+                  <Subtitle noPadding reverse muted {...props} />
+                ),
+                // eslint-disable-next-line
+                list: props => <StyledCardTitle reverse {...props} />
+              }}
+              source={introContent}
+            />
           </Col>
         </IntroRow>
       </Grid>
