@@ -138,7 +138,7 @@ const MediumPostPreview = ({
 
   return (
     <MediumRow>
-      <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
+      <Col width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
         <TitleAndAuthor
           show="smallPhone"
           hide="smallTablet"

@@ -9,6 +9,7 @@ import Hr from '../Common/Hr'
 import { SectionTitle } from '../Typography'
 
 const MediumLink = styled(StyledLink)`
+  font-size: ${({ theme }) => theme.spacing[1.5]};
   margin-top: ${({ theme }) => theme.space[6]};
   ${breakpoint('tablet')`
         margin-top: ${({ theme }) => theme.space[4]};
