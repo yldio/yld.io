@@ -23,10 +23,9 @@ const Wrapper = styled.div`
 
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: #848194;
-  padding-top: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[3]};
+    margin-top: ${({ theme }) => theme.space[3]};
   `}
 `
 
@@ -46,6 +45,13 @@ const ReposWrapper = styled.div`
   ${breakpoint('tablet')`  
     padding-bottom: ${({ theme }) => theme.space[6]};
     padding-top: ${({ theme }) => theme.space[6]};
+  `}
+`
+
+const GithubLink = styled(StyledLink)`
+  ${breakpoint('tablet')`
+    margin-top: ${({ theme }) => theme.space[4]};
+    margin-bottom: ${({ theme }) => theme.space[4]};
   `}
 `
 
@@ -121,9 +127,9 @@ const Contributions = ({
             </StyledBodyPrimary>
 
             {!repos && (
-              <StyledLink reverse="true" external href={ctaLink}>
+              <GithubLink reverse="true" external href={ctaLink}>
                 {ctaCopy}
-              </StyledLink>
+              </GithubLink>
             )}
           </Col>
 
@@ -149,9 +155,9 @@ const Contributions = ({
             </ReposWrapper>
             <Row>
               <Col width={[1, 1, 1, 1, 1]}>
-                <StyledLink reverse="true" external href={ctaLink}>
+                <GithubLink reverse="true" external href={ctaLink}>
                   {ctaCopy}
-                </StyledLink>
+                </GithubLink>
               </Col>
             </Row>
           </>
