@@ -19,7 +19,7 @@ const BlogListing = ({
   title,
   description,
   posts,
-  blogBackgroundColor = 'white'
+  blogBackgroundColor = 'White'
 }) => {
   const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
     id,
