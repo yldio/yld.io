@@ -9,13 +9,22 @@ const Column = styled(Col)`
   max-height: 108px;
   display: flex;
   align-items: center;
-  padding-bottom: ${props => props.theme.spacing[1]};
+  padding-top: ${props => props.theme.space[2]};
+`
+
+const StyledSubtitle = styled(Subtitle)`
+  padding-bottom: ${props => props.theme.space[4]};
+`
+const StyledRow = styled(Row)`
+  padding-bottom: ${props => props.theme.space[6]};
 `
 
 const LogoGrid = ({ companies }) => (
-  <Row>
+  <StyledRow>
     <Column width={1}>
-      <Subtitle>Some of the companies we&apos;ve worked with</Subtitle>
+      <StyledSubtitle>
+        Some of the companies we&apos;ve worked with
+      </StyledSubtitle>
     </Column>
     {companies.map(company => (
       <Column
@@ -39,7 +48,7 @@ const LogoGrid = ({ companies }) => (
         )}
       </Column>
     ))}
-  </Row>
+  </StyledRow>
 )
 
 export default LogoGrid
