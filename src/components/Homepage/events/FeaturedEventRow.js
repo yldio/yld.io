@@ -22,17 +22,29 @@ const EventWrapper = styled.header`
   `}
 
   ${breakpoint('desktop')`
-    padding-top: ${remcalc(24)};
-    padding-left: ${remcalc(36)};
+    padding: ${remcalc(30)} ${remcalc(36)};
   `};
+`
+
+const SpacedSectionTitle = styled(SectionTitle)`
+  margin-bottom: ${props => props.theme.space[2]};
 `
 
 const PaddedBodyPrimary = styled(BodyPrimary)`
   padding-bottom: ${props => props.theme.space[1]};
+
+  ${breakpoint('desktop')`
+    padding-bottom: ${props => props.theme.space[2]};
+  `};
+`
+
+const StyledDisplayTitle = styled(DisplayTitle)`
+  padding-bottom: ${props => props.theme.space[2]};
 `
 
 const FixedWidthBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(380)};
+  margin-bottom: ${props => props.theme.space[2]};
 `
 
 const StyledImage = styled(Image)`
@@ -78,7 +90,7 @@ const FeaturedEvent = ({ event }) => (
   <>
     <IntroRow>
       <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12, 5 / 12]}>
-        <SectionTitle>Events we run</SectionTitle>
+        <SpacedSectionTitle>Events we run</SpacedSectionTitle>
         <BodyPrimary>
           We pride ourselves on offering informative, inclusive and fun
           get-togethers for our ever growing tech community.
@@ -92,9 +104,9 @@ const FeaturedEvent = ({ event }) => (
             <PaddedBodyPrimary muted reverse noPadding>
               Featured event
             </PaddedBodyPrimary>
-            <DisplayTitle reverse noPaddingTop>
+            <StyledDisplayTitle reverse noPaddingTop>
               {event.eventTitle}
-            </DisplayTitle>
+            </StyledDisplayTitle>
             <BodyPrimary reverse>{event.date}</BodyPrimary>
             <FixedWidthBodyPrimary muted reverse>
               {event.blurb.blurb}

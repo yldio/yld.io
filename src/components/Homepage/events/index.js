@@ -25,7 +25,7 @@ const EventType = styled(Col)`
 
 const EventTypeCopyWrapper = styled.div`
   background: white;
-  padding: ${remcalc(20)} ${remcalc(20)} ${remcalc(50)};
+  padding: ${remcalc(24)} ${remcalc(16)} ${remcalc(50)} ${remcalc(24)};
 `
 
 const IntroRow = styled(Row)`
@@ -44,6 +44,10 @@ const CtaRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[7]};  
   `}
+`
+
+const ViewEventsLink = styled(StyledLink)`
+  font-size: ${({ theme }) => theme.spacing[1.5]};
 `
 
 const Events = ({ featuredEvent, eventTypes }) => (
@@ -70,7 +74,9 @@ const Events = ({ featuredEvent, eventTypes }) => (
           >
             <EventTypeCopyWrapper>
               <Subtitle noPadding>{title}</Subtitle>
-              <BodyPrimary muted>{copy}</BodyPrimary>
+              <BodyPrimary muted noPaddingTop>
+                {copy}
+              </BodyPrimary>
             </EventTypeCopyWrapper>
             {image && <Image image={image} />}
           </EventType>
@@ -78,7 +84,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
     </Row>
     <CtaRow>
       <Col width={[1]}>
-        <StyledLink>See all our events</StyledLink>
+        <ViewEventsLink>View our events</ViewEventsLink>
       </Col>
     </CtaRow>
   </Grid>

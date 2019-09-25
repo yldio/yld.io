@@ -10,7 +10,7 @@ import LogoGrid from '../components/Common/LogoGrid'
 import Services from '../components/Homepage/services'
 import Intro from '../components/Homepage/Intro'
 import OurWork from '../components/Homepage/OurWork'
-import Events from '../components/Homepage/events/index'
+import Events from '../components/Homepage/events'
 import BlogSection from '../components/Homepage/BlogSection'
 import FooterSections from '../components/Homepage/FooterSections'
 
