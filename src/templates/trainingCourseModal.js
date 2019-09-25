@@ -29,6 +29,12 @@ const CloseButtonWrapper = styled(Padding)`
 const ModalContent = ({ modal, closeTo, course, category, location }) => {
   const returnPath = `${closeTo}/#${category.slug}`
 
+  const handleKeyPress = ({ key }) => {
+    if (key === 'Escape') {
+      navigate(returnPath)
+    }
+  }
+
   useEffect(
     () => {
       document.addEventListener('keyup', handleKeyPress, false)
@@ -37,12 +43,6 @@ const ModalContent = ({ modal, closeTo, course, category, location }) => {
     },
     [handleKeyPress]
   )
-
-  const handleKeyPress = ({ key }) => {
-    if (key === 'Escape') {
-      navigate(returnPath)
-    }
-  }
 
   return (
     <Layout location={location}>

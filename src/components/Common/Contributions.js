@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { useCountUp } from 'react-countup'
+import { useInView } from 'react-intersection-observer'
 import breakpoint from 'styled-components-breakpoint'
 import ContributionsCopy from './ContributionsCopy'
 import { Grid, Row, Col } from '../grid'
@@ -60,23 +62,56 @@ const Contributions = ({
   githubRepos: repos,
   githubMetaData: { openSourceMetaReposCount, openSourceMetaPullRequestsCount }
 }) => {
-  const contributions = {
+  const [ref, inView] = useInView({
+    triggerOnce: true
+  })
+
+  const countUpOpts = ({ end }) => ({
+    start: 0,
+    end,
+    delay: 1000,
+    duration: 3
+  })
+
+  const { countUp: contributions, start: startContributions } = useCountUp(
+    countUpOpts({ end: openSourceMetaPullRequestsCount })
+  )
+
+  const { countUp: projects, start: startProjects } = useCountUp(
+    countUpOpts({ end: openSourceMetaReposCount })
+  )
+
+  const contributionsCopy = {
     titleSectionLine1,
     titleSectionLine2,
-    titleSectionLine3,
-    openSourceMetaReposCount,
-    openSourceMetaPullRequestsCount
+    titleSectionLine3
   }
+
+  useEffect(
+    () => {
+      if (inView) {
+        startProjects()
+        startContributions()
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [inView]
+  )
 
   return (
     <Grid>
-      <Wrapper>
+      <Wrapper ref={ref}>
         <Row>
           <Col width={[1]}>
             <StyledImage image={icon} />
           </Col>
           <Col width={[1, 1, 1, 1, 7 / 12, 8 / 12, 6 / 12]} block={false}>
-            <ContributionsCopy {...contributions} />
+            <ContributionsCopy
+              {...contributionsCopy}
+              projects={projects}
+              contributions={contributions}
+              inView={inView}
+            />
             <StyledBodyPrimary textLight>
               {descriptionLine1}
               <br />
