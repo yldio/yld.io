@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { useCountUp } from 'react-countup'
 import { useInView } from 'react-intersection-observer'
@@ -87,21 +87,17 @@ const Contributions = ({
     titleSectionLine3
   }
 
+  const startProjectsCallback = useCallback(startProjects, [])
+  const startContributionsCallback = useCallback(startContributions, [])
+
   useEffect(
     () => {
       if (inView) {
-        startProjects()
-        startContributions()
+        startProjectsCallback()
+        startContributionsCallback()
       }
     },
-    // startProjects() and startContributions() update between
-    // each render due to the countUp values updating and retruning
-    // new references to the same function. Internally when called
-    // they reset the count, if we list them as dependencies in
-    // useEffect it causes them to be called once more and thus
-    // the cycle continues for eternity.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [inView]
+    [inView, startProjectsCallback, startContributionsCallback]
   )
 
   return (
