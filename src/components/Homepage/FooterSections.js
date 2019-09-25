@@ -14,7 +14,7 @@ const FooterCTAInner = styled.div`
   flex-direction: column;
   align-items: flex-start;
   background: white;
-  padding: ${remcalc(24)} ${remcalc(30)};
+  padding: ${remcalc(24)} ${remcalc(36)};
 
   > img {
     width: 60px;
@@ -39,6 +39,12 @@ const StyledCol = styled(Col)`
 `}
 `
 
+const StyledCardTitle = styled(CardTitle)`
+  ${breakpoint('tablet')`
+    font-size: ${({ theme }) => theme.spacing[32]};
+  `}
+`
+
 /**
  * Usually I would opt to have these in content types but at
  * time of writing we've reach our limit and need to be a bit
@@ -61,7 +67,7 @@ const FooterSections = ({
       <StyledCol width={[1, 1, 1, 6 / 12]} key={generate()} block={false}>
         <FooterCTAInner>
           {footerSection1Icon && <Image image={footerSection1Icon} />}
-          <CardTitle>{footerSection1Title}</CardTitle>
+          <StyledCardTitle>{footerSection1Title}</StyledCardTitle>
           <BodyPrimary>{footerSection1Copy}</BodyPrimary>
           <StyledLink to={footerSection1CtaLink}>
             {footerSection1CtaCopy}
@@ -71,7 +77,7 @@ const FooterSections = ({
       <StyledCol width={[1, 1, 1, 6 / 12]} key={generate()} block={false}>
         <FooterCTAInner>
           {footerSection2Icon && <Image image={footerSection2Icon} />}
-          <CardTitle>{footerSection2Title}</CardTitle>
+          <StyledCardTitle>{footerSection2Title}</StyledCardTitle>
           <BodyPrimary>{footerSection2Copy}</BodyPrimary>
           <StyledLink to={footerSection2CtaLink}>
             {footerSection2CtaCopy}
