@@ -52,7 +52,7 @@ const ImageWrapper = styled.div`
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
   padding-top: ${({ theme }) => theme.space[3]};
   ${props =>
     props.show === 'smallTablet' ? `display: block;` : `display: none;`}
@@ -83,6 +83,10 @@ const InfoCol = styled(Col)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+`
+
+const ReadMoreLink = styled(StyledLink)`
+  font-size: ${({ theme }) => theme.spacing[1.5]};
 `
 
 const TitleAndAuthor = ({
@@ -172,9 +176,13 @@ const MediumPostPreview = ({
             {previewTextSmallTablet}
           </StyledBodyPrimary>
         </Col>
-        <StyledLink external href={postUrl} title={`Read more about ${title}`}>
+        <ReadMoreLink
+          external
+          href={postUrl}
+          title={`Read more about ${title}`}
+        >
           Read more
-        </StyledLink>
+        </ReadMoreLink>
       </InfoCol>
     </MediumRow>
   )
