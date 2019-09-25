@@ -299,6 +299,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      blogBackgroundColor
       logoColour
       contactText
       footerContactUs {
