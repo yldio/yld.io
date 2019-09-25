@@ -47,6 +47,10 @@ const ServiceCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
+const ServiceSentence = styled(BodyPrimary)`
+  margin-bottom: ${({ theme }) => theme.space[2]};
+`
+
 const Services = ({ statement, services }) => (
   <>
     <StyledRow>
@@ -71,7 +75,9 @@ const Services = ({ statement, services }) => (
                   <Link to={`/${service.slug}`}>{service.title}</Link>
                 </ServiceTitle>
 
-                <BodyPrimary>{service.introSentence.introSentence}</BodyPrimary>
+                <ServiceSentence>
+                  {service.introSentence.introSentence}
+                </ServiceSentence>
 
                 <SeoLinks items={service.homePageSpecialities} />
               </ServiceCol>
