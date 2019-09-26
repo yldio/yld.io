@@ -44,7 +44,11 @@ const ServiceTitle = styled(CardTitle)`
 `
 
 const ServiceCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[5]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
+
+  ${breakpoint('smallTablet')`
+    padding-bottom: ${({ theme }) => theme.space[5]};
+  `}
 `
 
 const ServiceSentence = styled(BodyPrimary)`
