@@ -14,6 +14,12 @@ import FeaturedEventRow from './FeaturedEventRow'
 const EventType = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
 
+  ${breakpoint('smallPhone', 'smallTablet')`
+    :last-child {
+      padding-bottom: ${({ theme }) => theme.space[5]};
+    }
+  `}
+
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[5]};
   `}
@@ -25,7 +31,11 @@ const EventType = styled(Col)`
 
 const EventTypeCopyWrapper = styled.div`
   background: white;
-  padding: ${remcalc(24)} ${remcalc(16)} ${remcalc(50)} ${remcalc(24)};
+  padding: ${remcalc(24)} ${remcalc(16)} ${remcalc(36)} ${remcalc(24)};
+
+  ${breakpoint('tablet')`
+    padding-bottom: ${remcalc(50)};
+  `}
 `
 
 const IntroRow = styled(Row)`
@@ -39,10 +49,11 @@ const IntroRow = styled(Row)`
 `
 
 const CtaRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[5]};
+  display: none;
+  padding-bottom: ${({ theme }) => theme.space[7]};
 
   ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[7]};  
+    display: block;
   `}
 `
 
