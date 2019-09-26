@@ -14,7 +14,11 @@ const StyledSubtitle = styled(Subtitle)`
   padding-bottom: ${props => props.theme.space[4]};
 `
 const StyledRow = styled(Row)`
-  padding-bottom: ${props => props.theme.space[6]};
+  padding-bottom: ${props => props.theme.space[4]};
+
+  ${breakpoint('tablet')`
+   padding-bottom: ${props => props.theme.space[6]};
+  `}
 `
 
 const LogoItem = styled(Col)`

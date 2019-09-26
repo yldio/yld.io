@@ -149,13 +149,15 @@ const CaseStudy = ({ caseStudy }) => {
 
 const MoreWorkLink = styled(StyledLink)`
   font-size: ${remcalc(18)};
-  padding: ${({ theme }) => theme.space[4]} 0;
   line-height: ${remcalc(30)};
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
   margin-top: ${remcalc(10)};
   margin-bottom: ${remcalc(24)};
 
   ${breakpoint('tablet')`
-    padding: ${({ theme }) => theme.space[6]} 0;
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
   `}
 `
 
