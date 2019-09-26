@@ -30,6 +30,7 @@
     "google-map-react": "^1.1.4",
     "got": "^9.6.0",
     "jest-specific-snapshot": "^2.0.0",
+    "jest-when": "^2.7.0",
     "lighthouse": "^4.0.0-alpha.2-3.2.1",
     "lodash": "^4.17.11",
     "lodash.get": "^4.4.2",
