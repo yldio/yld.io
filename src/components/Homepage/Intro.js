@@ -45,11 +45,10 @@ const StyledCardTitle = styled(CardTitle)`
 
 const IntroSectionTitleWrapper = styled.div`
   max-width: ${remcalc(425)};
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
     max-width: ${remcalc(490)};
-    padding-bottom: ${({ theme }) => theme.space[4]};
   `}
 
   ${breakpoint('desktop')`
