@@ -5,6 +5,7 @@ import remcalc from 'remcalc'
 
 import { Row, Col } from '../../grid'
 import Image from '../../Common/Image'
+import RatioContainer from '../../Common/RatioContainer'
 
 import StyledLink from '../../Common/StyledLink'
 import { SectionTitle, BodyPrimary, DisplayTitle } from '../../Typography'
@@ -52,21 +53,12 @@ const StyledImage = styled(Image)`
   display: block;
 `
 
-const StyledRatioContainer = styled.div`
-  position: relative;
-  height: 0;
-  width: 100%;
-  ${({ sizing }) => {
-    Object.keys(sizing).map(
-      size => breakpoint(size)`
-        padding-bottom: ${(sizing[size].height / sizing[size].width) * 100}%}
-      `
-    )
-  }}
-  overflow: hidden;
-
+const StyledRatioContainer = styled(RatioContainer)`
   > img {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
   }
 `
 const IntroRow = styled(Row)`
@@ -86,6 +78,10 @@ const EventRow = styled(Row)`
   `}
 `
 
+const WrapperCol = styled(Col)`
+  background-color: ${({ bgColor }) => `#${bgColor}`};
+`
+
 const FeaturedEvent = ({ event }) => (
   <>
     <IntroRow>
@@ -98,39 +94,43 @@ const FeaturedEvent = ({ event }) => (
       </Col>
     </IntroRow>
     <EventRow>
-      <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} block={false}>
-        <InfoInner key={event.id} color={event.color}>
-          <EventWrapper>
-            <PaddedBodyPrimary muted reverse noPadding>
-              Featured event
-            </PaddedBodyPrimary>
-            <StyledDisplayTitle reverse noPaddingTop>
-              {event.eventTitle}
-            </StyledDisplayTitle>
-            <BodyPrimary reverse>{event.date}</BodyPrimary>
-            <FixedWidthBodyPrimary muted reverse>
-              {event.blurb.blurb}
-            </FixedWidthBodyPrimary>
-            <StyledLink
-              external
-              reverse
-              href={event.linkToEvent}
-              title={`${event.eventTitle} - ${event.ctaText}`}
-            >
-              {event.ctaText}
-            </StyledLink>
-          </EventWrapper>
-        </InfoInner>
-      </Col>
-      <Col width={[1, 1, 1, 1, 5 / 12, 7 / 12]}>
-        <StyledRatioContainer
-          sizing={{ desktop: { width: 1, height: 1 } }}
-          width={1}
-          height={1}
-        >
-          <StyledImage image={event.posterImage} />
-        </StyledRatioContainer>
-      </Col>
+      <WrapperCol width={[1]} bgColor={event.color}>
+        <Row>
+          <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} block={false}>
+            <InfoInner color={event.color}>
+              <EventWrapper>
+                <PaddedBodyPrimary muted reverse noPadding>
+                  Featured event
+                </PaddedBodyPrimary>
+                <StyledDisplayTitle reverse noPaddingTop>
+                  {event.eventTitle}
+                </StyledDisplayTitle>
+                <BodyPrimary reverse>{event.date}</BodyPrimary>
+                <FixedWidthBodyPrimary muted reverse>
+                  {event.blurb.blurb}
+                </FixedWidthBodyPrimary>
+                <StyledLink
+                  external
+                  reverse
+                  href={event.linkToEvent}
+                  title={`${event.eventTitle} - ${event.ctaText}`}
+                >
+                  {event.ctaText}
+                </StyledLink>
+              </EventWrapper>
+            </InfoInner>
+          </Col>
+          <Col
+            width={[1, 1, 1, 1, 5 / 12, 7 / 12]}
+            block={false}
+            style={{ alignItems: 'center' }}
+          >
+            <StyledRatioContainer width={621} height={358}>
+              <StyledImage image={event.posterImage} />
+            </StyledRatioContainer>
+          </Col>
+        </Row>
+      </WrapperCol>
     </EventRow>
   </>
 )
