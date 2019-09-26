@@ -13,29 +13,23 @@ import { BodyPrimary } from '../Typography'
 
 const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: #848194;
-
-  ${breakpoint('tablet')`
-    margin-top: ${({ theme }) => theme.space[3]};
-  `}
+  margin-top: ${({ theme }) => theme.space[3]};
+  margin-bottom: ${({ theme }) => theme.space[4]};
 `
 
 const StyledImage = styled(Image)`
   max-width: 54px;
   padding-bottom: ${({ theme }) => theme.space[2]};
-
-  ${breakpoint('smallTablet')`
-    padding-bottom: ${({ theme }) => theme.space[3]};
-  `}
 `
 
 const ReposWrapper = styled.div`
@@ -53,6 +47,17 @@ const GithubLink = styled(StyledLink)`
     margin-top: ${({ theme }) => theme.space[4]};
     margin-bottom: ${({ theme }) => theme.space[4]};
   `}
+`
+
+const Graphic = styled(Image)`
+  width: auto;
+  max-width: initial;
+  height: calc(100% - ${({ theme }) => theme.space[4]});
+`
+
+const GraphicCol = styled(Col)`
+  display: flex;
+  align-items: flex-end;
 `
 
 const Contributions = ({
@@ -111,9 +116,9 @@ const Contributions = ({
       <Wrapper ref={ref}>
         <Row>
           <Col width={[1]}>
-            <StyledImage image={icon} />
+            <StyledImage image={icon} height="100%" width="auto" />
           </Col>
-          <Col width={[1, 1, 1, 1, 7 / 12, 8 / 12, 6 / 12]} block={false}>
+          <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 6 / 12]} block={false}>
             <ContributionsCopy
               {...contributionsCopy}
               projects={projects}
@@ -134,9 +139,9 @@ const Contributions = ({
           </Col>
 
           {sectionGraphic && (
-            <Col width={[1, 1, 1, 1, 5 / 12, 8 / 12, 6 / 12]}>
-              <Image image={sectionGraphic} />
-            </Col>
+            <GraphicCol width={[1, 1, 1, 1, 5 / 12, 4 / 12, 6 / 12]}>
+              <Graphic image={sectionGraphic} />
+            </GraphicCol>
           )}
         </Row>
         {repos && repos.length && (

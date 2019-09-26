@@ -12,7 +12,7 @@ const ContributionsCopy = props => {
 
   return (
     <Fragment>
-      <SectionTitle noPadding reverse>
+      <SectionTitle reverse>
         {first} <br />
         {contributions} {second} <br />
         {projects} {third}
