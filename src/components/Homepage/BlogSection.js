@@ -10,15 +10,28 @@ import { SectionTitle } from '../Typography'
 
 const MediumLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
-  margin-top: ${({ theme }) => theme.space[6]};
+  margin-top: ${({ theme }) => theme.space[2]};
+
   ${breakpoint('tablet')`
-        margin-top: ${({ theme }) => theme.space[4]};
-    `}
+      margin-top: ${({ theme }) => theme.space[4]};
+  `}
 `
 
-const BlogRow = styled(Row)`
+const MobileBlogRow = styled(Row)`
+  padding-bottom: ${({ theme }) => theme.space[5]};
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
+`
+
+const NonMobileBlogRow = styled(Row)`
+  display: none;
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('smallTablet')`
+    display: block;
+  `}
 
   ${breakpoint('tablet')`
       padding-top: ${({ theme }) => theme.space[6]};
@@ -35,7 +48,18 @@ const TitleCol = styled(Col)`
 `
 const BlogSection = ({ blogPosts }) => (
   <Grid>
-    <BlogRow>
+    <MobileBlogRow>
+      <TitleCol width={[1]}>
+        <SectionTitle>From the blog</SectionTitle>
+      </TitleCol>
+      <Col width={[1]} key={generate()}>
+        <MediumPostPreview {...blogPosts[0].node} />
+      </Col>
+      <Col width={[1]}>
+        <MediumLink to={'/blog'}>Read our blog</MediumLink>
+      </Col>
+    </MobileBlogRow>
+    <NonMobileBlogRow>
       <TitleCol width={[1]}>
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
@@ -48,7 +72,7 @@ const BlogSection = ({ blogPosts }) => (
       <Col width={[1]}>
         <MediumLink to={'/blog'}>Read our blog</MediumLink>
       </Col>
-    </BlogRow>
+    </NonMobileBlogRow>
   </Grid>
 )
 
