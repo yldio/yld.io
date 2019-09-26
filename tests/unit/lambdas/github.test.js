@@ -86,6 +86,8 @@ const secondRepo = {
   rank: 294
 }
 
+const missingRepoUrl = 'https://github.com/missing/repo'
+
 const metaResponseData = {
   openSourceMetaPullRequestsCount: 4276,
   openSourceMetaReposCount: 1017
@@ -127,7 +129,7 @@ describe('Github lambda', () => {
   it('should return meta data an a list of changes repos when there are differences', async () => {
     // localise the mocks to return data we tell it to
     getDataMock.mockResolvedValueOnce(getDataResponseData)
-    Repos.mockReturnValueOnce([secondRepo])
+    Repos.mockReturnValueOnce({ updatedRepos: [secondRepo] })
     Meta.mockReturnValueOnce(metaResponseData)
 
     const response = await GithubLambda.handler()
@@ -166,6 +168,32 @@ describe('Github lambda', () => {
       body: JSON.stringify({
         meta: metaResponseData,
         updatedRepos: 'No repos updated'
+      })
+    }
+
+    expect(Repos).toHaveBeenCalledWith('master', {
+      repos: getDataResponseData.repos
+    })
+    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData })
+    expect(response).toStrictEqual(expected)
+  })
+
+  it('should return meta data and an array of updatedRepos and missingRepos when there are changes and missing repos', async () => {
+    getDataMock.mockResolvedValueOnce(getDataResponseData)
+
+    Repos.mockReturnValueOnce({
+      updatedRepos: [secondRepo],
+      missingRepos: [missingRepoUrl]
+    })
+    Meta.mockReturnValueOnce(metaResponseData)
+
+    const response = await GithubLambda.handler()
+    const expected = {
+      statusCode: 200,
+      body: JSON.stringify({
+        meta: metaResponseData,
+        updatedRepos: [secondRepo],
+        missingRepos: [missingRepoUrl]
       })
     }
 

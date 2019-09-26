@@ -110,7 +110,32 @@ describe('Github lambda - Repos util', () => {
       differentRepoOne.nameWithOwner
     )
 
-    const expected = [differentRepoOne.nameWithOwner]
+    const expected = { updatedRepos: [differentRepoOne.nameWithOwner] }
+    expect(response).toStrictEqual(expected)
+  })
+
+  it('should call updateEntry once and return an array of missing repos if there are differences and github data does not contain a matching contentful repo', async () => {
+    const response = await ReposUtil(mockedEnvironment, {
+      repos: [differentRepoOne]
+    })
+
+    const expectedContentfulRepoFromGithub = {
+      ...contentfulRepoOne.fields,
+      pullRequestCount: { 'en-US': 6 }
+    }
+
+    expect(ossUtils.updateEntry).toHaveBeenCalledWith(
+      contentfulRepoOne,
+      expectedContentfulRepoFromGithub,
+      mockedEnvironment,
+      differentRepoOne.nameWithOwner
+    )
+    expect(ossUtils.updateEntry).toHaveBeenCalledTimes(1)
+
+    const expected = {
+      updatedRepos: [differentRepoOne.nameWithOwner],
+      missingRepos: [contentfulRepoTwo.fields.url['en-US']]
+    }
     expect(response).toStrictEqual(expected)
   })
 })

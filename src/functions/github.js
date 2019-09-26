@@ -43,7 +43,7 @@ exports.handler = async evt =>
     const space = await client.getSpace(CONTENTFUL_SPACE)
     const environment = await space.getEnvironment('master')
 
-    const [meta, updatedRepos] = await Promise.all([
+    const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
         openSourceMetaPullRequestsCount,
         openSourceMetaReposCount
@@ -60,7 +60,8 @@ exports.handler = async evt =>
         updatedRepos:
           updatedRepos && updatedRepos.length
             ? updatedRepos
-            : 'No repos updated'
+            : 'No repos updated',
+        missingRepos
       })
     }
   })
