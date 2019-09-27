@@ -203,6 +203,7 @@ exports.handler = async evt => {
           name: generatedEvent.fields.eventTitle['en-US'],
           values: [diffVals]
         })
+
         const id = await contentfulEvent.update()
         const updatedEntry = await environment.getEntry(id.sys.id)
 
