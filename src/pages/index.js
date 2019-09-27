@@ -48,7 +48,6 @@ const IndexPage = ({ data, location }) => {
 
   const blogPosts = blogData.edges || []
   const featuredEvent = getHomepageConferences(events.edges)[0]
-
   return (
     <Layout
       location={location}
@@ -304,6 +303,24 @@ export const query = graphql`
       edges {
         node {
           color
+          mobilePosterImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          desktopPosterImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 600) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
           posterImage {
             title
             file {
