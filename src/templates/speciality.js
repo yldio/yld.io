@@ -291,6 +291,7 @@ export const pageQuery = graphql`
           content
         }
       }
+      eventsBackgroundColor
       eventIcon {
         id
         title

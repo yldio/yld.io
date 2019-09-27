@@ -84,7 +84,12 @@ export const SpecialityView = props => {
       )}
 
       {renderCommunitySection && <CommunitySection {...flattenedSpeciality} />}
-      <EventSection events={events} title={title} eventIcon={eventIcon} />
+      <EventSection
+        events={events}
+        title={title}
+        eventIcon={eventIcon}
+        bgColor={speciality.eventsBackgroundColor}
+      />
 
       {renderTalksSection && (
         <TalksSection talks={talks} videoIcon={videoIcon} />
@@ -95,7 +100,7 @@ export const SpecialityView = props => {
           title="Blog posts"
           description={`${title} articles created by members of YLD for the community.`}
           posts={posts}
-          blogBackgroundColor={speciality.blogBackgroundColor}
+          bgColor={speciality.blogBackgroundColor}
         />
       )}
 

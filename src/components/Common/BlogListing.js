@@ -5,22 +5,9 @@ import { format } from 'date-fns'
 
 import { Grid } from '../grid'
 import TitleAndMediaList from '../Common/TitleAndMediaList'
-import GreyBackground from './GreyBackground'
+import BackgroundColorWrapper from '../Common/BackgroundColorWrapper'
 
-const Wrapper = ({ bgColor, children }) => {
-  switch (bgColor) {
-    case 'Grey':
-      return <GreyBackground>{children}</GreyBackground>
-    default:
-      return <>{children}</>
-  }
-}
-const BlogListing = ({
-  title,
-  description,
-  posts,
-  blogBackgroundColor = 'White'
-}) => {
+const BlogListing = ({ title, description, posts, bgColor }) => {
   const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
     id,
     title,
@@ -29,9 +16,9 @@ const BlogListing = ({
   }))
 
   return (
-    <Wrapper bgColor={blogBackgroundColor}>
-      <Grid>
-        <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
+    <BackgroundColorWrapper bgColor={bgColor}>
+      <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
+        <Grid>
           <TitleAndMediaList
             title={title}
             description={description}
@@ -40,9 +27,9 @@ const BlogListing = ({
             external
             CTAText="Visit our blog"
           />
-        </Padding>
-      </Grid>
-    </Wrapper>
+        </Grid>
+      </Padding>
+    </BackgroundColorWrapper>
   )
 }
 
