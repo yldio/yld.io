@@ -147,7 +147,7 @@ exports.handler = async evt => {
     []
   )
 
-  const { items: events } = await environment.getEntries({
+  const { items: contentfulEvents } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven',
     'fields.type': 'Meetup'
@@ -161,9 +161,14 @@ exports.handler = async evt => {
   }
 
   await Map(parsedEvents, async event => {
-    const contentfulEvent = Find(events, ['fields.id.en-US', event.id])
+    const contentfulEvent = Find(contentfulEvents, [
+      'fields.id.en-US',
+      event.id
+    ])
+
     const generatedEvent = generateContentfulEvent(event)
 
+    // If contentful already has this event then we look for differences
     if (generatedEvent && contentfulEvent) {
       const { fields: generatedEventFields } = generatedEvent
       const { fields: contentfulEventFields } = contentfulEvent
@@ -207,8 +212,8 @@ exports.handler = async evt => {
       }
     }
 
-    // create
-    if (isProd) {
+    // If there is no matching event in contentful then we need to create a new one
+    if (isProd && generatedEvent && !contentfulEvent) {
       log.newEvents.push(generatedEvent.fields.eventTitle['en-US'])
       const id = await environment.createEntry('meetupEven', generatedEvent)
       const newEntry = await environment.getEntry(id.sys.id)

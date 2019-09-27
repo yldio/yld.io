@@ -1,3 +1,4 @@
 module.exports = {
-  groups: require('./groups.js')
+  generateGroups: require('./groups'),
+  generateEvent: require('./events')
 }
