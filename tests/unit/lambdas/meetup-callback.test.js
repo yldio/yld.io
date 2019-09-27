@@ -244,6 +244,8 @@ describe('Meetup Oauth', () => {
     // TODO: add assertions for publish mocks
   })
 
+  // it.skip('runs correctly when there are updates to events', async () => {})
+
   it('throws an error when "code" is missing from query params', async () => {
     try {
       await MeetupCallbackLambda.handler({
