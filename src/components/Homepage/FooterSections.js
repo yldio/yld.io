@@ -13,9 +13,12 @@ const FooterCTAInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   background: white;
   padding: ${remcalc(24)} ${remcalc(36)};
+`
 
+const Content = styled.section`
   > img {
     width: 60px;
     margin-bottom: ${({ theme }) => theme.space[2]};
@@ -34,15 +37,23 @@ const StyledRow = styled(Row)`
 
 const StyledCol = styled(Col)`
   ${breakpoint('smallPhone', 'smallTablet')`
-    
-  padding-bottom: ${({ theme }) => theme.space[4]};
-`}
+    padding-bottom: ${({ theme }) => theme.space[4]};
+
+    :last-child {
+      padding-bottom: 0;
+    }
+  `}
 `
 
 const StyledCardTitle = styled(CardTitle)`
   ${breakpoint('tablet')`
     font-size: ${({ theme }) => theme.spacing[32]};
   `}
+`
+
+const CustomLink = styled(StyledLink)`
+  font-size: ${({ theme }) => theme.spacing[1.5]};
+  margin-bottom: ${({ theme }) => theme.space[2]};
 `
 
 /**
@@ -64,24 +75,28 @@ const FooterSections = ({
 }) => (
   <Grid>
     <StyledRow>
-      <StyledCol width={[1, 1, 1, 6 / 12]} key={generate()} block={false}>
+      <StyledCol width={[1, 1, 1, 1, 6 / 12]} key={generate()} block={false}>
         <FooterCTAInner>
-          {footerSection1Icon && <Image image={footerSection1Icon} />}
-          <StyledCardTitle>{footerSection1Title}</StyledCardTitle>
-          <BodyPrimary>{footerSection1Copy}</BodyPrimary>
-          <StyledLink to={footerSection1CtaLink}>
+          <Content>
+            {footerSection1Icon && <Image image={footerSection1Icon} />}
+            <StyledCardTitle>{footerSection1Title}</StyledCardTitle>
+            <BodyPrimary>{footerSection1Copy}</BodyPrimary>
+          </Content>
+          <CustomLink to={footerSection1CtaLink}>
             {footerSection1CtaCopy}
-          </StyledLink>
+          </CustomLink>
         </FooterCTAInner>
       </StyledCol>
-      <StyledCol width={[1, 1, 1, 6 / 12]} key={generate()} block={false}>
+      <StyledCol width={[1, 1, 1, 1, 6 / 12]} key={generate()} block={false}>
         <FooterCTAInner>
-          {footerSection2Icon && <Image image={footerSection2Icon} />}
-          <StyledCardTitle>{footerSection2Title}</StyledCardTitle>
-          <BodyPrimary>{footerSection2Copy}</BodyPrimary>
-          <StyledLink to={footerSection2CtaLink}>
+          <Content>
+            {footerSection2Icon && <Image image={footerSection2Icon} />}
+            <StyledCardTitle>{footerSection2Title}</StyledCardTitle>
+            <BodyPrimary>{footerSection2Copy}</BodyPrimary>
+          </Content>
+          <CustomLink to={footerSection2CtaLink}>
             {footerSection2CtaCopy}
-          </StyledLink>
+          </CustomLink>
         </FooterCTAInner>
       </StyledCol>
     </StyledRow>
