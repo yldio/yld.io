@@ -6,7 +6,6 @@ import remcalc from 'remcalc'
 
 import { Row, Col } from '../grid'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
-import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
 
 const formatCaseStudies = caseStudies =>
@@ -83,8 +82,22 @@ const AnimatedLink = styled(Link)`
   }
 `
 
-const ImageWrapper = styled.div`
+const CardImage = styled.div`
   max-width: 100%;
+  height: 0;
+  padding-top: 90%;
+  background-image: url(${props => props.image.file.url});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  ${breakpoint('tablet')`
+    padding-top: 70%;
+  `}
+
+  ${breakpoint('desktop')`
+    padding-top: 80%;
+  `}
 `
 
 const Card = styled.section`
@@ -96,6 +109,7 @@ const Card = styled.section`
     margin-top: ${({ theme }) => theme.space[5]};
   `}
 `
+
 // //fixed height - alternative: use max-height on image wrapper
 // const Card = styled.section`
 //   height: ${remcalc(430)};
@@ -139,9 +153,7 @@ const CaseStudy = ({ caseStudy }) => {
             </CardTitle>
           </section>
         </CardHeader>
-        <ImageWrapper>
-          <Image image={posterImage} />
-        </ImageWrapper>
+        <CardImage image={posterImage} />
       </Card>
     </AnimatedLink>
   )
