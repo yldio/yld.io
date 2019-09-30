@@ -69,19 +69,6 @@ const CardHeader = styled.header`
   `}
 `
 
-const AnimatedLink = styled(Link)`
-  > section {
-    transition: transform ${props => props.theme.animations.normal} ease;
-  }
-
-  &:focus,
-  &:hover {
-    > section {
-      transform: scale(0.97);
-    }
-  }
-`
-
 const CardImage = styled.div`
   max-width: 100%;
   height: 0;
@@ -141,7 +128,7 @@ const CaseStudy = ({ caseStudy }) => {
   } = caseStudy
 
   return (
-    <AnimatedLink to={`/case-study/${slug}`} title={title}>
+    <Link to={`/case-study/${slug}`} title={title}>
       <Card color={posterColor}>
         <CardHeader>
           <section>
@@ -155,7 +142,7 @@ const CaseStudy = ({ caseStudy }) => {
         </CardHeader>
         <CardImage image={posterImage} />
       </Card>
-    </AnimatedLink>
+    </Link>
   )
 }
 

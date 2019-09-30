@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 
-import { Row, Col } from '../../grid'
+import { Grid, Row, Col } from '../../grid'
 import Image from '../../Common/Image'
 
 import StyledLink from '../../Common/StyledLink'
 import { SectionTitle, BodyPrimary, DisplayTitle } from '../../Typography'
 
-const BackgroundColorCol = styled(Col)`
+const BackgroundColorGrid = styled(Grid)`
   background-color: ${({ bgColor }) => `#${bgColor}`};
+  padding: 0;
 `
 
 const InfoInner = styled.section`
@@ -19,15 +20,15 @@ const InfoInner = styled.section`
 `
 
 const EventWrapper = styled.header`
-  padding: ${remcalc(18)} ${remcalc(24)} 0;
+  padding: ${remcalc(24)} ${remcalc(24)} ${remcalc(36)};
 
-  ${breakpoint('tablet')`
-    padding: ${remcalc(24)} 0 0;
+  ${breakpoint('smallTablet')`
+    padding: ${remcalc(36)};
   `}
 
-  ${breakpoint('desktop')`
-    padding: ${remcalc(30)} 0;
-  `};
+  ${breakpoint('tablet')`
+    padding: ${remcalc(30)} ${remcalc(36)} ${remcalc(36)};
+  `}
 `
 
 const SpacedSectionTitle = styled(SectionTitle)`
@@ -44,11 +45,6 @@ const PaddedBodyPrimary = styled(BodyPrimary)`
 
 const StyledDisplayTitle = styled(DisplayTitle)`
   padding-bottom: ${props => props.theme.space[2]};
-`
-
-const StyledImage = styled(Image)`
-  /* to remove extra space below SVG */
-  display: block;
 `
 
 const IntroRow = styled(Row)`
@@ -68,28 +64,10 @@ const EventRow = styled(Row)`
   `}
 `
 
-/**
- * `nowrap` here forces the DesktopImageContainer
- * to fill the remaining space of the row.
- */
-const InnerRow = styled(Row)`
-  ${breakpoint('tablet')`
-    flex-wrap: nowrap;
-  `}
-`
-
-const DesktopImageContainer = styled.div`
-  flex: 1;
-  display: flex;
-
-  ${breakpoint('smallPhone', 'smallTablet')`
-    display: none;
-  `}
-`
-
 const DesktopImageWrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 100%;
 
   > img {
     position: absolute;
@@ -97,40 +75,25 @@ const DesktopImageWrapper = styled.div`
     height: 100%;
     width: auto;
   }
-`
 
-const MobileImageContainer = styled.div`
+  ${breakpoint('smallPhone', 'smallTablet')`
+    display: none;
+  `}
+`
+const MobileImageWrapper = styled.div`
+  position: relative;
   width: 100%;
+  height: 100%;
+
+  > img {
+    display: block;
+  }
 
   ${breakpoint('smallTablet')`
     display: none;
   `}
-
-  img > {
-    width: 100%;
-  }
 `
 
-/**
- *
- * The Grid layout in this component is nested to make sure that
- * the entire Row has the chosen background color. Because of
- * padding, it's not possible to set background color on both
- * columns without there being a white space between them.
- *
- * The only drawback from this method is that on desktop the
- * background color spills over into the Row because of the
- * negative left/right margin on Row.
- *
- *  IntroRow
- *  EventRow
- *    BackgroundColorCol <---- set to 100% and background color set on here
- *      InnerRow <--- main content Row
- *        Col <--- event info column
- *        DesktopImageContainer <--- fills remaining space from Col
- *        MobileImageContainer <--- is 100% width under sibling Col on mobile
- *
- */
 const FeaturedEvent = ({ event }) => (
   <>
     <IntroRow>
@@ -143,42 +106,44 @@ const FeaturedEvent = ({ event }) => (
       </Col>
     </IntroRow>
     <EventRow>
-      <BackgroundColorCol width={[1]} bgColor={event.color}>
-        <InnerRow block={false}>
-          <Col width={[1, 1, 1, 1, 7 / 12, 5 / 12]} block={false}>
-            <InfoInner color={event.color}>
-              <EventWrapper>
-                <PaddedBodyPrimary muted reverse noPadding>
-                  Featured event
-                </PaddedBodyPrimary>
-                <StyledDisplayTitle reverse noPaddingTop>
-                  {event.eventTitle}
-                </StyledDisplayTitle>
-                <BodyPrimary reverse>{event.date}</BodyPrimary>
-                <BodyPrimary muted reverse>
-                  {event.blurb.blurb}
-                </BodyPrimary>
-                <StyledLink
-                  external
-                  reverse
-                  href={event.linkToEvent}
-                  title={`${event.eventTitle} - ${event.ctaText}`}
-                >
-                  {event.ctaText}
-                </StyledLink>
-              </EventWrapper>
-            </InfoInner>
-          </Col>
-          <DesktopImageContainer>
-            <DesktopImageWrapper>
-              <StyledImage image={event.desktopPosterImage} />
-            </DesktopImageWrapper>
-          </DesktopImageContainer>
-          <MobileImageContainer>
-            <StyledImage image={event.mobilePosterImage} />
-          </MobileImageContainer>
-        </InnerRow>
-      </BackgroundColorCol>
+      <Col width={[1]}>
+        <BackgroundColorGrid bgColor={event.color}>
+          <Row>
+            <Col width={[1, 1, 1, 1, 1, 7 / 12, 5 / 12]}>
+              <InfoInner color={event.color}>
+                <EventWrapper>
+                  <PaddedBodyPrimary muted reverse noPadding>
+                    Featured event
+                  </PaddedBodyPrimary>
+                  <StyledDisplayTitle reverse noPaddingTop>
+                    {event.eventTitle}
+                  </StyledDisplayTitle>
+                  <BodyPrimary reverse>{event.date}</BodyPrimary>
+                  <BodyPrimary muted reverse>
+                    {event.blurb.blurb}
+                  </BodyPrimary>
+                  <StyledLink
+                    external
+                    reverse
+                    href={event.linkToEvent}
+                    title={`${event.eventTitle} - ${event.ctaText}`}
+                  >
+                    {event.ctaText}
+                  </StyledLink>
+                </EventWrapper>
+              </InfoInner>
+            </Col>
+            <Col width={[1, 1, 1, 1, 1, 5 / 12, 7 / 12]}>
+              <DesktopImageWrapper>
+                <Image image={event.desktopPosterImage} />
+              </DesktopImageWrapper>
+              <MobileImageWrapper>
+                <Image image={event.mobilePosterImage} />
+              </MobileImageWrapper>
+            </Col>
+          </Row>
+        </BackgroundColorGrid>
+      </Col>
     </EventRow>
   </>
 )
