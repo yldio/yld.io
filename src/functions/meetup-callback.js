@@ -201,7 +201,7 @@ exports.handler = async evt => {
       if (isProd) {
         log.updatedEvents.push({
           name: generatedEvent.fields.eventTitle['en-US'],
-          values: [diffVals]
+          values: diffVals
         })
 
         const id = await contentfulEvent.update()

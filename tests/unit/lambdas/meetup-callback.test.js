@@ -5,6 +5,8 @@ import faker from 'faker'
 import { when } from 'jest-when'
 import { generateGroups, generateEvent } from './__mocks__/meetup'
 
+const date = new Date().toISOString().split('T')[0]
+
 // eslint-disable-next-line no-unused-vars
 const contentful = require('contentful-management')
 
@@ -16,9 +18,7 @@ const mockEntryUpdate = jest.fn().mockResolvedValue({
 
 const generateContentfulEventObj = fields => ({
   ...generateContentfulEvent(fields),
-  update: () => ({
-    id: mockEntryUpdate
-  })
+  update: mockEntryUpdate
 })
 
 const got = require('got')
@@ -89,7 +89,12 @@ const generateMockData = (overwrites = {}) => {
   }, {})
 }
 
-describe('Meetup Oauth', () => {
+const getCmsEvents = events =>
+  Object.keys(events).reduce((acc, groupName) => {
+    return acc.concat(events[groupName].cms)
+  }, [])
+
+describe('Meetup Callback', () => {
   beforeEach(() => {
     process.env.MEETUP_API_SECRET = meetUpSecret
     process.env.MEETUP_API_KEY = meetUpKey
@@ -154,7 +159,6 @@ describe('Meetup Oauth', () => {
 
   it('runs correctly when there are no changes', async () => {
     // Get events from group
-    const date = new Date().toISOString().split('T')[0]
     const events = generateMockData({})
 
     groupNames.forEach(name => {
@@ -168,9 +172,7 @@ describe('Meetup Oauth', () => {
         })
     })
 
-    const cmsEvents = Object.keys(events).reduce((acc, groupName) => {
-      return acc.concat(events[groupName].cms)
-    }, [])
+    const cmsEvents = getCmsEvents(events)
 
     when(mockGetEntries)
       .calledWith({
@@ -186,10 +188,18 @@ describe('Meetup Oauth', () => {
       }
     })
 
+    const body = JSON.stringify({
+      log: {
+        isProd: true,
+        newEvents: [],
+        updatedEvents: [],
+        unchangedEvents: ['javascript-lisbon', 'node-group-london']
+      }
+    })
+
     const expected = {
       statusCode: 200,
-      body:
-        '{"log":{"isProd":true,"newEvents":[],"updatedEvents":[],"unchangedEvents":["javascript-lisbon","node-group-london"]}}'
+      body
     }
 
     expect(response).toEqual(expected)
@@ -198,7 +208,6 @@ describe('Meetup Oauth', () => {
 
   it('runs correctly when there are new events', async () => {
     // Get events from group
-    const date = new Date().toISOString().split('T')[0]
     const events = generateMockData({})
 
     groupNames.forEach(name => {
@@ -212,9 +221,7 @@ describe('Meetup Oauth', () => {
         })
     })
 
-    const cmsEvents = Object.keys(events).reduce((acc, groupName) => {
-      return acc.concat(events[groupName].cms)
-    }, [])
+    const cmsEvents = getCmsEvents(events)
 
     when(mockGetEntries)
       .calledWith({
@@ -230,21 +237,93 @@ describe('Meetup Oauth', () => {
       }
     })
 
+    const body = JSON.stringify({
+      log: {
+        isProd: true,
+        newEvents: ['node-group-london'],
+        updatedEvents: [],
+        unchangedEvents: ['javascript-lisbon']
+      }
+    })
+
     const expected = {
       statusCode: 200,
-      body:
-        '{"log":{"isProd":true,"newEvents":["node-group-london"],"updatedEvents":[],"unchangedEvents":["javascript-lisbon"]}}'
+      body: body
     }
 
     expect(response).toEqual(expected)
     expect(mockEntryUpdate).toHaveBeenCalledTimes(0)
     expect(mockCreateEntry).toHaveBeenCalledTimes(1)
-    // expect(mockCreateEntry).toHaveBeenCalledWith('meetupEven')
-    // TODO: add assertions for getEntry mocks
-    // TODO: add assertions for publish mocks
+    expect(mockCreateEntry).toHaveBeenCalledWith('meetupEven', {
+      fields: cmsEvents[1].fields
+    })
+    expect(mockGetEntry).toHaveBeenCalledWith('create_entry_id')
+    expect(mockPublish).toHaveBeenCalledTimes(1)
   })
 
-  // it.skip('runs correctly when there are updates to events', async () => {})
+  it('runs correctly when there are updates to events', async () => {
+    const events = generateMockData({
+      meetupEventOverwrites: {
+        yes_rsvp_count: 100
+      },
+      cmsEventOverwrites: {
+        yes_rsvp_count: 10
+      }
+    })
+
+    const cmsEvents = getCmsEvents(events)
+
+    when(mockGetEntries)
+      .calledWith({
+        limit: 1000,
+        content_type: 'meetupEven',
+        'fields.type': 'Meetup'
+      })
+      .mockReturnValue({ items: cmsEvents })
+
+    groupNames.forEach(name => {
+      when(got)
+        .calledWith(
+          `https://api.meetup.com/${name}/events?no_earlier_than${date}`,
+          { headers: { Authorization: `Bearer ${OAuthToken}` } }
+        )
+        .mockReturnValue({
+          body: JSON.stringify({ ...events[name].meetUp })
+        })
+    })
+
+    const response = await MeetupCallbackLambda.handler({
+      queryStringParameters: {
+        code: queryParamCode
+      }
+    })
+
+    const body = {
+      log: {
+        isProd: true,
+        newEvents: [],
+        updatedEvents: [
+          {
+            name: 'javascript-lisbon',
+            values: ['attendees']
+          },
+          {
+            name: 'node-group-london',
+            values: ['attendees']
+          }
+        ],
+        unchangedEvents: []
+      }
+    }
+    const expected = {
+      statusCode: 200,
+      body: JSON.stringify(body)
+    }
+
+    expect(response).toEqual(expected)
+    expect(mockEntryUpdate).toHaveBeenCalledTimes(2)
+    expect(mockPublish).toHaveBeenCalledTimes(2)
+  })
 
   it('throws an error when "code" is missing from query params', async () => {
     try {
