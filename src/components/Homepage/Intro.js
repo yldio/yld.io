@@ -21,8 +21,8 @@ const IntroRow = styled(Row)`
   position: relative;
 
   ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[5]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[8]};
   `}
 
   ${breakpoint('tablet')`
@@ -73,6 +73,10 @@ const IntroImageWrapper = styled.div`
   `}
 
   ${breakpoint('tablet')`
+    width: 1120px;
+  `}
+
+  ${breakpoint('desktop')`
     width: 1500px;
   `}
   `

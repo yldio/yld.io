@@ -112,63 +112,65 @@ const Contributions = ({
   )
 
   return (
-    <Grid>
-      <Wrapper ref={ref}>
-        <Row>
-          <Col width={[1]}>
-            <StyledImage image={icon} height="100%" width="auto" />
-          </Col>
-          <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 6 / 12]} block={false}>
-            <ContributionsCopy
-              {...contributionsCopy}
-              projects={projects}
-              contributions={contributions}
-              inView={inView}
-            />
-            <StyledBodyPrimary textLight>
-              {descriptionLine1}
-              <br />
-              {descriptionLine2}
-            </StyledBodyPrimary>
+    <div className="bkg">
+      <Grid>
+        <Wrapper ref={ref}>
+          <Row>
+            <Col width={[1]}>
+              <StyledImage image={icon} height="100%" width="auto" />
+            </Col>
+            <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 6 / 12]} block={false}>
+              <ContributionsCopy
+                {...contributionsCopy}
+                projects={projects}
+                contributions={contributions}
+                inView={inView}
+              />
+              <StyledBodyPrimary textLight>
+                {descriptionLine1}
+                <br />
+                {descriptionLine2}
+              </StyledBodyPrimary>
 
-            {!repos && (
-              <GithubLink reverse="true" external href={ctaLink}>
-                {ctaCopy}
-              </GithubLink>
-            )}
-          </Col>
-
-          {sectionGraphic && (
-            <GraphicCol width={[1, 1, 1, 1, 5 / 12, 4 / 12, 6 / 12]}>
-              <Graphic image={sectionGraphic} />
-            </GraphicCol>
-          )}
-        </Row>
-        {repos && repos.length && (
-          <>
-            <ReposWrapper>
-              <Row>
-                {repos.map(repo => (
-                  <Col
-                    key={generate()}
-                    width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
-                  >
-                    <Repo theme="dark" small {...repo} />
-                  </Col>
-                ))}
-              </Row>
-            </ReposWrapper>
-            <Row>
-              <Col width={[1, 1, 1, 1, 1]}>
+              {!repos && (
                 <GithubLink reverse="true" external href={ctaLink}>
                   {ctaCopy}
                 </GithubLink>
-              </Col>
-            </Row>
-          </>
-        )}
-      </Wrapper>
-    </Grid>
+              )}
+            </Col>
+
+            {sectionGraphic && (
+              <GraphicCol width={[1, 1, 1, 1, 5 / 12, 4 / 12, 6 / 12]}>
+                <Graphic image={sectionGraphic} />
+              </GraphicCol>
+            )}
+          </Row>
+          {repos && repos.length && (
+            <>
+              <ReposWrapper>
+                <Row>
+                  {repos.map(repo => (
+                    <Col
+                      key={generate()}
+                      width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
+                    >
+                      <Repo theme="dark" small {...repo} />
+                    </Col>
+                  ))}
+                </Row>
+              </ReposWrapper>
+              <Row>
+                <Col width={[1, 1, 1, 1, 1]}>
+                  <GithubLink reverse="true" external href={ctaLink}>
+                    {ctaCopy}
+                  </GithubLink>
+                </Col>
+              </Row>
+            </>
+          )}
+        </Wrapper>
+      </Grid>
+    </div>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
 
 import { Grid, Row, Col } from '../../grid'
 import Image from '../../Common/Image'
@@ -20,14 +19,15 @@ const InfoInner = styled.section`
 `
 
 const EventWrapper = styled.header`
-  padding: ${remcalc(24)} ${remcalc(24)} ${remcalc(36)};
+  padding: ${({ theme }) =>
+    `${theme.space[3]} ${theme.space[3]} ${theme.space[4]}`};
 
   ${breakpoint('smallTablet')`
-    padding: ${remcalc(36)};
+    padding: ${({ theme }) => theme.space[4]};
   `}
 
   ${breakpoint('tablet')`
-    padding: ${remcalc(30)} ${remcalc(36)} ${remcalc(36)};
+    padding: ${({ theme }) => theme.space[4]};
   `}
 `
 
@@ -68,11 +68,12 @@ const DesktopImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  padding: ${({ theme }) => theme.space[3]};
 
   > img {
     position: absolute;
-    right: 0;
-    height: 100%;
+    right: ${({ theme }) => theme.space[3]};
+    height: calc(100% - 2 * ${({ theme }) => theme.space[3]});
     width: auto;
   }
 
@@ -84,6 +85,10 @@ const MobileImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  padding: ${({ theme }) =>
+    `${theme.spacing[1.5]} ${theme.space[3]} ${theme.space[3]} ${
+      theme.space[3]
+    }`};
 
   > img {
     display: block;
@@ -109,7 +114,7 @@ const FeaturedEvent = ({ event }) => (
       <Col width={[1]}>
         <BackgroundColorGrid bgColor={event.color}>
           <Row>
-            <Col width={[1, 1, 1, 1, 1, 7 / 12, 5 / 12]}>
+            <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
               <InfoInner color={event.color}>
                 <EventWrapper>
                   <PaddedBodyPrimary muted reverse noPadding>
@@ -133,7 +138,7 @@ const FeaturedEvent = ({ event }) => (
                 </EventWrapper>
               </InfoInner>
             </Col>
-            <Col width={[1, 1, 1, 1, 1, 5 / 12, 7 / 12]}>
+            <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12, 7 / 12]}>
               <DesktopImageWrapper>
                 <Image image={event.desktopPosterImage} />
               </DesktopImageWrapper>
