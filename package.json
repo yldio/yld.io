@@ -24,7 +24,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sitemap": "2.0.2",
     "gatsby-plugin-styled-components": "3.0.3",
-    "gatsby-source-contentful": "2.1.28",
+    "gatsby-source-contentful": "2.1.35",
     "gatsby-source-lever": "2.0.9",
     "gatsby-source-medium": "2.0.8",
     "google-map-react": "^1.1.4",
