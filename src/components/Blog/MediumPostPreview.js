@@ -52,7 +52,8 @@ const ImageWrapper = styled.div`
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme, context }) =>
+    context === 'homepage' ? theme.space[2] : theme.space[3]};
   padding-top: ${({ theme }) => theme.space[3]};
   ${props =>
     props.show === 'smallTablet' ? `display: block;` : `display: none;`}
@@ -121,7 +122,8 @@ const MediumPostPreview = ({
   authorName,
   authorId,
   subtitle,
-  imageId
+  imageId,
+  context
 }) => {
   const previewText =
     subtitle.subtitle.length < 145
@@ -142,7 +144,13 @@ const MediumPostPreview = ({
 
   return (
     <MediumRow>
-      <Col width={[1, 1, 1, 1, 4 / 12, 3 / 12]}>
+      <Col
+        width={
+          context === 'homepage'
+            ? [1, 1, 1, 1, 4 / 12, 3 / 12]
+            : [1, 1, 1, 1, 4 / 12, 4 / 12]
+        }
+      >
         <TitleAndAuthor
           show="smallPhone"
           hide="smallTablet"
@@ -161,7 +169,14 @@ const MediumPostPreview = ({
           </ImageWrapper>
         </Anchor>
       </Col>
-      <InfoCol width={[1, 1, 1, 1, 8 / 12, 6 / 12]} block={false}>
+      <InfoCol
+        width={
+          context === 'homepage'
+            ? [1, 1, 1, 1, 8 / 12, 9 / 12]
+            : [1, 1, 1, 1, 8 / 12, 6 / 12]
+        }
+        block={false}
+      >
         <TitleAndAuthor
           show="smallTablet"
           title={title}
@@ -171,8 +186,8 @@ const MediumPostPreview = ({
           postUrl={postUrl}
         />
         <Col width={[1]} style={{ paddingLeft: 0 }}>
-          <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
-          <StyledBodyPrimary show="smallTablet">
+          <StyledBodyPrimary context={context}>{previewText}</StyledBodyPrimary>
+          <StyledBodyPrimary show="smallTablet" context={context}>
             {previewTextSmallTablet}
           </StyledBodyPrimary>
         </Col>

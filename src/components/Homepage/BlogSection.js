@@ -53,7 +53,7 @@ const BlogSection = ({ blogPosts }) => (
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
       <Col width={[1]} key={generate()}>
-        <MediumPostPreview {...blogPosts[0].node} />
+        <MediumPostPreview {...blogPosts[0].node} context="homepage" />
       </Col>
       <Col width={[1]}>
         <MediumLink to={'/blog'}>Read our blog</MediumLink>
@@ -65,7 +65,7 @@ const BlogSection = ({ blogPosts }) => (
       </TitleCol>
       {blogPosts.map((mediumPostData, idx, arr) => (
         <Col width={[1]} key={generate()}>
-          <MediumPostPreview {...mediumPostData.node} />
+          <MediumPostPreview {...mediumPostData.node} context="homepage" />
           {idx < arr.length - 1 && <Hr />}
         </Col>
       ))}
