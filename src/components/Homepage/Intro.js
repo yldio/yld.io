@@ -88,11 +88,15 @@ const IntroImageDesktop = styled.div`
   ${breakpoint('smallTablet')`
     left: calc(-50% + 72px);
     display: block;
-    `}
+  `}
 
   ${breakpoint('tablet')`
     left: calc(-50% + 80px);
-    `}
+  `}
+
+  ${breakpoint('desktop')`
+    left: calc(-50% + 154px);
+  `}
 
   > img {
     display: block;
