@@ -75,7 +75,9 @@ class Layout extends Component {
       bgColor,
       displayFooterOffices = true,
       footerContactUsId,
-      slug
+      slug,
+      structuredData,
+      breadcrumbData
     } = this.props
 
     const { GridDebugger } = this.state
@@ -87,55 +89,82 @@ class Layout extends Component {
             site {
               siteMetadata {
                 siteTitle
+                siteUrl
               }
             }
           }
         `}
-        render={data => (
-          <ThemeProvider theme={theme}>
-            <Fragment>
-              <Helmet
-                title={`${data.site.siteMetadata.siteTitle}`}
-                meta={[{ name: 'description', content: '' }]}
-              >
-                <script type="application/ld+json">{`
-                ${googleJson}
-            `}</script>
-                <html lang="en" />
+        render={data => {
+          const itemListElement = [
+            {
+              '@type': 'ListItem',
+              item: {
+                '@id': data.site.siteMetadata.siteUrl,
+                name: 'Homepage'
+              },
+              position: 1
+            }
+          ]
 
-                {addHotJar
-                  ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
-                  : null}
-              </Helmet>
-              <Location>
-                {({ location }) => (
-                  <Header
-                    slug={slug}
-                    path={location.pathname}
-                    bgColor={bgColor}
+          const breadcrumbs = {
+            '@context': 'http://schema.org',
+            '@type': 'BreadcrumbList',
+            description: 'Breadcrumbs list',
+            name: 'Breadcrumbs',
+            itemListElement: [...itemListElement, ...(breadcrumbData || [])]
+          }
+
+          return (
+            <ThemeProvider theme={theme}>
+              <Fragment>
+                <Helmet
+                  title={`${data.site.siteMetadata.siteTitle}`}
+                  meta={[{ name: 'description', content: '' }]}
+                >
+                  <script type="application/ld+json">{`${googleJson}`}</script>
+                  {structuredData && (
+                    <script type="application/ld+json">{`${structuredData}`}</script>
+                  )}
+
+                  <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbs)}
+                  </script>
+                  <html lang="en" />
+
+                  {addHotJar
+                    ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
+                    : null}
+                </Helmet>
+                <Location>
+                  {({ location }) => (
+                    <Header
+                      slug={slug}
+                      path={location.pathname}
+                      bgColor={bgColor}
+                    />
+                  )}
+                </Location>
+                {GridDebugger && (
+                  <GridDebugger
+                    theme={theme}
+                    maxWidth={['none', 'none', '480px', '1100px']}
+                    numCols={[1, 1, 1, 12]}
+                    gutter={['24px', '36px', '36px', '42px', '48px']}
                   />
                 )}
-              </Location>
-              {GridDebugger && (
-                <GridDebugger
-                  theme={theme}
-                  maxWidth={['none', 'none', '480px', '1100px']}
-                  numCols={[1, 1, 1, 12]}
-                  gutter={['24px', '36px', '36px', '42px', '48px']}
+                <StyledMain>{children}</StyledMain>
+                <Footer
+                  displayFooterOffices={displayFooterOffices}
+                  footerContactUsId={footerContactUsId}
                 />
-              )}
-              <StyledMain>{children}</StyledMain>
-              <Footer
-                displayFooterOffices={displayFooterOffices}
-                footerContactUsId={footerContactUsId}
-              />
-              <GlobalStyle />
-              {!this.state.cookiesAllowed && (
-                <Cookie onClick={this.handleClick} />
-              )}
-            </Fragment>
-          </ThemeProvider>
-        )}
+                <GlobalStyle />
+                {!this.state.cookiesAllowed && (
+                  <Cookie onClick={this.handleClick} />
+                )}
+              </Fragment>
+            </ThemeProvider>
+          )
+        }}
       />
     )
   }

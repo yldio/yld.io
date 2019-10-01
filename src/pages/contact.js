@@ -17,6 +17,7 @@ import {
 } from '../components/Typography'
 
 import { Grid, Row, Col } from '../components/grid'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Layout from '../components/layout'
 import StaffCard from '../components/AboutUs/StaffCard'
 
@@ -103,17 +104,32 @@ const ContactUs = ({
   location,
   data: {
     contentfulContactUsPage: page,
-    allContentfulLocation: { group: locations }
+    allContentfulLocation: { group: locations },
+    site: {
+      siteMetadata: { siteUrl }
+    }
   }
 }) => {
   const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
+
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      pathname: location.pathname,
+      position: 2,
+      name: 'Contact us'
+    }
+  ])
 
   const sortedGroups = locations.sort(({ nodes }) =>
     nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1
   )
 
   return (
-    <Layout location={location} displayFooterOffices={false}>
+    <Layout
+      location={location}
+      displayFooterOffices={false}
+      breadcrumbData={breadcrumbData}
+    >
       <Head seoMetaData={page.seoMetaData} />
 
       <Grid>
@@ -237,6 +253,11 @@ const Contact = props => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         contentfulContactUsPage {
           title
           seoMetaData {

@@ -2,12 +2,31 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
 import { SpecialityView } from './speciality-component'
 
 const Speciality = ({ data, location }) => {
-  const { contentfulSpeciality: speciality } = data
+  const {
+    contentfulSpeciality: speciality,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  } = data
   const { slug, title, seoMetaData } = speciality
+
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      position: 2,
+      name: 'Service',
+      pathname: '/service/'
+    },
+    {
+      name: title,
+      position: 3,
+      pathname: location.pathname
+    }
+  ])
 
   return (
     <Layout
@@ -18,6 +37,7 @@ const Speciality = ({ data, location }) => {
       footerContactUsId={
         speciality.footerContactUs && speciality.footerContactUs.id
       }
+      breadcrumbData={breadcrumbData}
     >
       <Head seoMetaData={seoMetaData} />
       <SpecialityView data={data} />
@@ -29,6 +49,11 @@ export default Speciality
 
 export const pageQuery = graphql`
   query($id: String, $postsTags: [String], $postsLimit: Int) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulSpeciality(id: { eq: $id }) {
       slug
       title
