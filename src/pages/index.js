@@ -49,11 +49,7 @@ const IndexPage = ({ data, location }) => {
   const blogPosts = blogData.edges || []
   const featuredEvent = getHomepageConferences(events.edges)[0]
   return (
-    <Layout
-      location={location}
-      footerContactUsId={content.footerContactUs.id}
-      bgColor="blueBg"
-    >
+    <Layout location={location} bgColor="blueBg">
       <Head seoMetaData={content.seoMetaData} />
       <Intro {...content} />
       <GreyBackground>

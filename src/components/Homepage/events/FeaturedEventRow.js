@@ -25,10 +25,6 @@ const EventWrapper = styled.header`
   ${breakpoint('smallTablet')`
     padding: ${({ theme }) => theme.space[4]};
   `}
-
-  ${breakpoint('tablet')`
-    padding: ${({ theme }) => theme.space[4]};
-  `}
 `
 
 const SpacedSectionTitle = styled(SectionTitle)`
@@ -68,12 +64,12 @@ const DesktopImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: ${({ theme }) => theme.space[3]};
+  padding: ${({ theme }) => theme.space[4]};
 
   > img {
     position: absolute;
-    right: ${({ theme }) => theme.space[3]};
-    height: calc(100% - 2 * ${({ theme }) => theme.space[3]});
+    right: ${({ theme }) => theme.space[4]};
+    height: calc(100% - 2 * ${({ theme }) => theme.space[4]});
     width: auto;
   }
 

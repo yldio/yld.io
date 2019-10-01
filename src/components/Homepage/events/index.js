@@ -31,8 +31,8 @@ const EventType = styled(Col)`
 
 const EventTypeCopyWrapper = styled.div`
   background: white;
-  padding: ${remcalc(24)} ${remcalc(16)} ${remcalc(36)} ${remcalc(24)};
-
+  padding: ${({ theme }) =>
+    `${theme.space[3]} ${theme.space[3]} ${theme.space[4]}`};
   ${breakpoint('tablet')`
     padding-bottom: ${remcalc(50)};
   `}

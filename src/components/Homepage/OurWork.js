@@ -65,7 +65,7 @@ const CardHeader = styled.header`
   `}
 
   ${breakpoint('desktop')`
-    padding: ${remcalc(24)} ${remcalc(25)} ${remcalc(24)} ${remcalc(31)};
+    padding: ${remcalc(24)} ${remcalc(25)} ${remcalc(31)} ${remcalc(24)};
   `}
 `
 
