@@ -7,6 +7,7 @@ import remcalc from 'remcalc'
 import { Row, Col } from '../grid'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
+import RatioContainer from '../Common/RatioContainer'
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
@@ -55,6 +56,7 @@ const CardHeader = styled.header`
   padding: ${({ theme }) => `${theme.spacing[1.5]} ${theme.spacing[2]}`};
   max-width: ${remcalc(475)};
   box-sizing: border-box;
+  background-color: #${({ backgroundColor }) => backgroundColor};
 
   > div {
     max-width: ${remcalc(310)};
@@ -69,53 +71,18 @@ const CardHeader = styled.header`
   `}
 `
 
-const CardImage = styled.div`
-  max-width: 100%;
-  height: 0;
-  padding-top: 90%;
-  background-image: url(${props => props.image.file.url});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  ${breakpoint('tablet')`
-    padding-top: 70%;
-  `}
-
-  ${breakpoint('desktop')`
-    padding-top: 80%;
-  `}
-`
-
-const Card = styled.section`
-  height: 100%;
+const Card = styled(RatioContainer)`
   background-color: #${props => props.color};
+  background-image: url(${props => props.image.file.url});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
   margin-top: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
     margin-top: ${({ theme }) => theme.space[5]};
   `}
 `
-
-// //fixed height - alternative: use max-height on image wrapper
-// const Card = styled.section`
-//   height: ${remcalc(430)};
-//   background-color: #${props => props.color};
-//   margin-top: ${({ theme }) => theme.space[4]};
-
-//   ${breakpoint('smallTablet')`
-//     height: ${remcalc(422)};
-//   `}
-
-//   ${breakpoint('tablet')`
-//     height: ${remcalc(432)};
-//     margin-top: ${({ theme }) => theme.space[5]};
-//   `}
-
-//   ${breakpoint('desktop')`
-//     height: ${remcalc(438)};
-//   `}
-// `
 
 const CaseStudy = ({ caseStudy }) => {
   const {
@@ -129,8 +96,8 @@ const CaseStudy = ({ caseStudy }) => {
 
   return (
     <Link to={`/case-study/${slug}`} title={title}>
-      <Card color={posterColor}>
-        <CardHeader>
+      <Card width={100} height={130} color={posterColor} image={posterImage}>
+        <CardHeader backgroundColor={posterColor}>
           <section>
             <BodyPrimary reverse={reverseColor} muted>
               {client}
@@ -140,7 +107,6 @@ const CaseStudy = ({ caseStudy }) => {
             </CardTitle>
           </section>
         </CardHeader>
-        <CardImage image={posterImage} />
       </Card>
     </Link>
   )
