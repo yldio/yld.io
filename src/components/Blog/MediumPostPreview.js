@@ -61,6 +61,12 @@ const StyledBodyPrimary = styled(BodyPrimary)`
     ${props =>
       props.show === 'smallTablet' ? `display: none;` : `display: block;`}
   `};
+
+  ${({ context }) =>
+    context &&
+    breakpoint('smallPhone', 'smallTablet')`
+    padding-bottom: 0;
+  `}
 `
 
 const AuthorAndDate = styled.p`
@@ -88,6 +94,19 @@ const InfoCol = styled(Col)`
 
 const ReadMoreLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
+
+  ${({ context }) =>
+    context &&
+    breakpoint('smallPhone', 'smallTablet')`
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    :after {
+      margin-top: 0;
+      height: 0.1rem;
+    }
+  `}
 `
 
 const TitleAndAuthor = ({
@@ -195,6 +214,7 @@ const MediumPostPreview = ({
           external
           href={postUrl}
           title={`Read more about ${title}`}
+          context={context}
         >
           Read more
         </ReadMoreLink>

@@ -23,6 +23,7 @@ const Wrapper = styled.div`
 
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: #848194;
+  width: 100%;
   margin-top: ${({ theme }) => theme.space[3]};
   margin-bottom: ${({ theme }) => theme.space[4]};
 `
@@ -44,7 +45,6 @@ const ReposWrapper = styled.div`
 
 const GithubLink = styled(StyledLink)`
   ${breakpoint('tablet')`
-    margin-top: ${({ theme }) => theme.space[4]};
     margin-bottom: ${({ theme }) => theme.space[4]};
   `}
 `
