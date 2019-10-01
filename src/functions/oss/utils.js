@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-const { get } = require('lodash')
+const Get = require('lodash.get')
 
 const { LOCALE = 'en-US' } = process.env
 
-const getFieldValue = (obj, key) => get(obj, `fields.${key}.${LOCALE}`)
+const getFieldValue = (obj, key) => Get(obj, `fields.${key}.${LOCALE}`)
 
 const generateContentfulData = (obj, keys) => {
   if (!keys && !keys.length) {

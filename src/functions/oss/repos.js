@@ -33,10 +33,17 @@ const Repos = async (environment, { repos }) => {
 
   // Iterate over the contentful repo data
   return Reduce(contentfulRepos, async (acc = [], contentfulRepo) => {
-    const githubRepo = find(filteredRepos, [
-      `url`,
-      getFieldValue(contentfulRepo, 'url')
-    ])
+    const url = getFieldValue(contentfulRepo, 'url')
+    const githubRepo = find(filteredRepos, [`url`, url])
+
+    if (!githubRepo) {
+      console.log(`
+        Contentful repo URL: ${url} cannot be found in the Github repo data. 
+        This happens when users leave the YLD Github organisation.
+        Consider removing this repo from contentful
+      `)
+      return { ...acc, missingRepos: [...(acc.missingRepos || []), url] }
+    }
 
     const contentfulRepoFromGithub = generateContentfulData(
       githubRepo,
@@ -57,7 +64,10 @@ const Repos = async (environment, { repos }) => {
         nameWithOwner
       )
 
-      return [...acc, nameWithOwner]
+      return {
+        ...acc,
+        updatedRepos: [...(acc.updatedRepos || []), nameWithOwner]
+      }
     } else {
       console.log(
         fieldsAreEqual
