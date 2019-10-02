@@ -119,7 +119,7 @@ const Contributions = ({
             <Col width={[1]}>
               <StyledImage image={icon} height="100%" width="auto" />
             </Col>
-            <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 6 / 12]} block={false}>
+            <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 6 / 12]} block={false}>
               <ContributionsCopy
                 {...contributionsCopy}
                 projects={projects}
@@ -140,7 +140,7 @@ const Contributions = ({
             </Col>
 
             {sectionGraphic && (
-              <GraphicCol width={[1, 1, 1, 1, 5 / 12, 4 / 12, 6 / 12]}>
+              <GraphicCol width={[1, 1, 1, 1, 4 / 12, 4 / 12, 6 / 12]}>
                 <Graphic image={sectionGraphic} />
               </GraphicCol>
             )}
