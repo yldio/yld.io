@@ -79,7 +79,7 @@ const StyledSectionTitleCol = styled(Col)`
 const StyledPosterImageCol = styled(Col)`
   overflow: visible;
   ${breakpoint('smallPhone', 'largePhone')`
-    height: 240px;
+    height: ${remcalc(240)};
   `}
 
   height: 100%;
