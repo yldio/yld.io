@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
 import { Grid, Row, Col } from '../components/grid'
@@ -53,7 +54,10 @@ const OpenSource = ({ data, location }) => {
       eventsSectionDescription,
       footerContactUs: { id: footerContactId }
     },
-    allContentfulMeetupEvent: { nodes: events }
+    allContentfulMeetupEvent: { nodes: events },
+    site: {
+      siteMetadata: { siteUrl }
+    }
   } = data
 
   const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
@@ -83,11 +87,20 @@ const OpenSource = ({ data, location }) => {
     })
   )
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'Open source',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
     <Layout
       location={location}
       slug={'open-source'}
       footerContactUsId={footerContactId}
+      breadcrumbData={breadcrumbData}
     >
       <Head seoMetaData={seoMetaData} />
       <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
@@ -146,6 +159,11 @@ const OpenSourcePage = props => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         allContentfulMeetupEvent {
           nodes {
             id

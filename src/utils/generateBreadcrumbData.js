@@ -1,3 +1,10 @@
+/*
+ *
+ * For page specific data, does not include homepage
+ * breadcrumb, this is added in Layout.js
+ *
+ */
+
 export default (siteUrl, pages = []) =>
   siteUrl &&
   pages &&

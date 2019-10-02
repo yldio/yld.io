@@ -9,8 +9,17 @@ import GreyBackground from '../components/Common/GreyBackground'
 import BlueBackground from '../components/Common/BlueBackground'
 import Head from '../components/Common/Head'
 import Statement from '../components/Common/Statement'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
-const Service = ({ data: { contentfulService: service }, location }) => {
+const Service = ({
+  data: {
+    contentfulService: service,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  },
+  location
+}) => {
   const specialities = [
     {
       title: service.specialityAreaTitle1,
@@ -32,10 +41,19 @@ const Service = ({ data: { contentfulService: service }, location }) => {
 
   const { seoMetaData } = service
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: service.title,
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
     <Layout
       location={location}
       slug={service.slug}
+      breadcrumbData={breadcrumbData}
       footerContactUsId={service.footerContactUs.id}
     >
       <Head seoMetaData={seoMetaData} />
@@ -77,6 +95,11 @@ export default Service
  */
 export const pageQuery = graphql`
   query($id: String) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulService(id: { eq: $id }) {
       slug
       title

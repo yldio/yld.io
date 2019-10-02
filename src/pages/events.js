@@ -8,6 +8,8 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+
 import Head from '../components/Common/Head'
 import Hr from '../components/Common/Hr'
 import {
@@ -160,7 +162,15 @@ const ConferenceList = ({ events }) =>
   ))
 
 const EventPage = ({
-  data: { events, conferences, contentfulEventsPage: content }
+  data: {
+    events,
+    conferences,
+    contentfulEventsPage: content,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  },
+  location
 }) => {
   const futureEvents = events.edges.filter(
     ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date)
@@ -168,8 +178,20 @@ const EventPage = ({
 
   const { introSentence, posterImage, seoMetaData, footerContactUs } = content
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'Events',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout bgColor="blueBg" footerContactUsId={footerContactUs.id}>
+    <Layout
+      bgColor="blueBg"
+      footerContactUsId={footerContactUs.id}
+      breadcrumbData={breadcrumbData}
+    >
       <Head seoMetaData={seoMetaData} />
 
       <StyledBlueBackground>
@@ -278,6 +300,11 @@ export const query = graphql`
   }
 
   query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulEventsPage {
       seoMetaData {
         ...SEOMetaFields
