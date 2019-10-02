@@ -46,6 +46,7 @@ const IndexPage = ({ data, location }) => {
     allContentfulBlogPost: blogData
   } = data
 
+  const sortedServices = content.services.sort((a, b) => a.order - b.order)
   const blogPosts = blogData.edges || []
   const featuredEvent = getHomepageConferences(events.edges)[0]
   return (
@@ -61,7 +62,7 @@ const IndexPage = ({ data, location }) => {
       <Grid>
         <Services
           statement={content.serviceStatement}
-          services={content.services}
+          services={sortedServices}
         />
       </Grid>
       <GreyBackground>
@@ -134,6 +135,7 @@ export const query = graphql`
         title
         slug
         pageReady
+        order
         icon {
           file {
             url
