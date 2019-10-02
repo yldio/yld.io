@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Helmet from 'react-helmet'
 import { generate } from 'shortid'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -25,6 +26,36 @@ import GreyBackground from '../components/Common/GreyBackground'
 import Image from '../components/Common/Image'
 import StyledLink from '../components/Common/StyledLink'
 import BlueBackground from '../components/Common/BlueBackground'
+
+const createEventStructuredData = (events = []) =>
+  events.map(({ node }) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: node.eventTitle,
+    startDate: node.date,
+    endDate: node.endTime,
+    location: {
+      '@type': 'Place',
+      name: node.venueName,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: node.addressLine1,
+        addressLocality: node.addressLine2,
+        postalCode: node.addressLine3,
+        addressRegion: node.city,
+        addressCountry: 'US'
+      }
+    },
+    ...((node.linkToTickets || node.linkToEvent) && {
+      offers: {
+        '@type': 'Offer',
+        url: node.linkToTickets || node.linkToEvent
+      }
+    }),
+    // Can't add it here as meetup blurb is HTML, using strip tags
+    // is not reliable enough due to potential ' + " characters in html breaking parsing
+    ...(node.type !== 'Meetup' && { description: node.blurb.blurb })
+  }))
 
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(40)};
@@ -186,12 +217,23 @@ const EventPage = ({
     }
   ])
 
+  const eventStructuredData = createEventStructuredData(futureEvents)
+
   return (
     <Layout
       bgColor="blueBg"
       footerContactUsId={footerContactUs.id}
       breadcrumbData={breadcrumbData}
     >
+      <Helmet>
+        {eventStructuredData &&
+          eventStructuredData.length > 0 &&
+          eventStructuredData.map(data => (
+            <script key={generate()} type="application/ld+json">
+              {JSON.stringify(data)}
+            </script>
+          ))}
+      </Helmet>
       <Head seoMetaData={seoMetaData} />
 
       <StyledBlueBackground>
