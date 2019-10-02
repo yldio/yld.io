@@ -52,7 +52,7 @@ const createEventStructuredData = (events = []) =>
         url: node.linkToTickets || node.linkToEvent
       }
     }),
-    // Can't add it here as meetup blurb is HTML, using strip tags
+    // Can't add description when meetup as meetup blurb is HTML, using strip tags
     // is not reliable enough due to potential ' + " characters in html breaking parsing
     ...(node.type !== 'Meetup' && { description: node.blurb.blurb })
   }))
