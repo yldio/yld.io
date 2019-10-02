@@ -9728,7 +9728,7 @@ gatsby-plugin-robots-txt@^1.5.0:
     "@babel/runtime" "^7.5.1"
     generate-robotstxt "^7.1.0"
 
-gatsby-plugin-sharp@^2.2.21:
+gatsby-plugin-sharp@^2.2.27:
   version "2.2.27"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.27.tgz#8374915e55c4b156f4ad661c1ec94e23999b0b33"
   integrity sha512-4tcHGYs2pWEs6pHVjdqqMgfZ7/+6RoWy4ohlCssz8CDuVOIFFYAUvRbYSViZ833ZkqYINLG26lNrTgUibmvE2Q==
@@ -9777,12 +9777,12 @@ gatsby-react-router-scroll@^2.1.8:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
-gatsby-source-contentful@2.1.35:
-  version "2.1.35"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.35.tgz#52debffa0a57371a03869dcb92525c59bd81af2f"
-  integrity sha512-xQcmrr+0RiUt5GuJ6xVP8hN8ZlbTOfJqOuTExe78MdcP923MJrAt8GSrvNOaJzt5Lf2R+6AgBoyBpBw2m7Y4kg==
+gatsby-source-contentful@2.1.44:
+  version "2.1.44"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.44.tgz#44f202e8f34df989afe986bf51bfed70f5dea32a"
+  integrity sha512-RU4la8twdEMzDnyBxKNThSgS6V3ciDeboVAhPt990MM8RN1SHKH7hMeEF4ByvdB1xpL/lfdD8vMlGiFs2je0MA==
   dependencies:
-    "@babel/runtime" "^7.6.0"
+    "@babel/runtime" "^7.6.2"
     "@hapi/joi" "^15.1.1"
     axios "^0.19.0"
     base64-img "^1.0.4"
@@ -9791,12 +9791,12 @@ gatsby-source-contentful@2.1.35:
     contentful "^6.1.3"
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.2.21"
-    gatsby-source-filesystem "^2.1.22"
+    gatsby-plugin-sharp "^2.2.27"
+    gatsby-source-filesystem "^2.1.28"
     is-online "^8.2.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
-    qs "^6.8.0"
+    qs "^6.9.0"
 
 gatsby-source-filesystem@^2.0.8:
   version "2.1.22"
@@ -9819,7 +9819,7 @@ gatsby-source-filesystem@^2.0.8:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-filesystem@^2.1.22:
+gatsby-source-filesystem@^2.1.28:
   version "2.1.28"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.28.tgz#c438306f4906564f3bf62464bc7240b571634e01"
   integrity sha512-rgYaRTIEFqsbzWKRRIDiL0wIk1K1Ig/KsZXCiSk07KxInBwSi96OU0HAHkNmrl/TLNdFSCvsll1G9CEZ0109Hg==
@@ -17027,10 +17027,15 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-qs@^6.5.2, qs@^6.6.0, qs@^6.8.0:
+qs@^6.5.2, qs@^6.6.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
   integrity sha512-tPSkj8y92PfZVbinY1n84i1Qdx75lZjMQYx9WZhnkofyxzw2r7Ho39G3/aEvSUdebxpnnM4LZJCtvE/Aq3+s9w==
+
+qs@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
+  integrity sha512-27RP4UotQORTpmNQDX8BHPukOnBP3p1uUJY5UnDhaJB+rMt9iMsok724XL+UHU23bEFOHRMQ2ZhI99qOWUMGFA==
 
 qs@~6.5.2:
   version "6.5.2"
