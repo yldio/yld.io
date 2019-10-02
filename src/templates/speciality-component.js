@@ -60,9 +60,6 @@ export const SpecialityView = props => {
   const renderBooksSection = books && books.length > 0
   const renderBlogSection = posts && posts.length > 0
 
-  // required: IntroSection, TrainingSection
-  // optional: ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
-
   return (
     <Fragment>
       <IntroSection speciality={flattenedSpeciality} />

@@ -1,25 +1,35 @@
 import React from 'react'
+import capitalize from 'capitalize'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+import getServiceInfo from '../utils/getServiceInfo'
 
 import { SpecialityView } from './speciality-component'
 
 const Speciality = ({ data, location }) => {
   const {
     contentfulSpeciality: speciality,
+    services,
+    specialities,
     site: {
       siteMetadata: { siteUrl }
     }
   } = data
   const { slug, title, seoMetaData } = speciality
 
+  const { service } = getServiceInfo({
+    slug,
+    services,
+    specialities
+  })
+
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       position: 2,
-      name: 'Service',
-      pathname: '/service/'
+      name: capitalize(service),
+      pathname: `/${service}/`
     },
     {
       name: title,
@@ -52,6 +62,37 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+    services: allContentfulService {
+      nodes {
+        slug
+        specialityAreaItems1 {
+          id
+          slug
+          title
+        }
+        specialityAreaItems2 {
+          id
+          slug
+          title
+        }
+        specialityAreaItems3 {
+          id
+          slug
+          title
+        }
+        specialityAreaItems4 {
+          id
+          slug
+          title
+        }
+      }
+    }
+    specialities: allContentfulSpeciality {
+      nodes {
+        slug
+        logoColour
       }
     }
     contentfulSpeciality(id: { eq: $id }) {

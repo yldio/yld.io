@@ -95,7 +95,7 @@ class Layout extends Component {
           }
         `}
         render={data => {
-          const itemListElement = [
+          const homepageListItem = [
             {
               '@type': 'ListItem',
               item: {
@@ -111,7 +111,7 @@ class Layout extends Component {
             '@type': 'BreadcrumbList',
             description: 'Breadcrumbs list',
             name: 'Breadcrumbs',
-            itemListElement: [...itemListElement, ...(breadcrumbData || [])]
+            itemListElement: [...homepageListItem, ...(breadcrumbData || [])]
           }
 
           return (
