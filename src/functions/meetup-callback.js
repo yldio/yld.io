@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const URLSearchParams = require('url').URLSearchParams
 const Got = require('got')
-const { every: Every } = require('lodash')
+const Every = require('lodash.every')
 const { createClient } = require('contentful-management')
 const Find = require('lodash.find')
 const { default: Map } = require('apr-map')
