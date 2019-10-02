@@ -88,7 +88,7 @@ const CaseStudy = ({ caseStudy }) => {
   const {
     title,
     client,
-    posterImage,
+    alternativePreviewImage,
     slug,
     posterColor,
     reverseColor
@@ -96,7 +96,12 @@ const CaseStudy = ({ caseStudy }) => {
 
   return (
     <Link to={`/case-study/${slug}`} title={title}>
-      <Card width={100} height={130} color={posterColor} image={posterImage}>
+      <Card
+        width={100}
+        height={130}
+        color={posterColor}
+        image={alternativePreviewImage}
+      >
         <CardHeader backgroundColor={posterColor}>
           <section>
             <BodyPrimary reverse={reverseColor} muted>
@@ -240,7 +245,7 @@ const OurWorkSection = props => (
               introSentence {
                 introSentence
               }
-              posterImage {
+              alternativePreviewImage {
                 title
                 file {
                   url
@@ -269,7 +274,7 @@ const OurWorkSection = props => (
               introSentence {
                 introSentence
               }
-              posterImage {
+              alternativePreviewImage {
                 title
                 file {
                   url
@@ -298,7 +303,7 @@ const OurWorkSection = props => (
               introSentence {
                 introSentence
               }
-              posterImage {
+              alternativePreviewImage {
                 title
                 file {
                   url
