@@ -30,7 +30,6 @@ const EventType = styled(Col)`
 `
 
 const EventTypeCopyWrapper = styled.div`
-  background: white;
   padding: ${({ theme }) =>
     `${theme.space[3]} ${theme.space[3]} ${theme.space[4]}`};
   ${breakpoint('tablet')`
@@ -55,6 +54,14 @@ const CtaRow = styled(Row)`
   ${breakpoint('tablet')`
     display: block;
   `}
+`
+
+const EventCard = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
 `
 
 const ViewEventsLink = styled(StyledLink)`
@@ -83,13 +90,15 @@ const Events = ({ featuredEvent, eventTypes }) => (
             width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
             key={generate()}
           >
-            <EventTypeCopyWrapper>
-              <Subtitle noPadding>{title}</Subtitle>
-              <BodyPrimary muted noPaddingTop>
-                {copy}
-              </BodyPrimary>
-            </EventTypeCopyWrapper>
-            {image && <Image image={image} />}
+            <EventCard>
+              <EventTypeCopyWrapper>
+                <Subtitle noPadding>{title}</Subtitle>
+                <BodyPrimary muted noPaddingTop>
+                  {copy}
+                </BodyPrimary>
+              </EventTypeCopyWrapper>
+              {image && <Image image={image} />}
+            </EventCard>
           </EventType>
         ))}
     </Row>
