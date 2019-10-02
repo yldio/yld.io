@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Get from 'lodash.get'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Layout from '../components/layout'
-import GetInTouch from '../components/Common/GetInTouch'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, BodyPrimary } from '../components/Typography'
 import { Discipline } from '../components/CareerFramework'
@@ -41,8 +41,12 @@ const DisciplineTitleCol = styled(Col)`
 const CareerFramework = ({
   data: {
     contentfulCareerFramework: generic,
-    contentfulCareerDiscipline: discipline
+    contentfulCareerDiscipline: discipline,
+    site: {
+      siteMetadata: { siteUrl }
+    }
   },
+  location,
   pageContext: { slug: pageSlug }
 }) => {
   const { introContent, introHeader, disciplines = [] } = generic
@@ -68,8 +72,16 @@ const CareerFramework = ({
       []
     )
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: `Career Framework - ${discipline.title}`,
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout>
+    <Layout breadcrumbData={breadcrumbData}>
       <Head seoMetaData={discipline.seoMetaData} />
       <Grid>
         <Row>
@@ -114,18 +126,17 @@ const CareerFramework = ({
       </GreyBackground>
 
       <Discipline key={generate()} {...discipline} />
-
-      <GetInTouch
-        title="Want to build your career with us?"
-        contactText="With the focus on learning and growth dynamic work environment, devotion to open source communities and epic perks, we hope for talent to feel as home with us."
-        ctaText="Get in touch"
-      />
     </Layout>
   )
 }
 
 export const query = graphql`
   query($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulCareerFramework {
       introContent {
         content {

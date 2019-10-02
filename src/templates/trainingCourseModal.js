@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import { graphql, navigate } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import Head from '../components/Common/Head'
 import Layout from '../components/layout'
@@ -26,8 +27,26 @@ const CloseButtonWrapper = styled(Padding)`
   justify-content: flex-end;
 `
 
-const ModalContent = ({ modal, closeTo, course, category, location }) => {
+const ModalContent = ({
+  modal,
+  closeTo,
+  course,
+  category,
+  location,
+  siteUrl
+}) => {
   const returnPath = `${closeTo}/#${category.slug}`
+
+  const handleKeyPress = useCallback(
+    ({ key }) => {
+      if (key === 'Escape') {
+        return navigate(returnPath)
+      }
+
+      return
+    },
+    [returnPath]
+  )
 
   useEffect(
     () => {
@@ -38,14 +57,21 @@ const ModalContent = ({ modal, closeTo, course, category, location }) => {
     [handleKeyPress]
   )
 
-  const handleKeyPress = ({ key }) => {
-    if (key === 'Escape') {
-      navigate(returnPath)
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'service',
+      pathname: returnPath,
+      position: 2
+    },
+    {
+      name: `Training - ${course.name}`,
+      pathname: location.pathname,
+      position: 3
     }
-  }
+  ])
 
   return (
-    <Layout location={location}>
+    <Layout location={location} breadcrumbData={breadcrumbData}>
       <Head
         page={{
           title: `Training - ${course.name}`,
@@ -84,7 +110,10 @@ const ModalContent = ({ modal, closeTo, course, category, location }) => {
 const TrainingCourseModal = ({
   data: {
     contentfulTrainingCourse: course,
-    contentfulTrainingCourseCategory: category
+    contentfulTrainingCourseCategory: category,
+    site: {
+      siteMetadata: { siteUrl }
+    }
   },
   location
 }) => (
@@ -96,6 +125,7 @@ const TrainingCourseModal = ({
         closeTo={closeTo}
         location={location}
         modal={modal}
+        siteUrl={siteUrl}
       />
     )}
   </ModalRoutingContext.Consumer>
@@ -105,6 +135,11 @@ export default TrainingCourseModal
 
 export const pageQuery = graphql`
   query($id: String, $categoryId: String) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulTrainingCourse(id: { eq: $id }) {
       id
       name
