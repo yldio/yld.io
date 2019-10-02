@@ -84,10 +84,12 @@ const PersonCopyWrapper = styled.div`
 
 const PersonCta = styled.div`
   align-self: flex-end;
-  > p,
-  > a {
-    display: inline;
-  }
+  ${breakpoint('tablet')`
+    > p,
+    > a {
+      display: inline;
+    }
+  `}
 
   a {
     text-decoration: underline;
@@ -109,6 +111,12 @@ const ProfileContentWrapper = styled.div`
   ${breakpoint('tablet')`
     border-right: 1px solid ${({ theme }) => theme.colors.border}
   `};
+`
+
+const PersonBodyPrimary = styled(BodyPrimary)`
+  ${breakpoint('smallPhone', 'tablet')`
+      display: block
+  `}
 `
 
 const Profile = props => {
@@ -176,7 +184,7 @@ const Profile = props => {
             </BodyPrimary>
           </PersonCopyWrapper>
           <PersonCta>
-            <BodyPrimary secondary>{personCtaCopy}</BodyPrimary>{' '}
+            <PersonBodyPrimary secondary>{personCtaCopy}</PersonBodyPrimary>{' '}
             <Link to={personCtaLinkUrl}>{personCtaLinkCopy}</Link>
           </PersonCta>
         </Col>
