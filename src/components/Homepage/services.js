@@ -55,6 +55,22 @@ const ServiceSentence = styled(BodyPrimary)`
   margin-bottom: ${({ theme }) => theme.space[2]};
 `
 
+const SpecialityList = styled(SeoLinks)`
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 60px;
+  text-align: justify;
+  position: relative;
+
+  // :after {
+  //   content: "...";
+  //   position: absolute;
+  //   right: 0px;
+  //   bottom: 0px;
+  // }
+`
+
 const Services = ({ statement, services }) => (
   <>
     <StyledRow>
@@ -83,7 +99,7 @@ const Services = ({ statement, services }) => (
                   {service.introSentence.introSentence}
                 </ServiceSentence>
 
-                <SeoLinks items={service.homePageSpecialities} />
+                <SpecialityList items={service.homePageSpecialities} />
               </ServiceCol>
               {/* This grid has no offsets so this is what we're left with... */}
               <Col width={[0, 0, 0, 1 / 12]} />
