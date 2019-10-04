@@ -11,6 +11,20 @@ import StyledLink from './StyledLink'
 import Image from './Image'
 import { BodyPrimary } from '../Typography'
 
+const UnpaddedGrid = styled(Grid)`
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  `}
+`
+const StyledCol = styled(Col)`
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-left: ${({ theme }) => theme.space[3]};
+    padding-right: ${({ theme }) => theme.space[3]};
+  `}
+`
+
 const Wrapper = styled.div`
   position: relative;
   padding-top: ${({ theme }) => theme.space[4]};
@@ -86,6 +100,7 @@ const GraphicCol = styled(Col)`
     background-image: url(${({ image }) => image.file.url});
     background-repeat: no-repeat;
     background-size: auto 100%;
+    background-position: ${({ theme }) => theme.space[3]};
   `}
 `
 
@@ -142,13 +157,16 @@ const Contributions = ({
 
   return (
     <div className="bkg">
-      <Grid>
+      <UnpaddedGrid>
         <Wrapper ref={ref}>
           <StaticRow>
-            <Col width={[1]}>
+            <StyledCol width={[1]}>
               <StyledImage image={icon} height="100%" width="auto" />
-            </Col>
-            <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 6 / 12]} block={false}>
+            </StyledCol>
+            <StyledCol
+              width={[1, 1, 1, 1, 8 / 12, 8 / 12, 6 / 12]}
+              block={false}
+            >
               <ContributionsCopy
                 {...contributionsCopy}
                 projects={projects}
@@ -166,7 +184,7 @@ const Contributions = ({
                   {ctaCopy}
                 </GithubLink>
               )}
-            </Col>
+            </StyledCol>
 
             {sectionGraphic && (
               <GraphicCol
@@ -201,7 +219,7 @@ const Contributions = ({
             </>
           )}
         </Wrapper>
-      </Grid>
+      </UnpaddedGrid>
     </div>
   )
 }
