@@ -12,6 +12,7 @@ import Image from './Image'
 import { BodyPrimary } from '../Typography'
 
 const Wrapper = styled.div`
+  position: relative;
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
 
@@ -50,14 +51,42 @@ const GithubLink = styled(StyledLink)`
 `
 
 const Graphic = styled(Image)`
-  width: auto;
-  max-width: initial;
-  height: calc(100% - ${({ theme }) => theme.space[4]});
+  display: none;
+
+  ${breakpoint('smallTablet')`
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    height: 320px;
+    transform: translateY(-50%);
+  `}
+
+  ${breakpoint('tablet')`
+  // initial margin - (WrapperWidth + GridMargin - Breakpoint)/2
+  // starts with -6px and adds 0.5px for each 1px screen size is over breakpoint
+    margin-left: calc(-6px - calc(calc(100% + 96px) - ${({ theme }) =>
+      theme.breakpoints.tablet}px)/2);
+  `}
+
+  ${breakpoint('desktop')`
+    margin-left: -154px;
+  `}
+`
+
+const StaticRow = styled(Row)`
+  position: static;
 `
 
 const GraphicCol = styled(Col)`
-  display: flex;
-  align-items: flex-end;
+  position: static;
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    min-height: 220px;
+    background-image: url(${({ image }) => image.file.url});
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  `}
 `
 
 const Contributions = ({
@@ -115,7 +144,7 @@ const Contributions = ({
     <div className="bkg">
       <Grid>
         <Wrapper ref={ref}>
-          <Row>
+          <StaticRow>
             <Col width={[1]}>
               <StyledImage image={icon} height="100%" width="auto" />
             </Col>
@@ -140,11 +169,14 @@ const Contributions = ({
             </Col>
 
             {sectionGraphic && (
-              <GraphicCol width={[1, 1, 1, 1, 4 / 12, 4 / 12, 6 / 12]}>
+              <GraphicCol
+                width={[1, 1, 1, 1, 4 / 12, 4 / 12, 6 / 12]}
+                image={sectionGraphic}
+              >
                 <Graphic image={sectionGraphic} />
               </GraphicCol>
             )}
-          </Row>
+          </StaticRow>
           {repos && repos.length && (
             <>
               <ReposWrapper>
