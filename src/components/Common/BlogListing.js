@@ -5,8 +5,9 @@ import { format } from 'date-fns'
 
 import { Grid } from '../grid'
 import TitleAndMediaList from '../Common/TitleAndMediaList'
+import BackgroundColorWrapper from '../Common/BackgroundColorWrapper'
 
-const BlogListing = ({ title, description, posts }) => {
+const BlogListing = ({ title, description, posts, bgColor }) => {
   const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
     id,
     title,
@@ -15,18 +16,20 @@ const BlogListing = ({ title, description, posts }) => {
   }))
 
   return (
-    <Grid>
+    <BackgroundColorWrapper bgColor={bgColor}>
       <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
-        <TitleAndMediaList
-          title={title}
-          description={description}
-          mediaItems={mediaItems}
-          CTALink="/blog/"
-          external
-          CTAText="Visit our blog"
-        />
+        <Grid>
+          <TitleAndMediaList
+            title={title}
+            description={description}
+            mediaItems={mediaItems}
+            CTALink="/blog/"
+            external
+            CTAText="Visit our blog"
+          />
+        </Grid>
       </Padding>
-    </Grid>
+    </BackgroundColorWrapper>
   )
 }
 
