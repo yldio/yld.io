@@ -49,6 +49,28 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.md', '.mdx'],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-smartypants'
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         modalProps: {

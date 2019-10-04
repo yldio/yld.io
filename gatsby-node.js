@@ -67,6 +67,14 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulBlogPost {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -80,6 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
   const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const policyTemplate = path.resolve(`./src/templates/policy.js`)
   const careerDisciplineTemplate = path.resolve(
     `./src/templates/career-discipline.js`
@@ -171,6 +180,53 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         })
       }
+    })
+  }
+
+  _.each(result.data.allContentfulBlogPost.edges, post => {
+    if (post.node.slug) {
+      createPage({
+        path: `blog/${post.node.slug}`,
+        component: blogPostTemplate,
+        context: {
+          id: post.node.id
+        }
+      })
+    }
+  })
+}
+
+exports.onCreateNode = async ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent)
+
+    let slug, title, date
+    if (parent.internal.type === 'contentfulBlogPostMarkdownTextNode') {
+      const contentfulNode = getNode(parent.parent)
+
+      slug = contentfulNode.slug
+      title = contentfulNode.title
+      date = contentfulNode.createdAt
+    }
+
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug
+    })
+
+    createNodeField({
+      node,
+      name: `title`,
+      value: title
+    })
+
+    createNodeField({
+      node,
+      name: `date`,
+      value: date
     })
   }
 }

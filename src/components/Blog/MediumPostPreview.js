@@ -111,7 +111,7 @@ const TitleAndAuthor = ({
 }) => {
   return (
     <TitleAndAuthorWrapper show={show} hide={hide}>
-      <Anchor href={postUrl}>
+      <Anchor to={postUrl}>
         <CardTitle>{title}</CardTitle>
       </Anchor>
       <AuthorAndDate>
@@ -149,7 +149,7 @@ const MediumPostPreview = ({
   const formattedDate = format(firstPublishedAt, 'MMMM DD')
 
   const imageUrl = `https://cdn-images-1.medium.com/max/1000/${imageId}`
-  const postUrl = `https://medium.com/yld-blog/${slug}`
+  const postUrl = `/blog/${slug}`
   const authorUrl = `https://medium.com/@${authorId}`
 
   const image = {
@@ -174,7 +174,7 @@ const MediumPostPreview = ({
           formattedDate={formattedDate}
           postUrl={postUrl}
         />
-        <Anchor href={postUrl}>
+        <Anchor to={postUrl}>
           <ImageWrapper>
             <RatioContainer width={100} height={100}>
               <MediumPostImage title={title} image={image} />
