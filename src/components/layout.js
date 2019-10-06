@@ -16,7 +16,14 @@ import Footer from './Footer'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
-const shortCodes = { Youtube, Gist }
+const FigureImage = ({ src, caption }) => (
+  <figure>
+    <img src={src} alt={caption} />
+    {caption && <figcaption>{caption}</figcaption>}
+  </figure>
+)
+
+const shortCodes = { Youtube, Gist, FigureImage }
 const { GATSBY_ENVIRONMENT } = process.env
 const googleJson = JSON.stringify(google)
 
