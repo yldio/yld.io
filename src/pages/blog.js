@@ -4,6 +4,8 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+
 import Layout from '../components/layout'
 import MediumPostPreview from '../components/Blog/MediumPostPreview'
 import Head from '../components/Common/Head'
@@ -61,12 +63,28 @@ const DescriptionMediumLink = styled(Anchor)`
   text-decoration: underline;
 `
 
-const BlogPage = ({ data: { allContentfulBlogPost: mediumContent } }) => {
+const BlogPage = ({
+  data: {
+    allContentfulBlogPost: mediumContent,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  },
+  location
+}) => {
   const mediumPosts = mediumContent.edges || []
   const mediumLink = 'https://medium.com/yld-blog'
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'Blog',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout>
+    <Layout breadcrumbData={breadcrumbData}>
       <Head
         page={{
           title: blogPageMeta.title,
@@ -126,6 +144,11 @@ const BlogPage = ({ data: { allContentfulBlogPost: mediumContent } }) => {
 
 export const query = graphql`
   {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     allContentfulBlogPost(
       limit: 6
       sort: { fields: [firstPublishedAt], order: DESC }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Padding } from 'styled-components-spacing'
 import breakpoint from 'styled-components-breakpoint'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
 import Layout from '../components/layout'
 import { Grid, Row, Col } from '../components/grid'
@@ -46,12 +47,15 @@ const IntroDescriptionCol = styled(Col)`
   `}
 `
 
-const OurWork = ({ data }) => {
+const OurWork = ({ data, location }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
     allContentfulNonTemplatedCaseStudy,
-    contentfulOurWork: { caseStudies }
+    contentfulOurWork: { caseStudies },
+    site: {
+      siteMetadata: { siteUrl }
+    }
   } = data
 
   const allCaseStudies = [
@@ -77,8 +81,19 @@ const OurWork = ({ data }) => {
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'Our work',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout footerContactUsId={data.contentfulOurWork.footerContactUs.id}>
+    <Layout
+      footerContactUsId={data.contentfulOurWork.footerContactUs.id}
+      breadcrumbData={breadcrumbData}
+    >
       <Head
         page={{
           ...page,
@@ -147,6 +162,11 @@ const OurWorkPage = props => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         contentfulOurWork {
           caseStudies {
             ... on ContentfulNonTemplatedCaseStudy {
