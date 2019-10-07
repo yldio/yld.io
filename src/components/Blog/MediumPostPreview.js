@@ -213,11 +213,7 @@ const MediumPostPreview = ({
             </a>
           </StyledBodyPrimary>
         </Col>
-        <ReadMoreLink
-          external
-          href={postUrl}
-          title={`Read more about ${title}`}
-        >
+        <ReadMoreLink to={postUrl} title={`Read more about ${title}`}>
           Read more
         </ReadMoreLink>
       </InfoCol>
