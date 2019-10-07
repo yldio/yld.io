@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import scrollToComponent from 'react-scroll-to-component'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Layout from '../components/layout'
 import ViewPositions from '../components/JoinUs/ViewOpenPositions'
 import Learning from '../components/JoinUs/Learning'
@@ -26,10 +27,28 @@ class JoinUs extends React.Component {
 
   render() {
     const {
-      data: { contentfulJoinUsPage: content }
+      data: {
+        contentfulJoinUsPage: content,
+        site: {
+          siteMetadata: { siteUrl }
+        }
+      },
+      location
     } = this.props
+
+    const breadcrumbData = generateBreadcrumbData(siteUrl, [
+      {
+        name: 'Join us',
+        pathname: location.pathname,
+        position: 2
+      }
+    ])
+
     return (
-      <Layout footerContactUsId={content.footerContactUs.id}>
+      <Layout
+        footerContactUsId={content.footerContactUs.id}
+        breadcrumbData={breadcrumbData}
+      >
         <Head seoMetaData={content.seoMetaData} />
         <ViewPositions
           text={content.introductionText.introductionText}
@@ -86,6 +105,11 @@ const JoinUsPage = props => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         contentfulJoinUsPage {
           title
           seoTitle

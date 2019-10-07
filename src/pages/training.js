@@ -7,16 +7,37 @@ import Approach from '../components/Training/Approach'
 import Courses from '../components/Training/Courses'
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
 import Head from '../components/Common/Head'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
-const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
+const TrainingPage = ({
+  data: {
+    contentfulTrainingPage: content,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  },
+  location
+}) => {
   const trainingApproachesContent = [
     content.trainingApproachContent1.trainingApproachContent1,
     content.trainingApproachContent2.trainingApproachContent2,
     content.trainingApproachContent3.trainingApproachContent3
   ]
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'Training',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout slug="training" footerContactUsId={content.footerContactUs.id}>
+    <Layout
+      slug="training"
+      footerContactUsId={content.footerContactUs.id}
+      breadcrumbData={breadcrumbData}
+    >
       <Head seoMetaData={content.seoMetaData} />
       <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
       <Statement richText={content.seoText.content[0].content} />
@@ -37,6 +58,11 @@ const TrainingPage = ({ data: { contentfulTrainingPage: content } }) => {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulTrainingPage {
       seoMetaData {
         ...SEOMetaFields

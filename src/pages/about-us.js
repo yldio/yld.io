@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import AboutUsHero from '../components/AboutUs/AboutUsHero'
@@ -9,7 +10,15 @@ import Subsidiaries from '../components/AboutUs/Subsidiaries'
 import ClientTestimonial from '../components/AboutUs/ClientTestimonial'
 import Partners from '../components/AboutUs/Partners'
 
-const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
+const AboutUs = ({
+  data: {
+    contentfulAboutUsPage: content,
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  },
+  location
+}) => {
   const {
     statementText,
     supportingStatement1Icon,
@@ -44,8 +53,16 @@ const AboutUs = ({ data: { contentfulAboutUsPage: content } }) => {
     }
   ]
 
+  const breadcrumbData = generateBreadcrumbData(siteUrl, [
+    {
+      name: 'About us',
+      pathname: location.pathname,
+      position: 2
+    }
+  ])
+
   return (
-    <Layout>
+    <Layout breadcrumbData={breadcrumbData}>
       <Head seoMetaData={seoMetaData} />
       <AboutUsHero
         statementText={statementText}
@@ -66,6 +83,11 @@ const AboutUsPage = props => (
   <StaticQuery
     query={graphql`
       query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
         contentfulAboutUsPage {
           title
           seoTitle
