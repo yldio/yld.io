@@ -357,6 +357,7 @@ export const pageQuery = graphql`
           content
         }
       }
+      eventsBackgroundColor
       eventIcon {
         id
         title
@@ -365,6 +366,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      blogBackgroundColor
       logoColour
       contactText
       footerContactUs {

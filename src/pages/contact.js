@@ -205,7 +205,7 @@ const ContactUs = ({
                         }) => (
                           <LocationCol
                             key={generate()}
-                            width={[1, 1, 1, 1, 1, 1, 1 / 2, 1 / 2]}
+                            width={[1, 1, 1, 1, 1 / 2, 1 / 2]}
                           >
                             <LocationWrapper>
                               <Image image={markerIcon} />

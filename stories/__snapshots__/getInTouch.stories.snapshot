@@ -561,15 +561,6 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-weight: 700;
 }
 
-.c21 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #757575;
-}
-
 .c14 {
   width: 3rem;
   height: 3rem;
@@ -652,11 +643,6 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   align-self: flex-end;
 }
 
-.c20 > p,
-.c20 > a {
-  display: inline;
-}
-
 .c20 a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -681,6 +667,15 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.c21 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #757575;
 }
 
 @media (min-width:29.4375em) {
@@ -1028,6 +1023,13 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   }
 }
 
+@media (min-width:56.3125em) {
+  .c20 > p,
+  .c20 > a {
+    display: inline;
+  }
+}
+
 @media (min-width:0em) and (max-width:34.5em) {
   .c9 {
     width: 100%;
@@ -1038,6 +1040,12 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 @media (min-width:56.3125em) {
   .c9 {
     border-right: 1px solid #e6e6e6;
+  }
+}
+
+@media (min-width:0em) and (max-width:56.25em) {
+  .c21 {
+    display: block;
   }
 }
 

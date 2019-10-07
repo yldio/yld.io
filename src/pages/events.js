@@ -57,6 +57,14 @@ const createEventStructuredData = (events = []) =>
     ...(node.type !== 'Meetup' && { description: node.blurb.blurb })
   }))
 
+const getInTouchData = {
+  title: 'Interested in hosting or talking at our meetups?',
+  copyHeading: 'Bring your organisation closer to our community',
+  copy:
+    'Host or sponsor one of our events. Have an idea of your own? Let us know!',
+  ctaText: 'Get in touch'
+}
+
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(40)};
 `
@@ -103,20 +111,12 @@ const StyledSectionTitleCol = styled(Col)`
 
 const StyledPosterImageCol = styled(Col)`
   overflow: visible;
-  ${breakpoint('smallPhone', 'smallTablet')`
-    height: 351px;
+  ${breakpoint('smallPhone', 'largePhone')`
+    height: ${remcalc(240)};
   `}
 
   height: 100%;
 `
-
-const getInTouchData = {
-  title: 'Interested in hosting or talking at our meetups?',
-  copyHeading: 'Bring your organisation closer to our community',
-  copy:
-    'Host or sponsor one of our events. Have an idea of your own? Let us know!',
-  ctaText: 'Get in touch'
-}
 
 const HrWrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
