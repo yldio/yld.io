@@ -1,27 +1,25 @@
-import React, { Fragment } from 'react';
-import { graphql } from 'gatsby';
-import remcalc from 'remcalc';
-import breakpoint from 'styled-components-breakpoint';
-import styled from 'styled-components';
+import React, { Fragment } from 'react'
+import { graphql } from 'gatsby'
+import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components'
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
-import Layout from '../components/layout';
-import MediumPostPreview from '../components/Blog/MediumPostPreview';
-import Head from '../components/Common/Head';
-import StyledLink from '../components/Common/StyledLink';
-import { Grid, Row, Col } from '../components/grid';
-import { SectionTitle, DisplayTitle } from '../components/Typography';
-import Hr from '../components/Common/Hr';
-import Anchor from '../components/Common/Anchor';
-import GreyBackground from '../components/Common/GreyBackground';
+import Layout from '../components/layout'
+import MediumPostPreview from '../components/Blog/MediumPostPreview'
+import Head from '../components/Common/Head'
+import { Grid, Row, Col } from '../components/grid'
+import { SectionTitle, DisplayTitle } from '../components/Typography'
+import Hr from '../components/Common/Hr'
+import GreyBackground from '../components/Common/GreyBackground'
 
 const blogPageMeta = {
   title: 'Blog',
   description:
     'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our ',
-  seoTitle: 'A collection of medium blog posts created by YLD',
-};
+  seoTitle: 'A collection of medium blog posts created by YLD'
+}
 
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
@@ -31,7 +29,7 @@ const FixedWidthDisplayTitle = styled(DisplayTitle)`
   ${breakpoint('tablet')`
     max-width: ${remcalc(785)};
   `}
-`;
+`
 
 const PageDescriptionCol = styled(Col)`
   ${breakpoint('smallPhone')`
@@ -43,7 +41,7 @@ const PageDescriptionCol = styled(Col)`
     padding-top: ${({ theme }) => theme.space[6]}
     padding-bottom: ${({ theme }) => theme.space[7]}
   `}
-`;
+`
 
 const DisplayTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -51,24 +49,24 @@ const DisplayTitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[5]}
   `}
-`;
+`
 
 const BlogPage = ({
   data: {
     allContentfulBlogPost: { edges: blogPosts },
     site: {
-      siteMetadata: { siteUrl },
-    },
+      siteMetadata: { siteUrl }
+    }
   },
-  location,
+  location
 }) => {
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Blog',
       pathname: location.pathname,
-      position: 2,
-    },
-  ]);
+      position: 2
+    }
+  ])
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -76,7 +74,7 @@ const BlogPage = ({
         page={{
           title: blogPageMeta.title,
           seoTitle: blogPageMeta.seoTitle,
-          seoMetaDescription: blogPageMeta.description,
+          seoMetaDescription: blogPageMeta.description
         }}
       />
       <Grid>
@@ -99,20 +97,20 @@ const BlogPage = ({
           {blogPosts &&
             blogPosts.length > 0 &&
             blogPosts.map((blogPost, idx) => {
-              const isLastPost = idx === blogPosts.length - 1;
+              const isLastPost = idx === blogPosts.length - 1
 
               return (
                 <Fragment key={blogPost.node.id}>
                   <MediumPostPreview {...blogPost.node} />
                   {!isLastPost && <Hr />}
                 </Fragment>
-              );
+              )
             })}
         </Grid>
       </GreyBackground>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   {
@@ -141,6 +139,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default BlogPage;
+export default BlogPage
