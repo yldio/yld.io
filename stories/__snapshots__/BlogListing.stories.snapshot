@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Blog Listing Blog Listing 1`] = `
-.c1 {
+.c0 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
@@ -10,7 +10,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
   padding-top: 2.25rem;
 }
 
-.c0 {
+.c1 {
   max-width: calc(100% - 48px);
   position: relative;
   margin-left: auto;
@@ -193,66 +193,66 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 }
 
 @media (min-width:74.8125em) {
-  .c1 {
+  .c0 {
     padding-top: 6.75rem;
     padding-bottom: 6.75rem;
   }
 }
 
 @media (min-width:29.4375em) {
-  .c0 {
+  .c1 {
     max-width: calc(100% - 72px);
   }
 }
 
 @media (min-width:34.5625em) {
-  .c0 {
+  .c1 {
     max-width: 480px;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c0 {
+  .c1 {
     max-width: none;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c0 {
+  .c1 {
     max-width: 1100px;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c0 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c0 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c0 {
+  .c1 {
     padding-left: 2.625rem;
     padding-right: 2.625rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c0 {
+  .c1 {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c0 {
+  .c1 {
     padding-left: 0;
     padding-right: 0;
   }

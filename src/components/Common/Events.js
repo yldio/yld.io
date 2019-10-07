@@ -8,6 +8,7 @@ import { Row, Col, Grid } from '../grid'
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
 import ExternalAnchor from './ExternalAnchor'
 import Hr from './Hr'
+import BackgroundColorWrapper from './BackgroundColorWrapper'
 
 const noEventsMessage = title =>
   `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`
@@ -37,58 +38,62 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   padding-bottom: ${({ theme }) => theme.space[4]};
 `
 
-const EventSection = ({ events, title, description }) => {
+const EventSection = ({ events, title, description, bgColor }) => {
   const upcomingEvents = events.length ? getAllUpcomingEvents(events) : []
   const hasEvents = !!upcomingEvents.length
 
   return (
-    <Grid>
-      <Wrapper>
-        <Row>
-          <Col width={[1]}>
-            <ImageWrapper>
-              <img src={specialityEventIcon} alt="events icon" />
-            </ImageWrapper>
-          </Col>
-          <Col width={[1, 1, 1, 1, 7 / 12]}>
-            <Row>
-              <Col width={[1]}>
-                <SectionTitle>{`Upcoming ${
-                  title ? title.trim() : ''
-                } events`}</SectionTitle>
-              </Col>
-
-              {description ? (
-                <Col width={[1, 1, 1, 1, 10 / 12, 7 / 12]}>
-                  <StyledBodyPrimary>{description}</StyledBodyPrimary>
+    <BackgroundColorWrapper bgColor={bgColor}>
+      <Grid>
+        <Wrapper>
+          <Row>
+            <Col width={[1]}>
+              <ImageWrapper>
+                <img src={specialityEventIcon} alt="events icon" />
+              </ImageWrapper>
+            </Col>
+            <Col width={[1, 1, 1, 1, 7 / 12]}>
+              <Row>
+                <Col width={[1]}>
+                  <SectionTitle>{`Upcoming ${
+                    title ? title.trim() : ''
+                  } events`}</SectionTitle>
                 </Col>
-              ) : null}
-            </Row>
-          </Col>
-          <Col width={[1, 1, 1, 1, 5 / 12]}>
-            {hasEvents ? (
-              <ul>
-                {upcomingEvents.map(({ id, eventTitle, date, linkToEvent }) => (
-                  <li key={id}>
-                    <Subtitle noPaddingBottom>
-                      <ExternalAnchor href={linkToEvent} title={eventTitle}>
-                        {eventTitle}
-                      </ExternalAnchor>
-                    </Subtitle>
-                    <BodyPrimary noPaddingTop>
-                      {format(date, 'MMMM DD[,] dddd')}
-                    </BodyPrimary>
-                    <Hr />
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              noEventsMessage(title)
-            )}
-          </Col>
-        </Row>
-      </Wrapper>
-    </Grid>
+
+                {description ? (
+                  <Col width={[1, 1, 1, 1, 10 / 12, 7 / 12]}>
+                    <StyledBodyPrimary>{description}</StyledBodyPrimary>
+                  </Col>
+                ) : null}
+              </Row>
+            </Col>
+            <Col width={[1, 1, 1, 1, 5 / 12]}>
+              {hasEvents ? (
+                <ul>
+                  {upcomingEvents.map(
+                    ({ id, eventTitle, date, linkToEvent }) => (
+                      <li key={id}>
+                        <Subtitle noPaddingBottom>
+                          <ExternalAnchor href={linkToEvent} title={eventTitle}>
+                            {eventTitle}
+                          </ExternalAnchor>
+                        </Subtitle>
+                        <BodyPrimary noPaddingTop>
+                          {format(date, 'MMMM DD[,] dddd')}
+                        </BodyPrimary>
+                        <Hr />
+                      </li>
+                    )
+                  )}
+                </ul>
+              ) : (
+                noEventsMessage(title)
+              )}
+            </Col>
+          </Row>
+        </Wrapper>
+      </Grid>
+    </BackgroundColorWrapper>
   )
 }
 export default EventSection
