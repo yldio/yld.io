@@ -1,39 +1,24 @@
 /* eslint-disable no-console */
 const URLSearchParams = require('url').URLSearchParams
 const Got = require('got')
+const Every = require('lodash.every')
 const { createClient } = require('contentful-management')
 const Find = require('lodash.find')
 const { default: Map } = require('apr-map')
 const isEqual = require('lodash.isequal')
 const { transformGroups, generateContentfulEvent } = require('./utils/meetup')
 
-const {
-  MEETUP_API_SECRET,
-  MEETUP_API_KEY,
-  MEETUP_EMAIL,
-  MEETUP_PASS,
-  CONTENTFUL_SPACE,
-  CMS_CRUD,
-  LAMBDA_ENV = 'development'
-} = process.env
-
-const isProd = LAMBDA_ENV === 'production'
-
-const client = createClient({
-  accessToken: CMS_CRUD
-})
-
+// Creates a util to make authenticated requests for all meetup requests
 const createAuthenticatedRequest = access_token => (url, options = {}) =>
   Got(url, {
     ...options,
     headers: { ...options.headers, Authorization: `Bearer ${access_token}` }
   })
 
-const redirect = `${
-  isProd ? 'https://yld.io/.netlify/functions' : 'http://localhost:9000'
-}/meetup-callback`
-
-const getAuthToken = async code => {
+const getAuthToken = async (
+  code,
+  { MEETUP_API_KEY, MEETUP_API_SECRET, MEETUP_EMAIL, MEETUP_PASS, redirect }
+) => {
   let token
   try {
     /**
@@ -49,6 +34,7 @@ const getAuthToken = async code => {
       ['grant_type', 'anonymous_code']
     ])
 
+    // Get the accessToken from access endpoint
     const { body: accessBody } = await Got.post(
       `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`
     )
@@ -60,6 +46,8 @@ const getAuthToken = async code => {
       ['password', MEETUP_PASS]
     ])
 
+    // Use the access_token and meetup username/password to get
+    // an oauth token for our session
     const { body } = await Got.post(
       `https://api.meetup.com/sessions?${sessionSearchParams.toString()}`,
       {
@@ -76,10 +64,47 @@ const getAuthToken = async code => {
     throw new Error(error)
   }
 
+  // return our token
   return token
 }
 
 exports.handler = async evt => {
+  const {
+    MEETUP_API_SECRET,
+    MEETUP_API_KEY,
+    MEETUP_EMAIL,
+    MEETUP_PASS,
+    CONTENTFUL_SPACE,
+    CMS_CRUD,
+    LAMBDA_ENV = 'development'
+  } = process.env
+
+  if (
+    !Every(
+      {
+        MEETUP_API_SECRET,
+        MEETUP_API_KEY,
+        MEETUP_EMAIL,
+        MEETUP_PASS,
+        CONTENTFUL_SPACE,
+        CMS_CRUD,
+        LAMBDA_ENV
+      },
+      Boolean
+    )
+  ) {
+    throw new Error('Env variables missing, check set up')
+  }
+
+  const isProd = LAMBDA_ENV === 'production'
+  const client = createClient({
+    accessToken: CMS_CRUD
+  })
+
+  const redirect = `${
+    isProd ? 'https://yld.io/.netlify/functions' : 'http://localhost:9000'
+  }/meetup-callback`
+
   const { queryStringParameters } = evt
 
   if (!queryStringParameters.code) {
@@ -89,7 +114,13 @@ exports.handler = async evt => {
     }
   }
 
-  const sessionToken = await getAuthToken(queryStringParameters.code)
+  const sessionToken = await getAuthToken(queryStringParameters.code, {
+    MEETUP_API_SECRET,
+    MEETUP_API_KEY,
+    MEETUP_EMAIL,
+    MEETUP_PASS,
+    redirect
+  })
 
   const AuthenticatedRequest = createAuthenticatedRequest(sessionToken)
 
@@ -116,7 +147,7 @@ exports.handler = async evt => {
     []
   )
 
-  const { items: events } = await environment.getEntries({
+  const { items: contentfulEvents } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven',
     'fields.type': 'Meetup'
@@ -130,10 +161,14 @@ exports.handler = async evt => {
   }
 
   await Map(parsedEvents, async event => {
-    const contentfulEvent = Find(events, ['fields.id.en-US', event.id])
-    const generatedEvent = generateContentfulEvent(event)
-    console.log(JSON.stringify({ contentfulEvent, generatedEvent }, null, 2))
+    const contentfulEvent = Find(contentfulEvents, [
+      'fields.id.en-US',
+      event.id
+    ])
 
+    const generatedEvent = generateContentfulEvent(event)
+
+    // If contentful already has this event then we look for differences
     if (generatedEvent && contentfulEvent) {
       const { fields: generatedEventFields } = generatedEvent
       const { fields: contentfulEventFields } = contentfulEvent
@@ -166,8 +201,9 @@ exports.handler = async evt => {
       if (isProd) {
         log.updatedEvents.push({
           name: generatedEvent.fields.eventTitle['en-US'],
-          values: [diffVals]
+          values: diffVals
         })
+
         const id = await contentfulEvent.update()
         const updatedEntry = await environment.getEntry(id.sys.id)
 
@@ -177,8 +213,8 @@ exports.handler = async evt => {
       }
     }
 
-    // create
-    if (isProd) {
+    // If there is no matching event in contentful then we need to create a new one
+    if (isProd && generatedEvent && !contentfulEvent) {
       log.newEvents.push(generatedEvent.fields.eventTitle['en-US'])
       const id = await environment.createEntry('meetupEven', generatedEvent)
       const newEntry = await environment.getEntry(id.sys.id)
