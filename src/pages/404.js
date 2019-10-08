@@ -60,7 +60,7 @@ const NotFoundPage = () => (
         ctaCopy
       } = content
       return (
-        <Layout footerContactUsId={id}>
+        <Layout is404={true} footerContactUsId={id}>
           <Helmet
             title={`${site.siteMetadata.siteTitle} - Not Found`}
             meta={[
