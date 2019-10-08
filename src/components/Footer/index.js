@@ -89,12 +89,11 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
 
       return (
         <>
-          {!!footerContactUsId &&
-            !is404(
-              <Wrapper bgColor={footerContactUsData.backgroundColor}>
-                <GetInTouch {...footerContactUsData} />
-              </Wrapper>
-            )}
+          {!!footerContactUsId && !is404 && (
+            <Wrapper bgColor={footerContactUsData.backgroundColor}>
+              <GetInTouch {...footerContactUsData} />
+            </Wrapper>
+          )}
           <GreyFooter>
             {displayFooterOffices && (
               <Padding top={{ smallPhone: 3, tablet: 4 }}>
