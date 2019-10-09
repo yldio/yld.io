@@ -61,12 +61,12 @@ const IntroImageWrapper = styled.div`
 
   ${breakpoint('smallPhone', 'smallTablet')`
     width: 135%;
-    margin-top: -24%;
+    margin-top: -14%;
   `}
 
   ${breakpoint('smallTablet')`
     bottom: 0;
-    left: 50%;
+    left: 46.7%;
     right: 0;
     position: absolute;
     width: 1000px;

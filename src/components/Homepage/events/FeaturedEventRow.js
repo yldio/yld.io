@@ -11,6 +11,10 @@ import { SectionTitle, BodyPrimary, DisplayTitle } from '../../Typography'
 const BackgroundColorGrid = styled(Grid)`
   background-color: ${({ bgColor }) => `#${bgColor}`};
   padding: 0;
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    max-width: 100%;
+  `}
 `
 
 const InfoInner = styled.section`
@@ -100,7 +104,7 @@ const FeaturedEvent = ({ event }) => (
     <IntroRow>
       <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12, 5 / 12]}>
         <SpacedSectionTitle>Events we run</SpacedSectionTitle>
-        <BodyPrimary>
+        <BodyPrimary lightMuted>
           We pride ourselves on offering informative, inclusive and fun
           get-togethers for our ever growing tech community.
         </BodyPrimary>
