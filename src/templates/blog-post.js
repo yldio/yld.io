@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Row, Col } from '../components/grid'
+import { H1 } from '../components/Blog/Typography'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 
@@ -13,9 +14,9 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location}>
       <Grid>
-        <Row>
-          <Col>
-            <h1>{post.title}</h1>
+        <Row style={{ justifyContent: 'center' }}>
+          <Col width={[1, 1, 8 / 12]}>
+            <H1>{post.title}</H1>
             <MDXRenderer scope={__mdxScope}>
               {post.markdown.childMdx.body}
             </MDXRenderer>

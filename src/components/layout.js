@@ -1,5 +1,15 @@
 import React, { Fragment, Component } from 'react'
 import { MDXProvider } from '@mdx-js/react'
+import {
+  H1,
+  H2,
+  List,
+  ListItem,
+  Body,
+  Code,
+  A,
+  Blockquote
+} from './Blog/Typography'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
@@ -23,6 +33,18 @@ const FigureImage = ({ src, caption }) => (
   </figure>
 )
 
+const components = {
+  h1: H1,
+  h2: H2,
+  h3: H2,
+  h4: H2,
+  ul: List,
+  li: ListItem,
+  p: Body,
+  code: Code,
+  anchor: A,
+  blockquote: Blockquote
+}
 const shortCodes = { Youtube, Gist, FigureImage }
 const { GATSBY_ENVIRONMENT } = process.env
 const googleJson = JSON.stringify(google)
@@ -126,7 +148,7 @@ class Layout extends Component {
 
           return (
             <ThemeProvider theme={theme}>
-              <MDXProvider components={shortCodes}>
+              <MDXProvider components={{ ...components, ...shortCodes }}>
                 <Fragment>
                   <Helmet
                     title={`${data.site.siteMetadata.siteTitle}`}
