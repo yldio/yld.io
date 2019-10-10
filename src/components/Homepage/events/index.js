@@ -93,7 +93,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
             <EventCard>
               <EventTypeCopyWrapper>
                 <Subtitle noPadding>{title}</Subtitle>
-                <BodyPrimary muted noPaddingTop>
+                <BodyPrimary lightMuted noPaddingTop>
                   {copy}
                 </BodyPrimary>
               </EventTypeCopyWrapper>
