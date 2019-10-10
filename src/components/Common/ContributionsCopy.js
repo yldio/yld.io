@@ -1,5 +1,10 @@
 import React, { Fragment } from 'react'
 import { SectionTitle } from '../Typography'
+import styled from 'styled-components'
+
+const StyledSpan = styled.span`
+  font-family: 'PT Mono]';
+`
 
 const ContributionsCopy = props => {
   const {
@@ -14,8 +19,8 @@ const ContributionsCopy = props => {
     <Fragment>
       <SectionTitle reverse>
         {first} <br />
-        {contributions} {second} <br />
-        {projects} {third}
+        <StyledSpan>{contributions}</StyledSpan> {second} <br />
+        <StyledSpan>{projects}</StyledSpan> {third}
       </SectionTitle>
     </Fragment>
   )

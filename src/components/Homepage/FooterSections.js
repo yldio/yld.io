@@ -45,12 +45,6 @@ const StyledCol = styled(Col)`
   `}
 `
 
-const StyledCardTitle = styled(CardTitle)`
-  ${breakpoint('tablet')`
-    font-size: ${({ theme }) => theme.spacing[32]};
-  `}
-`
-
 const CustomLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
   margin-bottom: ${({ theme }) => theme.space[2]};
@@ -79,7 +73,7 @@ const FooterSections = ({
         <FooterCTAInner>
           <Content>
             {footerSection1Icon && <Image image={footerSection1Icon} />}
-            <StyledCardTitle>{footerSection1Title}</StyledCardTitle>
+            <CardTitle>{footerSection1Title}</CardTitle>
             <BodyPrimary>{footerSection1Copy}</BodyPrimary>
           </Content>
           <CustomLink to={footerSection1CtaLink}>
@@ -91,7 +85,7 @@ const FooterSections = ({
         <FooterCTAInner>
           <Content>
             {footerSection2Icon && <Image image={footerSection2Icon} />}
-            <StyledCardTitle>{footerSection2Title}</StyledCardTitle>
+            <CardTitle>{footerSection2Title}</CardTitle>
             <BodyPrimary>{footerSection2Copy}</BodyPrimary>
           </Content>
           <CustomLink to={footerSection2CtaLink}>

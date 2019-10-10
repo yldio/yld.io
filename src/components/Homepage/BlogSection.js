@@ -42,6 +42,10 @@ const NonMobileBlogRow = styled(Row)`
 const TitleCol = styled(Col)`
   padding-bottom: 0;
 
+  ${breakpoint('tablet')`
+    padding-bottom: ${({ theme }) => theme.space[3]};
+   `}
+
   ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[4]};
    `}

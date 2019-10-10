@@ -62,13 +62,6 @@ const SpecialityList = styled(SeoLinks)`
   max-height: 60px;
   text-align: justify;
   position: relative;
-
-  // :after {
-  //   content: "...";
-  //   position: absolute;
-  //   right: 0px;
-  //   bottom: 0px;
-  // }
 `
 
 const Services = ({ statement, services }) => (

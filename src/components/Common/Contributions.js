@@ -94,8 +94,8 @@ const StaticRow = styled(Row)`
 
 const GraphicCol = styled(Col)`
   position: static;
-
   ${breakpoint('smallPhone', 'smallTablet')`
+    margin-top: ${({ theme }) => theme.space[3]};
     min-height: 220px;
     background-image: url(${({ image }) => image.file.url});
     background-repeat: no-repeat;

@@ -53,7 +53,7 @@ const DesktopOnlyRow = styled(Row)`
 `
 
 const CardHeader = styled.header`
-  padding: ${({ theme }) => `${theme.spacing[1.5]} ${theme.spacing[2]}`};
+  padding: ${({ theme }) => `${theme.space[4]} ${theme.space[3]}`};
   max-width: ${remcalc(475)};
   box-sizing: border-box;
   background-color: #${({ backgroundColor }) => backgroundColor};
@@ -63,7 +63,8 @@ const CardHeader = styled.header`
   }
 
   ${breakpoint('tablet')`
-    padding: ${({ theme }) => theme.spacing[2]};
+    padding: ${({ theme }) => theme.spacing[2]} ${({ theme }) =>
+    theme.spacing[3]};
   `}
 
   ${breakpoint('desktop')`
@@ -84,6 +85,18 @@ const Card = styled(RatioContainer)`
   `}
 `
 
+const AnimatedLink = styled(Link)`
+  > div {
+    transition: transform ${props => props.theme.animations.normal} ease;
+  }
+
+  &:focus,
+  &:hover {
+    > div {
+      transform: scale(0.97);
+    }
+  }
+`
 const CaseStudy = ({ caseStudy }) => {
   const {
     title,
@@ -95,7 +108,7 @@ const CaseStudy = ({ caseStudy }) => {
   } = caseStudy
 
   return (
-    <Link to={`/case-study/${slug}`} title={title}>
+    <AnimatedLink to={`/case-study/${slug}`} title={title}>
       <Card
         width={100}
         height={130}
@@ -113,7 +126,7 @@ const CaseStudy = ({ caseStudy }) => {
           </section>
         </CardHeader>
       </Card>
-    </Link>
+    </AnimatedLink>
   )
 }
 
