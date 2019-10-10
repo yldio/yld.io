@@ -86,7 +86,7 @@ const IntroImageDesktop = styled.div`
   position: relative;
 
   ${breakpoint('smallTablet')`
-    left: calc(-50% + 72px);
+    left: calc(-50% + 127px);
     display: block;
   `}
 

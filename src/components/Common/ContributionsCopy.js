@@ -3,7 +3,7 @@ import { SectionTitle } from '../Typography'
 import styled from 'styled-components'
 
 const StyledSpan = styled.span`
-  font-family: 'PT Mono]';
+  font-family: 'PT Mono';
 `
 
 const ContributionsCopy = props => {

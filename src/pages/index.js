@@ -271,7 +271,7 @@ export const query = graphql`
         title
         copy
         image {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
