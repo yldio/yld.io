@@ -95,7 +95,7 @@ const IntroImageDesktop = styled.div`
   `}
 
   ${breakpoint('desktop')`
-    left: calc(-50% + 154px);
+    left: calc(-50% + 175px);
   `}
 
   > img {
