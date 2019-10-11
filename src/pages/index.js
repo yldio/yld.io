@@ -149,6 +149,7 @@ export const query = graphql`
           file {
             url
           }
+          title
           fluid(maxWidth: 60) {
             ...GatsbyContentfulFluid_withWebp
           }
@@ -262,6 +263,7 @@ export const query = graphql`
         file {
           url
         }
+        title
       }
       footerSection1Title
       footerSection1Copy
@@ -271,6 +273,7 @@ export const query = graphql`
         file {
           url
         }
+        title
       }
       footerSection2Title
       footerSection2Copy

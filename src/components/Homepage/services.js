@@ -81,7 +81,7 @@ const Services = ({ statement, services }) => (
               <ServiceCol width={[1, 1, 1, 1 / 2, 5 / 12]}>
                 {service.icon && (
                   <ImageWrapper>
-                    <Image image={service.icon} />
+                    <Image title={service.icon.title} image={service.icon} />
                   </ImageWrapper>
                 )}
                 <ServiceTitle noPadding>

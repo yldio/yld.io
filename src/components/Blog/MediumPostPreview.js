@@ -173,7 +173,7 @@ const MediumPostPreview = ({
         <Anchor href={postUrl}>
           <ImageWrapper>
             <RatioContainer width={100} height={100}>
-              <MediumPostImage image={image} />
+              <MediumPostImage title={title} image={image} />
             </RatioContainer>
             <StyledMediumIcon />
           </ImageWrapper>
