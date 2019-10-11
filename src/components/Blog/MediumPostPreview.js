@@ -95,17 +95,8 @@ const InfoCol = styled(Col)`
 const ReadMoreLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
 
-  ${({ context }) =>
-    context &&
-    breakpoint('smallPhone', 'smallTablet')`
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-
-    :after {
-      margin-top: 0;
-      height: 0.1rem;
-    }
+  ${breakpoint('smallPhone', 'smallTablet')`
+      display: none;
   `}
 `
 
@@ -208,13 +199,20 @@ const MediumPostPreview = ({
           <StyledBodyPrimary context={context}>{previewText}</StyledBodyPrimary>
           <StyledBodyPrimary show="smallTablet" context={context}>
             {previewTextSmallTablet}
+            <a
+              href={postUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'block', textDecoration: 'underline' }}
+            >
+              Read More...
+            </a>
           </StyledBodyPrimary>
         </Col>
         <ReadMoreLink
           external
           href={postUrl}
           title={`Read more about ${title}`}
-          context={context}
         >
           Read more
         </ReadMoreLink>
