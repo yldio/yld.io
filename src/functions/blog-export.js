@@ -1,5 +1,5 @@
 const Got = require('got')
-const Export = require('./blog')
+const Export = require('./blogMethods')
 const Auth = require('./utils/auth')
 
 exports.handler = async evt =>
@@ -14,5 +14,8 @@ exports.handler = async evt =>
       throw new Error(error)
     }
 
-    return result
+    return {
+      statusCode: 200,
+      body: result
+    }
   })

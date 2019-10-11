@@ -34,8 +34,11 @@ const getImageMeta = function(imgSrc) {
  *    <a href="{medium link}"/>
  * </iframe>
  *
- * here {medium link} is a url that redirects to a gist
+ * Here {medium link} is a url that redirects to a gist
  * which is then rendered to the page in their own way.
+ *
+ * Further along in the process we follow this link
+ * and get the final URL.
  *
  */
 turndownService.addRule('iframe', {

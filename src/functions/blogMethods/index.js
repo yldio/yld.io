@@ -20,6 +20,10 @@ const client = createClient({
 const environmentName = isProd ? 'master' : 'development'
 
 module.exports = async data => {
+  if (!data || !Array.isArray(data)) {
+    throw new Error('Missing data', data)
+  }
+
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment(environmentName)
 
