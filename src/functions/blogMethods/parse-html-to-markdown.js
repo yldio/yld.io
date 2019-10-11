@@ -44,9 +44,9 @@ const getImageMeta = function(imgSrc) {
 turndownService.addRule('iframe', {
   filter: 'iframe',
   replacement: content => {
-    const [, href] = content.match(/href="(.*)">/)
+    const [, href] = content.match(/href="(.*)" >/)
 
-    return ` <iframecontent:"${href}"> `
+    return `<iframecontent:"${href}"> `
   }
 })
 
@@ -116,7 +116,7 @@ turndownService.addRule('pre', {
   }
 })
 
-module.exports = async ({ html, ...rest }) => {
+module.exports = ({ html, ...rest }) => {
   images = []
 
   const md = turndownService.turndown(html, {
