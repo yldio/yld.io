@@ -185,7 +185,7 @@ const OurWork = ({ data }) => {
     <>
       <Row>
         <TitleCol width={1}>
-          <SectionTitle as="h1">Our Work</SectionTitle>
+          <SectionTitle as="h2">Our Work</SectionTitle>
         </TitleCol>
       </Row>
       <MobileOnlyRow>
