@@ -330,5 +330,46 @@ exports[`Storyshots Spaces Spaces 1`] = `
       }
     />
   </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "margin": 10,
+        "position": "relative",
+      }
+    }
+  >
+    <p
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 12,
+          "left": "50%",
+          "opacity": 0.5,
+          "position": "absolute",
+          "textAlign": "center",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+          "width": "100%",
+        }
+      }
+    >
+      Level 
+      9
+       - 
+      176
+      px
+    </p>
+    <div
+      style={
+        Object {
+          "background": "#FFE5E5",
+          "height": "11rem",
+          "width": 160,
+        }
+      }
+    />
+  </div>
 </div>
 `;
