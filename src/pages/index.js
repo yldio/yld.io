@@ -39,6 +39,15 @@ const getHomepageConferences = (events = []) =>
       date: getFeaturedEventDate(n)
     }))
 
+/**
+ * Because this is the home page and needs to be a
+ * great looking page, a lot of work on diverts
+ * from the normal practises that  are used throughout
+ * the rest of the site.
+ *
+ * Specifically the hero section, a lot of this
+ * has custom CSS to get it the way that we want it.
+ */
 const IndexPage = ({ data, location }) => {
   const {
     contentfulHomepage: content,
