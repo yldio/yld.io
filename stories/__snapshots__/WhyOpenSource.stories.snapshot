@@ -421,7 +421,7 @@ Array [
   padding-right: 0;
 }
 
-.c6 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -429,7 +429,7 @@ Array [
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 50%;
+  width: 100%;
   position: initial;
   top: 0;
   left: 0;
@@ -441,7 +441,7 @@ Array [
   display: block;
 }
 
-.c3 {
+.c9 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -449,7 +449,7 @@ Array [
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: 50%;
   position: initial;
   top: 0;
   left: 0;
@@ -475,13 +475,41 @@ Array [
   display: flex;
 }
 
-.c7 {
+.c10 {
   width: 100%;
   height: auto;
 }
 
+.c6 {
+  padding-top: 0.75rem;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  font-weight: 700;
+  padding-bottom: 2.25rem;
+}
+
 .c5 {
-  max-height: 108px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 2.25rem;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -490,7 +518,7 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
 }
 
 .c0 {
@@ -567,42 +595,77 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c6 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c6 {
+  .c9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c9 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c9 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c9 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c9 {
     width: 50%;
     position: initial;
     top: 0;
@@ -611,7 +674,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c6 {
+  .c9 {
     width: 50%;
     position: initial;
     top: 0;
@@ -620,7 +683,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c6 {
+  .c9 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -629,46 +692,11 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c6 {
+  .c9 {
     width: 25%;
     position: initial;
     top: 0;
     left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 }
 
@@ -707,6 +735,72 @@ Array [
   }
 }
 
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c5 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:0em) and (max-width:43.75em) {
+  .c8:nth-child(even) {
+    padding-right: 0.75rem;
+  }
+
+  .c8:nth-child(odd) {
+    padding-left: 0.75rem;
+  }
+}
+
+@media (min-width:43.8125em) and (max-width:56.25em) {
+  .c8:nth-child(3n-1) {
+    padding-right: 0.75rem;
+  }
+
+  .c8:nth-child(3n) {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .c8:nth-child(3n+1) {
+    padding-left: 0.75rem;
+  }
+}
+
 @media (min-width:56.3125em) {
   .c0 {
     padding-bottom: 4.5rem;
@@ -742,10 +836,20 @@ Array [
         }
       >
         <div
-          className="c2"
+          className="c5"
         >
           <div
-            className="c5 c6"
+            className="c6 c3"
+            width={1}
+          >
+            <h3
+              className="c7"
+            >
+              Some of the companies we've worked with
+            </h3>
+          </div>
+          <div
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -759,7 +863,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {
@@ -771,7 +875,7 @@ Array [
             />
           </div>
           <div
-            className="c5 c6"
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -785,7 +889,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {
@@ -797,7 +901,7 @@ Array [
             />
           </div>
           <div
-            className="c5 c6"
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -811,7 +915,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {
@@ -823,7 +927,7 @@ Array [
             />
           </div>
           <div
-            className="c5 c6"
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -837,7 +941,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {
@@ -849,7 +953,7 @@ Array [
             />
           </div>
           <div
-            className="c5 c6"
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -863,7 +967,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {
@@ -875,7 +979,7 @@ Array [
             />
           </div>
           <div
-            className="c5 c6"
+            className="c8 c9"
             width={
               Array [
                 0.5,
@@ -889,7 +993,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c7"
+              className="c10"
               src="elife.png"
               style={
                 Object {

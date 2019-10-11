@@ -17,6 +17,7 @@ export const spacing = {
   6.5: remcalc(210),
   7: remcalc(288),
   30: remcalc(30),
+  32: remcalc(32),
   60: remcalc(60),
   42: remcalc(42),
   48: remcalc(48),
@@ -33,7 +34,8 @@ export const space = [
   remcalc(54), // 5
   remcalc(72), // 6
   remcalc(108), // 7
-  remcalc(144) // 8
+  remcalc(144), // 8
+  remcalc(176) // 9
 ]
 
 export const breakpoints = {

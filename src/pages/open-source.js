@@ -12,11 +12,11 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 import Statement from '../components/Common/Statement'
 import SeoLinksContainer from '../components/Common/seoLinksContainer'
 import Hr from '../components/Common/Hr'
+import Contributions from '../components/Common/Contributions'
 
 import TalksSection from '../components/OpenSource/Talks'
 import PartnershipsSection from '../components/OpenSource/Partnerships'
 import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
-import Contributions from '../components/OpenSource/Contributions'
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
 
 const StyledHr = styled(Hr)`
@@ -52,7 +52,8 @@ const OpenSource = ({ data, location }) => {
       technologyPartners: partners,
       eventsSectionImage,
       eventsSectionDescription,
-      footerContactUs: { id: footerContactId }
+      footerContactUs: { id: footerContactId },
+      contributionsSection: contributions
     },
     allContentfulMeetupEvent: { nodes: events },
     site: {
@@ -113,7 +114,7 @@ const OpenSource = ({ data, location }) => {
       />
       <OpenDeliverables {...data} />
       <BlueBackground>
-        <Contributions {...data} />
+        <Contributions {...contributions} />
         <Grid>
           <Row>
             <Col width={[1]}>
@@ -307,27 +308,35 @@ const OpenSourcePage = props => (
               }
             }
           }
-          contributionsSectionTitleLine1
-          contributionsSectionTitleLine2
-          contributionsSectionTitleLine3
-          openSourceMetaReposCount
-          openSourceMetaPullRequestsCount
-          contributionsSectionImage {
-            title
-            file {
-              url
+          contributionsSection {
+            githubMetaData {
+              openSourceMetaPullRequestsCount
+              openSourceMetaReposCount
             }
-          }
-          contributionsSectionDescriptionLine1
-          contributionsSectionDescriptionLine2
-          contributionsSectionCtaText
-          contributionsSectionCtaLink
-          contributionsSectionGithubRepos {
-            id
-            url
-            nameWithOwner
-            pullRequestCount
-            starCount
+            ctaCopy
+            ctaLink
+            descriptionLine1
+            descriptionLine2
+            titleSectionLine1
+            titleSectionLine2
+            titleSectionLine3
+            icon {
+              title
+              file {
+                url
+              }
+            }
+            descriptionLine1
+            descriptionLine2
+            ctaCopy
+            ctaLink
+            githubRepos {
+              id
+              url
+              nameWithOwner
+              pullRequestCount
+              starCount
+            }
           }
           eventsSectionDescription
           technologiesSectionTitle

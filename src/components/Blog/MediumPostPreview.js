@@ -52,7 +52,8 @@ const ImageWrapper = styled.div`
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme, context }) =>
+    context === 'homepage' ? theme.space[2] : theme.space[3]};
   padding-top: ${({ theme }) => theme.space[3]};
   ${props =>
     props.show === 'smallTablet' ? `display: block;` : `display: none;`}
@@ -60,6 +61,12 @@ const StyledBodyPrimary = styled(BodyPrimary)`
     ${props =>
       props.show === 'smallTablet' ? `display: none;` : `display: block;`}
   `};
+
+  ${({ context }) =>
+    context &&
+    breakpoint('smallPhone', 'smallTablet')`
+    padding-bottom: 0;
+  `}
 `
 
 const AuthorAndDate = styled.p`
@@ -83,6 +90,14 @@ const InfoCol = styled(Col)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+`
+
+const ReadMoreLink = styled(StyledLink)`
+  font-size: ${({ theme }) => theme.spacing[1.5]};
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+      display: none;
+  `}
 `
 
 const TitleAndAuthor = ({
@@ -117,7 +132,8 @@ const MediumPostPreview = ({
   authorName,
   authorId,
   subtitle,
-  imageId
+  imageId,
+  context
 }) => {
   const previewText =
     subtitle.subtitle.length < 145
@@ -138,7 +154,13 @@ const MediumPostPreview = ({
 
   return (
     <MediumRow>
-      <Col width={[1, 1, 1, 1, 4 / 12, 4 / 12]}>
+      <Col
+        width={
+          context === 'homepage'
+            ? [1, 1, 1, 1, 4 / 12, 3 / 12]
+            : [1, 1, 1, 1, 4 / 12, 4 / 12]
+        }
+      >
         <TitleAndAuthor
           show="smallPhone"
           hide="smallTablet"
@@ -151,13 +173,20 @@ const MediumPostPreview = ({
         <Anchor href={postUrl}>
           <ImageWrapper>
             <RatioContainer width={100} height={100}>
-              <MediumPostImage image={image} />
+              <MediumPostImage title={title} image={image} />
             </RatioContainer>
             <StyledMediumIcon />
           </ImageWrapper>
         </Anchor>
       </Col>
-      <InfoCol width={[1, 1, 1, 1, 8 / 12, 6 / 12]} block={false}>
+      <InfoCol
+        width={
+          context === 'homepage'
+            ? [1, 1, 1, 1, 8 / 12, 9 / 12]
+            : [1, 1, 1, 1, 8 / 12, 6 / 12]
+        }
+        block={false}
+      >
         <TitleAndAuthor
           show="smallTablet"
           title={title}
@@ -167,14 +196,26 @@ const MediumPostPreview = ({
           postUrl={postUrl}
         />
         <Col width={[1]} style={{ paddingLeft: 0 }}>
-          <StyledBodyPrimary>{previewText}</StyledBodyPrimary>
-          <StyledBodyPrimary show="smallTablet">
+          <StyledBodyPrimary context={context}>{previewText}</StyledBodyPrimary>
+          <StyledBodyPrimary show="smallTablet" context={context}>
             {previewTextSmallTablet}
+            <a
+              href={postUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'block', textDecoration: 'underline' }}
+            >
+              Read More...
+            </a>
           </StyledBodyPrimary>
         </Col>
-        <StyledLink external href={postUrl} title={`Read more about ${title}`}>
+        <ReadMoreLink
+          external
+          href={postUrl}
+          title={`Read more about ${title}`}
+        >
           Read more
-        </StyledLink>
+        </ReadMoreLink>
       </InfoCol>
     </MediumRow>
   )

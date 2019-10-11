@@ -4,10 +4,9 @@ import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import ReactMarkdown from 'react-markdown'
 
-import illustrationDesktop from '../../images/yld_illustration_desktop.svg'
-import illustrationMobile from '../../images/yld_illustration_mobile.svg'
+import illustrationDesktop from '../../images/hero_image_desktop.svg'
+import illustrationMobile from '../../images/hero_image_mobile.svg'
 import { Grid, Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
 import BlueBackground from '../Common/BlueBackground'
 import { SectionTitle, CardTitle, Subtitle } from '../Typography'
 
@@ -22,38 +21,34 @@ const IntroRow = styled(Row)`
   position: relative;
 
   ${breakpoint('smallTablet')`
-    padding-top: ${({ theme }) => theme.space[5]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[8]};
   `}
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
+
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[8]};
+    padding-bottom: ${({ theme }) => theme.space[9]};
+  `}
 `
 
 const StyledCardTitle = styled(CardTitle)`
   > li {
     list-style: none;
-    padding-bottom: ${({ theme }) => theme.space[2]};
+    padding-bottom: ${remcalc(8)};
   }
-`
-
-const IntroLinkWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[2]};
-
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[3]};
-  `}
 `
 
 const IntroSectionTitleWrapper = styled.div`
   max-width: ${remcalc(425)};
-  padding-bottom: ${({ theme }) => theme.space[3]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
     max-width: ${remcalc(490)};
-    padding-bottom: ${({ theme }) => theme.space[4]};
   `}
 
   ${breakpoint('desktop')`
@@ -66,18 +61,22 @@ const IntroImageWrapper = styled.div`
 
   ${breakpoint('smallPhone', 'smallTablet')`
     width: 135%;
-    margin-top: -24%;
+    margin-top: -14%;
   `}
 
   ${breakpoint('smallTablet')`
     bottom: 0;
-    left: 50%;
+    left: 46.7%;
     right: 0;
     position: absolute;
     width: 1000px;
   `}
 
   ${breakpoint('tablet')`
+    width: 1120px;
+  `}
+
+  ${breakpoint('desktop')`
     width: 1500px;
   `}
   `
@@ -87,13 +86,17 @@ const IntroImageDesktop = styled.div`
   position: relative;
 
   ${breakpoint('smallTablet')`
-    left: calc(-50% + 72px);
+    left: calc(-50% + 127px);
     display: block;
-    `}
+  `}
 
   ${breakpoint('tablet')`
     left: calc(-50% + 80px);
-    `}
+  `}
+
+  ${breakpoint('desktop')`
+    left: calc(-50% + 175px);
+  `}
 
   > img {
     display: block;
@@ -123,12 +126,7 @@ const StyledSectionTitle = styled(SectionTitle)`
   `};
 `
 
-const IntroSection = ({
-  introHeader,
-  introContent: { introContent },
-  introCtaText,
-  introCtaLink
-}) => {
+const IntroSection = ({ introHeader, introContent: { introContent } }) => {
   return (
     <StyledBlueBackground>
       <Grid>
@@ -139,22 +137,17 @@ const IntroSection = ({
                 {introHeader}
               </StyledSectionTitle>
             </IntroSectionTitleWrapper>
-            <IntroLinkWrapper>
-              <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <Subtitle reverse muted {...props} />,
-                  // eslint-disable-next-line
-                  list: props => (
-                    <StyledCardTitle noPaddingTop reverse {...props} />
-                  )
-                }}
-                source={introContent}
-              />
-            </IntroLinkWrapper>
-            <StyledLink reverse vibrant to={introCtaLink}>
-              {introCtaText}
-            </StyledLink>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line
+                heading: props => (
+                  <Subtitle noPadding reverse muted {...props} />
+                ),
+                // eslint-disable-next-line
+                list: props => <StyledCardTitle reverse {...props} />
+              }}
+              source={introContent}
+            />
           </Col>
         </IntroRow>
       </Grid>

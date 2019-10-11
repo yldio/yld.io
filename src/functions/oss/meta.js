@@ -20,7 +20,7 @@ const Meta = async (environment, githubMetaData) => {
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
-    content_type: 'openSourcePage'
+    content_type: 'githubMetaData'
   })
 
   const currentContentfulData = head(contentfulMetas)
