@@ -9808,10 +9808,6 @@ gatsby-source-contentful@2.1.44:
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     qs "^6.9.0"
-<<<<<<< HEAD
-
-gatsby-source-filesystem@^2.0.8, gatsby-source-filesystem@^2.1.28:
-=======
 
 gatsby-source-filesystem@^2.0.8:
   version "2.1.22"
@@ -9835,7 +9831,6 @@ gatsby-source-filesystem@^2.0.8:
     xstate "^4.6.7"
 
 gatsby-source-filesystem@^2.1.28:
->>>>>>> master
   version "2.1.28"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.28.tgz#c438306f4906564f3bf62464bc7240b571634e01"
   integrity sha512-rgYaRTIEFqsbzWKRRIDiL0wIk1K1Ig/KsZXCiSk07KxInBwSi96OU0HAHkNmrl/TLNdFSCvsll1G9CEZ0109Hg==
@@ -17107,17 +17102,10 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-<<<<<<< HEAD
-qs@^6.5.2, qs@^6.6.0, qs@^6.9.0:
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
-  integrity sha512-27RP4UotQORTpmNQDX8BHPukOnBP3p1uUJY5UnDhaJB+rMt9iMsok724XL+UHU23bEFOHRMQ2ZhI99qOWUMGFA==
-=======
 qs@^6.5.2, qs@^6.6.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
   integrity sha512-tPSkj8y92PfZVbinY1n84i1Qdx75lZjMQYx9WZhnkofyxzw2r7Ho39G3/aEvSUdebxpnnM4LZJCtvE/Aq3+s9w==
->>>>>>> master
 
 qs@^6.9.0:
   version "6.9.0"
