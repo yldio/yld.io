@@ -79,7 +79,7 @@ const QUERY = graphql`
   }
 `
 
-const Footer = ({ footerContactUsId, displayFooterOffices = true }) => (
+const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
   <StaticQuery
     query={QUERY}
     render={({ profiles }) => {
@@ -89,7 +89,7 @@ const Footer = ({ footerContactUsId, displayFooterOffices = true }) => (
 
       return (
         <>
-          {!!footerContactUsId && (
+          {!!footerContactUsId && !is404 && (
             <Wrapper bgColor={footerContactUsData.backgroundColor}>
               <GetInTouch {...footerContactUsData} />
             </Wrapper>

@@ -77,7 +77,8 @@ class Layout extends Component {
       footerContactUsId,
       slug,
       structuredData,
-      breadcrumbData
+      breadcrumbData,
+      is404 = false
     } = this.props
 
     const { GridDebugger } = this.state
@@ -156,6 +157,7 @@ class Layout extends Component {
                 <Footer
                   displayFooterOffices={displayFooterOffices}
                   footerContactUsId={footerContactUsId}
+                  is404={is404}
                 />
                 <GlobalStyle />
                 {!this.state.cookiesAllowed && (
