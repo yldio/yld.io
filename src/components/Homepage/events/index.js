@@ -104,7 +104,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
     </Row>
     <CtaRow>
       <Col width={[1]}>
-        <ViewEventsLink>View our events</ViewEventsLink>
+        <ViewEventsLink to="/events">View our events</ViewEventsLink>
       </Col>
     </CtaRow>
   </Grid>
