@@ -1,6 +1,6 @@
 const UploadToContentful = require('./upload-image-to-contentful')
 const { default: Map } = require('apr-map')
-const isProd = require('../../utils/is-prod')
+const isProd = require('../utils/is-prod')
 
 module.exports = async (post, environment) => {
   const { md, images = [], title: postTitle } = post

@@ -2,7 +2,7 @@ const { default: Map } = require('apr-map')
 const Waterfall = require('apr-waterfall')
 const Reduce = require('apr-reduce')
 
-const isProd = require('../../utils/is-prod')
+const isProd = require('../utils/is-prod')
 const ParseXMLToJSON = require('./parse-xml-to-json')
 const ParseHtmlToMd = require('./parse-html-to-markdown')
 const TransformCustomMDX = require('./transform-custom-mdx')
