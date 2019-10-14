@@ -1,0 +1,819 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Blog Typography Typography 1`] = `
+.c0 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c5 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c1 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  font-size: 2.625rem;
+  line-height: 3.1875rem;
+  font-weight: 500;
+  color: #333333;
+  padding: 0.875rem 0;
+}
+
+.c6 {
+  font-size: 1.75rem;
+  line-height: 2.625rem;
+  font-weight: 500;
+  color: #333333;
+  padding: 0.6875rem 0 0.4375rem;
+}
+
+.c7 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 400;
+  color: #828282;
+  padding: 0.625rem 0 0.5rem;
+}
+
+.c8 {
+  font-size: 1.25rem;
+  line-height: 2.0625rem;
+  font-weight: 400;
+  color: #333333;
+  padding: 0.8125rem 0 0.875rem;
+}
+
+.c8::selection {
+  background-color: #65ffcd;
+}
+
+.c8 a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.c8 code {
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #333333;
+  font-family: 'Roboto Mono',sans-serif;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  background-color: #e9e9e9;
+}
+
+.c8 code::selection {
+  background-color: #65ffcd;
+}
+
+.c9 {
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #333333;
+  background-color: #e9e9e9;
+  padding: 1.25rem;
+  font-family: 'Roboto Mono',sans-serif;
+  display: block;
+  margin: 0.8125rem 0 0.875rem;
+}
+
+.c10 {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.c11 {
+  font-size: 1.25rem;
+  line-height: 2.0625rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #333333;
+  padding-left: 1.5rem;
+  margin: 0.8125rem 0 0.875rem;
+  display: block;
+  border-left: 2px solid #333333;
+}
+
+@media (min-width:29.4375em) {
+  .c0 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c0 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c0 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c0 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c0 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c0 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    width: 83.33333333333334%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c5 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c5 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c5 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c5 {
+    width: 100%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c5 {
+    width: 66.66666666666666%;
+    position: initial;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+<div
+  className="c0"
+  style={
+    Object {
+      "margin": "2rem 0",
+    }
+  }
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Heading 1
+      </p>
+    </div>
+    <div
+      className="c3"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.8333333333333334,
+        ]
+      }
+    >
+      <h1
+        className="c4"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Heading 2
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <h2
+        className="c6"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Subtitle
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <h3
+        className="c7"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Body
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <p
+        className="c8"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Body w/ Code
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <p
+        className="c8"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor <code>sit amet consectetur adipisicing elit</code>. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Code Block
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <pre
+        className="c9"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<code>server.route({    
+  method: 'GET',  
+  path:'/',  
+  handler: function (request, reply) {  
+    var books = [{  
+      title: 'Professional Node.js',  
+      read: false  
+    }, {  
+      title: 'Node.js Patterns',  
+      read: false  
+    }];
+  }
+})</code>",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Anchor
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <a
+        className="c10"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Body with inline Anchor
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <p
+        className="c8"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit <a href=\\"https://example/com\\" target=\\"_blank\\"/>amet consectetur adipisicing</a> elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <p
+        style={
+          Object {
+            "color": "#757575",
+            "margin": "2rem 0 0",
+          }
+        }
+      >
+        Blockquote
+      </p>
+    </div>
+    <div
+      className="c5"
+      width={
+        Array [
+          1,
+          1,
+          1,
+          0.6666666666666666,
+        ]
+      }
+    >
+      <blockquote
+        className="c11"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

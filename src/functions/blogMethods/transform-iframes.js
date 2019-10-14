@@ -1,10 +1,10 @@
-const fetch = require('node-fetch')
+const Got = require('got')
 
 const gistBuilder = id => `<Gist id="${id}" />`
 
 const youtubeVideoBuilder = id => `<YouTube videoId="${id}" />`
 
-const genericIframeBuilder = link => `<iframe src="${link}"/>`
+const genericIframeBuilder = link => `<iframe src="${link}" />`
 
 const findOccurrences = str => {
   const regex = /<iframecontent:"(\S*)">/gi
@@ -24,7 +24,7 @@ const findOccurrences = str => {
 }
 
 const getIframeContent = async url => {
-  const { url: forwardedUrl } = await fetch(url)
+  const { url: forwardedUrl } = await Got(url)
 
   switch (true) {
     case forwardedUrl.includes('gist.github'): {

@@ -2,6 +2,9 @@
 import blogLambda from '../../../src/functions/blog-export'
 
 jest.mock('got')
+jest.mock('contentful-management', () => ({
+  createClient: jest.fn()
+}))
 jest.mock('../../../src/functions/blogMethods/index')
 jest.mock('../../../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
 
