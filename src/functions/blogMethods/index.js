@@ -49,18 +49,15 @@ module.exports = async data => {
       async posts => Map(posts, async post => ParseHtmlToMd(post, environment)),
       async posts => TransformCustomMDX(posts, environment),
       async posts => TransformMetaData(posts),
-      async posts => TranspileAllPosts(posts),
-      async posts => Promise.all(posts).then(res => Promise.resolve(res))
+      async posts => TranspileAllPosts(posts)
     ])
   } catch (error) {
     throw new Error(error)
   }
 
-  let cmsPosts
-
   if (isProd && posts) {
-    cmsPosts = await PublishToContentful(posts, environment)
+    return await PublishToContentful(posts, environment)
   }
 
-  return cmsPosts
+  return posts
 }

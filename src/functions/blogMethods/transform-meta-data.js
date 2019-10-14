@@ -1,13 +1,10 @@
-const { URL } = require('url')
 const { default: Map } = require('apr-map')
-const slugify = require('@sindresorhus/slugify')
 
-module.exports = posts =>
+module.exports = async posts =>
   Map(posts, post => {
-    const slug = slugify(new URL(post.slug).pathname)
-
     // Uses the assetId from the contentful image upload
-    // response. Means Gatsby will download the image
+    // response. Means Gatsby will download the image from
+    // contentful when the site builds
     const headerImage =
       post.uploadedImages && post.uploadedImages.length > 0
         ? {
@@ -21,7 +18,6 @@ module.exports = posts =>
 
     return {
       ...post,
-      slug,
       headerImage
     }
   })

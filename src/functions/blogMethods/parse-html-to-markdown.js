@@ -44,7 +44,7 @@ const getImageMeta = function(imgSrc) {
 turndownService.addRule('iframe', {
   filter: 'iframe',
   replacement: content => {
-    const [, href] = content.match(/href="(.*)" >/)
+    const [, href] = content.match(/href="(.*)">/)
 
     return `<iframecontent:"${href}"> `
   }
@@ -73,6 +73,11 @@ turndownService.addRule('img', {
   }
 })
 
+/**
+ * When Gatsby builds, Mdx tries to render <React.Suspense/> as a component
+ * instead of just string. Here we just need to wrap in `` to get Mdx to ignore
+ * trying to render this component...
+ */
 turndownService.addRule('p', {
   filter: 'p',
   replacement: content => {
@@ -85,6 +90,10 @@ turndownService.addRule('p', {
     return '\n\n' + newContent + '\n\n'
   }
 })
+
+/**
+ * See comment for `p` rule above
+ */
 
 turndownService.addRule('blockquote', {
   filter: 'blockquote',

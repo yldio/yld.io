@@ -15,7 +15,7 @@ module.exports = async (data, key = 'rss.channel.item') => {
       'content:encoded': content
     } = res
 
-    const [, slug] = link.match(/yld-blog\/(.*)/)
+    const [, slug] = link.match(/yld-blog\/([^?]*)/)
     const firstPublishedAt = new Date(pubDate)
 
     return {

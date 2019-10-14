@@ -18,8 +18,7 @@ width="854"
 height="480"
 frameborder="0"
 scrolling="no"
-><a href="https://medium.com/media/2a47b674cb99880c47c14b83c1b3b0a6/href"
-  >https://medium.com/media/2a47b674cb99880c47c14b83c1b3b0a6/href</a
+><a href="https://medium.com/media/2a47b674cb99880c47c14b83c1b3b0a6/href">https://medium.com/media/2a47b674cb99880c47c14b83c1b3b0a6/href</a
 ></iframe>`
 
 const pre = `<pre>n868740.ksc.nasa.gov - - [01/Aug/1995:12:19:45 -0400] &quot;GET /images/MOSAIC-logosmall.gif HTTP/1.0&quot; 200 363</pre>

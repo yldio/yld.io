@@ -43,7 +43,7 @@ describe('Blog Lambda', () => {
 
     expect(res).toEqual({
       statusCode: 200,
-      body: exportReturn
+      body: JSON.stringify(exportReturn)
     })
   })
 
