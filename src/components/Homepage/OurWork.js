@@ -53,7 +53,7 @@ const DesktopOnlyRow = styled(Row)`
 `
 
 const CardHeader = styled.header`
-  padding: ${({ theme }) => `${theme.space[4]} ${theme.space[3]}`};
+  padding: ${({ theme }) => `${theme.space[3]} ${theme.space[3]}`};
   max-width: ${remcalc(475)};
   box-sizing: border-box;
   background-color: #${({ backgroundColor }) => backgroundColor};

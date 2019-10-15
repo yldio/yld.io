@@ -7,7 +7,7 @@ import remcalc from 'remcalc'
 import { Grid, Row, Col } from '../grid'
 import Image from '../Common/Image'
 import StyledLink from '../Common/StyledLink'
-import { CardTitle, BodyPrimary } from '../Typography'
+import { BodyPrimary, DisplayTitle } from '../Typography'
 
 const FooterCTAInner = styled.div`
   display: flex;
@@ -73,7 +73,7 @@ const FooterSections = ({
         <FooterCTAInner>
           <Content>
             {footerSection1Icon && <Image image={footerSection1Icon} />}
-            <CardTitle>{footerSection1Title}</CardTitle>
+            <DisplayTitle>{footerSection1Title}</DisplayTitle>
             <BodyPrimary>{footerSection1Copy}</BodyPrimary>
           </Content>
           <CustomLink to={footerSection1CtaLink}>
@@ -85,7 +85,7 @@ const FooterSections = ({
         <FooterCTAInner>
           <Content>
             {footerSection2Icon && <Image image={footerSection2Icon} />}
-            <CardTitle>{footerSection2Title}</CardTitle>
+            <DisplayTitle>{footerSection2Title}</DisplayTitle>
             <BodyPrimary>{footerSection2Copy}</BodyPrimary>
           </Content>
           <CustomLink to={footerSection2CtaLink}>
