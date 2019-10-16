@@ -18,7 +18,7 @@ const BlogPostTemplate = ({
           <Col width={[1, 1, 8 / 12]}>
             <H1>{post.title}</H1>
             <MDXRenderer scope={__mdxScope}>
-              {post.markdown.childMdx.body}
+              {post.content.childMdx.body}
             </MDXRenderer>
           </Col>
         </Row>
@@ -36,7 +36,7 @@ export const pageQuery = graphql`
       title
       slug
       tags
-      markdown {
+      content {
         childMdx {
           body
         }

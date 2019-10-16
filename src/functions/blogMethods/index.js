@@ -63,7 +63,6 @@ module.exports = async data => {
   }, {})
 
   const FilterPostsToProcess = posts => {
-    console.log(JSON.stringify({ incompletePosts }, null, 2))
     const toProcess = posts.filter(({ title }) => {
       return incompletePosts.includes(title)
     })
@@ -81,7 +80,7 @@ module.exports = async data => {
         Reduce(data, async (sum = [], acc) =>
           sum.concat(await ParseXMLToJSON(acc))
         ),
-      posts => FilterPostsToProcess(posts),
+      // posts => FilterPostsToProcess(posts),
       async posts => Map(posts, async post => ParseHtmlToMd(post, environment)),
       async posts => TransformCustomMDX(posts, environment),
       async posts => TransformMetaData(posts),
