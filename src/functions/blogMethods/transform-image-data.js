@@ -43,17 +43,17 @@ module.exports = async (post, environment) => {
     )
 
     return {
-      src: cmsUrl,
-      caption: cmsCaption,
-      alt: cmsAlt,
-      fileName: cmsFileName,
-      assetId: cmsAssetId
+      sys: {
+        type: 'Link',
+        linkType: 'Asset',
+        id: cmsAssetId
+      }
     }
   })
 
   return {
     ...post,
-    uploadedImages: uploadedImageData,
+    relatedMedia: uploadedImageData,
     md: transformedMd
   }
 }

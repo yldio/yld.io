@@ -6,14 +6,8 @@ module.exports = async posts =>
     // response. Means Gatsby will download the image from
     // contentful when the site builds
     const headerImage =
-      post.uploadedImages && post.uploadedImages.length > 0
-        ? {
-            sys: {
-              type: 'Link',
-              linkType: 'Asset',
-              id: post.uploadedImages[0].assetId
-            }
-          }
+      post.relatedMedia && post.relatedMedia.length > 0
+        ? post.relatedMedia[0]
         : undefined
 
     return {

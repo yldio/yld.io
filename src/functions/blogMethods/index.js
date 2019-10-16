@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { default: Map } = require('apr-map')
 const Waterfall = require('apr-waterfall')
 const Reduce = require('apr-reduce')
@@ -17,7 +18,17 @@ const client = createClient({
   accessToken: CMS_CRUD
 })
 
-const environmentName = isProd ? 'master' : 'development'
+// const environmentName = isProd ? 'master' : 'development'
+const environmentName = 'master'
+
+const getContentTypeFields = ct =>
+  ct.fields.reduce(
+    ({ allFields = [], requiredFields = [] }, { required, id }) => ({
+      allFields: allFields.concat(id),
+      requiredFields: required ? requiredFields.concat(id) : requiredFields
+    }),
+    []
+  )
 
 module.exports = async data => {
   if (!data || !Array.isArray(data)) {
@@ -26,15 +37,41 @@ module.exports = async data => {
 
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment(environmentName)
+  const contentType = await environment.getContentType('blogPost')
 
-  const { items: publishedBlogPosts } = await environment.getEntries({
+  const { allFields, requiredFields } = getContentTypeFields(contentType)
+
+  const { items: cmsBlogPosts } = await environment.getEntries({
     limit: 1000,
     content_type: 'blogPost'
   })
 
-  const allPublishedBlogPostSlugs = publishedBlogPosts.map(
-    ({ fields }) => fields.slug['en-US']
-  )
+  const incompletePosts = cmsBlogPosts
+    .filter(({ fields }) => !requiredFields.every(field => fields[field]))
+    .map(p => p.fields.title['en-US'])
+
+  const postTitleIDMap = cmsBlogPosts.reduce((acc, curr) => {
+    // Cannot use slug as hash on end of medium slug changes
+    // e.g. blog-post-title-9231239sd => blog-post-title-89120302
+    const title = curr.fields.title['en-US']
+    const id = curr.sys.id
+
+    return {
+      ...acc,
+      [title]: id
+    }
+  }, {})
+
+  const FilterPostsToProcess = posts => {
+    console.log(JSON.stringify({ incompletePosts }, null, 2))
+    const toProcess = posts.filter(({ title }) => {
+      return incompletePosts.includes(title)
+    })
+
+    console.log(`Process posts: ${toProcess.map(({ title }) => `\n${title}`)}`)
+
+    return toProcess
+  }
 
   let posts
 
@@ -44,8 +81,7 @@ module.exports = async data => {
         Reduce(data, async (sum = [], acc) =>
           sum.concat(await ParseXMLToJSON(acc))
         ),
-      posts =>
-        posts.filter(({ slug }) => !allPublishedBlogPostSlugs.includes(slug)),
+      posts => FilterPostsToProcess(posts),
       async posts => Map(posts, async post => ParseHtmlToMd(post, environment)),
       async posts => TransformCustomMDX(posts, environment),
       async posts => TransformMetaData(posts),
@@ -56,7 +92,13 @@ module.exports = async data => {
   }
 
   if (isProd && posts) {
-    return await PublishToContentful(posts, environment)
+    console.log('Publishing to contentful')
+    return await PublishToContentful(
+      posts,
+      environment,
+      allFields,
+      postTitleIDMap
+    )
   }
 
   return posts

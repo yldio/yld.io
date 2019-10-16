@@ -24,17 +24,12 @@ Main(async () => {
   const environment = await space.getEnvironment('master')
 
   const { items } = await environment.getEntries({
-    limit: 1000,
-    content_type: 'speciality'
+    limit: 10,
+    content_type: 'blogPost',
+    'fields.title[eq]': 'HyperLogLog — A probabilistic data structure'
   })
 
-  console.log(
-    JSON.stringify(
-      {
-        items
-      },
-      null,
-      2
-    )
-  )
+  console.log(JSON.stringify({ items }, null, 2))
+
+  // const contentType = await environment.getContentType('blogPost')
 })

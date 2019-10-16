@@ -7,7 +7,8 @@ const toReplace = [
 
 module.exports = post => ({
   ...post,
-  md: toReplace.reduce((acc, [str, replace]) => {
-    return acc.replace(new RegExp(str, 'gm'), replace)
-  }, post.md)
+  md: toReplace.reduce(
+    (acc, [str, replace]) => acc.replace(new RegExp(str, 'gm'), replace),
+    post.md
+  )
 })
