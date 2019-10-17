@@ -39,13 +39,13 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
         ...contentfulPostData
       }
 
-      const [updateErr] = await Intercept(asset.update())
+      const [updateErr, updatedAsset] = await Intercept(asset.update())
 
       if (updateErr) {
         console.error(`Update for ${post.title} failed: `, updateErr)
       }
 
-      const [publishErr] = await Intercept(asset.publish())
+      const [publishErr] = await Intercept(updatedAsset.publish())
 
       if (publishErr) {
         console.error(`Publish for ${post.title} failed: `, publishErr)

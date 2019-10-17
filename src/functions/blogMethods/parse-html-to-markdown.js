@@ -109,7 +109,8 @@ turndownService.addRule('blockquote', {
         .find(n => n.nodeName === 'A')
         .getAttribute('href')
 
-      return `\n\n<Tweet tweetId="${anchor}" />\n\n`
+      const [, id] = anchor.match(/\/status\/(\d+)/)
+      return `\n\n<Tweet tweetId="${id}" />\n\n`
     }
 
     const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
