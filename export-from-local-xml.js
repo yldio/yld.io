@@ -4,7 +4,7 @@ const Export = require('./src/functions/blogMethods')
 
 module.exports.handler = async () => {
   // const XmlFileNames = await fs.readdir('./xml/full')
-  const XmlFileNames = ['posts_43_to_52.xml']
+  const XmlFileNames = ['posts_103_to_112.xml']
 
   const XmlData = await Reduce(XmlFileNames, async (sum = [], acc) =>
     sum.concat(await fs.readFile(`./xml/full/${acc}`))
