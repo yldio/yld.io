@@ -11,6 +11,11 @@ import RatioContainer from '../Common/RatioContainer'
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
 
+const StyledRatioContainer = styled(RatioContainer)`
+  > div {
+    position: absolute;
+  }
+`
 const AuthorMediumLink = styled(Anchor)`
   color: ${({ theme }) => theme.colors.textLight};
   text-decoration: underline;
@@ -27,13 +32,6 @@ const StyledMediumIcon = styled(MediumLogo)`
     top: ${({ theme }) => theme.space[4]};
     left: ${({ theme }) => theme.space[4]};
   `}
-`
-
-const MediumPostImage = styled(Image)`
-  position: absolute;
-  max-width: unset;
-  width: auto;
-  height: 100%;
 `
 
 const MediumRow = styled(Row)`
@@ -131,30 +129,16 @@ const MediumPostPreview = ({
   slug,
   authorName,
   authorId,
-  subtitle,
-  imageId,
-  context
+  context,
+  content,
+  headerImage
 }) => {
-  let previewText = ''
-
-  if (subtitle) {
-    previewText =
-      subtitle.subtitle.length < 145
-        ? subtitle.subtitle
-        : subtitle.subtitle.slice(0, 145).trim() + '...'
-  }
-
-  const previewTextSmallTablet = previewText.slice(0, 85).trim() + '...'
-
   const formattedDate = format(firstPublishedAt, 'MMMM DD')
 
-  const imageUrl = `https://cdn-images-1.medium.com/max/1000/${imageId}`
+  const { childMdx: { excerpt } = {} } = content
+
   const postUrl = `/blog/${slug}`
   const authorUrl = `https://medium.com/@${authorId}`
-
-  const image = {
-    file: { url: imageUrl }
-  }
 
   return (
     <MediumRow>
@@ -176,9 +160,9 @@ const MediumPostPreview = ({
         />
         <Anchor to={postUrl}>
           <ImageWrapper>
-            <RatioContainer width={100} height={100}>
-              <MediumPostImage title={title} image={image} />
-            </RatioContainer>
+            {/* <StyledRatioContainer width={100} height={100}> */}
+            <Image image={headerImage} />
+            {/* </StyledRatioContainer> */}
             <StyledMediumIcon />
           </ImageWrapper>
         </Anchor>
@@ -200,7 +184,7 @@ const MediumPostPreview = ({
           postUrl={postUrl}
         />
         <Col width={[1]} style={{ paddingLeft: 0 }}>
-          <StyledBodyPrimary context={context}>{previewText}</StyledBodyPrimary>
+          <StyledBodyPrimary context={context}>{excerpt}</StyledBodyPrimary>
           <StyledBodyPrimary show="smallTablet" context={context}>
             {previewTextSmallTablet}
             <a

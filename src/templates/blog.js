@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
@@ -12,6 +12,7 @@ import Head from '../components/Common/Head'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
+import StyledLink from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
 
 const blogPageMeta = {
@@ -56,9 +57,9 @@ const BlogPage = ({
     allContentfulBlogPost: { edges: blogPosts },
     site: {
       siteMetadata: { siteUrl }
-    },
-    blogPaths
+    }
   },
+  pageContext,
   location
 }) => {
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
@@ -68,6 +69,15 @@ const BlogPage = ({
       position: 2
     }
   ])
+  const { numberOfPages, currentPage } = pageContext
+
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numberOfPages
+  const prevPageNum =
+    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`
+  const nextPageNum = (currentPage + 1).toString()
+  const prevPageLink = isFirst ? null : `/blog/${prevPageNum}`
+  const nextPageLink = isLast ? null : `/blog/page/${nextPageNum}`
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -95,17 +105,7 @@ const BlogPage = ({
               <DisplayTitle>Recent articles</DisplayTitle>
             </DisplayTitleCol>
           </Row>
-          <Row>
-            <Col width={[1]}>
-              {blogPaths.nodes.map(({ path }) => {
-                return (
-                  <p key={path}>
-                    <Link to={path}>{path}</Link>
-                  </p>
-                )
-              })}
-            </Col>
-          </Row>
+
           {blogPosts &&
             blogPosts.length > 0 &&
             blogPosts.map((blogPost, idx) => {
@@ -118,6 +118,15 @@ const BlogPage = ({
                 </Fragment>
               )
             })}
+
+          <Row style={{ justifyContent: 'space-between' }} block={false}>
+            <Col>
+              <StyledLink to={prevPageLink}>Previous Page</StyledLink>
+            </Col>
+            <Col>
+              <StyledLink to={nextPageLink}>Next Page</StyledLink>
+            </Col>
+          </Row>
         </Grid>
       </GreyBackground>
     </Layout>
@@ -125,15 +134,17 @@ const BlogPage = ({
 }
 
 export const query = graphql`
-  {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         siteUrl
       }
     }
     allContentfulBlogPost(
-      limit: 6
+      filter: { content: { content: { ne: null } } }
       sort: { fields: [firstPublishedAt], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
@@ -141,18 +152,23 @@ export const query = graphql`
           title
           firstPublishedAt
           slug
-          imageId
+          content {
+            childMdx {
+              excerpt
+            }
+          }
+          headerImage {
+            title
+            file {
+              url
+            }
+            fluid(maxWidth: 400) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
           authorId
           authorName
-          subtitle {
-            subtitle
-          }
         }
-      }
-    }
-    blogPaths: allSitePage(filter:{path: {regex: "/blog\/\\S/"}}) {
-      nodes {
-        path
       }
     }
   }

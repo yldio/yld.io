@@ -23,11 +23,7 @@ Main(async () => {
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
-  const { items } = await environment.getEntries({
-    limit: 10,
-    content_type: 'blogPost',
-    'fields.title[eq]': 'HyperLogLog — A probabilistic data structure'
-  })
+  const items = await environment.getEntry('2HVervAg5P5qLlD31GoNSd')
 
   console.log(JSON.stringify({ items }, null, 2))
 
