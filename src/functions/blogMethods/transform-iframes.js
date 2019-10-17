@@ -38,12 +38,9 @@ const getIframeContent = async url => {
     }
 
     case forwardedUrl.includes('youtube'): {
-      console.log({ forwardedUrl })
-      const [, videoId] = forwardedUrl.split('https://www.youtube.com/watch?v=')
-
       return {
         type: 'youtube',
-        id: videoId
+        id: forwardedUrl
       }
     }
 
@@ -61,7 +58,6 @@ module.exports = async post => {
   let processedMarkdown = md
 
   const occurrences = findOccurrences(md)
-  console.log({ occurrences })
 
   if (occurrences.length > 0) {
     await Promise.all(

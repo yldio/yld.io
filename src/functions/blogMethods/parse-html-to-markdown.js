@@ -97,7 +97,21 @@ turndownService.addRule('p', {
 
 turndownService.addRule('blockquote', {
   filter: 'blockquote',
-  replacement: content => {
+  replacement: (content, node) => {
+    const className = node.getAttribute('class')
+
+    // Medium gives us rendered HTML <noscript> tweets
+    // Here we fish out the tweet status url and pass it
+    // to Tweet component that will be rendered later
+    // down the line
+    if (className === 'twitter-tweet') {
+      const anchor = Array.from(node.childNodes[1].childNodes)
+        .find(n => n.nodeName === 'A')
+        .getAttribute('href')
+
+      return `\n\n<Tweet id="${anchor}" />\n\n`
+    }
+
     const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
       if (match) {
         return `&lt;${match}&gt;`
@@ -122,6 +136,13 @@ turndownService.addRule('pre', {
      */
     // eslint-disable-next-line no-useless-concat
     return '\n\n' + '```' + '\n' + newContent + '\n' + '```' + '\n\n'
+  }
+})
+
+turndownService.addRule('script', {
+  filter: ['script', 'style'],
+  replacement: () => {
+    return '\n'
   }
 })
 

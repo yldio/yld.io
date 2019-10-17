@@ -80,13 +80,14 @@ module.exports = async data => {
         Reduce(data, async (sum = [], acc) =>
           sum.concat(await ParseXMLToJSON(acc))
         ),
-      // posts => FilterPostsToProcess(posts),
+      posts => FilterPostsToProcess(posts),
       async posts => Map(posts, async post => ParseHtmlToMd(post, environment)),
       async posts => TransformCustomMDX(posts, environment),
       async posts => TransformMetaData(posts),
       async posts => TranspileAllPosts(posts)
     ])
   } catch (error) {
+    console.log('WATERFALL ERROR')
     throw new Error(error)
   }
 

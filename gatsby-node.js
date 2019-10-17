@@ -72,8 +72,8 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             slug
-            markdown {
-              markdown
+            content {
+              content
             }
           }
         }
@@ -187,7 +187,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   _.each(result.data.allContentfulBlogPost.edges, post => {
-    if (post.node.slug && post.node.markdown) {
+    if (post.node.slug && post.node.content) {
       createPage({
         path: `blog/${post.node.slug}`,
         component: blogPostTemplate,
