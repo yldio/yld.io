@@ -16,7 +16,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import remcalc from 'remcalc'
 import { hotjar } from 'react-hotjar'
-import { Youtube, Gist } from '@blocks/kit'
+import { Youtube, Gist, Tweet } from '@blocks/kit'
 
 import Header from './Header'
 import './layout.css'
@@ -45,7 +45,7 @@ const components = {
   anchor: A,
   blockquote: Blockquote
 }
-const shortCodes = { Youtube, Gist, FigureImage }
+const shortCodes = { Youtube, Gist, FigureImage, Tweet }
 const { GATSBY_ENVIRONMENT } = process.env
 const googleJson = JSON.stringify(google)
 

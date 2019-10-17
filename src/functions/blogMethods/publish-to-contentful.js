@@ -31,7 +31,7 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
 
     let asset
     if (id) {
-      console.log(`Updating post: ${post.title} `)
+      console.info(`Updating post: ${post.title} `)
       asset = await environment.getEntry(id)
 
       asset.fields = {
@@ -39,13 +39,19 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
         ...contentfulPostData
       }
 
-      const [err] = await Intercept(asset.update())
+      const [updateErr] = await Intercept(asset.update())
 
-      if (err) {
-        console.log(`Update for ${post.title} failed: `, err)
+      if (updateErr) {
+        console.error(`Update for ${post.title} failed: `, updateErr)
+      }
+
+      const [publishErr] = await Intercept(asset.publish())
+
+      if (publishErr) {
+        console.error(`Publish for ${post.title} failed: `, publishErr)
       }
     } else {
-      console.log(`Creating new post: ${post.title} `)
+      console.info(`Creating new post: ${post.title} `)
       const newPost = await environment.createEntry('blogPost', {
         fields: contentfulPostData
       })
@@ -55,7 +61,7 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
       const [err] = await Intercept(asset.publish())
 
       if (err) {
-        console.log(`Create post for ${post.title} failed: `, err)
+        console.error(`Create post for ${post.title} failed: `, err)
       }
     }
 

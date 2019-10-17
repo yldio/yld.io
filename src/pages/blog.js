@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import remcalc from 'remcalc'
 import breakpoint from 'styled-components-breakpoint'
 import styled from 'styled-components'
@@ -56,7 +56,8 @@ const BlogPage = ({
     allContentfulBlogPost: { edges: blogPosts },
     site: {
       siteMetadata: { siteUrl }
-    }
+    },
+    blogPaths
   },
   location
 }) => {
@@ -93,6 +94,17 @@ const BlogPage = ({
             <DisplayTitleCol width={[1]}>
               <DisplayTitle>Recent articles</DisplayTitle>
             </DisplayTitleCol>
+          </Row>
+          <Row>
+            <Col width={[1]}>
+              {blogPaths.nodes.map(({ path }) => {
+                return (
+                  <p key={path}>
+                    <Link to={path}>{path}</Link>
+                  </p>
+                )
+              })}
+            </Col>
           </Row>
           {blogPosts &&
             blogPosts.length > 0 &&
@@ -136,6 +148,11 @@ export const query = graphql`
             subtitle
           }
         }
+      }
+    }
+    blogPaths: allSitePage(filter:{path: {regex: "/blog\/\\S/"}}) {
+      nodes {
+        path
       }
     }
   }
