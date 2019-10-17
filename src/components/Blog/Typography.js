@@ -69,7 +69,8 @@ const ListItem = styled.li`
   font-weight: 300;
 `
 
-const Code = styled.pre`
+const Code = styled.code`
+  overflow: scroll;
   font-size: ${remcalc(17)};
   line-height: ${remcalc(24)};
   font-weight: 400;

@@ -10,6 +10,7 @@ import {
   A,
   Blockquote
 } from './Blog/Typography'
+import FigureImage from './Blog/FigureImage'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
@@ -25,13 +26,6 @@ import GlobalStyle from '../utils/globalStyle'
 import Footer from './Footer'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
-
-const FigureImage = ({ src, caption }) => (
-  <figure>
-    <img src={src} alt={caption} />
-    {caption && <figcaption>{caption}</figcaption>}
-  </figure>
-)
 
 const components = {
   h1: H1,
