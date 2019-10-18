@@ -18,8 +18,7 @@ const client = createClient({
   accessToken: CMS_CRUD
 })
 
-// const environmentName = isProd ? 'master' : 'development'
-const environmentName = 'master'
+const environmentName = isProd ? 'master' : 'development'
 
 const getContentTypeFields = ct =>
   ct.fields.reduce(
