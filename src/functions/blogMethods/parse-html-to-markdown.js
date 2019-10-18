@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * This is a simple html to markdown converter using turndown
  * the main reason for this file is mainly so that we can use
@@ -50,24 +51,92 @@ turndownService.addRule('iframe', {
   }
 })
 
-// parsing figure and figcaption for markdown
+/**
+ * Medium gives us images with a caption:
+ *
+ * <figure>
+ *    <img src="image_src" alt=""/>
+ *    <figcaption>
+ *      {HTML and text nodes}
+ *    </figcaption>
+ * </figure>
+ *
+ * The replace rule below returns
+ *
+ * <image:${image_hash}>
+ *
+ * and adds to the array of images we then attach to
+ * `post` array.
+ *
+ * To note: turndown uses JSdom to parse the string,
+ * here we have access to most DOMNode API methods to
+ * calculate the inner values of DOM nodes
+ */
 turndownService.addRule('img', {
   filter: 'figure',
-  replacement: content => {
-    const lines = content.split('\n')
-    const caption = lines[1]
-    const res = content.match(/!\[(.*)\]\((.*)\)/i)
+  replacement: (_, node) => {
+    const childNodes = Array.from(node.childNodes)
 
-    const [, alt, imgSrc] = res
-    const { name, ext } = getImageMeta(imgSrc)
+    // Find the figcatpion in the figure node
+    const capTag = childNodes.find(n => n.nodeName === 'FIGCAPTION')
+    let caption
 
-    images.push({
-      src: imgSrc,
+    // Not all images have a figcaption!
+    if (capTag) {
+      // The final caption value is a markdown string
+      // that we render directly to the DOM with ReactMarkdown
+      // in the client. This markdown is NOT parsed by MDX
+      // by the gatsby build command
+      caption = Array.from(capTag.childNodes).reduce((acc, curr) => {
+        const tag = curr.nodeName
+        let tagcontent
+
+        // Transforms a few HTML elements that we know we
+        // should be including.
+        switch (tag) {
+          case 'A': {
+            const text = curr.textContent
+
+            const url = new URL(curr.getAttribute('href'))
+            const strippedQueryParams = url.origin + url.pathname
+
+            tagcontent = `[${text}](${strippedQueryParams})`
+            break
+          }
+          case 'STRONG': {
+            tagcontent = `**${curr.textContent}**`
+            break
+          }
+          case '#text': {
+            tagcontent = curr.textContent
+            break
+          }
+          default:
+            console.warn('Missing tag link - ', tag)
+            tagcontent = curr.textContent
+            break
+        }
+
+        return acc + tagcontent
+      }, '')
+    }
+
+    const imgNode = childNodes.find(n => n.nodeName === 'IMG')
+
+    const imageSrc = imgNode.getAttribute('src')
+    const imageAlt = imgNode.getAttribute('alt')
+
+    const { name, ext } = getImageMeta(imageSrc)
+
+    const newImage = {
+      src: imageSrc,
       ext,
-      alt,
+      alt: imageAlt,
       name,
       caption
-    })
+    }
+
+    images.push(newImage)
 
     return `<image:${name}>`
   }
@@ -94,7 +163,6 @@ turndownService.addRule('p', {
 /**
  * See comment for `p` rule above
  */
-
 turndownService.addRule('blockquote', {
   filter: 'blockquote',
   replacement: (content, node) => {

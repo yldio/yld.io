@@ -31,7 +31,7 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
 
     let asset
     if (id) {
-      console.info(`Updating post: ${post.title} `)
+      console.info(`Updating post: ${post.title}`)
       asset = await environment.getEntry(id)
 
       asset.fields = {
