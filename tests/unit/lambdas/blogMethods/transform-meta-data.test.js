@@ -5,12 +5,20 @@ describe('TransformMetaData', () => {
     const posts = [
       {
         title: 'Blog Title',
-        uploadedImages: [
+        relatedMedia: [
           {
-            assetId: 'asset_id_1'
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: 'asset_id_1'
+            }
           },
           {
-            assetId: 'asset_id_2'
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: 'asset_id_2'
+            }
           }
         ]
       }
@@ -27,12 +35,20 @@ describe('TransformMetaData', () => {
             id: 'asset_id_1'
           }
         },
-        uploadedImages: [
+        relatedMedia: [
           {
-            assetId: 'asset_id_1'
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: 'asset_id_1'
+            }
           },
           {
-            assetId: 'asset_id_2'
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: 'asset_id_2'
+            }
           }
         ]
       }

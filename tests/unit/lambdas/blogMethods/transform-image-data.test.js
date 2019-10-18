@@ -41,20 +41,20 @@ describe('TransformImageData', () => {
     const expected = {
       ...post,
       md: `# Blog Title\n<FigureImage src="https://images.host.com/the_name_of_the_first_image" caption="Image 1 caption" alt="caption" />\n<FigureImage src="https://images.host.com/the_name_of_the_second_image" caption="Image 2 caption" alt="caption" />`,
-      uploadedImages: [
+      relatedMedia: [
         {
-          src: `https://images.host.com/the_name_of_the_first_image`,
-          caption: 'Image 1 caption',
-          alt: 'caption',
-          fileName: 'the_name_of_the_first_image',
-          assetId: 'assetId'
+          sys: {
+            id: 'assetId',
+            linkType: 'Asset',
+            type: 'Link'
+          }
         },
         {
-          src: `https://images.host.com/the_name_of_the_second_image`,
-          caption: 'Image 2 caption',
-          alt: 'caption',
-          fileName: 'the_name_of_the_second_image',
-          assetId: 'assetId'
+          sys: {
+            id: 'assetId',
+            linkType: 'Asset',
+            type: 'Link'
+          }
         }
       ]
     }

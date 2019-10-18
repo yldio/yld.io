@@ -5,9 +5,11 @@ const contentful = require('contentful-management')
 
 const createEntryMock = jest.fn()
 const publishMock = jest.fn()
+const updateMock = jest.fn()
 
 const getEntryMock = jest.fn().mockResolvedValue({
-  publish: publishMock
+  publish: publishMock,
+  update: updateMock
 })
 
 const environment = {
@@ -17,9 +19,9 @@ const environment = {
 
 const locale = 'en-US'
 
-const generateContentfulData = posts =>
+const generateContentfulData = (posts, fields) =>
   posts.map(post => ({
-    fields: Object.keys(post).reduce(
+    fields: fields.reduce(
       (acc, curr) => ({
         ...acc,
         [curr]: {
@@ -32,6 +34,10 @@ const generateContentfulData = posts =>
 
 describe('PublishToContentful', () => {
   it('calls the contentful API methods correctly with the correct data', async () => {
+    const postTitleIDMap = {
+      'Blog Title #1': 'this_is_a_contentful_id'
+    }
+
     const posts = [
       {
         title: 'Blog Title #1',
@@ -45,7 +51,23 @@ describe('PublishToContentful', () => {
         slug: 'blog-slug-1',
         tags: ['tag1', 'tag2'],
         authorName: 'Big time author',
-        content: '# Blog title\nthis is markdown!'
+        content: '# Blog title\nthis is markdown!',
+        relatedMedia: [
+          {
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: '123'
+            }
+          },
+          {
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: '321'
+            }
+          }
+        ]
       },
       {
         title: 'Blog Title #2',
@@ -73,13 +95,42 @@ describe('PublishToContentful', () => {
       sys: '12'
     })
 
-    const createEntryData = generateContentfulData(posts)
+    const updatePublishMock = jest.fn().mockResolvedValueOnce({})
 
-    await PublishToContentful(posts, environment)
+    updateMock.mockResolvedValueOnce({
+      publish: updatePublishMock
+    })
 
-    expect(createEntryMock).toHaveBeenCalledWith('blogPost', createEntryData[0])
+    const allFields = [
+      'title',
+      'firstPublishedAt',
+      'headerImage',
+      'slug',
+      'tags',
+      'authorName',
+      'content',
+      'relatedMedia'
+    ]
+
+    const createEntryData = generateContentfulData(posts, allFields)
+
+    getEntryMock.mockResolvedValueOnce({
+      update: updateMock,
+      publish: updatePublishMock,
+      fields: createEntryData[0]
+    })
+
+    await PublishToContentful(posts, environment, allFields, postTitleIDMap)
+
+    // Updated post assertions
+    expect(updateMock).toHaveBeenCalled()
+    expect(updatePublishMock).toHaveBeenCalledTimes(1)
+
+    // New post assertions
     expect(createEntryMock).toHaveBeenCalledWith('blogPost', createEntryData[1])
+    expect(publishMock).toHaveBeenCalledTimes(1)
+
+    expect(getEntryMock).toHaveBeenNthCalledWith(1, 'this_is_a_contentful_id')
     expect(getEntryMock).toHaveBeenNthCalledWith(2, 'id')
-    expect(publishMock).toHaveBeenCalledTimes(2)
   })
 })

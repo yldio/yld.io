@@ -11,7 +11,7 @@ describe('TransformIframes', () => {
 
     const expected = {
       title: 'Blog Title',
-      md: `# Blog title\nSome more content to read!\n<Gist id="a0885e9223faaaa1b031de0b0862f4c9" />\n<YouTube videoId="youtube_video_id" />\n<iframe src="https://example.iframe.com" />\n`
+      md: `# Blog title\nSome more content to read!\n<Gist id="a0885e9223faaaa1b031de0b0862f4c9" />\n<YouTube videoId="https://www.youtube.com/watch?v=youtube_video_id" />\n<iframe src="https://example.iframe.com" />\n`
     }
 
     Got.mockResolvedValueOnce({
