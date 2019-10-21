@@ -4037,7 +4037,7 @@ Array [
                 href="https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg"
                 onClick={[Function]}
                 rel="noopener noreferrer"
-                reverse={true}
+                reverse="true"
                 target="_blank"
               >
                 See all talks

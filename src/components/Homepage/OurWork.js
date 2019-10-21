@@ -211,7 +211,7 @@ const OurWork = ({ data }) => {
       </DesktopOnlyRow>
       <Row>
         <Col width={1}>
-          <MoreWorkLink vibrant to="/our-work">
+          <MoreWorkLink vibrant="true" to="/our-work">
             More of our work
           </MoreWorkLink>
         </Col>

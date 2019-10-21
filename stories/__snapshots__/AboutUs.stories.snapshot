@@ -2258,7 +2258,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
               href="https://www.subs1.com"
               onClick={[Function]}
               rel="noopener noreferrer"
-              reverse={true}
+              reverse="true"
               target="_blank"
             >
               Subs1
