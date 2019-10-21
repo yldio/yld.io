@@ -375,7 +375,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -392,7 +392,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -456,7 +456,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -473,7 +473,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -537,7 +537,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -554,7 +554,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -618,7 +618,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -635,7 +635,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -699,7 +699,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -716,7 +716,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -1112,7 +1112,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -1129,7 +1129,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
