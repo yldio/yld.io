@@ -2,3 +2,4 @@ node_modules/
 ./functions/
 public/
 storybook-static/
+xml/

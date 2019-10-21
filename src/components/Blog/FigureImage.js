@@ -14,8 +14,10 @@ const Wrapper = styled.figure`
 
 const FigureImage = ({ src, caption }) => (
   <Wrapper className="figure-image">
-    <img src={src} alt={caption} />
-    {caption && <figcaption>{caption}</figcaption>}
+    <img className="figure-image__img" src={src} alt={caption} />
+    {caption && (
+      <figcaption className="figure-image__figcaption">{caption}</figcaption>
+    )}
   </Wrapper>
 )
 

@@ -70,6 +70,7 @@
     "styled-is": "1.1.5",
     "styled-reset": "1.6.0",
     "testcafe-react-selectors": "^3.1.0",
+    "title-case": "^2.1.1",
     "turndown": "^5.0.3",
     "tween": "^0.9.0",
     "xml2json": "^0.11.2"

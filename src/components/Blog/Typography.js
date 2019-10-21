@@ -109,6 +109,12 @@ const Blockquote = styled.blockquote`
 `
 
 const PostWrapper = styled.div`
+  /* > :not(.figure-image) {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
   p + p {
     padding-top: 0;
   }
