@@ -60,7 +60,7 @@ const Header = ({ path, bgColor, slug }) => {
             <Row style={{ overflow: 'visible' }}>
               <Col width={[1]} style={{ overflow: 'visible' }}>
                 <StyledTopNavContainer>
-                  <Branding path={path} slug={slug} />
+                  <Branding slug={slug} />
                   <DesktopNav themeVariation={themeVariation} />
                   <Hamburger
                     onClick={() => toggleMobileNav(true)}

@@ -13,6 +13,10 @@ import OurWork from '../components/Homepage/OurWork'
 import Events from '../components/Homepage/events'
 import BlogSection from '../components/Homepage/BlogSection'
 import FooterSections from '../components/Homepage/FooterSections'
+import BlueBackground from '../components/Common/BlueBackground'
+import Contributions from '../components/Common/Contributions'
+
+import { HomePageContext, LogoStyleContext } from '../context/PageContext'
 
 /**
  * Importing fragments here to have them available to the entire
@@ -20,8 +24,6 @@ import FooterSections from '../components/Homepage/FooterSections'
  */
 // eslint-disable-next-line no-unused-vars
 import { fragments } from '../fragments'
-import BlueBackground from '../components/Common/BlueBackground'
-import Contributions from '../components/Common/Contributions'
 
 const dateFormat = 'dddd[,] MMMM DD'
 
@@ -59,34 +61,41 @@ const IndexPage = ({ data, location }) => {
   const blogPosts = blogData.edges || []
   const featuredEvent = getHomepageConferences(events.edges)[0]
   return (
-    <Layout location={location} bgColor="blueBg">
-      <Head seoMetaData={content.seoMetaData} />
-      <Intro {...content} />
-      <GreyBackground>
-        <Grid>
-          <OurWork />
-          <LogoGrid companies={content.companies} />
-        </Grid>
-      </GreyBackground>
-      <Grid>
-        <Services
-          statement={content.serviceStatement}
-          services={sortedServices}
-        />
-      </Grid>
-      <GreyBackground>
-        <Events featuredEvent={featuredEvent} eventTypes={content.eventTypes} />
-      </GreyBackground>
-      {blogPosts && blogPosts.length > 0 && (
-        <BlogSection blogPosts={blogPosts} />
-      )}
-      <BlueBackground>
-        <Contributions {...content.contributions} />
-      </BlueBackground>
-      <GreyBackground>
-        <FooterSections {...content} />
-      </GreyBackground>
-    </Layout>
+    <HomePageContext.Provider value={true}>
+      <LogoStyleContext.Provider value="white">
+        <Layout location={location} bgColor="blueBg">
+          <Head seoMetaData={content.seoMetaData} />
+          <Intro {...content} />
+          <GreyBackground>
+            <Grid>
+              <OurWork />
+              <LogoGrid companies={content.companies} />
+            </Grid>
+          </GreyBackground>
+          <Grid>
+            <Services
+              statement={content.serviceStatement}
+              services={sortedServices}
+            />
+          </Grid>
+          <GreyBackground>
+            <Events
+              featuredEvent={featuredEvent}
+              eventTypes={content.eventTypes}
+            />
+          </GreyBackground>
+          {blogPosts && blogPosts.length > 0 && (
+            <BlogSection blogPosts={blogPosts} />
+          )}
+          <BlueBackground>
+            <Contributions {...content.contributions} />
+          </BlueBackground>
+          <GreyBackground>
+            <FooterSections {...content} />
+          </GreyBackground>
+        </Layout>
+      </LogoStyleContext.Provider>
+    </HomePageContext.Provider>
   )
 }
 
