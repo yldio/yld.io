@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from '../src/components/grid'
+import FigureImage from '../src/components/Blog/FigureImage'
 import {
   H1,
   H2,
@@ -90,8 +91,8 @@ const Annotate = styled.h2`
   text-decoration: underline;
 `
 
-storiesOf('Blog Typography', module)
-  .add('Base Typography', () => (
+storiesOf('Blog Components', module)
+  .add('Typography', () => (
     <Grid style={{ margin: '2rem 0' }}>
       {elements.map(({ component: Component, colWidths, content, label }) => (
         <Row key={content}>
@@ -105,11 +106,11 @@ storiesOf('Blog Typography', module)
       ))}
     </Grid>
   ))
-  .add('Compound', () => {
+  .add('Compound Typography', () => {
     return (
       <Grid style={{ margin: '2rem 0' }}>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[8 / 12]}>
+          <PostWrapper as={Col} width={[9 / 12]}>
             {/* ------------------------------------------------------------ */}
             <Annotate>Body Copy</Annotate>
             <Body>
@@ -230,6 +231,61 @@ storiesOf('Blog Typography', module)
               Rather, it provides a means of… well… suspending the rendering of
               an element subtree until a particular operation complete
             </Body>
+          </PostWrapper>
+        </Row>
+      </Grid>
+    )
+  })
+  .add('Image container', () => {
+    return (
+      <Grid>
+        <Row style={{ justifyContent: 'center' }}>
+          <PostWrapper as={Col} width={[9 / 12]}>
+            <Annotate>Image with caption</Annotate>
+            <FigureImage
+              src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
+              caption="We SHOULD only log information that will help
+              identify why a certain event occurs without exposing sensible
+              data."
+            />
+            <Body>
+              Given the context of this article, it may be tempting to view
+              Suspense as a lazy loading mechanism, but this is inaccurate.
+              Rather, it provides a means of… well… suspending the rendering of
+              an element subtree until a particular operation complete
+            </Body>
+
+            {/* ------------------------------------------------------------ */}
+
+            <Annotate>Image with caption and H2</Annotate>
+            <FigureImage
+              src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
+              caption="We SHOULD only log information that will help
+              identify why a certain event occurs without exposing sensible
+              data."
+            />
+            <H2>Learning about React and CSS</H2>
+            <Body>
+              Given the context of this article, it may be tempting to view
+              Suspense as a lazy loading mechanism, but this is inaccurate.
+              Rather, it provides a means of… well… suspending the rendering of
+              an element subtree until a particular operation complete
+            </Body>
+
+            {/* ------------------------------------------------------------ */}
+
+            <Annotate>Image with caption and H2</Annotate>
+            <FigureImage
+              src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
+              caption="We SHOULD only log information that will help
+              identify why a certain event occurs without exposing sensible
+              data."
+            />
+            <Blockquote>
+              We <strong>SHOULD</strong> only log information that will help
+              identify why a certain event occurs without exposing sensible
+              data.
+            </Blockquote>
           </PostWrapper>
         </Row>
       </Grid>

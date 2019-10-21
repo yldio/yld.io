@@ -3,12 +3,20 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 
 const Wrapper = styled.figure`
-  padding-bottom: ${remcalc(24)};
+  text-align: center;
 
   > img {
     width: 100%;
     display: block;
     max-width: 100%;
+    margin-bottom: ${remcalc(25)};
+  }
+
+  figcaption {
+    color: ${({ theme }) => theme.colors.textLight};
+    padding-bottom: ${remcalc(12)};
+    max-width: 70%;
+    margin: 0 auto;
   }
 `
 

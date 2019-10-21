@@ -109,12 +109,6 @@ const Blockquote = styled.blockquote`
 `
 
 const PostWrapper = styled.div`
-  /* > :not(.figure-image) {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-  } */
-
   p + p {
     padding-top: 0;
   }
@@ -148,7 +142,15 @@ const PostWrapper = styled.div`
   }
 
   .figure-image + p {
-    padding-top: 0;
+    padding-top: ${remcalc(37)};
+  }
+
+  .figure-image + h2 {
+    padding-top: ${remcalc(43)};
+  }
+
+  .figure-image + blockquote {
+    margin-top: ${remcalc(43)};
   }
 `
 
