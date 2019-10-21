@@ -37,6 +37,8 @@ const IntroRow = styled(Row)`
 `
 
 const StyledCardTitle = styled(CardTitle)`
+  font-weight: 400;
+
   > li {
     list-style: none;
     padding-bottom: ${remcalc(8)};
