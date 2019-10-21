@@ -2,6 +2,13 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from '../src/components/grid'
+
+import { TagGroup, Tag } from '../src/components/Blog/Tag'
+
+import {
+  PostOutroMetaData,
+  PostIntroMetaData
+} from '../src/components/Blog/PostMetaData'
 import FigureImage from '../src/components/Blog/FigureImage'
 import {
   H1,
@@ -15,6 +22,7 @@ import {
 } from '../src/components/Blog/Typography'
 
 import Theme from './theme'
+import WrappedGist from '../src/components/Blog/Gist'
 
 addDecorator(Theme)
 
@@ -241,6 +249,14 @@ storiesOf('Blog Components', module)
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
           <PostWrapper as={Col} width={[9 / 12]}>
+            <Annotate>Image without caption</Annotate>
+            <FigureImage src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_" />
+            <Body>
+              Given the context of this article, it may be tempting to view
+              Suspense as a lazy loading mechanism, but this is inaccurate.
+              Rather, it provides a means of… well… suspending the rendering of
+              an element subtree until a particular operation complete
+            </Body>
             <Annotate>Image with caption</Annotate>
             <FigureImage
               src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
@@ -289,5 +305,74 @@ storiesOf('Blog Components', module)
           </PostWrapper>
         </Row>
       </Grid>
+    )
+  })
+  .add('Meta Data', () => {
+    return (
+      <Grid style={{ width: '100%' }}>
+        <Row>
+          <Col width={[8 / 12]}>
+            <Annotate>Post Intro Meta Data</Annotate>
+            <PostIntroMetaData
+              author="Bob Dole"
+              date="2019-08-12T09:58:43.000Z"
+              readTime="11"
+            />
+            <Body>
+              Given the context of this article, it may be tempting to view
+              Suspense as a lazy loading mechanism, but this is inaccurate.
+              Rather, it provides a means of… well… suspending the rendering of
+              an element subtree until a particular operation complete
+            </Body>
+          </Col>
+          <Col width={[8 / 12]}>
+            <Annotate>Post Outro Meta Data</Annotate>
+            <PostOutroMetaData
+              author="Bob Dole"
+              date="2019-08-12T09:58:43.000Z"
+              timeRead="11"
+              tags={[
+                'frontend',
+                'nodejs',
+                'machine learning',
+                'database management'
+              ]}
+            />
+          </Col>
+        </Row>
+      </Grid>
+    )
+  })
+  .add('Code snippet', () => {
+    return (
+      <Grid style={{ width: '100%' }}>
+        <Row style={{ justifyContent: 'center' }}>
+          <PostWrapper as={Col} width={[8 / 12]}>
+            <Annotate>Code snippet</Annotate>
+            <WrappedGist id="7edc948ec968ab5508ace95b03238390" />
+          </PostWrapper>
+        </Row>
+      </Grid>
+    )
+  })
+  .add('Tags', () => {
+    return (
+      <div>
+        <div>
+          <Annotate>Tag</Annotate>
+          <Tag>Frontend</Tag>
+        </div>
+        <div>
+          <Annotate>Tag Group</Annotate>
+          <TagGroup
+            tags={[
+              'frontend',
+              'nodejs',
+              'machine learning',
+              'database management'
+            ]}
+          />
+        </div>
+      </div>
     )
   })

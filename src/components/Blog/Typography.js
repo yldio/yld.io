@@ -121,6 +121,7 @@ const PostWrapper = styled.div`
     margin-top: ${remcalc(18)};
   }
 
+  p + .gist,
   p + .figure-image {
     padding-top: 0;
   }

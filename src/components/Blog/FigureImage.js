@@ -4,12 +4,13 @@ import styled from 'styled-components'
 
 const Wrapper = styled.figure`
   text-align: center;
+  padding-top: ${remcalc(37)};
 
   > img {
     width: 100%;
     display: block;
     max-width: 100%;
-    margin-bottom: ${remcalc(25)};
+    margin-bottom: ${remcalc(24)};
   }
 
   figcaption {
