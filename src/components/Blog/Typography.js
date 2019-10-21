@@ -30,8 +30,9 @@ const Body = styled.p`
   line-height: ${remcalc(33)};
   font-weight: 400;
   color: ${props => props.theme.colors.text};
-  padding: ${remcalc(13)} 0 ${remcalc(14)};
+  padding: ${remcalc(37)} 0;
 
+  *::selection,
   ::selection {
     background-color: #65ffcd;
   }
@@ -39,6 +40,10 @@ const Body = styled.p`
   a {
     text-decoration: underline;
     cursor: pointer;
+    font-style: italic;
+  }
+
+  em {
     font-style: italic;
   }
 
@@ -94,10 +99,62 @@ const Blockquote = styled.blockquote`
   font-style: italic;
   font-weight: 500;
   color: ${props => props.theme.colors.text};
-  padding-left: ${remcalc(24)};
-  margin: ${remcalc(13)} 0 ${remcalc(14)};
+  padding-left: ${remcalc(35)};
+  margin: ${remcalc(55)} 0 ${remcalc(51)};
   display: block;
   border-left: 2px solid ${({ theme }) => theme.colors.text};
+  p {
+    padding: 0;
+  }
 `
 
-export { H1, H2, Subtitle, Body, Code, A, List, ListItem, Blockquote }
+const PostWrapper = styled.div`
+  p + p {
+    padding-top: 0;
+  }
+
+  p + h2 {
+    padding-top: ${remcalc(18)};
+  }
+
+  p + blockquote {
+    margin-top: ${remcalc(18)};
+  }
+
+  p + .figure-image {
+    padding-top: 0;
+  }
+
+  h2 + p {
+    padding-top: 0;
+  }
+
+  h2 + blockquote {
+    margin-top: ${remcalc(17)};
+  }
+
+  blockquote + h2 {
+    padding-top: ${remcalc(22)};
+  }
+
+  blockquote + p {
+    padding-top: 0;
+  }
+
+  .figure-image + p {
+    padding-top: 0;
+  }
+`
+
+export {
+  H1,
+  H2,
+  Subtitle,
+  Body,
+  Code,
+  A,
+  List,
+  ListItem,
+  Blockquote,
+  PostWrapper
+}

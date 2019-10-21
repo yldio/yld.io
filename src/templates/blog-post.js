@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Row, Col } from '../components/grid'
-import { H1 } from '../components/Blog/Typography'
+import { H1, PostWrapper } from '../components/Blog/Typography'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 
@@ -15,12 +15,12 @@ const BlogPostTemplate = ({
     <Layout location={location}>
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
-          <Col width={[1, 1, 8 / 12]}>
+          <PostWrapper as={Col} width={[1, 1, 9 / 12]}>
             <H1>{post.title}</H1>
             <MDXRenderer scope={__mdxScope}>
               {post.content.childMdx.body}
             </MDXRenderer>
-          </Col>
+          </PostWrapper>
         </Row>
       </Grid>
     </Layout>

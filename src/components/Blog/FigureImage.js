@@ -1,8 +1,9 @@
 import React from 'react'
+import remcalc from 'remcalc'
 import styled from 'styled-components'
 
 const Wrapper = styled.figure`
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${remcalc(24)};
 
   > img {
     width: 100%;
@@ -12,7 +13,7 @@ const Wrapper = styled.figure`
 `
 
 const FigureImage = ({ src, caption }) => (
-  <Wrapper>
+  <Wrapper className="figure-image">
     <img src={src} alt={caption} />
     {caption && <figcaption>{caption}</figcaption>}
   </Wrapper>
