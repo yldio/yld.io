@@ -42,10 +42,10 @@ const LogoWrapper = ({ children }) => {
 }
 
 const LogoLink = ({
-  isServiceOrSpecialityPage,
-  fillColorInitial,
-  fillColorHover,
-  textColor
+  isServiceOrSpecialityPage = false,
+  fillColorInitial = 'black',
+  fillColorHover = 'grey',
+  textColor = 'black'
 }) => {
   const [fillColor, setFillColor] = useState(fillColorInitial)
   const logoStyle = useContext(LogoStyleContext)
