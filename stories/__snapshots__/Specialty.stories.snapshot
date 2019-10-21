@@ -413,21 +413,21 @@ Array [
       </div>
     </div>
   </form>,
-  .c66 {
+  .c64 {
   margin-top: 1.125rem;
   margin-bottom: 1.125rem;
 }
 
-.c69 {
+.c67 {
   margin-right: 1.125rem;
 }
 
-.c73 {
+.c71 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
 
-.c58 {
+.c56 {
   padding-top: 2.25rem;
 }
 
@@ -441,29 +441,29 @@ Array [
   padding-bottom: 6.75rem;
 }
 
-.c67 {
+.c65 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.c80 {
+.c78 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
 
-.c81 {
+.c79 {
   padding-top: 4.5rem;
 }
 
-.c86 {
+.c84 {
   padding-top: 1.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
 
-.c91 {
+.c89 {
   padding-bottom: 6.75rem;
 }
 
@@ -499,7 +499,7 @@ Array [
   flex-basis: 100%;
 }
 
-.c89 {
+.c87 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -527,7 +527,7 @@ Array [
   align-items: center;
 }
 
-.c90 {
+.c88 {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -553,7 +553,7 @@ Array [
   padding-right: 0;
 }
 
-.c60 {
+.c58 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -562,6 +562,26 @@ Array [
   padding-left: 0;
   padding-right: 0;
   width: 100%;
+  position: initial;
+  top: 0;
+  left: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c35 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
   position: initial;
   top: 0;
   left: 0;
@@ -593,26 +613,6 @@ Array [
   display: block;
 }
 
-.c37 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 50%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
 .c4 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -633,7 +633,7 @@ Array [
   display: block;
 }
 
-.c75 {
+.c73 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -653,7 +653,7 @@ Array [
   display: block;
 }
 
-.c76 {
+.c74 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -733,7 +733,7 @@ Array [
   display: block;
 }
 
-.c49 {
+.c47 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -755,7 +755,7 @@ Array [
   display: flex;
 }
 
-.c52 {
+.c50 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -775,7 +775,7 @@ Array [
   display: block;
 }
 
-.c53 {
+.c51 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -795,7 +795,7 @@ Array [
   display: block;
 }
 
-.c65 {
+.c63 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -815,7 +815,7 @@ Array [
   display: block;
 }
 
-.c84 {
+.c82 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -871,7 +871,7 @@ Array [
   color: #fff;
 }
 
-.c87 {
+.c85 {
   color: #333333;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -899,7 +899,7 @@ Array [
   padding: 0;
 }
 
-.c54 {
+.c52 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -929,7 +929,7 @@ Array [
   font-weight: 700;
 }
 
-.c40 {
+.c38 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -947,7 +947,7 @@ Array [
   opacity: .5;
 }
 
-.c55 {
+.c53 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -978,11 +978,11 @@ Array [
   opacity: .8;
 }
 
-.c38 {
+.c36 {
   background: #f9f9f9;
 }
 
-.c61 {
+.c59 {
   position: relative;
   height: 0;
   width: 100%;
@@ -990,7 +990,7 @@ Array [
   overflow: hidden;
 }
 
-.c62 {
+.c60 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1000,7 +1000,7 @@ Array [
   box-shadow: 0px 0px 90px rgba(255,255,255,0.2), 0px 0px 20px rgba(255,255,255,0.07);
 }
 
-.c59 {
+.c57 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1018,20 +1018,6 @@ Array [
   justify-content: center;
 }
 
-.c34 {
-  padding-top: 0.75rem;
-}
-
-.c35 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 2.25rem;
-}
-
 .c33 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -1047,7 +1033,7 @@ Array [
   padding-bottom: 2.25rem;
 }
 
-.c36 {
+.c34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1059,12 +1045,12 @@ Array [
   padding-top: 0.75rem;
 }
 
-.c46 {
+.c44 {
   background: #090329;
   color: #fff;
 }
 
-.c45 {
+.c43 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1080,7 +1066,7 @@ Array [
   transition-property: background,color;
 }
 
-.c45:after {
+.c43:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1094,28 +1080,28 @@ Array [
   transition-property: background;
 }
 
-.c45:hover {
+.c43:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c45:focus {
+.c43:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c45:active {
+.c43:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c45:active:after {
+.c43:active:after {
   background: #333333;
 }
 
-.c72 {
+.c70 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1132,7 +1118,7 @@ Array [
   color: #fff;
 }
 
-.c72:after {
+.c70:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1147,49 +1133,49 @@ Array [
   background: #fff;
 }
 
-.c72:hover {
+.c70:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c72:focus {
+.c70:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c72:active {
+.c70:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c72:active:after {
+.c70:active:after {
   background: #333333;
 }
 
-.c72:hover {
+.c70:hover {
   background: #1d1d1d;
   color: #fff;
 }
 
-.c72:focus {
+.c70:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #fff;
 }
 
-.c72:active {
+.c70:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c72:active:after {
+.c70:active:after {
   background: #333333;
 }
 
-.c79 {
+.c77 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1205,7 +1191,7 @@ Array [
   transition-property: background,color;
 }
 
-.c79:after {
+.c77:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1219,28 +1205,28 @@ Array [
   transition-property: background;
 }
 
-.c79:hover {
+.c77:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c79:focus {
+.c77:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c79:active {
+.c77:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c79:active:after {
+.c77:active:after {
   background: #333333;
 }
 
-.c56 {
+.c54 {
   height: 0.0625rem;
   padding: 0 0 1.125rem 0;
   border: none;
@@ -1248,7 +1234,7 @@ Array [
   border-top: 1px solid #e6e6e6;
 }
 
-.c78 {
+.c76 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1259,11 +1245,11 @@ Array [
   padding-bottom: 0.375rem;
 }
 
-.c77 {
+.c75 {
   padding-top: 0.375rem;
 }
 
-.c74 {
+.c72 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1429,26 +1415,26 @@ Array [
   padding-bottom: 3.375rem;
 }
 
-.c41 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
-.c44 {
+.c39 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
 
 .c42 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.c40 {
   padding-bottom: 0.75rem;
 }
 
-.c39 {
+.c37 {
   padding-top: 2.25rem;
   padding-bottom: 3.375rem;
 }
 
-.c43 {
+.c41 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1458,7 +1444,7 @@ Array [
   padding-bottom: 0;
 }
 
-.c48 {
+.c46 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1469,28 +1455,28 @@ Array [
   justify-content: center;
 }
 
-.c47 {
+.c45 {
   padding-top: 3.375rem;
   padding-bottom: 3.375rem;
 }
 
-.c50 {
+.c48 {
   padding: 2.25rem 0 3.375rem;
 }
 
-.c51 {
+.c49 {
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
 }
 
-.c70 {
+.c68 {
   height: 1.5rem;
   width: 1.5rem;
   max-height: 1.5rem;
   max-width: 1.5rem;
 }
 
-.c71 {
+.c69 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1503,14 +1489,14 @@ Array [
   opacity: 0.5;
 }
 
-.c68 {
+.c66 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c88 {
+.c86 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1520,78 +1506,78 @@ Array [
   bottom: 1.625rem;
 }
 
-.c82 {
+.c80 {
   text-align: center;
 }
 
-.c83 {
+.c81 {
   position: relative;
 }
 
-.c85 {
+.c83 {
   border: 1px solid;
   height: 13.875rem;
   display: inline-block;
 }
 
 @media (min-width:43.8125em) {
-  .c66 {
+  .c64 {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c73 {
+  .c71 {
     padding-top: 6.75rem;
     padding-bottom: 6.75rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c57 {
+  .c55 {
     padding-top: 2.25rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c57 {
+  .c55 {
     padding-top: 4.5rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c57 {
+  .c55 {
     padding-bottom: 3.375rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c57 {
+  .c55 {
     padding-bottom: 6.75rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c63 {
+  .c61 {
     padding-top: 4.5rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c63 {
+  .c61 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c63 {
+  .c61 {
     padding-bottom: 4.5rem;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c80 {
+  .c78 {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
@@ -1657,42 +1643,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c60 {
+  .c58 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c60 {
+  .c58 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c60 {
+  .c58 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c60 {
+  .c58 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c60 {
+  .c58 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c60 {
+  .c58 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1701,7 +1687,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c60 {
+  .c58 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -1710,77 +1696,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c10 {
+  .c35 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c10 {
+  .c35 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c10 {
+  .c35 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c10 {
+  .c35 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c10 {
+  .c35 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c37 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c37 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c37 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c37 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c37 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c37 {
+  .c35 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1789,7 +1740,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c37 {
+  .c35 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1798,7 +1749,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c37 {
+  .c35 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -1807,7 +1758,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c37 {
+  .c35 {
     width: 25%;
     position: initial;
     top: 0;
@@ -1816,6 +1767,41 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
+  .c10 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c10 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c10 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c10 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c10 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
   .c4 {
     padding-left: 0;
     padding-right: 0;
@@ -1878,7 +1864,7 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c75 {
+  .c73 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1887,7 +1873,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c75 {
+  .c73 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1896,7 +1882,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c75 {
+  .c73 {
     width: 83.33333333333334%;
     position: initial;
     top: 0;
@@ -1905,42 +1891,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c76 {
+  .c74 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c76 {
+  .c74 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c76 {
+  .c74 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c76 {
+  .c74 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c76 {
+  .c74 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c76 {
+  .c74 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1949,7 +1935,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c76 {
+  .c74 {
     width: 100%;
     position: initial;
     top: 0;
@@ -1958,7 +1944,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c76 {
+  .c74 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1967,7 +1953,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c76 {
+  .c74 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -2162,42 +2148,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c49 {
+  .c47 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c49 {
+  .c47 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c49 {
+  .c47 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c49 {
+  .c47 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c49 {
+  .c47 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c49 {
+  .c47 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2206,7 +2192,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c49 {
+  .c47 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2215,7 +2201,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c49 {
+  .c47 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2224,42 +2210,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c52 {
+  .c50 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c52 {
+  .c50 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c52 {
+  .c50 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c52 {
+  .c50 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c52 {
+  .c50 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c52 {
+  .c50 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2268,7 +2254,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c52 {
+  .c50 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2277,7 +2263,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c52 {
+  .c50 {
     width: 58.333333333333336%;
     position: initial;
     top: 0;
@@ -2286,42 +2272,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c53 {
+  .c51 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c53 {
+  .c51 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c53 {
+  .c51 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c53 {
+  .c51 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c53 {
+  .c51 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c53 {
+  .c51 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2330,7 +2316,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c53 {
+  .c51 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2339,7 +2325,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c53 {
+  .c51 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -2348,42 +2334,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c65 {
+  .c63 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c65 {
+  .c63 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c65 {
+  .c63 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c65 {
+  .c63 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c65 {
+  .c63 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c65 {
+  .c63 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2392,7 +2378,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c65 {
+  .c63 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2401,7 +2387,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c65 {
+  .c63 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2410,7 +2396,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c65 {
+  .c63 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -2419,42 +2405,42 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c84 {
+  .c82 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c84 {
+  .c82 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c84 {
+  .c82 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c84 {
+  .c82 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c84 {
+  .c82 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c84 {
+  .c82 {
     width: 100%;
     position: initial;
     top: 0;
@@ -2463,7 +2449,7 @@ Array [
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c84 {
+  .c82 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2472,7 +2458,7 @@ Array [
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c84 {
+  .c82 {
     width: 50%;
     position: initial;
     top: 0;
@@ -2481,7 +2467,7 @@ Array [
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c84 {
+  .c82 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -2542,7 +2528,7 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c87 {
+  .c85 {
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
@@ -2572,35 +2558,35 @@ Array [
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c59 {
+  .c57 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c59 {
+  .c57 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c59 {
+  .c57 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c59 {
+  .c57 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c59 {
+  .c57 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
@@ -2648,67 +2634,67 @@ Array [
 }
 
 @media (min-width:0em) and (max-width:43.75em) {
-  .c36:nth-child(even) {
+  .c34:nth-child(even) {
     padding-right: 0.75rem;
   }
 
-  .c36:nth-child(odd) {
+  .c34:nth-child(odd) {
     padding-left: 0.75rem;
   }
 }
 
 @media (min-width:43.8125em) and (max-width:56.25em) {
-  .c36:nth-child(3n-1) {
+  .c34:nth-child(3n-1) {
     padding-right: 0.75rem;
   }
 
-  .c36:nth-child(3n) {
+  .c34:nth-child(3n) {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
 
-  .c36:nth-child(3n+1) {
+  .c34:nth-child(3n+1) {
     padding-left: 0.75rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c74 {
+  .c72 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c74 {
+  .c72 {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c74 {
+  .c72 {
     margin-left: -1.3125rem;
     margin-right: -1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c74 {
+  .c72 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c74 {
+  .c72 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c74 {
+  .c72 {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -2787,65 +2773,65 @@ Array [
 }
 
 @media (min-width:56.3125em) {
-  .c41 {
+  .c39 {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
 }
 
 @media (min-width:0em) and (max-width:43.75em) {
-  .c44 {
+  .c42 {
     padding-top: 0;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c44 {
+  .c42 {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c39 {
+  .c37 {
     padding-top: 4.5rem;
     padding-bottom: 6.75rem;
   }
 }
 
 @media (min-width:0em) and (max-width:29.375em) {
-  .c48 {
+  .c46 {
     padding-bottom: 2.25rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c47 {
+  .c45 {
     padding-top: 6.75rem;
     padding-bottom: 6.75rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c50 {
+  .c48 {
     padding: 4.5rem  0  6.75rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c64:nth-child(3) {
+  .c62:nth-child(3) {
     display: none;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c64:nth-child(3) {
+  .c62:nth-child(3) {
     display: block;
   }
 }
 
 @supports (-webkit-line-clamp:2) {
-  .c71 {
+  .c69 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -2855,19 +2841,19 @@ Array [
 }
 
 @media (min-width:43.8125em) {
-  .c83:last-child {
+  .c81:last-child {
     display: none;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c83:last-child {
+  .c81:last-child {
     display: block;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c85 {
+  .c83 {
     height: 22.5rem;
   }
 }
@@ -3259,17 +3245,7 @@ Array [
           className="c33"
         >
           <div
-            className="c34 c10"
-            width={1}
-          >
-            <h3
-              className="c35"
-            >
-              Some of the companies we've worked with
-            </h3>
-          </div>
-          <div
-            className="c36 c37"
+            className="c34 c35"
             width={
               Array [
                 0.5,
@@ -3295,7 +3271,7 @@ Array [
             />
           </div>
           <div
-            className="c36 c37"
+            className="c34 c35"
             width={
               Array [
                 0.5,
@@ -3321,7 +3297,7 @@ Array [
             />
           </div>
           <div
-            className="c36 c37"
+            className="c34 c35"
             width={
               Array [
                 0.5,
@@ -3347,7 +3323,7 @@ Array [
             />
           </div>
           <div
-            className="c36 c37"
+            className="c34 c35"
             width={
               Array [
                 0.5,
@@ -3373,7 +3349,7 @@ Array [
             />
           </div>
           <div
-            className="c36 c37"
+            className="c34 c35"
             width={
               Array [
                 0.5,
@@ -3402,10 +3378,10 @@ Array [
       </div>
     </div>
     <section
-      className="c38"
+      className="c36"
     >
       <div
-        className="c39"
+        className="c37"
       >
         <div
           className="c2"
@@ -3431,7 +3407,7 @@ Array [
                 Node.js training
               </h2>
               <p
-                className="c40"
+                className="c38"
               >
                 Our expert engineers offer hands-on training and practical education to help you succeed in the ever-evolving technological landscape.
               </p>
@@ -3453,10 +3429,10 @@ Array [
               }
             >
               <div
-                className="c41"
+                className="c39"
               >
                 <div
-                  className="c42"
+                  className="c40"
                 >
                   <img
                     alt="icon on prem"
@@ -3471,12 +3447,12 @@ Array [
                   />
                 </div>
                 <h3
-                  className="c43"
+                  className="c41"
                 >
                   Workshops
                 </h3>
                 <p
-                  className="c40"
+                  className="c38"
                 >
                   Instructor-led, hands-on classes that cover open source technologies like Node.js, React.js and Docker.
                 </p>
@@ -3495,10 +3471,10 @@ Array [
               }
             >
               <div
-                className="c44"
+                className="c42"
               >
                 <div
-                  className="c42"
+                  className="c40"
                 >
                   <img
                     alt="icon certification"
@@ -3513,12 +3489,12 @@ Array [
                   />
                 </div>
                 <h3
-                  className="c43"
+                  className="c41"
                 >
                   Certification programmes
                 </h3>
                 <p
-                  className="c40"
+                  className="c38"
                 >
                   Assess the technical ability of your team with our certification programmes, designed to identify your outstanding talents.
                 </p>
@@ -3537,10 +3513,10 @@ Array [
               }
             >
               <div
-                className="c44"
+                className="c42"
               >
                 <div
-                  className="c42"
+                  className="c40"
                 >
                   <img
                     alt="icon pair programming"
@@ -3555,12 +3531,12 @@ Array [
                   />
                 </div>
                 <h3
-                  className="c43"
+                  className="c41"
                 >
                   Pair programming
                 </h3>
                 <p
-                  className="c40"
+                  className="c38"
                 >
                   Your teams learn from seasoned professionals while delivering high quality, functional platforms.
                 </p>
@@ -3583,7 +3559,7 @@ Array [
               }
             >
               <a
-                className="c45"
+                className="c43"
                 href="/contact"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -3597,16 +3573,16 @@ Array [
       </div>
     </section>
     <section
-      className="c46"
+      className="c44"
     >
       <div
-        className="c47 c2"
+        className="c45 c2"
       >
         <div
           className="c9"
         >
           <div
-            className="c48 c49"
+            className="c46 c47"
             width={
               Array [
                 1,
@@ -3722,7 +3698,7 @@ Array [
       className="c2"
     >
       <div
-        className="c50"
+        className="c48"
       >
         <div
           className="c9"
@@ -3736,7 +3712,7 @@ Array [
             }
           >
             <div
-              className="c51"
+              className="c49"
             >
               <img
                 alt="events icon"
@@ -3745,7 +3721,7 @@ Array [
             </div>
           </div>
           <div
-            className="c52"
+            className="c50"
             width={
               Array [
                 1,
@@ -3776,7 +3752,7 @@ Array [
             </div>
           </div>
           <div
-            className="c53"
+            className="c51"
             width={
               Array [
                 1,
@@ -3790,7 +3766,7 @@ Array [
             <ul>
               <li>
                 <h3
-                  className="c54"
+                  className="c52"
                 >
                   <a
                     href="https://fakelink.com"
@@ -3803,17 +3779,17 @@ Array [
                   </a>
                 </h3>
                 <p
-                  className="c55"
+                  className="c53"
                 >
                   January 15, Tuesday
                 </p>
                 <hr
-                  className="c56"
+                  className="c54"
                 />
               </li>
               <li>
                 <h3
-                  className="c54"
+                  className="c52"
                 >
                   <a
                     href="https://fakelink.com"
@@ -3826,12 +3802,12 @@ Array [
                   </a>
                 </h3>
                 <p
-                  className="c55"
+                  className="c53"
                 >
                   September 15, Sunday
                 </p>
                 <hr
-                  className="c56"
+                  className="c54"
                 />
               </li>
             </ul>
@@ -3840,13 +3816,13 @@ Array [
       </div>
     </div>
     <section
-      className="c46"
+      className="c44"
     >
       <div
         className="c2"
       >
         <div
-          className="c57"
+          className="c55"
         >
           <div
             className="c9"
@@ -3867,13 +3843,13 @@ Array [
             </div>
           </div>
           <div
-            className="c58"
+            className="c56"
           >
             <div
-              className="c59"
+              className="c57"
             >
               <div
-                className="c60"
+                className="c58"
                 width={
                   Array [
                     1,
@@ -3887,14 +3863,14 @@ Array [
                   className=""
                 >
                   <div
-                    className="c61"
+                    className="c59"
                     height={480}
                     width={854}
                   >
                     <iframe
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen={true}
-                      className="c62"
+                      className="c60"
                       frameBorder="0"
                       src="https://www.youtube.com/embed/yToHjxhCeYM"
                     />
@@ -3904,13 +3880,13 @@ Array [
             </div>
           </div>
           <div
-            className="c63"
+            className="c61"
           >
             <div
               className="c9"
             >
               <div
-                className="c64 c65"
+                className="c62 c63"
                 width={
                   Array [
                     1,
@@ -3934,16 +3910,16 @@ Array [
                     themeVariation="dark"
                   >
                     <div
-                      className="c66"
+                      className="c64"
                     >
                       <div
-                        className="c67"
+                        className="c65"
                       >
                         <div
-                          className="c68"
+                          className="c66"
                         >
                           <div
-                            className="c69"
+                            className="c67"
                           >
                             <img
                               alt="Play button"
@@ -3952,7 +3928,7 @@ Array [
                             />
                           </div>
                           <p
-                            className="c71"
+                            className="c69"
                             color="#fff"
                             opacity={0.5}
                           >
@@ -3965,7 +3941,7 @@ Array [
                 </a>
               </div>
               <div
-                className="c64 c65"
+                className="c62 c63"
                 width={
                   Array [
                     1,
@@ -3989,25 +3965,30 @@ Array [
                     themeVariation="dark"
                   >
                     <div
-                      className="c66"
+                      className="c64"
                     >
                       <div
-                        className="c67"
+                        className="c65"
                       >
                         <div
-                          className="c68"
+                          className="c66"
                         >
                           <div
-                            className="c69"
+                            className="c67"
                           >
                             <img
                               alt="Play button"
+<<<<<<< HEAD
                               className="c70"
                               src="button-play-light.svg"
+=======
+                              className="c68"
+                              src="test-file-stub"
+>>>>>>> update snapshots
                             />
                           </div>
                           <p
-                            className="c71"
+                            className="c69"
                             color="#fff"
                             opacity={0.5}
                           >
@@ -4033,7 +4014,7 @@ Array [
               }
             >
               <a
-                className="c72"
+                className="c70"
                 href="https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -4048,13 +4029,13 @@ Array [
       </div>
     </section>
     <div
-      className="c73"
+      className="c71"
     >
       <div
         className="c2"
       >
         <div
-          className="c74"
+          className="c72"
         >
           <div
             className="c4"
@@ -4074,7 +4055,7 @@ Array [
               Blog posts
             </h2>
             <div
-              className="c75"
+              className="c73"
               width={
                 Array [
                   1,
@@ -4086,14 +4067,14 @@ Array [
               }
             >
               <p
-                className="c40"
+                className="c38"
               >
                 Node.js articles created by members of YLD for the community.
               </p>
             </div>
           </div>
           <div
-            className="c76"
+            className="c74"
             width={
               Array [
                 1,
@@ -4106,11 +4087,11 @@ Array [
             }
           >
             <ul
-              className="c77"
+              className="c75"
             >
               <li>
                 <h3
-                  className="c78"
+                  className="c76"
                 >
                   <a
                     href="https://medium.com/yld-blog/cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb"
@@ -4123,17 +4104,17 @@ Array [
                   </a>
                 </h3>
                 <p
-                  className="c55"
+                  className="c53"
                 >
                   February 11, Monday
                 </p>
                 <hr
-                  className="c56"
+                  className="c54"
                 />
               </li>
               <li>
                 <h3
-                  className="c78"
+                  className="c76"
                 >
                   <a
                     href="https://medium.com/yld-blog/quic-k-http-3-c6a4fbc7b947"
@@ -4146,17 +4127,17 @@ Array [
                   </a>
                 </h3>
                 <p
-                  className="c55"
+                  className="c53"
                 >
                   November 29, Thursday
                 </p>
                 <hr
-                  className="c56"
+                  className="c54"
                 />
               </li>
               <li>
                 <h3
-                  className="c78"
+                  className="c76"
                 >
                   <a
                     href="https://medium.com/yld-blog/culture-of-learning-a25081435ce8"
@@ -4169,20 +4150,20 @@ Array [
                   </a>
                 </h3>
                 <p
-                  className="c55"
+                  className="c53"
                 >
                   November 15, Thursday
                 </p>
                 <hr
-                  className="c56"
+                  className="c54"
                 />
               </li>
             </ul>
             <div
-              className="c58"
+              className="c56"
             >
               <a
-                className="c79"
+                className="c77"
                 href="/blog/"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -4197,16 +4178,16 @@ Array [
       </div>
     </div>
     <section
-      className="c38"
+      className="c36"
     >
       <div
         className="c2"
       >
         <div
-          className="c73"
+          className="c71"
         >
           <div
-            className="c74"
+            className="c72"
           >
             <div
               className="c4"
@@ -4226,7 +4207,7 @@ Array [
                 Tutorials
               </h2>
               <div
-                className="c75"
+                className="c73"
                 width={
                   Array [
                     1,
@@ -4238,14 +4219,14 @@ Array [
                 }
               >
                 <p
-                  className="c40"
+                  className="c38"
                 >
                   Node.js tutorials created by members of YLD for the community.
                 </p>
               </div>
             </div>
             <div
-              className="c76"
+              className="c74"
               width={
                 Array [
                   1,
@@ -4258,11 +4239,11 @@ Array [
               }
             >
               <ul
-                className="c77"
+                className="c75"
               >
                 <li>
                   <h3
-                    className="c78"
+                    className="c76"
                   >
                     <a
                       href="http://nodetuts.com/series/asynchronous-programming.html"
@@ -4275,17 +4256,17 @@ Array [
                     </a>
                   </h3>
                   <p
-                    className="c55"
+                    className="c53"
                   >
                     9 video tutorials
                   </p>
                   <hr
-                    className="c56"
+                    className="c54"
                   />
                 </li>
                 <li>
                   <h3
-                    className="c78"
+                    className="c76"
                   >
                     <a
                       href="http://nodetuts.com/series/tcp-servers.html"
@@ -4298,17 +4279,17 @@ Array [
                     </a>
                   </h3>
                   <p
-                    className="c55"
+                    className="c53"
                   >
                     2 video tutorials
                   </p>
                   <hr
-                    className="c56"
+                    className="c54"
                   />
                 </li>
                 <li>
                   <h3
-                    className="c78"
+                    className="c76"
                   >
                     <a
                       href="http://nodetuts.com/series/http-api-servers.html"
@@ -4321,20 +4302,20 @@ Array [
                     </a>
                   </h3>
                   <p
-                    className="c55"
+                    className="c53"
                   >
                     2 video tutorials
                   </p>
                   <hr
-                    className="c56"
+                    className="c54"
                   />
                 </li>
               </ul>
               <div
-                className="c58"
+                className="c56"
               >
                 <a
-                  className="c79"
+                  className="c77"
                   href="http://nodetuts.com/"
                   onClick={[Function]}
                   rel="noopener noreferrer"
@@ -4353,16 +4334,16 @@ Array [
       className="c2"
     >
       <div
-        className="c80"
+        className="c78"
       >
         <div
           className="c9"
         >
           <div
-            className="c81"
+            className="c79"
           />
           <div
-            className="c82 c10"
+            className="c80 c10"
             width={
               Array [
                 1,
@@ -4375,7 +4356,7 @@ Array [
               Node.js books
             </h2>
             <p
-              className="c40"
+              className="c38"
             >
               Node.js books written by members of YLD for our community.
             </p>
@@ -4385,7 +4366,7 @@ Array [
           className="c9"
         >
           <div
-            className="c83 c84"
+            className="c81 c82"
             width={
               Array [
                 1,
@@ -4398,10 +4379,10 @@ Array [
             }
           >
             <div
-              className="c81"
+              className="c79"
             >
               <a
-                className="c85"
+                className="c83"
                 href="http://nodepatternsbooks.com/books/database-patterns.html"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -4413,10 +4394,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c86"
+                  className="c84"
                 >
                   <h3
-                    className="c87"
+                    className="c85"
                     style={
                       Object {
                         "color": "#e92c2c",
@@ -4426,7 +4407,7 @@ Array [
                     Databases Volume I - LevelDB, Redis and CouchDB
                   </h3>
                   <p
-                    className="c88"
+                    className="c86"
                   >
                     By Pedro Teixeira
                   </p>
@@ -4435,7 +4416,7 @@ Array [
             </div>
           </div>
           <div
-            className="c83 c84"
+            className="c81 c82"
             width={
               Array [
                 1,
@@ -4448,10 +4429,10 @@ Array [
             }
           >
             <div
-              className="c81"
+              className="c79"
             >
               <a
-                className="c85"
+                className="c83"
                 href="http://nodepatternsbooks.com/books/flow-control.html"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -4463,10 +4444,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c86"
+                  className="c84"
                 >
                   <h3
-                    className="c87"
+                    className="c85"
                     style={
                       Object {
                         "color": "#2c49e9",
@@ -4476,7 +4457,7 @@ Array [
                     Flow Control Mastering asynchronous flow control in Node
                   </h3>
                   <p
-                    className="c88"
+                    className="c86"
                   >
                     By Pedro Teixeira
                   </p>
@@ -4485,7 +4466,7 @@ Array [
             </div>
           </div>
           <div
-            className="c83 c84"
+            className="c81 c82"
             width={
               Array [
                 1,
@@ -4498,10 +4479,10 @@ Array [
             }
           >
             <div
-              className="c81"
+              className="c79"
             >
               <a
-                className="c85"
+                className="c83"
                 href="http://nodepatternsbooks.com/books/work-queues.html"
                 onClick={[Function]}
                 rel="noopener noreferrer"
@@ -4513,10 +4494,10 @@ Array [
                 target="_blank"
               >
                 <div
-                  className="c86"
+                  className="c84"
                 >
                   <h3
-                    className="c87"
+                    className="c85"
                     style={
                       Object {
                         "color": "#9500de",
@@ -4526,7 +4507,7 @@ Array [
                     Work Queues Master Deferred and Distributed Work in Node
                   </h3>
                   <p
-                    className="c88"
+                    className="c86"
                   >
                     By Pedro Teixeira
                   </p>
@@ -4547,16 +4528,16 @@ Array [
             }
           >
             <div
-              className="c81"
+              className="c79"
             >
               <div
-                className="c89"
+                className="c87"
               >
                 <div
-                  className="c90"
+                  className="c88"
                 >
                   <a
-                    className="c79"
+                    className="c77"
                     href="http://nodepatternsbooks.com/index.html"
                     onClick={[Function]}
                     rel="noopener noreferrer"
@@ -4569,7 +4550,7 @@ Array [
             </div>
           </div>
           <div
-            className="c91"
+            className="c89"
           />
         </div>
       </div>

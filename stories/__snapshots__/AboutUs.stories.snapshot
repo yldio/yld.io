@@ -1035,26 +1035,6 @@ exports[`Storyshots AboutUs Partners 1`] = `
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c9 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
   width: 50%;
   position: initial;
   top: 0;
@@ -1067,12 +1047,12 @@ exports[`Storyshots AboutUs Partners 1`] = `
   display: block;
 }
 
-.c10 {
+.c7 {
   width: 250px;
   height: auto;
 }
 
-.c11 {
+.c8 {
   width: 100%;
   height: auto;
 }
@@ -1083,20 +1063,6 @@ exports[`Storyshots AboutUs Partners 1`] = `
   font-size: 2rem;
   line-height: 2.25rem;
   padding: 0.8125rem 0 0.6875rem 0;
-}
-
-.c5 {
-  padding-top: 0.75rem;
-}
-
-.c7 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  padding-bottom: 2.25rem;
 }
 
 .c4 {
@@ -1114,7 +1080,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
   padding-bottom: 2.25rem;
 }
 
-.c8 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1239,42 +1205,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c9 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c9 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1283,7 +1214,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c9 {
+  .c6 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1292,7 +1223,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c9 {
+  .c6 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -1301,7 +1232,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c9 {
+  .c6 {
     width: 25%;
     position: initial;
     top: 0;
@@ -1359,26 +1290,26 @@ exports[`Storyshots AboutUs Partners 1`] = `
 }
 
 @media (min-width:0em) and (max-width:43.75em) {
-  .c8:nth-child(even) {
+  .c5:nth-child(even) {
     padding-right: 0.75rem;
   }
 
-  .c8:nth-child(odd) {
+  .c5:nth-child(odd) {
     padding-left: 0.75rem;
   }
 }
 
 @media (min-width:43.8125em) and (max-width:56.25em) {
-  .c8:nth-child(3n-1) {
+  .c5:nth-child(3n-1) {
     padding-right: 0.75rem;
   }
 
-  .c8:nth-child(3n) {
+  .c5:nth-child(3n) {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
 
-  .c8:nth-child(3n+1) {
+  .c5:nth-child(3n+1) {
     padding-left: 0.75rem;
   }
 }
@@ -1403,16 +1334,6 @@ exports[`Storyshots AboutUs Partners 1`] = `
     >
       <div
         className="c5 c6"
-        width={1}
-      >
-        <h3
-          className="c7"
-        >
-          Some of the companies we've worked with
-        </h3>
-      </div>
-      <div
-        className="c8 c9"
         width={
           Array [
             0.5,
@@ -1432,7 +1353,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
           title="nodeJS"
         >
           <img
-            className="c10"
+            className="c7"
             src="img1.jpg"
             style={
               Object {
@@ -1445,7 +1366,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
         </a>
       </div>
       <div
-        className="c8 c9"
+        className="c5 c6"
         width={
           Array [
             0.5,
@@ -1465,7 +1386,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
           title="aws"
         >
           <img
-            className="c10"
+            className="c7"
             src="img2.jpg"
             style={
               Object {
@@ -1478,7 +1399,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
         </a>
       </div>
       <div
-        className="c8 c9"
+        className="c5 c6"
         width={
           Array [
             0.5,
@@ -1492,7 +1413,7 @@ exports[`Storyshots AboutUs Partners 1`] = `
       >
         <img
           alt="another partner"
-          className="c11"
+          className="c8"
           style={
             Object {
               "filter": "grayscale(1)",
