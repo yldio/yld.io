@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'gatsby'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import svgLogo from '../../../images/yld-white.svg'
 import animatedLogo from '../../../images/logo_animated.gif'
 import ServiceSpecialityLogo from '../../../images/service-speciality-logo'
+import { LogoStyleContext, HomePageContext } from '../../../context/PageContext'
 
 const StyledLink = styled(Link)`
   height: ${remcalc(48)};
@@ -26,8 +27,10 @@ const StyledHomePageLink = styled.div`
   cursor: pointer;
 `
 
-const LogoWrapper = ({ isHomePage, children }) =>
-  isHomePage ? (
+const LogoWrapper = ({ children }) => {
+  const isHomePage = useContext(HomePageContext)
+
+  return isHomePage ? (
     <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
       {children}
     </StyledHomePageLink>
@@ -36,20 +39,20 @@ const LogoWrapper = ({ isHomePage, children }) =>
       {children}
     </Link>
   )
+}
 
 const LogoLink = ({
-  isHomePage,
-  isEventsPage,
-  isServiceOrSpecialityPage,
-  fillColorInitial,
-  fillColorHover,
-  textColor
+  isServiceOrSpecialityPage = false,
+  fillColorInitial = 'black',
+  fillColorHover = 'grey',
+  textColor = 'black'
 }) => {
   const [fillColor, setFillColor] = useState(fillColorInitial)
+  const logoStyle = useContext(LogoStyleContext)
 
-  if (isHomePage || isEventsPage) {
+  if (logoStyle === 'white') {
     return (
-      <LogoWrapper isHomepage={isHomePage}>
+      <LogoWrapper>
         <Logo src={svgLogo} alt="yld logo" />
       </LogoWrapper>
     )

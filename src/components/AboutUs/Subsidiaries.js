@@ -12,11 +12,11 @@ const Subsidiary = ({ image, description, linkUrl, linkText }) => (
   <PaddedCol width={[1, 1, 1, 1, 6 / 12]}>
     <PaddedCol width={[1, 1, 1, 1, 1, 5 / 6]} px={0}>
       <Image image={image} width="250px" />
-      <BodyPrimary reverse muted>
+      <BodyPrimary reverse="true" muted>
         {description}
       </BodyPrimary>
       {linkText ? (
-        <StyledLink reverse href={linkUrl} external>
+        <StyledLink reverse="true" href={linkUrl} external>
           {linkText}
         </StyledLink>
       ) : null}

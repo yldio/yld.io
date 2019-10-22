@@ -12,7 +12,7 @@ const TappableAnchor = styled(ExternalAnchor)`
   align-items: center;
 
   &:first-child {
-    margin-left: -${({ theme, imageSize }) => remcalc((theme.elementSizes.tappableArea - imageSize) / 2)};
+    margin-left: -${({ theme, imagesize }) => remcalc((theme.elementSizes.tappableArea - imagesize) / 2)};
   }
 `
 
@@ -20,7 +20,7 @@ const SocialLink = ({ name, url, image, IMAGE_SIZE = 24 }) => {
   const size = `${IMAGE_SIZE}px`
 
   return (
-    <TappableAnchor title={`${name} account`} href={url} imageSize={IMAGE_SIZE}>
+    <TappableAnchor title={`${name} account`} href={url} imagesize={IMAGE_SIZE}>
       <Image image={image} alt={name} width={size} height={size} />
     </TappableAnchor>
   )

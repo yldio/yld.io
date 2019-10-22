@@ -8,6 +8,6 @@ exports[`Storyshots Image with file url 1`] = `
 
 <img
   className="c0"
-  src="test-file-stub"
+  src="logo_animated.gif"
 />
 `;

@@ -1208,7 +1208,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
           <a
             className="c14"
             href="https://www.linkedin.com/in/osbornnick/"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"

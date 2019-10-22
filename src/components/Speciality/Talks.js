@@ -52,7 +52,7 @@ const TalksSection = ({ talks: allTalks }) => {
             {cta && (
               <Row>
                 <Col width={[1]}>
-                  <StyledLink reverse href={cta.link} external>
+                  <StyledLink reverse="true" href={cta.link} external>
                     {cta.title}
                   </StyledLink>
                 </Col>

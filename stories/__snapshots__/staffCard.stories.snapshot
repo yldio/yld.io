@@ -343,7 +343,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -375,7 +375,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -385,14 +385,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -402,7 +402,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>
@@ -424,7 +424,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -456,7 +456,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -466,14 +466,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -483,7 +483,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>
@@ -505,7 +505,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -537,7 +537,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -547,14 +547,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -564,7 +564,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>
@@ -586,7 +586,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -618,7 +618,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -628,14 +628,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -645,7 +645,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>
@@ -667,7 +667,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -699,7 +699,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -709,14 +709,14 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -726,7 +726,7 @@ exports[`Storyshots About Us Page Components Multiple StaffCards 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>
@@ -1080,7 +1080,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
     >
       <img
         className="c4"
-        src="test-file-stub"
+        src="favicon.png"
         width="100%"
       />
       <h3
@@ -1112,7 +1112,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
           <a
             className="c11"
             href="twitter.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -1122,14 +1122,14 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
               alt="twitter"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="twiter-icon.svg"
               width="24px"
             />
           </a>
           <a
             className="c11"
             href="linkedin.com/etc"
-            imageSize={24}
+            imagesize={24}
             onClick={[Function]}
             rel="noopener noreferrer"
             target="_blank"
@@ -1139,7 +1139,7 @@ exports[`Storyshots About Us Page Components StaffCard 1`] = `
               alt="linkedin"
               className="c12"
               height="24px"
-              src="test-file-stub"
+              src="linkedin-icon.svg"
               width="24px"
             />
           </a>

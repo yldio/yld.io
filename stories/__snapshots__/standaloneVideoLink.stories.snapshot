@@ -293,7 +293,7 @@ exports[`Storyshots Standalone Video Link Dark theme 1`] = `
                   <img
                     alt="Play button"
                     className="c9"
-                    src="test-file-stub"
+                    src="button-play-light.svg"
                   />
                 </div>
                 <p
@@ -605,7 +605,7 @@ exports[`Storyshots Standalone Video Link Grey theme 1`] = `
                   <img
                     alt="Play button"
                     className="c9"
-                    src="test-file-stub"
+                    src="button-play-dark.svg"
                   />
                 </div>
                 <p
@@ -910,7 +910,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 <img
                   alt="Play button"
                   className="c8"
-                  src="test-file-stub"
+                  src="button-play-dark.svg"
                 />
               </div>
               <p
@@ -965,7 +965,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 <img
                   alt="Play button"
                   className="c8"
-                  src="test-file-stub"
+                  src="button-play-dark.svg"
                 />
               </div>
               <p
@@ -1020,7 +1020,7 @@ exports[`Storyshots Standalone Video Link Multiple components 1`] = `
                 <img
                   alt="Play button"
                   className="c8"
-                  src="test-file-stub"
+                  src="button-play-dark.svg"
                 />
               </div>
               <p
@@ -1324,7 +1324,7 @@ exports[`Storyshots Standalone Video Link Single component 1`] = `
                 <img
                   alt="Play button"
                   className="c8"
-                  src="test-file-stub"
+                  src="button-play-dark.svg"
                 />
               </div>
               <p

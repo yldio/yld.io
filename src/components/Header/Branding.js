@@ -12,7 +12,7 @@ const StyledLinksContainer = styled.div`
   align-items: center;
 `
 
-const TopNavBranding = ({ path, slug }) => (
+const TopNavBranding = ({ slug }) => (
   <StaticQuery
     query={graphql`
       {
@@ -61,9 +61,6 @@ const TopNavBranding = ({ path, slug }) => (
         slug
       })
 
-      const isHomePage = path === '/'
-      const isEventsPage = path.includes('events')
-
       const fillColorInitial = isSpecialityPage
         ? specialityColor || logoColors.specialitiesFillDefault
         : logoColors['default']
@@ -77,8 +74,6 @@ const TopNavBranding = ({ path, slug }) => (
       return (
         <StyledLinksContainer>
           <LogoLink
-            isHomePage={isHomePage}
-            isEventsPage={isEventsPage}
             isServiceOrSpecialityPage={isServicePage || isSpecialityPage}
             fillColorInitial={fillColorInitial}
             fillColorHover={fillColorHover}

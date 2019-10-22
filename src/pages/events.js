@@ -9,8 +9,6 @@ import breakpoint from 'styled-components-breakpoint'
 import remcalc from 'remcalc'
 import is from 'styled-is'
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-
 import Head from '../components/Common/Head'
 import Hr from '../components/Common/Hr'
 import {
@@ -26,6 +24,10 @@ import GreyBackground from '../components/Common/GreyBackground'
 import Image from '../components/Common/Image'
 import StyledLink from '../components/Common/StyledLink'
 import BlueBackground from '../components/Common/BlueBackground'
+
+import { LogoStyleContext } from '../context/PageContext'
+
+import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 
 const createEventStructuredData = (events = []) =>
   events.map(({ node }) => ({
@@ -220,92 +222,96 @@ const EventPage = ({
   const eventStructuredData = createEventStructuredData(futureEvents)
 
   return (
-    <Layout
-      bgColor="blueBg"
-      footerContactUsId={footerContactUs.id}
-      breadcrumbData={breadcrumbData}
-    >
-      <Helmet>
-        {eventStructuredData &&
-          eventStructuredData.length > 0 &&
-          eventStructuredData.map(data => (
-            <script key={generate()} type="application/ld+json">
-              {JSON.stringify(data)}
-            </script>
-          ))}
-      </Helmet>
-      <Head seoMetaData={seoMetaData} />
+    <LogoStyleContext.Provider value="white">
+      <Layout
+        bgColor="blueBg"
+        footerContactUsId={footerContactUs.id}
+        breadcrumbData={breadcrumbData}
+      >
+        <Helmet>
+          {eventStructuredData &&
+            eventStructuredData.length > 0 &&
+            eventStructuredData.map(data => (
+              <script key={generate()} type="application/ld+json">
+                {JSON.stringify(data)}
+              </script>
+            ))}
+        </Helmet>
+        <Head seoMetaData={seoMetaData} />
 
-      <StyledBlueBackground>
+        <StyledBlueBackground>
+          <Grid>
+            <StyledRow>
+              <StyledSectionTitleCol width={[1, 1, 1, 1, 1 / 2]}>
+                <SectionTitle reverse>
+                  {introSentence.introSentence}
+                </SectionTitle>
+              </StyledSectionTitleCol>
+              <StyledPosterImageCol width={[1, 1, 1, 1, 1 / 2]}>
+                <StyledPosterImage image={posterImage} />
+              </StyledPosterImageCol>
+            </StyledRow>
+          </Grid>
+        </StyledBlueBackground>
+
         <Grid>
-          <StyledRow>
-            <StyledSectionTitleCol width={[1, 1, 1, 1, 1 / 2]}>
-              <SectionTitle reverse>{introSentence.introSentence}</SectionTitle>
-            </StyledSectionTitleCol>
-            <StyledPosterImageCol width={[1, 1, 1, 1, 1 / 2]}>
-              <StyledPosterImage image={posterImage} />
-            </StyledPosterImageCol>
-          </StyledRow>
+          <EventsRow>
+            <Col width={[1]}>
+              <DisplayTitle>Upcoming events</DisplayTitle>
+            </Col>
+            <Col width={[1]}>
+              {futureEvents && futureEvents.length > 0 ? (
+                <EventList events={futureEvents} />
+              ) : (
+                <DisplayTitle>
+                  {
+                    "We don't seem to have any upcoming events currently, check back soon!"
+                  }
+                </DisplayTitle>
+              )}
+            </Col>
+          </EventsRow>
         </Grid>
-      </StyledBlueBackground>
 
-      <Grid>
-        <EventsRow>
-          <Col width={[1]}>
-            <DisplayTitle>Upcoming events</DisplayTitle>
-          </Col>
-          <Col width={[1]}>
-            {futureEvents && futureEvents.length > 0 ? (
-              <EventList events={futureEvents} />
-            ) : (
-              <DisplayTitle>
-                {
-                  "We don't seem to have any upcoming events currently, check back soon!"
-                }
-              </DisplayTitle>
-            )}
-          </Col>
-        </EventsRow>
-      </Grid>
+        <GreyBackground>
+          <Grid>
+            <Padding
+              top={{ smallPhone: 3.5, tablet: 5 }}
+              bottom={{ smallPhone: 3.5, tablet: 5 }}
+            >
+              <Row>
+                <Col width={[1, 1, 1, 1, 6 / 12]}>
+                  <SectionTitle>{getInTouchData.title}</SectionTitle>
+                </Col>
+                <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
+                  <BodyPrimary bold>{getInTouchData.copyHeading}</BodyPrimary>
+                  <BodyPrimary noPaddingTop>{getInTouchData.copy}</BodyPrimary>
 
-      <GreyBackground>
+                  <StyledLink to="/contact/" title={getInTouchData.ctaText}>
+                    {getInTouchData.ctaText}
+                  </StyledLink>
+                </Col>
+              </Row>
+            </Padding>
+          </Grid>
+        </GreyBackground>
+
         <Grid>
-          <Padding
-            top={{ smallPhone: 3.5, tablet: 5 }}
-            bottom={{ smallPhone: 3.5, tablet: 5 }}
-          >
-            <Row>
-              <Col width={[1, 1, 1, 1, 6 / 12]}>
-                <SectionTitle>{getInTouchData.title}</SectionTitle>
-              </Col>
-              <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
-                <BodyPrimary bold>{getInTouchData.copyHeading}</BodyPrimary>
-                <BodyPrimary noPaddingTop>{getInTouchData.copy}</BodyPrimary>
-
-                <StyledLink to="/contact/" title={getInTouchData.ctaText}>
-                  {getInTouchData.ctaText}
-                </StyledLink>
-              </Col>
-            </Row>
-          </Padding>
+          <ConferenceRow>
+            <Col width={[1]}>
+              <ConferenceTitleWrap>
+                <SectionTitle>Our Conferences</SectionTitle>
+              </ConferenceTitleWrap>
+            </Col>
+            <Col width={[1]}>
+              {conferences.edges && conferences.edges.length > 0 && (
+                <ConferenceList events={conferences.edges} />
+              )}
+            </Col>
+          </ConferenceRow>
         </Grid>
-      </GreyBackground>
-
-      <Grid>
-        <ConferenceRow>
-          <Col width={[1]}>
-            <ConferenceTitleWrap>
-              <SectionTitle>Our Conferences</SectionTitle>
-            </ConferenceTitleWrap>
-          </Col>
-          <Col width={[1]}>
-            {conferences.edges && conferences.edges.length > 0 && (
-              <ConferenceList events={conferences.edges} />
-            )}
-          </Col>
-        </ConferenceRow>
-      </Grid>
-    </Layout>
+      </Layout>
+    </LogoStyleContext.Provider>
   )
 }
 

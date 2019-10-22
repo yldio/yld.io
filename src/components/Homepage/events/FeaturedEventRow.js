@@ -117,19 +117,19 @@ const FeaturedEvent = ({ event }) => (
             <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
               <InfoInner color={event.color}>
                 <EventWrapper>
-                  <PaddedBodyPrimary muted reverse noPadding>
+                  <PaddedBodyPrimary muted reverse="true" noPadding>
                     Featured event
                   </PaddedBodyPrimary>
-                  <StyledDisplayTitle reverse noPaddingTop>
+                  <StyledDisplayTitle reverse="true" noPaddingTop>
                     {event.eventTitle}
                   </StyledDisplayTitle>
-                  <BodyPrimary reverse>{event.date}</BodyPrimary>
-                  <BodyPrimary muted reverse>
+                  <BodyPrimary reverse="true">{event.date}</BodyPrimary>
+                  <BodyPrimary muted reverse="true">
                     {event.blurb.blurb}
                   </BodyPrimary>
                   <StyledLink
                     external
-                    reverse
+                    reverse="true"
                     href={event.linkToEvent}
                     title={`${event.eventTitle} - ${event.ctaText}`}
                   >

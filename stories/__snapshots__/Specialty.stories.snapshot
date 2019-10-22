@@ -3740,7 +3740,7 @@ Array [
             >
               <img
                 alt="events icon"
-                src="test-file-stub"
+                src="events-icon.svg"
               />
             </div>
           </div>
@@ -3948,7 +3948,7 @@ Array [
                             <img
                               alt="Play button"
                               className="c70"
-                              src="test-file-stub"
+                              src="button-play-light.svg"
                             />
                           </div>
                           <p
@@ -4003,7 +4003,7 @@ Array [
                             <img
                               alt="Play button"
                               className="c70"
-                              src="test-file-stub"
+                              src="button-play-light.svg"
                             />
                           </div>
                           <p
@@ -4037,7 +4037,7 @@ Array [
                 href="https://www.youtube.com/channel/UCPXA8SlHzOsPNYlXGKZRPdg"
                 onClick={[Function]}
                 rel="noopener noreferrer"
-                reverse={true}
+                reverse="true"
                 target="_blank"
               >
                 See all talks

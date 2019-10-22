@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: 'yarn install'
+          command: 'yarn install --frozen-lockfile'
           name: 'Install dependencies'
       - persist_to_workspace:
           root: ~/app
@@ -48,7 +48,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm run test:lighthouse
+          command: 'yarn run test:lighthouse'
           name: Lighthouse
   lint:
     <<: *defaults
@@ -56,21 +56,29 @@ jobs:
       - checkout
       - *attach_workspace
       - run: 'yarn lint'
-  snapshots:
+  interaction:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: npm run test:snapshots && npm run test:interaction
-          name: Snapshots
+          command: 'yarn run test:interaction'
+          name: Interaction tests
+  storyshots:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: 'yarn run test:storyshots'
+          name: Storyshots
   testcafe:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: npm run test:e2e
+          command: 'yarn run test:e2e'
           name: Testcafe
       - store_artifacts:
           path: ~/app/artifacts/screenshots
@@ -86,15 +94,18 @@ workflows:
           requires:
             - install
       - lint:
-          requires: 
+          requires:
+            - install
+      - interaction:
+          requires:
             - install
       - lighthouse:
-          requires: 
+          requires:
             - build
-      - snapshots:
-          requires: 
+      - storyshots:
+          requires:
             - build
       - testcafe:
-          requires: 
+          requires:
             - build
   version: 2
