@@ -7,7 +7,7 @@ import remcalc from 'remcalc'
 import { Row, Col } from '../grid'
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
-import RatioContainer from '../Common/RatioContainer'
+import Image from '../Common/Image'
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
@@ -53,8 +53,9 @@ const DesktopOnlyRow = styled(Row)`
 `
 
 const CardHeader = styled.header`
-  padding: ${({ theme }) => `${theme.space[3]} ${theme.space[3]}`};
-  max-width: ${remcalc(475)};
+  padding: ${({ theme }) =>
+    `${theme.space[3]} ${theme.space[6]} ${theme.space[3]} ${theme.space[3]}`};
+  flex-grow: 2;
   box-sizing: border-box;
   background-color: #${({ backgroundColor }) => backgroundColor};
 
@@ -72,20 +73,20 @@ const CardHeader = styled.header`
   `}
 `
 
-const Card = styled(RatioContainer)`
-  background-color: #${props => props.color};
-  background-image: url(${props => props.image.file.url});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  margin-top: ${({ theme }) => theme.space[4]};
-
-  ${breakpoint('tablet')`
-    margin-top: ${({ theme }) => theme.space[5]};
-  `}
+const Card = styled.div`
+  background-color: #${({ color }) => color};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
 const AnimatedLink = styled(Link)`
+  margin-top: ${({ theme }) => theme.space[3]};
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: stretch;
+
   > div {
     transition: transform ${props => props.theme.animations.normal} ease;
   }
@@ -96,7 +97,24 @@ const AnimatedLink = styled(Link)`
       transform: scale(0.97);
     }
   }
+
+  ${breakpoint('tablet')`
+    margin-top: ${({ theme }) => theme.space[5]};
+  `}
 `
+
+const CaseStudyImageWrapper = styled.div`
+  background-color: #${({ backgroundColor }) => backgroundColor};
+
+  > * {
+    background-color: #${({ backgroundColor }) => backgroundColor};
+  }
+
+  ${breakpoint('smallPhone', 'smallTablet')`
+    display: none;
+  `}
+`
+
 const CaseStudy = ({ caseStudy }) => {
   const {
     title,
@@ -109,12 +127,7 @@ const CaseStudy = ({ caseStudy }) => {
 
   return (
     <AnimatedLink to={`/case-study/${slug}`} title={title}>
-      <Card
-        width={100}
-        height={130}
-        color={posterColor}
-        image={alternativePreviewImage}
-      >
+      <Card width={100} height={130} color={posterColor}>
         <CardHeader backgroundColor={posterColor}>
           <section>
             <BodyPrimary noPaddingTop reverse={reverseColor} muted>
@@ -125,6 +138,9 @@ const CaseStudy = ({ caseStudy }) => {
             </CardTitle>
           </section>
         </CardHeader>
+        <CaseStudyImageWrapper backgroundColor={posterColor}>
+          <Image image={alternativePreviewImage} />
+        </CaseStudyImageWrapper>
       </Card>
     </AnimatedLink>
   )
@@ -190,21 +206,21 @@ const OurWork = ({ data }) => {
       </Row>
       <MobileOnlyRow>
         {mobileCaseStudies.map((caseStudy, index) => (
-          <Col key={index} width={1}>
+          <Col key={index} width={1} block={false}>
             <CaseStudy key={caseStudy.id} caseStudy={caseStudy} />
           </Col>
         ))}
       </MobileOnlyRow>
       <TabletOnlyRow>
         {tabletCaseStudies.map((caseStudy, index) => (
-          <Col key={index} width={1 / 2}>
+          <Col key={index} width={1 / 2} block={false}>
             <CaseStudy key={caseStudy.id} caseStudy={caseStudy} />
           </Col>
         ))}
       </TabletOnlyRow>
       <DesktopOnlyRow>
         {desktopCaseStudies.map((caseStudy, index) => (
-          <Col key={index} width={4 / 12}>
+          <Col key={index} width={4 / 12} block={false}>
             <CaseStudy key={caseStudy.id} caseStudy={caseStudy} />
           </Col>
         ))}
