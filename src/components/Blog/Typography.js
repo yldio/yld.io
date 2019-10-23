@@ -61,6 +61,10 @@ const Body = styled.p`
       background-color: #65ffcd;
     }
   }
+
+  strong {
+    font-weight: 500;
+  }
 `
 
 const List = styled.ul`
@@ -72,6 +76,15 @@ const ListItem = styled.li`
   font-size: ${remcalc(20)};
   line-height: ${remcalc(33)};
   font-weight: 300;
+  padding: ${remcalc(8)} 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 `
 
 const Code = styled.code`
@@ -103,8 +116,10 @@ const Blockquote = styled.blockquote`
   margin: ${remcalc(55)} 0 ${remcalc(51)};
   display: block;
   border-left: 2px solid ${({ theme }) => theme.colors.text};
+
   p {
     padding: 0;
+    font-weight: 500;
   }
 `
 
@@ -127,7 +142,7 @@ const PostWrapper = styled.div`
   }
 
   h2 + p {
-    padding-top: 0;
+    padding-top: ${remcalc(13)};
   }
 
   h2 + blockquote {
@@ -152,6 +167,15 @@ const PostWrapper = styled.div`
 
   .figure-image + blockquote {
     margin-top: ${remcalc(43)};
+  }
+
+  .gist {
+    /* 
+    Remove padding set internally in iframe,
+    Gist from @blocks/kit removes left and right margin
+     */
+    margin-top: -8px;
+    margin-bottom: -8px;
   }
 `
 

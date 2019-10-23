@@ -19,11 +19,12 @@ const PostIntroMetaDataWrapper = styled.div`
 const PostMeta = styled(Body)`
   padding-top: 0;
   padding-bottom: ${remcalc(36)};
+  color: ${({ theme }) => theme.colors.secondaryText};
 `
 
-const PostIntroMetaData = ({ author, date, readTime }) => (
+const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <PostIntroMetaDataWrapper>
-    <PostTitle>Easier GraphQL wrappers for your REST API’s</PostTitle>
+    <PostTitle>{title}</PostTitle>
     <PostMeta>
       by {author} • {Format(date, 'MMMM do[,] YYYY')}{' '}
       {readTime && `• ${readTime}min`}
@@ -32,22 +33,19 @@ const PostIntroMetaData = ({ author, date, readTime }) => (
   </PostIntroMetaDataWrapper>
 )
 
-const PostOutroTopSection = styled.section`
-  padding: ${({ theme }) => theme.space[4]} 0;
-`
-
 const PostOutroTagSection = styled.section`
-  padding: ${({ theme }) => theme.space[4]} 0;
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
 `
 
 const PostOutroMetaData = ({ author, date, tags }) => (
   <div>
     <Hr />
-    <PostOutroTopSection>
+    <section>
       <Body>
         Written by {author} • {Format(date, 'MMMM do[,] YYYY')}
       </Body>
-    </PostOutroTopSection>
+    </section>
     <Hr />
     {tags && tags.length > 0 && (
       <PostOutroTagSection>

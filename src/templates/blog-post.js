@@ -19,8 +19,9 @@ const BlogPostTemplate = ({
     <Layout location={location}>
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
-          <Col width={[1, 1, 9 / 12]}>
+          <Col width={[1, 1, 7 / 12]}>
             <PostIntroMetaData
+              title={post.title}
               author={post.authorName}
               date={post.firstPublishedAt}
               readTime={post.content.childMdx.timeToRead}
@@ -28,12 +29,12 @@ const BlogPostTemplate = ({
           </Col>
         </Row>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[1, 1, 9 / 12]}>
+          <PostWrapper as={Col} width={[1, 1, 7 / 12]}>
             <MDXRenderer scope={__mdxScope}>
               {post.content.childMdx.body}
             </MDXRenderer>
           </PostWrapper>
-          <Col width={[1, 1, 9 / 12]}>
+          <Col width={[1, 1, 7 / 12]}>
             <PostOutroMetaData
               author={post.authorName}
               date={post.firstPublishedAt}
