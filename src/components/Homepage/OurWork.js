@@ -133,7 +133,7 @@ const CaseStudy = ({ caseStudy }) => {
             <BodyPrimary noPaddingTop reverse={reverseColor} muted>
               {client}
             </BodyPrimary>
-            <CardTitle reverse={reverseColor} noPadding>
+            <CardTitle reverse={reverseColor} noPaddingTop>
               {title}
             </CardTitle>
           </section>
