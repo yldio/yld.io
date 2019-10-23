@@ -66,7 +66,7 @@ module.exports = async data => {
       return incompletePosts.includes(title)
     })
 
-    console.log(`Process posts: ${toProcess.map(({ title }) => `\n${title}`)}`)
+    console.info(`Process posts: ${toProcess.map(({ title }) => `\n${title}`)}`)
 
     return toProcess
   }
@@ -86,12 +86,12 @@ module.exports = async data => {
       async posts => TranspileAllPosts(posts)
     ])
   } catch (error) {
-    console.log('WATERFALL ERROR')
+    console.error('WATERFALL ERROR')
     throw new Error(error)
   }
 
   if (isProd && posts) {
-    console.log('Publishing to contentful')
+    console.info('Publishing to contentful')
     return await PublishToContentful(
       posts,
       environment,

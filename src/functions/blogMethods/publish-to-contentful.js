@@ -42,7 +42,12 @@ module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
       const [updateErr, updatedAsset] = await Intercept(asset.update())
 
       if (updateErr) {
-        console.error(`Update for ${post.title} failed: `, updateErr)
+        console.error(
+          `Update for ${post.title} failed due to: `,
+          updateErr.details.errors[0].details
+        )
+
+        return `An error occured whilst updating post ${post.title}, see logs`
       }
 
       const [publishErr] = await Intercept(updatedAsset.publish())
