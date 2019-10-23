@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { H1, Body } from './Typography'
+import { H1, Body, PostInfo } from './Typography'
 import Hr from '../Common/Hr'
 import Format from 'date-fns/format'
 import { TagGroup } from './Tag'
@@ -16,19 +16,13 @@ const PostIntroMetaDataWrapper = styled.div`
   }
 `
 
-const PostMeta = styled(Body)`
-  padding-top: 0;
-  padding-bottom: ${remcalc(36)};
-  color: ${({ theme }) => theme.colors.secondaryText};
-`
-
 const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <PostIntroMetaDataWrapper>
     <PostTitle>{title}</PostTitle>
-    <PostMeta>
+    <PostInfo>
       by {author} • {Format(date, 'MMMM do[,] YYYY')}{' '}
       {readTime && `• ${readTime}min`}
-    </PostMeta>
+    </PostInfo>
     <Hr />
   </PostIntroMetaDataWrapper>
 )

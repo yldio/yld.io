@@ -179,6 +179,14 @@ const PostWrapper = styled.div`
   }
 `
 
+const PostInfo = styled(Body)`
+  font-size: ${remcalc(18)};
+  line-height: ${remcalc(31)};
+  padding-top: 0;
+  padding-bottom: ${remcalc(36)};
+  color: ${({ theme }) => theme.colors.secondaryText};
+`
+
 export {
   H1,
   H2,
@@ -189,5 +197,6 @@ export {
   List,
   ListItem,
   Blockquote,
+  PostInfo,
   PostWrapper
 }
