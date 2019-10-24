@@ -50,6 +50,8 @@ jobs:
       - run:
           command: 'yarn run test:lighthouse'
           name: Lighthouse
+      - store_artifacts:
+          path: ~/app/tests/lighthouse/artifacts
   lint:
     <<: *defaults
     steps:

@@ -1,133 +1,145 @@
-const launchChromeAndRunLighthouse = require('./launchChromeAndRunLighthouse.js')
+import { writeFileSync } from 'fs'
+import { resolve } from 'path'
 
-jest.setTimeout(60000)
+import { sync as mkdirpSync } from 'mkdirp'
+import prettyFormat from 'pretty-format'
 
-const auditTest = (audits, name, type, number) => {
-  switch (type) {
-    case 'value':
-      expect(audits[name].rawValue).toBeTruthy()
-      break
-    case 'smaller':
-      expect(audits[name].rawValue).toBeLessThanOrEqual(number)
-      break
-    case 'bigger':
-      expect(audits[name].rawValue).toBeGreaterThanOrEqual(number)
-      break
-    case 'size':
-      expect(audits[name].details.items.length).toBeLessThanOrEqual(number)
-      break
-    default:
-      expect(audits[name].details.items).toEqual([])
+import launchChromeAndRunLighthouse from './run'
+import mergeLighthouseResults from './merge'
+
+const numRuns = 5
+jest.setTimeout(3 * 60 * 1000)
+
+const resultDir = resolve(__dirname, 'artifacts')
+let result
+
+beforeAll(async () => {
+  const results = []
+  mkdirpSync(resultDir)
+
+  for (let i = 0; i < numRuns; i++) {
+    const { lhr } = await launchChromeAndRunLighthouse()
+    results.push(lhr)
+    writeFileSync(resolve(resultDir, `result-${i}.json`), JSON.stringify(lhr))
+    writeFileSync(resolve(resultDir, `result-${i}.txt`), prettyFormat(lhr))
   }
+  result = mergeLighthouseResults(results)
+
+  writeFileSync(resolve(resultDir, 'result.json'), JSON.stringify(result))
+  writeFileSync(resolve(resultDir, 'result.txt'), prettyFormat(result))
+})
+
+const deleteAudit = name => {
+  expect(result.audits).toHaveProperty(name)
+  delete result.audits[name]
 }
 
-test('Mobile Homepage', () => {
-  return launchChromeAndRunLighthouse(`http://localhost:3001`).then(
-    ({ lhr: { audits } }) => {
-      // https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag
-      auditTest(audits, 'viewport', 'value')
-      // https://developers.google.com/web/tools/lighthouse/audits/font-sizes
-      auditTest(audits, 'font-size', 'value')
-    }
-  )
+// Audits with informative/manual/notApplicable scores, as well as the audits listed here, are ignored.
+// This is done explicitly so that any new audits after an update must be dealt with.
+// Also, if audits become applicable due to changes to the site, they must be dealt with.
+const ignoredAudits = [
+  // not meaningful with a local server
+  'time-to-first-byte',
+  'uses-long-cache-ttl',
+  // binary not passing yet
+  'color-contrast',
+  'listitem',
+  'link-text',
+  'tap-targets'
+]
+afterAll(() => {
+  Object.values(result.audits)
+    .filter(({ scoreDisplayMode }) =>
+      ['informative', 'manual', 'notApplicable'].includes(scoreDisplayMode)
+    )
+    .map(({ id }) => id)
+    .forEach(deleteAudit)
+  ignoredAudits.forEach(deleteAudit)
+  expect(result.audits).toEqual({}) // all audits should have been checked or explicitly ignored
 })
 
-test('SEO', () => {
-  return launchChromeAndRunLighthouse(`http://localhost:3001`).then(
-    ({ lhr: { audits } }) => {
-      auditTest(audits, 'meta-description', 'value')
-      auditTest(audits, 'document-title', 'value')
-      auditTest(audits, 'http-status-code', 'value')
-      auditTest(audits, 'is-crawlable', 'value')
-      auditTest(audits, 'robots-txt', 'value')
-      // https://developers.google.com/web/tools/lighthouse/audits/hreflang
-      auditTest(audits, 'hreflang')
-    }
-  )
+// if the audit is commented out, we eventually want to make it pass
+test.each([
+  'viewport',
+  'font-display',
+  'third-party-summary',
+  'aria-allowed-attr',
+  'aria-required-attr',
+  'aria-required-children',
+  'aria-required-parent',
+  'aria-roles',
+  'aria-valid-attr-value',
+  'aria-valid-attr',
+  'button-name',
+  'bypass',
+  // 'color-contrast',
+  'document-title',
+  'duplicate-id',
+  'html-has-lang',
+  'html-lang-valid',
+  'image-alt',
+  'link-name',
+  'list',
+  //'listitem',
+  'meta-viewport',
+  'tabindex',
+  'meta-description',
+  'http-status-code',
+  'font-size',
+  //'link-text',
+  'is-crawlable',
+  'robots-txt',
+  //'tap-targets',
+  'hreflang',
+  'plugins'
+])('binary audit %s passes', name => {
+  const audit = result.audits[name]
+  deleteAudit(name)
+  expect(audit.scoreDisplayMode).toBe('binary')
+  expect(audit.score).toBe(1)
 })
 
-test('Security', () => {
-  return launchChromeAndRunLighthouse(`http://localhost:3001`).then(
-    ({ lhr: { audits } }) => {
-      // https://developers.google.com/web/tools/lighthouse/audits/vulnerabilities
-      auditTest(audits, 'no-vulnerable-libraries')
-      // (https://www.chromestatus.com/features#deprecated
-      auditTest(audits, 'deprecations')
-      // https://developers.google.com/web/tools/lighthouse/audits/noopener
-      auditTest(audits, 'external-anchors-use-rel-noopener', 'size', 1)
-    }
-  )
+// if the minScore is a - b, we eventually want to achieve a
+test.each`
+  name                            | minScore
+  ${'speed-index'}                | ${0.9}
+  ${'redirects'}                  | ${1}
+  ${'uses-rel-preload'}           | ${1}
+  ${'uses-rel-preconnect'}        | ${1 - 0.3}
+  ${'total-byte-weight'}          | ${1}
+  ${'offscreen-images'}           | ${1 - 0.75}
+  ${'render-blocking-resources'}  | ${1}
+  ${'unminified-css'}             | ${1}
+  ${'unminified-javascript'}      | ${1}
+  ${'unused-css-rules'}           | ${1}
+  ${'uses-webp-images'}           | ${1 - 0.5}
+  ${'uses-optimized-images'}      | ${1}
+  ${'uses-text-compression'}      | ${1}
+  ${'uses-responsive-images'}     | ${1}
+  ${'efficient-animated-content'} | ${1}
+  ${'dom-size'}                   | ${1 - 0.1}
+`('numeric audit $name scores at least $minScore', ({ name, minScore }) => {
+  const audit = result.audits[name]
+  deleteAudit(name)
+  expect(audit.scoreDisplayMode).toBe('numeric')
+  expect(audit.score).toBeGreaterThanOrEqual(minScore)
 })
 
-test('Performance', () => {
-  return launchChromeAndRunLighthouse(`http://localhost:3001`).then(
-    ({ lhr: { audits } }) => {
-      auditTest(audits, 'dom-size', 'smaller', 700)
-      auditTest(audits, 'network-requests', 'smaller', 70)
-      auditTest(audits, 'network-requests', 'smaller', 70)
-      auditTest(audits, 'bootup-time', 'smaller', 2600) //  0.89 -- prev 1333
-      auditTest(audits, 'interactive', 'smaller', 10000) //  0.45 -- prev 7788
-      auditTest(audits, 'speed-index', 'smaller', 6000) //  0.71 -- prev 4582
-      auditTest(audits, 'first-contentful-paint', 'smaller', 4700)
-      auditTest(audits, 'first-meaningful-paint', 'smaller', 4700)
-      // https://developers.google.com/web/tools/lighthouse/audits/preload
-      auditTest(audits, 'uses-rel-preload')
-      // https://developers.google.com/web/tools/lighthouse/audits/blocking-resources
-      auditTest(audits, 'render-blocking-resources', 'size', 1) // currently we have one blocking CSS resource (google fonts)
-      // https://developers.google.com/web/tools/lighthouse/audits/minify-css
-      auditTest(audits, 'unminified-css')
-      // https://developers.google.com/speed/docs/insights/MinifyResources
-      auditTest(audits, 'unminified-javascript')
-      // https://developers.google.com/web/tools/lighthouse/audits/optimize-images
-      auditTest(audits, 'uses-optimized-images')
-      // https://developers.google.com/web/tools/lighthouse/audits/oversized-images
-      auditTest(audits, 'uses-responsive-images')
-      // https://developers.google.com/web/tools/lighthouse/audits/redirects
-      auditTest(audits, 'redirects')
-      // https://developers.google.com/web/tools/lighthouse/audits/aspect-ratio
-      auditTest(audits, 'image-aspect-ratio')
-      // https://developers.google.com/web/tools/lighthouse/audits/unused-css-rules
-      auditTest(audits, 'unused-css-rules', 'size', 1)
-    }
-  )
-})
-
-test('A11y Homepage', () => {
-  return launchChromeAndRunLighthouse(`http://localhost:3001`).then(
-    ({ lhr: { audits } }) => {
-      // https://dequeuniversity.com/rules/axe/2.2/image-alt?application=lighthouse
-      auditTest(audits, 'image-alt')
-      // https://dequeuniversity.com/rules/axe/2.2/input-image-alt?application=lighthouse
-      auditTest(audits, 'input-image-alt', 'value')
-      // https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse
-      auditTest(audits, 'label', 'value')
-      // https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse
-      auditTest(audits, 'link-name')
-      // https://dequeuniversity.com/rules/axe/2.2/list?application=lighthouse
-      auditTest(audits, 'list')
-      // https://dequeuniversity.com/rules/axe/2.2/meta-viewport?application=lighthouse
-      auditTest(audits, 'meta-viewport')
-      // https://dequeuniversity.com/rules/axe/2.2/tabindex?application=lighthouse
-      auditTest(audits, 'tabindex')
-      // https://dequeuniversity.com/rules/axe/2.2/html-lang?application=lighthouse
-      auditTest(audits, 'html-has-lang', 'value')
-      // https://dequeuniversity.com/rules/axe/2.2/valid-lang?application=lighthouse
-      auditTest(audits, 'html-lang-valid', 'value')
-      // https://dequeuniversity.com/rules/axe/2.2/bypass?application=lighthouse
-      auditTest(audits, 'bypass', 'value')
-      // https://dequeuniversity.com/rules/axe/2.2/button-name?application=lighthouse
-      auditTest(audits, 'button-name')
-      // https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr-value?application=lighthouse
-      auditTest(audits, 'aria-valid-attr-value')
-      // https://dequeuniversity.com/rules/axe/2.2/aria-valid-attr?application=lighthouse
-      auditTest(audits, 'aria-valid-attr')
-      // https://dequeuniversity.com/rules/axe/2.2/aria-roles?application=lighthouse
-      auditTest(audits, 'aria-roles')
-      // https://dequeuniversity.com/rules/axe/2.2/aria-allowed-attr?application=lighthouse
-      auditTest(audits, 'aria-allowed-attr')
-
-      // https://dequeuniversity.com/rules/axe/2.2/color-contrast?application=lighthouse
-      // auditTest(audits,'color-contrast')
-    }
-  )
+// if the timeLimit is a + b, we eventually want to achieve a
+test.each`
+  name                           | timeLimit
+  ${'first-contentful-paint'}    | ${2000}
+  ${'first-meaningful-paint'}    | ${2000}
+  ${'estimated-input-latency'}   | ${50 + 1950}
+  ${'total-blocking-time'}       | ${250 + 4750}
+  ${'max-potential-fid'}         | ${100 + 2900}
+  ${'first-cpu-idle'}            | ${5000 + 7000}
+  ${'interactive'}               | ${5000 + 10000}
+  ${'mainthread-work-breakdown'} | ${5000 + 7000}
+  ${'bootup-time'}               | ${5000 + 5000}
+`('$name time is below $maxTime ms', ({ name, timeLimit }) => {
+  const audit = result.audits[name]
+  deleteAudit(name)
+  expect(audit.scoreDisplayMode).toBe('numeric')
+  expect(audit.numericValue).toBeLessThan(timeLimit)
 })
