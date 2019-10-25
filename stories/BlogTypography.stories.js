@@ -17,6 +17,7 @@ import {
   Body,
   Code,
   A,
+  ImageCaption,
   Blockquote,
   PostWrapper
 } from '../src/components/Blog/Typography'
@@ -36,56 +37,60 @@ const elements = [
   {
     component: H2,
     label: 'Heading 2',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
     component: Subtitle,
     label: 'Subtitle',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
     component: Body,
     label: 'Body',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
     component: Body,
     label: 'Body w/ Code',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor <code>sit amet consectetur adipisicing elit</code>. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
     component: Code,
     label: 'Code Block',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       "<code>server.route({    \n  method: 'GET',  \n  path:'/',  \n  handler: function (request, reply) {  \n    var books = [{  \n      title: 'Professional Node.js',  \n      read: false  \n    }, {  \n      title: 'Node.js Patterns',  \n      read: false  \n    }];\n  }\n})</code>"
   },
   {
     component: A,
     label: 'Anchor',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
     component: Body,
     label: 'Body with inline Anchor',
-    colWidths: [1, 1, 1, 8 / 12],
     content:
       'Lorem, ipsum dolor sit <a href="https://example/com" target="_blank"/>amet consectetur adipisicing</a> elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   },
   {
+    component: Body,
+    label: 'Body with strong',
+    content:
+      'Lorem, ipsum dolor sit <strong>ex impedit dicta temporibus animi saepe itaque</strong> totam, deserunt consectetur! Facere voluptatem ipsa'
+  },
+  {
     component: Blockquote,
     label: 'Blockquote',
-    colWidths: [1, 1, 1, 8 / 12],
+    content:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+  },
+  {
+    component: ImageCaption,
+    label: 'Image Caption',
     content:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
   }
@@ -101,24 +106,26 @@ const Annotate = styled.h2`
 
 storiesOf('Blog Components', module)
   .add('Typography', () => (
-    <Grid style={{ margin: '2rem 0' }}>
-      {elements.map(({ component: Component, colWidths, content, label }) => (
-        <Row key={content}>
-          <Col width={[1]}>
-            <p style={{ margin: '2rem 0 0', color: '#757575' }}>{label}</p>
-          </Col>
-          <PostWrapper as={Col} width={colWidths}>
-            <Component dangerouslySetInnerHTML={{ __html: content }} />
-          </PostWrapper>
-        </Row>
-      ))}
-    </Grid>
+    <PostWrapper>
+      <Grid style={{ margin: '2rem 0' }}>
+        {elements.map(({ component: Component, content, label }) => (
+          <Row key={content} style={{ justifyContent: 'center' }}>
+            <Col width={[1]}>
+              <p style={{ margin: '2rem 0 0', color: '#757575' }}>{label}</p>
+            </Col>
+            <Col width={[1, 1, 1, 7 / 12]}>
+              <Component dangerouslySetInnerHTML={{ __html: content }} />
+            </Col>
+          </Row>
+        ))}
+      </Grid>
+    </PostWrapper>
   ))
   .add('Compound Typography', () => {
     return (
       <Grid style={{ margin: '2rem 0' }}>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[9 / 12]}>
+          <PostWrapper as={Col} width={[1, 1, 1, 7 / 12]}>
             {/* ------------------------------------------------------------ */}
             <Annotate>Body Copy</Annotate>
             <Body>
@@ -248,7 +255,7 @@ storiesOf('Blog Components', module)
     return (
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[9 / 12]}>
+          <PostWrapper as={Col} width={[1, 1, 1, 7 / 12]}>
             <Annotate>Image without caption</Annotate>
             <FigureImage src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_" />
             <Body>
@@ -310,10 +317,11 @@ storiesOf('Blog Components', module)
   .add('Meta Data', () => {
     return (
       <Grid style={{ width: '100%' }}>
-        <Row>
-          <Col width={[8 / 12]}>
+        <Row style={{ justifyContent: 'center' }}>
+          <Col width={[1, 1, 1, 7 / 12]}>
             <Annotate>Post Intro Meta Data</Annotate>
             <PostIntroMetaData
+              title="Serverless and Step-Functions at DAZN"
               author="Bob Dole"
               date="2019-08-12T09:58:43.000Z"
               readTime="11"
@@ -325,7 +333,23 @@ storiesOf('Blog Components', module)
               an element subtree until a particular operation complete
             </Body>
           </Col>
-          <Col width={[8 / 12]}>
+          <Col width={[1, 1, 1, 7 / 12]}>
+            <Annotate>Post Intro Meta Data w/ Subtitle</Annotate>
+            <PostIntroMetaData
+              title="Serverless and Step-Functions at DAZN"
+              subtitle="Suspending the rendering of an element subtree until a particular operation complete"
+              author="Bob Dole"
+              date="2019-08-12T09:58:43.000Z"
+              readTime="11"
+            />
+            <Body>
+              Given the context of this article, it may be tempting to view
+              Suspense as a lazy loading mechanism, but this is inaccurate.
+              Rather, it provides a means of… well… suspending the rendering of
+              an element subtree until a particular operation complete
+            </Body>
+          </Col>
+          <Col width={[1, 1, 1, 7 / 12]}>
             <Annotate>Post Outro Meta Data</Annotate>
             <PostOutroMetaData
               author="Bob Dole"
@@ -347,7 +371,7 @@ storiesOf('Blog Components', module)
     return (
       <Grid style={{ width: '100%' }}>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[8 / 12]}>
+          <PostWrapper as={Col} width={[1, 1, 1, 7 / 12]}>
             <Annotate>Code snippet</Annotate>
             <WrappedGist id="7edc948ec968ab5508ace95b03238390" />
           </PostWrapper>

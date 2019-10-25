@@ -1,30 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import remcalc from 'remcalc'
-import { H1, Body, PostInfo } from './Typography'
+import { H1, Body, Subtitle, PostInfo } from './Typography'
 import Hr from '../Common/Hr'
 import Format from 'date-fns/format'
 import { TagGroup } from './Tag'
 
 const PostTitle = styled(H1)`
-  padding-bottom: ${remcalc(36)};
+  ${({ hasSubtitle }) =>
+    hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
 `
 
-const PostIntroMetaDataWrapper = styled.div`
-  p {
-    padding-bottom: ${({ theme }) => theme.space[3]};
-  }
-`
-
-const PostIntroMetaData = ({ title, author, date, readTime }) => (
-  <PostIntroMetaDataWrapper>
-    <PostTitle>{title}</PostTitle>
+const PostIntroMetaData = ({ title, subtitle, author, date, readTime }) => (
+  <>
+    <PostTitle hasSubtitle={!!subtitle}>{title}</PostTitle>
+    {subtitle && <Subtitle>{subtitle}</Subtitle>}
     <PostInfo>
       by {author} • {Format(date, 'MMMM do[,] YYYY')}{' '}
       {readTime && `• ${readTime}min`}
     </PostInfo>
     <Hr />
-  </PostIntroMetaDataWrapper>
+  </>
 )
 
 const PostOutroTagSection = styled.section`

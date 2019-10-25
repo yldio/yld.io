@@ -1,33 +1,60 @@
 import styled from 'styled-components'
 import remcalc from 'remcalc'
+import breakpoint from 'styled-components-breakpoint'
+
+const DESKTOP_BREAKPOINT = 'smallTablet'
 
 const H1 = styled.h1`
-  font-size: ${remcalc(42)};
-  line-height: ${remcalc(51)};
   font-weight: 500;
   color: ${props => props.theme.colors.text};
   padding: ${remcalc(14)} 0;
+
+  font-size: ${remcalc(28)};
+  line-height: ${remcalc(36)};
+
+  ${breakpoint('smallTablet')`
+    font-size: ${remcalc(42)};
+    line-height: ${remcalc(51)};
+  `}
 `
 
 const H2 = styled.h2`
-  font-size: ${remcalc(28)};
-  line-height: ${remcalc(42)};
   font-weight: 500;
   color: ${props => props.theme.colors.text};
   padding: ${remcalc(11)} 0 ${remcalc(7)};
+
+  font-size: ${remcalc(21)};
+  line-height: ${remcalc(26)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(28)};
+    line-height: ${remcalc(42)};
+  `}
 `
 
 const Subtitle = styled.h3`
-  font-size: ${remcalc(24)};
-  line-height: ${remcalc(36)};
   font-weight: 400;
   color: ${({ theme }) => theme.colors.textLight};
-  padding: ${remcalc(10)} 0 ${remcalc(8)};
+  padding: ${remcalc(12)} 0 ${remcalc(24)};
+
+  font-size: ${remcalc(21)};
+  line-height: ${remcalc(30)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(24)};
+    line-height: ${remcalc(36)};
+  `}
 `
 
 const Body = styled.p`
-  font-size: ${remcalc(20)};
-  line-height: ${remcalc(33)};
+  font-size: ${remcalc(18)};
+  line-height: ${remcalc(30)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(20)};
+    line-height: ${remcalc(33)};
+  `}
+
   font-weight: 400;
   color: ${props => props.theme.colors.text};
   padding: ${remcalc(37)} 0;
@@ -48,13 +75,17 @@ const Body = styled.p`
   }
 
   code {
-    font-size: ${remcalc(17)};
+    font-size: ${remcalc(15)};
     line-height: ${remcalc(24)};
+
+    ${breakpoint(DESKTOP_BREAKPOINT)`
+      font-size: ${remcalc(17)};
+    `}
+
     font-weight: 400;
     color: ${props => props.theme.colors.text};
     font-family: 'Roboto Mono', sans-serif;
-    padding-left: ${remcalc(4)};
-    padding-right: ${remcalc(4)};
+    padding: ${remcalc(4)};
     background-color: #e9e9e9;
 
     ::selection {
@@ -88,9 +119,15 @@ const ListItem = styled.li`
 `
 
 const Code = styled.code`
-  overflow: scroll;
-  font-size: ${remcalc(17)};
+  font-size: ${remcalc(15)};
   line-height: ${remcalc(24)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(17)};
+    line-height: ${remcalc(24)};
+  `}
+
+  overflow: scroll;
   font-weight: 400;
   color: ${props => props.theme.colors.text};
   background-color: #e9e9e9;
@@ -107,13 +144,19 @@ const A = styled.a`
 `
 
 const Blockquote = styled.blockquote`
-  font-size: ${remcalc(20)};
-  line-height: ${remcalc(33)};
+  font-size: ${remcalc(18)};
+  line-height: ${remcalc(30)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(20)};
+    line-height: ${remcalc(33)};
+  `}
+
   font-style: italic;
   font-weight: 500;
   color: ${props => props.theme.colors.text};
   padding-left: ${remcalc(35)};
-  margin: ${remcalc(55)} 0 ${remcalc(51)};
+  margin: 0 0 ${remcalc(37)};
   display: block;
   border-left: 2px solid ${({ theme }) => theme.colors.text};
 
@@ -121,19 +164,23 @@ const Blockquote = styled.blockquote`
     padding: 0;
     font-weight: 500;
   }
+
+  strong {
+    font-weight: 700;
+  }
 `
 
 const PostWrapper = styled.div`
+  h1 + h3 {
+    margin-top: ${remcalc(12)};
+  }
+
   p + p {
     padding-top: 0;
   }
 
   p + h2 {
     padding-top: ${remcalc(18)};
-  }
-
-  p + blockquote {
-    margin-top: ${remcalc(18)};
   }
 
   p + .gist,
@@ -146,7 +193,7 @@ const PostWrapper = styled.div`
   }
 
   h2 + blockquote {
-    margin-top: ${remcalc(17)};
+    margin-top: ${remcalc(37)};
   }
 
   blockquote + h2 {
@@ -187,6 +234,19 @@ const PostInfo = styled(Body)`
   color: ${({ theme }) => theme.colors.secondaryText};
 `
 
+const ImageCaption = styled.figcaption`
+  font-size: ${remcalc(16)};
+  line-height: ${remcalc(24)};
+  padding-bottom: ${remcalc(12)};
+  color: ${({ theme }) => theme.colors.textLight};
+  text-align: center;
+  margin: 0 auto;
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    max-width: 70%;
+  `}
+`
+
 export {
   H1,
   H2,
@@ -197,6 +257,7 @@ export {
   List,
   ListItem,
   Blockquote,
+  ImageCaption,
   PostInfo,
   PostWrapper
 }

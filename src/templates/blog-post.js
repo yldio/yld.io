@@ -10,6 +10,7 @@ import {
   PostOutroMetaData
 } from '../components/Blog/PostMetaData'
 
+const COL_WIDTHS = [1, 1, 1, 7 / 12]
 const BlogPostTemplate = ({
   data: { contentfulBlogPost: post },
   location,
@@ -19,7 +20,7 @@ const BlogPostTemplate = ({
     <Layout location={location}>
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
-          <Col width={[1, 1, 7 / 12]}>
+          <Col width={COL_WIDTHS}>
             <PostIntroMetaData
               title={post.title}
               author={post.authorName}
@@ -29,12 +30,12 @@ const BlogPostTemplate = ({
           </Col>
         </Row>
         <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[1, 1, 7 / 12]}>
+          <PostWrapper as={Col} width={COL_WIDTHS}>
             <MDXRenderer scope={__mdxScope}>
               {post.content.childMdx.body}
             </MDXRenderer>
           </PostWrapper>
-          <Col width={[1, 1, 7 / 12]}>
+          <Col width={COL_WIDTHS}>
             <PostOutroMetaData
               author={post.authorName}
               date={post.firstPublishedAt}
