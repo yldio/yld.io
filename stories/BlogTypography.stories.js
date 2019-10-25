@@ -3,7 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react'
 import styled from 'styled-components'
 import { Grid, Row, Col } from '../src/components/grid'
 
-import { TagGroup, Tag } from '../src/components/Blog/Tag'
+import { TagGroup } from '../src/components/Blog/Tag'
 
 import {
   PostOutroMetaData,
@@ -19,7 +19,8 @@ import {
   A,
   ImageCaption,
   Blockquote,
-  PostWrapper
+  PostWrapper,
+  Tag
 } from '../src/components/Blog/Typography'
 
 import Theme from './theme'

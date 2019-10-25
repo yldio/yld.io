@@ -60,6 +60,7 @@
     "react-intersection-observer": "^8.24.2",
     "react-markdown": "^4.0.6",
     "react-scroll-to-component": "^1.0.2",
+    "react-share": "^3.0.1",
     "remcalc": "1.0.10",
     "shortid": "^2.2.14",
     "slash": "2.0.0",

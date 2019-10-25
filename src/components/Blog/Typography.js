@@ -134,13 +134,66 @@ const Code = styled.code`
   padding: ${remcalc(20)};
   font-family: 'Roboto Mono', sans-serif;
   display: block;
-  margin: ${remcalc(13)} 0 ${remcalc(14)};
 `
 
 const A = styled.a`
   text-decoration: underline;
   cursor: pointer;
   font-style: italic;
+`
+
+const PostInfo = styled(Body)`
+  font-size: ${remcalc(16)};
+  line-height: ${remcalc(28)};
+  padding-bottom: ${remcalc(24)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(18)};
+    line-height: ${remcalc(31)};
+    padding-bottom: ${remcalc(36)};
+  `}
+
+  padding-top: 0;
+  color: ${({ theme }) => theme.colors.secondaryText};
+`
+
+const ImageCaption = styled.figcaption`
+  font-size: ${remcalc(16)};
+  line-height: ${remcalc(24)};
+  padding-bottom: ${remcalc(12)};
+  color: ${({ theme }) => theme.colors.textLight};
+  text-align: center;
+  margin: 0 auto;
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    max-width: 70%;
+  `}
+`
+
+const PostTitle = styled(H1)`
+  ${({ hasSubtitle }) =>
+    hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(24)};`}
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    ${({ hasSubtitle }) =>
+      hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
+    `}
+`
+
+const Tag = styled.li`
+  margin-right: ${remcalc(10)};
+  margin-bottom: ${remcalc(12)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    margin-right: ${remcalc(10)};
+    margin-bottom: ${remcalc(24)};
+  `}
+
+  display: inline-block;
+  background-color: #d8d8d8;
+  color: ${({ theme }) => theme.colors.textLight};
+  padding: ${remcalc(6)} ${remcalc(12)};
+  font-family: 'PT Mono';
 `
 
 const Blockquote = styled.blockquote`
@@ -204,6 +257,10 @@ const PostWrapper = styled.div`
     padding-top: 0;
   }
 
+  pre + h2 {
+    padding-top: ${remcalc(37)};
+  }
+
   .figure-image + p {
     padding-top: ${remcalc(37)};
   }
@@ -226,44 +283,6 @@ const PostWrapper = styled.div`
   }
 `
 
-const PostInfo = styled(Body)`
-  font-size: ${remcalc(16)};
-  line-height: ${remcalc(28)};
-  padding-bottom: ${remcalc(24)};
-
-  ${breakpoint(DESKTOP_BREAKPOINT)`
-    font-size: ${remcalc(18)};
-    line-height: ${remcalc(31)};
-    padding-bottom: ${remcalc(36)};
-  `}
-
-  padding-top: 0;
-  color: ${({ theme }) => theme.colors.secondaryText};
-`
-
-const ImageCaption = styled.figcaption`
-  font-size: ${remcalc(16)};
-  line-height: ${remcalc(24)};
-  padding-bottom: ${remcalc(12)};
-  color: ${({ theme }) => theme.colors.textLight};
-  text-align: center;
-  margin: 0 auto;
-
-  ${breakpoint(DESKTOP_BREAKPOINT)`
-    max-width: 70%;
-  `}
-`
-
-const PostTitle = styled(H1)`
-  ${({ hasSubtitle }) =>
-    hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(24)};`}
-
-  ${breakpoint(DESKTOP_BREAKPOINT)`
-    ${({ hasSubtitle }) =>
-      hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
-    `}
-`
-
 export {
   H1,
   H2,
@@ -277,5 +296,6 @@ export {
   Blockquote,
   ImageCaption,
   PostInfo,
-  PostWrapper
+  PostWrapper,
+  Tag
 }
