@@ -1,15 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import remcalc from 'remcalc'
-import { H1, Body, Subtitle, PostInfo } from './Typography'
+import { PostTitle, Body, Subtitle, PostInfo } from './Typography'
 import Hr from '../Common/Hr'
 import Format from 'date-fns/format'
 import { TagGroup } from './Tag'
-
-const PostTitle = styled(H1)`
-  ${({ hasSubtitle }) =>
-    hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
-`
 
 const PostIntroMetaData = ({ title, subtitle, author, date, readTime }) => (
   <>

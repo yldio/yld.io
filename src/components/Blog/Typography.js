@@ -227,10 +227,17 @@ const PostWrapper = styled.div`
 `
 
 const PostInfo = styled(Body)`
-  font-size: ${remcalc(18)};
-  line-height: ${remcalc(31)};
+  font-size: ${remcalc(16)};
+  line-height: ${remcalc(28)};
+  padding-bottom: ${remcalc(24)};
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    font-size: ${remcalc(18)};
+    line-height: ${remcalc(31)};
+    padding-bottom: ${remcalc(36)};
+  `}
+
   padding-top: 0;
-  padding-bottom: ${remcalc(36)};
   color: ${({ theme }) => theme.colors.secondaryText};
 `
 
@@ -247,9 +254,20 @@ const ImageCaption = styled.figcaption`
   `}
 `
 
+const PostTitle = styled(H1)`
+  ${({ hasSubtitle }) =>
+    hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(24)};`}
+
+  ${breakpoint(DESKTOP_BREAKPOINT)`
+    ${({ hasSubtitle }) =>
+      hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
+    `}
+`
+
 export {
   H1,
   H2,
+  PostTitle,
   Subtitle,
   Body,
   Code,
