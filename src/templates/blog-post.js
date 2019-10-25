@@ -1,8 +1,6 @@
 import React from 'react'
-import { FacebookShareButton, LinkedinShareButton } from 'react-share'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import { PostWrapper } from '../components/Blog/Typography'
 import { Grid, Row, Col } from '../components/grid'
@@ -12,7 +10,6 @@ import {
   PostOutroMetaData
 } from '../components/Blog/PostMetaData'
 
-const ShareWrapper = styled.div``
 const COL_WIDTHS = [1, 1, 1, 7 / 12]
 const BlogPostTemplate = ({
   data: { contentfulBlogPost: post },
@@ -43,11 +40,8 @@ const BlogPostTemplate = ({
               author={post.authorName}
               date={post.firstPublishedAt}
               tags={post.tags}
+              shareUrl={location.href}
             />
-            <ShareWrapper>
-              <FacebookShareButton url={location.href}>fb</FacebookShareButton>
-              <LinkedinShareButton url={location.href}>li</LinkedinShareButton>
-            </ShareWrapper>
           </Col>
         </Row>
       </Grid>
