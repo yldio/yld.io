@@ -25,14 +25,15 @@ const PostIntroMetaData = ({ title, subtitle, author, date, readTime }) => (
 
 const PostOutroTagSection = styled.section`
   padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[3]};
 `
 
 const ShareWrapper = styled.div`
   display: flex;
   padding-bottom: ${({ theme }) => theme.space[5]};
+
   > div {
-    margin: ${remcalc(5)} ${remcalc(10)} 0;
+    margin: ${remcalc(5)} ${remcalc(25)} ${remcalc(5)} 0;
   }
 `
 

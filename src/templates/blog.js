@@ -121,10 +121,14 @@ const BlogPage = ({
 
           <Row style={{ justifyContent: 'space-between' }} block={false}>
             <Col>
-              <StyledLink to={prevPageLink}>Previous Page</StyledLink>
+              {prevPageLink && (
+                <StyledLink to={prevPageLink}>Previous Page</StyledLink>
+              )}
             </Col>
             <Col>
-              <StyledLink to={nextPageLink}>Next Page</StyledLink>
+              {nextPageLink && (
+                <StyledLink to={nextPageLink}>Next Page</StyledLink>
+              )}
             </Col>
           </Row>
         </Grid>

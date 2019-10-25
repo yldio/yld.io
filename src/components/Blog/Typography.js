@@ -101,6 +101,7 @@ const Body = styled.p`
 const List = styled.ul`
   list-style-type: disc;
   padding-left: ${remcalc(30)};
+  padding-bottom: ${remcalc(36)};
 `
 
 const ListItem = styled.li`
@@ -209,7 +210,7 @@ const Blockquote = styled.blockquote`
   font-weight: 500;
   color: ${props => props.theme.colors.text};
   padding-left: ${remcalc(35)};
-  margin: 0 0 ${remcalc(37)};
+  margin: ${remcalc(37)} 0;
   display: block;
   border-left: 2px solid ${({ theme }) => theme.colors.text};
 
@@ -228,8 +229,24 @@ const PostWrapper = styled.div`
     margin-top: ${remcalc(12)};
   }
 
+  h2 + p {
+    padding-top: ${remcalc(13)};
+  }
+
+  h2 + blockquote {
+    margin-top: 0;
+  }
+
+  h2 + ul {
+    padding-top: ${remcalc(37)};
+  }
+
   p + p {
     padding-top: 0;
+  }
+
+  p + blockquote {
+    margin-top: 0;
   }
 
   p + h2 {
@@ -241,12 +258,8 @@ const PostWrapper = styled.div`
     padding-top: 0;
   }
 
-  h2 + p {
-    padding-top: ${remcalc(13)};
-  }
-
-  h2 + blockquote {
-    margin-top: ${remcalc(37)};
+  ul + p {
+    padding-top: 0;
   }
 
   blockquote + h2 {

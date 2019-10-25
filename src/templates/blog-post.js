@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import { PostWrapper } from '../components/Blog/Typography'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
+import Head from '../components/Common/Head'
 import {
   PostIntroMetaData,
   PostOutroMetaData
@@ -16,13 +17,22 @@ const BlogPostTemplate = ({
   location,
   __mdxScope
 }) => {
+  const seoMetaData = {
+    title: post.title + ' | YLD',
+    description: post.subtitle.subtitle || post.content.childMdx.excerpt,
+    socialLogo: post.headerImage && post.headerImage,
+    keywords: post.tags
+  }
+
   return (
     <Layout location={location}>
+      <Head seoMetaData={seoMetaData} />
       <Grid>
         <Row style={{ justifyContent: 'center' }}>
           <Col width={COL_WIDTHS}>
             <PostIntroMetaData
               title={post.title}
+              subtitle={post.subtitle.subtitle}
               author={post.authorName}
               date={post.firstPublishedAt}
               readTime={post.content.childMdx.timeToRead}
@@ -56,6 +66,14 @@ export const pageQuery = graphql`
     contentfulBlogPost(id: { eq: $id }) {
       id
       title
+      subtitle {
+        subtitle
+      }
+      headerImage {
+        file {
+          url
+        }
+      }
       slug
       tags
       firstPublishedAt
@@ -65,6 +83,7 @@ export const pageQuery = graphql`
         childMdx {
           body
           timeToRead
+          excerpt
         }
       }
     }
