@@ -37,8 +37,6 @@ const IntroRow = styled(Row)`
 `
 
 const StyledCardTitle = styled(CardTitle)`
-  font-weight: 400;
-
   > li {
     list-style: none;
     padding-bottom: ${remcalc(8)};
@@ -146,7 +144,9 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
                   <Subtitle noPadding reverse muted {...props} />
                 ),
                 // eslint-disable-next-line
-                list: props => <StyledCardTitle reverse {...props} />
+                list: props => (
+                  <StyledCardTitle regular="true" reverse {...props} />
+                )
               }}
               source={introContent}
             />

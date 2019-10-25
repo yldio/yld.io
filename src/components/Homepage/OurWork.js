@@ -106,7 +106,7 @@ const AnimatedLink = styled(Link)`
 const CaseStudyImageWrapper = styled.div`
   background-color: #${({ backgroundColor }) => backgroundColor};
 
-  > * {
+  img {
     background-color: #${({ backgroundColor }) => backgroundColor};
   }
 
@@ -130,7 +130,7 @@ const CaseStudy = ({ caseStudy }) => {
       <Card width={100} height={130} color={posterColor}>
         <CardHeader backgroundColor={posterColor}>
           <section>
-            <BodyPrimary noPaddingTop reverse={reverseColor} muted>
+            <BodyPrimary noPaddingTop="true" reverse={reverseColor} muted>
               {client}
             </BodyPrimary>
             <CardTitle reverse={reverseColor} noPaddingTop>
