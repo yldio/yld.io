@@ -19,7 +19,9 @@ const BlogPostTemplate = ({
 }) => {
   const seoMetaData = {
     title: post.title + ' | YLD',
-    description: post.subtitle.subtitle || post.content.childMdx.excerpt,
+    description:
+      (post.subtitle && post.subtitle.subtitle) ||
+      post.content.childMdx.excerpt,
     socialLogo: post.headerImage && post.headerImage,
     keywords: post.tags
   }
@@ -32,7 +34,7 @@ const BlogPostTemplate = ({
           <Col width={COL_WIDTHS}>
             <PostIntroMetaData
               title={post.title}
-              subtitle={post.subtitle.subtitle}
+              subtitle={post.subtitle && post.subtitle.subtitle}
               author={post.authorName}
               date={post.firstPublishedAt}
               readTime={post.content.childMdx.timeToRead}
