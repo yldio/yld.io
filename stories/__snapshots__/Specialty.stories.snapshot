@@ -3923,7 +3923,7 @@ Array [
                           >
                             <img
                               alt="Play button"
-                              className="c70"
+                              className="c68"
                               src="button-play-light.svg"
                             />
                           </div>
@@ -3978,13 +3978,8 @@ Array [
                           >
                             <img
                               alt="Play button"
-<<<<<<< HEAD
-                              className="c70"
-                              src="button-play-light.svg"
-=======
                               className="c68"
-                              src="test-file-stub"
->>>>>>> update snapshots
+                              src="button-play-light.svg"
                             />
                           </div>
                           <p
