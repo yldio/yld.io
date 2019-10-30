@@ -137,7 +137,7 @@ test.each`
   ${'interactive'}               | ${5000 + 10000}
   ${'mainthread-work-breakdown'} | ${5000 + 7000}
   ${'bootup-time'}               | ${5000 + 5000}
-`('$name time is below $maxTime ms', ({ name, timeLimit }) => {
+`('$name time is below $timeLimit ms', ({ name, timeLimit }) => {
   const audit = result.audits[name]
   deleteAudit(name)
   expect(audit.scoreDisplayMode).toBe('numeric')
