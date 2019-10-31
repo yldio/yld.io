@@ -135,10 +135,14 @@ const MediumPostPreview = ({
   imageId,
   context
 }) => {
-  const previewText =
-    subtitle.subtitle.length < 145
-      ? subtitle.subtitle
-      : subtitle.subtitle.slice(0, 145).trim() + '...'
+  let previewText = ''
+
+  if (subtitle) {
+    previewText =
+      subtitle.subtitle.length < 145
+        ? subtitle.subtitle
+        : subtitle.subtitle.slice(0, 145).trim() + '...'
+  }
 
   const previewTextSmallTablet = previewText.slice(0, 85).trim() + '...'
 
