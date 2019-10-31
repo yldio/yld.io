@@ -3,7 +3,7 @@ import remcalc from 'remcalc'
 import styled from 'styled-components'
 import { TwitterShareButton, LinkedinShareButton } from 'react-share'
 
-import { PostTitle, Body, Subtitle, PostInfo } from './Typography'
+import { PostTitle, Body, PostInfo } from './Typography'
 import Hr from '../Common/Hr'
 import Format from 'date-fns/format'
 import { TagGroup } from './Tag'
@@ -11,10 +11,9 @@ import { TagGroup } from './Tag'
 import twitterIcon from '../../images/twiter-icon.svg'
 import linkedinIcon from '../../images/linkedin-icon.svg'
 
-const PostIntroMetaData = ({ title, subtitle, author, date, readTime }) => (
+const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
-    <PostTitle hasSubtitle={!!subtitle}>{title}</PostTitle>
-    {subtitle && <Subtitle>{subtitle}</Subtitle>}
+    <PostTitle>{title}</PostTitle>
     <PostInfo>
       by {author} • {Format(date, 'MMMM do[,] YYYY')}{' '}
       {readTime && `• ${readTime}min`}

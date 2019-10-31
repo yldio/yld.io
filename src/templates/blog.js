@@ -166,8 +166,8 @@ export const query = graphql`
             file {
               url
             }
-            fluid(maxWidth: 400) {
-              ...GatsbyContentfulFluid_withWebp
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
           authorId

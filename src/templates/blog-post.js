@@ -34,7 +34,6 @@ const BlogPostTemplate = ({
           <Col width={COL_WIDTHS}>
             <PostIntroMetaData
               title={post.title}
-              subtitle={post.subtitle && post.subtitle.subtitle}
               author={post.authorName}
               date={post.firstPublishedAt}
               readTime={post.content.childMdx.timeToRead}
@@ -68,9 +67,6 @@ export const pageQuery = graphql`
     contentfulBlogPost(id: { eq: $id }) {
       id
       title
-      subtitle {
-        subtitle
-      }
       headerImage {
         file {
           url

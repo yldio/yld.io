@@ -4,34 +4,16 @@ import { format } from 'date-fns'
 import breakpoint from 'styled-components-breakpoint'
 
 import { Row, Col } from '../grid'
-import MediumLogo from '../../images/medium-logo'
 import { CardTitle, BodyPrimary } from '../Typography'
 import StyledLink from '../Common/StyledLink'
-import RatioContainer from '../Common/RatioContainer'
 import Image from '../Common/Image'
 import Anchor from '../Common/Anchor'
 
-const StyledRatioContainer = styled(RatioContainer)`
-  > div {
-    position: absolute;
-  }
-`
-const AuthorMediumLink = styled(Anchor)`
+const Author = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
-  text-decoration: underline;
-`
+  display: inline-block;
 
-const StyledMediumIcon = styled(MediumLogo)`
-  position: absolute;
-  top: ${({ theme }) => theme.space[3]};
-  left: ${({ theme }) => theme.space[3]};
-  width: 64px;
-  height: 64px;
-
-  ${breakpoint('tablet')`
-    top: ${({ theme }) => theme.space[4]};
-    left: ${({ theme }) => theme.space[4]};
-  `}
+  ${({ href }) => (href ? `text-decoration: underline;` : ``)}
 `
 
 const MediumRow = styled(Row)`
@@ -40,13 +22,6 @@ const MediumRow = styled(Row)`
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
-
-const ImageWrapper = styled.div`
-  position: relative;
-  ${breakpoint('smallTablet')`
-    padding-bottom: 0;
-  `};
 `
 
 const StyledBodyPrimary = styled(BodyPrimary)`
@@ -67,9 +42,10 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   `}
 `
 
-const AuthorAndDate = styled.p`
+const AuthorAndDate = styled.div`
   padding-bottom: ${({ theme }) => theme.space[3]};
   color: ${({ theme }) => theme.colors.textLight};
+
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
   `}
@@ -101,9 +77,9 @@ const ReadMoreLink = styled(StyledLink)`
 const TitleAndAuthor = ({
   title,
   authorName,
+  authorId,
   formattedDate,
   postUrl,
-  authorUrl,
   show,
   hide
 }) => {
@@ -114,7 +90,12 @@ const TitleAndAuthor = ({
       </Anchor>
       <AuthorAndDate>
         {authorName && (
-          <AuthorMediumLink href={authorUrl}>{authorName}</AuthorMediumLink>
+          <Author
+            as={authorId && Anchor}
+            href={authorId ? `https://medium.com/@${authorId}` : null}
+          >
+            {authorName}
+          </Author>
         )}
         {' • '}
         {formattedDate}
@@ -138,7 +119,6 @@ const MediumPostPreview = ({
   const { childMdx: { excerpt } = {} } = content
 
   const postUrl = `/blog/${slug}`
-  const authorUrl = `https://medium.com/@${authorId}`
 
   return (
     <MediumRow>
@@ -154,17 +134,17 @@ const MediumPostPreview = ({
           hide="smallTablet"
           title={title}
           authorName={authorName}
-          authorUrl={authorUrl}
+          authorId={authorId}
           formattedDate={formattedDate}
           postUrl={postUrl}
         />
         <Anchor to={postUrl}>
-          <ImageWrapper>
-            {/* <StyledRatioContainer width={100} height={100}> */}
-            {headerImage && <Image image={headerImage} />}
-            {/* </StyledRatioContainer> */}
-            <StyledMediumIcon />
-          </ImageWrapper>
+          {headerImage && (
+            <Image
+              sizes={{ ...headerImage.fluid, aspectRatio: 1 / 1 }}
+              image={headerImage}
+            />
+          )}
         </Anchor>
       </Col>
       <InfoCol
@@ -179,7 +159,7 @@ const MediumPostPreview = ({
           show="smallTablet"
           title={title}
           authorName={authorName}
-          authorUrl={authorUrl}
+          authorId={authorId}
           formattedDate={formattedDate}
           postUrl={postUrl}
         />
