@@ -166,7 +166,7 @@ const MediumPostPreview = ({
         <Col width={[1]} style={{ paddingLeft: 0 }}>
           <StyledBodyPrimary context={context}>{excerpt}</StyledBodyPrimary>
           <StyledBodyPrimary show="smallTablet" context={context}>
-            {previewTextSmallTablet}
+            {excerpt}
             <a
               href={postUrl}
               target="_blank"
