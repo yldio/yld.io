@@ -126,7 +126,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "8.0.4",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-styled-components": "1.8.0",
+    "babel-plugin-styled-components": "1.10.6",
     "babel-preset-gatsby": "^0.1.6",
     "capitalize": "^2.0.0",
     "chrome-launcher": "^0.11.2",

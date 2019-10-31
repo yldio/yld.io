@@ -191,8 +191,8 @@ const Tag = styled.li`
   `}
 
   display: inline-block;
-  background-color: #d8d8d8;
-  color: ${({ theme }) => theme.colors.textLight};
+  background-color: #f1f1f3;
+  color: ${({ theme }) => theme.colors.black};
   padding: ${remcalc(6)} ${remcalc(12)};
   font-family: 'PT Mono';
 `

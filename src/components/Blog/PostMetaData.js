@@ -1,6 +1,5 @@
 import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { TwitterShareButton, LinkedinShareButton } from 'react-share'
 
 import { PostTitle, Body, PostInfo } from './Typography'
@@ -10,6 +9,7 @@ import { TagGroup } from './Tag'
 
 import twitterIcon from '../../images/twiter-icon.svg'
 import linkedinIcon from '../../images/linkedin-icon.svg'
+import { BodyPrimary } from '../Typography'
 
 const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
@@ -24,16 +24,12 @@ const PostIntroMetaData = ({ title, author, date, readTime }) => (
 
 const PostOutroTagSection = styled.section`
   padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[3]};
 `
 
 const ShareWrapper = styled.div`
   display: flex;
+  padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[5]};
-
-  > div {
-    margin: ${remcalc(5)} ${remcalc(25)} ${remcalc(5)} 0;
-  }
 `
 
 const PostOutroMetaData = ({ author, date, tags, shareUrl }) => (
@@ -51,14 +47,48 @@ const PostOutroMetaData = ({ author, date, tags, shareUrl }) => (
       </PostOutroTagSection>
     )}
 
+    <BodyPrimary bold="true">Share this article</BodyPrimary>
+
     <ShareWrapper>
       <TwitterShareButton url={shareUrl}>
-        <img src={twitterIcon} alt="Twitter icon" />
+        <ShareButtonContent
+          image={twitterIcon}
+          imageAlt="Twitter icon"
+          label="Twitter"
+        />
       </TwitterShareButton>
+
       <LinkedinShareButton url={shareUrl}>
-        <img src={linkedinIcon} alt="LinkedIn icon" />
+        <ShareButtonContent
+          image={linkedinIcon}
+          imageAlt="LinkedIn icon"
+          label="LinkedIn"
+        />
       </LinkedinShareButton>
     </ShareWrapper>
+  </div>
+)
+
+const ShareButtonContent = ({ image, imageAlt, label }) => (
+  <div
+    css={css`
+      display: flex;
+      margin-right: ${({ theme }) => theme.space[3]};
+    `}
+  >
+    <img
+      src={image}
+      alt={imageAlt}
+      css={css`
+        padding-right: ${({ theme }) => theme.space[2]};
+      `}
+    />
+    <BodyPrimary
+      noPadding
+      css={{ display: 'inline-block', textDecoration: 'underline' }}
+    >
+      {label}
+    </BodyPrimary>
   </div>
 )
 
