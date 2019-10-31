@@ -111,12 +111,12 @@ const MediumPostPreview = ({
   authorName,
   authorId,
   context,
-  content,
+  content = {},
   headerImage
 }) => {
   const formattedDate = format(firstPublishedAt, 'MMMM DD')
 
-  const { childMdx: { excerpt } = {} } = content
+  const { childMdx: { excerpt } = {} } = content || {}
 
   const postUrl = `/blog/${slug}`
 
