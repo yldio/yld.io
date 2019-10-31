@@ -93,7 +93,7 @@ const GradientContent = ({ text, image }) => (
 )
 
 const IndexPage = ({
-  data: { contentfulNonTemplatedCaseStudy: caseStudy, travel },
+  data: { contentfulNonTemplatedCaseStudyV2: caseStudy, travel },
   location
 }) => {
   return (
@@ -106,7 +106,9 @@ const IndexPage = ({
       <Grid>
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
-            {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
+            {makeText(
+              caseStudy.genericBlock1[0].genericBlockText.genericBlockText
+            ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
           </FirstParagraphCol>
@@ -134,7 +136,9 @@ const IndexPage = ({
             <Row>
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
-                  {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
+                  {makeText(
+                    caseStudy.genericBlock2[0].genericBlockText.genericBlockText
+                  ).map((p, i) => (
                     <BodyPrimary key={i}>{p}</BodyPrimary>
                   ))}
                 </Margin>
@@ -146,7 +150,9 @@ const IndexPage = ({
         <NoMobile tablet as={Grid}>
           <GradientBackground>
             <GradientContent
-              text={caseStudy.genericText3.genericText3}
+              text={
+                caseStudy.genericBlock3[0].genericBlockText.genericBlockText
+              }
               image={travel.childImageSharp}
             />
           </GradientBackground>
@@ -157,7 +163,9 @@ const IndexPage = ({
         <GradientBackground>
           <Grid>
             <GradientContent
-              text={caseStudy.genericText3.genericText3}
+              text={
+                caseStudy.genericBlock3[0].genericBlockText.genericBlockText
+              }
               image={travel.childImageSharp}
             />
           </Grid>
@@ -174,7 +182,9 @@ const IndexPage = ({
               <SectionTitle>Exploring the story</SectionTitle>
             </Col>
             <Col width={[1, 1, 1, 1 / 2]}>
-              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
+              {makeText(
+                caseStudy.genericBlock4[0].genericBlockText.genericBlockText
+              ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
@@ -204,7 +214,9 @@ const IndexPage = ({
                 <SectionTitle>Out in the wild</SectionTitle>
               </Col>
               <Col width={[1, 1, 1, 1 / 2]}>
-                {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
+                {makeText(
+                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText
+                ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </Col>
@@ -230,10 +242,10 @@ export const query = graphql`
         }
       }
     }
-    contentfulNonTemplatedCaseStudy(
+    contentfulNonTemplatedCaseStudyV2(
       slug: { eq: "canon-giving-stories-a-new-form" }
     ) {
-      ...NonTemplatedCaseStudyRelated
+      ...NonTemplatedCaseStudyV2Related
       slug
       title
       seoMetaData {
@@ -248,25 +260,20 @@ export const query = graphql`
           url
         }
       }
-      genericText1 {
-        id
-        genericText1
+      genericBlock1 {
+        ...GenericFragment
       }
-      genericText2 {
-        id
-        genericText2
+      genericBlock2 {
+        ...GenericFragment
       }
-      genericText3 {
-        id
-        genericText3
+      genericBlock3 {
+        ...GenericFragment
       }
-      genericText4 {
-        id
-        genericText4
+      genericBlock4 {
+        ...GenericFragment
       }
-      genericText5 {
-        id
-        genericText5
+      genericBlock5 {
+        ...GenericFragment
       }
       specialities {
         title

@@ -77,7 +77,7 @@ const Divider = styled.div`
 
 const IndexPage = ({
   data: {
-    contentfulNonTemplatedCaseStudy: caseStudy,
+    contentfulNonTemplatedCaseStudyV2: caseStudy,
     deployment,
     picture,
     form,
@@ -100,10 +100,14 @@ const IndexPage = ({
             <SectionTitle>The challenge</SectionTitle>
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
-            {makeText(caseStudy.genericText1.genericText1).map((p, i) => (
+            {makeText(
+              caseStudy.genericBlock1[0].genericBlockText.genericBlockText
+            ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
-            {makeText(caseStudy.genericText2.genericText2).map((p, i) => (
+            {makeText(
+              caseStudy.genericBlock2[0].genericBlockText.genericBlockText
+            ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
           </Col>
@@ -125,7 +129,9 @@ const IndexPage = ({
                   <SectionTitle>Single sign-on</SectionTitle>
                 </SpreadUntilDesktop>
                 <SpreadUntilDesktop>
-                  {makeText(caseStudy.genericText3.genericText3).map((p, i) => (
+                  {makeText(
+                    caseStudy.genericBlock3[0].genericBlockText.genericBlockText
+                  ).map((p, i) => (
                     <BodyPrimary key={i}>{p}</BodyPrimary>
                   ))}
                 </SpreadUntilDesktop>
@@ -151,7 +157,9 @@ const IndexPage = ({
               <SectionTitle>Navigation</SectionTitle>
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              {makeText(caseStudy.genericText4.genericText4).map((p, i) => (
+              {makeText(
+                caseStudy.genericBlock4[0].genericBlockText.genericBlockText
+              ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
@@ -176,7 +184,9 @@ const IndexPage = ({
                 <SectionTitle>App deployment</SectionTitle>
               </SpreadUntilDesktop>
               <SpreadUntilDesktop>
-                {makeText(caseStudy.genericText5.genericText5).map((p, i) => (
+                {makeText(
+                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText
+                ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </SpreadUntilDesktop>
@@ -203,7 +213,9 @@ const IndexPage = ({
             <Row>
               <Col width={[1, 1, 1, 1, 5 / 12]}>
                 <SectionTitle>Topology</SectionTitle>
-                {makeText(caseStudy.genericText6.genericText6).map((p, i) => (
+                {makeText(
+                  caseStudy.genericBlock6[0].genericBlockText.genericBlockText
+                ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </Col>
@@ -226,7 +238,9 @@ const IndexPage = ({
               <SectionTitle>The big picture</SectionTitle>
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
-              {makeText(caseStudy.genericText7.genericText7).map((p, i) => (
+              {makeText(
+                caseStudy.genericBlock7[0].genericBlockText.genericBlockText
+              ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
             </Col>
@@ -251,7 +265,9 @@ const IndexPage = ({
                 <SectionTitle>Metrics visualisation</SectionTitle>
               </Col>
               <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
-                {makeText(caseStudy.genericText8.genericText8).map((p, i) => (
+                {makeText(
+                  caseStudy.genericBlock8[0].genericBlockText.genericBlockText
+                ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </ColWithoutExtraPadding>
@@ -280,7 +296,9 @@ const IndexPage = ({
                 <SectionTitle>Monitoring and alerting</SectionTitle>
               </SpreadUntilDesktop>
               <SpreadUntilDesktop>
-                {makeText(caseStudy.genericText9.genericText9).map((p, i) => (
+                {makeText(
+                  caseStudy.genericBlock9[0].genericBlockText.genericBlockText
+                ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
               </SpreadUntilDesktop>
@@ -396,7 +414,7 @@ export const query = graphql`
         }
       }
     }
-    contentfulNonTemplatedCaseStudy(
+    contentfulNonTemplatedCaseStudyV2(
       slug: { eq: "joyent-bringing-application-awareness-to-cloud" }
     ) {
       slug
@@ -413,42 +431,33 @@ export const query = graphql`
           url
         }
       }
-      ...NonTemplatedCaseStudyRelated
-      genericText1 {
-        id
-        genericText1
+      ...NonTemplatedCaseStudyV2Related
+      genericBlock1 {
+        ...GenericFragment
       }
-      genericText2 {
-        id
-        genericText2
+      genericBlock2 {
+        ...GenericFragment
       }
-      genericText3 {
-        id
-        genericText3
+      genericBlock3 {
+        ...GenericFragment
       }
-      genericText4 {
-        id
-        genericText4
+      genericBlock4 {
+        ...GenericFragment
       }
-      genericText5 {
-        id
-        genericText5
+      genericBlock5 {
+        ...GenericFragment
       }
-      genericText6 {
-        id
-        genericText6
+      genericBlock6 {
+        ...GenericFragment
       }
-      genericText7 {
-        id
-        genericText7
+      genericBlock7 {
+        ...GenericFragment
       }
-      genericText8 {
-        id
-        genericText8
+      genericBlock8 {
+        ...GenericFragment
       }
-      genericText9 {
-        id
-        genericText9
+      genericBlock9 {
+        ...GenericFragment
       }
       specialities {
         title
