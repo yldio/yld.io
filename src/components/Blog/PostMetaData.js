@@ -15,7 +15,7 @@ const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
     <PostTitle>{title}</PostTitle>
     <PostInfo>
-      by {author} • {Format(date, 'MMMM do[,] YYYY')}{' '}
+      by {author} • {Format(date, 'MMMM Do[,] YYYY')}{' '}
       {readTime && `• ${readTime}min`}
     </PostInfo>
     <Hr />
