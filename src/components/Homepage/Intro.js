@@ -144,7 +144,9 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
                   <Subtitle noPadding reverse muted {...props} />
                 ),
                 // eslint-disable-next-line
-                list: props => <StyledCardTitle reverse {...props} />
+                list: props => (
+                  <StyledCardTitle regular="true" reverse {...props} />
+                )
               }}
               source={introContent}
             />

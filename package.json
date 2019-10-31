@@ -66,7 +66,7 @@
     "test": "jest",
     "test:watch": "yarn run test --watch",
     "test:storyshots": "jest --config jest-storyshots.config.js --silent",
-    "test:storyshots:update": "yarn run test:snapshots -u",
+    "test:storyshots:update": "yarn run test:storyshots -u",
     "test:interaction": "jest --config jest-interaction.config.js",
     "test:interaction:update": "yarn run test:interaction -u",
     "test:e2e": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 500000",

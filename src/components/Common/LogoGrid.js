@@ -4,15 +4,7 @@ import styled from 'styled-components'
 import breakpoint from 'styled-components-breakpoint'
 import Image from '../Common/Image'
 import ExternalAnchor from '../Common/ExternalAnchor'
-import { Subtitle } from '../Typography'
 
-const Column = styled(Col)`
-  padding-top: ${props => props.theme.space[2]};
-`
-
-const StyledSubtitle = styled(Subtitle)`
-  padding-bottom: ${props => props.theme.space[4]};
-`
 const StyledRow = styled(Row)`
   padding-bottom: ${props => props.theme.space[4]};
 
@@ -54,11 +46,6 @@ const LogoItem = styled(Col)`
 
 const LogoGrid = ({ companies }) => (
   <StyledRow>
-    <Column width={1}>
-      <StyledSubtitle>
-        Some of the companies we&apos;ve worked with
-      </StyledSubtitle>
-    </Column>
     {companies.map(company => (
       <LogoItem
         width={[1 / 2, 1 / 2, 1 / 2, 1 / 2, 1 / 3, 1 / 4]}

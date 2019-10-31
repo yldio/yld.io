@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { format, isAfter, isSameDay } from 'date-fns'
+import styled from 'styled-components'
 
-import { Grid } from '../components/grid'
+import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import GreyBackground from '../components/Common/GreyBackground'
@@ -15,6 +16,7 @@ import BlogSection from '../components/Homepage/BlogSection'
 import FooterSections from '../components/Homepage/FooterSections'
 import BlueBackground from '../components/Common/BlueBackground'
 import Contributions from '../components/Common/Contributions'
+import { Subtitle } from '../components/Typography'
 
 import { HomePageContext, LogoStyleContext } from '../context/PageContext'
 
@@ -50,6 +52,15 @@ const getHomepageConferences = (events = []) =>
  * Specifically the hero section, a lot of this
  * has custom CSS to get it the way that we want it.
  */
+
+const StyledSubtitle = styled(Subtitle)`
+  padding-bottom: ${props => props.theme.space[4]};
+`
+
+const Column = styled(Col)`
+  padding-top: ${props => props.theme.space[2]};
+`
+
 const IndexPage = ({ data, location }) => {
   const {
     contentfulHomepage: content,
@@ -69,6 +80,13 @@ const IndexPage = ({ data, location }) => {
           <GreyBackground>
             <Grid>
               <OurWork />
+              <Row>
+                <Column width={[1]}>
+                  <StyledSubtitle>
+                    Some of the companies we&apos;ve worked with
+                  </StyledSubtitle>
+                </Column>
+              </Row>
               <LogoGrid companies={content.companies} />
             </Grid>
           </GreyBackground>
