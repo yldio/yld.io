@@ -23,8 +23,8 @@ const environmentName = isProd ? 'master' : 'development'
 
 // We don't want to publish certain posts
 const restrictredPosts = [
-  'Node.js databases: Using CouchDB', // Content is too long for Contentful
-  'Node.js databases: using Redis for fun and profit' // Content is too long for Contentful
+  'node-js-databases-using-redis-for-fun-and-profit-af61f9d0e49f', // Content is too long for Contentful
+  'node-js-databases-using-couchdb-5135f6f45dc1' // Content is too long for Contentful
 ]
 
 const getContentTypeFields = ct =>
@@ -52,11 +52,11 @@ module.exports = async data => {
     content_type: 'blogPost'
   })
 
+  const cmsPostSlugs = cmsBlogPosts.map(({ fields }) => fields.slug['en-US'])
+
   const incompletePosts = cmsBlogPosts
     .filter(({ fields }) => !requiredFields.every(field => fields[field]))
-    .map(p => EmojiStrip(p.fields.title['en-US']))
-
-  console.log(JSON.stringify({ incompletePosts }, null, 2))
+    .map(p => EmojiStrip(p.fields.slug['en-US']))
 
   const postTitleIDMap = cmsBlogPosts.reduce((acc, curr) => {
     // Cannot use slug as hash on end of medium slug changes
@@ -71,17 +71,30 @@ module.exports = async data => {
   }, {})
 
   const FilterPostsToProcess = posts => {
-    const toProcess = posts.filter(({ title }) => {
-      const emojiFreeTitle = EmojiStrip(title).trim()
-      return (
-        incompletePosts.includes(emojiFreeTitle) &&
-        !restrictredPosts.includes(emojiFreeTitle)
+    const newPosts = posts.filter(({ slug }) => !cmsPostSlugs.includes(slug))
+
+    const toUpdate = posts.filter(
+      ({ slug }) =>
+        incompletePosts.includes(slug) && !restrictredPosts.includes(slug)
+    )
+
+    const result = toUpdate.concat(newPosts)
+
+    if (newPosts.length && newPosts.length > 0) {
+      console.info(`New Posts: ${newPosts.map(({ title }) => title)}`)
+    } else {
+      console.info(`No new posts to publish`)
+    }
+
+    if (toUpdate.length && toUpdate.length > 0) {
+      console.info(
+        `Posts to update: ${toUpdate.map(({ title }) => `\n${title}`)}`
       )
-    })
+    } else {
+      console.info(`No posts to update`)
+    }
 
-    console.info(`Process posts: ${toProcess.map(({ title }) => `\n${title}`)}`)
-
-    return toProcess
+    return result
   }
 
   let posts
