@@ -164,14 +164,12 @@ const OurWork = ({ data }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudy,
     contentfulOurWork: { caseStudies }
   } = data
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
-    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
-    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy)
   ]
 
   // remove thomas cook and unpublished case studies
@@ -242,10 +240,6 @@ const OurWorkSection = props => (
       query {
         contentfulOurWork {
           caseStudies {
-            ... on ContentfulNonTemplatedCaseStudy {
-              id
-              publish
-            }
             ... on ContentfulNonTemplatedCaseStudyV2 {
               id
               publish
@@ -289,35 +283,6 @@ const OurWorkSection = props => (
           }
         }
         allContentfulTemplatedCaseStudy {
-          edges {
-            node {
-              slug
-              title
-              client
-              id
-              services {
-                ... on ContentfulService {
-                  title
-                }
-              }
-              introSentence {
-                introSentence
-              }
-              alternativePreviewImage {
-                title
-                file {
-                  url
-                }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-              }
-              posterColor
-              reverseColor
-            }
-          }
-        }
-        allContentfulNonTemplatedCaseStudy {
           edges {
             node {
               slug

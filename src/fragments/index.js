@@ -31,24 +31,6 @@ export const fragments = graphql`
     }
   }
 
-  fragment NonTemplatedCaseStudy on ContentfulNonTemplatedCaseStudy {
-    title
-    slug
-    posterImage {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
-      title
-      file {
-        url
-      }
-    }
-    posterColor
-    introSentence {
-      introSentence
-    }
-  }
-
   fragment TemplatedCaseStudy on ContentfulTemplatedCaseStudy {
     title
     slug
@@ -71,17 +53,6 @@ export const fragments = graphql`
     relatedCaseStudies {
       ... on Node {
         ...NonTemplatedCaseStudyV2
-        ...NonTemplatedCaseStudy
-        ...TemplatedCaseStudy
-      }
-    }
-  }
-
-  fragment NonTemplatedCaseStudyRelated on ContentfulNonTemplatedCaseStudy {
-    relatedCaseStudies {
-      ... on Node {
-        ...NonTemplatedCaseStudyV2
-        ...NonTemplatedCaseStudy
         ...TemplatedCaseStudy
       }
     }
@@ -91,7 +62,6 @@ export const fragments = graphql`
     relatedCaseStudies {
       ... on Node {
         ...NonTemplatedCaseStudyV2
-        ...NonTemplatedCaseStudy
         ...TemplatedCaseStudy
       }
     }

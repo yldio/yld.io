@@ -159,7 +159,7 @@ const JoinUsPage = props => (
               slug
               posterColor
             }
-            ... on ContentfulNonTemplatedCaseStudy {
+            ... on ContentfulNonTemplatedCaseStudyV2 {
               title
               slug
               posterColor
