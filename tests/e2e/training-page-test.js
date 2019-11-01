@@ -76,9 +76,11 @@ test('when using the Escape key to close a modal, any future modal that is opene
 
 test("navigating directly to a training course's url should show the same content as navigating via the training page", async t => {
   await t.click(firstModalLink)
-  const titleFromTrainingPageLink = await Selector(
-    '[data-testid="modal-title"]'
-  ).textContent
+  const title = await Selector('[data-testid="modal-title"]')
+
+  await t.expect(title.exists).ok({ timeout: 5000 })
+
+  const titleFromTrainingPageLink = title.textContent
   const location = await getWindowLocation()
 
   await t.navigateTo('/')

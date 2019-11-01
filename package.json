@@ -69,7 +69,7 @@
     "test:storyshots:update": "yarn run test:storyshots -u",
     "test:interaction": "jest --config jest-interaction.config.js",
     "test:interaction:update": "yarn run test:interaction -u",
-    "test:e2e": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 500000",
+    "test:e2e": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 90000",
     "test:lighthouse": "jest --config jest-lighthouse.config.js",
     "test:unit": "jest --config jest-unit.config.js",
     "test:unit:watch": "yarn run test:unit --watch",
