@@ -51,7 +51,6 @@ const OurWork = ({ data, location }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
-    allContentfulNonTemplatedCaseStudy,
     contentfulOurWork: { caseStudies },
     site: {
       siteMetadata: { siteUrl }
@@ -60,8 +59,7 @@ const OurWork = ({ data, location }) => {
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
-    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
-    ...formatCaseStudies(allContentfulNonTemplatedCaseStudy)
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy)
   ]
 
   const displayOrderByIDs = caseStudies
@@ -169,10 +167,6 @@ const OurWorkPage = props => (
         }
         contentfulOurWork {
           caseStudies {
-            ... on ContentfulNonTemplatedCaseStudy {
-              id
-              publish
-            }
             ... on ContentfulNonTemplatedCaseStudyV2 {
               id
               publish
@@ -239,32 +233,6 @@ const OurWorkPage = props => (
                 }
               }
               posterColor
-            }
-          }
-        }
-        allContentfulNonTemplatedCaseStudy {
-          edges {
-            node {
-              slug
-              title
-              id
-              services {
-                ... on ContentfulService {
-                  title
-                }
-              }
-              introSentence {
-                introSentence
-              }
-              posterImage {
-                title
-                file {
-                  url
-                }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-              }
             }
           }
         }

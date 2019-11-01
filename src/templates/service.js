@@ -130,23 +130,6 @@ export const pageQuery = graphql`
             }
             posterColor
           }
-          ... on ContentfulNonTemplatedCaseStudy {
-            title
-            slug
-            intro: introSentence {
-              introSentence
-            }
-            posterImage {
-              title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              file {
-                url
-              }
-            }
-            posterColor
-          }
           ... on ContentfulNonTemplatedCaseStudyV2 {
             title
             slug
@@ -172,23 +155,6 @@ export const pageQuery = graphql`
             title
             slug
             introSentence {
-              introSentence
-            }
-            posterColor
-            posterImage {
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-          }
-          ... on ContentfulNonTemplatedCaseStudy {
-            title
-            slug
-            intro: introSentence {
               introSentence
             }
             posterColor
