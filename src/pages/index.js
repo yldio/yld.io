@@ -184,20 +184,6 @@ export const query = graphql`
 
         caseStudies {
           ... on Node {
-            ... on ContentfulNonTemplatedCaseStudy {
-              title
-              slug
-              posterColor
-              posterImage {
-                title
-                file {
-                  url
-                }
-                fluid(maxWidth: 550) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
-              }
-            }
             ... on ContentfulNonTemplatedCaseStudyV2 {
               title
               slug
