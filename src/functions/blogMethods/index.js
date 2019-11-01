@@ -2,6 +2,7 @@
 const { default: Map } = require('apr-map')
 const Waterfall = require('apr-waterfall')
 const Reduce = require('apr-reduce')
+const EmojiStrip = require('emoji-strip')
 
 const isProd = require('../utils/is-prod')
 const ParseXMLToJSON = require('./parse-xml-to-json')
@@ -19,6 +20,12 @@ const client = createClient({
 })
 
 const environmentName = isProd ? 'master' : 'development'
+
+// We don't want to publish certain posts
+const restrictredPosts = [
+  'Node.js databases: Using CouchDB', // Content is too long for Contentful
+  'Node.js databases: using Redis for fun and profit' // Content is too long for Contentful
+]
 
 const getContentTypeFields = ct =>
   ct.fields.reduce(
@@ -47,7 +54,9 @@ module.exports = async data => {
 
   const incompletePosts = cmsBlogPosts
     .filter(({ fields }) => !requiredFields.every(field => fields[field]))
-    .map(p => p.fields.title['en-US'])
+    .map(p => EmojiStrip(p.fields.title['en-US']))
+
+  console.log(JSON.stringify({ incompletePosts }, null, 2))
 
   const postTitleIDMap = cmsBlogPosts.reduce((acc, curr) => {
     // Cannot use slug as hash on end of medium slug changes
@@ -63,7 +72,11 @@ module.exports = async data => {
 
   const FilterPostsToProcess = posts => {
     const toProcess = posts.filter(({ title }) => {
-      return incompletePosts.includes(title)
+      const emojiFreeTitle = EmojiStrip(title).trim()
+      return (
+        incompletePosts.includes(emojiFreeTitle) &&
+        !restrictredPosts.includes(emojiFreeTitle)
+      )
     })
 
     console.info(`Process posts: ${toProcess.map(({ title }) => `\n${title}`)}`)
