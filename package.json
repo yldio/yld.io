@@ -4,12 +4,15 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
+    "@sindresorhus/slugify": "^0.9.1",
     "@yldio/oss-stats": "^1.0.1",
     "airbnb-prop-types": "^2.13.2",
     "apr-intercept": "^3.0.3",
     "apr-reduce": "^3.0.3",
+    "apr-waterfall": "^3.0.3",
     "color-luminance": "^2.1.0",
     "date-fns": "1.29.0",
+    "emoji-strip": "^1.0.1",
     "event-stream": "3.3.4",
     "faker": "^4.1.0",
     "gatsby": "^2.8.3",
@@ -36,6 +39,7 @@
     "lodash.get": "^4.4.2",
     "lodash.isequal": "^4.5.0",
     "lodash.isnull": "^3.0.0",
+    "lodash.kebabcase": "^4.1.1",
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
     "polished": "2.3.0",
@@ -59,7 +63,10 @@
     "styled-is": "1.1.5",
     "styled-reset": "1.6.0",
     "testcafe-react-selectors": "^3.1.0",
-    "tween": "^0.9.0"
+    "title-case": "^2.1.1",
+    "turndown": "^5.0.3",
+    "tween": "^0.9.0",
+    "xml2json": "^0.11.2"
   },
   "license": "MIT",
   "scripts": {
@@ -111,7 +118,6 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "8.0.4",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-plugin-styled-components": "1.8.0",
     "babel-preset-gatsby": "^0.1.6",
     "capitalize": "^2.0.0",
     "chrome-launcher": "^0.11.2",

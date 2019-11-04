@@ -23,18 +23,27 @@ Main(async () => {
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
-  const { items } = await environment.getEntries({
+  const { items: cmsBlogPosts } = await environment.getEntries({
     limit: 1000,
-    content_type: 'speciality'
+    content_type: 'blogPost'
   })
 
-  console.log(
-    JSON.stringify(
-      {
-        items
-      },
-      null,
-      2
-    )
+  // console.log(JSON.stringify({ items }, null, 2))
+
+  // const contentType = await environment.getContentType('blogPost')
+
+  const contentType = await environment.getContentType('blogPost')
+
+  const { requiredFields } = contentType.fields.reduce(
+    ({ allFields = [], requiredFields = [] }, { required, id }) => ({
+      allFields: allFields.concat(id),
+      requiredFields: required ? requiredFields.concat(id) : requiredFields
+    }),
+    []
   )
+
+  const incompletePosts = cmsBlogPosts
+    .filter(({ fields }) => !requiredFields.every(field => fields[field]))
+    .map(p => p.fields.title['en-US'])
+  console.log(JSON.stringify({ incompletePosts }, null, 2))
 })
