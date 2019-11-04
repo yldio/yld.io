@@ -1,8 +1,5 @@
 const PublishToContentful = require('../../../../src/functions/blogMethods/publish-to-contentful')
 
-// eslint-disable-next-line no-unused-vars
-const contentful = require('contentful-management')
-
 const createEntryMock = jest.fn()
 const publishMock = jest.fn()
 const updateMock = jest.fn()
@@ -89,10 +86,6 @@ describe('PublishToContentful', () => {
       sys: {
         id: 'id'
       }
-    })
-
-    publishMock.mockResolvedValue({
-      sys: '12'
     })
 
     const updatePublishMock = jest.fn().mockResolvedValueOnce({})

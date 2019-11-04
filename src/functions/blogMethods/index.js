@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const { default: Map } = require('apr-map')
-const Waterfall = require('apr-waterfall')
 const Reduce = require('apr-reduce')
 const EmojiStrip = require('emoji-strip')
 
@@ -9,7 +8,7 @@ const ParseXMLToJSON = require('./parse-xml-to-json')
 const ParseHtmlToMd = require('./parse-html-to-markdown')
 const TransformCustomMDX = require('./transform-custom-mdx')
 const PublishToContentful = require('./publish-to-contentful')
-const TranspileAllPosts = require('./transpile-all-posts')
+const ValidateMdx = require('./validate-mdx')
 const TransformMetaData = require('./transform-meta-data')
 
 const { createClient } = require('contentful-management')
@@ -58,10 +57,8 @@ module.exports = async data => {
     .filter(({ fields }) => !requiredFields.every(field => fields[field]))
     .map(p => EmojiStrip(p.fields.slug['en-US']))
 
-  const postTitleIDMap = cmsBlogPosts.reduce((acc, curr) => {
-    // Cannot use slug as hash on end of medium slug changes
-    // e.g. blog-post-title-9231239sd => blog-post-title-89120302
-    const title = curr.fields.title['en-US']
+  const postSlugIDMap = cmsBlogPosts.reduce((acc, curr) => {
+    const title = curr.fields.slug['en-US']
     const id = curr.sys.id
 
     return {
@@ -73,12 +70,12 @@ module.exports = async data => {
   const FilterPostsToProcess = posts => {
     const newPosts = posts.filter(({ slug }) => !cmsPostSlugs.includes(slug))
 
-    const toUpdate = posts.filter(
+    const postsToUpdate = posts.filter(
       ({ slug }) =>
         incompletePosts.includes(slug) && !restrictredPosts.includes(slug)
     )
 
-    const result = toUpdate.concat(newPosts)
+    const result = postsToUpdate.concat(newPosts)
 
     if (newPosts.length && newPosts.length > 0) {
       console.info(`New Posts: ${newPosts.map(({ title }) => title)}`)
@@ -86,9 +83,9 @@ module.exports = async data => {
       console.info(`No new posts to publish`)
     }
 
-    if (toUpdate.length && toUpdate.length > 0) {
+    if (postsToUpdate.length && postsToUpdate.length > 0) {
       console.info(
-        `Posts to update: ${toUpdate.map(({ title }) => `\n${title}`)}`
+        `Posts to update: ${postsToUpdate.map(({ title }) => `\n${title}`)}`
       )
     } else {
       console.info(`No posts to update`)
@@ -100,17 +97,24 @@ module.exports = async data => {
   let posts
 
   try {
-    posts = await Waterfall([
-      async () =>
-        Reduce(data, async (sum = [], acc) =>
-          sum.concat(await ParseXMLToJSON(acc))
-        ),
-      posts => FilterPostsToProcess(posts),
-      async posts => Map(posts, async post => ParseHtmlToMd(post, environment)),
-      async posts => TransformCustomMDX(posts, environment),
-      async posts => TransformMetaData(posts),
-      async posts => TranspileAllPosts(posts)
-    ])
+    const parsedPostsInJson = async () =>
+      Reduce(data, async (sum = [], acc) =>
+        sum.concat(await ParseXMLToJSON(acc))
+      )
+
+    const postsToProcess = FilterPostsToProcess(parsedPostsInJson)
+    const postsWithAddedMarkdown = await Map(postsToProcess, async post =>
+      ParseHtmlToMd(post)
+    )
+    const postsWithAddedMDX = TransformCustomMDX(
+      postsWithAddedMarkdown,
+      environment
+    )
+    const postsWithMetaData = TransformMetaData(postsWithAddedMDX)
+
+    await ValidateMdx(postsWithMetaData)
+
+    posts = postsWithMetaData
   } catch (error) {
     console.error('WATERFALL ERROR')
     throw new Error(error)
@@ -122,7 +126,7 @@ module.exports = async data => {
       posts,
       environment,
       allFields,
-      postTitleIDMap
+      postSlugIDMap
     )
   }
 

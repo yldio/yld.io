@@ -19,9 +19,9 @@ const generateContentfulEntryFromPost = (post, keys, locale) =>
     {}
   )
 
-module.exports = async (posts, environment, allFields, postTitleIDMAp) =>
+module.exports = async (posts, environment, allFields, postSlugIdMap) =>
   Map(posts, async post => {
-    const id = postTitleIDMAp[post.title]
+    const id = postSlugIdMap[post.slug]
 
     const contentfulPostData = generateContentfulEntryFromPost(
       post,
