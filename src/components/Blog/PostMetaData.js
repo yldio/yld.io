@@ -74,6 +74,7 @@ const ShareButtonContent = ({ image, imageAlt, label }) => (
     css={css`
       display: flex;
       margin-right: ${({ theme }) => theme.space[3]};
+      cursor: pointer;
     `}
   >
     <img

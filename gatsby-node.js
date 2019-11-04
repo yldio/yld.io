@@ -187,6 +187,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   }
 
+  /**
+   * Creates all pages for blog listing pages,
+   * includes context for paging functionality
+   */
+
   const allBlogPosts = result.data.allContentfulBlogPost.edges
   const postsPerPage = 6
 
@@ -223,10 +228,10 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = async ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === 'contentfulBlogPost') {
-    // console.log({ node })
-  }
-
+  /**
+   * This section creates nodes within the graphql schema
+   * that we can query blog post content on.
+   */
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent)
 

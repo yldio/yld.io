@@ -49,22 +49,22 @@ module.exports = {
       }
     },
     {
+      // Exclusively for the blog posts and listing page
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.md', '.mdx'],
         plugins: [
           {
+            /**
+             * Because of FigureImage component, this is not
+             * used in the blog currently.
+             */
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 600
             }
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
-          },
+          'gatsby-remark-responsive-iframe',
           'gatsby-remark-smartypants'
         ]
       }
