@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import { Row, Col, Grid } from '../components/grid'
 import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
+import ReactMarkdown from 'react-markdown'
 
 import Layout from '../components/layout'
 import { makeText } from '../utils/makeText'
 import Head from '../components/Common/Head'
+import BodyPrimary from '../components/Typography/BodyPrimary'
 
 const SectionTitle = styled.h2`
   font-size: 17px;
@@ -20,12 +22,6 @@ const Title = styled.h1`
   line-height: ${remcalc(42)};
   font-weight: 500;
 `
-const Body = styled.article`
-  > p {
-    margin-bottom: 10px;
-  }
-`
-
 const Section = styled.section`
   margin-bottom: 10px;
 `
@@ -48,7 +44,11 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
               </Padding>
             </Col>
             <Col>
-              {body && body.body && <Body>{renderParagraphs(body.body)}</Body>}
+              {body && body.body && (
+                <ReactMarkdown renderers={{ paragraph: BodyPrimary }}>
+                  {body.body}
+                </ReactMarkdown>
+              )}
               {section &&
                 section.length &&
                 section.map(({ title, content: { content } }) => (
