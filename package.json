@@ -4,6 +4,7 @@
   "version": "1.0.1",
   "author": "YLD <hello@yld.io>",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.1",
     "@sindresorhus/slugify": "^0.9.1",
     "@yldio/oss-stats": "^1.0.1",
     "airbnb-prop-types": "^2.13.2",
