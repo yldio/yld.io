@@ -1,15 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Row, Col, Grid } from '../components/grid'
 import remcalc from 'remcalc'
 import { Padding } from 'styled-components-spacing'
 import ReactMarkdown from 'react-markdown'
 
+import { Row, Col, Grid } from '../components/grid'
 import Layout from '../components/layout'
-import { makeText } from '../utils/makeText'
 import Head from '../components/Common/Head'
 import BodyPrimary from '../components/Typography/BodyPrimary'
+
+const Title = styled.h1`
+  font-size: ${remcalc(42)};
+  line-height: ${remcalc(42)};
+  font-weight: 500;
+`
 
 const SectionTitle = styled.h2`
   font-size: 17px;
@@ -17,20 +22,12 @@ const SectionTitle = styled.h2`
   line-height: 1.5;
 `
 
-const Title = styled.h1`
-  font-size: ${remcalc(42)};
-  line-height: ${remcalc(42)};
-  font-weight: 500;
+const List = styled.ul`
+  margin-left: 1rem;
 `
-const Section = styled.section`
-  margin-bottom: 10px;
-`
-
-const renderParagraphs = content =>
-  makeText(content).map(cont => <p key={cont.trim()}>{cont}</p>)
 
 const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
-  const { seoMetaData, title, body, section } = policy
+  const { seoMetaData, title, body } = policy
 
   return (
     <Layout location={location}>
@@ -45,18 +42,16 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
             </Col>
             <Col>
               {body && body.body && (
-                <ReactMarkdown renderers={{ paragraph: BodyPrimary }}>
+                <ReactMarkdown
+                  renderers={{
+                    paragraph: BodyPrimary,
+                    heading: SectionTitle,
+                    list: List
+                  }}
+                >
                   {body.body}
                 </ReactMarkdown>
               )}
-              {section &&
-                section.length &&
-                section.map(({ title, content: { content } }) => (
-                  <Section key={title}>
-                    <SectionTitle>{title}</SectionTitle>
-                    {renderParagraphs(content)}
-                  </Section>
-                ))}
             </Col>
           </Row>
         </Grid>
@@ -74,12 +69,6 @@ export const pageQuery = graphql`
       title
       body {
         body
-      }
-      section {
-        title
-        content {
-          content
-        }
       }
       seoMetaData {
         ...SEOMetaFields
