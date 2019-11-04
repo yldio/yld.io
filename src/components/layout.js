@@ -1,24 +1,10 @@
 import React, { Fragment, Component } from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import {
-  H1,
-  H2,
-  List,
-  ListItem,
-  Body,
-  Code,
-  A,
-  Blockquote
-} from './Blog/Typography'
-import FigureImage from './Blog/FigureImage'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import remcalc from 'remcalc'
 import { hotjar } from 'react-hotjar'
-import Gist from './Blog/Gist'
-import { YouTube, Tweet } from '@blocks/kit'
 
 import Header from './Header'
 import './layout.css'
@@ -28,19 +14,6 @@ import Footer from './Footer'
 import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
-const components = {
-  h1: H1,
-  h2: H2,
-  h3: H2,
-  h4: H2,
-  ul: List,
-  li: ListItem,
-  p: Body,
-  code: Code,
-  anchor: A,
-  blockquote: Blockquote
-}
-const shortCodes = { YouTube, Gist, FigureImage, Tweet }
 const { GATSBY_ENVIRONMENT } = process.env
 const googleJson = JSON.stringify(google)
 
@@ -143,55 +116,53 @@ class Layout extends Component {
 
           return (
             <ThemeProvider theme={theme}>
-              <MDXProvider components={{ ...components, ...shortCodes }}>
-                <Fragment>
-                  <Helmet
-                    title={`${data.site.siteMetadata.siteTitle}`}
-                    meta={[{ name: 'description', content: '' }]}
-                  >
-                    <script type="application/ld+json">{`${googleJson}`}</script>
-                    {structuredData && (
-                      <script type="application/ld+json">{`${structuredData}`}</script>
-                    )}
+              <Fragment>
+                <Helmet
+                  title={`${data.site.siteMetadata.siteTitle}`}
+                  meta={[{ name: 'description', content: '' }]}
+                >
+                  <script type="application/ld+json">{`${googleJson}`}</script>
+                  {structuredData && (
+                    <script type="application/ld+json">{`${structuredData}`}</script>
+                  )}
 
-                    <script type="application/ld+json">
-                      {JSON.stringify(breadcrumbs)}
-                    </script>
-                    <html lang="en" />
+                  <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbs)}
+                  </script>
+                  <html lang="en" />
 
-                    {addHotJar
-                      ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
-                      : null}
-                  </Helmet>
-                  <Location>
-                    {({ location }) => (
-                      <Header
-                        slug={slug}
-                        path={location.pathname}
-                        bgColor={bgColor}
-                      />
-                    )}
-                  </Location>
-                  {GridDebugger && (
-                    <GridDebugger
-                      theme={theme}
-                      maxWidth={['none', 'none', '480px', '1100px']}
-                      numCols={[1, 1, 1, 12]}
-                      gutter={['24px', '36px', '36px', '42px', '48px']}
+                  {addHotJar
+                    ? hotjar.initialize(HOTJAR_ID, HOTJAR_SCRIPT_VERSION)
+                    : null}
+                </Helmet>
+                <Location>
+                  {({ location }) => (
+                    <Header
+                      slug={slug}
+                      path={location.pathname}
+                      bgColor={bgColor}
                     />
                   )}
-                  <StyledMain>{children}</StyledMain>
-                  <Footer
-                    displayFooterOffices={displayFooterOffices}
-                    footerContactUsId={footerContactUsId}
-                    is404={is404}
+                </Location>
+                {GridDebugger && (
+                  <GridDebugger
+                    theme={theme}
+                    maxWidth={['none', 'none', '480px', '1100px']}
+                    numCols={[1, 1, 1, 12]}
+                    gutter={['24px', '36px', '36px', '42px', '48px']}
                   />
-                  <GlobalStyle />
-                  {!this.state.cookiesAllowed && (
-                    <Cookie onClick={this.handleClick} />
-                  )}
-                </Fragment>
-              </MDXProvider>
+                )}
+                <StyledMain>{children}</StyledMain>
+                <Footer
+                  displayFooterOffices={displayFooterOffices}
+                  footerContactUsId={footerContactUsId}
+                  is404={is404}
+                />
+                <GlobalStyle />
+                {!this.state.cookiesAllowed && (
+                  <Cookie onClick={this.handleClick} />
+                )}
+              </Fragment>
             </ThemeProvider>
           )
         }}
