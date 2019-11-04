@@ -63,7 +63,7 @@ const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
   } ${page.seoTitle && page.seoTitle !== ' ' ? ` - ${page.seoTitle}` : ''}`
 
   const description = page.seoMetaDescription || page.seoDescription
-  const imageUrl = getImageUrl({ socialLogo: page.socialLogo, siteMetadata })
+  const imageUrl = getImageUrl({ socialLogo: page.socialLogo })
 
   return {
     title,

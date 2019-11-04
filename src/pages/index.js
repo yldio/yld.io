@@ -312,7 +312,20 @@ export const query = graphql`
           title
           firstPublishedAt
           slug
-          imageId
+          headerImage {
+            title
+            file {
+              url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          content {
+            childMdx {
+              excerpt
+            }
+          }
           authorId
           authorName
           subtitle {

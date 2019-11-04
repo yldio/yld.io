@@ -49,6 +49,27 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.md', '.mdx'],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          'gatsby-remark-smartypants'
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         modalProps: {
@@ -94,6 +115,10 @@ module.exports = {
           {
             family: `Roboto`,
             variants: [`400`, `500`, `700`]
+          },
+          {
+            family: `Roboto+Mono`,
+            variants: [`400`]
           }
         ]
       }
