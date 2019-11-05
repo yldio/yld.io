@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const { default: Map } = require('apr-map')
+
 /**
  * This is a simple html to markdown converter using turndown
  * the main reason for this file is mainly so that we can use
@@ -13,21 +13,85 @@ const { URL } = require('url')
 const path = require('path')
 
 const TurndownService = require('turndown')
-const turndownService = new TurndownService()
 
-let images = []
+/**
+ * When Gatsby builds, Mdx tries to render <React.Suspense/> as a component
+ * instead of just string. Here we just need to wrap in `` to get Mdx to ignore
+ * trying to render this component...
+ */
+const pRule = {
+  filter: 'p',
+  replacement: content => {
+    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
+      if (match) {
+        return '`<' + match + '>`'
+      }
+    })
 
-const getImageMeta = function(imgSrc) {
-  const imgPath = new URL(imgSrc).pathname
-  let imgFileName = path.basename(imgPath)
+    return '\n\n' + newContent + '\n\n'
+  }
+}
 
-  const parsed = path.parse(imgFileName)
-  const name = parsed.name.replace(/[^a-zA-Z0-9]/g, '__')
-  const ext = parsed.ext ? parsed.ext : '.jpg' // if no extension, add .jpg
+/**
+ * See comment for `p` rule above
+ */
+const blockquoteRule = {
+  filter: 'blockquote',
+  replacement: (content, node) => {
+    const className = node.getAttribute('class')
 
-  imgFileName = name + ext
+    // Medium gives us rendered HTML <noscript> tweets
+    // Here we fish out the tweet status url and pass it
+    // to Tweet component that will be rendered later
+    // down the line
+    if (className === 'twitter-tweet') {
+      const anchor = Array.from(node.childNodes[1].childNodes)
+        .find(n => n.nodeName === 'A')
+        .getAttribute('href')
 
-  return { name: imgFileName, ext }
+      const [, id] = anchor.match(/\/status\/(\d+)/)
+      return `\n\n<Tweet tweetId="${id}" />\n\n`
+    }
+
+    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
+      if (match) {
+        return `&lt;${match}&gt;`
+      }
+    })
+
+    // eslint-disable-next-line no-useless-concat
+    return '\n\n' + '>' + newContent + '\n\n'
+  }
+}
+
+/* medium doesn't give us correct html (pre>code) just <pre>{content}</pre>
+ * so we have to manage it ourselves
+ */
+const preRule = {
+  filter: 'pre',
+  replacement: (content, node, options) => {
+    const { ownerDocument: document } = node
+
+    const codeElem = document.createElement('code')
+    codeElem.innerHTML = node.innerHTML
+
+    const preElem = document.createElement('pre')
+    preElem.appendChild(codeElem)
+    ;[...codeElem.childNodes]
+      .filter(child => child.nodeName === 'BR')
+      .forEach(child => {
+        codeElem.replaceChild(document.createTextNode('\n'), child)
+      })
+
+    return options.rules.fencedCodeBlock.replacement(content, preElem, options)
+  }
+}
+
+const scriptRule = {
+  filter: ['script', 'style'],
+  replacement: () => {
+    return '\n'
+  }
 }
 
 /**
@@ -43,15 +107,27 @@ const getImageMeta = function(imgSrc) {
  * and get the final URL.
  *
  */
-turndownService.addRule('iframe', {
+const iframeRule = {
   filter: 'iframe',
   replacement: content => {
     const [, href] = content.match(/href="(.*)">/)
 
     return `<iframecontent:"${href}"> `
   }
-})
+}
 
+const getImageMeta = function(imgSrc) {
+  const imgPath = new URL(imgSrc).pathname
+  let imgFileName = path.basename(imgPath)
+
+  const parsed = path.parse(imgFileName)
+  const name = parsed.name.replace(/[^a-zA-Z0-9]/g, '__')
+  const ext = parsed.ext ? parsed.ext : '.jpg' // if no extension, add .jpg
+
+  imgFileName = name + ext
+
+  return { name: imgFileName, ext }
+}
 /**
  * Medium gives us images with a caption:
  *
@@ -73,7 +149,7 @@ turndownService.addRule('iframe', {
  * here we have access to most DOMNode API methods to
  * calculate the inner values of DOM nodes
  */
-turndownService.addRule('img', {
+const makeImgRule = images => ({
   filter: 'figure',
   replacement: (_, node) => {
     const childNodes = Array.from(node.childNodes)
@@ -113,7 +189,6 @@ turndownService.addRule('img', {
             break
           }
           default:
-            console.warn('Missing tag link - ', tag)
             tagcontent = curr.textContent
             break
         }
@@ -143,86 +218,19 @@ turndownService.addRule('img', {
   }
 })
 
-/**
- * When Gatsby builds, Mdx tries to render <React.Suspense/> as a component
- * instead of just string. Here we just need to wrap in `` to get Mdx to ignore
- * trying to render this component...
- */
-turndownService.addRule('p', {
-  filter: 'p',
-  replacement: content => {
-    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
-      if (match) {
-        return '`<' + match + '>`'
-      }
-    })
+const transformHtmlToMarkdown = posts =>
+  posts.map(({ html, ...rest }) => {
+    const turndownService = new TurndownService({ codeBlockStyle: 'fenced' })
 
-    return '\n\n' + newContent + '\n\n'
-  }
-})
+    turndownService.addRule('p', pRule)
+    turndownService.addRule('blockquote', blockquoteRule)
+    turndownService.addRule('pre', preRule)
+    turndownService.addRule('script', scriptRule)
+    turndownService.addRule('iframe', iframeRule)
+    const images = []
+    turndownService.addRule('img', makeImgRule(images))
 
-/**
- * See comment for `p` rule above
- */
-turndownService.addRule('blockquote', {
-  filter: 'blockquote',
-  replacement: (content, node) => {
-    const className = node.getAttribute('class')
-
-    // Medium gives us rendered HTML <noscript> tweets
-    // Here we fish out the tweet status url and pass it
-    // to Tweet component that will be rendered later
-    // down the line
-    if (className === 'twitter-tweet') {
-      const anchor = Array.from(node.childNodes[1].childNodes)
-        .find(n => n.nodeName === 'A')
-        .getAttribute('href')
-
-      const [, id] = anchor.match(/\/status\/(\d+)/)
-      return `\n\n<Tweet tweetId="${id}" />\n\n`
-    }
-
-    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
-      if (match) {
-        return `&lt;${match}&gt;`
-      }
-    })
-
-    // eslint-disable-next-line no-useless-concat
-    return '\n\n' + '>' + newContent + '\n\n'
-  }
-})
-
-turndownService.addRule('pre', {
-  filter: 'pre',
-  replacement: content => {
-    const newContent = content.replace(/\*\*(\w*)\*\*/gm, (_, match) => match)
-    /**
-     * Same rules as from turndown codeblocks, see here:
-     * https://github.com/domchristie/turndown/blob/master/src/commonmark-rules.js#L111
-     *
-     * medium doesn't give us correct html (pre>code) just <pre>{content}</pre>
-     * so we have to manage it ourselves
-     */
-    // eslint-disable-next-line no-useless-concat
-    return '\n\n' + '```' + '\n' + newContent + '\n' + '```' + '\n\n'
-  }
-})
-
-turndownService.addRule('script', {
-  filter: ['script', 'style'],
-  replacement: () => {
-    return '\n'
-  }
-})
-
-module.exports = posts =>
-  Map(posts, ({ html, ...rest }) => {
-    images = []
-
-    const md = turndownService.turndown(html, {
-      codeBlockStyle: 'fenced'
-    })
+    const md = turndownService.turndown(html)
 
     return {
       ...rest,
@@ -230,3 +238,5 @@ module.exports = posts =>
       images
     }
   })
+
+module.exports = transformHtmlToMarkdown

@@ -1,18 +1,19 @@
-module.exports = post => {
-  const { title, slug, md, tags, firstPublishedAt, authorName } = post
-
-  const frontmatter = `---
-title: "${title}"
+const addFrontmatter = ({
+  title,
+  slug,
+  md,
+  tags,
+  firstPublishedAt,
+  authorName
+}) => `---
+title: ${title}
 slug: ${slug}
 tags: ${tags}
 firstPublishedAt: ${firstPublishedAt}
 author: ${authorName}
 root: '/blog'
 ---
+${md}
 `
 
-  return {
-    ...post,
-    md: `${frontmatter}\n${md}`
-  }
-}
+module.exports = addFrontmatter

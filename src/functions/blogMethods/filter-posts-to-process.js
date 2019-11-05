@@ -3,11 +3,12 @@ const EmojiStrip = require('emoji-strip')
 
 // We don't want to publish certain posts
 const restrictedPosts = [
-  'node-js-databases-using-redis-for-fun-and-profit-af61f9d0e49f', // Content is too long for Contentful
-  'node-js-databases-using-couchdb-5135f6f45dc1' // Content is too long for Contentful
+  // Content is too long for Contentful
+  'node-js-databases-using-redis-for-fun-and-profit',
+  'node-js-databases-using-couchdb'
 ]
 
-module.exports = (posts, { cmsBlogPosts, requiredFields }) => {
+const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
   const cmsPostSlugs = cmsBlogPosts.map(({ fields }) => fields.slug['en-US'])
 
   const incompletePosts = cmsBlogPosts
@@ -39,3 +40,5 @@ module.exports = (posts, { cmsBlogPosts, requiredFields }) => {
 
   return result
 }
+
+module.exports = filterPostsToProcess

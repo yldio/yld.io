@@ -2,7 +2,7 @@
 const GetContentTypeFields = require('../utils/get-content-type-fields')
 const isProd = require('../utils/is-prod')
 const ParseXMLToJSON = require('./parse-xml-to-json')
-const ParseHtmlToMd = require('./parse-html-to-markdown')
+const TransformHtmlToMd = require('./transform-html-to-markdown')
 const TransformCustomMDX = require('./transform-custom-mdx')
 const PublishToContentful = require('./publish-to-contentful')
 const FilterPostsToProcess = require('./filter-posts-to-process')
@@ -36,7 +36,7 @@ module.exports = async data => {
     cmsBlogPosts,
     requiredFields
   })
-  const postsWithAddedMarkdown = ParseHtmlToMd(postsToProcess)
+  const postsWithAddedMarkdown = TransformHtmlToMd(postsToProcess)
 
   const postsWithAddedMDX = await TransformCustomMDX(
     postsWithAddedMarkdown,
