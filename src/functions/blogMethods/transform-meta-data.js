@@ -1,6 +1,6 @@
 const { default: Map } = require('apr-map')
 
-module.exports = async posts =>
+module.exports = posts =>
   Map(posts, post => {
     // Uses the assetId from the contentful image upload
     // response. Means Gatsby will download the image from
