@@ -19,8 +19,20 @@ const generateContentfulEntryFromPost = (post, keys, locale) =>
     {}
   )
 
-module.exports = async (posts, environment, allFields, postSlugIdMap) =>
-  Map(posts, async post => {
+const generatePostSlugIDMap = posts =>
+  posts.reduce((acc, curr) => {
+    const title = curr.fields.slug['en-US']
+    const id = curr.sys.id
+
+    return {
+      ...acc,
+      [title]: id
+    }
+  }, {})
+module.exports = async (posts, environment, allFields, cmsBlogPosts) => {
+  const postSlugIdMap = generatePostSlugIDMap(cmsBlogPosts)
+
+  return Map(posts, async post => {
     const id = postSlugIdMap[post.slug]
 
     const contentfulPostData = generateContentfulEntryFromPost(
@@ -69,3 +81,4 @@ module.exports = async (posts, environment, allFields, postSlugIdMap) =>
 
     return asset
   })
+}
