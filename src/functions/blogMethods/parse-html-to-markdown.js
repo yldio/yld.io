@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const { default: Map } = require('apr-map')
 /**
  * This is a simple html to markdown converter using turndown
  * the main reason for this file is mainly so that we can use
@@ -215,16 +216,17 @@ turndownService.addRule('script', {
   }
 })
 
-module.exports = ({ html, ...rest }) => {
-  images = []
+module.exports = posts =>
+  Map(posts, ({ html, ...rest }) => {
+    images = []
 
-  const md = turndownService.turndown(html, {
-    codeBlockStyle: 'fenced'
+    const md = turndownService.turndown(html, {
+      codeBlockStyle: 'fenced'
+    })
+
+    return {
+      ...rest,
+      md,
+      images
+    }
   })
-
-  return {
-    ...rest,
-    md,
-    images
-  }
-}
