@@ -38,13 +38,14 @@ const pRule = {
 const blockquoteRule = {
   filter: 'blockquote',
   replacement: (content, node) => {
-    const className = node.getAttribute('class')
+    const { classList } = node
 
     // Medium gives us rendered HTML <noscript> tweets
     // Here we fish out the tweet status url and pass it
     // to Tweet component that will be rendered later
     // down the line
-    if (className === 'twitter-tweet') {
+    if ([...classList].includes('twitter-tweet')) {
+      // TODO querySelector? and tests
       const anchor = Array.from(node.childNodes[1].childNodes)
         .find(n => n.nodeName === 'A')
         .getAttribute('href')

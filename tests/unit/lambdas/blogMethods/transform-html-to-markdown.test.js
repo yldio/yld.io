@@ -66,10 +66,17 @@ const TransformHTMLToMarkdown = require('../../../../src/functions/blogMethods/t
 // ]
 
 it.each`
-  htmlDescription | html                                              | md                            | mdDescription
-  ${'empty html'} | ${''}                                             | ${''}                         | ${'empty md'}
-  ${'an h3'}      | ${'<h3>Heading</h3>'}                             | ${'### Heading'}              | ${'a level 3 heading'}
-  ${'a pre tag'}  | ${'<pre><strong>a + b;</strong><br>b - a;</pre>'} | ${'```\na + b;\nb - a;\n```'} | ${'a fenced code block'}
+  htmlDescription                                    | html                                                              | md                    | mdDescription
+  ${'empty html'}                                    | ${''}                                                             | ${''}                 | ${'empty md'}
+  ${'an h3'}                                         | ${'<h3>Heading</h3>'}                                             | ${'### Heading'}      | ${'a level 3 heading'}
+  ${'p tags'}                                        | ${'<p>Par 1</p><p>Par 2</p>'}                                     | ${'Par 1\n\nPar 2'}   | ${'paragraphs'}
+  ${'a p tag containing text in tag shape'}          | ${'<p>My &lt;tag&gt;</p>'}                                        | ${'My `<tag>`'}       | ${'inline code containing a tag'}
+  ${'blockquote tags'}                               | ${'<blockquote>Par 1</blockquote><blockquote>Par 2</blockquote>'} | ${'>Par 1\n\n>Par 2'} | ${'quoted paragraphs'}
+  ${'a blockquote tag containing text in tag shape'} | ${'<blockquote>My &lt;tag&gt;</blockquote>'}                      | ${'>My `<tag>`'}      | ${'quoted inline code containing a tag'}
+  ${'a pre tag'}                                     | ${'<pre>a + b;</pre>'}                                            | ${'```\na + b;\n```'} | ${'a fenced code block'}
+  ${'a br tag in a pre tag'}                         | ${'<pre>a;<br>b;</pre>'}                                          | ${'```\na;\nb;\n```'} | ${'a line break in a fenced code block'}
+  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'} | ${'nothing'}
+  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'} | ${'nothing'}
 `('transforms $htmlDescription to $mdDescription', ({ html, md: expected }) => {
   const [{ md: actual }] = TransformHTMLToMarkdown([{ html }])
   expect(actual).toBe(expected)
