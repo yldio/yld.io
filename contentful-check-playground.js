@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * This is just a simple script that can be used when you want
  * to check the return values from the contentful API and try
@@ -23,27 +24,29 @@ Main(async () => {
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment('master')
 
-  const { items: cmsBlogPosts } = await environment.getEntries({
-    limit: 1000,
-    content_type: 'blogPost'
-  })
+  // const { items: cmsBlogPosts } = await environment.getEntries({
+  //   limit: 1000,
+  //   content_type: 'blogPost'
+  // })
 
   // console.log(JSON.stringify({ items }, null, 2))
 
   // const contentType = await environment.getContentType('blogPost')
+  // const { items, ...rest } = await environment.getEntries({
+  //   limit: 1000,
+  //   content_type: 'blogPost'
+  // })
 
-  const contentType = await environment.getContentType('blogPost')
+  // const { requiredFields } = contentType.fields.reduce(
+  //   ({ allFields = [], requiredFields = [] }, { required, id }) => ({
+  //     allFields: allFields.concat(id),
+  //     requiredFields: required ? requiredFields.concat(id) : requiredFields
+  //   }),
+  //   []
+  // )
 
-  const { requiredFields } = contentType.fields.reduce(
-    ({ allFields = [], requiredFields = [] }, { required, id }) => ({
-      allFields: allFields.concat(id),
-      requiredFields: required ? requiredFields.concat(id) : requiredFields
-    }),
-    []
-  )
-
-  const incompletePosts = cmsBlogPosts
-    .filter(({ fields }) => !requiredFields.every(field => fields[field]))
-    .map(p => p.fields.title['en-US'])
-  console.log(JSON.stringify({ incompletePosts }, null, 2))
+  // const incompletePosts = cmsBlogPosts
+  //   .filter(({ fields }) => !requiredFields.every(field => fields[field]))
+  //   .map(p => p.fields.title['en-US'])
+  // console.log(JSON.stringify({ incompletePosts }, null, 2))
 })
