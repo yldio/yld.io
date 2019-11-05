@@ -12,7 +12,7 @@ module.exports = async (posts, environment) => {
       async () => TransformImageData(post, environment),
       async post => TransformIFrames(post),
       async post => TransformStrings(post),
-      async post => AddFrontMatter(post)
+      async post => ({ ...post, md: AddFrontMatter(post) })
     ])
   )
 }

@@ -36,13 +36,15 @@ module.exports = async data => {
     cmsBlogPosts,
     requiredFields
   })
-  const postsWithAddedMarkdown = TransformHtmlToMd(postsToProcess)
+
+  const postsWithAddedMarkdown = await TransformHtmlToMd(postsToProcess)
 
   const postsWithAddedMDX = await TransformCustomMDX(
     postsWithAddedMarkdown,
     environment
   )
-  const postsWithMetaData = TransformMetaData(postsWithAddedMDX)
+
+  const postsWithMetaData = await TransformMetaData(postsWithAddedMDX)
 
   await ValidateMdx(postsWithMetaData)
 
