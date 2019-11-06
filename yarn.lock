@@ -3415,13 +3415,6 @@ apr-reduce@^3.0.3:
     apr-engine-each "^3.0.3"
     lodash.defaults "^4.2.0"
 
-apr-waterfall@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/apr-waterfall/-/apr-waterfall-3.0.3.tgz#6785375d051f04a01329d2dda5e87ae0c2b13385"
-  integrity sha1-Z4U3XQUfBKATKdLdpeh64MKxM4U=
-  dependencies:
-    apr-engine-each "^3.0.3"
-
 apr@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/apr/-/apr-2.0.2.tgz#22b897bb81c5fa96a3b1475c15406f87fdec3c30"

@@ -53,11 +53,11 @@ const getIframeContent = async url => {
 }
 
 module.exports = async post => {
-  const { md } = post
+  const { content } = post
 
-  let processedMarkdown = md
+  let processedMarkdown = content
 
-  const occurrences = findOccurrences(md)
+  const occurrences = findOccurrences(content)
 
   if (occurrences.length > 0) {
     await Promise.all(
@@ -89,6 +89,6 @@ module.exports = async post => {
 
   return {
     ...post,
-    md: processedMarkdown
+    content: processedMarkdown
   }
 }
