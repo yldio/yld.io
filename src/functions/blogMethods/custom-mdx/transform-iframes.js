@@ -52,7 +52,7 @@ const getIframeContent = async url => {
   }
 }
 
-module.exports = async post => {
+const transformIframes = async post => {
   const { content } = post
 
   let processedMarkdown = content
@@ -92,3 +92,5 @@ module.exports = async post => {
     content: processedMarkdown
   }
 }
+
+module.exports = transformIframes

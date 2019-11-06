@@ -5,8 +5,7 @@ const mdx = require('@mdx-js/mdx')
  * markdown we've generated can transpile to mdx correctly
  * otherwise we upload markdown that will break the build.
  */
-
-module.exports = async posts => {
+const validateMdx = async posts => {
   for (const post of posts) {
     const { md, slug } = post
 
@@ -16,6 +15,6 @@ module.exports = async posts => {
       throw new Error(`Error transpiling post ${slug}`, error)
     }
   }
-
-  return posts
 }
+
+module.exports = validateMdx

@@ -1,6 +1,10 @@
 const KebabCase = require('lodash.kebabcase')
 
-module.exports = async ({ caption, name, ext, src }, title, environment) => {
+const uploadImageToContentful = async (
+  { caption, name, ext, src },
+  title,
+  environment
+) => {
   const asset = await environment.createAsset({
     fields: {
       title: {
@@ -31,3 +35,5 @@ module.exports = async ({ caption, name, ext, src }, title, environment) => {
     title: contentfulTitle
   }
 }
+
+module.exports = uploadImageToContentful

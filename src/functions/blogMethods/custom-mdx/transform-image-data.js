@@ -3,7 +3,7 @@ const { default: Map } = require('apr-map')
 const UploadToContentful = require('./upload-image-to-contentful')
 const isProd = require('../../utils/is-prod')
 
-module.exports = async (post, environment) => {
+const transformImageData = async (post, environment) => {
   const { content, images, title: postTitle } = post
   let transformedContent = content
 
@@ -58,3 +58,5 @@ module.exports = async (post, environment) => {
     content: transformedContent
   }
 }
+
+module.exports = transformImageData

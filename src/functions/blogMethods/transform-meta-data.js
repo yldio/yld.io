@@ -1,17 +1,10 @@
-const { default: Map } = require('apr-map')
-
-module.exports = posts =>
-  Map(posts, post => {
+const transformMetaData = posts =>
+  posts.map(post => ({
+    ...post,
     // Uses the assetId from the contentful image upload
     // response. Means Gatsby will download the image from
     // contentful when the site builds
-    const headerImage =
-      post.relatedMedia && post.relatedMedia.length > 0
-        ? post.relatedMedia[0]
-        : undefined
+    headerImage: post.relatedMedia[0] // may be undefined
+  }))
 
-    return {
-      ...post,
-      headerImage
-    }
-  })
+module.exports = transformMetaData

@@ -2,10 +2,10 @@ const TransformStrings = require('../../../../../src/functions/blogMethods/custo
 
 it.each([
   'https://medium.com/yld-blog/',
+  'http://medium.com/yld-blog/',
+  'https://Medium.Com/YLD-Blog/',
   'https://medium.com/yld-blog',
-  'https://medium.com/yld-engineering-blog/',
-  'https://medium.com/yld-engineering-blog',
-  'https://Medium.Com/YLD-Engineering-Blog'
+  'https://medium.com/yld-engineering-blog/'
 ])(
   'replaces the YLD medium blog URL %s with the yld.io blog URL',
   mediumUrl => {

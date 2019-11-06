@@ -18,7 +18,7 @@ const client = createClient({
 
 const environmentName = isProd ? 'master' : 'development'
 
-module.exports = async data => {
+const syncMediumToContentful = async data => {
   const space = await client.getSpace(CONTENTFUL_SPACE)
   const environment = await space.getEnvironment(environmentName)
   const contentType = await environment.getContentType('blogPost')
@@ -44,7 +44,7 @@ module.exports = async data => {
     environment
   )
 
-  const postsWithMetaData = await TransformMetaData(postsWithAddedMDX)
+  const postsWithMetaData = TransformMetaData(postsWithAddedMDX)
 
   await ValidateMdx(postsWithMetaData)
 
@@ -61,3 +61,5 @@ module.exports = async data => {
 
   return postsWithMetaData
 }
+
+module.exports = syncMediumToContentful
