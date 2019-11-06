@@ -1,7 +1,7 @@
 const addFrontmatter = ({
   title,
   slug,
-  md,
+  content,
   tags,
   firstPublishedAt,
   authorName
@@ -13,7 +13,7 @@ firstPublishedAt: ${firstPublishedAt}
 author: ${authorName}
 root: '/blog'
 ---
-${md}
+${content}
 `
 
 module.exports = addFrontmatter

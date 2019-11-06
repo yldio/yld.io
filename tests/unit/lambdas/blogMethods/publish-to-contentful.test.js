@@ -1,129 +1,98 @@
+/* eslint-disable no-console */
 const PublishToContentful = require('../../../../src/functions/blogMethods/publish-to-contentful')
+const until = require('async-wait-until')
+
+const originalConsoleInfo = console.info
+beforeEach(() => {
+  console.info = jest.fn()
+})
+afterEach(() => {
+  console.info = originalConsoleInfo
+})
 
 const createEntryMock = jest.fn()
-const publishMock = jest.fn()
-const updateMock = jest.fn()
-
-const getEntryMock = jest.fn().mockResolvedValue({
-  publish: publishMock,
-  update: updateMock
-})
+const getEntryMock = jest.fn()
 
 const environment = {
   createEntry: createEntryMock,
   getEntry: getEntryMock
 }
 
-const locale = 'en-US'
+const publishMock = jest.fn().mockImplementation(async asset => ({ ...asset }))
 
-const generateContentfulData = (posts, fields) =>
-  posts.map(post => ({
-    fields: fields.reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr]: {
-          [locale]: post[curr]
+beforeEach(() => {
+  createEntryMock.mockReset()
+  getEntryMock.mockReset()
+})
+
+describe('given a post that is not in the CMS yet', () => {
+  it('publishes a new entry', async () => {
+    createEntryMock.mockImplementation(async (_type, fields) => ({
+      fields,
+      publish: publishMock
+    }))
+
+    const publishedAssets = await PublishToContentful(
+      [
+        {
+          slug: 'post',
+          title: 'Post'
         }
-      }),
-      {}
+      ],
+      environment,
+      ['slug', 'title'],
+      []
     )
-  }))
 
-describe('PublishToContentful', () => {
-  it('calls the contentful API methods correctly with the correct data', async () => {
-    const postTitleIDMap = {
-      'Blog Title #1': 'this_is_a_contentful_id'
-    }
+    expect(createEntryMock).toHaveBeenCalledWith('blogPost', {
+      fields: { slug: { 'en-US': 'post' }, title: { 'en-US': 'Post' } }
+    })
+    expect(publishMock).toHaveBeenCalled()
+    expect(publishedAssets).toEqual([await publishMock.mock.results[0].value])
 
-    const posts = [
-      {
-        title: 'Blog Title #1',
-        firstPublishedAt: '2019-10-10',
-        headerImage: {
-          sys: {
-            type: 'Link',
-            id: 'asset_id_1'
-          }
-        },
-        slug: 'blog-slug-1',
-        tags: ['tag1', 'tag2'],
-        authorName: 'Big time author',
-        content: '# Blog title\nthis is markdown!',
-        relatedMedia: [
-          {
-            sys: {
-              type: 'Link',
-              linkType: 'Asset',
-              id: '123'
-            }
-          },
-          {
-            sys: {
-              type: 'Link',
-              linkType: 'Asset',
-              id: '321'
-            }
-          }
-        ]
+    expect(console.info).toHaveBeenCalledWith(
+      expect.stringMatching(/Creating.+Post/)
+    )
+  })
+})
+
+describe('given a post that exists in the CMS', () => {
+  it('publishes the entry with updated fields', async () => {
+    let resolveUpdate
+    const updateMock = jest
+      .fn()
+      .mockReturnValue(new Promise(resolve => (resolveUpdate = resolve)))
+
+    const asset = {
+      fields: {
+        slug: { 'en-US': 'post' },
+        title: { 'en-US': 'Old Post' }
       },
-      {
-        title: 'Blog Title #2',
-        firstPublishedAt: '2019-10-11',
-        headerImage: {
-          sys: {
-            type: 'Link',
-            id: 'asset_id_2'
-          }
-        },
-        slug: 'blog-slug-2',
-        tags: ['tag1', 'tag2'],
-        authorName: 'Big time author',
-        content: '# Blog title\nthis is markdown!'
-      }
-    ]
+      update: updateMock
+    }
+    const publishedAssetsPromise = PublishToContentful(
+      [
+        {
+          slug: 'post',
+          title: 'New Post'
+        }
+      ],
+      environment,
+      ['slug', 'title'],
+      [asset]
+    )
 
-    createEntryMock.mockResolvedValue({
-      sys: {
-        id: 'id'
-      }
-    })
+    await until(() => updateMock.mock.calls.length === 1)
+    expect(asset.fields).toHaveProperty('title', { 'en-US': 'New Post' })
+    const updatedAsset = { ...asset, publish: publishMock }
+    resolveUpdate(updatedAsset)
 
-    const updatePublishMock = jest.fn().mockResolvedValueOnce({})
+    const publishedAssets = await publishedAssetsPromise
+    expect(publishMock).toHaveBeenCalled()
+    expect(publishedAssets).toEqual([await publishMock.mock.results[0].value])
 
-    updateMock.mockResolvedValueOnce({
-      publish: updatePublishMock
-    })
-
-    const allFields = [
-      'title',
-      'firstPublishedAt',
-      'headerImage',
-      'slug',
-      'tags',
-      'authorName',
-      'content',
-      'relatedMedia'
-    ]
-
-    const createEntryData = generateContentfulData(posts, allFields)
-
-    getEntryMock.mockResolvedValueOnce({
-      update: updateMock,
-      publish: updatePublishMock,
-      fields: createEntryData[0]
-    })
-
-    await PublishToContentful(posts, environment, allFields, postTitleIDMap)
-
-    // Updated post assertions
-    expect(updateMock).toHaveBeenCalled()
-    expect(updatePublishMock).toHaveBeenCalledTimes(1)
-
-    // New post assertions
-    expect(createEntryMock).toHaveBeenCalledWith('blogPost', createEntryData[1])
-    expect(publishMock).toHaveBeenCalledTimes(1)
-
-    expect(getEntryMock).toHaveBeenNthCalledWith(1, 'this_is_a_contentful_id')
-    expect(getEntryMock).toHaveBeenNthCalledWith(2, 'id')
+    expect(console.info).toHaveBeenCalledWith(
+      expect.stringMatching(/Updating.+New Post/)
+    )
   })
 })

@@ -1,10 +1,5 @@
 /* eslint-disable no-console */
 const { default: Map } = require('apr-map')
-const Intercept = require('apr-intercept')
-
-const postToCmsKeysMap = {
-  content: 'md'
-}
 
 const locale = 'en-US'
 
@@ -13,27 +8,26 @@ const generateContentfulEntryFromPost = (post, keys, locale) =>
     (acc, curr) => ({
       ...acc,
       [curr]: {
-        [locale]: post[postToCmsKeysMap[curr]] || post[curr]
+        [locale]: post[curr]
       }
     }),
     {}
   )
 
-const generatePostSlugIDMap = posts =>
-  posts.reduce((acc, curr) => {
-    const title = curr.fields.slug['en-US']
-    const id = curr.sys.id
-
-    return {
-      ...acc,
-      [title]: id
-    }
-  }, {})
-module.exports = async (posts, environment, allFields, cmsBlogPosts) => {
-  const postSlugIdMap = generatePostSlugIDMap(cmsBlogPosts)
-
+const publishToContentful = async (
+  posts,
+  environment,
+  allFields,
+  cmsBlogPosts
+) => {
   return Map(posts, async post => {
-    const id = postSlugIdMap[post.slug]
+    const asset = cmsBlogPosts.find(
+      ({
+        fields: {
+          slug: { [locale]: slug }
+        }
+      }) => slug === post.slug
+    )
 
     const contentfulPostData = generateContentfulEntryFromPost(
       post,
@@ -41,44 +35,26 @@ module.exports = async (posts, environment, allFields, cmsBlogPosts) => {
       locale
     )
 
-    let asset
-    if (id) {
+    if (asset) {
       console.info(`Updating post: ${post.title}`)
-      asset = await environment.getEntry(id)
 
       asset.fields = {
         ...asset.fields,
         ...contentfulPostData
       }
+      const updatedAsset = await asset.update()
 
-      const [updateErr, updatedAsset] = await Intercept(asset.update())
-
-      if (updateErr) {
-        console.error(`Update for ${post.title} failed due to: `, updateErr)
-
-        return `An error occured whilst updating post ${post.title}, see logs`
-      }
-
-      const [publishErr] = await Intercept(updatedAsset.publish())
-
-      if (publishErr) {
-        console.error(`Publish for ${post.title} failed: `, publishErr)
-      }
+      return await updatedAsset.publish()
     } else {
       console.info(`Creating new post: ${post.title} `)
-      const newPost = await environment.createEntry('blogPost', {
+
+      const newAsset = await environment.createEntry('blogPost', {
         fields: contentfulPostData
       })
 
-      asset = await environment.getEntry(newPost.sys.id)
-
-      const [err] = await Intercept(asset.publish())
-
-      if (err) {
-        console.error(`Create post for ${post.title} failed: `, err)
-      }
+      return await newAsset.publish()
     }
-
-    return asset
   })
 }
+
+module.exports = publishToContentful

@@ -114,6 +114,7 @@
     "apr": "2.0.2",
     "apr-main": "4.0.3",
     "apr-map": "3.0.3",
+    "async-wait-until": "^1.2.4",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "10.0.1",
     "babel-jest": "^23.6.0",

@@ -161,11 +161,11 @@ const transformHtmlToMarkdown = posts =>
     const images = []
     turndownService.addRule('img', makeImgRule(images))
 
-    const md = turndownService.turndown(html)
+    const content = turndownService.turndown(html)
 
     return {
       ...rest,
-      md,
+      content,
       images
     }
   })
