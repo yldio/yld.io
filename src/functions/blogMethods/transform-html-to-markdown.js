@@ -13,6 +13,10 @@ const { URL } = require('url')
 const path = require('path')
 
 const TurndownService = require('turndown')
+const turndownOptions = { codeBlockStyle: 'fenced' }
+
+const replaceTags = content =>
+  content.replace(/<([^>]*)>/g, (_, match) => '`<' + match + '>`')
 
 /**
  * When Gatsby builds, Mdx tries to render <React.Suspense/> as a component
@@ -22,12 +26,7 @@ const TurndownService = require('turndown')
 const pRule = {
   filter: 'p',
   replacement: content => {
-    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
-      if (match) {
-        return '`<' + match + '>`'
-      }
-    })
-
+    const newContent = replaceTags(content)
     return '\n\n' + newContent + '\n\n'
   }
 }
@@ -45,23 +44,14 @@ const blockquoteRule = {
     // to Tweet component that will be rendered later
     // down the line
     if ([...classList].includes('twitter-tweet')) {
-      // TODO querySelector? and tests
-      const anchor = Array.from(node.childNodes[1].childNodes)
-        .find(n => n.nodeName === 'A')
-        .getAttribute('href')
+      const { href } = node.querySelector(':scope > p:last-child > a')
 
-      const [, id] = anchor.match(/\/status\/(\d+)/)
+      const [, id] = href.match(/\/status\/(\d+)\/?$/)
       return `\n\n<Tweet tweetId="${id}" />\n\n`
     }
 
-    const newContent = content.replace(/<([^>]*)>/g, (_, match) => {
-      if (match) {
-        return `&lt;${match}&gt;`
-      }
-    })
-
-    // eslint-disable-next-line no-useless-concat
-    return '\n\n' + '>' + newContent + '\n\n'
+    const newContent = replaceTags(content)
+    return '\n\n>' + newContent + '\n\n'
   }
 }
 
@@ -90,9 +80,7 @@ const preRule = {
 
 const scriptRule = {
   filter: ['script', 'style'],
-  replacement: () => {
-    return '\n'
-  }
+  replacement: () => ''
 }
 
 /**
@@ -110,24 +98,18 @@ const scriptRule = {
  */
 const iframeRule = {
   filter: 'iframe',
-  replacement: content => {
-    const [, href] = content.match(/href="(.*)">/)
-
-    return `<iframecontent:"${href}"> `
+  replacement: (_, node) => {
+    // iframes can only have text node children, so we parse the HTML in a new element
+    const elem = document.createElement('div')
+    elem.innerHTML = node.innerHTML
+    return `<iframecontent:"${elem.querySelector('a').href}">`
   }
 }
 
 const getImageMeta = function(imgSrc) {
-  const imgPath = new URL(imgSrc).pathname
-  let imgFileName = path.basename(imgPath)
-
-  const parsed = path.parse(imgFileName)
-  const name = parsed.name.replace(/[^a-zA-Z0-9]/g, '__')
-  const ext = parsed.ext ? parsed.ext : '.jpg' // if no extension, add .jpg
-
-  imgFileName = name + ext
-
-  return { name: imgFileName, ext }
+  const { pathname } = new URL(imgSrc)
+  const { base: name, ext = '.jpg' } = path.parse(pathname)
+  return { name, ext }
 }
 /**
  * Medium gives us images with a caption:
@@ -153,67 +135,15 @@ const getImageMeta = function(imgSrc) {
 const makeImgRule = images => ({
   filter: 'figure',
   replacement: (_, node) => {
-    const childNodes = Array.from(node.childNodes)
+    const { src, alt } = node.querySelector('img')
+    const { name, ext } = getImageMeta(src)
 
-    // Find the figcatpion in the figure node
-    const capTag = childNodes.find(n => n.nodeName === 'FIGCAPTION')
-    let caption
+    const captionTag = node.querySelector('figcaption')
+    const caption = captionTag
+      ? new TurndownService(turndownOptions).turndown(captionTag)
+      : undefined
 
-    // Not all images have a figcaption!
-    if (capTag) {
-      // The final caption value is a markdown string
-      // that we render directly to the DOM with ReactMarkdown
-      // in the client. This markdown is NOT parsed by MDX
-      // by the gatsby build command
-      caption = Array.from(capTag.childNodes).reduce((acc, curr) => {
-        const tag = curr.nodeName
-        let tagcontent
-
-        // Transforms a few HTML elements that we know we
-        // should be including.
-        switch (tag) {
-          case 'A': {
-            const text = curr.textContent
-
-            const url = new URL(curr.getAttribute('href'))
-            const strippedQueryParams = url.origin + url.pathname
-
-            tagcontent = `[${text}](${strippedQueryParams})`
-            break
-          }
-          case 'STRONG': {
-            tagcontent = `**${curr.textContent}**`
-            break
-          }
-          case '#text': {
-            tagcontent = curr.textContent
-            break
-          }
-          default:
-            tagcontent = curr.textContent
-            break
-        }
-
-        return acc + tagcontent
-      }, '')
-    }
-
-    const imgNode = childNodes.find(n => n.nodeName === 'IMG')
-
-    const imageSrc = imgNode.getAttribute('src')
-    const imageAlt = imgNode.getAttribute('alt')
-
-    const { name, ext } = getImageMeta(imageSrc)
-
-    const newImage = {
-      src: imageSrc,
-      ext,
-      alt: imageAlt,
-      name,
-      caption
-    }
-
-    images.push(newImage)
+    images.push({ src, ext, alt, name, caption })
 
     return `<image:${name}>`
   }
@@ -221,7 +151,7 @@ const makeImgRule = images => ({
 
 const transformHtmlToMarkdown = posts =>
   posts.map(({ html, ...rest }) => {
-    const turndownService = new TurndownService({ codeBlockStyle: 'fenced' })
+    const turndownService = new TurndownService(turndownOptions)
 
     turndownService.addRule('p', pRule)
     turndownService.addRule('blockquote', blockquoteRule)
