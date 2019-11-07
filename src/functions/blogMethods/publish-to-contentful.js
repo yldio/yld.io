@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const { default: Map } = require('apr-map')
-
-const locale = 'en-US'
+const { LOCALE } = require('../utils/constants')
 
 const generateContentfulEntryFromPost = (post, keys, locale) =>
   keys.reduce(
@@ -24,7 +23,7 @@ const publishToContentful = async (
     const asset = cmsBlogPosts.find(
       ({
         fields: {
-          slug: { [locale]: slug }
+          slug: { [LOCALE]: slug }
         }
       }) => slug === post.slug
     )
@@ -32,7 +31,7 @@ const publishToContentful = async (
     const contentfulPostData = generateContentfulEntryFromPost(
       post,
       allFields,
-      locale
+      LOCALE
     )
 
     if (asset) {

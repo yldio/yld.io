@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const EmojiStrip = require('emoji-strip')
+const { LOCALE } = require('../utils/constants')
 
 // We don't want to publish certain posts
 const restrictedPosts = [
@@ -9,11 +10,11 @@ const restrictedPosts = [
 ]
 
 const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
-  const cmsPostSlugs = cmsBlogPosts.map(({ fields }) => fields.slug['en-US'])
+  const cmsPostSlugs = cmsBlogPosts.map(({ fields }) => fields.slug[LOCALE])
 
   const incompletePosts = cmsBlogPosts
     .filter(({ fields }) => !requiredFields.every(field => fields[field]))
-    .map(p => EmojiStrip(p.fields.slug['en-US']))
+    .map(p => EmojiStrip(p.fields.slug[LOCALE]))
 
   const newPosts = posts.filter(({ slug }) => !cmsPostSlugs.includes(slug))
 

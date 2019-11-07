@@ -1,6 +1,6 @@
 const KebabCase = require('lodash.kebabcase')
 const mime = require('mime-types')
-
+const { LOCALE } = require('../../utils/constants')
 const uploadImageToContentful = async (
   { name, src, ext },
   title,
@@ -9,10 +9,10 @@ const uploadImageToContentful = async (
   const asset = await environment.createAsset({
     fields: {
       title: {
-        'en-US': `${KebabCase(title)}__${name}`
+        [LOCALE]: `${KebabCase(title)}__${name}`
       },
       file: {
-        'en-US': {
+        [LOCALE]: {
           fileName: name,
           upload: src,
           contentType: mime.lookup(ext)
@@ -24,7 +24,7 @@ const uploadImageToContentful = async (
   const {
     fields: {
       file: {
-        'en-US': { url }
+        [LOCALE]: { url }
       }
     },
     sys: { id }
