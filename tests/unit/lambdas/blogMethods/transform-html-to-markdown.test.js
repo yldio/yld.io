@@ -9,25 +9,29 @@ const tweetBlockquote = `
     </p>
   </blockquote>
 `
-const tweetHtml = `<Tweet tweetId="123456789012345678" />`
+const tweetMdx = `<Tweet tweetId="123456789012345678" />`
+
+const iframe = '<iframe><a href="https://yld.io/"></iframe>'
+const iframeMdx = '<iframecontent:"https://yld.io/">'
 
 it.each`
-  htmlDescription                                    | html                                                              | md                                     | mdDescription
-  ${'nothing'}                                       | ${''}                                                             | ${''}                                  | ${'nothing'}
-  ${'an h3'}                                         | ${'<h3>Heading</h3>'}                                             | ${'### Heading'}                       | ${'a level 3 heading'}
-  ${'p tags'}                                        | ${'<p>Par 1</p><p>Par 2</p>'}                                     | ${'Par 1\n\nPar 2'}                    | ${'paragraphs'}
-  ${'a p tag containing text in tag shape'}          | ${'<p>My &lt;tag&gt;</p>'}                                        | ${'My `<tag>`'}                        | ${'inline code containing a tag'}
-  ${'blockquote tags'}                               | ${'<blockquote>Par 1</blockquote><blockquote>Par 2</blockquote>'} | ${'>Par 1\n\n>Par 2'}                  | ${'quoted paragraphs'}
-  ${'a blockquote tag containing text in tag shape'} | ${'<blockquote>My &lt;tag&gt;</blockquote>'}                      | ${'>My `<tag>`'}                       | ${'quoted inline code containing a tag'}
-  ${'a Tweet-shaped blockquote'}                     | ${tweetBlockquote}                                                | ${tweetHtml}                           | ${'a Tweet tag'}
-  ${'a pre tag'}                                     | ${'<pre>a + b;</pre>'}                                            | ${'```\na + b;\n```'}                  | ${'a fenced code block'}
-  ${'a br tag in a pre tag'}                         | ${'<pre>a;<br>b;</pre>'}                                          | ${'```\na;\nb;\n```'}                  | ${'a line break in a fenced code block'}
-  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'}                  | ${'nothing'}
-  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'}                  | ${'nothing'}
-  ${'a script tag'}                                  | ${'<script>a + b;</script>'}                                      | ${''}                                  | ${'nothing'}
-  ${'a style tag'}                                   | ${'<style>a + b;</style>'}                                        | ${''}                                  | ${'nothing'}
-  ${'an iframe'}                                     | ${'<iframe><a href="https://yld.io/"></iframe>'}                  | ${'<iframecontent:"https://yld.io/">'} | ${'an iframecontent: placeholder tag'}
-  ${'an image'}                                      | ${''}                                                             | ${''}                                  | ${''}
+  htmlDescription                                    | html                                                              | md                              | mdDescription
+  ${'nothing'}                                       | ${''}                                                             | ${''}                           | ${'nothing'}
+  ${'an h3'}                                         | ${'<h3>Heading</h3>'}                                             | ${'### Heading'}                | ${'a level 3 heading'}
+  ${'p tags'}                                        | ${'<p>Par 1</p><p>Par 2</p>'}                                     | ${'Par 1\n\nPar 2'}             | ${'paragraphs'}
+  ${'a p tag containing text in tag shape'}          | ${'<p>My &lt;tag&gt;</p>'}                                        | ${'My `<tag>`'}                 | ${'inline code containing a tag'}
+  ${'blockquote tags'}                               | ${'<blockquote>Par 1</blockquote><blockquote>Par 2</blockquote>'} | ${'>Par 1\n\n>Par 2'}           | ${'quoted paragraphs'}
+  ${'a blockquote tag containing text in tag shape'} | ${'<blockquote>My &lt;tag&gt;</blockquote>'}                      | ${'>My `<tag>`'}                | ${'quoted inline code containing a tag'}
+  ${'a Tweet-shaped blockquote'}                     | ${tweetBlockquote}                                                | ${tweetMdx}                     | ${'a Tweet tag'}
+  ${'a pre tag'}                                     | ${'<pre>a + b;</pre>'}                                            | ${'```\na + b;\n```'}           | ${'a fenced code block'}
+  ${'a br tag in a pre tag'}                         | ${'<pre>a;<br>b;</pre>'}                                          | ${'```\na;\nb;\n```'}           | ${'a line break in a fenced code block'}
+  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'}           | ${'nothing'}
+  ${'a strong tag in a pre tag'}                     | ${'<pre><strong>a + b;</strong></pre>'}                           | ${'```\na + b;\n```'}           | ${'nothing'}
+  ${'a script tag'}                                  | ${'<script>a + b;</script>'}                                      | ${''}                           | ${'nothing'}
+  ${'a style tag'}                                   | ${'<style>a + b;</style>'}                                        | ${''}                           | ${'nothing'}
+  ${'an iframe'}                                     | ${iframe}                                                         | ${iframeMdx}                    | ${'an iframecontent placeholder tag'}
+  ${'consecutive iframes'}                           | ${iframe + iframe}                                                | ${iframeMdx + '\n' + iframeMdx} | ${'iframecontent placeholders on different lines'}
+  ${'an image'}                                      | ${''}                                                             | ${''}                           | ${''}
 `('transforms $htmlDescription to $mdDescription', ({ html, md: expected }) => {
   const [{ content: actual }] = TransformHTMLToMarkdown([{ html }])
   expect(actual).toBe(expected)
