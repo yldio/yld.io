@@ -11,6 +11,7 @@ yarn-error.log
 /coverage/
 
 artifacts/
+xml/
 
 # Misc
 .DS_Store
