@@ -61,7 +61,7 @@ const Body = styled.p`
 
   *::selection,
   ::selection {
-    background-color: #65ffcd;
+    background-color: ${({ theme }) => theme.colors.vibrant};
   }
 
   a {
@@ -89,7 +89,7 @@ const Body = styled.p`
     background-color: #e9e9e9;
 
     ::selection {
-      background-color: #65ffcd;
+      background-color: ${({ theme }) => theme.colors.vibrant};
     }
   }
 

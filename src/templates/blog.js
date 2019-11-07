@@ -73,11 +73,13 @@ const BlogPage = ({
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
-  const prevPageNum =
+
+  const prevPagePath =
     currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`
-  const nextPageNum = (currentPage + 1).toString()
-  const prevPageLink = isFirst ? null : `/blog/${prevPageNum}`
-  const nextPageLink = isLast ? null : `/blog/page/${nextPageNum}`
+  const nextPagePath = `page/${(currentPage + 1).toString()}`
+
+  const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`
+  const nextPageLink = isLast ? null : `/blog/${nextPagePath}`
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
