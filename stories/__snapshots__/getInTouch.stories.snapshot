@@ -1187,12 +1187,8 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
             Talent Manager
           </h3>
           <a
-            aria-current="page"
             className="c12"
-            href="/"
-            noPadding={true}
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+            href="mailto:nick@yld.io"
             style={
               Object {
                 "textDecoration": "underline",
