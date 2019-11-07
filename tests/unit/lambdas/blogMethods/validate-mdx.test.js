@@ -7,8 +7,16 @@ it.each`
   ${'links'}       | ${'[YLD](https://yld.io/)'}
   ${'tags'}        | ${'<iframe src="https://yld.io/" />'}
   ${'components'}  | ${'<YouTube videoId="youtube_video_id" />'}
-`('passes for valid mdx using %s', async ({ mdx }) => {
+`('passes for valid mdx using $description', async ({ mdx }) => {
   await expect(ValidateMdx([{ content: mdx }])).resolves.not.toThrow()
 })
 
-// TODO invalid mdx?
+it('throws for a missing closing tag', async () => {
+  await expect(ValidateMdx([{ content: '<div>' }])).rejects.toThrow()
+})
+
+it('throws for invalid jsx', async () => {
+  await expect(
+    ValidateMdx([{ content: '<YouTube videoId=42 />' }])
+  ).rejects.toThrow()
+})

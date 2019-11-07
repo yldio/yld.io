@@ -9,45 +9,30 @@ const transformImageData = async (post, environment) => {
 
   // Upload images to Contentful from medium url
   const uploadedImageData = await Map(images, async image => {
-    let cmsUrl
-    let cmsCaption
-    let cmsAlt
-    let cmsFileName
-    let cmsAssetId
+    let url
+    let id
 
     if (isProd) {
-      const { url, caption, alt, fileName, assetId } = await UploadToContentful(
-        image,
-        postTitle,
-        environment
-      )
-
-      cmsUrl = url
-      cmsCaption = caption
-      cmsAlt = alt
-      cmsFileName = fileName
-      cmsAssetId = assetId
+      ;({ id, url } = await UploadToContentful(image, postTitle, environment))
     } else {
-      cmsUrl = 'https://foo.imges/'
-      cmsCaption = 'A Bunch of Foo'
-      cmsAlt = 'Some more foo'
-      cmsFileName = image.name
-      cmsAssetId = '123'
+      url = 'https://example.com/img.jpg'
+      id = '123'
     }
 
-    const captionProp = cmsCaption ? ` caption="${cmsCaption}"` : ''
-    const altProp = cmsAlt ? ` alt="${cmsAlt}"` : ''
+    const { name, alt, caption } = image
+    const captionProp = caption ? ` caption="${caption}"` : ''
+    const altProp = alt ? ` alt="${alt}"` : ''
 
     transformedContent = transformedContent.replace(
-      `<image:${cmsFileName}>`,
-      `<FigureImage src="${cmsUrl}"${captionProp}${altProp} />`
+      `<image:${name}>`,
+      `<FigureImage src="${url}"${captionProp}${altProp} />`
     )
 
     return {
       sys: {
         type: 'Link',
         linkType: 'Asset',
-        id: cmsAssetId
+        id
       }
     }
   })

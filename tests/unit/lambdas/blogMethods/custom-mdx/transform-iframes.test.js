@@ -52,10 +52,10 @@ it('replaces iframe links with iframe tags', async () => {
     content: `<iframecontent:"https://medium.com/media/medium_id/href">`
   }
 
-  const expected = `<iframe src="https://example.iframe.com" />`
+  const expected = `<iframe src="https://example.iframe.com/" />`
 
   Got.mockResolvedValueOnce({
-    url: 'https://example.iframe.com'
+    url: 'https://example.iframe.com/'
   })
 
   const { content } = await TransformIframes(post)

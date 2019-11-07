@@ -1,39 +1,36 @@
 const KebabCase = require('lodash.kebabcase')
+const mime = require('mime-types')
 
 const uploadImageToContentful = async (
-  { caption, name, ext, src },
+  { name, src, ext },
   title,
   environment
 ) => {
   const asset = await environment.createAsset({
     fields: {
       title: {
-        'en-US': `${KebabCase(title)}__${name}` || caption || name
+        'en-US': `${KebabCase(title)}__${name}`
       },
       file: {
         'en-US': {
-          contentType: `image/${ext.slice(1)}`,
           fileName: name,
-          upload: src
+          upload: src,
+          contentType: mime.lookup(ext)
         }
       }
     }
   })
+  const processedAsset = await asset.processForAllLocales()
+  const {
+    fields: {
+      file: {
+        'en-US': { url }
+      }
+    },
+    sys: { id }
+  } = await processedAsset.publish()
 
-  const { fields, sys } = await asset.processForAllLocales()
-
-  // Publish asset
-  const draftAsset = await environment.getAsset(sys.id)
-  await draftAsset.publish()
-
-  const contentfulTitle = fields.title['en-US']
-  const imgData = fields.file['en-US']
-
-  return {
-    ...imgData,
-    assetId: sys.id,
-    title: contentfulTitle
-  }
+  return { id, url }
 }
 
 module.exports = uploadImageToContentful

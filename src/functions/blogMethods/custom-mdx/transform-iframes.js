@@ -24,12 +24,11 @@ const findOccurrences = str => {
 }
 
 const getIframeContent = async url => {
-  const { url: forwardedUrl } = await Got(url)
+  const forwardedUrl = new URL((await Got(url)).url)
 
-  switch (true) {
-    case forwardedUrl.includes('gist.github'): {
-      const [, gistData] = forwardedUrl.split('https://gist.github.com/')
-      const [, gistId] = gistData.split('/')
+  switch (forwardedUrl.host) {
+    case 'gist.github.com': {
+      const [, , gistId] = forwardedUrl.pathname.split('/')
 
       return {
         type: 'gist',
@@ -37,12 +36,12 @@ const getIframeContent = async url => {
       }
     }
 
-    case forwardedUrl.includes('youtube'): {
+    case 'youtube.com':
+    case 'www.youtube.com':
       return {
         type: 'youtube',
-        id: forwardedUrl
+        id: String(forwardedUrl)
       }
-    }
 
     default:
       return {

@@ -1,12 +1,9 @@
 jest.mock('../../../../../src/functions/utils/is-prod', () => true)
 
-const mockUploadToContentful = jest.fn(({ alt, caption, name }) => {
+const mockUploadToContentful = jest.fn(({ name }) => {
   return {
-    caption,
-    alt,
-    fileName: name,
-    url: `https://images.host.com/${name}`,
-    assetId: 'assetId'
+    url: `https://cdn.example.com/${name}`,
+    id: 'assetId'
   }
 })
 
@@ -60,8 +57,8 @@ it('uploads the images', async () => {
 
 it('transforms image placeholders to FigureImage components', async () => {
   const expected = `
-    <FigureImage src="https://images.host.com/the_name_of_the_first_image.jpg" caption="Image 1 caption" />
-    <FigureImage src="https://images.host.com/the_name_of_the_second_image" alt="Image 2 caption" />
+    <FigureImage src="https://cdn.example.com/the_name_of_the_first_image.jpg" caption="Image 1 caption" />
+    <FigureImage src="https://cdn.example.com/the_name_of_the_second_image" alt="Image 2 caption" />
   `
 
   const { content } = await TransformImageData(post, environment)

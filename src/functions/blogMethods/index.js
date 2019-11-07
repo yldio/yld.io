@@ -48,9 +48,7 @@ const syncMediumToContentful = async data => {
 
   await ValidateMdx(postsWithMetaData)
 
-  if (isProd && postsWithMetaData) {
-    console.info('Publishing to contentful')
-
+  if (isProd) {
     return await PublishToContentful(
       postsWithMetaData,
       environment,

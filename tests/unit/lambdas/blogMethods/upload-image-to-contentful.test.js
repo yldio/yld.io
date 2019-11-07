@@ -1,77 +1,86 @@
-const UploadImageToContentful = require('../../../../src/functions/blogMethods/upload-image-to-contentful')
+const UploadImageToContentful = require('../../../../src/functions/blogMethods/custom-mdx/upload-image-to-contentful')
 
-const mockPublish = jest.fn()
-const mockGetAsset = jest.fn(() => ({
-  publish: mockPublish
-}))
-const mockProcessLocales = jest.fn()
-
-const mockCreateAsset = jest.fn(() => ({
-  processForAllLocales: mockProcessLocales
+const mockPublish = jest.fn(function publish() {
+  return {
+    ...this,
+    fields: {
+      ...this.fields,
+      file: {
+        ...this.fields.file,
+        'en-US': {
+          ...this.fields.file['en-US'],
+          url: 'https://cdn.example.com/uploaded.jpg'
+        }
+      }
+    }
+  }
+})
+const mockProcessForAllLocales = jest.fn(function processForAllLocales() {
+  return {
+    ...this,
+    publish: mockPublish
+  }
+})
+const mockCreateAsset = jest.fn(({ fields }) => ({
+  fields,
+  sys: { id: '42' },
+  processForAllLocales: mockProcessForAllLocales
 }))
 
 const environment = {
-  createAsset: mockCreateAsset,
-  getAsset: mockGetAsset
+  createAsset: mockCreateAsset
 }
 
-describe('UploadImageToContentful', () => {
-  it('should upload correctly', async () => {
-    const image = {
-      caption: 'A lovely caption',
-      name: 'image_name_1',
-      ext: '.jpg',
-      src: 'https://image.source.com/image_name_1'
-    }
+const image = {
+  caption: 'A lovely caption',
+  name: 'image_name',
+  ext: '.jpg',
+  src: 'https://source.example.com/image_name.jpg'
+}
+const title = 'How to'
 
-    const title = 'How to Write the best jquery functions'
-    const kebabTitle = 'how-to-write-the-best-jquery-functions'
-    const imageName = `${kebabTitle}__${image.name}`
+it('creates, processes, and publishes the image', async () => {
+  await UploadImageToContentful(image, title, environment)
+  expect(mockPublish).toHaveBeenCalled()
+})
 
-    mockProcessLocales.mockResolvedValueOnce({
-      fields: {
-        title: {
-          'en-US': imageName
-        },
-        file: {
-          'en-US': {
-            fileName: imageName,
-            url: `https://image.uploaded.com/${imageName}`
-          }
-        }
-      },
-      sys: {
-        id: 'new_asset_id'
-      }
-    })
-
-    const result = await UploadImageToContentful(image, title, environment)
-    const expected = {
-      assetId: 'new_asset_id',
-      fileName: imageName,
-      title: 'how-to-write-the-best-jquery-functions__image_name_1',
-      url:
-        'https://image.uploaded.com/how-to-write-the-best-jquery-functions__image_name_1'
-    }
-
-    expect(result).toEqual(expected)
-
-    expect(mockProcessLocales).toHaveBeenCalledTimes(1)
-    expect(mockGetAsset).toHaveBeenCalledWith('new_asset_id')
-    expect(mockPublish).toHaveBeenCalledTimes(1)
-    expect(mockCreateAsset).toHaveBeenCalledWith({
-      fields: {
-        title: {
-          'en-US': imageName
-        },
-        file: {
-          'en-US': {
-            contentType: `image/jpg`,
-            fileName: image.name,
-            upload: image.src
-          }
-        }
-      }
-    })
+it('generates a title including the image name', async () => {
+  await UploadImageToContentful(image, title, environment)
+  expect(mockPublish.mock.results[0].value).toHaveProperty('fields.title', {
+    'en-US': 'how-to__image_name'
   })
+})
+
+it('passes the file name for the upload', async () => {
+  await UploadImageToContentful(image, title, environment)
+  expect(mockPublish.mock.results[0].value).toHaveProperty(
+    'fields.file.en-US.fileName',
+    'image_name'
+  )
+})
+
+it('passes the upload URL', async () => {
+  await UploadImageToContentful(image, title, environment)
+  expect(mockPublish.mock.results[0].value).toHaveProperty(
+    'fields.file.en-US.upload',
+    'https://source.example.com/image_name.jpg'
+  )
+})
+
+it('generates a mime type based on the extension', async () => {
+  await UploadImageToContentful(image, title, environment)
+  expect(mockPublish.mock.results[0].value).toHaveProperty(
+    'fields.file.en-US.contentType',
+    'image/jpeg'
+  )
+})
+
+it('returns the image url', async () => {
+  const { url } = await UploadImageToContentful(image, title, environment)
+  expect(url).toBe('https://cdn.example.com/uploaded.jpg')
+})
+
+it('returns the id', async () => {
+  const { id } = await UploadImageToContentful(image, title, environment)
+  expect(id).toBe('42')
 })

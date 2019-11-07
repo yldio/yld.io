@@ -40,6 +40,7 @@
     "lodash.isequal": "^4.5.0",
     "lodash.isnull": "^3.0.0",
     "lodash.kebabcase": "^4.1.1",
+    "mime-types": "^2.1.24",
     "mz": "^2.7.0",
     "netlify-lambda": "^1.4.13",
     "polished": "2.3.0",

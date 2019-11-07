@@ -7,10 +7,10 @@ const mdx = require('@mdx-js/mdx')
  */
 const validateMdx = async posts => {
   for (const post of posts) {
-    const { md, slug } = post
+    const { content, slug } = post
 
     try {
-      await mdx(md)
+      await mdx(content)
     } catch (error) {
       throw new Error(`Error transpiling post ${slug}`, error)
     }
