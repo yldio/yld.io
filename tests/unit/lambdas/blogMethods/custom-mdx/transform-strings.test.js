@@ -14,6 +14,13 @@ it.each([
   }
 )
 
+it('strips hex UID from a post slug', () => {
+  const content = TransformStrings(
+    '[YLD Post](https://medium.com/yld-blog/yld-post-0123456789ab)'
+  )
+  expect(content).toBe('[YLD Post](https://yld.io/blog/yld-post)')
+})
+
 it('replaces multiple URLs in one post', () => {
   const content = TransformStrings(`
     [YLD Blog 1](https://medium.com/yld-blog/)
