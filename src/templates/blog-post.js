@@ -2,7 +2,19 @@ import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import { YouTube, Tweet } from '@blocks/kit'
+
+import { Grid, Row, Col } from '../components/grid'
+import Layout from '../components/layout'
+import Head from '../components/Common/Head'
+import {
+  PostIntroMetaData,
+  PostOutroMetaData
+} from '../components/Blog/PostMetaData'
+import FigureImage from '../components/Blog/FigureImage'
+import YouTube from '../components/Blog/YouTube'
+
+import Gist from 'react-gist'
+import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed'
 
 import {
   PostWrapper,
@@ -15,15 +27,7 @@ import {
   A,
   Blockquote
 } from '../components/Blog/Typography'
-import { Grid, Row, Col } from '../components/grid'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
-import {
-  PostIntroMetaData,
-  PostOutroMetaData
-} from '../components/Blog/PostMetaData'
-import FigureImage from '../components/Blog/FigureImage'
-import Gist from '../components/Blog/Gist'
+
 const components = {
   h1: H1,
   h2: H2,
