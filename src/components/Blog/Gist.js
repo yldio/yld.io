@@ -1,5 +1,5 @@
 import React from 'react'
-import { Gist } from '@blocks/kit'
+import Gist from 'react-gist'
 import remcalc from 'remcalc'
 import styled from 'styled-components'
 
