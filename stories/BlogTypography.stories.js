@@ -24,7 +24,6 @@ import {
 } from '../src/components/Blog/Typography'
 
 import Theme from './theme'
-import WrappedGist from '../src/components/Blog/Gist'
 
 addDecorator(Theme)
 
@@ -364,18 +363,6 @@ storiesOf('Blog Components', module)
               ]}
             />
           </Col>
-        </Row>
-      </Grid>
-    )
-  })
-  .add('Code snippet', () => {
-    return (
-      <Grid style={{ width: '100%' }}>
-        <Row style={{ justifyContent: 'center' }}>
-          <PostWrapper as={Col} width={[1, 1, 1, 7 / 12]}>
-            <Annotate>Code snippet</Annotate>
-            <WrappedGist id="7edc948ec968ab5508ace95b03238390" />
-          </PostWrapper>
         </Row>
       </Grid>
     )
