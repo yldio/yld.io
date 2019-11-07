@@ -67,6 +67,17 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulBlogPost(sort: { fields: [firstPublishedAt], order: DESC }) {
+        edges {
+          node {
+            id
+            slug
+            content {
+              content
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -80,6 +91,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
   const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
   const serviceTemplate = path.resolve(`./src/templates/service.js`)
+  const blogListTemplate = path.resolve(`./src/templates/blog.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const policyTemplate = path.resolve(`./src/templates/policy.js`)
   const careerDisciplineTemplate = path.resolve(
     `./src/templates/career-discipline.js`
@@ -171,6 +184,82 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         })
       }
+    })
+  }
+
+  /**
+   * Creates all pages for blog listing pages,
+   * includes context for paging functionality
+   */
+
+  const allBlogPosts = result.data.allContentfulBlogPost.edges
+  const postsPerPage = 6
+
+  const numberOfPages = Math.ceil(allBlogPosts.length / postsPerPage)
+
+  Array.from({
+    length: numberOfPages
+  }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      component: slash(blogListTemplate),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numberOfPages,
+        currentPage: i + 1
+      }
+    })
+  })
+
+  _.each(result.data.allContentfulBlogPost.edges, post => {
+    if (post.node.slug && post.node.content) {
+      createPage({
+        path: `blog/${post.node.slug}`,
+        component: slash(blogPostTemplate),
+        context: {
+          id: post.node.id
+        }
+      })
+    }
+  })
+}
+
+exports.onCreateNode = async ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  /**
+   * This section creates nodes within the graphql schema
+   * that we can query blog post content on.
+   */
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent)
+
+    let slug, title, date
+    if (parent.internal.type === 'contentfulBlogPostContentTextNode') {
+      const contentfulNode = getNode(parent.parent)
+
+      slug = contentfulNode.slug
+      title = contentfulNode.title
+      date = contentfulNode.createdAt
+    }
+
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug
+    })
+
+    createNodeField({
+      node,
+      name: `title`,
+      value: title
+    })
+
+    createNodeField({
+      node,
+      name: `date`,
+      value: date
     })
   }
 }

@@ -15,7 +15,6 @@ import google from '../utils/google-json.json'
 import Cookie from './Common/CookieBanner'
 
 const { GATSBY_ENVIRONMENT } = process.env
-
 const googleJson = JSON.stringify(google)
 
 const isDevEnvironment =

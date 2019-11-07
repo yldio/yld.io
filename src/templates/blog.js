@@ -9,11 +9,10 @@ import generateBreadcrumbData from '../utils/generateBreadcrumbData'
 import Layout from '../components/layout'
 import MediumPostPreview from '../components/Blog/MediumPostPreview'
 import Head from '../components/Common/Head'
-import StyledLink from '../components/Common/StyledLink'
 import { Grid, Row, Col } from '../components/grid'
 import { SectionTitle, DisplayTitle } from '../components/Typography'
 import Hr from '../components/Common/Hr'
-import Anchor from '../components/Common/Anchor'
+import StyledLink from '../components/Common/StyledLink'
 import GreyBackground from '../components/Common/GreyBackground'
 
 const blogPageMeta = {
@@ -45,11 +44,6 @@ const PageDescriptionCol = styled(Col)`
   `}
 `
 
-const MediumLink = styled(StyledLink)`
-  margin-top: ${({ theme }) => theme.space[6]};
-  margin-bottom: ${({ theme }) => theme.space[6]};
-`
-
 const DisplayTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
 
@@ -58,23 +52,16 @@ const DisplayTitleCol = styled(Col)`
   `}
 `
 
-const DescriptionMediumLink = styled(Anchor)`
-  color: ${({ theme }) => theme.colors.black};
-  text-decoration: underline;
-`
-
 const BlogPage = ({
   data: {
-    allContentfulBlogPost: mediumContent,
+    allContentfulBlogPost: { edges: blogPosts },
     site: {
       siteMetadata: { siteUrl }
     }
   },
+  pageContext,
   location
 }) => {
-  const mediumPosts = mediumContent.edges || []
-  const mediumLink = 'https://medium.com/yld-blog'
-
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Blog',
@@ -82,6 +69,17 @@ const BlogPage = ({
       position: 2
     }
   ])
+  const { numberOfPages, currentPage } = pageContext
+
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numberOfPages
+
+  const prevPagePath =
+    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`
+  const nextPagePath = `page/${(currentPage + 1).toString()}`
+
+  const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`
+  const nextPageLink = isLast ? null : `/blog/${nextPagePath}`
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -98,10 +96,6 @@ const BlogPage = ({
             <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
             <FixedWidthDisplayTitle regular textLight>
               {blogPageMeta.description}
-              <DescriptionMediumLink href={mediumLink}>
-                Medium blog
-              </DescriptionMediumLink>
-              .
             </FixedWidthDisplayTitle>
           </PageDescriptionCol>
         </Row>
@@ -113,27 +107,30 @@ const BlogPage = ({
               <DisplayTitle>Recent articles</DisplayTitle>
             </DisplayTitleCol>
           </Row>
-          {mediumPosts &&
-            mediumPosts.length > 0 &&
-            mediumPosts.map((mediumPostData, idx) => {
-              const isLastPost = idx === mediumPosts.length - 1
+
+          {blogPosts &&
+            blogPosts.length > 0 &&
+            blogPosts.map((blogPost, idx) => {
+              const isLastPost = idx === blogPosts.length - 1
 
               return (
-                <Fragment key={mediumPostData.node.id}>
-                  <MediumPostPreview {...mediumPostData.node} />
+                <Fragment key={blogPost.node.id}>
+                  <MediumPostPreview {...blogPost.node} />
                   {!isLastPost && <Hr />}
                 </Fragment>
               )
             })}
-          <Row>
-            <Col width={[1]}>
-              <MediumLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href={mediumLink}
-              >
-                View more on Medium
-              </MediumLink>
+
+          <Row style={{ justifyContent: 'space-between' }} block={false}>
+            <Col>
+              {prevPageLink && (
+                <StyledLink to={prevPageLink}>Previous Page</StyledLink>
+              )}
+            </Col>
+            <Col>
+              {nextPageLink && (
+                <StyledLink to={nextPageLink}>Next Page</StyledLink>
+              )}
             </Col>
           </Row>
         </Grid>
@@ -143,15 +140,17 @@ const BlogPage = ({
 }
 
 export const query = graphql`
-  {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         siteUrl
       }
     }
     allContentfulBlogPost(
-      limit: 6
+      filter: { content: { content: { ne: null } } }
       sort: { fields: [firstPublishedAt], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
@@ -159,12 +158,22 @@ export const query = graphql`
           title
           firstPublishedAt
           slug
-          imageId
+          content {
+            childMdx {
+              excerpt
+            }
+          }
+          headerImage {
+            title
+            file {
+              url
+            }
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
           authorId
           authorName
-          subtitle {
-            subtitle
-          }
         }
       }
     }

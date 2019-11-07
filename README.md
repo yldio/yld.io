@@ -61,6 +61,10 @@ All tests are run through scripts within package.json so check there for details
 
 - [Contentful](https://contentful.com)
 
+## Blog
+
+How does the blog work? Good question! See [here](./docs/blog.md)
+
 ## Deployment
 
 The website and lambda are built (`yarn build`) and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
