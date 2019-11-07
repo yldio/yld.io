@@ -55,8 +55,9 @@ const blockquoteRule = {
   }
 }
 
-/* medium doesn't give us correct html (pre>code) just <pre>{content}</pre>
- * so we have to manage it ourselves
+/*
+ * Medium doesn't give us correct html (pre>code) just <pre>{content}</pre>
+ * We fix that and then pass it to turndown
  */
 const preRule = {
   filter: 'pre',

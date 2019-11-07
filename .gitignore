@@ -4,14 +4,15 @@ node_modules
 yarn-error.log
 
 # Build directory
-/public
-/functions
-.DS_Store
-.eslintcache
-.env
-hint-report
-storybook-static/
-package-lock.json
+/public/
+/functions/
+
+/storybook-static/
+/coverage/
+
 artifacts/
-coverage/
-xml/
+
+# Misc
+.DS_Store
+.env
+.eslintcache
