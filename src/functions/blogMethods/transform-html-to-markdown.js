@@ -101,9 +101,11 @@ const iframeRule = {
   filter: 'iframe',
   replacement: (_, node) => {
     // iframes can only have text node children, so we parse the HTML in a new element
+    const { ownerDocument: document } = node
+
     const elem = document.createElement('div')
     elem.innerHTML = node.innerHTML
-    return `<iframecontent:"${elem.querySelector('a').href}">`
+    return `\n<iframecontent:"${elem.querySelector('a').href}">\n`
   }
 }
 
@@ -146,7 +148,7 @@ const makeImgRule = images => ({
 
     images.push({ src, ext, alt, name, caption })
 
-    return `<image:${name}>`
+    return `\n<image:${name}>\n`
   }
 })
 
