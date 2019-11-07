@@ -42,7 +42,7 @@ const components = {
 }
 const shortCodes = { YouTube, Gist, FigureImage, Tweet }
 
-const COL_WIDTHS = [1, 1, 1, 7 / 12]
+const COL_WIDTHS = [1, 1, 1, 10 / 12, 10 / 12, 7 / 12]
 
 const BlogPostTemplate = ({
   data: { contentfulBlogPost: post },
