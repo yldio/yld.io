@@ -147,7 +147,7 @@ const Profile = props => {
                 {person.footerRole}
               </Subtitle>
               <BodyPrimary
-                as={Link}
+                as={'a'}
                 style={{
                   textDecoration: 'underline'
                 }}
