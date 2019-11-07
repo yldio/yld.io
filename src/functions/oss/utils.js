@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const Get = require('lodash.get')
-
-const { LOCALE = 'en-US' } = process.env
+const { LOCALE } = require('../utils/constants')
 
 const getFieldValue = (obj, key) => Get(obj, `fields.${key}.${LOCALE}`)
 

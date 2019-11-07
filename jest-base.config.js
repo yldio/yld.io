@@ -22,5 +22,6 @@ module.exports = {
   setupFiles: [
     '<rootDir>/.jest/registerContext.js',
     '<rootDir>/.jest/loaderShim.js'
-  ]
+  ],
+  setupFilesAfterEnv: ['jest-extended']
 }

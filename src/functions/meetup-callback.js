@@ -7,6 +7,7 @@ const Find = require('lodash.find')
 const { default: Map } = require('apr-map')
 const isEqual = require('lodash.isequal')
 const { transformGroups, generateContentfulEvent } = require('./utils/meetup')
+const { LOCALE } = require('./utils/constants')
 
 // Creates a util to make authenticated requests for all meetup requests
 const createAuthenticatedRequest = access_token => (url, options = {}) =>
@@ -162,7 +163,7 @@ exports.handler = async evt => {
 
   await Map(parsedEvents, async event => {
     const contentfulEvent = Find(contentfulEvents, [
-      'fields.id.en-US',
+      `fields.id.${LOCALE}`,
       event.id
     ])
 
@@ -185,7 +186,7 @@ exports.handler = async evt => {
       }, [])
 
       if (diffVals && !diffVals.length) {
-        log.unchangedEvents.push(generatedEvent.fields.eventTitle['en-US'])
+        log.unchangedEvents.push(generatedEvent.fields.eventTitle[LOCALE])
         return
       }
 
@@ -200,7 +201,7 @@ exports.handler = async evt => {
 
       if (isProd) {
         log.updatedEvents.push({
-          name: generatedEvent.fields.eventTitle['en-US'],
+          name: generatedEvent.fields.eventTitle[LOCALE],
           values: diffVals
         })
 
@@ -215,7 +216,7 @@ exports.handler = async evt => {
 
     // If there is no matching event in contentful then we need to create a new one
     if (isProd && generatedEvent && !contentfulEvent) {
-      log.newEvents.push(generatedEvent.fields.eventTitle['en-US'])
+      log.newEvents.push(generatedEvent.fields.eventTitle[LOCALE])
       const id = await environment.createEntry('meetupEven', generatedEvent)
       const newEntry = await environment.getEntry(id.sys.id)
 
