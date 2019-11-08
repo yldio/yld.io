@@ -32,42 +32,45 @@ const ShareWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[5]};
 `
 
-const PostOutroMetaData = ({ author, date, tags, shareUrl }) => (
-  <div>
-    <Hr />
-    <section>
-      <Body>
-        Written by {author} • {Format(date, 'MMMM do[,] YYYY')}
-      </Body>
-    </section>
-    <Hr />
-    {tags && tags.length > 0 && (
-      <PostOutroTagSection>
-        <TagGroup tags={tags} />
-      </PostOutroTagSection>
-    )}
+const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
+  const sharingTitle = `${title} - ${author}`
+  return (
+    <div>
+      <Hr />
+      <section>
+        <Body>
+          Written by {author} • {Format(date, 'MMMM do[,] YYYY')}
+        </Body>
+      </section>
+      <Hr />
+      {tags && tags.length > 0 && (
+        <PostOutroTagSection>
+          <TagGroup tags={tags} />
+        </PostOutroTagSection>
+      )}
 
-    <BodyPrimary bold="true">Share this article</BodyPrimary>
+      <BodyPrimary bold="true">Share this article</BodyPrimary>
 
-    <ShareWrapper>
-      <TwitterShareButton url={shareUrl}>
-        <ShareButtonContent
-          image={twitterIcon}
-          imageAlt="Twitter icon"
-          label="Twitter"
-        />
-      </TwitterShareButton>
+      <ShareWrapper>
+        <TwitterShareButton title={sharingTitle} url={shareUrl}>
+          <ShareButtonContent
+            image={twitterIcon}
+            imageAlt="Twitter icon"
+            label="Twitter"
+          />
+        </TwitterShareButton>
 
-      <LinkedinShareButton url={shareUrl}>
-        <ShareButtonContent
-          image={linkedinIcon}
-          imageAlt="LinkedIn icon"
-          label="LinkedIn"
-        />
-      </LinkedinShareButton>
-    </ShareWrapper>
-  </div>
-)
+        <LinkedinShareButton url={shareUrl}>
+          <ShareButtonContent
+            image={linkedinIcon}
+            imageAlt="LinkedIn icon"
+            label="LinkedIn"
+          />
+        </LinkedinShareButton>
+      </ShareWrapper>
+    </div>
+  )
+}
 
 const ShareButtonContent = ({ image, imageAlt, label }) => (
   <div
