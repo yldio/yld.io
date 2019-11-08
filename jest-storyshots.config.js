@@ -1,5 +1,13 @@
+const { setupFiles, ...base } = require('./jest.config.js')
+
 module.exports = {
-  ...require('./jest-base.config.js'),
-  displayName: 'storyshots',
-  testMatch: ['<rootDir>/stories/storyshots.test.js']
+  ...base,
+
+  testMatch: ['<rootDir>/stories/storyshots.js'],
+
+  setupFiles: [
+    ...setupFiles,
+    // storybook polyfills
+    '<rootDir>/.jest/registerContext.js'
+  ]
 }

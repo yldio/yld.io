@@ -2,7 +2,7 @@ const ParseXMLToJSON = require('../../../../src/functions/blogMethods/parse-xml-
 const { readFileSync } = require('fs')
 const { resolve } = require('path')
 
-const xml = readFileSync(resolve(__dirname, '__fixtures__/medium-posts.xml'))
+const xml = readFileSync(resolve(__dirname, '../__fixtures__/medium-posts.xml'))
 let result
 beforeAll(async () => {
   result = await ParseXMLToJSON(xml)
