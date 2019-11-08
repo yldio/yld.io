@@ -33,7 +33,7 @@ const ShareWrapper = styled.div`
 `
 
 const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
-  const sharingTitle = `${title} - ${author} | @YLDio`
+  const sharingTitle = `${title} - ${author} | @YLDio Blog`
   return (
     <div>
       <Hr />
