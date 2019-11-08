@@ -18,7 +18,7 @@ import GreyBackground from '../components/Common/GreyBackground'
 const blogPageMeta = {
   title: 'Blog',
   description:
-    'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our ',
+    'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our blog.',
   seoTitle: 'A collection of medium blog posts created by YLD'
 }
 
