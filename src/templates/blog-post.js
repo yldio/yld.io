@@ -81,6 +81,7 @@ const BlogPostTemplate = ({
             </PostWrapper>
             <Col width={COL_WIDTHS}>
               <PostOutroMetaData
+                title={post.title}
                 author={post.authorName}
                 date={post.firstPublishedAt}
                 tags={post.tags}
