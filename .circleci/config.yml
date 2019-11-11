@@ -20,14 +20,14 @@ jobs:
           root: ~/app
           paths:
             - node_modules
-  unit:
+  test:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run test:unit"
-          name: "Run unit tests"
+          command: "yarn run test"
+          name: "Run tests"
   build:
     <<: *defaults
     steps:
@@ -58,14 +58,6 @@ jobs:
       - checkout
       - *attach_workspace
       - run: "yarn lint"
-  interaction:
-    <<: *defaults
-    steps:
-      - checkout
-      - *attach_workspace
-      - run:
-          command: "yarn run test:interaction"
-          name: Interaction tests
   storyshots:
     <<: *defaults
     steps:
@@ -89,16 +81,13 @@ workflows:
   build_and_test:
     jobs:
       - install
-      - unit:
+      - test:
           requires:
             - install
       - build:
           requires:
             - install
       - lint:
-          requires:
-            - install
-      - interaction:
           requires:
             - install
       - lighthouse:

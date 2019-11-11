@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react'
 
 import { wrapper } from '../../../utils/tests/react'
 import Teams from '../Teams'
-import { teams } from './__fixtures__'
+import { teams } from '../__fixtures__'
 
 describe('<Teams />', () => {
   test('allows the user to change tabs', async () => {
