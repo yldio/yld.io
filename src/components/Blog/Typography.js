@@ -98,8 +98,14 @@ const Body = styled.p`
   }
 `;
 
-const List = styled.ul`
+const UnorderedList = styled.ul`
   list-style-type: disc;
+  padding-left: ${remcalc(30)};
+  padding-bottom: ${remcalc(36)};
+`;
+
+const OrderedList = styled.ol`
+  list-style-type: decimal;
   padding-left: ${remcalc(30)};
   padding-bottom: ${remcalc(36)};
 `;
@@ -287,7 +293,7 @@ const PostWrapper = styled.div`
   }
 
   .gist {
-    /* 
+    /*
     Remove padding set internally in iframe,
     Gist from @blocks/kit removes left and right margin
      */
@@ -304,7 +310,8 @@ export {
   Body,
   Code,
   A,
-  List,
+  UnorderedList,
+  OrderedList,
   ListItem,
   Blockquote,
   ImageCaption,
