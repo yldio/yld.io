@@ -15,7 +15,7 @@ New additional steps. (Nothing will break if these steps are not performed but i
 - Update the canonical link.
 - (Optional) Add preview image.
 
-## To update the canonical link
+## To update the canonical link in medium
 
 **N.B. The new blog post will be live ~15-30mins after publishing depending on how long it takes for the task to be triggered**
 
@@ -54,3 +54,6 @@ A: No, we only look for new urls in the RSS content and compare it to blog posts
 Q: How do I change content on a blog post then? Do I have to update it twice?
 A: Yes, for this reason we encourage authors and proof readers to make sure everything is 100% ready before publishing but it can be easy to miss things sometimes! To change blog post content on CMS you'll need to write it in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Try not to change too much!
 N.B. If you want to change a lot of content in a post it is probably better to delete the post from the CMS then retrigger the export script. You'll need engineering resource for this, [a guide](./blog)
+
+Q: Why do we do all of this?
+A: The content published on the YLD blog is popular, some posts have upwards of 20k reads. Prior to this process we had no way of attributing any of that traffic to yld.io 👎. Updating the canonical links means that SEO engines will attribute any traffic and interest in our medium blog posts back to yld.io 👍. To learn more about canonical links see [here](https://moz.com/blog/cross-domain-rel-canonical-seo-value-cross-posted-content)
