@@ -46,7 +46,7 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
                   renderers={{
                     paragraph: BodyPrimary,
                     heading: SectionTitle,
-                    list: List
+                    list: List,
                   }}
                 >
                   {body.body}

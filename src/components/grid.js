@@ -84,7 +84,7 @@ const directions = {
   b: ['-bottom'],
   l: ['-left'],
   x: ['-left', '-right'],
-  y: ['-top', '-bottom']
+  y: ['-top', '-bottom'],
 }
 
 const block = (key, n) => dec(['display', n ? 'block' : 'flex'])
@@ -105,7 +105,7 @@ const stylers = () => ({
   column,
   align,
   justify,
-  order
+  order,
 })
 
 const GridStyled = styled.div`
@@ -152,7 +152,7 @@ export const Grid = props => (
 )
 
 export const Row = styled(Flex).attrs({
-  mx: [0, 0, 0, 0, -1.75, -2, -2]
+  mx: [0, 0, 0, 0, -1.75, -2, -2],
 })`
   ${props =>
     props.spaced &&
@@ -170,7 +170,7 @@ export const Row = styled(Flex).attrs({
 export const Col = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
 
 Col.defaultProps = {
-  block: true
+  block: true,
 }
 
 /**
@@ -209,7 +209,7 @@ export const ColumnLayout = ({ children, cols, items }) => {
         return React.cloneElement(child, {
           width: child.props.width || width,
           key: child.props.key || idx,
-          idx
+          idx,
         })
       })}
     </StackableRow>

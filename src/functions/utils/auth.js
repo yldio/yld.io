@@ -35,7 +35,7 @@ const auth = (event, cb) => {
     ? cb()
     : {
         statusCode: 401,
-        body: 'Not authenticated'
+        body: 'Not authenticated',
       }
 }
 

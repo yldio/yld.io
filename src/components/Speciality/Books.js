@@ -71,7 +71,7 @@ const BooksSection = ({ books, title }) =>
               <Padding top={4}>
                 <BooksBox
                   style={{
-                    borderColor: `${externalResource.colorCode}`
+                    borderColor: `${externalResource.colorCode}`,
                   }}
                   href={externalResource.link}
                 >
@@ -79,7 +79,7 @@ const BooksSection = ({ books, title }) =>
                     <CardTitle
                       normal
                       style={{
-                        color: `${externalResource.colorCode}`
+                        color: `${externalResource.colorCode}`,
                       }}
                     >
                       {externalResource.title}

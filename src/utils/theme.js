@@ -21,7 +21,7 @@ export const spacing = {
   60: remcalc(60),
   42: remcalc(42),
   48: remcalc(48),
-  90: remcalc(90)
+  90: remcalc(90),
 }
 
 // use this instead of the 'spacing' object - 'space' is a keyword in styled-system
@@ -35,7 +35,7 @@ export const space = [
   remcalc(72), // 6
   remcalc(108), // 7
   remcalc(144), // 8
-  remcalc(176) // 9
+  remcalc(176), // 9
 ]
 
 export const breakpoints = {
@@ -44,17 +44,17 @@ export const breakpoints = {
   largePhone: 553,
   smallTablet: 701, // sharon
   tablet: 901,
-  desktop: 1197
+  desktop: 1197,
 }
 
 const elementSizes = {
-  tappableArea: 48
+  tappableArea: 48,
 }
 
 export const zIndexes = {
   header: 999,
   modal: 10000,
-  gridDebugger: 10001
+  gridDebugger: 10001,
 }
 
 const colorsVariables = {
@@ -70,7 +70,7 @@ const colorsVariables = {
   mediumGrey: '#757575',
   tan: '#a08162',
   regalBlue: '#153d53',
-  mountainMeadow: '#14B48F'
+  mountainMeadow: '#14B48F',
 }
 
 export default {
@@ -82,12 +82,12 @@ export default {
   variations: {
     white: 'white',
     dark: 'dark',
-    grey: 'grey'
+    grey: 'grey',
   },
   animations: {
     fast: '200ms',
     normal: '300ms',
-    long: '450ms'
+    long: '450ms',
   },
   colors: {
     blueBg: colorsVariables.darkBlue,
@@ -103,6 +103,6 @@ export default {
     textLight: colorsVariables.darkGrey,
     tanBg: colorsVariables.tan,
     regalBlueBg: colorsVariables.regalBlue,
-    mountainMeadowBg: colorsVariables.mountainMeadow
-  }
+    mountainMeadowBg: colorsVariables.mountainMeadow,
+  },
 }

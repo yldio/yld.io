@@ -46,7 +46,7 @@ const TopNav = ({ themeVariation }) => (
         >
           {label}
         </OuterAnchorItem>
-      )
+      ),
     )}
   </TopNavList>
 )

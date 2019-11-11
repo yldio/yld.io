@@ -3,7 +3,7 @@ import IsNull from 'lodash.isnull'
 
 const getExternalType = (flattenedSpeciality, type) =>
   flattenedSpeciality.externalResources.filter(
-    additionalInfo => additionalInfo.type === type
+    additionalInfo => additionalInfo.type === type,
   ) || []
 
 const flattenSpeciality = speciality => {
@@ -20,72 +20,72 @@ const flattenSpeciality = speciality => {
     introTextBody1: Get(
       speciality,
       'introTextBody1.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     introTextTitle2: Get(speciality, 'introTextTitle2', undefined), // required
     introTextBody2: Get(
       speciality,
       'introTextBody2.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     introTextTitle3: Get(speciality, 'introTextTitle3', undefined), // required
     introTextBody3: Get(
       speciality,
       'introTextBody3.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     trainingIntroText: Get(
       speciality,
       'trainingIntroText.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon1Title: Get(
       speciality,
       'trainingTextIcon1.title',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon1: Get(speciality, 'trainingTextIcon1', undefined), // required
     trainingTextTitle1: Get(speciality, 'trainingTextTitle1', undefined), // required
     trainingTextBody1: Get(
       speciality,
       'trainingTextBody1.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon2Title: Get(
       speciality,
       'trainingTextIcon2.title',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon2: Get(speciality, 'trainingTextIcon2', undefined), // required
     trainingTextTitle2: Get(speciality, 'trainingTextTitle2', undefined), // required
     trainingTextBody2: Get(
       speciality,
       'trainingTextBody2.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon3Title: Get(
       speciality,
       'trainingTextIcon3.title',
-      undefined
+      undefined,
     ), // required
     trainingTextIcon3: Get(speciality, 'trainingTextIcon3', undefined), // required
     trainingTextTitle3: Get(speciality, 'trainingTextTitle3', undefined), // required
     trainingTextBody3: Get(
       speciality,
       'trainingTextBody3.content[0].content[0].value',
-      undefined
+      undefined,
     ), // required
     communityText: Get(
       speciality,
       'communityText.content[0].content[0].value',
-      undefined
+      undefined,
     ),
     communityLogoTitle: Get(speciality, 'communityLogo.title', undefined),
     communityLogo: Get(speciality, 'communityLogo', undefined),
     communityBackgroundTitle: Get(
       speciality,
       'communityBackground.title',
-      undefined
+      undefined,
     ),
     communityBackground: Get(speciality, 'communityBackground', undefined),
     eventIconTitle: Get(speciality, 'eventIcon.title', undefined),
@@ -96,12 +96,12 @@ const flattenSpeciality = speciality => {
     howWeWorkWithCopy: Get(
       speciality,
       'howWeWorkWithCopy.howWeWorkWithCopy',
-      undefined
+      undefined,
     ),
     howWeWorkWithPractises: Get(
       speciality,
       'howWeWorkWithPractises',
-      undefined
+      undefined,
     ),
     externalResources: IsNull(speciality.externalResources)
       ? []
@@ -109,7 +109,7 @@ const flattenSpeciality = speciality => {
     relatedProjects: IsNull(speciality.relatedProjects)
       ? []
       : Get(speciality, 'relatedProjects', []),
-    clients: IsNull(speciality.clients) ? [] : Get(speciality, 'clients', [])
+    clients: IsNull(speciality.clients) ? [] : Get(speciality, 'clients', []),
   }
 }
 

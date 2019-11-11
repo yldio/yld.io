@@ -13,7 +13,7 @@ const { createClient } = require('contentful-management')
 const { CMS_CRUD, CONTENTFUL_SPACE } = process.env
 
 const client = createClient({
-  accessToken: CMS_CRUD
+  accessToken: CMS_CRUD,
 })
 
 const environmentName = isProd ? 'master' : 'development'
@@ -27,21 +27,21 @@ const syncMediumToContentful = async data => {
 
   const { items: cmsBlogPosts } = await environment.getEntries({
     limit: 1000,
-    content_type: 'blogPost'
+    content_type: 'blogPost',
   })
 
   const parsedPostsInJson = await ParseXMLToJSON(data)
 
   const postsToProcess = FilterPostsToProcess(parsedPostsInJson, {
     cmsBlogPosts,
-    requiredFields
+    requiredFields,
   })
 
   const postsWithAddedMarkdown = await TransformHtmlToMd(postsToProcess)
 
   const postsWithAddedMDX = await TransformCustomMDX(
     postsWithAddedMarkdown,
-    environment
+    environment,
   )
 
   const postsWithMetaData = TransformMetaData(postsWithAddedMDX)
@@ -53,7 +53,7 @@ const syncMediumToContentful = async data => {
       postsWithMetaData,
       environment,
       allFields,
-      cmsBlogPosts
+      cmsBlogPosts,
     )
   }
 

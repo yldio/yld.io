@@ -53,12 +53,12 @@ const OpenSource = ({ data, location }) => {
       eventsSectionImage,
       eventsSectionDescription,
       footerContactUs: { id: footerContactId },
-      contributionsSection: contributions
+      contributionsSection: contributions,
     },
     allContentfulMeetupEvent: { nodes: events },
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   } = data
 
   const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
@@ -67,33 +67,33 @@ const OpenSource = ({ data, location }) => {
     {
       image: whyOsSectionReason1Image,
       title: whyOsSectionReason1Title,
-      body: whyOsSectionReason1Body.whyOsSectionReason1Body
+      body: whyOsSectionReason1Body.whyOsSectionReason1Body,
     },
     {
       image: whyOsSectionReason2Image,
       title: whyOsSectionReason2Title,
-      body: whyOsSectionReason2Body.whyOsSectionReason2Body
+      body: whyOsSectionReason2Body.whyOsSectionReason2Body,
     },
     {
       image: whyOsSectionReason3Image,
       title: whyOsSectionReason3Title,
-      body: whyOsSectionReason3Body.whyOsSectionReason3Body
-    }
+      body: whyOsSectionReason3Body.whyOsSectionReason3Body,
+    },
   ]
 
   const specialities = technologiesSectionTechnologies.map(
     ({ name, specialities }) => ({
       title: name,
-      items: specialities
-    })
+      items: specialities,
+    }),
   )
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Open source',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (

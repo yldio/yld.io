@@ -5,7 +5,7 @@ import { Padding } from 'styled-components-spacing'
 import { Col } from '../../../components/grid'
 import {
   ItemSubtitle,
-  ItemBody
+  ItemBody,
 } from '../../../components/Common/SubtitleWithBody'
 import CustomisedBulletpoint from '../../../components/Common/CustomisedBulletpoint'
 
@@ -28,7 +28,7 @@ const CourseContent = ({ content }) => (
           ),
           listItem: props => (
             <CustomisedBulletpoint maxWidth="auto" {...props} />
-          )
+          ),
         }}
         source={content}
       />

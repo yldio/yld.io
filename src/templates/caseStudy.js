@@ -15,7 +15,7 @@ import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPrevi
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
-  location
+  location,
 }) => {
   const body = generateCaseStudy(caseStudy)
   const firstTextBlock = body[0]
@@ -39,7 +39,7 @@ const CaseStudy = ({
               src={videoInfo[0]}
               padding={{
                 top: { smallPhone: 3, tablet: 4 },
-                bottom: { smallPhone: 3, tablet: 4 }
+                bottom: { smallPhone: 3, tablet: 4 },
               }}
             />
             <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />

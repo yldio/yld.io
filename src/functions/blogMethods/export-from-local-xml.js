@@ -8,7 +8,7 @@ module.exports.handler = async () => {
 
   // Remove this Reduce, transform all xml posts into one XML string in the same medium schema
   const XmlData = await Reduce(XmlFileNames, async (sum = [], acc) =>
-    sum.concat(await fs.readFile(`./xml/full/${acc}`))
+    sum.concat(await fs.readFile(`./xml/full/${acc}`)),
   )
 
   let result

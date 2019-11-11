@@ -24,7 +24,7 @@ const generateCaseStudy = caseStudy => {
 
       return acc
     },
-    [[], [], []]
+    [[], [], []],
   )
 }
 

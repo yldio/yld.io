@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react'
 
 import {
   LogoStyleContext,
-  HomePageContext
+  HomePageContext,
 } from '../../../../context/PageContext'
 
 import LogoLink from '../LogoLink'
@@ -40,7 +40,7 @@ describe('with LogoStyle white', () => {
     const { getByAltText } = render(
       <LogoStyleContext.Provider value="white">
         <LogoLink />
-      </LogoStyleContext.Provider>
+      </LogoStyleContext.Provider>,
     )
     const logo = getByAltText(/logo/i)
     expect(logo.src).toContain('yld-white.svg')
@@ -53,7 +53,7 @@ describe('with LogoStyle white', () => {
           <HomePageContext.Provider value={true}>
             <LogoLink />
           </HomePageContext.Provider>
-        </LogoStyleContext.Provider>
+        </LogoStyleContext.Provider>,
       )
       const logo = getByAltText(/logo/i)
 

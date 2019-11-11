@@ -28,7 +28,7 @@ const CommunitySection = ({
   communityText,
   communityLogoTitle,
   communityLogo,
-  title
+  title,
 }) => (
   <BlueBackground>
     <Wrapper>

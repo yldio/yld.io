@@ -35,12 +35,12 @@ const sortJobs = (jobsByLocation, limit) => {
     if (location === 'London') {
       sortedJobs.unshift({
         location,
-        jobs: limitedJobs
+        jobs: limitedJobs,
       })
     } else {
       sortedJobs.push({
         location,
-        jobs: limitedJobs
+        jobs: limitedJobs,
       })
     }
   })

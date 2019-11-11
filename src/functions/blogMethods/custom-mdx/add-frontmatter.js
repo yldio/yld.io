@@ -4,7 +4,7 @@ const addFrontmatter = ({
   content,
   tags,
   firstPublishedAt,
-  authorName
+  authorName,
 }) => `---
 title: ${title}
 slug: ${slug}

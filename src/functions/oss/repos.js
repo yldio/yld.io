@@ -9,7 +9,7 @@ const repoKeys = [
   'nameWithOwner',
   'descriptionHTML',
   'pullRequestCount',
-  'starCount'
+  'starCount',
 ]
 
 const Repos = async (environment, { repos }) => {
@@ -18,17 +18,17 @@ const Repos = async (environment, { repos }) => {
   const isProd = LAMBDA_ENV === 'production'
   const { items: contentfulRepos } = await environment.getEntries({
     limit: 1000,
-    content_type: 'githubRepo'
+    content_type: 'githubRepo',
   })
 
   // Get the urls from the repos currently on the site
   const contentfulRepoUrls = contentfulRepos.map(repo =>
-    getFieldValue(repo, 'url')
+    getFieldValue(repo, 'url'),
   )
 
   // Get the repo data we care about
   const filteredRepos = repos.filter(({ url }) =>
-    contentfulRepoUrls.includes(url)
+    contentfulRepoUrls.includes(url),
   )
 
   // Iterate over the contentful repo data
@@ -47,12 +47,12 @@ const Repos = async (environment, { repos }) => {
 
     const contentfulRepoFromGithub = generateContentfulData(
       githubRepo,
-      repoKeys
+      repoKeys,
     )
 
     const fieldsAreEqual = isEqual(
       contentfulRepoFromGithub,
-      contentfulRepo.fields
+      contentfulRepo.fields,
     )
 
     if (isProd && !fieldsAreEqual) {
@@ -61,12 +61,12 @@ const Repos = async (environment, { repos }) => {
         contentfulRepo,
         contentfulRepoFromGithub,
         environment,
-        nameWithOwner
+        nameWithOwner,
       )
 
       return {
         ...acc,
-        updatedRepos: [...(acc.updatedRepos || []), nameWithOwner]
+        updatedRepos: [...(acc.updatedRepos || []), nameWithOwner],
       }
     } else {
       console.log(
@@ -80,11 +80,11 @@ const Repos = async (environment, { repos }) => {
         JSON.stringify(
           {
             contentful: contentfulRepo.fields,
-            github: contentfulRepoFromGithub
+            github: contentfulRepoFromGithub,
           },
           null,
-          2
-        )
+          2,
+        ),
       )
 
       return acc

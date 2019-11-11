@@ -36,7 +36,7 @@ const Insight = ({ insight }) => (
 )
 
 const Learning = ({
-  data: { title, subtitle, text, featuredInsights, list }
+  data: { title, subtitle, text, featuredInsights, list },
 }) => (
   <Section greyBg>
     <TitleAndList title={title} list={list} />

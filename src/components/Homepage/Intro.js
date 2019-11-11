@@ -146,7 +146,7 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
                 // eslint-disable-next-line
                 list: props => (
                   <StyledCardTitle regular="true" reverse {...props} />
-                )
+                ),
               }}
               source={introContent}
             />

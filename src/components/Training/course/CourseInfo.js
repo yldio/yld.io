@@ -12,7 +12,7 @@ const courseInfoSectionNames = {
   level: 'Level',
   preRequisites: 'Pre-requisites',
   preRequisitesCourses: 'Pre-requisite Courses',
-  contactUs: 'Contact us'
+  contactUs: 'Contact us',
 }
 
 const CourseInfo = ({
@@ -21,7 +21,7 @@ const CourseInfo = ({
   level,
   preRequisites,
   preRequisitesCourses,
-  image
+  image,
 }) => (
   <Col width={[1, 1, 1, 1, 5 / 6]} px={0}>
     <Padding bottom={1}>

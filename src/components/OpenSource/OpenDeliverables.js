@@ -42,10 +42,10 @@ const OpenDeliverables = props => {
       openDeliverablesSectionTitle,
       openDeliverablesClientReposSubtitle,
       openDeliverablesSectionDescription: {
-        openDeliverablesSectionDescription
+        openDeliverablesSectionDescription,
       },
-      openDeliverablesClientRepos
-    }
+      openDeliverablesClientRepos,
+    },
   } = props
 
   return (
@@ -61,7 +61,7 @@ const OpenDeliverables = props => {
             <ReactMarkdown
               renderers={{
                 // eslint-disable-next-line react/display-name
-                paragraph: props => <BodyPrimary {...props} />
+                paragraph: props => <BodyPrimary {...props} />,
               }}
               source={openDeliverablesSectionDescription}
             />

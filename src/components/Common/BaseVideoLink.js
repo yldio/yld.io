@@ -56,7 +56,7 @@ const getColorBasedOnBackground = themeVariation => {
       return {
         opacity: 0.5,
         useLightIcon: true,
-        color: theme.colors.white
+        color: theme.colors.white,
       }
     case theme.variations.white:
     case theme.variations.grey:
@@ -64,7 +64,7 @@ const getColorBasedOnBackground = themeVariation => {
       return {
         opacity: 1,
         useLightIcon: false,
-        color: theme.colors.text
+        color: theme.colors.text,
       }
   }
 }
@@ -87,7 +87,7 @@ const BaseVideoLink = ({
   ...props
 }) => {
   const { opacity, useLightIcon, color } = getColorBasedOnBackground(
-    themeVariation
+    themeVariation,
   )
   const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div'
 

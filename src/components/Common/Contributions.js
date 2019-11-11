@@ -115,31 +115,31 @@ const Contributions = ({
   icon,
   sectionGraphic,
   githubRepos: repos,
-  githubMetaData: { openSourceMetaReposCount, openSourceMetaPullRequestsCount }
+  githubMetaData: { openSourceMetaReposCount, openSourceMetaPullRequestsCount },
 }) => {
   const [ref, inView] = useInView({
-    triggerOnce: true
+    triggerOnce: true,
   })
 
   const countUpOpts = ({ end }) => ({
     start: 0,
     end,
     delay: 1000,
-    duration: 3
+    duration: 3,
   })
 
   const { countUp: contributions, start: startContributions } = useCountUp(
-    countUpOpts({ end: openSourceMetaPullRequestsCount })
+    countUpOpts({ end: openSourceMetaPullRequestsCount }),
   )
 
   const { countUp: projects, start: startProjects } = useCountUp(
-    countUpOpts({ end: openSourceMetaReposCount })
+    countUpOpts({ end: openSourceMetaReposCount }),
   )
 
   const contributionsCopy = {
     titleSectionLine1,
     titleSectionLine2,
-    titleSectionLine3
+    titleSectionLine3,
   }
 
   const startProjectsCallback = useCallback(startProjects, [])
@@ -152,7 +152,7 @@ const Contributions = ({
         startContributionsCallback()
       }
     },
-    [inView, startProjectsCallback, startContributionsCallback]
+    [inView, startProjectsCallback, startContributionsCallback],
   )
 
   return (

@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import Head from '../components/Common/Head'
 import {
   PostIntroMetaData,
-  PostOutroMetaData
+  PostOutroMetaData,
 } from '../components/Blog/PostMetaData'
 import FigureImage from '../components/Blog/FigureImage'
 import YouTube from '../components/Blog/YouTube'
@@ -25,7 +25,7 @@ import {
   Body,
   Code,
   A,
-  Blockquote
+  Blockquote,
 } from '../components/Blog/Typography'
 
 const components = {
@@ -38,7 +38,7 @@ const components = {
   p: Body,
   code: Code,
   anchor: A,
-  blockquote: Blockquote
+  blockquote: Blockquote,
 }
 const shortCodes = { YouTube, Gist, FigureImage, Tweet }
 
@@ -47,7 +47,7 @@ const COL_WIDTHS = [1, 1, 1, 10 / 12, 10 / 12, 7 / 12]
 const BlogPostTemplate = ({
   data: { contentfulBlogPost: post },
   location,
-  __mdxScope
+  __mdxScope,
 }) => {
   const seoMetaData = {
     title: post.title + ' | YLD',
@@ -55,7 +55,7 @@ const BlogPostTemplate = ({
       (post.subtitle && post.subtitle.subtitle) ||
       post.content.childMdx.excerpt,
     socialLogo: post.headerImage && post.headerImage,
-    keywords: post.tags
+    keywords: post.tags,
   }
 
   return (

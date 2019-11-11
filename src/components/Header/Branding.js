@@ -54,11 +54,11 @@ const TopNavBranding = ({ slug }) => (
         isServicePage,
         isSpecialityPage,
         specialityColor,
-        service
+        service,
       } = getServiceInfo({
         services,
         specialities,
-        slug
+        slug,
       })
 
       const fillColorInitial = isSpecialityPage

@@ -11,62 +11,62 @@ const social = [
   {
     label: 'Twitter',
     to: 'http://twitter.com/yldio',
-    img: twitter
+    img: twitter,
   },
   {
     label: 'Github',
     to: 'http://github.com/yldio',
-    img: github
+    img: github,
   },
   {
     label: 'Youtube',
     to: 'https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA',
-    img: youtube
+    img: youtube,
   },
   {
     label: 'Medium',
     to: 'https://medium.com/yld-blog',
-    img: medium
+    img: medium,
   },
   {
     label: 'Instagram',
     to: 'https://www.instagram.com/yld.io/',
-    img: instagram
+    img: instagram,
   },
   {
     label: 'Linkedin',
     to: 'https://www.linkedin.com/company/yld/',
-    img: linkedin
+    img: linkedin,
   },
   {
     label: 'Dribbble',
     to: 'https://dribbble.com/yld',
-    img: dribbble
+    img: dribbble,
   },
   {
     label: 'Behance',
     to: 'https://www.behance.net/YLDio',
-    img: behance
-  }
+    img: behance,
+  },
 ]
 
 const gdpr = [
   {
     label: 'Contact',
-    to: '/contact'
+    to: '/contact',
   },
   {
     label: 'Cookies',
-    to: '/cookie-policy'
+    to: '/cookie-policy',
   },
   {
     label: 'Privacy policy',
-    to: '/privacy-policy'
+    to: '/privacy-policy',
   },
   {
     label: 'Data-retention policy',
-    to: '/data-retention-policy'
-  }
+    to: '/data-retention-policy',
+  },
 ]
 
 export { social, gdpr }

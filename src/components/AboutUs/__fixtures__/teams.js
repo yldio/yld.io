@@ -7,13 +7,13 @@ const teams = [
         role: 'Co-founder & Chief Executive Officer - YLD',
         description: {
           description:
-            "Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni."
+            "Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.",
         },
         image: {
           title: 'Nuno Job',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg',
           },
           fluid: {
             base64:
@@ -27,8 +27,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/2Dx4a2A6q709zjVT2GBEUz/5f78255c4b1bb42f383d955f1834a3e9/nuno.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -38,7 +38,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -47,9 +47,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Nuno Job Twitter',
@@ -58,7 +58,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -67,24 +67,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Anthony Mann',
         role: 'Co-founder - YLD & YLD Labs',
         description: {
           description:
-            'Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.'
+            'Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.',
         },
         image: {
           title: 'Anthony',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg',
           },
           fluid: {
             base64:
@@ -98,8 +98,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/1CJKgpypI3QFhFytglS4n1/f84e1c71029ea2356df4b84eb46c0ecf/Anthony.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -109,7 +109,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -118,9 +118,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Anthony Mann Twitter',
@@ -129,7 +129,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -138,24 +138,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Tracey Bianchi',
         role: 'Chief Financial Officer - YLD',
         description: {
           description:
-            'Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.'
+            'Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.',
         },
         image: {
           title: 'Tracey Bianchi',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg',
           },
           fluid: {
             base64:
@@ -169,8 +169,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/5MWNxjbrJ9EWK5Nv7S0T0K/73ad37b1e5ec64c218338a3c8feb1c9c/tracey.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -181,7 +181,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -190,24 +190,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Carlos Vilhena',
         role: 'Chief Technology Officer - YLD',
         description: {
           description:
-            'Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.'
+            'Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.',
         },
         image: {
           title: 'Carlos Vilhena',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg',
           },
           fluid: {
             base64:
@@ -221,8 +221,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/60TW1U738xBjaYhPE5GctU/0ff63d3a264960350288b98672e4620c/carlos.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -232,7 +232,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -241,9 +241,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Carlos Vilhena Twitter',
@@ -252,7 +252,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -261,24 +261,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Bradley Stott',
         role: 'Chief Operations Officer - YLD',
         description: {
           description:
-            'Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.'
+            'Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.',
         },
         image: {
           title: 'Bradley Stott',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg',
           },
           fluid: {
             base64:
@@ -292,8 +292,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/6yEiPwKJEpdM5eE2qcQjgi/306a2878e9444f96746062f834f32cdc/bradley.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -303,7 +303,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -312,24 +312,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Annie Vladev',
         role: 'Head of Commercial - YLD',
         description: {
           description:
-            'Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. \n'
+            'Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. \n',
         },
         image: {
           title: 'Annie Vladev',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg',
           },
           fluid: {
             base64:
@@ -343,8 +343,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/4xdaMWFVGvvzpVxahTxGVm/fa1223c9d2b919954840d05780125cf1/annie.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -354,7 +354,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -363,24 +363,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Greta Strolyte',
         role: 'Marketing and Community Manager - YLD',
         description: {
           description:
-            'Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. '
+            'Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. ',
         },
         image: {
           title: 'Greta Strolyte',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg',
           },
           fluid: {
             base64:
@@ -394,8 +394,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/1UJxDTLiOj5hTtu1z8QvdL/75fe5b2019b047e0d59df04daced64f6/greta.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -405,7 +405,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -414,9 +414,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: "Greta Strolyte's Twitter",
@@ -425,7 +425,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -434,24 +434,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Fabio Oliveira',
         role: 'Managing Director - YLD Portugal, CEO - AddCode',
         description: {
           description:
-            'Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.'
+            'Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.',
         },
         image: {
           title: 'Fabio Oliveira',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg',
           },
           fluid: {
             base64:
@@ -465,8 +465,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/GlEWASz48Ca65HxahJcd1/7051a27a2e92373ffe0d686c77dd8dcb/fabio.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -476,7 +476,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -485,9 +485,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Fabio Oliveira Twitter',
@@ -496,7 +496,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -505,24 +505,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Gareth Scrivens',
         role: 'Associate Partner - YLD',
         description: {
           description:
-            'Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini'
+            'Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini',
         },
         image: {
           title: 'Gareth Scrivens',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg',
           },
           fluid: {
             base64:
@@ -536,8 +536,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/53ZiWEni0nFLbHJ0dtPqvD/cbd3ea4c3f971a73a0fce5c4a57fa7fc/gareth.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -547,7 +547,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -556,13 +556,13 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
-      }
-    ]
+                sizes: null,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Advisory',
@@ -572,13 +572,13 @@ const teams = [
         role: 'Board Advisor',
         description: {
           description:
-            'Kate Davies is Chief Executive of Notting Hill Genesis, a 65,000 home association, with 90% of its stock in London. She was previously Chief Executive of Servite Houses and Director of Housing in Brighton and Hove. Kare has two degrees and qualifications in housing management (MCIH) and\nhousing association development.'
+            'Kate Davies is Chief Executive of Notting Hill Genesis, a 65,000 home association, with 90% of its stock in London. She was previously Chief Executive of Servite Houses and Director of Housing in Brighton and Hove. Kare has two degrees and qualifications in housing management (MCIH) and\nhousing association development.',
         },
         image: {
           title: 'Kate Davies',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png'
+              '//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png',
           },
           fluid: {
             base64:
@@ -592,8 +592,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/46LCKHDT2XdLq8Gpg3bQ0a/fef7729b7ee79edca2f95458f9f4b5f6/kate.png?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -603,7 +603,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -612,24 +612,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Bill Scott',
         role: 'Board Advisor',
         description: {
           description:
-            'Bill is VP of Venmo Engineering, PayPal Consumer Engineering, Identity & Next Gen Commerce. Before PayPal, Bill created and led the User Interface Engineering organisation at Netflix and was Technology & Design Evangelist at Yahoo; as well as an early Mac Game Developer.'
+            'Bill is VP of Venmo Engineering, PayPal Consumer Engineering, Identity & Next Gen Commerce. Before PayPal, Bill created and led the User Interface Engineering organisation at Netflix and was Technology & Design Evangelist at Yahoo; as well as an early Mac Game Developer.',
         },
         image: {
           title: 'Bill Scott',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg',
           },
           fluid: {
             base64:
@@ -643,8 +643,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/BzM0Y5byeWe3XONwfYLIj/0507cf5974645749b285c88c6413f323/bill_scott.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -654,7 +654,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -663,9 +663,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Bill Scott Twitter',
@@ -674,7 +674,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -683,24 +683,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Tim Morgan',
         role: 'Board Advisor',
         description: {
           description:
-            'Tim founded and was CEO of startup studio Mint Digital, helping large corporations deliver digital products and leading startups from ideation, through growth and, in two cases, to exit. Prior to founding Mint, Tim worked in mergers and acquisitions and has advised on fundraising and exits with value in excess of £200m.'
+            'Tim founded and was CEO of startup studio Mint Digital, helping large corporations deliver digital products and leading startups from ideation, through growth and, in two cases, to exit. Prior to founding Mint, Tim worked in mergers and acquisitions and has advised on fundraising and exits with value in excess of £200m.',
         },
         image: {
           title: 'Tim Morgan',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg',
           },
           fluid: {
             base64:
@@ -714,8 +714,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/AJ5YCA4qC1K4XrN3383mk/b269e992e0ebb9ff179a658138a25d1f/tim_morgan.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -725,7 +725,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -734,9 +734,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Tim Morgan Twitter',
@@ -745,7 +745,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -754,24 +754,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Stuart Hamilton',
         role: 'Board Advisor',
         description: {
           description:
-            'Stuart has spent his career in high growth, technology powered businesses. He was a Director of Axon, from startup to $700M exit; he also led the largest sale the company ever made, at several hundred million dollars. He holds a PhD and a B.Eng. from Imperial College, London.'
+            'Stuart has spent his career in high growth, technology powered businesses. He was a Director of Axon, from startup to $700M exit; he also led the largest sale the company ever made, at several hundred million dollars. He holds a PhD and a B.Eng. from Imperial College, London.',
         },
         image: {
           title: 'Stuart Hamilton',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg',
           },
           fluid: {
             base64:
@@ -785,8 +785,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/6CZN93JL8lXbqAJ0d9SI2j/144cff289a762e7a948ef148bd4ad728/photo_stuart_hamilton.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -796,7 +796,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -805,24 +805,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Richard Goold',
         role: 'Board Advisor',
         description: {
           description:
-            'Richard is a Partner at Moorhouse, a consulting firm that helps organisations address their biggest strategic challenges. He is the Lead Partner for People & Talent and is passionate about influencing, shaping and informing new forms of leadership for a new workforce, and a new world.\n\n'
+            'Richard is a Partner at Moorhouse, a consulting firm that helps organisations address their biggest strategic challenges. He is the Lead Partner for People & Talent and is passionate about influencing, shaping and informing new forms of leadership for a new workforce, and a new world.\n\n',
         },
         image: {
           title: 'Richard Goold',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg',
           },
           fluid: {
             base64:
@@ -836,8 +836,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/1yKxtgeSKs9JqWTPE9LvxH/fcecd097acdc8b7a5b43bfb09b4a4274/richard_.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -847,7 +847,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -856,13 +856,13 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
-      }
-    ]
+                sizes: null,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Client',
@@ -872,13 +872,13 @@ const teams = [
         role: 'Principal Consultant - Delivery',
         description: {
           description:
-            'Julie oversees the delivery function at YLD. She’s passionate about co-ordinating, leading and motivating multi-disciplinary teams. She previously worked in advertising agencies and has 10+ years’ experience delivering successful projects and products for renowned brands.'
+            'Julie oversees the delivery function at YLD. She’s passionate about co-ordinating, leading and motivating multi-disciplinary teams. She previously worked in advertising agencies and has 10+ years’ experience delivering successful projects and products for renowned brands.',
         },
         image: {
           title: 'Julie-Laure Coassin',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg',
           },
           fluid: {
             base64:
@@ -892,8 +892,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/Jx0cpaqVEAU7Ta4Tl3MnL/e84d9b1047d0debcca5574f8f21ecdfa/julie.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -903,7 +903,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -912,9 +912,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Julie-Laure Coassin Twitter',
@@ -923,7 +923,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -932,24 +932,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Pieter Raubenheimer',
         role: 'Staff Architect',
         description: {
           description:
-            'Pieter works across teams to help define software structure and advise on technical implementation decisions. He also supports engineering skills development, both internally and for clients. Pieter has designed and delivered solutions for clients ranging from start-ups to FTSE 250 listed companies.'
+            'Pieter works across teams to help define software structure and advise on technical implementation decisions. He also supports engineering skills development, both internally and for clients. Pieter has designed and delivered solutions for clients ranging from start-ups to FTSE 250 listed companies.',
         },
         image: {
           title: 'Pieter Raubenheimer',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg',
           },
           fluid: {
             base64:
@@ -963,8 +963,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/75Y77qhuAslNhrmzGWa2Hd/ee39e3e242bf1cd5fb422681d0607923/peter.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -974,7 +974,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -983,24 +983,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Mark Gillespie',
         role: 'Principal Consultant',
         description: {
           description:
-            'Mark’s experience of building and leading highly motivated, effective, scalable teams is invaluable to YLD. Starting his career in the NHS, he then spent 15 years at Visa Europe eventually as Head of Development Strategy and Delivery for digital channels, before becoming Director of Software Development for Perform (DAZN), and holding a consultancy role with Maersk.'
+            'Mark’s experience of building and leading highly motivated, effective, scalable teams is invaluable to YLD. Starting his career in the NHS, he then spent 15 years at Visa Europe eventually as Head of Development Strategy and Delivery for digital channels, before becoming Director of Software Development for Perform (DAZN), and holding a consultancy role with Maersk.',
         },
         image: {
           title: 'Mark Gillespie',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg',
           },
           fluid: {
             base64:
@@ -1014,8 +1014,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/7LEtFG3MimIswde310LXny/00cf1536bc8f569c17e25218fd0c1918/mark.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1025,7 +1025,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1034,24 +1034,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Joaquim Serafim',
         role: 'Principal Consultant',
         description: {
           description:
-            'Joaquim has 20 years’ professional experience in IT and is skilled in building teams, cloud computing, information management, software design, application development and operations. A proven mentor, he helps clients adapt to the digital transformation efficiently.'
+            'Joaquim has 20 years’ professional experience in IT and is skilled in building teams, cloud computing, information management, software design, application development and operations. A proven mentor, he helps clients adapt to the digital transformation efficiently.',
         },
         image: {
           title: 'Joaquim Serafim',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg',
           },
           fluid: {
             base64:
@@ -1065,8 +1065,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/6oSyaGc7mDa4EEWCVWD2dm/a7f746c683a37ab66aea847392f5e397/joaquim.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1076,7 +1076,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1085,24 +1085,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Hana Lodhi',
         role: 'Design Lead',
         description: {
           description:
-            'Hana establishes processes and practices that set the bar for design quality. She’s proved the business value of design to many clients and continues to do so through a deep understanding of how to create great UX with cross-functional collaboration. She transitioned into the tech industry from an award-winning background in architecture.'
+            'Hana establishes processes and practices that set the bar for design quality. She’s proved the business value of design to many clients and continues to do so through a deep understanding of how to create great UX with cross-functional collaboration. She transitioned into the tech industry from an award-winning background in architecture.',
         },
         image: {
           title: 'Hana Lodhi',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg',
           },
           fluid: {
             base64:
@@ -1116,8 +1116,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/2acDsUhexzV5K1l1Nky99e/0cd44dc9996ef22b1cc5474357583dd2/hana.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1127,7 +1127,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1136,9 +1136,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Hana Lodhi Twitter',
@@ -1147,7 +1147,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1156,24 +1156,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Ray Brooks',
         role: 'Principal Consultant',
         description: {
           description:
-            'As an award-winning software developer, Ray has written software for many large international brands including Microsoft. Now a Principal Consultant, Ray helps YLD clients and engineering teams get the best from their technology projects. A strong background in Javascript and fluent in many other tech languages, he has a tight focus on web technology.'
+            'As an award-winning software developer, Ray has written software for many large international brands including Microsoft. Now a Principal Consultant, Ray helps YLD clients and engineering teams get the best from their technology projects. A strong background in Javascript and fluent in many other tech languages, he has a tight focus on web technology.',
         },
         image: {
           title: 'Ray Brooks',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg',
           },
           fluid: {
             base64:
@@ -1187,8 +1187,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/4vbysh6jHqsojT7tyiyZeG/f0ac304b72c5a9c77aeb5c9edf60d08a/ray.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1198,7 +1198,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1207,24 +1207,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Tom Gallacher',
         role: 'Staff Engineer',
         description: {
           description:
-            "Tom is a staff engineer at YLD, developing using Node.js in large production applications and, within the last couple of years, started focusing on the infrastructure that supports these applications. He loves performance optimisation - whether that's engineer productivity or software!"
+            "Tom is a staff engineer at YLD, developing using Node.js in large production applications and, within the last couple of years, started focusing on the infrastructure that supports these applications. He loves performance optimisation - whether that's engineer productivity or software!",
         },
         image: {
           title: 'Tom Gallacher',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg',
           },
           fluid: {
             base64:
@@ -1238,8 +1238,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/8nKYckScGm3TdywhknTWf/79a69092988b73a969af7b057e6e0a3d/tom.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1249,7 +1249,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1258,9 +1258,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Tom Gallacher Twitter',
@@ -1269,7 +1269,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1278,24 +1278,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Sérgio Ramos',
         role: 'Staff Engineer',
         description: {
           description:
-            'Sérgio is responsible not only for solving complex technical problems for our clients when needed, but also for pushing the business in the right technical direction. He’s been with YLD since almost its beginning and as a full stack engineer he provides training and consulting.'
+            'Sérgio is responsible not only for solving complex technical problems for our clients when needed, but also for pushing the business in the right technical direction. He’s been with YLD since almost its beginning and as a full stack engineer he provides training and consulting.',
         },
         image: {
           title: 'Sergio Ramos',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg',
           },
           fluid: {
             base64:
@@ -1309,8 +1309,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/7xMVFW9hLvYjzhIg9tnnOq/eb33fd4a5d3df8defc51bb72b20bb054/photo_sergio_ramos_new_v2.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1320,7 +1320,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1329,9 +1329,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Sérgio Ramos Twitter',
@@ -1340,7 +1340,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1349,24 +1349,24 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
+                sizes: null,
+              },
+            },
+          },
+        ],
       },
       {
         name: 'Filipe Pinheiro',
         role: 'Engineering Manager',
         description: {
           description:
-            'Filipe works closely with our clients to ensure process and technical standards improvements.\nHe previously worked at startups and multinational companies, leading tech projects in mobile and web apps, before bringing this gathered experience to YLD.'
+            'Filipe works closely with our clients to ensure process and technical standards improvements.\nHe previously worked at startups and multinational companies, leading tech projects in mobile and web apps, before bringing this gathered experience to YLD.',
         },
         image: {
           title: 'fillipe',
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg'
+              '//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg',
           },
           fluid: {
             base64:
@@ -1380,8 +1380,8 @@ const teams = [
               '//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg?w=500&q=50&fm=webp',
             srcSetWebp:
               '//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/1VK27g9xLwGfhJQqY4cIOX/aeb23e7393e572194b62471acd98dd09/fillipe.jpg?w=670&h=672&q=50&fm=webp 670w',
-            sizes: '(max-width: 500px) 100vw, 500px'
-          }
+            sizes: '(max-width: 500px) 100vw, 500px',
+          },
         },
         socialLinks: [
           {
@@ -1391,7 +1391,7 @@ const teams = [
               title: 'LinkedIn Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1400,9 +1400,9 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
+                sizes: null,
+              },
+            },
           },
           {
             name: 'Filipe Pinheiro',
@@ -1411,7 +1411,7 @@ const teams = [
               title: 'Twitter Icon',
               file: {
                 url:
-                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg',
               },
               fluid: {
                 base64: null,
@@ -1420,14 +1420,14 @@ const teams = [
                 srcSet: null,
                 srcWebp: null,
                 srcSetWebp: null,
-                sizes: null
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
+                sizes: null,
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 export default teams

@@ -6,59 +6,59 @@ const navLinks = [
     dropdownItems: [
       {
         label: 'Engineering',
-        to: '/engineering/'
+        to: '/engineering/',
       },
       {
         label: 'Design',
-        to: '/design/'
+        to: '/design/',
       },
       {
         label: 'Training',
-        to: '/training/'
-      }
+        to: '/training/',
+      },
     ],
     attributes: {
-      dataEvent: eventLabels.navigationServices
-    }
+      dataEvent: eventLabels.navigationServices,
+    },
   },
   {
     label: 'Our work',
-    to: '/our-work/'
+    to: '/our-work/',
   },
   {
     label: 'Open Source',
-    to: '/open-source/'
+    to: '/open-source/',
   },
   {
     label: 'Community',
     dropdownItems: [
       {
         label: 'Blog',
-        to: '/blog/'
+        to: '/blog/',
       },
       {
         label: 'Events',
-        to: '/events/'
-      }
-    ]
+        to: '/events/',
+      },
+    ],
   },
   {
     label: 'About',
     dropdownItems: [
       {
         label: 'Our team',
-        to: '/about-us/'
+        to: '/about-us/',
       },
       {
         label: 'Join us',
-        to: '/join-us/'
-      }
-    ]
+        to: '/join-us/',
+      },
+    ],
   },
   {
     label: 'Contact',
-    to: '/contact/'
-  }
+    to: '/contact/',
+  },
 ]
 
 export default navLinks

@@ -132,7 +132,7 @@ const StyledLink = ({ external, to, href, children, ...props }) => {
   const externalProps = external
     ? {
         target: '_blank',
-        rel: 'noopener noreferrer'
+        rel: 'noopener noreferrer',
       }
     : {}
 

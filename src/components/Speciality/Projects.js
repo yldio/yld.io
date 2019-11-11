@@ -22,7 +22,7 @@ const PosterLinks = ({ project }) => {
   const poster = {
     title: project[imageKey].title,
     url: project[imageKey].file.url,
-    color: project.posterColor
+    color: project.posterColor,
   }
 
   const isDarkPosterColor = getColorLuminance(poster.color) < 132.5
@@ -31,7 +31,7 @@ const PosterLinks = ({ project }) => {
     <AnimatedLink to={`/case-study/${project.slug}`} title={project.title}>
       <section
         style={{
-          background: `#${poster.color}`
+          background: `#${poster.color}`,
         }}
       >
         <CardHeader>

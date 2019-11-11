@@ -19,7 +19,7 @@ const Approach = ({ title, content, formats }) => (
           title={'Our training approach '}
           list={title.map((approach, i) => ({
             title: approach,
-            body: content[i]
+            body: content[i],
           }))}
           themeVariation={theme.variations.dark}
         />

@@ -29,7 +29,7 @@ export default function PagePaths(props) {
         data.allSitePage.edges.forEach(
           edge =>
             edge.node.context &&
-            (cachedPathsById[edge.node.context.id] = edge.node.path)
+            (cachedPathsById[edge.node.context.id] = edge.node.path),
         )
         return props.render(cachedPathsById)
       }}

@@ -16,7 +16,7 @@ const LevelInfo = ({
   ctaUrl,
   infoContent,
   title,
-  isLastLevelInfo
+  isLastLevelInfo,
 }) => (
   <LevelInfoWrapper isLastLevelInfo={isLastLevelInfo}>
     <BodyPrimary noPaddingBottom bold>

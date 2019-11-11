@@ -84,7 +84,7 @@ const StaffCard = ({
   colWidths = [1, 1, 1, 1, 6 / 12, 4 / 12],
   paddingBottom = {},
   emailAddress,
-  contactUsRole
+  contactUsRole,
 }) => {
   return (
     <WrapperCol
@@ -120,16 +120,16 @@ StaffCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.shape({
     file: PropTypes.shape({
-      url: PropTypes.string.isRequired
-    }).isRequired
+      url: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
   role: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  socialLinks: PropTypes.array
+  socialLinks: PropTypes.array,
 }
 
 StaffCard.defaultProps = {
-  socialLinks: []
+  socialLinks: [],
 }
 
 export default StaffCard

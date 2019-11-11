@@ -83,7 +83,7 @@ const EventSection = ({ events, title, description, bgColor }) => {
                         </BodyPrimary>
                         <Hr />
                       </li>
-                    )
+                    ),
                   )}
                 </ul>
               ) : (

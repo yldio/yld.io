@@ -127,7 +127,7 @@ const Profile = props => {
     personCopy: { personCopy },
     personCtaCopy,
     personCtaLinkUrl,
-    personCtaLinkCopy
+    personCtaLinkCopy,
   } = props
 
   return (
@@ -149,7 +149,7 @@ const Profile = props => {
               <BodyPrimary
                 as={'a'}
                 style={{
-                  textDecoration: 'underline'
+                  textDecoration: 'underline',
                 }}
                 href={`mailto:${person.emailAddress}`}
                 noPadding
@@ -241,11 +241,11 @@ const GetInTouch = props => {
 GetInTouch.propTypes = {
   title: PropTypes.string.isRequired,
   contactText: PropTypes.string.isRequired,
-  ctaText: PropTypes.string.isRequired
+  ctaText: PropTypes.string.isRequired,
 }
 
 GetInTouch.defaultProps = {
-  ctaText: 'Get in touch'
+  ctaText: 'Get in touch',
 }
 
 export default GetInTouch

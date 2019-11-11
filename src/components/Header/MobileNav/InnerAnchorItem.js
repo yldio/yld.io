@@ -33,7 +33,7 @@ export const InnerAnchorItem = ({
   to,
   href,
   activeClassName,
-  label
+  label,
 }) => (
   <InnerListItem>
     <InnerAnchor

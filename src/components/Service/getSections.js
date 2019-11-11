@@ -12,7 +12,7 @@ export default workStage =>
         id: generate(),
         title: workStage[getCurrent('title')],
         icon: workStage[getCurrent('icon')],
-        body: (workStage[getCurrent('body')] || {})[getCurrent('body')]
+        body: (workStage[getCurrent('body')] || {})[getCurrent('body')],
       }
     })
     .filter(({ title }) => title)

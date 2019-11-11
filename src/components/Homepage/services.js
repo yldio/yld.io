@@ -97,7 +97,7 @@ const Services = ({ statement, services }) => (
               {/* This grid has no offsets so this is what we're left with... */}
               <Col width={[0, 0, 0, 1 / 12]} />
             </>
-          )
+          ),
       )}
     </ServiceRow>
   </>

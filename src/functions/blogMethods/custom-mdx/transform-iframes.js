@@ -16,7 +16,7 @@ const findOccurrences = str => {
 
     occurrences.push({
       chunk,
-      url
+      url,
     })
   }
 
@@ -32,7 +32,7 @@ const getIframeContent = async url => {
 
       return {
         type: 'gist',
-        id: gistId
+        id: gistId,
       }
     }
 
@@ -40,13 +40,13 @@ const getIframeContent = async url => {
     case 'www.youtube.com':
       return {
         type: 'youtube',
-        id: String(forwardedUrl)
+        id: String(forwardedUrl),
       }
 
     default:
       return {
         type: 'unknown',
-        link: forwardedUrl
+        link: forwardedUrl,
       }
   }
 }
@@ -67,28 +67,28 @@ const transformIframes = async post => {
           case 'gist':
             processedMarkdown = processedMarkdown.replace(
               chunk,
-              gistBuilder(id)
+              gistBuilder(id),
             )
             break
           case 'youtube':
             processedMarkdown = processedMarkdown.replace(
               chunk,
-              youtubeVideoBuilder(id)
+              youtubeVideoBuilder(id),
             )
             break
           default:
             processedMarkdown = processedMarkdown.replace(
               chunk,
-              genericIframeBuilder(link)
+              genericIframeBuilder(link),
             )
         }
-      })
+      }),
     )
   }
 
   return {
     ...post,
-    content: processedMarkdown
+    content: processedMarkdown,
   }
 }
 

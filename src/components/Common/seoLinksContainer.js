@@ -46,7 +46,7 @@ const SeoLinksContainer = ({ specialities, sectionTitle }) => (
       </Row>
       <Row>
         {specialities.map((speciality, index) =>
-          SeoLinksColumn({ speciality }, index)
+          SeoLinksColumn({ speciality }, index),
         )}
       </Row>
     </Grid>

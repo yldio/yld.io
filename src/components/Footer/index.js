@@ -15,7 +15,7 @@ export const GreyFooter = styled.footer`
 
 const colorMap = {
   White: 'white',
-  Grey: 'greyBg'
+  Grey: 'greyBg',
 }
 
 const Wrapper = styled.div`
@@ -84,7 +84,7 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
     query={QUERY}
     render={({ profiles }) => {
       const footerContactUsData = profiles.nodes.find(
-        ({ id }) => id === footerContactUsId
+        ({ id }) => id === footerContactUsId,
       )
 
       return (

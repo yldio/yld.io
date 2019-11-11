@@ -20,7 +20,7 @@ const parseXmlToJson = async data => {
       category: tags = [],
       'dc:creator': authorName,
       pubDate,
-      'content:encoded': html
+      'content:encoded': html,
     } = res
 
     const { pathname } = new URL(link)
@@ -33,7 +33,7 @@ const parseXmlToJson = async data => {
       authorName,
       firstPublishedAt: new Date(pubDate).toISOString(),
       html,
-      slug
+      slug,
     }
   })
 }

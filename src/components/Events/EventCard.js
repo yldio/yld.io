@@ -78,7 +78,7 @@ const EventCard = ({ event }) => {
     type,
     eventTitle,
     attendees,
-    linkToEvent
+    linkToEvent,
   } = event
 
   const formattedStartTime = format(new Date(startTime), 'ha')

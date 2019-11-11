@@ -14,10 +14,10 @@ const AboutUs = ({
   data: {
     contentfulAboutUsPage: content,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
-  location
+  location,
 }) => {
   const {
     statementText,
@@ -35,30 +35,30 @@ const AboutUs = ({
     clientTestimonialVideo,
     partnershipsTitle,
     partners,
-    seoMetaData
+    seoMetaData,
   } = content
 
   const supportingStatements = [
     {
       icon: supportingStatement1Icon,
-      text: supportingStatement1Text
+      text: supportingStatement1Text,
     },
     {
       icon: supportingStatement2Icon,
-      text: supportingStatement2Text
+      text: supportingStatement2Text,
     },
     {
       icon: supportingStatement3Icon,
-      text: supportingStatement3Text
-    }
+      text: supportingStatement3Text,
+    },
   ]
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'About us',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (

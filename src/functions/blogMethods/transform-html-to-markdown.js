@@ -28,7 +28,7 @@ const pRule = {
   replacement: content => {
     const newContent = replaceTags(content)
     return '\n\n' + newContent + '\n\n'
-  }
+  },
 }
 
 /**
@@ -52,7 +52,7 @@ const blockquoteRule = {
 
     const newContent = replaceTags(content)
     return '\n\n>' + newContent + '\n\n'
-  }
+  },
 }
 
 /*
@@ -76,12 +76,12 @@ const preRule = {
       })
 
     return options.rules.fencedCodeBlock.replacement(content, preElem, options)
-  }
+  },
 }
 
 const scriptRule = {
   filter: ['script', 'style'],
-  replacement: () => ''
+  replacement: () => '',
 }
 
 /**
@@ -106,7 +106,7 @@ const iframeRule = {
     const elem = document.createElement('div')
     elem.innerHTML = node.innerHTML
     return `\n<iframecontent:"${elem.querySelector('a').href}">\n`
-  }
+  },
 }
 
 const getImageMeta = function(imgSrc) {
@@ -149,7 +149,7 @@ const makeImgRule = images => ({
     images.push({ src, ext, alt, name, caption })
 
     return `\n<image:${name}>\n`
-  }
+  },
 })
 
 const transformHtmlToMarkdown = posts =>
@@ -169,7 +169,7 @@ const transformHtmlToMarkdown = posts =>
     return {
       ...rest,
       content,
-      images
+      images,
     }
   })
 

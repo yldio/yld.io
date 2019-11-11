@@ -7,8 +7,8 @@ const specialitiesMap = {
     'vue-js',
     'react-js',
     'kubernetes',
-    'react-native'
-  ]
+    'react-native',
+  ],
 }
 
 const logoColors = {
@@ -17,7 +17,7 @@ const logoColors = {
   defaultHover: '#8e8e8e',
   specialityText: theme.colors.blueBg,
   specialityHover: theme.colors.white,
-  specialitiesFillDefault: theme.colors.white
+  specialitiesFillDefault: theme.colors.white,
 }
 
 const servicesList = Object.keys(specialitiesMap)
@@ -40,5 +40,5 @@ export {
   servicesRegExp,
   getIsServicePage,
   getSpeciality,
-  getAboutUrl
+  getAboutUrl,
 }

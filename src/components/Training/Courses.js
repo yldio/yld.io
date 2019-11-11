@@ -35,7 +35,7 @@ const Courses = ({ categories, sectionTitle }) => {
                     title={course.name}
                     key={course.id}
                     state={{
-                      modal: true
+                      modal: true,
                     }}
                     data-testid="course-link"
                   >

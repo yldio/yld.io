@@ -11,11 +11,11 @@ module.exports = async (posts, environment) => {
     const postWithEmbedTags = await TransformIFrames(postWithImageData)
     const postWithReplacedStrings = {
       ...postWithEmbedTags,
-      content: await TransformStrings(postWithEmbedTags.content)
+      content: await TransformStrings(postWithEmbedTags.content),
     }
     const postWithFrontmatter = {
       ...postWithReplacedStrings,
-      content: await AddFrontmatter(postWithReplacedStrings)
+      content: await AddFrontmatter(postWithReplacedStrings),
     }
     return postWithFrontmatter
   })

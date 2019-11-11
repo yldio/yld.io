@@ -12,7 +12,7 @@ const ContributionsCopy = props => {
     contributions,
     titleSectionLine1: first,
     titleSectionLine2: second,
-    titleSectionLine3: third
+    titleSectionLine3: third,
   } = props
 
   return (

@@ -15,28 +15,28 @@ const Service = ({
   data: {
     contentfulService: service,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
-  location
+  location,
 }) => {
   const specialities = [
     {
       title: service.specialityAreaTitle1,
-      items: service.specialityAreaItems1
+      items: service.specialityAreaItems1,
     },
     {
       title: service.specialityAreaTitle2,
-      items: service.specialityAreaItems2
+      items: service.specialityAreaItems2,
     },
     {
       title: service.specialityAreaTitle3,
-      items: service.specialityAreaItems3
+      items: service.specialityAreaItems3,
     },
     {
       title: service.specialityAreaTitle4,
-      items: service.specialityAreaItems4
-    }
+      items: service.specialityAreaItems4,
+    },
   ]
 
   const { seoMetaData } = service
@@ -45,8 +45,8 @@ const Service = ({
     {
       name: service.title,
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (

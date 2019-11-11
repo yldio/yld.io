@@ -6,7 +6,7 @@ import theme from '../../utils/theme'
 const ItemBody = styled(BodyPrimary).attrs({
   noPaddingTop: true,
   muted: props => props.themeVariation === theme.variations.dark,
-  reverse: props => props.themeVariation === theme.variations.dark
+  reverse: props => props.themeVariation === theme.variations.dark,
 })`
   > a {
     text-decoration: underline;
@@ -14,7 +14,7 @@ const ItemBody = styled(BodyPrimary).attrs({
 `
 
 const ItemSubtitle = styled(Subtitle).attrs({
-  reverse: props => props.themeVariation === theme.variations.dark
+  reverse: props => props.themeVariation === theme.variations.dark,
 })`
   padding-bottom: 0;
 `

@@ -7,31 +7,31 @@ const generateContentfulEntryFromPost = (post, keys, locale) =>
     (acc, curr) => ({
       ...acc,
       [curr]: {
-        [locale]: post[curr]
-      }
+        [locale]: post[curr],
+      },
     }),
-    {}
+    {},
   )
 
 const publishToContentful = async (
   posts,
   environment,
   allFields,
-  cmsBlogPosts
+  cmsBlogPosts,
 ) => {
   return Map(posts, async post => {
     const asset = cmsBlogPosts.find(
       ({
         fields: {
-          slug: { [LOCALE]: slug }
-        }
-      }) => slug === post.slug
+          slug: { [LOCALE]: slug },
+        },
+      }) => slug === post.slug,
     )
 
     const contentfulPostData = generateContentfulEntryFromPost(
       post,
       allFields,
-      LOCALE
+      LOCALE,
     )
 
     if (asset) {
@@ -39,7 +39,7 @@ const publishToContentful = async (
 
       asset.fields = {
         ...asset.fields,
-        ...contentfulPostData
+        ...contentfulPostData,
       }
       const updatedAsset = await asset.update()
 
@@ -48,7 +48,7 @@ const publishToContentful = async (
       console.info(`Creating new post: ${post.title} `)
 
       const newAsset = await environment.createEntry('blogPost', {
-        fields: contentfulPostData
+        fields: contentfulPostData,
       })
 
       return await newAsset.publish()

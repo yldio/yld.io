@@ -65,7 +65,7 @@ const FooterSections = ({
   footerSection2Title,
   footerSection2Copy,
   footerSection2CtaCopy,
-  footerSection2CtaLink
+  footerSection2CtaLink,
 }) => (
   <Grid>
     <StyledRow>

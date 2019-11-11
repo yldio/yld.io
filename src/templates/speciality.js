@@ -14,28 +14,28 @@ const Speciality = ({ data, location }) => {
     services,
     specialities,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   } = data
   const { slug, title, seoMetaData } = speciality
 
   const { service } = getServiceInfo({
     slug,
     services,
-    specialities
+    specialities,
   })
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       position: 2,
       name: capitalize(service),
-      pathname: `/${service}/`
+      pathname: `/${service}/`,
     },
     {
       name: title,
       position: 3,
-      pathname: location.pathname
-    }
+      pathname: location.pathname,
+    },
   ])
 
   return (
