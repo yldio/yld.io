@@ -10,7 +10,7 @@ const hoverActiveStyles = css`
 
 const outerItemStates = {
   default: defaultStyles,
-  hoverActive: hoverActiveStyles
+  hoverActive: hoverActiveStyles,
 }
 
 export default outerItemStates

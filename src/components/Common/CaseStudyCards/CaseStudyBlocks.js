@@ -43,7 +43,7 @@ const renderText = ({
   disallowed = [],
   bpFont = null,
   noHeaderPadding = false,
-  bpFontSmall = false
+  bpFontSmall = false,
 }) =>
   text && (
     <ReactMarkdown
@@ -66,7 +66,7 @@ const renderText = ({
             bpFontSmall={bpFontSmall}
             {...props}
           />
-        )
+        ),
       }}
       source={text}
     />
@@ -96,7 +96,7 @@ const TextColumnsBlock = ({
   bpColorReverse = false,
   noHeaderPadding = false,
   headerBlock = true,
-  headerColCss = undefined
+  headerColCss = undefined,
 }) => (
   <Fragment>
     <StyledColOne width={colWidthOne} block={headerBlock} {...headerColCss}>
@@ -105,7 +105,7 @@ const TextColumnsBlock = ({
         colorReverse,
         bpColorReverse,
         disallowed: ['paragraph'],
-        noHeaderPadding
+        noHeaderPadding,
       })}
     </StyledColOne>
     {middleColWidth && <Col width={middleColWidth} />}
@@ -114,7 +114,7 @@ const TextColumnsBlock = ({
         text,
         colorReverse,
         bpColorReverse,
-        disallowed: ['heading']
+        disallowed: ['heading'],
       })}
     </StyledColTwo>
   </Fragment>
@@ -167,7 +167,7 @@ const TextAndImageBlock = ({
   colWidthOne = [1, 1, 1, 1, 1 / 2],
   colWidthTwo = [1, 1, 1, 1, 1 / 2],
   middleColWidth = null,
-  colorReverse = false
+  colorReverse = false,
 }) => (
   <Fragment>
     <Col width={colWidthOne}>{renderText({ text, colorReverse })}</Col>
@@ -230,7 +230,7 @@ const normaliseAll = (genericBlocks = []) =>
   genericBlocks.map(({ genericBlockText, genericBlockImages, ...props }) => ({
     image: getImage(genericBlockImages, 0),
     text: genericBlockText && genericBlockText.genericBlockText,
-    ...props
+    ...props,
   }))
 
 const normalise = (genericBlocks = [], index = 0) =>
@@ -257,5 +257,5 @@ export {
   getImages,
   getImage,
   normalise,
-  normaliseAll
+  normaliseAll,
 }

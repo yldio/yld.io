@@ -17,7 +17,7 @@ const { createClient } = require('contentful-management')
 const { CMS_CRUD, CONTENTFUL_SPACE } = process.env
 
 const client = createClient({
-  accessToken: CMS_CRUD
+  accessToken: CMS_CRUD,
 })
 
 Main(async () => {

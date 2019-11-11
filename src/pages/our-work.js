@@ -20,7 +20,7 @@ const formatCaseStudies = caseStudies =>
       ...caseStudy,
       services: caseStudy.services
         .filter(service => service.title)
-        .map(service => service.title)
+        .map(service => service.title),
     }
   })
 
@@ -28,7 +28,7 @@ const ourWork = {
   title: 'Our Work',
   description:
     "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left",
-  seoTitle: 'A collection of case studies'
+  seoTitle: 'A collection of case studies',
 }
 
 const IntroTitleCol = styled(Col)`
@@ -53,13 +53,13 @@ const OurWork = ({ data, location }) => {
     allContentfulTemplatedCaseStudy,
     contentfulOurWork: { caseStudies },
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   } = data
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
-    ...formatCaseStudies(allContentfulTemplatedCaseStudy)
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
   ]
 
   const displayOrderByIDs = caseStudies
@@ -67,14 +67,14 @@ const OurWork = ({ data, location }) => {
     .map(({ id }) => id)
 
   const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
-    allCaseStudies.find(cs => cs.id === orderedId)
+    allCaseStudies.find(cs => cs.id === orderedId),
   )
   const missingFromContentfulOrder = allCaseStudies.filter(
-    cs => !displayOrderByIDs.includes(cs.id)
+    cs => !displayOrderByIDs.includes(cs.id),
   )
   const orderedCaseStudies = [
     ...mappedFromContentfulOrder,
-    ...missingFromContentfulOrder
+    ...missingFromContentfulOrder,
   ]
 
   const page = allContentfulTemplatedCaseStudy.edges[0].node
@@ -83,8 +83,8 @@ const OurWork = ({ data, location }) => {
     {
       name: 'Our work',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (
@@ -97,7 +97,7 @@ const OurWork = ({ data, location }) => {
           ...page,
           title: ourWork.title,
           seoTitle: ourWork.seoTitle,
-          seoMetaDescription: ourWork.description
+          seoMetaDescription: ourWork.description,
         }}
       />
       <Grid>

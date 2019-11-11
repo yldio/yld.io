@@ -11,7 +11,7 @@ import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
 import Layout from '../../components/layout'
 import GreyBackground, {
-  GreyBackgroundOffset
+  GreyBackgroundOffset,
 } from '../../components/Common/GreyBackground'
 import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
 import Image from '../../components/Common/Image'
@@ -94,7 +94,7 @@ const GradientContent = ({ text, image }) => (
 
 const IndexPage = ({
   data: { contentfulNonTemplatedCaseStudyV2: caseStudy, travel },
-  location
+  location,
 }) => {
   return (
     <Layout
@@ -107,7 +107,7 @@ const IndexPage = ({
         <Row>
           <FirstParagraphCol width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(
-              caseStudy.genericBlock1[0].genericBlockText.genericBlockText
+              caseStudy.genericBlock1[0].genericBlockText.genericBlockText,
             ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
@@ -137,7 +137,8 @@ const IndexPage = ({
               <RightAlignedCol width={[1, 1, 1, 1 / 2]}>
                 <Margin top={3}>
                   {makeText(
-                    caseStudy.genericBlock2[0].genericBlockText.genericBlockText
+                    caseStudy.genericBlock2[0].genericBlockText
+                      .genericBlockText,
                   ).map((p, i) => (
                     <BodyPrimary key={i}>{p}</BodyPrimary>
                   ))}
@@ -183,7 +184,7 @@ const IndexPage = ({
             </Col>
             <Col width={[1, 1, 1, 1 / 2]}>
               {makeText(
-                caseStudy.genericBlock4[0].genericBlockText.genericBlockText
+                caseStudy.genericBlock4[0].genericBlockText.genericBlockText,
               ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
@@ -215,7 +216,7 @@ const IndexPage = ({
               </Col>
               <Col width={[1, 1, 1, 1 / 2]}>
                 {makeText(
-                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText
+                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText,
                 ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}

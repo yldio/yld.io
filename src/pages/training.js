@@ -13,23 +13,23 @@ const TrainingPage = ({
   data: {
     contentfulTrainingPage: content,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
-  location
+  location,
 }) => {
   const trainingApproachesContent = [
     content.trainingApproachContent1.trainingApproachContent1,
     content.trainingApproachContent2.trainingApproachContent2,
-    content.trainingApproachContent3.trainingApproachContent3
+    content.trainingApproachContent3.trainingApproachContent3,
   ]
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Training',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (

@@ -25,22 +25,22 @@ const transformImageData = async (post, environment) => {
 
     transformedContent = transformedContent.replace(
       `<image:${name}>`,
-      `<FigureImage src="${url}"${captionProp}${altProp} />`
+      `<FigureImage src="${url}"${captionProp}${altProp} />`,
     )
 
     return {
       sys: {
         type: 'Link',
         linkType: 'Asset',
-        id
-      }
+        id,
+      },
     }
   })
 
   return {
     ...post,
     relatedMedia: uploadedImageData,
-    content: transformedContent
+    content: transformedContent,
   }
 }
 

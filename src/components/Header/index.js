@@ -24,7 +24,7 @@ const trainingModalRegExp = /training\/[a-zA-Z]/
 const getThemeVariation = bgColor => {
   const map = {
     dark: ['blueBg'],
-    grey: ['grey']
+    grey: ['grey'],
   }
 
   return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white'
@@ -87,8 +87,8 @@ const Header = ({ path, bgColor, slug }) => {
 
 Header.defaultProps = {
   location: {
-    pathname: ''
-  }
+    pathname: '',
+  },
 }
 
 export default Header

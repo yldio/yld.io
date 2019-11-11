@@ -39,7 +39,7 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
                     const {
                       text,
                       hostedUrl,
-                      categories: { commitment }
+                      categories: { commitment },
                     } = job.node
                     return (
                       <Col

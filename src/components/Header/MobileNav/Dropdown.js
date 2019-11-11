@@ -10,7 +10,7 @@ import outerItemStates from './outerItemStates'
 import outlineStyles from '../utils/outlineStyles'
 
 const DropdownNameWrapper = styled.span.attrs(() => ({
-  states: outerItemStates
+  states: outerItemStates,
 }))`
   display: flex;
   align-items: center;
@@ -46,14 +46,14 @@ export default class Dropdown extends PureComponent {
     const { items, path } = props
 
     this.state = {
-      isExpanded: items.some(({ to }) => path === to)
+      isExpanded: items.some(({ to }) => path === to),
     }
   }
 
   toggle = e => {
     e.preventDefault()
     this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded
+      isExpanded: !prevState.isExpanded,
     }))
   }
 

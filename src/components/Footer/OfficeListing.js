@@ -20,7 +20,7 @@ const OfficeListing = () => (
               key={location.node.id}
               {...location.node}
               streetAddress={location.node.streetAddress.streetAddress.split(
-                '\n'
+                '\n',
               )}
             />
           ))

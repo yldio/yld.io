@@ -13,12 +13,12 @@ const { LOCALE } = require('./utils/constants')
 const createAuthenticatedRequest = access_token => (url, options = {}) =>
   Got(url, {
     ...options,
-    headers: { ...options.headers, Authorization: `Bearer ${access_token}` }
+    headers: { ...options.headers, Authorization: `Bearer ${access_token}` },
   })
 
 const getAuthToken = async (
   code,
-  { MEETUP_API_KEY, MEETUP_API_SECRET, MEETUP_EMAIL, MEETUP_PASS, redirect }
+  { MEETUP_API_KEY, MEETUP_API_SECRET, MEETUP_EMAIL, MEETUP_PASS, redirect },
 ) => {
   let token
   try {
@@ -32,19 +32,19 @@ const getAuthToken = async (
       ['client_secret', MEETUP_API_SECRET],
       ['redirect_uri', redirect],
       ['code', code],
-      ['grant_type', 'anonymous_code']
+      ['grant_type', 'anonymous_code'],
     ])
 
     // Get the accessToken from access endpoint
     const { body: accessBody } = await Got.post(
-      `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`
+      `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`,
     )
 
     const { access_token } = JSON.parse(accessBody)
 
     const sessionSearchParams = new URLSearchParams([
       ['email', MEETUP_EMAIL],
-      ['password', MEETUP_PASS]
+      ['password', MEETUP_PASS],
     ])
 
     // Use the access_token and meetup username/password to get
@@ -53,9 +53,9 @@ const getAuthToken = async (
       `https://api.meetup.com/sessions?${sessionSearchParams.toString()}`,
       {
         headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      }
+          Authorization: `Bearer ${access_token}`,
+        },
+      },
     )
 
     const { oauth_token } = JSON.parse(body)
@@ -77,7 +77,7 @@ exports.handler = async evt => {
     MEETUP_PASS,
     CONTENTFUL_SPACE,
     CMS_CRUD,
-    LAMBDA_ENV = 'development'
+    LAMBDA_ENV = 'development',
   } = process.env
 
   if (
@@ -89,9 +89,9 @@ exports.handler = async evt => {
         MEETUP_PASS,
         CONTENTFUL_SPACE,
         CMS_CRUD,
-        LAMBDA_ENV
+        LAMBDA_ENV,
       },
-      Boolean
+      Boolean,
     )
   ) {
     throw new Error('Env variables missing, check set up')
@@ -99,7 +99,7 @@ exports.handler = async evt => {
 
   const isProd = LAMBDA_ENV === 'production'
   const client = createClient({
-    accessToken: CMS_CRUD
+    accessToken: CMS_CRUD,
   })
 
   const redirect = `${
@@ -111,7 +111,7 @@ exports.handler = async evt => {
   if (!queryStringParameters.code) {
     return {
       statusCode: 400,
-      body: 'Missing code query parameter'
+      body: 'Missing code query parameter',
     }
   }
 
@@ -120,7 +120,7 @@ exports.handler = async evt => {
     MEETUP_API_KEY,
     MEETUP_EMAIL,
     MEETUP_PASS,
-    redirect
+    redirect,
   })
 
   const AuthenticatedRequest = createAuthenticatedRequest(sessionToken)
@@ -129,7 +129,7 @@ exports.handler = async evt => {
   const environment = await space.getEnvironment('master')
 
   const { body: groups } = await AuthenticatedRequest(
-    'https://api.meetup.com/self/groups'
+    'https://api.meetup.com/self/groups',
   )
 
   const transformedGroups = transformGroups(JSON.parse(groups))
@@ -138,33 +138,33 @@ exports.handler = async evt => {
   const eventsFromGroups = await Promise.all(
     transformedGroups.map(({ urlname }) =>
       AuthenticatedRequest(
-        `https://api.meetup.com/${urlname}/events?no_earlier_than${date}`
-      )
-    )
+        `https://api.meetup.com/${urlname}/events?no_earlier_than${date}`,
+      ),
+    ),
   )
 
   const parsedEvents = eventsFromGroups.reduce(
     (acc, { body }) => acc.concat(JSON.parse(body)),
-    []
+    [],
   )
 
   const { items: contentfulEvents } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven',
-    'fields.type': 'Meetup'
+    'fields.type': 'Meetup',
   })
 
   let log = {
     isProd,
     newEvents: [],
     updatedEvents: [],
-    unchangedEvents: []
+    unchangedEvents: [],
   }
 
   await Map(parsedEvents, async event => {
     const contentfulEvent = Find(contentfulEvents, [
       `fields.id.${LOCALE}`,
-      event.id
+      event.id,
     ])
 
     const generatedEvent = generateContentfulEvent(event)
@@ -195,14 +195,14 @@ exports.handler = async evt => {
         contentfulEvent.fields,
         diffVals.reduce(
           (acc, curr) => ({ ...acc, [curr]: generatedEventFields[curr] }),
-          {}
-        )
+          {},
+        ),
       )
 
       if (isProd) {
         log.updatedEvents.push({
           name: generatedEvent.fields.eventTitle[LOCALE],
-          values: diffVals
+          values: diffVals,
         })
 
         const id = await contentfulEvent.update()
@@ -228,6 +228,6 @@ exports.handler = async evt => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ log })
+    body: JSON.stringify({ log }),
   }
 }

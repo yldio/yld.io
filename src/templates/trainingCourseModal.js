@@ -33,7 +33,7 @@ const ModalContent = ({
   course,
   category,
   location,
-  siteUrl
+  siteUrl,
 }) => {
   const returnPath = `${closeTo}/#${category.slug}`
 
@@ -45,7 +45,7 @@ const ModalContent = ({
 
       return
     },
-    [returnPath]
+    [returnPath],
   )
 
   useEffect(
@@ -54,20 +54,20 @@ const ModalContent = ({
 
       return () => document.removeEventListener('keyup', handleKeyPress, false)
     },
-    [handleKeyPress]
+    [handleKeyPress],
   )
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'service',
       pathname: returnPath,
-      position: 2
+      position: 2,
     },
     {
       name: `Training - ${course.name}`,
       pathname: location.pathname,
-      position: 3
-    }
+      position: 3,
+    },
   ])
 
   return (
@@ -76,7 +76,7 @@ const ModalContent = ({
         page={{
           title: `Training - ${course.name}`,
           seoMetaDescription: course.description.description,
-          keywords: `training ${course.level} ${course.name}`
+          keywords: `training ${course.level} ${course.name}`,
         }}
       />
       <Wrapper>
@@ -112,10 +112,10 @@ const TrainingCourseModal = ({
     contentfulTrainingCourse: course,
     contentfulTrainingCourseCategory: category,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
-  location
+  location,
 }) => (
   <ModalRoutingContext.Consumer>
     {({ modal, closeTo }) => (

@@ -23,7 +23,7 @@ const Team = ({ members }) => {
               socialLinks={socialLinks}
               dataTestId={`staff-card-${idx}`}
             />
-          )
+          ),
         )}
       </Row>
     </Padding>

@@ -8,7 +8,7 @@ import mobileNavItemStyles from './mobileNavItemStyles'
 import outerItemStates from './outerItemStates'
 
 const StyledAnchor = styled(Anchor).attrs(() => ({
-  states: outerItemStates
+  states: outerItemStates,
 }))`
   display: block;
   ${headerItemStyles}

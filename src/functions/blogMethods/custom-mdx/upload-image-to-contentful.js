@@ -4,30 +4,30 @@ const { LOCALE } = require('../../utils/constants')
 const uploadImageToContentful = async (
   { name, src, ext },
   title,
-  environment
+  environment,
 ) => {
   const asset = await environment.createAsset({
     fields: {
       title: {
-        [LOCALE]: `${KebabCase(title)}__${name}`
+        [LOCALE]: `${KebabCase(title)}__${name}`,
       },
       file: {
         [LOCALE]: {
           fileName: name,
           upload: src,
-          contentType: mime.lookup(ext)
-        }
-      }
-    }
+          contentType: mime.lookup(ext),
+        },
+      },
+    },
   })
   const processedAsset = await asset.processForAllLocales()
   const {
     fields: {
       file: {
-        [LOCALE]: { url }
-      }
+        [LOCALE]: { url },
+      },
     },
-    sys: { id }
+    sys: { id },
   } = await processedAsset.publish()
 
   return { id, url }

@@ -25,13 +25,13 @@ exports.handler = async evt =>
     const {
       URL: NETLIFY_URL,
       LAMBDA_ENV = 'development',
-      LAMBDA_LEVER_WEBHOOK // Set up in Netlify UI
+      LAMBDA_LEVER_WEBHOOK, // Set up in Netlify UI
     } = process.env
 
     const isProd = LAMBDA_ENV === 'production'
 
     const metaHref = new URL(
-      `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`
+      `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`,
     )
 
     const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json')
@@ -49,19 +49,19 @@ exports.handler = async evt =>
 
         return {
           statusCode: 200,
-          body
+          body,
         }
       } else {
         return {
           statusCode: 200,
           body:
-            'Difference in jobs found but this is not production so no deployment for you'
+            'Difference in jobs found but this is not production so no deployment for you',
         }
       }
     }
 
     return {
       body: 'No differences in jobs found, not deploying',
-      statusCode: 200
+      statusCode: 200,
     }
   })

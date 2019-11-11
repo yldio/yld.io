@@ -50,11 +50,11 @@ const TitleAndList = ({
   title,
   list,
   themeVariation = 'white',
-  extraContent
+  extraContent,
 }) => {
   useEffect(() => {
     const titledAnchors = Array.from(document.querySelectorAll('a')).filter(
-      a => a.title
+      a => a.title,
     )
     titledAnchors.forEach(a => a.setAttribute('target', '_blank'))
   }, [])
@@ -80,7 +80,7 @@ const TitleAndList = ({
                 // eslint-disable-next-line
                 paragraph: props => (
                   <Body themeVariation={themeVariation} {...props} />
-                )
+                ),
               }}
               source={list}
             />

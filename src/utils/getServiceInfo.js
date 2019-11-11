@@ -9,19 +9,19 @@ const getSpecialitiesToServices = (services = []) =>
       specialityAreaItems1,
       specialityAreaItems2,
       specialityAreaItems3,
-      specialityAreaItems4
+      specialityAreaItems4,
     } = rest
 
     const areas = [
       ...specialityAreaItems1,
       ...specialityAreaItems2,
       ...specialityAreaItems3,
-      ...specialityAreaItems4
+      ...specialityAreaItems4,
     ].filter(i => i)
 
     return {
       ...acc,
-      [slug]: areas.map(({ slug }) => slug)
+      [slug]: areas.map(({ slug }) => slug),
     }
   }, {})
 
@@ -41,6 +41,6 @@ export default ({ services, specialities, slug }) => {
     isServicePage,
     isSpecialityPage,
     specialityColor: isSpecialityPage && getColor(specialities.nodes, slug),
-    service: isServicePage ? slug : service
+    service: isServicePage ? slug : service,
   }
 }

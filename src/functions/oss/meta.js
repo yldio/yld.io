@@ -5,7 +5,7 @@ const ossUtils = require('./utils')
 
 const contentfulMetaKeys = [
   'openSourceMetaReposCount',
-  'openSourceMetaPullRequestsCount'
+  'openSourceMetaPullRequestsCount',
 ]
 
 const Meta = async (environment, githubMetaData) => {
@@ -15,19 +15,19 @@ const Meta = async (environment, githubMetaData) => {
   const {
     getContentfulDataFromKeys,
     generateContentfulData,
-    updateEntry
+    updateEntry,
   } = ossUtils
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
-    content_type: 'githubMetaData'
+    content_type: 'githubMetaData',
   })
 
   const currentContentfulData = head(contentfulMetas)
 
   const contentfulMetaData = getContentfulDataFromKeys(
     currentContentfulData,
-    contentfulMetaKeys
+    contentfulMetaKeys,
   )
 
   const fieldsAreEqual = isEqual(contentfulMetaData, githubMetaData)
@@ -37,7 +37,7 @@ const Meta = async (environment, githubMetaData) => {
       currentContentfulData,
       generateContentfulData(githubMetaData, contentfulMetaKeys),
       environment,
-      'github meta data'
+      'github meta data',
     )
   } else {
     console.log(
@@ -47,11 +47,11 @@ const Meta = async (environment, githubMetaData) => {
       JSON.stringify(
         {
           contentful: { ...contentfulMetaData },
-          github: { ...githubMetaData }
+          github: { ...githubMetaData },
         },
         null,
-        2
-      )
+        2,
+      ),
     )
   }
 

@@ -48,7 +48,7 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
                   const label = content[0].value.split(' ').join('-')
 
                   const dataEvent = dataEvents && {
-                    'data-event': `${dataEvents}-${label}`
+                    'data-event': `${dataEvents}-${label}`,
                   }
 
                   return (
@@ -76,7 +76,7 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
                 // eslint-disable-next-line react/display-name
                 paragraph: props => (
                   <StyledDisplayTitle as={as} textLight {...props} />
-                )
+                ),
               }}
               source={children}
             />

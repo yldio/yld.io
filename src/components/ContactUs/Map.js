@@ -19,10 +19,10 @@ const Map = ({ locations }) => {
       <GoogleMapReact
         center={getLatLngMidpoint(locations)}
         options={{
-          styles: mapStyles
+          styles: mapStyles,
         }}
         bootstrapURLKeys={{
-          key: 'AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k'
+          key: 'AIzaSyBKK8Yx8_oj20eSw4pqnsflHrEsTHjnG5k',
         }}
         defaultZoom={5}
       >

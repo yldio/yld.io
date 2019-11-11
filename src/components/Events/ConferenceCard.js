@@ -39,7 +39,7 @@ const ConferenceCard = ({ event }) => {
     linkToEvent,
     linkToTickets,
     eventImage,
-    ctaText
+    ctaText,
   } = event
 
   const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY')

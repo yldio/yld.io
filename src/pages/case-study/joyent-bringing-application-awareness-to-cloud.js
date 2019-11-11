@@ -87,8 +87,8 @@ const IndexPage = ({
     metric4,
     navigation,
     signOn,
-    topology
-  }
+    topology,
+  },
 }) => {
   return (
     <Layout footerContactUsId={caseStudy.footerContactUs.id}>
@@ -101,12 +101,12 @@ const IndexPage = ({
           </Col>
           <Col width={[1, 1, 1, 1, 1 / 2]}>
             {makeText(
-              caseStudy.genericBlock1[0].genericBlockText.genericBlockText
+              caseStudy.genericBlock1[0].genericBlockText.genericBlockText,
             ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
             {makeText(
-              caseStudy.genericBlock2[0].genericBlockText.genericBlockText
+              caseStudy.genericBlock2[0].genericBlockText.genericBlockText,
             ).map((p, i) => (
               <BodyPrimary key={i}>{p}</BodyPrimary>
             ))}
@@ -130,7 +130,8 @@ const IndexPage = ({
                 </SpreadUntilDesktop>
                 <SpreadUntilDesktop>
                   {makeText(
-                    caseStudy.genericBlock3[0].genericBlockText.genericBlockText
+                    caseStudy.genericBlock3[0].genericBlockText
+                      .genericBlockText,
                   ).map((p, i) => (
                     <BodyPrimary key={i}>{p}</BodyPrimary>
                   ))}
@@ -158,7 +159,7 @@ const IndexPage = ({
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(
-                caseStudy.genericBlock4[0].genericBlockText.genericBlockText
+                caseStudy.genericBlock4[0].genericBlockText.genericBlockText,
               ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
@@ -185,7 +186,7 @@ const IndexPage = ({
               </SpreadUntilDesktop>
               <SpreadUntilDesktop>
                 {makeText(
-                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText
+                  caseStudy.genericBlock5[0].genericBlockText.genericBlockText,
                 ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
@@ -214,7 +215,7 @@ const IndexPage = ({
               <Col width={[1, 1, 1, 1, 5 / 12]}>
                 <SectionTitle>Topology</SectionTitle>
                 {makeText(
-                  caseStudy.genericBlock6[0].genericBlockText.genericBlockText
+                  caseStudy.genericBlock6[0].genericBlockText.genericBlockText,
                 ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
@@ -239,7 +240,7 @@ const IndexPage = ({
             </Col>
             <Col width={[1, 1, 1, 1, 1 / 2]}>
               {makeText(
-                caseStudy.genericBlock7[0].genericBlockText.genericBlockText
+                caseStudy.genericBlock7[0].genericBlockText.genericBlockText,
               ).map((p, i) => (
                 <BodyPrimary key={i}>{p}</BodyPrimary>
               ))}
@@ -266,7 +267,7 @@ const IndexPage = ({
               </Col>
               <ColWithoutExtraPadding width={[1, 1, 1, 1, 1 / 2]}>
                 {makeText(
-                  caseStudy.genericBlock8[0].genericBlockText.genericBlockText
+                  caseStudy.genericBlock8[0].genericBlockText.genericBlockText,
                 ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}
@@ -297,7 +298,7 @@ const IndexPage = ({
               </SpreadUntilDesktop>
               <SpreadUntilDesktop>
                 {makeText(
-                  caseStudy.genericBlock9[0].genericBlockText.genericBlockText
+                  caseStudy.genericBlock9[0].genericBlockText.genericBlockText,
                 ).map((p, i) => (
                   <BodyPrimary key={i}>{p}</BodyPrimary>
                 ))}

@@ -26,7 +26,7 @@ const StyledRow = styled(Row)`
 `
 
 const TextCol = styled(Col).attrs({
-  width: [1, 1, 1, 1, 0.5, 0.5]
+  width: [1, 1, 1, 1, 0.5, 0.5],
 })`
   padding-top: ${({ theme }) => theme.space[4]};
   ${breakpoint('smallTablet')`
@@ -39,7 +39,7 @@ const TextCol = styled(Col).attrs({
 `
 
 const IllustrationCol = styled(Col).attrs({
-  width: [1, 1, 1, 1, 0.5, 0.5]
+  width: [1, 1, 1, 1, 0.5, 0.5],
 })`
   ${breakpoint('smallTablet', 'tablet')`
     padding-top: ${({ theme }) => theme.space[4]};
@@ -57,7 +57,7 @@ const CopyText = props => <BodyPrimary {...props} reverse="true" />
 
 const LinksTitle = styled(BodyPrimary).attrs({
   reverse: 'true',
-  bold: 'true'
+  bold: 'true',
 })`
   padding-top: ${({ theme }) => theme.space[3]};
 `
@@ -98,7 +98,7 @@ const NotFoundPage = () => (
         footerContactUsProfile: { id },
         title,
         copy: { copy },
-        linksTitle
+        linksTitle,
       } = content
       return (
         <LogoStyleContext.Provider value="white">
@@ -108,8 +108,8 @@ const NotFoundPage = () => (
               meta={[
                 {
                   name: 'description',
-                  content: 'YLD - Engineering - Digital, NodeJS, React, AWS'
-                }
+                  content: 'YLD - Engineering - Digital, NodeJS, React, AWS',
+                },
               ]}
             >
               <html lang="en" />
@@ -121,7 +121,7 @@ const NotFoundPage = () => (
                     <TitleHeadline>{title}</TitleHeadline>
                     <ReactMarkdown
                       renderers={{
-                        paragraph: CopyText
+                        paragraph: CopyText,
                       }}
                       source={copy}
                     />

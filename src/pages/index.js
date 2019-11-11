@@ -40,7 +40,7 @@ const getHomepageConferences = (events = []) =>
     .slice(0, 1)
     .map(n => ({
       ...n.node,
-      date: getFeaturedEventDate(n)
+      date: getFeaturedEventDate(n),
     }))
 
 /**
@@ -65,7 +65,7 @@ const IndexPage = ({ data, location }) => {
   const {
     contentfulHomepage: content,
     allContentfulMeetupEvent: events,
-    allContentfulBlogPost: blogData
+    allContentfulBlogPost: blogData,
   } = data
 
   const sortedServices = content.services.sort((a, b) => a.order - b.order)

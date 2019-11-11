@@ -44,7 +44,7 @@ const PractiseCol = styled(Col)`
 const HowWeWorkWithSection = ({
   howWeWorkWithTitle: title,
   howWeWorkWithCopy: copy,
-  howWeWorkWithPractises: practises = []
+  howWeWorkWithPractises: practises = [],
 }) => {
   const hasPractises = practises && practises.length > 0
   return (
@@ -87,7 +87,7 @@ const MarkDownRender = ({ source }) => (
       // eslint-disable-next-line react/display-name
       paragraph: props => <BodyPrimary noPaddingTop {...props} />,
       // eslint-disable-next-line react/display-name
-      listItem: props => <CustomisedBulletpoint {...props} />
+      listItem: props => <CustomisedBulletpoint {...props} />,
     }}
   />
 )

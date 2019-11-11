@@ -14,7 +14,7 @@ import Hr from '../components/Common/Hr'
 import {
   BodyPrimary,
   SectionTitle,
-  DisplayTitle
+  DisplayTitle,
 } from '../components/Typography'
 import { Grid, Row, Col } from '../components/grid'
 import Layout from '../components/layout'
@@ -45,18 +45,18 @@ const createEventStructuredData = (events = []) =>
         addressLocality: node.addressLine2,
         postalCode: node.addressLine3,
         addressRegion: node.city,
-        addressCountry: 'US'
-      }
+        addressCountry: 'US',
+      },
     },
     ...((node.linkToTickets || node.linkToEvent) && {
       offers: {
         '@type': 'Offer',
-        url: node.linkToTickets || node.linkToEvent
-      }
+        url: node.linkToTickets || node.linkToEvent,
+      },
     }),
     // Can't add description when meetup as meetup blurb is HTML, using strip tags
     // is not reliable enough due to potential ' + " characters in html breaking parsing
-    ...(node.type !== 'Meetup' && { description: node.blurb.blurb })
+    ...(node.type !== 'Meetup' && { description: node.blurb.blurb }),
   }))
 
 const getInTouchData = {
@@ -64,7 +64,7 @@ const getInTouchData = {
   copyHeading: 'Bring your organisation closer to our community',
   copy:
     'Host or sponsor one of our events. Have an idea of your own? Let us know!',
-  ctaText: 'Get in touch'
+  ctaText: 'Get in touch',
 }
 
 const StyledBlueBackground = styled(BlueBackground)`
@@ -200,13 +200,13 @@ const EventPage = ({
     conferences,
     contentfulEventsPage: content,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
-  location
+  location,
 }) => {
   const futureEvents = events.edges.filter(
-    ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date)
+    ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date),
   )
 
   const { introSentence, posterImage, seoMetaData, footerContactUs } = content
@@ -215,8 +215,8 @@ const EventPage = ({
     {
       name: 'Events',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   const eventStructuredData = createEventStructuredData(futureEvents)

@@ -16,7 +16,7 @@ const formatCaseStudies = caseStudies =>
       ...caseStudy,
       services: caseStudy.services
         .filter(service => service.title)
-        .map(service => service.title)
+        .map(service => service.title),
     }
   })
 
@@ -122,7 +122,7 @@ const CaseStudy = ({ caseStudy }) => {
     alternativePreviewImage,
     slug,
     posterColor,
-    reverseColor
+    reverseColor,
   } = caseStudy
 
   return (
@@ -164,31 +164,31 @@ const OurWork = ({ data }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
-    contentfulOurWork: { caseStudies }
+    contentfulOurWork: { caseStudies },
   } = data
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
-    ...formatCaseStudies(allContentfulTemplatedCaseStudy)
+    ...formatCaseStudies(allContentfulTemplatedCaseStudy),
   ]
 
   // remove thomas cook and unpublished case studies
   const displayOrderByIDs = caseStudies
     .filter(
       ({ publish, id }) =>
-        publish && id !== 'bb2bc84d-c03e-5605-b2fa-041a674a1e94'
+        publish && id !== 'bb2bc84d-c03e-5605-b2fa-041a674a1e94',
     )
     .map(({ id }) => id)
 
   const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
-    allCaseStudies.find(cs => cs.id === orderedId)
+    allCaseStudies.find(cs => cs.id === orderedId),
   )
   const missingFromContentfulOrder = allCaseStudies.filter(
-    cs => !displayOrderByIDs.includes(cs.id)
+    cs => !displayOrderByIDs.includes(cs.id),
   )
   const orderedCaseStudies = [
     ...mappedFromContentfulOrder,
-    ...missingFromContentfulOrder
+    ...missingFromContentfulOrder,
   ]
 
   const mobileCaseStudies = orderedCaseStudies.slice(0, 3)

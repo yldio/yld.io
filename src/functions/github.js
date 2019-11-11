@@ -27,17 +27,17 @@ exports.handler = async evt =>
     const {
       repos,
       repoCount: openSourceMetaReposCount,
-      pullRequestCount: openSourceMetaPullRequestsCount
+      pullRequestCount: openSourceMetaPullRequestsCount,
     } = await getData({
       org,
-      token: GITHUB_TOKEN
+      token: GITHUB_TOKEN,
     })
       .then(normalise)
       .then(summariseContributions)
 
     // Get contentful data
     const client = createClient({
-      accessToken: CMS_CRUD
+      accessToken: CMS_CRUD,
     })
 
     const space = await client.getSpace(CONTENTFUL_SPACE)
@@ -46,9 +46,9 @@ exports.handler = async evt =>
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
         openSourceMetaPullRequestsCount,
-        openSourceMetaReposCount
+        openSourceMetaReposCount,
       }),
-      Repos(environment, { repos })
+      Repos(environment, { repos }),
     ]).catch(err => {
       throw new Error(err)
     })
@@ -61,7 +61,7 @@ exports.handler = async evt =>
           updatedRepos && updatedRepos.length
             ? updatedRepos
             : 'No repos updated',
-        missingRepos
-      })
+        missingRepos,
+      }),
     }
   })

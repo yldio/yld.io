@@ -81,7 +81,7 @@ const TitleAndAuthor = ({
   formattedDate,
   postUrl,
   show,
-  hide
+  hide,
 }) => {
   return (
     <TitleAndAuthorWrapper show={show} hide={hide}>
@@ -112,7 +112,7 @@ const MediumPostPreview = ({
   authorId,
   context,
   content = {},
-  headerImage
+  headerImage,
 }) => {
   const formattedDate = format(firstPublishedAt, 'MMMM DD')
 

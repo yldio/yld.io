@@ -44,7 +44,7 @@ const Repo = ({
   starCount,
   isImage = false,
   titleLink = true,
-  theme
+  theme,
 }) => {
   const isDark = theme === 'dark'
   return (

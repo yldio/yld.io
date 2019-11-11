@@ -55,7 +55,7 @@ export const lightStates = {
   hover: hoverLight,
   clickTap: clickTapLight,
   active: activeLight,
-  activeAndHover: activeAndHoverLight
+  activeAndHover: activeAndHoverLight,
 }
 
 export const darkStates = {
@@ -63,5 +63,5 @@ export const darkStates = {
   hover: hoverDark,
   clickTap: clickTapDark,
   active: activeDark,
-  activeAndHover: activeAndHoverDark
+  activeAndHover: activeAndHoverDark,
 }

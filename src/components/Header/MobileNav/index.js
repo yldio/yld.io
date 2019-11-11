@@ -66,7 +66,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
               label={label}
               attributes={attributes}
             />
-          )
+          ),
         )}
     </ul>
   </MobileNavPanel>

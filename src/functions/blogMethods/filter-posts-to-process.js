@@ -6,7 +6,7 @@ const { LOCALE } = require('../utils/constants')
 const restrictedPosts = [
   // Content is too long for Contentful
   'node-js-databases-using-redis-for-fun-and-profit',
-  'node-js-databases-using-couchdb'
+  'node-js-databases-using-couchdb',
 ]
 
 const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
@@ -20,7 +20,7 @@ const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
 
   const postsToUpdate = posts.filter(
     ({ slug }) =>
-      incompletePosts.includes(slug) && !restrictedPosts.includes(slug)
+      incompletePosts.includes(slug) && !restrictedPosts.includes(slug),
   )
 
   const result = postsToUpdate.concat(newPosts)
@@ -33,7 +33,7 @@ const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
 
   if (postsToUpdate.length && postsToUpdate.length > 0) {
     console.info(
-      `Posts to update: ${postsToUpdate.map(({ title }) => `\n${title}`)}`
+      `Posts to update: ${postsToUpdate.map(({ title }) => `\n${title}`)}`,
     )
   } else {
     console.info(`No posts to update`)

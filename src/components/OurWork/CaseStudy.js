@@ -32,7 +32,7 @@ const NonMobileCol = styled(Col)`
 const serviceLinkMapper = {
   Engineering: '/engineering',
   Design: '/design',
-  Training: '/training'
+  Training: '/training',
 }
 
 const ServiceList = ({ services }) =>

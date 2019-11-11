@@ -72,7 +72,7 @@ const Cookie = ({ onClick }) => (
 )
 
 Cookie.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 }
 
 export default Cookie

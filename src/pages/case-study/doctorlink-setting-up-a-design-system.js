@@ -25,7 +25,7 @@ import {
   shouldRender,
   getImage,
   getImages,
-  normalise
+  normalise,
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 import { SectionTitle, BodyPrimary } from '../../components/Typography'
 import Statement from '../../components/Common/Statement'
@@ -53,16 +53,16 @@ const SeamlessStyledBodyPrimary = styled(BodyPrimary)`
 const PropertiesAndTokensBlock = ({
   data = [],
   colorReverse = false,
-  bpColorReverse = false
+  bpColorReverse = false,
 }) => {
   const {
     genericBlockImages,
-    genericBlockText: { genericBlockText: textOne }
+    genericBlockText: { genericBlockText: textOne },
   } = data[0]
 
   const image = getImage(genericBlockImages, 0)
   const {
-    genericBlockText: { genericBlockText: textTwo }
+    genericBlockText: { genericBlockText: textTwo },
   } = data[1]
 
   const PropertiesAndTokensImage = styled(Image)`
@@ -85,7 +85,7 @@ const PropertiesAndTokensBlock = ({
           colorReverse,
           bpColorReverse,
           bpFont: 'PT Mono, sans-serif',
-          bpFontSmall: true
+          bpFontSmall: true,
         })}
       </Col>
       <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
@@ -94,7 +94,7 @@ const PropertiesAndTokensBlock = ({
           colorReverse,
           bpColorReverse,
           bpFont: 'PT Mono, sans-serif',
-          bpFontSmall: true
+          bpFontSmall: true,
         })}
       </Col>
     </PropertiesAndTokensBlockRow>
@@ -104,7 +104,7 @@ const PropertiesAndTokensBlock = ({
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
-    location
+    location,
   } = props
 
   const {
@@ -138,7 +138,7 @@ const IndexPage = props => {
     genericBlock28: data28,
     genericBlock29: data29,
     genericBlock30: data30,
-    genericBlock31: data31
+    genericBlock31: data31,
   } = caseStudy
 
   return (
@@ -193,7 +193,7 @@ const IndexPage = props => {
               <TextColumnsBlock
                 data={normalise(data4)}
                 headerColCss={{
-                  alignContent: 'center'
+                  alignContent: 'center',
                 }}
               />
             </BlockRow>
@@ -214,7 +214,7 @@ const IndexPage = props => {
                 block={false}
                 style={{
                   flexDirection: 'column',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
                 }}
               >
                 <ReactMarkdown
@@ -223,7 +223,7 @@ const IndexPage = props => {
                     // eslint-disable-next-line
                     heading: props => (
                       <SectionTitle noPadding reverse {...props} />
-                    )
+                    ),
                   }}
                   source={normalise(data5).text}
                 />
@@ -235,7 +235,7 @@ const IndexPage = props => {
                     // eslint-disable-next-line
                     paragraph: props => (
                       <SeamlessStyledBodyPrimary reverse {...props} />
-                    )
+                    ),
                   }}
                   source={normalise(data5).text}
                 />

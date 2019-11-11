@@ -19,7 +19,7 @@ const blogPageMeta = {
   title: 'Blog',
   description:
     'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our blog.',
-  seoTitle: 'A collection of medium blog posts created by YLD'
+  seoTitle: 'A collection of medium blog posts created by YLD',
 }
 
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
@@ -56,18 +56,18 @@ const BlogPage = ({
   data: {
     allContentfulBlogPost: { edges: blogPosts },
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
   pageContext,
-  location
+  location,
 }) => {
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Blog',
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
   const { numberOfPages, currentPage } = pageContext
 
@@ -87,7 +87,7 @@ const BlogPage = ({
         page={{
           title: blogPageMeta.title,
           seoTitle: blogPageMeta.seoTitle,
-          seoMetaDescription: blogPageMeta.description
+          seoMetaDescription: blogPageMeta.description,
         }}
       />
       <Grid>

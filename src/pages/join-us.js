@@ -22,7 +22,7 @@ class JoinUs extends React.Component {
     scrollToComponent(this.vacanciesRef.current, {
       offset: -84,
       align: 'top',
-      duration: 800
+      duration: 800,
     })
 
   render() {
@@ -30,18 +30,18 @@ class JoinUs extends React.Component {
       data: {
         contentfulJoinUsPage: content,
         site: {
-          siteMetadata: { siteUrl }
-        }
+          siteMetadata: { siteUrl },
+        },
       },
-      location
+      location,
     } = this.props
 
     const breadcrumbData = generateBreadcrumbData(siteUrl, [
       {
         name: 'Join us',
         pathname: location.pathname,
-        position: 2
-      }
+        position: 2,
+      },
     ])
 
     return (
@@ -61,7 +61,7 @@ class JoinUs extends React.Component {
             list: content.learningText.learningText,
             subtitle: content.insightsTitle,
             text: content.insightsDescriptionText.insightsDescriptionText,
-            featuredInsights: content.insights
+            featuredInsights: content.insights,
           }}
         />
         <Work
@@ -70,7 +70,7 @@ class JoinUs extends React.Component {
             list: content.challengingText.challengingText,
             subtitle: content.someOfOurWorkTitle,
             text: content.someOfOurWorkDescription.someOfOurWorkDescription,
-            someWork: content.someWork
+            someWork: content.someWork,
           }}
         />
         <OSS
@@ -79,19 +79,19 @@ class JoinUs extends React.Component {
             list: content.ossText.ossText,
             subtitle: content.talksTitle,
             text: content.talksText.talksText,
-            featuredTalks: content.talks
+            featuredTalks: content.talks,
           }}
         />
         <Perks
           data={{
             title: content.perksTitle,
             text: content.perksText.perksText,
-            perks: content.perks
+            perks: content.perks,
           }}
         />
         <OpenPositionsWithRef
           data={{
-            title: content.openPositionsTitle
+            title: content.openPositionsTitle,
           }}
           ref={this.vacanciesRef}
           limit={40}

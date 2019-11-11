@@ -18,8 +18,8 @@ export default (siteUrl, pages = []) =>
       '@type': 'ListItem',
       item: {
         '@id': `${siteUrl}${pathname}`,
-        name
+        name,
       },
-      position
+      position,
     }
   })

@@ -4,5 +4,5 @@ export default {
   navigationServices: 'navigation-services',
   navigationBlog: 'navigation-blog',
   learnMoreCTA: 'learn-more-cta',
-  homepageLearnMore: 'homepage-learn-more'
+  homepageLearnMore: 'homepage-learn-more',
 }

@@ -17,7 +17,7 @@ const checkLocationData = locations =>
       location.lat &&
       location.lng &&
       typeof location.lat === 'number' &&
-      typeof location.lng === 'number'
+      typeof location.lng === 'number',
   )
 
 // http://geomidpoint.com/calculation.ht
@@ -32,19 +32,19 @@ export default locations => {
 
   const latLongRadians = locations.map(location => ({
     lat: decimelToRadian(location.lat),
-    lng: decimelToRadian(location.lng)
+    lng: decimelToRadian(location.lng),
   }))
 
   const latLongCatesian = latLongRadians.map(radian => ({
     x: Math.cos(radian.lat) * Math.cos(radian.lng),
     y: Math.cos(radian.lat) * Math.sin(radian.lng),
-    z: Math.sin(radian.lat)
+    z: Math.sin(radian.lat),
   }))
 
   const radianAv = {
     x: getAverage(latLongCatesian, 'x'),
     y: getAverage(latLongCatesian, 'y'),
-    z: getAverage(latLongCatesian, 'z')
+    z: getAverage(latLongCatesian, 'z'),
   }
 
   const lng = Math.atan2(radianAv.y, radianAv.x)
@@ -53,7 +53,7 @@ export default locations => {
 
   const midPointsToDecimels = {
     lat: radianToDecimel(lat),
-    lng: radianToDecimel(lng)
+    lng: radianToDecimel(lng),
   }
 
   return midPointsToDecimels

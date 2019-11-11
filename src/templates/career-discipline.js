@@ -43,18 +43,18 @@ const CareerFramework = ({
     contentfulCareerFramework: generic,
     contentfulCareerDiscipline: discipline,
     site: {
-      siteMetadata: { siteUrl }
-    }
+      siteMetadata: { siteUrl },
+    },
   },
   location,
-  pageContext: { slug: pageSlug }
+  pageContext: { slug: pageSlug },
 }) => {
   const { introContent, introHeader, disciplines = [] } = generic
 
   const introContentSafe = Get(
     introContent,
     'content[0].content[0].value',
-    undefined
+    undefined,
   )
 
   const disciplineTabData =
@@ -66,18 +66,18 @@ const CareerFramework = ({
           {
             slug: `/career-framework/${slug}`,
             title,
-            isActive: slug === pageSlug
-          }
+            isActive: slug === pageSlug,
+          },
         ]),
-      []
+      [],
     )
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: `Career Framework - ${discipline.title}`,
       pathname: location.pathname,
-      position: 2
-    }
+      position: 2,
+    },
   ])
 
   return (

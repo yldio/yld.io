@@ -4,19 +4,19 @@ const communitySchema = {
   type: 'object',
   properties: {
     title: {
-      type: 'string'
+      type: 'string',
     },
     communityText: {
-      type: 'string'
+      type: 'string',
     },
     communityLogoTitle: {
-      type: 'string'
+      type: 'string',
     },
     communityLogoUrl: {
-      type: 'string'
-    }
+      type: 'string',
+    },
   },
-  required: ['title', 'communityText']
+  required: ['title', 'communityText'],
 }
 
 const trainingSchema = {
@@ -24,10 +24,10 @@ const trainingSchema = {
   type: 'object',
   properties: {
     trainingIntroText: {
-      type: 'string'
-    }
+      type: 'string',
+    },
   },
-  required: ['trainingIntroText']
+  required: ['trainingIntroText'],
 }
 
 const projectsSchema = {
@@ -46,7 +46,7 @@ const projectsSchema = {
       'slug',
       'introSentence',
       'posterColor',
-      'posterImage'
+      'posterImage',
     ],
     properties: {
       __typename: {
@@ -55,7 +55,7 @@ const projectsSchema = {
         title: 'The __typename Schema',
         default: '',
         examples: ['ContentfulTemplatedCaseStudy'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       title: {
         $id: '#/items/properties/title',
@@ -63,7 +63,7 @@ const projectsSchema = {
         title: 'The Title Schema',
         default: '',
         examples: ['Migrating The Economist platform'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       slug: {
         $id: '#/items/properties/slug',
@@ -71,7 +71,7 @@ const projectsSchema = {
         title: 'The Slug Schema',
         default: '',
         examples: ['the-economist-creating-a-better-reading-experience'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       introSentence: {
         $id: '#/items/properties/introSentence',
@@ -79,9 +79,9 @@ const projectsSchema = {
         title: 'The Introsentence Schema',
         default: '',
         examples: [
-          'We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.'
+          'We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.',
         ],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       posterColor: {
         $id: '#/items/properties/posterColor',
@@ -89,7 +89,7 @@ const projectsSchema = {
         title: 'The Postercolor Schema',
         default: '',
         examples: ['E02A1B'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       posterImage: {
         $id: '#/items/properties/posterImage',
@@ -103,7 +103,7 @@ const projectsSchema = {
             title: 'The Title Schema',
             default: '',
             examples: ['The Economist case study featured image '],
-            pattern: '^(.*)$'
+            pattern: '^(.*)$',
           },
           file: {
             $id: '#/items/properties/posterImage/properties/file',
@@ -118,16 +118,16 @@ const projectsSchema = {
                 title: 'The Url Schema',
                 default: '',
                 examples: [
-                  '//images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg'
+                  '//images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg',
                 ],
-                pattern: '^(.*)$'
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+                pattern: '^(.*)$',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }
 
 const clientSchema = {
@@ -147,7 +147,7 @@ const clientSchema = {
         title: 'The Id Schema',
         default: '',
         examples: ['4084b31a-9b20-5e7b-ba23-8ec4a71e32ff'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       title: {
         $id: '#/items/properties/title',
@@ -155,7 +155,7 @@ const clientSchema = {
         title: 'The Title Schema',
         default: '',
         examples: ['conde nast logo'],
-        pattern: '^(.*)$'
+        pattern: '^(.*)$',
       },
       file: {
         $id: '#/items/properties/file',
@@ -169,9 +169,9 @@ const clientSchema = {
             title: 'The Url Schema',
             default: '',
             examples: [
-              '//images.ctfassets.net/22g1lenhck4z/5QAIwaWizKc6Eq64uckG4a/db1b0b78464e82588cccb52a2a98528d/conde_nast.png'
+              '//images.ctfassets.net/22g1lenhck4z/5QAIwaWizKc6Eq64uckG4a/db1b0b78464e82588cccb52a2a98528d/conde_nast.png',
             ],
-            pattern: '^(.*)$'
+            pattern: '^(.*)$',
           },
           fileName: {
             $id: '#/items/properties/file/properties/fileName',
@@ -179,12 +179,12 @@ const clientSchema = {
             title: 'The Filename Schema',
             default: '',
             examples: ['conde_nast.png'],
-            pattern: '^(.*)$'
-          }
-        }
-      }
-    }
-  }
+            pattern: '^(.*)$',
+          },
+        },
+      },
+    },
+  },
 }
 
 const howWeWorkSchema = {
@@ -192,13 +192,13 @@ const howWeWorkSchema = {
   type: 'object',
   properties: {
     howWeWorkWithTitle: {
-      type: 'string'
+      type: 'string',
     },
     howWeWorkWithCopy: {
-      type: 'string'
-    }
+      type: 'string',
+    },
   },
-  required: ['howWeWorkWithTitle', 'howWeWorkWithCopy']
+  required: ['howWeWorkWithTitle', 'howWeWorkWithCopy'],
 }
 
 export {
@@ -206,5 +206,5 @@ export {
   projectsSchema,
   clientSchema,
   trainingSchema,
-  howWeWorkSchema
+  howWeWorkSchema,
 }

@@ -52,8 +52,8 @@ const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
         socialLogo: (
           (seoMetaData.socialLogo && seoMetaData.socialLogo.file) ||
           {}
-        ).url
-      })
+        ).url,
+      }),
     }
 
   const { siteTitle } = siteMetadata
@@ -69,7 +69,7 @@ const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
     title,
     description,
     imageUrl,
-    keywords: page.keywords
+    keywords: page.keywords,
   }
 }
 
@@ -83,7 +83,7 @@ const Head = ({ page, seoMetaData }) => {
         const { title, description, imageUrl, keywords } = getMetaData({
           page,
           seoMetaData,
-          siteMetadata
+          siteMetadata,
         })
 
         return (

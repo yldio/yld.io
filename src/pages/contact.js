@@ -13,7 +13,7 @@ import {
   SectionTitle,
   BodyPrimary,
   Subtitle,
-  DisplayTitle
+  DisplayTitle,
 } from '../components/Typography'
 
 import { Grid, Row, Col } from '../components/grid'
@@ -106,9 +106,9 @@ const ContactUs = ({
     contentfulContactUsPage: page,
     allContentfulLocation: { group: locations },
     site: {
-      siteMetadata: { siteUrl }
-    }
-  }
+      siteMetadata: { siteUrl },
+    },
+  },
 }) => {
   const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
 
@@ -116,12 +116,12 @@ const ContactUs = ({
     {
       pathname: location.pathname,
       position: 2,
-      name: 'Contact us'
-    }
+      name: 'Contact us',
+    },
   ])
 
   const sortedGroups = locations.sort(({ nodes }) =>
-    nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1
+    nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1,
   )
 
   return (
@@ -158,14 +158,14 @@ const ContactUs = ({
                   image,
                   socialLinks,
                   contactUsRole,
-                  emailAddress
+                  emailAddress,
                 }) => (
                   <StaffCard
                     colWidths={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12, 4 / 12]}
                     paddingBottom={{
                       smallTablet: 4,
                       tablet: '0',
-                      desktop: '0'
+                      desktop: '0',
                     }}
                     key={`staff-${name}`}
                     name={name}
@@ -176,7 +176,7 @@ const ContactUs = ({
                     emailAddress={emailAddress}
                     socialLinks={socialLinks}
                   />
-                )
+                ),
               )}
           </TeamSectionRow>
           <Row>
@@ -201,7 +201,7 @@ const ContactUs = ({
                           telephone,
                           markerIcon,
                           email,
-                          streetAddress
+                          streetAddress,
                         }) => (
                           <LocationCol
                             key={generate()}
@@ -236,7 +236,7 @@ const ContactUs = ({
                               </BodyPrimary>
                             )}
                           </LocationCol>
-                        )
+                        ),
                       )}
                     </Row>
                   </Col>

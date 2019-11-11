@@ -40,7 +40,7 @@ const Subsidiaries = ({ title, subsidiaries }) => (
               description: { description },
               image,
               linkUrl,
-              linkText
+              linkText,
             } = subsidiary
 
             return (

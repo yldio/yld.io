@@ -36,7 +36,7 @@ const CaseStudyTitle = styled(CardTitle)`
 
 const servicesList = services => {
   return [services.slice(0, -1).join(', '), services.slice(-1)[0]].join(
-    services.length < 2 ? '' : ' & '
+    services.length < 2 ? '' : ' & ',
   )
 }
 

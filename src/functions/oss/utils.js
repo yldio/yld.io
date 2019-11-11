@@ -10,14 +10,14 @@ const generateContentfulData = (obj, keys) => {
   }
   return keys.reduce(
     (acc, curr) => ({ ...acc, [curr]: { [LOCALE]: obj[curr] } }),
-    {}
+    {},
   )
 }
 
 const getContentfulDataFromKeys = (data, keys) =>
   keys.reduce(
     (acc, curr) => ({ ...acc, [curr]: getFieldValue(data, curr) }),
-    {}
+    {},
   )
 
 const updateEntry = async (contentfulEntry, githubEntry, environment, key) => {
@@ -28,7 +28,7 @@ const updateEntry = async (contentfulEntry, githubEntry, environment, key) => {
 
   console.log(
     `Publishing updated entry for ${key}`,
-    JSON.stringify(contentfulEntry.fields, null, 2)
+    JSON.stringify(contentfulEntry.fields, null, 2),
   )
   await updatedEntry.publish()
 }
@@ -37,5 +37,5 @@ module.exports = {
   generateContentfulData,
   getContentfulDataFromKeys,
   getFieldValue,
-  updateEntry
+  updateEntry,
 }

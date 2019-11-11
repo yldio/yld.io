@@ -45,7 +45,7 @@ class Layout extends Component {
 
     this.state = {
       cookiesAllowed: true,
-      GridDebugger: null
+      GridDebugger: null,
     }
   }
 
@@ -54,11 +54,11 @@ class Layout extends Component {
 
     if (isDevEnvironment) {
       const {
-        default: component
+        default: component,
       } = await import(/* webpackChunkName: "grid-debugger" */ 'react-grid-debugger')
 
       this.setState({
-        GridDebugger: component
+        GridDebugger: component,
       })
     }
   }
@@ -77,7 +77,7 @@ class Layout extends Component {
       slug,
       structuredData,
       breadcrumbData,
-      is404 = false
+      is404 = false,
     } = this.props
 
     const { GridDebugger } = this.state
@@ -100,10 +100,10 @@ class Layout extends Component {
               '@type': 'ListItem',
               item: {
                 '@id': data.site.siteMetadata.siteUrl,
-                name: 'Homepage'
+                name: 'Homepage',
               },
-              position: 1
-            }
+              position: 1,
+            },
           ]
 
           const breadcrumbs = {
@@ -111,7 +111,7 @@ class Layout extends Component {
             '@type': 'BreadcrumbList',
             description: 'Breadcrumbs list',
             name: 'Breadcrumbs',
-            itemListElement: [...homepageListItem, ...(breadcrumbData || [])]
+            itemListElement: [...homepageListItem, ...(breadcrumbData || [])],
           }
 
           return (

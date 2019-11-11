@@ -12,7 +12,7 @@ const TutorialsSection = ({ speciality, tutorials }) => {
       id,
       title,
       href: link,
-      body: additionalInfo
+      body: additionalInfo,
     }))
 
   return (

@@ -310,5 +310,5 @@ export {
   ImageCaption,
   PostInfo,
   PostWrapper,
-  Tag
+  Tag,
 }

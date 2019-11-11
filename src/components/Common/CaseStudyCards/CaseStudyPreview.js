@@ -39,7 +39,7 @@ const RightHandText = ({
   introSentence,
   ctaDataEventLabel,
   link,
-  as
+  as,
 }) => (
   <Fragment>
     <Padding bottom={0.5}>
@@ -99,10 +99,10 @@ CaseStudyPreview.propTypes = {
     introSentence: or([
       PropTypes.string.isRequired,
       PropTypes.shape({
-        introSentence: PropTypes.string.isRequired
-      }).isRequired
-    ])
-  })
+        introSentence: PropTypes.string.isRequired,
+      }).isRequired,
+    ]),
+  }),
 }
 
 export default CaseStudyPreview

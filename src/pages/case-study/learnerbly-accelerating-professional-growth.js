@@ -20,7 +20,7 @@ import {
   shouldRender,
   normalise,
   TextColumnsBlock,
-  BlockRow
+  BlockRow,
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
 const Block1Col = styled(Col)`
@@ -45,7 +45,7 @@ const StyledColTwo5 = styled(Col)`
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
-    location
+    location,
   } = props
 
   const {
@@ -57,7 +57,7 @@ const IndexPage = props => {
     genericBlock6: data6,
     genericBlock7: data7,
     genericBlock8: data8,
-    relatedCaseStudy
+    relatedCaseStudy,
   } = caseStudy
 
   return (
@@ -176,7 +176,7 @@ const IndexPage = props => {
                     disallowedTypes={['paragraph']}
                     renderers={{
                       // eslint-disable-next-line
-                      heading: props => <SectionTitle {...props} />
+                      heading: props => <SectionTitle {...props} />,
                     }}
                     source={normalise(data6).text}
                   />
@@ -186,7 +186,7 @@ const IndexPage = props => {
                     disallowedTypes={['heading']}
                     renderers={{
                       // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary {...props} />
+                      paragraph: props => <BodyPrimary {...props} />,
                     }}
                     source={normalise(data6).text}
                   />
@@ -243,7 +243,7 @@ const IndexPage = props => {
                     disallowedTypes={['paragraph']}
                     renderers={{
                       // eslint-disable-next-line
-                      heading: props => <SectionTitle {...props} />
+                      heading: props => <SectionTitle {...props} />,
                     }}
                     source={normalise(data8).text}
                   />
@@ -253,7 +253,7 @@ const IndexPage = props => {
                     disallowedTypes={['heading']}
                     renderers={{
                       // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary {...props} />
+                      paragraph: props => <BodyPrimary {...props} />,
                     }}
                     source={normalise(data8).text}
                   />

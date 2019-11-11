@@ -6,7 +6,7 @@ import {
   projectsSchema,
   clientSchema,
   trainingSchema,
-  howWeWorkSchema
+  howWeWorkSchema,
 } from './speciality/schemas'
 
 import { getExternalType, flattenSpeciality } from './speciality/methods'
@@ -30,8 +30,8 @@ export const SpecialityView = props => {
       contentfulSpeciality: speciality,
       allContentfulMeetupEvent: { nodes: events },
       videoIcon,
-      filteredPosts = []
-    }
+      filteredPosts = [],
+    },
   } = props
 
   const flattenedSpeciality = flattenSpeciality(speciality)

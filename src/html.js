@@ -7,7 +7,7 @@ const HTML = ({
   preBodyComponents,
   bodyAttributes,
   postBodyComponents,
-  body
+  body,
 }) => {
   return (
     <html lang="en" {...htmlAttributes}>
@@ -44,7 +44,7 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array
+  postBodyComponents: PropTypes.array,
 }
 
 export default HTML

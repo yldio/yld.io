@@ -41,11 +41,11 @@ const TitleAndMediaList = ({
   mediaItems,
   CTAText,
   CTALink,
-  external = true
+  external = true,
 }) => {
   const styledLinkProps = {
     title: CTAText,
-    ...(external ? { external: true, href: CTALink } : { to: CTALink })
+    ...(external ? { external: true, href: CTALink } : { to: CTALink }),
   }
   return (
     <RowLayout>

@@ -46,7 +46,7 @@ const CaseStudyLayout = ({
   headings,
   textBelowImage,
   rightHandText,
-  link
+  link,
 }) => (
   <Grid>
     <RowLayout isTop={isTop}>

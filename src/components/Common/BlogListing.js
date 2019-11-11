@@ -12,7 +12,7 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
     id,
     title,
     href: `https://medium.com/yld-blog/${slug}`,
-    body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd')
+    body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd'),
   }))
 
   return (
@@ -37,11 +37,11 @@ BlogListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   mediaItems: PropTypes.array.isRequired,
-  CTALink: PropTypes.string
+  CTALink: PropTypes.string,
 }
 
 BlogListing.defaultProps = {
-  CTALink: '/blog/'
+  CTALink: '/blog/',
 }
 
 export default BlogListing

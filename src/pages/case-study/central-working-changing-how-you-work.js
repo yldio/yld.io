@@ -21,7 +21,7 @@ import {
   shouldRender,
   normalise,
   normaliseAll,
-  BlockRow
+  BlockRow,
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
 
 import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
@@ -98,7 +98,7 @@ const StyledHr = styled(Hr)`
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
-    location
+    location,
   } = props
 
   const {
@@ -111,7 +111,7 @@ const IndexPage = props => {
     genericBlock7: data7,
     genericBlock8: data8,
     genericBlock9: data9,
-    relatedCaseStudy
+    relatedCaseStudy,
   } = caseStudy
 
   const outComesDataFigures = normaliseAll(data2.slice(1))
@@ -159,7 +159,7 @@ const IndexPage = props => {
                     textAlign: 'center',
                     flexDirection: 'column',
                     justifyContent: 'space-around',
-                    alignItems: 'center'
+                    alignItems: 'center',
                   }}
                   block={false}
                   key={generate()}
@@ -171,7 +171,7 @@ const IndexPage = props => {
                         <SectionTitle noPaddingBottom {...props} />
                       ),
                       // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary bold {...props} />
+                      paragraph: props => <BodyPrimary bold {...props} />,
                     }}
                     source={text}
                   />
@@ -204,7 +204,7 @@ const IndexPage = props => {
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />
+                  heading: props => <SectionTitle reverse {...props} />,
                 }}
                 source={normalise(data4).text}
               />
@@ -244,7 +244,7 @@ const IndexPage = props => {
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />
+                  heading: props => <SectionTitle reverse {...props} />,
                 }}
                 source={normalise(data6).text}
               />
@@ -265,7 +265,7 @@ const IndexPage = props => {
                   // eslint-disable-next-line
                   heading: props => <SectionTitle reverse {...props} />,
                   // eslint-disable-next-line react/display-name
-                  paragraph: props => <BodyPrimary reverse {...props} />
+                  paragraph: props => <BodyPrimary reverse {...props} />,
                 }}
                 source={normalise(data7).text}
               />
@@ -285,7 +285,7 @@ const IndexPage = props => {
               <ReactMarkdown
                 renderers={{
                   // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />
+                  heading: props => <SectionTitle reverse {...props} />,
                 }}
                 source={normalise(data8).text}
               />
@@ -308,7 +308,7 @@ const IndexPage = props => {
                   // eslint-disable-next-line
                   heading: props => <SectionTitle {...props} />,
                   // eslint-disable-next-line react/display-name
-                  paragraph: props => <BodyPrimary {...props} />
+                  paragraph: props => <BodyPrimary {...props} />,
                 }}
                 source={normalise(data9).text}
               />

@@ -18,7 +18,7 @@ const Jobs = () => (
   <Fragment>
     <OpenPositions
       data={{
-        title: 'Join our team'
+        title: 'Join our team',
       }}
       limit={4}
     />

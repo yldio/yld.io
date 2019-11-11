@@ -6,7 +6,7 @@ import TitleAndList from '../Common/TitleAndList'
 import VideoGrid from '../Common/VideoGrid'
 
 const OpenSource = ({
-  data: { title, subtitle, list, text, featuredTalks }
+  data: { title, subtitle, list, text, featuredTalks },
 }) => (
   <Section greyBg>
     <TitleAndList title={title} list={list} />

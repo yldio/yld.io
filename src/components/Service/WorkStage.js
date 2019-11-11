@@ -25,7 +25,7 @@ const WorkStage = ({ workStage }) => {
         title={workStage.title}
         list={sections.map(({ title, body }) => ({
           title,
-          body
+          body,
         }))}
         themeVariation={theme.variations.dark}
       />
@@ -39,7 +39,7 @@ const WorkStage = ({ workStage }) => {
           top={{
             smallPhone: 0,
             smallTablet: 5,
-            tablet: 3.5
+            tablet: 3.5,
           }}
           bottom={{ smallPhone: 3, desktop: 4 }}
         >
@@ -64,7 +64,7 @@ const WorkStage = ({ workStage }) => {
                 paragraph: props => <BodyPrimary muted reverse {...props} />,
                 listItem: props => (
                   <CustomisedBulletpoint muted reverse {...props} />
-                )
+                ),
               }}
             />
             {/* eslint-enable react/display-name */}
