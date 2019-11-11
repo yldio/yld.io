@@ -7,3 +7,5 @@
 /team/          /
 /what-we-do.html /engineering/
 /career-framework/ /career-framework/engineering
+
+https://blog.yld.io/* https://www.yld.io/blog/:splat 301!
