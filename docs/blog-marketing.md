@@ -15,6 +15,8 @@ New additional steps
 
 ## To update the canonical link
 
+**N.B. The new blog post will be live ~5-10mins after publishing depending on how long it takes for the task to be triggered**
+
 - Go to the new blog post, at the top right there is a settings/cog icon, click here and then click `Edit story`
 
   ![edit post](./assets/edit.png)
@@ -29,4 +31,18 @@ New additional steps
 
 ## Add preivew image
 
-This step is only required if the blog published on medium has no images. Having images in blog posts is not critical to the new content but has two but It is advised that you encourage authors to add content but if not possible then these are the steps to
+This step is only required if the blog published on medium has no images. Having images in blog posts is not critical to the new content but has two but It is advised that you encourage authors to add content but if not possible then these are the steps to follow to include the image.
+
+- Have the image you want to include saved to your computer. 1:1 ratio is preferred.
+- Go to Contentful and find the blog post you want to change.
+- In the blog post find the `Header Image` field
+- Add the new header image
+- Click publish and you're done!
+
+## FAQ
+
+Q: If I change content on medium will it update on yld.io?
+A: No, we only look for new urls in the RSS content and compare it to blog posts already published it on the CMS.
+
+Q: How do I change content on a blog post then? Do I have to update it twice?
+A: Yes, for this reason we encourage authors and proof readers to make sure everything is 100% ready before publishing but it can be easy to miss things sometimes! To change blog post content on CMS you'll need to write it in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Try not to change too much!
