@@ -264,7 +264,8 @@ const PostWrapper = styled.div`
     padding-top: 0;
   }
 
-  ul + p {
+  ul + p,
+  ol + p {
     padding-top: 0;
   }
 
