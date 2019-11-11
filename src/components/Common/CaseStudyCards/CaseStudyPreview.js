@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types'
-import { or } from 'airbnb-prop-types'
-import React, { Fragment } from 'react'
-import { Padding } from 'styled-components-spacing'
+import PropTypes from 'prop-types';
+import { or } from 'airbnb-prop-types';
+import React, { Fragment } from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import CaseStudyLayout from './CaseStudyLayout'
-import { SectionTitle, BodyPrimary } from '../../Typography'
-import Anchor from '../Anchor'
-import StyledLink from '../StyledLink'
-import getIntroSentence from '../../../utils/getIntroSentence'
-import eventLabels from '../../../utils/eventLabels'
+import CaseStudyLayout from './CaseStudyLayout';
+import { SectionTitle, BodyPrimary } from '../../Typography';
+import Anchor from '../Anchor';
+import StyledLink from '../StyledLink';
+import getIntroSentence from '../../../utils/getIntroSentence';
+import eventLabels from '../../../utils/eventLabels';
 
 const Headings = ({ title, as, link }) => (
   <Fragment>
@@ -19,7 +19,7 @@ const Headings = ({ title, as, link }) => (
       <SectionTitle as={as}>{title}</SectionTitle>
     </Anchor>
   </Fragment>
-)
+);
 
 const TextBelowImage = ({ introSentence, link, ctaDataEventLabel }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
@@ -32,7 +32,7 @@ const TextBelowImage = ({ introSentence, link, ctaDataEventLabel }) => (
       Learn more
     </StyledLink>
   </Padding>
-)
+);
 
 const RightHandText = ({
   title,
@@ -53,16 +53,16 @@ const RightHandText = ({
       />
     </Padding>
   </Fragment>
-)
+);
 
 const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
   if (!caseStudy) {
-    return null
+    return null;
   }
 
-  const introSentence = getIntroSentence(caseStudy)
-  const { posterImage, title, slug } = caseStudy
-  const caseStudyLink = `/case-study/${slug}`
+  const introSentence = getIntroSentence(caseStudy);
+  const { posterImage, title, slug } = caseStudy;
+  const caseStudyLink = `/case-study/${slug}`;
 
   return (
     <CaseStudyLayout
@@ -87,8 +87,8 @@ const CaseStudyPreview = ({ isTop, caseStudy, ctaDataEventLabel, as }) => {
         />
       }
     />
-  )
-}
+  );
+};
 
 CaseStudyPreview.propTypes = {
   isTop: PropTypes.bool,
@@ -103,6 +103,6 @@ CaseStudyPreview.propTypes = {
       }).isRequired,
     ]),
   }),
-}
+};
 
-export default CaseStudyPreview
+export default CaseStudyPreview;

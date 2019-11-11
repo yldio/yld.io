@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import remcalc from 'remcalc'
+import styled from 'styled-components';
+import remcalc from 'remcalc';
 
-import { lightStates, darkStates } from './outerItemStates'
+import { lightStates, darkStates } from './outerItemStates';
 
 const TopNavItem = styled.li.attrs(props => ({
   states: props.themeVariation === 'dark' ? darkStates : lightStates,
@@ -14,6 +14,6 @@ const TopNavItem = styled.li.attrs(props => ({
       margin-right: ${remcalc(0)};
     }
   }
-`
+`;
 
-export default TopNavItem
+export default TopNavItem;

@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import close from '../../../images/close.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import close from '../../../images/close.svg';
 
 const Close = styled(Link)`
   border: none;
@@ -27,12 +27,12 @@ const Close = styled(Link)`
       background: ${props => props.theme.colors.text};
     }
   }
-`
+`;
 
 const ModalCloseButton = ({ to }) => (
   <Close to={to} data-testid="modal-close-button">
     <img src={close} alt="close modal" width="18" height="18" />
   </Close>
-)
+);
 
-export default ModalCloseButton
+export default ModalCloseButton;

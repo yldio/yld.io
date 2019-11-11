@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import { capitalize } from 'lodash'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import { capitalize } from 'lodash';
 
 const StyledServiceLink = styled(Link)`
   font-size: ${remcalc(26)};
@@ -17,7 +17,7 @@ const StyledServiceLink = styled(Link)`
     text-decoration: underline;
     color: ${props => props.theme.colors[props.color]};
   }
-`
+`;
 
 const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
   return (
@@ -30,7 +30,7 @@ const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
         {capitalize(service.replace(/-/g, ' '))}
       </StyledServiceLink>
     )
-  )
-}
+  );
+};
 
-export default ServiceLink
+export default ServiceLink;

@@ -1,23 +1,23 @@
 /* eslint-env jest */
-import GithubLambda from '../../../src/functions/github'
-import ossStats from '@yldio/oss-stats'
+import GithubLambda from '../../../src/functions/github';
+import ossStats from '@yldio/oss-stats';
 
 /**
  * Set up all the mocks
  */
-jest.mock('@yldio/oss-stats')
+jest.mock('@yldio/oss-stats');
 
-jest.mock('../../../src/functions/utils/auth', () => jest.fn((_, cb) => cb()))
-jest.mock('../../../src/functions/oss/repos')
-jest.mock('../../../src/functions/oss/meta')
+jest.mock('../../../src/functions/utils/auth', () => jest.fn((_, cb) => cb()));
+jest.mock('../../../src/functions/oss/repos');
+jest.mock('../../../src/functions/oss/meta');
 
-const Repos = require('../../../src/functions/oss/repos')
-const Meta = require('../../../src/functions/oss/meta')
+const Repos = require('../../../src/functions/oss/repos');
+const Meta = require('../../../src/functions/oss/meta');
 
-const getDataMock = jest.fn()
-ossStats.getData = getDataMock
-ossStats.normalise = jest.fn(res => res)
-ossStats.summariseContributions = jest.fn(res => res)
+const getDataMock = jest.fn();
+ossStats.getData = getDataMock;
+ossStats.normalise = jest.fn(res => res);
+ossStats.summariseContributions = jest.fn(res => res);
 
 /**
  * It would be best to do this in the same way as the oss stats package
@@ -32,14 +32,14 @@ ossStats.summariseContributions = jest.fn(res => res)
  *
  * I'm asking around for this to create a better solution.
  */
-const contentful = require('contentful-management')
+const contentful = require('contentful-management');
 jest.mock('contentful-management', () => ({
   createClient: jest.fn(() => ({
     getSpace: jest.fn(() => ({
-      getEnvironment: jest.fn(name => name)
-    }))
-  }))
-}))
+      getEnvironment: jest.fn(name => name),
+    })),
+  })),
+}));
 
 /**
  *
@@ -61,13 +61,13 @@ const firstRepo = {
   pullRequests: [
     'MDExOlB1bGxSZXF1ZXN0Nzc1MzkzMDc=',
     'MDExOlB1bGxSZXF1ZXN0MTM2MzY1MDU5',
-    'MDExOlB1bGxSZXF1ZXN0MTUxNjY4NzY0'
+    'MDExOlB1bGxSZXF1ZXN0MTUxNjY4NzY0',
   ],
   contributors: ['yldio'],
   pullRequestsRank: 85,
   starsRank: 366,
-  rank: 451
-}
+  rank: 451,
+};
 
 const secondRepo = {
   url: 'https://github.com/yldio/another-fake-repo',
@@ -78,129 +78,129 @@ const secondRepo = {
   topics: [],
   pullRequests: [
     'MDExOlB1bGxSZXF1ZXN0MjUzNDI2MDA1',
-    'MDExOlB1bGxSZXF1ZXN0MjUzNDU4MTUx'
+    'MDExOlB1bGxSZXF1ZXN0MjUzNDU4MTUx',
   ],
   contributors: ['yldio'],
   pullRequestsRank: 69,
   starsRank: 123,
-  rank: 294
-}
+  rank: 294,
+};
 
-const missingRepoUrl = 'https://github.com/missing/repo'
+const missingRepoUrl = 'https://github.com/missing/repo';
 
 const metaResponseData = {
   openSourceMetaPullRequestsCount: 4276,
-  openSourceMetaReposCount: 1017
-}
+  openSourceMetaReposCount: 1017,
+};
 
 const getDataResponseData = {
   repos: [firstRepo, secondRepo],
   repoCount: metaResponseData.openSourceMetaReposCount,
-  pullRequestCount: metaResponseData.openSourceMetaPullRequestsCount
-}
+  pullRequestCount: metaResponseData.openSourceMetaPullRequestsCount,
+};
 
-const mockSpace = 'yld_mock_contentful_space'
-const mockCmsCrud = 'yld_mock_CMS_CRUD'
-const mockGithubToken = 'yld_mock_Github_token'
+const mockSpace = 'yld_mock_contentful_space';
+const mockCmsCrud = 'yld_mock_CMS_CRUD';
+const mockGithubToken = 'yld_mock_Github_token';
 
 describe('Github lambda', () => {
   beforeEach(() => {
-    process.env.CONTENTFUL_SPACE = mockSpace
-    process.env.CMS_CRUD = mockCmsCrud
-    process.env.GITHUB_TOKEN = mockGithubToken
-  })
+    process.env.CONTENTFUL_SPACE = mockSpace;
+    process.env.CMS_CRUD = mockCmsCrud;
+    process.env.GITHUB_TOKEN = mockGithubToken;
+  });
 
   afterEach(() => {
-    jest.clearAllMocks()
-  })
+    jest.clearAllMocks();
+  });
 
   it('should error when there are missing env variables', async () => {
-    delete process.env.CONTENTFUL_SPACE
-    delete process.env.CMS_CRUD
-    delete process.env.GITHUB_TOKEN
+    delete process.env.CONTENTFUL_SPACE;
+    delete process.env.CMS_CRUD;
+    delete process.env.GITHUB_TOKEN;
 
     try {
-      await GithubLambda.handler()
+      await GithubLambda.handler();
     } catch (error) {
-      expect(error.message).toMatch(`Missing env variables, check set up`)
+      expect(error.message).toMatch(`Missing env variables, check set up`);
     }
-  })
+  });
 
   it('should return meta data an a list of changes repos when there are differences', async () => {
     // localise the mocks to return data we tell it to
-    getDataMock.mockResolvedValueOnce(getDataResponseData)
-    Repos.mockReturnValueOnce({ updatedRepos: [secondRepo] })
-    Meta.mockReturnValueOnce(metaResponseData)
+    getDataMock.mockResolvedValueOnce(getDataResponseData);
+    Repos.mockReturnValueOnce({ updatedRepos: [secondRepo] });
+    Meta.mockReturnValueOnce(metaResponseData);
 
-    const response = await GithubLambda.handler()
+    const response = await GithubLambda.handler();
     const expected = {
       statusCode: 200,
       body: JSON.stringify({
         meta: metaResponseData,
-        updatedRepos: [secondRepo]
-      })
-    }
-    const { createClient } = contentful
+        updatedRepos: [secondRepo],
+      }),
+    };
+    const { createClient } = contentful;
 
-    expect(createClient).toHaveBeenCalledWith({ accessToken: mockCmsCrud })
+    expect(createClient).toHaveBeenCalledWith({ accessToken: mockCmsCrud });
 
     // asserting its called with `master` is a bit shit here.
     // It does mean that we kind of correctly follow the contentful management module
     // chain of createClient -> getSpace -> getEnvironment but it's not ideal. Refer to
     // my comment above about trying to make this mocking of the contentful module better.
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos
-    })
-    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData })
+      repos: getDataResponseData.repos,
+    });
+    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
 
-    expect(response).toStrictEqual(expected)
-  })
+    expect(response).toStrictEqual(expected);
+  });
 
   it("should return meta data an a message of 'No repos updated' when there are no updates", async () => {
-    getDataMock.mockResolvedValueOnce(getDataResponseData)
+    getDataMock.mockResolvedValueOnce(getDataResponseData);
 
-    Repos.mockReturnValueOnce([])
-    Meta.mockReturnValueOnce(metaResponseData)
+    Repos.mockReturnValueOnce([]);
+    Meta.mockReturnValueOnce(metaResponseData);
 
-    const response = await GithubLambda.handler()
+    const response = await GithubLambda.handler();
     const expected = {
       statusCode: 200,
       body: JSON.stringify({
         meta: metaResponseData,
-        updatedRepos: 'No repos updated'
-      })
-    }
+        updatedRepos: 'No repos updated',
+      }),
+    };
 
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos
-    })
-    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData })
-    expect(response).toStrictEqual(expected)
-  })
+      repos: getDataResponseData.repos,
+    });
+    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
+    expect(response).toStrictEqual(expected);
+  });
 
   it('should return meta data and an array of updatedRepos and missingRepos when there are changes and missing repos', async () => {
-    getDataMock.mockResolvedValueOnce(getDataResponseData)
+    getDataMock.mockResolvedValueOnce(getDataResponseData);
 
     Repos.mockReturnValueOnce({
       updatedRepos: [secondRepo],
-      missingRepos: [missingRepoUrl]
-    })
-    Meta.mockReturnValueOnce(metaResponseData)
+      missingRepos: [missingRepoUrl],
+    });
+    Meta.mockReturnValueOnce(metaResponseData);
 
-    const response = await GithubLambda.handler()
+    const response = await GithubLambda.handler();
     const expected = {
       statusCode: 200,
       body: JSON.stringify({
         meta: metaResponseData,
         updatedRepos: [secondRepo],
-        missingRepos: [missingRepoUrl]
-      })
-    }
+        missingRepos: [missingRepoUrl],
+      }),
+    };
 
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos
-    })
-    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData })
-    expect(response).toStrictEqual(expected)
-  })
-})
+      repos: getDataResponseData.repos,
+    });
+    expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
+    expect(response).toStrictEqual(expected);
+  });
+});

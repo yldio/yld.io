@@ -1,6 +1,6 @@
-import React from 'react'
-import TitleCase from 'title-case'
-import { Tag } from './Typography'
+import React from 'react';
+import TitleCase from 'title-case';
+import { Tag } from './Typography';
 
 const TagGroup = ({ tags }) => {
   return (
@@ -9,7 +9,7 @@ const TagGroup = ({ tags }) => {
         <Tag key={tag}>{TitleCase(tag)}</Tag>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export { Tag, TagGroup }
+export { Tag, TagGroup };

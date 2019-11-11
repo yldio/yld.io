@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
 
-import illustrationDesktop from '../../images/hero_image_desktop.svg'
-import illustrationMobile from '../../images/hero_image_mobile.svg'
-import { Grid, Row, Col } from '../grid'
-import BlueBackground from '../Common/BlueBackground'
-import { SectionTitle, CardTitle, Subtitle } from '../Typography'
+import illustrationDesktop from '../../images/hero_image_desktop.svg';
+import illustrationMobile from '../../images/hero_image_mobile.svg';
+import { Grid, Row, Col } from '../grid';
+import BlueBackground from '../Common/BlueBackground';
+import { SectionTitle, CardTitle, Subtitle } from '../Typography';
 
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(36)};
   position: relative;
-`
+`;
 
 const IntroRow = styled(Row)`
   z-index: 1;
@@ -34,14 +34,14 @@ const IntroRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[8]};
     padding-bottom: ${({ theme }) => theme.space[9]};
   `}
-`
+`;
 
 const StyledCardTitle = styled(CardTitle)`
   > li {
     list-style: none;
     padding-bottom: ${remcalc(8)};
   }
-`
+`;
 
 const IntroSectionTitleWrapper = styled.div`
   max-width: ${remcalc(425)};
@@ -54,7 +54,7 @@ const IntroSectionTitleWrapper = styled.div`
   ${breakpoint('desktop')`
     max-width: ${remcalc(550)};
   `}
-`
+`;
 
 const IntroImageWrapper = styled.div`
   width: 100%;
@@ -79,7 +79,7 @@ const IntroImageWrapper = styled.div`
   ${breakpoint('desktop')`
     width: 1500px;
   `}
-  `
+  `;
 
 const IntroImageDesktop = styled.div`
   display: none;
@@ -101,7 +101,7 @@ const IntroImageDesktop = styled.div`
   > img {
     display: block;
   }
-`
+`;
 
 const IntroImageMobile = styled.div`
   position: relative;
@@ -112,7 +112,7 @@ const IntroImageMobile = styled.div`
   > img {
     display: block;
   }
-`
+`;
 
 const StyledSectionTitle = styled(SectionTitle)`
   ${breakpoint('tablet')`
@@ -124,7 +124,7 @@ const StyledSectionTitle = styled(SectionTitle)`
     font-size: ${remcalc(42)};
     line-height: ${remcalc(48)};
   `};
-`
+`;
 
 const IntroSection = ({ introHeader, introContent: { introContent } }) => {
   return (
@@ -172,7 +172,7 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
         )}
       </IntroImageWrapper>
     </StyledBlueBackground>
-  )
-}
+  );
+};
 
-export default IntroSection
+export default IntroSection;

@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import { Subtitle, BodyPrimary } from '../Typography'
-import theme from '../../utils/theme'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { Subtitle, BodyPrimary } from '../Typography';
+import theme from '../../utils/theme';
 
 const ItemBody = styled(BodyPrimary).attrs({
   noPaddingTop: true,
@@ -11,21 +11,21 @@ const ItemBody = styled(BodyPrimary).attrs({
   > a {
     text-decoration: underline;
   }
-`
+`;
 
 const ItemSubtitle = styled(Subtitle).attrs({
   reverse: props => props.themeVariation === theme.variations.dark,
 })`
   padding-bottom: 0;
-`
+`;
 
 const SubtitleWithBody = ({ subtitle, body, themeVariation = 'white' }) => (
   <Fragment>
     <ItemSubtitle themeVariation={themeVariation}>{subtitle}</ItemSubtitle>
     <ItemBody themeVariation={themeVariation}>{body}</ItemBody>
   </Fragment>
-)
+);
 
-export { ItemSubtitle, ItemBody }
+export { ItemSubtitle, ItemBody };
 
-export default SubtitleWithBody
+export default SubtitleWithBody;

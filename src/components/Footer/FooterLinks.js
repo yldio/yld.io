@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import { Link } from 'gatsby'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import { Link } from 'gatsby';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Grid, Row, Col } from '../../components/grid'
-import ExternalAnchor from '../Common/ExternalAnchor'
+import { Grid, Row, Col } from '../../components/grid';
+import ExternalAnchor from '../Common/ExternalAnchor';
 
-import { social, gdpr } from './links'
+import { social, gdpr } from './links';
 
 export const FooterBanner = styled.section`
   background: ${props => props.theme.colors.black};
-`
+`;
 
 export const Social = styled.ul`
   display: flex;
@@ -34,7 +34,7 @@ export const Social = styled.ul`
   li:not(:last-child) {
     margin-right: ${remcalc(24)};
   }
-`
+`;
 
 const GDPR = styled.div`
   display: flex;
@@ -51,11 +51,11 @@ const GDPR = styled.div`
       padding: ${remcalc(12)} 0 ${remcalc(12)} ${remcalc(36)};
     }
   `}
-`
+`;
 
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
-`
+`;
 
 const FooterLinks = () => (
   <FooterBanner>
@@ -89,6 +89,6 @@ const FooterLinks = () => (
       </Grid>
     </Padding>
   </FooterBanner>
-)
+);
 
-export default FooterLinks
+export default FooterLinks;

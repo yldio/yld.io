@@ -1,40 +1,40 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import Flex from 'styled-flex-component'
-import { Padding, Margin } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
+import React, { Fragment } from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import { Padding, Margin } from 'styled-components-spacing';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Grid, Row, Col } from '../../components/grid'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import Layout from '../../components/layout'
+import { Grid, Row, Col } from '../../components/grid';
+import { SectionTitle, BodyPrimary } from '../../components/Typography';
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
+import Layout from '../../components/layout';
 import GreyBackground, {
   GreyBackgroundOffset,
-} from '../../components/Common/GreyBackground'
-import landscape from '../../images/case-study/at_the_heart_of_a_story.svg'
-import Image from '../../components/Common/Image'
-import { makeText } from '../../utils/makeText'
-import Head from '../../components/Common/Head'
-import VideoSection from '../../components/Common/VideoSection'
+} from '../../components/Common/GreyBackground';
+import landscape from '../../images/case-study/at_the_heart_of_a_story.svg';
+import Image from '../../components/Common/Image';
+import { makeText } from '../../utils/makeText';
+import Head from '../../components/Common/Head';
+import VideoSection from '../../components/Common/VideoSection';
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: none;
     `}
-`
+`;
 
 const NoMobile = styled.div`
   display: none;
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: inherit;
     `}
-`
+`;
 
 const CenteredCol = styled(Col)`
   margin: 0 auto;
-`
+`;
 
 const GradientBackground = styled.div`
   background-image: linear-gradient(to top, #0c1835, #050a18);
@@ -43,24 +43,24 @@ const GradientBackground = styled.div`
     width: 83.3%; // 10/12
     margin: 0 auto;
   `}
-`
+`;
 
 const FirstParagraphCol = styled(Col)`
   margin-left: auto;
-`
+`;
 
 const RightAlignedCol = styled(Col)`
   ${breakpoint('smallTablet')`
     margin-left: auto;
   `}
-`
+`;
 
 const BrAtTablet = styled.br`
   display: none;
   ${breakpoint('tablet')`
     display: initial;
   `}
-`
+`;
 
 const GradientContent = ({ text, image }) => (
   <Fragment>
@@ -90,7 +90,7 @@ const GradientContent = ({ text, image }) => (
       </CenteredCol>
     </Row>
   </Fragment>
-)
+);
 
 const IndexPage = ({
   data: { contentfulNonTemplatedCaseStudyV2: caseStudy, travel },
@@ -230,8 +230,8 @@ const IndexPage = ({
         caseStudy={caseStudy.relatedCaseStudies[0]}
       />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -290,6 +290,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

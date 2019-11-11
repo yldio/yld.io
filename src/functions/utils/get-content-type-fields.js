@@ -5,4 +5,4 @@ module.exports = ct =>
       requiredFields: required ? requiredFields.concat(id) : requiredFields,
     }),
     [],
-  )
+  );

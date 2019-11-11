@@ -1,15 +1,15 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import generate from 'shortid'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import remcalc from 'remcalc';
+import generate from 'shortid';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import Image from '../../Common/Image'
-import StyledLink from '../../Common/StyledLink'
-import Hr from '../../Common/Hr'
-import { Grid, Row, Col } from '../../grid'
-import { DisplayTitle, Subtitle, BodyPrimary } from '../../Typography'
-import FeaturedEventRow from './FeaturedEventRow'
+import Image from '../../Common/Image';
+import StyledLink from '../../Common/StyledLink';
+import Hr from '../../Common/Hr';
+import { Grid, Row, Col } from '../../grid';
+import { DisplayTitle, Subtitle, BodyPrimary } from '../../Typography';
+import FeaturedEventRow from './FeaturedEventRow';
 
 const EventType = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -27,7 +27,7 @@ const EventType = styled(Col)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const EventTypeCopyWrapper = styled.div`
   padding: ${({ theme }) =>
@@ -35,7 +35,7 @@ const EventTypeCopyWrapper = styled.div`
   ${breakpoint('tablet')`
     padding-bottom: ${remcalc(50)};
   `}
-`
+`;
 
 const IntroRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -45,7 +45,7 @@ const IntroRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[5]};
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const CtaRow = styled(Row)`
   display: none;
@@ -54,7 +54,7 @@ const CtaRow = styled(Row)`
   ${breakpoint('tablet')`
     display: block;
   `}
-`
+`;
 
 const EventCard = styled.div`
   height: 100%;
@@ -62,11 +62,11 @@ const EventCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background: white;
-`
+`;
 
 const ViewEventsLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
-`
+`;
 
 const Events = ({ featuredEvent, eventTypes }) => (
   <Grid>
@@ -108,6 +108,6 @@ const Events = ({ featuredEvent, eventTypes }) => (
       </Col>
     </CtaRow>
   </Grid>
-)
+);
 
-export default Events
+export default Events;

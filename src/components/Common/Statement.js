@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
 
-import StyledLink from './StyledLink'
-import GreyBackground from './GreyBackground'
-import { Row, Col, Grid } from '../grid'
-import { DisplayTitle } from '../Typography'
+import StyledLink from './StyledLink';
+import GreyBackground from './GreyBackground';
+import { Row, Col, Grid } from '../grid';
+import { DisplayTitle } from '../Typography';
 
 const PaddedGrid = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -16,7 +16,7 @@ const PaddedGrid = styled(Grid)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const Link = styled(StyledLink)`
   margin-bottom: 0;
@@ -25,14 +25,14 @@ const Link = styled(StyledLink)`
   font-weight: normal;
   text-decoration: underline;
   display: initial;
-`
+`;
 
 const StyledDisplayTitle = styled(DisplayTitle)`
   > strong {
     color: ${({ theme }) => theme.colors.text};
     font-weight: 500;
   }
-`
+`;
 
 const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
   <GreyBackground>
@@ -42,14 +42,14 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
           {richText ? (
             <DisplayTitle textLight>
               {richText.map(({ nodeType, data, value, content }) => {
-                if (nodeType === 'text') return value
+                if (nodeType === 'text') return value;
 
                 if (nodeType === 'hyperlink') {
-                  const label = content[0].value.split(' ').join('-')
+                  const label = content[0].value.split(' ').join('-');
 
                   const dataEvent = dataEvents && {
                     'data-event': `${dataEvents}-${label}`,
-                  }
+                  };
 
                   return (
                     <Link
@@ -60,10 +60,10 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
                     >
                       {content[0].value}
                     </Link>
-                  )
+                  );
                 }
 
-                return ''
+                return '';
               })}
             </DisplayTitle>
           ) : (
@@ -85,6 +85,6 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
       </Row>
     </PaddedGrid>
   </GreyBackground>
-)
+);
 
-export default Statement
+export default Statement;

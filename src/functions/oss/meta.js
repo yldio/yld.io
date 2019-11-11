@@ -1,36 +1,36 @@
 /* eslint-disable no-console */
-const { head, isEqual } = require('lodash')
+const { head, isEqual } = require('lodash');
 
-const ossUtils = require('./utils')
+const ossUtils = require('./utils');
 
 const contentfulMetaKeys = [
   'openSourceMetaReposCount',
   'openSourceMetaPullRequestsCount',
-]
+];
 
 const Meta = async (environment, githubMetaData) => {
-  const { LAMBDA_ENV = 'development' } = process.env
-  const isProd = LAMBDA_ENV === 'production'
+  const { LAMBDA_ENV = 'development' } = process.env;
+  const isProd = LAMBDA_ENV === 'production';
 
   const {
     getContentfulDataFromKeys,
     generateContentfulData,
     updateEntry,
-  } = ossUtils
+  } = ossUtils;
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
     content_type: 'githubMetaData',
-  })
+  });
 
-  const currentContentfulData = head(contentfulMetas)
+  const currentContentfulData = head(contentfulMetas);
 
   const contentfulMetaData = getContentfulDataFromKeys(
     currentContentfulData,
     contentfulMetaKeys,
-  )
+  );
 
-  const fieldsAreEqual = isEqual(contentfulMetaData, githubMetaData)
+  const fieldsAreEqual = isEqual(contentfulMetaData, githubMetaData);
 
   if (isProd && !fieldsAreEqual) {
     await updateEntry(
@@ -38,7 +38,7 @@ const Meta = async (environment, githubMetaData) => {
       generateContentfulData(githubMetaData, contentfulMetaKeys),
       environment,
       'github meta data',
-    )
+    );
   } else {
     console.log(
       fieldsAreEqual
@@ -52,9 +52,9 @@ const Meta = async (environment, githubMetaData) => {
         null,
         2,
       ),
-    )
+    );
   }
 
-  return fieldsAreEqual ? contentfulMetaData : githubMetaData
-}
-module.exports = Meta
+  return fieldsAreEqual ? contentfulMetaData : githubMetaData;
+};
+module.exports = Meta;

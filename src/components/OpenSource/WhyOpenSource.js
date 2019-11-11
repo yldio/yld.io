@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import { Grid, Row, Col } from '../grid'
-import TitleAndList from '../Common/TitleAndList'
-import Subtitle from '../Typography/Subtitle'
-import LogoGrid from '../Common/LogoGrid'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { Grid, Row, Col } from '../grid';
+import TitleAndList from '../Common/TitleAndList';
+import Subtitle from '../Typography/Subtitle';
+import LogoGrid from '../Common/LogoGrid';
 
 const StyledGrid = styled(Grid)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -12,11 +12,11 @@ const StyledGrid = styled(Grid)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]}
   `}
-`
+`;
 
 const StyledSubtitle = styled(Subtitle)`
   margin-bottom: ${({ theme }) => theme.space[3]};
-`
+`;
 
 const WhyOpenSource = ({ title, list, subtitle, companies }) => (
   <Fragment>
@@ -32,6 +32,6 @@ const WhyOpenSource = ({ title, list, subtitle, companies }) => (
       </Row>
     </StyledGrid>
   </Fragment>
-)
+);
 
-export default WhyOpenSource
+export default WhyOpenSource;

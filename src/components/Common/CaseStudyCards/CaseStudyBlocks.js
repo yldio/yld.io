@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react'
-import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import React, { Fragment } from 'react';
+import ReactMarkdown from 'react-markdown';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Col, Row } from '../../../components/grid'
-import { SectionTitle, BodyPrimary } from '../../../components/Typography'
-import Image from '../../../components/Common/Image'
-import VideoSection from '../../../components/Common/VideoSection'
-import GreyBackground from '../../../components/Common/GreyBackground'
+import { Col, Row } from '../../../components/grid';
+import { SectionTitle, BodyPrimary } from '../../../components/Typography';
+import Image from '../../../components/Common/Image';
+import VideoSection from '../../../components/Common/VideoSection';
+import GreyBackground from '../../../components/Common/GreyBackground';
 
 const StyledColumnImage = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
@@ -16,9 +16,9 @@ const StyledColumnImage = styled(Col)`
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
   `}
-`
+`;
 
-const renderImage = data => data && <Image image={data} />
+const renderImage = data => data && <Image image={data} />;
 
 /* The reason for this is to solve inconsistent CSS Styling Between gatsby develop and build.
 This solution ensures that strong is always bold and white for any environment */
@@ -34,7 +34,7 @@ const StyledBodyPrimary = styled(BodyPrimary)`
       bpColorReverse ? theme.colors.white : null};
     font-family: 'Roboto', sans-serif;
   }
-`
+`;
 
 const renderText = ({
   text,
@@ -70,7 +70,7 @@ const renderText = ({
       }}
       source={text}
     />
-  )
+  );
 
 const MobileReverseOrderWrapper = styled.div`
   display: flex;
@@ -79,11 +79,11 @@ const MobileReverseOrderWrapper = styled.div`
   ${breakpoint('smallTablet')`
     flex-direction: column;
   `}
-`
+`;
 
 const TextAndImagePaddingSeparator = styled.div`
   padding-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const TextColumnsBlock = ({
   data: { text },
@@ -118,7 +118,7 @@ const TextColumnsBlock = ({
       })}
     </StyledColTwo>
   </Fragment>
-)
+);
 
 const FullWidthBlock = ({ data: { text, image }, StyledCol = Col }) => (
   <StyledCol width={[1]}>
@@ -126,7 +126,7 @@ const FullWidthBlock = ({ data: { text, image }, StyledCol = Col }) => (
     {text && image && <TextAndImagePaddingSeparator />}
     {renderImage(image)}
   </StyledCol>
-)
+);
 
 const HalfGreyBackground = styled(GreyBackground)`
   display: ${({ mobile }) => (mobile ? 'inherit' : 'none')};
@@ -135,9 +135,9 @@ const HalfGreyBackground = styled(GreyBackground)`
   ${breakpoint('smallTablet')`
       display: ${({ mobile }) => (mobile ? 'none' : 'inherit')};
   `}
-`
+`;
 
-const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />
+const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />;
 
 const ImagesBlock = ({ data }) => (
   <Fragment>
@@ -150,17 +150,17 @@ const ImagesBlock = ({ data }) => (
       </StyledColumnImage>
     ))}
   </Fragment>
-)
+);
 
 const StyledMobilePadding = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const StyledBreakpointMobilePadding = styled(StyledMobilePadding)`
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const TextAndImageBlock = ({
   data: { text, image },
@@ -175,7 +175,7 @@ const TextAndImageBlock = ({
     {middleColWidth && <Col width={middleColWidth} />}
     <Col width={colWidthTwo}>{renderImage(image)}</Col>
   </Fragment>
-)
+);
 
 const TextAndResizedImageBlock = ({ data: { text, image } }) => (
   <Fragment>
@@ -183,7 +183,7 @@ const TextAndResizedImageBlock = ({ data: { text, image } }) => (
     {text && image && <StyledMobilePadding width={[1, 1, 1, 1, 1 / 8]} />}
     <Col width={[1, 1, 1, 1, 3 / 8]}>{renderImage(image)}</Col>
   </Fragment>
-)
+);
 
 const BlockRow = styled(Row)`
   flex-direction: ${({ columnReverse }) =>
@@ -222,24 +222,24 @@ const BlockRow = styled(Row)`
     padding-bottom: ${({ theme, desktop }) =>
       desktop && desktop.bottom ? theme.space[desktop.bottom] : null};
   `}
-`
+`;
 
-const getImage = (blockImages, index) => blockImages && blockImages[index]
+const getImage = (blockImages, index) => blockImages && blockImages[index];
 
 const normaliseAll = (genericBlocks = []) =>
   genericBlocks.map(({ genericBlockText, genericBlockImages, ...props }) => ({
     image: getImage(genericBlockImages, 0),
     text: genericBlockText && genericBlockText.genericBlockText,
     ...props,
-  }))
+  }));
 
 const normalise = (genericBlocks = [], index = 0) =>
-  normaliseAll(genericBlocks, index)[index]
+  normaliseAll(genericBlocks, index)[index];
 
 const getImages = data =>
-  data.genericBlockImages ? data.genericBlockImages : []
+  data.genericBlockImages ? data.genericBlockImages : [];
 
-const shouldRender = data => data && data.length
+const shouldRender = data => data && data.length;
 
 export {
   BlockRow,
@@ -258,4 +258,4 @@ export {
   getImage,
   normalise,
   normaliseAll,
-}
+};

@@ -12,7 +12,7 @@ tcp        0      0 127.0.0.1:6463          0.0.0.0:*               LISTEN      
 tcp        0      0 192.168.1.159:34672     151.101.16.133:443      ESTABLISHED 8842/chrome
 tcp        0      0 192.168.1.159:59696     18.130.74.87:443        ESTABLISHED 17047/slack
 tcp        0      0 192.168.1.159:48398     172.217.23.5:443        ESTABLISHED 8842/chrome
-`
+`;
 
 export const command2 = `
 $ ps aux / head
@@ -26,4 +26,4 @@ root         8  0.0  0.0      0     0 ?        I<   11:34   0:00 [mm_percpu_wq]
 root         9  0.0  0.0      0     0 ?        S    11:34   0:00 [ksoftirqd/0]
 root        10  0.0  0.0      0     0 ?        I    11:34   0:07 [rcu_preempt]
 root        11  0.0  0.0      0     0 ?        I    11:34   0:01 [rcu_sched]
-`
+`;

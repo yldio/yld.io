@@ -1,10 +1,10 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import Flex from 'styled-flex-component'
-import { SectionTitle } from '../Typography'
-import Image from '../Common/Image'
-import StyledLink from '../Common/StyledLink'
-import { Grid, Row, Col } from '../grid'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import Flex from 'styled-flex-component';
+import { SectionTitle } from '../Typography';
+import Image from '../Common/Image';
+import StyledLink from '../Common/StyledLink';
+import { Grid, Row, Col } from '../grid';
 
 const Courses = ({ categories, sectionTitle }) => {
   return (
@@ -49,7 +49,7 @@ const Courses = ({ categories, sectionTitle }) => {
       </Row>
       <Padding bottom={{ smallPhone: 2, tablet: 0 }} />
     </Grid>
-  )
-}
+  );
+};
 
-export default Courses
+export default Courses;

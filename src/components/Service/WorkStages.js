@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import { Padding } from 'styled-components-spacing'
-import { Grid } from '../grid'
+import React, { Fragment } from 'react';
+import { Padding } from 'styled-components-spacing';
+import { Grid } from '../grid';
 
-import Hr from '../Common/Hr'
-import BackgroundGraphic from '../Common/BackgroundGraphic'
-import WorkStage from './WorkStage'
+import Hr from '../Common/Hr';
+import BackgroundGraphic from '../Common/BackgroundGraphic';
+import WorkStage from './WorkStage';
 
 const WorkStages = ({ title, workStages }) => (
   <Fragment>
@@ -18,6 +18,6 @@ const WorkStages = ({ title, workStages }) => (
       ))}
     </Padding>
   </Fragment>
-)
+);
 
-export default WorkStages
+export default WorkStages;

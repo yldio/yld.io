@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
 
-import { Col } from '../../grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../../Typography'
-import ExternalAnchor from '../../Common/ExternalAnchor'
-import Hr from '../../Common/Hr'
-import eventIcon from './assets/homepage-event-icon.svg'
+import { Col } from '../../grid';
+import { SectionTitle, Subtitle, BodyPrimary } from '../../Typography';
+import ExternalAnchor from '../../Common/ExternalAnchor';
+import Hr from '../../Common/Hr';
+import eventIcon from './assets/homepage-event-icon.svg';
 
 const EventsColumn = styled(Col)`
   padding-left: 0;
-`
+`;
 
 export const MobileMeetups = ({ events }) => (
   <Col width={[1, 1, 1, 1, 0, 0, 0]}>
@@ -30,7 +30,7 @@ export const MobileMeetups = ({ events }) => (
       </ul>
     </Padding>
   </Col>
-)
+);
 
 export const MobileHeader = () => (
   <Col width={[1, 1, 1, 1, 0, 0, 0]}>
@@ -44,4 +44,4 @@ export const MobileHeader = () => (
       </Padding>
     </EventsColumn>
   </Col>
-)
+);

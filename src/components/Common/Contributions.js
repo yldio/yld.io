@@ -1,15 +1,15 @@
-import React, { useEffect, useCallback } from 'react'
-import styled from 'styled-components'
-import { useCountUp } from 'react-countup'
-import { useInView } from 'react-intersection-observer'
-import breakpoint from 'styled-components-breakpoint'
-import ContributionsCopy from './ContributionsCopy'
-import { Grid, Row, Col } from '../grid'
-import { Repo } from './Repo'
-import { generate } from 'shortid'
-import StyledLink from './StyledLink'
-import Image from './Image'
-import { BodyPrimary } from '../Typography'
+import React, { useEffect, useCallback } from 'react';
+import styled from 'styled-components';
+import { useCountUp } from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+import breakpoint from 'styled-components-breakpoint';
+import ContributionsCopy from './ContributionsCopy';
+import { Grid, Row, Col } from '../grid';
+import { Repo } from './Repo';
+import { generate } from 'shortid';
+import StyledLink from './StyledLink';
+import Image from './Image';
+import { BodyPrimary } from '../Typography';
 
 const UnpaddedGrid = styled(Grid)`
   ${breakpoint('smallPhone', 'smallTablet')`
@@ -17,13 +17,13 @@ const UnpaddedGrid = styled(Grid)`
     padding-right: 0;
     max-width: 100%;
   `}
-`
+`;
 const StyledCol = styled(Col)`
   ${breakpoint('smallPhone', 'smallTablet')`
     padding-left: ${({ theme }) => theme.space[3]};
     padding-right: ${({ theme }) => theme.space[3]};
   `}
-`
+`;
 
 const Wrapper = styled.div`
   position: relative;
@@ -34,19 +34,19 @@ const Wrapper = styled.div`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: #848194;
   width: 100%;
   margin-top: ${({ theme }) => theme.space[3]};
   margin-bottom: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const StyledImage = styled(Image)`
   max-width: 54px;
   padding-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const ReposWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -56,13 +56,13 @@ const ReposWrapper = styled.div`
     padding-bottom: ${({ theme }) => theme.space[6]};
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const GithubLink = styled(StyledLink)`
   ${breakpoint('tablet')`
     margin-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const Graphic = styled(Image)`
   display: none;
@@ -86,11 +86,11 @@ const Graphic = styled(Image)`
   ${breakpoint('desktop')`
     margin-left: -154px;
   `}
-`
+`;
 
 const StaticRow = styled(Row)`
   position: static;
-`
+`;
 
 const GraphicCol = styled(Col)`
   position: static;
@@ -102,7 +102,7 @@ const GraphicCol = styled(Col)`
     background-size: auto 100%;
     background-position: ${({ theme }) => theme.space[3]};
   `}
-`
+`;
 
 const Contributions = ({
   ctaCopy,
@@ -119,41 +119,41 @@ const Contributions = ({
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-  })
+  });
 
   const countUpOpts = ({ end }) => ({
     start: 0,
     end,
     delay: 1000,
     duration: 3,
-  })
+  });
 
   const { countUp: contributions, start: startContributions } = useCountUp(
     countUpOpts({ end: openSourceMetaPullRequestsCount }),
-  )
+  );
 
   const { countUp: projects, start: startProjects } = useCountUp(
     countUpOpts({ end: openSourceMetaReposCount }),
-  )
+  );
 
   const contributionsCopy = {
     titleSectionLine1,
     titleSectionLine2,
     titleSectionLine3,
-  }
+  };
 
-  const startProjectsCallback = useCallback(startProjects, [])
-  const startContributionsCallback = useCallback(startContributions, [])
+  const startProjectsCallback = useCallback(startProjects, []);
+  const startContributionsCallback = useCallback(startContributions, []);
 
   useEffect(
     () => {
       if (inView) {
-        startProjectsCallback()
-        startContributionsCallback()
+        startProjectsCallback();
+        startContributionsCallback();
       }
     },
     [inView, startProjectsCallback, startContributionsCallback],
-  )
+  );
 
   return (
     <div className="bkg">
@@ -221,7 +221,7 @@ const Contributions = ({
         </Wrapper>
       </UnpaddedGrid>
     </div>
-  )
-}
+  );
+};
 
-export default Contributions
+export default Contributions;

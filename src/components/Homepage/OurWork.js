@@ -1,24 +1,24 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import { Row, Col } from '../grid'
-import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
-import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
+import { Row, Col } from '../grid';
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography';
+import StyledLink from '../Common/StyledLink';
+import Image from '../Common/Image';
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
-    const caseStudy = caseStudyObject.node
+    const caseStudy = caseStudyObject.node;
     return {
       ...caseStudy,
       services: caseStudy.services
         .filter(service => service.title)
         .map(service => service.title),
-    }
-  })
+    };
+  });
 
 const TitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -26,13 +26,13 @@ const TitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const MobileOnlyRow = styled(Row)`
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const TabletOnlyRow = styled(Row)`
   display: none;
@@ -43,14 +43,14 @@ const TabletOnlyRow = styled(Row)`
   ${breakpoint('desktop')`
     display: none;
   `}
-`
+`;
 
 const DesktopOnlyRow = styled(Row)`
   display: none;
   ${breakpoint('desktop')`
     display: flex;
   `}
-`
+`;
 
 const CardHeader = styled.header`
   padding: ${({ theme }) =>
@@ -71,14 +71,14 @@ const CardHeader = styled.header`
   ${breakpoint('desktop')`
     padding: ${remcalc(24)} ${remcalc(25)} ${remcalc(31)} ${remcalc(24)};
   `}
-`
+`;
 
 const Card = styled.div`
   background-color: #${({ color }) => color};
   width: 100%;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const AnimatedLink = styled(Link)`
   margin-top: ${({ theme }) => theme.space[3]};
@@ -101,7 +101,7 @@ const AnimatedLink = styled(Link)`
   ${breakpoint('tablet')`
     margin-top: ${({ theme }) => theme.space[5]};
   `}
-`
+`;
 
 const CaseStudyImageWrapper = styled.div`
   background-color: #${({ backgroundColor }) => backgroundColor};
@@ -113,7 +113,7 @@ const CaseStudyImageWrapper = styled.div`
   ${breakpoint('smallPhone', 'smallTablet')`
     display: none;
   `}
-`
+`;
 
 const CaseStudy = ({ caseStudy }) => {
   const {
@@ -123,7 +123,7 @@ const CaseStudy = ({ caseStudy }) => {
     slug,
     posterColor,
     reverseColor,
-  } = caseStudy
+  } = caseStudy;
 
   return (
     <AnimatedLink to={`/case-study/${slug}`} title={title}>
@@ -143,8 +143,8 @@ const CaseStudy = ({ caseStudy }) => {
         </CaseStudyImageWrapper>
       </Card>
     </AnimatedLink>
-  )
-}
+  );
+};
 
 const MoreWorkLink = styled(StyledLink)`
   font-size: ${remcalc(18)};
@@ -158,19 +158,19 @@ const MoreWorkLink = styled(StyledLink)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const OurWork = ({ data }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
     contentfulOurWork: { caseStudies },
-  } = data
+  } = data;
 
   const allCaseStudies = [
     ...formatCaseStudies(allContentfulNonTemplatedCaseStudyV2),
     ...formatCaseStudies(allContentfulTemplatedCaseStudy),
-  ]
+  ];
 
   // remove thomas cook and unpublished case studies
   const displayOrderByIDs = caseStudies
@@ -178,22 +178,22 @@ const OurWork = ({ data }) => {
       ({ publish, id }) =>
         publish && id !== 'bb2bc84d-c03e-5605-b2fa-041a674a1e94',
     )
-    .map(({ id }) => id)
+    .map(({ id }) => id);
 
   const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
     allCaseStudies.find(cs => cs.id === orderedId),
-  )
+  );
   const missingFromContentfulOrder = allCaseStudies.filter(
     cs => !displayOrderByIDs.includes(cs.id),
-  )
+  );
   const orderedCaseStudies = [
     ...mappedFromContentfulOrder,
     ...missingFromContentfulOrder,
-  ]
+  ];
 
-  const mobileCaseStudies = orderedCaseStudies.slice(0, 3)
-  const tabletCaseStudies = orderedCaseStudies.slice(0, 4)
-  const desktopCaseStudies = orderedCaseStudies.slice(0, 6)
+  const mobileCaseStudies = orderedCaseStudies.slice(0, 3);
+  const tabletCaseStudies = orderedCaseStudies.slice(0, 4);
+  const desktopCaseStudies = orderedCaseStudies.slice(0, 6);
 
   return (
     <>
@@ -231,8 +231,8 @@ const OurWork = ({ data }) => {
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};
 
 const OurWorkSection = props => (
   <StaticQuery
@@ -315,6 +315,6 @@ const OurWorkSection = props => (
     `}
     render={data => <OurWork data={data} {...props} />}
   />
-)
+);
 
-export default OurWorkSection
+export default OurWorkSection;

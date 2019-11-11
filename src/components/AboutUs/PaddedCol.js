@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Col } from '../grid'
+import { Col } from '../grid';
 
 const PaddedCol = styled(Col).attrs({ block: false })`
   flex-direction: column;
@@ -16,6 +16,6 @@ const PaddedCol = styled(Col).attrs({ block: false })`
   ${breakpoint('tablet')`
     padding-bottom: 0
   `}
-`
+`;
 
-export default PaddedCol
+export default PaddedCol;

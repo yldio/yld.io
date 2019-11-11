@@ -29,14 +29,14 @@ const groups = [
       thumb_link:
         'https://secure.meetupstatic.com/photos/event/2/e/0/4/thumb_475751780.jpeg',
       type: 'event',
-      base_url: 'https://secure.meetupstatic.com'
+      base_url: 'https://secure.meetupstatic.com',
     },
     timezone: 'Europe/London',
     category: {
       id: 34,
       name: 'Tech',
       shortname: 'tech',
-      sort_name: 'Tech'
+      sort_name: 'Tech',
     },
     meta_category: {
       id: 292,
@@ -52,10 +52,10 @@ const groups = [
         thumb_link:
           'https://secure.meetupstatic.com/photos/event/2/e/a/d/thumb_450131949.jpeg',
         type: 'event',
-        base_url: 'https://secure.meetupstatic.com'
+        base_url: 'https://secure.meetupstatic.com',
       },
-      category_ids: [34]
-    }
+      category_ids: [34],
+    },
   },
   {
     id: 23599684,
@@ -88,7 +88,7 @@ const groups = [
       thumb_link:
         'https://secure.meetupstatic.com/photos/event/d/3/3/f/thumb_469494079.jpeg',
       type: 'event',
-      base_url: 'https://secure.meetupstatic.com'
+      base_url: 'https://secure.meetupstatic.com',
     },
     key_photo: {
       id: 469493912,
@@ -99,14 +99,14 @@ const groups = [
       thumb_link:
         'https://secure.meetupstatic.com/photos/event/d/2/9/8/thumb_469493912.jpeg',
       type: 'event',
-      base_url: 'https://secure.meetupstatic.com'
+      base_url: 'https://secure.meetupstatic.com',
     },
     timezone: 'Europe/London',
     category: {
       id: 34,
       name: 'Tech',
       shortname: 'tech',
-      sort_name: 'Tech'
+      sort_name: 'Tech',
     },
     meta_category: {
       id: 292,
@@ -122,12 +122,12 @@ const groups = [
         thumb_link:
           'https://secure.meetupstatic.com/photos/event/2/e/a/d/thumb_450131949.jpeg',
         type: 'event',
-        base_url: 'https://secure.meetupstatic.com'
+        base_url: 'https://secure.meetupstatic.com',
       },
-      category_ids: [34]
-    }
-  }
-]
+      category_ids: [34],
+    },
+  },
+];
 
 // Create a mock generator function to enable us to validate against
 // passed in values further in the test
@@ -136,12 +136,12 @@ module.exports = urlNames => {
     const msg = `Need the same length of urlNames and groups in the groups.js mock generator!
 urlNames: ${urlNames.length}
 groups: ${groups.length}
-    `
-    throw new Error(msg)
+    `;
+    throw new Error(msg);
   }
 
   return groups.map((group, idx) => ({
     ...group,
-    urlname: urlNames[idx]
-  }))
-}
+    urlname: urlNames[idx],
+  }));
+};

@@ -1,15 +1,15 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import { TwitterShareButton, LinkedinShareButton } from 'react-share'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { TwitterShareButton, LinkedinShareButton } from 'react-share';
 
-import { PostTitle, Body, PostInfo } from './Typography'
-import Hr from '../Common/Hr'
-import Format from 'date-fns/format'
-import { TagGroup } from './Tag'
+import { PostTitle, Body, PostInfo } from './Typography';
+import Hr from '../Common/Hr';
+import Format from 'date-fns/format';
+import { TagGroup } from './Tag';
 
-import twitterIcon from '../../images/twiter-icon.svg'
-import linkedinIcon from '../../images/linkedin-icon.svg'
-import { BodyPrimary } from '../Typography'
+import twitterIcon from '../../images/twiter-icon.svg';
+import linkedinIcon from '../../images/linkedin-icon.svg';
+import { BodyPrimary } from '../Typography';
 
 const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
@@ -20,20 +20,20 @@ const PostIntroMetaData = ({ title, author, date, readTime }) => (
     </PostInfo>
     <Hr />
   </>
-)
+);
 
 const PostOutroTagSection = styled.section`
   padding-top: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const ShareWrapper = styled.div`
   display: flex;
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[5]};
-`
+`;
 
 const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
-  const sharingTitle = `${title} - ${author} | @YLDio Blog`
+  const sharingTitle = `${title} - ${author} | @YLDio Blog`;
   return (
     <div>
       <Hr />
@@ -69,8 +69,8 @@ const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
         </LinkedinShareButton>
       </ShareWrapper>
     </div>
-  )
-}
+  );
+};
 
 const ShareButtonContent = ({ image, imageAlt, label }) => (
   <div
@@ -94,6 +94,6 @@ const ShareButtonContent = ({ image, imageAlt, label }) => (
       {label}
     </BodyPrimary>
   </div>
-)
+);
 
-export { PostIntroMetaData, PostOutroMetaData }
+export { PostIntroMetaData, PostOutroMetaData };

@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import is from 'styled-is'
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import is from 'styled-is';
 
-import modifiers from '../Typography/modifiers'
+import modifiers from '../Typography/modifiers';
 
 const Hr = styled.hr`
   height: ${remcalc(1)};
@@ -15,6 +15,6 @@ const Hr = styled.hr`
   ${is('short')`
     width: 60px;
   `};
-`
+`;
 
-export default Hr
+export default Hr;

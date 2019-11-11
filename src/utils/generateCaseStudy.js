@@ -5,27 +5,27 @@
 */
 
 const generateCaseStudy = caseStudy => {
-  let met = false
+  let met = false;
   return caseStudy.body.content.reduce(
     (acc, c) => {
-      const code = c.content[0].marks.length
-      const value = c.content[0].value
+      const code = c.content[0].marks.length;
+      const value = c.content[0].value;
 
       if (met && !code) {
-        acc[2].push(value)
+        acc[2].push(value);
       } else if (!met && !code) {
-        acc[0].push(value)
+        acc[0].push(value);
       }
 
       if (c.content[0] && c.content[0].marks && code) {
-        met = true
-        acc[1].push(value)
+        met = true;
+        acc[1].push(value);
       }
 
-      return acc
+      return acc;
     },
     [[], [], []],
-  )
-}
+  );
+};
 
-export default generateCaseStudy
+export default generateCaseStudy;

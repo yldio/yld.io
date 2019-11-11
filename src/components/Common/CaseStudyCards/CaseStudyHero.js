@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import Flex from 'styled-flex-component'
-import { Padding } from 'styled-components-spacing'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import { Padding } from 'styled-components-spacing';
 
-import CaseStudyLayout from './CaseStudyLayout'
-import { Col } from '../../grid'
-import { SectionTitle, Subtitle } from '../../Typography'
-import SeoLinks from '../seoLinks'
+import CaseStudyLayout from './CaseStudyLayout';
+import { Col } from '../../grid';
+import { SectionTitle, Subtitle } from '../../Typography';
+import SeoLinks from '../seoLinks';
 
 const FlexCol = styled(Col)`
   display: flex;
-`
+`;
 
 const SubSection = ({ heading, items }) => (
   <Padding bottom={0.5}>
@@ -19,14 +19,14 @@ const SubSection = ({ heading, items }) => (
       <SeoLinks noPadding items={items} />
     </Flex>
   </Padding>
-)
+);
 
 const SpecialitiesAndServices = ({ specialities, services }) => (
   <Padding top={{ smallPhone: 0, tablet: 0.5 }}>
     <SubSection heading="Services provided" items={services} />
     <SubSection heading="Specialities involved" items={specialities} />
   </Padding>
-)
+);
 
 const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
   <Fragment>
@@ -42,10 +42,10 @@ const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
       </Padding>
     </FlexCol>
   </Fragment>
-)
+);
 
 const CaseStudyHero = ({ caseStudy, as }) => {
-  const { posterImage, title, specialities, services } = caseStudy
+  const { posterImage, title, specialities, services } = caseStudy;
   return (
     <CaseStudyLayout
       posterImage={posterImage}
@@ -65,7 +65,7 @@ const CaseStudyHero = ({ caseStudy, as }) => {
         />
       }
     />
-  )
-}
+  );
+};
 
-export default CaseStudyHero
+export default CaseStudyHero;

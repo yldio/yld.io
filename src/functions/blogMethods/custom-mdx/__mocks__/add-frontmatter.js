@@ -1,1 +1,1 @@
-module.exports = jest.fn(async ({ content }) => `frontmatter\n${content}`)
+module.exports = jest.fn(async ({ content }) => `frontmatter\n${content}`);

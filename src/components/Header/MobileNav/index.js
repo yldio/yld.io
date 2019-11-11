@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import Flex from 'styled-flex-component'
-import is from 'styled-is'
-import generate from 'shortid'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import Flex from 'styled-flex-component';
+import is from 'styled-is';
+import generate from 'shortid';
 
-import links from '../utils/navLinks'
-import CloseButton from './CloseButton'
-import Dropdown from './Dropdown'
-import OuterAnchorItem from './OuterAnchorItem'
+import links from '../utils/navLinks';
+import CloseButton from './CloseButton';
+import Dropdown from './Dropdown';
+import OuterAnchorItem from './OuterAnchorItem';
 
 const MobileNavPanel = styled.nav`
   position: fixed;
@@ -36,7 +36,7 @@ const MobileNavPanel = styled.nav`
   @media screen and (min-width: 960px) {
     display: none;
   }
-`
+`;
 
 const MobileNav = ({ isOpen, onClose, path }) => (
   <MobileNavPanel open={isOpen}>
@@ -70,6 +70,6 @@ const MobileNav = ({ isOpen, onClose, path }) => (
         )}
     </ul>
   </MobileNavPanel>
-)
+);
 
-export default MobileNav
+export default MobileNav;

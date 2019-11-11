@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Marker = () => (
   <svg
@@ -26,6 +26,6 @@ const Marker = () => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default Marker
+export default Marker;

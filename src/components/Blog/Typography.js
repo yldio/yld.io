@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
 
-const DESKTOP_BREAKPOINT = 'smallTablet'
+const DESKTOP_BREAKPOINT = 'smallTablet';
 
 const H1 = styled.h1`
   font-weight: 500;
@@ -16,7 +16,7 @@ const H1 = styled.h1`
     font-size: ${remcalc(42)};
     line-height: ${remcalc(51)};
   `}
-`
+`;
 
 const H2 = styled.h2`
   font-weight: 500;
@@ -30,7 +30,7 @@ const H2 = styled.h2`
     font-size: ${remcalc(28)};
     line-height: ${remcalc(42)};
   `}
-`
+`;
 
 const Subtitle = styled.h3`
   font-weight: 400;
@@ -44,7 +44,7 @@ const Subtitle = styled.h3`
     font-size: ${remcalc(24)};
     line-height: ${remcalc(36)};
   `}
-`
+`;
 
 const Body = styled.p`
   font-size: ${remcalc(18)};
@@ -96,13 +96,13 @@ const Body = styled.p`
   strong {
     font-weight: 500;
   }
-`
+`;
 
 const List = styled.ul`
   list-style-type: disc;
   padding-left: ${remcalc(30)};
   padding-bottom: ${remcalc(36)};
-`
+`;
 
 const ListItem = styled.li`
   font-size: ${remcalc(20)};
@@ -117,7 +117,7 @@ const ListItem = styled.li`
   &:last-child {
     padding-bottom: 0;
   }
-`
+`;
 
 const Code = styled.code`
   font-size: ${remcalc(15)};
@@ -135,13 +135,13 @@ const Code = styled.code`
   padding: ${remcalc(20)};
   font-family: 'Roboto Mono', sans-serif;
   display: block;
-`
+`;
 
 const A = styled.a`
   text-decoration: underline;
   cursor: pointer;
   font-style: italic;
-`
+`;
 
 const PostInfo = styled(Body)`
   font-size: ${remcalc(16)};
@@ -156,7 +156,7 @@ const PostInfo = styled(Body)`
 
   padding-top: 0;
   color: ${({ theme }) => theme.colors.secondaryText};
-`
+`;
 
 const ImageCaption = styled.figcaption`
   font-size: ${remcalc(16)};
@@ -169,7 +169,7 @@ const ImageCaption = styled.figcaption`
   ${breakpoint(DESKTOP_BREAKPOINT)`
     max-width: 70%;
   `}
-`
+`;
 
 const PostTitle = styled(H1)`
   ${({ hasSubtitle }) =>
@@ -179,7 +179,7 @@ const PostTitle = styled(H1)`
     ${({ hasSubtitle }) =>
       hasSubtitle ? `padding-bottom: 0` : `padding-bottom: ${remcalc(36)};`}
     `}
-`
+`;
 
 const Tag = styled.li`
   margin-right: ${remcalc(10)};
@@ -195,7 +195,7 @@ const Tag = styled.li`
   color: ${({ theme }) => theme.colors.black};
   padding: ${remcalc(6)} ${remcalc(12)};
   font-family: 'PT Mono';
-`
+`;
 
 const Blockquote = styled.blockquote`
   font-size: ${remcalc(18)};
@@ -222,7 +222,7 @@ const Blockquote = styled.blockquote`
   strong {
     font-weight: 700;
   }
-`
+`;
 
 const PostWrapper = styled.div`
   h1 + h3 {
@@ -294,7 +294,7 @@ const PostWrapper = styled.div`
     margin-top: -8px;
     margin-bottom: -8px;
   }
-`
+`;
 
 export {
   H1,
@@ -311,4 +311,4 @@ export {
   PostInfo,
   PostWrapper,
   Tag,
-}
+};

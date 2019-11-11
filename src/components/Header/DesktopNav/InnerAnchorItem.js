@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import outlineStyles from '../utils/outlineStyles'
-import Anchor from '../../Common/Anchor'
-import headerItemStyles from '../utils/headerItemStyles'
-import topNavItemStyles from './desktopNavItemStyles'
+import outlineStyles from '../utils/outlineStyles';
+import Anchor from '../../Common/Anchor';
+import headerItemStyles from '../utils/headerItemStyles';
+import topNavItemStyles from './desktopNavItemStyles';
 
 const InnerListItem = styled.li`
   display: flex;
-`
+`;
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
@@ -23,7 +23,7 @@ const InnerAnchor = styled(Anchor)`
   &.active {
     color: ${props => props.theme.colors.text};
   }
-`
+`;
 
 export const InnerAnchorItem = ({
   children,
@@ -58,6 +58,6 @@ export const InnerAnchorItem = ({
       {children}
     </InnerAnchor>
   </InnerListItem>
-)
+);
 
-export default InnerAnchorItem
+export default InnerAnchorItem;

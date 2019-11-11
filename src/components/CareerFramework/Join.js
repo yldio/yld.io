@@ -1,23 +1,23 @@
-import React from 'react'
-import StyledLink from '../Common/StyledLink'
-import styled from 'styled-components'
+import React from 'react';
+import StyledLink from '../Common/StyledLink';
+import styled from 'styled-components';
 
-import { Grid, Row, Col } from '../grid'
-import { BodyPrimary, SectionTitle } from '../Typography'
+import { Grid, Row, Col } from '../grid';
+import { BodyPrimary, SectionTitle } from '../Typography';
 
-import Image from '../Common/Image'
+import Image from '../Common/Image';
 
 const JoinContentCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[7]};
   padding-bottom: ${({ theme }) => theme.space[7]};
-`
+`;
 
 const getCtaLink = ({ ctaReference = {}, ctaUrl }) => {
-  return ctaReference.slug ? `/career-framework/${ctaReference.slug}` : ctaUrl
-}
+  return ctaReference.slug ? `/career-framework/${ctaReference.slug}` : ctaUrl;
+};
 
 const Join = ({ title, ctaTitle, ctaUrl, ctaReference, content, image }) => {
-  const to = getCtaLink({ ctaReference, ctaUrl })
+  const to = getCtaLink({ ctaReference, ctaUrl });
 
   return (
     <Grid>
@@ -42,7 +42,7 @@ const Join = ({ title, ctaTitle, ctaUrl, ctaReference, content, image }) => {
         </Col>
       </Row>
     </Grid>
-  )
-}
+  );
+};
 
-export default Join
+export default Join;

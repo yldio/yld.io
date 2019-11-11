@@ -1,15 +1,15 @@
-import React from 'react'
-import generate from 'shortid'
-import StyledLink from '../Common/StyledLink'
-import styled from 'styled-components'
+import React from 'react';
+import generate from 'shortid';
+import StyledLink from '../Common/StyledLink';
+import styled from 'styled-components';
 
-import { Row, Col } from '../grid'
-import { BodyPrimary, SectionTitle } from '../Typography'
+import { Row, Col } from '../grid';
+import { BodyPrimary, SectionTitle } from '../Typography';
 
 const LevelInfoWrapper = styled(Col)`
   padding-bottom: ${({ theme, isLastLevelInfo }) =>
     isLastLevelInfo ? null : theme.space[4]};
-`
+`;
 
 const LevelInfo = ({
   ctaTitle,
@@ -31,7 +31,7 @@ const LevelInfo = ({
       </StyledLink>
     )}
   </LevelInfoWrapper>
-)
+);
 
 const LevelOrder = styled.div`
   border: 3px solid ${({ theme }) => theme.colors.black};
@@ -43,11 +43,11 @@ const LevelOrder = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-`
+`;
 
 const LevelOrderWrapper = styled(Col)`
   padding-top: ${({ first, theme }) => theme.space[first ? 4 : 2]};
-`
+`;
 
 const Level = ({ title, info, order, levelInfo = [], first }) => {
   return (
@@ -71,7 +71,7 @@ const Level = ({ title, info, order, levelInfo = [], first }) => {
           ))}
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default Level
+export default Level;

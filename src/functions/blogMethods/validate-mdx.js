@@ -1,4 +1,4 @@
-const mdx = require('@mdx-js/mdx')
+const mdx = require('@mdx-js/mdx');
 
 /**
  * Before uploading to Contentful we should be sure that the
@@ -7,14 +7,14 @@ const mdx = require('@mdx-js/mdx')
  */
 const validateMdx = async posts => {
   for (const post of posts) {
-    const { content, slug } = post
+    const { content, slug } = post;
 
     try {
-      await mdx(content)
+      await mdx(content);
     } catch (error) {
-      throw new Error(`Error transpiling post ${slug}`, error)
+      throw new Error(`Error transpiling post ${slug}`, error);
     }
   }
-}
+};
 
-module.exports = validateMdx
+module.exports = validateMdx;

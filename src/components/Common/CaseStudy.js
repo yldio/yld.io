@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import { Link } from 'gatsby'
-import { CardTitle, BodyPrimary } from '../Typography'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
+import { Link } from 'gatsby';
+import { CardTitle, BodyPrimary } from '../Typography';
 
 const CaseStudyLink = styled(Link)`
   background: ${props => props.bg};
   color: ${props => props.color || props.theme.colors.white};
   flex: 1;
-`
+`;
 
 const CaseStudyTitle = styled(CardTitle)`
   font-size: ${remcalc(21)};
@@ -32,13 +32,13 @@ const CaseStudyTitle = styled(CardTitle)`
   font-size: ${remcalc(26)};
   line-height: ${remcalc(30)};
 `};
-`
+`;
 
 const servicesList = services => {
   return [services.slice(0, -1).join(', '), services.slice(-1)[0]].join(
     services.length < 2 ? '' : ' & ',
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
 
@@ -57,7 +57,7 @@ const Wrapper = styled.div`
         padding: 
           ${({ theme }) => theme.space[3]} ;
     `}
-`
+`;
 
 const CaseStudy = ({ title, services, ...props }) => (
   <CaseStudyLink {...props}>
@@ -70,6 +70,6 @@ const CaseStudy = ({ title, services, ...props }) => (
       <CaseStudyTitle reverse>{title}</CaseStudyTitle>
     </Wrapper>
   </CaseStudyLink>
-)
+);
 
-export { CaseStudy }
+export { CaseStudy };

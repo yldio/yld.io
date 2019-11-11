@@ -1,5 +1,5 @@
-import { css } from 'styled-components'
-import remcalc from 'remcalc'
+import { css } from 'styled-components';
+import remcalc from 'remcalc';
 
 const outlineStyles = css`
   outline: ${remcalc(4)} solid transparent;
@@ -11,6 +11,6 @@ const outlineStyles = css`
   &:active {
     outline: none;
   }
-`
+`;
 
-export default outlineStyles
+export default outlineStyles;

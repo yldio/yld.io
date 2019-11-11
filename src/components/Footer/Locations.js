@@ -1,5 +1,5 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
 const LOCATIONS = graphql`
   query locations {
@@ -22,7 +22,7 @@ const LOCATIONS = graphql`
       }
     }
   }
-`
+`;
 
 const Locations = ({ children }) => (
   <StaticQuery
@@ -31,6 +31,6 @@ const Locations = ({ children }) => (
       children(allContentfulLocation.edges)
     }
   />
-)
+);
 
-export default Locations
+export default Locations;

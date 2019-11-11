@@ -1,4 +1,4 @@
-import remcalc from 'remcalc'
+import remcalc from 'remcalc';
 
 // slowly being deprecated
 export const spacing = {
@@ -22,7 +22,7 @@ export const spacing = {
   42: remcalc(42),
   48: remcalc(48),
   90: remcalc(90),
-}
+};
 
 // use this instead of the 'spacing' object - 'space' is a keyword in styled-system
 export const space = [
@@ -36,7 +36,7 @@ export const space = [
   remcalc(108), // 7
   remcalc(144), // 8
   remcalc(176), // 9
-]
+];
 
 export const breakpoints = {
   smallPhone: 0,
@@ -45,17 +45,17 @@ export const breakpoints = {
   smallTablet: 701, // sharon
   tablet: 901,
   desktop: 1197,
-}
+};
 
 const elementSizes = {
   tappableArea: 48,
-}
+};
 
 export const zIndexes = {
   header: 999,
   modal: 10000,
   gridDebugger: 10001,
-}
+};
 
 const colorsVariables = {
   darkBlue: '#090329',
@@ -71,7 +71,7 @@ const colorsVariables = {
   tan: '#a08162',
   regalBlue: '#153d53',
   mountainMeadow: '#14B48F',
-}
+};
 
 export default {
   breakpoints,
@@ -105,4 +105,4 @@ export default {
     regalBlueBg: colorsVariables.regalBlue,
     mountainMeadowBg: colorsVariables.mountainMeadow,
   },
-}
+};

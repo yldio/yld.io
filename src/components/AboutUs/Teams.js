@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { Padding } from 'styled-components-spacing'
+import React, { useState } from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle } from '../Typography'
-import Tab, { Tabs } from '../Common/Tab'
-import GreyBackground from '../Common/GreyBackground'
-import StaffCard from './StaffCard'
-import eventLabels from '../../utils/eventLabels'
+import { Row, Col, Grid } from '../grid';
+import { SectionTitle } from '../Typography';
+import Tab, { Tabs } from '../Common/Tab';
+import GreyBackground from '../Common/GreyBackground';
+import StaffCard from './StaffCard';
+import eventLabels from '../../utils/eventLabels';
 
 const Team = ({ members }) => {
   return (
@@ -27,12 +27,12 @@ const Team = ({ members }) => {
         )}
       </Row>
     </Padding>
-  )
-}
+  );
+};
 
 const Teams = ({ title, teams }) => {
-  const [currentTab, setCurrentTab] = useState(0)
-  const currentTeam = teams[currentTab]
+  const [currentTab, setCurrentTab] = useState(0);
+  const currentTeam = teams[currentTab];
 
   return (
     <GreyBackground>
@@ -67,7 +67,7 @@ const Teams = ({ title, teams }) => {
         </Padding>
       </Grid>
     </GreyBackground>
-  )
-}
+  );
+};
 
-export default Teams
+export default Teams;

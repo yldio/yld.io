@@ -1,26 +1,26 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import { Grid, Row, Col } from '../../components/grid'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import Layout from '../../components/layout'
-import GreyBackground from '../../components/Common/GreyBackground'
-import Image from '../../components/Common/Image'
-import { makeText } from '../../utils/makeText'
-import Head from '../../components/Common/Head'
+import { Grid, Row, Col } from '../../components/grid';
+import { SectionTitle, BodyPrimary } from '../../components/Typography';
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
+import Layout from '../../components/layout';
+import GreyBackground from '../../components/Common/GreyBackground';
+import Image from '../../components/Common/Image';
+import { makeText } from '../../utils/makeText';
+import Head from '../../components/Common/Head';
 
 const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
   ${breakpoint('smallTablet')`
     padding-left: 0;
   `}
-`
+`;
 
 const SpreadUntilDesktop = styled(Col)`
   &:first-child {
@@ -41,7 +41,7 @@ const SpreadUntilDesktop = styled(Col)`
       padding-left: 0;
     }
   `}
-`
+`;
 
 const FlexDirectionColumn = styled(Col)`
   flex: none;
@@ -54,7 +54,7 @@ const FlexDirectionColumn = styled(Col)`
   ${breakpoint('desktop')`
     flex-direction: column;
   `}
-`
+`;
 
 const MetricsCol = styled(Col)`
   display: grid;
@@ -67,13 +67,13 @@ const MetricsCol = styled(Col)`
       max-width: 80%;
       margin: auto;
   `}
-`
+`;
 
 const Divider = styled.div`
   height: 1px;
   width: 100vw;
   background-color: #e6e6e6;
-`
+`;
 
 const IndexPage = ({
   data: {
@@ -323,8 +323,8 @@ const IndexPage = ({
         caseStudy={caseStudy.relatedCaseStudies[0]}
       />
     </Layout>
-  )
-}
+  );
+};
 export const query = graphql`
   {
     navigation: file(relativePath: { eq: "case-study/joyent/navigation.png" }) {
@@ -474,6 +474,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

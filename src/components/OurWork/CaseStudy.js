@@ -1,21 +1,21 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Row, Col } from '../grid'
-import { Padding } from 'styled-components-spacing'
-import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
-import Anchor from '../Common/Anchor'
-import { CardTitle, BodyPrimary } from '../Typography'
-import getIntroSentence from '../../utils/getIntroSentence'
-import eventLabels from '../../utils/eventLabels'
+import { Row, Col } from '../grid';
+import { Padding } from 'styled-components-spacing';
+import StyledLink from '../Common/StyledLink';
+import Image from '../Common/Image';
+import Anchor from '../Common/Anchor';
+import { CardTitle, BodyPrimary } from '../Typography';
+import getIntroSentence from '../../utils/getIntroSentence';
+import eventLabels from '../../utils/eventLabels';
 
 const MobileOnlyCol = styled(Col)`
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const NonMobileCol = styled(Col)`
   display: none;
@@ -27,32 +27,32 @@ const NonMobileCol = styled(Col)`
     align-items: flex-start;
     justify-content: center;
   `}
-`
+`;
 
 const serviceLinkMapper = {
   Engineering: '/engineering',
   Design: '/design',
   Training: '/training',
-}
+};
 
 const ServiceList = ({ services }) =>
   services.map((service, index) => {
-    const isPenultimate = index === services.length - 2
-    const isLast = index === services.length - 1
-    const link = serviceLinkMapper[service]
-    const element = link ? <Anchor to={link}>{service}</Anchor> : service
+    const isPenultimate = index === services.length - 2;
+    const isLast = index === services.length - 1;
+    const link = serviceLinkMapper[service];
+    const element = link ? <Anchor to={link}>{service}</Anchor> : service;
 
     switch (true) {
       case isLast:
-        return <Fragment key={index}>{element}</Fragment>
+        return <Fragment key={index}>{element}</Fragment>;
       case isPenultimate:
         // anchor/text + ampersand
-        return <Fragment key={index}>{element} &amp; </Fragment>
+        return <Fragment key={index}>{element} &amp; </Fragment>;
       default:
         // anchor/text + comma
-        return <Fragment key={index}>{element} &#44; </Fragment>
+        return <Fragment key={index}>{element} &#44; </Fragment>;
     }
-  })
+  });
 
 const TitleSection = ({ services, title, link }) => {
   return (
@@ -64,8 +64,8 @@ const TitleSection = ({ services, title, link }) => {
         <CardTitle as="h2">{title}</CardTitle>
       </Anchor>
     </Padding>
-  )
-}
+  );
+};
 
 const InfoSection = ({ introSentence, title, link }) => (
   <Fragment>
@@ -81,12 +81,12 @@ const InfoSection = ({ introSentence, title, link }) => (
       Learn more
     </StyledLink>
   </Fragment>
-)
+);
 
 const CaseStudy = ({ caseStudy }) => {
-  const { title, services, posterImage, slug } = caseStudy
-  const introSentence = getIntroSentence(caseStudy)
-  const caseStudyLink = `/case-study/${slug}`
+  const { title, services, posterImage, slug } = caseStudy;
+  const introSentence = getIntroSentence(caseStudy);
+  const caseStudyLink = `/case-study/${slug}`;
 
   return (
     <Row>
@@ -116,8 +116,8 @@ const CaseStudy = ({ caseStudy }) => {
         />
       </MobileOnlyCol>
     </Row>
-  )
-}
+  );
+};
 
-export default CaseStudy
-export { CaseStudy, ServiceList }
+export default CaseStudy;
+export { CaseStudy, ServiceList };

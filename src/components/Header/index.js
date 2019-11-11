@@ -1,12 +1,12 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import { Row, Col, Grid } from '../grid'
-import Hamburger from './MobileNav/Hamburger'
-import Overlay from './utils/Overlay'
-import Branding from './Branding'
-import DesktopNav from './DesktopNav'
-import MobileNav from './MobileNav'
+import React, { Fragment, useState, useEffect } from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import { Row, Col, Grid } from '../grid';
+import Hamburger from './MobileNav/Hamburger';
+import Overlay from './utils/Overlay';
+import Branding from './Branding';
+import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -16,41 +16,41 @@ const StyledContainer = styled.div`
   z-index: ${props => props.theme.zIndexes.header};
   box-shadow: ${props =>
     props.hasShadow ? `0 9px 9px -9px rgba(0, 0, 0, 0.175)` : null};
-`
+`;
 
 // nb: at the moment only the training service has modals pages. Modals match this RegExp:
-const trainingModalRegExp = /training\/[a-zA-Z]/
+const trainingModalRegExp = /training\/[a-zA-Z]/;
 
 const getThemeVariation = bgColor => {
   const map = {
     dark: ['blueBg'],
     grey: ['grey'],
-  }
+  };
 
-  return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white'
-}
+  return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white';
+};
 
 const StyledTopNavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: ${remcalc(84)};
-`
+`;
 
 const Header = ({ path, bgColor, slug }) => {
-  const [isMobileNavOpen, toggleMobileNav] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const isModalPage = !!path.match(trainingModalRegExp)
+  const [isMobileNavOpen, toggleMobileNav] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const isModalPage = !!path.match(trainingModalRegExp);
 
   useEffect(() => {
-    document.addEventListener('scroll', handleScroll)
-    return () => document.removeEventListener('scroll', handleScroll)
-  }, [])
+    document.addEventListener('scroll', handleScroll);
+    return () => document.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleScroll = () =>
-    setIsScrolled(document.documentElement.scrollTop !== 0)
+    setIsScrolled(document.documentElement.scrollTop !== 0);
 
-  const themeVariation = getThemeVariation(bgColor)
+  const themeVariation = getThemeVariation(bgColor);
 
   return (
     <Fragment>
@@ -82,13 +82,13 @@ const Header = ({ path, bgColor, slug }) => {
         </StyledContainer>
       ) : null}
     </Fragment>
-  )
-}
+  );
+};
 
 Header.defaultProps = {
   location: {
     pathname: '',
   },
-}
+};
 
-export default Header
+export default Header;

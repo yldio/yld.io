@@ -1,44 +1,44 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import generate from 'shortid'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import generate from 'shortid';
+import breakpoint from 'styled-components-breakpoint';
 
-import Head from '../components/Common/Head'
-import Image from '../components/Common/Image'
-import Hr from '../components/Common/Hr'
-import StyledLink from '../components/Common/StyledLink'
-import GreyBackground from '../components/Common/GreyBackground'
+import Head from '../components/Common/Head';
+import Image from '../components/Common/Image';
+import Hr from '../components/Common/Hr';
+import StyledLink from '../components/Common/StyledLink';
+import GreyBackground from '../components/Common/GreyBackground';
 import {
   SectionTitle,
   BodyPrimary,
   Subtitle,
   DisplayTitle,
-} from '../components/Typography'
+} from '../components/Typography';
 
-import { Grid, Row, Col } from '../components/grid'
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import Layout from '../components/layout'
-import StaffCard from '../components/AboutUs/StaffCard'
+import { Grid, Row, Col } from '../components/grid';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import Layout from '../components/layout';
+import StaffCard from '../components/AboutUs/StaffCard';
 
-import Map from '../components/ContactUs/Map'
+import Map from '../components/ContactUs/Map';
 
 const MapGroup = ({ locations = [] }) => {
   const mappedLocations = locations.map(({ mapLocation }) => {
-    return { lng: mapLocation.lon, lat: mapLocation.lat }
-  })
+    return { lng: mapLocation.lon, lat: mapLocation.lat };
+  });
 
   return (
     mappedLocations &&
     mappedLocations.length > 0 && <Map locations={mappedLocations} />
-  )
-}
+  );
+};
 
 const LocationWrapper = styled.div`
   width: 60px;
   height: 60px;
   margin-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const IntroSectionRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[6]};
@@ -51,14 +51,14 @@ const IntroSectionRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[6]};
     `}
-`
+`;
 
 const IntroSectionTitleCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const TeamSectionRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -68,7 +68,7 @@ const TeamSectionRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const TeamSectionTitleCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -76,11 +76,11 @@ const TeamSectionTitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const LocationCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const MapRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -90,7 +90,7 @@ const MapRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
 `}
-`
+`;
 
 const MapWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -98,7 +98,7 @@ const MapWrapper = styled.div`
   ${breakpoint('smallPhone', 'smallTablet')`
     display: none;
   `}
-`
+`;
 
 const ContactUs = ({
   location,
@@ -110,7 +110,7 @@ const ContactUs = ({
     },
   },
 }) => {
-  const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page
+  const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -118,11 +118,11 @@ const ContactUs = ({
       position: 2,
       name: 'Contact us',
     },
-  ])
+  ]);
 
   const sortedGroups = locations.sort(({ nodes }) =>
     nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1,
-  )
+  );
 
   return (
     <Layout
@@ -240,14 +240,14 @@ const ContactUs = ({
                       )}
                     </Row>
                   </Col>
-                )
+                );
               })}
           </MapRow>
         </Grid>
       </GreyBackground>
     </Layout>
-  )
-}
+  );
+};
 
 const Contact = props => (
   <StaticQuery
@@ -332,6 +332,6 @@ const Contact = props => (
     `}
     render={data => <ContactUs data={data} {...props} />}
   />
-)
+);
 
-export default Contact
+export default Contact;

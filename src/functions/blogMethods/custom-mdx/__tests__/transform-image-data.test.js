@@ -1,70 +1,70 @@
-jest.mock('../../../../../src/functions/utils/is-prod', () => true)
+jest.mock('../../../../../src/functions/utils/is-prod', () => true);
 
 const mockUploadToContentful = jest.fn(({ name }) => {
   return {
     url: `https://cdn.example.com/${name}`,
-    id: 'assetId'
-  }
-})
+    id: 'assetId',
+  };
+});
 
 jest.mock(
   '../../../../../src/functions/blogMethods/custom-mdx/upload-image-to-contentful',
-  () => mockUploadToContentful
-)
+  () => mockUploadToContentful,
+);
 
 beforeEach(() => {
-  mockUploadToContentful.mockClear()
-})
+  mockUploadToContentful.mockClear();
+});
 
-const TransformImageData = require('../../../../../src/functions/blogMethods/custom-mdx/transform-image-data')
+const TransformImageData = require('../../../../../src/functions/blogMethods/custom-mdx/transform-image-data');
 
 const img1 = {
   caption: 'Image 1 caption',
   name: 'the_name_of_the_first_image.jpg',
   ext: '.jpg',
-  src: 'https://external.source.com/1'
-}
+  src: 'https://external.source.com/1',
+};
 const img2 = {
   alt: 'Image 2 caption',
   name: 'the_name_of_the_second_image',
   ext: '.jpg',
-  src: 'https://external.source.com/2'
-}
+  src: 'https://external.source.com/2',
+};
 const post = {
   title: 'Blog Title',
   content: `
     <image:the_name_of_the_first_image.jpg>
     <image:the_name_of_the_second_image>
   `,
-  images: [img1, img2]
-}
-const environment = {}
+  images: [img1, img2],
+};
+const environment = {};
 
 it('uploads the images', async () => {
-  await TransformImageData(post, environment)
+  await TransformImageData(post, environment);
 
   expect(mockUploadToContentful).toHaveBeenCalledWith(
     img1,
     'Blog Title',
-    environment
-  )
+    environment,
+  );
   expect(mockUploadToContentful).toHaveBeenCalledWith(
     img2,
     'Blog Title',
-    environment
-  )
-})
+    environment,
+  );
+});
 
 it('transforms image placeholders to FigureImage components', async () => {
   const expected = `
     <FigureImage src="https://cdn.example.com/the_name_of_the_first_image.jpg" caption="Image 1 caption" />
     <FigureImage src="https://cdn.example.com/the_name_of_the_second_image" alt="Image 2 caption" />
-  `
+  `;
 
-  const { content } = await TransformImageData(post, environment)
+  const { content } = await TransformImageData(post, environment);
 
-  expect(content).toBe(expected)
-})
+  expect(content).toBe(expected);
+});
 
 it('generates relatedMedia links', async () => {
   const expected = [
@@ -72,19 +72,19 @@ it('generates relatedMedia links', async () => {
       sys: {
         id: 'assetId',
         linkType: 'Asset',
-        type: 'Link'
-      }
+        type: 'Link',
+      },
     },
     {
       sys: {
         id: 'assetId',
         linkType: 'Asset',
-        type: 'Link'
-      }
-    }
-  ]
+        type: 'Link',
+      },
+    },
+  ];
 
-  const { relatedMedia } = await TransformImageData(post, environment)
+  const { relatedMedia } = await TransformImageData(post, environment);
 
-  expect(relatedMedia).toStrictEqual(expected)
-})
+  expect(relatedMedia).toStrictEqual(expected);
+});

@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import Anchor from '../../Common/Anchor'
-import headerItemStyles from '../utils/headerItemStyles'
-import outlineStyles from '../utils/outlineStyles'
-import topNavItemStyles from './desktopNavItemStyles'
-import TopNavItem from './TopNavItem'
+import Anchor from '../../Common/Anchor';
+import headerItemStyles from '../utils/headerItemStyles';
+import outlineStyles from '../utils/outlineStyles';
+import topNavItemStyles from './desktopNavItemStyles';
+import TopNavItem from './TopNavItem';
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
   ${outlineStyles}
-`
+`;
 
 const StyledListItem = styled(TopNavItem)`
   display: flex;
@@ -36,7 +36,7 @@ const StyledListItem = styled(TopNavItem)`
       ${props => props.states.activeAndHover}
     }
   }
-`
+`;
 
 const OuterAnchorItem = ({
   children,
@@ -61,6 +61,6 @@ const OuterAnchorItem = ({
       {children}
     </StyledAnchor>
   </StyledListItem>
-)
+);
 
-export default OuterAnchorItem
+export default OuterAnchorItem;

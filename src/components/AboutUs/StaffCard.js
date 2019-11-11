@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import PropTypes from 'prop-types'
-import breakpoint from 'styled-components-breakpoint'
-import { Padding } from 'styled-components-spacing'
-import is from 'styled-is'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import PropTypes from 'prop-types';
+import breakpoint from 'styled-components-breakpoint';
+import { Padding } from 'styled-components-spacing';
+import is from 'styled-is';
 
-import SocialLink from '../Common/SocialLink'
-import { Col } from '../grid'
-import { BodyPrimary, Subtitle, CardTitle } from '../Typography'
-import GatsbyImage from '../Common/Image'
+import SocialLink from '../Common/SocialLink';
+import { Col } from '../grid';
+import { BodyPrimary, Subtitle, CardTitle } from '../Typography';
+import GatsbyImage from '../Common/Image';
 
-const IMAGE_SIZE = 24
+const IMAGE_SIZE = 24;
 
 const LinksContainer = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ const LinksContainer = styled.div`
   ${is('noMarginTop')`
       margin-top: 0;
     `}
-`
+`;
 
 const Description = styled(BodyPrimary)`
   padding-bottom: ${() => remcalc(30)};
   flex-grow: 2;
-`
+`;
 
 const SocialLinks = ({ data, noMarginTop }) => {
   return (data || []).length > 0 ? (
@@ -42,8 +42,8 @@ const SocialLinks = ({ data, noMarginTop }) => {
         />
       ))}
     </LinksContainer>
-  ) : null
-}
+  ) : null;
+};
 
 const WrapperCol = styled(Col)`
   flex-direction: column;
@@ -64,15 +64,15 @@ const WrapperCol = styled(Col)`
     padding-bottom: ${({ theme, paddingBottom: { desktop } }) =>
       theme.space[desktop || 7]};
   `}
-`
+`;
 
 const EndGroup = styled.div`
   justify-self: end;
-`
+`;
 
 const Image = styled(GatsbyImage)`
   margin-bottom: ${({ theme }) => theme.space[3]};
-`
+`;
 
 const StaffCard = ({
   name,
@@ -113,8 +113,8 @@ const StaffCard = ({
         <SocialLinks noMarginTop={emailAddress} data={socialLinks} />
       </EndGroup>
     </WrapperCol>
-  )
-}
+  );
+};
 
 StaffCard.propTypes = {
   name: PropTypes.string.isRequired,
@@ -126,10 +126,10 @@ StaffCard.propTypes = {
   role: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   socialLinks: PropTypes.array,
-}
+};
 
 StaffCard.defaultProps = {
   socialLinks: [],
-}
+};
 
-export default StaffCard
+export default StaffCard;

@@ -1,10 +1,10 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle } from '../Typography'
-import GreyBackground from '../Common/GreyBackground'
-import VideoSection from '../Common/VideoSection'
+import { Row, Col, Grid } from '../grid';
+import { SectionTitle } from '../Typography';
+import GreyBackground from '../Common/GreyBackground';
+import VideoSection from '../Common/VideoSection';
 
 const ClientTestimonial = ({ title, video }) => (
   <GreyBackground>
@@ -24,6 +24,6 @@ const ClientTestimonial = ({ title, video }) => (
       </Padding>
     </Grid>
   </GreyBackground>
-)
+);
 
-export default ClientTestimonial
+export default ClientTestimonial;

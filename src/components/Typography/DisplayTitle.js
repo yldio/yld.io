@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import modifiers from './modifiers'
+import modifiers from './modifiers';
 
 const DisplayTitle = styled.h2`
   color: ${props => props.theme.colors.text};
@@ -18,6 +18,6 @@ const DisplayTitle = styled.h2`
     padding: ${remcalc(13)} 0 ${remcalc(11)} 0;
     ${modifiers}
   `}
-`
+`;
 
-export default DisplayTitle
+export default DisplayTitle;

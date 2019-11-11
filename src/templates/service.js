@@ -1,15 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import SeoLinksContainer from '../components/Common/seoLinksContainer'
-import WorkStages from '../components/Service/WorkStages'
-import GreyBackground from '../components/Common/GreyBackground'
-import BlueBackground from '../components/Common/BlueBackground'
-import Head from '../components/Common/Head'
-import Statement from '../components/Common/Statement'
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+import Layout from '../components/layout';
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import SeoLinksContainer from '../components/Common/seoLinksContainer';
+import WorkStages from '../components/Service/WorkStages';
+import GreyBackground from '../components/Common/GreyBackground';
+import BlueBackground from '../components/Common/BlueBackground';
+import Head from '../components/Common/Head';
+import Statement from '../components/Common/Statement';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 const Service = ({
   data: {
@@ -37,9 +37,9 @@ const Service = ({
       title: service.specialityAreaTitle4,
       items: service.specialityAreaItems4,
     },
-  ]
+  ];
 
-  const { seoMetaData } = service
+  const { seoMetaData } = service;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -47,7 +47,7 @@ const Service = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
   return (
     <Layout
@@ -78,10 +78,10 @@ const Service = ({
       </GreyBackground>
       <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Service
+export default Service;
 
 /**
  *
@@ -271,4 +271,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,13 +1,13 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import Statement from '../components/Common/Statement'
-import Approach from '../components/Training/Approach'
-import Courses from '../components/Training/Courses'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import Head from '../components/Common/Head'
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+import Layout from '../components/layout';
+import Statement from '../components/Common/Statement';
+import Approach from '../components/Training/Approach';
+import Courses from '../components/Training/Courses';
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import Head from '../components/Common/Head';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 const TrainingPage = ({
   data: {
@@ -22,7 +22,7 @@ const TrainingPage = ({
     content.trainingApproachContent1.trainingApproachContent1,
     content.trainingApproachContent2.trainingApproachContent2,
     content.trainingApproachContent3.trainingApproachContent3,
-  ]
+  ];
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -30,7 +30,7 @@ const TrainingPage = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
   return (
     <Layout
@@ -53,8 +53,8 @@ const TrainingPage = ({
       />
       <CaseStudyPreview isTop={false} caseStudy={content.relatedCaseStudy} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -161,6 +161,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default TrainingPage
+export default TrainingPage;

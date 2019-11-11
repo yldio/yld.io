@@ -1,9 +1,9 @@
-import React from 'react'
-import { Row, Col } from '../grid'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import Image from '../Common/Image'
-import ExternalAnchor from '../Common/ExternalAnchor'
+import React from 'react';
+import { Row, Col } from '../grid';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import Image from '../Common/Image';
+import ExternalAnchor from '../Common/ExternalAnchor';
 
 const StyledRow = styled(Row)`
   padding-bottom: ${props => props.theme.space[4]};
@@ -11,7 +11,7 @@ const StyledRow = styled(Row)`
   ${breakpoint('tablet')`
    padding-bottom: ${props => props.theme.space[6]};
   `}
-`
+`;
 
 const LogoItem = styled(Col)`
   display: flex;
@@ -42,7 +42,7 @@ const LogoItem = styled(Col)`
       padding-left: ${props => props.theme.space[2]};
     }
   `}
-`
+`;
 
 const LogoGrid = ({ companies }) => (
   <StyledRow>
@@ -69,6 +69,6 @@ const LogoGrid = ({ companies }) => (
       </LogoItem>
     ))}
   </StyledRow>
-)
+);
 
-export default LogoGrid
+export default LogoGrid;

@@ -1,6 +1,6 @@
-const KebabCase = require('lodash.kebabcase')
-const mime = require('mime-types')
-const { LOCALE } = require('../../utils/constants')
+const KebabCase = require('lodash.kebabcase');
+const mime = require('mime-types');
+const { LOCALE } = require('../../utils/constants');
 const uploadImageToContentful = async (
   { name, src, ext },
   title,
@@ -19,8 +19,8 @@ const uploadImageToContentful = async (
         },
       },
     },
-  })
-  const processedAsset = await asset.processForAllLocales()
+  });
+  const processedAsset = await asset.processForAllLocales();
   const {
     fields: {
       file: {
@@ -28,9 +28,9 @@ const uploadImageToContentful = async (
       },
     },
     sys: { id },
-  } = await processedAsset.publish()
+  } = await processedAsset.publish();
 
-  return { id, url }
-}
+  return { id, url };
+};
 
-module.exports = uploadImageToContentful
+module.exports = uploadImageToContentful;

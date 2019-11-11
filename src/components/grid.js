@@ -1,52 +1,52 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import { spacing, breakpoints } from '../utils/theme'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
+import { spacing, breakpoints } from '../utils/theme';
 
 const css = props => {
-  const breaks = [null, ...Object.values(breakpoints)]
-  const sx = stylers()
-  const rules = []
+  const breaks = [null, ...Object.values(breakpoints)];
+  const sx = stylers();
+  const rules = [];
 
   for (let key in props) {
-    const val = props[key]
-    const cx = createRule(breaks, sx)(key, val)
+    const val = props[key];
+    const cx = createRule(breaks, sx)(key, val);
 
-    rules.push(cx)
+    rules.push(cx);
   }
 
-  return rules.map(r => Array.from(new Set(r)))
-}
+  return rules.map(r => Array.from(new Set(r)));
+};
 
 const createRule = (breaks, sx) => (key, val) => {
-  const k = key.charAt(0)
-  const style = sx[key] || sx[k] || null
+  const k = key.charAt(0);
+  const style = sx[key] || sx[k] || null;
 
   return toArr(val)
     .map((v, i) => {
       if (style) {
-        const bp = breaks[i]
-        const decs = style(key, v)
-        const body = `${decs};`
-        const rule = media(bp, body)
+        const bp = breaks[i];
+        const decs = style(key, v);
+        const body = `${decs};`;
+        const rule = media(bp, body);
 
-        return rule
+        return rule;
       }
 
-      return null
+      return null;
     })
-    .filter(r => r !== null)
-}
+    .filter(r => r !== null);
+};
 
-const toArr = n => (Array.isArray(n) ? n : [n])
-const num = n => typeof n === 'number' && !isNaN(n)
+const toArr = n => (Array.isArray(n) ? n : [n]);
+const num = n => typeof n === 'number' && !isNaN(n);
 
-const dec = args => args.join(':')
-const rule = args => args.join(';')
+const dec = args => args.join(':');
+const rule = args => args.join(';');
 const media = (bp, body) =>
-  bp ? `@media screen and (min-width:${remcalc(bp)}){${body}}` : body
+  bp ? `@media screen and (min-width:${remcalc(bp)}){${body}}` : body;
 
 const width = scale => (key, n) => {
   if (n === 0) {
@@ -55,7 +55,7 @@ const width = scale => (key, n) => {
       position: absolute;
       top: -9999px;
       left: -9999px;
-    `
+    `;
   }
 
   return `
@@ -63,20 +63,20 @@ const width = scale => (key, n) => {
       position: initial;
       top: 0;
       left: 0;
-  `
-}
-const px = n => (num(n) ? n + 'px' : n)
+  `;
+};
+const px = n => (num(n) ? n + 'px' : n);
 
 const space = scale => (key, n) => {
-  const [a, b] = key.split('')
-  const prop = a === 'm' ? 'margin' : 'padding'
-  const dirs = directions[b] || ['']
-  const neg = n < 0 ? '-' : ''
-  const val = !num(n) ? n : neg + (scale[Math.abs(n)] || Math.abs(n))
-  const rules = rule(dirs.map(d => dec([prop + d, val])))
+  const [a, b] = key.split('');
+  const prop = a === 'm' ? 'margin' : 'padding';
+  const dirs = directions[b] || [''];
+  const neg = n < 0 ? '-' : '';
+  const val = !num(n) ? n : neg + (scale[Math.abs(n)] || Math.abs(n));
+  const rules = rule(dirs.map(d => dec([prop + d, val])));
 
-  return rules
-}
+  return rules;
+};
 
 const directions = {
   t: ['-top'],
@@ -85,15 +85,15 @@ const directions = {
   l: ['-left'],
   x: ['-left', '-right'],
   y: ['-top', '-bottom'],
-}
+};
 
-const block = (key, n) => dec(['display', n ? 'block' : 'flex'])
-const wrap = (key, n) => dec(['flex-wrap', n ? 'wrap' : 'nowrap'])
-const auto = (key, n) => dec(['flex', '1 1 auto'])
-const column = (key, n) => dec(['flex-direction', n ? 'column' : 'row'])
-const align = (key, n) => dec(['align-items', n])
-const justify = (key, n) => dec(['justify-content', n])
-const order = (key, n) => dec(['order', n])
+const block = (key, n) => dec(['display', n ? 'block' : 'flex']);
+const wrap = (key, n) => dec(['flex-wrap', n ? 'wrap' : 'nowrap']);
+const auto = (key, n) => dec(['flex', '1 1 auto']);
+const column = (key, n) => dec(['flex-direction', n ? 'column' : 'row']);
+const align = (key, n) => dec(['align-items', n]);
+const justify = (key, n) => dec(['justify-content', n]);
+const order = (key, n) => dec(['order', n]);
 
 const stylers = () => ({
   m: space(spacing),
@@ -106,7 +106,7 @@ const stylers = () => ({
   align,
   justify,
   order,
-})
+});
 
 const GridStyled = styled.div`
   ${breakpoint('smallPhone')`
@@ -132,7 +132,7 @@ const GridStyled = styled.div`
   position: relative;
 
   ${props => css(props)}
-`
+`;
 
 const Flex = styled.div`
   flex-wrap: wrap;
@@ -145,11 +145,11 @@ const Flex = styled.div`
     `
     display: block;
   `};
-`
+`;
 
 export const Grid = props => (
   <GridStyled mx="auto" px={[0, 0, 0, 0, 42, 48, 0]} {...props} />
-)
+);
 
 export const Row = styled(Flex).attrs({
   mx: [0, 0, 0, 0, -1.75, -2, -2],
@@ -165,13 +165,13 @@ export const Row = styled(Flex).attrs({
     `
     justify-content: flex-end;
   `}
-`
+`;
 
-export const Col = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />
+export const Col = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />;
 
 Col.defaultProps = {
   block: true,
-}
+};
 
 /**
  * This is an Utilitary component for quickly building a column layout.
@@ -191,27 +191,27 @@ Col.defaultProps = {
  * full width, for a different scenario, it's best to manually build the layout with the appropriate components.
  */
 export const ColumnLayout = ({ children, cols, items }) => {
-  const defaultWidthOnTabletAndAbove = 12 / cols / 12
-  const width = [1, 1, 1, 1, defaultWidthOnTabletAndAbove]
+  const defaultWidthOnTabletAndAbove = 12 / cols / 12;
+  const width = [1, 1, 1, 1, defaultWidthOnTabletAndAbove];
   const StackableRow = styled(Row)`
     flex-direction: column;
 
     ${breakpoint('smallTablet')`
       flex-direction: row;
     `}
-  `
+  `;
 
   return (
     <StackableRow>
       {items.map((item, idx) => {
-        const child = children({ Col, item, idx })
+        const child = children({ Col, item, idx });
 
         return React.cloneElement(child, {
           width: child.props.width || width,
           key: child.props.key || idx,
           idx,
-        })
+        });
       })}
     </StackableRow>
-  )
-}
+  );
+};

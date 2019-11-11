@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import { Padding } from 'styled-components-spacing';
 
-import { Col } from '../../../components/grid'
+import { Col } from '../../../components/grid';
 import {
   ItemSubtitle,
   ItemBody,
-} from '../../../components/Common/SubtitleWithBody'
-import CustomisedBulletpoint from '../../../components/Common/CustomisedBulletpoint'
+} from '../../../components/Common/SubtitleWithBody';
+import CustomisedBulletpoint from '../../../components/Common/CustomisedBulletpoint';
 
 const CourseContent = ({ content }) => (
   <Col width={[1, 1, 1, 1, 1, 5 / 6]} px={0}>
@@ -35,6 +35,6 @@ const CourseContent = ({ content }) => (
       {/* eslint-enable react/display-name */}
     </Padding>
   </Col>
-)
+);
 
-export default CourseContent
+export default CourseContent;

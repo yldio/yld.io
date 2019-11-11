@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import BlueBackground from '../Common/BlueBackground'
-import VideoGrid from '../Common/VideoGrid'
-import StyledLink from '../Common/StyledLink'
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle } from '../Typography'
+import BlueBackground from '../Common/BlueBackground';
+import VideoGrid from '../Common/VideoGrid';
+import StyledLink from '../Common/StyledLink';
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle } from '../Typography';
 
 const StyledGrid = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -23,16 +23,16 @@ const StyledGrid = styled(Grid)`
   ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[7]}
   `}
-`
+`;
 
 const StyledImage = styled.img`
   padding-bottom: ${({ theme }) => theme.spacing[2]};
-`
+`;
 
 const StyledVideoGridWrapper = styled.div`
   padding-top: ${({ theme }) => theme.spacing[3]};
   padding-bottom: ${({ theme }) => theme.spacing[3]};
-`
+`;
 
 const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
   <BlueBackground>
@@ -51,6 +51,6 @@ const TalksSection = ({ icon, title, talks, ctaText, ctaLink }) => (
       </StyledLink>
     </StyledGrid>
   </BlueBackground>
-)
+);
 
-export default TalksSection
+export default TalksSection;

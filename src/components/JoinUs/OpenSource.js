@@ -1,9 +1,9 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing/dist/cjs/Padding'
+import React from 'react';
+import { Padding } from 'styled-components-spacing/dist/cjs/Padding';
 
-import { Section, Separator, TitleAndBody } from './elements'
-import TitleAndList from '../Common/TitleAndList'
-import VideoGrid from '../Common/VideoGrid'
+import { Section, Separator, TitleAndBody } from './elements';
+import TitleAndList from '../Common/TitleAndList';
+import VideoGrid from '../Common/VideoGrid';
 
 const OpenSource = ({
   data: { title, subtitle, list, text, featuredTalks },
@@ -17,6 +17,6 @@ const OpenSource = ({
     <VideoGrid data={featuredTalks} />
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
-)
+);
 
-export default OpenSource
+export default OpenSource;

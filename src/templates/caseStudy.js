@@ -1,26 +1,26 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import { graphql } from 'gatsby';
 
-import generateCaseStudy from '../utils/generateCaseStudy'
-import Layout from '../components/layout'
-import { Grid } from '../components/grid'
-import { GreyBackgroundOffset } from '../components/Common/GreyBackground'
-import Head from '../components/Common/Head'
-import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero'
-import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection'
-import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection'
-import VideoSection from '../components/Common/VideoSection'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
+import generateCaseStudy from '../utils/generateCaseStudy';
+import Layout from '../components/layout';
+import { Grid } from '../components/grid';
+import { GreyBackgroundOffset } from '../components/Common/GreyBackground';
+import Head from '../components/Common/Head';
+import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero';
+import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection';
+import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection';
+import VideoSection from '../components/Common/VideoSection';
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location,
 }) => {
-  const body = generateCaseStudy(caseStudy)
-  const firstTextBlock = body[0]
-  const videoInfo = body[1]
-  const secondTextBlock = body[2]
+  const body = generateCaseStudy(caseStudy);
+  const firstTextBlock = body[0];
+  const videoInfo = body[1];
+  const secondTextBlock = body[2];
 
   return (
     <Layout
@@ -51,10 +51,10 @@ const CaseStudy = ({
         caseStudy={caseStudy.relatedCaseStudies[0]}
       />
     </Layout>
-  )
-}
+  );
+};
 
-export default CaseStudy
+export default CaseStudy;
 
 export const pageQuery = graphql`
   query($id: String) {
@@ -104,4 +104,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -11,7 +11,7 @@ export default (siteUrl, pages = []) =>
   pages.length > 0 &&
   pages.map(({ name, pathname, position }) => {
     if (!pathname || !position || !name) {
-      throw new Error('Missing breadcrumb data')
+      throw new Error('Missing breadcrumb data');
     }
 
     return {
@@ -21,5 +21,5 @@ export default (siteUrl, pages = []) =>
         name,
       },
       position,
-    }
-  })
+    };
+  });

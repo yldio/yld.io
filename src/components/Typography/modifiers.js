@@ -1,5 +1,5 @@
-import { css } from 'styled-components'
-import is from 'styled-is'
+import { css } from 'styled-components';
+import is from 'styled-is';
 
 const modifiers = css`
   ${is('secondary')`
@@ -33,6 +33,6 @@ const modifiers = css`
   ${is('noPaddingBottom')`
     padding-bottom: 0;
   `};
-`
+`;
 
-export default modifiers
+export default modifiers;

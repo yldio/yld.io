@@ -1,33 +1,33 @@
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
-import { generate } from 'shortid'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import { startOfToday, isAfter, isToday } from 'date-fns'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import is from 'styled-is'
+import React, { Fragment } from 'react';
+import Helmet from 'react-helmet';
+import { generate } from 'shortid';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import { startOfToday, isAfter, isToday } from 'date-fns';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
+import is from 'styled-is';
 
-import Head from '../components/Common/Head'
-import Hr from '../components/Common/Hr'
+import Head from '../components/Common/Head';
+import Hr from '../components/Common/Hr';
 import {
   BodyPrimary,
   SectionTitle,
   DisplayTitle,
-} from '../components/Typography'
-import { Grid, Row, Col } from '../components/grid'
-import Layout from '../components/layout'
-import ConferenceCard from '../components/Events/ConferenceCard'
-import EventCard from '../components/Events/EventCard'
-import GreyBackground from '../components/Common/GreyBackground'
-import Image from '../components/Common/Image'
-import StyledLink from '../components/Common/StyledLink'
-import BlueBackground from '../components/Common/BlueBackground'
+} from '../components/Typography';
+import { Grid, Row, Col } from '../components/grid';
+import Layout from '../components/layout';
+import ConferenceCard from '../components/Events/ConferenceCard';
+import EventCard from '../components/Events/EventCard';
+import GreyBackground from '../components/Common/GreyBackground';
+import Image from '../components/Common/Image';
+import StyledLink from '../components/Common/StyledLink';
+import BlueBackground from '../components/Common/BlueBackground';
 
-import { LogoStyleContext } from '../context/PageContext'
+import { LogoStyleContext } from '../context/PageContext';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 const createEventStructuredData = (events = []) =>
   events.map(({ node }) => ({
@@ -57,7 +57,7 @@ const createEventStructuredData = (events = []) =>
     // Can't add description when meetup as meetup blurb is HTML, using strip tags
     // is not reliable enough due to potential ' + " characters in html breaking parsing
     ...(node.type !== 'Meetup' && { description: node.blurb.blurb }),
-  }))
+  }));
 
 const getInTouchData = {
   title: 'Interested in hosting or talking at our meetups?',
@@ -65,11 +65,11 @@ const getInTouchData = {
   copy:
     'Host or sponsor one of our events. Have an idea of your own? Let us know!',
   ctaText: 'Get in touch',
-}
+};
 
 const StyledBlueBackground = styled(BlueBackground)`
   margin-top: -${remcalc(40)};
-`
+`;
 
 const StyledRow = styled(Row)`
   align-items: center;
@@ -90,7 +90,7 @@ const StyledRow = styled(Row)`
     height: ${remcalc(644)};
     padding-bottom: ${({ theme }) => theme.space[6]};
     `};
-`
+`;
 
 const StyledPosterImage = styled(Image)`
   height: 100%;
@@ -100,7 +100,7 @@ const StyledPosterImage = styled(Image)`
   ${breakpoint('desktop')`
     width: 200%;
   `}
-`
+`;
 
 const StyledSectionTitleCol = styled(Col)`
   display: flex;
@@ -109,7 +109,7 @@ const StyledSectionTitleCol = styled(Col)`
   ${breakpoint('smallPhone', 'smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const StyledPosterImageCol = styled(Col)`
   overflow: visible;
@@ -118,7 +118,7 @@ const StyledPosterImageCol = styled(Col)`
   `}
 
   height: 100%;
-`
+`;
 
 const HrWrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -132,7 +132,7 @@ const HrWrapper = styled.div`
   ${is('noPaddingTop')`
     padding-top: 0;
   `}
-`
+`;
 
 const EventsRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -146,7 +146,7 @@ const EventsRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const ConferenceRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -156,7 +156,7 @@ const ConferenceRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
     `}
-`
+`;
 
 const ConferenceTitleWrap = styled.div`
   padding-bottom: ${({ theme }) => theme.space[5]};
@@ -164,13 +164,13 @@ const ConferenceTitleWrap = styled.div`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const EventListWrapper = styled.div`
   ${is('paddingBottom')`
     padding-bottom: ${({ theme }) => theme.space[2]}
   `}
-`
+`;
 
 const EventList = ({ events }) =>
   events.slice(0, 4).map((event, idx, arr) => (
@@ -180,7 +180,7 @@ const EventList = ({ events }) =>
       </HrWrapper>
       <EventCard event={event.node} />
     </EventListWrapper>
-  ))
+  ));
 
 const ConferenceList = ({ events }) =>
   events.slice(0, 4).map((event, idx) => (
@@ -192,7 +192,7 @@ const ConferenceList = ({ events }) =>
       )}
       <ConferenceCard event={event.node} />
     </Fragment>
-  ))
+  ));
 
 const EventPage = ({
   data: {
@@ -207,9 +207,9 @@ const EventPage = ({
 }) => {
   const futureEvents = events.edges.filter(
     ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date),
-  )
+  );
 
-  const { introSentence, posterImage, seoMetaData, footerContactUs } = content
+  const { introSentence, posterImage, seoMetaData, footerContactUs } = content;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -217,9 +217,9 @@ const EventPage = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
-  const eventStructuredData = createEventStructuredData(futureEvents)
+  const eventStructuredData = createEventStructuredData(futureEvents);
 
   return (
     <LogoStyleContext.Provider value="white">
@@ -312,8 +312,8 @@ const EventPage = ({
         </Grid>
       </Layout>
     </LogoStyleContext.Provider>
-  )
-}
+  );
+};
 
 export const query = graphql`
   fragment Event on ContentfulMeetupEvent {
@@ -393,6 +393,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default EventPage
+export default EventPage;

@@ -1,15 +1,15 @@
-import React, { useEffect, useCallback } from 'react'
-import styled from 'styled-components'
-import { graphql, navigate } from 'gatsby'
-import { Padding } from 'styled-components-spacing'
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
-import Head from '../components/Common/Head'
-import Layout from '../components/layout'
-import CourseInfo from '../components/Training/course/CourseInfo'
-import CourseContent from '../components/Training/course/CourseContent'
-import ModalCloseButton from '../components/Training/course/ModalCloseButton'
-import { Grid, Row, Col } from '../components/grid'
+import React, { useEffect, useCallback } from 'react';
+import styled from 'styled-components';
+import { graphql, navigate } from 'gatsby';
+import { Padding } from 'styled-components-spacing';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
+import Head from '../components/Common/Head';
+import Layout from '../components/layout';
+import CourseInfo from '../components/Training/course/CourseInfo';
+import CourseContent from '../components/Training/course/CourseContent';
+import ModalCloseButton from '../components/Training/course/ModalCloseButton';
+import { Grid, Row, Col } from '../components/grid';
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -20,12 +20,12 @@ const Wrapper = styled.div`
   left: 0;
   z-index: ${props => props.theme.zIndexes.modal};
   overflow: scroll;
-`
+`;
 
 const CloseButtonWrapper = styled(Padding)`
   display: flex;
   justify-content: flex-end;
-`
+`;
 
 const ModalContent = ({
   modal,
@@ -35,27 +35,27 @@ const ModalContent = ({
   location,
   siteUrl,
 }) => {
-  const returnPath = `${closeTo}/#${category.slug}`
+  const returnPath = `${closeTo}/#${category.slug}`;
 
   const handleKeyPress = useCallback(
     ({ key }) => {
       if (key === 'Escape') {
-        return navigate(returnPath)
+        return navigate(returnPath);
       }
 
-      return
+      return;
     },
     [returnPath],
-  )
+  );
 
   useEffect(
     () => {
-      document.addEventListener('keyup', handleKeyPress, false)
+      document.addEventListener('keyup', handleKeyPress, false);
 
-      return () => document.removeEventListener('keyup', handleKeyPress, false)
+      return () => document.removeEventListener('keyup', handleKeyPress, false);
     },
     [handleKeyPress],
-  )
+  );
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -68,7 +68,7 @@ const ModalContent = ({
       pathname: location.pathname,
       position: 3,
     },
-  ])
+  ]);
 
   return (
     <Layout location={location} breadcrumbData={breadcrumbData}>
@@ -104,8 +104,8 @@ const ModalContent = ({
         </Padding>
       </Wrapper>
     </Layout>
-  )
-}
+  );
+};
 
 const TrainingCourseModal = ({
   data: {
@@ -129,9 +129,9 @@ const TrainingCourseModal = ({
       />
     )}
   </ModalRoutingContext.Consumer>
-)
+);
 
-export default TrainingCourseModal
+export default TrainingCourseModal;
 
 export const pageQuery = graphql`
   query($id: String, $categoryId: String) {
@@ -168,4 +168,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
+import React from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 const Image = ({ image, alt, className, ...props }) => {
   return (image.fluid || {}).src ? (
@@ -17,10 +17,10 @@ const Image = ({ image, alt, className, ...props }) => {
       className={className}
       {...props}
     />
-  )
-}
+  );
+};
 
 export default styled(Image)`
   width: ${props => (props.width ? `${props.width}` : '100%')};
   height: ${props => (props.height ? `${props.height}` : 'auto')};
-`
+`;

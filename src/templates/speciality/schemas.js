@@ -17,7 +17,7 @@ const communitySchema = {
     },
   },
   required: ['title', 'communityText'],
-}
+};
 
 const trainingSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -28,7 +28,7 @@ const trainingSchema = {
     },
   },
   required: ['trainingIntroText'],
-}
+};
 
 const projectsSchema = {
   definitions: {},
@@ -128,7 +128,7 @@ const projectsSchema = {
       },
     },
   },
-}
+};
 
 const clientSchema = {
   definitions: {},
@@ -185,7 +185,7 @@ const clientSchema = {
       },
     },
   },
-}
+};
 
 const howWeWorkSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -199,7 +199,7 @@ const howWeWorkSchema = {
     },
   },
   required: ['howWeWorkWithTitle', 'howWeWorkWithCopy'],
-}
+};
 
 export {
   communitySchema,
@@ -207,4 +207,4 @@ export {
   clientSchema,
   trainingSchema,
   howWeWorkSchema,
-}
+};

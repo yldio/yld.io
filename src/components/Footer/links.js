@@ -1,11 +1,11 @@
-import behance from '../../images/behance-icon.svg'
-import dribbble from '../../images/dribbble-icon.svg'
-import github from '../../images/github-icon.svg'
-import medium from '../../images/medium-icon.svg'
-import twitter from '../../images/twiter-icon.svg'
-import youtube from '../../images/youtube-icon.svg'
-import instagram from '../../images/instagram-icon.svg'
-import linkedin from '../../images/linkedin-icon.svg'
+import behance from '../../images/behance-icon.svg';
+import dribbble from '../../images/dribbble-icon.svg';
+import github from '../../images/github-icon.svg';
+import medium from '../../images/medium-icon.svg';
+import twitter from '../../images/twiter-icon.svg';
+import youtube from '../../images/youtube-icon.svg';
+import instagram from '../../images/instagram-icon.svg';
+import linkedin from '../../images/linkedin-icon.svg';
 
 const social = [
   {
@@ -48,7 +48,7 @@ const social = [
     to: 'https://www.behance.net/YLDio',
     img: behance,
   },
-]
+];
 
 const gdpr = [
   {
@@ -67,6 +67,6 @@ const gdpr = [
     label: 'Data-retention policy',
     to: '/data-retention-policy',
   },
-]
+];
 
-export { social, gdpr }
+export { social, gdpr };

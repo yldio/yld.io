@@ -5,22 +5,22 @@
  * lambda triggered --> get repo urls stored in contentful --> get current contentful data -->  get current github data --> if any differences, write new data to contentful
  */
 
-const OssStats = require('@yldio/oss-stats')
-const { createClient } = require('contentful-management')
+const OssStats = require('@yldio/oss-stats');
+const { createClient } = require('contentful-management');
 
-const Auth = require('./utils/auth')
-const Meta = require('./oss/meta')
-const Repos = require('./oss/repos')
+const Auth = require('./utils/auth');
+const Meta = require('./oss/meta');
+const Repos = require('./oss/repos');
 
-const org = 'yldio'
+const org = 'yldio';
 
 exports.handler = async evt =>
   Auth(evt, async () => {
-    const { getData, normalise, summariseContributions } = OssStats
-    const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env
+    const { getData, normalise, summariseContributions } = OssStats;
+    const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
-      throw new Error(`Missing env variables, check set up`)
+      throw new Error(`Missing env variables, check set up`);
     }
 
     // Get github data
@@ -33,15 +33,15 @@ exports.handler = async evt =>
       token: GITHUB_TOKEN,
     })
       .then(normalise)
-      .then(summariseContributions)
+      .then(summariseContributions);
 
     // Get contentful data
     const client = createClient({
       accessToken: CMS_CRUD,
-    })
+    });
 
-    const space = await client.getSpace(CONTENTFUL_SPACE)
-    const environment = await space.getEnvironment('master')
+    const space = await client.getSpace(CONTENTFUL_SPACE);
+    const environment = await space.getEnvironment('master');
 
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
@@ -50,8 +50,8 @@ exports.handler = async evt =>
       }),
       Repos(environment, { repos }),
     ]).catch(err => {
-      throw new Error(err)
-    })
+      throw new Error(err);
+    });
 
     return {
       statusCode: 200,
@@ -63,5 +63,5 @@ exports.handler = async evt =>
             : 'No repos updated',
         missingRepos,
       }),
-    }
-  })
+    };
+  });

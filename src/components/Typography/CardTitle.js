@@ -1,9 +1,9 @@
-import styled from 'styled-components'
-import is from 'styled-is'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import styled from 'styled-components';
+import is from 'styled-is';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import modifiers from './modifiers'
+import modifiers from './modifiers';
 
 const CardTitle = styled.h3`
   color: ${props => props.theme.colors.text};
@@ -28,6 +28,6 @@ const CardTitle = styled.h3`
       line-height: ${remcalc(36)};
     `}
   `};
-`
+`;
 
-export default CardTitle
+export default CardTitle;

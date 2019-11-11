@@ -1,7 +1,7 @@
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import Flex from 'styled-flex-component'
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import Flex from 'styled-flex-component';
 
 export const AnimatedLink = styled(Link)`
   > section {
@@ -13,7 +13,7 @@ export const AnimatedLink = styled(Link)`
       transform: scale(0.97);
     }
   }
-`
+`;
 
 export const PosterImage = styled(Flex)`
   background: #${({ color }) => color};
@@ -25,7 +25,7 @@ export const PosterImage = styled(Flex)`
     max-width: 100%;
     width: 100%;
   }
-`
+`;
 
 export const CardHeader = styled.header`
   padding: ${remcalc(24)} ${remcalc(36)} ${remcalc(22)} ${remcalc(36)};
@@ -35,4 +35,4 @@ export const CardHeader = styled.header`
   > div {
     max-width: ${remcalc(310)};
   }
-`
+`;

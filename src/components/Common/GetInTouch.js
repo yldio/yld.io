@@ -1,15 +1,15 @@
-import React from 'react'
-import breakpoint from 'styled-components-breakpoint'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import PropTypes from 'prop-types'
-import generate from 'shortid'
-import { Row, Col, Grid } from '../grid'
-import { DisplayTitle, BodyPrimary, Subtitle } from '../Typography'
-import Image from './Image'
-import StyledLink from './StyledLink'
-import SocialLink from './SocialLink'
-import { Link } from 'gatsby'
+import React from 'react';
+import breakpoint from 'styled-components-breakpoint';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import PropTypes from 'prop-types';
+import generate from 'shortid';
+import { Row, Col, Grid } from '../grid';
+import { DisplayTitle, BodyPrimary, Subtitle } from '../Typography';
+import Image from './Image';
+import StyledLink from './StyledLink';
+import SocialLink from './SocialLink';
+import { Link } from 'gatsby';
 
 const PersonProfileCol = styled(Col)`
   display: flex;
@@ -18,9 +18,9 @@ const PersonProfileCol = styled(Col)`
   ${breakpoint('smallTablet')`
     flex-wrap: nowrap;
   `};
-`
+`;
 
-const IMAGE_SIZE = 24
+const IMAGE_SIZE = 24;
 
 const ProfileImageWrapper = styled.div`
   width: 100%;
@@ -30,7 +30,7 @@ const ProfileImageWrapper = styled.div`
   ${breakpoint('smallPhone', 'largePhone')`
     padding-bottom: ${({ theme }) => theme.space[2]}
   `}
-`
+`;
 
 const LinksContainer = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ const LinksContainer = styled.div`
   ${breakpoint('smallTablet')`
     padding-top: 0;
   `};
-`
+`;
 
 const ProfileRow = styled(Row)`
   align-items: end;
@@ -55,7 +55,7 @@ const ProfileRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const ProfileTitleCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
@@ -67,7 +67,7 @@ const ProfileTitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[5]};
   `}
-`
+`;
 
 const PersonCopyWrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[3]};
@@ -80,7 +80,7 @@ const PersonCopyWrapper = styled.div`
   ${breakpoint('desktop')`
     padding-bottom: 0;
   `}
-`
+`;
 
 const PersonCta = styled.div`
   align-self: flex-end;
@@ -94,7 +94,7 @@ const PersonCta = styled.div`
   a {
     text-decoration: underline;
   }
-`
+`;
 
 const ProfileContentWrapper = styled.div`
   ${breakpoint('smallPhone', 'largePhone')`
@@ -111,13 +111,13 @@ const ProfileContentWrapper = styled.div`
   ${breakpoint('tablet')`
     border-right: 1px solid ${({ theme }) => theme.colors.border}
   `};
-`
+`;
 
 const PersonBodyPrimary = styled(BodyPrimary)`
   ${breakpoint('smallPhone', 'tablet')`
       display: block
   `}
-`
+`;
 
 const Profile = props => {
   const {
@@ -128,7 +128,7 @@ const Profile = props => {
     personCtaCopy,
     personCtaLinkUrl,
     personCtaLinkCopy,
-  } = props
+  } = props;
 
   return (
     <Grid>
@@ -190,8 +190,8 @@ const Profile = props => {
         </Col>
       </ProfileRow>
     </Grid>
-  )
-}
+  );
+};
 
 const GenericRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -206,14 +206,14 @@ const GenericRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const GenericCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const Generic = props => {
-  const { title, genericCopy, genericCtaText, genericCtaUrl } = props
+  const { title, genericCopy, genericCtaText, genericCtaUrl } = props;
   return (
     <Grid>
       <GenericRow>
@@ -230,22 +230,22 @@ const Generic = props => {
         </Col>
       </GenericRow>
     </Grid>
-  )
-}
+  );
+};
 const GetInTouch = props => {
-  const { genericCopy } = props
+  const { genericCopy } = props;
 
-  return genericCopy ? <Generic {...props} /> : <Profile {...props} />
-}
+  return genericCopy ? <Generic {...props} /> : <Profile {...props} />;
+};
 
 GetInTouch.propTypes = {
   title: PropTypes.string.isRequired,
   contactText: PropTypes.string.isRequired,
   ctaText: PropTypes.string.isRequired,
-}
+};
 
 GetInTouch.defaultProps = {
   ctaText: 'Get in touch',
-}
+};
 
-export default GetInTouch
+export default GetInTouch;

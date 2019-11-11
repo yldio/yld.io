@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const fragments = graphql`
   fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
@@ -77,4 +77,4 @@ export const fragments = graphql`
       }
     }
   }
-`
+`;

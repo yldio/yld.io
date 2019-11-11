@@ -5,6 +5,6 @@ const transformMetaData = posts =>
     // response. Means Gatsby will download the image from
     // contentful when the site builds
     headerImage: post.relatedMedia[0], // may be undefined
-  }))
+  }));
 
-module.exports = transformMetaData
+module.exports = transformMetaData;

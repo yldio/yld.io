@@ -1,14 +1,14 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import { FakeLink } from '../Common/StyledLink'
+import React from 'react';
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle, BodyPrimary } from '../Typography';
+import { FakeLink } from '../Common/StyledLink';
 
 const FixedWidthBodyPrimary = styled(BodyPrimary)`
   max-width: ${remcalc(525)};
-`
+`;
 
 /**
  * This component needs to be a class to avoid
@@ -19,7 +19,7 @@ const FixedWidthBodyPrimary = styled(BodyPrimary)`
  */
 class ViewPositions extends React.Component {
   render() {
-    const { text, description, scrollToVacancies } = this.props
+    const { text, description, scrollToVacancies } = this.props;
     return (
       <Grid>
         <Padding
@@ -45,8 +45,8 @@ class ViewPositions extends React.Component {
           </Row>
         </Padding>
       </Grid>
-    )
+    );
   }
 }
 
-export default ViewPositions
+export default ViewPositions;

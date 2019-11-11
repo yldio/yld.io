@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
 
-import { UnstyledButton } from '../../Common/Button'
-import outlineStyles from '../utils/outlineStyles'
+import { UnstyledButton } from '../../Common/Button';
+import outlineStyles from '../utils/outlineStyles';
 
 const HamburgerSvg = styled.svg`
   fill: ${({ themeVariation, theme }) =>
     themeVariation === theme.variations.dark
       ? theme.colors.white
       : theme.colors.text};
-`
+`;
 
 const HamburgerButton = styled(UnstyledButton)`
   ${breakpoint('smallPhone')`
@@ -27,7 +27,7 @@ const HamburgerButton = styled(UnstyledButton)`
   @media screen and (min-width: 960px) {
     display: none;
   }
-`
+`;
 
 const Hamburger = ({ themeVariation, onClick }) => (
   <HamburgerButton onClick={onClick}>
@@ -41,6 +41,6 @@ const Hamburger = ({ themeVariation, onClick }) => (
       <path d="M0 16h24v2H0zm0-8h24v2H0zm0-8h24v2H0z" fillRule="evenodd" />
     </HamburgerSvg>
   </HamburgerButton>
-)
+);
 
-export default Hamburger
+export default Hamburger;

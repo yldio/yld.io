@@ -1,14 +1,14 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import { Grid, Row, Col } from '../grid'
-import Hr from '../Common/Hr'
-import BlueBackground from '../Common/BlueBackground'
-import BackgroundGraphic from '../Common/BackgroundGraphic'
-import TitleAndList from '../Common/TitleAndList'
-import theme from '../../utils/theme'
-import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography';
+import { Grid, Row, Col } from '../grid';
+import Hr from '../Common/Hr';
+import BlueBackground from '../Common/BlueBackground';
+import BackgroundGraphic from '../Common/BackgroundGraphic';
+import TitleAndList from '../Common/TitleAndList';
+import theme from '../../utils/theme';
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint';
 
 const Approach = ({ title, content, formats }) => (
   <BlueBackground>
@@ -64,6 +64,6 @@ const Approach = ({ title, content, formats }) => (
       <Padding bottom={{ smallPhone: 0, tablet: 5 }} />
     </Grid>
   </BlueBackground>
-)
+);
 
-export default Approach
+export default Approach;

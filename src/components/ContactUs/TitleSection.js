@@ -1,9 +1,9 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import ReactMarkdown from 'react-markdown'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import ReactMarkdown from 'react-markdown';
 
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle } from '../Typography'
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle } from '../Typography';
 
 // title must be a string!!
 const TitleSection = ({ title }) => {
@@ -26,7 +26,7 @@ const TitleSection = ({ title }) => {
         </Row>
       </Padding>
     </Grid>
-  )
-}
+  );
+};
 
-export default TitleSection
+export default TitleSection;

@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Row, Col, Grid } from '../grid'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
-import generate from 'shortid'
-import is from 'styled-is'
+import React from 'react';
+import styled from 'styled-components';
+import { Row, Col, Grid } from '../grid';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
+import generate from 'shortid';
+import is from 'styled-is';
 
-import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
-import GreyBackground from '../Common/GreyBackground'
-import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint';
+import GreyBackground from '../Common/GreyBackground';
+import { SectionTitle, BodyPrimary, Subtitle } from '../Typography';
 
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -31,7 +31,7 @@ const StyledRow = styled(Row)`
   ${is('noPaddingTop')`
     padding-top: 0 !important; 
     `}
-`
+`;
 
 const PractiseCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -39,14 +39,14 @@ const PractiseCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const HowWeWorkWithSection = ({
   howWeWorkWithTitle: title,
   howWeWorkWithCopy: copy,
   howWeWorkWithPractises: practises = [],
 }) => {
-  const hasPractises = practises && practises.length > 0
+  const hasPractises = practises && practises.length > 0;
   return (
     <GreyBackground>
       <Grid>
@@ -75,8 +75,8 @@ const HowWeWorkWithSection = ({
         )}
       </Grid>
     </GreyBackground>
-  )
-}
+  );
+};
 
 const MarkDownRender = ({ source }) => (
   <ReactMarkdown
@@ -90,6 +90,6 @@ const MarkDownRender = ({ source }) => (
       listItem: props => <CustomisedBulletpoint {...props} />,
     }}
   />
-)
+);
 
-export default HowWeWorkWithSection
+export default HowWeWorkWithSection;

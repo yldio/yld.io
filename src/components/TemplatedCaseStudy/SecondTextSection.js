@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import { Margin } from 'styled-components-spacing'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { Margin } from 'styled-components-spacing';
 
-import { Row, Col } from '../grid'
-import { SectionTitleStyles, BodyPrimary } from '../Typography'
+import { Row, Col } from '../grid';
+import { SectionTitleStyles, BodyPrimary } from '../Typography';
 
 const NonMobileRow = styled(Row)`
   display: none;
@@ -12,17 +12,17 @@ const NonMobileRow = styled(Row)`
   ${breakpoint('smallTablet')`
     display: flex;
   `}
-`
+`;
 
 const MobileOnlyRow = styled(Row)`
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const LargeStatsValue = styled(BodyPrimary)`
   ${SectionTitleStyles}
-`
+`;
 
 const Stats = ({ stats }) => (
   <Fragment>
@@ -35,7 +35,7 @@ const Stats = ({ stats }) => (
       </Margin>
     ))}
   </Fragment>
-)
+);
 
 const TextColumn = ({ text }) => (
   <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
@@ -43,7 +43,7 @@ const TextColumn = ({ text }) => (
       <BodyPrimary key={i}>{text}</BodyPrimary>
     ))}
   </Col>
-)
+);
 
 const SecondTextSection = ({ stats, text }) => (
   <Fragment>
@@ -68,6 +68,6 @@ const SecondTextSection = ({ stats, text }) => (
       </Row>
     )}
   </Fragment>
-)
+);
 
-export default SecondTextSection
+export default SecondTextSection;
