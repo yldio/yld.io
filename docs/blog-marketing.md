@@ -29,7 +29,7 @@ New additional steps
 
   ![edit canonical](./assets/canonical-url.png)
 
-## Add preivew image
+## Add preview image
 
 This step is only required if the blog published on medium has no images. Having images in blog posts is not critical to the new content but has two but It is advised that you encourage authors to add content but if not possible then these are the steps to follow to include the image.
 
