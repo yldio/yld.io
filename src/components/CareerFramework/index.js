@@ -1,1 +1,1 @@
-export { default as Discipline } from './Discipline'
+export { default as Discipline } from './Discipline';

@@ -1,38 +1,38 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { format, isAfter, isSameDay } from 'date-fns'
-import styled from 'styled-components'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { format, isAfter, isSameDay } from 'date-fns';
+import styled from 'styled-components';
 
-import { Grid, Row, Col } from '../components/grid'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
-import GreyBackground from '../components/Common/GreyBackground'
-import LogoGrid from '../components/Common/LogoGrid'
-import Services from '../components/Homepage/services'
-import Intro from '../components/Homepage/Intro'
-import OurWork from '../components/Homepage/OurWork'
-import Events from '../components/Homepage/events'
-import BlogSection from '../components/Homepage/BlogSection'
-import FooterSections from '../components/Homepage/FooterSections'
-import BlueBackground from '../components/Common/BlueBackground'
-import Contributions from '../components/Common/Contributions'
-import { Subtitle } from '../components/Typography'
+import { Grid, Row, Col } from '../components/grid';
+import Layout from '../components/layout';
+import Head from '../components/Common/Head';
+import GreyBackground from '../components/Common/GreyBackground';
+import LogoGrid from '../components/Common/LogoGrid';
+import Services from '../components/Homepage/services';
+import Intro from '../components/Homepage/Intro';
+import OurWork from '../components/Homepage/OurWork';
+import Events from '../components/Homepage/events';
+import BlogSection from '../components/Homepage/BlogSection';
+import FooterSections from '../components/Homepage/FooterSections';
+import BlueBackground from '../components/Common/BlueBackground';
+import Contributions from '../components/Common/Contributions';
+import { Subtitle } from '../components/Typography';
 
-import { HomePageContext, LogoStyleContext } from '../context/PageContext'
+import { HomePageContext, LogoStyleContext } from '../context/PageContext';
 
 /**
  * Importing fragments here to have them available to the entire
  * GraphQL schema
  */
 // eslint-disable-next-line no-unused-vars
-import { fragments } from '../fragments'
+import { fragments } from '../fragments';
 
-const dateFormat = 'dddd[,] MMMM DD'
+const dateFormat = 'dddd[,] MMMM DD';
 
 const getFeaturedEventDate = ({ node: { date, endTime } }) =>
   !isSameDay(date, endTime) && isAfter(endTime, date)
     ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
-    : format(date, dateFormat)
+    : format(date, dateFormat);
 
 const getHomepageConferences = (events = []) =>
   events
@@ -41,7 +41,7 @@ const getHomepageConferences = (events = []) =>
     .map(n => ({
       ...n.node,
       date: getFeaturedEventDate(n),
-    }))
+    }));
 
 /**
  * Because this is the home page and needs to be a
@@ -55,22 +55,22 @@ const getHomepageConferences = (events = []) =>
 
 const StyledSubtitle = styled(Subtitle)`
   padding-bottom: ${props => props.theme.space[4]};
-`
+`;
 
 const Column = styled(Col)`
   padding-top: ${props => props.theme.space[2]};
-`
+`;
 
 const IndexPage = ({ data, location }) => {
   const {
     contentfulHomepage: content,
     allContentfulMeetupEvent: events,
     allContentfulBlogPost: blogData,
-  } = data
+  } = data;
 
-  const sortedServices = content.services.sort((a, b) => a.order - b.order)
-  const blogPosts = blogData.edges || []
-  const featuredEvent = getHomepageConferences(events.edges)[0]
+  const sortedServices = content.services.sort((a, b) => a.order - b.order);
+  const blogPosts = blogData.edges || [];
+  const featuredEvent = getHomepageConferences(events.edges)[0];
   return (
     <HomePageContext.Provider value={true}>
       <LogoStyleContext.Provider value="white">
@@ -114,8 +114,8 @@ const IndexPage = ({ data, location }) => {
         </Layout>
       </LogoStyleContext.Provider>
     </HomePageContext.Provider>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -380,6 +380,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

@@ -1,15 +1,15 @@
-import React, { useState, useRef } from 'react'
-import styled from 'styled-components'
-import is from 'styled-is'
-import remcalc from 'remcalc'
-import generate from 'shortid'
+import React, { useState, useRef } from 'react';
+import styled from 'styled-components';
+import is from 'styled-is';
+import remcalc from 'remcalc';
+import generate from 'shortid';
 
-import Chevron from '../../Common/Chevron'
-import InnerAnchorItem from './InnerAnchorItem'
-import headerItemStyles from '../utils/headerItemStyles'
-import outlineStyles from '../utils/outlineStyles'
-import DesktopNavItemStyles from './desktopNavItemStyles'
-import TopNavItem from './TopNavItem'
+import Chevron from '../../Common/Chevron';
+import InnerAnchorItem from './InnerAnchorItem';
+import headerItemStyles from '../utils/headerItemStyles';
+import outlineStyles from '../utils/outlineStyles';
+import DesktopNavItemStyles from './desktopNavItemStyles';
+import TopNavItem from './TopNavItem';
 
 const DropdownContainer = styled(TopNavItem)`
   position: relative;
@@ -34,7 +34,7 @@ const DropdownContainer = styled(TopNavItem)`
       }
     }
   `}
-`
+`;
 
 const DropdownNameWrapper = styled.span`
   ${headerItemStyles}
@@ -50,7 +50,7 @@ const DropdownNameWrapper = styled.span`
     outline: none;
     user-select: none;
   }
-`
+`;
 
 const DropdownList = styled.ul`
   position: absolute;
@@ -69,30 +69,30 @@ const DropdownList = styled.ul`
     display: block;
     opacity: 1;
   `};
-`
+`;
 
 const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
-  const [isExpanded, toggleDropdown] = useState(false)
-  const dropdownRef = useRef(null)
+  const [isExpanded, toggleDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleClick = () => {
     if (!hasTouch()) {
-      return
+      return;
     }
 
-    toggleDropdown(!isExpanded)
-  }
+    toggleDropdown(!isExpanded);
+  };
 
   const handleFocus = () => {
     if (hasTouch()) {
-      return
+      return;
     }
-    toggleDropdown(true)
-  }
+    toggleDropdown(true);
+  };
 
   const handleBlur = e => {
     if (hasTouch()) {
-      return
+      return;
     }
     /**
      * Here the event gives us `relatedTarget`, this value is a
@@ -102,12 +102,12 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
      * This functionality is to make sure that users are able to
      * tab through the navigation properly.
      */
-    toggleDropdown(dropdownRef.current.contains(e.relatedTarget))
-  }
+    toggleDropdown(dropdownRef.current.contains(e.relatedTarget));
+  };
 
   const hasTouch = () => {
-    return 'ontouchstart' in window
-  }
+    return 'ontouchstart' in window;
+  };
 
   return (
     <DropdownContainer
@@ -143,7 +143,7 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
         ))}
       </DropdownList>
     </DropdownContainer>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;

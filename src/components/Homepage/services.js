@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Row, Col } from '../grid'
+import { Row, Col } from '../grid';
 
-import Image from '../Common/Image'
+import Image from '../Common/Image';
 
-import SeoLinks from '../Common/seoLinks'
-import { DisplayTitle, CardTitle, BodyPrimary } from '../Typography'
+import SeoLinks from '../Common/seoLinks';
+import { DisplayTitle, CardTitle, BodyPrimary } from '../Typography';
 
 const ImageWrapper = styled.div`
   width: 60px;
   height: 60px;
   max-width: 100%;
   margin-bottom: ${({ theme }) => theme.space[3]};
-`
+`;
 
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -25,7 +25,7 @@ const StyledRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const ServiceRow = styled(Row)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -37,11 +37,11 @@ const ServiceRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[5]};
   `}
-`
+`;
 
 const ServiceTitle = styled(CardTitle)`
   text-decoration: underline;
-`
+`;
 
 const ServiceCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -49,11 +49,11 @@ const ServiceCol = styled(Col)`
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[5]};
   `}
-`
+`;
 
 const ServiceSentence = styled(BodyPrimary)`
   margin-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const SpecialityList = styled(SeoLinks)`
   display: inline-block;
@@ -62,7 +62,7 @@ const SpecialityList = styled(SeoLinks)`
   max-height: 60px;
   text-align: justify;
   position: relative;
-`
+`;
 
 const Services = ({ statement, services }) => (
   <>
@@ -101,6 +101,6 @@ const Services = ({ statement, services }) => (
       )}
     </ServiceRow>
   </>
-)
+);
 
-export default Services
+export default Services;

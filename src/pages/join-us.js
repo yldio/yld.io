@@ -1,21 +1,21 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import scrollToComponent from 'react-scroll-to-component'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import scrollToComponent from 'react-scroll-to-component';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import Layout from '../components/layout'
-import ViewPositions from '../components/JoinUs/ViewOpenPositions'
-import Learning from '../components/JoinUs/Learning'
-import Work from '../components/JoinUs/Work'
-import OSS from '../components/JoinUs/OpenSource'
-import Perks from '../components/JoinUs/Perks'
-import { OpenPositionsWithRef } from '../components/Common/OpenPositions'
-import Head from '../components/Common/Head'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import Layout from '../components/layout';
+import ViewPositions from '../components/JoinUs/ViewOpenPositions';
+import Learning from '../components/JoinUs/Learning';
+import Work from '../components/JoinUs/Work';
+import OSS from '../components/JoinUs/OpenSource';
+import Perks from '../components/JoinUs/Perks';
+import { OpenPositionsWithRef } from '../components/Common/OpenPositions';
+import Head from '../components/Common/Head';
 
 class JoinUs extends React.Component {
   constructor(props) {
-    super(props)
-    this.vacanciesRef = React.createRef()
+    super(props);
+    this.vacanciesRef = React.createRef();
   }
 
   scrollToVacancies = () =>
@@ -23,7 +23,7 @@ class JoinUs extends React.Component {
       offset: -84,
       align: 'top',
       duration: 800,
-    })
+    });
 
   render() {
     const {
@@ -34,7 +34,7 @@ class JoinUs extends React.Component {
         },
       },
       location,
-    } = this.props
+    } = this.props;
 
     const breadcrumbData = generateBreadcrumbData(siteUrl, [
       {
@@ -42,7 +42,7 @@ class JoinUs extends React.Component {
         pathname: location.pathname,
         position: 2,
       },
-    ])
+    ]);
 
     return (
       <Layout
@@ -97,7 +97,7 @@ class JoinUs extends React.Component {
           limit={40}
         />
       </Layout>
-    )
+    );
   }
 }
 
@@ -206,6 +206,6 @@ const JoinUsPage = props => (
     `}
     render={data => <JoinUs data={data} {...props} />}
   />
-)
+);
 
-export default JoinUsPage
+export default JoinUsPage;

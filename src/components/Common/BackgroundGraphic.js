@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import { Grid, Row, Col } from '../grid'
-import Image from './Image'
-import remcalc from 'remcalc'
-import { SectionTitle } from '../Typography'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { Grid, Row, Col } from '../grid';
+import Image from './Image';
+import remcalc from 'remcalc';
+import { SectionTitle } from '../Typography';
+import { StaticQuery, graphql } from 'gatsby';
 
 export const Graphic = styled.div`
   position: relative;
@@ -19,18 +19,18 @@ export const Graphic = styled.div`
   ${breakpoint('smallTablet')`
     max-width: 80%;
   `}
-`
+`;
 
 export const How = styled(SectionTitle)`
   position: relative;
   top: -71%;
   text-align: center;
-`
+`;
 
 const HowGrid = styled(Grid)`
   ${breakpoint('smallTablet')`margin-bottom: -10%;`};
   ${breakpoint('tablet')`margin-bottom: 0;`};
-`
+`;
 
 export const BackgroundGraphic = ({ title, image }) => (
   <HowGrid>
@@ -43,7 +43,7 @@ export const BackgroundGraphic = ({ title, image }) => (
       </Col>
     </Row>
   </HowGrid>
-)
+);
 
 const BackgroundGraphicWrapper = ({ title }) => (
   <StaticQuery
@@ -62,6 +62,6 @@ const BackgroundGraphicWrapper = ({ title }) => (
     `}
     render={({ image }) => <BackgroundGraphic title={title} image={image} />}
   />
-)
+);
 
-export default BackgroundGraphicWrapper
+export default BackgroundGraphicWrapper;

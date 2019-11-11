@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import { format } from 'date-fns'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
+import { format } from 'date-fns';
 
-import { Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
-import RatioContainer from '../Common/RatioContainer'
-import { CardTitle, BodyPrimary, CalendarDay } from '../Typography'
+import { Row, Col } from '../grid';
+import StyledLink from '../Common/StyledLink';
+import RatioContainer from '../Common/RatioContainer';
+import { CardTitle, BodyPrimary, CalendarDay } from '../Typography';
 
 const StyledRatioContainer = styled(RatioContainer)`
   border: ${remcalc(1)} solid ${({ theme }) => theme.colors.border};
-`
+`;
 
 const CalendarMonth = styled(BodyPrimary)`
   line-height: ${remcalc(18)};
@@ -19,7 +19,7 @@ const CalendarMonth = styled(BodyPrimary)`
   ${breakpoint('tablet')`
     line-height: ${remcalc(24)};
   `}
-`
+`;
 
 const DateCardInner = styled.div`
   display: flex;
@@ -29,20 +29,20 @@ const DateCardInner = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-`
+`;
 
 const DateCard = ({ date }) => {
-  const monthDayArray = format(new Date(date), 'MMM DD').split(' ')
-  const month = monthDayArray[0]
-  const day = monthDayArray[1]
+  const monthDayArray = format(new Date(date), 'MMM DD').split(' ');
+  const month = monthDayArray[0];
+  const day = monthDayArray[1];
 
   return (
     <DateCardInner>
       <CalendarDay noPadding>{day}</CalendarDay>
       <CalendarMonth noPadding>{month.toUpperCase()}</CalendarMonth>
     </DateCardInner>
-  )
-}
+  );
+};
 
 const StyledInfoCol = styled(Col)`
   display: flex;
@@ -52,13 +52,13 @@ const StyledInfoCol = styled(Col)`
   ${breakpoint('smallPhone', 'smallTablet')`
     padding-bottom: ${({ theme }) => theme.spacing[3]};
   `};
-`
+`;
 
 const AlignRightCol = styled(Col)`
   ${breakpoint('tablet')`
     text-align: right;
   `}
-`
+`;
 
 const TypeBodyPrimary = styled(BodyPrimary)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -66,7 +66,7 @@ const TypeBodyPrimary = styled(BodyPrimary)`
   ${breakpoint('smallTablet')`
     padding-top: 0;
   `};
-`
+`;
 
 const EventCard = ({ event }) => {
   const {
@@ -79,18 +79,18 @@ const EventCard = ({ event }) => {
     eventTitle,
     attendees,
     linkToEvent,
-  } = event
+  } = event;
 
-  const formattedStartTime = format(new Date(startTime), 'ha')
-  const formattedEndTime = format(new Date(endTime), 'ha')
+  const formattedStartTime = format(new Date(startTime), 'ha');
+  const formattedEndTime = format(new Date(endTime), 'ha');
 
   const eventInfo = `${
     addressLine3 ? `${addressLine3}, ` : ''
   }${city} • ${formattedStartTime} - ${formattedEndTime}${
     attendees ? ` • ${attendees} attending` : ''
-  }`
+  }`;
 
-  const StyledLinkText = type === 'Meetup' ? 'More on Meetup' : 'Get tickets'
+  const StyledLinkText = type === 'Meetup' ? 'More on Meetup' : 'Get tickets';
 
   return (
     <Row>
@@ -121,7 +121,7 @@ const EventCard = ({ event }) => {
         </StyledLink>
       </AlignRightCol>
     </Row>
-  )
-}
+  );
+};
 
-export default EventCard
+export default EventCard;

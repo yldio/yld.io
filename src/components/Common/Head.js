@@ -1,6 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
 const TITLE = graphql`
   query SITE_TITLE {
@@ -12,7 +12,7 @@ const TITLE = graphql`
       }
     }
   }
-`
+`;
 
 /**
  * Contentful doesn't give us https: in the image urls so
@@ -20,7 +20,7 @@ const TITLE = graphql`
  * up the image properly
  */
 const initImageUrl = ({ siteUrl, image }) => ({ socialLogo }) =>
-  socialLogo ? `https://${socialLogo}` : `${siteUrl}${image}`
+  socialLogo ? `https://${socialLogo}` : `${siteUrl}${image}`;
 
 /**
  *
@@ -43,7 +43,7 @@ const initImageUrl = ({ siteUrl, image }) => ({ socialLogo }) =>
  * - https://trello.com/c/q8pzabwy/573-amend-site-title-creation
  */
 const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
-  const getImageUrl = initImageUrl(siteMetadata)
+  const getImageUrl = initImageUrl(siteMetadata);
 
   if (seoMetaData)
     return {
@@ -54,37 +54,37 @@ const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
           {}
         ).url,
       }),
-    }
+    };
 
-  const { siteTitle } = siteMetadata
+  const { siteTitle } = siteMetadata;
 
   const title = `${siteTitle} ${
     page.title === 'YLD' ? '' : ` - ${page.title}`
-  } ${page.seoTitle && page.seoTitle !== ' ' ? ` - ${page.seoTitle}` : ''}`
+  } ${page.seoTitle && page.seoTitle !== ' ' ? ` - ${page.seoTitle}` : ''}`;
 
-  const description = page.seoMetaDescription || page.seoDescription
-  const imageUrl = getImageUrl({ socialLogo: page.socialLogo })
+  const description = page.seoMetaDescription || page.seoDescription;
+  const imageUrl = getImageUrl({ socialLogo: page.socialLogo });
 
   return {
     title,
     description,
     imageUrl,
     keywords: page.keywords,
-  }
-}
+  };
+};
 
 const Head = ({ page, seoMetaData }) => {
   return (
     <StaticQuery
       query={TITLE}
       render={({ site: { siteMetadata } }) => {
-        const { siteTitle, siteUrl } = siteMetadata
+        const { siteTitle, siteUrl } = siteMetadata;
 
         const { title, description, imageUrl, keywords } = getMetaData({
           page,
           seoMetaData,
           siteMetadata,
-        })
+        });
 
         return (
           <Helmet>
@@ -108,10 +108,10 @@ const Head = ({ page, seoMetaData }) => {
 
             <link rel="image_src" type="image/png" href={imageUrl} />
           </Helmet>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};
 
-export default Head
+export default Head;

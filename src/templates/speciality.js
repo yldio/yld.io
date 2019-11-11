@@ -1,12 +1,12 @@
-import React from 'react'
-import capitalize from 'capitalize'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import getServiceInfo from '../utils/getServiceInfo'
+import React from 'react';
+import capitalize from 'capitalize';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import Head from '../components/Common/Head';
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import getServiceInfo from '../utils/getServiceInfo';
 
-import { SpecialityView } from './speciality-component'
+import { SpecialityView } from './speciality-component';
 
 const Speciality = ({ data, location }) => {
   const {
@@ -16,14 +16,14 @@ const Speciality = ({ data, location }) => {
     site: {
       siteMetadata: { siteUrl },
     },
-  } = data
-  const { slug, title, seoMetaData } = speciality
+  } = data;
+  const { slug, title, seoMetaData } = speciality;
 
   const { service } = getServiceInfo({
     slug,
     services,
     specialities,
-  })
+  });
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -36,7 +36,7 @@ const Speciality = ({ data, location }) => {
       position: 3,
       pathname: location.pathname,
     },
-  ])
+  ]);
 
   return (
     <Layout
@@ -52,10 +52,10 @@ const Speciality = ({ data, location }) => {
       <Head seoMetaData={seoMetaData} />
       <SpecialityView data={data} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Speciality
+export default Speciality;
 
 export const pageQuery = graphql`
   query($id: String, $postsTags: [String], $postsLimit: Int) {
@@ -395,4 +395,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,25 +1,25 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import styled from 'styled-components'
-import generate from 'shortid'
-import { Row, Col } from '../grid'
-import Image from '../Common/Image'
-import Hr from '../Common/Hr'
-import { Subtitle } from '../Typography'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import styled from 'styled-components';
+import generate from 'shortid';
+import { Row, Col } from '../grid';
+import Image from '../Common/Image';
+import Hr from '../Common/Hr';
+import { Subtitle } from '../Typography';
 
-import { Section, Separator, TitleAndBody } from './elements'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import TitleAndList from '../Common/TitleAndList'
+import { Section, Separator, TitleAndBody } from './elements';
+import ExternalAnchor from '../Common/ExternalAnchor';
+import TitleAndList from '../Common/TitleAndList';
 
 const InsightAnchor = styled(ExternalAnchor)`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-`
+`;
 const PostTitleWrapper = styled(Padding)`
   flex: 1;
-`
+`;
 
 const Insight = ({ insight }) => (
   <Col width={[1, 1, 1, 4 / 12]}>
@@ -33,7 +33,7 @@ const Insight = ({ insight }) => (
       <Hr />
     </InsightAnchor>
   </Col>
-)
+);
 
 const Learning = ({
   data: { title, subtitle, text, featuredInsights, list },
@@ -49,6 +49,6 @@ const Learning = ({
     </Row>
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
-)
+);
 
-export default Learning
+export default Learning;

@@ -1,6 +1,6 @@
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import is from 'styled-is'
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import is from 'styled-is';
 
 export const Checkbox = styled.input`
   appearance: none;
@@ -24,7 +24,7 @@ export const Checkbox = styled.input`
     height: ${remcalc(12)};
     transform: translateX(-50%) translateY(-50%);
   }
-`
+`;
 
 export const Input = styled.input`
   border: solid 2px ${props => props.theme.colors.text};
@@ -41,13 +41,13 @@ export const Input = styled.input`
   ${is('noBoxShadow')`
     box-shadow:none;
   `};
-`
+`;
 
 export const Label = styled('label')`
   font-weight: bold;
   padding-bottom: ${remcalc(12)};
   display: block;
-`
+`;
 
 export const Field = styled.section`
   margin-bottom: ${remcalc(36)};
@@ -57,7 +57,7 @@ export const Field = styled.section`
     align-items: center;
     margin-bottom: ${remcalc(24)};
   }
-`
+`;
 
 export const Fieldset = styled.section`
   display: flex;
@@ -70,4 +70,4 @@ export const Fieldset = styled.section`
     align-items: center;
     margin-bottom: ${remcalc(24)};
   }
-`
+`;

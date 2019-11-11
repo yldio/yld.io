@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import remcalc from 'remcalc'
+import styled from 'styled-components';
+import remcalc from 'remcalc';
 
 export const UnstyledButton = styled.button`
   border: none;
@@ -12,7 +12,7 @@ export const UnstyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const Button = styled(UnstyledButton)`
   display: block;
@@ -27,6 +27,6 @@ const Button = styled(UnstyledButton)`
   &:disabled {
     opacity: 0.5;
   }
-`
+`;
 
-export default Button
+export default Button;

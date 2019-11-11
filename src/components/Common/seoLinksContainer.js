@@ -1,19 +1,19 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import { generate } from 'shortid'
+import React from 'react';
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { generate } from 'shortid';
 
-import { SectionTitle, Subtitle } from '../Typography'
-import { Grid, Row, Col } from '../grid'
-import SeoLinks from './seoLinks'
+import { SectionTitle, Subtitle } from '../Typography';
+import { Grid, Row, Col } from '../grid';
+import SeoLinks from './seoLinks';
 
 const StyledLinksColumn = styled.div`
   padding-top: ${({ theme, index }) => theme.spacing[index === 1 ? 3 : 2]};
   ${breakpoint('tablet')`
     padding-top: ${({ index }) => remcalc(index * 72)};
   `}
-`
+`;
 
 const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
   <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={generate()}>
@@ -34,7 +34,7 @@ const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
       </StyledLinksColumn>
     )}
   </Col>
-)
+);
 
 const SeoLinksContainer = ({ specialities, sectionTitle }) => (
   <Wrapper>
@@ -51,6 +51,6 @@ const SeoLinksContainer = ({ specialities, sectionTitle }) => (
       </Row>
     </Grid>
   </Wrapper>
-)
+);
 
-export default SeoLinksContainer
+export default SeoLinksContainer;

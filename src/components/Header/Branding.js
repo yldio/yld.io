@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
 
-import LogoLink from './DesktopNav/LogoLink'
-import ServiceLink from './DesktopNav/ServiceLink'
-import { logoColors } from './utils/navLinksHelper'
-import getServiceInfo from '../../utils/getServiceInfo'
+import LogoLink from './DesktopNav/LogoLink';
+import ServiceLink from './DesktopNav/ServiceLink';
+import { logoColors } from './utils/navLinksHelper';
+import getServiceInfo from '../../utils/getServiceInfo';
 
 const StyledLinksContainer = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 const TopNavBranding = ({ slug }) => (
   <StaticQuery
@@ -59,17 +59,17 @@ const TopNavBranding = ({ slug }) => (
         services,
         specialities,
         slug,
-      })
+      });
 
       const fillColorInitial = isSpecialityPage
         ? specialityColor || logoColors.specialitiesFillDefault
-        : logoColors['default']
+        : logoColors['default'];
 
       const fillColorHover =
-        logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover']
+        logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover'];
 
       const textColor =
-        logoColors[isSpecialityPage ? 'specialityText' : 'defaultText']
+        logoColors[isSpecialityPage ? 'specialityText' : 'defaultText'];
 
       return (
         <StyledLinksContainer>
@@ -85,9 +85,9 @@ const TopNavBranding = ({ slug }) => (
             service={service}
           />
         </StyledLinksContainer>
-      )
+      );
     }}
   />
-)
+);
 
-export default TopNavBranding
+export default TopNavBranding;

@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Grid, Row, Col } from '../../grid'
-import Image from '../../Common/Image'
+import { Grid, Row, Col } from '../../grid';
+import Image from '../../Common/Image';
 
-import StyledLink from '../../Common/StyledLink'
-import { SectionTitle, BodyPrimary, DisplayTitle } from '../../Typography'
+import StyledLink from '../../Common/StyledLink';
+import { SectionTitle, BodyPrimary, DisplayTitle } from '../../Typography';
 
 const BackgroundColorGrid = styled(Grid)`
   background-color: ${({ bgColor }) => `#${bgColor}`};
@@ -15,12 +15,12 @@ const BackgroundColorGrid = styled(Grid)`
   ${breakpoint('smallPhone', 'smallTablet')`
     max-width: 100%;
   `}
-`
+`;
 
 const InfoInner = styled.section`
   background-color: #${props => props.color};
   width: 100%;
-`
+`;
 
 const EventWrapper = styled.header`
   padding: ${({ theme }) =>
@@ -29,11 +29,11 @@ const EventWrapper = styled.header`
   ${breakpoint('smallTablet')`
     padding: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const SpacedSectionTitle = styled(SectionTitle)`
   margin-bottom: ${props => props.theme.space[2]};
-`
+`;
 
 const PaddedBodyPrimary = styled(BodyPrimary)`
   padding-bottom: ${props => props.theme.space[1]};
@@ -41,11 +41,11 @@ const PaddedBodyPrimary = styled(BodyPrimary)`
   ${breakpoint('desktop')`
     padding-bottom: ${props => props.theme.space[2]};
   `};
-`
+`;
 
 const StyledDisplayTitle = styled(DisplayTitle)`
   padding-bottom: ${props => props.theme.space[2]};
-`
+`;
 
 const IntroRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -54,7 +54,7 @@ const IntroRow = styled(Row)`
   ${breakpoint('tablet')`
       padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const EventRow = styled(Row)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -62,7 +62,7 @@ const EventRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[5]};
   `}
-`
+`;
 
 const DesktopImageWrapper = styled.div`
   position: relative;
@@ -80,7 +80,7 @@ const DesktopImageWrapper = styled.div`
   ${breakpoint('smallPhone', 'smallTablet')`
     display: none;
   `}
-`
+`;
 const MobileImageWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -97,7 +97,7 @@ const MobileImageWrapper = styled.div`
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const FeaturedEvent = ({ event }) => (
   <>
@@ -151,6 +151,6 @@ const FeaturedEvent = ({ event }) => (
       </Col>
     </EventRow>
   </>
-)
+);
 
-export default FeaturedEvent
+export default FeaturedEvent;

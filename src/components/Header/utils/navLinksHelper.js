@@ -1,4 +1,4 @@
-import theme from '../../../utils/theme'
+import theme from '../../../utils/theme';
 
 const specialitiesMap = {
   engineering: [
@@ -9,7 +9,7 @@ const specialitiesMap = {
     'kubernetes',
     'react-native',
   ],
-}
+};
 
 const logoColors = {
   default: theme.colors.text,
@@ -18,20 +18,20 @@ const logoColors = {
   specialityText: theme.colors.blueBg,
   specialityHover: theme.colors.white,
   specialitiesFillDefault: theme.colors.white,
-}
+};
 
-const servicesList = Object.keys(specialitiesMap)
+const servicesList = Object.keys(specialitiesMap);
 
-const servicesRegExp = new RegExp(servicesList.join('|'))
+const servicesRegExp = new RegExp(servicesList.join('|'));
 
-const getIsServicePage = path => path.search(servicesRegExp) > -1
+const getIsServicePage = path => path.search(servicesRegExp) > -1;
 
-const getSpeciality = path => path.split('/')[2]
+const getSpeciality = path => path.split('/')[2];
 
-const AboutUrlList = ['about-us', 'contact']
+const AboutUrlList = ['about-us', 'contact'];
 
 const getAboutUrl = path =>
-  AboutUrlList.find(aboutUrl => path.includes(aboutUrl))
+  AboutUrlList.find(aboutUrl => path.includes(aboutUrl));
 
 export {
   specialitiesMap,
@@ -41,4 +41,4 @@ export {
   getIsServicePage,
   getSpeciality,
   getAboutUrl,
-}
+};

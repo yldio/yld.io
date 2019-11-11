@@ -12,17 +12,17 @@
  *
  */
 /* eslint-disable no-console */
-const Main = require('apr-main')
-const { createClient } = require('contentful-management')
-const { CMS_CRUD, CONTENTFUL_SPACE } = process.env
+const Main = require('apr-main');
+const { createClient } = require('contentful-management');
+const { CMS_CRUD, CONTENTFUL_SPACE } = process.env;
 
 const client = createClient({
   accessToken: CMS_CRUD,
-})
+});
 
 Main(async () => {
-  const space = await client.getSpace(CONTENTFUL_SPACE)
-  const environment = await space.getEnvironment('master')
+  const space = await client.getSpace(CONTENTFUL_SPACE);
+  const environment = await space.getEnvironment('master');
 
   // const { items: cmsBlogPosts } = await environment.getEntries({
   //   limit: 1000,
@@ -49,4 +49,4 @@ Main(async () => {
   //   .filter(({ fields }) => !requiredFields.every(field => fields[field]))
   //   .map(p => p.fields.title['en-US'])
   // console.log(JSON.stringify({ incompletePosts }, null, 2))
-})
+});

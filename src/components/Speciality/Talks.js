@@ -1,18 +1,18 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import BlueBackground from '../Common/BlueBackground'
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle } from '../Typography'
-import VideoSection from '../Common/VideoSection'
-import CompactVideoLink from '../Common/CompactVideoLink'
-import StyledLink from '../Common/StyledLink'
-import theme from '../../utils/theme'
+import BlueBackground from '../Common/BlueBackground';
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle } from '../Typography';
+import VideoSection from '../Common/VideoSection';
+import CompactVideoLink from '../Common/CompactVideoLink';
+import StyledLink from '../Common/StyledLink';
+import theme from '../../utils/theme';
 
 const TalksSection = ({ talks: allTalks }) => {
-  const talks = allTalks.filter(({ featured, cta }) => !featured && !cta)
-  const featured = allTalks.find(({ featured }) => featured)
-  const cta = allTalks.find(({ cta }) => cta)
+  const talks = allTalks.filter(({ featured, cta }) => !featured && !cta);
+  const featured = allTalks.find(({ featured }) => featured);
+  const cta = allTalks.find(({ cta }) => cta);
 
   return (
     talks &&
@@ -62,7 +62,7 @@ const TalksSection = ({ talks: allTalks }) => {
         </Grid>
       </BlueBackground>
     )
-  )
-}
+  );
+};
 
-export default TalksSection
+export default TalksSection;

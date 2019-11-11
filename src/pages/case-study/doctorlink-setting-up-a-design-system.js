@@ -1,16 +1,16 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import { graphql } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Grid, Row, Col } from '../../components/grid'
-import BlueBackground from '../../components/Common/BlueBackground'
-import GreyBackground from '../../components/Common/GreyBackground'
-import Layout from '../../components/layout'
-import Head from '../../components/Common/Head'
-import Hr from '../../components/Common/Hr'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
+import { Grid, Row, Col } from '../../components/grid';
+import BlueBackground from '../../components/Common/BlueBackground';
+import GreyBackground from '../../components/Common/GreyBackground';
+import Layout from '../../components/layout';
+import Head from '../../components/Common/Head';
+import Hr from '../../components/Common/Hr';
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
 import {
   renderText,
   MobileReverseOrderWrapper,
@@ -26,11 +26,11 @@ import {
   getImage,
   getImages,
   normalise,
-} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
-import Statement from '../../components/Common/Statement'
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import Image from '../../components/Common/Image'
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
+import { SectionTitle, BodyPrimary } from '../../components/Typography';
+import Statement from '../../components/Common/Statement';
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
+import Image from '../../components/Common/Image';
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
@@ -38,7 +38,7 @@ const PropertiesAndTokensBlockRow = styled(BlockRow)`
   ${breakpoint('largePhone')`
     flex-direction: row;
   `}
-`
+`;
 
 const SeamlessStyledBodyPrimary = styled(BodyPrimary)`
   ${breakpoint('smallPhone', 'phone')`
@@ -48,7 +48,7 @@ const SeamlessStyledBodyPrimary = styled(BodyPrimary)`
   > strong {
     font-weight: bold;
   }
-`
+`;
 
 const PropertiesAndTokensBlock = ({
   data = [],
@@ -58,16 +58,16 @@ const PropertiesAndTokensBlock = ({
   const {
     genericBlockImages,
     genericBlockText: { genericBlockText: textOne },
-  } = data[0]
+  } = data[0];
 
-  const image = getImage(genericBlockImages, 0)
+  const image = getImage(genericBlockImages, 0);
   const {
     genericBlockText: { genericBlockText: textTwo },
-  } = data[1]
+  } = data[1];
 
   const PropertiesAndTokensImage = styled(Image)`
     width: 314px;
-  `
+  `;
 
   return (
     <PropertiesAndTokensBlockRow
@@ -98,14 +98,14 @@ const PropertiesAndTokensBlock = ({
         })}
       </Col>
     </PropertiesAndTokensBlockRow>
-  )
-}
+  );
+};
 
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
-  } = props
+  } = props;
 
   const {
     genericBlock1: data1,
@@ -139,7 +139,7 @@ const IndexPage = props => {
     genericBlock29: data29,
     genericBlock30: data30,
     genericBlock31: data31,
-  } = caseStudy
+  } = caseStudy;
 
   return (
     <Layout
@@ -565,8 +565,8 @@ const IndexPage = props => {
         caseStudy={caseStudy.relatedCaseStudies[0]}
       />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -692,5 +692,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default IndexPage
+`;
+export default IndexPage;

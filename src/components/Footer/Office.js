@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import PaddedCol from '../../components/AboutUs/PaddedCol'
-import { Subtitle, BodyPrimary } from '../../components/Typography'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import PaddedCol from '../../components/AboutUs/PaddedCol';
+import { Subtitle, BodyPrimary } from '../../components/Typography';
 
 const StyledBodyPrimary = styled(BodyPrimary).attrs({ noPadding: true })`
   color: ${({ theme }) => theme.colors.white};
   padding-top: ${({ theme, hasPaddingTop }) =>
     theme.space[hasPaddingTop ? 3 : 0]};
   opacity: 0.5;
-`
+`;
 
 const Office = ({ name, telephone, email, streetAddress }) => (
   <PaddedCol width={[1, 1, 1, 1 / 2, 1 / 2, 1 / 4]}>
@@ -34,6 +34,6 @@ const Office = ({ name, telephone, email, streetAddress }) => (
       )}
     </Padding>
   </PaddedCol>
-)
+);
 
-export default Office
+export default Office;

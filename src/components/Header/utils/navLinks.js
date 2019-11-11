@@ -1,4 +1,4 @@
-import eventLabels from '../../../utils/eventLabels'
+import eventLabels from '../../../utils/eventLabels';
 
 const navLinks = [
   {
@@ -59,6 +59,6 @@ const navLinks = [
     label: 'Contact',
     to: '/contact/',
   },
-]
+];
 
-export default navLinks
+export default navLinks;

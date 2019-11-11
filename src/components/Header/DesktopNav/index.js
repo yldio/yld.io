@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
-import OuterAnchorItem from './OuterAnchorItem'
-import Dropdown from './Dropdown'
-import links from '../utils/navLinks'
-import generate from 'shortid'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
+import OuterAnchorItem from './OuterAnchorItem';
+import Dropdown from './Dropdown';
+import links from '../utils/navLinks';
+import generate from 'shortid';
 
 const TopNavList = styled.ul`
   ${breakpoint('smallPhone')`
@@ -18,7 +18,7 @@ const TopNavList = styled.ul`
     justify-content: space-between;
     padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
   }
-`
+`;
 
 const TopNav = ({ themeVariation }) => (
   <TopNavList>
@@ -49,6 +49,6 @@ const TopNav = ({ themeVariation }) => (
       ),
     )}
   </TopNavList>
-)
+);
 
-export default TopNav
+export default TopNav;

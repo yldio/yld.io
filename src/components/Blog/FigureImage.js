@@ -1,8 +1,8 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import ReactMarkdown from 'react-markdown'
-import { ImageCaption } from './Typography'
+import React from 'react';
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
+import { ImageCaption } from './Typography';
 
 const Wrapper = styled.figure`
   text-align: center;
@@ -14,7 +14,7 @@ const Wrapper = styled.figure`
     max-width: 100%;
     margin-bottom: ${remcalc(25)};
   }
-`
+`;
 
 /**
  * NOT used anywhere in the codebase, this component is utilised in the
@@ -29,6 +29,6 @@ const FigureImage = ({ src, caption }) => (
       </ImageCaption>
     )}
   </Wrapper>
-)
+);
 
-export default FigureImage
+export default FigureImage;

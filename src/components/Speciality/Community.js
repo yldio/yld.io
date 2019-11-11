@@ -1,10 +1,10 @@
-import React from 'react'
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import breakpoint from 'styled-components-breakpoint'
-import BlueBackground from '../Common/BlueBackground'
-import styled from 'styled-components'
-import Image from '../Common/Image'
+import React from 'react';
+import { Row, Col, Grid } from '../grid';
+import { SectionTitle, BodyPrimary } from '../Typography';
+import breakpoint from 'styled-components-breakpoint';
+import BlueBackground from '../Common/BlueBackground';
+import styled from 'styled-components';
+import Image from '../Common/Image';
 
 const ImgContainerCol = styled(Col)`
   align-items: center;
@@ -13,7 +13,7 @@ const ImgContainerCol = styled(Col)`
   ${breakpoint('smallPhone', 'phone')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const Wrapper = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -22,7 +22,7 @@ const Wrapper = styled(Grid)`
     padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const CommunitySection = ({
   communityText,
@@ -54,6 +54,6 @@ const CommunitySection = ({
       </Row>
     </Wrapper>
   </BlueBackground>
-)
+);
 
-export default CommunitySection
+export default CommunitySection;

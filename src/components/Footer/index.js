@@ -1,29 +1,29 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
 
-import { Grid, Row, Col } from '../../components/grid'
-import { SectionTitle } from '../../components/Typography'
-import GetInTouch from '../Common/GetInTouch'
-import OfficeListing from './OfficeListing'
-import FooterLinks from './FooterLinks'
-import { StaticQuery, graphql } from 'gatsby'
+import { Grid, Row, Col } from '../../components/grid';
+import { SectionTitle } from '../../components/Typography';
+import GetInTouch from '../Common/GetInTouch';
+import OfficeListing from './OfficeListing';
+import FooterLinks from './FooterLinks';
+import { StaticQuery, graphql } from 'gatsby';
 
 export const GreyFooter = styled.footer`
   background: #232323;
-`
+`;
 
 const colorMap = {
   White: 'white',
   Grey: 'greyBg',
-}
+};
 
 const Wrapper = styled.div`
   background-color: ${({ theme, bgColor = 'white' }) => {
-    const mappedColor = colorMap[bgColor]
-    return mappedColor ? theme.colors[mappedColor] : theme.colors[bgColor]
+    const mappedColor = colorMap[bgColor];
+    return mappedColor ? theme.colors[mappedColor] : theme.colors[bgColor];
   }};
-`
+`;
 
 const QUERY = graphql`
   {
@@ -77,7 +77,7 @@ const QUERY = graphql`
       }
     }
   }
-`
+`;
 
 const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
   <StaticQuery
@@ -85,7 +85,7 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
     render={({ profiles }) => {
       const footerContactUsData = profiles.nodes.find(
         ({ id }) => id === footerContactUsId,
-      )
+      );
 
       return (
         <>
@@ -112,9 +112,9 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
             <FooterLinks />
           </GreyFooter>
         </>
-      )
+      );
     }}
   />
-)
+);
 
-export default Footer
+export default Footer;

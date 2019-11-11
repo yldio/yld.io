@@ -14,6 +14,6 @@ author: ${authorName}
 root: '/blog'
 ---
 ${content}
-`
+`;
 
-module.exports = addFrontmatter
+module.exports = addFrontmatter;

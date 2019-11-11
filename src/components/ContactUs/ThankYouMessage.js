@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import { Row, Col } from '../grid'
-import { BodyPrimary } from '../Typography'
+import { Row, Col } from '../grid';
+import { BodyPrimary } from '../Typography';
 
 const ThankYouMessage = ({ message }) => (
   <Row>
@@ -9,6 +9,6 @@ const ThankYouMessage = ({ message }) => (
       <BodyPrimary>{message}</BodyPrimary>
     </Col>
   </Row>
-)
+);
 
-export default ThankYouMessage
+export default ThankYouMessage;

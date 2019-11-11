@@ -1,21 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import { Grid, Row, Col } from '../../grid'
-import Anchor from '../Anchor'
-import Image from '../Image'
+import { Grid, Row, Col } from '../../grid';
+import Anchor from '../Anchor';
+import Image from '../Image';
 
 const TextWrapper = styled.div`
   ${breakpoint('tablet')`
     align-self: center;
   `}
-`
+`;
 
 const FlexCol = styled(Col)`
   display: flex;
-`
+`;
 
 const RowLayout = styled(Row)`
   ${breakpoint('smallPhone')`
@@ -34,10 +34,10 @@ const RowLayout = styled(Row)`
   ${breakpoint('desktop')`
     justify-content: space-between;
   `}
-`
+`;
 
 const AnchorWrapper = ({ to, children }) =>
-  to ? <Anchor to={to}>{children}</Anchor> : children
+  to ? <Anchor to={to}>{children}</Anchor> : children;
 
 // headings, textBelowImage & rightHandText should be sub-components (rather than a string, for example)
 const CaseStudyLayout = ({
@@ -62,6 +62,6 @@ const CaseStudyLayout = ({
       <Col width={[1, 1, 1, 1, 0]}>{textBelowImage}</Col>
     </RowLayout>
   </Grid>
-)
+);
 
-export default CaseStudyLayout
+export default CaseStudyLayout;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 /**
  *
@@ -12,6 +12,6 @@ const RatioContainer = styled.div`
   width: 100%;
   padding-bottom: ${props => (props.height / props.width) * 100}%;
   overflow: hidden;
-`
+`;
 
-export default RatioContainer
+export default RatioContainer;

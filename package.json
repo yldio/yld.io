@@ -188,11 +188,11 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --config .prettierrc --write",
+      "prettier --write",
       "git add"
     ],
     "*.*": [
-      "prettier --config .prettierrc --write",
+      "prettier --write",
       "git add"
     ]
   }

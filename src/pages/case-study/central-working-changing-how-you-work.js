@@ -1,20 +1,20 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
-import { generate } from 'shortid'
+import React, { Fragment } from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
+import { generate } from 'shortid';
 
-import { Grid, Col } from '../../components/grid'
-import GreyBackground from '../../components/Common/GreyBackground'
-import BlackBackground from '../../components/Common/BlackBackground'
-import TanBackground from '../../components/Common/TanBackground'
+import { Grid, Col } from '../../components/grid';
+import GreyBackground from '../../components/Common/GreyBackground';
+import BlackBackground from '../../components/Common/BlackBackground';
+import TanBackground from '../../components/Common/TanBackground';
 
-import Layout from '../../components/layout'
-import Head from '../../components/Common/Head'
-import Hr from '../../components/Common/Hr'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
+import Layout from '../../components/layout';
+import Head from '../../components/Common/Head';
+import Hr from '../../components/Common/Hr';
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
+import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import {
   TextColumnsBlock,
   FullWidthBlock,
@@ -22,37 +22,37 @@ import {
   normalise,
   normaliseAll,
   BlockRow,
-} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
 
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import Image from '../../components/Common/Image'
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
+import Image from '../../components/Common/Image';
 
 const StyledColData2 = styled(Col)`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Block3Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const Block4ImageCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const Block6ImageCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const Block7ImageCol = styled(Col)`
   ${breakpoint('smallPhone', 'phone')`
     padding-top: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const Block9Grid = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const Block9BlockRow = styled(BlockRow)`
   /* 
@@ -84,7 +84,7 @@ const Block9BlockRow = styled(BlockRow)`
     transform: translateY(100%);
     padding-top: 0;
   `}
-`
+`;
 
 const StyledHr = styled(Hr)`
   margin-left: auto;
@@ -93,13 +93,13 @@ const StyledHr = styled(Hr)`
   ${breakpoint('smallTablet')`
     display: none
   ;`}
-`
+`;
 
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
-  } = props
+  } = props;
 
   const {
     genericBlock1: data1,
@@ -112,9 +112,9 @@ const IndexPage = props => {
     genericBlock8: data8,
     genericBlock9: data9,
     relatedCaseStudy,
-  } = caseStudy
+  } = caseStudy;
 
-  const outComesDataFigures = normaliseAll(data2.slice(1))
+  const outComesDataFigures = normaliseAll(data2.slice(1));
 
   return (
     <Layout
@@ -326,8 +326,8 @@ const IndexPage = props => {
 
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -400,5 +400,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default IndexPage
+`;
+export default IndexPage;

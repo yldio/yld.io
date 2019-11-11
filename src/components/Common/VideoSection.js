@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import { Row, Col } from '../grid'
-import RatioContainer from './RatioContainer'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import { Row, Col } from '../grid';
+import RatioContainer from './RatioContainer';
 
 const Video = styled.iframe`
   position: absolute;
@@ -13,11 +13,11 @@ const Video = styled.iframe`
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 90px rgba(255, 255, 255, 0.2),
     0px 0px 20px rgba(255, 255, 255, 0.07);
-`
+`;
 
 const CenteredRow = styled(Row)`
   justify-content: center;
-`
+`;
 
 /**
  * Since iframes can't set their height to auto, we're using a RatioContainer
@@ -39,6 +39,6 @@ const VideoSection = ({ src, padding = {} }) => (
       </Padding>
     </Col>
   </CenteredRow>
-)
+);
 
-export default VideoSection
+export default VideoSection;

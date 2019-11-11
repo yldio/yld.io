@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-import { Row, Col } from '../grid'
-import { Padding } from 'styled-components-spacing'
-import { SectionTitle, BodyPrimary } from '../Typography'
-import Image from '../Common/Image'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
+import { Row, Col } from '../grid';
+import { Padding } from 'styled-components-spacing';
+import { SectionTitle, BodyPrimary } from '../Typography';
+import Image from '../Common/Image';
 
-import { Section } from './elements'
+import { Section } from './elements';
 
 const PerksListContainer = styled.ul`
   width: 100%;
@@ -31,33 +31,33 @@ const PerksListContainer = styled.ul`
     column-gap: 48px;
     padding-top: ${remcalc(12)};
   `};
-`
+`;
 
 const Icon = styled(Image)`
   width: 60px;
   height: 60px;
-`
+`;
 
 const PerkContainer = styled.li`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const PerkDescription = styled(BodyPrimary)`
   padding: ${remcalc(12)} 0;
-`
+`;
 const Perk = ({ icon, description }) => (
   <PerkContainer>
     <Icon image={icon} />
     <PerkDescription noMargin>{description}</PerkDescription>
   </PerkContainer>
-)
+);
 
 const RowLayout = styled(Row)`
   ${breakpoint('tablet')`
     justify-content: space-between;
   `}
-`
+`;
 
 const PerksList = ({ perks }) => (
   <Col width={[1, 1, 1, 1, 1, 6 / 12]}>
@@ -71,7 +71,7 @@ const PerksList = ({ perks }) => (
       ))}
     </PerksListContainer>
   </Col>
-)
+);
 
 const Perks = ({ data: { title, text, perks } }) => (
   <Section>
@@ -88,6 +88,6 @@ const Perks = ({ data: { title, text, perks } }) => (
     </Padding>
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
   </Section>
-)
+);
 
-export default Perks
+export default Perks;

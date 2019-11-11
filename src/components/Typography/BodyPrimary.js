@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import is from 'styled-is'
-import BodyPrimaryStyles from './BodyPrimaryStyles'
+import styled from 'styled-components';
+import is from 'styled-is';
+import BodyPrimaryStyles from './BodyPrimaryStyles';
 
 const BodyPrimary = styled.p`
   ${BodyPrimaryStyles}
@@ -12,6 +12,6 @@ const BodyPrimary = styled.p`
   ${is('underline')`
     text-decoration: underline;
   `}
-`
+`;
 
-export default BodyPrimary
+export default BodyPrimary;

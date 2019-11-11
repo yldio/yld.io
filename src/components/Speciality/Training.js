@@ -1,12 +1,12 @@
-import React from 'react'
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import GreyBackground from '../Common/GreyBackground'
-import StyledLink from '../Common/StyledLink'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import { Row, Col, Grid } from '../grid';
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography';
+import GreyBackground from '../Common/GreyBackground';
+import StyledLink from '../Common/StyledLink';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import Image from '../Common/Image'
+import Image from '../Common/Image';
 
 const TrainingStageContainer = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -22,11 +22,11 @@ const TrainingStageContainer = styled.div`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const StyledImageBorder = styled.div`
   padding-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const TrainingSectionContainer = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -36,11 +36,11 @@ const TrainingSectionContainer = styled.div`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const TrainingStageSubtitle = styled(Subtitle)`
   padding-bottom: 0;
-`
+`;
 
 const TrainingStage = ({ title, body, iconTitle, icon, first = false }) => (
   <Col width={[1, 1, 1, 1, 4 / 12]}>
@@ -56,7 +56,7 @@ const TrainingStage = ({ title, body, iconTitle, icon, first = false }) => (
       <BodyPrimary>{body}</BodyPrimary>
     </TrainingStageContainer>
   </Col>
-)
+);
 
 const TrainingSection = ({ speciality }) => (
   <GreyBackground>
@@ -101,6 +101,6 @@ const TrainingSection = ({ speciality }) => (
       </Grid>
     </TrainingSectionContainer>
   </GreyBackground>
-)
+);
 
-export default TrainingSection
+export default TrainingSection;

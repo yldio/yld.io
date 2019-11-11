@@ -5,4 +5,4 @@ export default {
   navigationBlog: 'navigation-blog',
   learnMoreCTA: 'learn-more-cta',
   homepageLearnMore: 'homepage-learn-more',
-}
+};

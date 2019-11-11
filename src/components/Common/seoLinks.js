@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import { BodyStylised } from '../Typography'
-import { Link } from 'gatsby'
-import { generate } from 'shortid'
-import PagePaths from '../pagePaths'
+import React from 'react';
+import styled from 'styled-components';
+import { BodyStylised } from '../Typography';
+import { Link } from 'gatsby';
+import { generate } from 'shortid';
+import PagePaths from '../pagePaths';
 
-const List = props => React.createElement(BodyStylised, props)
+const List = props => React.createElement(BodyStylised, props);
 
 const ListItem = styled.li`
   display: inline-block;
@@ -15,7 +15,7 @@ const ListItem = styled.li`
       padding: 0 8px;
     }
   }
-`
+`;
 
 export default function SeoLinks({ items, ...props }) {
   return (
@@ -23,7 +23,7 @@ export default function SeoLinks({ items, ...props }) {
       render={pathsById => (
         <List as="ul" {...props}>
           {(items || []).map(item => {
-            const path = pathsById[item.id]
+            const path = pathsById[item.id];
 
             return (
               <ListItem key={generate()}>
@@ -39,10 +39,10 @@ export default function SeoLinks({ items, ...props }) {
                   item.title.trim()
                 )}
               </ListItem>
-            )
+            );
           })}
         </List>
       )}
     />
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import { Grid } from '../grid'
-import { SectionTitle } from '../Typography'
-import LogoGrid from '../Common/LogoGrid'
+import { Grid } from '../grid';
+import { SectionTitle } from '../Typography';
+import LogoGrid from '../Common/LogoGrid';
 
 const Partners = ({ title, partners }) => (
   <Grid>
@@ -17,6 +17,6 @@ const Partners = ({ title, partners }) => (
       <LogoGrid companies={partners} />
     </Padding>
   </Grid>
-)
+);
 
-export default Partners
+export default Partners;

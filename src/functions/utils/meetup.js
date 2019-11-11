@@ -1,6 +1,6 @@
-const moment = require('moment')
+const moment = require('moment');
 
-const { LOCALE } = require('./constants')
+const { LOCALE } = require('./constants');
 
 const transformGroups = groups =>
   groups.map(group => ({
@@ -9,7 +9,7 @@ const transformGroups = groups =>
     url: group.link,
     urlname: group.urlname,
     nextEvent: group.next_event ? group.next_event.id : 0,
-  }))
+  }));
 
 const generateContentfulEvent = ({
   id,
@@ -23,8 +23,8 @@ const generateContentfulEvent = ({
   yes_rsvp_count: attendees,
   group: { urlname },
 }) => {
-  const startTime = moment(`${local_date} ${local_time}`)
-  const endTime = moment(startTime).add(duration, 'ms')
+  const startTime = moment(`${local_date} ${local_time}`);
+  const endTime = moment(startTime).add(duration, 'ms');
 
   return {
     fields: {
@@ -75,10 +75,10 @@ const generateContentfulEvent = ({
         [LOCALE]: attendees,
       },
     },
-  }
-}
+  };
+};
 
 module.exports = {
   transformGroups,
   generateContentfulEvent,
-}
+};

@@ -1,4 +1,4 @@
-const AddFrontMatter = require('../../../../../src/functions/blogMethods/custom-mdx/add-frontmatter')
+const AddFrontMatter = require('../../../../../src/functions/blogMethods/custom-mdx/add-frontmatter');
 
 const post = {
   title: 'Blog Title',
@@ -6,8 +6,8 @@ const post = {
   content: `# Blog Title\n\nA bit of content`,
   tags: ['tag1', 'tag2'],
   firstPublishedAt: '2019-01-01',
-  authorName: 'Rick Sanchez'
-}
+  authorName: 'Rick Sanchez',
+};
 
 it('prepends the front matter to the content', () => {
   const frontmatter = `---
@@ -17,10 +17,10 @@ tags: tag1,tag2
 firstPublishedAt: 2019-01-01
 author: Rick Sanchez
 root: '/blog'
----`
-  expect(AddFrontMatter(post)).toStartWith(frontmatter)
-})
+---`;
+  expect(AddFrontMatter(post)).toStartWith(frontmatter);
+});
 
 it('retains the original content', () => {
-  expect(AddFrontMatter(post)).toContain(post.content)
-})
+  expect(AddFrontMatter(post)).toContain(post.content);
+});

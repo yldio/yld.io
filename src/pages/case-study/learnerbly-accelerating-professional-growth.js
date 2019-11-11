@@ -1,32 +1,32 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
+import React, { Fragment } from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
 
-import { Grid, Row, Col } from '../../components/grid'
-import Layout from '../../components/layout'
-import GreyBackground from '../../components/Common/GreyBackground'
-import RegalBlueBackground from '../../components/Common/RegalBlueBackground'
-import MountainMeadowBackground from '../../components/Common/MountainMeadowBackground'
-import Statement from '../../components/Common/Statement'
-import Head from '../../components/Common/Head'
-import Hr from '../../components/Common/Hr'
-import Image from '../../components/Common/Image'
-import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero'
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview'
-import { SectionTitle, BodyPrimary } from '../../components/Typography'
+import { Grid, Row, Col } from '../../components/grid';
+import Layout from '../../components/layout';
+import GreyBackground from '../../components/Common/GreyBackground';
+import RegalBlueBackground from '../../components/Common/RegalBlueBackground';
+import MountainMeadowBackground from '../../components/Common/MountainMeadowBackground';
+import Statement from '../../components/Common/Statement';
+import Head from '../../components/Common/Head';
+import Hr from '../../components/Common/Hr';
+import Image from '../../components/Common/Image';
+import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
+import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
+import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import {
   shouldRender,
   normalise,
   TextColumnsBlock,
   BlockRow,
-} from '../../components/Common/CaseStudyCards/CaseStudyBlocks'
+} from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
 
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
   padding-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const StyledParagraphCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -36,17 +36,17 @@ const StyledParagraphCol = styled(Col)`
     padding-top: 0;
     padding-bottom: 0;
   `}
-`
+`;
 
 const StyledColTwo5 = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
-`
+`;
 
 const IndexPage = props => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
-  } = props
+  } = props;
 
   const {
     genericBlock1: data1,
@@ -58,7 +58,7 @@ const IndexPage = props => {
     genericBlock7: data7,
     genericBlock8: data8,
     relatedCaseStudy,
-  } = caseStudy
+  } = caseStudy;
 
   return (
     <Layout
@@ -276,8 +276,8 @@ const IndexPage = props => {
 
       <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   {
@@ -348,5 +348,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default IndexPage
+`;
+export default IndexPage;

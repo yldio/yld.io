@@ -1,22 +1,22 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import Repo from './Repo'
-import CommonImage from '../Image'
-import RatioContainer from '../RatioContainer'
-import ExternalAnchor from '../ExternalAnchor'
+import React from 'react';
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import Repo from './Repo';
+import CommonImage from '../Image';
+import RatioContainer from '../RatioContainer';
+import ExternalAnchor from '../ExternalAnchor';
 
 const Link = styled(ExternalAnchor)`
   display: flex;
-`
+`;
 
-const borderGrey = '#DBDBDB'
+const borderGrey = '#DBDBDB';
 
 const Wrapper = styled.div`
   display: inline-block;
   margin: ${props => props.theme.spacing[1.5]} 0;
   width: 100%;
-`
+`;
 
 const ImageWrapper = styled.div`
   padding: ${remcalc(24)};
@@ -24,18 +24,18 @@ const ImageWrapper = styled.div`
   vertical-align: top;
   border: 1px solid ${borderGrey};
   border-right: none;
-`
+`;
 
 const ImageWrapperInner = styled.div`
   width: 72px;
-`
+`;
 
 const Image = styled(CommonImage)`
   display: block;
   width: 100%;
   position: absolute;
   height: 100%;
-`
+`;
 
 const RepoWrapper = styled.div`
   display: flex;
@@ -46,10 +46,10 @@ const RepoWrapper = styled.div`
   vertical-align: top;
   padding: ${remcalc(24)};
   border: 1px solid ${borderGrey};
-`
+`;
 
 const RepoWithImage = props => {
-  const { url, nameWithOwner, clientLogo } = props
+  const { url, nameWithOwner, clientLogo } = props;
 
   return (
     <Wrapper>
@@ -68,7 +68,7 @@ const RepoWithImage = props => {
         </RepoWrapper>
       </Link>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default RepoWithImage
+export default RepoWithImage;

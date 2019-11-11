@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ServiceSpecialityLogo = ({ fillColor, textColor }) => (
   <svg viewBox="0 0 54 54">
@@ -23,6 +23,6 @@ const ServiceSpecialityLogo = ({ fillColor, textColor }) => (
       />
     </g>
   </svg>
-)
+);
 
-export default ServiceSpecialityLogo
+export default ServiceSpecialityLogo;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
 const JOBS_BY_LOCATION = graphql`
   query JOBS_BY_CITY {
@@ -19,7 +19,7 @@ const JOBS_BY_LOCATION = graphql`
       }
     }
   }
-`
+`;
 
 /**
  * Aux function for adjusting the group ordering.
@@ -27,32 +27,32 @@ const JOBS_BY_LOCATION = graphql`
  * it seems London is suppposed to come first in the list.
  */
 const sortJobs = (jobsByLocation, limit) => {
-  const sortedJobs = []
+  const sortedJobs = [];
   jobsByLocation.forEach(group => {
-    const location = group.edges[0].node.categories.location
-    const limitedJobs = group.edges.slice(0, limit)
+    const location = group.edges[0].node.categories.location;
+    const limitedJobs = group.edges.slice(0, limit);
 
     if (location === 'London') {
       sortedJobs.unshift({
         location,
         jobs: limitedJobs,
-      })
+      });
     } else {
       sortedJobs.push({
         location,
         jobs: limitedJobs,
-      })
+      });
     }
-  })
+  });
 
-  return sortedJobs
-}
+  return sortedJobs;
+};
 
 const JobsByLocation = ({ children, sort = sortJobs, limit }) => (
   <StaticQuery
     query={JOBS_BY_LOCATION}
     render={({ allLever }) => children(sort(allLever.group, limit))}
   />
-)
+);
 
-export default JobsByLocation
+export default JobsByLocation;

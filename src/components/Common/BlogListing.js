@@ -1,11 +1,11 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import PropTypes from 'prop-types'
-import { format } from 'date-fns'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import PropTypes from 'prop-types';
+import { format } from 'date-fns';
 
-import { Grid } from '../grid'
-import TitleAndMediaList from '../Common/TitleAndMediaList'
-import BackgroundColorWrapper from '../Common/BackgroundColorWrapper'
+import { Grid } from '../grid';
+import TitleAndMediaList from '../Common/TitleAndMediaList';
+import BackgroundColorWrapper from '../Common/BackgroundColorWrapper';
 
 const BlogListing = ({ title, description, posts, bgColor }) => {
   const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
@@ -13,7 +13,7 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
     title,
     href: `https://medium.com/yld-blog/${slug}`,
     body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd'),
-  }))
+  }));
 
   return (
     <BackgroundColorWrapper bgColor={bgColor}>
@@ -30,18 +30,18 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
         </Grid>
       </Padding>
     </BackgroundColorWrapper>
-  )
-}
+  );
+};
 
 BlogListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   mediaItems: PropTypes.array.isRequired,
   CTALink: PropTypes.string,
-}
+};
 
 BlogListing.defaultProps = {
   CTALink: '/blog/',
-}
+};
 
-export default BlogListing
+export default BlogListing;

@@ -1,26 +1,26 @@
 /* eslint-disable no-console */
-const URLSearchParams = require('url').URLSearchParams
-const Got = require('got')
-const Every = require('lodash.every')
-const { createClient } = require('contentful-management')
-const Find = require('lodash.find')
-const { default: Map } = require('apr-map')
-const isEqual = require('lodash.isequal')
-const { transformGroups, generateContentfulEvent } = require('./utils/meetup')
-const { LOCALE } = require('./utils/constants')
+const URLSearchParams = require('url').URLSearchParams;
+const Got = require('got');
+const Every = require('lodash.every');
+const { createClient } = require('contentful-management');
+const Find = require('lodash.find');
+const { default: Map } = require('apr-map');
+const isEqual = require('lodash.isequal');
+const { transformGroups, generateContentfulEvent } = require('./utils/meetup');
+const { LOCALE } = require('./utils/constants');
 
 // Creates a util to make authenticated requests for all meetup requests
 const createAuthenticatedRequest = access_token => (url, options = {}) =>
   Got(url, {
     ...options,
     headers: { ...options.headers, Authorization: `Bearer ${access_token}` },
-  })
+  });
 
 const getAuthToken = async (
   code,
   { MEETUP_API_KEY, MEETUP_API_SECRET, MEETUP_EMAIL, MEETUP_PASS, redirect },
 ) => {
-  let token
+  let token;
   try {
     /**
      * I would usually add this to { searchParams }
@@ -33,19 +33,19 @@ const getAuthToken = async (
       ['redirect_uri', redirect],
       ['code', code],
       ['grant_type', 'anonymous_code'],
-    ])
+    ]);
 
     // Get the accessToken from access endpoint
     const { body: accessBody } = await Got.post(
       `https://secure.meetup.com/oauth2/access?${accessSearchParams.toString()}`,
-    )
+    );
 
-    const { access_token } = JSON.parse(accessBody)
+    const { access_token } = JSON.parse(accessBody);
 
     const sessionSearchParams = new URLSearchParams([
       ['email', MEETUP_EMAIL],
       ['password', MEETUP_PASS],
-    ])
+    ]);
 
     // Use the access_token and meetup username/password to get
     // an oauth token for our session
@@ -56,18 +56,18 @@ const getAuthToken = async (
           Authorization: `Bearer ${access_token}`,
         },
       },
-    )
+    );
 
-    const { oauth_token } = JSON.parse(body)
+    const { oauth_token } = JSON.parse(body);
 
-    token = oauth_token
+    token = oauth_token;
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
 
   // return our token
-  return token
-}
+  return token;
+};
 
 exports.handler = async evt => {
   const {
@@ -78,7 +78,7 @@ exports.handler = async evt => {
     CONTENTFUL_SPACE,
     CMS_CRUD,
     LAMBDA_ENV = 'development',
-  } = process.env
+  } = process.env;
 
   if (
     !Every(
@@ -94,25 +94,25 @@ exports.handler = async evt => {
       Boolean,
     )
   ) {
-    throw new Error('Env variables missing, check set up')
+    throw new Error('Env variables missing, check set up');
   }
 
-  const isProd = LAMBDA_ENV === 'production'
+  const isProd = LAMBDA_ENV === 'production';
   const client = createClient({
     accessToken: CMS_CRUD,
-  })
+  });
 
   const redirect = `${
     isProd ? 'https://yld.io/.netlify/functions' : 'http://localhost:9000'
-  }/meetup-callback`
+  }/meetup-callback`;
 
-  const { queryStringParameters } = evt
+  const { queryStringParameters } = evt;
 
   if (!queryStringParameters.code) {
     return {
       statusCode: 400,
       body: 'Missing code query parameter',
-    }
+    };
   }
 
   const sessionToken = await getAuthToken(queryStringParameters.code, {
@@ -121,19 +121,19 @@ exports.handler = async evt => {
     MEETUP_EMAIL,
     MEETUP_PASS,
     redirect,
-  })
+  });
 
-  const AuthenticatedRequest = createAuthenticatedRequest(sessionToken)
+  const AuthenticatedRequest = createAuthenticatedRequest(sessionToken);
 
-  const space = await client.getSpace(CONTENTFUL_SPACE)
-  const environment = await space.getEnvironment('master')
+  const space = await client.getSpace(CONTENTFUL_SPACE);
+  const environment = await space.getEnvironment('master');
 
   const { body: groups } = await AuthenticatedRequest(
     'https://api.meetup.com/self/groups',
-  )
+  );
 
-  const transformedGroups = transformGroups(JSON.parse(groups))
-  const date = new Date().toISOString().split('T')[0]
+  const transformedGroups = transformGroups(JSON.parse(groups));
+  const date = new Date().toISOString().split('T')[0];
 
   const eventsFromGroups = await Promise.all(
     transformedGroups.map(({ urlname }) =>
@@ -141,53 +141,53 @@ exports.handler = async evt => {
         `https://api.meetup.com/${urlname}/events?no_earlier_than${date}`,
       ),
     ),
-  )
+  );
 
   const parsedEvents = eventsFromGroups.reduce(
     (acc, { body }) => acc.concat(JSON.parse(body)),
     [],
-  )
+  );
 
   const { items: contentfulEvents } = await environment.getEntries({
     limit: 1000,
     content_type: 'meetupEven',
     'fields.type': 'Meetup',
-  })
+  });
 
   let log = {
     isProd,
     newEvents: [],
     updatedEvents: [],
     unchangedEvents: [],
-  }
+  };
 
   await Map(parsedEvents, async event => {
     const contentfulEvent = Find(contentfulEvents, [
       `fields.id.${LOCALE}`,
       event.id,
-    ])
+    ]);
 
-    const generatedEvent = generateContentfulEvent(event)
+    const generatedEvent = generateContentfulEvent(event);
 
     // If contentful already has this event then we look for differences
     if (generatedEvent && contentfulEvent) {
-      const { fields: generatedEventFields } = generatedEvent
-      const { fields: contentfulEventFields } = contentfulEvent
+      const { fields: generatedEventFields } = generatedEvent;
+      const { fields: contentfulEventFields } = contentfulEvent;
 
       const diffVals = Object.keys(generatedEventFields).reduce((acc, curr) => {
         // we don't care about homepageFeatured
         if (['homepageFeatured'].includes(curr)) {
-          return acc
+          return acc;
         }
 
         return isEqual(contentfulEventFields[curr], generatedEventFields[curr])
           ? acc
-          : [...acc, curr]
-      }, [])
+          : [...acc, curr];
+      }, []);
 
       if (diffVals && !diffVals.length) {
-        log.unchangedEvents.push(generatedEvent.fields.eventTitle[LOCALE])
-        return
+        log.unchangedEvents.push(generatedEvent.fields.eventTitle[LOCALE]);
+        return;
       }
 
       // update
@@ -197,37 +197,37 @@ exports.handler = async evt => {
           (acc, curr) => ({ ...acc, [curr]: generatedEventFields[curr] }),
           {},
         ),
-      )
+      );
 
       if (isProd) {
         log.updatedEvents.push({
           name: generatedEvent.fields.eventTitle[LOCALE],
           values: diffVals,
-        })
+        });
 
-        const id = await contentfulEvent.update()
-        const updatedEntry = await environment.getEntry(id.sys.id)
+        const id = await contentfulEvent.update();
+        const updatedEntry = await environment.getEntry(id.sys.id);
 
-        return updatedEntry.publish()
+        return updatedEntry.publish();
       } else {
-        return
+        return;
       }
     }
 
     // If there is no matching event in contentful then we need to create a new one
     if (isProd && generatedEvent && !contentfulEvent) {
-      log.newEvents.push(generatedEvent.fields.eventTitle[LOCALE])
-      const id = await environment.createEntry('meetupEven', generatedEvent)
-      const newEntry = await environment.getEntry(id.sys.id)
+      log.newEvents.push(generatedEvent.fields.eventTitle[LOCALE]);
+      const id = await environment.createEntry('meetupEven', generatedEvent);
+      const newEntry = await environment.getEntry(id.sys.id);
 
-      return newEntry.publish()
+      return newEntry.publish();
     } else {
-      return
+      return;
     }
-  })
+  });
 
   return {
     statusCode: 200,
     body: JSON.stringify({ log }),
-  }
-}
+  };
+};

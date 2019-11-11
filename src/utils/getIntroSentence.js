@@ -1,11 +1,11 @@
 export default caseStudy => {
   if (caseStudy.intro) {
-    return (caseStudy.intro || {}).introSentence
+    return (caseStudy.intro || {}).introSentence;
   }
 
   if (typeof caseStudy.introSentence === 'string') {
-    return caseStudy.introSentence
+    return caseStudy.introSentence;
   }
 
-  return (caseStudy.introSentence || {}).introSentence
-}
+  return (caseStudy.introSentence || {}).introSentence;
+};

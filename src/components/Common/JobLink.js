@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import ExternalAnchor from '../Common/ExternalAnchor'
-import { BodyPrimary } from '../Typography'
-import Hr from '../Common/Hr'
+import ExternalAnchor from '../Common/ExternalAnchor';
+import { BodyPrimary } from '../Typography';
+import Hr from '../Common/Hr';
 
 const JobLink = ({ position, hostedUrl, contractType, location }) => (
   <ExternalAnchor
@@ -15,6 +15,6 @@ const JobLink = ({ position, hostedUrl, contractType, location }) => (
     </BodyPrimary>
     <Hr short />
   </ExternalAnchor>
-)
+);
 
-export default JobLink
+export default JobLink;

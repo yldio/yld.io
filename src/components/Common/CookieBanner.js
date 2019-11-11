@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 const Box = styled.div`
   position: fixed;
@@ -28,7 +28,7 @@ const Box = styled.div`
     border: 1px solid #ffcd7c;
     padding: 18px 24px;
   `}
-`
+`;
 
 const Text = styled.p`
   font-size: 17px;
@@ -37,7 +37,7 @@ const Text = styled.p`
         display: inline;
         margin: 0;
     `}
-`
+`;
 
 const Button = styled.button`
   color: ${props => props.theme.colors.white};
@@ -51,11 +51,11 @@ const Button = styled.button`
         margin-left: auto;
         width: 150px;
     `};
-`
+`;
 
 const LinkUnderline = styled(Link)`
   text-decoration: underline;
-`
+`;
 
 const Cookie = ({ onClick }) => (
   <Box>
@@ -69,10 +69,10 @@ const Cookie = ({ onClick }) => (
     </Text>
     <Button onClick={onClick}>I agree</Button>
   </Box>
-)
+);
 
 Cookie.propTypes = {
   onClick: PropTypes.func.isRequired,
-}
+};
 
-export default Cookie
+export default Cookie;

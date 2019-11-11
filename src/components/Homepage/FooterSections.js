@@ -1,13 +1,13 @@
-import React from 'react'
-import generate from 'shortid'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import React from 'react';
+import generate from 'shortid';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import { Grid, Row, Col } from '../grid'
-import Image from '../Common/Image'
-import StyledLink from '../Common/StyledLink'
-import { BodyPrimary, DisplayTitle } from '../Typography'
+import { Grid, Row, Col } from '../grid';
+import Image from '../Common/Image';
+import StyledLink from '../Common/StyledLink';
+import { BodyPrimary, DisplayTitle } from '../Typography';
 
 const FooterCTAInner = styled.div`
   display: flex;
@@ -16,14 +16,14 @@ const FooterCTAInner = styled.div`
   justify-content: space-between;
   background: white;
   padding: ${remcalc(24)} ${remcalc(36)};
-`
+`;
 
 const Content = styled.section`
   > img {
     width: 60px;
     margin-bottom: ${({ theme }) => theme.space[2]};
   }
-`
+`;
 
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -33,7 +33,7 @@ const StyledRow = styled(Row)`
     padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const StyledCol = styled(Col)`
   ${breakpoint('smallPhone', 'smallTablet')`
@@ -43,12 +43,12 @@ const StyledCol = styled(Col)`
       padding-bottom: 0;
     }
   `}
-`
+`;
 
 const CustomLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
   margin-bottom: ${({ theme }) => theme.space[2]};
-`
+`;
 
 /**
  * Usually I would opt to have these in content types but at
@@ -95,6 +95,6 @@ const FooterSections = ({
       </StyledCol>
     </StyledRow>
   </Grid>
-)
+);
 
-export default FooterSections
+export default FooterSections;

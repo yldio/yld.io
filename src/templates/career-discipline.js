@@ -1,18 +1,18 @@
-import React from 'react'
-import { graphql, navigate } from 'gatsby'
-import generate from 'shortid'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import Get from 'lodash.get'
+import React from 'react';
+import { graphql, navigate } from 'gatsby';
+import generate from 'shortid';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import Get from 'lodash.get';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import Layout from '../components/layout'
-import { Grid, Row, Col } from '../components/grid'
-import { SectionTitle, BodyPrimary } from '../components/Typography'
-import { Discipline } from '../components/CareerFramework'
-import Tab, { Tabs } from '../components/Common/Tab'
-import GreyBackground from '../components/Common/GreyBackground'
-import Head from '../components/Common/Head'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import Layout from '../components/layout';
+import { Grid, Row, Col } from '../components/grid';
+import { SectionTitle, BodyPrimary } from '../components/Typography';
+import { Discipline } from '../components/CareerFramework';
+import Tab, { Tabs } from '../components/Common/Tab';
+import GreyBackground from '../components/Common/GreyBackground';
+import Head from '../components/Common/Head';
 
 const StyledIntroHeaderCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
@@ -20,7 +20,7 @@ const StyledIntroHeaderCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const StyledIntroIntroCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -28,7 +28,7 @@ const StyledIntroIntroCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const DisciplineTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -36,7 +36,7 @@ const DisciplineTitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const CareerFramework = ({
   data: {
@@ -49,13 +49,13 @@ const CareerFramework = ({
   location,
   pageContext: { slug: pageSlug },
 }) => {
-  const { introContent, introHeader, disciplines = [] } = generic
+  const { introContent, introHeader, disciplines = [] } = generic;
 
   const introContentSafe = Get(
     introContent,
     'content[0].content[0].value',
     undefined,
-  )
+  );
 
   const disciplineTabData =
     disciplines &&
@@ -70,7 +70,7 @@ const CareerFramework = ({
           },
         ]),
       [],
-    )
+    );
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -78,7 +78,7 @@ const CareerFramework = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -127,8 +127,8 @@ const CareerFramework = ({
 
       <Discipline key={generate()} {...discipline} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($id: String!) {
@@ -192,6 +192,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default CareerFramework
+export default CareerFramework;

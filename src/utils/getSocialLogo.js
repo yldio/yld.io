@@ -1,4 +1,4 @@
-import IsNull from 'lodash.isnull'
+import IsNull from 'lodash.isnull';
 
 /**
  *
@@ -12,4 +12,4 @@ import IsNull from 'lodash.isnull'
  *
  */
 export default ({ posterImage, ogImageMeta }) =>
-  (IsNull(ogImageMeta) ? posterImage.file : ogImageMeta.file).url
+  (IsNull(ogImageMeta) ? posterImage.file : ogImageMeta.file).url;

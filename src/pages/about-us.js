@@ -1,14 +1,14 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
-import AboutUsHero from '../components/AboutUs/AboutUsHero'
-import Teams from '../components/AboutUs/Teams'
-import Subsidiaries from '../components/AboutUs/Subsidiaries'
-import ClientTestimonial from '../components/AboutUs/ClientTestimonial'
-import Partners from '../components/AboutUs/Partners'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import Layout from '../components/layout';
+import Head from '../components/Common/Head';
+import AboutUsHero from '../components/AboutUs/AboutUsHero';
+import Teams from '../components/AboutUs/Teams';
+import Subsidiaries from '../components/AboutUs/Subsidiaries';
+import ClientTestimonial from '../components/AboutUs/ClientTestimonial';
+import Partners from '../components/AboutUs/Partners';
 
 const AboutUs = ({
   data: {
@@ -36,7 +36,7 @@ const AboutUs = ({
     partnershipsTitle,
     partners,
     seoMetaData,
-  } = content
+  } = content;
 
   const supportingStatements = [
     {
@@ -51,7 +51,7 @@ const AboutUs = ({
       icon: supportingStatement3Icon,
       text: supportingStatement3Text,
     },
-  ]
+  ];
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -59,7 +59,7 @@ const AboutUs = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -76,8 +76,8 @@ const AboutUs = ({
       />
       <Partners title={partnershipsTitle} partners={partners} />
     </Layout>
-  )
-}
+  );
+};
 
 const AboutUsPage = props => (
   <StaticQuery
@@ -202,6 +202,6 @@ const AboutUsPage = props => (
     `}
     render={data => <AboutUs data={data} {...props} />}
   />
-)
+);
 
-export default AboutUsPage
+export default AboutUsPage;

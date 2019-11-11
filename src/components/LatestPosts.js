@@ -1,5 +1,5 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
 const POSTS = graphql`
   query contentfulBlogPosts {
@@ -18,7 +18,7 @@ const POSTS = graphql`
       }
     }
   }
-`
+`;
 
 const LatestPosts = ({ children }) => (
   <StaticQuery
@@ -27,6 +27,6 @@ const LatestPosts = ({ children }) => (
       children(allContentfulBlogPost.edges)
     }
   />
-)
+);
 
-export default LatestPosts
+export default LatestPosts;

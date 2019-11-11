@@ -1,8 +1,8 @@
-const got = require('got')
-const { URL } = require('url')
-const isEqual = require('lodash.isequal')
+const got = require('got');
+const { URL } = require('url');
+const isEqual = require('lodash.isequal');
 
-const Auth = require('./utils/auth')
+const Auth = require('./utils/auth');
 
 /**
  *
@@ -26,42 +26,42 @@ exports.handler = async evt =>
       URL: NETLIFY_URL,
       LAMBDA_ENV = 'development',
       LAMBDA_LEVER_WEBHOOK, // Set up in Netlify UI
-    } = process.env
+    } = process.env;
 
-    const isProd = LAMBDA_ENV === 'production'
+    const isProd = LAMBDA_ENV === 'production';
 
     const metaHref = new URL(
       `${isProd ? NETLIFY_URL : 'http://localhost:8000'}/meta.json`,
-    )
+    );
 
-    const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json')
+    const leverHref = new URL('https://api.lever.co/v0/postings/yld?mode=json');
 
-    const { body: metaBody } = await got(metaHref, { json: true })
-    const { body: leverBody } = await got(leverHref, { json: true })
+    const { body: metaBody } = await got(metaHref, { json: true });
+    const { body: leverBody } = await got(leverHref, { json: true });
 
-    const { allJobIds = [] } = metaBody
+    const { allJobIds = [] } = metaBody;
     const leverJobIds =
-      leverBody && leverBody.length && leverBody.map(({ id }) => id)
+      leverBody && leverBody.length && leverBody.map(({ id }) => id);
 
     if (!isEqual(allJobIds.sort(), leverJobIds.sort())) {
       if (isProd) {
-        const { body } = await got.post(LAMBDA_LEVER_WEBHOOK)
+        const { body } = await got.post(LAMBDA_LEVER_WEBHOOK);
 
         return {
           statusCode: 200,
           body,
-        }
+        };
       } else {
         return {
           statusCode: 200,
           body:
             'Difference in jobs found but this is not production so no deployment for you',
-        }
+        };
       }
     }
 
     return {
       body: 'No differences in jobs found, not deploying',
       statusCode: 200,
-    }
-  })
+    };
+  });

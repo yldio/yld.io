@@ -1,11 +1,11 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import StyledLink from '../../../components/Common/StyledLink'
-import Image from '../../../components/Common/Image'
-import { SectionTitle, BodyPrimary } from '../../../components/Typography'
-import { Col } from '../../../components/grid'
-import SubtitleWithBody from '../../../components/Common/SubtitleWithBody'
+import StyledLink from '../../../components/Common/StyledLink';
+import Image from '../../../components/Common/Image';
+import { SectionTitle, BodyPrimary } from '../../../components/Typography';
+import { Col } from '../../../components/grid';
+import SubtitleWithBody from '../../../components/Common/SubtitleWithBody';
 
 // TODO - should come from contentful
 const courseInfoSectionNames = {
@@ -13,7 +13,7 @@ const courseInfoSectionNames = {
   preRequisites: 'Pre-requisites',
   preRequisitesCourses: 'Pre-requisite Courses',
   contactUs: 'Contact us',
-}
+};
 
 const CourseInfo = ({
   name,
@@ -44,6 +44,6 @@ const CourseInfo = ({
       <StyledLink to="/contact">{courseInfoSectionNames.contactUs}</StyledLink>
     </Padding>
   </Col>
-)
+);
 
-export default CourseInfo
+export default CourseInfo;

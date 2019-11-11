@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-import { Col } from '../grid'
-import { Padding, Margin } from 'styled-components-spacing'
-import theme from '../../utils/theme'
-import { BodyPrimary } from '../Typography'
-import darkIcon from '../../images/button-play-dark.svg'
-import lightIcon from '../../images/button-play-light.svg'
-import ExternalAnchor from '../Common/ExternalAnchor'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
+import { Col } from '../grid';
+import { Padding, Margin } from 'styled-components-spacing';
+import theme from '../../utils/theme';
+import { BodyPrimary } from '../Typography';
+import darkIcon from '../../images/button-play-dark.svg';
+import lightIcon from '../../images/button-play-light.svg';
+import ExternalAnchor from '../Common/ExternalAnchor';
 
 const Wrapper = styled(Col)`
   ${breakpoint('smallTablet')`
@@ -22,14 +22,14 @@ const Wrapper = styled(Col)`
       display: block;
     }
   `}
-`
+`;
 
 const PlayIcon = styled.img`
   height: ${theme.spacing[2]};
   width: ${theme.spacing[2]};
   max-height: ${theme.spacing[2]};
   max-width: ${theme.spacing[2]};
-`
+`;
 
 const TruncatedParagraph = styled(BodyPrimary)`
   height: ${remcalc(48)};
@@ -44,11 +44,11 @@ const TruncatedParagraph = styled(BodyPrimary)`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`
+`;
 
 const FlexContent = styled.div`
   display: flex;
-`
+`;
 
 const getColorBasedOnBackground = themeVariation => {
   switch (themeVariation) {
@@ -57,7 +57,7 @@ const getColorBasedOnBackground = themeVariation => {
         opacity: 0.5,
         useLightIcon: true,
         color: theme.colors.white,
-      }
+      };
     case theme.variations.white:
     case theme.variations.grey:
     default:
@@ -65,9 +65,9 @@ const getColorBasedOnBackground = themeVariation => {
         opacity: 1,
         useLightIcon: false,
         color: theme.colors.text,
-      }
+      };
   }
-}
+};
 
 const StandaloneWrapper = styled(Margin)`
   height: ${remcalc(186)};
@@ -77,7 +77,7 @@ const StandaloneWrapper = styled(Margin)`
   border: 1px solid
     ${({ themeVariation, theme }) =>
       themeVariation === 'dark' ? '#848194' : theme.colors.border};
-`
+`;
 
 const BaseVideoLink = ({
   children,
@@ -88,8 +88,8 @@ const BaseVideoLink = ({
 }) => {
   const { opacity, useLightIcon, color } = getColorBasedOnBackground(
     themeVariation,
-  )
-  const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div'
+  );
+  const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div';
 
   return (
     <Wrapper width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
@@ -125,7 +125,7 @@ const BaseVideoLink = ({
         </InnerWrapper>
       </ExternalAnchor>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default BaseVideoLink
+export default BaseVideoLink;

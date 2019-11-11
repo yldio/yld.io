@@ -1,9 +1,9 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
 
-import GreyBackground from '../Common/GreyBackground'
-import { Grid } from '../grid'
-import TitleAndMediaList from '../Common/TitleAndMediaList'
+import GreyBackground from '../Common/GreyBackground';
+import { Grid } from '../grid';
+import TitleAndMediaList from '../Common/TitleAndMediaList';
 
 const TutorialsSection = ({ speciality, tutorials }) => {
   const mediaItems = tutorials
@@ -13,7 +13,7 @@ const TutorialsSection = ({ speciality, tutorials }) => {
       title,
       href: link,
       body: additionalInfo,
-    }))
+    }));
 
   return (
     <GreyBackground>
@@ -29,7 +29,7 @@ const TutorialsSection = ({ speciality, tutorials }) => {
         </Padding>
       </Grid>
     </GreyBackground>
-  )
-}
+  );
+};
 
-export default TutorialsSection
+export default TutorialsSection;

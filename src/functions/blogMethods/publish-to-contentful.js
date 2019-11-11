@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const { default: Map } = require('apr-map')
-const { LOCALE } = require('../utils/constants')
+const { default: Map } = require('apr-map');
+const { LOCALE } = require('../utils/constants');
 
 const generateContentfulEntryFromPost = (post, keys, locale) =>
   keys.reduce(
@@ -11,7 +11,7 @@ const generateContentfulEntryFromPost = (post, keys, locale) =>
       },
     }),
     {},
-  )
+  );
 
 const publishToContentful = async (
   posts,
@@ -26,34 +26,34 @@ const publishToContentful = async (
           slug: { [LOCALE]: slug },
         },
       }) => slug === post.slug,
-    )
+    );
 
     const contentfulPostData = generateContentfulEntryFromPost(
       post,
       allFields,
       LOCALE,
-    )
+    );
 
     if (asset) {
-      console.info(`Updating post: ${post.title}`)
+      console.info(`Updating post: ${post.title}`);
 
       asset.fields = {
         ...asset.fields,
         ...contentfulPostData,
-      }
-      const updatedAsset = await asset.update()
+      };
+      const updatedAsset = await asset.update();
 
-      return await updatedAsset.publish()
+      return await updatedAsset.publish();
     } else {
-      console.info(`Creating new post: ${post.title} `)
+      console.info(`Creating new post: ${post.title} `);
 
       const newAsset = await environment.createEntry('blogPost', {
         fields: contentfulPostData,
-      })
+      });
 
-      return await newAsset.publish()
+      return await newAsset.publish();
     }
-  })
-}
+  });
+};
 
-module.exports = publishToContentful
+module.exports = publishToContentful;

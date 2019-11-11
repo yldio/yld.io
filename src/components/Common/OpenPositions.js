@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Col, Row, Grid } from '../grid'
-import JobsByLocation from './JobsByLocation'
-import { SectionTitle, Subtitle } from '../Typography'
-import JobLink from './JobLink'
-import GreyBackground from './GreyBackground'
+import { Col, Row, Grid } from '../grid';
+import JobsByLocation from './JobsByLocation';
+import { SectionTitle, Subtitle } from '../Typography';
+import JobLink from './JobLink';
+import GreyBackground from './GreyBackground';
 
 export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
   <div ref={ref}>
     <OpenPositions {...props} />
   </div>
-))
+));
 
 const StyledOpenPositions = styled(GreyBackground)`
   padding-top: ${({ theme }) => theme.space[6]};
@@ -22,7 +22,7 @@ const StyledOpenPositions = styled(GreyBackground)`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[4]}
 `}
-`
+`;
 
 const OpenPositions = ({ data: { title }, limit = 4 }) => (
   <StyledOpenPositions>
@@ -40,7 +40,7 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
                       text,
                       hostedUrl,
                       categories: { commitment },
-                    } = job.node
+                    } = job.node;
                     return (
                       <Col
                         key={`job-${location}-${idx}`}
@@ -54,7 +54,7 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
                           contractType={commitment}
                         />
                       </Col>
-                    )
+                    );
                   })}
                 </Row>
               </Padding>
@@ -64,6 +64,6 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
       </JobsByLocation>
     </Grid>
   </StyledOpenPositions>
-)
+);
 
-export default OpenPositions
+export default OpenPositions;

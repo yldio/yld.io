@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
-import { BodyPrimary } from '../Typography'
-import { Row, Col } from '../grid'
+import { BodyPrimary } from '../Typography';
+import { Row, Col } from '../grid';
 
 const RowLayout = styled(Row)`
   ${breakpoint('smallTablet')`
     justify-content: flex-end;
   `}
-`
+`;
 
 const FirstTextSection = ({ text }) => (
   <RowLayout>
@@ -19,6 +19,6 @@ const FirstTextSection = ({ text }) => (
       ))}
     </Col>
   </RowLayout>
-)
+);
 
-export default FirstTextSection
+export default FirstTextSection;

@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import remcalc from 'remcalc'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import styled from 'styled-components';
+import remcalc from 'remcalc';
+import { Padding } from 'styled-components-spacing';
 
-import { Row, Col } from '../grid'
-import { Label, Checkbox } from '../Common/Forms'
+import { Row, Col } from '../grid';
+import { Label, Checkbox } from '../Common/Forms';
 
 export const CheckBoxesContainer = styled(Col)`
   display: flex;
@@ -26,7 +26,7 @@ export const CheckBoxesContainer = styled(Col)`
       padding-right: 0;
     }
   }
-`
+`;
 
 const AreasOfInterest = ({ title, interests, onChange }) => (
   <section>
@@ -40,7 +40,7 @@ const AreasOfInterest = ({ title, interests, onChange }) => (
     <Row>
       <CheckBoxesContainer width={[1, 1, 1, 1, 10 / 12, 8 / 12]}>
         {interests.map((interest, idx) => {
-          const { name, label, branch } = interest
+          const { name, label, branch } = interest;
           return (
             <Col width={[1, 1, 1, 1, 6 / 12]} key={idx}>
               <Checkbox
@@ -51,11 +51,11 @@ const AreasOfInterest = ({ title, interests, onChange }) => (
               />
               <label htmlFor={name}>{label}</label>
             </Col>
-          )
+          );
         })}
       </CheckBoxesContainer>
     </Row>
   </section>
-)
+);
 
-export default AreasOfInterest
+export default AreasOfInterest;

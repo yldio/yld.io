@@ -1,24 +1,24 @@
-import React, { Fragment, Component } from 'react'
-import Helmet from 'react-helmet'
-import styled, { ThemeProvider } from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import { Location } from '@reach/router'
-import remcalc from 'remcalc'
-import { hotjar } from 'react-hotjar'
+import React, { Fragment, Component } from 'react';
+import Helmet from 'react-helmet';
+import styled, { ThemeProvider } from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import { Location } from '@reach/router';
+import remcalc from 'remcalc';
+import { hotjar } from 'react-hotjar';
 
-import Header from './Header'
-import './layout.css'
-import theme from '../utils/theme'
-import GlobalStyle from '../utils/globalStyle'
-import Footer from './Footer'
-import google from '../utils/google-json.json'
-import Cookie from './Common/CookieBanner'
+import Header from './Header';
+import './layout.css';
+import theme from '../utils/theme';
+import GlobalStyle from '../utils/globalStyle';
+import Footer from './Footer';
+import google from '../utils/google-json.json';
+import Cookie from './Common/CookieBanner';
 
-const { GATSBY_ENVIRONMENT } = process.env
-const googleJson = JSON.stringify(google)
+const { GATSBY_ENVIRONMENT } = process.env;
+const googleJson = JSON.stringify(google);
 
 const isDevEnvironment =
-  GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview'
+  GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview';
 
 /**
  * These are not destructured as the values are replaced inline
@@ -29,44 +29,44 @@ const isDevEnvironment =
  *
  * These variables are stored in netlify settings
  */
-const HOTJAR_ID = process.env.HOTJAR_ID
-const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6
+const HOTJAR_ID = process.env.HOTJAR_ID;
+const HOTJAR_SCRIPT_VERSION = process.env.HOTJAR_SCRIPT_VERSION || 6;
 
 const addHotJar =
-  !isDevEnvironment && typeof window !== `undefined` && HOTJAR_ID
+  !isDevEnvironment && typeof window !== `undefined` && HOTJAR_ID;
 
 const StyledMain = styled.main`
   padding-top: ${remcalc(120)};
-`
+`;
 
 class Layout extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       cookiesAllowed: true,
       GridDebugger: null,
-    }
+    };
   }
 
   async componentDidMount() {
-    this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) })
+    this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) });
 
     if (isDevEnvironment) {
       const {
         default: component,
-      } = await import(/* webpackChunkName: "grid-debugger" */ 'react-grid-debugger')
+      } = await import(/* webpackChunkName: "grid-debugger" */ 'react-grid-debugger');
 
       this.setState({
         GridDebugger: component,
-      })
+      });
     }
   }
 
   handleClick = () => {
-    this.setState({ cookiesAllowed: true })
-    localStorage.setItem('cookies', true)
-  }
+    this.setState({ cookiesAllowed: true });
+    localStorage.setItem('cookies', true);
+  };
 
   render() {
     const {
@@ -78,9 +78,9 @@ class Layout extends Component {
       structuredData,
       breadcrumbData,
       is404 = false,
-    } = this.props
+    } = this.props;
 
-    const { GridDebugger } = this.state
+    const { GridDebugger } = this.state;
 
     return (
       <StaticQuery
@@ -104,7 +104,7 @@ class Layout extends Component {
               },
               position: 1,
             },
-          ]
+          ];
 
           const breadcrumbs = {
             '@context': 'http://schema.org',
@@ -112,7 +112,7 @@ class Layout extends Component {
             description: 'Breadcrumbs list',
             name: 'Breadcrumbs',
             itemListElement: [...homepageListItem, ...(breadcrumbData || [])],
-          }
+          };
 
           return (
             <ThemeProvider theme={theme}>
@@ -164,11 +164,11 @@ class Layout extends Component {
                 )}
               </Fragment>
             </ThemeProvider>
-          )
+          );
         }}
       />
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

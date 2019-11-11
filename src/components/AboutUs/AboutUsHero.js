@@ -1,17 +1,17 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import Flex from 'styled-flex-component'
-import styled from 'styled-components'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import Flex from 'styled-flex-component';
+import styled from 'styled-components';
 
-import { Grid, Row, Col } from '../grid'
-import PaddedCol from './PaddedCol'
-import Image from '../Common/Image'
-import { SectionTitle, BodyPrimary } from '../Typography'
+import { Grid, Row, Col } from '../grid';
+import PaddedCol from './PaddedCol';
+import Image from '../Common/Image';
+import { SectionTitle, BodyPrimary } from '../Typography';
 
 const ImageWrapper = styled(Flex)`
   width: 60px;
   height: 60px;
-`
+`;
 
 const SupportingStatement = ({ icon, text }) => (
   <PaddedCol width={[1, 1, 1, 1, 1 / 2, 1 / 3]}>
@@ -22,7 +22,7 @@ const SupportingStatement = ({ icon, text }) => (
     </Padding>
     <BodyPrimary>{text}</BodyPrimary>
   </PaddedCol>
-)
+);
 
 const AboutUsHero = ({ statementText, supportingStatements }) => (
   <Grid>
@@ -48,6 +48,6 @@ const AboutUsHero = ({ statementText, supportingStatements }) => (
       </Row>
     </Padding>
   </Grid>
-)
+);
 
-export default AboutUsHero
+export default AboutUsHero;

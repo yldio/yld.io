@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import { SectionTitle } from '../Typography'
-import styled from 'styled-components'
+import React, { Fragment } from 'react';
+import { SectionTitle } from '../Typography';
+import styled from 'styled-components';
 
 const StyledSpan = styled.span`
   font-family: 'PT Mono';
-`
+`;
 
 const ContributionsCopy = props => {
   const {
@@ -13,7 +13,7 @@ const ContributionsCopy = props => {
     titleSectionLine1: first,
     titleSectionLine2: second,
     titleSectionLine3: third,
-  } = props
+  } = props;
 
   return (
     <Fragment>
@@ -23,7 +23,7 @@ const ContributionsCopy = props => {
         <StyledSpan>{projects}</StyledSpan> {third}
       </SectionTitle>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ContributionsCopy
+export default ContributionsCopy;

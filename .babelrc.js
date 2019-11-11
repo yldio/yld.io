@@ -1,0 +1,8 @@
+module.exports = {
+  presets: ['babel-preset-gatsby'],
+  env: {
+    test: {
+      plugins: ['require-context-hook'],
+    },
+  },
+};

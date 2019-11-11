@@ -1,27 +1,27 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
-import Head from '../components/Common/Head'
-import Layout from '../components/layout'
-import { Grid, Row, Col } from '../components/grid'
-import EventSection from '../components/Common/Events'
-import BlueBackground from '../components/Common/BlueBackground'
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview'
-import Statement from '../components/Common/Statement'
-import SeoLinksContainer from '../components/Common/seoLinksContainer'
-import Hr from '../components/Common/Hr'
-import Contributions from '../components/Common/Contributions'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import Head from '../components/Common/Head';
+import Layout from '../components/layout';
+import { Grid, Row, Col } from '../components/grid';
+import EventSection from '../components/Common/Events';
+import BlueBackground from '../components/Common/BlueBackground';
+import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import Statement from '../components/Common/Statement';
+import SeoLinksContainer from '../components/Common/seoLinksContainer';
+import Hr from '../components/Common/Hr';
+import Contributions from '../components/Common/Contributions';
 
-import TalksSection from '../components/OpenSource/Talks'
-import PartnershipsSection from '../components/OpenSource/Partnerships'
-import WhyOpenSource from '../components/OpenSource/WhyOpenSource'
-import OpenDeliverables from '../components/OpenSource/OpenDeliverables'
+import TalksSection from '../components/OpenSource/Talks';
+import PartnershipsSection from '../components/OpenSource/Partnerships';
+import WhyOpenSource from '../components/OpenSource/WhyOpenSource';
+import OpenDeliverables from '../components/OpenSource/OpenDeliverables';
 
 const StyledHr = styled(Hr)`
   border-color: #848194;
-`
+`;
 
 const OpenSource = ({ data, location }) => {
   const {
@@ -59,9 +59,9 @@ const OpenSource = ({ data, location }) => {
     site: {
       siteMetadata: { siteUrl },
     },
-  } = data
+  } = data;
 
-  const talks = talksSectionTalks.filter(({ type }) => type === 'Talk')
+  const talks = talksSectionTalks.filter(({ type }) => type === 'Talk');
 
   const whyOsReasons = [
     {
@@ -79,14 +79,14 @@ const OpenSource = ({ data, location }) => {
       title: whyOsSectionReason3Title,
       body: whyOsSectionReason3Body.whyOsSectionReason3Body,
     },
-  ]
+  ];
 
   const specialities = technologiesSectionTechnologies.map(
     ({ name, specialities }) => ({
       title: name,
       items: specialities,
     }),
-  )
+  );
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -94,7 +94,7 @@ const OpenSource = ({ data, location }) => {
       pathname: location.pathname,
       position: 2,
     },
-  ])
+  ]);
 
   return (
     <Layout
@@ -153,8 +153,8 @@ const OpenSource = ({ data, location }) => {
         />
       )}
     </Layout>
-  )
-}
+  );
+};
 
 const OpenSourcePage = props => (
   <StaticQuery
@@ -356,6 +356,6 @@ const OpenSourcePage = props => (
     `}
     render={data => <OpenSource data={data} {...props} />}
   />
-)
+);
 
-export default OpenSourcePage
+export default OpenSourcePage;

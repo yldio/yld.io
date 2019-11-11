@@ -1,10 +1,10 @@
-import Get from 'lodash.get'
-import IsNull from 'lodash.isnull'
+import Get from 'lodash.get';
+import IsNull from 'lodash.isnull';
 
 const getExternalType = (flattenedSpeciality, type) =>
   flattenedSpeciality.externalResources.filter(
     additionalInfo => additionalInfo.type === type,
-  ) || []
+  ) || [];
 
 const flattenSpeciality = speciality => {
   return {
@@ -110,7 +110,7 @@ const flattenSpeciality = speciality => {
       ? []
       : Get(speciality, 'relatedProjects', []),
     clients: IsNull(speciality.clients) ? [] : Get(speciality, 'clients', []),
-  }
-}
+  };
+};
 
-export { getExternalType, flattenSpeciality }
+export { getExternalType, flattenSpeciality };

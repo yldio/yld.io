@@ -1,8 +1,8 @@
-import { css } from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import { css } from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import modifiers from './modifiers'
+import modifiers from './modifiers';
 
 const SectionTitleStyles = css`
   color: ${props => props.theme.colors.text};
@@ -18,6 +18,6 @@ const SectionTitleStyles = css`
     padding: ${remcalc(10)} 0 ${remcalc(8)} 0;
     ${modifiers}
   `};
-`
+`;
 
-export default SectionTitleStyles
+export default SectionTitleStyles;

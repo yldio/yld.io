@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import modifiers from './modifiers'
+import modifiers from './modifiers';
 
 const CalendarDay = styled.p`
   color: ${props => props.theme.colors.text};
@@ -17,6 +17,6 @@ const CalendarDay = styled.p`
     line-height: ${remcalc(72)};
     ${modifiers}
   `}
-`
+`;
 
-export default CalendarDay
+export default CalendarDay;

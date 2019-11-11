@@ -1,20 +1,20 @@
-import React from 'react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { graphql } from 'gatsby'
-import { MDXProvider } from '@mdx-js/react'
+import React from 'react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { graphql } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 
-import { Grid, Row, Col } from '../components/grid'
-import Layout from '../components/layout'
-import Head from '../components/Common/Head'
+import { Grid, Row, Col } from '../components/grid';
+import Layout from '../components/layout';
+import Head from '../components/Common/Head';
 import {
   PostIntroMetaData,
   PostOutroMetaData,
-} from '../components/Blog/PostMetaData'
-import FigureImage from '../components/Blog/FigureImage'
-import YouTube from '../components/Blog/YouTube'
+} from '../components/Blog/PostMetaData';
+import FigureImage from '../components/Blog/FigureImage';
+import YouTube from '../components/Blog/YouTube';
 
-import Gist from 'react-gist'
-import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed'
+import Gist from 'react-gist';
+import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
 
 import {
   PostWrapper,
@@ -26,7 +26,7 @@ import {
   Code,
   A,
   Blockquote,
-} from '../components/Blog/Typography'
+} from '../components/Blog/Typography';
 
 const components = {
   h1: H1,
@@ -39,10 +39,10 @@ const components = {
   code: Code,
   anchor: A,
   blockquote: Blockquote,
-}
-const shortCodes = { YouTube, Gist, FigureImage, Tweet }
+};
+const shortCodes = { YouTube, Gist, FigureImage, Tweet };
 
-const COL_WIDTHS = [1, 1, 1, 10 / 12, 10 / 12, 7 / 12]
+const COL_WIDTHS = [1, 1, 1, 10 / 12, 10 / 12, 7 / 12];
 
 const BlogPostTemplate = ({
   data: { contentfulBlogPost: post },
@@ -56,7 +56,7 @@ const BlogPostTemplate = ({
       post.content.childMdx.excerpt,
     socialLogo: post.headerImage && post.headerImage,
     keywords: post.tags,
-  }
+  };
 
   return (
     <MDXProvider components={{ ...components, ...shortCodes }}>
@@ -92,10 +92,10 @@ const BlogPostTemplate = ({
         </Grid>
       </Layout>
     </MDXProvider>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -121,4 +121,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

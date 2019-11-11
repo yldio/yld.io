@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import is from 'styled-is'
+import styled from 'styled-components';
+import is from 'styled-is';
 
 /**
  * Overlay is used on tablet viewports to enable users to click
@@ -27,6 +27,6 @@ const Overlay = styled.div`
       opacity: 1;
     `}
   }
-`
+`;
 
-export default Overlay
+export default Overlay;

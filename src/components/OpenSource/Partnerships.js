@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import remcalc from 'remcalc'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import remcalc from 'remcalc';
 
-import BlueBackground from '../Common/BlueBackground'
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle } from '../Typography'
-import Image from '../Common/Image'
-import RatioContainer from '../Common/RatioContainer'
-import SubtitleWithBody from '../Common/SubtitleWithBody'
+import BlueBackground from '../Common/BlueBackground';
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle } from '../Typography';
+import Image from '../Common/Image';
+import RatioContainer from '../Common/RatioContainer';
+import SubtitleWithBody from '../Common/SubtitleWithBody';
 
 const StyledGrid = styled(Grid)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -18,7 +18,7 @@ const StyledGrid = styled(Grid)`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const StyledRow = styled(Row)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -26,7 +26,7 @@ const StyledRow = styled(Row)`
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[6]};
   `}
-`
+`;
 
 const StyledCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -34,19 +34,19 @@ const StyledCol = styled(Col)`
   ${breakpoint('desktop')`
     padding-bottom: 0;
   `}
-`
+`;
 
 const StyledSubtitleWithBodyContainer = styled.div`
   padding-top: ${({ theme }) => theme.spacing[1]};
-`
+`;
 
 const ImageContainer = styled.div`
   max-width: ${remcalc(238)};
-`
+`;
 
 const StyledImage = styled(Image)`
   position: absolute;
-`
+`;
 
 const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
   <StyledCol key={name} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
@@ -66,7 +66,7 @@ const PartnerCol = ({ name, logoDarkTheme, membershipLevel, description }) => (
       />
     </StyledSubtitleWithBodyContainer>
   </StyledCol>
-)
+);
 
 const PartnershipsSection = ({ title, partners }) => (
   <BlueBackground>
@@ -79,6 +79,6 @@ const PartnershipsSection = ({ title, partners }) => (
       <Row>{partners.map(partner => PartnerCol(partner))}</Row>
     </StyledGrid>
   </BlueBackground>
-)
+);
 
-export default PartnershipsSection
+export default PartnershipsSection;

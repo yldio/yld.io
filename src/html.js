@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const HTML = ({
   htmlAttributes,
@@ -35,8 +35,8 @@ const HTML = ({
         {postBodyComponents}
       </body>
     </html>
-  )
-}
+  );
+};
 
 HTML.propTypes = {
   htmlAttributes: PropTypes.object,
@@ -45,6 +45,6 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};
 
-export default HTML
+export default HTML;

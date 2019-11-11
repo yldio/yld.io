@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Padding } from 'styled-components-spacing'
+import React from 'react';
+import styled from 'styled-components';
+import { Padding } from 'styled-components-spacing';
 
-import { Row } from '../../components/grid'
-import Locations from './Locations'
-import Office from './Office'
+import { Row } from '../../components/grid';
+import Locations from './Locations';
+import Office from './Office';
 
 const OfficeStyled = styled(Row)`
   overflow: hidden;
-`
+`;
 
 const OfficeListing = () => (
   <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
@@ -28,6 +28,6 @@ const OfficeListing = () => (
       </Locations>
     </OfficeStyled>
   </Padding>
-)
+);
 
-export default OfficeListing
+export default OfficeListing;

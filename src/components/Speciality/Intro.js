@@ -1,23 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-import Flex from 'styled-flex-component'
-import { Padding } from 'styled-components-spacing'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import { Padding } from 'styled-components-spacing';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Row, Col, Grid } from '../grid'
-import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography'
-import BlueBackground from '../Common/BlueBackground'
-import Image from '../Common/Image'
+import { Row, Col, Grid } from '../grid';
+import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography';
+import BlueBackground from '../Common/BlueBackground';
+import Image from '../Common/Image';
 
 const IntroBorder = styled(Col)`
   border: 1px solid rgba(255, 255, 255, 0.3);
-`
+`;
 
 const StyledBlueBackground = styled(BlueBackground)`
   padding-top: ${remcalc(36)};
   margin-top: -${remcalc(36)};
-`
+`;
 
 const StyledIntroRectangleInner = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -29,7 +29,7 @@ const StyledIntroRectangleInner = styled.div`
       padding-left: ${({ theme }) => theme.space[4]};
       padding-right: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const IntroSectionPadding = styled.div`
   padding-top: ${({ theme }) => theme.space[3]};
@@ -38,7 +38,7 @@ const IntroSectionPadding = styled.div`
   ${breakpoint('tablet')`
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const IntroRectangle = ({ introTextTitle, introTextBody }) => (
   <IntroBorder width={[1, 1, 1, 1, 4 / 12]}>
@@ -51,13 +51,13 @@ const IntroRectangle = ({ introTextTitle, introTextBody }) => (
       </BodyPrimary>
     </StyledIntroRectangleInner>
   </IntroBorder>
-)
+);
 
 const TopSectionRow = styled(Row)`
   ${breakpoint('smallPhone', 'smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const IntroSection = ({ speciality }) => (
   <StyledBlueBackground>
@@ -111,5 +111,5 @@ const IntroSection = ({ speciality }) => (
       </Grid>
     </IntroSectionPadding>
   </StyledBlueBackground>
-)
-export default IntroSection
+);
+export default IntroSection;

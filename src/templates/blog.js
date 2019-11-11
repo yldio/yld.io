@@ -1,26 +1,26 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import remcalc from 'remcalc'
-import breakpoint from 'styled-components-breakpoint'
-import styled from 'styled-components'
+import React, { Fragment } from 'react';
+import { graphql } from 'gatsby';
+import remcalc from 'remcalc';
+import breakpoint from 'styled-components-breakpoint';
+import styled from 'styled-components';
 
-import generateBreadcrumbData from '../utils/generateBreadcrumbData'
+import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
-import Layout from '../components/layout'
-import MediumPostPreview from '../components/Blog/MediumPostPreview'
-import Head from '../components/Common/Head'
-import { Grid, Row, Col } from '../components/grid'
-import { SectionTitle, DisplayTitle } from '../components/Typography'
-import Hr from '../components/Common/Hr'
-import StyledLink from '../components/Common/StyledLink'
-import GreyBackground from '../components/Common/GreyBackground'
+import Layout from '../components/layout';
+import MediumPostPreview from '../components/Blog/MediumPostPreview';
+import Head from '../components/Common/Head';
+import { Grid, Row, Col } from '../components/grid';
+import { SectionTitle, DisplayTitle } from '../components/Typography';
+import Hr from '../components/Common/Hr';
+import StyledLink from '../components/Common/StyledLink';
+import GreyBackground from '../components/Common/GreyBackground';
 
 const blogPageMeta = {
   title: 'Blog',
   description:
     'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our blog.',
   seoTitle: 'A collection of medium blog posts created by YLD',
-}
+};
 
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
   max-width: 100%;
@@ -30,7 +30,7 @@ const FixedWidthDisplayTitle = styled(DisplayTitle)`
   ${breakpoint('tablet')`
     max-width: ${remcalc(785)};
   `}
-`
+`;
 
 const PageDescriptionCol = styled(Col)`
   ${breakpoint('smallPhone')`
@@ -42,7 +42,7 @@ const PageDescriptionCol = styled(Col)`
     padding-top: ${({ theme }) => theme.space[6]}
     padding-bottom: ${({ theme }) => theme.space[7]}
   `}
-`
+`;
 
 const DisplayTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -50,7 +50,7 @@ const DisplayTitleCol = styled(Col)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[5]}
   `}
-`
+`;
 
 const BlogPage = ({
   data: {
@@ -68,18 +68,18 @@ const BlogPage = ({
       pathname: location.pathname,
       position: 2,
     },
-  ])
-  const { numberOfPages, currentPage } = pageContext
+  ]);
+  const { numberOfPages, currentPage } = pageContext;
 
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numberOfPages
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === numberOfPages;
 
   const prevPagePath =
-    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`
-  const nextPagePath = `page/${(currentPage + 1).toString()}`
+    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`;
+  const nextPagePath = `page/${(currentPage + 1).toString()}`;
 
-  const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`
-  const nextPageLink = isLast ? null : `/blog/${nextPagePath}`
+  const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`;
+  const nextPageLink = isLast ? null : `/blog/${nextPagePath}`;
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -111,14 +111,14 @@ const BlogPage = ({
           {blogPosts &&
             blogPosts.length > 0 &&
             blogPosts.map((blogPost, idx) => {
-              const isLastPost = idx === blogPosts.length - 1
+              const isLastPost = idx === blogPosts.length - 1;
 
               return (
                 <Fragment key={blogPost.node.id}>
                   <MediumPostPreview {...blogPost.node} />
                   {!isLastPost && <Hr />}
                 </Fragment>
-              )
+              );
             })}
 
           <Row style={{ justifyContent: 'space-between' }} block={false}>
@@ -136,8 +136,8 @@ const BlogPage = ({
         </Grid>
       </GreyBackground>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
@@ -178,6 +178,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default BlogPage
+export default BlogPage;

@@ -1,26 +1,26 @@
-import React from 'react'
-import remcalc from 'remcalc'
-import styled from 'styled-components'
-import { Row, Col, Grid } from '../grid'
-import ExternalAnchor from '../Common/ExternalAnchor'
-import Flex, { FlexItem } from 'styled-flex-component'
-import { Padding } from 'styled-components-spacing'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import remcalc from 'remcalc';
+import styled from 'styled-components';
+import { Row, Col, Grid } from '../grid';
+import ExternalAnchor from '../Common/ExternalAnchor';
+import Flex, { FlexItem } from 'styled-flex-component';
+import { Padding } from 'styled-components-spacing';
+import breakpoint from 'styled-components-breakpoint';
 
-import { SectionTitle, CardTitle, BodyPrimary } from '../Typography'
-import StyledLink from '../Common/StyledLink'
+import { SectionTitle, CardTitle, BodyPrimary } from '../Typography';
+import StyledLink from '../Common/StyledLink';
 
 // TODO - should come from contentful
-const moreBooksLink = 'http://nodepatternsbooks.com/index.html'
+const moreBooksLink = 'http://nodepatternsbooks.com/index.html';
 
 const BottomBodyPrimary = styled(BodyPrimary)`
   position: absolute;
   bottom: ${remcalc(26)};
-`
+`;
 
 const CenteredCol = styled(Col)`
   text-align: center;
-`
+`;
 
 const BookCol = styled(Col)`
   position: relative;
@@ -36,7 +36,7 @@ const BookCol = styled(Col)`
     display:block;
    }
    `}
-`
+`;
 
 const BooksBox = styled(ExternalAnchor)`
   border: 1px solid;
@@ -46,7 +46,7 @@ const BooksBox = styled(ExternalAnchor)`
   ${breakpoint('smallTablet')`
     height: ${remcalc(360)};
   `}
-`
+`;
 
 const BooksSection = ({ books, title }) =>
   books &&
@@ -109,6 +109,6 @@ const BooksSection = ({ books, title }) =>
         </Row>
       </Padding>
     </Grid>
-  )
+  );
 
-export default BooksSection
+export default BooksSection;

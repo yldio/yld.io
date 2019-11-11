@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import { format, isPast } from 'date-fns'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import { format, isPast } from 'date-fns';
 
-import Image from '../Common/Image'
-import Anchor from '../Common/Anchor'
-import { Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
-import { CardTitle, BodyPrimary } from '../Typography'
+import Image from '../Common/Image';
+import Anchor from '../Common/Anchor';
+import { Row, Col } from '../grid';
+import StyledLink from '../Common/StyledLink';
+import { CardTitle, BodyPrimary } from '../Typography';
 
 const BlurbWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.space[2]};
@@ -15,7 +15,7 @@ const BlurbWrapper = styled.div`
   ${breakpoint('smallTablet')`
       padding-top: ${({ theme }) => theme.space[3]};
   `};
-`
+`;
 
 const StyledStatusBodyPrimary = styled(BodyPrimary)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -23,10 +23,10 @@ const StyledStatusBodyPrimary = styled(BodyPrimary)`
   ${breakpoint('smallTablet')`
     padding-top: 0;
   `};
-`
+`;
 
 const AnchorWrapper = ({ to, children }) =>
-  to ? <Anchor to={to}>{children}</Anchor> : children
+  to ? <Anchor to={to}>{children}</Anchor> : children;
 
 const ConferenceCard = ({ event }) => {
   const {
@@ -40,12 +40,12 @@ const ConferenceCard = ({ event }) => {
     linkToTickets,
     eventImage,
     ctaText,
-  } = event
+  } = event;
 
-  const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY')
-  const eventInfo = `${formattedDate} • ${city}`
+  const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY');
+  const eventInfo = `${formattedDate} • ${city}`;
 
-  const status = isPast(new Date(date)) ? 'Past' : 'Upcoming'
+  const status = isPast(new Date(date)) ? 'Past' : 'Upcoming';
 
   return (
     <Row>
@@ -99,7 +99,7 @@ const ConferenceCard = ({ event }) => {
         </AnchorWrapper>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default ConferenceCard
+export default ConferenceCard;

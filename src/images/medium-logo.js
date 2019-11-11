@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const MediumLogo = props => (
   <svg {...props} viewBox=" 0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -8,6 +8,6 @@ const MediumLogo = props => (
       fill="#FFFFFF"
     />
   </svg>
-)
+);
 
-export default MediumLogo
+export default MediumLogo;

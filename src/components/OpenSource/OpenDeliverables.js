@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import ReactMarkdown from 'react-markdown'
-import { Grid, Row, Col } from '../grid'
-import { SectionTitle, BodyPrimary, Subtitle } from '../Typography'
-import GreyBackground from '../Common/GreyBackground'
-import RepoWithImage from '../Common/Repo/RepoWithImage'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import ReactMarkdown from 'react-markdown';
+import { Grid, Row, Col } from '../grid';
+import { SectionTitle, BodyPrimary, Subtitle } from '../Typography';
+import GreyBackground from '../Common/GreyBackground';
+import RepoWithImage from '../Common/Repo/RepoWithImage';
 
 const Wrapper = styled(GreyBackground)`
   padding: ${({ theme }) => theme.spacing[3]} 0;
@@ -18,11 +18,11 @@ const Wrapper = styled(GreyBackground)`
     padding-top: ${({ theme }) => theme.spacing[4]};
     padding-bottom: ${({ theme }) => theme.space[7]};
     `}
-`
+`;
 
 const StyledSectionTitle = styled(SectionTitle)`
   padding-bottom: ${({ theme }) => theme.space[4]};
-`
+`;
 
 const StyledSubtitle = styled(Subtitle)`
   padding: ${({ theme }) => `${theme.spacing[3]} 0 ${theme.spacing[3]} 0`};
@@ -34,7 +34,7 @@ const StyledSubtitle = styled(Subtitle)`
   ${breakpoint('tablet')`
     padding: ${({ theme }) => `${theme.spacing[4]} 0 ${theme.spacing[3]} 0`};
   `}
-`
+`;
 
 const OpenDeliverables = props => {
   const {
@@ -46,7 +46,7 @@ const OpenDeliverables = props => {
       },
       openDeliverablesClientRepos,
     },
-  } = props
+  } = props;
 
   return (
     <Wrapper>
@@ -83,7 +83,7 @@ const OpenDeliverables = props => {
         </Row>
       </Grid>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default OpenDeliverables
+export default OpenDeliverables;

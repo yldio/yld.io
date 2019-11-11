@@ -1,7 +1,7 @@
-import React from 'react'
-import Player from 'react-youtube'
-import GetYouTubeId from 'get-youtube-id'
-import styled from 'styled-components'
+import React from 'react';
+import Player from 'react-youtube';
+import GetYouTubeId from 'get-youtube-id';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   padding-bottom: ${900 / 16 + '%'};
@@ -19,11 +19,11 @@ const Wrapper = styled.div`
     left: 0;
     border: 0;
   }
-`
+`;
 const YouTube = ({ videoId }) => (
   <Wrapper>
     <Player videoId={GetYouTubeId(videoId)} />
   </Wrapper>
-)
+);
 
-export default YouTube
+export default YouTube;

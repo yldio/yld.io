@@ -1,39 +1,39 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 
 import {
   LogoStyleContext,
   HomePageContext,
-} from '../../../../context/PageContext'
+} from '../../../../context/PageContext';
 
-import LogoLink from '../LogoLink'
+import LogoLink from '../LogoLink';
 
-let mockScrollTo
-let originalScrollTo
+let mockScrollTo;
+let originalScrollTo;
 beforeEach(() => {
-  window.scrollTo = mockScrollTo = jest.fn()
-})
+  window.scrollTo = mockScrollTo = jest.fn();
+});
 afterEach(() => {
-  window.scrollTo = originalScrollTo
-})
+  window.scrollTo = originalScrollTo;
+});
 
 describe('by default', () => {
-  let logo
+  let logo;
 
   beforeEach(() => {
-    const { getByAltText } = render(<LogoLink />)
-    logo = getByAltText(/logo/i)
-  })
+    const { getByAltText } = render(<LogoLink />);
+    logo = getByAltText(/logo/i);
+  });
 
   it('renders the black logo GIF', () => {
-    expect(logo.src).toContain('logo_animated.gif')
-  })
+    expect(logo.src).toContain('logo_animated.gif');
+  });
 
   it('links to the homepage', () => {
-    const { pathname } = new URL(logo.closest('a').href)
-    expect(pathname).toBe('/')
-  })
-})
+    const { pathname } = new URL(logo.closest('a').href);
+    expect(pathname).toBe('/');
+  });
+});
 
 describe('with LogoStyle white', () => {
   it('renders the static white logo', () => {
@@ -41,10 +41,10 @@ describe('with LogoStyle white', () => {
       <LogoStyleContext.Provider value="white">
         <LogoLink />
       </LogoStyleContext.Provider>,
-    )
-    const logo = getByAltText(/logo/i)
-    expect(logo.src).toContain('yld-white.svg')
-  })
+    );
+    const logo = getByAltText(/logo/i);
+    expect(logo.src).toContain('yld-white.svg');
+  });
 
   describe('on the homepage', () => {
     it('links to the top of the page', () => {
@@ -54,11 +54,11 @@ describe('with LogoStyle white', () => {
             <LogoLink />
           </HomePageContext.Provider>
         </LogoStyleContext.Provider>,
-      )
-      const logo = getByAltText(/logo/i)
+      );
+      const logo = getByAltText(/logo/i);
 
-      fireEvent.click(logo)
-      expect(mockScrollTo).toHaveBeenCalledWith(0, 0)
-    })
-  })
-})
+      fireEvent.click(logo);
+      expect(mockScrollTo).toHaveBeenCalledWith(0, 0);
+    });
+  });
+});

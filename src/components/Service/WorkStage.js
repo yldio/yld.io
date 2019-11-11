@@ -1,24 +1,24 @@
-import React from 'react'
-import { Padding } from 'styled-components-spacing'
-import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
+import React from 'react';
+import { Padding } from 'styled-components-spacing';
+import ReactMarkdown from 'react-markdown';
+import styled from 'styled-components';
 
-import { Row, Col } from '../grid'
-import { SectionTitle, Subtitle, BodyPrimary } from '../Typography'
-import getSections from './getSections'
-import TitleAndList from '../Common/TitleAndList'
-import CustomisedBulletpoint from '../Common/CustomisedBulletpoint'
-import theme from '../../utils/theme'
+import { Row, Col } from '../grid';
+import { SectionTitle, Subtitle, BodyPrimary } from '../Typography';
+import getSections from './getSections';
+import TitleAndList from '../Common/TitleAndList';
+import CustomisedBulletpoint from '../Common/CustomisedBulletpoint';
+import theme from '../../utils/theme';
 
 const IconContainer = styled.div`
   height: 60px;
   width: 60px;
   display: flex;
   align-items: flex-end;
-`
+`;
 
 const WorkStage = ({ workStage }) => {
-  const sections = getSections(workStage)
+  const sections = getSections(workStage);
   if (workStage.displayType === 'List') {
     return (
       <TitleAndList
@@ -29,7 +29,7 @@ const WorkStage = ({ workStage }) => {
         }))}
         themeVariation={theme.variations.dark}
       />
-    )
+    );
   }
 
   return (
@@ -73,7 +73,7 @@ const WorkStage = ({ workStage }) => {
       ))}
       <Padding bottom={{ smallPhone: 3, desktop: 4 }} />
     </Row>
-  )
-}
+  );
+};
 
-export default WorkStage
+export default WorkStage;

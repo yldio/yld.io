@@ -1,4 +1,4 @@
 module.exports = {
   generateGroups: require('./groups'),
-  generateEvent: require('./events')
-}
+  generateEvent: require('./events'),
+};

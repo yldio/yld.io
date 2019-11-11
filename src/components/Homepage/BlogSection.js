@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
-import generate from 'shortid'
-import { Grid, Row, Col } from '../grid'
-import StyledLink from '../Common/StyledLink'
-import MediumPostPreview from '../Blog/MediumPostPreview'
-import Hr from '../Common/Hr'
-import { SectionTitle } from '../Typography'
+import React from 'react';
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
+import generate from 'shortid';
+import { Grid, Row, Col } from '../grid';
+import StyledLink from '../Common/StyledLink';
+import MediumPostPreview from '../Blog/MediumPostPreview';
+import Hr from '../Common/Hr';
+import { SectionTitle } from '../Typography';
 
 const MediumLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
@@ -15,14 +15,14 @@ const MediumLink = styled(StyledLink)`
   ${breakpoint('tablet')`
       margin-top: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const MobileBlogRow = styled(Row)`
   padding-bottom: ${({ theme }) => theme.space[5]};
   ${breakpoint('smallTablet')`
     display: none;
   `}
-`
+`;
 
 const NonMobileBlogRow = styled(Row)`
   display: none;
@@ -37,7 +37,7 @@ const NonMobileBlogRow = styled(Row)`
       padding-top: ${({ theme }) => theme.space[6]};
       padding-bottom: ${({ theme }) => theme.space[7]};
   `}
-`
+`;
 
 const TitleCol = styled(Col)`
   padding-bottom: 0;
@@ -49,7 +49,7 @@ const TitleCol = styled(Col)`
   ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[4]};
    `}
-`
+`;
 const BlogSection = ({ blogPosts }) => (
   <Grid>
     <MobileBlogRow>
@@ -78,6 +78,6 @@ const BlogSection = ({ blogPosts }) => (
       </Col>
     </NonMobileBlogRow>
   </Grid>
-)
+);
 
-export default BlogSection
+export default BlogSection;

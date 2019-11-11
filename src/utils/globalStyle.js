@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
-import remcalc from 'remcalc'
-import { lighten } from 'polished'
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+import remcalc from 'remcalc';
+import { lighten } from 'polished';
 
 export default createGlobalStyle`
   ${reset}
@@ -70,4 +70,4 @@ export default createGlobalStyle`
     height: 100%;
   }
 }
-`
+`;

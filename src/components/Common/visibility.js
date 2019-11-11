@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import breakpoint from 'styled-components-breakpoint'
+import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
 export const NoMobile = styled.section`
   display: none;
@@ -7,7 +7,7 @@ export const NoMobile = styled.section`
   ${breakpoint('tablet')`
     display: block;
   `};
-`
+`;
 
 export const NoDesktop = styled.section`
   display: block;
@@ -15,4 +15,4 @@ export const NoDesktop = styled.section`
   ${breakpoint('tablet')`
     display: none;
   `};
-`
+`;

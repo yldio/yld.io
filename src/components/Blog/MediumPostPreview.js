@@ -1,20 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import { format } from 'date-fns'
-import breakpoint from 'styled-components-breakpoint'
+import React from 'react';
+import styled from 'styled-components';
+import { format } from 'date-fns';
+import breakpoint from 'styled-components-breakpoint';
 
-import { Row, Col } from '../grid'
-import { CardTitle, BodyPrimary } from '../Typography'
-import StyledLink from '../Common/StyledLink'
-import Image from '../Common/Image'
-import Anchor from '../Common/Anchor'
+import { Row, Col } from '../grid';
+import { CardTitle, BodyPrimary } from '../Typography';
+import StyledLink from '../Common/StyledLink';
+import Image from '../Common/Image';
+import Anchor from '../Common/Anchor';
 
 const Author = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
   display: inline-block;
 
   ${({ href }) => (href ? `text-decoration: underline;` : ``)}
-`
+`;
 
 const MediumRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
@@ -22,7 +22,7 @@ const MediumRow = styled(Row)`
   ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `}
-`
+`;
 
 const StyledBodyPrimary = styled(BodyPrimary)`
   padding-bottom: ${({ theme, context }) =>
@@ -40,7 +40,7 @@ const StyledBodyPrimary = styled(BodyPrimary)`
     breakpoint('smallPhone', 'smallTablet')`
     padding-bottom: 0;
   `}
-`
+`;
 
 const AuthorAndDate = styled.div`
   padding-bottom: ${({ theme }) => theme.space[3]};
@@ -49,7 +49,7 @@ const AuthorAndDate = styled.div`
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
   `}
-`
+`;
 
 const TitleAndAuthorWrapper = styled.div`
   display: none;
@@ -57,14 +57,14 @@ const TitleAndAuthorWrapper = styled.div`
     breakpoint(show, hide)`
       display: block;
     `};
-`
+`;
 
 const InfoCol = styled(Col)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-`
+`;
 
 const ReadMoreLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
@@ -72,7 +72,7 @@ const ReadMoreLink = styled(StyledLink)`
   ${breakpoint('smallPhone', 'smallTablet')`
       display: none;
   `}
-`
+`;
 
 const TitleAndAuthor = ({
   title,
@@ -101,8 +101,8 @@ const TitleAndAuthor = ({
         {formattedDate}
       </AuthorAndDate>
     </TitleAndAuthorWrapper>
-  )
-}
+  );
+};
 
 const MediumPostPreview = ({
   title,
@@ -114,11 +114,11 @@ const MediumPostPreview = ({
   content = {},
   headerImage,
 }) => {
-  const formattedDate = format(firstPublishedAt, 'MMMM DD')
+  const formattedDate = format(firstPublishedAt, 'MMMM DD');
 
-  const { childMdx: { excerpt } = {} } = content || {}
+  const { childMdx: { excerpt } = {} } = content || {};
 
-  const postUrl = `/blog/${slug}`
+  const postUrl = `/blog/${slug}`;
 
   return (
     <MediumRow>
@@ -182,7 +182,7 @@ const MediumPostPreview = ({
         </ReadMoreLink>
       </InfoCol>
     </MediumRow>
-  )
-}
+  );
+};
 
-export default MediumPostPreview
+export default MediumPostPreview;

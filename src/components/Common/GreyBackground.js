@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
-import remcalc from 'remcalc'
-import { isNot } from 'styled-is'
-import breakpoint from 'styled-components-breakpoint'
+import styled, { css } from 'styled-components';
+import remcalc from 'remcalc';
+import { isNot } from 'styled-is';
+import breakpoint from 'styled-components-breakpoint';
 
 export default styled.section`
   background: ${props => props.theme.colors.greyBg};
-`
+`;
 
 const afterStyles = css`
   content: ' ';
@@ -15,9 +15,9 @@ const afterStyles = css`
   display: block;
   position: absolute;
   z-index: 2;
-`
+`;
 
-const PADDING = 50
+const PADDING = 50;
 
 export const GreyBackgroundOffset = styled.section`
   background: ${props => props.theme.colors.greyBg};
@@ -84,4 +84,4 @@ export const GreyBackgroundOffset = styled.section`
       position: relative;
     }
   `}
-`
+`;
