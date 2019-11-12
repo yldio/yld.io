@@ -52,7 +52,7 @@ const BlogPostTemplate = ({
   __mdxScope,
 }) => {
   const seoMetaData = {
-    title: post.title + ' | YLD',
+    title: post.title + ' | YLD Blog',
     description:
       (post.subtitle && post.subtitle.subtitle) ||
       post.content.childMdx.excerpt,

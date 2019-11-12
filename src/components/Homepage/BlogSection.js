@@ -4,11 +4,11 @@ import breakpoint from 'styled-components-breakpoint';
 import generate from 'shortid';
 import { Grid, Row, Col } from '../grid';
 import StyledLink from '../Common/StyledLink';
-import MediumPostPreview from '../Blog/MediumPostPreview';
+import BlogPostPreview from '../Blog/BlogPostPreview';
 import Hr from '../Common/Hr';
 import { SectionTitle } from '../Typography';
 
-const MediumLink = styled(StyledLink)`
+const BlogLink = styled(StyledLink)`
   font-size: ${({ theme }) => theme.spacing[1.5]};
   margin-top: ${({ theme }) => theme.space[2]};
 
@@ -50,6 +50,7 @@ const TitleCol = styled(Col)`
     padding-bottom: ${({ theme }) => theme.space[4]};
    `}
 `;
+
 const BlogSection = ({ blogPosts }) => (
   <Grid>
     <MobileBlogRow>
@@ -57,24 +58,24 @@ const BlogSection = ({ blogPosts }) => (
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
       <Col width={[1]} key={generate()}>
-        <MediumPostPreview {...blogPosts[0].node} context="homepage" />
+        <BlogPostPreview {...blogPosts[0].node} context="homepage" />
       </Col>
       <Col width={[1]}>
-        <MediumLink to={'/blog'}>Read our blog</MediumLink>
+        <BlogLink to={'/blog'}>Read our blog</BlogLink>
       </Col>
     </MobileBlogRow>
     <NonMobileBlogRow>
       <TitleCol width={[1]}>
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
-      {blogPosts.map((mediumPostData, idx, arr) => (
+      {blogPosts.map((post, idx, arr) => (
         <Col width={[1]} key={generate()}>
-          <MediumPostPreview {...mediumPostData.node} context="homepage" />
+          <BlogPostPreview {...post.node} context="homepage" />
           {idx < arr.length - 1 && <Hr />}
         </Col>
       ))}
       <Col width={[1]}>
-        <MediumLink to={'/blog'}>Read our blog</MediumLink>
+        <BlogLink to={'/blog'}>Read our blog</BlogLink>
       </Col>
     </NonMobileBlogRow>
   </Grid>

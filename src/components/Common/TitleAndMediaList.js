@@ -5,9 +5,10 @@ import breakpoint from 'styled-components-breakpoint';
 
 import { Row, Col } from '../grid';
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography';
-import ExternalAnchor from './ExternalAnchor';
+import { Link } from 'gatsby';
 import StyledLink from './StyledLink';
 import Hr from './Hr';
+import ExternalAnchor from './ExternalAnchor';
 
 const PaddedSubtitle = styled(Subtitle)`
   padding-bottom: ${props => props.theme.spacing[0.5]};
@@ -23,17 +24,25 @@ const RowLayout = styled(Row)`
   `}
 `;
 
-const MediaItem = ({ id, title, href, body }) => (
-  <li key={`${id}`}>
-    <PaddedSubtitle noPaddingBottom>
-      <ExternalAnchor href={href} title={title}>
-        {title}
-      </ExternalAnchor>
-    </PaddedSubtitle>
-    <BodyPrimary noPaddingTop>{body}</BodyPrimary>
-    <Hr />
-  </li>
-);
+const MediaItem = ({ id, title, external, to, body }) => {
+  const linkProps = {
+    [external ? 'href' : 'to']: to,
+  };
+
+  const LinkComponent = external ? ExternalAnchor : Link;
+
+  return (
+    <li key={`${id}`}>
+      <PaddedSubtitle noPaddingBottom>
+        <LinkComponent {...linkProps} title={title}>
+          {title}
+        </LinkComponent>
+      </PaddedSubtitle>
+      <BodyPrimary noPaddingTop>{body}</BodyPrimary>
+      <Hr />
+    </li>
+  );
+};
 
 const TitleAndMediaList = ({
   title,
@@ -59,8 +68,15 @@ const TitleAndMediaList = ({
       </Col>
       <Col width={[1, 1, 1, 1, 6 / 12, 5 / 12]}>
         <MediaItems>
-          {mediaItems.map(({ id, title, href, body }) => (
-            <MediaItem key={id} id={id} title={title} href={href} body={body} />
+          {mediaItems.map(({ id, title, to, body }) => (
+            <MediaItem
+              external={external}
+              key={id}
+              id={id}
+              title={title}
+              to={to}
+              body={body}
+            />
           ))}
         </MediaItems>
         {CTALink && CTAText ? (

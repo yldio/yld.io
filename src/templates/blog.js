@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 import Layout from '../components/layout';
-import MediumPostPreview from '../components/Blog/MediumPostPreview';
+import BlogPostPreview from '../components/Blog/BlogPostPreview';
 import Head from '../components/Common/Head';
 import { Grid, Row, Col } from '../components/grid';
 import { SectionTitle, DisplayTitle } from '../components/Typography';
@@ -16,10 +16,9 @@ import StyledLink from '../components/Common/StyledLink';
 import GreyBackground from '../components/Common/GreyBackground';
 
 const blogPageMeta = {
-  title: 'Blog',
+  title: 'Blog | YLD',
   description:
     'A collection of thoughts, musings and insights from our talented group of software engineers and product designers - read all about it on our blog.',
-  seoTitle: 'A collection of medium blog posts created by YLD',
 };
 
 const FixedWidthDisplayTitle = styled(DisplayTitle)`
@@ -84,16 +83,15 @@ const BlogPage = ({
   return (
     <Layout breadcrumbData={breadcrumbData}>
       <Head
-        page={{
+        seoMetaData={{
           title: blogPageMeta.title,
-          seoTitle: blogPageMeta.seoTitle,
-          seoMetaDescription: blogPageMeta.description,
+          description: blogPageMeta.description,
         }}
       />
       <Grid>
         <Row>
           <PageDescriptionCol width={[1]}>
-            <SectionTitle as="h1">{blogPageMeta.title}</SectionTitle>
+            <SectionTitle as="h1">Blog</SectionTitle>
             <FixedWidthDisplayTitle regular textLight>
               {blogPageMeta.description}
             </FixedWidthDisplayTitle>
@@ -115,7 +113,7 @@ const BlogPage = ({
 
               return (
                 <Fragment key={blogPost.node.id}>
-                  <MediumPostPreview {...blogPost.node} />
+                  <BlogPostPreview {...blogPost.node} />
                   {!isLastPost && <Hr />}
                 </Fragment>
               );
