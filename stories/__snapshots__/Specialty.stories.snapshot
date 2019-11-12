@@ -4089,10 +4089,9 @@ Array [
                   className="c76"
                 >
                   <a
-                    href="https://medium.com/yld-blog/cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb"
+                    href="/blog/cpu-and-i-o-performance-diagnostics-in-node-js-c85ea71738eb"
                     onClick={[Function]}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    onMouseEnter={[Function]}
                     title="CPU and I/O performance diagnostics in Node.js"
                   >
                     CPU and I/O performance diagnostics in Node.js
@@ -4112,10 +4111,9 @@ Array [
                   className="c76"
                 >
                   <a
-                    href="https://medium.com/yld-blog/quic-k-http-3-c6a4fbc7b947"
+                    href="/blog/quic-k-http-3-c6a4fbc7b947"
                     onClick={[Function]}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    onMouseEnter={[Function]}
                     title="QUIC(k) HTTP/3"
                   >
                     QUIC(k) HTTP/3
@@ -4135,10 +4133,9 @@ Array [
                   className="c76"
                 >
                   <a
-                    href="https://medium.com/yld-blog/culture-of-learning-a25081435ce8"
+                    href="/blog/culture-of-learning-a25081435ce8"
                     onClick={[Function]}
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    onMouseEnter={[Function]}
                     title="Culture of Learning"
                   >
                     Culture of Learning
@@ -4158,11 +4155,10 @@ Array [
               className="c56"
             >
               <a
-                className="c77"
+                className="c43"
                 href="/blog/"
                 onClick={[Function]}
-                rel="noopener noreferrer"
-                target="_blank"
+                onMouseEnter={[Function]}
                 title="Visit our blog"
               >
                 Visit our blog
@@ -4241,7 +4237,6 @@ Array [
                     className="c76"
                   >
                     <a
-                      href="http://nodetuts.com/series/asynchronous-programming.html"
                       onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -4264,7 +4259,6 @@ Array [
                     className="c76"
                   >
                     <a
-                      href="http://nodetuts.com/series/tcp-servers.html"
                       onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -4287,7 +4281,6 @@ Array [
                     className="c76"
                   >
                     <a
-                      href="http://nodetuts.com/series/http-api-servers.html"
                       onClick={[Function]}
                       rel="noopener noreferrer"
                       target="_blank"
