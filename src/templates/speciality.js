@@ -98,8 +98,6 @@ export const pageQuery = graphql`
     contentfulSpeciality(id: { eq: $id }) {
       slug
       title
-      seoTitle
-      seoMetaDescription
       seoMetaData {
         ...SEOMetaFields
       }
