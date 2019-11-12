@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 import Layout from '../components/layout';
-import MediumPostPreview from '../components/Blog/MediumPostPreview';
+import BlogPostPreview from '../components/Blog/BlogPostPreview';
 import Head from '../components/Common/Head';
 import { Grid, Row, Col } from '../components/grid';
 import { SectionTitle, DisplayTitle } from '../components/Typography';
@@ -113,7 +113,7 @@ const BlogPage = ({
 
               return (
                 <Fragment key={blogPost.node.id}>
-                  <MediumPostPreview {...blogPost.node} />
+                  <BlogPostPreview {...blogPost.node} />
                   {!isLastPost && <Hr />}
                 </Fragment>
               );
