@@ -11,7 +11,7 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
   const mediaItems = posts.map(({ id, title, slug, firstPublishedAt }) => ({
     id,
     title,
-    href: `https://medium.com/yld-blog/${slug}`,
+    to: `/blog/${slug}`,
     body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd'),
   }));
 
@@ -20,11 +20,11 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
       <Padding vertical={{ desktop: 5, smallPhone: 3.5 }}>
         <Grid>
           <TitleAndMediaList
+            external={false}
             title={title}
             description={description}
             mediaItems={mediaItems}
             CTALink="/blog/"
-            external
             CTAText="Visit our blog"
           />
         </Grid>

@@ -536,10 +536,9 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-blog/security-trivia-series-understanding-csps-reporting-68d885596686"
+                href="/blog/security-trivia-series-understanding-csps-reporting-68d885596686"
                 onClick={[Function]}
-                rel="noopener noreferrer"
-                target="_blank"
+                onMouseEnter={[Function]}
                 title="Security Trivia Series: Understanding CSP’s Reporting"
               >
                 Security Trivia Series: Understanding CSP’s Reporting
@@ -559,10 +558,9 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-blog/serverless-its-not-all-a-faas-9de3d8187ba3"
+                href="/blog/serverless-its-not-all-a-faas-9de3d8187ba3"
                 onClick={[Function]}
-                rel="noopener noreferrer"
-                target="_blank"
+                onMouseEnter={[Function]}
                 title="Serverless: It’s not all a FaaS"
               >
                 Serverless: It’s not all a FaaS
@@ -582,10 +580,9 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
               className="c9"
             >
               <a
-                href="https://medium.com/yld-blog/under-the-with-kubernetes-c1ea1a82c61f"
+                href="/blog/under-the-with-kubernetes-c1ea1a82c61f"
                 onClick={[Function]}
-                rel="noopener noreferrer"
-                target="_blank"
+                onMouseEnter={[Function]}
                 title="Under the 🔬 with Kubernetes"
               >
                 Under the 🔬 with Kubernetes
@@ -608,8 +605,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
             className="c13"
             href="/blog/"
             onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
+            onMouseEnter={[Function]}
             title="Visit our blog"
           >
             Visit our blog
