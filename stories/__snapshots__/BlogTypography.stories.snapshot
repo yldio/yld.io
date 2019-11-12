@@ -148,7 +148,8 @@ exports[`Storyshots Blog Components Compound Typography 1`] = `
   padding-top: 0;
 }
 
-.c2 ul + p {
+.c2 ul + p,
+.c2 ol + p {
   padding-top: 0;
 }
 
@@ -686,7 +687,8 @@ exports[`Storyshots Blog Components Image container 1`] = `
   padding-top: 0;
 }
 
-.c2 ul + p {
+.c2 ul + p,
+.c2 ol + p {
   padding-top: 0;
 }
 
@@ -1991,7 +1993,8 @@ exports[`Storyshots Blog Components Typography 1`] = `
   padding-top: 0;
 }
 
-.c0 ul + p {
+.c0 ul + p,
+.c0 ol + p {
   padding-top: 0;
 }
 
