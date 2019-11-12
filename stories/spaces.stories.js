@@ -1,9 +1,9 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import theme from '../src/utils/theme'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import theme from '../src/utils/theme';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('Spaces', module).add('Spaces', () => (
   <div>
@@ -15,7 +15,7 @@ storiesOf('Spaces', module).add('Spaces', () => (
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            margin: 10
+            margin: 10,
           }}
         >
           <p
@@ -28,7 +28,7 @@ storiesOf('Spaces', module).add('Spaces', () => (
               fontSize: 12,
               color: 'red',
               width: '100%',
-              textAlign: 'center'
+              textAlign: 'center',
             }}
           >
             Level {idx} - {space.replace('rem', '') * 16}px
@@ -37,11 +37,11 @@ storiesOf('Spaces', module).add('Spaces', () => (
             style={{
               width: 160,
               height: space,
-              background: '#FFE5E5'
+              background: '#FFE5E5',
             }}
           />
         </div>
-      ) : null
+      ) : null,
     )}
   </div>
-))
+));

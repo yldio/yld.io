@@ -1,4 +1,4 @@
-const { setupFiles, ...base } = require('./jest.config.js')
+const { setupFiles, ...base } = require('./jest.config.js');
 
 module.exports = {
   ...base,
@@ -8,6 +8,6 @@ module.exports = {
   setupFiles: [
     ...setupFiles,
     // storybook polyfills
-    '<rootDir>/.jest/registerContext.js'
-  ]
-}
+    '<rootDir>/.jest/registerContext.js',
+  ],
+};

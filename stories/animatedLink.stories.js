@@ -1,20 +1,20 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
 import {
   AnimatedLink,
   PosterImage,
-  CardHeader
-} from '../src/components/Common/animatedLink'
+  CardHeader,
+} from '../src/components/Common/animatedLink';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('AnimatedLink', module).add('AnimatedLink', () => (
   <AnimatedLink to="#">
     <section
       style={{
         background: `#03183D`,
-        maxWidth: 400
+        maxWidth: 400,
       }}
     >
       <CardHeader>
@@ -30,4 +30,4 @@ storiesOf('AnimatedLink', module).add('AnimatedLink', () => (
       </PosterImage>
     </section>
   </AnimatedLink>
-))
+));

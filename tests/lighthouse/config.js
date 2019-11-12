@@ -1,4 +1,4 @@
 export default {
   extends: 'lighthouse:default',
-  settings: { onlyCategories: ['accessibility', 'performance', 'seo'] }
-}
+  settings: { onlyCategories: ['accessibility', 'performance', 'seo'] },
+};

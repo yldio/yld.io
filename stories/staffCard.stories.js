@@ -1,13 +1,13 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import { Grid, Row } from '../src/components/grid'
-import StaffCard from '../src/components/AboutUs/StaffCard'
-import logo from '../src/images/favicon.png'
-import twitter from '../src/images/twiter-icon.svg'
-import linkedin from '../src/images/linkedin-icon.svg'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import { Grid, Row } from '../src/components/grid';
+import StaffCard from '../src/components/AboutUs/StaffCard';
+import logo from '../src/images/favicon.png';
+import twitter from '../src/images/twiter-icon.svg';
+import linkedin from '../src/images/linkedin-icon.svg';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('About Us Page Components', module)
   .add('StaffCard', () => {
@@ -17,8 +17,8 @@ storiesOf('About Us Page Components', module)
           <StaffCard
             image={{
               file: {
-                url: logo
-              }
+                url: logo,
+              },
             }}
             name="Nuno Job"
             role="Chief Executive Officer"
@@ -27,26 +27,26 @@ storiesOf('About Us Page Components', module)
               {
                 name: 'twitter',
                 image: { file: { url: twitter } },
-                url: 'twitter.com/etc'
+                url: 'twitter.com/etc',
               },
               {
                 name: 'linkedin',
                 image: { file: { url: linkedin } },
-                url: 'linkedin.com/etc'
-              }
+                url: 'linkedin.com/etc',
+              },
             ]}
           />
         </Row>
       </Grid>
-    )
+    );
   })
   .add('Multiple StaffCards', () => {
     const Sc = (
       <StaffCard
         image={{
           file: {
-            url: logo
-          }
+            url: logo,
+          },
         }}
         name="Nuno Job"
         role="Chief Executive Officer"
@@ -55,16 +55,16 @@ storiesOf('About Us Page Components', module)
           {
             name: 'twitter',
             image: { file: { url: twitter } },
-            url: 'twitter.com/etc'
+            url: 'twitter.com/etc',
           },
           {
             name: 'linkedin',
             image: { file: { url: linkedin } },
-            url: 'linkedin.com/etc'
-          }
+            url: 'linkedin.com/etc',
+          },
         ]}
       />
-    )
+    );
 
     return (
       <Grid>
@@ -76,5 +76,5 @@ storiesOf('About Us Page Components', module)
           {Sc}
         </Row>
       </Grid>
-    )
-  })
+    );
+  });

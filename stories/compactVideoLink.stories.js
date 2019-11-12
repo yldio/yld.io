@@ -1,16 +1,16 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import CompactVideoLink from '../src/components/Common/CompactVideoLink'
-import { Row } from '../src/components/grid'
-import BlueBackground from '../src/components/Common/BlueBackground'
-import GreyBackground from '../src/components/Common/GreyBackground'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import CompactVideoLink from '../src/components/Common/CompactVideoLink';
+import { Row } from '../src/components/grid';
+import BlueBackground from '../src/components/Common/BlueBackground';
+import GreyBackground from '../src/components/Common/GreyBackground';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const text =
-  'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright'
-const smallerText = 'Some smaller title'
+  'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright';
+const smallerText = 'Some smaller title';
 
 storiesOf('Compact Video Link', module)
   .add('Single component', () => {
@@ -20,7 +20,7 @@ storiesOf('Compact Video Link', module)
           {text}
         </CompactVideoLink>
       </Row>
-    )
+    );
   })
   .add('Multiple components', () => {
     return (
@@ -35,7 +35,7 @@ storiesOf('Compact Video Link', module)
           {smallerText}
         </CompactVideoLink>
       </Row>
-    )
+    );
   })
   .add('Dark theme', () => {
     return (
@@ -49,7 +49,7 @@ storiesOf('Compact Video Link', module)
           </CompactVideoLink>
         </Row>
       </BlueBackground>
-    )
+    );
   })
   .add('Grey theme', () => {
     return (
@@ -63,5 +63,5 @@ storiesOf('Compact Video Link', module)
           </CompactVideoLink>
         </Row>
       </GreyBackground>
-    )
-  })
+    );
+  });

@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
 
-import { storiesOf, addDecorator } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-import theme from '../src/utils/theme'
-import GlobalStyle from '../src/utils/globalStyle'
-import StandaloneVideoLink from '../src/components/Common/StandaloneVideoLink'
-import { Row } from '../src/components/grid'
-import BlueBackground from '../src/components/Common/BlueBackground'
-import GreyBackground from '../src/components/Common/GreyBackground'
+import { storiesOf, addDecorator } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../src/utils/theme';
+import GlobalStyle from '../src/utils/globalStyle';
+import StandaloneVideoLink from '../src/components/Common/StandaloneVideoLink';
+import { Row } from '../src/components/grid';
+import BlueBackground from '../src/components/Common/BlueBackground';
+import GreyBackground from '../src/components/Common/GreyBackground';
 
 const Theme = storyFn => (
   <ThemeProvider theme={theme}>
@@ -16,12 +16,12 @@ const Theme = storyFn => (
       <GlobalStyle />
     </Fragment>
   </ThemeProvider>
-)
+);
 
-addDecorator(Theme)
+addDecorator(Theme);
 const text =
-  'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright'
-const smallerText = 'Some smaller title'
+  'Manipulating the Web Audio API with JSX and Custom Renderers - James Wright';
+const smallerText = 'Some smaller title';
 
 storiesOf('Standalone Video Link', module)
   .add('Single component', () => {
@@ -31,7 +31,7 @@ storiesOf('Standalone Video Link', module)
           {text}
         </StandaloneVideoLink>
       </Row>
-    )
+    );
   })
   .add('Multiple components', () => {
     return (
@@ -46,7 +46,7 @@ storiesOf('Standalone Video Link', module)
           {smallerText}
         </StandaloneVideoLink>
       </Row>
-    )
+    );
   })
   .add('Dark theme', () => {
     return (
@@ -60,7 +60,7 @@ storiesOf('Standalone Video Link', module)
           </StandaloneVideoLink>
         </Row>
       </BlueBackground>
-    )
+    );
   })
   .add('Grey theme', () => {
     return (
@@ -74,5 +74,5 @@ storiesOf('Standalone Video Link', module)
           </StandaloneVideoLink>
         </Row>
       </GreyBackground>
-    )
-  })
+    );
+  });

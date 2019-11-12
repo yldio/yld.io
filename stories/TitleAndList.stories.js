@@ -1,60 +1,60 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import BlueBackground from '../src/components/Common/BlueBackground'
-import GreyBackground from '../src/components/Common/GreyBackground'
-import { Grid } from '../src/components/grid'
-import TitleAndList from '../src/components/Common/TitleAndList'
-import StyledLink from '../src/components/Common/StyledLink'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import BlueBackground from '../src/components/Common/BlueBackground';
+import GreyBackground from '../src/components/Common/GreyBackground';
+import { Grid } from '../src/components/grid';
+import TitleAndList from '../src/components/Common/TitleAndList';
+import StyledLink from '../src/components/Common/StyledLink';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const ExampleImage = {
   title: 'Community Support Logo',
   file: { url: '/community_support.svg' },
-  className: 'logo'
-}
+  className: 'logo',
+};
 
-const title = 'Community support'
+const title = 'Community support';
 const body =
-  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
+  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.';
 
-const stringList = `### ${title}\n${body}\n### ${title}\n${body}`
+const stringList = `### ${title}\n${body}\n### ${title}\n${body}`;
 
 const arrayList = [
   {
     title,
-    body
+    body,
   },
   {
     title,
     body:
-      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.'
+      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
   },
   {
     title,
-    body
-  }
-]
+    body,
+  },
+];
 
 const arrayListWithLogos = [
   {
     image: ExampleImage,
     title,
-    body
+    body,
   },
   {
     image: ExampleImage,
     title,
     body:
-      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.'
+      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
   },
   {
     image: ExampleImage,
     title,
-    body
-  }
-]
+    body,
+  },
+];
 
 storiesOf('Title and List (with optional logos)', module)
   .add('list in form of a string (Contentful data)', () => {
@@ -66,7 +66,7 @@ storiesOf('Title and List (with optional logos)', module)
           themeVariation="white"
         />
       </Grid>
-    )
+    );
   })
   .add('list in form of an array', () => {
     return (
@@ -77,7 +77,7 @@ storiesOf('Title and List (with optional logos)', module)
           themeVariation="white"
         />
       </Grid>
-    )
+    );
   })
   .add('with extra content', () => {
     return (
@@ -93,7 +93,7 @@ storiesOf('Title and List (with optional logos)', module)
           themeVariation="white"
         />
       </Grid>
-    )
+    );
   })
   .add('on dark background', () => {
     return (
@@ -106,7 +106,7 @@ storiesOf('Title and List (with optional logos)', module)
           />
         </Grid>
       </BlueBackground>
-    )
+    );
   })
   .add('on grey background', () => {
     return (
@@ -119,7 +119,7 @@ storiesOf('Title and List (with optional logos)', module)
           />
         </Grid>
       </GreyBackground>
-    )
+    );
   })
   .add('with logos', () => {
     return (
@@ -130,5 +130,5 @@ storiesOf('Title and List (with optional logos)', module)
           themeVariation="white"
         />
       </Grid>
-    )
-  })
+    );
+  });

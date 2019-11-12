@@ -1,16 +1,16 @@
-import React, { PureComponent } from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import Tab, { Tabs } from '../src/components/Common/Tab'
+import React, { PureComponent } from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import Tab, { Tabs } from '../src/components/Common/Tab';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 class MultipleTabs extends PureComponent {
   state = {
-    active: 0
-  }
+    active: 0,
+  };
 
-  tabs = ['First Tab', 'Second Tab', 'Third Tab']
+  tabs = ['First Tab', 'Second Tab', 'Third Tab'];
 
   render() {
     return (
@@ -25,14 +25,14 @@ class MultipleTabs extends PureComponent {
           </Tab>
         ))}
       </Tabs>
-    )
+    );
   }
 
   handleClick = idx => {
     this.setState(prevState => ({
-      active: prevState.active === idx ? undefined : idx
-    }))
-  }
+      active: prevState.active === idx ? undefined : idx,
+    }));
+  };
 }
 
 storiesOf('Tabs', module)
@@ -43,5 +43,5 @@ storiesOf('Tabs', module)
   ))
   .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>)
   .add('Multiple Tabs', () => {
-    return <MultipleTabs />
-  })
+    return <MultipleTabs />;
+  });

@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Margin } from 'styled-components-spacing'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import { Grid, Row, Col } from '../src/components/grid'
+import React from 'react';
+import styled from 'styled-components';
+import { Margin } from 'styled-components-spacing';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import { Grid, Row, Col } from '../src/components/grid';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const Container = styled(Margin)`
   width: 100%;
-`
+`;
 
 const Block = styled.div`
   width: 100%;
@@ -17,7 +17,7 @@ const Block = styled.div`
   margin: 20px 0;
   background: #d8fff7;
   border: 1px solid #31ffde;
-`
+`;
 
 storiesOf('Grid', module).add('Rows and Colums (some combinations)', () => {
   return (
@@ -79,5 +79,5 @@ storiesOf('Grid', module).add('Rows and Colums (some combinations)', () => {
         </Row>
       </Grid>
     </Container>
-  )
-})
+  );
+});

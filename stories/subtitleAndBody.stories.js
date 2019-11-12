@@ -1,16 +1,16 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import BlueBackground from '../src/components/Common/BlueBackground'
-import GreyBackground from '../src/components/Common/GreyBackground'
-import { Grid, Col, Row } from '../src/components/grid'
-import SubtitleWithBody from '../src/components/Common/SubtitleWithBody'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import BlueBackground from '../src/components/Common/BlueBackground';
+import GreyBackground from '../src/components/Common/GreyBackground';
+import { Grid, Col, Row } from '../src/components/grid';
+import SubtitleWithBody from '../src/components/Common/SubtitleWithBody';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
-const title = 'Community support'
+const title = 'Community support';
 const body =
-  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
+  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.';
 
 storiesOf('Subtitle and Body', module)
   .add('on white Background', () => {
@@ -26,7 +26,7 @@ storiesOf('Subtitle and Body', module)
           </Col>
         </Row>
       </Grid>
-    )
+    );
   })
   .add('on dark background', () => {
     return (
@@ -41,7 +41,7 @@ storiesOf('Subtitle and Body', module)
           </Col>
         </Grid>
       </BlueBackground>
-    )
+    );
   })
   .add('on grey background', () => {
     return (
@@ -56,5 +56,5 @@ storiesOf('Subtitle and Body', module)
           </Col>
         </Grid>
       </GreyBackground>
-    )
-  })
+    );
+  });

@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview'
-import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview';
+import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy';
 
 const TrainlineCaseStudy = {
   title: 'Future-proofing Trainline',
@@ -21,22 +21,22 @@ const TrainlineCaseStudy = {
         '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50&fm=webp',
       srcSetWebp:
         '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w',
-      sizes: '(max-width: 600px) 100vw, 600px'
+      sizes: '(max-width: 600px) 100vw, 600px',
     },
     title: 'Trainline case study featured image ',
     file: {
       url:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png'
-    }
+        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png',
+    },
   },
   posterColor: '051534',
   introSentence:
-    'We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.'
-}
+    'We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.',
+};
 
-const services = ['Engineering', 'Design', 'Untracked']
+const services = ['Engineering', 'Design', 'Untracked'];
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('CaseStudy', module)
   .add('CaseStudyPreview', () => (
@@ -47,4 +47,4 @@ storiesOf('CaseStudy', module)
   ))
   .add('Our Work - CaseStudy - ServiceList', () => (
     <ServiceList services={services} />
-  ))
+  ));

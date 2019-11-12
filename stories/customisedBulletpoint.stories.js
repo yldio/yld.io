@@ -1,9 +1,9 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import CustomisedBulletpoint from '../src/components/Common/CustomisedBulletpoint'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import CustomisedBulletpoint from '../src/components/Common/CustomisedBulletpoint';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('CustomisedBulletpoint', module)
   .add('CustomisedBulletpoint', () => (
@@ -24,4 +24,4 @@ storiesOf('CustomisedBulletpoint', module)
       <CustomisedBulletpoint>Second bullet thingy</CustomisedBulletpoint>
       <CustomisedBulletpoint>Third bullet thingy</CustomisedBulletpoint>
     </ul>
-  ))
+  ));

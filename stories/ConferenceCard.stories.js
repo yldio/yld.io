@@ -1,10 +1,10 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import ConferenceCard from '../src/components/Events/ConferenceCard'
-import { Grid } from '../src/components/grid'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import ConferenceCard from '../src/components/Events/ConferenceCard';
+import { Grid } from '../src/components/grid';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const event = {
   startTime: '2019-05-03T18:00',
@@ -20,7 +20,7 @@ const event = {
   city: 'London',
   blurb: {
     blurb:
-      'ReactJS Girls is a non-profit community conference for 300 React developers where women take the stage.'
+      'ReactJS Girls is a non-profit community conference for 300 React developers where women take the stage.',
   },
   homepageFeatured: false,
   linkToEvent: 'http://reactjsgirls.com',
@@ -28,7 +28,7 @@ const event = {
   eventImage: {
     file: {
       url:
-        '//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg'
+        '//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg',
     },
     fluid: {
       base64: null,
@@ -37,15 +37,15 @@ const event = {
       srcSet: null,
       srcWebp: null,
       srcSetWebp: null,
-      sizes: null
-    }
-  }
-}
+      sizes: null,
+    },
+  },
+};
 
 storiesOf('Conference Card', module).add('Conference Card', () => {
   return (
     <Grid style={{ width: '100%' }}>
       <ConferenceCard event={event} />
     </Grid>
-  )
-})
+  );
+});
