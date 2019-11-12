@@ -1,8 +1,9 @@
 {
   "name": "yld.io",
-  "description": "Company Website",
-  "version": "1.0.1",
+  "description": "YLD Company Website yld.io",
+  "version": "1.0.0",
   "author": "YLD <hello@yld.io>",
+  "license": "MIT",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.0",
@@ -78,7 +79,6 @@
     "tween": "^0.9.0",
     "xml2json": "^0.11.2"
   },
-  "license": "MIT",
   "scripts": {
     "clean": "rm -rf .cache public",
     "test": "jest",
