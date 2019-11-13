@@ -1,15 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
 import SeoLinksContainer from '../components/Common/seoLinksContainer';
 import WorkStages from '../components/Service/WorkStages';
+import { SectionTitle } from '../components/Typography';
+import { Grid, Row, Col } from '../components/grid';
 import GreyBackground from '../components/Common/GreyBackground';
 import BlueBackground from '../components/Common/BlueBackground';
 import Head from '../components/Common/Head';
 import Statement from '../components/Common/Statement';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+
+const StyledRow = styled(Row)`
+  padding-top: ${({ theme }) => theme.space[7]};
+  padding-bottom: ${({ theme }) => theme.space[6]};
+`;
 
 const Service = ({
   data: {
@@ -58,7 +66,15 @@ const Service = ({
     >
       <Head seoMetaData={seoMetaData} />
 
-      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
+      <Grid>
+        <StyledRow>
+          <Col width={[1, 1, 1, 8 / 12]}>
+            <SectionTitle>
+              {service.mainPageIntroSentence.mainPageIntroSentence}
+            </SectionTitle>
+          </Col>
+        </StyledRow>
+      </Grid>
 
       <Statement>
         {service.mainPageIntroSentence.mainPageIntroSentence}
@@ -146,41 +162,6 @@ export const pageQuery = graphql`
               }
             }
             posterColor
-          }
-        }
-      }
-      caseStudies {
-        ... on Node {
-          ... on ContentfulTemplatedCaseStudy {
-            title
-            slug
-            introSentence {
-              introSentence
-            }
-            posterColor
-            posterImage {
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-          }
-          ... on ContentfulNonTemplatedCaseStudyV2 {
-            title
-            slug
-            intro: introSentence {
-              introSentence
-            }
-            posterColor
-            posterImage {
-              title
-              file {
-                url
-              }
-            }
           }
         }
       }
