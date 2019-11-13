@@ -167,14 +167,12 @@ const MediumPostPreview = ({
           <StyledBodyPrimary context={context}>{excerpt}</StyledBodyPrimary>
           <StyledBodyPrimary show="smallTablet" context={context}>
             {excerpt}
-            <a
-              href={postUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Anchor
+              to={postUrl}
               style={{ display: 'block', textDecoration: 'underline' }}
             >
               Read More...
-            </a>
+            </Anchor>
           </StyledBodyPrimary>
         </Col>
         <ReadMoreLink to={postUrl} title={`Read more about ${title}`}>

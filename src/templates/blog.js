@@ -74,8 +74,8 @@ const BlogPage = ({
   const isLast = currentPage === numberOfPages;
 
   const prevPagePath =
-    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}`;
-  const nextPagePath = `page/${(currentPage + 1).toString()}`;
+    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}/`;
+  const nextPagePath = `page/${(currentPage + 1).toString()}/`;
 
   const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`;
   const nextPageLink = isLast ? null : `/blog/${nextPagePath}`;
