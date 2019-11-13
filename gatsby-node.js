@@ -103,7 +103,7 @@ exports.createPages = async ({ graphql, actions }) => {
       _.each(edge.node.courses, course => {
         if (course.slug && course.id) {
           createPage({
-            path: `/training/${edge.node.slug}/${course.slug}`,
+            path: `/training/${edge.node.slug}/${course.slug}/`,
             component: slash(trainingCourseTemplate),
             context: {
               id: course.id,
@@ -201,7 +201,7 @@ exports.createPages = async ({ graphql, actions }) => {
     length: numberOfPages,
   }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      path: i === 0 ? `/blog/` : `/blog/page/${i + 1}/`,
       component: slash(blogListTemplate),
       context: {
         limit: postsPerPage,
@@ -215,7 +215,7 @@ exports.createPages = async ({ graphql, actions }) => {
   _.each(result.data.allContentfulBlogPost.edges, post => {
     if (post.node.slug && post.node.content) {
       createPage({
-        path: `blog/${post.node.slug}`,
+        path: `/blog/${post.node.slug}/`,
         component: slash(blogPostTemplate),
         context: {
           id: post.node.id,

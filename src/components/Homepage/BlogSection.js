@@ -61,7 +61,7 @@ const BlogSection = ({ blogPosts }) => (
         <BlogPostPreview {...blogPosts[0].node} context="homepage" />
       </Col>
       <Col width={[1]}>
-        <BlogLink to={'/blog'}>Read our blog</BlogLink>
+        <BlogLink to={'/blog/'}>Read our blog</BlogLink>
       </Col>
     </MobileBlogRow>
     <NonMobileBlogRow>
@@ -75,7 +75,7 @@ const BlogSection = ({ blogPosts }) => (
         </Col>
       ))}
       <Col width={[1]}>
-        <BlogLink to={'/blog'}>Read our blog</BlogLink>
+        <BlogLink to={'/blog/'}>Read our blog</BlogLink>
       </Col>
     </NonMobileBlogRow>
   </Grid>
