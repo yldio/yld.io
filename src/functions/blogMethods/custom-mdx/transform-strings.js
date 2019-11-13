@@ -11,9 +11,9 @@ const postPathSegment = new RegExp(`(${slug.source}-${hexUid.source})?`);
 const path = new RegExp(`${blogPath.source}(\\/${postPathSegment.source})?`);
 
 const mdLink = new RegExp(`\\(${origin.source}${path.source}\\)`, 'gi');
-const mdLinkFull = /\(https?:\/\/medium\.com\/yld(-engineering)?-blog(\/((?<slug>[^)]+)-[0-9a-f]{8,})?)?\)/;
+const mdLinkFull = /\(https?:\/\/medium\.com\/yld(-engineering)?-blog(\/((?<slug>[^)]+)-[0-9a-f]{8,})?)?\)/gi;
 // composite mdLink and mdLinkFull are provided because one may find either more legible - this ensures they are kept in sync
-assert.strictEqual(mdLink.source, mdLinkFull.source);
+assert.deepStrictEqual(mdLink, mdLinkFull);
 
 const transformStrings = content =>
   content.replace(mdLink, function() {

@@ -1,4 +1,4 @@
-const TransformIframes = require('../../../../../src/functions/blogMethods/custom-mdx/transform-iframes');
+const TransformIframes = require('../transform-iframes');
 const Got = require('got');
 
 jest.mock('got');

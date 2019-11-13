@@ -1,4 +1,4 @@
-const TransformHTMLToMarkdown = require('../../../../src/functions/blogMethods/transform-html-to-markdown');
+const TransformHTMLToMarkdown = require('../transform-html-to-markdown');
 
 const tweetBlockquote = `
   <blockquote class="twitter-tweet">

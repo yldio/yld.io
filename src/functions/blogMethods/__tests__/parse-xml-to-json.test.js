@@ -1,4 +1,4 @@
-const ParseXMLToJSON = require('../../../../src/functions/blogMethods/parse-xml-to-json');
+const ParseXMLToJSON = require('../parse-xml-to-json');
 const { readFileSync } = require('fs');
 const { resolve } = require('path');
 

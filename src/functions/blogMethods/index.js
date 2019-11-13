@@ -6,6 +6,7 @@ const TransformHtmlToMd = require('./transform-html-to-markdown');
 const TransformCustomMDX = require('./custom-mdx');
 const PublishToContentful = require('./publish-to-contentful');
 const FilterPostsToProcess = require('./filter-posts-to-process');
+const GetAllContentfulBlogPosts = require('./get-all-contentful-blog-posts');
 const ValidateMdx = require('./validate-mdx');
 const TransformMetaData = require('./transform-meta-data');
 
@@ -25,11 +26,7 @@ const syncMediumToContentful = async data => {
 
   const { allFields, requiredFields } = GetContentTypeFields(contentType);
 
-  const { items: cmsBlogPosts } = await environment.getEntries({
-    limit: 1000,
-    content_type: 'blogPost',
-  });
-
+  const cmsBlogPosts = await GetAllContentfulBlogPosts(environment);
   const parsedPostsInJson = await ParseXMLToJSON(data);
 
   const postsToProcess = FilterPostsToProcess(parsedPostsInJson, {

@@ -1,4 +1,4 @@
-const AddFrontMatter = require('../../../../../src/functions/blogMethods/custom-mdx/add-frontmatter');
+const AddFrontMatter = require('../add-frontmatter');
 
 const post = {
   title: 'Blog Title',

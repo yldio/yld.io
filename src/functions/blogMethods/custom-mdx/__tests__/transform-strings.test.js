@@ -1,4 +1,4 @@
-const TransformStrings = require('../../../../../src/functions/blogMethods/custom-mdx/transform-strings');
+const TransformStrings = require('../transform-strings');
 
 it.each([
   'https://medium.com/yld-blog/',

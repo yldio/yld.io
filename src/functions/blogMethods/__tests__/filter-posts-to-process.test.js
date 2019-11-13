@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const FilterPostsToProcess = require('../../../../src/functions/blogMethods/filter-posts-to-process');
+const FilterPostsToProcess = require('../filter-posts-to-process');
 
 const originalConsoleInfo = console.info;
 beforeEach(() => {

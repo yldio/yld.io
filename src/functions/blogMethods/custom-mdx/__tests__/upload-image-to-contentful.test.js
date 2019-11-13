@@ -1,4 +1,4 @@
-const UploadImageToContentful = require('../../../../src/functions/blogMethods/custom-mdx/upload-image-to-contentful');
+const UploadImageToContentful = require('../upload-image-to-contentful');
 
 const mockPublish = jest.fn(function publish() {
   return {

@@ -1,4 +1,4 @@
-const ValidateMdx = require('../../../../src/functions/blogMethods/validate-mdx');
+const ValidateMdx = require('../validate-mdx');
 
 it.each`
   description      | mdx

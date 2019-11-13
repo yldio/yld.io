@@ -1,18 +1,10 @@
-const TransformCustomMdx = require('../../../../../src/functions/blogMethods/custom-mdx');
-const TransformImageData = require('../../../../../src/functions/blogMethods/custom-mdx/transform-image-data');
+const TransformCustomMdx = require('..');
+const TransformImageData = require('../transform-image-data');
 
-jest.mock(
-  '../../../../../src/functions/blogMethods/custom-mdx/add-frontmatter',
-);
-jest.mock(
-  '../../../../../src/functions/blogMethods/custom-mdx/transform-iframes',
-);
-jest.mock(
-  '../../../../../src/functions/blogMethods/custom-mdx/transform-image-data',
-);
-jest.mock(
-  '../../../../../src/functions/blogMethods/custom-mdx/transform-strings',
-);
+jest.mock('../add-frontmatter');
+jest.mock('../transform-iframes');
+jest.mock('../transform-image-data');
+jest.mock('../transform-strings');
 
 const post = {
   slug: 'Post',
