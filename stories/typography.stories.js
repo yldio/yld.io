@@ -1,16 +1,16 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
 import {
   SectionTitle,
   DisplayTitle,
   CardTitle,
   Subtitle,
   BodyStylised,
-  BodyPrimary
-} from '../src/components/Typography'
+  BodyPrimary,
+} from '../src/components/Typography';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('Typography', module)
   .add('SectionTitle', () => <SectionTitle>Section Title</SectionTitle>)
@@ -66,4 +66,4 @@ storiesOf('Typography', module)
       <code>noPaddingBottom</code>
       <DisplayTitle noPaddingBottom>modifier</DisplayTitle>
     </div>
-  ))
+  ));

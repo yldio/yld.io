@@ -1,27 +1,27 @@
-import { launch as launchChrome } from 'chrome-launcher'
-import lighthouse from 'lighthouse'
+import { launch as launchChrome } from 'chrome-launcher';
+import lighthouse from 'lighthouse';
 
-import createServer from '../createServer'
-import config from './config'
+import createServer from '../createServer';
+import config from './config';
 
-const port = 3001
+const port = 3001;
 
 const runLighthouse = async () => {
-  const server = createServer(port)
+  const server = createServer(port);
   try {
-    const chrome = await launchChrome({ chromeFlags: [] })
+    const chrome = await launchChrome({ chromeFlags: [] });
     try {
       return await lighthouse(
         `http://localhost:${port}/`,
         { port: chrome.port },
-        config
-      )
+        config,
+      );
     } finally {
-      await chrome.kill()
+      await chrome.kill();
     }
   } finally {
-    server.close()
+    server.close();
   }
-}
+};
 
-export default runLighthouse
+export default runLighthouse;

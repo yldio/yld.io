@@ -1,16 +1,16 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
 import {
   Checkbox,
   Input,
   Label,
   Field,
-  Fieldset
-} from '../src/components/Common/Forms'
-import Button from '../src/components/Common/Button'
+  Fieldset,
+} from '../src/components/Common/Forms';
+import Button from '../src/components/Common/Button';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('Form', module)
   .add('Checkbox', () => (
@@ -31,4 +31,4 @@ storiesOf('Form', module)
     <Fieldset>
       <Input type="text" placeholder="test" />
     </Fieldset>
-  ))
+  ));

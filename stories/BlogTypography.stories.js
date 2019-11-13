@@ -1,15 +1,15 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import styled from 'styled-components'
-import { Grid, Row, Col } from '../src/components/grid'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import styled from 'styled-components';
+import { Grid, Row, Col } from '../src/components/grid';
 
-import { TagGroup } from '../src/components/Blog/Tag'
+import { TagGroup } from '../src/components/Blog/Tag';
 
 import {
   PostOutroMetaData,
-  PostIntroMetaData
-} from '../src/components/Blog/PostMetaData'
-import FigureImage from '../src/components/Blog/FigureImage'
+  PostIntroMetaData,
+} from '../src/components/Blog/PostMetaData';
+import FigureImage from '../src/components/Blog/FigureImage';
 import {
   H1,
   H2,
@@ -20,81 +20,81 @@ import {
   ImageCaption,
   Blockquote,
   PostWrapper,
-  Tag
-} from '../src/components/Blog/Typography'
+  Tag,
+} from '../src/components/Blog/Typography';
 
-import Theme from './theme'
+import Theme from './theme';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const elements = [
   {
     component: H1,
     label: 'Heading 1',
     colWidths: [1, 1, 1, 10 / 12],
-    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
   },
   {
     component: H2,
     label: 'Heading 2',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Subtitle,
     label: 'Subtitle',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Body,
     label: 'Body',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Body,
     label: 'Body w/ Code',
     content:
-      'Lorem, ipsum dolor <code>sit amet consectetur adipisicing elit</code>. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor <code>sit amet consectetur adipisicing elit</code>. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Code,
     label: 'Code Block',
     content:
-      "<code>server.route({    \n  method: 'GET',  \n  path:'/',  \n  handler: function (request, reply) {  \n    var books = [{  \n      title: 'Professional Node.js',  \n      read: false  \n    }, {  \n      title: 'Node.js Patterns',  \n      read: false  \n    }];\n  }\n})</code>"
+      "<code>server.route({    \n  method: 'GET',  \n  path:'/',  \n  handler: function (request, reply) {  \n    var books = [{  \n      title: 'Professional Node.js',  \n      read: false  \n    }, {  \n      title: 'Node.js Patterns',  \n      read: false  \n    }];\n  }\n})</code>",
   },
   {
     component: A,
     label: 'Anchor',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Body,
     label: 'Body with inline Anchor',
     content:
-      'Lorem, ipsum dolor sit <a href="https://example/com" target="_blank"/>amet consectetur adipisicing</a> elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit <a href="https://example/com" target="_blank"/>amet consectetur adipisicing</a> elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Body,
     label: 'Body with strong',
     content:
-      'Lorem, ipsum dolor sit <strong>ex impedit dicta temporibus animi saepe itaque</strong> totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit <strong>ex impedit dicta temporibus animi saepe itaque</strong> totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: Blockquote,
     label: 'Blockquote',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
   },
   {
     component: ImageCaption,
     label: 'Image Caption',
     content:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa'
-  }
-]
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias ex impedit dicta temporibus animi saepe itaque totam, deserunt consectetur! Facere voluptatem ipsa',
+  },
+];
 
 const Annotate = styled.h2`
   font-size: 24px;
@@ -102,7 +102,7 @@ const Annotate = styled.h2`
   margin: 30px 0 20px;
   color: lightgrey;
   text-decoration: underline;
-`
+`;
 
 storiesOf('Blog Components', module)
   .add('Typography', () => (
@@ -249,7 +249,7 @@ storiesOf('Blog Components', module)
           </PostWrapper>
         </Row>
       </Grid>
-    )
+    );
   })
   .add('Image container', () => {
     return (
@@ -312,7 +312,7 @@ storiesOf('Blog Components', module)
           </PostWrapper>
         </Row>
       </Grid>
-    )
+    );
   })
   .add('Meta Data', () => {
     return (
@@ -359,13 +359,13 @@ storiesOf('Blog Components', module)
                 'frontend',
                 'nodejs',
                 'machine learning',
-                'database management'
+                'database management',
               ]}
             />
           </Col>
         </Row>
       </Grid>
-    )
+    );
   })
   .add('Tags', () => {
     return (
@@ -381,10 +381,10 @@ storiesOf('Blog Components', module)
               'frontend',
               'nodejs',
               'machine learning',
-              'database management'
+              'database management',
             ]}
           />
         </div>
       </div>
-    )
-  })
+    );
+  });

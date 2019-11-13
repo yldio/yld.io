@@ -1,11 +1,11 @@
-const _ = require(`lodash`)
-const path = require(`path`)
-const slash = require(`slash`)
-const { getTagsForTitle } = require('./src/utils/getTagsForTitle')
-const { writeFile } = require('mz/fs')
+const _ = require(`lodash`);
+const path = require(`path`);
+const slash = require(`slash`);
+const { getTagsForTitle } = require('./src/utils/getTagsForTitle');
+const { writeFile } = require('mz/fs');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(`
     query {
       allContentfulTrainingCourseCategory {
@@ -79,24 +79,24 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    throw result.errors
+    throw result.errors;
   }
 
   const trainingCourseTemplate = path.resolve(
-    `./src/templates/trainingCourseModal.js`
-  )
-  const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`)
-  const specialityTemplate = path.resolve(`./src/templates/speciality.js`)
-  const serviceTemplate = path.resolve(`./src/templates/service.js`)
-  const blogListTemplate = path.resolve(`./src/templates/blog.js`)
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const policyTemplate = path.resolve(`./src/templates/policy.js`)
+    `./src/templates/trainingCourseModal.js`,
+  );
+  const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`);
+  const specialityTemplate = path.resolve(`./src/templates/speciality.js`);
+  const serviceTemplate = path.resolve(`./src/templates/service.js`);
+  const blogListTemplate = path.resolve(`./src/templates/blog.js`);
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+  const policyTemplate = path.resolve(`./src/templates/policy.js`);
   const careerDisciplineTemplate = path.resolve(
-    `./src/templates/career-discipline.js`
-  )
+    `./src/templates/career-discipline.js`,
+  );
 
   _.each(result.data.allContentfulTrainingCourseCategory.edges, edge => {
     if (edge.node.slug && edge.node.courses) {
@@ -107,13 +107,13 @@ exports.createPages = async ({ graphql, actions }) => {
             component: slash(trainingCourseTemplate),
             context: {
               id: course.id,
-              categoryId: edge.node.id
-            }
-          })
+              categoryId: edge.node.id,
+            },
+          });
         }
-      })
+      });
     }
-  })
+  });
 
   _.each(result.data.allContentfulTemplatedCaseStudy.edges, edge => {
     if (edge.node.slug) {
@@ -121,20 +121,20 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/case-study/${edge.node.slug}/`,
         component: slash(caseStudyTemplate),
         context: {
-          id: edge.node.id
-        }
-      })
+          id: edge.node.id,
+        },
+      });
     }
-  })
+  });
 
   _.each(result.data.allContentfulSpeciality.edges, ({ node }) => {
-    const { id, slug, title, generate, blogpostTags } = node
+    const { id, slug, title, generate, blogpostTags } = node;
 
     if (slug && generate) {
-      const titleTags = getTagsForTitle(title)
+      const titleTags = getTagsForTitle(title);
       const contentfulTags = blogpostTags
         ? blogpostTags.map(el => el.toLowerCase().trim())
-        : []
+        : [];
 
       createPage({
         path: `/speciality/${slug}/`,
@@ -142,11 +142,11 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           id: id,
           postsLimit: 3,
-          postsTags: [...titleTags, ...contentfulTags]
-        }
-      })
+          postsTags: [...titleTags, ...contentfulTags],
+        },
+      });
     }
-  })
+  });
 
   _.each(result.data.allContentfulService.edges, edge => {
     if (edge.node.slug) {
@@ -154,11 +154,11 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/${edge.node.slug}/`,
         component: slash(serviceTemplate),
         context: {
-          id: edge.node.id
-        }
-      })
+          id: edge.node.id,
+        },
+      });
     }
-  })
+  });
 
   _.each(result.data.allContentfulPolicy.edges, edge => {
     if (edge.node.slug) {
@@ -166,11 +166,11 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/${edge.node.slug}/`,
         component: slash(policyTemplate),
         context: {
-          id: edge.node.id
-        }
-      })
+          id: edge.node.id,
+        },
+      });
     }
-  })
+  });
 
   if (result.data.contentfulCareerFramework.publish) {
     _.each(result.data.allContentfulCareerDiscipline.edges, edge => {
@@ -180,11 +180,11 @@ exports.createPages = async ({ graphql, actions }) => {
           component: slash(careerDisciplineTemplate),
           context: {
             id: edge.node.id,
-            slug: edge.node.slug
-          }
-        })
+            slug: edge.node.slug,
+          },
+        });
       }
-    })
+    });
   }
 
   /**
@@ -192,13 +192,13 @@ exports.createPages = async ({ graphql, actions }) => {
    * includes context for paging functionality
    */
 
-  const allBlogPosts = result.data.allContentfulBlogPost.edges
-  const postsPerPage = 6
+  const allBlogPosts = result.data.allContentfulBlogPost.edges;
+  const postsPerPage = 6;
 
-  const numberOfPages = Math.ceil(allBlogPosts.length / postsPerPage)
+  const numberOfPages = Math.ceil(allBlogPosts.length / postsPerPage);
 
   Array.from({
-    length: numberOfPages
+    length: numberOfPages,
   }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
@@ -207,10 +207,10 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numberOfPages,
-        currentPage: i + 1
-      }
-    })
-  })
+        currentPage: i + 1,
+      },
+    });
+  });
 
   _.each(result.data.allContentfulBlogPost.edges, post => {
     if (post.node.slug && post.node.content) {
@@ -218,51 +218,51 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `blog/${post.node.slug}`,
         component: slash(blogPostTemplate),
         context: {
-          id: post.node.id
-        }
-      })
+          id: post.node.id,
+        },
+      });
     }
-  })
-}
+  });
+};
 
 exports.onCreateNode = async ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   /**
    * This section creates nodes within the graphql schema
    * that we can query blog post content on.
    */
   if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent)
+    const parent = getNode(node.parent);
 
-    let slug, title, date
+    let slug, title, date;
     if (parent.internal.type === 'contentfulBlogPostContentTextNode') {
-      const contentfulNode = getNode(parent.parent)
+      const contentfulNode = getNode(parent.parent);
 
-      slug = contentfulNode.slug
-      title = contentfulNode.title
-      date = contentfulNode.createdAt
+      slug = contentfulNode.slug;
+      title = contentfulNode.title;
+      date = contentfulNode.createdAt;
     }
 
     createNodeField({
       node,
       name: `slug`,
-      value: slug
-    })
+      value: slug,
+    });
 
     createNodeField({
       node,
       name: `title`,
-      value: title
-    })
+      value: title,
+    });
 
     createNodeField({
       node,
       name: `date`,
-      value: date
-    })
+      value: date,
+    });
   }
-}
+};
 
 exports.onPostBuild = async ({ graphql }) => {
   /**
@@ -273,7 +273,7 @@ exports.onPostBuild = async ({ graphql }) => {
    */
   const {
     errors,
-    data: { allLever }
+    data: { allLever },
   } = await graphql(`
     {
       allLever(limit: 500) {
@@ -286,10 +286,10 @@ exports.onPostBuild = async ({ graphql }) => {
         }
       }
     }
-  `)
+  `);
 
   if (errors) {
-    throw new Error(errors)
+    throw new Error(errors);
   }
 
   const allJobIds =
@@ -298,8 +298,8 @@ exports.onPostBuild = async ({ graphql }) => {
     allLever.group.reduce(
       (acc, { edges }) =>
         acc.concat(...edges.map(({ node: { lever_id: id } }) => id)),
-      []
-    )
+      [],
+    );
 
-  await writeFile('./public/meta.json', JSON.stringify({ allJobIds }))
-}
+  await writeFile('./public/meta.json', JSON.stringify({ allJobIds }));
+};

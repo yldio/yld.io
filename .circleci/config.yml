@@ -14,8 +14,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "yarn install --frozen-lockfile"
-          name: "Install dependencies"
+          command: 'yarn install --frozen-lockfile'
+          name: 'Install dependencies'
       - persist_to_workspace:
           root: ~/app
           paths:
@@ -26,16 +26,16 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run test"
-          name: "Run tests"
+          command: 'yarn run test'
+          name: 'Run tests'
   build:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run build:app"
-          name: "Build app"
+          command: 'yarn run build:app'
+          name: 'Build app'
       - persist_to_workspace:
           root: ~/app
           paths:
@@ -48,7 +48,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run test:lighthouse"
+          command: 'yarn run test:lighthouse'
           name: Lighthouse
       - store_artifacts:
           path: ~/app/tests/lighthouse/artifacts
@@ -57,14 +57,14 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
-      - run: "yarn lint"
+      - run: 'yarn lint'
   storyshots:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run test:storyshots"
+          command: 'yarn run test:storyshots'
           name: Storyshots
   testcafe:
     <<: *defaults
@@ -72,7 +72,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: "yarn run test:e2e"
+          command: 'yarn run test:e2e'
           name: Testcafe
       - store_artifacts:
           path: ~/app/artifacts/screenshots

@@ -80,23 +80,27 @@
   },
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf .cache public",
     "test": "jest",
     "test:watch": "yarn run test --watch",
     "test:storyshots": "jest --config jest-storyshots.config.js --silent",
     "test:storyshots:update": "yarn run test:storyshots -u",
     "test:e2e": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 90000",
     "test:lighthouse": "jest --config jest-lighthouse.config.js",
-    "develop": "yarn start",
+    "lint": "run-s lint:prettier lint:eslint",
+    "lint:eslint": "eslint . --cache",
+    "lint:eslint:fix": "yarn run lint:eslint --fix",
+    "lint:prettier": "prettier -l \"**/*.{js,ts,json,html,css,md,mdx,yml,yaml}\"",
+    "lint:prettier:fix": "prettier -l \"**/*.{js,ts,json,html,css,md,mdx,yml,yaml}\"",
+    "format": "yarn run lint:prettier:fix",
+    "develop": "yarn run start",
     "start": "gatsby develop",
-    "dev:clean": "rm -rf .cache && yarn develop",
-    "format": "prettier --write \"src/**/*.js\"",
+    "clean-start": "run-s clean start",
     "storybook": "start-storybook -p 6006 -s ./stories/assets",
     "storybook:static": "build-storybook -s ./stories/assets",
     "build": "run-p build:**",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda -c webpack.functions.js --babelrc false build src/functions",
-    "lint": "run-p lint:**",
-    "lint:js": "eslint . --cache --fix",
     "start:lambda": "netlify-lambda -c webpack.functions.js --babelrc false serve src/functions",
     "now-build": "yarn run storybook:static --quiet",
     "now-start": "serve storybook-static"
@@ -191,7 +195,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.*": [
+    "*.{js,ts,json,html,css,md,mdx,yml,yaml}": [
       "prettier --write",
       "git add"
     ]

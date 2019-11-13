@@ -1,19 +1,19 @@
-import React, { Fragment, Component } from 'react'
-import styled from 'styled-components'
-import capitalize from 'capitalize'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import { Row, Col } from '../src/components/grid'
+import React, { Fragment, Component } from 'react';
+import styled from 'styled-components';
+import capitalize from 'capitalize';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import { Row, Col } from '../src/components/grid';
 
-import { Checkbox } from '../src/components/Common/Forms'
-import { SpecialityView } from '../src/templates/speciality-component'
+import { Checkbox } from '../src/components/Common/Forms';
+import { SpecialityView } from '../src/templates/speciality-component';
 import {
   talkData,
   bookData,
   tutorialData,
   eventsData,
-  data
-} from './assets/speciality-data'
+  data,
+} from './assets/speciality-data';
 
 // ProjectsSection, Community, Talks, BlogListing, Tutorials, Books
 
@@ -25,8 +25,8 @@ const initialRenderingOptions = {
   talks: true,
   blogs: true,
   books: true,
-  tutorials: true
-}
+  tutorials: true,
+};
 
 const Form = styled.form`
   margin: 0 auto;
@@ -39,7 +39,7 @@ const Form = styled.form`
   box-shadow: 3px 3px 16px 0px;
   padding: 2rem;
   background: white;
-`
+`;
 
 const ToggleForm = ({ handleToggle, renderOptions }) => (
   <Form>
@@ -67,12 +67,12 @@ const ToggleForm = ({ handleToggle, renderOptions }) => (
         ))}
     </Row>
   </Form>
-)
+);
 
 const ErrorWrapper = styled.div`
   margin: 0 auto;
   width: 500px;
-`
+`;
 
 const Error = ({ info: { componentStack }, message }) => {
   return (
@@ -81,20 +81,20 @@ const Error = ({ info: { componentStack }, message }) => {
       <pre style={{ color: 'red' }}>{message}</pre>
       <pre>{componentStack}</pre>
     </ErrorWrapper>
-  )
-}
+  );
+};
 
 class StorySpecialityWrapper extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       hasError: false,
-      renderOptions: initialRenderingOptions
-    }
+      renderOptions: initialRenderingOptions,
+    };
   }
 
   componentDidCatch({ message }, info) {
-    this.setState({ hasError: true, error: { info, message } })
+    this.setState({ hasError: true, error: { info, message } });
   }
 
   handleToggle = option => {
@@ -102,13 +102,13 @@ class StorySpecialityWrapper extends Component {
       ...prevState,
       renderOptions: {
         ...prevState.renderOptions,
-        [option]: !prevState.renderOptions[option]
-      }
-    }))
-  }
+        [option]: !prevState.renderOptions[option],
+      },
+    }));
+  };
 
   generateProps = () => {
-    const { renderOptions } = this.state
+    const { renderOptions } = this.state;
 
     const {
       talks,
@@ -117,14 +117,14 @@ class StorySpecialityWrapper extends Component {
       events,
       community,
       caseStudies,
-      clients
-    } = renderOptions
+      clients,
+    } = renderOptions;
 
     const externalResources = [
       [talks, talkData],
       [books, bookData],
-      [tutorials, tutorialData]
-    ].reduce((acc, [render, data]) => (render ? acc.concat(data) : acc), [])
+      [tutorials, tutorialData],
+    ].reduce((acc, [render, data]) => (render ? acc.concat(data) : acc), []);
 
     return {
       ...data,
@@ -135,19 +135,19 @@ class StorySpecialityWrapper extends Component {
           ? data.contentfulSpeciality.relatedProjects
           : undefined,
         clients: clients ? data.contentfulSpeciality.clients : undefined,
-        externalResources
+        externalResources,
       },
       allContentfulMeetupEvent: {
-        nodes: events ? eventsData : []
-      }
-    }
-  }
+        nodes: events ? eventsData : [],
+      },
+    };
+  };
 
   render() {
-    const { hasError, error, renderOptions } = this.state
-    const { children } = this.props
+    const { hasError, error, renderOptions } = this.state;
+    const { children } = this.props;
 
-    const data = this.generateProps()
+    const data = this.generateProps();
 
     return (
       <Fragment>
@@ -160,7 +160,7 @@ class StorySpecialityWrapper extends Component {
             width: '195.312%',
             height: '195.312%',
             transform: 'scale(0.512)',
-            transformOrigin: 'top'
+            transformOrigin: 'top',
           }}
         >
           {hasError ? (
@@ -170,14 +170,14 @@ class StorySpecialityWrapper extends Component {
           )}
         </div>
       </Fragment>
-    )
+    );
   }
 }
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 storiesOf('Speciality ', module).add('Speciality', () => (
   <StorySpecialityWrapper>
     <SpecialityView />
   </StorySpecialityWrapper>
-))
+));

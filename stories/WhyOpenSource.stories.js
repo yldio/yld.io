@@ -1,21 +1,21 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import WhyOpenSource from '../src/components/OpenSource/WhyOpenSource'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import WhyOpenSource from '../src/components/OpenSource/WhyOpenSource';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const ExampleImage = {
   title: 'Community Support Logo',
   file: { url: '/community_support.svg' },
-  className: 'logo'
-}
+  className: 'logo',
+};
 
 const ExampleLogo = {
   title: 'Elife logo',
   file: { url: 'elife.png' },
-  className: 'client-logo'
-}
+  className: 'client-logo',
+};
 
 const clients = [
   ExampleLogo,
@@ -23,33 +23,33 @@ const clients = [
   ExampleLogo,
   ExampleLogo,
   ExampleLogo,
-  ExampleLogo
-]
+  ExampleLogo,
+];
 
-const itemTitle = 'Community support'
+const itemTitle = 'Community support';
 const body =
-  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.'
+  'Open source technologies are supported by knowledgeable and resourceful communities. Their collective contributions result in more robust, innovative and faster solutions.';
 
-const title = 'Why use Open Source?'
+const title = 'Why use Open Source?';
 const list = [
   {
     image: ExampleImage,
     itemTitle,
-    body
+    body,
   },
   {
     image: ExampleImage,
     itemTitle,
     body:
-      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.'
+      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
   },
   {
     image: ExampleImage,
     itemTitle,
-    body
-  }
-]
-const subtitle = 'Clients we helped with open source'
+    body,
+  },
+];
+const subtitle = 'Clients we helped with open source';
 
 storiesOf('Why Open Source', module).add('Why Open Source component', () => (
   <WhyOpenSource
@@ -58,4 +58,4 @@ storiesOf('Why Open Source', module).add('Why Open Source component', () => (
     subtitle={subtitle}
     companies={clients}
   />
-))
+));

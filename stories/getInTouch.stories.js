@@ -1,9 +1,9 @@
-import React from 'react'
-import { storiesOf, addDecorator } from '@storybook/react'
-import Theme from './theme'
-import GetInTouch from '../src/components/Common/GetInTouch'
+import React from 'react';
+import { storiesOf, addDecorator } from '@storybook/react';
+import Theme from './theme';
+import GetInTouch from '../src/components/Common/GetInTouch';
 
-addDecorator(Theme)
+addDecorator(Theme);
 
 const profileProps = {
   id: '9621d712-b52c-57a5-98a7-621a5657a260',
@@ -13,7 +13,7 @@ const profileProps = {
     emailAddress: 'nick@yld.io',
     description: {
       description:
-        'Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.'
+        'Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.',
     },
     image: {
       title: 'Nick Image',
@@ -29,12 +29,12 @@ const profileProps = {
           '//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&q=50&fm=webp',
         srcSetWebp:
           '//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=125&h=125&q=50&fm=webp 125w,\n//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=250&h=251&q=50&fm=webp 250w,\n//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=500&h=501&q=50&fm=webp 500w,\n//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png?w=670&h=672&q=50&fm=webp 670w',
-        sizes: '(max-width: 500px) 100vw, 500px'
+        sizes: '(max-width: 500px) 100vw, 500px',
       },
       file: {
         url:
-          '//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png'
-      }
+          '//images.ctfassets.net/22g1lenhck4z/6TJmhMdsGxLNVTridSk0lL/01f0437c2fdd505786f6d24d573a2a06/nick-update.png',
+      },
     },
     socialLinks: [
       {
@@ -49,21 +49,21 @@ const profileProps = {
             srcSet: null,
             srcWebp: null,
             srcSetWebp: null,
-            sizes: null
+            sizes: null,
           },
           file: {
             url:
-              '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg'
-          }
-        }
-      }
-    ]
+              '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
+          },
+        },
+      },
+    ],
   },
   title: 'Want to talk to someone about this?',
   personCopyTitle: 'Why reach out to Nick?',
   personCopy: {
     personCopy:
-      'Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.'
+      'Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.',
   },
   personCtaCopy: 'Something else you want to chat about?',
   personCtaLinkUrl: 'contact',
@@ -71,8 +71,8 @@ const profileProps = {
   genericCopy: null,
   genericCtaUrl: null,
   genericCtaText: null,
-  ctaText: 'Get in touch'
-}
+  ctaText: 'Get in touch',
+};
 
 const genericProps = {
   id: '62e8fb51-f98f-5f09-82de-92993b8ed9e8',
@@ -85,13 +85,13 @@ const genericProps = {
   personCtaLinkCopy: null,
   genericCopy: {
     genericCopy:
-      'Our experts work with you to understand your goals and help you build the capabilities you need to succeed'
+      'Our experts work with you to understand your goals and help you build the capabilities you need to succeed',
   },
   genericCtaUrl: 'contact',
   genericCtaText: 'Get in touch',
-  ctaText: 'Get in touch'
-}
+  ctaText: 'Get in touch',
+};
 
 storiesOf('GetInTouch', module)
   .add('GetInTouch - Profile', () => <GetInTouch {...profileProps} />)
-  .add('GetInTouch - Generic', () => <GetInTouch {...genericProps} />)
+  .add('GetInTouch - Generic', () => <GetInTouch {...genericProps} />);
