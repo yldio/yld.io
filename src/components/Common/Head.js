@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { Location } from '@reach/router';
 
 const TITLE = graphql`
   query SITE_TITLE {
@@ -87,27 +88,33 @@ const Head = ({ page, seoMetaData }) => {
         });
 
         return (
-          <Helmet>
-            <html lang="en" />
-            <title>{title}</title>
+          <Location>
+            {({ location }) => {
+              return (
+                <Helmet>
+                  <html lang="en" />
+                  <title>{title}</title>
 
-            <meta name="description" content={description} />
+                  <meta name="description" content={description} />
 
-            {keywords && <meta name="keywords" content={keywords} />}
+                  {keywords && <meta name="keywords" content={keywords} />}
 
-            {/* Open Graph  */}
-            <meta property="og:image" content={imageUrl} />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:site_name" content={siteTitle} />
-            <meta property="og:url" content={siteUrl} />
+                  {/* Open Graph  */}
+                  <meta property="og:image" content={imageUrl} />
+                  <meta property="og:type" content="website" />
+                  <meta property="og:title" content={title} />
+                  <meta property="og:description" content={description} />
+                  <meta property="og:site_name" content={siteTitle} />
+                  <meta property="og:url" content={location.href || siteUrl} />
 
-            {/* Twitter */}
-            <meta name="twitter:site" content="yldio" />
+                  {/* Twitter */}
+                  <meta name="twitter:site" content="yldio" />
 
-            <link rel="image_src" type="image/png" href={imageUrl} />
-          </Helmet>
+                  <link rel="image_src" type="image/png" href={imageUrl} />
+                </Helmet>
+              );
+            }}
+          </Location>
         );
       }}
     />
