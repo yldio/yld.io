@@ -2,7 +2,6 @@ import React from 'react';
 import { Padding } from 'styled-components-spacing';
 import { graphql } from 'gatsby';
 
-import generateCaseStudy from '../utils/generateCaseStudy';
 import Layout from '../components/layout';
 import { Grid } from '../components/grid';
 import { GreyBackgroundOffset } from '../components/Common/GreyBackground';
@@ -17,11 +16,6 @@ const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location,
 }) => {
-  const body = generateCaseStudy(caseStudy);
-  const firstTextBlock = body[0];
-  const videoInfo = body[1];
-  const secondTextBlock = body[2];
-
   return (
     <Layout
       location={location}
@@ -30,19 +24,22 @@ const CaseStudy = ({
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero as="h1" caseStudy={caseStudy} />
       <Grid>
-        <FirstTextSection text={firstTextBlock} />
+        <FirstTextSection source={caseStudy.bodyFirstBlock.bodyFirstBlock} />
       </Grid>
       <GreyBackgroundOffset topMargin topOffset={-150}>
         <Padding bottom={{ smallPhone: 3.5, tablet: 4 }}>
           <Grid>
             <VideoSection
-              src={videoInfo[0]}
+              src={caseStudy.youtubeVideo.link}
               padding={{
                 top: { smallPhone: 3, tablet: 4 },
                 bottom: { smallPhone: 3, tablet: 4 },
               }}
             />
-            <SecondTextSection stats={caseStudy.stats} text={secondTextBlock} />
+            <SecondTextSection
+              stats={caseStudy.stats}
+              source={caseStudy.bodySecondBlock.bodySecondBlock}
+            />
           </Grid>
         </Padding>
       </GreyBackgroundOffset>
@@ -79,16 +76,14 @@ export const pageQuery = graphql`
         value
       }
       posterColor
-      body {
-        content {
-          nodeType
-          content {
-            value
-            marks {
-              type
-            }
-          }
-        }
+      bodyFirstBlock {
+        bodyFirstBlock
+      }
+      bodySecondBlock {
+        bodySecondBlock
+      }
+      youtubeVideo {
+        link
       }
       posterImage {
         fluid(maxWidth: 600) {
