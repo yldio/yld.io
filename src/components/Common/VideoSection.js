@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { Padding } from 'styled-components-spacing';
 import { Row, Col } from '../grid';
 import RatioContainer from './RatioContainer';
+import Player from 'react-youtube';
+import GetYouTubeId from 'get-youtube-id';
 
-const Video = styled.iframe`
+const Video = styled(Player)`
   position: absolute;
   top: 0;
   left: 0;
@@ -28,13 +30,7 @@ const VideoSection = ({ src, padding = {} }) => (
     <Col width={[1, 1, 1, 10 / 12]}>
       <Padding top={padding.top} bottom={padding.bottom}>
         <RatioContainer height={480} width={854}>
-          <Video
-            align="middle"
-            src={src}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <Video videoId={GetYouTubeId(src)} />
         </RatioContainer>
       </Padding>
     </Col>

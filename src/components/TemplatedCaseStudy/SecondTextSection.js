@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { Margin } from 'styled-components-spacing';
+import MarkdownRenderer from './MarkdownRenderer';
 
 import { Row, Col } from '../grid';
 import { SectionTitleStyles, BodyPrimary } from '../Typography';
@@ -37,15 +38,7 @@ const Stats = ({ stats }) => (
   </Fragment>
 );
 
-const TextColumn = ({ text }) => (
-  <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-    {text.map((text, i) => (
-      <BodyPrimary key={i}>{text}</BodyPrimary>
-    ))}
-  </Col>
-);
-
-const SecondTextSection = ({ stats, text }) => (
+const SecondTextSection = ({ stats, source }) => (
   <Fragment>
     {stats ? (
       <Fragment>
@@ -53,10 +46,14 @@ const SecondTextSection = ({ stats, text }) => (
           <Col width={[3 / 12]}>
             <Stats stats={stats} />
           </Col>
-          <TextColumn text={text} />
+          <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+            <MarkdownRenderer source={source} />
+          </Col>
         </NonMobileRow>
         <MobileOnlyRow>
-          <TextColumn text={text} />
+          <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+            <MarkdownRenderer source={source} />
+          </Col>
           <Col width={[1]}>
             <Stats stats={stats} />
           </Col>
@@ -64,7 +61,9 @@ const SecondTextSection = ({ stats, text }) => (
       </Fragment>
     ) : (
       <Row flexEnd>
-        <TextColumn text={text} />
+        <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+          <MarkdownRenderer source={source} />
+        </Col>
       </Row>
     )}
   </Fragment>

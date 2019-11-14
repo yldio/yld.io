@@ -992,13 +992,14 @@ exports[`Storyshots AboutUs ClientTestimonial 1`] = `
               height={480}
               width={854}
             >
-              <iframe
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen={true}
-                className="c10"
-                frameBorder="0"
-                src="https://www.youtube.com/watch?v=Jv5J6a7QJug"
-              />
+              <div
+                className=""
+              >
+                <div
+                  className="c10"
+                  id={null}
+                />
+              </div>
             </div>
           </div>
         </div>

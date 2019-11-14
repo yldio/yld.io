@@ -3867,13 +3867,14 @@ Array [
                     height={480}
                     width={854}
                   >
-                    <iframe
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen={true}
-                      className="c60"
-                      frameBorder="0"
-                      src="https://www.youtube.com/embed/yToHjxhCeYM"
-                    />
+                    <div
+                      className=""
+                    >
+                      <div
+                        className="c60"
+                        id={null}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
