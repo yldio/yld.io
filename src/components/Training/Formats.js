@@ -35,7 +35,7 @@ const ImageWrapper = styled.div`
   width: 60px;
   height: 60px;
   max-width: 100%;
-  padding-bottom: ${({ theme }) => theme.space[2]};
+  margin-bottom: ${({ theme }) => theme.space[2]};
 `;
 
 const BulletPointWrapper = styled.div`
