@@ -1,4 +1,4 @@
-jest.mock('../../../../../src/functions/utils/is-prod', () => true);
+jest.mock('../../../utils/is-prod', () => true);
 
 const mockUploadToContentful = jest.fn(({ name }) => {
   return {
@@ -7,16 +7,13 @@ const mockUploadToContentful = jest.fn(({ name }) => {
   };
 });
 
-jest.mock(
-  '../../../../../src/functions/blogMethods/custom-mdx/upload-image-to-contentful',
-  () => mockUploadToContentful,
-);
+jest.mock('../upload-image-to-contentful', () => mockUploadToContentful);
 
 beforeEach(() => {
   mockUploadToContentful.mockClear();
 });
 
-const TransformImageData = require('../../../../../src/functions/blogMethods/custom-mdx/transform-image-data');
+const TransformImageData = require('../transform-image-data');
 
 const img1 = {
   caption: 'Image 1 caption',

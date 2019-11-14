@@ -1,4 +1,4 @@
-const TransformMetaData = require('../../../../src/functions/blogMethods/transform-meta-data');
+const TransformMetaData = require('../transform-meta-data');
 
 const headerImage = {
   sys: {

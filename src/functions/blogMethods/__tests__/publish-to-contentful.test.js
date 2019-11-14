@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const PublishToContentful = require('../../../../src/functions/blogMethods/publish-to-contentful');
+const PublishToContentful = require('../publish-to-contentful');
 const until = require('async-wait-until');
 
 const originalConsoleInfo = console.info;
