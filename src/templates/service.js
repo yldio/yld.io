@@ -1,23 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
 import SeoLinksContainer from '../components/Common/seoLinksContainer';
 import WorkStages from '../components/Service/WorkStages';
-import { SectionTitle } from '../components/Typography';
-import { Grid, Row, Col } from '../components/grid';
 import GreyBackground from '../components/Common/GreyBackground';
 import BlueBackground from '../components/Common/BlueBackground';
 import Head from '../components/Common/Head';
-import Statement from '../components/Common/Statement';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
-
-const StyledRow = styled(Row)`
-  padding-top: ${({ theme }) => theme.space[7]};
-  padding-bottom: ${({ theme }) => theme.space[6]};
-`;
+import IntroSection from '../components/Service/IntroSection';
 
 const Service = ({
   data: {
@@ -47,6 +39,24 @@ const Service = ({
     },
   ];
 
+  const introBlocks = [
+    {
+      subtitle: service.introBlock1Title,
+      body: service.introBlock1Content,
+      icon: service.introBlock1Icon,
+    },
+    {
+      subtitle: service.introBlock2Title,
+      body: service.introBlock2Content,
+      icon: service.introBlock2Icon,
+    },
+    {
+      subtitle: service.introBlock3Title,
+      body: service.introBlock3Content,
+      icon: service.introBlock3Icon,
+    },
+  ];
+
   const { seoMetaData } = service;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
@@ -66,19 +76,10 @@ const Service = ({
     >
       <Head seoMetaData={seoMetaData} />
 
-      <Grid>
-        <StyledRow>
-          <Col width={[1, 1, 1, 8 / 12]}>
-            <SectionTitle>
-              {service.mainPageIntroSentence.mainPageIntroSentence}
-            </SectionTitle>
-          </Col>
-        </StyledRow>
-      </Grid>
-
-      <Statement>
-        {service.mainPageIntroSentence.mainPageIntroSentence}
-      </Statement>
+      <IntroSection
+        introSentence={service.mainPageIntroSentence.mainPageIntroSentence}
+        introBlocks={introBlocks}
+      />
 
       <BlueBackground>
         <WorkStages
@@ -126,6 +127,27 @@ export const pageQuery = graphql`
       seoMetaDescription
       mainPageIntroSentence {
         mainPageIntroSentence
+      }
+      introBlock1Title
+      introBlock1Content
+      introBlock1Icon {
+        file {
+          url
+        }
+      }
+      introBlock2Title
+      introBlock2Content
+      introBlock2Icon {
+        file {
+          url
+        }
+      }
+      introBlock3Title
+      introBlock3Content
+      introBlock3Icon {
+        file {
+          url
+        }
       }
       relatedCaseStudy {
         ... on Node {
