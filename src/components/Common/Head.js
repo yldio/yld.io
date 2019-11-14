@@ -9,6 +9,7 @@ const TITLE = graphql`
       siteMetadata {
         siteTitle
         image
+        siteUrl
       }
     }
   }
@@ -78,7 +79,7 @@ const Head = ({ page, seoMetaData }) => {
     <StaticQuery
       query={TITLE}
       render={({ site: { siteMetadata } }) => {
-        const { siteTitle } = siteMetadata;
+        const { siteTitle, siteUrl } = siteMetadata;
 
         const { title, description, imageUrl, keywords } = getMetaData({
           page,
@@ -104,7 +105,7 @@ const Head = ({ page, seoMetaData }) => {
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={description} />
                   <meta property="og:site_name" content={siteTitle} />
-                  <meta property="og:url" content={location.href} />
+                  <meta property="og:url" content={location.href || siteUrl} />
 
                   {/* Twitter */}
                   <meta name="twitter:site" content="yldio" />
