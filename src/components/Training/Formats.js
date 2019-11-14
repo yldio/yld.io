@@ -26,19 +26,20 @@ const FormatsRow = styled(Row)`
 `;
 
 const FormatCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
-
-  ${breakpoint('desktop')`
-    padding-bottom: ${({ theme }) => theme.space[0]}
+  ${breakpoint('smallPhone', 'desktop')`
+    padding-bottom: ${({ theme }) => theme.space[4]};
   `};
 `;
 
-const Icon = styled.img`
-  padding-bottom: 2;
+const ImageWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+  padding-bottom: ${({ theme }) => theme.space[2]};
 `;
 
-const Bullets = styled.div`
-  padding-top: 2;
+const BulletPointWrapper = styled.div`
+  padding-top: ${({ theme }) => theme.space[2]};
   max-width: 80%;
 `;
 
@@ -56,23 +57,25 @@ const Formats = ({ formats }) => (
       <FormatsRow>
         {formats.map(format => (
           <FormatCol width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={format.id}>
-            <Icon
-              src={`https://${format.icon.file.url}`}
-              alt={format.icon.title}
-            />
+            <ImageWrapper>
+              <img
+                src={`https://${format.icon.file.url}`}
+                alt={format.icon.title}
+              />
+            </ImageWrapper>
             <Subtitle noPadding reverse>
               {format.title}
             </Subtitle>
             <BodyPrimary muted reverse>
               {format.description}
             </BodyPrimary>
-            <Bullets>
+            <BulletPointWrapper>
               {format.bulletPoints.map((point, idx) => (
                 <CustomisedBulletpoint key={idx} muted reverse>
                   {point}
                 </CustomisedBulletpoint>
               ))}
-            </Bullets>
+            </BulletPointWrapper>
           </FormatCol>
         ))}
       </FormatsRow>
