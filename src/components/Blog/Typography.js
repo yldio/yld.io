@@ -293,6 +293,11 @@ const PostWrapper = styled.div`
     margin-top: ${remcalc(43)};
   }
 
+  iframe {
+    width: 100%;
+    height: 50vh;
+  }
+
   .gist {
     /*
     Remove padding set internally in iframe,

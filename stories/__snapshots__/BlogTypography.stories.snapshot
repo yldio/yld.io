@@ -177,6 +177,11 @@ exports[`Storyshots Blog Components Compound Typography 1`] = `
   margin-top: 2.6875rem;
 }
 
+.c2 iframe {
+  width: 100%;
+  height: 50vh;
+}
+
 .c2 .gist {
   margin-top: -8px;
   margin-bottom: -8px;
@@ -714,6 +719,11 @@ exports[`Storyshots Blog Components Image container 1`] = `
 
 .c2 .figure-image + blockquote {
   margin-top: 2.6875rem;
+}
+
+.c2 iframe {
+  width: 100%;
+  height: 50vh;
 }
 
 .c2 .gist {
@@ -2020,6 +2030,11 @@ exports[`Storyshots Blog Components Typography 1`] = `
 
 .c0 .figure-image + blockquote {
   margin-top: 2.6875rem;
+}
+
+.c0 iframe {
+  width: 100%;
+  height: 50vh;
 }
 
 .c0 .gist {
