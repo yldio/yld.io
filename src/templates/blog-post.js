@@ -10,11 +10,12 @@ import {
   PostIntroMetaData,
   PostOutroMetaData,
 } from '../components/Blog/PostMetaData';
-import FigureImage from '../components/Blog/FigureImage';
-import YouTube from '../components/Blog/YouTube';
 
+import FigureImage from '../components/Blog/FigureImage';
 import Gist from 'react-gist';
+import Instagram from '../components/Blog/Instagram';
 import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
+import YouTube from '../components/Blog/YouTube';
 
 import {
   PostWrapper,
@@ -42,7 +43,13 @@ const components = {
   anchor: A,
   blockquote: Blockquote,
 };
-const shortCodes = { YouTube, Gist, FigureImage, Tweet };
+const shortCodes = {
+  FigureImage,
+  Gist,
+  Instagram,
+  Tweet,
+  YouTube,
+};
 
 const COL_WIDTHS = [1, 1, 1, 10 / 12, 10 / 12, 7 / 12];
 
