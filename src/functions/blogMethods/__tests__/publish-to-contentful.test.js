@@ -45,7 +45,11 @@ describe('given a post that is not in the CMS yet', () => {
     );
 
     expect(createEntryMock).toHaveBeenCalledWith('blogPost', {
-      fields: { slug: { 'en-US': 'post' }, title: { 'en-US': 'Post' } },
+      fields: {
+        publish: { 'en-US': true },
+        slug: { 'en-US': 'post' },
+        title: { 'en-US': 'Post' },
+      },
     });
     expect(publishMock).toHaveBeenCalled();
     expect(publishedAssets).toEqual([await publishMock.mock.results[0].value]);
@@ -84,6 +88,7 @@ describe('given a post that exists in the CMS', () => {
 
     await until(() => updateMock.mock.calls.length === 1);
     expect(asset.fields).toHaveProperty('title', { 'en-US': 'New Post' });
+    expect(asset.fields).not.toHaveProperty('publish');
     const updatedAsset = { ...asset, publish: publishMock };
     resolveUpdate(updatedAsset);
 
