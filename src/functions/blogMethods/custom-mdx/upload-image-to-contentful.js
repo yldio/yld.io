@@ -15,7 +15,7 @@ const uploadImageToContentful = async (
         [LOCALE]: {
           fileName: name,
           upload: src,
-          contentType: mime.lookup(ext),
+          contentType: mime.lookup(ext) || 'image/jpeg',
         },
       },
     },

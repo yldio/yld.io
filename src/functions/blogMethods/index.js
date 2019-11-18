@@ -17,6 +17,10 @@ const client = createClient({
   accessToken: CMS_CRUD,
 });
 
+// When trying out things with the master environment,
+// prefer changing this to enabling prod mode,
+// because prod mode will also enable image / post publishing
+// const environmentName = 'master';
 const environmentName = isProd ? 'master' : 'development';
 
 const syncMediumToContentful = async data => {
