@@ -145,7 +145,7 @@ export const query = graphql`
       }
     }
     allContentfulBlogPost(
-      filter: { content: { content: { ne: null } } }
+      filter: { publish: { eq: true }, content: { content: { ne: null } } }
       sort: { fields: [firstPublishedAt], order: DESC }
       limit: $limit
       skip: $skip

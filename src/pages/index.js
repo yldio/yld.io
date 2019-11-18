@@ -303,6 +303,7 @@ export const query = graphql`
       }
     }
     allContentfulBlogPost(
+      filter: { publish: { eq: true } }
       limit: 3
       sort: { fields: [firstPublishedAt], order: DESC }
     ) {

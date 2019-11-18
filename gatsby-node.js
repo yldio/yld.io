@@ -67,7 +67,10 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allContentfulBlogPost(sort: { fields: [firstPublishedAt], order: DESC }) {
+      allContentfulBlogPost(
+        filter: { publish: { eq: true } }
+        sort: { fields: [firstPublishedAt], order: DESC }
+      ) {
         edges {
           node {
             id
@@ -212,7 +215,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  _.each(result.data.allContentfulBlogPost.edges, post => {
+  _.each(allBlogPosts, post => {
     if (post.node.slug && post.node.content) {
       createPage({
         path: `/blog/${post.node.slug}/`,

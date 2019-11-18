@@ -2,12 +2,12 @@
 const { default: Map } = require('apr-map');
 const { LOCALE } = require('../utils/constants');
 
-const generateContentfulEntryFromPost = (post, keys, locale) =>
+const generateContentfulEntryFromPost = (post, keys) =>
   keys.reduce(
     (acc, curr) => ({
       ...acc,
       [curr]: {
-        [locale]: post[curr],
+        [LOCALE]: post[curr],
       },
     }),
     {},
@@ -28,11 +28,7 @@ const publishToContentful = async (
       }) => slug === post.slug,
     );
 
-    const contentfulPostData = generateContentfulEntryFromPost(
-      post,
-      allFields,
-      LOCALE,
-    );
+    const contentfulPostData = generateContentfulEntryFromPost(post, allFields);
 
     if (asset) {
       console.info(`Updating post: ${post.title}`);
@@ -48,7 +44,12 @@ const publishToContentful = async (
       console.info(`Creating new post: ${post.title} `);
 
       const newAsset = await environment.createEntry('blogPost', {
-        fields: contentfulPostData,
+        fields: {
+          ...contentfulPostData,
+          publish: {
+            [LOCALE]: true,
+          },
+        },
       });
 
       return await newAsset.publish();
