@@ -19,8 +19,12 @@ const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[5]};
 
-  ${breakpoint('desktop')`
+  ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+
+  ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `;
