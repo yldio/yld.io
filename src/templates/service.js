@@ -8,8 +8,8 @@ import WorkStages from '../components/Service/WorkStages';
 import GreyBackground from '../components/Common/GreyBackground';
 import BlueBackground from '../components/Common/BlueBackground';
 import Head from '../components/Common/Head';
-import Statement from '../components/Common/Statement';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import IntroSection from '../components/Service/IntroSection';
 
 const Service = ({
   data: {
@@ -39,6 +39,24 @@ const Service = ({
     },
   ];
 
+  const introBlocks = [
+    {
+      subtitle: service.introBlock1Title,
+      body: service.introBlock1Content,
+      icon: service.introBlock1Icon,
+    },
+    {
+      subtitle: service.introBlock2Title,
+      body: service.introBlock2Content,
+      icon: service.introBlock2Icon,
+    },
+    {
+      subtitle: service.introBlock3Title,
+      body: service.introBlock3Content,
+      icon: service.introBlock3Icon,
+    },
+  ];
+
   const { seoMetaData } = service;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
@@ -58,11 +76,10 @@ const Service = ({
     >
       <Head seoMetaData={seoMetaData} />
 
-      <CaseStudyPreview as="h1" caseStudy={service.caseStudies[0]} />
-
-      <Statement>
-        {service.mainPageIntroSentence.mainPageIntroSentence}
-      </Statement>
+      <IntroSection
+        introSentence={service.mainPageIntroSentence.mainPageIntroSentence}
+        introBlocks={introBlocks}
+      />
 
       <BlueBackground>
         <WorkStages
@@ -111,6 +128,27 @@ export const pageQuery = graphql`
       mainPageIntroSentence {
         mainPageIntroSentence
       }
+      introBlock1Title
+      introBlock1Content
+      introBlock1Icon {
+        file {
+          url
+        }
+      }
+      introBlock2Title
+      introBlock2Content
+      introBlock2Icon {
+        file {
+          url
+        }
+      }
+      introBlock3Title
+      introBlock3Content
+      introBlock3Icon {
+        file {
+          url
+        }
+      }
       relatedCaseStudy {
         ... on Node {
           ... on ContentfulTemplatedCaseStudy {
@@ -146,41 +184,6 @@ export const pageQuery = graphql`
               }
             }
             posterColor
-          }
-        }
-      }
-      caseStudies {
-        ... on Node {
-          ... on ContentfulTemplatedCaseStudy {
-            title
-            slug
-            introSentence {
-              introSentence
-            }
-            posterColor
-            posterImage {
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-              title
-              file {
-                url
-              }
-            }
-          }
-          ... on ContentfulNonTemplatedCaseStudyV2 {
-            title
-            slug
-            intro: introSentence {
-              introSentence
-            }
-            posterColor
-            posterImage {
-              title
-              file {
-                url
-              }
-            }
           }
         }
       }

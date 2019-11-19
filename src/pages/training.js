@@ -2,28 +2,23 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import Statement from '../components/Common/Statement';
-import Approach from '../components/Training/Approach';
+import Formats from '../components/Training/Formats';
 import Courses from '../components/Training/Courses';
 import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
 import Head from '../components/Common/Head';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import IntroSection from '../components/Service/IntroSection';
 
 const TrainingPage = ({
   data: {
     contentfulTrainingPage: content,
+    contentfulService: service,
     site: {
       siteMetadata: { siteUrl },
     },
   },
   location,
 }) => {
-  const trainingApproachesContent = [
-    content.trainingApproachContent1.trainingApproachContent1,
-    content.trainingApproachContent2.trainingApproachContent2,
-    content.trainingApproachContent3.trainingApproachContent3,
-  ];
-
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
       name: 'Training',
@@ -32,6 +27,24 @@ const TrainingPage = ({
     },
   ]);
 
+  const introBlocks = [
+    {
+      subtitle: service.introBlock1Title,
+      body: service.introBlock1Content,
+      icon: service.introBlock1Icon,
+    },
+    {
+      subtitle: service.introBlock2Title,
+      body: service.introBlock2Content,
+      icon: service.introBlock2Icon,
+    },
+    {
+      subtitle: service.introBlock3Title,
+      body: service.introBlock3Content,
+      icon: service.introBlock3Icon,
+    },
+  ];
+
   return (
     <Layout
       slug="training"
@@ -39,14 +52,11 @@ const TrainingPage = ({
       breadcrumbData={breadcrumbData}
     >
       <Head seoMetaData={content.seoMetaData} />
-      <CaseStudyPreview as="h1" caseStudy={content.featuredCaseStudy} />
-      <Statement richText={content.seoText.content[0].content} />
-
-      <Approach
-        title={content.trainingApproachTitle}
-        content={trainingApproachesContent}
-        formats={content.trainingFormats}
+      <IntroSection
+        introSentence={service.mainPageIntroSentence.mainPageIntroSentence}
+        introBlocks={introBlocks}
       />
+      <Formats formats={content.trainingFormats} />{' '}
       <Courses
         categories={content.courseCategories}
         sectionTitle={content.courseSectionTitle}
@@ -101,32 +111,6 @@ export const query = graphql`
           name
         }
       }
-      featuredCaseStudy {
-        id
-        title
-        slug
-        posterImage {
-          title
-          file {
-            url
-          }
-          fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-        }
-        posterColor
-        introSentence {
-          introSentence
-        }
-      }
-      seoText {
-        content {
-          content {
-            value
-            nodeType
-          }
-        }
-      }
       trainingFormats {
         id
         title
@@ -158,6 +142,32 @@ export const query = graphql`
       }
       footerContactUs {
         id
+      }
+    }
+    contentfulService(slug: { eq: "training" }) {
+      mainPageIntroSentence {
+        mainPageIntroSentence
+      }
+      introBlock1Title
+      introBlock1Content
+      introBlock1Icon {
+        file {
+          url
+        }
+      }
+      introBlock2Title
+      introBlock2Content
+      introBlock2Icon {
+        file {
+          url
+        }
+      }
+      introBlock3Title
+      introBlock3Content
+      introBlock3Icon {
+        file {
+          url
+        }
       }
     }
   }
