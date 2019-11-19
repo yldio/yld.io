@@ -1,5 +1,4 @@
 import React from 'react';
-import remcalc from 'remcalc';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import { generate } from 'shortid';
@@ -9,9 +8,10 @@ import { Grid, Row, Col } from '../grid';
 import SeoLinks from './seoLinks';
 
 const StyledLinksColumn = styled.div`
-  padding-top: ${({ theme, index }) => theme.spacing[index === 1 ? 3 : 2]};
-  ${breakpoint('tablet')`
-    padding-top: ${({ index }) => remcalc(index * 72)};
+  padding-top: ${({ theme }) => theme.space[4]};
+  ${breakpoint('desktop')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-right: ${({ theme }) => theme.space[6]};
   `}
 `;
 
@@ -21,14 +21,18 @@ const Wrapper = styled.div`
 
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+
+  ${breakpoint('desktop')`
     padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `;
 
-const SeoLinksColumn = ({ speciality: { title, items } }, index) => (
-  <Col width={[1, 1, 1, 1, 1 / 2, 3 / 12]} key={generate()}>
+const SeoLinksColumn = ({ speciality: { title, items } }) => (
+  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2]} key={generate()}>
     {items && items.length && (
-      <StyledLinksColumn index={index + 1}>
+      <StyledLinksColumn>
         <Subtitle>{title}</Subtitle>
         <SeoLinks items={items} />
       </StyledLinksColumn>
