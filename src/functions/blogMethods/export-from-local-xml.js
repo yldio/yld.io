@@ -1,20 +1,19 @@
 const fs = require('mz/fs');
 const Reduce = require('apr-reduce');
-const Export = require('./src/functions/blogMethods');
+const SyncMediumToContentful = require('.');
 
-module.exports.handler = async () => {
-  // const XmlFileNames = await fs.readdir('./xml/full')
-  const XmlFileNames = ['posts_103_to_112.xml'];
+const exportFromLocalXml = async () => {
+  const XmlFileNames = ['/tmp/posts_a_to_b.xml'];
 
-  // Remove this Reduce, transform all xml posts into one XML string in the same medium schema
+  // TODO remove this Reduce, transform all xml posts into one XML string in the same medium schema
   const XmlData = await Reduce(XmlFileNames, async (sum = [], acc) =>
-    sum.concat(await fs.readFile(`./xml/full/${acc}`)),
+    sum.concat(await fs.readFile(acc)),
   );
 
   let result;
 
   try {
-    result = await Export(XmlData[0]);
+    result = await SyncMediumToContentful(XmlData[0]);
   } catch (error) {
     throw new Error(error);
   }
@@ -24,3 +23,5 @@ module.exports.handler = async () => {
 
   return result;
 };
+
+exportFromLocalXml();

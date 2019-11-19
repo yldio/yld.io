@@ -179,7 +179,7 @@ exports[`Storyshots Blog Components Compound Typography 1`] = `
 
 .c2 iframe {
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .c2 .gist {
@@ -723,7 +723,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
 
 .c2 iframe {
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .c2 .gist {
@@ -2034,7 +2034,7 @@ exports[`Storyshots Blog Components Typography 1`] = `
 
 .c0 iframe {
   width: 100%;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .c0 .gist {
