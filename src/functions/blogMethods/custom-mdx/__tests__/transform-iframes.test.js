@@ -30,6 +30,23 @@ it('replaces gist links with Gist components', async () => {
   expect(content).toBe(expected);
 });
 
+it('replaces instagram links with Instagram components', async () => {
+  const post = {
+    content: `<iframecontent:"https://medium.com/media/medium_id/href">`,
+  };
+
+  const expected = `<Instagram postId="https://www.instagram.com/p/insta_id/?taken-by=insta_user" />`;
+
+  Got.mockResolvedValueOnce({
+    url: 'https://www.instagram.com/p/insta_id/?taken-by=insta_user',
+  });
+
+  const { content } = await TransformIframes(post);
+
+  expect(Got).toHaveBeenCalledWith('https://medium.com/media/medium_id/href');
+  expect(content).toBe(expected);
+});
+
 it('replaces youtube links with YouTube components', async () => {
   const post = {
     content: `<iframecontent:"https://medium.com/media/medium_id/href">`,

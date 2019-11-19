@@ -1,9 +1,8 @@
 const Got = require('got');
 
 const gistBuilder = id => `<Gist id="${id}" />`;
-
-const youtubeVideoBuilder = id => `<YouTube videoId="${id}" />`;
-
+const instagramPostBuilder = url => `<Instagram postId="${url}" />`;
+const youtubeVideoBuilder = url => `<YouTube videoId="${url}" />`;
 const genericIframeBuilder = link => `<iframe src="${link}" />`;
 
 const findOccurrences = str => {
@@ -33,6 +32,15 @@ const getIframeContent = async url => {
       return {
         type: 'gist',
         id: gistId,
+      };
+    }
+
+    case 'instagr.am':
+    case 'instagram.com':
+    case 'www.instagram.com': {
+      return {
+        type: 'instagram',
+        id: String(forwardedUrl),
       };
     }
 
@@ -68,6 +76,12 @@ const transformIframes = async post => {
             processedMarkdown = processedMarkdown.replace(
               chunk,
               gistBuilder(id),
+            );
+            break;
+          case 'instagram':
+            processedMarkdown = processedMarkdown.replace(
+              chunk,
+              instagramPostBuilder(id),
             );
             break;
           case 'youtube':

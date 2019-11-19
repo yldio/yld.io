@@ -295,7 +295,7 @@ const PostWrapper = styled.div`
 
   iframe {
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .gist {
