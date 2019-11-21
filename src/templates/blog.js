@@ -12,8 +12,8 @@ import Head from '../components/Common/Head';
 import { Grid, Row, Col } from '../components/grid';
 import { SectionTitle, DisplayTitle } from '../components/Typography';
 import Hr from '../components/Common/Hr';
-import StyledLink from '../components/Common/StyledLink';
 import GreyBackground from '../components/Common/GreyBackground';
+import Pagination from '../components/Blog/Pagination';
 
 const blogPageMeta = {
   title: 'Blog | YLD',
@@ -68,17 +68,6 @@ const BlogPage = ({
       position: 2,
     },
   ]);
-  const { numberOfPages, currentPage } = pageContext;
-
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numberOfPages;
-
-  const prevPagePath =
-    currentPage - 1 === 1 ? `` : `page/${(currentPage - 1).toString()}/`;
-  const nextPagePath = `page/${(currentPage + 1).toString()}/`;
-
-  const prevPageLink = isFirst ? null : `/blog/${prevPagePath}`;
-  const nextPageLink = isLast ? null : `/blog/${nextPagePath}`;
 
   return (
     <Layout breadcrumbData={breadcrumbData}>
@@ -119,18 +108,7 @@ const BlogPage = ({
               );
             })}
 
-          <Row style={{ justifyContent: 'space-between' }} block={false}>
-            <Col>
-              {prevPageLink && (
-                <StyledLink to={prevPageLink}>Previous Page</StyledLink>
-              )}
-            </Col>
-            <Col>
-              {nextPageLink && (
-                <StyledLink to={nextPageLink}>Next Page</StyledLink>
-              )}
-            </Col>
-          </Row>
+          <Pagination {...pageContext} />
         </Grid>
       </GreyBackground>
     </Layout>
