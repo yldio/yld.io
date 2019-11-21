@@ -88,7 +88,6 @@ describe('given a post that exists in the CMS', () => {
 
     await until(() => updateMock.mock.calls.length === 1);
     expect(asset.fields).toHaveProperty('title', { 'en-US': 'New Post' });
-    expect(asset.fields).not.toHaveProperty('publish');
     const updatedAsset = { ...asset, publish: publishMock };
     resolveUpdate(updatedAsset);
 

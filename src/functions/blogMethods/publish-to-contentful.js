@@ -28,7 +28,10 @@ const publishToContentful = async (
       }) => slug === post.slug,
     );
 
-    const contentfulPostData = generateContentfulEntryFromPost(post, allFields);
+    const contentfulPostData = generateContentfulEntryFromPost(
+      { ...post, publish: true },
+      [...allFields, 'publish'],
+    );
 
     if (asset) {
       console.info(`Updating post: ${post.title}`);
@@ -41,15 +44,10 @@ const publishToContentful = async (
 
       return await updatedAsset.publish();
     } else {
-      console.info(`Creating new post: ${post.title} `);
+      console.info(`Creating new post: ${post.title}`);
 
       const newAsset = await environment.createEntry('blogPost', {
-        fields: {
-          ...contentfulPostData,
-          publish: {
-            [LOCALE]: true,
-          },
-        },
+        fields: contentfulPostData,
       });
 
       return await newAsset.publish();
