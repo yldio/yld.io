@@ -53,12 +53,19 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.md', '.mdx'],
+        // The blog currently has a FigureImage component that does not use remark-images
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+            },
+          },
+          'gatsby-remark-responsive-iframe',
+          'gatsby-remark-smartypants',
+        ],
         plugins: [
           {
-            /**
-             * Because of FigureImage component, this is not
-             * used in the blog currently.
-             */
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 600,

@@ -20,9 +20,9 @@ const Wrapper = styled.figure`
  * NOT used anywhere in the codebase, this component is utilised in the
  * blog post MDX content that is stored in Contentful
  */
-const FigureImage = ({ src, caption }) => (
+const FigureImage = ({ src, alt, caption }) => (
   <Wrapper className="figure-image">
-    <img className="figure-image__img" src={src} alt={caption} />
+    <img className="figure-image__img" src={src} alt={alt} />
     {caption && (
       <ImageCaption className="figure-image__figcaption">
         <ReactMarkdown source={caption} />
