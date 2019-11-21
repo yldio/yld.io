@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const GetContentTypeFields = require('../utils/get-content-type-fields');
 const isProd = require('../utils/is-prod');
+const environmentName = require('../utils/contentful-environment-name');
 const ParseXMLToJSON = require('./parse-xml-to-json');
 const TransformHtmlToMd = require('./transform-html-to-markdown');
 const TransformCustomMDX = require('./custom-mdx');
@@ -16,12 +17,6 @@ const { CMS_CRUD, CONTENTFUL_SPACE } = process.env;
 const client = createClient({
   accessToken: CMS_CRUD,
 });
-
-// When trying out things with the master environment,
-// prefer changing this to enabling prod mode,
-// because prod mode will also enable image / post publishing
-// const environmentName = 'master';
-const environmentName = isProd ? 'master' : 'development';
 
 const syncMediumToContentful = async data => {
   const space = await client.getSpace(CONTENTFUL_SPACE);

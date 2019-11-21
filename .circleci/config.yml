@@ -66,13 +66,21 @@ jobs:
       - run:
           command: 'yarn run test:storyshots'
           name: Storyshots
+  e2e-lambda:
+    <<: *defaults
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: 'yarn run test:e2e:lambda'
+          name: e2e lambda
   testcafe:
     <<: *defaults
     steps:
       - checkout
       - *attach_workspace
       - run:
-          command: 'yarn run test:e2e'
+          command: 'yarn run test:e2e:ui'
           name: Testcafe
       - store_artifacts:
           path: ~/app/artifacts/screenshots
@@ -88,6 +96,9 @@ workflows:
           requires:
             - install
       - lint:
+          requires:
+            - install
+      - e2e-lambda:
           requires:
             - install
       - lighthouse:
