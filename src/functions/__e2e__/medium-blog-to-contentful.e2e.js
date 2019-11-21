@@ -18,15 +18,20 @@ const {
 } = require('../medium-blog-to-contentful');
 
 // Medium nock
-const mediaPathRegex = /\/media\/([0-9a-f]{32})\/href/;
-beforeEach(() => {
+const nockFeed = feed =>
   nock('https://medium.com')
     .get('/feed/yld-blog')
     .reply(
       200,
-      readFileSync(resolve(__dirname, '../__fixtures__/medium-feed.xml')),
+      readFileSync(
+        resolve(__dirname, `../__fixtures__/medium-feed-${feed}.xml`),
+      ),
       { 'content-type': 'text/xml; charset=UTF-8' },
-    )
+    );
+
+const mediaPathRegex = /\/media\/([0-9a-f]{32})\/href/;
+beforeEach(() => {
+  nock('https://medium.com')
     .get(mediaPathRegex)
     .times(Object.keys(mediaRedirects).length)
     .reply(uri => {
@@ -35,9 +40,7 @@ beforeEach(() => {
       return location ? [302, null, { location }] : [404];
     });
 });
-afterAll(() => {
-  nock.cleanAll();
-});
+afterEach(nock.cleanAll);
 
 // Contentful setup / teardown
 const { CMS_CRUD, CONTENTFUL_SPACE } = process.env;
@@ -76,11 +79,10 @@ beforeAll(async () => {
     await Promise.all(
       posts.items.map(
         /* eslint-disable-next-line no-unused-vars */
-        throat(32, async post => {
-          try {
-            // might not be published
+        throat(16, async post => {
+          if (post.isPublished()) {
             post = await post.unpublish();
-          } catch {} /* eslint-disable-line no-empty */
+          }
           post = await post.delete();
         }),
       ),
@@ -93,11 +95,11 @@ beforeAll(async () => {
     await Promise.all(
       assets.items.map(
         /* eslint-disable-next-line no-unused-vars */
-        throat(32, async asset => {
-          try {
+        throat(16, async asset => {
+          if (asset.isPublished()) {
             // might not be published
             asset = await asset.unpublish();
-          } catch {} /* eslint-disable-line no-empty */
+          }
           asset = await asset.delete();
         }),
       ),
@@ -109,7 +111,10 @@ afterAll(async () => {
 });
 
 test('initial sync', async () => {
+  nockFeed('2nd-3rd');
+
   await MediumBlogToContentful({});
+
   const posts = await environment.getEntries({
     limit: 10,
     content_type: 'blogPost',
@@ -118,11 +123,12 @@ test('initial sync', async () => {
   const lambdaPost = posts.items.find(
     post => post.fields.slug['en-US'] === 'reduce-bloat-of-your-lambdas',
   );
-  expect(lambdaPost).not.toBe(undefined);
+  expect(lambdaPost.isPublished()).toBe(true);
+  // additional post to check a different embed type
   const reactGirlsPost = posts.items.find(
     post => post.fields.slug['en-US'] === 'reactjs-girls-the-conference',
   );
-  expect(reactGirlsPost).not.toBe(undefined);
+  expect(reactGirlsPost.isPublished()).toBe(true);
 
   // meta
   expect(lambdaPost).toHaveProperty(
@@ -160,5 +166,61 @@ test('initial sync', async () => {
   // images
   const assets = await environment.getAssets();
   expect(assets.items).toHaveLength(2);
+  const lambdaImage = assets.items.find(
+    item =>
+      item.fields.title['en-US'] ===
+      'reduce-bloat-of-your-lambdas__1*p_IgJZXI_556pWzFg_xKgw.jpeg',
+  );
+  expect(lambdaImage.isPublished()).toBe(true);
 });
-// TODO sync with no changes, sync with further posts, sync with updates
+
+test('sync with partially new posts', async () => {
+  nockFeed('1st-2nd');
+
+  await MediumBlogToContentful({});
+
+  const posts = await environment.getEntries({
+    limit: 10,
+    content_type: 'blogPost',
+  });
+  expect(posts.items).toHaveLength(3);
+  // existing post not republished
+  const lambdaPost = posts.items.find(
+    post => post.fields.slug['en-US'] === 'reduce-bloat-of-your-lambdas',
+  );
+  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 1);
+  // new post
+  const mergerPost = posts.items.find(
+    post =>
+      post.fields.slug['en-US'] === 'yld-announces-a-merger-with-make-us-proud',
+  );
+  expect(mergerPost.isPublished()).toBe(true);
+});
+
+test('sync with updates', async () => {
+  let {
+    items: [lambdaPost],
+  } = await environment.getEntries({
+    limit: 1,
+    content_type: 'blogPost',
+    'fields.slug': 'reduce-bloat-of-your-lambdas',
+  });
+  delete lambdaPost.fields.authorName;
+  lambdaPost = await lambdaPost.update();
+  expect(lambdaPost).not.toHaveProperty('fields.authorName');
+
+  nockFeed('1st-2nd');
+
+  await MediumBlogToContentful({});
+
+  ({
+    items: [lambdaPost],
+  } = await environment.getEntries({
+    limit: 1,
+    content_type: 'blogPost',
+    'fields.slug': 'reduce-bloat-of-your-lambdas',
+  }));
+  expect(lambdaPost).toHaveProperty('fields.authorName');
+  expect(lambdaPost.isPublished()).toBe(true);
+  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 2);
+});
