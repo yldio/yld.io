@@ -9,13 +9,13 @@ import Head from '../components/Common/Head';
 import {
   PostIntroMetaData,
   PostOutroMetaData,
-} from '../components/Blog/PostMetaData';
+} from '../components/Blog/post/PostMetaData';
 
-import FigureImage from '../components/Blog/FigureImage';
+import FigureImage from '../components/Blog/post/FigureImage';
 import Gist from 'react-gist';
-import Instagram from '../components/Blog/Instagram';
+import Instagram from '../components/Blog/post/Instagram';
 import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
-import YouTube from '../components/Blog/YouTube';
+import YouTube from '../components/Blog/post/YouTube';
 
 import {
   PostWrapper,
@@ -28,7 +28,7 @@ import {
   Code,
   A,
   Blockquote,
-} from '../components/Blog/Typography';
+} from '../components/Blog/post/Typography';
 
 const components = {
   h1: H1,

@@ -3,13 +3,13 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from '../src/components/grid';
 
-import { TagGroup } from '../src/components/Blog/Tag';
+import { TagGroup } from '../src/components/Blog/post/Tag';
 
 import {
   PostOutroMetaData,
   PostIntroMetaData,
-} from '../src/components/Blog/PostMetaData';
-import FigureImage from '../src/components/Blog/FigureImage';
+} from '../src/components/Blog/post/PostMetaData';
+import FigureImage from '../src/components/Blog/post/FigureImage';
 import {
   H1,
   H2,
@@ -21,7 +21,7 @@ import {
   Blockquote,
   PostWrapper,
   Tag,
-} from '../src/components/Blog/Typography';
+} from '../src/components/Blog/post/Typography';
 
 import Theme from './theme';
 

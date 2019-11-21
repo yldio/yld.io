@@ -981,7 +981,6 @@ exports[`Storyshots Blog Components Image container 1`] = `
         className="figure-image c5"
       >
         <img
-          alt="We SHOULD only log information that will help identify why a certain event occurs without exposing sensible data."
           className="figure-image__img"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
@@ -1007,7 +1006,6 @@ exports[`Storyshots Blog Components Image container 1`] = `
         className="figure-image c5"
       >
         <img
-          alt="We SHOULD only log information that will help identify why a certain event occurs without exposing sensible data."
           className="figure-image__img"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
@@ -1038,7 +1036,6 @@ exports[`Storyshots Blog Components Image container 1`] = `
         className="figure-image c5"
       >
         <img
-          alt="We SHOULD only log information that will help identify why a certain event occurs without exposing sensible data."
           className="figure-image__img"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
