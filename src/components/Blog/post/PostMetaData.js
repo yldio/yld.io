@@ -3,13 +3,13 @@ import styled, { css } from 'styled-components';
 import { TwitterShareButton, LinkedinShareButton } from 'react-share';
 
 import { PostTitle, Body, PostInfo } from './Typography';
-import Hr from '../Common/Hr';
+import Hr from '../../Common/Hr';
 import Format from 'date-fns/format';
 import { TagGroup } from './Tag';
 
-import twitterIcon from '../../images/twiter-icon.svg';
-import linkedinIcon from '../../images/linkedin-icon.svg';
-import { BodyPrimary } from '../Typography';
+import twitterIcon from '../../../images/twiter-icon.svg';
+import linkedinIcon from '../../../images/linkedin-icon.svg';
+import { BodyPrimary } from '../../Typography';
 
 const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
