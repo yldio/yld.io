@@ -1,50 +1,131 @@
 import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import Theme from './theme';
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview';
+import FeaturedWork from '../src/components/Common/CaseStudyCards/FeaturedWork';
 import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy';
 
-const TrainlineCaseStudy = {
-  title: 'Future-proofing Trainline',
-  slug: 'future-proofing-trainline',
-  services: ['Engineering', 'Design'],
-  posterImage: {
-    fluid: {
-      base64:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC',
-      aspectRatio: 1,
-      src:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50',
-      srcSet:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w',
-      srcWebp:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50&fm=webp',
-      srcSetWebp:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,\n//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w',
-      sizes: '(max-width: 600px) 100vw, 600px',
-    },
-    title: 'Trainline case study featured image ',
-    file: {
-      url:
-        '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png',
-    },
+const economistImage = {
+  fluid: {
+    base64: null,
+    aspectRatio: null,
+    src: null,
+    srcSet: null,
+    srcWebp: null,
+    srcSetWebp: null,
+    sizes: null,
   },
-  posterColor: '051534',
-  introSentence:
-    'We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.',
+  title: 'The Economist case study featured image ',
+  file: {
+    url:
+      'https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250',
+  },
 };
-
-const services = ['Engineering', 'Design', 'Untracked'];
+const TheEconomistCaseStudy = {
+  slug: 'the-economist-creating-a-better-reading-experience',
+  title: 'Migrating The Economist platform',
+  services: ['Engineering'],
+  client: 'The Economist',
+  reverseColor: true,
+  previewImage: economistImage,
+  posterImage: economistImage,
+  posterColor: 'E02A1B',
+  introSentence: {
+    introSentence:
+      'We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.',
+  },
+};
+const trainlineImage = {
+  fluid: {
+    base64: null,
+    aspectRatio: null,
+    src: null,
+    srcSet: null,
+    srcWebp: null,
+    srcSetWebp: null,
+    sizes: null,
+  },
+  title: 'Trainline case study featured image ',
+  file: {
+    url:
+      'https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250',
+  },
+};
+const TrainlineCaseStudy = {
+  slug: 'future-proofing-trainline',
+  title: 'Future-proofing Trainline',
+  services: ['Engineering', 'Training'],
+  client: 'Trainline',
+  reverseColor: true,
+  previewImage: trainlineImage,
+  posterImage: trainlineImage,
+  posterColor: '071a41',
+  introSentence: {
+    introSentence:
+      'We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.',
+  },
+};
+const kingfisherImage = {
+  fluid: {
+    base64: null,
+    aspectRatio: null,
+    src: null,
+    srcSet: null,
+    srcWebp: null,
+    srcSetWebp: null,
+    sizes: null,
+  },
+  title: 'Kingfischer illustration',
+  file: {
+    url:
+      'https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250',
+  },
+};
+const KingfisherCaseStudy = {
+  slug: 'kingfisher-support-scale-adapt',
+  title: 'Kingfisher: support, scale, adapt',
+  services: ['Engineering', 'Training'],
+  client: 'Kingfisher',
+  reverseColor: true,
+  previewImage: kingfisherImage,
+  posterImage: kingfisherImage,
+  posterColor: '1B1A4C',
+  introSentence: {
+    introSentence:
+      'Kingfisher used our Node.js expertise to bring scalability and adaptability to their team; enabling them to quickly build resilient services that can withstand a challenges.',
+  },
+};
+const caseStudies = [
+  TheEconomistCaseStudy,
+  TrainlineCaseStudy,
+  KingfisherCaseStudy,
+];
 
 addDecorator(Theme);
 
 storiesOf('CaseStudy', module)
+  .addDecorator(withKnobs)
   .add('CaseStudyPreview', () => (
     <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
+  ))
+  .add('FeaturedWork', () => (
+    <FeaturedWork
+      limited={boolean(
+        'Limit number of case studies based on screen size',
+        false,
+      )}
+      caseStudies={[...Array(number('Number of case studies', 3)).keys()].map(
+        i => ({
+          ...caseStudies[i % 3],
+          slug: `case-study-${i}`,
+        }),
+      )}
+    />
   ))
   .add('Our Work - CaseStudy', () => (
     <CaseStudy caseStudy={TrainlineCaseStudy} />
   ))
   .add('Our Work - CaseStudy - ServiceList', () => (
-    <ServiceList services={services} />
+    <ServiceList services={TrainlineCaseStudy.services} />
   ));

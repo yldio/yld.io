@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import FeaturedWork from '../components/Common/CaseStudyCards/FeaturedWork';
 import SeoLinksContainer from '../components/Common/seoLinksContainer';
 import WorkStages from '../components/Service/WorkStages';
 import GreyBackground from '../components/Common/GreyBackground';
@@ -93,7 +93,7 @@ const Service = ({
           sectionTitle="We work with"
         />
       </GreyBackground>
-      <CaseStudyPreview isTop={false} caseStudy={service.relatedCaseStudy[0]} />
+      <FeaturedWork limited caseStudies={service.relatedCaseStudy} />
     </Layout>
   );
 };
@@ -157,7 +157,10 @@ export const pageQuery = graphql`
             introSentence {
               introSentence
             }
-            posterImage {
+            client
+            reverseColor
+            posterColor
+            previewImage {
               title
               fluid(maxWidth: 600) {
                 ...GatsbyContentfulFluid_withWebp
@@ -166,15 +169,17 @@ export const pageQuery = graphql`
                 url
               }
             }
-            posterColor
           }
           ... on ContentfulNonTemplatedCaseStudyV2 {
             title
             slug
-            intro: introSentence {
+            introSentence {
               introSentence
             }
-            posterImage {
+            client
+            reverseColor
+            posterColor
+            previewImage {
               title
               fluid(maxWidth: 600) {
                 ...GatsbyContentfulFluid_withWebp
@@ -183,7 +188,6 @@ export const pageQuery = graphql`
                 url
               }
             }
-            posterColor
           }
         }
       }

@@ -594,86 +594,12 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <div
-          className="c6 gatsby-image-wrapper"
-          style={
-            Object {
-              "overflow": "hidden",
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "paddingBottom": "100%",
-                "width": "100%",
-              }
-            }
-          />
-          <img
-            alt=""
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 0,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "transitionDelay": "0.5s",
-                "width": "100%",
-              }
-            }
-          />
-          <picture>
-            <source
-              sizes="(max-width: 600px) 100vw, 600px"
-              srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
-              type="image/webp"
-            />
-            <source
-              sizes="(max-width: 600px) 100vw, 600px"
-              srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
-            />
-            <img
-              alt="Trainline case study featured image "
-              onLoad={[Function]}
-              src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
-              style={
-                Object {
-                  "height": "100%",
-                  "left": 0,
-                  "objectFit": "cover",
-                  "objectPosition": "center",
-                  "opacity": 1,
-                  "position": "absolute",
-                  "top": 0,
-                  "transition": "opacity 0.5s",
-                  "width": "100%",
-                }
-              }
-            />
-          </picture>
-          <noscript
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-              }
-            }
-          />
-        </div>
+        <img
+          alt="Trainline case study featured image "
+          className="c6"
+          src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+          width="100%"
+        />
       </a>
     </div>
     <div
@@ -774,6 +700,670 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 </div>
 `;
 
+exports[`Storyshots CaseStudy FeaturedWork 1`] = `
+.c1 {
+  max-width: calc(100% - 48px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c3 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+}
+
+.c2 {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c8 {
+  width: 100%;
+  height: auto;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+.c10 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+}
+
+.c13 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  color: #fff;
+}
+
+.c14 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .5;
+  padding: 0;
+}
+
+.c12 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #fff;
+  opacity: .5;
+  padding-bottom: 0;
+}
+
+.c15 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background,color;
+  transition-property: background,color;
+}
+
+.c15:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.c15:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c15:focus {
+  background: transparent;
+  outline: 0.25rem solid #65FFCD;
+  color: #333333;
+}
+
+.c15:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c15:active:after {
+  background: #333333;
+}
+
+.c5 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 2.25rem;
+}
+
+.c5 img {
+  max-height: initial;
+}
+
+.c6 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  margin: 1.5rem 0;
+}
+
+.c11 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #E02A1B;
+}
+
+.c16 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #071a41;
+}
+
+.c17 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #1B1A4C;
+}
+
+.c0 {
+  margin-top: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+@media (min-width:29.4375em) {
+  .c1 {
+    max-width: calc(100% - 72px);
+  }
+}
+
+@media (min-width:34.5625em) {
+  .c1 {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:43.8125em) {
+  .c1 {
+    max-width: none;
+  }
+}
+
+@media (min-width:74.8125em) {
+  .c1 {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c1 {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c1 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c3 {
+    padding-left: 1.3125rem;
+    padding-right: 1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (min-width:29.4375rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:34.5625rem) {
+  .c2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width:43.8125rem) {
+  .c2 {
+    margin-left: -1.3125rem;
+    margin-right: -1.3125rem;
+  }
+}
+
+@media screen and (min-width:56.3125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media screen and (min-width:74.8125rem) {
+  .c2 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    padding: 0.8125rem 0 0.6875rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c10 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c13 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    color: #fff;
+  }
+}
+
+@media (min-width:0em) and (max-width:43.75em) {
+  .c5 {
+    grid-template-columns: 1fr;
+  }
+
+  .c5 > * {
+    grid-column: 1;
+  }
+
+  .c5 > hr:first-child {
+    display: none;
+  }
+}
+
+@media (min-width:43.8125em) and (max-width:56.25em) {
+  .c5 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c5 > *:nth-child(10n + 1),
+  .c5 > *:nth-child(10n + 2),
+  .c5 > *:nth-child(10n + 3),
+  .c5 > *:nth-child(10n + 4),
+  .c5 > *:nth-child(10n + 5) {
+    grid-column: 1;
+  }
+
+  .c5 > *:nth-child(10n + 6),
+  .c5 > *:nth-child(10n + 7),
+  .c5 > *:nth-child(10n + 8),
+  .c5 > *:nth-child(10n + 9),
+  .c5 > *:nth-child(10n + 10) {
+    grid-column: 2;
+  }
+
+  .c5 > hr:nth-of-type(1),
+  .c5 > hr:nth-of-type(2) {
+    display: none;
+  }
+
+  .c5 > *:nth-child(10n + 11):nth-last-child(5),
+  .c5 > *:nth-child(10n + 12):nth-last-child(4),
+  .c5 > *:nth-child(10n + 13):nth-last-child(3),
+  .c5 > *:nth-child(10n + 14):nth-last-child(2),
+  .c5 > *:nth-child(10n + 15):nth-last-child(1) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .c5 > *:nth-child(15n + 1),
+  .c5 > *:nth-child(15n + 2),
+  .c5 > *:nth-child(15n + 3),
+  .c5 > *:nth-child(15n + 4),
+  .c5 > *:nth-child(15n + 5) {
+    grid-column: 1;
+  }
+
+  .c5 > *:nth-child(15n + 6),
+  .c5 > *:nth-child(15n + 7),
+  .c5 > *:nth-child(15n + 8),
+  .c5 > *:nth-child(15n + 9),
+  .c5 > *:nth-child(15n + 10) {
+    grid-column: 2;
+  }
+
+  .c5 > *:nth-child(15n + 11),
+  .c5 > *:nth-child(15n + 12),
+  .c5 > *:nth-child(15n + 13),
+  .c5 > *:nth-child(15n + 14),
+  .c5 > *:nth-child(15n + 15) {
+    grid-column: 3;
+  }
+
+  .c5 > hr:nth-of-type(1),
+  .c5 > hr:nth-of-type(2),
+  .c5 > hr:nth-of-type(3) {
+    display: none;
+  }
+
+  .c5 > *:nth-child(15n+16):nth-last-child(10),
+  .c5 > *:nth-child(15n+17):nth-last-child(9),
+  .c5 > *:nth-child(15n+18):nth-last-child(8),
+  .c5 > *:nth-child(15n+19):nth-last-child(7),
+  .c5 > *:nth-child(15n+20):nth-last-child(6),
+  .c5 > *:nth-child(15n+16):nth-last-child(5),
+  .c5 > *:nth-child(15n+17):nth-last-child(4),
+  .c5 > *:nth-child(15n+18):nth-last-child(3),
+  .c5 > *:nth-child(15n+19):nth-last-child(2),
+  .c5 > *:nth-child(15n+20):nth-last-child(1),
+  .c5 > *:nth-child(15n+21):nth-last-child(5),
+  .c5 > *:nth-child(15n+22):nth-last-child(4),
+  .c5 > *:nth-child(15n+23):nth-last-child(3),
+  .c5 > *:nth-child(15n+24):nth-last-child(2),
+  .c5 > *:nth-child(15n+25):nth-last-child(1) {
+    display: none;
+  }
+}
+
+@media (min-width:0em) and (max-width:56.25em) {
+  .c7 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c16 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c17 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    margin-top: 3.375rem;
+    margin-bottom: 3.375rem;
+  }
+}
+
+<section>
+  <div
+    className="c0 c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h2
+          className="c4"
+        >
+          Featured work
+        </h2>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <hr
+        className="c6"
+      />
+      <div
+        className="c7"
+      >
+        <img
+          alt="The Economist case study featured image "
+          className="c8"
+          css={[Function]}
+          src="https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250"
+        />
+        <p
+          className="c9"
+          muted={true}
+        >
+          The Economist
+        </p>
+        <h3
+          className="c10"
+        >
+          Migrating The Economist platform
+        </h3>
+      </div>
+      <div
+        className="c11"
+      >
+        <p
+          className="c12"
+          muted={true}
+        >
+          The Economist
+        </p>
+        <h3
+          className="c13"
+        >
+          Migrating The Economist platform
+        </h3>
+      </div>
+      <p
+        className="c14"
+      >
+        We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.
+      </p>
+      <div>
+        <a
+          className="c15"
+          href="/case-study/case-study-0/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn more
+        </a>
+      </div>
+      <hr
+        className="c6"
+      />
+      <div
+        className="c7"
+      >
+        <img
+          alt="Trainline case study featured image "
+          className="c8"
+          css={[Function]}
+          src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+        />
+        <p
+          className="c9"
+          muted={true}
+        >
+          Trainline
+        </p>
+        <h3
+          className="c10"
+        >
+          Future-proofing Trainline
+        </h3>
+      </div>
+      <div
+        className="c16"
+      >
+        <p
+          className="c12"
+          muted={true}
+        >
+          Trainline
+        </p>
+        <h3
+          className="c13"
+        >
+          Future-proofing Trainline
+        </h3>
+      </div>
+      <p
+        className="c14"
+      >
+        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+      </p>
+      <div>
+        <a
+          className="c15"
+          href="/case-study/case-study-1/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn more
+        </a>
+      </div>
+      <hr
+        className="c6"
+      />
+      <div
+        className="c7"
+      >
+        <img
+          alt="Kingfischer illustration"
+          className="c8"
+          css={[Function]}
+          src="https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250"
+        />
+        <p
+          className="c9"
+          muted={true}
+        >
+          Kingfisher
+        </p>
+        <h3
+          className="c10"
+        >
+          Kingfisher: support, scale, adapt
+        </h3>
+      </div>
+      <div
+        className="c17"
+      >
+        <p
+          className="c12"
+          muted={true}
+        >
+          Kingfisher
+        </p>
+        <h3
+          className="c13"
+        >
+          Kingfisher: support, scale, adapt
+        </h3>
+      </div>
+      <p
+        className="c14"
+      >
+        Kingfisher used our Node.js expertise to bring scalability and adaptability to their team; enabling them to quickly build resilient services that can withstand a challenges.
+      </p>
+      <div>
+        <a
+          className="c15"
+          href="/case-study/case-study-2/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`Storyshots CaseStudy Our Work - CaseStudy - ServiceList 1`] = `
 Array [
   <a
@@ -783,16 +1373,14 @@ Array [
   >
     Engineering
   </a>,
-  " , ",
+  " & ",
   <a
-    href="/design"
+    href="/training"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
-    Design
+    Training
   </a>,
-  " & ",
-  "Untracked",
 ]
 `;
 
@@ -1314,11 +1902,11 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
         </a>
          & 
         <a
-          href="/design"
+          href="/training"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Design
+          Training
         </a>
       </p>
       <a
@@ -1356,86 +1944,11 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <div
-          className="c7 gatsby-image-wrapper"
-          style={
-            Object {
-              "overflow": "hidden",
-              "position": "relative",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "paddingBottom": "100%",
-                "width": "100%",
-              }
-            }
-          />
-          <img
-            alt=""
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAB6VBMVEUEGT0EGDwEGDsEFzoEFzkEFjgEFjcEFTYEFTUEFTQEFDMDFDIDEzEDEzADEi8DEi4DES0FGj4FGT4EFjYDES4FGj8FG0AFGkADEjAFG0EYJX0PIGwPIGsOIGoOH2oNHWMEFzgFHEIpLrUB47wA6r4IpKsDEzIFHEMD3cELvMgEGDoFHUQGyL8IubsSlcsB5r8SI0IkM1AoNlIfLkofLUkFHUUaZcoQEHoRbLAIuL0Sns8LeqEEGTwPIUIaK0oFFzgQIUAEFDQFHkZYfc8tL3hGYb1XZrdaidJUg7hLWnVKWXQUMFcFIEUiM1IYJ0UFHkeZqchocYKdqLGClaRve59+ia2ltM2fsrxVb40MNXMfOVkQI0QiMU4MHDwFH0gpLraSorxfbHzF0dXL1dnc6Onm9PS4y9vH0tjY5OY1t6YDT14NHz8ZKkgGH0kqLrZAlpg0jJM6ua9AnphGrKJXtbxPZ35CW3JFYno2eogiQ14fMlIfMVEfMVA4R2IsPFgtO1cGIEoIpKwFG0IkNlcGIEspL7QMgqULhaYOYZgFHEQaLlAOI0YGIUwHIU8HIE4HH00HH0wGHksGHkoGHUgdMVMfMlMfMVIeMVEeMFAeME8GIU0GH0oFHkgFHUYGIk4GIEwGIk8GI1AGIU6GIVpLAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAB3RJTUUH4wEZDwsueAthEAAAATRJREFUGNNjZGBgRAMMDMyCXN8ZwIDnF4RmYP3HzMvEARH9BRP9y8rMw8SIJsr9g4WZkYWRC2jSEwbpZ7xfQYJfeFg4wEYzMP5neCIDEZV+xsTGwMDCCmT+/6/2ROoz9////59IsbD85mRkZPvK8J/hhsYtGQGwm1i4voNM5GZ8+876mIYwkHmC0YKF9y0v2MnmjIxe27y3g8zlZeFl4IX7JYJR7ZbMszBGFn5bJB9eApqbzjiLMRfd50DMIvxuC8idscuip//N7Xtvc0zjFgNjC9TxjPOipxcytoFEbzL2QLUtCpn360c1VP+sTz8YxC/pb/abARL9+/8PUC3jvD+fhJ9CRL/9gYoyMbHw/ZZ+qXfRd1MGFwsbBzDQBI8wBwJ9/kvgufIlu80M//8yMv77z8QOAHJeb6gXDUlSAAAAAElFTkSuQmCC"
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 0,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "transitionDelay": "0.5s",
-                "width": "100%",
-              }
-            }
-          />
-          <picture>
-            <source
-              sizes="(max-width: 600px) 100vw, 600px"
-              srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w"
-              type="image/webp"
-            />
-            <source
-              sizes="(max-width: 600px) 100vw, 600px"
-              srcSet="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w"
-            />
-            <img
-              alt="Trainline case study featured image "
-              onLoad={[Function]}
-              src="//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50"
-              style={
-                Object {
-                  "height": "100%",
-                  "left": 0,
-                  "objectFit": "cover",
-                  "objectPosition": "center",
-                  "opacity": 1,
-                  "position": "absolute",
-                  "top": 0,
-                  "transition": "opacity 0.5s",
-                  "width": "100%",
-                }
-              }
-            />
-          </picture>
-          <noscript
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<picture><source type='image/webp' srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50&fm=webp 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50&fm=webp 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50&fm=webp 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcSet=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=150&h=150&q=50 150w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=300&h=300&q=50 300w,
-//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=550&h=550&q=50 550w\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img src=\\"//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png?w=600&q=50\\" alt=\\"Trainline case study featured image \\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-              }
-            }
-          />
-        </div>
+        <img
+          alt="Trainline case study featured image "
+          className="c7"
+          src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+        />
       </a>
     </div>
   </div>
@@ -1468,11 +1981,11 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
         </a>
          & 
         <a
-          href="/design"
+          href="/training"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          Design
+          Training
         </a>
       </p>
       <a
