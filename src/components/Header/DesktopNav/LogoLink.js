@@ -15,7 +15,7 @@ const StyledLink = styled(Link)`
   height: ${remcalc(48)};
   width: ${remcalc(48)};
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1000px) {
     height: ${remcalc(54)};
     width: ${remcalc(54)};
   }

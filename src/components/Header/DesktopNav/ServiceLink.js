@@ -9,7 +9,7 @@ const StyledServiceLink = styled(Link)`
   margin-left: ${remcalc(12)};
   color: ${props => props.theme.colors[props.color]};
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1000px) {
     font-size: ${remcalc(30)};
   }
 

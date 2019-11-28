@@ -33,7 +33,7 @@ const MobileNavPanel = styled.nav`
     transform: translateX(0%);
   `};
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `;

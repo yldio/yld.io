@@ -24,7 +24,7 @@ const HamburgerButton = styled(UnstyledButton)`
     ${outlineStyles}
   `}
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1000px) {
     display: none;
   }
 `;
