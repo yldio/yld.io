@@ -24,13 +24,6 @@ const formatCaseStudies = caseStudies =>
     };
   });
 
-const ourWork = {
-  title: 'Our Work',
-  description:
-    "We make work that we’re proud to stand behind and celebrate. That way we’re sure our clients love it from the moment we start collaborating to well after we've left",
-  seoTitle: 'A collection of case studies',
-};
-
 const IntroTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[5]};
 
@@ -51,7 +44,12 @@ const OurWork = ({ data, location }) => {
   const {
     allContentfulNonTemplatedCaseStudyV2,
     allContentfulTemplatedCaseStudy,
-    contentfulOurWork: { caseStudies },
+    contentfulOurWork: {
+      title,
+      description: { description },
+      caseStudies,
+      seoMetaData,
+    },
     site: {
       siteMetadata: { siteUrl },
     },
@@ -92,22 +90,15 @@ const OurWork = ({ data, location }) => {
       footerContactUsId={data.contentfulOurWork.footerContactUs.id}
       breadcrumbData={breadcrumbData}
     >
-      <Head
-        page={{
-          ...page,
-          title: ourWork.title,
-          seoTitle: ourWork.seoTitle,
-          seoMetaDescription: ourWork.description,
-        }}
-      />
+      <Head page={page} seoMetaData={seoMetaData} />
       <Grid>
         <Row>
           <IntroTitleCol width={[1]}>
-            <SectionTitle as="h1">{ourWork.title}</SectionTitle>
+            <SectionTitle as="h1">{title}</SectionTitle>
           </IntroTitleCol>
           <IntroDescriptionCol width={[1, 1, 1, 1, 9 / 12]}>
             <DisplayTitle regular textLight>
-              {ourWork.description}
+              {description}
             </DisplayTitle>
           </IntroDescriptionCol>
         </Row>
@@ -166,6 +157,13 @@ const OurWorkPage = props => (
           }
         }
         contentfulOurWork {
+          title
+          description {
+            description
+          }
+          seoMetaData {
+            ...SEOMetaFields
+          }
           caseStudies {
             ... on ContentfulNonTemplatedCaseStudyV2 {
               id
