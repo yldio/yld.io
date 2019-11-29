@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Formats from '../components/Training/Formats';
 import Courses from '../components/Training/Courses';
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import FeaturedWork from '../components/Common/CaseStudyCards/FeaturedWork';
 import Head from '../components/Common/Head';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import IntroSection from '../components/Service/IntroSection';
@@ -61,7 +61,7 @@ const TrainingPage = ({
         categories={content.courseCategories}
         sectionTitle={content.courseSectionTitle}
       />
-      <CaseStudyPreview isTop={false} caseStudy={content.relatedCaseStudy} />
+      <FeaturedWork limited caseStudies={content.relatedCaseStudies} />
     </Layout>
   );
 };
@@ -123,21 +123,46 @@ export const query = graphql`
           }
         }
       }
-      relatedCaseStudy {
-        title
-        slug
-        posterImage {
-          fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_withWebp
+      relatedCaseStudies {
+        ... on Node {
+          ... on ContentfulTemplatedCaseStudy {
+            title
+            slug
+            introSentence {
+              introSentence
+            }
+            client
+            reverseColor
+            posterColor
+            previewImage {
+              title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              file {
+                url
+              }
+            }
           }
-          title
-          file {
-            url
+          ... on ContentfulNonTemplatedCaseStudyV2 {
+            title
+            slug
+            introSentence {
+              introSentence
+            }
+            client
+            reverseColor
+            posterColor
+            previewImage {
+              title
+              fluid(maxWidth: 600) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+              file {
+                url
+              }
+            }
           }
-        }
-        posterColor
-        introSentence {
-          introSentence
         }
       }
       footerContactUs {
