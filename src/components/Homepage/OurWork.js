@@ -149,14 +149,12 @@ const CaseStudy = ({ caseStudy }) => {
 const MoreWorkLink = styled(StyledLink)`
   font-size: ${remcalc(18)};
   line-height: ${remcalc(30)};
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[4]};
-  margin-top: ${remcalc(10)};
-  margin-bottom: ${remcalc(24)};
+  margin-top: ${({ theme }) => theme.space[4]};
+  margin-bottom: ${({ theme }) => theme.space[5]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[6]};
+    margin-top: ${({ theme }) => theme.space[6]};
+    margin-bottom: ${({ theme }) => theme.space[7]};
   `}
 `;
 
