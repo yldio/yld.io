@@ -1,11 +1,17 @@
 # See https://www.netlify.com/docs/redirects/
-/about.html     /
-/contact.html   /contact/       301
-/newsroom.html  https://medium.com/yld-engineering-blog
-/our-work.html  /engineering/
-/resources.html /
-/team/          /
-/what-we-do.html /engineering/
-/career-framework/ /career-framework/engineering
 
-https://blog.yld.io/* https://www.yld.io/blog/:splat 301!
+# Old site
+/about.html      /about-us/
+/contact.html    /contact/
+/newsroom.html   /blog/
+/our-work.html   /our-work/
+/resources.html  /
+/what-we-do.html /
+
+# Obsolete links
+/community/        /events/
+/team/*            /about-us/
+/career-framework/ /
+
+# Subdomains
+https://blog.yld.io/* https://www.yld.io/blog/:splat
