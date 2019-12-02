@@ -73,11 +73,8 @@ const ModalContent = ({
   return (
     <Layout location={location} breadcrumbData={breadcrumbData}>
       <Head
-        page={{
-          title: `Training - ${course.name}`,
-          seoMetaDescription: course.description.description,
-          keywords: `training ${course.level} ${course.name}`,
-        }}
+        page={{ title: `Training - ${course.name}` }}
+        seoMetaData={course.seoMetaData}
       />
       <Wrapper>
         <Padding top={{ smallPhone: 3 }} bottom={{ smallPhone: 5 }}>
@@ -153,6 +150,9 @@ export const pageQuery = graphql`
       }
       content {
         content
+      }
+      seoMetaData {
+        ...SEOMetaFields
       }
     }
     contentfulTrainingCourseCategory(id: { eq: $categoryId }) {
