@@ -107,7 +107,7 @@ test.each`
   ${'uses-rel-preload'}           | ${1}
   ${'uses-rel-preconnect'}        | ${1 - 0.3}
   ${'total-byte-weight'}          | ${1}
-  ${'offscreen-images'}           | ${1 - 0.75}
+  ${'offscreen-images'}           | ${0.5}
   ${'render-blocking-resources'}  | ${1}
   ${'unminified-css'}             | ${1}
   ${'unminified-javascript'}      | ${1}

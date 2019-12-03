@@ -139,7 +139,7 @@ const CaseStudy = ({ caseStudy }) => {
           </section>
         </CardHeader>
         <CaseStudyImageWrapper backgroundColor={posterColor}>
-          <Image image={alternativePreviewImage} />
+          <Image image={alternativePreviewImage} width="100%" height="100%" />
         </CaseStudyImageWrapper>
       </Card>
     </AnimatedLink>
