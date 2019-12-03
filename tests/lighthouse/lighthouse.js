@@ -71,7 +71,7 @@ test.each([
   'aria-valid-attr',
   'button-name',
   'bypass',
-  // 'color-contrast',
+  // 'color-contrast', // https://trello.com/c/JaJYcxI9/185-card-background-color-contrast-ratio
   'document-title',
   'duplicate-id',
   'html-has-lang',

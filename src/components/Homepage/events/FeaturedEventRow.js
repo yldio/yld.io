@@ -18,7 +18,6 @@ const BackgroundColorGrid = styled(Grid)`
 `;
 
 const InfoInner = styled.section`
-  background-color: #${props => props.color};
   width: 100%;
 `;
 
@@ -104,7 +103,7 @@ const FeaturedEvent = ({ event }) => (
     <IntroRow>
       <Col width={[1, 1, 1, 1, 8 / 12, 7 / 12, 5 / 12]}>
         <SpacedSectionTitle>Events we run</SpacedSectionTitle>
-        <BodyPrimary lightMuted>
+        <BodyPrimary muted>
           We pride ourselves on offering informative, inclusive and fun
           get-togethers for our ever growing tech community.
         </BodyPrimary>
@@ -115,7 +114,7 @@ const FeaturedEvent = ({ event }) => (
         <BackgroundColorGrid bgColor={event.color}>
           <Row>
             <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
-              <InfoInner color={event.color}>
+              <InfoInner>
                 <EventWrapper>
                   <PaddedBodyPrimary muted reverse="true" noPadding>
                     Featured event

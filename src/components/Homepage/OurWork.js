@@ -57,7 +57,6 @@ const CardHeader = styled.header`
     `${theme.space[3]} ${theme.space[6]} ${theme.space[3]} ${theme.space[3]}`};
   flex-grow: 2;
   box-sizing: border-box;
-  background-color: #${({ backgroundColor }) => backgroundColor};
 
   > div {
     max-width: ${remcalc(310)};

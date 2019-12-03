@@ -75,7 +75,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
     <IntroRow>
       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
         <DisplayTitle>Our event types</DisplayTitle>
-        <BodyPrimary lightMuted>
+        <BodyPrimary muted>
           We{"'"}re proud to offer a variety of different YLD-run events, so
           whether you{"'"}re taking your first steps in tech or are a seasoned
           veteran, there{"'"}s something for everyone.
@@ -93,7 +93,7 @@ const Events = ({ featuredEvent, eventTypes }) => (
             <EventCard>
               <EventTypeCopyWrapper>
                 <Subtitle noPadding>{title}</Subtitle>
-                <BodyPrimary lightMuted noPaddingTop>
+                <BodyPrimary muted noPaddingTop>
                   {copy}
                 </BodyPrimary>
               </EventTypeCopyWrapper>

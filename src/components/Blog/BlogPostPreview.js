@@ -10,7 +10,6 @@ import Image from '../Common/Image';
 import Anchor from '../Common/Anchor';
 
 const Author = styled.p`
-  color: ${({ theme }) => theme.colors.textLight};
   display: inline-block;
 
   ${({ href }) => (href ? `text-decoration: underline;` : ``)}
@@ -42,9 +41,11 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   `}
 `;
 
-const AuthorAndDate = styled.div`
+const AuthorAndDate = styled(BodyPrimary).attrs({
+  muted: true,
+  noPadding: true,
+})`
   padding-bottom: ${({ theme }) => theme.space[3]};
-  color: ${({ theme }) => theme.colors.textLight};
 
   ${breakpoint('smallTablet')`
     padding-bottom: 0;
