@@ -964,6 +964,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
       >
         <img
           className="figure-image__img"
+          loading="lazy"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
       </figure>
@@ -982,6 +983,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
       >
         <img
           className="figure-image__img"
+          loading="lazy"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
         <figcaption
@@ -1007,6 +1009,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
       >
         <img
           className="figure-image__img"
+          loading="lazy"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
         <figcaption
@@ -1037,6 +1040,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
       >
         <img
           className="figure-image__img"
+          loading="lazy"
           src="https://miro.medium.com/max/8640/0*v-PhgvOW418Xjpj_"
         />
         <figcaption
