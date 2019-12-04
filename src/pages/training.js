@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Formats from '../components/Training/Formats';
 import Courses from '../components/Training/Courses';
-import FeaturedWork from '../components/Common/CaseStudyCards/FeaturedWork';
+import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
 import Head from '../components/Common/Head';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import IntroSection from '../components/Service/IntroSection';

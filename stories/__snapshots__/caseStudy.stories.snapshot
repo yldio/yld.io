@@ -1,5 +1,450 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots CaseStudy Case Studies 1`] = `
+.c3 {
+  width: 100%;
+  height: auto;
+}
+
+.c5 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+}
+
+.c8 {
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 0 0.8125rem 0;
+  color: #ffffff;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.c4 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  opacity: .7;
+  padding: 0;
+}
+
+.c7 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
+  color: #ffffff;
+  padding-bottom: 0;
+}
+
+.c10 {
+  padding: 0.5rem 0.375rem;
+  margin-top: 0.1875rem;
+  margin-bottom: 1.5rem;
+  margin-left: -0.375rem;
+  line-height: 1.5rem;
+  color: #333333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background,color;
+  transition-property: background,color;
+}
+
+.c10:after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 0.375rem;
+  background: #333333;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.c10:hover {
+  background: #f9f9f9;
+  color: #333333;
+}
+
+.c10:focus {
+  background: transparent;
+  outline: 0.25rem solid #65ffcd;
+  color: #333333;
+}
+
+.c10:active {
+  outline: none;
+  background: #00edbf;
+  color: #333333;
+}
+
+.c10:active:after {
+  background: #333333;
+}
+
+.c0 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 2.25rem;
+}
+
+.c0 img {
+  max-height: initial;
+}
+
+.c1 {
+  height: 0.0625rem;
+  padding: 0 0 1.125rem 0;
+  border: none;
+  margin: 1.0625rem 0 0 0;
+  border-top: 1px solid #e6e6e6;
+  margin: 1.5rem 0;
+}
+
+.c6 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #E02A1B;
+}
+
+.c11 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #071a41;
+}
+
+.c12 {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  background-color: #1B1A4C;
+}
+
+@media (min-width:56.3125em) {
+  .c5 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c8 {
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    padding: 0.75rem 0 0.75rem 0;
+    color: #ffffff;
+  }
+}
+
+@media (min-width:0em) and (max-width:43.75em) {
+  .c0 {
+    grid-template-columns: 1fr;
+  }
+
+  .c0 > * {
+    grid-column: 1;
+  }
+
+  .c0 > hr:first-child {
+    display: none;
+  }
+}
+
+@media (min-width:43.8125em) and (max-width:56.25em) {
+  .c0 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c0 > *:nth-child(10n + 1),
+  .c0 > *:nth-child(10n + 2),
+  .c0 > *:nth-child(10n + 3),
+  .c0 > *:nth-child(10n + 4),
+  .c0 > *:nth-child(10n + 5) {
+    grid-column: 1;
+  }
+
+  .c0 > *:nth-child(10n + 6),
+  .c0 > *:nth-child(10n + 7),
+  .c0 > *:nth-child(10n + 8),
+  .c0 > *:nth-child(10n + 9),
+  .c0 > *:nth-child(10n + 10) {
+    grid-column: 2;
+  }
+
+  .c0 > hr:nth-of-type(1),
+  .c0 > hr:nth-of-type(2) {
+    display: none;
+  }
+
+  .c0 > *:nth-child(10n + 11):nth-last-child(5),
+  .c0 > *:nth-child(10n + 12):nth-last-child(4),
+  .c0 > *:nth-child(10n + 13):nth-last-child(3),
+  .c0 > *:nth-child(10n + 14):nth-last-child(2),
+  .c0 > *:nth-child(10n + 15):nth-last-child(1) {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c0 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .c0 > *:nth-child(15n + 1),
+  .c0 > *:nth-child(15n + 2),
+  .c0 > *:nth-child(15n + 3),
+  .c0 > *:nth-child(15n + 4),
+  .c0 > *:nth-child(15n + 5) {
+    grid-column: 1;
+  }
+
+  .c0 > *:nth-child(15n + 6),
+  .c0 > *:nth-child(15n + 7),
+  .c0 > *:nth-child(15n + 8),
+  .c0 > *:nth-child(15n + 9),
+  .c0 > *:nth-child(15n + 10) {
+    grid-column: 2;
+  }
+
+  .c0 > *:nth-child(15n + 11),
+  .c0 > *:nth-child(15n + 12),
+  .c0 > *:nth-child(15n + 13),
+  .c0 > *:nth-child(15n + 14),
+  .c0 > *:nth-child(15n + 15) {
+    grid-column: 3;
+  }
+
+  .c0 > hr:nth-of-type(1),
+  .c0 > hr:nth-of-type(2),
+  .c0 > hr:nth-of-type(3) {
+    display: none;
+  }
+
+  .c0 > *:nth-child(15n+16):nth-last-child(10),
+  .c0 > *:nth-child(15n+17):nth-last-child(9),
+  .c0 > *:nth-child(15n+18):nth-last-child(8),
+  .c0 > *:nth-child(15n+19):nth-last-child(7),
+  .c0 > *:nth-child(15n+20):nth-last-child(6),
+  .c0 > *:nth-child(15n+16):nth-last-child(5),
+  .c0 > *:nth-child(15n+17):nth-last-child(4),
+  .c0 > *:nth-child(15n+18):nth-last-child(3),
+  .c0 > *:nth-child(15n+19):nth-last-child(2),
+  .c0 > *:nth-child(15n+20):nth-last-child(1),
+  .c0 > *:nth-child(15n+21):nth-last-child(5),
+  .c0 > *:nth-child(15n+22):nth-last-child(4),
+  .c0 > *:nth-child(15n+23):nth-last-child(3),
+  .c0 > *:nth-child(15n+24):nth-last-child(2),
+  .c0 > *:nth-child(15n+25):nth-last-child(1) {
+    display: none;
+  }
+}
+
+@media (min-width:0em) and (max-width:56.25em) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c6 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c11 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c12 {
+    display: none;
+  }
+}
+
+<div
+  className="c0"
+>
+  <hr
+    className="c1"
+  />
+  <div
+    className="c2"
+  >
+    <img
+      alt="The Economist case study featured image "
+      className="c3"
+      css={[Function]}
+      src="https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250"
+    />
+    <p
+      className="c4"
+      muted={true}
+    >
+      The Economist
+    </p>
+    <h3
+      className="c5"
+    >
+      Migrating The Economist platform
+    </h3>
+  </div>
+  <div
+    className="c6"
+  >
+    <p
+      className="c7"
+    >
+      The Economist
+    </p>
+    <h3
+      className="c8"
+    >
+      Migrating The Economist platform
+    </h3>
+  </div>
+  <p
+    className="c9"
+  >
+    We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.
+  </p>
+  <div>
+    <a
+      className="c10"
+      href="/case-study/case-study-0/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Learn more
+    </a>
+  </div>
+  <hr
+    className="c1"
+  />
+  <div
+    className="c2"
+  >
+    <img
+      alt="Trainline case study featured image "
+      className="c3"
+      css={[Function]}
+      src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+    />
+    <p
+      className="c4"
+      muted={true}
+    >
+      Trainline
+    </p>
+    <h3
+      className="c5"
+    >
+      Future-proofing Trainline
+    </h3>
+  </div>
+  <div
+    className="c11"
+  >
+    <p
+      className="c7"
+    >
+      Trainline
+    </p>
+    <h3
+      className="c8"
+    >
+      Future-proofing Trainline
+    </h3>
+  </div>
+  <p
+    className="c9"
+  >
+    We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
+  </p>
+  <div>
+    <a
+      className="c10"
+      href="/case-study/case-study-1/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Learn more
+    </a>
+  </div>
+  <hr
+    className="c1"
+  />
+  <div
+    className="c2"
+  >
+    <img
+      alt="Kingfischer illustration"
+      className="c3"
+      css={[Function]}
+      src="https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250"
+    />
+    <p
+      className="c4"
+      muted={true}
+    >
+      Kingfisher
+    </p>
+    <h3
+      className="c5"
+    >
+      Kingfisher: support, scale, adapt
+    </h3>
+  </div>
+  <div
+    className="c12"
+  >
+    <p
+      className="c7"
+    >
+      Kingfisher
+    </p>
+    <h3
+      className="c8"
+    >
+      Kingfisher: support, scale, adapt
+    </h3>
+  </div>
+  <p
+    className="c9"
+  >
+    Kingfisher used our Node.js expertise to bring scalability and adaptability to their team; enabling them to quickly build resilient services that can withstand a challenges.
+  </p>
+  <div>
+    <a
+      className="c10"
+      href="/case-study/case-study-2/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Learn more
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 .c11 {
   padding-bottom: 0.75rem;
@@ -696,1361 +1141,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
         </a>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots CaseStudy FeaturedWork 1`] = `
-.c1 {
-  max-width: calc(100% - 48px);
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c3 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c8 {
-  width: 100%;
-  height: auto;
-}
-
-.c4 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.625rem;
-  line-height: 1.875rem;
-  padding: 0.75rem 0 0.75rem 0;
-}
-
-.c10 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.6875rem 0 0.8125rem 0;
-}
-
-.c13 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.6875rem 0 0.8125rem 0;
-  color: #ffffff;
-}
-
-.c14 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-}
-
-.c9 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  opacity: .7;
-  padding: 0;
-}
-
-.c12 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  color: #ffffff;
-  padding-bottom: 0;
-}
-
-.c15 {
-  padding: 0.5rem 0.375rem;
-  margin-top: 0.1875rem;
-  margin-bottom: 1.5rem;
-  margin-left: -0.375rem;
-  line-height: 1.5rem;
-  color: #333333;
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  -webkit-transition-property: background,color;
-  transition-property: background,color;
-}
-
-.c15:after {
-  content: '';
-  display: block;
-  height: 0.125rem;
-  width: 100%;
-  margin-top: 0.375rem;
-  background: #333333;
-  box-sizing: border-box;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  -webkit-transition-property: background;
-  transition-property: background;
-}
-
-.c15:hover {
-  background: #f9f9f9;
-  color: #333333;
-}
-
-.c15:focus {
-  background: transparent;
-  outline: 0.25rem solid #65ffcd;
-  color: #333333;
-}
-
-.c15:active {
-  outline: none;
-  background: #00edbf;
-  color: #333333;
-}
-
-.c15:active:after {
-  background: #333333;
-}
-
-.c5 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-column-gap: 2.25rem;
-}
-
-.c5 img {
-  max-height: initial;
-}
-
-.c6 {
-  height: 0.0625rem;
-  padding: 0 0 1.125rem 0;
-  border: none;
-  margin: 1.0625rem 0 0 0;
-  border-top: 1px solid #e6e6e6;
-  margin: 1.5rem 0;
-}
-
-.c11 {
-  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
-  background-color: #E02A1B;
-}
-
-.c16 {
-  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
-  background-color: #071a41;
-}
-
-.c17 {
-  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
-  background-color: #1B1A4C;
-}
-
-.c0 {
-  margin-top: 1.5rem;
-  margin-bottom: 2.25rem;
-}
-
-@media (min-width:29.4375em) {
-  .c1 {
-    max-width: calc(100% - 72px);
-  }
-}
-
-@media (min-width:34.5625em) {
-  .c1 {
-    max-width: 480px;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    max-width: none;
-  }
-}
-
-@media (min-width:74.8125em) {
-  .c1 {
-    max-width: 1100px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c1 {
-    padding-left: 2.625rem;
-    padding-right: 2.625rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c1 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c3 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c3 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c3 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c4 {
-    font-size: 2rem;
-    line-height: 2.25rem;
-    padding: 0.8125rem 0 0.6875rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c10 {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
-    padding: 0.75rem 0 0.75rem 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c13 {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
-    padding: 0.75rem 0 0.75rem 0;
-    color: #ffffff;
-  }
-}
-
-@media (min-width:0em) and (max-width:43.75em) {
-  .c5 {
-    grid-template-columns: 1fr;
-  }
-
-  .c5 > * {
-    grid-column: 1;
-  }
-
-  .c5 > hr:first-child {
-    display: none;
-  }
-}
-
-@media (min-width:43.8125em) and (max-width:56.25em) {
-  .c5 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .c5 > *:nth-child(10n + 1),
-  .c5 > *:nth-child(10n + 2),
-  .c5 > *:nth-child(10n + 3),
-  .c5 > *:nth-child(10n + 4),
-  .c5 > *:nth-child(10n + 5) {
-    grid-column: 1;
-  }
-
-  .c5 > *:nth-child(10n + 6),
-  .c5 > *:nth-child(10n + 7),
-  .c5 > *:nth-child(10n + 8),
-  .c5 > *:nth-child(10n + 9),
-  .c5 > *:nth-child(10n + 10) {
-    grid-column: 2;
-  }
-
-  .c5 > hr:nth-of-type(1),
-  .c5 > hr:nth-of-type(2) {
-    display: none;
-  }
-
-  .c5 > *:nth-child(10n + 11):nth-last-child(5),
-  .c5 > *:nth-child(10n + 12):nth-last-child(4),
-  .c5 > *:nth-child(10n + 13):nth-last-child(3),
-  .c5 > *:nth-child(10n + 14):nth-last-child(2),
-  .c5 > *:nth-child(10n + 15):nth-last-child(1) {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c5 {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .c5 > *:nth-child(15n + 1),
-  .c5 > *:nth-child(15n + 2),
-  .c5 > *:nth-child(15n + 3),
-  .c5 > *:nth-child(15n + 4),
-  .c5 > *:nth-child(15n + 5) {
-    grid-column: 1;
-  }
-
-  .c5 > *:nth-child(15n + 6),
-  .c5 > *:nth-child(15n + 7),
-  .c5 > *:nth-child(15n + 8),
-  .c5 > *:nth-child(15n + 9),
-  .c5 > *:nth-child(15n + 10) {
-    grid-column: 2;
-  }
-
-  .c5 > *:nth-child(15n + 11),
-  .c5 > *:nth-child(15n + 12),
-  .c5 > *:nth-child(15n + 13),
-  .c5 > *:nth-child(15n + 14),
-  .c5 > *:nth-child(15n + 15) {
-    grid-column: 3;
-  }
-
-  .c5 > hr:nth-of-type(1),
-  .c5 > hr:nth-of-type(2),
-  .c5 > hr:nth-of-type(3) {
-    display: none;
-  }
-
-  .c5 > *:nth-child(15n+16):nth-last-child(10),
-  .c5 > *:nth-child(15n+17):nth-last-child(9),
-  .c5 > *:nth-child(15n+18):nth-last-child(8),
-  .c5 > *:nth-child(15n+19):nth-last-child(7),
-  .c5 > *:nth-child(15n+20):nth-last-child(6),
-  .c5 > *:nth-child(15n+16):nth-last-child(5),
-  .c5 > *:nth-child(15n+17):nth-last-child(4),
-  .c5 > *:nth-child(15n+18):nth-last-child(3),
-  .c5 > *:nth-child(15n+19):nth-last-child(2),
-  .c5 > *:nth-child(15n+20):nth-last-child(1),
-  .c5 > *:nth-child(15n+21):nth-last-child(5),
-  .c5 > *:nth-child(15n+22):nth-last-child(4),
-  .c5 > *:nth-child(15n+23):nth-last-child(3),
-  .c5 > *:nth-child(15n+24):nth-last-child(2),
-  .c5 > *:nth-child(15n+25):nth-last-child(1) {
-    display: none;
-  }
-}
-
-@media (min-width:0em) and (max-width:56.25em) {
-  .c7 {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c11 {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c16 {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c17 {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c0 {
-    margin-top: 3.375rem;
-    margin-bottom: 3.375rem;
-  }
-}
-
-<section>
-  <div
-    className="c0 c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <h2
-          className="c4"
-        >
-          Featured work
-        </h2>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
-      <hr
-        className="c6"
-      />
-      <div
-        className="c7"
-      >
-        <img
-          alt="The Economist case study featured image "
-          className="c8"
-          css={[Function]}
-          src="https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250"
-        />
-        <p
-          className="c9"
-          muted={true}
-        >
-          The Economist
-        </p>
-        <h3
-          className="c10"
-        >
-          Migrating The Economist platform
-        </h3>
-      </div>
-      <div
-        className="c11"
-      >
-        <p
-          className="c12"
-        >
-          The Economist
-        </p>
-        <h3
-          className="c13"
-        >
-          Migrating The Economist platform
-        </h3>
-      </div>
-      <p
-        className="c14"
-      >
-        We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.
-      </p>
-      <div>
-        <a
-          className="c15"
-          href="/case-study/case-study-0/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Learn more
-        </a>
-      </div>
-      <hr
-        className="c6"
-      />
-      <div
-        className="c7"
-      >
-        <img
-          alt="Trainline case study featured image "
-          className="c8"
-          css={[Function]}
-          src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
-        />
-        <p
-          className="c9"
-          muted={true}
-        >
-          Trainline
-        </p>
-        <h3
-          className="c10"
-        >
-          Future-proofing Trainline
-        </h3>
-      </div>
-      <div
-        className="c16"
-      >
-        <p
-          className="c12"
-        >
-          Trainline
-        </p>
-        <h3
-          className="c13"
-        >
-          Future-proofing Trainline
-        </h3>
-      </div>
-      <p
-        className="c14"
-      >
-        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-      </p>
-      <div>
-        <a
-          className="c15"
-          href="/case-study/case-study-1/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Learn more
-        </a>
-      </div>
-      <hr
-        className="c6"
-      />
-      <div
-        className="c7"
-      >
-        <img
-          alt="Kingfischer illustration"
-          className="c8"
-          css={[Function]}
-          src="https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250"
-        />
-        <p
-          className="c9"
-          muted={true}
-        >
-          Kingfisher
-        </p>
-        <h3
-          className="c10"
-        >
-          Kingfisher: support, scale, adapt
-        </h3>
-      </div>
-      <div
-        className="c17"
-      >
-        <p
-          className="c12"
-        >
-          Kingfisher
-        </p>
-        <h3
-          className="c13"
-        >
-          Kingfisher: support, scale, adapt
-        </h3>
-      </div>
-      <p
-        className="c14"
-      >
-        Kingfisher used our Node.js expertise to bring scalability and adaptability to their team; enabling them to quickly build resilient services that can withstand a challenges.
-      </p>
-      <div>
-        <a
-          className="c15"
-          href="/case-study/case-study-2/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Learn more
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-`;
-
-exports[`Storyshots CaseStudy Our Work - CaseStudy - ServiceList 1`] = `
-Array [
-  <a
-    href="/engineering"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    Engineering
-  </a>,
-  " & ",
-  <a
-    href="/training"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    Training
-  </a>,
-]
-`;
-
-exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
-.c3 {
-  padding-bottom: 0.75rem;
-}
-
-.c10 {
-  padding-bottom: 0.375rem;
-}
-
-.c6 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c2 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  position: initial;
-  top: 0;
-  left: 0;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c9 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
-  width: 0;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: block;
-}
-
-.c0 {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  margin-left: 0;
-  margin-right: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c7 {
-  width: 100%;
-  height: auto;
-}
-
-.c5 {
-  color: #333333;
-  font-weight: 500;
-  font-size: 1.3125rem;
-  line-height: 1.5rem;
-  padding: 0.6875rem 0 0.8125rem 0;
-}
-
-.c11 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-}
-
-.c4 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  opacity: .7;
-  padding: 0;
-}
-
-.c12 {
-  padding: 0.5rem 0.375rem;
-  margin-top: 0.1875rem;
-  margin-bottom: 1.5rem;
-  margin-left: -0.375rem;
-  line-height: 1.5rem;
-  color: #333333;
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  -webkit-transition-property: background,color;
-  transition-property: background,color;
-}
-
-.c12:after {
-  content: '';
-  display: block;
-  height: 0.125rem;
-  width: 100%;
-  margin-top: 0.375rem;
-  background: #333333;
-  box-sizing: border-box;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  -webkit-transition-property: background;
-  transition-property: background;
-}
-
-.c12:hover {
-  background: #f9f9f9;
-  color: #333333;
-}
-
-.c12:focus {
-  background: transparent;
-  outline: 0.25rem solid #65ffcd;
-  color: #333333;
-}
-
-.c12:active {
-  outline: none;
-  background: #00edbf;
-  color: #333333;
-}
-
-.c12:active:after {
-  background: #333333;
-}
-
-.c8 {
-  display: none;
-}
-
-@media (min-width:43.8125em) {
-  .c3 {
-    padding-bottom: 0;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c10 {
-    padding-bottom: 0.75rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c6 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c6 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c6 {
-    width: 41.66666666666667%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c6 {
-    width: 33.33333333333333%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c6 {
-    width: 33.33333333333333%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c2 {
-    width: 100%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c2 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c9 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c9 {
-    padding-left: 1.3125rem;
-    padding-right: 1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c9 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c9 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c9 {
-    width: 0;
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c9 {
-    width: 58.333333333333336%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c9 {
-    width: 50%;
-    position: initial;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media screen and (min-width:29.4375rem) {
-  .c0 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:34.5625rem) {
-  .c0 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width:43.8125rem) {
-  .c0 {
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
-  }
-}
-
-@media screen and (min-width:56.3125rem) {
-  .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media screen and (min-width:74.8125rem) {
-  .c0 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c5 {
-    font-size: 1.625rem;
-    line-height: 1.875rem;
-    padding: 0.75rem 0 0.75rem 0;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c1 {
-    display: none;
-  }
-}
-
-@media (min-width:43.8125em) {
-  .c8 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: flex-start;
-    -webkit-box-align: flex-start;
-    -ms-flex-align: flex-start;
-    align-items: flex-start;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1 c2"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-      ]
-    }
-  >
-    <div
-      className="c3"
-    >
-      <p
-        className="c4"
-        muted={true}
-      >
-        <a
-          href="/engineering"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Engineering
-        </a>
-         & 
-        <a
-          href="/training"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Training
-        </a>
-      </p>
-      <a
-        href="/case-study/future-proofing-trainline"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <h2
-          className="c5"
-        >
-          Future-proofing Trainline
-        </h2>
-      </a>
-    </div>
-  </div>
-  <div
-    className="c6"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0.4166666666666667,
-        0.3333333333333333,
-        0.3333333333333333,
-      ]
-    }
-  >
-    <div
-      className="c3"
-    >
-      <a
-        href="/case-study/future-proofing-trainline"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <img
-          alt="Trainline case study featured image "
-          className="c7"
-          src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
-        />
-      </a>
-    </div>
-  </div>
-  <div
-    className="c8 c9"
-    width={
-      Array [
-        0,
-        0,
-        0,
-        0,
-        0.5833333333333334,
-        0.5,
-      ]
-    }
-  >
-    <div
-      className="c3"
-    >
-      <p
-        className="c4"
-        muted={true}
-      >
-        <a
-          href="/engineering"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Engineering
-        </a>
-         & 
-        <a
-          href="/training"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Training
-        </a>
-      </p>
-      <a
-        href="/case-study/future-proofing-trainline"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <h2
-          className="c5"
-        >
-          Future-proofing Trainline
-        </h2>
-      </a>
-    </div>
-    <div
-      className="c10"
-    >
-      <p
-        className="c11"
-      >
-        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-      </p>
-    </div>
-    <a
-      aria-label="Learn more about Future-proofing Trainline"
-      className="c12"
-      data-event="learn-more-cta"
-      href="/case-study/future-proofing-trainline"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      title="Learn more about Future-proofing Trainline"
-    >
-      Learn more
-    </a>
-  </div>
-  <div
-    className="c1 c2"
-    width={
-      Array [
-        1,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-      ]
-    }
-  >
-    <div
-      className="c10"
-    >
-      <p
-        className="c11"
-      >
-        We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
-      </p>
-    </div>
-    <a
-      aria-label="Learn more about Future-proofing Trainline"
-      className="c12"
-      data-event="learn-more-cta"
-      href="/case-study/future-proofing-trainline"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      title="Learn more about Future-proofing Trainline"
-    >
-      Learn more
-    </a>
   </div>
 </div>
 `;
