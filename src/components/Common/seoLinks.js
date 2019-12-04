@@ -5,7 +5,9 @@ import { Link } from 'gatsby';
 import { generate } from 'shortid';
 import PagePaths from '../pagePaths';
 
-const List = props => React.createElement(BodyStylised, props);
+const List = styled(BodyStylised)`
+  line-height: 2rem;
+`;
 
 const ListItem = styled.li`
   display: inline-block;

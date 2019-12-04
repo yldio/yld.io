@@ -7,7 +7,7 @@ import prettyFormat from 'pretty-format';
 import launchChromeAndRunLighthouse from './run';
 import mergeLighthouseResults from './merge';
 
-const numRuns = 5;
+const numRuns = 1;
 jest.setTimeout(3 * 60 * 1000);
 
 const resultDir = resolve(__dirname, 'artifacts');
@@ -44,7 +44,6 @@ const ignoredAudits = [
   // binary not passing yet
   'color-contrast',
   'link-text',
-  'tap-targets',
 ];
 afterAll(() => {
   Object.values(result.audits)
@@ -85,10 +84,10 @@ test.each([
   'meta-description',
   'http-status-code',
   'font-size',
-  //'link-text',
+  //'link-text', // https://trello.com/c/uE2jxcMh/186-better-link-text-for-learn-more-etc
   'is-crawlable',
   'robots-txt',
-  //'tap-targets',
+  'tap-targets',
   'hreflang',
   'plugins',
 ])('binary audit %s passes', name => {
