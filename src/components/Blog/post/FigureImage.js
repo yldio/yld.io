@@ -22,7 +22,7 @@ const Wrapper = styled.figure`
  */
 const FigureImage = ({ src, alt, caption }) => (
   <Wrapper className="figure-image">
-    <img className="figure-image__img" src={src} alt={alt} />
+    <img className="figure-image__img" src={src} alt={alt} loading="lazy" />
     {caption && (
       <ImageCaption className="figure-image__figcaption">
         <ReactMarkdown source={caption} />

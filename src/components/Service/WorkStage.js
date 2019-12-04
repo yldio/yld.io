@@ -51,7 +51,11 @@ const WorkStage = ({ workStage }) => {
           <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
             <Padding bottom={1}>
               <IconContainer>
-                <img src={`https://${icon.file.url}`} alt={icon.title} />
+                <img
+                  src={`https://${icon.file.url}`}
+                  alt={icon.title}
+                  loading="lazy"
+                />
               </IconContainer>
             </Padding>
             <Subtitle noPadding reverse>

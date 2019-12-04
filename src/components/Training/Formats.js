@@ -61,6 +61,7 @@ const Formats = ({ formats }) => (
               <img
                 src={`https://${format.icon.file.url}`}
                 alt={format.icon.title}
+                loading="lazy"
               />
             </ImageWrapper>
             <Subtitle noPadding reverse>
