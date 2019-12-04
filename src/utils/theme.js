@@ -59,18 +59,15 @@ export const zIndexes = {
 
 const colorsVariables = {
   darkBlue: '#090329',
-  neonGreen: '#65FFCD',
-  darkBlack: '#1d1d1d',
+  neonGreen: '#65ffcd',
   black: '#333333',
-  darkGrey: '#828282',
+  darkGrey: '#737373',
   lightGrey: '#f9f9f9',
+  white: '#ffffff',
+  // TODO these are not standard, investigate
   grey: '#e6e6e6',
-  white: '#fff',
+  darkBlack: '#1d1d1d',
   opacityWhite: '#848194',
-  mediumGrey: '#757575',
-  tan: '#a08162',
-  regalBlue: '#153d53',
-  mountainMeadow: '#14B48F',
 };
 
 export default {
@@ -98,11 +95,7 @@ export default {
     border: colorsVariables.grey,
     black: colorsVariables.darkBlack,
     text: colorsVariables.black,
-    secondaryText: colorsVariables.mediumGrey,
-    placeholder: colorsVariables.mediumGrey,
-    textLight: colorsVariables.darkGrey,
-    tanBg: colorsVariables.tan,
-    regalBlueBg: colorsVariables.regalBlue,
-    mountainMeadowBg: colorsVariables.mountainMeadow,
+    secondaryText: colorsVariables.darkGrey,
+    placeholder: colorsVariables.darkGrey,
   },
 };

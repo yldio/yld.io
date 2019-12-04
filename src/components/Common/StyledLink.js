@@ -38,7 +38,7 @@ export const StyledLinkCss = css`
     `};
 
     ${is('muted')`
-      background: ${({ theme }) => theme.colors.textLight};
+      background: ${({ theme }) => theme.colors.secondaryText};
     `};
   }
 
@@ -70,7 +70,7 @@ export const StyledLinkCss = css`
   }
 
   ${is('muted')`
-    color: ${({ theme }) => theme.colors.textLight};
+    color: ${({ theme }) => theme.colors.secondaryText};
   `}
 
   ${is('reverse')`

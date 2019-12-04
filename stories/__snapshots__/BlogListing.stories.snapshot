@@ -141,7 +141,7 @@ exports[`Storyshots Blog Listing Blog Listing 1`] = `
 
 .c13:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 

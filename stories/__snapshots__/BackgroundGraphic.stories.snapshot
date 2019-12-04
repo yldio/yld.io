@@ -51,7 +51,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 
 .c0 {
   background: #090329;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c5 {
@@ -72,7 +72,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   font-size: 2rem;
   line-height: 2.25rem;
   padding: 0.8125rem 0 0.6875rem 0;
-  color: #fff;
+  color: #ffffff;
   position: relative;
   top: -71%;
   text-align: center;
@@ -218,7 +218,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
-    color: #fff;
+    color: #ffffff;
   }
 }
 

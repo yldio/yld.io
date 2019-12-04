@@ -110,7 +110,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #757575;
+  color: #737373;
   padding: 0;
 }
 
@@ -151,7 +151,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 
 .c14:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 
@@ -767,7 +767,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   font-size: 1.3125rem;
   line-height: 1.5rem;
   padding: 0.6875rem 0 0.8125rem 0;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c14 {
@@ -794,8 +794,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #fff;
-  opacity: .7;
+  color: #ffffff;
   padding-bottom: 0;
 }
 
@@ -836,7 +835,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
 
 .c15:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 
@@ -1039,7 +1038,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
-    color: #fff;
+    color: #ffffff;
   }
 }
 
@@ -1226,7 +1225,6 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <p
           className="c12"
-          muted={true}
         >
           The Economist
         </p>
@@ -1280,7 +1278,6 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <p
           className="c12"
-          muted={true}
         >
           Trainline
         </p>
@@ -1334,7 +1331,6 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <p
           className="c12"
-          muted={true}
         >
           Kingfisher
         </p>
@@ -1535,7 +1531,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 
 .c12:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 

@@ -62,7 +62,7 @@ exports[`Storyshots Blog Components Compound Typography 1`] = `
 
 .c5 *::selection,
 .c5::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c5 a {
@@ -87,7 +87,7 @@ exports[`Storyshots Blog Components Compound Typography 1`] = `
 }
 
 .c5 code::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c5 strong {
@@ -597,7 +597,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
 
 .c6 *::selection,
 .c6::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c6 a {
@@ -622,7 +622,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
 }
 
 .c6 code::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c6 strong {
@@ -633,7 +633,7 @@ exports[`Storyshots Blog Components Image container 1`] = `
   font-size: 1rem;
   line-height: 1.5rem;
   padding-bottom: 0.75rem;
-  color: #828282;
+  color: #737373;
   text-align: center;
   margin: 0 auto;
 }
@@ -1145,7 +1145,7 @@ exports[`Storyshots Blog Components Meta Data 1`] = `
 
 .c7 *::selection,
 .c7::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c7 a {
@@ -1170,7 +1170,7 @@ exports[`Storyshots Blog Components Meta Data 1`] = `
 }
 
 .c7 code::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c7 strong {
@@ -1187,12 +1187,12 @@ exports[`Storyshots Blog Components Meta Data 1`] = `
   line-height: 1.75rem;
   padding-bottom: 1.5rem;
   padding-top: 0;
-  color: #757575;
+  color: #737373;
 }
 
 .c5 *::selection,
 .c5::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c5 a {
@@ -1217,7 +1217,7 @@ exports[`Storyshots Blog Components Meta Data 1`] = `
 }
 
 .c5 code::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c5 strong {
@@ -1874,7 +1874,7 @@ exports[`Storyshots Blog Components Typography 1`] = `
 
 .c7 {
   font-weight: 400;
-  color: #828282;
+  color: #737373;
   padding: 0.75rem 0 1.5rem;
   font-size: 1.3125rem;
   line-height: 1.875rem;
@@ -1890,7 +1890,7 @@ exports[`Storyshots Blog Components Typography 1`] = `
 
 .c8 *::selection,
 .c8::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c8 a {
@@ -1915,7 +1915,7 @@ exports[`Storyshots Blog Components Typography 1`] = `
 }
 
 .c8 code::selection {
-  background-color: #65FFCD;
+  background-color: #65ffcd;
 }
 
 .c8 strong {
@@ -1945,7 +1945,7 @@ exports[`Storyshots Blog Components Typography 1`] = `
   font-size: 1rem;
   line-height: 1.5rem;
   padding-bottom: 0.75rem;
-  color: #828282;
+  color: #737373;
   text-align: center;
   margin: 0 auto;
 }

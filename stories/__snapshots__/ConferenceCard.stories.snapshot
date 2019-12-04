@@ -185,7 +185,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 
 .c12:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 

@@ -53,7 +53,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
 
 .c0 {
   background: #090329;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c8 {
@@ -72,7 +72,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
   padding: 0;
   height: 3rem;
   overflow: hidden;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.5;
 }
 
@@ -238,7 +238,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
       }
     >
       <a
-        color="#fff"
+        color="#ffffff"
         href="https://www.youtube.com/watch?v=IeuuBKBb4Wg"
         onClick={[Function]}
         opacity={0.5}
@@ -268,7 +268,7 @@ exports[`Storyshots Compact Video Link Dark theme 1`] = `
                 </div>
                 <p
                   className="c9"
-                  color="#fff"
+                  color="#ffffff"
                   opacity={0.5}
                 >
                   Manipulating the Web Audio API with JSX and Custom Renderers - James Wright

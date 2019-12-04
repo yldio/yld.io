@@ -55,7 +55,7 @@ const CaseStudy = ({
     </CaseStudyPoster>
     {/* small screen */}
     <CaseStudyCard backgroundColor={posterColor}>
-      <BodyPrimary noPaddingBottom muted reverse={reverseColor}>
+      <BodyPrimary noPaddingBottom reverse={reverseColor}>
         {client}
       </BodyPrimary>
       <CardTitle reverse={reverseColor}>{title}</CardTitle>

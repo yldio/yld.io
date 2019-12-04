@@ -104,7 +104,7 @@ exports[`Storyshots GetInTouch GetInTouch - Generic 1`] = `
 
 .c7:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 
@@ -547,7 +547,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #757575;
+  color: #737373;
   padding: 0;
 }
 
@@ -675,7 +675,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #757575;
+  color: #737373;
 }
 
 @media (min-width:29.4375em) {

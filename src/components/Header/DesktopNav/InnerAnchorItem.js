@@ -17,7 +17,7 @@ const InnerAnchor = styled(Anchor)`
 
   width: 100%;
   background: ${props => props.theme.colors.greyBg};
-  color: ${props => props.theme.colors.textLight};
+  color: ${props => props.theme.colors.secondaryText};
 
   &:hover,
   &.active {

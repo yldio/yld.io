@@ -40,7 +40,7 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
       <Row>
         <Col width={[1, 1, 1, 10 / 12, 10 / 12, 9 / 12]}>
           {richText ? (
-            <DisplayTitle textLight>
+            <DisplayTitle secondary>
               {richText.map(({ nodeType, data, value, content }) => {
                 if (nodeType === 'text') return value;
 
@@ -71,11 +71,11 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
               renderers={{
                 // eslint-disable-next-line
                 headings: props => (
-                  <StyledDisplayTitle as={as} textLight {...props} />
+                  <StyledDisplayTitle as={as} secondary {...props} />
                 ),
                 // eslint-disable-next-line react/display-name
                 paragraph: props => (
-                  <StyledDisplayTitle as={as} textLight {...props} />
+                  <StyledDisplayTitle as={as} secondary {...props} />
                 ),
               }}
               source={children}

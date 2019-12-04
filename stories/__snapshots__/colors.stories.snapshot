@@ -45,7 +45,7 @@ exports[`Storyshots Colors Colors 1`] = `
     <div
       style={
         Object {
-          "background": "#65FFCD",
+          "background": "#65ffcd",
           "border": "1px solid #444",
           "height": 160,
           "width": 160,
@@ -63,7 +63,7 @@ exports[`Storyshots Colors Colors 1`] = `
       vibrant
     </p>
     <p>
-      #65FFCD
+      #65ffcd
     </p>
   </div>
   <div
@@ -77,7 +77,7 @@ exports[`Storyshots Colors Colors 1`] = `
     <div
       style={
         Object {
-          "background": "#fff",
+          "background": "#ffffff",
           "border": "1px solid #444",
           "height": 160,
           "width": 160,
@@ -95,7 +95,7 @@ exports[`Storyshots Colors Colors 1`] = `
       white
     </p>
     <p>
-      #fff
+      #ffffff
     </p>
   </div>
   <div
@@ -269,7 +269,7 @@ exports[`Storyshots Colors Colors 1`] = `
     <div
       style={
         Object {
-          "background": "#757575",
+          "background": "#737373",
           "border": "1px solid #444",
           "height": 160,
           "width": 160,
@@ -287,7 +287,7 @@ exports[`Storyshots Colors Colors 1`] = `
       secondaryText
     </p>
     <p>
-      #757575
+      #737373
     </p>
   </div>
   <div
@@ -301,7 +301,7 @@ exports[`Storyshots Colors Colors 1`] = `
     <div
       style={
         Object {
-          "background": "#757575",
+          "background": "#737373",
           "border": "1px solid #444",
           "height": 160,
           "width": 160,
@@ -319,135 +319,7 @@ exports[`Storyshots Colors Colors 1`] = `
       placeholder
     </p>
     <p>
-      #757575
-    </p>
-  </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#828282",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      textLight
-    </p>
-    <p>
-      #828282
-    </p>
-  </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#a08162",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      tanBg
-    </p>
-    <p>
-      #a08162
-    </p>
-  </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#153d53",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      regalBlueBg
-    </p>
-    <p>
-      #153d53
-    </p>
-  </div>
-  <div
-    style={
-      Object {
-        "float": "left",
-        "margin": 10,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "background": "#14B48F",
-          "border": "1px solid #444",
-          "height": 160,
-          "width": 160,
-        }
-      }
-    />
-    <p
-      style={
-        Object {
-          "color": "#444",
-          "fontWeight": "bold",
-        }
-      }
-    >
-      mountainMeadowBg
-    </p>
-    <p>
-      #14B48F
+      #737373
     </p>
   </div>
 </div>

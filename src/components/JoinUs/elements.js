@@ -40,7 +40,7 @@ export const TitleAndBody = ({ title, body }) => (
   <Row>
     <Col width={[1, 1, 1, 1, 6 / 12, 6 / 12, 5 / 12]}>
       <DisplayTitle>{title}</DisplayTitle>
-      <BodyPrimary textLight>{body}</BodyPrimary>
+      <BodyPrimary secondary>{body}</BodyPrimary>
     </Col>
   </Row>
 );
