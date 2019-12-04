@@ -1803,7 +1803,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
   font-size: 2rem;
   line-height: 2.25rem;
   padding: 0.8125rem 0 0.6875rem 0;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c10 {
@@ -1812,13 +1812,13 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #fff;
+  color: #ffffff;
   opacity: .7;
 }
 
 .c0 {
   background: #090329;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c11 {
@@ -1835,7 +1835,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
   transition: all 200ms ease-out;
   -webkit-transition-property: background,color;
   transition-property: background,color;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c11:after {
@@ -1850,7 +1850,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
   transition: all 200ms ease-out;
   -webkit-transition-property: background;
   transition-property: background;
-  background: #fff;
+  background: #ffffff;
 }
 
 .c11:hover {
@@ -1860,7 +1860,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
 
 .c11:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
+  outline: 0.25rem solid #65ffcd;
   color: #333333;
 }
 
@@ -1876,13 +1876,13 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
 
 .c11:hover {
   background: #1d1d1d;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c11:focus {
   background: transparent;
-  outline: 0.25rem solid #65FFCD;
-  color: #fff;
+  outline: 0.25rem solid #65ffcd;
+  color: #ffffff;
 }
 
 .c11:active {
@@ -2116,7 +2116,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
-    color: #fff;
+    color: #ffffff;
   }
 }
 

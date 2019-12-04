@@ -34,7 +34,7 @@ const H2 = styled.h2`
 
 const Subtitle = styled.h3`
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.textLight};
+  color: ${({ theme }) => theme.colors.secondaryText};
   padding: ${remcalc(12)} 0 ${remcalc(24)};
 
   font-size: ${remcalc(21)};
@@ -168,7 +168,7 @@ const ImageCaption = styled.figcaption`
   font-size: ${remcalc(16)};
   line-height: ${remcalc(24)};
   padding-bottom: ${remcalc(12)};
-  color: ${({ theme }) => theme.colors.textLight};
+  color: ${({ theme }) => theme.colors.secondaryText};
   text-align: center;
   margin: 0 auto;
 

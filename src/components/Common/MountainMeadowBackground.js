@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export default styled.section`
-  background: ${({ theme }) => theme.colors.mountainMeadowBg};
+  background: #14b48f;
 `;

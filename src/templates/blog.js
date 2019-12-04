@@ -81,7 +81,7 @@ const BlogPage = ({
         <Row>
           <PageDescriptionCol width={[1]}>
             <SectionTitle as="h1">Blog</SectionTitle>
-            <FixedWidthDisplayTitle regular textLight>
+            <FixedWidthDisplayTitle regular secondary>
               {blogPageMeta.description}
             </FixedWidthDisplayTitle>
           </PageDescriptionCol>

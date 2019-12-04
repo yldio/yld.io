@@ -173,7 +173,7 @@ const Contributions = ({
                 contributions={contributions}
                 inView={inView}
               />
-              <StyledBodyPrimary textLight>
+              <StyledBodyPrimary secondary>
                 {descriptionLine1}
                 <br />
                 {descriptionLine2}

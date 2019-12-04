@@ -43,8 +43,8 @@ storiesOf('Typography', module)
 
       <br />
 
-      <code>textLight</code>
-      <DisplayTitle textLight>modifier</DisplayTitle>
+      <code>secondary</code>
+      <DisplayTitle secondary>modifier</DisplayTitle>
 
       <br />
 

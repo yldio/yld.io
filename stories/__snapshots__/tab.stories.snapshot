@@ -139,14 +139,14 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
 @media (min-width:74.8125em) {
   .c2:active,
   .c2:focus {
-    outline: 0.25rem solid #65FFCD;
+    outline: 0.25rem solid #65ffcd;
   }
 }
 
 @media (min-width:74.8125em) {
   .c4:active,
   .c4:focus {
-    outline: 0.25rem solid #65FFCD;
+    outline: 0.25rem solid #65ffcd;
   }
 }
 
@@ -279,7 +279,7 @@ exports[`Storyshots Tabs Single Tab - active 1`] = `
 @media (min-width:74.8125em) {
   .c1:active,
   .c1:focus {
-    outline: 0.25rem solid #65FFCD;
+    outline: 0.25rem solid #65ffcd;
   }
 }
 
@@ -375,7 +375,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
 @media (min-width:74.8125em) {
   .c1:active,
   .c1:focus {
-    outline: 0.25rem solid #65FFCD;
+    outline: 0.25rem solid #65ffcd;
   }
 }
 

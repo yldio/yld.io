@@ -32,7 +32,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
 
 .c0 {
   background: #090329;
-  color: #fff;
+  color: #ffffff;
 }
 
 .c4 {
@@ -41,7 +41,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #fff;
+  color: #ffffff;
   opacity: .7;
   padding-top: 0;
 }
@@ -57,7 +57,7 @@ exports[`Storyshots Subtitle and Body on dark background 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   padding-bottom: 0;
 }

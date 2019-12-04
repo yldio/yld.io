@@ -97,7 +97,7 @@ const OurWork = ({ data, location }) => {
             <SectionTitle as="h1">{title}</SectionTitle>
           </IntroTitleCol>
           <IntroDescriptionCol width={[1, 1, 1, 1, 9 / 12]}>
-            <DisplayTitle regular textLight>
+            <DisplayTitle regular secondary>
               {description}
             </DisplayTitle>
           </IntroDescriptionCol>

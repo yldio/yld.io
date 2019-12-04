@@ -29,7 +29,7 @@ exports[`Storyshots CookieBanner CookieBanner 1`] = `
 }
 
 .c3 {
-  color: #fff;
+  color: #ffffff;
   background-color: #333333;
   font-weight: bold;
   text-align: center;

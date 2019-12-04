@@ -38,7 +38,7 @@ const PosterLinks = ({ project }) => {
           <CardTitle reverse={isDarkPosterColor} noPadding bigger>
             {project.title}
           </CardTitle>
-          <BodyPrimary muted reverse={isDarkPosterColor}>
+          <BodyPrimary reverse={isDarkPosterColor}>
             {project.introSentence.introSentence}
           </BodyPrimary>
         </CardHeader>

@@ -42,7 +42,6 @@ const ignoredAudits = [
   'time-to-first-byte',
   'uses-long-cache-ttl',
   // binary not passing yet
-  'color-contrast',
   'link-text',
 ];
 afterAll(() => {
@@ -70,7 +69,7 @@ test.each([
   'aria-valid-attr',
   'button-name',
   'bypass',
-  // 'color-contrast', // https://trello.com/c/JaJYcxI9/185-card-background-color-contrast-ratio
+  'color-contrast',
   'document-title',
   'duplicate-id',
   'html-has-lang',

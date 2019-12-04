@@ -129,7 +129,7 @@ const CaseStudy = ({ caseStudy }) => {
       <Card width={100} height={130} color={posterColor}>
         <CardHeader backgroundColor={posterColor}>
           <section>
-            <BodyPrimary noPaddingTop="true" reverse={reverseColor} muted>
+            <BodyPrimary noPaddingTop="true" reverse={reverseColor}>
               {client}
             </BodyPrimary>
             <CardTitle reverse={reverseColor} noPaddingTop>

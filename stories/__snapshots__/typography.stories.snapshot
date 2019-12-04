@@ -34,7 +34,7 @@ exports[`Storyshots Typography BodyPrimary 1`] = `
 
 exports[`Storyshots Typography BodyStylised 1`] = `
 .c0 {
-  color: #757575;
+  color: #737373;
   font-family: 'PT Mono',sans-serif;
   font-weight: 400;
   font-size: 0.9375rem;
@@ -163,22 +163,13 @@ exports[`Storyshots Typography Subtitle 1`] = `
 `;
 
 exports[`Storyshots Typography Typography Modifiers 1`] = `
-.c2 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.625rem;
-  line-height: 1.875rem;
-  padding: 0.75rem 0 0.75rem 0;
-  color: #828282;
-}
-
 .c0 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
   line-height: 1.875rem;
   padding: 0.75rem 0 0.75rem 0;
-  color: #757575;
+  color: #737373;
 }
 
 .c1 {
@@ -187,10 +178,10 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   font-size: 1.625rem;
   line-height: 1.875rem;
   padding: 0.75rem 0 0.75rem 0;
-  color: #fff;
+  color: #ffffff;
 }
 
-.c3 {
+.c2 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
@@ -199,7 +190,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   opacity: .7;
 }
 
-.c4 {
+.c3 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
@@ -208,7 +199,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   padding: 0;
 }
 
-.c5 {
+.c4 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
@@ -217,7 +208,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   padding-top: 0;
 }
 
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 400;
   font-size: 1.625rem;
@@ -227,20 +218,11 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c2 {
-    font-size: 2rem;
-    line-height: 2.25rem;
-    padding: 0.8125rem 0 0.6875rem 0;
-    color: #828282;
-  }
-}
-
-@media (min-width:56.3125em) {
   .c0 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
-    color: #757575;
+    color: #737373;
   }
 }
 
@@ -249,12 +231,12 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
-    color: #fff;
+    color: #ffffff;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c3 {
+  .c2 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
@@ -263,7 +245,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c4 {
+  .c3 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
@@ -272,7 +254,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c5 {
+  .c4 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
@@ -281,7 +263,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c6 {
+  .c5 {
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
@@ -323,10 +305,10 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   </div>
   <br />
   <code>
-    textLight
+    secondary
   </code>
   <h2
-    className="c2"
+    className="c0"
   >
     modifier
   </h2>
@@ -335,7 +317,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     muted
   </code>
   <h2
-    className="c3"
+    className="c2"
     muted={true}
   >
     modifier
@@ -345,7 +327,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     noPadding
   </code>
   <h2
-    className="c4"
+    className="c3"
   >
     modifier
   </h2>
@@ -354,7 +336,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     noPaddingTop
   </code>
   <h2
-    className="c5"
+    className="c4"
   >
     modifier
   </h2>
@@ -363,7 +345,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     noPaddingBottom
   </code>
   <h2
-    className="c6"
+    className="c5"
   >
     modifier
   </h2>
