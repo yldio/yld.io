@@ -84,13 +84,13 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
           class="sc-ifAKCX dJZmHe"
         >
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-0"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -147,18 +147,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Nuno is the Co-founder and CEO of YLD Group. Previously he was the Chief Commercial Officer at Nodejitsu, where he was responsible for the world's largest Node.js cloud, providing extensive contributions to the success of Node.js. Nuno's formative work years were spent in the USA at IBM Research and MarkLogic. He is also a proud Stanford alumni.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/nunojob/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -167,13 +167,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Nuno Job Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/dscape"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -182,22 +183,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Nuno Job Twitter"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-1"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -254,18 +256,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Anthony is co-founder of YLD and runs YLD Labs, a subsidiary YLD company that focuses on ventures. He previously worked at Apple and then founded digital product agency, Make Us Proud, now part of YLD. Anthony has experience designing the next generation of digital products, web marketing, and establishing the best Design Systems practises.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/anthony-mann-11251214/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -274,13 +276,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Anthony Mann Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/objectCreate"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -289,22 +292,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Anthony Mann Twitter"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-2"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -361,18 +365,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Tracey is responsible for all financial internal controls and for providing strategic recommendations based on financial analysis and projections, and revenue/ expense analysis. Previously Tracey worked at the Royal Society and the British Safety Council. She is a Stanford alumna.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/tracey-bianchi-maisuria-6568651a/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -381,22 +385,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Tracey Bianchi Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-3"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -453,18 +458,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Carlos oversees the largest function at the company, from the engineering culture to our project deliverables. With 10 years of commercial full-stack engineering experience, Carlos has previously lead engineering at UK Government Digital Services and co-founded his own tech startup.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/carlosvilhena/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -473,13 +478,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Carlos Vilhena Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/carvil_"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -488,22 +494,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Carlos Vilhena Twitter"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-4"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -560,18 +567,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Bradley oversees company operations, client relationships, and the people function of YLD. Previously he managed teams in the technology recruitment world, focussing on cutting-edge technologies and building many highly skilled software engineering teams across London.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/bradleystott/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -580,22 +587,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Bradley Stott Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-5"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -652,19 +660,19 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Annie is responsible for commercial growth and business development at YLD, overseeing how we add value to YLD’s future clients. Before joining YLD, she built global teams, infrastructure and strategy for fast growing businesses within the technology industry. 
 
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/annie-vladev-165617125/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -673,22 +681,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Annie Vladev Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-6"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -745,18 +754,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Greta heads up marketing at YLD, focusing on growth by bringing our client and tech communities together. Previously she worked in marketing and events at technology and non-profit organisations. 
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/gretastrolyte/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -765,13 +774,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Greta Strolyte's LinkedIn"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/gretastarlight"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -780,22 +790,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Greta Strolyte's Twitter"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-7"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -852,18 +863,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Fabio is the CEO of AddCode, a subsidiary YLD company that provides dedicated teams to our clients. A Computer Science graduate with extensive Software Engineering and Pragmatic Analysis experience, Fabio is focused on our Portuguese company’s operations and finance.
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/fanoliveira/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -872,13 +883,14 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Fabio Oliveira Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://twitter.com/fanoliveira"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -887,22 +899,23 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Fabio Oliveira Twitter"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/FdXGFPf4z0iDPYLCKpz8q/8bd04fa7a8818127c239d97c689faa05/twiter-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>
             </div>
           </div>
           <div
-            class="sc-dxgOiQ fzDkea sc-bxivhb dxbGAu"
+            class="sc-ckVGcZ jMpyFF sc-bxivhb dxbGAu"
             data-testid="staff-card-8"
             width="1,1,1,1,0.5,0.3333333333333333"
           >
             <div
-              class="sc-jKJlTe eyKHke gatsby-image-wrapper"
-              style="position: relative; overflow: hidden; width: 100%; height: auto;"
+              class="sc-eNQAEJ lhQPzh gatsby-image-wrapper"
+              style="position: relative; overflow: hidden;"
             >
               <div
                 style="width: 100%; padding-bottom: 100.29850746268657%;"
@@ -959,18 +972,18 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
               </h3>
             </div>
             <p
-              class="sc-kpOJdX kEGNpK"
+              class="sc-dxgOiQ hbmCkh"
             >
               Gareth leads our Professional Services organisation, and ensures our clients receive the right blend of our engineering, design and delivery talent to make them successful. He is a proven technology leader with over 20 years experience delivering user-focussed software solutions for a wide range of enterprise clients, while working for IBM iX, AKQA and Capgemini
             </p>
             <div
-              class="sc-ckVGcZ bGludN"
+              class="sc-jKJlTe fXqLSs"
             >
               <div
-                class="sc-kGXeez hfEiWh"
+                class="sc-kpOJdX dWOKQB"
               >
                 <a
-                  class="sc-kgoBCf fSowWp"
+                  class="sc-kGXeez RalHl"
                   href="https://www.linkedin.com/in/garethscrivens/"
                   imagesize="24"
                   rel="noopener noreferrer"
@@ -979,9 +992,10 @@ exports[`<Teams /> allows the user to change tabs 1`] = `
                 >
                   <img
                     alt="Gareth Scrivens Linkedin"
-                    loading="lazy"
+                    class="sc-kgoBCf cxQzZ"
+                    height="24px"
                     src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-                    style="width: 24px; height: 24px;"
+                    width="24px"
                   />
                 </a>
               </div>

@@ -1,21 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-const Image = ({
-  image,
-  alt,
-  className,
-
-  // used as inline styled to help browser lazy-load
-  width = '100%',
-  height = 'auto',
-
-  ...props
-}) => {
+const Image = ({ image, alt, className, ...props }) => {
   return (image.fluid || {}).src ? (
     <Img
-      loading="lazy"
-      style={{ width, height }}
       alt={alt || image.title}
       fluid={image.fluid}
       className={className}
@@ -23,8 +12,6 @@ const Image = ({
     />
   ) : (
     <img
-      loading="lazy"
-      style={{ width, height }}
       alt={alt || image.title}
       src={(image.file || {}).url}
       className={className}
@@ -33,4 +20,7 @@ const Image = ({
   );
 };
 
-export default Image;
+export default styled(Image)`
+  width: ${props => (props.width ? `${props.width}` : '100%')};
+  height: ${props => (props.height ? `${props.height}` : 'auto')};
+`;

@@ -157,8 +157,6 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
         {illustrationDesktop && (
           <IntroImageDesktop>
             <img
-              loading="lazy"
-              style={{ width: '100%', height: 'auto' }}
               alt="YLD homepage illustration for desktop views"
               src={illustrationDesktop}
             />
@@ -167,8 +165,6 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
         {illustrationMobile && (
           <IntroImageMobile>
             <img
-              loading="lazy"
-              style={{ width: '100%', height: 'auto' }}
               alt="YLD homepage illustration for mobile views"
               src={illustrationMobile}
             />

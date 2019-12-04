@@ -1935,6 +1935,8 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
 
 .c9 {
   width: 100%;
+  height: auto;
+  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
@@ -2165,14 +2167,7 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
               <img
                 alt="Community Support Logo"
                 className="c9"
-                loading="lazy"
                 src="/community_support.svg"
-                style={
-                  Object {
-                    "height": "auto",
-                    "width": "100%",
-                  }
-                }
               />
             </div>
           </div>
@@ -2202,14 +2197,7 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
               <img
                 alt="Community Support Logo"
                 className="c9"
-                loading="lazy"
                 src="/community_support.svg"
-                style={
-                  Object {
-                    "height": "auto",
-                    "width": "100%",
-                  }
-                }
               />
             </div>
           </div>
@@ -2239,14 +2227,7 @@ exports[`Storyshots Title and List (with optional logos) with logos 1`] = `
               <img
                 alt="Community Support Logo"
                 className="c9"
-                loading="lazy"
                 src="/community_support.svg"
-                style={
-                  Object {
-                    "height": "auto",
-                    "width": "100%",
-                  }
-                }
               />
             </div>
           </div>
