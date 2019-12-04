@@ -59,7 +59,6 @@ const SpecialityList = styled(SeoLinks)`
   display: inline-block;
   word-wrap: break-word;
   overflow: hidden;
-  max-height: 60px;
   text-align: justify;
   position: relative;
 `;
