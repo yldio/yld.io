@@ -44,11 +44,6 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   display: flex;
 }
 
-.c6 {
-  width: 100%;
-  height: auto;
-}
-
 .c0 {
   background: #090329;
   color: #fff;
@@ -66,7 +61,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
   transform: translateX(-50%);
 }
 
-.c7 {
+.c6 {
   color: #333333;
   font-weight: 500;
   font-size: 2rem;
@@ -214,7 +209,7 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c7 {
+  .c6 {
     font-size: 2.625rem;
     line-height: 3rem;
     padding: 0.625rem 0 0.5rem 0;
@@ -266,12 +261,18 @@ exports[`Storyshots BackgroundGraphic BackgroundGraphic 1`] = `
         >
           <img
             alt="Background graphic"
-            className="c6"
+            loading="lazy"
             src="//images.ctfassets.net/22g1lenhck4z/5mJBlVfVuMEGsYsUAgasSa/09eee531f2e46e80cf1a4478fc230c52/eng-graphic.svg"
+            style={
+              Object {
+                "height": "auto",
+                "width": "100%",
+              }
+            }
           />
         </div>
         <h2
-          className="c7"
+          className="c6"
         >
           How we work
         </h2>

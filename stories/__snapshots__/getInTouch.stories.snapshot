@@ -471,7 +471,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   display: block;
 }
 
-.c16 {
+.c14 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -493,16 +493,6 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   display: flex;
 }
 
-.c8 {
-  width: 100%;
-  height: auto;
-}
-
-.c15 {
-  width: 24px;
-  height: 24px;
-}
-
 .c4 {
   color: #333333;
   font-weight: 400;
@@ -511,7 +501,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   padding: 0.75rem 0 0.75rem 0;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -521,7 +511,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-weight: 700;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -532,7 +522,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-weight: 700;
 }
 
-.c12 {
+.c11 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -541,7 +531,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   padding: 0;
 }
 
-.c19 {
+.c17 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -551,7 +541,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   padding: 0;
 }
 
-.c18 {
+.c16 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -561,7 +551,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   font-weight: 700;
 }
 
-.c14 {
+.c13 {
   width: 3rem;
   height: 3rem;
   display: -webkit-box;
@@ -578,7 +568,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   align-items: center;
 }
 
-.c14:first-child {
+.c13:first-child {
   margin-left: -0.75rem;
 }
 
@@ -599,7 +589,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   margin-right: 1.5rem;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -632,23 +622,23 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   padding-bottom: 1.5rem;
 }
 
-.c17 {
+.c15 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
-.c20 {
+.c18 {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c20 a {
+.c18 a {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -669,7 +659,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
   justify-content: space-between;
 }
 
-.c21 {
+.c19 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -853,42 +843,42 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c16 {
+  .c14 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c16 {
+  .c14 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c16 {
+  .c14 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c16 {
+  .c14 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c16 {
+  .c14 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c16 {
+  .c14 {
     width: 100%;
     position: initial;
     top: 0;
@@ -897,7 +887,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c16 {
+  .c14 {
     width: 100%;
     position: initial;
     top: 0;
@@ -906,7 +896,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c16 {
+  .c14 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -915,7 +905,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c16 {
+  .c14 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -946,7 +936,7 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c13 {
+  .c12 {
     padding-top: 0;
   }
 }
@@ -1012,39 +1002,39 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c17 {
+  .c15 {
     padding-top: 0;
   }
 }
 
 @media (min-width:74.8125em) {
-  .c17 {
+  .c15 {
     padding-bottom: 0;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c20 > p,
-  .c20 > a {
+  .c18 > p,
+  .c18 > a {
     display: inline;
   }
 }
 
 @media (min-width:0em) and (max-width:34.5em) {
-  .c9 {
+  .c8 {
     width: 100%;
     padding-bottom: 0.75rem;
   }
 }
 
 @media (min-width:56.3125em) {
-  .c9 {
+  .c8 {
     border-right: 1px solid #e6e6e6;
   }
 }
 
 @media (min-width:0em) and (max-width:56.25em) {
-  .c21 {
+  .c19 {
     display: block;
   }
 }
@@ -1087,11 +1077,13 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
         className="c7"
       >
         <div
-          className="c8 gatsby-image-wrapper"
+          className=" gatsby-image-wrapper"
           style={
             Object {
+              "height": "auto",
               "overflow": "hidden",
               "position": "relative",
+              "width": "100%",
             }
           }
         >
@@ -1172,22 +1164,22 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        className="c8"
       >
         <div>
           <h3
-            className="c10"
+            className="c9"
           >
             Nick Osborn
           </h3>
           <h3
-            className="c11"
+            className="c10"
             muted={true}
           >
             Talent Manager
           </h3>
           <a
-            className="c12"
+            className="c11"
             href="mailto:nick@yld.io"
             style={
               Object {
@@ -1199,10 +1191,10 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
           </a>
         </div>
         <div
-          className="c13"
+          className="c12"
         >
           <a
-            className="c14"
+            className="c13"
             href="https://www.linkedin.com/in/osbornnick/"
             imagesize={24}
             onClick={[Function]}
@@ -1212,17 +1204,21 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
           >
             <img
               alt="Nick Osborn LinkedIn"
-              className="c15"
-              height="24px"
+              loading="lazy"
               src="//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg"
-              width="24px"
+              style={
+                Object {
+                  "height": "24px",
+                  "width": "24px",
+                }
+              }
             />
           </a>
         </div>
       </div>
     </div>
     <div
-      className="c16"
+      className="c14"
       style={
         Object {
           "alignSelf": "stretch",
@@ -1240,24 +1236,24 @@ exports[`Storyshots GetInTouch GetInTouch - Profile 1`] = `
       }
     >
       <div
-        className="c17"
+        className="c15"
       >
         <p
-          className="c18"
+          className="c16"
         >
           Why reach out to Nick?
         </p>
         <p
-          className="c19"
+          className="c17"
         >
           Nick oversees our talent requisition, ensuring the YLD has excellent people onboard by brining the right talent to our growing team of expert engineers and designers.
         </p>
       </div>
       <div
-        className="c20"
+        className="c18"
       >
         <p
-          className="c21"
+          className="c19"
         >
           Something else you want to chat about?
         </p>

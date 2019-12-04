@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
-.c11 {
+.c10 {
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   padding-bottom: 0.375rem;
 }
 
-.c12 {
+.c11 {
   padding-top: 0;
 }
 
@@ -63,7 +63,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c8 {
+.c7 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -83,11 +83,6 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   display: block;
 }
 
-.c6 {
-  width: 100%;
-  height: auto;
-}
-
 .c4 {
   color: #333333;
   font-weight: 500;
@@ -96,7 +91,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0.8125rem 0 0.6875rem 0;
 }
 
-.c13 {
+.c12 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -114,7 +109,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   padding: 0;
 }
 
-.c14 {
+.c13 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -130,7 +125,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition-property: background,color;
 }
 
-.c14:after {
+.c13:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -144,28 +139,28 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
   transition-property: background;
 }
 
-.c14:hover {
+.c13:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c14:focus {
+.c13:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c14:active {
+.c13:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c14:active:after {
+.c13:active:after {
   background: #333333;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,7 +184,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c12 {
+  .c11 {
     padding-top: 0.375rem;
   }
 }
@@ -396,42 +391,42 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -440,7 +435,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -449,7 +444,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     width: 50%;
     position: initial;
     top: 0;
@@ -458,7 +453,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     width: 50%;
     position: initial;
     top: 0;
@@ -467,7 +462,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -484,7 +479,7 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c9 {
+  .c8 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -596,14 +591,19 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       >
         <img
           alt="Trainline case study featured image "
-          className="c6"
+          loading="lazy"
           src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
-          width="100%"
+          style={
+            Object {
+              "height": "auto",
+              "width": "100%",
+            }
+          }
         />
       </a>
     </div>
     <div
-      className="c7 c8"
+      className="c6 c7"
       width={
         Array [
           0,
@@ -617,10 +617,10 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       }
     >
       <div
-        className="c9"
+        className="c8"
       >
         <div
-          className="c10"
+          className="c9"
         >
           <p
             className="c3"
@@ -640,18 +640,18 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
           </a>
         </div>
         <div
-          className="c11"
+          className="c10"
         >
           <div
-            className="c12"
+            className="c11"
           >
             <p
-              className="c13"
+              className="c12"
             >
               We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
             </p>
             <a
-              className="c14"
+              className="c13"
               data-event="learn-more-cta"
               href="/case-study/future-proofing-trainline"
               onClick={[Function]}
@@ -677,15 +677,15 @@ exports[`Storyshots CaseStudy CaseStudyPreview 1`] = `
       }
     >
       <div
-        className="c12"
+        className="c11"
       >
         <p
-          className="c13"
+          className="c12"
         >
           We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
         </p>
         <a
-          className="c14"
+          className="c13"
           data-event="learn-more-cta"
           href="/case-study/future-proofing-trainline"
           onClick={[Function]}
@@ -740,11 +740,6 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   display: flex;
 }
 
-.c8 {
-  width: 100%;
-  height: auto;
-}
-
 .c4 {
   color: #333333;
   font-weight: 400;
@@ -753,7 +748,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   padding: 0.75rem 0 0.75rem 0;
 }
 
-.c10 {
+.c9 {
   color: #333333;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -761,7 +756,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   padding: 0.6875rem 0 0.8125rem 0;
 }
 
-.c13 {
+.c12 {
   color: #333333;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -770,7 +765,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   color: #fff;
 }
 
-.c14 {
+.c13 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -778,7 +773,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   padding: 0.75rem 0;
 }
 
-.c9 {
+.c8 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -788,7 +783,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   padding: 0;
 }
 
-.c12 {
+.c11 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -799,7 +794,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   padding-bottom: 0;
 }
 
-.c15 {
+.c14 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -815,7 +810,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   transition-property: background,color;
 }
 
-.c15:after {
+.c14:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -829,24 +824,24 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   transition-property: background;
 }
 
-.c15:hover {
+.c14:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c15:focus {
+.c14:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c15:active {
+.c14:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c15:active:after {
+.c14:active:after {
   background: #333333;
 }
 
@@ -869,17 +864,17 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   margin: 1.5rem 0;
 }
 
-.c11 {
+.c10 {
   padding: 1.5rem 4.5rem 1.5rem 1.5rem;
   background-color: #E02A1B;
 }
 
-.c16 {
+.c15 {
   padding: 1.5rem 4.5rem 1.5rem 1.5rem;
   background-color: #071a41;
 }
 
-.c17 {
+.c16 {
   padding: 1.5rem 4.5rem 1.5rem 1.5rem;
   background-color: #1B1A4C;
 }
@@ -1027,7 +1022,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c10 {
+  .c9 {
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
@@ -1035,7 +1030,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c13 {
+  .c12 {
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
@@ -1153,19 +1148,19 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c11 {
+  .c10 {
+    display: none;
+  }
+}
+
+@media (min-width:56.3125em) {
+  .c15 {
     display: none;
   }
 }
 
 @media (min-width:56.3125em) {
   .c16 {
-    display: none;
-  }
-}
-
-@media (min-width:56.3125em) {
-  .c17 {
     display: none;
   }
 }
@@ -1205,45 +1200,51 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <img
           alt="The Economist case study featured image "
-          className="c8"
           css={[Function]}
+          loading="lazy"
           src="https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250"
+          style={
+            Object {
+              "height": "auto",
+              "width": "100%",
+            }
+          }
         />
         <p
-          className="c9"
+          className="c8"
           muted={true}
         >
           The Economist
         </p>
         <h3
-          className="c10"
+          className="c9"
         >
           Migrating The Economist platform
         </h3>
       </div>
       <div
-        className="c11"
+        className="c10"
       >
         <p
-          className="c12"
+          className="c11"
           muted={true}
         >
           The Economist
         </p>
         <h3
-          className="c13"
+          className="c12"
         >
           Migrating The Economist platform
         </h3>
       </div>
       <p
-        className="c14"
+        className="c13"
       >
         We created a mobile-first, content-led, better reading experience for global digital users, improving the site architecture while delivering a more flexible solution.
       </p>
       <div>
         <a
-          className="c15"
+          className="c14"
           href="/case-study/case-study-0/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1259,45 +1260,51 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <img
           alt="Trainline case study featured image "
-          className="c8"
           css={[Function]}
+          loading="lazy"
           src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+          style={
+            Object {
+              "height": "auto",
+              "width": "100%",
+            }
+          }
         />
         <p
-          className="c9"
+          className="c8"
           muted={true}
         >
           Trainline
         </p>
         <h3
-          className="c10"
+          className="c9"
         >
           Future-proofing Trainline
         </h3>
       </div>
       <div
-        className="c16"
+        className="c15"
       >
         <p
-          className="c12"
+          className="c11"
           muted={true}
         >
           Trainline
         </p>
         <h3
-          className="c13"
+          className="c12"
         >
           Future-proofing Trainline
         </h3>
       </div>
       <p
-        className="c14"
+        className="c13"
       >
         We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
       </p>
       <div>
         <a
-          className="c15"
+          className="c14"
           href="/case-study/case-study-1/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1313,45 +1320,51 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
       >
         <img
           alt="Kingfischer illustration"
-          className="c8"
           css={[Function]}
+          loading="lazy"
           src="https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250"
+          style={
+            Object {
+              "height": "auto",
+              "width": "100%",
+            }
+          }
         />
         <p
-          className="c9"
+          className="c8"
           muted={true}
         >
           Kingfisher
         </p>
         <h3
-          className="c10"
+          className="c9"
         >
           Kingfisher: support, scale, adapt
         </h3>
       </div>
       <div
-        className="c17"
+        className="c16"
       >
         <p
-          className="c12"
+          className="c11"
           muted={true}
         >
           Kingfisher
         </p>
         <h3
-          className="c13"
+          className="c12"
         >
           Kingfisher: support, scale, adapt
         </h3>
       </div>
       <p
-        className="c14"
+        className="c13"
       >
         Kingfisher used our Node.js expertise to bring scalability and adaptability to their team; enabling them to quickly build resilient services that can withstand a challenges.
       </p>
       <div>
         <a
-          className="c15"
+          className="c14"
           href="/case-study/case-study-2/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1389,7 +1402,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   padding-bottom: 0.75rem;
 }
 
-.c10 {
+.c9 {
   padding-bottom: 0.375rem;
 }
 
@@ -1433,7 +1446,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   display: block;
 }
 
-.c9 {
+.c8 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -1467,11 +1480,6 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   display: flex;
 }
 
-.c7 {
-  width: 100%;
-  height: auto;
-}
-
 .c5 {
   color: #333333;
   font-weight: 500;
@@ -1480,7 +1488,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   padding: 0.6875rem 0 0.8125rem 0;
 }
 
-.c11 {
+.c10 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -1498,7 +1506,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   padding: 0;
 }
 
-.c12 {
+.c11 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -1514,7 +1522,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   transition-property: background,color;
 }
 
-.c12:after {
+.c11:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -1528,28 +1536,28 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   transition-property: background;
 }
 
-.c12:hover {
+.c11:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c12:focus {
+.c11:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c12:active {
+.c11:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c12:active:after {
+.c11:active:after {
   background: #333333;
 }
 
-.c8 {
+.c7 {
   display: none;
 }
 
@@ -1560,7 +1568,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c10 {
+  .c9 {
     padding-bottom: 0.75rem;
   }
 }
@@ -1726,42 +1734,42 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c9 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c9 {
+  .c8 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c9 {
+  .c8 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c9 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c9 {
+  .c8 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c9 {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1770,7 +1778,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c9 {
+  .c8 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -1779,7 +1787,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c9 {
+  .c8 {
     width: 58.333333333333336%;
     position: initial;
     top: 0;
@@ -1788,7 +1796,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c9 {
+  .c8 {
     width: 50%;
     position: initial;
     top: 0;
@@ -1846,7 +1854,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c8 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1946,14 +1954,20 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
       >
         <img
           alt="Trainline case study featured image "
-          className="c7"
+          loading="lazy"
           src="https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250"
+          style={
+            Object {
+              "height": "auto",
+              "width": "100%",
+            }
+          }
         />
       </a>
     </div>
   </div>
   <div
-    className="c8 c9"
+    className="c7 c8"
     width={
       Array [
         0,
@@ -2001,17 +2015,17 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
       </a>
     </div>
     <div
-      className="c10"
+      className="c9"
     >
       <p
-        className="c11"
+        className="c10"
       >
         We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
       </p>
     </div>
     <a
       aria-label="Learn more about Future-proofing Trainline"
-      className="c12"
+      className="c11"
       data-event="learn-more-cta"
       href="/case-study/future-proofing-trainline"
       onClick={[Function]}
@@ -2036,17 +2050,17 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
     }
   >
     <div
-      className="c10"
+      className="c9"
     >
       <p
-        className="c11"
+        className="c10"
       >
         We wrapped the platforms in an efficient and scalable Node.js layer, contributing to an enhanced user experience.
       </p>
     </div>
     <a
       aria-label="Learn more about Future-proofing Trainline"
-      className="c12"
+      className="c11"
       data-event="learn-more-cta"
       href="/case-study/future-proofing-trainline"
       onClick={[Function]}

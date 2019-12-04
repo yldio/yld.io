@@ -110,8 +110,6 @@ Array [
 
 .c9 {
   width: 100%;
-  height: auto;
-  width: 100%;
   height: 100%;
   top: 0;
   left: 0;
@@ -339,7 +337,14 @@ Array [
               <img
                 alt="Community Support Logo"
                 className="c9"
+                loading="lazy"
                 src="/community_support.svg"
+                style={
+                  Object {
+                    "height": "auto",
+                    "width": "100%",
+                  }
+                }
               />
             </div>
           </div>
@@ -367,7 +372,14 @@ Array [
               <img
                 alt="Community Support Logo"
                 className="c9"
+                loading="lazy"
                 src="/community_support.svg"
+                style={
+                  Object {
+                    "height": "auto",
+                    "width": "100%",
+                  }
+                }
               />
             </div>
           </div>
@@ -395,7 +407,14 @@ Array [
               <img
                 alt="Community Support Logo"
                 className="c9"
+                loading="lazy"
                 src="/community_support.svg"
+                style={
+                  Object {
+                    "height": "auto",
+                    "width": "100%",
+                  }
+                }
               />
             </div>
           </div>
@@ -473,11 +492,6 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c8 {
-  width: 100%;
-  height: auto;
 }
 
 .c5 {
@@ -839,7 +853,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {
@@ -865,7 +879,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {
@@ -891,7 +905,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {
@@ -917,7 +931,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {
@@ -943,7 +957,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {
@@ -969,7 +983,7 @@ Array [
           >
             <img
               alt="Elife logo"
-              className="c8"
+              loading="lazy"
               src="elife.png"
               style={
                 Object {

@@ -30,7 +30,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   display: block;
 }
 
-.c4 {
+.c3 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -50,7 +50,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   display: block;
 }
 
-.c8 {
+.c7 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -70,7 +70,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   display: block;
 }
 
-.c13 {
+.c12 {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -104,17 +104,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   display: flex;
 }
 
-.c3 {
-  width: 100%;
-  height: auto;
-}
-
-.c14 {
-  width: 100%;
-  height: 100%;
-}
-
-.c6 {
+.c5 {
   color: #333333;
   font-weight: 500;
   font-size: 1.3125rem;
@@ -122,21 +112,12 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   padding: 0.6875rem 0 0.8125rem 0;
 }
 
-.c7 {
+.c6 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-}
-
-.c11 {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.0625rem;
-  line-height: 1.5rem;
-  padding: 0.75rem 0;
-  padding-top: 0;
 }
 
 .c10 {
@@ -145,10 +126,19 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
+  padding-top: 0;
+}
+
+.c9 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  padding: 0.75rem 0;
   padding-bottom: 0;
 }
 
-.c12 {
+.c11 {
   padding: 0.5rem 0.375rem;
   margin-top: 0.1875rem;
   margin-bottom: 1.5rem;
@@ -164,7 +154,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   transition-property: background,color;
 }
 
-.c12:after {
+.c11:after {
   content: '';
   display: block;
   height: 0.125rem;
@@ -178,32 +168,32 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
   transition-property: background;
 }
 
-.c12:hover {
+.c11:hover {
   background: #f9f9f9;
   color: #333333;
 }
 
-.c12:focus {
+.c11:focus {
   background: transparent;
   outline: 0.25rem solid #65FFCD;
   color: #333333;
 }
 
-.c12:active {
+.c11:active {
   outline: none;
   background: #00edbf;
   color: #333333;
 }
 
-.c12:active:after {
+.c11:active:after {
   background: #333333;
 }
 
-.c9 {
+.c8 {
   padding-bottom: 0.75rem;
 }
 
-.c5 {
+.c4 {
   color: #333333;
   font-weight: 400;
   font-size: 1.0625rem;
@@ -354,42 +344,42 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c3 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c4 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -398,7 +388,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c4 {
+  .c3 {
     width: 100%;
     position: initial;
     top: 0;
@@ -407,7 +397,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c4 {
+  .c3 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -416,7 +406,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c4 {
+  .c3 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -425,7 +415,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c4 {
+  .c3 {
     width: 33.33333333333333%;
     position: initial;
     top: 0;
@@ -434,42 +424,42 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c8 {
+  .c7 {
     width: 100%;
     position: initial;
     top: 0;
@@ -478,7 +468,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c8 {
+  .c7 {
     width: 100%;
     position: initial;
     top: 0;
@@ -487,7 +477,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c8 {
+  .c7 {
     width: 58.333333333333336%;
     position: initial;
     top: 0;
@@ -496,7 +486,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c8 {
+  .c7 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -505,7 +495,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c8 {
+  .c7 {
     width: 41.66666666666667%;
     position: initial;
     top: 0;
@@ -514,42 +504,42 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c13 {
+  .c12 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c13 {
+  .c12 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c13 {
+  .c12 {
     padding-left: 1.3125rem;
     padding-right: 1.3125rem;
   }
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c13 {
+  .c12 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c13 {
+  .c12 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media screen and (min-width:29.4375rem) {
-  .c13 {
+  .c12 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -558,7 +548,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:34.5625rem) {
-  .c13 {
+  .c12 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -567,7 +557,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:43.8125rem) {
-  .c13 {
+  .c12 {
     width: 0;
     position: absolute;
     top: -9999px;
@@ -576,7 +566,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:56.3125rem) {
-  .c13 {
+  .c12 {
     width: 25%;
     position: initial;
     top: 0;
@@ -585,7 +575,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media screen and (min-width:74.8125rem) {
-  .c13 {
+  .c12 {
     width: 25%;
     position: initial;
     top: 0;
@@ -629,7 +619,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media (min-width:56.3125em) {
-  .c6 {
+  .c5 {
     font-size: 1.625rem;
     line-height: 1.875rem;
     padding: 0.75rem 0 0.75rem 0;
@@ -637,13 +627,13 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
 }
 
 @media (min-width:43.8125em) {
-  .c9 {
+  .c8 {
     padding-top: 1.5rem;
   }
 }
 
 @media (min-width:43.8125em) {
-  .c5 {
+  .c4 {
     padding-top: 0;
   }
 }
@@ -674,18 +664,17 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       }
     >
       <img
-        className="c3"
+        loading="lazy"
         src="//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg"
         style={
           Object {
             "display": "block",
           }
         }
-        width="100%"
       />
     </div>
     <div
-      className="c4"
+      className="c3"
       width={
         Array [
           1,
@@ -699,24 +688,24 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       }
     >
       <p
-        className="c5"
+        className="c4"
         muted={true}
       >
         Past
       </p>
       <h3
-        className="c6"
+        className="c5"
       >
         ReactJS Girls Conference
       </h3>
       <p
-        className="c7"
+        className="c6"
       >
         May 03, 2019 • London
       </p>
     </div>
     <div
-      className="c8"
+      className="c7"
       width={
         Array [
           1,
@@ -730,15 +719,15 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       }
     >
       <div
-        className="c9"
+        className="c8"
       >
         <p
-          className="c10"
+          className="c9"
         >
           ReactJS Girls is a non-profit community conference for 300 React developers where women take the stage.
         </p>
         <p
-          className="c11"
+          className="c10"
         >
           <a
             href="http://reactjsgirls.com"
@@ -756,7 +745,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       </div>
       <a
         aria-label="Visit the website"
-        className="c12"
+        className="c11"
         href="http://reactjsgirls.com"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -767,7 +756,7 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       </a>
     </div>
     <div
-      className="c13"
+      className="c12"
       width={
         Array [
           0,
@@ -781,9 +770,14 @@ exports[`Storyshots Conference Card Conference Card 1`] = `
       }
     >
       <img
-        className="c14"
-        height="100%"
+        loading="lazy"
         src="//images.ctfassets.net/22g1lenhck4z/1soYNJmFH3GzCk3K8xGxtG/f4d62ba3f5858a3a11907bae5aae4512/reactgirl.svg"
+        style={
+          Object {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
       />
     </div>
   </div>
