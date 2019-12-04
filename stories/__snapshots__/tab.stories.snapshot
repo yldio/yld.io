@@ -29,7 +29,7 @@ exports[`Storyshots Tabs Multiple Tabs 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
   padding: 0;
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;
@@ -315,7 +315,7 @@ exports[`Storyshots Tabs Single Tab - inactive 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
   padding: 0;
   font-weight: 700;
   -webkit-transition: opacity 300ms ease-in-out;

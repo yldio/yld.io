@@ -196,7 +196,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
   font-size: 1.625rem;
   line-height: 1.875rem;
   padding: 0.75rem 0 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
 }
 
 .c4 {
@@ -258,7 +258,7 @@ exports[`Storyshots Typography Typography Modifiers 1`] = `
     font-size: 2rem;
     line-height: 2.25rem;
     padding: 0.8125rem 0 0.6875rem 0;
-    opacity: .5;
+    opacity: .7;
   }
 }
 

@@ -1479,7 +1479,7 @@ exports[`Storyshots AboutUs StaffCard 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
   padding: 0;
   font-weight: 700;
 }
@@ -1813,7 +1813,7 @@ exports[`Storyshots AboutUs Subsidiaries 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
-  opacity: .5;
+  opacity: .7;
 }
 
 .c0 {

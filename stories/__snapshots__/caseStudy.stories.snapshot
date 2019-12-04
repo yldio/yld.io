@@ -784,7 +784,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
   padding: 0;
 }
 
@@ -795,7 +795,7 @@ exports[`Storyshots CaseStudy FeaturedWork 1`] = `
   line-height: 1.5rem;
   padding: 0.75rem 0;
   color: #fff;
-  opacity: .5;
+  opacity: .7;
   padding-bottom: 0;
 }
 
@@ -1494,7 +1494,7 @@ exports[`Storyshots CaseStudy Our Work - CaseStudy 1`] = `
   font-size: 1.0625rem;
   line-height: 1.5rem;
   padding: 0.75rem 0;
-  opacity: .5;
+  opacity: .7;
   padding: 0;
 }
 

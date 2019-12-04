@@ -141,7 +141,7 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
               renderers={{
                 // eslint-disable-next-line
                 heading: props => (
-                  <Subtitle noPadding reverse muted {...props} />
+                  <Subtitle noPadding reverse textLight {...props} />
                 ),
                 // eslint-disable-next-line
                 list: props => (

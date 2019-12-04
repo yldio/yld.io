@@ -12,11 +12,9 @@ describe('<Teams />', () => {
       teams: teams,
     };
 
-    const { container, getByTestId, getByText } = render(
-      <Teams {...details} />,
-      { wrapper },
-    );
-    expect(container.firstChild).toMatchSnapshot();
+    const { getByTestId, getByText } = render(<Teams {...details} />, {
+      wrapper,
+    });
     expect(getByTestId('staff-card-0')).toHaveTextContent(
       teams[0].members[0].name,
     );
