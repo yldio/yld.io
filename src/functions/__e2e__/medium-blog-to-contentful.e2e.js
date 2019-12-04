@@ -105,7 +105,7 @@ beforeAll(async () => {
       ),
     );
   }
-}, 300000);
+}, 600000);
 afterAll(async () => {
   await environment.delete();
 });
