@@ -36,7 +36,7 @@ const IntroRow = styled(Row)`
   `}
 `;
 
-const StyledCardTitle = styled(CardTitle)`
+const StyledCardTitle = styled(CardTitle).attrs({ as: 'ul' })`
   > li {
     list-style: none;
     padding-bottom: ${remcalc(8)};

@@ -43,7 +43,6 @@ const ignoredAudits = [
   'uses-long-cache-ttl',
   // binary not passing yet
   'color-contrast',
-  'listitem',
   'link-text',
   'tap-targets',
 ];
@@ -80,7 +79,7 @@ test.each([
   'image-alt',
   'link-name',
   'list',
-  //'listitem',
+  'listitem',
   'meta-viewport',
   'tabindex',
   'meta-description',
