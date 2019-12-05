@@ -26,6 +26,7 @@ const CaseStudiesGrid = styled.div`
       grid-column: 1
     }
 
+    /* Hide the hr above the first row */
     > hr:first-child {
       display: none;
     }
@@ -45,7 +46,7 @@ const CaseStudiesGrid = styled.div`
     > *:nth-child(10n + 3),
     > *:nth-child(10n + 4),
     > *:nth-child(10n + 5) {
-      grid-column: 1;
+      grid-column-start: 1;
     }
 
     > *:nth-child(10n + 6),
@@ -53,11 +54,15 @@ const CaseStudiesGrid = styled.div`
     > *:nth-child(10n + 8),
     > *:nth-child(10n + 9),
     > *:nth-child(10n + 10) {
-      grid-column: 2;
+      grid-column-start: 2;
     }
 
-    > hr:nth-of-type(1),
-    > hr:nth-of-type(2) {
+    /* starting from the second row, extend the left hr to the entire width of the grid */
+    > hr:nth-of-type(2n + 3) {
+      grid-column-end: -1;
+    }
+    /* hide all other hrs, including all hrs at the top */
+    > hr:not(:nth-of-type(2n + 3)) {
       display: none;
     }
 
@@ -87,7 +92,7 @@ const CaseStudiesGrid = styled.div`
     > *:nth-child(15n + 3),
     > *:nth-child(15n + 4),
     > *:nth-child(15n + 5) {
-      grid-column: 1;
+      grid-column-start: 1;
     }
 
     > *:nth-child(15n + 6),
@@ -95,7 +100,7 @@ const CaseStudiesGrid = styled.div`
     > *:nth-child(15n + 8),
     > *:nth-child(15n + 9),
     > *:nth-child(15n + 10) {
-      grid-column: 2;
+      grid-column-start: 2;
     }
 
     > *:nth-child(15n + 11),
@@ -103,12 +108,15 @@ const CaseStudiesGrid = styled.div`
     > *:nth-child(15n + 13),
     > *:nth-child(15n + 14),
     > *:nth-child(15n + 15) {
-      grid-column: 3;
+      grid-column-start: 3;
     }
 
-    > hr:nth-of-type(1),
-    > hr:nth-of-type(2),
-    > hr:nth-of-type(3) {
+    /* starting from the second row, extend the left hr to the entire width of the grid */
+    > hr:nth-of-type(3n + 4) {
+      grid-column-end: -1;
+    }
+    /* hide all other hrs, including all hrs at the top */
+    > hr:not(:nth-of-type(3n + 4)) {
       display: none;
     }
 
