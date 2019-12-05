@@ -61,7 +61,11 @@ const TrainingPage = ({
         categories={content.courseCategories}
         sectionTitle={content.courseSectionTitle}
       />
-      <FeaturedWork limited caseStudies={content.relatedCaseStudies} />
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={content.relatedCaseStudies}
+      />
     </Layout>
   );
 };

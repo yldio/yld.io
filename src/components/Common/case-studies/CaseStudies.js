@@ -68,13 +68,21 @@ const CaseStudy = ({
   </>
 );
 
-const CaseStudies = ({ caseStudies, limited = false }) => {
+/**
+ * @prop {boolean} limited Do not show more than two rows on phones, or one row on larger screens. Defaults to false.
+ * @prop {boolean} hideSparseRows Hide the last row if there are too few elements to fill all its columns. Does not apply to the first row, which is always shown. Defaults to false.
+ */
+const CaseStudies = ({
+  caseStudies,
+  limited = false,
+  hideSparseRows = false,
+}) => {
   if (!caseStudies || !caseStudies.length) {
     return null;
   }
 
   return (
-    <CaseStudiesGrid limited={limited}>
+    <CaseStudiesGrid limited={limited} hideSparseRows={hideSparseRows}>
       {caseStudies.map(caseStudy => (
         <CaseStudy key={caseStudy.slug} caseStudy={caseStudy} />
       ))}

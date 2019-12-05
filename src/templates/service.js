@@ -93,7 +93,11 @@ const Service = ({
           sectionTitle="We work with"
         />
       </GreyBackground>
-      <FeaturedWork limited caseStudies={service.relatedCaseStudy} />
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={service.relatedCaseStudy}
+      />
     </Layout>
   );
 };

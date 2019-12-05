@@ -114,6 +114,10 @@ storiesOf('CaseStudy', module)
         'Limit number of case studies based on screen size',
         false,
       )}
+      hideSparseRows={boolean(
+        'Hide the last row if there are too few elements',
+        false,
+      )}
       caseStudies={[...Array(number('Number of case studies', 3)).keys()].map(
         i => ({
           ...caseStudies[i % 3],
