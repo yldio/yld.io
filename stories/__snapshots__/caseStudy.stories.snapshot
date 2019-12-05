@@ -177,7 +177,7 @@ exports[`Storyshots CaseStudy Case Studies 1`] = `
   .c0 > *:nth-child(10n + 3),
   .c0 > *:nth-child(10n + 4),
   .c0 > *:nth-child(10n + 5) {
-    grid-column: 1;
+    grid-column-start: 1;
   }
 
   .c0 > *:nth-child(10n + 6),
@@ -185,19 +185,14 @@ exports[`Storyshots CaseStudy Case Studies 1`] = `
   .c0 > *:nth-child(10n + 8),
   .c0 > *:nth-child(10n + 9),
   .c0 > *:nth-child(10n + 10) {
-    grid-column: 2;
+    grid-column-start: 2;
   }
 
-  .c0 > hr:nth-of-type(1),
-  .c0 > hr:nth-of-type(2) {
-    display: none;
+  .c0 > hr:nth-of-type(2n + 3) {
+    grid-column-end: -1;
   }
 
-  .c0 > *:nth-child(10n + 11):nth-last-child(5),
-  .c0 > *:nth-child(10n + 12):nth-last-child(4),
-  .c0 > *:nth-child(10n + 13):nth-last-child(3),
-  .c0 > *:nth-child(10n + 14):nth-last-child(2),
-  .c0 > *:nth-child(10n + 15):nth-last-child(1) {
+  .c0 > hr:not(:nth-of-type(2n + 3)) {
     display: none;
   }
 }
@@ -212,7 +207,7 @@ exports[`Storyshots CaseStudy Case Studies 1`] = `
   .c0 > *:nth-child(15n + 3),
   .c0 > *:nth-child(15n + 4),
   .c0 > *:nth-child(15n + 5) {
-    grid-column: 1;
+    grid-column-start: 1;
   }
 
   .c0 > *:nth-child(15n + 6),
@@ -220,7 +215,7 @@ exports[`Storyshots CaseStudy Case Studies 1`] = `
   .c0 > *:nth-child(15n + 8),
   .c0 > *:nth-child(15n + 9),
   .c0 > *:nth-child(15n + 10) {
-    grid-column: 2;
+    grid-column-start: 2;
   }
 
   .c0 > *:nth-child(15n + 11),
@@ -228,30 +223,14 @@ exports[`Storyshots CaseStudy Case Studies 1`] = `
   .c0 > *:nth-child(15n + 13),
   .c0 > *:nth-child(15n + 14),
   .c0 > *:nth-child(15n + 15) {
-    grid-column: 3;
+    grid-column-start: 3;
   }
 
-  .c0 > hr:nth-of-type(1),
-  .c0 > hr:nth-of-type(2),
-  .c0 > hr:nth-of-type(3) {
-    display: none;
+  .c0 > hr:nth-of-type(3n + 4) {
+    grid-column-end: -1;
   }
 
-  .c0 > *:nth-child(15n+16):nth-last-child(10),
-  .c0 > *:nth-child(15n+17):nth-last-child(9),
-  .c0 > *:nth-child(15n+18):nth-last-child(8),
-  .c0 > *:nth-child(15n+19):nth-last-child(7),
-  .c0 > *:nth-child(15n+20):nth-last-child(6),
-  .c0 > *:nth-child(15n+16):nth-last-child(5),
-  .c0 > *:nth-child(15n+17):nth-last-child(4),
-  .c0 > *:nth-child(15n+18):nth-last-child(3),
-  .c0 > *:nth-child(15n+19):nth-last-child(2),
-  .c0 > *:nth-child(15n+20):nth-last-child(1),
-  .c0 > *:nth-child(15n+21):nth-last-child(5),
-  .c0 > *:nth-child(15n+22):nth-last-child(4),
-  .c0 > *:nth-child(15n+23):nth-last-child(3),
-  .c0 > *:nth-child(15n+24):nth-last-child(2),
-  .c0 > *:nth-child(15n+25):nth-last-child(1) {
+  .c0 > hr:not(:nth-of-type(3n + 4)) {
     display: none;
   }
 }
