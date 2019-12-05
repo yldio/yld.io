@@ -58,14 +58,6 @@ jobs:
       - checkout
       - *attach_workspace
       - run: 'yarn lint'
-  storyshots:
-    <<: *defaults
-    steps:
-      - checkout
-      - *attach_workspace
-      - run:
-          command: 'yarn run test:storyshots'
-          name: Storyshots
   e2e-lambda:
     <<: *defaults
     steps:
@@ -102,9 +94,6 @@ workflows:
           requires:
             - install
       - lighthouse:
-          requires:
-            - build
-      - storyshots:
           requires:
             - build
       - testcafe:
