@@ -7,7 +7,7 @@ import prettyFormat from 'pretty-format';
 import launchChromeAndRunLighthouse from './run';
 import mergeLighthouseResults from './merge';
 
-const numRuns = 1;
+const numRuns = 5;
 jest.setTimeout(3 * 60 * 1000);
 
 const resultDir = resolve(__dirname, 'artifacts');
@@ -102,7 +102,7 @@ test.each`
   ${'speed-index'}                | ${0.9}
   ${'redirects'}                  | ${1}
   ${'uses-rel-preload'}           | ${1}
-  ${'uses-rel-preconnect'}        | ${1 - 0.3}
+  ${'uses-rel-preconnect'}        | ${1}
   ${'total-byte-weight'}          | ${1}
   ${'offscreen-images'}           | ${0.5}
   ${'render-blocking-resources'}  | ${1}
