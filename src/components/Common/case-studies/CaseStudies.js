@@ -5,11 +5,9 @@ import breakpoint from 'styled-components-breakpoint';
 import Image from '../../Common/Image';
 import StyledLink from '../../Common/StyledLink';
 import Hr from '../Hr';
-import { Grid, Row, Col } from '../../grid';
-import CaseStudiesGrid from './CaseStudiesGrid';
-import { BodyPrimary, CardTitle, DisplayTitle } from '../../Typography';
+import { BodyPrimary, CardTitle } from '../../Typography';
 
-// --- individual case study ---
+import CaseStudiesGrid from './CaseStudiesGrid';
 
 const SeparatorCol = styled(Hr)`
   margin: ${({ theme }) => theme.space[3]} 0;
@@ -70,43 +68,26 @@ const CaseStudy = ({
   </>
 );
 
-// --- featured work as a whole ---
-
-const FeaturedWorkGrid = styled(Grid)`
-  margin-top: ${({ theme }) => theme.space[3]};
-  margin-bottom: ${({ theme }) => theme.space[4]};
-
-  ${breakpoint('tablet')`
-    margin-top: ${({ theme }) => theme.space[5]};
-    margin-bottom: ${({ theme }) => theme.space[5]};
-  `}
-`;
-
-const FeaturedWorkHeading = () => (
-  <Row css={({ theme }) => ({ 'padding-bottom': theme.space[3] })}>
-    <Col>
-      <DisplayTitle>Featured work</DisplayTitle>
-    </Col>
-  </Row>
-);
-
-const FeaturedWork = ({ caseStudies, limited = false }) => {
+/**
+ * @prop {boolean} limited Do not show more than two rows on phones, or one row on larger screens. Defaults to false.
+ * @prop {boolean} hideSparseRows Hide the last row if there are too few elements to fill all its columns. Does not apply to the first row, which is always shown. Defaults to false.
+ */
+const CaseStudies = ({
+  caseStudies,
+  limited = false,
+  hideSparseRows = false,
+}) => {
   if (!caseStudies || !caseStudies.length) {
     return null;
   }
 
   return (
-    <section>
-      <FeaturedWorkGrid>
-        <FeaturedWorkHeading />
-        <CaseStudiesGrid limited={limited}>
-          {caseStudies.map(caseStudy => (
-            <CaseStudy key={caseStudy.slug} caseStudy={caseStudy} />
-          ))}
-        </CaseStudiesGrid>
-      </FeaturedWorkGrid>
-    </section>
+    <CaseStudiesGrid limited={limited} hideSparseRows={hideSparseRows}>
+      {caseStudies.map(caseStudy => (
+        <CaseStudy key={caseStudy.slug} caseStudy={caseStudy} />
+      ))}
+    </CaseStudiesGrid>
   );
 };
 
-export default FeaturedWork;
+export default CaseStudies;

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import FeaturedWork from '../components/Common/CaseStudyCards/FeaturedWork';
+import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
 import SeoLinksContainer from '../components/Common/seoLinksContainer';
 import WorkStages from '../components/Service/WorkStages';
 import GreyBackground from '../components/Common/GreyBackground';
@@ -93,7 +93,11 @@ const Service = ({
           sectionTitle="We work with"
         />
       </GreyBackground>
-      <FeaturedWork limited caseStudies={service.relatedCaseStudy} />
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={service.relatedCaseStudy}
+      />
     </Layout>
   );
 };

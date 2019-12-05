@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import { Padding } from 'styled-components-spacing';
 import breakpoint from 'styled-components-breakpoint';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
@@ -9,9 +8,32 @@ import Layout from '../components/layout';
 import { Grid, Row, Col } from '../components/grid';
 import { SectionTitle, DisplayTitle } from '../components/Typography';
 import GreyBackground from '../components/Common/GreyBackground';
-import Hr from '../components/Common/Hr';
 import Head from '../components/Common/Head';
-import CaseStudy from '../components/OurWork/CaseStudy';
+import CaseStudies from '../components/Common/case-studies/CaseStudies';
+
+const HeaderGrid = styled(Grid)`
+  padding-top: 0; /* Header pads enough */
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[2]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
+  `}
+`;
+
+const WorkGrid = styled(Grid)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]};
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+`;
 
 const formatCaseStudies = caseStudies =>
   caseStudies.edges.map(caseStudyObject => {
@@ -23,22 +45,6 @@ const formatCaseStudies = caseStudies =>
         .map(service => service.title),
     };
   });
-
-const IntroTitleCol = styled(Col)`
-  padding-top: ${({ theme }) => theme.space[5]};
-
-  ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
-  `}
-`;
-
-const IntroDescriptionCol = styled(Col)`
-  padding-bottom: ${({ theme }) => theme.space[5]};
-
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[7]};
-  `}
-`;
 
 const OurWork = ({ data, location }) => {
   const {
@@ -91,57 +97,22 @@ const OurWork = ({ data, location }) => {
       breadcrumbData={breadcrumbData}
     >
       <Head page={page} seoMetaData={seoMetaData} />
-      <Grid>
+      <HeaderGrid>
         <Row>
-          <IntroTitleCol width={[1]}>
+          <Col width={[1]}>
             <SectionTitle as="h1">{title}</SectionTitle>
-          </IntroTitleCol>
-          <IntroDescriptionCol width={[1, 1, 1, 1, 9 / 12]}>
+          </Col>
+          <Col width={[1, 1, 1, 1, 9 / 12]}>
             <DisplayTitle regular secondary>
               {description}
             </DisplayTitle>
-          </IntroDescriptionCol>
+          </Col>
         </Row>
-      </Grid>
+      </HeaderGrid>
       <GreyBackground>
-        <Grid>
-          {orderedCaseStudies.map((caseStudy, index, arr) => {
-            const isFirstCaseStudy = index === 0;
-            const isLastCaseStudy = index === arr.length - 1;
-            const isMiddleCaseStudy = !!(!isFirstCaseStudy && !isLastCaseStudy);
-            return (
-              <Fragment key={index}>
-                {isFirstCaseStudy && (
-                  <Fragment>
-                    <Padding
-                      top={{ smallPhone: 3, smallTablet: 3.5, tablet: 4 }}
-                      bottom={{ smallPhone: 2, smallTablet: 3 }}
-                    >
-                      <CaseStudy caseStudy={caseStudy} />
-                    </Padding>
-                    <Hr />
-                  </Fragment>
-                )}
-                {isMiddleCaseStudy && (
-                  <Fragment>
-                    <Padding top={3} bottom={{ smallPhone: 2, smallTablet: 3 }}>
-                      <CaseStudy caseStudy={caseStudy} />
-                    </Padding>
-                    <Hr />
-                  </Fragment>
-                )}
-                {isLastCaseStudy && (
-                  <Padding
-                    top={3}
-                    bottom={{ smallPhone: 3.5, smallTablet: 3.5, tablet: 4 }}
-                  >
-                    <CaseStudy caseStudy={caseStudy} />
-                  </Padding>
-                )}
-              </Fragment>
-            );
-          })}
-        </Grid>
+        <WorkGrid>
+          <CaseStudies caseStudies={orderedCaseStudies} />
+        </WorkGrid>
       </GreyBackground>
     </Layout>
   );
@@ -186,6 +157,7 @@ const OurWorkPage = props => (
             node {
               slug
               title
+              client
               id
               services {
                 ... on ContentfulService {
@@ -195,6 +167,8 @@ const OurWorkPage = props => (
               introSentence {
                 introSentence
               }
+              reverseColor
+              posterColor
               posterImage {
                 title
                 file {
@@ -202,6 +176,15 @@ const OurWorkPage = props => (
                 }
                 fluid(maxWidth: 600) {
                   ...GatsbyContentfulFluid_withWebp
+                }
+              }
+              previewImage {
+                title
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+                file {
+                  url
                 }
               }
             }
@@ -212,6 +195,7 @@ const OurWorkPage = props => (
             node {
               slug
               title
+              client
               id
               services {
                 ... on ContentfulService {
@@ -221,6 +205,8 @@ const OurWorkPage = props => (
               introSentence {
                 introSentence
               }
+              reverseColor
+              posterColor
               posterImage {
                 title
                 file {
@@ -230,7 +216,15 @@ const OurWorkPage = props => (
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
-              posterColor
+              previewImage {
+                title
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+                file {
+                  url
+                }
+              }
             }
           }
         }

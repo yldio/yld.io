@@ -3,8 +3,7 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import Theme from './theme';
 import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview';
-import FeaturedWork from '../src/components/Common/CaseStudyCards/FeaturedWork';
-import { CaseStudy, ServiceList } from '../src/components/OurWork/CaseStudy';
+import CaseStudies from '../src/components/Common/case-studies/CaseStudies';
 
 const economistImage = {
   fluid: {
@@ -109,10 +108,14 @@ storiesOf('CaseStudy', module)
   .add('CaseStudyPreview', () => (
     <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
   ))
-  .add('FeaturedWork', () => (
-    <FeaturedWork
+  .add('Case Studies', () => (
+    <CaseStudies
       limited={boolean(
         'Limit number of case studies based on screen size',
+        false,
+      )}
+      hideSparseRows={boolean(
+        'Hide the last row if there are too few elements',
         false,
       )}
       caseStudies={[...Array(number('Number of case studies', 3)).keys()].map(
@@ -122,10 +125,4 @@ storiesOf('CaseStudy', module)
         }),
       )}
     />
-  ))
-  .add('Our Work - CaseStudy', () => (
-    <CaseStudy caseStudy={TrainlineCaseStudy} />
-  ))
-  .add('Our Work - CaseStudy - ServiceList', () => (
-    <ServiceList services={TrainlineCaseStudy.services} />
   ));
