@@ -55,7 +55,6 @@ afterAll(() => {
   expect(result.audits).toEqual({}); // all audits should have been checked or explicitly ignored
 });
 
-// if the audit is commented out, we eventually want to make it pass
 test.each([
   'viewport',
   'font-display',
@@ -96,7 +95,6 @@ test.each([
   expect(audit.score).toBe(1);
 });
 
-// if the minScore is a - b, we eventually want to achieve a
 test.each`
   name                            | minScore
   ${'speed-index'}                | ${0.9}
@@ -109,12 +107,12 @@ test.each`
   ${'unminified-css'}             | ${1}
   ${'unminified-javascript'}      | ${1}
   ${'unused-css-rules'}           | ${1}
-  ${'uses-webp-images'}           | ${1 - 0.5}
+  ${'uses-webp-images'}           | ${1}
   ${'uses-optimized-images'}      | ${1}
   ${'uses-text-compression'}      | ${1}
   ${'uses-responsive-images'}     | ${1}
   ${'efficient-animated-content'} | ${1}
-  ${'dom-size'}                   | ${1 - 0.1}
+  ${'dom-size'}                   | ${0.9}
 `('numeric audit $name scores at least $minScore', ({ name, minScore }) => {
   const audit = result.audits[name];
   deleteAudit(name);
@@ -122,7 +120,8 @@ test.each`
   expect(audit.score).toBeGreaterThanOrEqual(minScore);
 });
 
-// if the timeLimit is a + b, we eventually want to achieve a
+// if the timeLimit is a + b, a is a desirable value,
+// but we cannot achieve it with the current React hydration mechanism
 test.each`
   name                           | timeLimit
   ${'first-contentful-paint'}    | ${2000}
