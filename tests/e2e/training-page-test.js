@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import until from 'async-wait-until';
 
 import createServer from '../createServer';
 import { port, baseUrl, getWindowLocation } from './helper';
@@ -14,7 +15,7 @@ fixture`Training page`.page`${trainingPageUrl}`
     server = createServer(port);
   })
   .beforeEach(async () => {
-    firstModalLink = await Selector('a[data-testid=course-link]').nth(0);
+    firstModalLink = Selector('a[data-testid="course-link"]').nth(0);
   })
   .after(() => server.close());
 
@@ -27,41 +28,40 @@ test('clicking a link on the training page should open up a modal with informati
 });
 
 test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
-  await t.expect(firstModalLink.exists).ok({ timeout: 5000 });
+  await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 
-  await t.click(firstModalLink);
-  const modalCloseButton = await Selector(
-    'a[data-testid="modal-close-button"]',
-  );
-
-  await t.expect(modalCloseButton.exists).ok({ timeout: 5000 });
+  const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
+  do {
+    await t.click(firstModalLink);
+  } while (!(await modalCloseButton.exists));
   await t.click(modalCloseButton);
 
-  const location = await getWindowLocation();
-  await t
-    .expect(location.href)
-    .contains(trainingPageUrl)
-    .expect(firstModalLink.visible)
-    .ok({ timeout: 5000 });
+  await until(async () =>
+    (await getWindowLocation()).href.includes(trainingPageUrl),
+  );
+  await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 });
 
 test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async t => {
   await t.expect(firstModalLink.exists).ok({ timeout: 5000 });
-  await t.click(firstModalLink);
+
+  const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
+  do {
+    await t.click(firstModalLink);
+  } while (!(await modalCloseButton.exists));
+  await t.click(modalCloseButton);
 
   await t.pressKey('esc');
 
-  const location = await getWindowLocation();
-  await t
-    .expect(location.href)
-    .contains(trainingPageUrl)
-    .expect(firstModalLink.visible)
-    .ok({ timeout: 5000 });
+  await until(async () =>
+    (await getWindowLocation()).href.includes(trainingPageUrl),
+  );
+  await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 });
 
 test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {
   const firstCourseLinkText = await firstModalLink.textContent;
-  const secondModalLink = await Selector('a[data-testid=course-link]').nth(1);
+  const secondModalLink = Selector('a[data-testid="course-link"]').nth(1);
   const secondCourseLinkText = await secondModalLink.textContent;
 
   let modalTitle;
