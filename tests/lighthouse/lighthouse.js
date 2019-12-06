@@ -100,7 +100,7 @@ test.each`
   ${'speed-index'}                | ${0.9}
   ${'redirects'}                  | ${1}
   ${'uses-rel-preload'}           | ${1}
-  ${'uses-rel-preconnect'}        | ${0.7}
+  ${'uses-rel-preconnect'}        | ${0.5}
   ${'total-byte-weight'}          | ${1}
   ${'offscreen-images'}           | ${0.5}
   ${'render-blocking-resources'}  | ${1}
