@@ -12,7 +12,7 @@ import {
 } from '../components/Blog/post/PostMetaData';
 
 import FigureImage from '../components/Blog/post/FigureImage';
-import Gist from 'react-gist';
+import Gist from '../components/Blog/post/Gist';
 import Instagram from '../components/Blog/post/Instagram';
 import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
 import YouTube from '../components/Blog/post/YouTube';

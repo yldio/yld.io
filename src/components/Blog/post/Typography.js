@@ -305,6 +305,10 @@ const PostWrapper = styled.div`
      */
     margin-top: -8px;
     margin-bottom: -8px;
+
+    iframe {
+      min-height: initial;
+    }
   }
 `;
 
