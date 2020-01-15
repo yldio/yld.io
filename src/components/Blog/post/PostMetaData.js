@@ -39,7 +39,7 @@ const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
       <Hr />
       <section>
         <Body>
-          Written by {author} • {Format(date, 'MMMM do[,] YYYY')}
+          Written by {author} • {Format(date, 'MMMM Do[,] YYYY')}
         </Body>
       </section>
       <Hr />
