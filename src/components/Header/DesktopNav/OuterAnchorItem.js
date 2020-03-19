@@ -3,38 +3,34 @@ import styled from 'styled-components';
 
 import Anchor from '../../Common/Anchor';
 import headerItemStyles from '../utils/headerItemStyles';
-import outlineStyles from '../utils/outlineStyles';
 import topNavItemStyles from './desktopNavItemStyles';
 import TopNavItem from './TopNavItem';
 
 const StyledAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
-  ${outlineStyles}
 `;
 
 const StyledListItem = styled(TopNavItem)`
   display: flex;
-  ${props => props.states.default}
+  flex-wrap: wrap;
 
-  &:hover,
+  > a {
+    ${props => props.states.default}
+  }
+
   > a:hover {
+    ${props => props.states.default}
     ${props => props.states.hover}
   }
 
   > a:active {
+    ${props => props.states.default}
     ${props => props.states.clickTap}
   }
 
-  > a.active {
-    ${props => props.states.active}
-    &:active {
-      ${props => props.states.active}
-    }
-
-    &:hover {
-      ${props => props.states.activeAndHover}
-    }
+  > a.current {
+    ${props => props.states.current}
   }
 `;
 
@@ -42,7 +38,7 @@ const OuterAnchorItem = ({
   children,
   to,
   href,
-  activeClassName,
+  currentClassName,
   themeVariation,
   onClick,
   title,
@@ -53,7 +49,7 @@ const OuterAnchorItem = ({
     <StyledAnchor
       href={href}
       to={to}
-      activeClassName={activeClassName}
+      currentClassName={currentClassName}
       onClick={onClick}
       title={title}
       {...attributes}

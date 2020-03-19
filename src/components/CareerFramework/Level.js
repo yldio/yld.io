@@ -34,7 +34,7 @@ const LevelInfo = ({
 );
 
 const LevelOrder = styled.div`
-  border: 3px solid ${({ theme }) => theme.colors.black};
+  border: 3px solid ${({ theme }) => theme.colors.darkGrey};
   display: inline-block;
   font-weight: bold;
   width: 36px;

@@ -8,6 +8,7 @@ import { logoColors } from './utils/navLinksHelper';
 import getServiceInfo from '../../utils/getServiceInfo';
 
 const StyledLinksContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   align-items: center;
 `;

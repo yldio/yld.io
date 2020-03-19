@@ -5,6 +5,15 @@ import remcalc from 'remcalc';
 import is from 'styled-is';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
+export const underlinePseudoElement = css`
+  content: '';
+  display: block;
+  height: ${remcalc(2)};
+  width: 100%;
+  margin-top: ${remcalc(6)};
+  box-sizing: border-box;
+`;
+
 export const StyledLinkCss = css`
   padding: ${remcalc(8)} ${remcalc(6)};
   margin-top: ${remcalc(3)};
@@ -19,13 +28,8 @@ export const StyledLinkCss = css`
   transition-property: background, color;
 
   &:after {
-    content: '';
-    display: block;
-    height: ${remcalc(2)};
-    width: 100%;
-    margin-top: ${remcalc(6)};
+    ${underlinePseudoElement}
     background: ${({ theme }) => theme.colors.text};
-    box-sizing: border-box;
     transition: all ${({ theme }) => theme.animations.fast} ease-out;
     transition-property: background;
 
@@ -77,7 +81,7 @@ export const StyledLinkCss = css`
     color: ${({ theme }) => theme.colors.white};
 
     &:hover {
-      background: ${({ theme }) => theme.colors.black};
+      background: ${({ theme }) => theme.colors.darkGrey};
       color: ${({ theme }) => theme.colors.white};
     }
 

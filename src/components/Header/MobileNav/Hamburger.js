@@ -15,18 +15,15 @@ const HamburgerSvg = styled.svg`
 
 const HamburgerButton = styled(UnstyledButton)`
   ${breakpoint('smallPhone')`
-    position: absolute;
-    right: 0;
-    top: 0;
     width: ${remcalc(80)};
     height: ${remcalc(80)};
     margin: ${remcalc(4)} ${remcalc(-20)} ${remcalc(4)} ${remcalc(4)};
     ${outlineStyles}
   `}
 
-  @media screen and (min-width: 1000px) {
+  ${breakpoint('header')`
     display: none;
-  }
+  `}
 `;
 
 const Hamburger = ({ themeVariation, onClick }) => (

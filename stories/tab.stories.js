@@ -7,7 +7,7 @@ addDecorator(Theme);
 
 class MultipleTabs extends PureComponent {
   state = {
-    active: 0,
+    current: 0,
   };
 
   tabs = ['First Tab', 'Second Tab', 'Third Tab'];
@@ -18,7 +18,7 @@ class MultipleTabs extends PureComponent {
         {this.tabs.map((tab, idx) => (
           <Tab
             key={idx}
-            active={this.state.active === idx}
+            current={this.state.current === idx}
             onClick={() => this.handleClick(idx)}
           >
             {tab}
@@ -30,18 +30,18 @@ class MultipleTabs extends PureComponent {
 
   handleClick = idx => {
     this.setState(prevState => ({
-      active: prevState.active === idx ? undefined : idx,
+      current: prevState.current === idx ? undefined : idx,
     }));
   };
 }
 
 storiesOf('Tabs', module)
-  .add('Single Tab - active', () => (
-    <Tab active as="p">
+  .add('Single Tab - current', () => (
+    <Tab current as="p">
       This is a tab
     </Tab>
   ))
-  .add('Single Tab - inactive', () => <Tab active={false}>This is a tab</Tab>)
+  .add('Single Tab - inactive', () => <Tab current={false}>This is a tab</Tab>)
   .add('Multiple Tabs', () => {
     return <MultipleTabs />;
   });

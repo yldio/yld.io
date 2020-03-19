@@ -61,7 +61,7 @@ const Header = ({ path, bgColor, slug }) => {
               <Col width={[1]} style={{ overflow: 'visible' }}>
                 <StyledTopNavContainer>
                   <Branding slug={slug} />
-                  <DesktopNav themeVariation={themeVariation} />
+                  <DesktopNav path={path} themeVariation={themeVariation} />
                   <Hamburger
                     onClick={() => toggleMobileNav(true)}
                     themeVariation={themeVariation}

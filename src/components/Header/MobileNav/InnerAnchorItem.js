@@ -23,7 +23,7 @@ const InnerAnchor = styled(Anchor)`
 
   &:hover,
   &:focus,
-  &.active {
+  &.current {
     color: ${props => props.theme.colors.text};
   }
 `;
@@ -32,14 +32,14 @@ export const InnerAnchorItem = ({
   children,
   to,
   href,
-  activeClassName,
+  currentClassName,
   label,
 }) => (
   <InnerListItem>
     <InnerAnchor
       href={href}
       to={to}
-      activeClassName={activeClassName}
+      currentClassName={currentClassName}
       title={label}
     >
       {children}

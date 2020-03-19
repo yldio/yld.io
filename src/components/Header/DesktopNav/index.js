@@ -5,49 +5,59 @@ import remcalc from 'remcalc';
 import OuterAnchorItem from './OuterAnchorItem';
 import Dropdown from './Dropdown';
 import links from '../utils/navLinks';
-import generate from 'shortid';
+import ContactButton from './ContactButton';
 
-const TopNavList = styled.ul`
-  ${breakpoint('smallPhone')`
+const IfDesktopHeader = styled.div`
+  ${breakpoint('smallPhone', 'header')`
     display: none;
   `}
-
-  @media screen and (min-width: 1000px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
-  }
 `;
 
-const TopNav = ({ themeVariation }) => (
+const SmallTabletAndUp = styled.div`
+  ${breakpoint('smallPhone', 'smallTablet')`
+    display: none;
+  `}
+`;
+
+const TopNavList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: ${remcalc(20)} ${remcalc(0)} ${remcalc(16)};
+`;
+
+const TopNav = ({ path, themeVariation }) => (
   <TopNavList>
-    {links.map(({ label, dropdownItems, attributes, to, href }) =>
-      dropdownItems && dropdownItems.length > 0 ? (
-        <Dropdown
-          key={generate()}
-          themeVariation={themeVariation}
-          items={dropdownItems}
-          dataEvent={
-            attributes && attributes.dataEvent ? attributes.dataEvent : null
-          }
-        >
-          {label}
-        </Dropdown>
-      ) : (
-        <OuterAnchorItem
-          key={generate()}
-          themeVariation={themeVariation}
-          activeClassName="active"
-          to={to}
-          href={href}
-          title={label}
-          attributes={attributes}
-        >
-          {label}
-        </OuterAnchorItem>
-      ),
-    )}
+    {links.map(({ label, dropdownItems, attributes, to, href }) => (
+      <IfDesktopHeader key={label}>
+        {dropdownItems && dropdownItems.length > 0 ? (
+          <Dropdown
+            path={path}
+            themeVariation={themeVariation}
+            items={dropdownItems}
+            dataEvent={
+              attributes && attributes.dataEvent ? attributes.dataEvent : null
+            }
+          >
+            {label}
+          </Dropdown>
+        ) : (
+          <OuterAnchorItem
+            themeVariation={themeVariation}
+            currentClassName="current"
+            to={to}
+            href={href}
+            title={label}
+            attributes={attributes}
+          >
+            {label}
+          </OuterAnchorItem>
+        )}
+      </IfDesktopHeader>
+    ))}
+    <SmallTabletAndUp>
+      <ContactButton themeVariation={themeVariation} />
+    </SmallTabletAndUp>
   </TopNavList>
 );
 

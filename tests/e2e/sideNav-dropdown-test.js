@@ -123,11 +123,11 @@ test('After a sub-item has been clicked and if the MobileNav is re-opened, the s
   const inactiveSubItem = mobileNavPanel
     .find('a')
     .withText('Engineering')
-    .withAttribute('active');
+    .withAttribute('current');
   await t.expect(inactiveSubItem.exists).notOk();
 
   const activeSubItem = mobileNavPanel
-    .find('a[class$="active"]')
+    .find('a[class$="current"]')
     .withText('Design');
   await t.expect(activeSubItem.exists).ok();
 });

@@ -4,6 +4,7 @@ import remcalc from 'remcalc';
 import Flex from 'styled-flex-component';
 import is from 'styled-is';
 import generate from 'shortid';
+import breakpoint from 'styled-components-breakpoint';
 
 import links from '../utils/navLinks';
 import CloseButton from './CloseButton';
@@ -19,6 +20,8 @@ const MobileNavPanel = styled.nav`
   top: 0;
   z-index: ${props => props.theme.zIndexes.header};
   overflow-y: auto;
+  padding-bottom: ${remcalc(60)};
+
   transform: translateX(100%);
   transition: transform ${props => props.theme.animations.fast} ease-in-out;
 
@@ -33,9 +36,20 @@ const MobileNavPanel = styled.nav`
     transform: translateX(0%);
   `};
 
-  @media screen and (min-width: 1000px) {
+  ${breakpoint('header')`
     display: none;
+  `}
+`;
+
+const ContactItem = styled(OuterAnchorItem)`
+  background: ${props => props.theme.colors.vibrant};
+  > a {
+    color: ${props => props.theme.colors.blueBg} !important;
   }
+
+  ${breakpoint('smallTablet')`
+    display: none;
+  `}
 `;
 
 const MobileNav = ({ isOpen, onClose, path }) => (
@@ -44,7 +58,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
       <CloseButton onClick={onClose} />
     </Flex>
     <ul>
-      <OuterAnchorItem activeClassName="active" to="/" label="Home" />
+      <OuterAnchorItem currentClassName="current" to="/" label="Home" />
       {links &&
         links.length &&
         links.map(({ label, dropdownItems, attributes, to, href }) =>
@@ -60,7 +74,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
           ) : (
             <OuterAnchorItem
               key={generate()}
-              activeClassName="active"
+              currentClassName="current"
               to={to}
               href={href}
               label={label}
@@ -68,6 +82,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
             />
           ),
         )}
+      <ContactItem currentClassName="current" to="/contact/" label="Contact" />
     </ul>
   </MobileNavPanel>
 );

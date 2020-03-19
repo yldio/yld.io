@@ -84,7 +84,7 @@ export default class Dropdown extends PureComponent {
                 key={generate()}
                 href={href}
                 to={to}
-                activeClassName="active"
+                currentClassName="current"
                 label={label}
               >
                 {label}

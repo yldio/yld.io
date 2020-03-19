@@ -50,7 +50,7 @@ const Teams = ({ title, teams }) => {
                 {(teams || []).map((team, idx) => (
                   <Tab
                     key={idx}
-                    active={currentTab === idx}
+                    current={currentTab === idx}
                     data-event={`${
                       eventLabels.aboutTeam
                     }-${team.name.toLowerCase()}`}

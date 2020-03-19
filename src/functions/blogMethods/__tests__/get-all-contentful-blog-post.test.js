@@ -16,7 +16,7 @@ beforeEach(() => {
 
 it('requests blog posts', async () => {
   await GetAllContentfulBlogPosts(environment);
-  mockGetEntries.mock.calls.map(([{ content_type }]) => {
+  mockGetEntries.mock.calls.forEach(([{ content_type }]) => {
     expect(content_type).toBe('blogPost');
   });
 });
@@ -27,7 +27,7 @@ it('requests until it has all entries and returns them', async () => {
 
 it('does not exceed the contentful entry limit', async () => {
   await GetAllContentfulBlogPosts(environment);
-  mockGetEntries.mock.calls.map(([{ limit }]) => {
+  mockGetEntries.mock.calls.forEach(([{ limit }]) => {
     expect(limit).toBeLessThanOrEqual(1000);
   });
 });
