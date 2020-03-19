@@ -16,9 +16,7 @@ const StyledAnchor = styled(Anchor).attrs(() => ({
 
   ${props => props.states.default}
 
-  &:hover,
-  &:active,
-  &.active {
+  &.current {
     ${props => props.states.hoverActive}
   }
 
@@ -36,7 +34,7 @@ const OuterAnchorItem = ({
   label,
   to,
   href,
-  activeClassName,
+  currentClassName,
   onClick,
   attributes,
   ...props
@@ -45,7 +43,7 @@ const OuterAnchorItem = ({
     <StyledAnchor
       href={href}
       to={to}
-      activeClassName={activeClassName}
+      currentClassName={currentClassName}
       onClick={onClick}
       title={label}
       {...attributes}

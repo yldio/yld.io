@@ -2,13 +2,12 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import is from 'styled-is';
 import remcalc from 'remcalc';
-import generate from 'shortid';
 
 import Chevron from '../../Common/Chevron';
 import InnerAnchorItem from './InnerAnchorItem';
 import headerItemStyles from '../utils/headerItemStyles';
-import outlineStyles from '../utils/outlineStyles';
 import DesktopNavItemStyles from './desktopNavItemStyles';
+import { white, whiteHover } from './itemStyles';
 import TopNavItem from './TopNavItem';
 
 const DropdownContainer = styled(TopNavItem)`
@@ -19,28 +18,38 @@ const DropdownContainer = styled(TopNavItem)`
 
   > span {
     ${props => props.states.default}
-
     &:hover {
+      ${props => props.states.default}
       ${props => props.states.hover}
     }
-  }
-
-  ${is('expanded')`
-    > span {
+    &:active {
+      ${props => props.states.default}
       ${props => props.states.clickTap}
-
-      &:hover {
-        ${props => props.states.hover}
-      }
     }
-  `}
+
+    ${is('current')`
+      ${props => props.states.current}
+    `}
+
+    ${is('expanded')`
+      ${white}
+      background: ${props => props.theme.colors.greyBg};
+      &:hover {
+        ${whiteHover}
+        background: ${props => props.theme.colors.greyBg};
+      }
+
+      ${props => props.states.current}
+    `}
+  }
 `;
 
 const DropdownNameWrapper = styled.span`
   ${headerItemStyles}
   ${DesktopNavItemStyles}
-  ${({ isExpanded }) => !isExpanded && outlineStyles}
+
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
@@ -71,7 +80,7 @@ const DropdownList = styled.ul`
   `};
 `;
 
-const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
+const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
   const [isExpanded, toggleDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -112,6 +121,7 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
   return (
     <DropdownContainer
       ref={dropdownRef}
+      current={items.some(({ to }) => to === path)}
       expanded={isExpanded}
       aria-haspopup="true"
       aria-expanded={isExpanded}
@@ -120,22 +130,18 @@ const Dropdown = ({ items, themeVariation, children, dataEvent }) => {
       onBlur={handleBlur}
       themeVariation={themeVariation}
     >
-      <DropdownNameWrapper
-        tabIndex="0"
-        isExpanded={isExpanded}
-        themeVariation={themeVariation}
-      >
+      <DropdownNameWrapper tabIndex="0" themeVariation={themeVariation}>
         <span data-event={dataEvent}>{children}</span>
         <Chevron direction={isExpanded ? 'up' : 'down'} />
       </DropdownNameWrapper>
       <DropdownList expanded={isExpanded}>
         {items.map(({ to, href, label }) => (
           <InnerAnchorItem
-            key={generate()}
+            key={label}
             themeVariation={themeVariation}
             href={href}
             to={to}
-            activeClassName="active"
+            currentClassName="current"
             label={label}
           >
             {label}

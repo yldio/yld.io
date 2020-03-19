@@ -44,6 +44,7 @@ export const breakpoints = {
   largePhone: 553,
   smallTablet: 701, // sharon
   tablet: 901,
+  header: 1000,
   desktop: 1197,
 };
 
@@ -57,45 +58,37 @@ export const zIndexes = {
   gridDebugger: 10001,
 };
 
-const colorsVariables = {
-  darkBlue: '#090329',
-  neonGreen: '#65ffcd',
-  black: '#333333',
-  darkGrey: '#737373',
-  lightGrey: '#f9f9f9',
+export const colors = {
+  blueBg: '#090329',
+  vibrant: '#65ffcd',
   white: '#ffffff',
-  // TODO these are not standard, investigate
-  grey: '#e6e6e6',
-  darkBlack: '#1d1d1d',
   opacityWhite: '#848194',
+  greyBg: '#f9f9f9',
+  border: '#e6e6e6',
+  darkGrey: '#1d1d1d',
+  text: '#333333',
+  secondaryText: '#737373',
+};
+
+export const variations = {
+  white: 'white',
+  dark: 'dark',
+  grey: 'grey',
+};
+
+export const animations = {
+  fast: '200ms',
+  normal: '300ms',
+  long: '450ms',
 };
 
 export default {
+  animations,
   breakpoints,
-  spacing,
-  space,
+  colors,
   elementSizes,
+  space,
+  spacing,
+  variations,
   zIndexes,
-  variations: {
-    white: 'white',
-    dark: 'dark',
-    grey: 'grey',
-  },
-  animations: {
-    fast: '200ms',
-    normal: '300ms',
-    long: '450ms',
-  },
-  colors: {
-    blueBg: colorsVariables.darkBlue,
-    vibrant: colorsVariables.neonGreen,
-    white: colorsVariables.white,
-    opacityWhite: colorsVariables.opacityWhite,
-    greyBg: colorsVariables.lightGrey,
-    border: colorsVariables.grey,
-    black: colorsVariables.darkBlack,
-    text: colorsVariables.black,
-    secondaryText: colorsVariables.darkGrey,
-    placeholder: colorsVariables.darkGrey,
-  },
 };

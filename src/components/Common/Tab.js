@@ -38,7 +38,7 @@ const Underline = css`
   transform-origin: left;
   transform: scaleX(0);
 
-  ${is('active')`
+  ${is('current')`
     transform: scaleX(1);
   `};
 `;
@@ -59,10 +59,10 @@ const Button = styled(UnstyledButton)`
   }
 `;
 
-const Tab = ({ active, onClick, children, as, ...props }) => (
+const Tab = ({ current, onClick, children, as, ...props }) => (
   <TabContainer>
-    <Button onClick={onClick} {...props} active={active}>
-      <Text muted={!active} noPadding as={as}>
+    <Button onClick={onClick} {...props} active={current}>
+      <Text muted={!current} noPadding as={as}>
         {children}
       </Text>
     </Button>

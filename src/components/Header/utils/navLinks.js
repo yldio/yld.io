@@ -55,10 +55,6 @@ const navLinks = [
       },
     ],
   },
-  {
-    label: 'Contact',
-    to: '/contact/',
-  },
 ];
 
 export default navLinks;

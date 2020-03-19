@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 import { capitalize } from 'lodash';
 
@@ -9,9 +10,9 @@ const StyledServiceLink = styled(Link)`
   margin-left: ${remcalc(12)};
   color: ${props => props.theme.colors[props.color]};
 
-  @media screen and (min-width: 1000px) {
+  ${breakpoint('header')`
     font-size: ${remcalc(30)};
-  }
+  `}
 
   &:hover {
     text-decoration: underline;

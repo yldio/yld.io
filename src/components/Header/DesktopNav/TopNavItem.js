@@ -1,19 +1,28 @@
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 
-import { lightStates, darkStates } from './outerItemStates';
+import * as itemStyles from './itemStyles';
 
-const TopNavItem = styled.li.attrs(props => ({
-  states: props.themeVariation === 'dark' ? darkStates : lightStates,
-}))`
+const TopNavItem = styled.li.attrs(
+  ({ themeVariation = 'white', primary = false }) => ({
+    states: {
+      default: itemStyles[themeVariation + (primary ? 'Primary' : '')],
+      hover: itemStyles[themeVariation + (primary ? 'Primary' : '') + 'Hover'],
+      clickTap:
+        itemStyles[themeVariation + (primary ? 'Primary' : '') + 'Hover'],
+      current: itemStyles['current' + (primary ? 'Primary' : '')],
+    },
+  }),
+)`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  @media screen and (min-width: 1000px) {
+  ${breakpoint('header')`
     margin-right: ${remcalc(6)};
 
     &:last-child {
       margin-right: ${remcalc(0)};
     }
-  }
+  `}
 `;
 
 export default TopNavItem;

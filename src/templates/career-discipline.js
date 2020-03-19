@@ -110,7 +110,7 @@ const CareerFramework = ({
                       key={title}
                       role="tab"
                       id={`discipline-tab-${slug}`}
-                      active={isActive}
+                      current={isActive}
                       aria-selected={isActive}
                       aria-controls={`panel-${title}`}
                       onClick={() => navigate(slug)}

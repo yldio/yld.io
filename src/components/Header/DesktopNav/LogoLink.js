@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'gatsby';
 import remcalc from 'remcalc';
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
 import svgLogo from '../../../images/yld-white.svg';
 import animatedLogo from '../../../images/logo_animated.gif';
@@ -15,10 +16,10 @@ const StyledLink = styled(Link)`
   height: ${remcalc(48)};
   width: ${remcalc(48)};
 
-  @media screen and (min-width: 1000px) {
+  ${breakpoint('header')`
     height: ${remcalc(54)};
     width: ${remcalc(54)};
-  }
+  `}
 `;
 const Logo = styled.img`
   width: 49px;
