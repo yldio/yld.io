@@ -9,7 +9,7 @@ let server;
 
 fixture`Top Nav Menu`.page`${baseUrl}`
   .before(async () => {
-    server = createServer(port);
+    server = await createServer(port);
   })
   .after(() => server.close());
 

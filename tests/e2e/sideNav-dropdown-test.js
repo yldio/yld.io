@@ -8,7 +8,7 @@ let server;
 
 fixture`mobile Nav Menu`.page`${baseUrl}`
   .before(async () => {
-    server = createServer(port);
+    server = await createServer(port);
   })
   .after(() => server.close());
 
@@ -20,7 +20,7 @@ const openMobileNav = async t => {
 
 fixture`mobile Nav Menu`.page`${baseUrl}`
   .before(async () => {
-    server = createServer(port);
+    server = await createServer(port);
   })
   .after(() => server.close());
 

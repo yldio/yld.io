@@ -12,7 +12,7 @@ let firstModalLink;
 
 fixture`Training page`.page`${trainingPageUrl}`
   .before(async () => {
-    server = createServer(port);
+    server = await createServer(port);
   })
   .beforeEach(async () => {
     firstModalLink = Selector('a[data-testid="course-link"]').nth(0);
