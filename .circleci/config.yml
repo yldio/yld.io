@@ -75,7 +75,7 @@ jobs:
           command: 'yarn run test:e2e:ui'
           name: Testcafe
       - store_artifacts:
-          path: ~/app/artifacts/screenshots
+          path: ~/app/artifacts/e2e-ui
 version: 2
 workflows:
   build_and_test:
