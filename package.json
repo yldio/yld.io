@@ -85,7 +85,7 @@
     "test": "jest",
     "test:watch": "yarn run test --watch",
     "test:e2e:lambda": "jest --config jest-lambda-e2e.config.js",
-    "test:e2e:ui": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/screenshots --reporter html:artifacts/screenshots/report.html --assertion-timeout 10000 --selector-timeout 90000",
+    "test:e2e:ui": "testcafe chrome:headless ./tests/e2e/**/*.js -S -s artifacts/e2e-ui --reporter html:artifacts/e2e-ui/report.html --assertion-timeout 10000 --selector-timeout 90000",
     "test:lighthouse": "jest --config jest-lighthouse.config.js",
     "lint": "run-s lint:prettier lint:eslint",
     "lint:eslint": "eslint . --cache",
