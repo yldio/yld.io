@@ -56,11 +56,11 @@ test('clicking a mobile Nav link redirects to the correct url and closes the mob
     'open',
   );
 
-  const joinUsLink = mobileNavPanel.find('a').withText('Contact');
+  const joinUsLink = mobileNavPanel.find('a').withText('Open Source');
   await t.click(joinUsLink);
 
   const location = await getWindowLocation();
-  await t.expect(location.href).contains(`${baseUrl}/contact`);
+  await t.expect(location.href).contains(`${baseUrl}/open-source`);
   await t.expect(mobileNavPanel.exists).notOk();
 });
 
