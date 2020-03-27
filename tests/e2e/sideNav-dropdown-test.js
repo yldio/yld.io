@@ -111,17 +111,11 @@ test('After a sub-item has been clicked and if the MobileNav is re-opened, the s
   await t.click(designSubItem);
   await openMobileNav(t);
 
-  const engineeringSubItem = mobileNavPanel.find('a').withText('Engineering');
-  await t.expect(engineeringSubItem.exists).ok();
+  const inactiveSubItem = mobileNavPanel.find('a').withText('Engineering');
+  await t.expect(inactiveSubItem.exists).ok();
+  await t.expect(inactiveSubItem.hasClass('current')).notOk();
 
-  const inactiveSubItem = mobileNavPanel
-    .find('a')
-    .withText('Engineering')
-    .withAttribute('current');
-  await t.expect(inactiveSubItem.exists).notOk();
-
-  const activeSubItem = mobileNavPanel
-    .find('a[class$="current"]')
-    .withText('Design');
+  const activeSubItem = mobileNavPanel.find('a').withText('Design');
   await t.expect(activeSubItem.exists).ok();
+  await t.expect(activeSubItem.hasClass('current')).ok();
 });
