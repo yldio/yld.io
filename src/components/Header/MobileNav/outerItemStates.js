@@ -5,6 +5,7 @@ const defaultStyles = css`
 `;
 
 const hoverActiveStyles = css`
+  color: ${props => props.theme.colors.white};
   font-weight: bold;
 `;
 
