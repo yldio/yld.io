@@ -25,6 +25,7 @@ const InnerAnchor = styled(Anchor)`
   &:focus,
   &.current {
     color: ${props => props.theme.colors.text};
+    font-weight: bold;
   }
 `;
 
