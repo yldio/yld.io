@@ -23,13 +23,13 @@ New additional steps. (Nothing will break if these steps are not performed but i
 
   ![edit post](./assets/edit.png)
 
-- Once you’re in editing mode click the three dots on the top right to open the dropdown. At the bottom of the dropdown list you’ll want to click `Customize canonical link`.
+- Once you’re in editing mode click the three dots on the top right to open the dropdown. At the bottom of the dropdown list you’ll want to click `More settings`.
 
-  ![edit canonical](./assets/canonical.png)
+  ![dropdown](./assets/dropdown.png)
 
-- Add the new blog post link from the yld.io site, hit save and you’re good to go!
+- Under 'Advanced settings', tick 'This story was originally published elsewhere' and use the text field and button to enter and save the new blog post link from the yld.io site and you're good to go!
 
-  ![edit canonical](./assets/canonical-url.png)
+  ![settings](./assets/settings.png)
 
 ## Add preview image
 
