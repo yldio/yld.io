@@ -108,7 +108,7 @@ test.each`
   ${'unminified-css'}             | ${1}
   ${'unminified-javascript'}      | ${1}
   ${'unused-css-rules'}           | ${1}
-  ${'uses-webp-images'}           | ${0.5}
+  ${'uses-webp-images'}           | ${0.3}
   ${'uses-optimized-images'}      | ${1}
   ${'uses-text-compression'}      | ${1}
   ${'uses-responsive-images'}     | ${1}
