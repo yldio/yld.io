@@ -18,12 +18,6 @@ const openMobileNav = async t => {
   await t.resizeWindow(414, 736).click(hamburger);
 };
 
-fixture`mobile Nav Menu`.page`${baseUrl}`
-  .before(async () => {
-    server = await createServer(port);
-  })
-  .after(() => server.close());
-
 test('we are on the homepage', async t => {
   const location = await getWindowLocation();
   await t.expect(location.href).contains(baseUrl);
