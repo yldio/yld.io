@@ -3,6 +3,7 @@ import until from 'async-wait-until';
 
 import createServer from '../createServer';
 import { port, baseUrl, getWindowLocation } from './helper';
+import { retryTimes } from './utils';
 
 require('dotenv').config();
 let server;
@@ -28,10 +29,12 @@ test('a dropdown dropdownContainer opens on desktop and redirects correctly', as
   const engineeringSubItem = Selector('li[class^="InnerAnchorItem"]')
     .withText('Engineering')
     .nth(0);
-  do {
+  // opening the dropdown is unfortunately flaky in testcafe, might need a couple of page reloads
+  await retryTimes(async () => {
+    await t.navigateTo('.');
     await t.click(services);
-  } while (!(await engineeringSubItem.visible));
-
+    await t.expect(await engineeringSubItem.visible).ok();
+  }, 10);
   await t.click(engineeringSubItem);
 
   const location = await getWindowLocation();
@@ -52,16 +55,17 @@ test('opens and close a dropdown', async t => {
   const services = Selector('li').withText('Services');
   await t.expect(services.exists).ok({ timeout: 5000 });
 
-  const openDropdown = services.withAttribute('aria-expanded', 'true').nth(0);
-  do {
+  const openDropdown = services.withAttribute('aria-expanded', 'true');
+  // opening the dropdown is unfortunately flaky in testcafe, might need a couple of page reloads
+  await retryTimes(async () => {
+    await t.navigateTo('.');
     await t.click(services);
-  } while (!(await openDropdown.exists));
+    await t.expect(await openDropdown.exists).ok();
+  }, 10);
 
   const elsewhere = Selector('section').nth(0);
   await t.click(elsewhere);
 
-  const closedDropdown = services
-    .withAttribute('aria-expanded', 'false')
-    .nth(0);
+  const closedDropdown = services.withAttribute('aria-expanded', 'false');
   await t.expect(closedDropdown.exists).ok({ timeout: 5000 });
 });
