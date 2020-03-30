@@ -3,6 +3,7 @@ import until from 'async-wait-until';
 
 import createServer from '../createServer';
 import { port, baseUrl, getWindowLocation } from './helper';
+import { retryTimes } from './utils';
 
 require('dotenv').config();
 let server;
@@ -14,8 +15,10 @@ fixture`Training page`.page`${trainingPageUrl}`
   .before(async () => {
     server = await createServer(port);
   })
-  .beforeEach(async () => {
+  .beforeEach(async t => {
     firstModalLink = Selector('a[data-testid="course-link"]').nth(0);
+    // cookie banner may block link clicks
+    await t.click(Selector('button').withText('I agree'));
   })
   .after(() => server.close());
 
@@ -31,9 +34,10 @@ test('should be redirected to the course catalog on the training page when the m
   await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
-  do {
+  await retryTimes(async () => {
     await t.click(firstModalLink);
-  } while (!(await modalCloseButton.exists));
+    await t.expect(await modalCloseButton.exists).ok();
+  });
   await t.click(modalCloseButton);
 
   await until(async () =>
@@ -46,9 +50,10 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
   await t.expect(firstModalLink.exists).ok({ timeout: 5000 });
 
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
-  do {
+  await retryTimes(async () => {
     await t.click(firstModalLink);
-  } while (!(await modalCloseButton.exists));
+    await t.expect(await modalCloseButton.exists).ok();
+  });
   await t.click(modalCloseButton);
 
   await t.pressKey('esc');
