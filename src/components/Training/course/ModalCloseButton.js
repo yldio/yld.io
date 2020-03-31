@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import InternalAnchor from '../../Common/InternalAnchor';
 import styled from 'styled-components';
 import remcalc from 'remcalc';
 import close from '../../../images/close.svg';
 
-const Close = styled(Link)`
+const Close = styled(InternalAnchor)`
   border: none;
   border-radius: 50%;
   width: ${remcalc(54)};

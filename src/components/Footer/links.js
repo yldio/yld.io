@@ -10,12 +10,12 @@ import linkedin from '../../images/linkedin-icon.svg';
 const social = [
   {
     label: 'Twitter',
-    to: 'http://twitter.com/yldio',
+    to: 'https://twitter.com/yldio',
     img: twitter,
   },
   {
     label: 'Github',
-    to: 'http://github.com/yldio',
+    to: 'https://github.com/yldio',
     img: github,
   },
   {
@@ -53,19 +53,19 @@ const social = [
 const gdpr = [
   {
     label: 'Contact',
-    to: '/contact',
+    to: '/contact/',
   },
   {
     label: 'Cookies',
-    to: '/cookie-policy',
+    to: '/cookie-policy/',
   },
   {
     label: 'Privacy policy',
-    to: '/privacy-policy',
+    to: '/privacy-policy/',
   },
   {
     label: 'Data-retention policy',
-    to: '/data-retention-policy',
+    to: '/data-retention-policy/',
   },
 ];
 

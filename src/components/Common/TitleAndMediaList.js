@@ -5,10 +5,9 @@ import breakpoint from 'styled-components-breakpoint';
 
 import { Row, Col } from '../grid';
 import { SectionTitle, Subtitle, BodyPrimary } from '../Typography';
-import { Link } from 'gatsby';
 import StyledLink from './StyledLink';
 import Hr from './Hr';
-import ExternalAnchor from './ExternalAnchor';
+import Anchor from './Anchor';
 
 const PaddedSubtitle = styled(Subtitle)`
   padding-bottom: ${props => props.theme.spacing[0.5]};
@@ -29,14 +28,12 @@ const MediaItem = ({ id, title, external, to, body }) => {
     [external ? 'href' : 'to']: to,
   };
 
-  const LinkComponent = external ? ExternalAnchor : Link;
-
   return (
     <li key={`${id}`}>
       <PaddedSubtitle noPaddingBottom>
-        <LinkComponent {...linkProps} title={title}>
+        <Anchor {...linkProps} title={title}>
           {title}
-        </LinkComponent>
+        </Anchor>
       </PaddedSubtitle>
       <BodyPrimary noPaddingTop>{body}</BodyPrimary>
       <Hr />

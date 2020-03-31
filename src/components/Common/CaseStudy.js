@@ -3,10 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 import { CardTitle, BodyPrimary } from '../Typography';
 
-const CaseStudyLink = styled(Link)`
+const CaseStudyLink = styled(InternalAnchor)`
   background: ${props => props.bg};
   color: ${props => props.color || props.theme.colors.white};
   flex: 1;

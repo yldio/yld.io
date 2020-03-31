@@ -9,7 +9,7 @@ storiesOf('JobLink', module).add('JobLink', () => {
   return (
     <JobLink
       position="Software Engineer"
-      hostedUrl="http://www.lever.com"
+      hostedUrl="https://www.lever.com"
       contractType="Permanent"
     />
   );

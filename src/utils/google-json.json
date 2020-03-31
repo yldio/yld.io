@@ -1,9 +1,9 @@
 {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "YLD",
   "telephone": "+440 203 514 4678",
-  "url": "http://www.yld.io",
+  "url": "https://www.yld.io",
   "email": "hello@yld.io",
   "geo": {
     "@type": "GeoCoordinates",
@@ -20,8 +20,8 @@
     "addressCountry": "UK"
   },
   "sameAs": [
-    "http://twitter.com/yldio",
-    "http://github.com/yldio",
+    "https://twitter.com/yldio",
+    "https://github.com/yldio",
     "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
     "https://www.instagram.com/yld.io/",
     "https://www.linkedin.com/company/yld/",

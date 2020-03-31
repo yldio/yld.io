@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 import { capitalize } from 'lodash';
+import InternalAnchor from '../../../components/Common/InternalAnchor';
 
-const StyledServiceLink = styled(Link)`
+const StyledServiceLink = styled(InternalAnchor)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
   color: ${props => props.theme.colors[props.color]};

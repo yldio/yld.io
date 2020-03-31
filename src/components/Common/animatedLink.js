@@ -1,9 +1,10 @@
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import remcalc from 'remcalc';
 import Flex from 'styled-flex-component';
 
-export const AnimatedLink = styled(Link)`
+import InternalAnchor from './InternalAnchor';
+
+export const AnimatedLink = styled(InternalAnchor)`
   > section {
     transition: all ${({ theme }) => theme.animations.normal} ease;
   }

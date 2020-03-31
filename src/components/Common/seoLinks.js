@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BodyStylised } from '../Typography';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 import { generate } from 'shortid';
 import PagePaths from '../pagePaths';
 
@@ -30,13 +30,13 @@ export default function SeoLinks({ items, ...props }) {
             return (
               <ListItem key={generate()}>
                 {path ? (
-                  <Link
+                  <InternalAnchor
                     to={path}
                     style={{ textDecoration: 'underline' }}
                     title={`Speciality - ${item.title.trim()}`}
                   >
                     {item.title.trim()}
-                  </Link>
+                  </InternalAnchor>
                 ) : (
                   item.title.trim()
                 )}

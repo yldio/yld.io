@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 
+import InternalAnchor from '../Common/InternalAnchor';
 import { Row, Col } from '../grid';
 import { SectionTitle, CardTitle, BodyPrimary } from '../Typography';
 import StyledLink from '../Common/StyledLink';
@@ -79,7 +80,7 @@ const Card = styled.div`
   flex-direction: column;
 `;
 
-const AnimatedLink = styled(Link)`
+const AnimatedLink = styled(InternalAnchor)`
   margin-top: ${({ theme }) => theme.space[3]};
   display: flex;
   width: 100%;

@@ -30,7 +30,7 @@ Markdown:
 ```markdown
 ### Post Title
 
-<FigureImage src={'https://yld.io/image/image.png'} caption={'caption of image'}>
+<FigureImage src={'https://www.yld.io/image/image.png'} caption={'caption of image'}>
 
 The content of the post
 ```
@@ -50,7 +50,7 @@ Will render:
 
 ```html
 <figure>
-  <img src="http://yld.io/image/image.png" alt="caption of image" />
+  <img src="https://www.yld.io/image/image.png" alt="caption of image" />
   <figcaption>caption of image</figcaption>
 </figure>
 ```
