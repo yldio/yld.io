@@ -4,8 +4,8 @@ it.each`
   description      | mdx
   ${'text'}        | ${'asdf'}
   ${'font styles'} | ${'**asdf**'}
-  ${'links'}       | ${'[YLD](https://yld.io/)'}
-  ${'tags'}        | ${'<iframe src="https://yld.io/" />'}
+  ${'links'}       | ${'[YLD](https://www.yld.io/)'}
+  ${'tags'}        | ${'<iframe src="https://www.yld.io/" />'}
   ${'components'}  | ${'<YouTube videoId="youtube_video_id" />'}
 `('passes for valid mdx using $description', async ({ mdx }) => {
   await expect(ValidateMdx([{ content: mdx }])).resolves.not.toThrow();

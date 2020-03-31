@@ -107,7 +107,7 @@ class Layout extends Component {
           ];
 
           const breadcrumbs = {
-            '@context': 'http://schema.org',
+            '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             description: 'Breadcrumbs list',
             name: 'Breadcrumbs',

@@ -11,8 +11,8 @@ const tweetBlockquote = `
 `;
 const tweetMdx = `<Tweet tweetId="123456789012345678" />`;
 
-const iframe = '<iframe><a href="https://yld.io/"></iframe>';
-const iframeMdx = '<iframecontent:"https://yld.io/">';
+const iframe = '<iframe><a href="https://www.yld.io/"></iframe>';
+const iframeMdx = '<iframecontent:"https://www.yld.io/">';
 
 it.each`
   htmlDescription                                    | html                                                              | md                              | mdDescription
@@ -41,7 +41,7 @@ const imgFigure = `
   <figure>
     <img
       alt="Alt"
-      src="https://yld.io/yld.png"
+      src="https://www.yld.io/yld.png"
     />
   </figure>
 `;
@@ -50,12 +50,12 @@ const imgFigureWithCaption = `
   <figure>
     <img
       alt="Alt"
-      src="https://yld.io/yld.png"
+      src="https://www.yld.io/yld.png"
     />
-    <figcaption><strong>Link</strong>: <a href="https://yld.io/">YLD</a></figcaption>
+    <figcaption><strong>Link</strong>: <a href="https://www.yld.io/">YLD</a></figcaption>
   </figure>
 `;
-const captionMarkdown = '**Link**: [YLD](https://yld.io/)';
+const captionMarkdown = '**Link**: [YLD](https://www.yld.io/)';
 
 describe('images:', () => {
   it('transforms an image to an image: placeholder tag', () => {
@@ -67,7 +67,7 @@ describe('images:', () => {
     const [{ images }] = TransformHTMLToMarkdown([{ html: imgFigure }]);
     expect(images).toEqual([
       {
-        src: 'https://yld.io/yld.png',
+        src: 'https://www.yld.io/yld.png',
         ext: '.png',
         alt: 'Alt',
         name: 'yld.png',

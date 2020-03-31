@@ -18,7 +18,7 @@ assert.deepStrictEqual(mdLink, mdLinkFull);
 const transformStrings = content =>
   content.replace(mdLink, function() {
     const { slug = '' } = arguments[arguments.length - 1];
-    return `(https://yld.io/blog/${slug})`;
+    return `(https://www.yld.io/blog/${slug})`;
   });
 
 module.exports = transformStrings;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 
 const Box = styled.div`
   position: fixed;
@@ -53,7 +53,7 @@ const Button = styled.button`
     `};
 `;
 
-const LinkUnderline = styled(Link)`
+const LinkUnderline = styled(InternalAnchor)`
   text-decoration: underline;
 `;
 

@@ -1,6 +1,6 @@
 # YLD Website
 
-## [Link](https://yld.io/)
+## [Link](https://www.yld.io/)
 
 ## [Storybook](https://yld-storybook.now.sh)
 
@@ -67,7 +67,7 @@ How does the blog work? Good question! See [here](./docs/blog.md)
 
 ## Deployment
 
-The website and lambda are built (`yarn build`) and deployed on [Netlify](https://netlify.com/) to our production environment ([https://yld.io](https://yld.io)) when:
+The website and lambda are built (`yarn build`) and deployed on [Netlify](https://netlify.com/) to our production environment ([https://www.yld.io](https://www.yld.io)) when:
 
 - a new commit is pushed to our **production** (`master`) branch, read more [here](https://www.netlify.com/docs/continuous-deployment/);
 - the Contentful data is updated (via _webhook_).

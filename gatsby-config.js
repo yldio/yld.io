@@ -7,7 +7,7 @@ const {
   GA_TRACKING_ID,
   GTM_AUTH,
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://yld.io',
+  URL: NETLIFY_SITE_URL = 'https://www.yld.io',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;

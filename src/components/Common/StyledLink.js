@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 import styled, { css } from 'styled-components';
 import remcalc from 'remcalc';
 import is from 'styled-is';
@@ -124,7 +124,7 @@ export const FakeLink = styled.p`
   ${StyledLinkCss}
 `;
 
-const Anchor = styled(Link)`
+const Anchor = styled(InternalAnchor)`
   ${StyledLinkCss};
 `;
 

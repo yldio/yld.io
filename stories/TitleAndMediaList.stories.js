@@ -32,7 +32,7 @@ storiesOf('Title and Media List', module).add('Title and Media List', () => {
       title="Best title"
       description="Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here. Mini description goes here."
       mediaItems={mediaItems}
-      CTALink="https://yld.io"
+      CTALink="https://www.yld.io"
       CTAText="Head to yld.io for more"
     />
   );

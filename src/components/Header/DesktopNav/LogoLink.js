@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'gatsby';
+import InternalAnchor from '../../Common/InternalAnchor';
 import remcalc from 'remcalc';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
@@ -12,7 +12,7 @@ import {
   HomePageContext,
 } from '../../../context/PageContext';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(InternalAnchor)`
   height: ${remcalc(48)};
   width: ${remcalc(48)};
 
@@ -39,9 +39,9 @@ const LogoWrapper = ({ children }) => {
       {children}
     </StyledHomePageLink>
   ) : (
-    <Link to="/" title="Return to homepage">
+    <InternalAnchor to="/" title="Return to homepage">
       {children}
-    </Link>
+    </InternalAnchor>
   );
 };
 
@@ -76,9 +76,9 @@ const LogoLink = ({
   }
 
   return (
-    <Link to="/" title="Return to Homepage">
+    <InternalAnchor to="/" title="Return to Homepage">
       <img role="link" width="49" src={animatedLogo} alt="yld logo" />
-    </Link>
+    </InternalAnchor>
   );
 };
 

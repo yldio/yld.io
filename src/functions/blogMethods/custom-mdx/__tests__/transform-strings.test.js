@@ -10,7 +10,7 @@ it.each([
   'replaces the YLD medium blog URL %s with the yld.io blog URL',
   mediumUrl => {
     const content = TransformStrings(`[YLD Blog](${mediumUrl})`);
-    expect(content).toBe('[YLD Blog](https://yld.io/blog/)');
+    expect(content).toBe('[YLD Blog](https://www.yld.io/blog/)');
   },
 );
 
@@ -18,7 +18,7 @@ it('strips hex UID from a post slug', () => {
   const content = TransformStrings(
     '[YLD Post](https://medium.com/yld-blog/yld-post-0123456789ab)',
   );
-  expect(content).toBe('[YLD Post](https://yld.io/blog/yld-post)');
+  expect(content).toBe('[YLD Post](https://www.yld.io/blog/yld-post)');
 });
 
 it('replaces multiple URLs in one post', () => {
@@ -27,7 +27,7 @@ it('replaces multiple URLs in one post', () => {
     [YLD Blog 2](https://medium.com/yld-blog/)
   `);
   expect(content).toBe(`
-    [YLD Blog 1](https://yld.io/blog/)
-    [YLD Blog 2](https://yld.io/blog/)
+    [YLD Blog 1](https://www.yld.io/blog/)
+    [YLD Blog 2](https://www.yld.io/blog/)
   `);
 });

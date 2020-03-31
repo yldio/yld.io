@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Padding } from 'styled-components-spacing';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 import remcalc from 'remcalc';
 import breakpoint from 'styled-components-breakpoint';
 
@@ -53,7 +53,7 @@ const GDPR = styled.div`
   `}
 `;
 
-const LinkUnderline = styled(Link)`
+const LinkUnderline = styled(InternalAnchor)`
   text-decoration: underline;
 `;
 

@@ -9,7 +9,7 @@ import { DisplayTitle, BodyPrimary, Subtitle } from '../Typography';
 import Image from './Image';
 import StyledLink from './StyledLink';
 import SocialLink from './SocialLink';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 
 const PersonProfileCol = styled(Col)`
   display: flex;
@@ -185,7 +185,9 @@ const Profile = props => {
           </PersonCopyWrapper>
           <PersonCta>
             <PersonBodyPrimary secondary>{personCtaCopy}</PersonBodyPrimary>{' '}
-            <Link to={personCtaLinkUrl}>{personCtaLinkCopy}</Link>
+            <InternalAnchor to={personCtaLinkUrl}>
+              {personCtaLinkCopy}
+            </InternalAnchor>
           </PersonCta>
         </Col>
       </ProfileRow>

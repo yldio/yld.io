@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import InternalAnchor from '../Common/InternalAnchor';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
@@ -84,7 +84,9 @@ const Services = ({ statement, services }) => (
                   </ImageWrapper>
                 )}
                 <ServiceTitle noPadding>
-                  <Link to={`/${service.slug}`}>{service.title}</Link>
+                  <InternalAnchor to={`/${service.slug}`}>
+                    {service.title}
+                  </InternalAnchor>
                 </ServiceTitle>
 
                 <ServiceSentence>
