@@ -14,6 +14,5 @@
 /career-framework/ /
 
 # Subdomains
-https://blog.yld.io/           https://www.yld.io/blog/
 https://blog.yld.io/:y/:m/:d/* https://www.yld.io/blog/:splat
 https://blog.yld.io/*          https://www.yld.io/blog/:splat
