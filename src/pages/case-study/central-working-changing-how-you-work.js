@@ -24,8 +24,8 @@ import {
   BlockRow,
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
 
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
 import Image from '../../components/Common/Image';
+import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const StyledColData2 = styled(Col)`
   display: flex;
@@ -55,8 +55,8 @@ const Block9Grid = styled(Grid)`
 `;
 
 const Block9BlockRow = styled(BlockRow)`
-  /* 
-    This set up is used to bring this Row down to be nested 
+  /*
+    This set up is used to bring this Row down to be nested
     within a square image.
 
     The important part here is the "transform: translateY(100%);"
@@ -66,16 +66,16 @@ const Block9BlockRow = styled(BlockRow)`
         |    | <--- Row
         |___ |
     __________
-    |         | 
+    |         |
     |         | <--- image
-    |         | 
-    |_________| 
+    |         |
+    |_________|
 
     With below CSS:
     __________
     |    |    | <--- Row - brought down to be sitting on top of image
     |    |___ |
-    |         | 
+    |         |
     |_________| <--- image
   */
   ${breakpoint('smallTablet')`
@@ -111,7 +111,7 @@ const IndexPage = props => {
     genericBlock7: data7,
     genericBlock8: data8,
     genericBlock9: data9,
-    relatedCaseStudy,
+    relatedCaseStudies,
   } = caseStudy;
 
   const outComesDataFigures = normaliseAll(data2.slice(1));
@@ -324,7 +324,7 @@ const IndexPage = props => {
         </Block9Grid>
       </GreyBackground>
 
-      <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
+      <FeaturedWork limited hideSparseRows caseStudies={relatedCaseStudies} />
     </Layout>
   );
 };
@@ -337,20 +337,7 @@ export const query = graphql`
       seoMetaData {
         ...SEOMetaFields
       }
-      relatedCaseStudy {
-        title
-        slug
-        introSentence {
-          introSentence
-        }
-        posterImage {
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-      }
+      ...NonTemplatedCaseStudyV2Related
       slug
       title
       posterImage {

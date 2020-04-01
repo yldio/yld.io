@@ -16,6 +16,15 @@ export const fragments = graphql`
   fragment NonTemplatedCaseStudyV2 on ContentfulNonTemplatedCaseStudyV2 {
     title
     slug
+    previewImage {
+      fluid(maxWidth: 600) {
+        ...GatsbyContentfulFluid_withWebp
+      }
+      title
+      file {
+        url
+      }
+    }
     posterImage {
       fluid(maxWidth: 600) {
         ...GatsbyContentfulFluid_withWebp
@@ -26,14 +35,25 @@ export const fragments = graphql`
       }
     }
     posterColor
+    reverseColor
     introSentence {
       introSentence
     }
+    client
   }
 
   fragment TemplatedCaseStudy on ContentfulTemplatedCaseStudy {
     title
     slug
+    previewImage {
+      fluid(maxWidth: 600) {
+        ...GatsbyContentfulFluid_withWebp
+      }
+      title
+      file {
+        url
+      }
+    }
     posterImage {
       fluid(maxWidth: 600) {
         ...GatsbyContentfulFluid_withWebp
@@ -44,9 +64,11 @@ export const fragments = graphql`
       }
     }
     posterColor
+    reverseColor
     introSentence {
       introSentence
     }
+    client
   }
 
   fragment NonTemplatedCaseStudyV2Related on ContentfulNonTemplatedCaseStudyV2 {
