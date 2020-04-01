@@ -10,7 +10,7 @@ import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero';
 import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection';
 import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection';
 import VideoSection from '../components/Common/VideoSection';
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
+import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
@@ -43,9 +43,10 @@ const CaseStudy = ({
           </Grid>
         </Padding>
       </GreyBackgroundOffset>
-      <CaseStudyPreview
-        isTop={false}
-        caseStudy={caseStudy.relatedCaseStudies[0]}
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={caseStudy.relatedCaseStudies}
       />
     </Layout>
   );

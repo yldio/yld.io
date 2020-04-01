@@ -29,8 +29,8 @@ import {
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
 import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import Statement from '../../components/Common/Statement';
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
 import Image from '../../components/Common/Image';
+import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const PropertiesAndTokensBlockRow = styled(BlockRow)`
   flex-direction: column;
@@ -560,9 +560,10 @@ const IndexPage = props => {
           </Col>
         </Row>
       </Grid>
-      <CaseStudyPreview
-        isTop={false}
-        caseStudy={caseStudy.relatedCaseStudies[0]}
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={caseStudy.relatedCaseStudies}
       />
     </Layout>
   );

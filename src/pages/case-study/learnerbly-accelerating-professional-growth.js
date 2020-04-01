@@ -14,7 +14,6 @@ import Head from '../../components/Common/Head';
 import Hr from '../../components/Common/Hr';
 import Image from '../../components/Common/Image';
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
 import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import {
   shouldRender,
@@ -22,6 +21,7 @@ import {
   TextColumnsBlock,
   BlockRow,
 } from '../../components/Common/CaseStudyCards/CaseStudyBlocks';
+import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const Block1Col = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
@@ -57,7 +57,7 @@ const IndexPage = props => {
     genericBlock6: data6,
     genericBlock7: data7,
     genericBlock8: data8,
-    relatedCaseStudy,
+    relatedCaseStudies,
   } = caseStudy;
 
   return (
@@ -274,7 +274,7 @@ const IndexPage = props => {
         </Grid>
       )}
 
-      <CaseStudyPreview isTop={false} caseStudy={relatedCaseStudy} />
+      <FeaturedWork limited hideSparseRows caseStudies={relatedCaseStudies} />
     </Layout>
   );
 };
@@ -287,20 +287,7 @@ export const query = graphql`
       seoMetaData {
         ...SEOMetaFields
       }
-      relatedCaseStudy {
-        title
-        slug
-        introSentence {
-          introSentence
-        }
-        posterImage {
-          title
-          file {
-            url
-          }
-        }
-        posterColor
-      }
+      ...NonTemplatedCaseStudyV2Related
       slug
       title
       posterImage {

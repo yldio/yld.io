@@ -8,12 +8,12 @@ import remcalc from 'remcalc';
 import { Grid, Row, Col } from '../../components/grid';
 import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
 import Layout from '../../components/layout';
 import GreyBackground from '../../components/Common/GreyBackground';
 import Image from '../../components/Common/Image';
 import { makeText } from '../../utils/makeText';
 import Head from '../../components/Common/Head';
+import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const ColWithoutExtraPadding = styled(Col)`
   margin-left: auto;
@@ -318,9 +318,10 @@ const IndexPage = ({
         </Grid>
       </Padding>
       <Divider />
-      <CaseStudyPreview
-        isTop={false}
-        caseStudy={caseStudy.relatedCaseStudies[0]}
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={caseStudy.relatedCaseStudies}
       />
     </Layout>
   );

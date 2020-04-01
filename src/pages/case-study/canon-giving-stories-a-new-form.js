@@ -8,7 +8,6 @@ import breakpoint from 'styled-components-breakpoint';
 import { Grid, Row, Col } from '../../components/grid';
 import { SectionTitle, BodyPrimary } from '../../components/Typography';
 import CaseStudyHero from '../../components/Common/CaseStudyCards/CaseStudyHero';
-import CaseStudyPreview from '../../components/Common/CaseStudyCards/CaseStudyPreview';
 import Layout from '../../components/layout';
 import GreyBackground, {
   GreyBackgroundOffset,
@@ -18,6 +17,7 @@ import Image from '../../components/Common/Image';
 import { makeText } from '../../utils/makeText';
 import Head from '../../components/Common/Head';
 import VideoSection from '../../components/Common/VideoSection';
+import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const MobileOnly = styled.div`
   ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
@@ -225,9 +225,10 @@ const IndexPage = ({
           </Padding>
         </Grid>
       </GreyBackgroundOffset>
-      <CaseStudyPreview
-        isTop={false}
-        caseStudy={caseStudy.relatedCaseStudies[0]}
+      <FeaturedWork
+        limited
+        hideSparseRows
+        caseStudies={caseStudy.relatedCaseStudies}
       />
     </Layout>
   );
