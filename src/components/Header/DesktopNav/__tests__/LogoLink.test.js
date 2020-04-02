@@ -1,12 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import {
-  LogoStyleContext,
-  HomePageContext,
-} from '../../../../context/PageContext';
+import { HomePageContext } from '../../../../context/PageContext';
 
 import LogoLink from '../LogoLink';
+import { colors } from '../../../../utils/theme';
 
 let mockScrollTo;
 let originalScrollTo;
@@ -18,47 +16,51 @@ afterEach(() => {
 });
 
 describe('by default', () => {
-  let logo;
+  let elem;
 
   beforeEach(() => {
-    const { getByAltText } = render(<LogoLink />);
-    logo = getByAltText(/logo/i);
+    elem = render(<LogoLink />);
   });
 
-  it('renders the black logo GIF', () => {
-    expect(logo.src).toContain('logo_animated.gif');
+  it('renders the logo', () => {
+    expect(elem.getAllByTitle('YLD default logo')).toHaveLength(1);
   });
 
   it('links to the homepage', () => {
-    const { pathname } = new URL(logo.closest('a').href);
+    const { pathname } = new URL(elem.queryByRole('link').href);
     expect(pathname).toBe('/');
   });
 });
 
-describe('with LogoStyle white', () => {
-  it('renders the static white logo', () => {
-    const { getByAltText } = render(
-      <LogoStyleContext.Provider value="white">
-        <LogoLink />
-      </LogoStyleContext.Provider>,
-    );
-    const logo = getByAltText(/logo/i);
-    expect(logo.src).toContain('yld-white.svg');
+describe('with square=true', () => {
+  it('renders the squared logo', () => {
+    const { getAllByTitle } = render(<LogoLink squared />);
+    expect(getAllByTitle('YLD squared logo')).toHaveLength(1);
+  });
+});
+
+describe('with a fillColorInitial', () => {
+  it('renders the logo colored', () => {
+    const { getByRole } = render(<LogoLink fillColorInitial="red" />);
+    expect(getByRole('img').querySelectorAll('[fill="red"]')).toHaveLength(1);
   });
 
-  describe('on the homepage', () => {
-    it('links to the top of the page', () => {
-      const { getByAltText } = render(
-        <LogoStyleContext.Provider value="white">
-          <HomePageContext.Provider value={true}>
-            <LogoLink />
-          </HomePageContext.Provider>
-        </LogoStyleContext.Provider>,
-      );
-      const logo = getByAltText(/logo/i);
+  it('of text color renders the animated text-colored logo', () => {
+    const { getByRole } = render(<LogoLink fillColorInitial={colors.text} />);
+    expect(getByRole('img')).toHaveAttribute('alt', 'YLD animated logo');
+  });
+});
 
-      fireEvent.click(logo);
-      expect(mockScrollTo).toHaveBeenCalledWith(0, 0);
-    });
+describe('on the homepage', () => {
+  it('links to the top of the page', () => {
+    const { getByRole } = render(
+      <HomePageContext.Provider value={true}>
+        <LogoLink />
+      </HomePageContext.Provider>,
+    );
+    const logo = getByRole('img');
+
+    fireEvent.click(logo);
+    expect(mockScrollTo).toHaveBeenCalledWith(0, 0);
   });
 });

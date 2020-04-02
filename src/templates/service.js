@@ -10,6 +10,8 @@ import BlueBackground from '../components/Common/BlueBackground';
 import Head from '../components/Common/Head';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import IntroSection from '../components/Service/IntroSection';
+import { LogoStyleContext } from '../context/PageContext';
+import { colors } from '../utils/theme';
 
 const Service = ({
   data: {
@@ -68,37 +70,46 @@ const Service = ({
   ]);
 
   return (
-    <Layout
-      location={location}
-      slug={service.slug}
-      breadcrumbData={breadcrumbData}
-      footerContactUsId={service.footerContactUs.id}
+    <LogoStyleContext.Provider
+      value={{
+        type: 'squared',
+        fillColorInitial: colors.text,
+        fillColorHover: '#8e8e8e',
+        textColor: colors.white,
+      }}
     >
-      <Head seoMetaData={seoMetaData} />
+      <Layout
+        location={location}
+        slug={service.slug}
+        breadcrumbData={breadcrumbData}
+        footerContactUsId={service.footerContactUs.id}
+      >
+        <Head seoMetaData={seoMetaData} />
 
-      <IntroSection
-        introSentence={service.mainPageIntroSentence.mainPageIntroSentence}
-        introBlocks={introBlocks}
-      />
+        <IntroSection
+          introSentence={service.mainPageIntroSentence.mainPageIntroSentence}
+          introBlocks={introBlocks}
+        />
 
-      <BlueBackground>
-        <WorkStages
-          title={service.workStagesTitle}
-          workStages={service.workStages}
+        <BlueBackground>
+          <WorkStages
+            title={service.workStagesTitle}
+            workStages={service.workStages}
+          />
+        </BlueBackground>
+        <GreyBackground>
+          <SeoLinksContainer
+            specialities={specialities}
+            sectionTitle="We work with"
+          />
+        </GreyBackground>
+        <FeaturedWork
+          limited
+          hideSparseRows
+          caseStudies={service.relatedCaseStudy}
         />
-      </BlueBackground>
-      <GreyBackground>
-        <SeoLinksContainer
-          specialities={specialities}
-          sectionTitle="We work with"
-        />
-      </GreyBackground>
-      <FeaturedWork
-        limited
-        hideSparseRows
-        caseStudies={service.relatedCaseStudy}
-      />
-    </Layout>
+      </Layout>
+    </LogoStyleContext.Provider>
   );
 };
 

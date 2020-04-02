@@ -1,84 +1,83 @@
 import React, { useContext, useState } from 'react';
 import InternalAnchor from '../../Common/InternalAnchor';
 import remcalc from 'remcalc';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
-import svgLogo from '../../../images/yld-white.svg';
+import YldLogo from '../../../images/yld-logo.js';
 import animatedLogo from '../../../images/logo_animated.gif';
-import ServiceSpecialityLogo from '../../../images/service-speciality-logo';
-import {
-  LogoStyleContext,
-  HomePageContext,
-} from '../../../context/PageContext';
+import SquaredLogo from '../../../images/squared-logo.js';
+import { HomePageContext } from '../../../context/PageContext';
+import { colors } from '../../../utils/theme';
 
 const StyledLink = styled(InternalAnchor)`
-  height: ${remcalc(48)};
   width: ${remcalc(48)};
 
   ${breakpoint('header')`
-    height: ${remcalc(54)};
     width: ${remcalc(54)};
   `}
 `;
-const Logo = styled.img`
-  width: 49px;
-  height: 36px;
+const StyledHomePageLink = styled.div`
+  cursor: pointer;
+
+  width: ${remcalc(48)};
+
+  ${breakpoint('header')`
+    width: ${remcalc(54)};
+  `}
+`;
+
+const iconStyles = css`
+  width: 48px;
   margin-top: ${remcalc(6)};
 `;
 
-const StyledHomePageLink = styled.div`
-  cursor: pointer;
-`;
-
-const LogoWrapper = ({ children }) => {
+const LogoBehavior = ({ children, onMouseEnter, onMouseLeave }) => {
   const isHomePage = useContext(HomePageContext);
 
   return isHomePage ? (
-    <StyledHomePageLink onClick={() => window.scrollTo(0, 0)}>
+    <StyledHomePageLink
+      onClick={() => window.scrollTo(0, 0)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {children}
     </StyledHomePageLink>
   ) : (
-    <InternalAnchor to="/" title="Return to homepage">
+    <StyledLink
+      to="/"
+      title="Return to Homepage"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {children}
-    </InternalAnchor>
+    </StyledLink>
   );
 };
 
-const LogoLink = ({
-  isServiceOrSpecialityPage = false,
-  fillColorInitial = 'black',
-  fillColorHover = 'grey',
-  textColor = 'black',
-}) => {
+const LogoLink = ({ squared, fillColorInitial, fillColorHover, textColor }) => {
+  const isHomePage = useContext(HomePageContext);
+
   const [fillColor, setFillColor] = useState(fillColorInitial);
-  const logoStyle = useContext(LogoStyleContext);
-
-  if (logoStyle === 'white') {
-    return (
-      <LogoWrapper>
-        <Logo src={svgLogo} alt="yld logo" />
-      </LogoWrapper>
-    );
-  }
-
-  if (isServiceOrSpecialityPage) {
-    return (
-      <StyledLink
-        to="/"
-        title="Return to Homepage"
-        onMouseEnter={() => setFillColor(fillColorHover)}
-        onMouseLeave={() => setFillColor(fillColorInitial)}
-      >
-        <ServiceSpecialityLogo fillColor={fillColor} textColor={textColor} />
-      </StyledLink>
-    );
-  }
+  const onMouseEnter = () => fillColorHover && setFillColor(fillColorHover);
+  const onMouseLeave = () => setFillColor(fillColorInitial);
 
   return (
-    <InternalAnchor to="/" title="Return to Homepage">
-      <img role="link" width="49" src={animatedLogo} alt="yld logo" />
-    </InternalAnchor>
+    <LogoBehavior onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {squared ? (
+        <SquaredLogo
+          css={iconStyles}
+          fillColor={fillColor}
+          textColor={textColor}
+        />
+      ) : isHomePage || fillColorInitial !== colors.text ? (
+        // Do not fall back to animated logo if there is a different color,
+        // since we cannot recolor that. Also force non-animated on home page.
+        <YldLogo css={iconStyles} fillColor={fillColor} />
+      ) : (
+        <img css={iconStyles} src={animatedLogo} alt="YLD animated logo" />
+      )}
+    </LogoBehavior>
   );
 };
 

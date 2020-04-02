@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
 import LogoLink from './DesktopNav/LogoLink';
 import ServiceLink from './DesktopNav/ServiceLink';
-import { logoColors } from './utils/navLinksHelper';
 import getServiceInfo from '../../utils/getServiceInfo';
+import { LogoStyleContext, logoStyleDefaults } from '../../context/PageContext';
 
 const StyledLinksContainer = styled.div`
   flex-grow: 1;
@@ -51,40 +51,40 @@ const TopNavBranding = ({ slug }) => (
       }
     `}
     render={({ services, specialities }) => {
-      const {
-        isServicePage,
-        isSpecialityPage,
-        specialityColor,
-        service,
-      } = getServiceInfo({
+      const { isServicePage, isSpecialityPage, service } = getServiceInfo({
         services,
         specialities,
         slug,
       });
 
-      const fillColorInitial = isSpecialityPage
-        ? specialityColor || logoColors.specialitiesFillDefault
-        : logoColors['default'];
-
-      const fillColorHover =
-        logoColors[isSpecialityPage ? 'specialityHover' : 'defaultHover'];
-
-      const textColor =
-        logoColors[isSpecialityPage ? 'specialityText' : 'defaultText'];
+      let {
+        type,
+        fillColorInitial = logoStyleDefaults.fillColorInitial,
+        fillColorHover = fillColorInitial,
+        textColor = logoStyleDefaults.textColor,
+        serviceColor = fillColorInitial,
+      } = {
+        ...logoStyleDefaults,
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        ...useContext(LogoStyleContext),
+      };
 
       return (
         <StyledLinksContainer>
           <LogoLink
-            isServiceOrSpecialityPage={isServicePage || isSpecialityPage}
+            squared={type === 'squared'}
             fillColorInitial={fillColorInitial}
             fillColorHover={fillColorHover}
             textColor={textColor}
           />
-          <ServiceLink
-            isSpecialityPage={isSpecialityPage}
-            isServicePage={isServicePage}
-            service={service}
-          />
+          {(isSpecialityPage || isServicePage) && (
+            <ServiceLink
+              isSpecialityPage={isSpecialityPage}
+              isServicePage={isServicePage}
+              service={service}
+              color={serviceColor}
+            />
+          )}
         </StyledLinksContainer>
       );
     }}

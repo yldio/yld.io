@@ -11,7 +11,9 @@ import Hr from './Hr';
 import BackgroundColorWrapper from './BackgroundColorWrapper';
 
 const noEventsMessage = title =>
-  `It looks like there currently aren’t any upcoming ${title} events. You can always check back again later or get in touch if you are interested in potentially hosting one.`;
+  `It looks like there currently aren’t any upcoming ${
+    title ? `${title} ` : ''
+  }events. You can always check back again later or get in touch if you are interested in potentially hosting one.`;
 
 const getAllUpcomingEvents = events =>
   events
@@ -23,9 +25,9 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.space[4]} 0 ${({ theme }) => theme.space[5]};
 
   ${breakpoint('tablet')`
-      padding: 
-        ${({ theme }) => theme.space[6]} 
-        0 
+      padding:
+        ${({ theme }) => theme.space[6]}
+        0
         ${({ theme }) => theme.space[7]};
   `}
 `;

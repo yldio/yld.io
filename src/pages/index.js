@@ -73,7 +73,7 @@ const IndexPage = ({ data, location }) => {
   const featuredEvent = getHomepageConferences(events.edges)[0];
   return (
     <HomePageContext.Provider value={true}>
-      <LogoStyleContext.Provider value="white">
+      <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
         <Layout location={location} bgColor="blueBg">
           <Head seoMetaData={content.seoMetaData} />
           <Intro {...content} />
@@ -132,24 +132,6 @@ export const query = graphql`
       }
       introCtaText
       introCtaLink
-      featuredCaseStudy {
-        id
-        title
-        slug
-        posterImage {
-          title
-          file {
-            url
-          }
-          fluid(maxWidth: 600) {
-            ...GatsbyContentfulFluid_withWebp
-          }
-        }
-        posterColor
-        introSentence {
-          introSentence
-        }
-      }
       seoText {
         content {
           content {
@@ -245,9 +227,9 @@ export const query = graphql`
         ctaLink
         descriptionLine1
         descriptionLine2
-        titleSectionLine1
-        titleSectionLine2
-        titleSectionLine3
+        titleBeforeContributionCount: titleSectionLine1
+        titleBetweenContributionAndProjectCount: titleSectionLine2
+        titleAfterProjectCount: titleSectionLine3
         icon {
           title
           file {

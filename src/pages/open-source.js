@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import remcalc from 'remcalc';
 
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import Head from '../components/Common/Head';
@@ -8,7 +9,6 @@ import Layout from '../components/layout';
 import { Grid, Row, Col } from '../components/grid';
 import EventSection from '../components/Common/Events';
 import BlueBackground from '../components/Common/BlueBackground';
-import CaseStudyPreview from '../components/Common/CaseStudyCards/CaseStudyPreview';
 import Statement from '../components/Common/Statement';
 import SeoLinksContainer from '../components/Common/seoLinksContainer';
 import Hr from '../components/Common/Hr';
@@ -18,16 +18,21 @@ import TalksSection from '../components/OpenSource/Talks';
 import PartnershipsSection from '../components/OpenSource/Partnerships';
 import WhyOpenSource from '../components/OpenSource/WhyOpenSource';
 import OpenDeliverables from '../components/OpenSource/OpenDeliverables';
+import { LogoStyleContext } from '../context/PageContext';
+import { colors } from '../utils/theme';
+import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
+import GreyBackground from '../components/Common/GreyBackground';
 
 const StyledHr = styled(Hr)`
   border-color: #848194;
 `;
 
+const title = 'Open Source';
+
 const OpenSource = ({ data, location }) => {
   const {
     contentfulOpenSourcePage: {
       seoMetaData,
-      featuredCaseStudy,
       statement,
       talksSectionImage,
       talksSectionTitle,
@@ -52,8 +57,10 @@ const OpenSource = ({ data, location }) => {
       technologyPartners: partners,
       eventsSectionImage,
       eventsSectionDescription,
+      topContributionsSection,
+      contributionsSection,
+      featuredWork,
       footerContactUs: { id: footerContactId },
-      contributionsSection: contributions,
     },
     allContentfulMeetupEvent: { nodes: events },
     site: {
@@ -90,69 +97,90 @@ const OpenSource = ({ data, location }) => {
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
-      name: 'Open source',
+      name: title,
       pathname: location.pathname,
       position: 2,
     },
   ]);
 
   return (
-    <Layout
-      location={location}
-      slug={'open-source'}
-      footerContactUsId={footerContactId}
-      breadcrumbData={breadcrumbData}
+    <LogoStyleContext.Provider
+      value={{
+        type: 'squared',
+        fillColorInitial: colors.white,
+        fillColorHover: '#8e8e8e',
+        textColor: colors.blueBg,
+      }}
     >
-      <Head seoMetaData={seoMetaData} />
-      <CaseStudyPreview isTop caseStudy={featuredCaseStudy} />
-      <Statement as="h1">{statement}</Statement>
-      <WhyOpenSource
-        title={whyOsSectionTitle}
-        list={whyOsReasons}
-        subtitle={whyOsSectionClientsSubtitle}
-        companies={whyOsSectionClients}
-      />
-      <OpenDeliverables {...data} />
-      <BlueBackground>
-        <Contributions {...contributions} />
-        <Grid>
-          <Row>
-            <Col width={[1]}>
-              <StyledHr />
-            </Col>
-          </Row>
-        </Grid>
-        {talks && talks.length && (
-          <TalksSection
-            icon={talksSectionImage}
-            title={talksSectionTitle}
-            talks={talks}
-            ctaText={talkSectionCtaText}
-            ctaLink={talksSectionCtaLink}
-          />
-        )}
-      </BlueBackground>
-      <EventSection
-        events={events}
-        description={eventsSectionDescription}
-        eventIcon={eventsSectionImage.file.url}
-      />
-      <BlueBackground>
-        {partners && partners.length && (
-          <PartnershipsSection
-            title={technologyPartnersSectionTitle}
-            partners={partners}
-          />
-        )}
-      </BlueBackground>
-
-      {specialities && specialities.length && (
-        <SeoLinksContainer
-          specialities={specialities}
-          sectionTitle={technologiesSectionTitle}
+      <Layout
+        location={location}
+        bgColor="blueBg"
+        slug={'open-source'}
+        footerContactUsId={footerContactId}
+        breadcrumbData={breadcrumbData}
+      >
+        <Head seoMetaData={seoMetaData} />
+        <BlueBackground
+          css={css`
+            margin-top: -${remcalc(36)};
+          `}
+        >
+          <Contributions {...topContributionsSection} />
+        </BlueBackground>
+        <Statement as="h1">{statement}</Statement>
+        <WhyOpenSource
+          title={whyOsSectionTitle}
+          list={whyOsReasons}
+          subtitle={whyOsSectionClientsSubtitle}
+          companies={whyOsSectionClients}
         />
-      )}
-    </Layout>
+        <OpenDeliverables {...data} />
+        <BlueBackground>
+          <Contributions {...contributionsSection} />
+          <Grid>
+            <Row>
+              <Col width={[1]}>
+                <StyledHr />
+              </Col>
+            </Row>
+          </Grid>
+          {talks && talks.length && (
+            <TalksSection
+              icon={talksSectionImage}
+              title={talksSectionTitle}
+              talks={talks}
+              ctaText={talkSectionCtaText}
+              ctaLink={talksSectionCtaLink}
+            />
+          )}
+        </BlueBackground>
+        <EventSection
+          events={events}
+          title={title}
+          description={eventsSectionDescription}
+          eventIcon={eventsSectionImage.file.url}
+        />
+        <BlueBackground>
+          {partners && partners.length && (
+            <PartnershipsSection
+              title={technologyPartnersSectionTitle}
+              partners={partners}
+            />
+          )}
+        </BlueBackground>
+
+        {specialities && specialities.length && (
+          <GreyBackground>
+            <SeoLinksContainer
+              specialities={specialities}
+              sectionTitle={technologiesSectionTitle}
+            />
+          </GreyBackground>
+        )}
+
+        <FeaturedWork limited hideSparseRows caseStudies={featuredWork} />
+      </Layout>
+    </LogoStyleContext.Provider>
   );
 };
 
@@ -185,23 +213,6 @@ const OpenSourcePage = props => (
             file {
               fileName
               url
-            }
-          }
-          featuredCaseStudy {
-            title
-            slug
-            posterColor
-            posterImage {
-              title
-              file {
-                url
-              }
-              fluid(maxWidth: 550) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
-            introSentence {
-              introSentence
             }
           }
           statement
@@ -308,26 +319,29 @@ const OpenSourcePage = props => (
               }
             }
           }
-          contributionsSection {
+          topContributionsSection {
+            titleBeforeContributionCount: titleSectionLine1
+            titleBetweenContributionAndProjectCount: titleSectionLine2
+            titleAfterProjectCount: titleSectionLine3
             githubMetaData {
               openSourceMetaPullRequestsCount
               openSourceMetaReposCount
             }
-            ctaCopy
-            ctaLink
-            descriptionLine1
-            descriptionLine2
-            titleSectionLine1
-            titleSectionLine2
-            titleSectionLine3
+            sectionGraphic {
+              title
+              file {
+                url
+              }
+            }
+          }
+          contributionsSection {
+            titleStandalone
             icon {
               title
               file {
                 url
               }
             }
-            descriptionLine1
-            descriptionLine2
             ctaCopy
             ctaLink
             githubRepos {
@@ -346,6 +360,12 @@ const OpenSourcePage = props => (
             specialities {
               title
               id
+            }
+          }
+          featuredWork {
+            ... on Node {
+              ...NonTemplatedCaseStudyV2
+              ...TemplatedCaseStudy
             }
           }
           footerContactUs {
