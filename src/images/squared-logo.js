@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ServiceSpecialityLogo = ({ fillColor, textColor }) => (
-  <svg viewBox="0 0 54 54">
+const SquaredLogo = ({ fillColor, textColor, ...props }) => (
+  <svg {...props} role="img" viewBox="0 0 54 54">
     {/*
-      If you're here to delete this SVG title for SEO reasons, turn back now. 
+      If you're here to delete this SVG title for SEO reasons, turn back now.
       This is used for accessibility and wont affect SEO rankings
     */}
-    <title>service speciality logo</title>
-    <g id="yld-service-speciality-logo" stroke="none" fill="none">
+    <title>YLD squared logo</title>
+    <g id="yld-logo" stroke="none" fill="none">
       <rect
         id="Logo-rectangle"
         fill={fillColor}
@@ -25,4 +25,4 @@ const ServiceSpecialityLogo = ({ fillColor, textColor }) => (
   </svg>
 );
 
-export default ServiceSpecialityLogo;
+export default SquaredLogo;

@@ -8,7 +8,7 @@ import InternalAnchor from '../../../components/Common/InternalAnchor';
 const StyledServiceLink = styled(InternalAnchor)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
-  color: ${props => props.theme.colors[props.color]};
+  color: ${props => props.color};
 
   ${breakpoint('header')`
     font-size: ${remcalc(30)};
@@ -16,21 +16,15 @@ const StyledServiceLink = styled(InternalAnchor)`
 
   &:hover {
     text-decoration: underline;
-    color: ${props => props.theme.colors[props.color]};
+    color: ${props => props.color};
   }
 `;
 
-const ServiceLink = ({ service, isServicePage, isSpecialityPage }) => {
+const ServiceLink = ({ service, color }) => {
   return (
-    (isServicePage || isSpecialityPage) && (
-      <StyledServiceLink
-        to={`/${service}`}
-        title={service}
-        color={isServicePage ? 'text' : 'white'}
-      >
-        {capitalize(service.replace(/-/g, ' '))}
-      </StyledServiceLink>
-    )
+    <StyledServiceLink to={`/${service}`} title={service} color={color}>
+      {capitalize(service.replace(/-/g, ' '))}
+    </StyledServiceLink>
   );
 };
 

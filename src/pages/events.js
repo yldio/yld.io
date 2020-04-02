@@ -77,7 +77,7 @@ const StyledRow = styled(Row)`
   overflow: visible;
   padding-bottom: ${({ theme }) => theme.space[3]};
 
-  ${breakpoint('smalltablet')`
+  ${breakpoint('smallTablet')`
     padding-bottom: ${({ theme }) => theme.space[4]};
   `};
 
@@ -222,7 +222,7 @@ const EventPage = ({
   const eventStructuredData = createEventStructuredData(futureEvents);
 
   return (
-    <LogoStyleContext.Provider value="white">
+    <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
       <Layout
         bgColor="blueBg"
         footerContactUsId={footerContactUs.id}

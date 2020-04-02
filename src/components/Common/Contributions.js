@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useCountUp } from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import breakpoint from 'styled-components-breakpoint';
@@ -11,29 +11,16 @@ import StyledLink from './StyledLink';
 import Image from './Image';
 import { BodyPrimary } from '../Typography';
 
-const UnpaddedGrid = styled(Grid)`
-  ${breakpoint('smallPhone', 'smallTablet')`
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 100%;
-  `}
-`;
-const StyledCol = styled(Col)`
-  ${breakpoint('smallPhone', 'smallTablet')`
-    padding-left: ${({ theme }) => theme.space[3]};
-    padding-right: ${({ theme }) => theme.space[3]};
-  `}
-`;
-
 const Wrapper = styled.div`
   position: relative;
-  padding-top: ${({ theme }) => theme.space[4]};
-  padding-bottom: ${({ theme }) => theme.space[5]};
-
+  padding: ${({ theme }) => theme.space[5]} 0;
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]};
-    padding-bottom: ${({ theme }) => theme.space[7]};
+    padding: ${({ theme }) => theme.space[7]} 0;
   `}
+`;
+
+const ContributionsIcon = styled(Image)`
+  max-width: 54px;
 `;
 
 const StyledBodyPrimary = styled(BodyPrimary)`
@@ -43,80 +30,76 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   margin-bottom: ${({ theme }) => theme.space[4]};
 `;
 
-const StyledImage = styled(Image)`
-  max-width: 54px;
-  padding-bottom: ${({ theme }) => theme.space[2]};
+const RowWithImage = styled(Row)`
+  overflow: visible;
+  ${breakpoint('smallTablet')`
+    flex-wrap: nowrap;
+  `}
+`;
+const StyledCol = styled(Col)`
+  align-items: center;
+
+  ${breakpoint('tablet')`
+    padding-right: ${({ theme }) => theme.space[2]}
+  `}
+`;
+
+const GraphicCol = styled(Col)`
+  height: 320px;
+
+  ${breakpoint('tablet')`
+    padding-left: ${({ theme }) => theme.space[2]}
+  `}
+  ${breakpoint('smallPhone', 'smallTablet')`
+    padding-top: ${({ theme }) => theme.space[4]};
+  `}
+
+  overflow: visible;
+`;
+const Graphic = styled(Image)`
+  height: 100%;
+  width: auto;
+  max-width: none;
 `;
 
 const ReposWrapper = styled.div`
-  padding-bottom: ${({ theme }) => theme.space[4]};
   padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[4]};
 
-  ${breakpoint('tablet')`  
+  ${breakpoint('smallTablet')`
+    padding-top: ${({ theme }) => theme.space[5]}
+  `}
+
+  ${breakpoint('tablet')`
+    padding-top: ${({ theme }) => theme.space[7]};
     padding-bottom: ${({ theme }) => theme.space[6]};
+  `}
+
+  ${breakpoint('desktop')`
     padding-top: ${({ theme }) => theme.space[6]};
   `}
 `;
 
-const GithubLink = styled(StyledLink)`
-  ${breakpoint('tablet')`
-    margin-bottom: ${({ theme }) => theme.space[4]};
-  `}
-`;
-
-const Graphic = styled(Image)`
-  display: none;
-
-  ${breakpoint('smallTablet')`
-    display: block;
-    position: absolute;
-    z-index: 0;
-    top: 50%;
-    height: 320px;
-    transform: translateY(-50%);
-  `}
-
-  ${breakpoint('tablet')`
-  // initial margin - (WrapperWidth + GridMargin - Breakpoint)/2
-  // starts with -6px and adds 0.5px for each 1px screen size is over breakpoint
-    margin-left: calc(-6px - calc(calc(100% + 96px) - ${({ theme }) =>
-      theme.breakpoints.tablet}px)/2);
-  `}
-
-  ${breakpoint('desktop')`
-    margin-left: -154px;
-  `}
-`;
-
-const StaticRow = styled(Row)`
-  position: static;
-`;
-
-const GraphicCol = styled(Col)`
-  position: static;
-  ${breakpoint('smallPhone', 'smallTablet')`
-    margin-top: ${({ theme }) => theme.space[3]};
-    min-height: 220px;
-    background-image: url(${({ image }) => image.file.url});
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: ${({ theme }) => theme.space[3]};
-  `}
-`;
-
+// Used on homepage and multiple times on open source page
 const Contributions = ({
   ctaCopy,
   ctaLink,
+  titleStandalone,
+  titleBeforeContributionCount,
+  titleBetweenContributionAndProjectCount,
+  titleAfterProjectCount,
   descriptionLine1,
   descriptionLine2,
-  titleSectionLine1,
-  titleSectionLine2,
-  titleSectionLine3,
   icon,
   sectionGraphic,
   githubRepos: repos,
-  githubMetaData: { openSourceMetaReposCount, openSourceMetaPullRequestsCount },
+  githubMetaData: {
+    openSourceMetaReposCount,
+    openSourceMetaPullRequestsCount,
+  } = {},
 }) => {
+  // counters
+
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -129,18 +112,20 @@ const Contributions = ({
   });
 
   const { countUp: contributions, start: startContributions } = useCountUp(
-    countUpOpts({ end: openSourceMetaPullRequestsCount }),
+    countUpOpts({ end: openSourceMetaPullRequestsCount || 0 }),
   );
 
   const { countUp: projects, start: startProjects } = useCountUp(
-    countUpOpts({ end: openSourceMetaReposCount }),
+    countUpOpts({ end: openSourceMetaReposCount || 0 }),
   );
 
-  const contributionsCopy = {
-    titleSectionLine1,
-    titleSectionLine2,
-    titleSectionLine3,
-  };
+  const contributionsCopy = titleBeforeContributionCount &&
+    titleBetweenContributionAndProjectCount &&
+    titleAfterProjectCount && {
+      titleBeforeContributionCount,
+      titleBetweenContributionAndProjectCount,
+      titleAfterProjectCount,
+    };
 
   const startProjectsCallback = useCallback(startProjects, []);
   const startContributionsCallback = useCallback(startContributions, []);
@@ -155,71 +140,89 @@ const Contributions = ({
     [inView, startProjectsCallback, startContributionsCallback],
   );
 
+  // decide where to put GithubLink
+  let leftColGithubLink = null;
+  let bottomGithubLink = null;
+  if (ctaLink && ctaCopy) {
+    const githubLink = (
+      <StyledLink reverse="true" external href={ctaLink}>
+        {ctaCopy}
+      </StyledLink>
+    );
+    if (repos && repos.length) {
+      bottomGithubLink = githubLink;
+    } else {
+      leftColGithubLink = githubLink;
+    }
+  }
+
+  // render
+
   return (
     <div className="bkg">
-      <UnpaddedGrid>
+      <Grid>
         <Wrapper ref={ref}>
-          <StaticRow>
-            <StyledCol width={[1]}>
-              <StyledImage image={icon} height="100%" width="auto" />
-            </StyledCol>
+          {icon && <ContributionsIcon image={icon} width="auto" />}
+          <RowWithImage>
             <StyledCol
               width={[1, 1, 1, 1, 8 / 12, 8 / 12, 6 / 12]}
               block={false}
+              css={css`
+                min-width: ${100 * (7 / 12)}%;
+              `}
             >
               <ContributionsCopy
                 {...contributionsCopy}
+                titleStandalone={titleStandalone}
                 projects={projects}
                 contributions={contributions}
                 inView={inView}
               />
-              <StyledBodyPrimary secondary>
-                {descriptionLine1}
-                <br />
-                {descriptionLine2}
-              </StyledBodyPrimary>
-
-              {!repos && (
-                <GithubLink reverse="true" external href={ctaLink}>
-                  {ctaCopy}
-                </GithubLink>
+              {descriptionLine1 && (
+                <StyledBodyPrimary secondary>
+                  {descriptionLine1}
+                  {descriptionLine2 && (
+                    <>
+                      <br />
+                      {descriptionLine2}
+                    </>
+                  )}
+                </StyledBodyPrimary>
               )}
+              {leftColGithubLink}
             </StyledCol>
 
             {sectionGraphic && (
-              <GraphicCol
-                width={[1, 1, 1, 1, 4 / 12, 4 / 12, 6 / 12]}
-                image={sectionGraphic}
-              >
+              <GraphicCol width={[1, 1, 1, 1, 4 / 12, 4 / 12, 6 / 12]}>
                 <Graphic image={sectionGraphic} />
               </GraphicCol>
             )}
-          </StaticRow>
+          </RowWithImage>
           {repos && repos.length && (
-            <>
-              <ReposWrapper>
-                <Row>
-                  {repos.map(repo => (
-                    <Col
-                      key={generate()}
-                      width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
-                    >
-                      <Repo theme="dark" small {...repo} />
-                    </Col>
-                  ))}
-                </Row>
-              </ReposWrapper>
-              <Row>
-                <Col width={[1, 1, 1, 1, 1]}>
-                  <GithubLink reverse="true" external href={ctaLink}>
-                    {ctaCopy}
-                  </GithubLink>
-                </Col>
-              </Row>
-            </>
+            <Row>
+              <Col>
+                <ReposWrapper>
+                  <Row>
+                    {repos.map(repo => (
+                      <Col
+                        key={generate()}
+                        width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
+                      >
+                        <Repo theme="dark" small {...repo} />
+                      </Col>
+                    ))}
+                  </Row>
+                </ReposWrapper>
+                {ctaLink && ctaCopy && (
+                  <Row>
+                    <Col width={[1, 1, 1, 1, 1]}>{bottomGithubLink}</Col>
+                  </Row>
+                )}
+              </Col>
+            </Row>
           )}
         </Wrapper>
-      </UnpaddedGrid>
+      </Grid>
     </div>
   );
 };

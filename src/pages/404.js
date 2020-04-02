@@ -101,7 +101,7 @@ const NotFoundPage = () => (
         linksTitle,
       } = content;
       return (
-        <LogoStyleContext.Provider value="white">
+        <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
           <Layout is404={true} bgColor="blueBg" footerContactUsId={id}>
             <Helmet
               title={`${site.siteMetadata.siteTitle} - Not Found`}

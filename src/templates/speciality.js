@@ -7,6 +7,8 @@ import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import getServiceInfo from '../utils/getServiceInfo';
 
 import { SpecialityView } from './speciality-component';
+import { LogoStyleContext } from '../context/PageContext';
+import { colors } from '../utils/theme';
 
 const Speciality = ({ data, location }) => {
   const {
@@ -19,7 +21,7 @@ const Speciality = ({ data, location }) => {
   } = data;
   const { slug, title, seoMetaData } = speciality;
 
-  const { service } = getServiceInfo({
+  const { service, specialityColor } = getServiceInfo({
     slug,
     services,
     specialities,
@@ -39,19 +41,29 @@ const Speciality = ({ data, location }) => {
   ]);
 
   return (
-    <Layout
-      bgColor="blueBg"
-      slug={slug}
-      title={title}
-      location={location}
-      footerContactUsId={
-        speciality.footerContactUs && speciality.footerContactUs.id
-      }
-      breadcrumbData={breadcrumbData}
+    <LogoStyleContext.Provider
+      value={{
+        type: 'squared',
+        fillColorInitial: specialityColor,
+        fillColorHover: colors.white,
+        textColor: colors.blueBg,
+        serviceColor: colors.white,
+      }}
     >
-      <Head seoMetaData={seoMetaData} />
-      <SpecialityView data={data} />
-    </Layout>
+      <Layout
+        bgColor="blueBg"
+        slug={slug}
+        title={title}
+        location={location}
+        footerContactUsId={
+          speciality.footerContactUs && speciality.footerContactUs.id
+        }
+        breadcrumbData={breadcrumbData}
+      >
+        <Head seoMetaData={seoMetaData} />
+        <SpecialityView data={data} />
+      </Layout>
+    </LogoStyleContext.Provider>
   );
 };
 

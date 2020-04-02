@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import Theme from './theme';
-import CaseStudyPreview from '../src/components/Common/CaseStudyCards/CaseStudyPreview';
 import CaseStudies from '../src/components/Common/case-studies/CaseStudies';
 
 const economistImage = {
@@ -105,9 +104,6 @@ addDecorator(Theme);
 
 storiesOf('CaseStudy', module)
   .addDecorator(withKnobs)
-  .add('CaseStudyPreview', () => (
-    <CaseStudyPreview caseStudy={TrainlineCaseStudy} />
-  ))
   .add('Case Studies', () => (
     <CaseStudies
       limited={boolean(
