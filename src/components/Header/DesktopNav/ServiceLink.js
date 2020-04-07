@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 import { capitalize } from 'lodash';
 import InternalAnchor from '../../../components/Common/InternalAnchor';
+import { breakpointsWithHeader } from '../../../utils/theme';
 
 const StyledServiceLink = styled(InternalAnchor)`
   font-size: ${remcalc(26)};
   margin-left: ${remcalc(12)};
   color: ${props => props.color};
 
-  ${breakpoint('header')`
+  ${breakpointsWithHeader.header`
     font-size: ${remcalc(30)};
   `}
 

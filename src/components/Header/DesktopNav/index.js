@@ -6,9 +6,10 @@ import OuterAnchorItem from './OuterAnchorItem';
 import Dropdown from './Dropdown';
 import links from '../utils/navLinks';
 import ContactButton from './ContactButton';
+import { breakpointsWithHeader } from '../../../utils/theme';
 
 const IfDesktopHeader = styled.div`
-  ${breakpoint('smallPhone', 'header')`
+  ${breakpointsWithHeader.breakpoint('smallPhone', 'header')`
     display: none;
   `}
 `;

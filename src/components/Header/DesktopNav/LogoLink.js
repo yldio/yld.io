@@ -2,18 +2,17 @@ import React, { useContext, useState } from 'react';
 import InternalAnchor from '../../Common/InternalAnchor';
 import remcalc from 'remcalc';
 import styled, { css } from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 
 import YldLogo from '../../../images/yld-logo.js';
 import animatedLogo from '../../../images/logo_animated.gif';
 import SquaredLogo from '../../../images/squared-logo.js';
 import { HomePageContext } from '../../../context/PageContext';
-import { colors } from '../../../utils/theme';
+import { colors, breakpointsWithHeader } from '../../../utils/theme';
 
 const StyledLink = styled(InternalAnchor)`
   width: ${remcalc(48)};
 
-  ${breakpoint('header')`
+  ${breakpointsWithHeader.header`
     width: ${remcalc(54)};
   `}
 `;
@@ -22,7 +21,7 @@ const StyledHomePageLink = styled.div`
 
   width: ${remcalc(48)};
 
-  ${breakpoint('header')`
+  ${breakpointsWithHeader.header`
     width: ${remcalc(54)};
   `}
 `;

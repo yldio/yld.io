@@ -5,6 +5,7 @@ import breakpoint from 'styled-components-breakpoint';
 
 import { UnstyledButton } from '../../Common/Button';
 import outlineStyles from '../utils/outlineStyles';
+import { breakpointsWithHeader } from '../../../utils/theme';
 
 const HamburgerSvg = styled.svg`
   fill: ${({ themeVariation, theme }) =>
@@ -21,7 +22,7 @@ const HamburgerButton = styled(UnstyledButton)`
     ${outlineStyles}
   `}
 
-  ${breakpoint('header')`
+  ${breakpointsWithHeader.header`
     display: none;
   `}
 `;

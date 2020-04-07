@@ -10,6 +10,7 @@ import links from '../utils/navLinks';
 import CloseButton from './CloseButton';
 import Dropdown from './Dropdown';
 import OuterAnchorItem from './OuterAnchorItem';
+import { breakpointsWithHeader } from '../../../utils/theme';
 
 const MobileNavPanel = styled.nav`
   position: fixed;
@@ -36,7 +37,7 @@ const MobileNavPanel = styled.nav`
     transform: translateX(0%);
   `};
 
-  ${breakpoint('header')`
+  ${breakpointsWithHeader.header`
     display: none;
   `}
 `;
