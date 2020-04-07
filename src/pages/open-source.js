@@ -320,9 +320,9 @@ const OpenSourcePage = props => (
             }
           }
           topContributionsSection {
-            titleBeforeContributionCount: titleSectionLine1
-            titleBetweenContributionAndProjectCount: titleSectionLine2
-            titleAfterProjectCount: titleSectionLine3
+            titleBeforeContributionCount
+            titleBetweenContributionAndProjectCount
+            titleAfterProjectCount
             githubMetaData {
               openSourceMetaPullRequestsCount
               openSourceMetaReposCount

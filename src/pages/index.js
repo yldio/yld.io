@@ -227,9 +227,9 @@ export const query = graphql`
         ctaLink
         descriptionLine1
         descriptionLine2
-        titleBeforeContributionCount: titleSectionLine1
-        titleBetweenContributionAndProjectCount: titleSectionLine2
-        titleAfterProjectCount: titleSectionLine3
+        titleBeforeContributionCount
+        titleBetweenContributionAndProjectCount
+        titleAfterProjectCount
         icon {
           title
           file {
