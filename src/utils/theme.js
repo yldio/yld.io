@@ -1,4 +1,5 @@
 import remcalc from 'remcalc';
+import { createStatic } from 'styled-components-breakpoint';
 
 // slowly being deprecated
 export const spacing = {
@@ -44,9 +45,12 @@ export const breakpoints = {
   largePhone: 553,
   smallTablet: 701, // sharon
   tablet: 901,
-  header: 1000,
   desktop: 1197,
 };
+export const breakpointsWithHeader = createStatic({
+  ...breakpoints,
+  header: 1000,
+});
 
 const elementSizes = {
   tappableArea: 48,
