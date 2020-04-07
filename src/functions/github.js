@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  *
  * This lambda is to keep selected repo data up to date on Contentful
@@ -34,6 +35,13 @@ exports.handler = async evt =>
     })
       .then(normalise)
       .then(summariseContributions);
+    console.log(
+      `Github data: ${openSourceMetaPullRequestsCount} PRs on ${openSourceMetaReposCount} repos:\n${JSON.stringify(
+        repos,
+        null,
+        2,
+      )}`,
+    );
 
     // Get contentful data
     const client = createClient({
