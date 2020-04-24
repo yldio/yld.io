@@ -72,7 +72,9 @@ const MetricsCol = styled(Col)`
 const Divider = styled.div`
   height: 1px;
   width: 100vw;
-  background-color: #e6e6e6;
+
+  background-color: ${({ theme }) => theme.colors.text};
+  opacity: 0.25;
 `;
 
 const IndexPage = ({

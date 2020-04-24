@@ -79,7 +79,7 @@ const StandaloneWrapper = styled(Margin)`
     ${({ themeVariation, theme }) =>
       themeVariation === 'dark'
         ? hexToRgbWithAlpha(theme.colors.white, 0.5)
-        : theme.colors.border};
+        : hexToRgbWithAlpha(theme.colors.text, 0.25)};
 `;
 
 const BaseVideoLink = ({

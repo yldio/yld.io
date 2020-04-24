@@ -10,6 +10,7 @@ import Image from './Image';
 import StyledLink from './StyledLink';
 import SocialLink from './SocialLink';
 import InternalAnchor from '../Common/InternalAnchor';
+import { hexToRgbWithAlpha } from '../../utils/color';
 
 const PersonProfileCol = styled(Col)`
   display: flex;
@@ -109,7 +110,8 @@ const ProfileContentWrapper = styled.div`
   justify-content: space-between;
 
   ${breakpoint('tablet')`
-    border-right: 1px solid ${({ theme }) => theme.colors.border}
+    border-right: 1px solid ${({ theme }) =>
+      hexToRgbWithAlpha(theme.colors.text, 0.25)}
   `};
 `;
 

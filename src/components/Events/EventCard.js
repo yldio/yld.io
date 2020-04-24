@@ -8,9 +8,11 @@ import { Row, Col } from '../grid';
 import StyledLink from '../Common/StyledLink';
 import RatioContainer from '../Common/RatioContainer';
 import { CardTitle, BodyPrimary, CalendarDay } from '../Typography';
+import { hexToRgbWithAlpha } from '../../utils/color';
 
 const StyledRatioContainer = styled(RatioContainer)`
-  border: ${remcalc(1)} solid ${({ theme }) => theme.colors.border};
+  border: ${remcalc(1)} solid
+    ${({ theme }) => hexToRgbWithAlpha(theme.colors.text, 0.25)};
 `;
 
 const CalendarMonth = styled(BodyPrimary)`
