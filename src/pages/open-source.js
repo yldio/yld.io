@@ -24,7 +24,8 @@ import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
 import GreyBackground from '../components/Common/GreyBackground';
 
 const StyledHr = styled(Hr)`
-  border-color: #848194;
+  border-color: ${({ theme }) => theme.colors.white};
+  opacity: 0.5;
 `;
 
 const title = 'Open Source';

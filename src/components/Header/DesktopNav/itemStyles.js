@@ -39,10 +39,9 @@ export const dark = css`
   }
 `;
 export const darkHover = css`
-  color: ${props => props.theme.colors.opacityWhite};
+  opacity: 0.5;
   &:after {
-    background: ${props => props.theme.colors.opacityWhite};
-    opacity: 1;
+    opacity: 0.5;
   }
 `;
 

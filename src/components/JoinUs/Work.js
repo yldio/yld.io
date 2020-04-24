@@ -7,7 +7,7 @@ import { Section, Separator, TitleAndBody } from './elements';
 import TitleAndList from '../Common/TitleAndList';
 import breakpoint from 'styled-components-breakpoint';
 
-import getColorLuminance from '../../utils/getColorLuminance';
+import { getColorLuminance } from '../../utils/color';
 
 const MAX_CASE_STUDIES = 3;
 
@@ -19,12 +19,12 @@ const CaseStudyWrapper = styled.div`
 
 const SpaceFiller = styled.div`
   ${breakpoint('tablet')`
-      padding-bottom: 
+      padding-bottom:
         ${({ theme }) => theme.space[7]};
   `}
 
   ${breakpoint('smallPhone')`
-      padding-bottom: 
+      padding-bottom:
         ${({ theme }) => theme.space[5]};
   `}
 `;

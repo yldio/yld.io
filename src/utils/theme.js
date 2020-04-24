@@ -66,7 +66,6 @@ export const colors = {
   blueBg: '#090329',
   vibrant: '#65ffcd',
   white: '#ffffff',
-  opacityWhite: '#848194',
   greyBg: '#f9f9f9',
   border: '#e6e6e6',
   darkGrey: '#1d1d1d',

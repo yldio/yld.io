@@ -9,6 +9,7 @@ import { BodyPrimary } from '../Typography';
 import darkIcon from '../../images/button-play-dark.svg';
 import lightIcon from '../../images/button-play-light.svg';
 import ExternalAnchor from '../Common/ExternalAnchor';
+import { hexToRgbWithAlpha } from '../../utils/color';
 
 const Wrapper = styled(Col)`
   ${breakpoint('smallTablet')`
@@ -76,7 +77,9 @@ const StandaloneWrapper = styled(Margin)`
   justify-content: center;
   border: 1px solid
     ${({ themeVariation, theme }) =>
-      themeVariation === 'dark' ? '#848194' : theme.colors.border};
+      themeVariation === 'dark'
+        ? hexToRgbWithAlpha(theme.colors.white, 0.5)
+        : theme.colors.border};
 `;
 
 const BaseVideoLink = ({

@@ -4,7 +4,7 @@ import { Row, Col, Grid } from '../grid';
 import { SectionTitle, CardTitle, Subtitle, BodyPrimary } from '../Typography';
 import { Padding } from 'styled-components-spacing';
 import breakpoint from 'styled-components-breakpoint';
-import getColorLuminance from '../../utils/getColorLuminance';
+import { getColorLuminance } from '../../utils/color';
 import { AnimatedLink, CardHeader, PosterImage } from '../Common/animatedLink';
 import LogoGrid from '../Common/LogoGrid';
 import Image from '../Common/Image';

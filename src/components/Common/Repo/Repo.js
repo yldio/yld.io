@@ -23,7 +23,8 @@ const Ellipsis = styled.div`
 `;
 
 const StyledBodyStylised = styled(BodyStylised)`
-  color: ${({ isDark }) => (isDark ? '#848194' : null)};
+  color: ${({ isDark, theme }) => (isDark ? theme.colors.white : null)};
+  opacity: ${({ isDark }) => (isDark ? 0.5 : null)};
 `;
 
 /**

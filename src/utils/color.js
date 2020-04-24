@@ -1,7 +1,7 @@
 import colorLuminance from 'color-luminance';
 
 /* Utility function to convert an HEX color into the RGB format */
-const hexToRgb = hex => {
+export const hexToRgb = hex => {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
@@ -12,11 +12,13 @@ const hexToRgb = hex => {
     : null;
 };
 
+export const hexToRgbWithAlpha = (hex, alpha) => {
+  const { r, g, b } = hexToRgb(hex);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
 /* Returns the luminance (in a 0-255 range) of a color in the HEX format */
-const getColorLuminance = hexColor => {
+export const getColorLuminance = hexColor => {
   const rgbValue = hexToRgb(`#${hexColor}`);
 
   return colorLuminance(rgbValue.r, rgbValue.g, rgbValue.b);
 };
-
-export default getColorLuminance;

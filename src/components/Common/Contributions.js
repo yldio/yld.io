@@ -24,10 +24,12 @@ const ContributionsIcon = styled(Image)`
 `;
 
 const StyledBodyPrimary = styled(BodyPrimary)`
-  color: #848194;
   width: 100%;
   margin-top: ${({ theme }) => theme.space[3]};
   margin-bottom: ${({ theme }) => theme.space[4]};
+
+  color: ${({ theme }) => theme.colors.white};
+  opacity: 0.5;
 `;
 
 const RowWithImage = styled(Row)`

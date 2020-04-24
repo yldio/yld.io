@@ -9,6 +9,7 @@ import { SectionTitle, BodyPrimary } from '../../../components/Typography';
 import Image from '../../../components/Common/Image';
 import VideoSection from '../../../components/Common/VideoSection';
 import GreyBackground from '../../../components/Common/GreyBackground';
+import { hexToRgbWithAlpha } from '../../../utils/color';
 
 const StyledColumnImage = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[3]};
@@ -24,7 +25,7 @@ const renderImage = data => data && <Image image={data} />;
 This solution ensures that strong is always bold and white for any environment */
 const StyledBodyPrimary = styled(BodyPrimary)`
   color: ${({ theme, bpColorReverse }) =>
-    bpColorReverse ? theme.colors.opacityWhite : null};
+    bpColorReverse ? hexToRgbWithAlpha(theme.colors.white, 0.5) : null};
   font-family: ${({ bpFont }) => bpFont};
   font-size: ${({ bpFontSmall }) => (bpFontSmall ? remcalc(16) : null)};
 
