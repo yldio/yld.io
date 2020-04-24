@@ -147,7 +147,7 @@ const Contributions = ({
   let bottomGithubLink = null;
   if (ctaLink && ctaCopy) {
     const githubLink = (
-      <StyledLink reverse="true" external href={ctaLink}>
+      <StyledLink reverse="true" vibrant="true" external href={ctaLink}>
         {ctaCopy}
       </StyledLink>
     );

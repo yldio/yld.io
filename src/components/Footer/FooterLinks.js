@@ -11,7 +11,7 @@ import ExternalAnchor from '../Common/ExternalAnchor';
 import { social, gdpr } from './links';
 
 export const FooterBanner = styled.section`
-  background: ${props => props.theme.colors.darkGrey};
+  background: ${props => props.theme.colors.text};
 `;
 
 export const Social = styled.ul`

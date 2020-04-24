@@ -81,7 +81,7 @@ export const StyledLinkCss = css`
     color: ${({ theme }) => theme.colors.white};
 
     &:hover {
-      background: ${({ theme }) => theme.colors.darkGrey};
+      background: ${({ theme }) => theme.colors.text};
       color: ${({ theme }) => theme.colors.white};
     }
 

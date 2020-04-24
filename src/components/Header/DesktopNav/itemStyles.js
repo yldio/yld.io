@@ -21,7 +21,7 @@ export const whiteHover = css`
 `;
 
 export const whitePrimary = css`
-  background: ${props => props.theme.colors.darkGrey};
+  background: ${props => props.theme.colors.text};
   color: ${props => props.theme.colors.white};
 `;
 export const whitePrimaryHover = css`
