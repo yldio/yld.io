@@ -3,10 +3,7 @@ const { head, isEqual } = require('lodash');
 
 const ossUtils = require('./utils');
 
-const contentfulMetaKeys = [
-  'openSourceMetaReposCount',
-  'openSourceMetaPullRequestsCount',
-];
+const contentfulMetaKeys = ['contributionsCount', 'reposContributedToCount'];
 
 const Meta = async (environment, githubMetaData) => {
   const { LAMBDA_ENV = 'development' } = process.env;

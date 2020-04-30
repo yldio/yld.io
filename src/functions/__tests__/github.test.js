@@ -14,10 +14,8 @@ jest.mock('../../../src/functions/oss/meta');
 const Repos = require('../../../src/functions/oss/repos');
 const Meta = require('../../../src/functions/oss/meta');
 
-const getDataMock = jest.fn();
-ossStats.getData = getDataMock;
-ossStats.normalise = jest.fn(res => res);
-ossStats.summariseContributions = jest.fn(res => res);
+const getContributionStatsMock = jest.fn();
+ossStats.contributions.getContributionStats = getContributionStatsMock;
 
 /**
  * It would be best to do this in the same way as the oss stats package
@@ -50,53 +48,50 @@ jest.mock('contentful-management', () => ({
  * const getEnvironment = jest.spyOn(contentful, 'getEnvironment')
  */
 
-// All our data we will use in the tests
-const firstRepo = {
-  url: 'https://github.com/yldio/fake-repo',
-  nameWithOwner: 'yldio/fake-repo',
-  descriptionHTML: '<div>This is fake! It does not exist!</div>',
-  starCount: 72,
-  pullRequestCount: 3,
-  topics: [],
-  pullRequests: [
-    'MDExOlB1bGxSZXF1ZXN0Nzc1MzkzMDc=',
-    'MDExOlB1bGxSZXF1ZXN0MTM2MzY1MDU5',
-    'MDExOlB1bGxSZXF1ZXN0MTUxNjY4NzY0',
+// Github data
+
+const getDataResponseData = {
+  totalContributions: 4276,
+  contributionsByRepository: [
+    {
+      contributions: {
+        totalCount: 3,
+      },
+      repository: {
+        url: 'https://github.com/yldio/fake-repo',
+        nameWithOwner: 'yldio/fake-repo',
+        descriptionHTML: '<div>This is fake! It does not exist!</div>',
+        stargazers: { totalCount: 72 },
+      },
+    },
+    {
+      contributions: {
+        totalCount: 2,
+      },
+      repository: {
+        url: 'https://github.com/yldio/another-fake-repo',
+        nameWithOwner: 'yldio/another-fake-repo',
+        descriptionHTML: '<div>This is fake as well! It does not exist!</div>',
+        stargazers: { totalCount: 62 },
+      },
+    },
   ],
-  contributors: ['yldio'],
-  pullRequestsRank: 85,
-  starsRank: 366,
-  rank: 451,
 };
 
+// Contentful data
 const secondRepo = {
   url: 'https://github.com/yldio/another-fake-repo',
   nameWithOwner: 'yldio/another-fake-repo',
   descriptionHTML: '<div>This is fake as well! It does not exist!</div>',
   starCount: 62,
-  pullRequestCount: 2,
-  topics: [],
-  pullRequests: [
-    'MDExOlB1bGxSZXF1ZXN0MjUzNDI2MDA1',
-    'MDExOlB1bGxSZXF1ZXN0MjUzNDU4MTUx',
-  ],
-  contributors: ['yldio'],
-  pullRequestsRank: 69,
-  starsRank: 123,
-  rank: 294,
+  yldContributionsCount: 2,
 };
 
 const missingRepoUrl = 'https://github.com/missing/repo';
 
 const metaResponseData = {
-  openSourceMetaPullRequestsCount: 4276,
-  openSourceMetaReposCount: 1017,
-};
-
-const getDataResponseData = {
-  repos: [firstRepo, secondRepo],
-  repoCount: metaResponseData.openSourceMetaReposCount,
-  pullRequestCount: metaResponseData.openSourceMetaPullRequestsCount,
+  contributionsCount: 4276,
+  reposContributedToCount: getDataResponseData.contributionsByRepository.length,
 };
 
 const mockSpace = 'yld_mock_contentful_space';
@@ -128,7 +123,7 @@ describe('Github lambda', () => {
 
   it('should return meta data an a list of changes repos when there are differences', async () => {
     // localise the mocks to return data we tell it to
-    getDataMock.mockResolvedValueOnce(getDataResponseData);
+    getContributionStatsMock.mockResolvedValueOnce(getDataResponseData);
     Repos.mockReturnValueOnce({ updatedRepos: [secondRepo] });
     Meta.mockReturnValueOnce(metaResponseData);
 
@@ -149,37 +144,33 @@ describe('Github lambda', () => {
     // chain of createClient -> getSpace -> getEnvironment but it's not ideal. Refer to
     // my comment above about trying to make this mocking of the contentful module better.
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos,
+      contributionsByRepository: getDataResponseData.contributionsByRepository,
     });
     expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
 
     expect(response).toStrictEqual(expected);
   });
 
-  it("should return meta data an a message of 'No repos updated' when there are no updates", async () => {
-    getDataMock.mockResolvedValueOnce(getDataResponseData);
+  it('should return meta data when there are no updates', async () => {
+    getContributionStatsMock.mockResolvedValueOnce(getDataResponseData);
 
     Repos.mockReturnValueOnce([]);
     Meta.mockReturnValueOnce(metaResponseData);
 
     const response = await GithubLambda.handler();
-    const expected = {
-      statusCode: 200,
-      body: JSON.stringify({
-        meta: metaResponseData,
-        updatedRepos: 'No repos updated',
-      }),
-    };
 
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos,
+      contributionsByRepository: getDataResponseData.contributionsByRepository,
     });
     expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
-    expect(response).toStrictEqual(expected);
+    expect(response.statusCode).toBe(200);
+    expect(JSON.parse(response.body)).toStrictEqual({
+      meta: metaResponseData,
+    });
   });
 
   it('should return meta data and an array of updatedRepos and missingRepos when there are changes and missing repos', async () => {
-    getDataMock.mockResolvedValueOnce(getDataResponseData);
+    getContributionStatsMock.mockResolvedValueOnce(getDataResponseData);
 
     Repos.mockReturnValueOnce({
       updatedRepos: [secondRepo],
@@ -198,7 +189,7 @@ describe('Github lambda', () => {
     };
 
     expect(Repos).toHaveBeenCalledWith('master', {
-      repos: getDataResponseData.repos,
+      contributionsByRepository: getDataResponseData.contributionsByRepository,
     });
     expect(Meta).toHaveBeenCalledWith('master', { ...metaResponseData });
     expect(response).toStrictEqual(expected);

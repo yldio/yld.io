@@ -9,8 +9,8 @@ ossUtils.updateEntry = jest
 const contentfulMetasMock = [
   {
     fields: {
-      openSourceMetaPullRequestsCount: { 'en-US': 3886 },
-      openSourceMetaReposCount: { 'en-US': 1001 },
+      contributionsCount: { 'en-US': 3886 },
+      reposContributedToCount: { 'en-US': 1001 },
     },
   },
 ];
@@ -32,8 +32,8 @@ describe('Github lambda - Meta util', () => {
 
   it('should not call updateEntry and should return the expected data if github and contentful MetaDatas are not different', async () => {
     const sameGithubMetaData = {
-      openSourceMetaPullRequestsCount: 3886,
-      openSourceMetaReposCount: 1001,
+      contributionsCount: 3886,
+      reposContributedToCount: 1001,
     };
 
     const response = await MetaUtil(mockedEnvironment, sameGithubMetaData);
@@ -46,13 +46,13 @@ describe('Github lambda - Meta util', () => {
 
   it('should call updateEntry and should return the expected data if github and contentful MetaDatas are different', async () => {
     const differentGithubMetaData = {
-      openSourceMetaPullRequestsCount: 3999,
-      openSourceMetaReposCount: 1017,
+      contributionsCount: 3999,
+      reposContributedToCount: 1017,
     };
 
     const expectedContentfulData = {
-      openSourceMetaPullRequestsCount: { 'en-US': 3999 },
-      openSourceMetaReposCount: { 'en-US': 1017 },
+      contributionsCount: { 'en-US': 3999 },
+      reposContributedToCount: { 'en-US': 1017 },
     };
 
     const response = await MetaUtil(mockedEnvironment, differentGithubMetaData);
