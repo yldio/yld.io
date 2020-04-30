@@ -17,7 +17,7 @@ const org = 'yldio';
 
 exports.handler = async evt =>
   Auth(evt, async () => {
-    const { getData, normalise, summariseContributions } = OssStats;
+    const { getContributionStats } = OssStats.contributions;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
@@ -26,22 +26,9 @@ exports.handler = async evt =>
 
     // Get github data
     const {
-      repos,
-      repoCount: openSourceMetaReposCount,
-      pullRequestCount: openSourceMetaPullRequestsCount,
-    } = await getData({
-      org,
-      token: GITHUB_TOKEN,
-    })
-      .then(normalise)
-      .then(summariseContributions);
-    console.log(
-      `Github data: ${openSourceMetaPullRequestsCount} PRs on ${openSourceMetaReposCount} repos:\n${JSON.stringify(
-        repos,
-        null,
-        2,
-      )}`,
-    );
+      contributionsByRepository,
+      totalContributions,
+    } = await getContributionStats(org, GITHUB_TOKEN);
 
     // Get contentful data
     const client = createClient({
@@ -53,10 +40,10 @@ exports.handler = async evt =>
 
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
-        openSourceMetaPullRequestsCount,
-        openSourceMetaReposCount,
+        contributionsCount: totalContributions,
+        reposContributedToCount: contributionsByRepository.length,
       }),
-      Repos(environment, { repos }),
+      Repos(environment, { contributionsByRepository }),
     ]).catch(err => {
       throw new Error(err);
     });
@@ -65,10 +52,7 @@ exports.handler = async evt =>
       statusCode: 200,
       body: JSON.stringify({
         meta: { ...meta },
-        updatedRepos:
-          updatedRepos && updatedRepos.length
-            ? updatedRepos
-            : 'No repos updated',
+        updatedRepos,
         missingRepos,
       }),
     };

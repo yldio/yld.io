@@ -33,7 +33,7 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.0",
     "@sindresorhus/slugify": "^0.9.1",
-    "@yldio/oss-stats": "^1.0.1",
+    "@yldio/oss-stats": "yldio/oss-stats#784cef7e58b239000cd9d2e122ac44f881805792",
     "airbnb-prop-types": "^2.13.2",
     "apr-intercept": "^3.0.3",
     "apr-reduce": "^3.0.3",

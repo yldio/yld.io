@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
-const Reduce = require('apr-reduce');
-const { find, isEqual } = require('lodash');
+const { isEqual } = require('lodash');
 
 const ossUtils = require('./utils');
 
@@ -8,11 +7,11 @@ const repoKeys = [
   'url',
   'nameWithOwner',
   'descriptionHTML',
-  'pullRequestCount',
+  'yldContributionsCount',
   'starCount',
 ];
 
-const Repos = async (environment, { repos }) => {
+const Repos = async (environment, { contributionsByRepository }) => {
   const { getFieldValue, generateContentfulData, updateEntry } = ossUtils;
   const { LAMBDA_ENV = 'development' } = process.env;
   const isProd = LAMBDA_ENV === 'production';
@@ -27,48 +26,67 @@ const Repos = async (environment, { repos }) => {
   );
 
   // Get the repo data we care about
-  const filteredRepos = repos.filter(({ url }) =>
-    contentfulRepoUrls.includes(url),
+  const filteredContributionsByRepository = contributionsByRepository.filter(
+    ({ repository: { url } }) => contentfulRepoUrls.includes(url),
   );
 
   // Iterate over the contentful repo data
-  return Reduce(contentfulRepos, async (acc = [], contentfulRepo) => {
-    const url = getFieldValue(contentfulRepo, 'url');
-    const githubRepo = find(filteredRepos, [`url`, url]);
-
-    if (!githubRepo) {
-      console.log(`
-        Contentful repo URL: ${url} cannot be found in the Github repo data. 
+  const missingRepos = [];
+  const updatedRepos = [];
+  await Promise.all(
+    contentfulRepos.map(async contentfulRepo => {
+      const url = getFieldValue(contentfulRepo, 'url');
+      const repositoryContribution = filteredContributionsByRepository.find(
+        ({ repository }) => repository.url === url,
+      );
+      if (!repositoryContribution) {
+        console.log(`
+        Contentful repo URL: ${url} cannot be found in the Github repo data.
         This happens when users leave the YLD Github organisation.
         Consider removing this repo from contentful
       `);
-      return { ...acc, missingRepos: [...(acc.missingRepos || []), url] };
-    }
+        missingRepos.push(url);
+        return;
+      }
 
-    const contentfulRepoFromGithub = generateContentfulData(
-      githubRepo,
-      repoKeys,
-    );
-
-    const fieldsAreEqual = isEqual(
-      contentfulRepoFromGithub,
-      contentfulRepo.fields,
-    );
-
-    if (isProd && !fieldsAreEqual) {
-      const { nameWithOwner } = githubRepo;
-      await updateEntry(
-        contentfulRepo,
-        contentfulRepoFromGithub,
-        environment,
+      const {
         nameWithOwner,
+        descriptionHTML,
+        stargazers: { totalCount: starCount },
+      } = repositoryContribution.repository;
+      const {
+        totalCount: yldContributionsCount,
+      } = repositoryContribution.contributions;
+      const githubRepo = {
+        url,
+        nameWithOwner,
+        descriptionHTML,
+        yldContributionsCount,
+        starCount,
+      };
+
+      const contentfulRepoFromGithub = generateContentfulData(
+        githubRepo,
+        repoKeys,
       );
 
-      return {
-        ...acc,
-        updatedRepos: [...(acc.updatedRepos || []), nameWithOwner],
-      };
-    } else {
+      const fieldsAreEqual = isEqual(
+        contentfulRepoFromGithub,
+        contentfulRepo.fields,
+      );
+
+      if (isProd && !fieldsAreEqual) {
+        const { nameWithOwner } = githubRepo;
+        await updateEntry(
+          contentfulRepo,
+          contentfulRepoFromGithub,
+          environment,
+          nameWithOwner,
+        );
+
+        updatedRepos.push(nameWithOwner);
+        return;
+      }
       console.log(
         fieldsAreEqual
           ? `Fields for ${
@@ -86,10 +104,10 @@ const Repos = async (environment, { repos }) => {
           2,
         ),
       );
+    }),
+  );
 
-      return acc;
-    }
-  });
+  return { updatedRepos, missingRepos };
 };
 
 module.exports = Repos;

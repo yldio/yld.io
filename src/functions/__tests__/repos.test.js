@@ -6,25 +6,44 @@ ossUtils.updateEntry = jest
   .fn()
   .mockImplementation(() => Promise.resolve(null));
 
+const sameInputOne = {
+  repository: {
+    url: 'https://github.com/yldio/fake-repo',
+    nameWithOwner: 'yldio/fake-repo',
+    descriptionHTML: '<div>This is a fake repo.</div>',
+    stargazers: { totalCount: 10924 },
+  },
+  contributions: { totalCount: 4 },
+};
+
+const differentInputOne = {
+  repository: sameInputOne.repository,
+  contributions: { totalCount: 6 },
+};
+
+const sameInputTwo = {
+  repository: {
+    url: 'https://github.com/yldio/another-fake-repo',
+    nameWithOwner: 'yldio/another-fake-repo',
+    descriptionHTML: '<div>This is another fake repo.</div>',
+    stargazers: { totalCount: 8724 },
+  },
+  contributions: {
+    totalCount: 3,
+  },
+};
+
 const sameRepoOne = {
   url: 'https://github.com/yldio/fake-repo',
   nameWithOwner: 'yldio/fake-repo',
   descriptionHTML: '<div>This is a fake repo.</div>',
   starCount: 10924,
-  pullRequestCount: 4,
+  yldContributionsCount: 4,
 };
 
 const differentRepoOne = {
   ...sameRepoOne,
-  pullRequestCount: 6,
-};
-
-const sameRepoTwo = {
-  url: 'https://github.com/yldio/another-fake-repo',
-  nameWithOwner: 'yldio/another-fake-repo',
-  descriptionHTML: '<div>This is another fake repo.</div>',
-  starCount: 8724,
-  pullRequestCount: 3,
+  yldContributionsCount: 6,
 };
 
 const contentfulRepoOne = {
@@ -38,7 +57,7 @@ const contentfulRepoOne = {
     descriptionHTML: {
       'en-US': '<div>This is a fake repo.</div>',
     },
-    pullRequestCount: {
+    yldContributionsCount: {
       'en-US': 4,
     },
     starCount: {
@@ -58,7 +77,7 @@ const contentfulRepoTwo = {
     descriptionHTML: {
       'en-US': '<div>This is another fake repo.</div>',
     },
-    pullRequestCount: {
+    yldContributionsCount: {
       'en-US': 3,
     },
     starCount: {
@@ -86,44 +105,49 @@ describe('Github lambda - Repos util', () => {
 
   it('should not call updateEntry and no changes should be returned if repos and contentfulRepos have no differences', async () => {
     const response = await ReposUtil(mockedEnvironment, {
-      repos: [sameRepoOne, sameRepoTwo],
+      contributionsByRepository: [sameInputOne, sameInputTwo],
     });
 
     expect(ossUtils.updateEntry).not.toHaveBeenCalled();
 
-    const expected = [];
-    expect(response).toStrictEqual(expected);
+    expect(response).toStrictEqual({
+      updatedRepos: [],
+      missingRepos: [],
+    });
   });
 
   it('should call updateEntry and return the changes if repos and contentfulRepos are different', async () => {
     const response = await ReposUtil(mockedEnvironment, {
-      repos: [differentRepoOne, sameRepoTwo],
+      contributionsByRepository: [differentInputOne, sameInputTwo],
     });
 
     const expectedContentfulRepoFromGithub = {
       ...contentfulRepoOne.fields,
-      pullRequestCount: { 'en-US': 6 },
+      yldContributionsCount: { 'en-US': 6 },
     };
 
     expect(ossUtils.updateEntry).toHaveBeenCalledWith(
       contentfulRepoOne,
       expectedContentfulRepoFromGithub,
       mockedEnvironment,
-      differentRepoOne.nameWithOwner,
+      sameRepoOne.nameWithOwner,
     );
 
-    const expected = { updatedRepos: [differentRepoOne.nameWithOwner] };
+    const expected = {
+      updatedRepos: [sameRepoOne.nameWithOwner],
+      missingRepos: [],
+    };
     expect(response).toStrictEqual(expected);
   });
 
   it('should call updateEntry once and return an array of missing repos if there are differences and github data does not contain a matching contentful repo', async () => {
     const response = await ReposUtil(mockedEnvironment, {
-      repos: [differentRepoOne],
+      contributionsByRepository: [differentInputOne],
     });
 
     const expectedContentfulRepoFromGithub = {
       ...contentfulRepoOne.fields,
-      pullRequestCount: { 'en-US': 6 },
+      yldContributionsCount: { 'en-US': 6 },
     };
 
     expect(ossUtils.updateEntry).toHaveBeenCalledWith(
