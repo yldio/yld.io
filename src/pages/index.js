@@ -220,8 +220,8 @@ export const query = graphql`
       }
       contributions: contributionsSection {
         githubMetaData {
-          openSourceMetaPullRequestsCount
-          openSourceMetaReposCount
+          contributionsCount
+          reposContributedToCount
         }
         ctaCopy
         ctaLink
@@ -250,7 +250,7 @@ export const query = graphql`
           id
           url
           nameWithOwner
-          pullRequestCount
+          yldContributionsCount
           starCount
         }
       }

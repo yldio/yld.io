@@ -310,7 +310,7 @@ const OpenSourcePage = props => (
             id
             url
             nameWithOwner
-            pullRequestCount
+            yldContributionsCount
             starCount
             clientLogo {
               file {
@@ -325,8 +325,8 @@ const OpenSourcePage = props => (
             titleBetweenContributionAndProjectCount
             titleAfterProjectCount
             githubMetaData {
-              openSourceMetaPullRequestsCount
-              openSourceMetaReposCount
+              contributionsCount
+              reposContributedToCount
             }
             sectionGraphic {
               title
@@ -349,7 +349,7 @@ const OpenSourcePage = props => (
               id
               url
               nameWithOwner
-              pullRequestCount
+              yldContributionsCount
               starCount
             }
           }
