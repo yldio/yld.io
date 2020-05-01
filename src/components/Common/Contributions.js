@@ -95,10 +95,7 @@ const Contributions = ({
   icon,
   sectionGraphic,
   githubRepos: repos,
-  githubMetaData: {
-    openSourceMetaReposCount,
-    openSourceMetaPullRequestsCount,
-  } = {},
+  githubMetaData: { contributionsCount, reposContributedToCount } = {},
 }) => {
   // counters
 
@@ -114,11 +111,11 @@ const Contributions = ({
   });
 
   const { countUp: contributions, start: startContributions } = useCountUp(
-    countUpOpts({ end: openSourceMetaPullRequestsCount || 0 }),
+    countUpOpts({ end: contributionsCount || 0 }),
   );
 
   const { countUp: projects, start: startProjects } = useCountUp(
-    countUpOpts({ end: openSourceMetaReposCount || 0 }),
+    countUpOpts({ end: reposContributedToCount || 0 }),
   );
 
   const contributionsCopy = titleBeforeContributionCount &&

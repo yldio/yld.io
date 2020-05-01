@@ -41,7 +41,7 @@ const ConditionalLink = ({ titleLink, url, children }) =>
 const Repo = ({
   url,
   nameWithOwner,
-  pullRequestCount,
+  yldContributionsCount,
   starCount,
   isImage = false,
   titleLink = true,
@@ -55,11 +55,13 @@ const Repo = ({
           <Ellipsis>{nameWithOwner}</Ellipsis>
         </Subtitle>
       </ConditionalLink>
-      <Ellipsis>
-        <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
-          {pullRequestCount} Contributions
-        </StyledBodyStylised>
-      </Ellipsis>
+      {yldContributionsCount != null && (
+        <Ellipsis>
+          <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
+            {yldContributionsCount} Contributions
+          </StyledBodyStylised>
+        </Ellipsis>
+      )}
       <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
         {starCount} Stars
       </StyledBodyStylised>

@@ -14,7 +14,7 @@ const StyledBlueBackground = styled(BlueBackground)`
 const data = {
   url: 'https://github.com/nodejs/node',
   nameWithOwner: 'nodejs/node',
-  pullRequestCount: 123,
+  yldContributionsCount: 123,
   starCount: 123,
 };
 
