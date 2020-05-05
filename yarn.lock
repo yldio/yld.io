@@ -3368,9 +3368,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@yldio/oss-stats@yldio/oss-stats#784cef7e58b239000cd9d2e122ac44f881805792":
+"@yldio/oss-stats@^2.0.1":
   version "2.0.1"
-  resolved "https://codeload.github.com/yldio/oss-stats/tar.gz/784cef7e58b239000cd9d2e122ac44f881805792"
+  resolved "https://registry.yarnpkg.com/@yldio/oss-stats/-/oss-stats-2.0.1.tgz#43a9f46a770f87f4380bec7a7a954453b11f04cd"
+  integrity sha512-RQYCxgTZeWK19kcuFgLqjzhijSlgSA2EurJrt2mN2u2JoDmgzSOQJoBRMdAwPufFP0O5E3A5Hm9Q8a0ZKCBXdA==
   dependencies:
     date-fns "^2.12.0"
     github-graphql-api "^1.0.6"
