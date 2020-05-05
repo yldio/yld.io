@@ -1,8 +1,9 @@
 # See https://www.netlify.com/docs/redirects/
 
 # Subdomains
-https://blog.yld.io   https://www.yld.io/blog/
-https://blog.yld.io/* https://www.yld.io/blog/:splat
+https://blog.yld.io       https://www.yld.io/blog/
+https://blog.yld.io/*     https://www.yld.io/blog/:splat
+https://resources.yld.io/ https://www.yld.io/blog/
 
 # Old site via subdomain
 /blog/:y/:m/:d/:slug /blog/:slug
