@@ -10,6 +10,7 @@ const TITLE = graphql`
         siteTitle
         image
         siteUrl
+        googleSiteVerificationMetaContent
       }
     }
   }
@@ -79,7 +80,11 @@ const Head = ({ page, seoMetaData }) => {
     <StaticQuery
       query={TITLE}
       render={({ site: { siteMetadata } }) => {
-        const { siteTitle, siteUrl } = siteMetadata;
+        const {
+          siteTitle,
+          siteUrl,
+          googleSiteVerificationMetaContent,
+        } = siteMetadata;
 
         const { title, description, imageUrl, keywords } = getMetaData({
           page,
@@ -109,6 +114,14 @@ const Head = ({ page, seoMetaData }) => {
 
                   {/* Twitter */}
                   <meta name="twitter:site" content="yldio" />
+
+                  {/* Google */}
+                  {googleSiteVerificationMetaContent && (
+                    <meta
+                      name="google-site-verification"
+                      content={googleSiteVerificationMetaContent}
+                    />
+                  )}
 
                   <link rel="image_src" type="image/png" href={imageUrl} />
                 </Helmet>

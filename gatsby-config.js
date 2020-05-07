@@ -6,6 +6,7 @@ const {
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
   GTM_AUTH,
+  GOOGLE_SITE_VERIFICATION_META_CONTENT,
   NODE_ENV,
   URL: NETLIFY_SITE_URL = 'https://www.yld.io',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
@@ -20,6 +21,8 @@ module.exports = {
     siteTitle: 'YLD',
     siteUrl,
     image: '/images/logo.png',
+    googleSiteVerificationMetaContent:
+      GOOGLE_SITE_VERIFICATION_META_CONTENT || '',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
