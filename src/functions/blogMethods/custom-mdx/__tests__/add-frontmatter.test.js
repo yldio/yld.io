@@ -21,7 +21,7 @@ root: /blog
   expect(AddFrontMatter(post)).toStartWith(frontmatter);
 });
 
-it('excapes strings when they include especial characters', () => {
+it('escapes strings when they include special characters', () => {
   const frontmatter = `---
 title: \"Test: 1\"
 slug: blog-slug
