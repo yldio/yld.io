@@ -16,7 +16,7 @@ slug: blog-slug
 tags: tag1,tag2
 firstPublishedAt: 2019-01-01
 author: Rick Sanchez
-root: '/blog'
+root: /blog
 ---`;
   expect(AddFrontMatter(post)).toStartWith(frontmatter);
 });

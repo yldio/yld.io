@@ -1,3 +1,5 @@
+const YAML = require('yaml');
+
 const addFrontmatter = ({
   title,
   slug,
@@ -6,13 +8,14 @@ const addFrontmatter = ({
   firstPublishedAt,
   authorName,
 }) => `---
-title: ${title}
-slug: ${slug}
-tags: ${tags}
-firstPublishedAt: ${firstPublishedAt}
-author: ${authorName}
-root: '/blog'
----
+${YAML.stringify({
+  title,
+  slug,
+  tags: tags.join(','),
+  firstPublishedAt,
+  author: authorName,
+  root: '/blog',
+})}---
 ${content}
 `;
 
