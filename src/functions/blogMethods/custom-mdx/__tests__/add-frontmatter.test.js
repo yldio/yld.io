@@ -21,6 +21,20 @@ root: /blog
   expect(AddFrontMatter(post)).toStartWith(frontmatter);
 });
 
+it('excapes strings when they include especial characters', () => {
+  const frontmatter = `---
+title: \"Test: 1\"
+slug: blog-slug
+tags: tag1,tag2
+firstPublishedAt: 2019-01-01
+author: Rick Sanchez
+root: /blog
+---`;
+  expect(AddFrontMatter({ ...post, title: 'Test: 1' })).toStartWith(
+    frontmatter,
+  );
+});
+
 it('retains the original content', () => {
   expect(AddFrontMatter(post)).toContain(post.content);
 });
