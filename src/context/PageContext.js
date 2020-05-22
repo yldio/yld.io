@@ -7,7 +7,7 @@ export const HomePageContext = createContext(/* boolean */ false);
 export const ModalPageContext = createContext(/* boolean */ false);
 
 export const logoStyleDefaults = {
-  type: 'default', // 'default' | 'squared'
+  type: 'squared', // 'default' | 'squared'
 
   fillColorInitial: colors.text, // CSS color
   fillColorHover: undefined, // CSS color | undefined (default fillColorInitial)

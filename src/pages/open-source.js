@@ -107,9 +107,8 @@ const OpenSource = ({ data, location }) => {
   return (
     <LogoStyleContext.Provider
       value={{
-        type: 'squared',
         fillColorInitial: colors.white,
-        fillColorHover: '#8e8e8e',
+        fillColorHover: colors.grey,
         textColor: colors.blueBg,
       }}
     >

@@ -43,7 +43,6 @@ const Speciality = ({ data, location }) => {
   return (
     <LogoStyleContext.Provider
       value={{
-        type: 'squared',
         fillColorInitial: specialityColor,
         fillColorHover: colors.white,
         textColor: colors.blueBg,
