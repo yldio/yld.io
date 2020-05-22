@@ -4,7 +4,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { HomePageContext } from '../../../../context/PageContext';
 
 import LogoLink from '../LogoLink';
-import { colors } from '../../../../utils/theme';
 
 let mockScrollTo;
 let originalScrollTo;
@@ -23,6 +22,7 @@ describe('by default', () => {
   });
 
   it('renders the logo', () => {
+    elem.debug();
     expect(elem.getAllByTitle('YLD default logo')).toHaveLength(1);
   });
 
@@ -32,22 +32,10 @@ describe('by default', () => {
   });
 });
 
-describe('with square=true', () => {
-  it('renders the squared logo', () => {
-    const { getAllByTitle } = render(<LogoLink squared />);
-    expect(getAllByTitle('YLD squared logo')).toHaveLength(1);
-  });
-});
-
 describe('with a fillColorInitial', () => {
   it('renders the logo colored', () => {
     const { getByRole } = render(<LogoLink fillColorInitial="red" />);
     expect(getByRole('img').querySelectorAll('[fill="red"]')).toHaveLength(1);
-  });
-
-  it('of text color renders the animated text-colored logo', () => {
-    const { getByRole } = render(<LogoLink fillColorInitial={colors.text} />);
-    expect(getByRole('img')).toHaveAttribute('alt', 'YLD animated logo');
   });
 });
 
