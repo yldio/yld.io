@@ -58,7 +58,6 @@ const TopNavBranding = ({ slug }) => (
       });
 
       let {
-        type,
         fillColorInitial = logoStyleDefaults.fillColorInitial,
         fillColorHover = fillColorInitial,
         textColor = logoStyleDefaults.textColor,
@@ -72,7 +71,6 @@ const TopNavBranding = ({ slug }) => (
       return (
         <StyledLinksContainer>
           <LogoLink
-            squared={type === 'squared'}
             fillColorInitial={fillColorInitial}
             fillColorHover={fillColorHover}
             textColor={textColor}
