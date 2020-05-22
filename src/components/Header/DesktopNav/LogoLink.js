@@ -59,8 +59,7 @@ const LogoLink = ({ fillColorInitial, fillColorHover, textColor }) => {
 
   return (
     <LogoBehavior onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      (
-      <YldLogo css={iconStyles} fillColor={fillColor} textColor={textColor} />)
+      <YldLogo css={iconStyles} fillColor={fillColor} textColor={textColor} />
     </LogoBehavior>
   );
 };
