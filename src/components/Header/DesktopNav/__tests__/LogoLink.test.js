@@ -22,7 +22,6 @@ describe('by default', () => {
   });
 
   it('renders the logo', () => {
-    elem.debug();
     expect(elem.getAllByTitle('YLD default logo')).toHaveLength(1);
   });
 
