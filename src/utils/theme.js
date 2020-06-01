@@ -67,6 +67,7 @@ export const colors = {
   vibrant: '#65ffcd',
   white: '#ffffff',
   greyBg: '#f9f9f9',
+  grey: '#8e8e8e',
   text: '#333333',
   secondaryText: '#737373',
 };

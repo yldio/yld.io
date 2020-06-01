@@ -8,9 +8,9 @@ export const ModalPageContext = createContext(/* boolean */ false);
 
 export const logoStyleDefaults = {
   fillColorInitial: colors.text, // CSS color
-  fillColorHover: undefined, // CSS color | undefined (default fillColorInitial)
+  fillColorHover: colors.grey, // CSS color
 
-  textColor: colors.white,
+  textColor: colors.white, // CSS color
 
   serviceColor: undefined, // CSS color | undefined (default fillColorInitial)
 };

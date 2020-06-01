@@ -77,6 +77,7 @@ const IndexPage = ({ data, location }) => {
     <HomePageContext.Provider value={true}>
       <LogoStyleContext.Provider
         value={{
+          fillColorHover: colors.grey,
           fillColorInitial: colors.white,
           textColor: colors.blueBg,
         }}
