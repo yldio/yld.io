@@ -28,6 +28,7 @@ import BlueBackground from '../components/Common/BlueBackground';
 import { LogoStyleContext } from '../context/PageContext';
 
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
+import { colors } from '../utils/theme';
 
 const createEventStructuredData = (events = []) =>
   events.map(({ node }) => ({
@@ -222,7 +223,9 @@ const EventPage = ({
   const eventStructuredData = createEventStructuredData(futureEvents);
 
   return (
-    <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
+    <LogoStyleContext.Provider
+      value={{ fillColorInitial: colors.white, textColor: colors.blueBg }}
+    >
       <Layout
         bgColor="blueBg"
         footerContactUsId={footerContactUs.id}

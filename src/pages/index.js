@@ -20,6 +20,8 @@ import { Subtitle } from '../components/Typography';
 
 import { HomePageContext, LogoStyleContext } from '../context/PageContext';
 
+import { colors } from '../utils/theme';
+
 /**
  * Importing fragments here to have them available to the entire
  * GraphQL schema
@@ -73,7 +75,12 @@ const IndexPage = ({ data, location }) => {
   const featuredEvent = getHomepageConferences(events.edges)[0];
   return (
     <HomePageContext.Provider value={true}>
-      <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
+      <LogoStyleContext.Provider
+        value={{
+          fillColorInitial: colors.white,
+          textColor: colors.blueBg,
+        }}
+      >
         <Layout location={location} bgColor="blueBg">
           <Head seoMetaData={content.seoMetaData} />
           <Intro {...content} />
