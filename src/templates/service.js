@@ -73,7 +73,6 @@ const Service = ({
     <LogoStyleContext.Provider
       value={{
         fillColorInitial: colors.text,
-        fillColorHover: colors.grey,
         textColor: colors.white,
       }}
     >

@@ -108,7 +108,6 @@ const OpenSource = ({ data, location }) => {
     <LogoStyleContext.Provider
       value={{
         fillColorInitial: colors.white,
-        fillColorHover: colors.grey,
         textColor: colors.blueBg,
       }}
     >
