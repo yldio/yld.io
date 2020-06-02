@@ -15,6 +15,8 @@ import { LogoStyleContext } from '../context/PageContext';
 
 import illustration from '../images/404-illustration.svg';
 
+import { colors } from '../utils/theme';
+
 // Layout
 
 const StyledBlueBackground = styled(BlueBackground)`
@@ -101,7 +103,12 @@ const NotFoundPage = () => (
         linksTitle,
       } = content;
       return (
-        <LogoStyleContext.Provider value={{ fillColorInitial: 'white' }}>
+        <LogoStyleContext.Provider
+          value={{
+            fillColorInitial: colors.white,
+            textColor: colors.blueBg,
+          }}
+        >
           <Layout is404={true} bgColor="blueBg" footerContactUsId={id}>
             <Helmet
               title={`${site.siteMetadata.siteTitle} - Not Found`}
