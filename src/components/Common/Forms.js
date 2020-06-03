@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import remcalc from 'remcalc';
 import styled from 'styled-components';
 import is from 'styled-is';
@@ -41,6 +42,14 @@ export const Input = styled.input`
   ${is('noBoxShadow')`
     box-shadow:none;
   `};
+
+  ${is('serachBox')`
+    border:none;
+    &:focus {
+      outline: ${props => props.theme.colors.vibrant} solid 1px;
+      outline-offset: -1px;
+    }
+  `};
 `;
 
 export const Label = styled('label')`
@@ -71,3 +80,57 @@ export const Fieldset = styled.section`
     margin-bottom: ${remcalc(24)};
   }
 `;
+
+const SearchField = styled.section`
+  position: relative;
+  margin-bottom: ${remcalc(36)};
+`;
+
+const Results = styled.ul`
+  width: 100%;
+  list-style-type: none;
+  background: ${props => props.theme.colors.greyBg};
+  margin-top: -${remcalc(36)};
+`;
+
+const Result = styled.li`
+  padding: ${remcalc(8)} ${remcalc(24)};
+  font-size: ${remcalc(18)};
+  line-height: ${remcalc(24)};
+  font-weight: 300;
+  color: ${props => props.theme.colors.text};
+  background: transparent;
+  transition: background 350ms ease-in-out, color 350ms ease-in-out;
+  &:hover {
+    background: ${props => props.theme.colors.vibrant};
+    color: ${props => props.theme.colors.blueBg};
+  }
+`;
+
+export const SearchBox = ({ placeholder = 'Search...', results = [] }) => {
+  const [value, setValue] = useState('');
+  const handleChange = e => {
+    e.preventDefault();
+    setValue(e.target.value);
+  };
+  return (
+    <SearchField>
+      <Input
+        type="search"
+        placeholder={placeholder}
+        aria-label="Search"
+        value={value}
+        onChange={handleChange}
+        noBoxShadow
+        serachBox
+      />
+      {results.length > 0 && (
+        <Results role="listbox">
+          {results.map((result, idx) => (
+            <Result key={idx}>{result}</Result>
+          ))}
+        </Results>
+      )}
+    </SearchField>
+  );
+};
