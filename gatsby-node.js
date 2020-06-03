@@ -306,3 +306,15 @@ exports.onPostBuild = async ({ graphql }) => {
 
   await writeFile('./public/meta.json', JSON.stringify({ allJobIds }));
 };
+
+exports.onCreatePage = async ({
+  page,
+  actions: { createPage, deletePage },
+}) => {
+  if (/^\/blog\/404\/$/.test(page.path)) {
+    const oldPage = { ...page };
+    page.matchPath = '/blog/*';
+    deletePage(oldPage);
+    createPage(page);
+  }
+};
