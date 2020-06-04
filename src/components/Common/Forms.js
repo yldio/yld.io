@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import remcalc from 'remcalc';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import is from 'styled-is';
+
+import Anchor from './Anchor';
 
 export const Checkbox = styled.input`
   appearance: none;
@@ -81,19 +83,36 @@ export const Fieldset = styled.section`
   }
 `;
 
-const SearchField = styled.section`
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const SearchField = styled.section`
   position: relative;
   margin-bottom: ${remcalc(36)};
 `;
 
-const Results = styled.ul`
+export const Results = styled.ul`
   width: 100%;
+  max-height: ${remcalc(400)};
   list-style-type: none;
   background: ${props => props.theme.colors.greyBg};
-  margin-top: -${remcalc(36)};
+  position: absolute;
+  left: 0;
+  top: ${remcalc(56)};
+  z-index: 10;
+  overflow-x: auto;
+  overflow-y: scroll;
+  will-change: opacity;
+  animation: ${fadeIn} 450ms linear;
 `;
 
-const Result = styled.li`
+export const Result = styled.li`
   padding: ${remcalc(8)} ${remcalc(24)};
   font-size: ${remcalc(18)};
   line-height: ${remcalc(24)};
@@ -103,34 +122,59 @@ const Result = styled.li`
   transition: background 350ms ease-in-out, color 350ms ease-in-out;
   &:hover {
     background: ${props => props.theme.colors.vibrant};
-    color: ${props => props.theme.colors.blueBg};
+    > a {
+      color: ${props => props.theme.colors.blueBg};
+    }
   }
+  ${is('notFound')`
+    pointer-events:none;
+    color: ${props => props.theme.colors.grey};
+    font-weight: 500;
+  `};
 `;
 
-export const SearchBox = ({ placeholder = 'Search...', results = [] }) => {
-  const [value, setValue] = useState('');
-  const handleChange = e => {
-    e.preventDefault();
-    setValue(e.target.value);
-  };
-  return (
-    <SearchField>
-      <Input
-        type="search"
-        placeholder={placeholder}
-        aria-label="Search"
-        value={value}
-        onChange={handleChange}
-        noBoxShadow
-        serachBox
-      />
-      {results.length > 0 && (
-        <Results role="listbox">
-          {results.map((result, idx) => (
-            <Result key={idx}>{result}</Result>
-          ))}
-        </Results>
-      )}
-    </SearchField>
-  );
-};
+export const SearchBox = forwardRef(
+  ({ placeholder = 'Search...', serchedData }, ref) => {
+    const [isListBoxOpen, setOpen] = useState(false);
+    const [results, setResults] = useState([]);
+
+    const handleChange = () => {
+      const searchedData = serchedData();
+      if (ref.current.value.length >= 2) {
+        setResults(searchedData);
+        setOpen(true);
+      } else {
+        setOpen(false);
+      }
+    };
+
+    return (
+      <SearchField>
+        <Input
+          ref={ref}
+          type="search"
+          placeholder={placeholder}
+          aria-label="Search"
+          onChange={handleChange}
+          noBoxShadow
+          serachBox
+        />
+        {isListBoxOpen && (
+          <Results role="listbox">
+            {results.length > 0 ? (
+              results.map(({ title, slug }, idx) => (
+                <Result key={idx}>
+                  <Anchor to={slug}>{title}</Anchor>
+                </Result>
+              ))
+            ) : (
+              <Result notFound>Not Found !!!</Result>
+            )}
+          </Results>
+        )}
+      </SearchField>
+    );
+  },
+);
+
+SearchBox.displayName = 'SearchBox';
