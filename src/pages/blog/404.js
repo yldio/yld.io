@@ -23,7 +23,7 @@ import {
 import illustration from '../../images/404-illustration.svg';
 
 import { colors } from '../../utils/theme';
-import replaceAccentChars from '../../utils/replaceAccentChars';
+import mapBlogPostsToList from '../../utils/mapBlogPostsToList';
 
 const NotFoundBlogPage = ({
   data: {
@@ -40,16 +40,7 @@ const NotFoundBlogPage = ({
   const ref = useRef(null);
 
   const handleSearch = () => {
-    const reg = new RegExp(ref.current.value, 'ig');
-    return posts
-      .filter(
-        ({ node: { title, authorName } }) =>
-          reg.test(title) || reg.test(replaceAccentChars(authorName)),
-      )
-      .map(({ node: { title, slug } }) => ({
-        slug: `/blog/${slug}`,
-        title,
-      }));
+    return mapBlogPostsToList(ref.current.value, posts);
   };
 
   return (
