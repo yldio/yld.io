@@ -99,7 +99,7 @@ export const SearchField = styled.section`
 
 export const Results = styled.ul`
   width: 100%;
-  max-height: ${remcalc(400)};
+  max-height: ${remcalc(200)};
   list-style-type: none;
   background: ${props => props.theme.colors.greyBg};
   position: absolute;
@@ -164,7 +164,9 @@ export const SearchBox = forwardRef(
             {results.length > 0 ? (
               results.map(({ title, slug }, idx) => (
                 <Result key={idx}>
-                  <Anchor to={slug}>{title}</Anchor>
+                  <Anchor to={slug}>
+                    {title.length > 55 ? `${title.slice(0, 52)}...` : title}
+                  </Anchor>
                 </Result>
               ))
             ) : (
