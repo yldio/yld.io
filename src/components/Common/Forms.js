@@ -109,7 +109,7 @@ export const Results = styled.ul`
   overflow-x: auto;
   overflow-y: scroll;
   will-change: opacity;
-  animation: ${fadeIn} 450ms linear;
+  animation: ${fadeIn} ${props => props.theme.animations.long} linear;
 `;
 
 export const Result = styled.li`
@@ -119,7 +119,8 @@ export const Result = styled.li`
   font-weight: 300;
   color: ${props => props.theme.colors.text};
   background: transparent;
-  transition: background 350ms ease-in-out, color 350ms ease-in-out;
+  transition: background ${props => props.theme.animations.normal} ease-in-out,
+    color ${props => props.theme.animations.normal} ease-in-out;
   &:hover {
     background: ${props => props.theme.colors.vibrant};
     > a {
@@ -134,14 +135,14 @@ export const Result = styled.li`
 `;
 
 export const SearchBox = forwardRef(
-  ({ placeholder = 'Search...', serchedData }, ref) => {
+  ({ placeholder = 'Search...', searchedData }, ref) => {
     const [isListBoxOpen, setOpen] = useState(false);
     const [results, setResults] = useState([]);
 
     const handleChange = () => {
-      const searchedData = serchedData();
+      const newResults = searchedData();
       if (ref.current.value.length >= 2) {
-        setResults(searchedData);
+        setResults(newResults);
         setOpen(true);
       } else {
         setOpen(false);

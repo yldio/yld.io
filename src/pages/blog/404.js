@@ -82,7 +82,7 @@ const NotFoundBlogPage = ({
                   }}
                   source={copy}
                 />
-                <SearchBox ref={ref} serchedData={handleSearch} />
+                <SearchBox ref={ref} searchedData={handleSearch} />
                 <LinkParagraph>
                   <NotFoundPageLink to="/blog">Go to our Blog</NotFoundPageLink>
                 </LinkParagraph>
