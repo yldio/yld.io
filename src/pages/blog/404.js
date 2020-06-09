@@ -1,28 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-import ReactMarkdown from 'react-markdown';
-
-import { LogoStyleContext } from '../../context/PageContext';
-
-import { Grid } from '../../components/grid';
-import Layout from '../../components/layout';
 import SearchBox from '../../components/Common/SearchBox';
 
-import {
-  StyledBlueBackground,
-  StyledRow,
-  TextCol,
-  IllustrationCol,
-  TitleHeadline,
-  CopyText,
+import NotFoundPage, {
   LinkParagraph,
   NotFoundPageLink,
 } from '../../components/404';
 
-import illustration from '../../images/404-illustration.svg';
-
-import { colors } from '../../utils/theme';
 import mapBlogPostsToList from '../../utils/mapBlogPostsToList';
 
 const NotFoundBlogPage = ({
@@ -44,51 +28,17 @@ const NotFoundBlogPage = ({
   };
 
   return (
-    <LogoStyleContext.Provider
-      value={{
-        fillColorInitial: colors.white,
-        textColor: colors.blueBg,
-      }}
+    <NotFoundPage
+      siteTitle={site.siteMetadata.siteTitle}
+      footerId={id}
+      titleHeadline={title}
+      copy={copy}
     >
-      <Layout is404={true} bgColor="blueBg" footerContactUsId={id}>
-        <Helmet
-          title={`${site.siteMetadata.siteTitle} - Not Found`}
-          meta={[
-            {
-              name: 'description',
-              content: 'YLD - Engineering - Digital, NodeJS, React, AWS',
-            },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <StyledBlueBackground>
-          <Grid>
-            <StyledRow>
-              <TextCol>
-                <TitleHeadline>{title}</TitleHeadline>
-                <ReactMarkdown
-                  renderers={{
-                    paragraph: CopyText,
-                  }}
-                  source={copy}
-                />
-                <SearchBox ref={ref} searchedData={handleSearch} />
-                <LinkParagraph>
-                  <NotFoundPageLink to="/blog">Go to our Blog</NotFoundPageLink>
-                </LinkParagraph>
-              </TextCol>
-              <IllustrationCol>
-                <img
-                  src={illustration}
-                  alt="There's nothing to see here - ilustration"
-                />
-              </IllustrationCol>
-            </StyledRow>
-          </Grid>
-        </StyledBlueBackground>
-      </Layout>
-    </LogoStyleContext.Provider>
+      <SearchBox ref={ref} searchedData={handleSearch} />
+      <LinkParagraph>
+        <NotFoundPageLink to="/blog">Go to our Blog</NotFoundPageLink>
+      </LinkParagraph>
+    </NotFoundPage>
   );
 };
 
