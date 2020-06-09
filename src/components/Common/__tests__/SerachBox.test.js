@@ -1,9 +1,9 @@
 import React from 'react';
-import { SearchBox } from '../Forms';
+import SearchBox from '../SearchBox';
 import { render, fireEvent } from '@testing-library/react';
 import { wrapper } from '../../../utils/tests/react';
 
-test('<SerachBox/>', () => {
+test('<SearchBox/>', () => {
   const ref = React.createRef();
   const results = [
     { title: 'Blog Post', slug: '/blog/blog-post/' },

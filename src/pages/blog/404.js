@@ -7,7 +7,7 @@ import { LogoStyleContext } from '../../context/PageContext';
 
 import { Grid } from '../../components/grid';
 import Layout from '../../components/layout';
-import { SearchBox } from '../../components/Common/Forms';
+import SearchBox from '../../components/Common/SearchBox';
 
 import {
   StyledBlueBackground,
