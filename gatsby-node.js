@@ -311,6 +311,7 @@ exports.onCreatePage = async ({
   page,
   actions: { createPage, deletePage },
 }) => {
+  // this approach was taken from the gatsby docs https://www.gatsbyjs.org/docs/creating-prefixed-404-pages-for-different-languages/
   if (/^\/blog\/404\/$/.test(page.path)) {
     const oldPage = { ...page };
     page.matchPath = '/blog/*';
