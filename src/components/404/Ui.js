@@ -58,6 +58,6 @@ export const LinkParagraph = props => (
   <BodyPrimary {...props} reverse="true" noPaddingBottom="true" />
 );
 
-export const NotFoundPageLink = styled(Link)`
+export const Page404Link = styled(Link)`
   text-decoration: underline;
 `;

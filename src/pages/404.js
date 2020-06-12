@@ -1,7 +1,11 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { LinksTitle, LinkParagraph, NotFoundPageLink } from '../components/404';
+import Page404, {
+  LinksTitle,
+  LinkParagraph,
+  Page404Link,
+} from '../components/404';
 
 // Page
 
@@ -34,7 +38,7 @@ const NotFoundPage = () => (
         linksTitle,
       } = content;
       return (
-        <NotFoundPage
+        <Page404
           siteTitle={site.siteMetadata.siteTitle}
           footerId={id}
           titleHeadline={title}
@@ -42,15 +46,15 @@ const NotFoundPage = () => (
         >
           <LinksTitle>{linksTitle}</LinksTitle>
           <LinkParagraph>
-            <NotFoundPageLink to="/">Home</NotFoundPageLink>
+            <Page404Link to="/">Home</Page404Link>
           </LinkParagraph>
           <LinkParagraph>
-            <NotFoundPageLink to="/our-work/">Our work</NotFoundPageLink>
+            <Page404Link to="/our-work/">Our work</Page404Link>
           </LinkParagraph>
           <LinkParagraph>
-            <NotFoundPageLink to="/contact/">Contact</NotFoundPageLink>
+            <Page404Link to="/contact/">Contact</Page404Link>
           </LinkParagraph>
-        </NotFoundPage>
+        </Page404>
       );
     }}
   />

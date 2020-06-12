@@ -2,10 +2,7 @@ import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import SearchBox from '../../components/Common/SearchBox';
 
-import NotFoundPage, {
-  LinkParagraph,
-  NotFoundPageLink,
-} from '../../components/404';
+import Page404, { LinkParagraph, Page404Link } from '../../components/404';
 
 import mapBlogPostsToList from '../../utils/mapBlogPostsToList';
 
@@ -28,7 +25,7 @@ const NotFoundBlogPage = ({
   };
 
   return (
-    <NotFoundPage
+    <Page404
       siteTitle={site.siteMetadata.siteTitle}
       footerId={id}
       titleHeadline={title}
@@ -36,9 +33,9 @@ const NotFoundBlogPage = ({
     >
       <SearchBox ref={ref} searchedData={handleSearch} />
       <LinkParagraph>
-        <NotFoundPageLink to="/blog">Go to our Blog</NotFoundPageLink>
+        <Page404Link to="/blog">Go to our Blog</Page404Link>
       </LinkParagraph>
-    </NotFoundPage>
+    </Page404>
   );
 };
 

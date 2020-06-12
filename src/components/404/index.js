@@ -1,2 +1,2 @@
 export * from './Ui';
-export { default } from './NotFoundPage';
+export { default } from './Page404';

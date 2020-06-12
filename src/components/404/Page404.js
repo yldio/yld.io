@@ -20,13 +20,7 @@ import illustration from '../../images/404-illustration.svg';
 
 import { colors } from '../../utils/theme';
 
-const NotFoundPage = ({
-  siteTitle,
-  footerId,
-  titleHeadline,
-  copy,
-  children,
-}) => (
+const Page404 = ({ siteTitle, footerId, titleHeadline, copy, children }) => (
   <LogoStyleContext.Provider
     value={{
       fillColorInitial: colors.white,
@@ -71,4 +65,4 @@ const NotFoundPage = ({
   </LogoStyleContext.Provider>
 );
 
-export default NotFoundPage;
+export default Page404;
