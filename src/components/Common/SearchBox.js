@@ -75,6 +75,7 @@ export const SearchBox = forwardRef(
     return (
       <SearchField>
         <Input
+          data-testid="search"
           ref={ref}
           type="text"
           placeholder={placeholder}

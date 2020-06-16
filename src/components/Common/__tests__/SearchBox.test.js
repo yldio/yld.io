@@ -10,14 +10,14 @@ test('<SearchBox/>', () => {
     { title: 'Blog Post 2', slug: '/blog/blog-post-2/' },
   ];
   const searchedData = jest.fn().mockReturnValue(results);
-  const { getByPlaceholderText, queryByRole, queryAllByText } = render(
+  const { getByTestId, queryByRole, queryAllByText } = render(
     <SearchBox ref={ref} searchedData={searchedData} />,
     { wrapper },
   );
 
   expect(queryByRole('listbox')).not.toBeInTheDocument();
 
-  fireEvent.change(getByPlaceholderText(/search/i), {
+  fireEvent.change(getByTestId(/search/i), {
     target: { value: 'blog' },
   });
 
