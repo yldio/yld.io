@@ -76,8 +76,9 @@ export const SearchBox = forwardRef(
       <SearchField>
         <Input
           ref={ref}
-          type="search"
+          type="text"
           placeholder={placeholder}
+          role="search"
           aria-label="Search"
           onChange={handleChange}
           noBoxShadow
