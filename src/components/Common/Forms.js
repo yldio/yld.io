@@ -41,6 +41,14 @@ export const Input = styled.input`
   ${is('noBoxShadow')`
     box-shadow:none;
   `};
+
+  ${is('searchBox')`
+    border:none;
+    &:focus {
+      outline: ${props => props.theme.colors.vibrant} solid 1px;
+      outline-offset: -1px;
+    }
+  `};
 `;
 
 export const Label = styled('label')`
