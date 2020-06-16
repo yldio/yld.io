@@ -2,7 +2,6 @@ import React from 'react';
 import breakpoint from 'styled-components-breakpoint';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import remcalc from 'remcalc';
 import { Row, Col } from '../grid';
 import BlueBackground from '../Common/BlueBackground';
 import { SectionTitle, BodyPrimary } from '../Typography';
@@ -10,7 +9,7 @@ import { SectionTitle, BodyPrimary } from '../Typography';
 // Layout
 
 export const StyledBlueBackground = styled(BlueBackground)`
-  margin-top: -${remcalc(36)};
+  margin-top: ${({ theme }) => `-${theme.space[4]}`};
 `;
 
 export const StyledRow = styled(Row)`
