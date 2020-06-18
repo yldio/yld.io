@@ -35,7 +35,7 @@ const ImageWrapper = styled.div`
   width: 60px;
   height: 60px;
   max-width: 100%;
-  margin-bottom: ${({ theme }) => theme.space[2]};
+  padding-bottom: ${({ theme }) => theme.space[2]};
 `;
 
 const BulletPointWrapper = styled.div`
@@ -67,7 +67,7 @@ const Formats = ({ formats }) => (
             <Subtitle noPadding reverse>
               {format.title}
             </Subtitle>
-            <BodyPrimary muted reverse>
+            <BodyPrimary muted reverse noPaddingTop>
               {format.description}
             </BodyPrimary>
             <BulletPointWrapper>

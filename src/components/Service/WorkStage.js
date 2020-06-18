@@ -36,11 +36,7 @@ const WorkStage = ({ workStage }) => {
     <Row spaced={false}>
       <Col width={[1]}>
         <Padding
-          top={{
-            smallPhone: 0,
-            smallTablet: 5,
-            tablet: 3.5,
-          }}
+          top={{ smallPhone: 0, smallTablet: 5, tablet: 3.5, desktop: 4 }}
           bottom={{ smallPhone: 3, desktop: 4 }}
         >
           <SectionTitle reverse>{workStage.title}</SectionTitle>
@@ -65,7 +61,9 @@ const WorkStage = ({ workStage }) => {
             <ReactMarkdown
               source={body}
               renderers={{
-                paragraph: props => <BodyPrimary muted reverse {...props} />,
+                paragraph: props => (
+                  <BodyPrimary muted reverse noPaddingTop {...props} />
+                ),
                 listItem: props => (
                   <CustomisedBulletpoint muted reverse {...props} />
                 ),
