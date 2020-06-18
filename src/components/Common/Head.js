@@ -124,6 +124,7 @@ const Head = ({ page, seoMetaData }) => {
                   )}
 
                   <link rel="image_src" type="image/png" href={imageUrl} />
+                  <link rel="canonical" href={location.href} />
                 </Helmet>
               );
             }}
