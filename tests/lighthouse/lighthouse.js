@@ -88,6 +88,7 @@ test.each([
   'tap-targets',
   'hreflang',
   'plugins',
+  'canonical',
 ])('binary audit %s passes', name => {
   const audit = result.audits[name];
   deleteAudit(name);
