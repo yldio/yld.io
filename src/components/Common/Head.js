@@ -95,6 +95,8 @@ const Head = ({ page, seoMetaData }) => {
         return (
           <Location>
             {({ location }) => {
+              const baseUrl = location.href || siteUrl;
+
               return (
                 <Helmet>
                   <html lang="en" />
@@ -110,7 +112,7 @@ const Head = ({ page, seoMetaData }) => {
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={description} />
                   <meta property="og:site_name" content={siteTitle} />
-                  <meta property="og:url" content={location.href || siteUrl} />
+                  <meta property="og:url" content={baseUrl} />
 
                   {/* Twitter */}
                   <meta name="twitter:site" content="yldio" />
@@ -126,7 +128,7 @@ const Head = ({ page, seoMetaData }) => {
                   <link rel="image_src" type="image/png" href={imageUrl} />
                   <link
                     rel="canonical"
-                    href={`${siteUrl}${location.pathname}`}
+                    href={`${baseUrl}${location.pathname}`}
                   />
                 </Helmet>
               );
