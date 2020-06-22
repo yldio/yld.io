@@ -11,10 +11,12 @@ const {
   URL: NETLIFY_SITE_URL = 'https://www.yld.io',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
+  LIGHTHOUSE,
 } = process.env;
-
 const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const isLighthouse = LIGHTHOUSE === 'true';
+const netlifyUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const siteUrl = isLighthouse ? 'http://localhost:3001' : netlifyUrl;
 
 module.exports = {
   siteMetadata: {
