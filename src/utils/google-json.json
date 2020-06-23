@@ -5,28 +5,90 @@
   "telephone": "+440 203 514 4678",
   "url": "https://www.yld.io",
   "email": "hello@yld.io",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 51.5208762,
-    "longitude": -0.0999571
-  },
   "image": "https://twitter.com/yldio/profile_image?size=original",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "124 Aldersgate Street",
-    "addressLocality": "London",
-    "addressRegion": "London",
-    "postalCode": "EC1A 4JQ",
-    "addressCountry": "UK"
-  },
-  "sameAs": [
-    "https://twitter.com/yldio",
-    "https://github.com/yldio",
-    "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
-    "https://www.instagram.com/yld.io/",
-    "https://www.linkedin.com/company/yld/",
-    "https://dribbble.com/makeusproud",
-    "https://www.behance.net/MakeUsProud"
+  "location": [
+    {
+      "parentOrganization": {
+        "name": "YLD"
+      },
+      "name": "YLD - London",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5208762,
+        "longitude": -0.0999571
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "124 Aldersgate Street",
+        "addressLocality": "London",
+        "addressRegion": "London",
+        "postalCode": "EC1A 4JQ",
+        "addressCountry": "UK"
+      },
+      "sameAs": [
+        "https://twitter.com/yldio",
+        "https://github.com/yldio",
+        "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
+        "https://www.instagram.com/yld.io/",
+        "https://www.linkedin.com/company/yld/",
+        "https://dribbble.com/makeusproud",
+        "https://www.behance.net/MakeUsProud"
+      ]
+    },
+    {
+      "parentOrganization": {
+        "name": "YLD"
+      },
+      "name": "YLD - Lisbon",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.7355695,
+        "longitude": -9.1557634
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Ramalho Ortigão 8 3º Piso",
+        "addressLocality": "Lisbon",
+        "addressRegion": "Lisbon",
+        "postalCode": "1070-230 Lisboa",
+        "addressCountry": "PT"
+      },
+      "sameAs": [
+        "https://twitter.com/yldio",
+        "https://github.com/yldio",
+        "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
+        "https://www.instagram.com/yld.io/",
+        "https://www.linkedin.com/company/yld/",
+        "https://dribbble.com/makeusproud",
+        "https://www.behance.net/MakeUsProud"
+      ]
+    },
+    {
+      "parentOrganization": {
+        "name": "YLD"
+      },
+      "name": "Addcode",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.1532847,
+        "longitude": -8.6055695
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": " R. de Sá da Bandeira 819 2° Esq",
+        "addressLocality": "Porto",
+        "addressRegion": "Porto",
+        "postalCode": "4000-267 Porto",
+        "addressCountry": "PT"
+      },
+      "sameAs": [
+        "https://twitter.com/AddCode_io",
+        "https://github.com/addcodeio",
+        "https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA",
+        "https://www.instagram.com/addcode.io/",
+        "https://www.linkedin.com/company/addcode-io/"
+      ]
+    }
   ],
   "openingHoursSpecification": [
     {
