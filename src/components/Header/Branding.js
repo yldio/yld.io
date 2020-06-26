@@ -85,7 +85,7 @@ const TopNavBranding = ({ slug }) => (
             />
           ) : (
             <StyledHeaderLink
-              to={`/${slug.replace(/\s/, '-').toLowerCase()}`}
+              to={slug && `/${slug.replace(/\s/, '-').toLowerCase()}`}
               color={fillColorInitial}
             >
               {slug}
