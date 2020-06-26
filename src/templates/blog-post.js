@@ -69,7 +69,7 @@ const BlogPostTemplate = ({
 
   return (
     <MDXProvider components={{ ...components, ...shortCodes }}>
-      <Layout location={location}>
+      <Layout location={location} slug="Blog">
         <Head seoMetaData={seoMetaData} />
         <Grid>
           <Row style={{ justifyContent: 'center' }}>

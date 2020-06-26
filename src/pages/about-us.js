@@ -36,6 +36,7 @@ const AboutUs = ({
     partnershipsTitle,
     partners,
     seoMetaData,
+    title,
   } = content;
 
   const supportingStatements = [
@@ -62,7 +63,7 @@ const AboutUs = ({
   ]);
 
   return (
-    <Layout breadcrumbData={breadcrumbData}>
+    <Layout breadcrumbData={breadcrumbData} slug={title}>
       <Head seoMetaData={seoMetaData} />
       <AboutUsHero
         statementText={statementText}

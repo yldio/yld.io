@@ -48,6 +48,7 @@ class JoinUs extends React.Component {
       <Layout
         footerContactUsId={content.footerContactUs.id}
         breadcrumbData={breadcrumbData}
+        slug={content.title}
       >
         <Head seoMetaData={content.seoMetaData} />
         <ViewPositions

@@ -10,7 +10,7 @@ import Layout from '../components/layout';
 import BlogPostPreview from '../components/Blog/BlogPostPreview';
 import Head from '../components/Common/Head';
 import { Grid, Row, Col } from '../components/grid';
-import { SectionTitle, DisplayTitle } from '../components/Typography';
+import { DisplayTitle } from '../components/Typography';
 import Hr from '../components/Common/Hr';
 import GreyBackground from '../components/Common/GreyBackground';
 import Pagination from '../components/Blog/Pagination';
@@ -70,7 +70,7 @@ const BlogPage = ({
   ]);
 
   return (
-    <Layout breadcrumbData={breadcrumbData}>
+    <Layout breadcrumbData={breadcrumbData} slug="Blog">
       <Head
         seoMetaData={{
           title: blogPageMeta.title,
@@ -80,7 +80,6 @@ const BlogPage = ({
       <Grid>
         <Row>
           <PageDescriptionCol width={[1]}>
-            <SectionTitle as="h1">Blog</SectionTitle>
             <FixedWidthDisplayTitle regular secondary>
               {blogPageMeta.description}
             </FixedWidthDisplayTitle>
