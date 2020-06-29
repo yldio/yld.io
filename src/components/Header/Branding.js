@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import LogoLink from './DesktopNav/LogoLink';
 import ServiceLink from './DesktopNav/ServiceLink';
+import StyledHeaderLink from './DesktopNav/StyledHeaderLink';
 import getServiceInfo from '../../utils/getServiceInfo';
 import { LogoStyleContext, logoStyleDefaults } from '../../context/PageContext';
 
@@ -75,13 +76,17 @@ const TopNavBranding = ({ slug }) => (
             fillColorHover={fillColorHover}
             textColor={textColor}
           />
-          {(isSpecialityPage || isServicePage) && (
+          {isSpecialityPage || isServicePage ? (
             <ServiceLink
               isSpecialityPage={isSpecialityPage}
               isServicePage={isServicePage}
               service={service}
               color={serviceColor}
             />
+          ) : (
+            <StyledHeaderLink color={fillColorInitial} as="h3">
+              {slug}
+            </StyledHeaderLink>
           )}
         </StyledLinksContainer>
       );

@@ -6,7 +6,7 @@ import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 
 import Layout from '../components/layout';
 import { Grid, Row, Col } from '../components/grid';
-import { SectionTitle, DisplayTitle } from '../components/Typography';
+import { DisplayTitle } from '../components/Typography';
 import GreyBackground from '../components/Common/GreyBackground';
 import Head from '../components/Common/Head';
 import CaseStudies from '../components/Common/case-studies/CaseStudies';
@@ -95,13 +95,11 @@ const OurWork = ({ data, location }) => {
     <Layout
       footerContactUsId={data.contentfulOurWork.footerContactUs.id}
       breadcrumbData={breadcrumbData}
+      slug={title}
     >
       <Head page={page} seoMetaData={seoMetaData} />
       <HeaderGrid>
         <Row>
-          <Col width={[1]}>
-            <SectionTitle as="h1">{title}</SectionTitle>
-          </Col>
           <Col width={[1, 1, 1, 1, 9 / 12]}>
             <DisplayTitle regular secondary>
               {description}

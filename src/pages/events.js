@@ -230,6 +230,7 @@ const EventPage = ({
         bgColor="blueBg"
         footerContactUsId={footerContactUs.id}
         breadcrumbData={breadcrumbData}
+        slug="Events"
       >
         <Helmet>
           {eventStructuredData &&
