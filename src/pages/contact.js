@@ -129,6 +129,7 @@ const ContactUs = ({
       location={location}
       displayFooterOffices={false}
       breadcrumbData={breadcrumbData}
+      slug={'Contact'}
     >
       <Head seoMetaData={page.seoMetaData} />
 
