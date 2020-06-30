@@ -46,7 +46,7 @@ const navLinks = [
     label: 'About',
     dropdownItems: [
       {
-        label: 'Our team',
+        label: 'About Us',
         to: '/about-us/',
       },
       {
