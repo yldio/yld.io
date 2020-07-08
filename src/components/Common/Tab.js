@@ -14,7 +14,7 @@ const TabContainer = styled.li`
     margin-right: 0;
   }
 
-  ${breakpoint('phone')`
+  ${breakpoint('phone')`.
     margin-right: ${remcalc(36)};
   `}
 `;
@@ -50,10 +50,11 @@ const Button = styled(UnstyledButton)`
   ${breakpoint('desktop')`
     &:active,
     &:focus {
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
+      &:after {
+        transform: scaleX(1);
+      }
     }
   `}
-
   &:after {
     ${Underline}
   }
