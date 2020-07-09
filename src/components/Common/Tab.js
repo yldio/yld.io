@@ -14,7 +14,7 @@ const TabContainer = styled.li`
     margin-right: 0;
   }
 
-  ${breakpoint('phone')`.
+  ${breakpoint('phone')`
     margin-right: ${remcalc(36)};
   `}
 `;
