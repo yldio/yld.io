@@ -50,10 +50,11 @@ const Button = styled(UnstyledButton)`
   ${breakpoint('desktop')`
     &:active,
     &:focus {
-      outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
+      &:after {
+        transform: scaleX(1);
+      }
     }
   `}
-
   &:after {
     ${Underline}
   }
