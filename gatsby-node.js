@@ -36,6 +36,13 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             slug
+            speciality {
+              id
+              slug
+              title
+              generate
+              blogpostTags
+            }
           }
         }
       }
@@ -130,27 +137,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  _.each(result.data.allContentfulSpeciality.edges, ({ node }) => {
-    const { id, slug, title, generate, blogpostTags } = node;
-
-    if (slug && generate) {
-      const titleTags = getTagsForTitle(title);
-      const contentfulTags = blogpostTags
-        ? blogpostTags.map(el => el.toLowerCase().trim())
-        : [];
-
-      createPage({
-        path: `/speciality/${slug}/`,
-        component: slash(specialityTemplate),
-        context: {
-          id: id,
-          postsLimit: 3,
-          postsTags: [...titleTags, ...contentfulTags],
-        },
-      });
-    }
-  });
-
   _.each(result.data.allContentfulService.edges, edge => {
     if (edge.node.slug) {
       createPage({
@@ -159,6 +145,27 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           id: edge.node.id,
         },
+      });
+
+      _.each(edge.node.speciality, speciality => {
+        const { id, slug, title, generate, blogpostTags } = speciality;
+
+        if (slug && generate) {
+          const titleTags = getTagsForTitle(title);
+          const contentfulTags = blogpostTags
+            ? blogpostTags.map(el => el.toLowerCase().trim())
+            : [];
+
+          createPage({
+            path: `/${edge.node.slug}/${slug}/`,
+            component: slash(specialityTemplate),
+            context: {
+              id: id,
+              postsLimit: 3,
+              postsTags: [...titleTags, ...contentfulTags],
+            },
+          });
+        }
       });
     }
   });
