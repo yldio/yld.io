@@ -244,7 +244,6 @@ const GetInTouch = props => {
 
 GetInTouch.propTypes = {
   title: PropTypes.string.isRequired,
-  contactText: PropTypes.string.isRequired,
   ctaText: PropTypes.string.isRequired,
 };
 

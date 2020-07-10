@@ -76,7 +76,7 @@ const Services = ({ statement, services }) => (
       {services.map(
         service =>
           service.introSentence && (
-            <>
+            <div key={service.slug}>
               <ServiceCol width={[1, 1, 1, 1 / 2, 5 / 12]}>
                 {service.icon && (
                   <ImageWrapper>
@@ -97,7 +97,7 @@ const Services = ({ statement, services }) => (
               </ServiceCol>
               {/* This grid has no offsets so this is what we're left with... */}
               <Col width={[0, 0, 0, 1 / 12]} />
-            </>
+            </div>
           ),
       )}
     </ServiceRow>

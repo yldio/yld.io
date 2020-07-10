@@ -51,9 +51,9 @@ const IntroSection = ({ introSentence, introBlocks }) => (
           <ImageWrapper>
             {icon && <img src={icon.file.url} alt={subtitle} />}
           </ImageWrapper>
-          {subtitle && <Subtitle noPaddingBottom="true">{subtitle}</Subtitle>}
+          {subtitle && <Subtitle noPaddingBottom>{subtitle}</Subtitle>}
           {body && (
-            <BodyPrimary noPaddingTop="true" muted="true">
+            <BodyPrimary noPaddingTop="true" muted>
               {body}
             </BodyPrimary>
           )}
