@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
 import Image from '../../Common/Image';
+import InternalAnchor from '../../Common/InternalAnchor';
 import StyledLink from '../../Common/StyledLink';
 import Hr from '../Hr';
 import { BodyPrimary, CardTitle } from '../../Typography';
@@ -41,27 +42,33 @@ const CaseStudy = ({
   <>
     <SeparatorCol />
     {/* large screen */}
-    <CaseStudyPoster>
-      <Image
-        css={({ theme }) => ({ marginBottom: theme.space[4] })}
-        image={previewImage}
-      />
-      <BodyPrimary noPadding muted>
-        {client}
-      </BodyPrimary>
-      <CardTitle>{title}</CardTitle>
-    </CaseStudyPoster>
+    <InternalAnchor to={`/case-study/${slug}/`}>
+      <CaseStudyPoster>
+        <Image
+          css={({ theme }) => ({ marginBottom: theme.space[4] })}
+          image={previewImage}
+        />
+        <BodyPrimary noPadding muted>
+          {client}
+        </BodyPrimary>
+        <CardTitle>{title}</CardTitle>
+      </CaseStudyPoster>
+    </InternalAnchor>
     {/* small screen */}
-    <CaseStudyCard backgroundColor={posterColor}>
-      <BodyPrimary noPaddingBottom reverse={reverseColor}>
-        {client}
-      </BodyPrimary>
-      <CardTitle reverse={reverseColor}>{title}</CardTitle>
-    </CaseStudyCard>
+    <InternalAnchor to={`/case-study/${slug}/`}>
+      <CaseStudyCard backgroundColor={posterColor}>
+        <BodyPrimary noPaddingBottom reverse={reverseColor}>
+          {client}
+        </BodyPrimary>
+        <CardTitle reverse={reverseColor}>{title}</CardTitle>
+      </CaseStudyCard>
+    </InternalAnchor>
     {/* any screen */}
-    <BodyPrimary css={({ theme }) => ({ padding: `${theme.space[3]} 0` })}>
-      {introSentence}
-    </BodyPrimary>
+    <InternalAnchor to={`/case-study/${slug}/`}>
+      <BodyPrimary css={({ theme }) => ({ padding: `${theme.space[3]} 0` })}>
+        {introSentence}
+      </BodyPrimary>
+    </InternalAnchor>
     <div>
       <StyledLink to={`/case-study/${slug}/`}>Learn more</StyledLink>
     </div>
