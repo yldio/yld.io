@@ -93,22 +93,14 @@ const BaseVideoLink = ({
     themeVariation,
   );
   const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div';
+  const top = { smallPhone: 2, smallTablet: 1.5 };
+  const bottom = { smallPhone: 0, smallTablet: 1.5 };
 
   return (
     <Wrapper width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
       <ExternalAnchor href={href} color={color} opacity={opacity} {...props}>
         <InnerWrapper
-          themeVariation={themeVariation}
-          top={
-            mode === 'standalone'
-              ? { smallPhone: 2, smallTablet: 1.5 }
-              : undefined
-          }
-          bottom={
-            mode === 'standalone'
-              ? { smallPhone: 0, smallTablet: 1.5 }
-              : undefined
-          }
+          {...(mode === 'standalone' ? { themeVariation, top, bottom } : {})}
         >
           <Margin vertical={{ smallPhone: 1.5, smallTablet: 0 }}>
             <Padding vertical={1} horizontal={mode === 'standalone' ? 2 : 0}>
