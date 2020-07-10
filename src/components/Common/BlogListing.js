@@ -36,12 +36,13 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
 BlogListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  mediaItems: PropTypes.array.isRequired,
+  mediaItems: PropTypes.array,
   CTALink: PropTypes.string,
 };
 
 BlogListing.defaultProps = {
   CTALink: '/blog/',
+  mediaItems: [],
 };
 
 export default BlogListing;
