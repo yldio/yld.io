@@ -38,42 +38,46 @@ const CaseStudy = ({
     title,
     introSentence: { introSentence },
   },
-}) => (
-  <>
-    <SeparatorCol />
-    {/* large screen */}
-    <InternalAnchor to={`/case-study/${slug}/`}>
-      <CaseStudyPoster>
-        <Image
-          css={({ theme }) => ({ marginBottom: theme.space[4] })}
-          image={previewImage}
-        />
-        <BodyPrimary noPadding muted>
-          {client}
+}) => {
+  const url = `/case-study/${slug}/`;
+
+  return (
+    <>
+      <SeparatorCol />
+      {/* large screen */}
+      <InternalAnchor to={url}>
+        <CaseStudyPoster>
+          <Image
+            css={({ theme }) => ({ marginBottom: theme.space[4] })}
+            image={previewImage}
+          />
+          <BodyPrimary noPadding muted>
+            {client}
+          </BodyPrimary>
+          <CardTitle>{title}</CardTitle>
+        </CaseStudyPoster>
+      </InternalAnchor>
+      {/* small screen */}
+      <InternalAnchor to={url}>
+        <CaseStudyCard backgroundColor={posterColor}>
+          <BodyPrimary noPaddingBottom reverse={reverseColor}>
+            {client}
+          </BodyPrimary>
+          <CardTitle reverse={reverseColor}>{title}</CardTitle>
+        </CaseStudyCard>
+      </InternalAnchor>
+      {/* any screen */}
+      <InternalAnchor to={url}>
+        <BodyPrimary css={({ theme }) => ({ padding: `${theme.space[3]} 0` })}>
+          {introSentence}
         </BodyPrimary>
-        <CardTitle>{title}</CardTitle>
-      </CaseStudyPoster>
-    </InternalAnchor>
-    {/* small screen */}
-    <InternalAnchor to={`/case-study/${slug}/`}>
-      <CaseStudyCard backgroundColor={posterColor}>
-        <BodyPrimary noPaddingBottom reverse={reverseColor}>
-          {client}
-        </BodyPrimary>
-        <CardTitle reverse={reverseColor}>{title}</CardTitle>
-      </CaseStudyCard>
-    </InternalAnchor>
-    {/* any screen */}
-    <InternalAnchor to={`/case-study/${slug}/`}>
-      <BodyPrimary css={({ theme }) => ({ padding: `${theme.space[3]} 0` })}>
-        {introSentence}
-      </BodyPrimary>
-    </InternalAnchor>
-    <div>
-      <StyledLink to={`/case-study/${slug}/`}>Learn more</StyledLink>
-    </div>
-  </>
-);
+      </InternalAnchor>
+      <div>
+        <StyledLink to={url}>Learn more</StyledLink>
+      </div>
+    </>
+  );
+};
 
 /**
  * @prop {boolean} limited Do not show more than two rows on phones, or one row on larger screens. Defaults to false.
