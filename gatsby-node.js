@@ -5,7 +5,8 @@ const { getTagsForTitle } = require('./src/utils/getTagsForTitle');
 const { writeFile } = require('mz/fs');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
   const result = await graphql(`
     query {
       allContentfulTrainingCourseCategory {
@@ -85,6 +86,7 @@ exports.createPages = async ({ graphql, actions }) => {
             content {
               content
             }
+            aliases
           }
         }
       }
@@ -231,6 +233,15 @@ exports.createPages = async ({ graphql, actions }) => {
           id: post.node.id,
         },
       });
+
+      _.each(post.node.aliases, alias =>
+        createRedirect({
+          fromPath: alias,
+          toPath: `/blog/${post.node.slug}/`,
+          isPermanent: true,
+          force: true,
+        }),
+      );
     }
   });
 };
