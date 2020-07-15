@@ -156,14 +156,42 @@ const JoinUsPage = props => (
           }
           someWork {
             ... on ContentfulTemplatedCaseStudy {
-              title
               slug
               posterColor
+              reverseColor
+              client
+              title
+              introSentence {
+                introSentence
+              }
+              previewImage {
+                title
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+                file {
+                  url
+                }
+              }
             }
             ... on ContentfulNonTemplatedCaseStudyV2 {
-              title
               slug
               posterColor
+              reverseColor
+              client
+              title
+              introSentence {
+                introSentence
+              }
+              previewImage {
+                title
+                fluid(maxWidth: 600) {
+                  ...GatsbyContentfulFluid_withWebp
+                }
+                file {
+                  url
+                }
+              }
             }
           }
           ossTitle
