@@ -38,7 +38,7 @@ const Underline = css`
   transform-origin: left;
   transform: scaleX(0);
 
-  ${is('current')`
+  ${is('active')`
     transform: scaleX(1);
   `};
 `;
@@ -46,10 +46,12 @@ const Underline = css`
 const Button = styled(UnstyledButton)`
   position: relative;
   outline: none;
+  cursor: pointer;
 
   ${breakpoint('desktop')`
     &:active,
     &:focus {
+      cursor: unset;
       &:after {
         transform: scaleX(1);
       }
