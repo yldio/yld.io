@@ -41,7 +41,9 @@ const CourseInfo = ({
       body={preRequisitesCourses}
     />
     <Padding top={2}>
-      <StyledLink to="/contact">{courseInfoSectionNames.contactUs}</StyledLink>
+      <StyledLink to="/contact" style={{ position: 'absolute' }}>
+        {courseInfoSectionNames.contactUs}
+      </StyledLink>
     </Padding>
   </Col>
 );
