@@ -22,7 +22,6 @@ const LogoItem = styled(Col)`
     :nth-child(even) {
       padding-right: ${props => props.theme.space[2]};
     }
-
     :nth-child(odd) {
       padding-left: ${props => props.theme.space[2]};
     }
@@ -44,6 +43,11 @@ const LogoItem = styled(Col)`
   `}
 `;
 
+const CustomAnchor = styled(ExternalAnchor)`
+  width: 100%;
+  max-width: 250px;
+`;
+
 const LogoGrid = ({ companies }) => (
   <StyledRow>
     {companies.map(company => (
@@ -52,13 +56,12 @@ const LogoGrid = ({ companies }) => (
         key={company.id}
       >
         {company.url ? (
-          <ExternalAnchor href={company.url} title={company.title}>
+          <CustomAnchor href={company.url} title={company.title}>
             <Image
               image={company.image}
-              width="250px"
               style={{ filter: 'grayscale(1)', saturate: '0' }}
             />
-          </ExternalAnchor>
+          </CustomAnchor>
         ) : (
           <Image
             image={company}
