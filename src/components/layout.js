@@ -153,11 +153,21 @@ class Layout extends Component {
                   />
                 )}
                 <StyledMain>{children}</StyledMain>
-                <Footer
-                  displayFooterOffices={displayFooterOffices}
-                  footerContactUsId={footerContactUsId}
-                  is404={is404}
-                />
+                <Location>
+                  {({
+                    location: {
+                      state: { modal },
+                    },
+                  }) =>
+                    !modal && (
+                      <Footer
+                        displayFooterOffices={displayFooterOffices}
+                        footerContactUsId={footerContactUsId}
+                        is404={is404}
+                      />
+                    )
+                  }
+                </Location>
                 <GlobalStyle />
                 {!this.state.cookiesAllowed && (
                   <Cookie onClick={this.handleClick} />
