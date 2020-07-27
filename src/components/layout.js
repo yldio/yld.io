@@ -154,8 +154,8 @@ class Layout extends Component {
                 )}
                 <StyledMain>{children}</StyledMain>
                 <Location>
-                  {({ location: { state: { modal } = {} } }) =>
-                    !modal && (
+                  {({ location }) =>
+                    !(location && location.state && location.state.modal) && (
                       <Footer
                         displayFooterOffices={displayFooterOffices}
                         footerContactUsId={footerContactUsId}
