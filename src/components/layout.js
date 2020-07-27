@@ -136,13 +136,15 @@ class Layout extends Component {
                     : null}
                 </Helmet>
                 <Location>
-                  {({ location }) => (
-                    <Header
-                      slug={slug}
-                      path={location.pathname}
-                      bgColor={bgColor}
-                    />
-                  )}
+                  {({ location }) =>
+                    !(location && location.state && location.state.modal) && (
+                      <Header
+                        slug={slug}
+                        path={location.pathname}
+                        bgColor={bgColor}
+                      />
+                    )
+                  }
                 </Location>
                 {GridDebugger && (
                   <GridDebugger
