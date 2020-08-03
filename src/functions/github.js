@@ -15,20 +15,36 @@ const Repos = require('./oss/repos');
 
 const org = 'yldio';
 
+const membersLog = `
+Sérgio Ramos,Joined YLD,Mar 2015,sergioramos
+Filipe Pinheiro,Joined YLD,Sep 2015,fampinheiro
+Fábio Moreira,Joined YLD,Apr 2018,fabiommmoreira
+Fábio Antunes (2),Joined YLD,Feb 2017,FabioAntunes
+Fábio Antunes (2),Left YLD,May 2018,FabioAntunes
+Fábio Antunes (1),Joined YLD,Mar 2019,FabioAntunes
+`;
+
 exports.handler = async evt =>
   Auth(evt, async () => {
     const { getContributionStats } = OssStats.contributions;
+    const { getOrgMembers } = OssStats.org;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
       throw new Error(`Missing env variables, check set up`);
     }
 
+    const members = await getOrgMembers(membersLog);
+
     // Get github data
     const {
       contributionsByRepository,
       totalContributions,
-    } = await getContributionStats(org, GITHUB_TOKEN);
+    } = await getContributionStats({
+      org,
+      token: GITHUB_TOKEN,
+      members,
+    });
 
     // Get contentful data
     const client = createClient({
