@@ -5,7 +5,7 @@
   command = "yarn build"
 
 [context.production]
-  environment = { LAMBDA_ENV = "production" }
+  environment = { LAMBDA_ENV = "production", MEMBERS_LOG = "${{ secrets.MEMBERS_LOG }}" }
 
 [context.deploy-preview.environment]
   # Naturally we would use NODE_ENV but this breaks the 
