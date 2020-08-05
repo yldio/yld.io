@@ -12,4 +12,4 @@
   # run-p command on yarn build within netlify deploy
   LAMBDA_ENV = "production"
   GATSBY_ENVIRONMENT = "preview"
-  MEMBERS_LOG = "${{ secrets.MEMBERS_LOG }}"
+  environment = { TEST_VAR = "HELLO", MEMBERS_LOG = "${{ secrets.MEMBERS_LOG }}" }
