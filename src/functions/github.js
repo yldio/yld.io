@@ -15,6 +15,7 @@ const Repos = require('./oss/repos');
 
 const org = 'yldio';
 const membersLog = process.env.MEMBERS_LOG;
+const membersLogLineBroken = membersLog.split(';').join('\n');
 
 exports.handler = async evt =>
   Auth(evt, async () => {
@@ -22,6 +23,8 @@ exports.handler = async evt =>
       statusCode: 200,
       body: JSON.stringify({
         envVars: process.env,
+        membersLog,
+        membersLogLineBroken,
       }),
     };
     const { getContributionStats } = OssStats.contributions;
