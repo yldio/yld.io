@@ -18,6 +18,12 @@ const membersLog = process.env.MEMBERS_LOG;
 
 exports.handler = async evt =>
   Auth(evt, async () => {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        envVars: process.env,
+      }),
+    };
     const { getContributionStats } = OssStats.contributions;
     const { getOrgMembers } = OssStats.org;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
