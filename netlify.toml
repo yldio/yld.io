@@ -13,3 +13,4 @@
   LAMBDA_ENV = "production"
   GATSBY_ENVIRONMENT = "preview"
   MEMBERS_LOG = "${{ secrets.MEMBERS_LOG }}"
+  LAMBDA_AUTH_TOKEN = "m0ckT0k3n"
