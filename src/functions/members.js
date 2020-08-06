@@ -11,6 +11,7 @@ const { createClient } = require('contentful-management');
 const { head, isEqual } = require('lodash');
 
 const Auth = require('./utils/auth');
+const { LOCALE } = require('./utils/constants');
 
 exports.handler = async evt =>
   Auth(evt, async () => {
@@ -45,7 +46,7 @@ exports.handler = async evt =>
       content_type: 'memberLog',
     });
 
-    const membersLog = log['en-US'];
+    const membersLog = log[LOCALE];
 
     const members = await getOrgMembers(membersLog);
 
@@ -64,7 +65,7 @@ exports.handler = async evt =>
     if (isProd && !fieldsAreEqual) {
       contentfulEntry.fields = {
         ...contentfulEntry.fields,
-        membersDetails: { members },
+        membersDetails: { [LOCALE]: members },
       };
       const id = await contentfulEntry.update();
       const updatedEntry = await environment.getEntry(id.sys.id);
