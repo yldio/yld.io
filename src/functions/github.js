@@ -14,19 +14,9 @@ const Meta = require('./oss/meta');
 const Repos = require('./oss/repos');
 
 const org = 'yldio';
-const membersLog = process.env.MEMBERS_LOG;
-const membersLogLineBroken = membersLog.split(';').join('\n');
 
 exports.handler = async evt =>
   Auth(evt, async () => {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        envVars: process.env,
-        membersLog,
-        membersLogLineBroken,
-      }),
-    };
     const { getContributionStats } = OssStats.contributions;
     const { getOrgMembers } = OssStats.org;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
@@ -34,6 +24,26 @@ exports.handler = async evt =>
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
       throw new Error(`Missing env variables, check set up`);
     }
+
+    // Get contentful data
+    const client = createClient({
+      accessToken: CMS_CRUD,
+    });
+
+    const space = await client.getSpace(CONTENTFUL_SPACE);
+    const environment = await space.getEnvironment('master');
+
+    const {
+      items: [
+        {
+          fields: { log },
+        },
+      ],
+    } = await environment.getEntries({
+      content_type: 'memberLog',
+    });
+
+    const membersLog = log['en-US'];
 
     const members = await getOrgMembers(membersLog);
 
@@ -46,14 +56,6 @@ exports.handler = async evt =>
       token: GITHUB_TOKEN,
       members,
     });
-
-    // Get contentful data
-    const client = createClient({
-      accessToken: CMS_CRUD,
-    });
-
-    const space = await client.getSpace(CONTENTFUL_SPACE);
-    const environment = await space.getEnvironment('master');
 
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
