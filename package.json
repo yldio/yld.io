@@ -30,8 +30,8 @@
     "now-start": "serve storybook-static"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.16",
-    "@mdx-js/react": "^1.6.16",
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/react": "^1.5.0",
     "@sindresorhus/slugify": "^0.9.1",
     "@yldio/oss-stats": "^3.0.0",
     "airbnb-prop-types": "^2.13.2",
