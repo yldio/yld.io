@@ -59,12 +59,12 @@ exports.handler = async evt =>
       fields: { membersDetails },
     } = contentfulEntry;
 
-    const fieldsAreEqual = isEqual(members, membersDetails);
+    const fieldsAreEqual = isEqual(members, membersDetails.members);
 
     if (isProd && !fieldsAreEqual) {
       contentfulEntry.fields = {
         ...contentfulEntry.fields,
-        membersDetails: members,
+        membersDetails: { members },
       };
       const id = await contentfulEntry.update();
       const updatedEntry = await environment.getEntry(id.sys.id);
@@ -81,7 +81,7 @@ exports.handler = async evt =>
           : `Not prod so not updating contentful github meta data `,
         JSON.stringify(
           {
-            generateMembersDetails: members,
+            generatedMembersDetails: members,
           },
           null,
           2,
