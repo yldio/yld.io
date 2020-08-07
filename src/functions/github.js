@@ -8,17 +8,18 @@
 
 const OssStats = require('@yldio/oss-stats');
 const { createClient } = require('contentful-management');
+const { head } = require('lodash');
 
 const Auth = require('./utils/auth');
 const Meta = require('./oss/meta');
 const Repos = require('./oss/repos');
+const { LOCALE } = require('./utils/constants');
 
 const org = 'yldio';
 
 exports.handler = async evt =>
   Auth(evt, async () => {
     const { getContributionStats } = OssStats.contributions;
-    const { getOrgMembers } = OssStats.org;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
@@ -33,19 +34,15 @@ exports.handler = async evt =>
     const space = await client.getSpace(CONTENTFUL_SPACE);
     const environment = await space.getEnvironment('master');
 
-    const {
-      items: [
-        {
-          fields: { log },
-        },
-      ],
-    } = await environment.getEntries({
-      content_type: 'memberLog',
+    const { items: membersData } = await environment.getEntries({
+      content_type: 'membersData',
     });
 
-    const membersLog = log['en-US'];
+    const contentfulEntry = head(membersData);
 
-    const members = await getOrgMembers(membersLog);
+    const {
+      fields: { membersDetails },
+    } = contentfulEntry;
 
     // Get github data
     const {
@@ -54,7 +51,7 @@ exports.handler = async evt =>
     } = await getContributionStats({
       org,
       token: GITHUB_TOKEN,
-      members,
+      members: membersDetails[LOCALE],
     });
 
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
