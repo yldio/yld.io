@@ -43,18 +43,22 @@ exports.handler = async evt =>
         // prettier-ignore
         const { contributionsByRepo, totalContributions } = contributions[LOCALE];
 
-        contributionsByRepo.forEach(otherRepositoryEntry => {
+        contributionsByRepo.forEach(repositoryContribution => {
           const repositoryEntry = acc.contributionsByRepository.find(
             ({ repository }) =>
-              repository &&
-              repository.id === otherRepositoryEntry.repository.id,
+              repository && repository.id === repositoryContribution.id,
           );
 
           if (repositoryEntry) {
             repositoryEntry.contributions.totalCount +=
-              otherRepositoryEntry.contributions.totalCount;
+              repositoryContribution.totalCount;
           } else {
-            acc.contributionsByRepository.push(otherRepositoryEntry);
+            acc.contributionsByRepository.push({
+              repository: repositoryContribution,
+              contributions: {
+                totalCount: repositoryContribution.totalCount,
+              },
+            });
           }
         });
 

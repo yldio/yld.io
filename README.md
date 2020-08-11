@@ -139,6 +139,17 @@ Lever webhooks are extremely limited so we have to write our own lambda to check
 
 The zap is within the zapier account registered to `apis@yld.io`
 
+#### Contributions
+
+We have 4 lambdas to update contribution data on contentful, considering each contribution type (_pullRequest_, _pullRequestReview_, _commit_, _issue_):
+
+- `contributions-pull-requests`
+- `contributions-pull-request-reviews`
+- `contributions-commits`
+- `contributions-issues`
+
+Each time one of these lambdas runs, it'll fetch the contributions using the github graphQL API and _Members Data_ from Contenful, considering each members working periods, and update the contribution list for that type on Contentful (_OS contributions_).
+
 #### Github
 
 Local development requires:
@@ -151,7 +162,7 @@ Local development requires:
 
 `./src/functions/github.js`
 
-The aim of this lammbda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating data on a lambda and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
+The aim of this lammbda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating the contributions from different types, that should be up to date on Contenful via the contribution types lambdas, processing the data and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
 
 - Repos
   We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enyzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value edtiable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
