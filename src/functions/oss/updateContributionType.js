@@ -8,6 +8,7 @@ const { LOCALE } = require('../utils/constants');
 
 const { LAMBDA_ENV = 'development' } = process.env;
 const isProd = LAMBDA_ENV === 'production';
+
 const org = 'yldio';
 
 const updateContributionType = async contributionType => {
@@ -36,10 +37,14 @@ const updateContributionType = async contributionType => {
     content_type: 'osContributions',
   });
 
-  const osContributionsEntry = head(osContributions);
+  const osContributionsEntry = head(
+    osContributions.filter(
+      ({ fields: { type } }) => type[LOCALE] === contributionType,
+    ),
+  );
 
   const {
-    fields: { pullRequests },
+    fields: { contributions: currentData },
   } = osContributionsEntry;
 
   // Get github data
@@ -60,9 +65,8 @@ const updateContributionType = async contributionType => {
     }),
   );
 
-  const key = `${contributionType}s`;
   const newData = {
-    [key]: {
+    contributions: {
       [LOCALE]: {
         contributionsByRepo: mappedContributionsByRepository,
         totalContributions,
@@ -70,7 +74,7 @@ const updateContributionType = async contributionType => {
     },
   };
 
-  const fieldsAreEqual = isEqual(pullRequests, newData.pullRequests);
+  const fieldsAreEqual = isEqual(currentData, newData.contributions);
 
   if (isProd && !fieldsAreEqual) {
     await updateEntry(
