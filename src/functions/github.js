@@ -5,21 +5,15 @@
  *
  * lambda triggered --> get repo urls stored in contentful --> get current contentful data -->  get current github data --> if any differences, write new data to contentful
  */
-
-const OssStats = require('@yldio/oss-stats');
 const { createClient } = require('contentful-management');
-const { head } = require('lodash');
 
 const Auth = require('./utils/auth');
 const Meta = require('./oss/meta');
 const Repos = require('./oss/repos');
 const { LOCALE } = require('./utils/constants');
 
-const org = 'yldio';
-
 exports.handler = async evt =>
   Auth(evt, async () => {
-    const { getContributionStats } = OssStats.contributions;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
 
     if ((!CONTENTFUL_SPACE, !CMS_CRUD, !GITHUB_TOKEN)) {
@@ -34,25 +28,42 @@ exports.handler = async evt =>
     const space = await client.getSpace(CONTENTFUL_SPACE);
     const environment = await space.getEnvironment('master');
 
-    const { items: membersData } = await environment.getEntries({
-      content_type: 'membersData',
+    const { items: osContributions } = await environment.getEntries({
+      content_type: 'osContributions',
     });
 
-    const contentfulEntry = head(membersData);
-
-    const {
-      fields: { membersDetails },
-    } = contentfulEntry;
-
-    // Get github data
     const {
       contributionsByRepository,
       totalContributions,
-    } = await getContributionStats({
-      org,
-      token: GITHUB_TOKEN,
-      members: membersDetails[LOCALE],
-    });
+    } = osContributions.reduce(
+      (acc, curr) => {
+        const {
+          fields: { contributions },
+        } = curr;
+        // prettier-ignore
+        const { contributionsByRepo, totalContributions } = contributions[LOCALE];
+
+        contributionsByRepo.forEach(otherRepositoryEntry => {
+          const repositoryEntry = acc.contributionsByRepository.find(
+            ({ repository }) =>
+              repository &&
+              repository.id === otherRepositoryEntry.repository.id,
+          );
+
+          if (repositoryEntry) {
+            repositoryEntry.contributions.totalCount +=
+              otherRepositoryEntry.contributions.totalCount;
+          } else {
+            acc.contributionsByRepository.push(otherRepositoryEntry);
+          }
+        });
+
+        acc.totalContributions += totalContributions;
+
+        return acc;
+      },
+      { contributionsByRepository: [], totalContributions: 0 },
+    );
 
     const [meta, { updatedRepos, missingRepos }] = await Promise.all([
       Meta(environment, {
