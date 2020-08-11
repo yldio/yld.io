@@ -172,6 +172,21 @@ The aim of this lammbda is to have up to date metrics of yld's open source contr
 
 Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
 
+#### Members
+
+This lambda takes a log with members join/leave dates from contentful(_Member log_), as:
+
+```
+Sérgio Ramos,Joined YLD,Mar 2015,sergioramos
+Filipe Pinheiro,Joined YLD,Sep 2015,fampinheiro
+Fábio Moreira,Joined YLD,Apr 2018,fabiommmoreira
+Fábio Antunes (2),Joined YLD,Feb 2017,FabioAntunes
+Fábio Antunes (2),Left YLD,May 2018,FabioAntunes
+Fábio Antunes (1),Joined YLD,Mar 2019,FabioAntunes
+```
+
+calls [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to fetch additional data from github (id and url) and return an object with the member data formatted in the way it's intended to be used within the contributions aggregator and stores it on Contenful - _Members Data_.
+
 ## Content Model notes
 
 This section serves as a information repository for some of our content models, stating what they represent and explaining some of their fields, if needed.
