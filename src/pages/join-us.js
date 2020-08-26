@@ -78,9 +78,9 @@ class JoinUs extends React.Component {
           data={{
             title: content.ossTitle,
             list: content.ossText.ossText,
-            subtitle: content.talksTitle,
-            text: content.talksText.talksText,
-            featuredTalks: content.talks,
+            // subtitle: content.talksTitle,
+            // text: content.talksText.talksText,
+            // featuredTalks: content.talks,
           }}
         />
         <Perks
@@ -198,14 +198,14 @@ const JoinUsPage = props => (
           ossText {
             ossText
           }
-          talksTitle
-          talksText {
-            talksText
-          }
-          talks {
-            title
-            link
-          }
+          # talksTitle
+          # talksText {
+          #   talksText
+          # }
+          # talks {
+          #   title
+          #   link
+          # }
           perksTitle
           perksText {
             perksText
