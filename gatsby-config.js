@@ -5,7 +5,7 @@ const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
-  GTAG_ID,
+  GTM_ID,
   GTM_AUTH,
   GOOGLE_SITE_VERIFICATION_META_CONTENT,
   NODE_ENV,
@@ -172,7 +172,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: GTAG_ID,
+        id: GTM_ID,
         includeInDevelopment: false,
         gtmAuth: GTM_AUTH,
         gtmPreview: 'env-2',
