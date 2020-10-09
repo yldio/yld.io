@@ -5,6 +5,7 @@ const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
+  GTM_ID,
   GTM_AUTH,
   GOOGLE_SITE_VERIFICATION_META_CONTENT,
   NODE_ENV,
@@ -148,9 +149,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: GA_TRACKING_ID,
+        trackingIds: [GA_TRACKING_ID],
+        gtagConfig: {
+          anonymize_ip: false,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     {
@@ -164,7 +172,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: 'GTM-TNNW9LP',
+        id: GTM_ID,
         includeInDevelopment: false,
         gtmAuth: GTM_AUTH,
         gtmPreview: 'env-2',

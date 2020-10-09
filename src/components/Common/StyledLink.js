@@ -3,7 +3,7 @@ import InternalAnchor from '../Common/InternalAnchor';
 import styled, { css } from 'styled-components';
 import remcalc from 'remcalc';
 import is from 'styled-is';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 export const underlinePseudoElement = css`
   content: '';
