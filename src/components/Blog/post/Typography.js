@@ -16,6 +16,11 @@ const H1 = styled.h1`
     font-size: ${remcalc(42)};
     line-height: ${remcalc(51)};
   `}
+
+  *::selection,
+  ::selection {
+    background-color: ${({ theme }) => theme.colors.vibrant};
+  }
 `;
 
 const H2 = styled.h2`
@@ -30,6 +35,11 @@ const H2 = styled.h2`
     font-size: ${remcalc(28)};
     line-height: ${remcalc(42)};
   `}
+
+  *::selection,
+  ::selection {
+    background-color: ${({ theme }) => theme.colors.vibrant};
+  }
 `;
 
 const Subtitle = styled.h3`
@@ -44,6 +54,11 @@ const Subtitle = styled.h3`
     font-size: ${remcalc(24)};
     line-height: ${remcalc(36)};
   `}
+
+  *::selection,
+  ::selection {
+    background-color: ${({ theme }) => theme.colors.vibrant};
+  }
 `;
 
 const Body = styled.p`
