@@ -50,7 +50,7 @@ const navLinks = [
         to: '/about-us/',
       },
       {
-        label: 'Join us',
+        label: 'Join Us',
         to: '/join-us/',
       },
     ],

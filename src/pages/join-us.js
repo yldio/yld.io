@@ -38,7 +38,7 @@ class JoinUs extends React.Component {
 
     const breadcrumbData = generateBreadcrumbData(siteUrl, [
       {
-        name: 'Join us',
+        name: 'Join Us',
         pathname: location.pathname,
         position: 2,
       },
