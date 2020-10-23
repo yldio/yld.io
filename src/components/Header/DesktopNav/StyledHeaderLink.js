@@ -13,7 +13,6 @@ const StyledHeaderLink = styled(InternalAnchor)`
   `}
 
   &:hover {
-    text-decoration: underline;
     color: ${props => props.color};
   }
 `;
