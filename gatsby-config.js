@@ -124,21 +124,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `PT+Mono`,
-          },
-          {
-            family: `Roboto`,
-            variants: [`400`, `500`, `700`],
-          },
-          {
-            family: `Roboto+Mono`,
-            variants: [`400`],
-          },
-        ],
+        fonts: [`pt mono`, `roboto\:400,500,700`, `roboto mono\:400`],
+        display: 'swap',
       },
     },
     {
