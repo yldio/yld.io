@@ -14,11 +14,10 @@ const InnerAnchor = styled(Anchor)`
   ${topNavItemStyles}
 
   width: 100%;
-  color: ${props => props.theme.colors.white};
-  &:hover,
-  &.current {
-    color: ${props => props.theme.colors.text};
-  }
+  color: ${props =>
+    props.themeVariation === 'white'
+      ? props.theme.colors.text
+      : props.theme.colors.white};
 `;
 
 export const InnerAnchorItem = ({
