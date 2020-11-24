@@ -33,7 +33,7 @@ export const dark = css`
   color: ${props => props.theme.colors.white};
   &:after {
     ${underlinePseudoElement}
-    background: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.vibrant};
     opacity: 0;
     transition: all ${({ theme }) => theme.animations.fast} ease-out;
   }
