@@ -7,7 +7,6 @@ import Chevron from '../../Common/Chevron';
 import InnerAnchorItem from './InnerAnchorItem';
 import headerItemStyles from '../utils/headerItemStyles';
 import DesktopNavItemStyles from './desktopNavItemStyles';
-import { white, whiteHover } from './itemStyles';
 import TopNavItem from './TopNavItem';
 
 const DropdownContainer = styled(TopNavItem)`
@@ -32,13 +31,6 @@ const DropdownContainer = styled(TopNavItem)`
     `}
 
     ${is('expanded')`
-      ${white}
-      background: ${props => props.theme.colors.greyBg};
-      &:hover {
-        ${whiteHover}
-        background: ${props => props.theme.colors.greyBg};
-      }
-
       ${props => props.states.current}
     `}
   }
