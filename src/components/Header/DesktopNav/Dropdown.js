@@ -60,7 +60,6 @@ const DropdownList = styled.ul`
   flex-direction: column;
   top: 100%;
   transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBg};
   z-index: ${props => props.theme.zIndexes.header};
 
   display: none;
