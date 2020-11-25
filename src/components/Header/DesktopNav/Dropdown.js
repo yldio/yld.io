@@ -15,7 +15,15 @@ const DropdownContainer = styled(TopNavItem)`
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  > span {
+  > div {
+    ${props => props.states.default}
+  }
+
+  svg {
+    margin-bottom: ${remcalc(5)};
+  }
+
+  span {
     ${props => props.states.default}
     &:hover {
       ${props => props.states.default}
@@ -36,7 +44,7 @@ const DropdownContainer = styled(TopNavItem)`
   }
 `;
 
-const DropdownNameWrapper = styled.span`
+const DropdownNameWrapper = styled.div`
   ${headerItemStyles}
   ${DesktopNavItemStyles}
 
@@ -45,12 +53,12 @@ const DropdownNameWrapper = styled.span`
   align-items: center;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
+`;
 
-  > span {
-    padding-right: ${remcalc(6)};
-    outline: none;
-    user-select: none;
-  }
+const DropdownName = styled.span`
+  padding-right: ${remcalc(6)};
+  outline: none;
+  user-select: none;
 `;
 
 const DropdownList = styled.ul`
@@ -121,8 +129,8 @@ const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
       onBlur={handleBlur}
       themeVariation={themeVariation}
     >
-      <DropdownNameWrapper tabIndex="0" themeVariation={themeVariation}>
-        <span data-event={dataEvent}>{children}</span>
+      <DropdownNameWrapper tabIndex="0">
+        <DropdownName data-event={dataEvent}>{children}</DropdownName>
         <Chevron direction={isExpanded ? 'up' : 'down'} />
       </DropdownNameWrapper>
       <DropdownList expanded={isExpanded}>

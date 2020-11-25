@@ -13,9 +13,9 @@ export const white = css`
   }
 `;
 export const whiteHover = css`
-  color: ${props => props.theme.colors.secondaryText};
+  color: ${props => props.theme.colors.text};
   &:after {
-    background: ${props => props.theme.colors.secondaryText};
+    background: ${props => props.theme.colors.text};
     opacity: 1;
   }
 `;
@@ -25,7 +25,7 @@ export const whitePrimary = css`
   color: ${props => props.theme.colors.white};
 `;
 export const whitePrimaryHover = css`
-  background: ${props => props.theme.colors.secondaryText};
+  background: ${props => props.theme.colors.text};
 `;
 
 export const dark = css`

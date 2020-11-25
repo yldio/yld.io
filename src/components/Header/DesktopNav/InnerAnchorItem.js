@@ -34,6 +34,7 @@ export const InnerAnchorItem = ({
       href={href}
       to={to}
       title={label}
+      themeVariation={themeVariation}
       /**
        * Tab Index here is very important! It
        * allows e.relatedTarget in Dropdown.js to
