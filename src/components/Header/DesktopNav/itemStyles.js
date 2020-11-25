@@ -39,7 +39,7 @@ export const dark = css`
   }
 `;
 export const darkHover = css`
-  color: ${props => props.theme.colors.vibrant};
+  color: ${props => props.theme.colors.white};
   opacity: 1;
   &:after {
     opacity: 1;

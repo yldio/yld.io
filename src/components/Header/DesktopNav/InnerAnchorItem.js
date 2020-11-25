@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import remcalc from 'remcalc';
 
 import Anchor from '../../Common/Anchor';
 import headerItemStyles from '../utils/headerItemStyles';
@@ -9,15 +10,34 @@ const InnerListItem = styled.li`
   display: flex;
 `;
 
+const innerWhite = css`
+  background: ${props => props.theme.colors.white}
+  color: ${props => props.theme.colors.text};
+
+  &:hover,
+  &.current {	
+    color: ${props => props.theme.colors.text};
+  }
+`;
+
+const innerDark = css`
+  background: ${props => props.theme.colors.blueBg}
+  color: ${props => props.theme.colors.white};
+
+  &:hover,
+  &.current {	
+    color: ${props => props.theme.colors.white};
+  }
+`;
+
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
 
+  ${props => (props.themeVariation === 'white' ? innerWhite : innerDark)}
+
+  line-height: ${remcalc(6)};
   width: 100%;
-  color: ${props =>
-    props.themeVariation === 'white'
-      ? props.theme.colors.text
-      : props.theme.colors.white};
 `;
 
 export const InnerAnchorItem = ({

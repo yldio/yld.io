@@ -63,10 +63,10 @@ const DropdownName = styled.span`
 
 const DropdownList = styled.ul`
   position: absolute;
-  width: ${remcalc(160)};
+  width: ${remcalc(128)};
   display: flex;
   flex-direction: column;
-  top: 100%;
+  top: 85%;
   transition: opacity ${props => props.theme.animations.normal} ease;
   z-index: ${props => props.theme.zIndexes.header};
 

@@ -13,6 +13,7 @@ const ContactButton = ({ themeVariation }) => (
     primary
     css={css`
       margin: 0 ${remcalc(15)};
+      z-index: ${props => props.theme.zIndexes.headerButton};
     `}
   >
     Contact
