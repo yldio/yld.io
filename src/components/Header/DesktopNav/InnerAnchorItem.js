@@ -11,21 +11,21 @@ const InnerListItem = styled.li`
 `;
 
 const innerWhite = css`
-  background: ${props => props.theme.colors.white}
+  background: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.text};
 
   &:hover,
-  &.current {	
+  &.current {
     color: ${props => props.theme.colors.text};
   }
 `;
 
 const innerDark = css`
-  background: ${props => props.theme.colors.blueBg}
+  background: ${props => props.theme.colors.blueBg};
   color: ${props => props.theme.colors.white};
 
   &:hover,
-  &.current {	
+  &.current {
     color: ${props => props.theme.colors.white};
   }
 `;
@@ -33,6 +33,7 @@ const innerDark = css`
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
+  ${innerWhite}
 
   ${props => (props.themeVariation === 'white' ? innerWhite : innerDark)}
 
