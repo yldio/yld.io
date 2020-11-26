@@ -1,5 +1,5 @@
 import React from 'react';
-import capitalize from 'capitalize';
+import capitalize from 'lodash.capitalize';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Head from '../components/Common/Head';

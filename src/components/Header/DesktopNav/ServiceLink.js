@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash.capitalize';
 import StyledHeaderLink from './StyledHeaderLink';
 
 const ServiceLink = ({ service, color }) => {

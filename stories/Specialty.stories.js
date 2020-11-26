@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import capitalize from 'capitalize';
+import capitalize from 'lodash.capitalize';
 import { storiesOf, addDecorator } from '@storybook/react';
 import Theme from './theme';
 import { Row, Col } from '../src/components/grid';

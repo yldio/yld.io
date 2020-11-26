@@ -18,11 +18,6 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link
-          crossOrigin="true"
-          rel="preconnect"
-          href="https://fonts.gstatic.com/"
-        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>
