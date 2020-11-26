@@ -18,6 +18,12 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link
+          crossOrigin="true"
+          rel="preload"
+          as="font"
+          href="https://fonts.googleapis.com/css?family=Pt+Mono|Roboto:400,500,700|Roboto+Mono:400&display=swap"
+        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>

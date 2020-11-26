@@ -125,13 +125,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`pt mono`, `roboto\:400,500,700`, `roboto mono\:400`],
-        display: 'swap',
-      },
-    },
-    {
       resolve: 'gatsby-source-lever',
       options: {
         site: 'yld',
