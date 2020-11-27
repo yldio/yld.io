@@ -23,6 +23,12 @@ const HTML = ({
           rel="preconnect"
           href="https://fonts.gstatic.com/"
         />
+        <link
+          crossOrigin="true"
+          rel="prefetch"
+          as="font"
+          href="https://fonts.googleapis.com/css?family=Pt+Mono|Roboto:400,500,700|Roboto+Mono:400&display=swap"
+        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>
