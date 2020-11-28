@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import googleFonts from './utils/googleFonts';
 
 const HTML = ({
   htmlAttributes,
@@ -18,17 +19,7 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link
-          crossOrigin="true"
-          rel="preconnect"
-          href="https://fonts.gstatic.com/"
-        />
-        <link
-          crossOrigin="true"
-          rel="prefetch"
-          as="font"
-          href="https://fonts.googleapis.com/css?family=Pt+Mono|Roboto:400,500,700|Roboto+Mono:400&display=swap"
-        />
+        {googleFonts}
         {headComponents}
       </head>
       <body {...bodyAttributes}>
