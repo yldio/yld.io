@@ -1,7 +1,6 @@
-import find from 'lodash.find';
-
 const getSlugs = (arr = []) => arr.map(({ slug }) => slug).filter(i => i);
-const getColor = (arr, slug) => (find(arr, { slug }) || {}).logoColour;
+const getColor = (arr, findSlug) =>
+  (arr.find(({ slug }) => slug === findSlug) || {}).logoColour;
 
 const getSpecialitiesToServices = (services = []) =>
   services.reduce((acc, { slug, ...rest }) => {

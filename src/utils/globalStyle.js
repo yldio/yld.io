@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import remcalc from 'remcalc';
-import { lighten } from 'polished';
+import lighten from 'polished/lib/color/lighten';
 
 export default createGlobalStyle`
   ${reset}

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import { format, isPast } from 'date-fns';
+import format from 'date-fns/format';
+import isPast from 'date-fns/is_past';
 
 import Image from '../Common/Image';
 import Anchor from '../Common/Anchor';

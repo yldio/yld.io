@@ -1,5 +1,8 @@
 import React from 'react';
-import { format, isAfter, endOfYesterday } from 'date-fns';
+import format from 'date-fns/format';
+import isAfter from 'date-fns/is_after';
+import endOfYesterday from 'date-fns/end_of_yesterday';
+
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
