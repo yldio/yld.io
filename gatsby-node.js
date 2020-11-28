@@ -337,14 +337,3 @@ exports.onCreatePage = async ({
     createPage(page);
   }
 };
-
-exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === `build-javascript`) {
-    const config = getConfig();
-
-    // Remove dev dependencies from the bundle, tree-shaking and other optimizations
-    config.mode = 'production';
-
-    actions.replaceWebpackConfig(config);
-  }
-};
