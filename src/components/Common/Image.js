@@ -8,6 +8,7 @@ const Image = ({ image, alt, className, ...props }) => {
       alt={alt || image.title}
       fluid={image.fluid}
       className={className}
+      loading="lazy"
       {...props}
     />
   ) : (
@@ -15,6 +16,7 @@ const Image = ({ image, alt, className, ...props }) => {
       alt={alt || image.title}
       src={(image.file || {}).url}
       className={className}
+      loading="lazy"
       {...props}
     />
   );
