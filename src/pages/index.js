@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { format, isAfter, isSameDay } from 'date-fns';
+import format from 'date-fns/format';
+import isAfter from 'date-fns/is_after';
+import isSameDay from 'date-fns/is_same_day';
 import styled from 'styled-components';
 
 import { Grid, Row, Col } from '../components/grid';

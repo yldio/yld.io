@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 import breakpoint from 'styled-components-breakpoint';
 
 import { Row, Col } from '../grid';

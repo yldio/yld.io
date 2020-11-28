@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 
 import { Row, Col } from '../grid';
 import StyledLink from '../Common/StyledLink';

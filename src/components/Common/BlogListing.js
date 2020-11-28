@@ -1,7 +1,7 @@
 import React from 'react';
 import { Padding } from 'styled-components-spacing';
 import PropTypes from 'prop-types';
-import { format } from 'date-fns';
+import format from 'date-fns/format';
 
 import { Grid } from '../grid';
 import TitleAndMediaList from '../Common/TitleAndMediaList';
