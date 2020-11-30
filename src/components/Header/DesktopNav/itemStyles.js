@@ -7,7 +7,7 @@ export const white = css`
   color: ${props => props.theme.colors.text};
   &:after {
     ${underlinePseudoElement}
-    background: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.blueBg};
     opacity: 0;
     transition: all ${({ theme }) => theme.animations.fast} ease-out;
   }
@@ -15,7 +15,7 @@ export const white = css`
 export const whiteHover = css`
   color: ${props => props.theme.colors.text};
   &:after {
-    background: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.blueBg};
     opacity: 1;
   }
 `;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Anchor from '../../Common/Anchor';
 import headerItemStyles from '../utils/headerItemStyles';
-import outlineStyles from '../utils/outlineStyles';
 import mobileNavItemStyles from './mobileNavItemStyles';
 import outerItemStates from './outerItemStates';
 
@@ -14,16 +13,8 @@ const StyledAnchor = styled(Anchor).attrs(() => ({
   ${headerItemStyles}
   ${mobileNavItemStyles}
 
-  ${props => props.states.default}
-
-  &.current {
-    ${props => props.states.hoverActive}
-  }
-
-  &:focus {
-    ${props => props.states.hoverActive}
-    ${outlineStyles}
-  }
+  ${({ states, themeVariation }) =>
+    themeVariation === 'white' ? states.white : states.dark}
 `;
 
 const StyledListItem = styled.li`
@@ -37,6 +28,7 @@ const OuterAnchorItem = ({
   currentClassName,
   onClick,
   attributes,
+  themeVariation,
   ...props
 }) => (
   <StyledListItem {...props}>
@@ -46,6 +38,7 @@ const OuterAnchorItem = ({
       currentClassName={currentClassName}
       onClick={onClick}
       title={label}
+      themeVariation={themeVariation}
       {...attributes}
     >
       {label}

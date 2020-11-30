@@ -72,6 +72,7 @@ const Header = ({ path, bgColor, slug }) => {
                   />
                   <MobileNav
                     path={path}
+                    themeVariation={themeVariation}
                     isOpen={isMobileNavOpen}
                     onClose={() => toggleMobileNav(false)}
                   />

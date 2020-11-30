@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import generate from 'shortid';
+import remcalc from 'remcalc';
+import is from 'styled-is';
 
 import Chevron from '../../Common/Chevron';
 import InnerAnchorItem from './InnerAnchorItem';
@@ -8,6 +10,35 @@ import headerItemStyles from '../utils/headerItemStyles';
 import mobileNavItemStyles from './mobileNavItemStyles';
 import outerItemStates from './outerItemStates';
 import outlineStyles from '../utils/outlineStyles';
+import { underlinePseudoElement } from '../../Common/StyledLink';
+
+const themeFn = ({ theme, themeVariation }) =>
+  themeVariation === 'white' ? theme.colors.blueBg : theme.colors.vibrant;
+
+const DropdownContainer = styled.li`
+  > span {
+    > span {
+      &:after {
+        ${underlinePseudoElement}
+        background: ${props => themeFn(props)};
+        opacity: 0;
+        transition: all ${({ theme }) => theme.animations.fast} ease-out;
+      }
+
+      ${is('expanded')`
+        &:after {
+          opacity: 1;
+        }
+      `}
+      }
+    }
+    
+    svg {
+      color: ${props => themeFn(props)};
+      margin-bottom: ${remcalc(10)};
+    }
+  }
+`;
 
 const DropdownNameWrapper = styled.span.attrs(() => ({
   states: outerItemStates,
@@ -19,24 +50,19 @@ const DropdownNameWrapper = styled.span.attrs(() => ({
   ${mobileNavItemStyles}
   ${outlineStyles}
 
-  ${props => props.states.default}
-
-  &:hover,
-  &:focus {
-    ${props => props.states.hoverActive}
-  }
+  ${({ states, themeVariation }) =>
+    themeVariation === 'white' ? states.white : states.dark}
 `;
 
 const DropdownName = styled.span`
-  max-width: 320px;
-  flex: 1;
+  max-width: ${remcalc(320)};
+  padding-right: ${remcalc(15)};
 `;
 const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: ${props => props.theme.colors.greyBg};
-  padding: ${props => props.theme.spacing[1]} 0;
+  padding: 0 ${props => props.theme.spacing[1]};
 `;
 
 export default class Dropdown extends PureComponent {
@@ -62,20 +88,26 @@ export default class Dropdown extends PureComponent {
   };
 
   render() {
-    const { items, children, dataEvent } = this.props;
+    const { items, children, dataEvent, themeVariation } = this.props;
     const { isExpanded } = this.state;
 
     return (
-      <li aria-haspopup="true" aria-expanded={isExpanded}>
+      <DropdownContainer
+        aria-haspopup="true"
+        aria-expanded={isExpanded}
+        expanded={isExpanded}
+        themeVariation={themeVariation}
+      >
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
           onMouseDown={this.toggle}
           onFocus={this.handleFocus}
           data-event={dataEvent}
+          themeVariation={themeVariation}
         >
           <DropdownName>{children}</DropdownName>
-          <Chevron direction={isExpanded ? 'up' : 'down'} />
+          <Chevron direction={isExpanded ? 'up' : 'down'} size={10} />
         </DropdownNameWrapper>
         {isExpanded && (
           <DropdownList>
@@ -86,13 +118,14 @@ export default class Dropdown extends PureComponent {
                 to={to}
                 currentClassName="current"
                 label={label}
+                themeVariation={themeVariation}
               >
                 {label}
               </InnerAnchorItem>
             ))}
           </DropdownList>
         )}
-      </li>
+      </DropdownContainer>
     );
   }
 }

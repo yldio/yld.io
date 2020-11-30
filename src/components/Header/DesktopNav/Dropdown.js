@@ -9,6 +9,9 @@ import headerItemStyles from '../utils/headerItemStyles';
 import DesktopNavItemStyles from './desktopNavItemStyles';
 import TopNavItem from './TopNavItem';
 
+const themeFn = ({ theme, themeVariation }) =>
+  themeVariation === 'white' ? theme.colors.blueBg : theme.colors.vibrant;
+
 const DropdownContainer = styled(TopNavItem)`
   position: relative;
   cursor: pointer;
@@ -21,6 +24,7 @@ const DropdownContainer = styled(TopNavItem)`
 
   svg {
     margin-bottom: ${remcalc(5)};
+    color: ${props => themeFn(props)};
   }
 
   span {

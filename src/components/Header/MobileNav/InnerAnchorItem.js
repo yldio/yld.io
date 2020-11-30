@@ -6,6 +6,9 @@ import Anchor from '../../Common/Anchor';
 import headerItemStyles from '../utils/headerItemStyles';
 import mobileNavItemStyles from './mobileNavItemStyles';
 
+const themeFn = ({ theme, themeVariation }) =>
+  themeVariation === 'white' ? theme.colors.text : theme.colors.white;
+
 const InnerListItem = styled.li`
   display: flex;
   > a:focus {
@@ -17,16 +20,7 @@ const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${mobileNavItemStyles}
   width: 100%;
-
-  background: ${props => props.theme.colors.greyBg};
-  color: ${props => props.theme.colors.secondaryText};
-
-  &:hover,
-  &:focus,
-  &.current {
-    color: ${props => props.theme.colors.text};
-    font-weight: bold;
-  }
+  color: ${props => themeFn(props)};
 `;
 
 export const InnerAnchorItem = ({
@@ -35,6 +29,7 @@ export const InnerAnchorItem = ({
   href,
   currentClassName,
   label,
+  themeVariation,
 }) => (
   <InnerListItem>
     <InnerAnchor
@@ -42,6 +37,7 @@ export const InnerAnchorItem = ({
       to={to}
       currentClassName={currentClassName}
       title={label}
+      themeVariation={themeVariation}
     >
       {children}
     </InnerAnchor>
