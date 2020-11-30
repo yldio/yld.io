@@ -8,15 +8,21 @@ import topNavItemStyles from './desktopNavItemStyles';
 
 const InnerListItem = styled.li`
   display: flex;
+
+  ${props => (props.themeVariation === 'white' ? innerWhite : innerDark)}
 `;
 
 const innerWhite = css`
   background: ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.text};
 
-  &:hover,
-  &.current {
-    color: ${props => props.theme.colors.text};
+  > a {
+    &:hover,
+    &:active,
+    &.current {
+      color: ${props => props.theme.colors.text};
+      font-weight: bold;
+    }
   }
 `;
 
@@ -24,18 +30,19 @@ const innerDark = css`
   background: ${props => props.theme.colors.blueBg};
   color: ${props => props.theme.colors.white};
 
-  &:hover,
-  &.current {
-    color: ${props => props.theme.colors.white};
+  > a {
+    &:hover,
+    &:active,
+    &.current {
+      color: ${props => props.theme.colors.white};
+      font-weight: bold;
+    }
   }
 `;
 
 const InnerAnchor = styled(Anchor)`
   ${headerItemStyles}
   ${topNavItemStyles}
-  ${innerWhite}
-
-  ${props => (props.themeVariation === 'white' ? innerWhite : innerDark)}
 
   line-height: ${remcalc(6)};
   width: 100%;
@@ -55,7 +62,6 @@ export const InnerAnchorItem = ({
       href={href}
       to={to}
       title={label}
-      themeVariation={themeVariation}
       /**
        * Tab Index here is very important! It
        * allows e.relatedTarget in Dropdown.js to
