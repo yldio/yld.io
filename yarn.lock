@@ -10266,11 +10266,6 @@ gatsby-page-utils@^0.0.28:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-env-variables@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-env-variables/-/gatsby-plugin-env-variables-1.0.1.tgz#89cdf43b03d46105521bb7d0f09d0d5b92ad83c8"
-  integrity sha512-TnXU+IjvM3iHcaNOa+alqP3Wk19+pmxvXwMyoPaUZIDKNwvpXRz8klsag2AwNlsqD17949/m8I80z8plZRyE1w==
-
 gatsby-plugin-favicon@^3.1.6:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-favicon/-/gatsby-plugin-favicon-3.1.6.tgz#f63f45c9af112bc13dbf4cb89e0445f72c0811ac"
@@ -18069,11 +18064,6 @@ react-hot-loader@^4.12.15:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.1.0"
     source-map "^0.7.3"
-
-react-hotjar@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-2.0.2.tgz#3c98594e5708f59c6459e4df88338fa3bbca5e89"
-  integrity sha512-ei8Ep15GYk5fOFQm5q2hyfDRe/i0kh+ZD1n30g8UD7C4/Njq2H50fzGIYw9BJBPKgRTL0TkuxUVMMCUXVip9xQ==
 
 react-hotkeys@2.0.0-pre4:
   version "2.0.0-pre4"

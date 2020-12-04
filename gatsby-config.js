@@ -108,12 +108,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-env-variables`,
-      options: {
-        whitelist: ['HOTJAR_ID', 'HOTJAR_SCRIPT_VERSION'],
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: CONTENTFUL_SPACE,
