@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import generate from 'shortid';
 import remcalc from 'remcalc';
@@ -9,7 +9,6 @@ import InnerAnchorItem from './InnerAnchorItem';
 import headerItemStyles from '../utils/headerItemStyles';
 import mobileNavItemStyles from './mobileNavItemStyles';
 import outerItemStates from './outerItemStates';
-import outlineStyles from '../utils/outlineStyles';
 import { underlinePseudoElement } from '../../Common/StyledLink';
 
 const themeFn = ({ theme, themeVariation }) =>
@@ -32,7 +31,7 @@ const DropdownContainer = styled.li`
       `}
       }
     }
-    
+
     svg {
       color: ${props => themeFn(props)};
       margin-bottom: ${remcalc(10)};
@@ -48,7 +47,6 @@ const DropdownNameWrapper = styled.span.attrs(() => ({
   cursor: pointer;
   ${headerItemStyles}
   ${mobileNavItemStyles}
-  ${outlineStyles}
 
   ${({ states, themeVariation }) =>
     themeVariation === 'white' ? states.white : states.dark}
@@ -65,67 +63,63 @@ const DropdownList = styled.ul`
   padding: 0 ${props => props.theme.spacing[1]};
 `;
 
-export default class Dropdown extends PureComponent {
-  constructor(props) {
-    super(props);
+const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
+  const [isExpanded, toggleDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
-    const { items, path } = props;
-
-    this.state = {
-      isExpanded: items.some(({ to }) => path === to),
-    };
-  }
-
-  toggle = e => {
-    e.preventDefault();
-    this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded,
-    }));
+  const handleFocus = () => {
+    toggleDropdown(true);
   };
 
-  handleFocus = () => {
-    this.setState({ isExpanded: true });
+  const handleBlur = e => {
+    /**
+     * Here the event gives us `relatedTarget`, this value is a
+     * DOM node of the new focused element, knowing this value
+     * and setting a ref on the DropdownContainer, we can work
+     * out if the new relatedTarget is a child of the DropdownContainer.
+     * This functionality is to make sure that users are able to
+     * tab through the navigation properly.
+     */
+    toggleDropdown(dropdownRef.current.contains(e.relatedTarget));
   };
 
-  render() {
-    const { items, children, dataEvent, themeVariation } = this.props;
-    const { isExpanded } = this.state;
-
-    return (
-      <DropdownContainer
-        aria-haspopup="true"
-        aria-expanded={isExpanded}
-        expanded={isExpanded}
+  return (
+    <DropdownContainer
+      ref={dropdownRef}
+      current={items.some(({ to }) => to === path)}
+      expanded={isExpanded}
+      aria-haspopup="true"
+      aria-expanded={isExpanded}
+      themeVariation={themeVariation}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+    >
+      <DropdownNameWrapper
+        tabIndex="0"
+        data-event={dataEvent}
         themeVariation={themeVariation}
       >
-        <DropdownNameWrapper
-          tabIndex="0"
-          expanded={isExpanded}
-          onMouseDown={this.toggle}
-          onFocus={this.handleFocus}
-          data-event={dataEvent}
-          themeVariation={themeVariation}
-        >
-          <DropdownName>{children}</DropdownName>
-          <Chevron direction={isExpanded ? 'up' : 'down'} size={10} />
-        </DropdownNameWrapper>
-        {isExpanded && (
-          <DropdownList>
-            {items.map(({ to, href, label }) => (
-              <InnerAnchorItem
-                key={generate()}
-                href={href}
-                to={to}
-                currentClassName="current"
-                label={label}
-                themeVariation={themeVariation}
-              >
-                {label}
-              </InnerAnchorItem>
-            ))}
-          </DropdownList>
-        )}
-      </DropdownContainer>
-    );
-  }
-}
+        <DropdownName>{children}</DropdownName>
+        <Chevron direction={isExpanded ? 'up' : 'down'} size={10} />
+      </DropdownNameWrapper>
+      {isExpanded && (
+        <DropdownList>
+          {items.map(({ to, href, label }) => (
+            <InnerAnchorItem
+              key={generate()}
+              href={href}
+              to={to}
+              currentClassName="current"
+              label={label}
+              themeVariation={themeVariation}
+            >
+              {label}
+            </InnerAnchorItem>
+          ))}
+        </DropdownList>
+      )}
+    </DropdownContainer>
+  );
+};
+
+export default Dropdown;

@@ -52,6 +52,7 @@ const MobileNav = ({ isOpen, onClose, path, themeVariation }) => (
       <CloseButton themeVariation={themeVariation} onClick={onClose} />
     </Flex>
     <ul>
+      <OuterAnchorItem currentClassName="current" to="/" label="Home" />
       {links &&
         links.length &&
         links.map(({ label, dropdownItems, attributes, to, href }) =>
