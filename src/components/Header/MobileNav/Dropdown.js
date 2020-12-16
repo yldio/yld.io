@@ -25,6 +25,7 @@ const DropdownContainer = styled.li`
       }
 
       ${is('expanded')`
+        font-weight: bold;
         &:after {
           opacity: 1;
         }
