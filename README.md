@@ -6,10 +6,18 @@
 
 ## How to run:
 
+Clone project and install dependencies:
+
 ```
   git clone git@github.com:yldio/yld.io.git
   cd yld.io
   yarn
+```
+
+Copy the environment variables from .env.example to .env file:
+
+```
+cp .env.example .env
 ```
 
 In order to access data from contentful make sure that you have an .env file that matches the contentful keys and tokens:
@@ -135,7 +143,7 @@ For another explanation of the flow check the meetup guides [here](https://www.m
 
 Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./gatsby-node.js) and Gatsby docs [here](https://www.gatsbyjs.org/docs/node-apis/#onPostBuild)
 
-Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lmabda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
+Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lambda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
 
 The zap is within the zapier account registered to `apis@yld.io`
 
@@ -151,15 +159,15 @@ Local development requires:
 
 `./src/functions/github.js`
 
-The aim of this lammbda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating data on a lambda and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
+The aim of this lambda is to have up to date metrics of yld's open source contribution on the site. We do this by aggregating data on a lambda and publishing it to Contentful. It is split into two sections, `repos` and `meta`.
 
 - Repos
-  We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enyzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value edtiable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
+  We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value editable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
 
 - Meta
   Meta data is used a summary of all the repositories that yldio organisation has contributed to. This data is written directly to the Open Source content type.
 
-Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
+Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organisation members.
 
 ## Content Model notes
 
