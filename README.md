@@ -6,10 +6,18 @@
 
 ## How to run:
 
+Clone project and install dependencies
+
 ```
   git clone git@github.com:yldio/yld.io.git
   cd yld.io
   yarn
+```
+
+Copy the environment variables from .env.example to .env file:
+
+```
+cp .env.example .env
 ```
 
 In order to access data from contentful make sure that you have an .env file that matches the contentful keys and tokens:
