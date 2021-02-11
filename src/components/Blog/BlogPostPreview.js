@@ -9,7 +9,7 @@ import StyledLink from '../Common/StyledLink';
 import Image from '../Common/Image';
 import Anchor from '../Common/Anchor';
 
-const Author = styled.p`
+const Author = styled.span`
   display: inline-block;
 
   ${({ href }) => (href ? `text-decoration: underline;` : ``)}

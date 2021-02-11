@@ -7,8 +7,10 @@ import Chevron from '../../Common/Chevron';
 import InnerAnchorItem from './InnerAnchorItem';
 import headerItemStyles from '../utils/headerItemStyles';
 import DesktopNavItemStyles from './desktopNavItemStyles';
-import { white, whiteHover } from './itemStyles';
 import TopNavItem from './TopNavItem';
+
+const themeFn = ({ theme, themeVariation }) =>
+  themeVariation === 'white' ? theme.colors.blueBg : theme.colors.vibrant;
 
 const DropdownContainer = styled(TopNavItem)`
   position: relative;
@@ -16,7 +18,16 @@ const DropdownContainer = styled(TopNavItem)`
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  > span {
+  > div {
+    ${props => props.states.default}
+  }
+
+  svg {
+    margin-bottom: ${remcalc(5)};
+    color: ${props => themeFn(props)};
+  }
+
+  span {
     ${props => props.states.default}
     &:hover {
       ${props => props.states.default}
@@ -32,19 +43,12 @@ const DropdownContainer = styled(TopNavItem)`
     `}
 
     ${is('expanded')`
-      ${white}
-      background: ${props => props.theme.colors.greyBg};
-      &:hover {
-        ${whiteHover}
-        background: ${props => props.theme.colors.greyBg};
-      }
-
       ${props => props.states.current}
     `}
   }
 `;
 
-const DropdownNameWrapper = styled.span`
+const DropdownNameWrapper = styled.div`
   ${headerItemStyles}
   ${DesktopNavItemStyles}
 
@@ -53,22 +57,21 @@ const DropdownNameWrapper = styled.span`
   align-items: center;
   /* bumping the z-index so that the outline doesn't get behind the dropdown items list */
   z-index: 2;
+`;
 
-  > span {
-    padding-right: ${remcalc(6)};
-    outline: none;
-    user-select: none;
-  }
+const DropdownName = styled.span`
+  padding-right: ${remcalc(6)};
+  outline: none;
+  user-select: none;
 `;
 
 const DropdownList = styled.ul`
   position: absolute;
-  width: ${remcalc(160)};
+  width: ${remcalc(128)};
   display: flex;
   flex-direction: column;
-  top: 100%;
+  top: 85%;
   transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBg};
   z-index: ${props => props.theme.zIndexes.header};
 
   display: none;
@@ -130,8 +133,8 @@ const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
       onBlur={handleBlur}
       themeVariation={themeVariation}
     >
-      <DropdownNameWrapper tabIndex="0" themeVariation={themeVariation}>
-        <span data-event={dataEvent}>{children}</span>
+      <DropdownNameWrapper tabIndex="0">
+        <DropdownName data-event={dataEvent}>{children}</DropdownName>
         <Chevron direction={isExpanded ? 'up' : 'down'} />
       </DropdownNameWrapper>
       <DropdownList expanded={isExpanded}>

@@ -10,7 +10,7 @@ export const underlinePseudoElement = css`
   display: block;
   height: ${remcalc(2)};
   width: 100%;
-  margin-top: ${remcalc(6)};
+  margin-top: ${remcalc(3)};
   box-sizing: border-box;
 `;
 

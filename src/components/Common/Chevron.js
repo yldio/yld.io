@@ -15,8 +15,13 @@ const ChevronSvg = styled.svg`
   `}
 `;
 
-const Chevron = ({ direction = 'down' }) => (
-  <ChevronSvg viewBox="0 0 6 6" width="6" height="6" up={direction === 'up'}>
+const Chevron = ({ direction = 'down', size = 6 }) => (
+  <ChevronSvg
+    viewBox="0 0 6 6"
+    width={size}
+    height={size}
+    up={direction === 'up'}
+  >
     <polyline points="0,0 6,0 6,6" />
   </ChevronSvg>
 );

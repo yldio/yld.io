@@ -7,15 +7,15 @@ export const white = css`
   color: ${props => props.theme.colors.text};
   &:after {
     ${underlinePseudoElement}
-    background: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.blueBg};
     opacity: 0;
     transition: all ${({ theme }) => theme.animations.fast} ease-out;
   }
 `;
 export const whiteHover = css`
-  color: ${props => props.theme.colors.secondaryText};
+  color: ${props => props.theme.colors.text};
   &:after {
-    background: ${props => props.theme.colors.secondaryText};
+    background: ${props => props.theme.colors.blueBg};
     opacity: 1;
   }
 `;
@@ -25,7 +25,7 @@ export const whitePrimary = css`
   color: ${props => props.theme.colors.white};
 `;
 export const whitePrimaryHover = css`
-  background: ${props => props.theme.colors.secondaryText};
+  background: ${props => props.theme.colors.text};
 `;
 
 export const dark = css`
@@ -33,15 +33,16 @@ export const dark = css`
   color: ${props => props.theme.colors.white};
   &:after {
     ${underlinePseudoElement}
-    background: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.vibrant};
     opacity: 0;
     transition: all ${({ theme }) => theme.animations.fast} ease-out;
   }
 `;
 export const darkHover = css`
-  opacity: 0.5;
+  color: ${props => props.theme.colors.white};
+  opacity: 1;
   &:after {
-    opacity: 0.5;
+    opacity: 1;
   }
 `;
 

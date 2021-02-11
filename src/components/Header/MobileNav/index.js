@@ -4,17 +4,21 @@ import remcalc from 'remcalc';
 import Flex from 'styled-flex-component';
 import is from 'styled-is';
 import generate from 'shortid';
-import breakpoint from 'styled-components-breakpoint';
 
 import links from '../utils/navLinks';
 import CloseButton from './CloseButton';
 import Dropdown from './Dropdown';
 import OuterAnchorItem from './OuterAnchorItem';
+import ContactItem from './ContactItem';
 import { breakpointsWithHeader } from '../../../utils/theme';
 
+const themeFn = ({ theme, themeVariation }) =>
+  themeVariation === 'white' ? theme.colors.white : theme.colors.blueBg;
+
 const MobileNavPanel = styled.nav`
+  background: ${props => themeFn(props)};
+
   position: fixed;
-  background: ${props => props.theme.colors.blueBg};
   height: 100vh;
   width: 100vw;
   left: 0;
@@ -42,21 +46,10 @@ const MobileNavPanel = styled.nav`
   `}
 `;
 
-const ContactItem = styled(OuterAnchorItem)`
-  background: ${props => props.theme.colors.vibrant};
-  > a {
-    color: ${props => props.theme.colors.blueBg} !important;
-  }
-
-  ${breakpoint('smallTablet')`
-    display: none;
-  `}
-`;
-
-const MobileNav = ({ isOpen, onClose, path }) => (
-  <MobileNavPanel open={isOpen}>
+const MobileNav = ({ isOpen, onClose, path, themeVariation }) => (
+  <MobileNavPanel open={isOpen} themeVariation={themeVariation}>
     <Flex justifyEnd>
-      <CloseButton onClick={onClose} />
+      <CloseButton themeVariation={themeVariation} onClick={onClose} />
     </Flex>
     <ul>
       <OuterAnchorItem currentClassName="current" to="/" label="Home" />
@@ -68,6 +61,7 @@ const MobileNav = ({ isOpen, onClose, path }) => (
               key={generate()}
               items={dropdownItems}
               path={path}
+              themeVariation={themeVariation}
               dataEvent={attributes ? attributes.dataEvent : null}
             >
               {label}
@@ -80,10 +74,16 @@ const MobileNav = ({ isOpen, onClose, path }) => (
               href={href}
               label={label}
               attributes={attributes}
+              themeVariation={themeVariation}
             />
           ),
         )}
-      <ContactItem currentClassName="current" to="/contact/" label="Contact" />
+      <ContactItem
+        themeVariation={themeVariation}
+        currentClassName="current"
+        to="/contact/"
+        label="Contact"
+      />
     </ul>
   </MobileNavPanel>
 );

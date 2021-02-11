@@ -58,6 +58,7 @@ const elementSizes = {
 
 export const zIndexes = {
   header: 999,
+  headerButton: 1000,
   modal: 10000,
   gridDebugger: 10001,
 };
