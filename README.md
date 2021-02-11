@@ -6,7 +6,7 @@
 
 ## How to run:
 
-Clone project and install dependencies
+Clone project and install dependencies:
 
 ```
   git clone git@github.com:yldio/yld.io.git
@@ -100,7 +100,7 @@ The account is registered under `apis@yld.io`, for access speak with Carlos Vilh
 
 ### ƛ Netlify lambda automated deployments
 
-Utilizing Netlify's [functions](https://www.netlify.com/docs/functions/).
+Utilising Netlify's [functions](https://www.netlify.com/docs/functions/).
 
 #### Meetup
 
@@ -141,7 +141,7 @@ For another explanation of the flow check the meetup guides [here](https://www.m
 
 `./src/functions/lever.js`
 
-Utilizes Gatsby's `onPostBuild` functionality - see how we utilise it [here](./gatsby-node.js) and Gatsby docs [here](https://www.gatsbyjs.org/docs/node-apis/#onPostBuild)
+Utilises Gatsby's `onPostBuild` functionality - see how we utilise it [here](./gatsby-node.js) and Gatsby docs [here](https://www.gatsbyjs.org/docs/node-apis/#onPostBuild)
 
 Lever webhooks are extremely limited so we have to write our own lambda to check for updated roles. Zapier pings the the public lambda every hour. Using the onPostBuild functionality we write the current role ids to a public file named `meta.json`. The lambda compares the ids we get from lever and the ones currently on the site, if there are any differences we use the URL stored within `LAMBDA_LEVER_WEBHOOK` to make a POST request to deploy the site.
 
@@ -165,9 +165,9 @@ The aim of this lambda is to have up to date metrics of yld's open source contri
   We want to store data regarding specific repos that members of yld have contributed to e.g. node, react, enzyme etc. By creating a `githubRepo` content type on Contentful with only a URL value editable, we are able to create references to these repos that can be used throughout the site but have metrics that are _only_ available to update via the API medium. This ensures data is always valid and accurate.
 
 - Meta
-  Meta data is used a summary of all the repositories that yldio organization has contributed to. This data is written directly to the Open Source content type.
+  Meta data is used a summary of all the repositories that yldio organisation has contributed to. This data is written directly to the Open Source content type.
 
-Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organization members.
+Main [`@yld.io/oss-stats`](https://www.npmjs.com/package/@yldio/oss-stats) to aggregate all open source contributions for `yldio` organisation members.
 
 ## Content Model notes
 
@@ -175,10 +175,10 @@ This section serves as a information repository for some of our content models, 
 
 ### Speciality
 
-This content type describe YLD's specialties (Design and engineering methodologies, technologies, models, patterns, etc). These specialties may or may not have their own page and that's decided based on the content.
+This content type describe YLD's specialities (Design and engineering methodologies, technologies, models, patterns, etc). These specialities may or may not have their own page and that's decided based on the content.
 
-- **generate:** a boolean value that indicates wether a page should be generate for the current specialty;
-- **Blogpost tags:** comma-separated list of tags that should be considered when displaying the latest blog posts for the current specialty. By default, the specialty title is already added as a tag, so this fields are added to that base filtering.
+- **generate:** a boolean value that indicates wether a page should be generate for the current speciality;
+- **Blogpost tags:** comma-separated list of tags that should be considered when displaying the latest blog posts for the current speciality. By default, the speciality title is already added as a tag, so this fields are added to that base filtering.
 
 ## Browser support
 
