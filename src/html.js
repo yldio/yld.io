@@ -19,6 +19,13 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script
+          async
+          defer
+          type="text/javascript"
+          id="hs-script-loader"
+          src="//js-na1.hs-scripts.com/19658504.js"
+        />
         {googleFonts}
         {headComponents}
       </head>
