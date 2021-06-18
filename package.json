@@ -169,7 +169,7 @@
     "serve": "^10.1.1",
     "serve-static": "^1.13.2",
     "storybook-addon-react-docgen": "^1.2.6",
-    "striptags": "3.1.1",
+    "striptags": "3.2.0",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
