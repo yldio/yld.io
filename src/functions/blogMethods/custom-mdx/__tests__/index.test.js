@@ -29,10 +29,9 @@ it('transforms iframes', async () => {
 });
 
 it('transforms image data', async () => {
-  const { content, relatedMedia } = (await TransformCustomMdx(
-    [post],
-    environment,
-  ))[0];
+  const { content, relatedMedia } = (
+    await TransformCustomMdx([post], environment)
+  )[0];
   expect(content).toContain('images');
   expect(Array.isArray(relatedMedia)).toBe(true);
   expect(TransformImageData).toHaveBeenCalledWith(

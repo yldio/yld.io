@@ -4,9 +4,10 @@ import { generate } from 'shortid';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Padding } from 'styled-components-spacing';
-import startOfToday from 'date-fns/start_of_today';
-import isAfter from 'date-fns/is_after';
-import isToday from 'date-fns/is_today';
+import startOfToday from 'date-fns/startOfToday';
+import isAfter from 'date-fns/isAfter';
+import isToday from 'date-fns/isToday';
+import parseISO from 'date-fns/parseISO';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 import is from 'styled-is';
@@ -65,8 +66,7 @@ const createEventStructuredData = (events = []) =>
 const getInTouchData = {
   title: 'Interested in hosting or talking at our meetups?',
   copyHeading: 'Bring your organisation closer to our community',
-  copy:
-    'Host or sponsor one of our events. Have an idea of your own? Let us know!',
+  copy: 'Host or sponsor one of our events. Have an idea of your own? Let us know!',
   ctaText: 'Get in touch',
 };
 
@@ -208,9 +208,16 @@ const EventPage = ({
   },
   location,
 }) => {
-  const futureEvents = events.edges.filter(
-    ({ node }) => isAfter(node.date, startOfToday()) || isToday(node.date),
-  );
+  const futureEvents = events.edges
+    .map(({ node, ...rest }) => {
+      return {
+        ...rest,
+        node: { ...node, date: parseISO(node.date) },
+      };
+    })
+    .filter(({ node }) => {
+      return isAfter(node.date, startOfToday()) || isToday(node.date);
+    });
 
   const { introSentence, posterImage, seoMetaData, footerContactUs } = content;
 
@@ -224,10 +231,15 @@ const EventPage = ({
 
   const eventStructuredData = createEventStructuredData(futureEvents);
 
+  const value = React.useMemo(() => {
+    return {
+      fillColorInitial: colors.white,
+      textColor: colors.blueBg,
+    };
+  }, []);
+
   return (
-    <LogoStyleContext.Provider
-      value={{ fillColorInitial: colors.white, textColor: colors.blueBg }}
-    >
+    <LogoStyleContext.Provider value={value}>
       <Layout
         bgColor="blueBg"
         footerContactUsId={footerContactUs.id}
@@ -237,7 +249,7 @@ const EventPage = ({
         <Helmet>
           {eventStructuredData &&
             eventStructuredData.length > 0 &&
-            eventStructuredData.map(data => (
+            eventStructuredData.map((data) => (
               <script key={generate()} type="application/ld+json">
                 {JSON.stringify(data)}
               </script>
@@ -270,9 +282,8 @@ const EventPage = ({
                 <EventList events={futureEvents} />
               ) : (
                 <DisplayTitle>
-                  {
-                    "We don't seem to have any upcoming events currently, check back soon!"
-                  }
+                  We don&apos;t seem to have any upcoming events currently,
+                  check back soon!
                 </DisplayTitle>
               )}
             </Col>
@@ -347,9 +358,7 @@ export const query = graphql`
       file {
         url
       }
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
 
@@ -364,9 +373,7 @@ export const query = graphql`
         ...SEOMetaFields
       }
       posterImage {
-        fluid(maxWidth: 600) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           url
         }

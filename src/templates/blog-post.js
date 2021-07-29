@@ -107,7 +107,7 @@ const BlogPostTemplate = ({
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
       id
       title

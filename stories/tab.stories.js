@@ -28,8 +28,8 @@ class MultipleTabs extends PureComponent {
     );
   }
 
-  handleClick = idx => {
-    this.setState(prevState => ({
+  handleClick = (idx) => {
+    this.setState((prevState) => ({
       current: prevState.current === idx ? undefined : idx,
     }));
   };

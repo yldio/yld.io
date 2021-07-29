@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Image = ({ image, alt, className, ...props }) => {
-  return (image.fluid || {}).src ? (
-    <Img
+  return image.gatsbyImageData ? (
+    <GatsbyImage
       alt={alt || image.title}
-      fluid={image.fluid}
+      image={image.gatsbyImageData}
       className={className}
       loading="lazy"
       {...props}
@@ -23,6 +23,6 @@ const Image = ({ image, alt, className, ...props }) => {
 };
 
 export default styled(Image)`
-  width: ${props => (props.width ? `${props.width}` : '100%')};
-  height: ${props => (props.height ? `${props.height}` : 'auto')};
+  width: ${(props) => (props.width ? `${props.width}` : '100%')};
+  height: ${(props) => (props.height ? `${props.height}` : 'auto')};
 `;

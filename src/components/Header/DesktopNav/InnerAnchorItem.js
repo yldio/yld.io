@@ -14,12 +14,12 @@ const InnerAnchor = styled(Anchor)`
   ${topNavItemStyles}
 
   width: 100%;
-  background: ${props => props.theme.colors.greyBg};
-  color: ${props => props.theme.colors.secondaryText};
+  background: ${(props) => props.theme.colors.greyBg};
+  color: ${(props) => props.theme.colors.secondaryText};
 
   &:hover,
   &.current {
-    color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
   }
 `;
 

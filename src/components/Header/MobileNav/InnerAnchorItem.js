@@ -18,13 +18,13 @@ const InnerAnchor = styled(Anchor)`
   ${mobileNavItemStyles}
   width: 100%;
 
-  background: ${props => props.theme.colors.greyBg};
-  color: ${props => props.theme.colors.secondaryText};
+  background: ${(props) => props.theme.colors.greyBg};
+  color: ${(props) => props.theme.colors.secondaryText};
 
   &:hover,
   &:focus,
   &.current {
-    color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
     font-weight: bold;
   }
 `;

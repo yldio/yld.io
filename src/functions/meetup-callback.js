@@ -1,20 +1,22 @@
 /* eslint-disable no-console */
-const URLSearchParams = require('url').URLSearchParams;
+const { URLSearchParams } = require('url');
 const Got = require('got');
 const Every = require('lodash.every');
 const { createClient } = require('contentful-management');
-const Find = require('lodash/find');
+const Find = require('lodash.find');
 const { default: Map } = require('apr-map');
 const isEqual = require('lodash.isequal');
 const { transformGroups, generateContentfulEvent } = require('./utils/meetup');
 const { LOCALE } = require('./utils/constants');
 
 // Creates a util to make authenticated requests for all meetup requests
-const createAuthenticatedRequest = access_token => (url, options = {}) =>
-  Got(url, {
-    ...options,
-    headers: { ...options.headers, Authorization: `Bearer ${access_token}` },
-  });
+const createAuthenticatedRequest =
+  (access_token) =>
+  (url, options = {}) =>
+    Got(url, {
+      ...options,
+      headers: { ...options.headers, Authorization: `Bearer ${access_token}` },
+    });
 
 const getAuthToken = async (
   code,
@@ -69,7 +71,7 @@ const getAuthToken = async (
   return token;
 };
 
-exports.handler = async evt => {
+exports.handler = async (evt) => {
   const {
     MEETUP_API_SECRET,
     MEETUP_API_KEY,
@@ -154,14 +156,14 @@ exports.handler = async evt => {
     'fields.type': 'Meetup',
   });
 
-  let log = {
+  const log = {
     isProd,
     newEvents: [],
     updatedEvents: [],
     unchangedEvents: [],
   };
 
-  await Map(parsedEvents, async event => {
+  await Map(parsedEvents, async (event) => {
     const contentfulEvent = Find(contentfulEvents, [
       `fields.id.${LOCALE}`,
       event.id,
@@ -209,9 +211,9 @@ exports.handler = async evt => {
         const updatedEntry = await environment.getEntry(id.sys.id);
 
         return updatedEntry.publish();
-      } else {
-        return;
       }
+
+      return;
     }
 
     // If there is no matching event in contentful then we need to create a new one
@@ -221,8 +223,6 @@ exports.handler = async evt => {
       const newEntry = await environment.getEntry(id.sys.id);
 
       return newEntry.publish();
-    } else {
-      return;
     }
   });
 

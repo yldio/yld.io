@@ -11,8 +11,7 @@ const image = {
   title: 'Background graphic',
   file: {
     fileName: 'eng-graphic.svg',
-    url:
-      '//images.ctfassets.net/22g1lenhck4z/5mJBlVfVuMEGsYsUAgasSa/09eee531f2e46e80cf1a4478fc230c52/eng-graphic.svg',
+    url: '//images.ctfassets.net/22g1lenhck4z/5mJBlVfVuMEGsYsUAgasSa/09eee531f2e46e80cf1a4478fc230c52/eng-graphic.svg',
   },
 };
 

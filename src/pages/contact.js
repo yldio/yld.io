@@ -129,7 +129,7 @@ const ContactUs = ({
       location={location}
       displayFooterOffices={false}
       breadcrumbData={breadcrumbData}
-      slug={'Contact'}
+      slug="Contact"
     >
       <Head seoMetaData={page.seoMetaData} />
 
@@ -162,13 +162,13 @@ const ContactUs = ({
                   emailAddress,
                 }) => (
                   <StaffCard
+                    key={`staff-${name}`}
                     colWidths={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12, 4 / 12]}
                     paddingBottom={{
                       smallTablet: 4,
                       tablet: '0',
                       desktop: '0',
                     }}
-                    key={`staff-${name}`}
                     name={name}
                     contactUsRole={contactUsRole}
                     description={contactUsDescription.contactUsDescription}
@@ -214,14 +214,14 @@ const ContactUs = ({
                             <Subtitle bold>{name}</Subtitle>
                             {streetAddress.streetAddress
                               .split('\n')
-                              .map(address => (
-                                <BodyPrimary noPadding key={address}>
+                              .map((address) => (
+                                <BodyPrimary key={address} noPadding>
                                   {address}
                                 </BodyPrimary>
                               ))}
 
                             {telephone && (
-                              <BodyPrimary itemProp="telephone" noPaddingBottom>
+                              <BodyPrimary noPaddingBottom itemProp="telephone">
                                 {telephone}
                               </BodyPrimary>
                             )}
@@ -250,7 +250,7 @@ const ContactUs = ({
   );
 };
 
-const Contact = props => (
+const Contact = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -281,9 +281,7 @@ const Contact = props => (
               file {
                 url
               }
-              fluid(maxWidth: 500) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
             socialLinks {
               name
@@ -293,9 +291,7 @@ const Contact = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 30) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
@@ -311,9 +307,7 @@ const Contact = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 30) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               mapLocation {
                 lon
@@ -331,7 +325,7 @@ const Contact = props => (
         }
       }
     `}
-    render={data => <ContactUs data={data} {...props} />}
+    render={(data) => <ContactUs data={data} {...props} />}
   />
 );
 

@@ -43,6 +43,7 @@ describe('Meetup Oauth', () => {
     try {
       await MeetupOAuthLambda.handler();
     } catch (error) {
+      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
       expect(error.message).toMatch(`Missing env variables, check set up`);
     }
   });

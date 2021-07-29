@@ -35,8 +35,8 @@ const PlayIcon = styled.img`
 const TruncatedParagraph = styled(BodyPrimary)`
   height: ${remcalc(48)};
   overflow: hidden;
-  color: ${props => props.color};
-  opacity: ${props => props.opacity};
+  color: ${(props) => props.color};
+  opacity: ${(props) => props.opacity};
 
   @supports (-webkit-line-clamp: 2) {
     display: -webkit-box;
@@ -51,7 +51,7 @@ const FlexContent = styled.div`
   display: flex;
 `;
 
-const getColorBasedOnBackground = themeVariation => {
+const getColorBasedOnBackground = (themeVariation) => {
   switch (themeVariation) {
     case theme.variations.dark:
       return {
@@ -89,9 +89,8 @@ const BaseVideoLink = ({
   mode = 'compact',
   ...props
 }) => {
-  const { opacity, useLightIcon, color } = getColorBasedOnBackground(
-    themeVariation,
-  );
+  const { opacity, useLightIcon, color } =
+    getColorBasedOnBackground(themeVariation);
   const InnerWrapper = mode === 'standalone' ? StandaloneWrapper : 'div';
   const top = { smallPhone: 2, smallTablet: 1.5 };
   const bottom = { smallPhone: 0, smallTablet: 1.5 };
@@ -111,7 +110,7 @@ const BaseVideoLink = ({
                     alt="Play button"
                   />
                 </Margin>
-                <TruncatedParagraph color={color} opacity={opacity} noPadding>
+                <TruncatedParagraph noPadding color={color} opacity={opacity}>
                   {children}
                 </TruncatedParagraph>
               </FlexContent>

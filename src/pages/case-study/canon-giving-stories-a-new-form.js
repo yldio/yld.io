@@ -20,14 +20,14 @@ import VideoSection from '../../components/Common/VideoSection';
 import FeaturedWork from '../../components/Common/case-studies/FeaturedWork';
 
 const MobileOnly = styled.div`
-  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
+  ${(props) => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: none;
     `}
 `;
 
 const NoMobile = styled.div`
   display: none;
-  ${props => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
+  ${(props) => breakpoint(props.tablet ? 'tablet' : 'smallTablet')`
       display: inherit;
     `}
 `;
@@ -63,7 +63,7 @@ const BrAtTablet = styled.br`
 `;
 
 const GradientContent = ({ text, image }) => (
-  <Fragment>
+  <>
     <Row>
       <CenteredCol width={[1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
         <Margin top={3} bottom={{ smallPhone: 3, tablet: 1 }}>
@@ -77,7 +77,7 @@ const GradientContent = ({ text, image }) => (
       <CenteredCol width={[1, 1, 1, 8 / 12, 8 / 12, 7 / 12]}>
         <Margin bottom={{ smallPhone: 1, tablet: 60 }}>
           {makeText(text).map((p, i) => (
-            <BodyPrimary muted reverse key={i}>
+            <BodyPrimary key={i} muted reverse>
               {p}
             </BodyPrimary>
           ))}
@@ -89,7 +89,7 @@ const GradientContent = ({ text, image }) => (
         <Image image={image} alt="Image of a travel itinerary" />
       </CenteredCol>
     </Row>
-  </Fragment>
+  </>
 );
 
 const IndexPage = ({
@@ -239,9 +239,7 @@ export const query = graphql`
     travel: file(relativePath: { eq: "case-study/beyond_photography.png" }) {
       publicURL
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     contentfulNonTemplatedCaseStudyV2(
@@ -254,9 +252,7 @@ export const query = graphql`
         ...SEOMetaFields
       }
       posterImage {
-        fluid(maxWidth: 550) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         title
         file {
           url

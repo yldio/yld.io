@@ -43,7 +43,7 @@ const WorkStage = ({ workStage }) => {
         </Padding>
       </Col>
       {sections.map(({ id, title, body, icon }) => (
-        <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={id}>
+        <Col key={id} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
           <Padding bottom={{ smallPhone: 3, desktop: 4 }}>
             <Padding bottom={1}>
               <IconContainer>
@@ -59,16 +59,17 @@ const WorkStage = ({ workStage }) => {
             </Subtitle>
             {/* eslint-disable react/display-name */}
             <ReactMarkdown
-              source={body}
-              renderers={{
-                paragraph: props => (
+              components={{
+                p: (props) => (
                   <BodyPrimary muted reverse noPaddingTop {...props} />
                 ),
-                listItem: props => (
+                li: (props) => (
                   <CustomisedBulletpoint muted reverse {...props} />
                 ),
               }}
-            />
+            >
+              {body}
+            </ReactMarkdown>
             {/* eslint-enable react/display-name */}
           </Padding>
         </Col>

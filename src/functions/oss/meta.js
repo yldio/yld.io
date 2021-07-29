@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-const { head, isEqual } = require('lodash');
+const head = require('lodash.head');
+const isEqual = require('lodash.isequal');
 
 const ossUtils = require('./utils');
 
@@ -9,11 +10,8 @@ const Meta = async (environment, githubMetaData) => {
   const { LAMBDA_ENV = 'development' } = process.env;
   const isProd = LAMBDA_ENV === 'production';
 
-  const {
-    getContentfulDataFromKeys,
-    generateContentfulData,
-    updateEntry,
-  } = ossUtils;
+  const { getContentfulDataFromKeys, generateContentfulData, updateEntry } =
+    ossUtils;
 
   const { items: contentfulMetas } = await environment.getEntries({
     limit: 1000,
@@ -54,4 +52,5 @@ const Meta = async (environment, githubMetaData) => {
 
   return fieldsAreEqual ? contentfulMetaData : githubMetaData;
 };
+
 module.exports = Meta;

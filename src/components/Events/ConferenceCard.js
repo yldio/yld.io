@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import format from 'date-fns/format';
-import isPast from 'date-fns/is_past';
+import isPast from 'date-fns/isPast';
 
 import Image from '../Common/Image';
 import Anchor from '../Common/Anchor';
@@ -43,7 +43,7 @@ const ConferenceCard = ({ event }) => {
     ctaText,
   } = event;
 
-  const formattedDate = format(new Date(date), 'MMMM DD[,] YYYY');
+  const formattedDate = format(new Date(date), 'PPP');
   const eventInfo = `${formattedDate} • ${city}`;
 
   const status = isPast(new Date(date)) ? 'Past' : 'Upcoming';

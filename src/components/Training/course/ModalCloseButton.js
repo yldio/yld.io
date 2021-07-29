@@ -9,22 +9,22 @@ const Close = styled(InternalAnchor)`
   border-radius: 50%;
   width: ${remcalc(54)};
   height: ${remcalc(54)};
-  background-color: ${props => props.theme.colors.text};
+  background-color: ${(props) => props.theme.colors.text};
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 
   &:focus {
-    outline: ${remcalc(4)} solid ${props => props.theme.colors.vibrant};
+    outline: ${remcalc(4)} solid ${(props) => props.theme.colors.vibrant};
   }
 
   &:active {
     outline: none;
-    background-color: ${props => props.theme.colors.vibrant};
+    background-color: ${(props) => props.theme.colors.vibrant};
 
     &:after {
-      background: ${props => props.theme.colors.text};
+      background: ${(props) => props.theme.colors.text};
     }
   }
 `;

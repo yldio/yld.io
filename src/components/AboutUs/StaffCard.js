@@ -15,8 +15,8 @@ const IMAGE_SIZE = 24;
 
 const LinksContainer = styled.div`
   display: flex;
-  margin-top: -${props => remcalc((props.theme.elementSizes.tappableArea - IMAGE_SIZE) / 2)};
-  padding-bottom: ${props =>
+  margin-top: -${(props) => remcalc((props.theme.elementSizes.tappableArea - IMAGE_SIZE) / 2)};
+  padding-bottom: ${(props) =>
     remcalc(18 - (props.theme.elementSizes.tappableArea - IMAGE_SIZE) / 2)};
 
   ${is('noMarginTop')`
@@ -34,8 +34,8 @@ const SocialLinks = ({ data, noMarginTop }) => {
     <LinksContainer noMarginTop={noMarginTop}>
       {data.map(({ name, url, image }, idx) => (
         <SocialLink
-          imageSize={IMAGE_SIZE}
           key={`${name}-${idx}`}
+          imageSize={IMAGE_SIZE}
           name={name}
           url={url}
           image={image}

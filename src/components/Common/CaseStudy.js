@@ -7,15 +7,15 @@ import InternalAnchor from '../Common/InternalAnchor';
 import { CardTitle, BodyPrimary } from '../Typography';
 
 const CaseStudyLink = styled(InternalAnchor)`
-  background: ${props => props.bg};
-  color: ${props => props.color || props.theme.colors.white};
+  background: ${(props) => props.bg};
+  color: ${(props) => props.color || props.theme.colors.white};
   flex: 1;
 `;
 
 const CaseStudyTitle = styled(CardTitle)`
   font-size: ${remcalc(21)};
   line-height: ${remcalc(24)};
-  color: ${props =>
+  color: ${(props) =>
     props.reverse ? props.theme.colors.white : props.theme.colors.text};
 
   ${breakpoint('largePhone')`
@@ -34,14 +34,13 @@ const CaseStudyTitle = styled(CardTitle)`
 `};
 `;
 
-const servicesList = services => {
+const servicesList = (services) => {
   return [services.slice(0, -1).join(', '), services.slice(-1)[0]].join(
     services.length < 2 ? '' : ' & ',
   );
 };
 
 const Wrapper = styled.div`
-
   ${breakpoint('tablet')`
       padding:
         ${({ theme }) => theme.space[4]}

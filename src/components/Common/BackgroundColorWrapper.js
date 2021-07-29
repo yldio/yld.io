@@ -6,7 +6,7 @@ const BackgroundColorWrapper = ({ bgColor, children }) => {
     case 'grey':
       return <GreyBackground>{children}</GreyBackground>;
     default:
-      return <>{children}</>;
+      return children;
   }
 };
 

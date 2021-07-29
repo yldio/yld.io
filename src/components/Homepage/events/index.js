@@ -76,9 +76,11 @@ const Events = ({ featuredEvent, eventTypes }) => (
       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
         <DisplayTitle>Our event types</DisplayTitle>
         <BodyPrimary muted>
-          We{"'"}re proud to offer a variety of different YLD-run events, so
-          whether you{"'"}re taking your first steps in tech or are a seasoned
-          veteran, there{"'"}s something for everyone.
+          We&apos;re proud to offer a variety of different YLD-run events, so
+          whether you We&apos;re proud to offer a variety of different YLD-run
+          events, so re taking your first steps in tech or are a seasoned
+          veteran, there We&apos;re proud to offer a variety of different
+          YLD-run events, so s something for everyone.
         </BodyPrimary>
       </Col>
     </IntroRow>
@@ -87,8 +89,8 @@ const Events = ({ featuredEvent, eventTypes }) => (
         eventTypes.length > 0 &&
         eventTypes.map(({ title, copy, image }) => (
           <EventType
-            width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
             key={generate()}
+            width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
           >
             <EventCard>
               <EventTypeCopyWrapper>

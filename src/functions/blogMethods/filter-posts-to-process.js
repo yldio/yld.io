@@ -13,8 +13,8 @@ const filterPostsToProcess = (posts, { cmsBlogPosts, requiredFields }) => {
   const cmsPostSlugs = cmsBlogPosts.map(({ fields }) => fields.slug[LOCALE]);
 
   const incompletePosts = cmsBlogPosts
-    .filter(({ fields }) => !requiredFields.every(field => fields[field]))
-    .map(p => EmojiStrip(p.fields.slug[LOCALE]));
+    .filter(({ fields }) => !requiredFields.every((field) => fields[field]))
+    .map((p) => EmojiStrip(p.fields.slug[LOCALE]));
 
   const newPosts = posts.filter(({ slug }) => !cmsPostSlugs.includes(slug));
 

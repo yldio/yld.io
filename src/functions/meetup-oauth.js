@@ -1,8 +1,8 @@
-const URLSearchParams = require('url').URLSearchParams;
+const { URLSearchParams } = require('url');
 const Got = require('got');
 const Auth = require('./utils/auth');
 
-exports.handler = async evt =>
+exports.handler = async (evt) =>
   Auth(evt, async () => {
     const { MEETUP_API_KEY, LAMBDA_ENV = 'development' } = process.env;
 

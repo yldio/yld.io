@@ -80,16 +80,21 @@ const HowWeWorkWithSection = ({
 
 const MarkDownRender = ({ source }) => (
   <ReactMarkdown
-    source={source}
-    renderers={{
+    components={{
+      ...Object.fromEntries(
+        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+          heading,
+          (props) => <Subtitle noPaddingBottom {...props} />,
+        ]),
+      ),
       // eslint-disable-next-line react/display-name
-      heading: props => <Subtitle noPaddingBottom {...props} />,
+      p: (props) => <BodyPrimary noPaddingTop {...props} />,
       // eslint-disable-next-line react/display-name
-      paragraph: props => <BodyPrimary noPaddingTop {...props} />,
-      // eslint-disable-next-line react/display-name
-      listItem: props => <CustomisedBulletpoint {...props} />,
+      li: (props) => <CustomisedBulletpoint {...props} />,
     }}
-  />
+  >
+    {source}
+  </ReactMarkdown>
 );
 
 export default HowWeWorkWithSection;

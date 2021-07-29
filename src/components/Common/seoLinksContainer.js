@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import { generate } from 'shortid';
 
 import { SectionTitle, Subtitle } from '../Typography';
 import { Grid, Row, Col } from '../grid';
@@ -30,7 +29,7 @@ const Wrapper = styled.div`
 `;
 
 const SeoLinksColumn = ({ speciality: { title, items } }) => (
-  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2]} key={generate()}>
+  <Col width={[1, 1, 1, 1, 1 / 2, 1 / 2]}>
     {items && items.length && (
       <StyledLinksColumn>
         <Subtitle>{title}</Subtitle>
@@ -49,9 +48,9 @@ const SeoLinksContainer = ({ specialities, sectionTitle }) => (
         </Col>
       </Row>
       <Row>
-        {specialities.map((speciality, index) =>
-          SeoLinksColumn({ speciality }, index),
-        )}
+        {specialities.map((speciality, index) => (
+          <SeoLinksColumn key={index} speciality={speciality} />
+        ))}
       </Row>
     </Grid>
   </Wrapper>

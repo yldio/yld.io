@@ -112,8 +112,7 @@ const projectsSchema = {
             required: ['url'],
             properties: {
               url: {
-                $id:
-                  '#/items/properties/posterImage/properties/file/properties/url',
+                $id: '#/items/properties/posterImage/properties/file/properties/url',
                 type: 'string',
                 title: 'The Url Schema',
                 default: '',

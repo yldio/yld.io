@@ -58,7 +58,7 @@ const TopNavBranding = ({ slug }) => (
         slug,
       });
 
-      let {
+      const {
         fillColorInitial = logoStyleDefaults.fillColorInitial,
         fillColorHover = logoStyleDefaults.fillColorHover,
         textColor = logoStyleDefaults.textColor,

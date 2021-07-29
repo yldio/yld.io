@@ -26,47 +26,45 @@ const LargeStatsValue = styled(BodyPrimary)`
 `;
 
 const Stats = ({ stats }) => (
-  <Fragment>
-    {stats.map(stat => (
-      <Margin bottom={1} key={stat.id}>
+  <>
+    {stats.map((stat) => (
+      <Margin key={stat.id} bottom={1}>
         <LargeStatsValue>{stat.value}</LargeStatsValue>
         <BodyPrimary bold noPaddingTop>
           {stat.label}
         </BodyPrimary>
       </Margin>
     ))}
-  </Fragment>
+  </>
 );
 
-const SecondTextSection = ({ stats, source }) => (
-  <Fragment>
-    {stats ? (
-      <Fragment>
-        <NonMobileRow spaced>
-          <Col width={[3 / 12]}>
-            <Stats stats={stats} />
-          </Col>
-          <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-            <MarkdownRenderer source={source} />
-          </Col>
-        </NonMobileRow>
-        <MobileOnlyRow>
-          <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
-            <MarkdownRenderer source={source} />
-          </Col>
-          <Col width={[1]}>
-            <Stats stats={stats} />
-          </Col>
-        </MobileOnlyRow>
-      </Fragment>
-    ) : (
-      <Row flexEnd>
+const SecondTextSection = ({ stats, source }) => {
+  return stats ? (
+    <>
+      <NonMobileRow spaced>
+        <Col width={[3 / 12]}>
+          <Stats stats={stats} />
+        </Col>
         <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
           <MarkdownRenderer source={source} />
         </Col>
-      </Row>
-    )}
-  </Fragment>
-);
+      </NonMobileRow>
+      <MobileOnlyRow>
+        <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+          <MarkdownRenderer source={source} />
+        </Col>
+        <Col width={[1]}>
+          <Stats stats={stats} />
+        </Col>
+      </MobileOnlyRow>
+    </>
+  ) : (
+    <Row flexEnd>
+      <Col width={[1, 1, 1, 1, 9 / 12, 7 / 12]}>
+        <MarkdownRenderer source={source} />
+      </Col>
+    </Row>
+  );
+};
 
 export default SecondTextSection;

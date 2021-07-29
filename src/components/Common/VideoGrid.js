@@ -9,8 +9,8 @@ const VideoGrid = ({ data, themeVariation }) => (
   <Row>
     {data.slice(0, MAX_VIDEOS).map(({ title, link }, idx) => (
       <StandaloneVideoLink
-        href={link}
         key={idx}
+        href={link}
         themeVariation={themeVariation}
       >
         {title}

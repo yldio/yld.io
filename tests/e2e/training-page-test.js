@@ -15,14 +15,14 @@ fixture`Training page`.page`${trainingPageUrl}`
   .before(async () => {
     server = await createServer(port);
   })
-  .beforeEach(async t => {
+  .beforeEach(async (t) => {
     firstModalLink = Selector('a[data-testid="course-link"]').nth(0);
     // cookie banner may block link clicks
     await t.click(Selector('button').withText('I agree'));
   })
   .after(() => server.close());
 
-test('clicking a link on the training page should open up a modal with information on the correct training course', async t => {
+test('clicking a link on the training page should open up a modal with information on the correct training course', async (t) => {
   await t.expect(firstModalLink.exists).ok({ timeout: 5000 });
   const courseLinkText = await firstModalLink.textContent;
   await t.click(firstModalLink);
@@ -30,7 +30,7 @@ test('clicking a link on the training page should open up a modal with informati
   await t.expect(courseLinkText).eql(modalTitle);
 });
 
-test('should be redirected to the course catalog on the training page when the modal is closed', async t => {
+test('should be redirected to the course catalog on the training page when the modal is closed', async (t) => {
   await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
@@ -46,7 +46,7 @@ test('should be redirected to the course catalog on the training page when the m
   await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 });
 
-test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async t => {
+test('pressing Escape on the keyboard closes the modal & redirects to the course catalog', async (t) => {
   await t.expect(firstModalLink.exists).ok({ timeout: 5000 });
 
   const modalCloseButton = Selector('a[data-testid="modal-close-button"]');
@@ -64,7 +64,7 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
   await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 });
 
-test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async t => {
+test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async (t) => {
   const firstCourseLinkText = await firstModalLink.textContent;
   const secondModalLink = Selector('a[data-testid="course-link"]').nth(1);
   const secondCourseLinkText = await secondModalLink.textContent;
@@ -81,7 +81,7 @@ test('when using the Escape key to close a modal, any future modal that is opene
   await t.expect(secondCourseLinkText).eql(modalTitle);
 });
 
-test("navigating directly to a training course's url should show the same content as navigating via the training page", async t => {
+test("navigating directly to a training course's url should show the same content as navigating via the training page", async (t) => {
   await t.click(firstModalLink);
 
   const titleEl = Selector('[data-testid="modal-title"]');

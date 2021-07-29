@@ -4,9 +4,7 @@ export const fragments = graphql`
   fragment GenericFragment on ContentfulNonTemplatedCaseStudyGenericBlock {
     genericBlockImages {
       title
-      fluid(maxWidth: 1100) {
-        ...GatsbyContentfulFluid
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
     }
     genericBlockText {
       genericBlockText
@@ -17,18 +15,14 @@ export const fragments = graphql`
     title
     slug
     previewImage {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
       title
       file {
         url
       }
     }
     posterImage {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
       title
       file {
         url
@@ -46,18 +40,15 @@ export const fragments = graphql`
     title
     slug
     previewImage {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
+
       title
       file {
         url
       }
     }
     posterImage {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid_withWebp
-      }
+      gatsbyImageData(layout: FULL_WIDTH)
       title
       file {
         url

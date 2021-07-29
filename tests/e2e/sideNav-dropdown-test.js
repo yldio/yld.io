@@ -12,30 +12,29 @@ fixture`mobile Nav Menu`.page`${baseUrl}`
   })
   .after(() => server.close());
 
-const openMobileNav = async t => {
-  const hamburger = await Selector('[class^="Hamburger"');
-  // 414 x 736 is the viewport of the iphone 6
-  await t.resizeWindow(414, 736).click(hamburger);
+const openMobileNav = async (t) => {
+  await t.resizeWindowToFitDevice('iphone6plus');
+  await t.click(await Selector('[class^="Hamburger"'));
 };
 
-test('we are on the homepage', async t => {
+test('we are on the homepage', async (t) => {
   const location = await getWindowLocation();
   await t.expect(location.href).contains(baseUrl);
 });
 
-test('a hamburger is present on the page', async t => {
+test('a hamburger is present on the page', async (t) => {
   const hamburger = await Selector('[class^="Hamburger"').filterVisible();
   await t.expect(hamburger.exists).ok();
 });
 
-test('the mobile nav is not expanded at its initial state', async t => {
+test('the mobile nav is not expanded at its initial state', async (t) => {
   const mobileNavPanel = Selector('nav[class^="MobileNav"').withAttribute(
     'open',
   );
   await t.expect(mobileNavPanel.exists).notOk();
 });
 
-test('when the hamburger button is clicked the mobile nav expands', async t => {
+test('when the hamburger button is clicked the mobile nav expands', async (t) => {
   await openMobileNav(t);
 
   const mobileNavPanel = Selector('nav[class^="MobileNav"').withAttribute(
@@ -44,7 +43,7 @@ test('when the hamburger button is clicked the mobile nav expands', async t => {
   await t.expect(mobileNavPanel.exists).ok();
 });
 
-test('clicking a mobile Nav link redirects to the correct url and closes the mobile Nav', async t => {
+test('clicking a mobile Nav link redirects to the correct url and closes the mobile Nav', async (t) => {
   await openMobileNav(t);
   const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
     'open',
@@ -58,7 +57,7 @@ test('clicking a mobile Nav link redirects to the correct url and closes the mob
   await t.expect(mobileNavPanel.exists).notOk();
 });
 
-test('when the mobile nav expands for the first time no sub-item is shown by default', async t => {
+test('when the mobile nav expands for the first time no sub-item is shown by default', async (t) => {
   await openMobileNav(t);
   const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
     'open',
@@ -68,7 +67,7 @@ test('when the mobile nav expands for the first time no sub-item is shown by def
   await t.expect(engineeringSubItem.exists).notOk();
 });
 
-test('when an item is clicked its sub-items appear', async t => {
+test('when an item is clicked its sub-items appear', async (t) => {
   await openMobileNav(t);
   const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
     'open',
@@ -81,7 +80,7 @@ test('when an item is clicked its sub-items appear', async t => {
   await t.expect(engineeringSubItem.exists).ok();
 });
 
-test('clicking a sub-item redirects to the correct url and closes the mobile Nav', async t => {
+test('clicking a sub-item redirects to the correct url and closes the mobile Nav', async (t) => {
   await openMobileNav(t);
   const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
     'open',
@@ -98,7 +97,7 @@ test('clicking a sub-item redirects to the correct url and closes the mobile Nav
   await t.expect(mobileNavPanel.exists).notOk();
 });
 
-test('After a sub-item has been clicked and if the MobileNav is re-opened, the subitems are still visible and the selected one highlighted', async t => {
+test('After a sub-item has been clicked and if the MobileNav is re-opened, the subitems are still visible and the selected one highlighted', async (t) => {
   await openMobileNav(t);
   const mobileNavPanel = Selector('nav[class^="MobileNav"]').withAttribute(
     'open',

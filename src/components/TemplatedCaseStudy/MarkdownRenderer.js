@@ -4,14 +4,19 @@ import { BodyPrimary, Subtitle } from '../Typography';
 
 const MarkdownRenderer = ({ source }) => (
   <ReactMarkdown
-    renderers={{
-      // eslint-disable-next-line
-      heading: props => <Subtitle noPaddingBottom {...props} />,
+    components={{
+      ...Object.fromEntries(
+        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+          heading,
+          (props) => <Subtitle noPaddingBottom {...props} />,
+        ]),
+      ),
       // eslint-disable-next-line react/display-name
-      paragraph: props => <BodyPrimary {...props} />,
+      p: (props) => <BodyPrimary {...props} />,
     }}
-    source={source}
-  />
+  >
+    {source}
+  </ReactMarkdown>
 );
 
 export default MarkdownRenderer;

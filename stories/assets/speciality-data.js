@@ -33,8 +33,7 @@ const data = {
       },
       title: 'node',
       file: {
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/C7Xq53muc0ywWQ6OKUMoE/df06c6567c2756ebf08413a2a8291ab2/node.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/C7Xq53muc0ywWQ6OKUMoE/df06c6567c2756ebf08413a2a8291ab2/node.svg',
       },
     },
     introTitle: 'Why use Node.js?',
@@ -97,8 +96,7 @@ const data = {
         posterImage: {
           title: 'The Economist case study featured image ',
           file: {
-            url:
-              '//images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg',
+            url: '//images.ctfassets.net/22g1lenhck4z/SYVlouC4GiCMyIESK6ieY/d28fa4457c4d6e8bf6bac6603b2b5bfd/economist_export.svg',
           },
         },
       },
@@ -112,8 +110,7 @@ const data = {
         posterImage: {
           title: 'Trainline case study featured image ',
           file: {
-            url:
-              '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png',
+            url: '//images.ctfassets.net/22g1lenhck4z/18KTBFOFsaIE6gcMQQMWkk/792ebef4cd9b995618b11aa8d09bd56c/trainline_export__1_.png',
           },
         },
       },
@@ -123,8 +120,7 @@ const data = {
         id: '4084b31a-9b20-5e7b-ba23-8ec4a71e32ff',
         title: 'conde nast logo',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/5QAIwaWizKc6Eq64uckG4a/db1b0b78464e82588cccb52a2a98528d/conde_nast.png',
+          url: '//images.ctfassets.net/22g1lenhck4z/5QAIwaWizKc6Eq64uckG4a/db1b0b78464e82588cccb52a2a98528d/conde_nast.png',
           fileName: 'conde_nast.png',
         },
       },
@@ -132,8 +128,7 @@ const data = {
         id: '60f3641f-8069-5b98-a77d-f7ebb4f05233',
         title: 'compare the market logo',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/1TS4HkY4ocmm6kIg0YsygY/f44555db1e51efff89cc5dd0e7f4df96/compare_the_market.png',
+          url: '//images.ctfassets.net/22g1lenhck4z/1TS4HkY4ocmm6kIg0YsygY/f44555db1e51efff89cc5dd0e7f4df96/compare_the_market.png',
           fileName: 'compare the market.png',
         },
       },
@@ -141,8 +136,7 @@ const data = {
         id: '1fae86aa-4770-5f8f-91fa-7779e8713721',
         title: 'dazn logo',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/6dVU2xvKyQSOuEMcUuE24E/4c1540f8943b303677855fc20054d2f8/dazn.png',
+          url: '//images.ctfassets.net/22g1lenhck4z/6dVU2xvKyQSOuEMcUuE24E/4c1540f8943b303677855fc20054d2f8/dazn.png',
           fileName: 'dazn.png',
         },
       },
@@ -150,8 +144,7 @@ const data = {
         id: 'c9efef4d-5fcc-51f7-af5e-a06b766ca0ee',
         title: 'News uk logo',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/5MqWU8tHTUwSYkUIis2iSu/6abb1254037f70ba9fc6cfb1cc120584/news_uk.png',
+          url: '//images.ctfassets.net/22g1lenhck4z/5MqWU8tHTUwSYkUIis2iSu/6abb1254037f70ba9fc6cfb1cc120584/news_uk.png',
           fileName: 'news uk.png',
         },
       },
@@ -159,8 +152,7 @@ const data = {
         id: 'd0fdff30-e2cd-5584-8344-35a19da0ff78',
         title: 'elife logo grid',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/5DByuN8hymvblPPXFA3sII/c0dc72e2049d2df75e252d75e5df243a/elife.png',
+          url: '//images.ctfassets.net/22g1lenhck4z/5DByuN8hymvblPPXFA3sII/c0dc72e2049d2df75e252d75e5df243a/elife.png',
           fileName: 'elife.png',
         },
       },
@@ -193,8 +185,7 @@ const data = {
         sizes: null,
       },
       file: {
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/3MKFTde4QgSM6Uy46g24OW/a34149ec4597aff25cb2527a041469c8/icon_on_prem.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/3MKFTde4QgSM6Uy46g24OW/a34149ec4597aff25cb2527a041469c8/icon_on_prem.svg',
         fileName: 'icon_on_prem.svg',
       },
     },
@@ -227,8 +218,7 @@ const data = {
         sizes: null,
       },
       file: {
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/65eVhiMQJqooO06ICyumIE/241752913dbeb88899b688cdbc42dc32/icon_certification.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/65eVhiMQJqooO06ICyumIE/241752913dbeb88899b688cdbc42dc32/icon_certification.svg',
         fileName: 'icon_certification.svg',
       },
     },
@@ -261,8 +251,7 @@ const data = {
         sizes: null,
       },
       file: {
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/4Mjcf90SAUKmqaqCYyE6iG/bc8c06103e236df6bbbcf1525ca89272/icon_pair_programming.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/4Mjcf90SAUKmqaqCYyE6iG/bc8c06103e236df6bbbcf1525ca89272/icon_pair_programming.svg',
         fileName: 'icon_pair_programming.svg',
       },
     },
@@ -304,16 +293,14 @@ const data = {
         base64:
           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAMAAAA/FZ0KAAAAt1BMVEUAAAD///////////////96ul9yq2H////////////////////////////o8eZwt1NrpVyWvpH////////////////////////////r9OlWnUlloFeQuo7///////////////9EjkG00qv///////////////////////////////////////////////////////////////////////////////////////////////////////8oCtXJAAAAPXRSTlMAhCAXPRwwJLcyMB7fwmbz/GDU3Gvg2QxScvH7X17dQAQYUjhQLxkREDRdA0czPCFLREk7RkNfGi46IzkibVQTEAAAAAlwSFlzAAAXEQAAFxEByibzPwAAAAd0SU1FB+MHAg44Fq3487cAAABiSURBVAjXY2CAAEYmBgRgZGb8w8r4i50RCL7CBXkYEeAlVJDljwCI++0/FyPjQ5hKJokX7EAgJPyWnR3IVWfQEAdqB8lo3tCE6P/MByL/gC39Y8p8lZub+xYXAwsn+wUWbgAR3BHVw30LrwAAAABJRU5ErkJggg==',
         aspectRatio: 2.98,
-        src:
-          '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=745&h=250&q=50',
+        src: '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=745&h=250&q=50',
         srcSet:
           '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=186&h=62&q=50 186w,\n//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=373&h=125&q=50 373w,\n//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png?w=602&h=202&q=50 602w',
         sizes: '(max-width: 745px) 100vw, 745px',
       },
       file: {
         fileName: 'node_foundation.png',
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png',
+        url: '//images.ctfassets.net/22g1lenhck4z/1IzLuhPn6kQS8w0qSeOUgs/5b2572f141e591b869339bad1f076ac9/node_foundation.png',
       },
     },
     communityBackground: {
@@ -330,8 +317,7 @@ const data = {
       },
       file: {
         fileName: 'image.svg',
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/55yfft0RYQ4WiIMA6wMgWE/395df3ff28686ce7b2aed7828b50d5f3/image.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/55yfft0RYQ4WiIMA6wMgWE/395df3ff28686ce7b2aed7828b50d5f3/image.svg',
       },
     },
     eventIcon: {
@@ -339,8 +325,7 @@ const data = {
       title: 'icon talks',
       file: {
         fileName: 'icon_upcoming_events.svg',
-        url:
-          '//images.ctfassets.net/22g1lenhck4z/1OUF8Yd91qEOkyYsg0ekEI/1851ce2fc4ee64da35c9d70215df8fed/icon_upcoming_events.svg',
+        url: '//images.ctfassets.net/22g1lenhck4z/1OUF8Yd91qEOkyYsg0ekEI/1851ce2fc4ee64da35c9d70215df8fed/icon_upcoming_events.svg',
       },
     },
     contactText:
@@ -645,8 +630,7 @@ const data = {
     title: 'button play small',
     file: {
       fileName: 'button_play_small.svg',
-      url:
-        '//images.ctfassets.net/22g1lenhck4z/2H5G3iFyXueasqewSsgWAA/fcb689683fa053c74824c7f1008b63b5/button_play_small.svg',
+      url: '//images.ctfassets.net/22g1lenhck4z/2H5G3iFyXueasqewSsgWAA/fcb689683fa053c74824c7f1008b63b5/button_play_small.svg',
     },
   },
   filteredPosts: {
@@ -806,8 +790,7 @@ const talkData = [
   {
     type: 'Talk',
     title: 'Node10 - Francesco Lentini - London NodeJS Meetup',
-    link:
-      'https://www.youtube.com/watch?v=sbe_2N5urMs&index=2&list=PLfrHCOIcmSuqQPa00ZEtfx7-v4RNkFAmY',
+    link: 'https://www.youtube.com/watch?v=sbe_2N5urMs&index=2&list=PLfrHCOIcmSuqQPa00ZEtfx7-v4RNkFAmY',
     cta: null,
     featured: null,
     additionalInfo: null,

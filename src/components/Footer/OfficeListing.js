@@ -14,8 +14,8 @@ const OfficeListing = () => (
   <Padding bottom={{ smallPhone: 3.5, tablet: 5 }}>
     <OfficeStyled>
       <Locations>
-        {data =>
-          data.map(location => (
+        {(data) =>
+          data.map((location) => (
             <Office
               key={location.node.id}
               {...location.node}

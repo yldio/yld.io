@@ -15,7 +15,7 @@ const TrainingStageContainer = styled.div`
   ${breakpoint('smallPhone', 'smallTablet')`
     // :not(:first-child) wouldn't work in this instance as its all nested
     // so have to throw a prop in there to maintain padding
-    ${props => (props.first ? '' : 'padding-top: 0;')}
+    ${(props) => (props.first ? '' : 'padding-top: 0;')}
   `}
 
   ${breakpoint('tablet')`
@@ -93,9 +93,10 @@ const TrainingSection = ({ speciality }) => (
         </Row>
         <Row>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
-            <StyledLink to="/contact" title={speciality.title}>{`Request ${
-              speciality.title
-            } training`}</StyledLink>
+            <StyledLink
+              to="/contact"
+              title={speciality.title}
+            >{`Request ${speciality.title} training`}</StyledLink>
           </Col>
         </Row>
       </Grid>

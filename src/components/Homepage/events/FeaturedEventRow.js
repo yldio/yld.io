@@ -31,19 +31,19 @@ const EventWrapper = styled.header`
 `;
 
 const SpacedSectionTitle = styled(SectionTitle)`
-  margin-bottom: ${props => props.theme.space[2]};
+  margin-bottom: ${(props) => props.theme.space[2]};
 `;
 
 const PaddedBodyPrimary = styled(BodyPrimary)`
-  padding-bottom: ${props => props.theme.space[1]};
+  padding-bottom: ${(props) => props.theme.space[1]};
 
   ${breakpoint('desktop')`
-    padding-bottom: ${props => props.theme.space[2]};
+    padding-bottom: ${(props) => props.theme.space[2]};
   `};
 `;
 
 const StyledDisplayTitle = styled(DisplayTitle)`
-  padding-bottom: ${props => props.theme.space[2]};
+  padding-bottom: ${(props) => props.theme.space[2]};
 `;
 
 const IntroRow = styled(Row)`
@@ -85,9 +85,7 @@ const MobileImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding: ${({ theme }) =>
-    `${theme.spacing[1.5]} ${theme.space[3]} ${theme.space[3]} ${
-      theme.space[3]
-    }`};
+    `${theme.spacing[1.5]} ${theme.space[3]} ${theme.space[3]} ${theme.space[3]}`};
 
   > img {
     display: block;
@@ -116,10 +114,10 @@ const FeaturedEvent = ({ event }) => (
             <Col width={[1, 1, 1, 1, 7 / 12, 7 / 12, 5 / 12]}>
               <InfoInner>
                 <EventWrapper>
-                  <PaddedBodyPrimary reverse="true" noPadding>
+                  <PaddedBodyPrimary noPadding reverse="true">
                     Featured event
                   </PaddedBodyPrimary>
-                  <StyledDisplayTitle reverse="true" noPaddingTop>
+                  <StyledDisplayTitle noPaddingTop reverse="true">
                     {event.eventTitle}
                   </StyledDisplayTitle>
                   <BodyPrimary reverse="true">{event.date}</BodyPrimary>

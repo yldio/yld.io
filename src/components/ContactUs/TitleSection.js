@@ -16,12 +16,13 @@ const TitleSection = ({ title }) => {
         <Row>
           <Col width={[1, 1, 1, 1, 7 / 12]}>
             <ReactMarkdown
-              renderers={{
+              components={{
                 // eslint-disable-next-line
-                paragraph: props => <SectionTitle {...props} as="h1" />,
+                p: (props) => <SectionTitle {...props} as="h1" />,
               }}
-              source={title}
-            />
+            >
+              {title}
+            </ReactMarkdown>
           </Col>
         </Row>
       </Padding>

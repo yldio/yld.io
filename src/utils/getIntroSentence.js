@@ -1,4 +1,4 @@
-export default caseStudy => {
+export default (caseStudy) => {
   if (caseStudy.intro) {
     return (caseStudy.intro || {}).introSentence;
   }

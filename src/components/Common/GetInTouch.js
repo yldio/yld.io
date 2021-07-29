@@ -121,7 +121,7 @@ const PersonBodyPrimary = styled(BodyPrimary)`
   `}
 `;
 
-const Profile = props => {
+const Profile = (props) => {
   const {
     title,
     person,
@@ -149,12 +149,12 @@ const Profile = props => {
                 {person.footerRole}
               </Subtitle>
               <BodyPrimary
-                as={'a'}
+                noPadding
+                as="a"
                 style={{
                   textDecoration: 'underline',
                 }}
                 href={`mailto:${person.emailAddress}`}
-                noPadding
               >
                 {person.emailAddress}
               </BodyPrimary>
@@ -162,10 +162,10 @@ const Profile = props => {
             <LinksContainer>
               {person.socialLinks &&
                 person.socialLinks.length > 0 &&
-                person.socialLinks.map(link => (
+                person.socialLinks.map((link) => (
                   <SocialLink
-                    imageSize={IMAGE_SIZE}
                     key={generate()}
+                    imageSize={IMAGE_SIZE}
                     {...link}
                   />
                 ))}
@@ -216,7 +216,7 @@ const GenericCol = styled(Col)`
   padding-bottom: ${({ theme }) => theme.space[4]};
 `;
 
-const Generic = props => {
+const Generic = (props) => {
   const { title, genericCopy, genericCtaText, genericCtaUrl } = props;
   return (
     <Grid>
@@ -236,7 +236,8 @@ const Generic = props => {
     </Grid>
   );
 };
-const GetInTouch = props => {
+
+const GetInTouch = (props) => {
   const { genericCopy } = props;
 
   return genericCopy ? <Generic {...props} /> : <Profile {...props} />;
@@ -244,7 +245,7 @@ const GetInTouch = props => {
 
 GetInTouch.propTypes = {
   title: PropTypes.string.isRequired,
-  ctaText: PropTypes.string.isRequired,
+  ctaText: PropTypes.string,
 };
 
 GetInTouch.defaultProps = {

@@ -94,7 +94,7 @@ const CaseStudies = ({
 
   return (
     <CaseStudiesGrid limited={limited} hideSparseRows={hideSparseRows}>
-      {caseStudies.map(caseStudy => (
+      {caseStudies.map((caseStudy) => (
         <CaseStudy key={caseStudy.slug} caseStudy={caseStudy} />
       ))}
     </CaseStudiesGrid>

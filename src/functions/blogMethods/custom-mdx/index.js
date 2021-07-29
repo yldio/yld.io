@@ -6,7 +6,7 @@ const TransformStrings = require('./transform-strings');
 const AddFrontmatter = require('./add-frontmatter');
 
 module.exports = async (posts, environment) => {
-  return Map(posts, async post => {
+  return Map(posts, async (post) => {
     const postWithImageData = await TransformImageData(post, environment);
     const postWithEmbedTags = await TransformIFrames(postWithImageData);
     const postWithReplacedStrings = {

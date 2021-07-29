@@ -37,9 +37,9 @@ class Layout extends Component {
     this.setState({ cookiesAllowed: Boolean(localStorage.getItem('cookies')) });
 
     if (isDevEnvironment) {
-      const {
-        default: component,
-      } = await import(/* webpackChunkName: "grid-debugger" */ 'react-grid-debugger');
+      const { default: component } = await import(
+        /* webpackChunkName: "grid-debugger" */ 'react-grid-debugger'
+      );
 
       this.setState({
         GridDebugger: component,
@@ -78,7 +78,7 @@ class Layout extends Component {
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const homepageListItem = [
             {
               '@type': 'ListItem',
@@ -100,7 +100,7 @@ class Layout extends Component {
 
           return (
             <ThemeProvider theme={theme}>
-              <Fragment>
+              <>
                 <Helmet
                   title={`${data.site.siteMetadata.siteTitle}`}
                   meta={[{ name: 'description', content: '' }]}
@@ -150,7 +150,7 @@ class Layout extends Component {
                 {!this.state.cookiesAllowed && (
                   <Cookie onClick={this.handleClick} />
                 )}
-              </Fragment>
+              </>
             </ThemeProvider>
           );
         }}

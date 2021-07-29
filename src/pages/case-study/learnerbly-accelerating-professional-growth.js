@@ -42,7 +42,7 @@ const StyledColTwo5 = styled(Col)`
   padding-top: ${({ theme }) => theme.space[2]};
 `;
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
@@ -92,7 +92,7 @@ const IndexPage = props => {
 
       {/* "The problem" */}
       {shouldRender(data3) && (
-        <Fragment>
+        <>
           <Grid flex>
             <BlockRow
               mobile={{ bottom: '4', top: '4' }}
@@ -113,7 +113,7 @@ const IndexPage = props => {
               </Col>
             </BlockRow>
           </Grid>
-        </Fragment>
+        </>
       )}
 
       {/* "The solution" */}
@@ -173,23 +173,29 @@ const IndexPage = props => {
               <Row>
                 <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
-                    disallowedTypes={['paragraph']}
-                    renderers={{
-                      // eslint-disable-next-line
-                      heading: props => <SectionTitle {...props} />,
+                    disallowedElements={['p']}
+                    components={{
+                      ...Object.fromEntries(
+                        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                          heading,
+                          (props) => <SectionTitle {...props} />,
+                        ]),
+                      ),
                     }}
-                    source={normalise(data6).text}
-                  />
+                  >
+                    {normalise(data6).text}
+                  </ReactMarkdown>
                 </Col>
                 <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
-                    disallowedTypes={['heading']}
-                    renderers={{
+                    disallowedElements={['h1', 'h2', 'h3', 'h4', 'h5', 'h6']}
+                    components={{
                       // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary {...props} />,
+                      p: (props) => <BodyPrimary {...props} />,
                     }}
-                    source={normalise(data6).text}
-                  />
+                  >
+                    {normalise(data6).text}
+                  </ReactMarkdown>
                 </StyledParagraphCol>
               </Row>
             </Col>
@@ -240,23 +246,33 @@ const IndexPage = props => {
               <Row>
                 <Col width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
-                    disallowedTypes={['paragraph']}
-                    renderers={{
-                      // eslint-disable-next-line
-                      heading: props => <SectionTitle {...props} />,
+                    disallowedElements={['p']}
+                    components={{
+                      ...Object.fromEntries(
+                        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                          heading,
+                          (props) => <SectionTitle {...props} />,
+                        ]),
+                      ),
                     }}
-                    source={normalise(data8).text}
-                  />
+                  >
+                    {normalise(data8).text}
+                  </ReactMarkdown>
                 </Col>
                 <StyledParagraphCol width={[1, 1, 1, 1 / 2, 1 / 2, 1]}>
                   <ReactMarkdown
-                    disallowedTypes={['heading']}
-                    renderers={{
-                      // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary {...props} />,
+                    disallowedElements={['h1', 'h2', 'h3', 'h4', 'h5', 'h6']}
+                    components={{
+                      ...Object.fromEntries(
+                        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                          heading,
+                          (props) => <BodyPrimary {...props} />,
+                        ]),
+                      ),
                     }}
-                    source={normalise(data8).text}
-                  />
+                  >
+                    {normalise(data8).text}
+                  </ReactMarkdown>
                 </StyledParagraphCol>
               </Row>
             </Col>

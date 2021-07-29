@@ -17,37 +17,37 @@ const fadeIn = keyframes`
 
 export const SearchField = styled.section`
   position: relative;
-  margin-bottom: ${props => props.theme.space[4]};
+  margin-bottom: ${(props) => props.theme.space[4]};
 `;
 
 export const Results = styled.ul`
   width: 100%;
   max-height: ${remcalc(200)};
   list-style-type: none;
-  background: ${props => props.theme.colors.greyBg};
+  background: ${(props) => props.theme.colors.greyBg};
   position: absolute;
   left: 0;
-  top: ${props => props.theme.space[5]};
+  top: ${(props) => props.theme.space[5]};
   z-index: 10;
   overflow-x: auto;
   overflow-y: scroll;
   will-change: opacity;
-  animation: ${fadeIn} ${props => props.theme.animations.long} linear;
+  animation: ${fadeIn} ${(props) => props.theme.animations.long} linear;
 `;
 
 export const Result = styled.li`
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   background: transparent;
-  transition: background ${props => props.theme.animations.normal} ease-in-out,
-    color ${props => props.theme.animations.normal} ease-in-out;
+  transition: background ${(props) => props.theme.animations.normal} ease-in-out,
+    color ${(props) => props.theme.animations.normal} ease-in-out;
   &:hover {
-    background: ${props => props.theme.colors.vibrant};
+    background: ${(props) => props.theme.colors.vibrant};
     > a {
-      color: ${props => props.theme.colors.blueBg};
+      color: ${(props) => props.theme.colors.blueBg};
     }
   }
   a {
-    padding: ${props => `${props.theme.space[2]} ${props.theme.space[3]}`};
+    padding: ${(props) => `${props.theme.space[2]} ${props.theme.space[3]}`};
     font-size: ${remcalc(18)};
     line-height: ${remcalc(24)};
     font-weight: 300;
@@ -55,11 +55,11 @@ export const Result = styled.li`
     width: 100%;
   }
   ${is('notFound')`
-    padding: ${props => `${props.theme.space[2]} ${props.theme.space[3]}`};
+    padding: ${(props) => `${props.theme.space[2]} ${props.theme.space[3]}`};
     font-size: ${remcalc(18)};
     line-height: ${remcalc(24)};
     pointer-events:none;
-    color: ${props => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
     font-weight: 500;
   `};
 `;
@@ -82,15 +82,15 @@ export const SearchBox = forwardRef(
     return (
       <SearchField>
         <Input
-          data-testid="search"
           ref={ref}
+          noBoxShadow
+          searchBox
+          data-testid="search"
           type="text"
           placeholder={placeholder}
           role="search"
           aria-label="Search"
           onChange={handleChange}
-          noBoxShadow
-          searchBox
         />
         {isListBoxOpen && (
           <Results role="listbox">

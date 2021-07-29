@@ -4,7 +4,7 @@ import remcalc from 'remcalc';
 const outlineStyles = css`
   outline: ${remcalc(4)} solid transparent;
   &:focus {
-    outline-color: ${props => props.theme.colors.vibrant};
+    outline-color: ${(props) => props.theme.colors.vibrant};
     z-index: 1;
   }
 

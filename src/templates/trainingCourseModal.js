@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { graphql, navigate } from 'gatsby';
 import { Padding } from 'styled-components-spacing';
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
-import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
+import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-3';
 import Head from '../components/Common/Head';
 import Layout from '../components/layout';
 import CourseInfo from '../components/Training/course/CourseInfo';
@@ -14,11 +14,11 @@ import { Grid, Row, Col } from '../components/grid';
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.white};
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ${props => props.theme.zIndexes.modal};
+  z-index: ${(props) => props.theme.zIndexes.modal};
   overflow: scroll;
 `;
 
@@ -42,20 +42,15 @@ const ModalContent = ({
       if (key === 'Escape') {
         return navigate(returnPath);
       }
-
-      return;
     },
     [returnPath],
   );
 
-  useEffect(
-    () => {
-      document.addEventListener('keyup', handleKeyPress, false);
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyPress, false);
 
-      return () => document.removeEventListener('keyup', handleKeyPress, false);
-    },
-    [handleKeyPress],
-  );
+    return () => document.removeEventListener('keyup', handleKeyPress, false);
+  }, [handleKeyPress]);
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -131,7 +126,7 @@ const TrainingCourseModal = ({
 export default TrainingCourseModal;
 
 export const pageQuery = graphql`
-  query($id: String, $categoryId: String) {
+  query ($id: String, $categoryId: String) {
     site {
       siteMetadata {
         siteUrl
@@ -158,9 +153,7 @@ export const pageQuery = graphql`
     contentfulTrainingCourseCategory(id: { eq: $categoryId }) {
       slug
       logo {
-        fluid(maxWidth: 60) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         title
         file {
           url

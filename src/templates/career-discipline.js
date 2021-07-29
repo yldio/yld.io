@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import generate from 'shortid';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import Get from 'lodash.get';
 
 import generateBreadcrumbData from '../utils/generateBreadcrumbData';
 import Layout from '../components/layout';
@@ -51,11 +51,9 @@ const CareerFramework = ({
 }) => {
   const { introContent, introHeader, disciplines = [] } = generic;
 
-  const introContentSafe = Get(
-    introContent,
-    'content[0].content[0].value',
-    undefined,
-  );
+  const introContentSafe = introContent
+    ? renderRichText(introContent)
+    : undefined;
 
   const disciplineTabData =
     disciplines &&
@@ -131,7 +129,7 @@ const CareerFramework = ({
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     site {
       siteMetadata {
         siteUrl
@@ -139,11 +137,7 @@ export const query = graphql`
     }
     contentfulCareerFramework {
       introContent {
-        content {
-          content {
-            value
-          }
-        }
+        raw
       }
       introHeader
       disciplines {
@@ -164,9 +158,7 @@ export const query = graphql`
         ctaTitle
         ctaUrl
         image {
-          fluid(maxWidth: 550) {
-            ...GatsbyContentfulFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
         ctaReference {
           slug

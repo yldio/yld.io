@@ -19,7 +19,7 @@ const publishToContentful = async (
   allFields,
   cmsBlogPosts,
 ) => {
-  return Map(posts, async post => {
+  return Map(posts, async (post) => {
     const asset = cmsBlogPosts.find(
       ({
         fields: {
@@ -42,16 +42,16 @@ const publishToContentful = async (
       };
       const updatedAsset = await asset.update();
 
-      return await updatedAsset.publish();
-    } else {
-      console.info(`Creating new post: ${post.title}`);
-
-      const newAsset = await environment.createEntry('blogPost', {
-        fields: contentfulPostData,
-      });
-
-      return await newAsset.publish();
+      return updatedAsset.publish();
     }
+
+    console.info(`Creating new post: ${post.title}`);
+
+    const newAsset = await environment.createEntry('blogPost', {
+      fields: contentfulPostData,
+    });
+
+    return newAsset.publish();
   });
 };
 

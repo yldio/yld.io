@@ -68,18 +68,23 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
             </DisplayTitle>
           ) : (
             <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                headings: props => (
-                  <StyledDisplayTitle as={as} secondary {...props} />
+              components={{
+                ...Object.fromEntries(
+                  ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                    heading,
+                    (props) => (
+                      <StyledDisplayTitle secondary as={as} {...props} />
+                    ),
+                  ]),
                 ),
                 // eslint-disable-next-line react/display-name
-                paragraph: props => (
-                  <StyledDisplayTitle as={as} secondary {...props} />
+                p: (props) => (
+                  <StyledDisplayTitle secondary as={as} {...props} />
                 ),
               }}
-              source={children}
-            />
+            >
+              {children}
+            </ReactMarkdown>
           )}
         </Col>
       </Row>

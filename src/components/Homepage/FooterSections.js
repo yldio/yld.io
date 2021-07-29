@@ -69,7 +69,7 @@ const FooterSections = ({
 }) => (
   <Grid>
     <StyledRow>
-      <StyledCol width={[1, 1, 1, 1, 6 / 12]} key={generate()} block={false}>
+      <StyledCol key={generate()} width={[1, 1, 1, 1, 6 / 12]} block={false}>
         <FooterCTAInner>
           <Content>
             {footerSection1Icon && <Image image={footerSection1Icon} />}
@@ -81,7 +81,7 @@ const FooterSections = ({
           </CustomLink>
         </FooterCTAInner>
       </StyledCol>
-      <StyledCol width={[1, 1, 1, 1, 6 / 12]} key={generate()} block={false}>
+      <StyledCol key={generate()} width={[1, 1, 1, 1, 6 / 12]} block={false}>
         <FooterCTAInner>
           <Content>
             {footerSection2Icon && <Image image={footerSection2Icon} />}

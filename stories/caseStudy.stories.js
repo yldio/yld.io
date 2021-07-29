@@ -16,8 +16,7 @@ const economistImage = {
   },
   title: 'The Economist case study featured image ',
   file: {
-    url:
-      'https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250',
+    url: 'https://images.ctfassets.net/22g1lenhck4z/7gxjSPslc53u7r7kYZpzo/c9fdac04b66e4e03f2947e0caaca212f/our_work_economist.svg?h=250',
   },
 };
 const TheEconomistCaseStudy = {
@@ -46,8 +45,7 @@ const trainlineImage = {
   },
   title: 'Trainline case study featured image ',
   file: {
-    url:
-      'https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250',
+    url: 'https://images.ctfassets.net/22g1lenhck4z/3uU0sfGdOiOCA6XqDy1vFM/6bc9b38aa78591d29a8ceed1ddfd5120/our_work_trainline.svg?h=250',
   },
 };
 const TrainlineCaseStudy = {
@@ -76,8 +74,7 @@ const kingfisherImage = {
   },
   title: 'Kingfischer illustration',
   file: {
-    url:
-      'https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250',
+    url: 'https://images.ctfassets.net/22g1lenhck4z/2enktDdbf4MBhD4zzw2KAw/94fa7bd87fcd12998c3f059bd11c9bdc/our_work_kingfisher.svg?h=250',
   },
 };
 const KingfisherCaseStudy = {
@@ -115,7 +112,7 @@ storiesOf('CaseStudy', module)
         false,
       )}
       caseStudies={[...Array(number('Number of case studies', 3)).keys()].map(
-        i => ({
+        (i) => ({
           ...caseStudies[i % 3],
           slug: `case-study-${i}`,
         }),

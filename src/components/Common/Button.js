@@ -5,8 +5,8 @@ export const UnstyledButton = styled.button`
   border: none;
   background: transparent;
   padding: 0;
-  min-width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  min-height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+  min-width: ${(props) => remcalc(props.theme.elementSizes.tappableArea)};
+  min-height: ${(props) => remcalc(props.theme.elementSizes.tappableArea)};
 
   /* center icon inside button */
   display: flex;
@@ -17,8 +17,8 @@ export const UnstyledButton = styled.button`
 const Button = styled(UnstyledButton)`
   display: block;
   padding: ${remcalc(18)} ${remcalc(24)};
-  color: ${props => props.theme.colors.white};
-  background: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.text};
   font-weight: bold;
   font-size: ${remcalc(18)};
   line-height: ${remcalc(24)};

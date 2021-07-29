@@ -14,15 +14,12 @@ fixture`Top Nav Menu`.page`${baseUrl}`
   })
   .after(() => server.close());
 
-test('we are on the homepage', async t => {
+test('we are on the homepage', async (t) => {
   const location = await getWindowLocation();
-  await t
-    .resizeWindow(1280, 720)
-    .expect(location.href)
-    .contains(baseUrl);
+  await t.resizeWindow(1280, 720).expect(location.href).contains(baseUrl);
 });
 
-test('a dropdown dropdownContainer opens on desktop and redirects correctly', async t => {
+test('a dropdown dropdownContainer opens on desktop and redirects correctly', async (t) => {
   const services = Selector('li').withText('Services');
   await t.expect(services.exists).ok({ timeout: 5000 });
 
@@ -41,7 +38,7 @@ test('a dropdown dropdownContainer opens on desktop and redirects correctly', as
   await t.expect(location.href).contains(`${baseUrl}/engineering`);
 });
 
-test('An outerAnchorItem redirects to a page', async t => {
+test('An outerAnchorItem redirects to a page', async (t) => {
   const contact = Selector('li').withText('Contact');
   await t.expect(contact.exists).ok();
   await t.click(contact);
@@ -51,7 +48,7 @@ test('An outerAnchorItem redirects to a page', async t => {
   );
 });
 
-test('opens and close a dropdown', async t => {
+test('opens and close a dropdown', async (t) => {
   const services = Selector('li').withText('Services');
   await t.expect(services.exists).ok({ timeout: 5000 });
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import format from 'date-fns/format';
-import isAfter from 'date-fns/is_after';
-import endOfYesterday from 'date-fns/end_of_yesterday';
+import isAfter from 'date-fns/isAfter';
+import endOfYesterday from 'date-fns/endOfYesterday';
+import parseISO from 'date-fns/parseISO';
 
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
@@ -13,16 +14,17 @@ import ExternalAnchor from './ExternalAnchor';
 import Hr from './Hr';
 import BackgroundColorWrapper from './BackgroundColorWrapper';
 
-const noEventsMessage = title =>
+const noEventsMessage = (title) =>
   `It looks like there currently aren’t any upcoming ${
     title ? `${title} ` : ''
   }events. You can always check back again later or get in touch if you are interested in potentially hosting one.`;
 
-const getAllUpcomingEvents = events =>
-  events
-    .filter(({ date }) => isAfter(date, endOfYesterday()))
+const getAllUpcomingEvents = (events) => {
+  return events
+    .filter(({ date }) => isAfter(parseISO(date), endOfYesterday()))
     .sort((a, b) => (a.date <= b.date ? -1 : 1))
     .slice(0, 5);
+};
 
 const Wrapper = styled.div`
   padding: ${({ theme }) => theme.space[4]} 0 ${({ theme }) => theme.space[5]};
@@ -45,7 +47,7 @@ const StyledBodyPrimary = styled(BodyPrimary)`
 
 const EventSection = ({ events, title, description, bgColor }) => {
   const upcomingEvents = events.length ? getAllUpcomingEvents(events) : [];
-  const hasEvents = !!upcomingEvents.length;
+  const hasEvents = Boolean(upcomingEvents.length);
 
   return (
     <BackgroundColorWrapper bgColor={bgColor}>
@@ -84,7 +86,7 @@ const EventSection = ({ events, title, description, bgColor }) => {
                           </ExternalAnchor>
                         </Subtitle>
                         <BodyPrimary noPaddingTop>
-                          {format(date, 'MMMM DD[,] dddd')}
+                          {format(date, 'PPP')}
                         </BodyPrimary>
                         <Hr />
                       </li>
@@ -101,4 +103,5 @@ const EventSection = ({ events, title, description, bgColor }) => {
     </BackgroundColorWrapper>
   );
 };
+
 export default EventSection;

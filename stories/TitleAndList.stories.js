@@ -28,8 +28,7 @@ const arrayList = [
   },
   {
     title,
-    body:
-      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
+    body: 'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
   },
   {
     title,
@@ -46,8 +45,7 @@ const arrayListWithLogos = [
   {
     image: ExampleImage,
     title,
-    body:
-      'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
+    body: 'Using open source technology means transparency and access to the code, which allows faster bug fixes and custom feature development. Clients are no longer dependent on tech vendors and gain full control over the code base.',
   },
   {
     image: ExampleImage,

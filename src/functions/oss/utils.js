@@ -8,6 +8,7 @@ const generateContentfulData = (obj, keys) => {
   if (!keys && !keys.length) {
     throw new Error('Missing key values');
   }
+
   return keys.reduce(
     (acc, curr) => ({ ...acc, [curr]: { [LOCALE]: obj[curr] } }),
     {},

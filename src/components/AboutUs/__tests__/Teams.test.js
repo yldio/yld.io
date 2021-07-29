@@ -9,7 +9,7 @@ describe('<Teams />', () => {
   test('allows the user to change tabs', async () => {
     const details = {
       title: 'Our teams',
-      teams: teams,
+      teams,
     };
 
     const { getByTestId, getByText } = render(<Teams {...details} />, {

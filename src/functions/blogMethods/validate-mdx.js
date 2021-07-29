@@ -5,11 +5,12 @@ const mdx = require('@mdx-js/mdx');
  * markdown we've generated can transpile to mdx correctly
  * otherwise we upload markdown that will break the build.
  */
-const validateMdx = async posts => {
+const validateMdx = async (posts) => {
   for (const post of posts) {
     const { content, slug } = post;
 
     try {
+      // eslint-disable-next-line no-await-in-loop
       await mdx(content);
     } catch (error) {
       throw new Error(`Error transpiling post ${slug}`, error);

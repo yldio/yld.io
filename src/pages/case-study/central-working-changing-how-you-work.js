@@ -95,7 +95,7 @@ const StyledHr = styled(Hr)`
   ;`}
 `;
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
@@ -119,7 +119,7 @@ const IndexPage = props => {
   return (
     <Layout
       location={location}
-      contactUsBg={'greyBg'}
+      contactUsBg="greyBg"
       footerContactUsId={caseStudy.footerContactUs.id}
     >
       <Head seoMetaData={caseStudy.seoMetaData} />
@@ -154,6 +154,7 @@ const IndexPage = props => {
             >
               {outComesDataFigures.map(({ text }, index) => (
                 <Col
+                  key={generate()}
                   width={[1, 1, 1, 1, 4 / 12]}
                   style={{
                     textAlign: 'center',
@@ -162,19 +163,23 @@ const IndexPage = props => {
                     alignItems: 'center',
                   }}
                   block={false}
-                  key={generate()}
                 >
                   <ReactMarkdown
-                    renderers={{
+                    components={{
                       // eslint-disable-next-line
-                      heading: props => (
-                        <SectionTitle noPaddingBottom {...props} />
+                      p: (props) => <BodyPrimary bold {...props} />,
+                      ...Object.fromEntries(
+                        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                          heading,
+                          (props) => (
+                            <SectionTitle noPaddingBottom {...props} />
+                          ),
+                        ]),
                       ),
-                      // eslint-disable-next-line
-                      paragraph: props => <BodyPrimary bold {...props} />,
                     }}
-                    source={text}
-                  />
+                  >
+                    {text}
+                  </ReactMarkdown>
                   {index + 1 < outComesDataFigures.length && <StyledHr short />}
                 </Col>
               ))}
@@ -184,9 +189,9 @@ const IndexPage = props => {
       )}
       <Grid>
         <BlockRow
+          flexEnd
           mobile={{ bottom: '5', top: '4' }}
           tablet={{ bottom: '6', top: '6' }}
-          flexEnd
         >
           <TextColumnsBlock data={normalise(data3)} />
           <Block3Col width={[1, 1, 1, 8 / 12]}>
@@ -202,12 +207,17 @@ const IndexPage = props => {
           >
             <Col width={[1]}>
               <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
+                components={{
+                  ...Object.fromEntries(
+                    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                      heading,
+                      (props) => <SectionTitle reverse {...props} />,
+                    ]),
+                  ),
                 }}
-                source={normalise(data4).text}
-              />
+              >
+                {normalise(data4).text}
+              </ReactMarkdown>
             </Col>
 
             <Block4ImageCol width={[1]}>
@@ -220,7 +230,7 @@ const IndexPage = props => {
       {/* Cities */}
       <Grid>
         {shouldRender(data5) && (
-          <Fragment>
+          <>
             <BlockRow
               mobile={{ bottom: '4', top: '4' }}
               smallTablet={{ bottom: '4', top: '4' }}
@@ -233,7 +243,7 @@ const IndexPage = props => {
                 <Image image={normalise(data5).image} />
               </Col>
             </BlockRow>
-          </Fragment>
+          </>
         )}
       </Grid>
 
@@ -242,12 +252,17 @@ const IndexPage = props => {
           <BlockRow mobile={{ bottom: '4', top: '4' }}>
             <Col width={[1, 1, 1, 4 / 12]}>
               <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
+                components={{
+                  ...Object.fromEntries(
+                    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                      heading,
+                      (props) => <SectionTitle reverse {...props} />,
+                    ]),
+                  ),
                 }}
-                source={normalise(data6).text}
-              />
+              >
+                {normalise(data6).text}
+              </ReactMarkdown>
             </Col>
 
             <Block6ImageCol width={[1, 1, 1, 8 / 12]}>
@@ -261,14 +276,19 @@ const IndexPage = props => {
           >
             <Col width={[1, 1, 1, 4 / 12]}>
               <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
+                components={{
+                  ...Object.fromEntries(
+                    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                      heading,
+                      (props) => <SectionTitle reverse {...props} />,
+                    ]),
+                  ),
                   // eslint-disable-next-line react/display-name
-                  paragraph: props => <BodyPrimary reverse {...props} />,
+                  p: (props) => <BodyPrimary reverse {...props} />,
                 }}
-                source={normalise(data7).text}
-              />
+              >
+                {normalise(data7).text}
+              </ReactMarkdown>
             </Col>
 
             <Block7ImageCol width={[1, 1, 1, 8 / 12]}>
@@ -283,12 +303,17 @@ const IndexPage = props => {
           <BlockRow mobile={{ top: '4', bottom: '4' }}>
             <Col width={[1, 1, 1, 1, 6 / 12]}>
               <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle reverse {...props} />,
+                components={{
+                  ...Object.fromEntries(
+                    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                      heading,
+                      (props) => <SectionTitle reverse {...props} />,
+                    ]),
+                  ),
                 }}
-                source={normalise(data8).text}
-              />
+              >
+                {normalise(data8).text}
+              </ReactMarkdown>
             </Col>
           </BlockRow>
           <BlockRow style={{ justifyContent: 'center' }}>
@@ -301,17 +326,22 @@ const IndexPage = props => {
 
       <GreyBackground>
         <Block9Grid>
-          <Block9BlockRow mobile={{ top: '0', bottom: '4' }} flexEnd>
-            <Col width={[1, 1, 1, 1, 7 / 12, 6 / 12, 5 / 12]} flexEnd>
+          <Block9BlockRow flexEnd mobile={{ top: '0', bottom: '4' }}>
+            <Col flexEnd width={[1, 1, 1, 1, 7 / 12, 6 / 12, 5 / 12]}>
               <ReactMarkdown
-                renderers={{
-                  // eslint-disable-next-line
-                  heading: props => <SectionTitle {...props} />,
+                components={{
                   // eslint-disable-next-line react/display-name
-                  paragraph: props => <BodyPrimary {...props} />,
+                  p: (props) => <BodyPrimary {...props} />,
+                  ...Object.fromEntries(
+                    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                      heading,
+                      (props) => <SectionTitle {...props} />,
+                    ]),
+                  ),
                 }}
-                source={normalise(data9).text}
-              />
+              >
+                {normalise(data9).text}
+              </ReactMarkdown>
             </Col>
             <Col width={[0, 0, 0, 0, 0, 0, 1 / 12]} />
           </Block9BlockRow>

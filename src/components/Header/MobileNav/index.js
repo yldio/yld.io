@@ -14,17 +14,17 @@ import { breakpointsWithHeader } from '../../../utils/theme';
 
 const MobileNavPanel = styled.nav`
   position: fixed;
-  background: ${props => props.theme.colors.blueBg};
+  background: ${(props) => props.theme.colors.blueBg};
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
-  z-index: ${props => props.theme.zIndexes.header};
+  z-index: ${(props) => props.theme.zIndexes.header};
   overflow-y: auto;
   padding-bottom: ${remcalc(60)};
 
   transform: translateX(100%);
-  transition: transform ${props => props.theme.animations.fast} ease-in-out;
+  transition: transform ${(props) => props.theme.animations.fast} ease-in-out;
 
   /* Thinner version of MobileNav for tablet devices */
   @media screen and (min-width: 600px) and (max-width: 959px) {
@@ -43,9 +43,9 @@ const MobileNavPanel = styled.nav`
 `;
 
 const ContactItem = styled(OuterAnchorItem)`
-  background: ${props => props.theme.colors.vibrant};
+  background: ${(props) => props.theme.colors.vibrant};
   > a {
-    color: ${props => props.theme.colors.blueBg} !important;
+    color: ${(props) => props.theme.colors.blueBg} !important;
   }
 
   ${breakpoint('smallTablet')`

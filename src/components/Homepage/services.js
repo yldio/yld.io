@@ -74,7 +74,7 @@ const Services = ({ statement, services }) => (
     </StyledRow>
     <ServiceRow>
       {services.map(
-        service =>
+        (service) =>
           service.introSentence && (
             <div key={service.slug}>
               <ServiceCol width={[1, 1, 1, 1 / 2, 5 / 12]}>

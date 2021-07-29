@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const { isEqual } = require('lodash');
+const isEqual = require('lodash.isequal');
 
 const ossUtils = require('./utils');
 
@@ -21,7 +21,7 @@ const Repos = async (environment, { contributionsByRepository }) => {
   });
 
   // Get the urls from the repos currently on the site
-  const contentfulRepoUrls = contentfulRepos.map(repo =>
+  const contentfulRepoUrls = contentfulRepos.map((repo) =>
     getFieldValue(repo, 'url'),
   );
 
@@ -34,7 +34,7 @@ const Repos = async (environment, { contributionsByRepository }) => {
   const missingRepos = [];
   const updatedRepos = [];
   await Promise.all(
-    contentfulRepos.map(async contentfulRepo => {
+    contentfulRepos.map(async (contentfulRepo) => {
       const url = getFieldValue(contentfulRepo, 'url');
       const repositoryContribution = filteredContributionsByRepository.find(
         ({ repository }) => repository.url === url,
@@ -54,9 +54,8 @@ const Repos = async (environment, { contributionsByRepository }) => {
         descriptionHTML,
         stargazers: { totalCount: starCount },
       } = repositoryContribution.repository;
-      const {
-        totalCount: yldContributionsCount,
-      } = repositoryContribution.contributions;
+      const { totalCount: yldContributionsCount } =
+        repositoryContribution.contributions;
       const githubRepo = {
         url,
         nameWithOwner,
@@ -87,14 +86,11 @@ const Repos = async (environment, { contributionsByRepository }) => {
         updatedRepos.push(nameWithOwner);
         return;
       }
+
       console.log(
         fieldsAreEqual
-          ? `Fields for ${
-              githubRepo.nameWithOwner
-            } have not changed. Not updating!`
-          : `Not prod so not updating contentful for ${
-              githubRepo.nameWithOwner
-            }`,
+          ? `Fields for ${githubRepo.nameWithOwner} have not changed. Not updating!`
+          : `Not prod so not updating contentful for ${githubRepo.nameWithOwner}`,
         JSON.stringify(
           {
             contentful: contentfulRepo.fields,

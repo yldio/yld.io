@@ -24,7 +24,7 @@ import BlogListing from '../components/Common/BlogListing';
 
 const ajv = new Ajv({ allErrors: true });
 
-export const SpecialityView = props => {
+export const SpecialityView = (props) => {
   const {
     data: {
       contentfulSpeciality: speciality,
@@ -61,7 +61,7 @@ export const SpecialityView = props => {
   const renderBlogSection = posts && posts.length > 0;
 
   return (
-    <Fragment>
+    <>
       <IntroSection speciality={flattenedSpeciality} />
 
       {renderProjectsSection && (
@@ -106,7 +106,7 @@ export const SpecialityView = props => {
       )}
 
       {renderBooksSection && <BooksSection title={title} books={books} />}
-    </Fragment>
+    </>
   );
 };
 

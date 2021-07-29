@@ -25,7 +25,7 @@ const TalksSection = ({ talks: allTalks }) => {
           >
             <Row>
               <Col width={[1]}>
-                <SectionTitle reverse>{`Talks`}</SectionTitle>
+                <SectionTitle reverse>Talks</SectionTitle>
               </Col>
             </Row>
             {featured && (
@@ -40,8 +40,8 @@ const TalksSection = ({ talks: allTalks }) => {
               <Row>
                 {talks.map(({ title, link, id }) => (
                   <CompactVideoLink
-                    href={link}
                     key={id}
+                    href={link}
                     themeVariation={theme.variations.dark}
                   >
                     {title}
@@ -52,7 +52,7 @@ const TalksSection = ({ talks: allTalks }) => {
             {cta && (
               <Row>
                 <Col width={[1]}>
-                  <StyledLink reverse="true" href={cta.link} external>
+                  <StyledLink external reverse="true" href={cta.link}>
                     {cta.title}
                   </StyledLink>
                 </Col>

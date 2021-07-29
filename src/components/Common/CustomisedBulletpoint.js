@@ -9,7 +9,7 @@ const StyledListItem = styled.li`
   ${BodyPrimaryStyles}
   padding: ${remcalc(12)} 0 ${remcalc(21)} 0;
   list-style: none;
-  max-width: ${props => props.maxWidth || '240px'};
+  max-width: ${(props) => props.maxWidth || '240px'};
 `;
 
 const StyledHr = styled(Hr)`
@@ -18,7 +18,7 @@ const StyledHr = styled(Hr)`
 `;
 
 const CustomisedBulletpoint = ({ muted, reverse, maxWidth, ...props }) => (
-  <Fragment>
+  <>
     <StyledListItem
       muted={muted}
       reverse={reverse}
@@ -26,7 +26,7 @@ const CustomisedBulletpoint = ({ muted, reverse, maxWidth, ...props }) => (
       {...props}
     />
     <StyledHr short muted={muted} reverse={reverse} />
-  </Fragment>
+  </>
 );
 
 export default CustomisedBulletpoint;

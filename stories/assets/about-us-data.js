@@ -5,26 +5,22 @@ const statements = {
     {
       icon: {
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/3nY47YCXwddZVLJrujz7hR/bf332f4e48512cb3d284e382401d49a3/icon_outperform.svg',
+          url: '//images.ctfassets.net/22g1lenhck4z/3nY47YCXwddZVLJrujz7hR/bf332f4e48512cb3d284e382401d49a3/icon_outperform.svg',
           title: 'Outperform Icon',
           fluid: {},
         },
       },
-      text:
-        'Offering some of the best engineers and designers in Europe, we augment your talent and deliver solutions so that you out-perform in your market.',
+      text: 'Offering some of the best engineers and designers in Europe, we augment your talent and deliver solutions so that you out-perform in your market.',
     },
     {
       icon: {
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/2x8pYI2nw4JkmsY28MXyNG/fff47431227f3b10c26645cd2a8aa995/icon_continuous_innovation.svg',
+          url: '//images.ctfassets.net/22g1lenhck4z/2x8pYI2nw4JkmsY28MXyNG/fff47431227f3b10c26645cd2a8aa995/icon_continuous_innovation.svg',
           title: 'Continuous Icon',
           fluid: {},
         },
       },
-      text:
-        'With newly elevated skills and knowledge, you’re able to continuously innovate long after YLD’s involvement has ended.',
+      text: 'With newly elevated skills and knowledge, you’re able to continuously innovate long after YLD’s involvement has ended.',
     },
   ],
 };
@@ -86,8 +82,7 @@ const teamMember = {
       image: {
         title: 'LinkedIn Icon',
         file: {
-          url:
-            '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
+          url: '//images.ctfassets.net/22g1lenhck4z/3uuYxyNek0bMtaGIwoXFei/586067fb0cf887cbf18bcb12588bda71/linkedin-icon.svg',
         },
         fluid: {},
       },

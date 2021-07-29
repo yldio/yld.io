@@ -1,23 +1,23 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import remcalc from 'remcalc';
 import { spacing, breakpoints } from '../utils/theme';
 
-const css = props => {
+const css = (props) => {
   const breaks = [null, ...Object.values(breakpoints)];
   const sx = stylers();
   const rules = [];
 
-  for (let key in props) {
+  // eslint-disable-next-line guard-for-in
+  for (const key in props) {
     const val = props[key];
     const cx = createRule(breaks, sx)(key, val);
 
     rules.push(cx);
   }
 
-  return rules.map(r => Array.from(new Set(r)));
+  return rules.map((r) => Array.from(new Set(r)));
 };
 
 const createRule = (breaks, sx) => (key, val) => {
@@ -37,18 +37,18 @@ const createRule = (breaks, sx) => (key, val) => {
 
       return null;
     })
-    .filter(r => r !== null);
+    .filter((r) => r !== null);
 };
 
-const toArr = n => (Array.isArray(n) ? n : [n]);
-const num = n => typeof n === 'number' && !isNaN(n);
+const toArr = (n) => (Array.isArray(n) ? n : [n]);
+const num = (n) => typeof n === 'number' && !isNaN(n);
 
-const dec = args => args.join(':');
-const rule = args => args.join(';');
+const dec = (args) => args.join(':');
+const rule = (args) => args.join(';');
 const media = (bp, body) =>
   bp ? `@media screen and (min-width:${remcalc(bp)}){${body}}` : body;
 
-const width = scale => (key, n) => {
+const width = (scale) => (key, n) => {
   if (n === 0) {
     return `
       width: 0;
@@ -59,21 +59,23 @@ const width = scale => (key, n) => {
   }
 
   return `
-    ${dec(['width', !num(n) || n > 1 ? px(n) : n * 100 + '%'])}
+    ${dec(['width', !num(n) || n > 1 ? px(n) : n * 100 + '%;'])}
       position: initial;
       top: 0;
       left: 0;
   `;
 };
-const px = n => (num(n) ? n + 'px' : n);
 
-const space = scale => (key, n) => {
+const px = (n) => (num(n) ? n + 'px' : n);
+
+const space = (scale) => (key, n) => {
   const [a, b] = key.split('');
   const prop = a === 'm' ? 'margin' : 'padding';
   const dirs = directions[b] || [''];
   const neg = n < 0 ? '-' : '';
+  // eslint-disable-next-line no-negated-condition
   const val = !num(n) ? n : neg + (scale[Math.abs(n)] || Math.abs(n));
-  const rules = rule(dirs.map(d => dec([prop + d, val])));
+  const rules = rule(dirs.map((d) => dec([prop + d, val])));
 
   return rules;
 };
@@ -131,43 +133,43 @@ const GridStyled = styled.div`
 
   position: relative;
 
-  ${props => css(props)}
+  ${(props) => css(props)}
 `;
 
 const Flex = styled.div`
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  ${props => css(props)};
+  ${(props) => css(props)};
   display: flex;
-  ${props =>
+  ${(props) =>
     props.block &&
     `
     display: block;
   `};
 `;
 
-export const Grid = props => (
+export const Grid = (props) => (
   <GridStyled mx="auto" px={[0, 0, 0, 0, 42, 48, 0]} {...props} />
 );
 
-export const Row = styled(Flex).attrs({
+export const Row = styled(Flex).attrs(() => ({
   mx: [0, 0, 0, 0, -1.75, -2, -2],
-})`
-  ${props =>
+}))`
+  ${(props) =>
     props.spaced &&
     `
     justify-content: space-between;
   `}
 
-  ${props =>
+  ${(props) =>
     props.flexEnd &&
     `
     justify-content: flex-end;
   `}
 `;
 
-export const Col = props => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />;
+export const Col = (props) => <Flex px={[0, 0, 0, 0, 1.75, 2, 2]} {...props} />;
 
 Col.defaultProps = {
   block: true,

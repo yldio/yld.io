@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import remcalc from 'remcalc';
 import { Row, Col, Grid } from '../grid';
@@ -13,21 +13,21 @@ const StyledContainer = styled.div`
   background: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
   width: 100%;
   max-width: unset;
-  z-index: ${props => props.theme.zIndexes.header};
-  box-shadow: ${props =>
+  z-index: ${(props) => props.theme.zIndexes.header};
+  box-shadow: ${(props) =>
     props.hasShadow ? `0 9px 9px -9px rgba(0, 0, 0, 0.175)` : null};
 `;
 
 // nb: at the moment only the training service has modals pages. Modals match this RegExp:
 const trainingModalRegExp = /training\/[a-zA-Z]/;
 
-const getThemeVariation = bgColor => {
+const getThemeVariation = (bgColor) => {
   const map = {
     dark: ['blueBg'],
     grey: ['grey'],
   };
 
-  return Object.keys(map).find(key => map[key].includes(bgColor)) || 'white';
+  return Object.keys(map).find((key) => map[key].includes(bgColor)) || 'white';
 };
 
 const StyledTopNavContainer = styled.nav`
@@ -40,7 +40,7 @@ const StyledTopNavContainer = styled.nav`
 const Header = ({ path, bgColor, slug }) => {
   const [isMobileNavOpen, toggleMobileNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isModalPage = !!path.match(trainingModalRegExp);
+  const isModalPage = Boolean(path.match(trainingModalRegExp));
 
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -52,36 +52,32 @@ const Header = ({ path, bgColor, slug }) => {
 
   const themeVariation = getThemeVariation(bgColor);
 
-  return (
-    <Fragment>
-      {!isModalPage ? (
-        <StyledContainer bgColor={bgColor} hasShadow={isScrolled}>
-          <Grid>
-            <Row style={{ overflow: 'visible' }}>
-              <Col width={[1]} style={{ overflow: 'visible' }}>
-                <StyledTopNavContainer>
-                  <Branding slug={slug} />
-                  <DesktopNav path={path} themeVariation={themeVariation} />
-                  <Hamburger
-                    onClick={() => toggleMobileNav(true)}
-                    themeVariation={themeVariation}
-                  />
-                  <Overlay
-                    visible={isMobileNavOpen}
-                    onClick={() => toggleMobileNav(false)}
-                  />
-                  <MobileNav
-                    path={path}
-                    isOpen={isMobileNavOpen}
-                    onClose={() => toggleMobileNav(false)}
-                  />
-                </StyledTopNavContainer>
-              </Col>
-            </Row>
-          </Grid>
-        </StyledContainer>
-      ) : null}
-    </Fragment>
+  return isModalPage ? null : (
+    <StyledContainer bgColor={bgColor} hasShadow={isScrolled}>
+      <Grid>
+        <Row style={{ overflow: 'visible' }}>
+          <Col width={[1]} style={{ overflow: 'visible' }}>
+            <StyledTopNavContainer>
+              <Branding slug={slug} />
+              <DesktopNav path={path} themeVariation={themeVariation} />
+              <Hamburger
+                themeVariation={themeVariation}
+                onClick={() => toggleMobileNav(true)}
+              />
+              <Overlay
+                visible={isMobileNavOpen}
+                onClick={() => toggleMobileNav(false)}
+              />
+              <MobileNav
+                path={path}
+                isOpen={isMobileNavOpen}
+                onClose={() => toggleMobileNav(false)}
+              />
+            </StyledTopNavContainer>
+          </Col>
+        </Row>
+      </Grid>
+    </StyledContainer>
   );
 };
 

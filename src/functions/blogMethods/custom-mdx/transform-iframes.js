@@ -1,11 +1,11 @@
 const Got = require('got');
 
-const gistBuilder = id => `<Gist id="${id}" />`;
-const instagramPostBuilder = url => `<Instagram postId="${url}" />`;
-const youtubeVideoBuilder = url => `<YouTube videoId="${url}" />`;
-const genericIframeBuilder = link => `<iframe src="${link}" />`;
+const gistBuilder = (id) => `<Gist id="${id}" />`;
+const instagramPostBuilder = (url) => `<Instagram postId="${url}" />`;
+const youtubeVideoBuilder = (url) => `<YouTube videoId="${url}" />`;
+const genericIframeBuilder = (link) => `<iframe src="${link}" />`;
 
-const findOccurrences = str => {
+const findOccurrences = (str) => {
   const regex = /<iframecontent:"(\S*)">/gi;
   let result = [];
   const occurrences = [];
@@ -22,7 +22,7 @@ const findOccurrences = str => {
   return occurrences;
 };
 
-const getIframeContent = async url => {
+const getIframeContent = async (url) => {
   const forwardedUrl = new URL((await Got(url)).url);
 
   switch (forwardedUrl.host) {
@@ -59,7 +59,7 @@ const getIframeContent = async url => {
   }
 };
 
-const transformIframes = async post => {
+const transformIframes = async (post) => {
   const { content } = post;
 
   let processedMarkdown = content;

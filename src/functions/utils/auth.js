@@ -1,6 +1,6 @@
 const { LAMBDA_AUTH_TOKEN } = process.env;
 
-const parseBasicToken = req => {
+const parseBasicToken = (req) => {
   const auth = req.headers ? req.headers.authorization || null : null;
 
   if (!auth) {

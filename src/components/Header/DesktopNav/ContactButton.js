@@ -6,11 +6,11 @@ import OuterAnchorItem from './OuterAnchorItem';
 
 const ContactButton = ({ themeVariation }) => (
   <OuterAnchorItem
+    primary
     currentClassName="current"
     to="/contact/"
     title="Contact"
     themeVariation={themeVariation}
-    primary
     css={css`
       margin: 0 ${remcalc(15)};
     `}

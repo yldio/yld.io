@@ -17,3 +17,8 @@ xml/
 .DS_Store
 .env
 .eslintcache
+
+# Yarn
+.yarn/cache
+.yarn/install-state.gz
+.yarn/build-state.yml

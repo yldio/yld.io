@@ -2,7 +2,7 @@ const Got = require('got');
 const SyncMediumToContentful = require('./blogMethods');
 const Auth = require('./utils/auth');
 
-exports.handler = async evt =>
+exports.handler = async (evt) =>
   Auth(evt, async () => {
     const { body, statusCode } = await Got('https://medium.com/feed/yld-blog');
 

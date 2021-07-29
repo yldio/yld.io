@@ -131,7 +131,7 @@ const groups = [
 
 // Create a mock generator function to enable us to validate against
 // passed in values further in the test
-module.exports = urlNames => {
+module.exports = (urlNames) => {
   if (urlNames.length !== groups.length) {
     const msg = `Need the same length of urlNames and groups in the groups.js mock generator!
 urlNames: ${urlNames.length}

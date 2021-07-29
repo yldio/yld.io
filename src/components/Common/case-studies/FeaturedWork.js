@@ -24,7 +24,7 @@ const FeaturedWorkHeading = () => (
   </Row>
 );
 
-const FeaturedWork = props => {
+const FeaturedWork = (props) => {
   return (
     <section>
       <FeaturedWorkGrid>

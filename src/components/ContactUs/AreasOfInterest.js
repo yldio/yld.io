@@ -42,12 +42,12 @@ const AreasOfInterest = ({ title, interests, onChange }) => (
         {interests.map((interest, idx) => {
           const { name, label, branch } = interest;
           return (
-            <Col width={[1, 1, 1, 1, 6 / 12]} key={idx}>
+            <Col key={idx} width={[1, 1, 1, 1, 6 / 12]}>
               <Checkbox
                 type="checkbox"
                 id={name}
                 name={name}
-                onChange={e => onChange(e, branch)}
+                onChange={(e) => onChange(e, branch)}
               />
               <label htmlFor={name}>{label}</label>
             </Col>

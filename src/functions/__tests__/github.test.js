@@ -34,7 +34,7 @@ const contentful = require('contentful-management');
 jest.mock('contentful-management', () => ({
   createClient: jest.fn(() => ({
     getSpace: jest.fn(() => ({
-      getEnvironment: jest.fn(name => name),
+      getEnvironment: jest.fn((name) => name),
     })),
   })),
 }));
@@ -117,6 +117,7 @@ describe('Github lambda', () => {
     try {
       await GithubLambda.handler();
     } catch (error) {
+      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
       expect(error.message).toMatch(`Missing env variables, check set up`);
     }
   });

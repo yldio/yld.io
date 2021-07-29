@@ -15,7 +15,7 @@ const Repos = require('./oss/repos');
 
 const org = 'yldio';
 
-exports.handler = async evt =>
+exports.handler = async (evt) =>
   Auth(evt, async () => {
     const { getContributionStats } = OssStats.contributions;
     const { CONTENTFUL_SPACE, CMS_CRUD, GITHUB_TOKEN } = process.env;
@@ -25,10 +25,8 @@ exports.handler = async evt =>
     }
 
     // Get github data
-    const {
-      contributionsByRepository,
-      totalContributions,
-    } = await getContributionStats(org, GITHUB_TOKEN);
+    const { contributionsByRepository, totalContributions } =
+      await getContributionStats(org, GITHUB_TOKEN);
 
     // Get contentful data
     const client = createClient({
@@ -44,7 +42,7 @@ exports.handler = async evt =>
         reposContributedToCount: contributionsByRepository.length,
       }),
       Repos(environment, { contributionsByRepository }),
-    ]).catch(err => {
+    ]).catch((err) => {
       throw new Error(err);
     });
 

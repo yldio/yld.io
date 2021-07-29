@@ -9,10 +9,10 @@ export default createGlobalStyle`
   body {
     font-size: ${remcalc(17)};
     font-family: 'Roboto', sans-serif;
-    background: ${props => props.theme.colors.white};
+    background: ${(props) => props.theme.colors.white};
     font-weight: normal;
     line-height: 1.33;
-    color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
     overflow-x: hidden;
 
     * {
@@ -29,20 +29,20 @@ export default createGlobalStyle`
 
 
     &:hover {
-      color: ${props => lighten(0.2, props.theme.colors.text)};
+      color: ${(props) => lighten(0.2, props.theme.colors.text)};
     }
   }
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: ${props => props.theme.colors.secondaryText};
+      color: ${(props) => props.theme.colors.secondaryText};
       font-style: italic;
     }
     ::-moz-placeholder { /* Firefox 19+ */
-      color: ${props => props.theme.colors.secondaryText};
+      color: ${(props) => props.theme.colors.secondaryText};
       font-style: italic;
     }
     :-ms-input-placeholder { /* IE 10+ */
-      color: ${props => props.theme.colors.secondaryText};
+      color: ${(props) => props.theme.colors.secondaryText};
       font-style: italic;
     }
 

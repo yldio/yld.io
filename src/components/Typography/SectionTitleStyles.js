@@ -5,7 +5,7 @@ import remcalc from 'remcalc';
 import modifiers from './modifiers';
 
 const SectionTitleStyles = css`
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   font-weight: 500;
   font-size: ${remcalc(32)};
   line-height: ${remcalc(36)};

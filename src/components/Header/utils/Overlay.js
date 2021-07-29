@@ -18,7 +18,7 @@ const Overlay = styled.div`
     height: 100vh;
     left: 0;
     top: 0;
-    transition: opacity ${props => props.theme.animations.fast} ease-out;
+    transition: opacity ${(props) => props.theme.animations.fast} ease-out;
     opacity: 0;
     transform: translateX(200%);
 

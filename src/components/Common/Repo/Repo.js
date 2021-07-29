@@ -51,18 +51,18 @@ const Repo = ({
   return (
     <Wrapper isImage={isImage}>
       <ConditionalLink titleLink={titleLink} url={url}>
-        <Subtitle reverse={isDark} noPaddingBottom noPaddingTop={isImage}>
+        <Subtitle noPaddingBottom reverse={isDark} noPaddingTop={isImage}>
           <Ellipsis>{nameWithOwner}</Ellipsis>
         </Subtitle>
       </ConditionalLink>
-      {yldContributionsCount != null && (
+      {yldContributionsCount !== null && (
         <Ellipsis>
-          <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
+          <StyledBodyStylised noPadding isDark={isDark} small={isImage}>
             {yldContributionsCount} Contributions
           </StyledBodyStylised>
         </Ellipsis>
       )}
-      <StyledBodyStylised isDark={isDark} small={isImage} noPadding>
+      <StyledBodyStylised noPadding isDark={isDark} small={isImage}>
         {starCount} Stars
       </StyledBodyStylised>
       {!isImage && <StyledHr short />}

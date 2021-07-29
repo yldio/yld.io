@@ -101,7 +101,7 @@ const PropertiesAndTokensBlock = ({
   );
 };
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const {
     data: { contentfulNonTemplatedCaseStudyV2: caseStudy },
     location,
@@ -144,7 +144,7 @@ const IndexPage = props => {
   return (
     <Layout
       location={location}
-      contactUsBg={'greyBg'}
+      contactUsBg="greyBg"
       footerContactUsId={caseStudy.footerContactUs.id}
     >
       <Head seoMetaData={caseStudy.seoMetaData} />
@@ -218,27 +218,33 @@ const IndexPage = props => {
                 }}
               >
                 <ReactMarkdown
-                  disallowedTypes={['paragraph']}
-                  renderers={{
-                    // eslint-disable-next-line
-                    heading: props => (
-                      <SectionTitle noPadding reverse {...props} />
+                  disallowedElements={['p']}
+                  components={{
+                    ...Object.fromEntries(
+                      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                        heading,
+                        (props) => (
+                          <SectionTitle noPadding reverse {...props} />
+                        ),
+                      ]),
                     ),
                   }}
-                  source={normalise(data5).text}
-                />
+                >
+                  {normalise(data5).text}
+                </ReactMarkdown>
               </Col>
               <Col width={[1, 1, 1, 1, 1 / 2]}>
                 <ReactMarkdown
-                  disallowedTypes={['heading']}
-                  renderers={{
+                  disallowedElements={['h1', 'h2', 'h3', 'h4', 'h5', 'h6']}
+                  components={{
                     // eslint-disable-next-line
-                    paragraph: props => (
+                    p: (props) => (
                       <SeamlessStyledBodyPrimary reverse {...props} />
                     ),
                   }}
-                  source={normalise(data5).text}
-                />
+                >
+                  {normalise(data5).text}
+                </ReactMarkdown>
               </Col>
             </BlockRow>
           )}
@@ -312,10 +318,10 @@ const IndexPage = props => {
           {/* images for illustrations - 4 images block */}
           {shouldRender(data12) && (
             <BlockRow
+              spaced
               mobile={{ bottom: '2' }}
               smallTablet={{ bottom: '6' }}
               tablet={{ bottom: '7' }}
-              spaced
             >
               <ImagesBlock data={getImages(data12[0])} />
             </BlockRow>
@@ -452,9 +458,9 @@ const IndexPage = props => {
               tablet={{ bottom: '6', top: '6' }}
             >
               <TextColumnsBlock
-                data={normalise(data23)}
                 colorReverse
                 bpColorReverse
+                data={normalise(data23)}
               />
             </BlockRow>
           )}
@@ -462,9 +468,9 @@ const IndexPage = props => {
           {/* Save your details button image / Properties & Tokens */}
           {shouldRender(data24) && (
             <PropertiesAndTokensBlock
-              data={data24}
               colorReverse
               bpColorReverse
+              data={data24}
             />
           )}
         </Grid>

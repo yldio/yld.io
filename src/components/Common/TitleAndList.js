@@ -11,21 +11,21 @@ import RatioContainer from './RatioContainer';
 import Image from './Image';
 
 const StyledCol = styled(Col)`
-  padding-bottom: ${props => props.theme.space[4]};
+  padding-bottom: ${(props) => props.theme.space[4]};
 `;
 
 const PaddedGrid = styled(Grid)`
-  padding-top: ${props => props.theme.space[4]};
-  padding-bottom: ${props => props.theme.space[4]};
+  padding-top: ${(props) => props.theme.space[4]};
+  padding-bottom: ${(props) => props.theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-top: ${props => props.theme.space[6]};
-    padding-bottom: ${props => props.theme.space[6]};
+    padding-top: ${(props) => props.theme.space[6]};
+    padding-bottom: ${(props) => props.theme.space[6]};
   `}
 `;
 
 const Wrapper = styled.div`
-  padding-bottom: ${props => props.theme.spacing[3]};
+  padding-bottom: ${(props) => props.theme.spacing[3]};
 
   &:last-child {
     padding: 0;
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   width: 60px;
   height: 60px;
-  margin-bottom: ${props => props.theme.space[2]};
+  margin-bottom: ${(props) => props.theme.space[2]};
 `;
 
 const StyledImage = styled(Image)`
@@ -54,9 +54,9 @@ const TitleAndList = ({
 }) => {
   useEffect(() => {
     const titledAnchors = Array.from(document.querySelectorAll('a')).filter(
-      a => a.title,
+      (a) => a.title,
     );
-    titledAnchors.forEach(a => a.setAttribute('target', '_blank'));
+    titledAnchors.forEach((a) => a.setAttribute('target', '_blank'));
   }, []);
 
   // there is no image in the `typeof list === 'string'` because that would come from a textarea input from contentful as a bullet list, so if we want an image per bullet, we MUST pass the list as an array of objects.
@@ -72,18 +72,26 @@ const TitleAndList = ({
         <Col width={[1, 1, 1, 1, 6 / 12]}>
           {typeof list === 'string' ? (
             <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                heading: props => (
-                  <ItemSubtitle themeVariation={themeVariation} {...props} />
+              components={{
+                ...Object.fromEntries(
+                  ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                    heading,
+                    (props) => (
+                      <ItemSubtitle
+                        themeVariation={themeVariation}
+                        {...props}
+                      />
+                    ),
+                  ]),
                 ),
                 // eslint-disable-next-line
-                paragraph: props => (
+                p: (props) => (
                   <Body themeVariation={themeVariation} {...props} />
                 ),
               }}
-              source={list}
-            />
+            >
+              {list}
+            </ReactMarkdown>
           ) : null}
           {Array.isArray(list)
             ? list.map((el, idx) => (

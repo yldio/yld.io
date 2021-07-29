@@ -40,15 +40,17 @@ const Speciality = ({ data, location }) => {
     },
   ]);
 
+  const value = React.useMemo(() => {
+    return {
+      fillColorInitial: specialityColor,
+      fillColorHover: colors.white,
+      textColor: colors.blueBg,
+      serviceColor: colors.white,
+    };
+  }, [specialityColor]);
+
   return (
-    <LogoStyleContext.Provider
-      value={{
-        fillColorInitial: specialityColor,
-        fillColorHover: colors.white,
-        textColor: colors.blueBg,
-        serviceColor: colors.white,
-      }}
-    >
+    <LogoStyleContext.Provider value={value}>
       <Layout
         bgColor="blueBg"
         slug={slug}
@@ -69,7 +71,7 @@ const Speciality = ({ data, location }) => {
 export default Speciality;
 
 export const pageQuery = graphql`
-  query($id: String, $postsTags: [String], $postsLimit: Int) {
+  query ($id: String, $postsTags: [String], $postsLimit: Int) {
     site {
       siteMetadata {
         siteUrl
@@ -113,20 +115,11 @@ export const pageQuery = graphql`
         ...SEOMetaFields
       }
       seoText {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       introGraphic {
         id
-        fluid(maxWidth: 600) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         title
         file {
           url
@@ -135,36 +128,15 @@ export const pageQuery = graphql`
       introTitle
       introTextTitle1
       introTextBody1 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       introTextTitle2
       introTextBody2 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       introTextTitle3
       introTextBody3 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       relatedProjects {
         ... on ContentfulTemplatedCaseStudy {
@@ -175,9 +147,7 @@ export const pageQuery = graphql`
           }
           posterColor
           posterImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             title
             file {
               url
@@ -192,18 +162,14 @@ export const pageQuery = graphql`
             introSentence
           }
           posterImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             title
             file {
               url
             }
           }
           alternativePreviewImage {
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             title
             file {
               url
@@ -218,26 +184,15 @@ export const pageQuery = graphql`
           url
           fileName
         }
-        fluid(maxWidth: 250) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
       trainingIntroText {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       trainingTextIcon1 {
         id
         title
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           url
           fileName
@@ -245,21 +200,12 @@ export const pageQuery = graphql`
       }
       trainingTextTitle1
       trainingTextBody1 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       trainingTextIcon2 {
         id
         title
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           url
           fileName
@@ -267,21 +213,12 @@ export const pageQuery = graphql`
       }
       trainingTextTitle2
       trainingTextBody2 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       trainingTextIcon3 {
         id
         title
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           url
           fileName
@@ -289,14 +226,7 @@ export const pageQuery = graphql`
       }
       trainingTextTitle3
       trainingTextBody3 {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       externalResources {
         type
@@ -309,21 +239,12 @@ export const pageQuery = graphql`
         colorCode
       }
       communityText {
-        nodeType
-        content {
-          nodeType
-          content {
-            nodeType
-            value
-          }
-        }
+        raw
       }
       communityLogo {
         id
         title
-        fluid(maxHeight: 250) {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           fileName
           url
@@ -332,9 +253,7 @@ export const pageQuery = graphql`
       communityBackground {
         id
         title
-        fluid {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         file {
           fileName
           url
@@ -344,11 +263,11 @@ export const pageQuery = graphql`
       howWeWorkWithCopy {
         howWeWorkWithCopy
       }
-      howWeWorkWithPractises {
-        content {
-          content
-        }
-      }
+      # howWeWorkWithPractises {
+      #   # content {
+      #   #   content
+      #   # }
+      # }
       eventsBackgroundColor
       eventIcon {
         id

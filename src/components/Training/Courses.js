@@ -20,20 +20,20 @@ const Courses = ({ categories, sectionTitle }) => {
         </Col>
       </Row>
       <Row>
-        {categories.map(cat => (
-          <Col width={[1, 1, 1, 1, 1 / 2]} key={cat.id}>
+        {categories.map((cat) => (
+          <Col key={cat.id} width={[1, 1, 1, 1, 1 / 2]}>
             <Padding bottom={{ smallPhone: 3, tablet: 5 }}>
               <Padding bottom={1}>
                 <Image image={cat.logo} width="60px" id={cat.slug} />
                 <SectionTitle>{cat.name}</SectionTitle>
               </Padding>
               <Flex column alignStart>
-                {cat.courses.map(course => (
+                {cat.courses.map((course) => (
                   <StyledLink
+                    key={course.id}
                     style={{ cursor: 'pointer' }}
                     to={`/training/${cat.slug}/${course.slug}`}
                     title={course.name}
-                    key={course.id}
                     state={{
                       modal: true,
                     }}

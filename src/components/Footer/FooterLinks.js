@@ -11,7 +11,7 @@ import ExternalAnchor from '../Common/ExternalAnchor';
 import { social, gdpr } from './links';
 
 export const FooterBanner = styled.section`
-  background: ${props => props.theme.colors.text};
+  background: ${(props) => props.theme.colors.text};
 `;
 
 export const Social = styled.ul`
@@ -64,7 +64,7 @@ const FooterLinks = () => (
         <Row>
           <Col width={[1, 1, 1, 1, 1, 1, 5 / 12]}>
             <Social>
-              {social.map(link => (
+              {social.map((link) => (
                 <li key={link.label}>
                   <ExternalAnchor
                     href={link.to}
@@ -78,7 +78,7 @@ const FooterLinks = () => (
           </Col>
           <Col width={[1, 1, 1, 1, 1, 1, 7 / 12]}>
             <GDPR>
-              {gdpr.map(link => (
+              {gdpr.map((link) => (
                 <LinkUnderline key={link.label} to={link.to} title={link.label}>
                   {link.label}
                 </LinkUnderline>

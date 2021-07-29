@@ -10,14 +10,14 @@ import { SectionTitle, CardTitle, BodyPrimary } from '../Typography';
 import StyledLink from '../Common/StyledLink';
 import Image from '../Common/Image';
 
-const formatCaseStudies = caseStudies =>
-  caseStudies.edges.map(caseStudyObject => {
+const formatCaseStudies = (caseStudies) =>
+  caseStudies.edges.map((caseStudyObject) => {
     const caseStudy = caseStudyObject.node;
     return {
       ...caseStudy,
       services: caseStudy.services
-        .filter(service => service.title)
-        .map(service => service.title),
+        .filter((service) => service.title)
+        .map((service) => service.title),
     };
   });
 
@@ -88,7 +88,7 @@ const AnimatedLink = styled(InternalAnchor)`
   align-items: stretch;
 
   > div {
-    transition: transform ${props => props.theme.animations.normal} ease;
+    transition: transform ${(props) => props.theme.animations.normal} ease;
   }
 
   &:focus,
@@ -133,7 +133,7 @@ const CaseStudy = ({ caseStudy }) => {
             <BodyPrimary noPaddingTop="true" reverse={reverseColor}>
               {client}
             </BodyPrimary>
-            <CardTitle reverse={reverseColor} noPaddingTop>
+            <CardTitle noPaddingTop reverse={reverseColor}>
               {title}
             </CardTitle>
           </section>
@@ -178,11 +178,11 @@ const OurWork = ({ data }) => {
     )
     .map(({ id }) => id);
 
-  const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
-    allCaseStudies.find(cs => cs.id === orderedId),
+  const mappedFromContentfulOrder = displayOrderByIDs.map((orderedId) =>
+    allCaseStudies.find((cs) => cs.id === orderedId),
   );
   const missingFromContentfulOrder = allCaseStudies.filter(
-    cs => !displayOrderByIDs.includes(cs.id),
+    (cs) => !displayOrderByIDs.includes(cs.id),
   );
   const orderedCaseStudies = [
     ...mappedFromContentfulOrder,
@@ -232,7 +232,7 @@ const OurWork = ({ data }) => {
   );
 };
 
-const OurWorkSection = props => (
+const OurWorkSection = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -271,9 +271,7 @@ const OurWorkSection = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               posterColor
               reverseColor
@@ -300,9 +298,7 @@ const OurWorkSection = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               posterColor
               reverseColor
@@ -311,7 +307,7 @@ const OurWorkSection = props => (
         }
       }
     `}
-    render={data => <OurWork data={data} {...props} />}
+    render={(data) => <OurWork data={data} {...props} />}
   />
 );
 

@@ -328,66 +328,53 @@ const IndexPage = ({
     </Layout>
   );
 };
+
 export const query = graphql`
   {
     navigation: file(relativePath: { eq: "case-study/joyent/navigation.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
 
     signOn: file(relativePath: { eq: "case-study/joyent/single_sign_on.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
 
     topology: file(relativePath: { eq: "case-study/joyent/topology.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
 
     metric2: file(relativePath: { eq: "case-study/joyent/metric_2.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     metric3: file(relativePath: { eq: "case-study/joyent/metric_3.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     metric4: file(relativePath: { eq: "case-study/joyent/metric_4.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
 
     metric1: file(relativePath: { eq: "case-study/joyent/metric_1.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     deployment: file(
@@ -395,17 +382,13 @@ export const query = graphql`
     ) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     picture: file(relativePath: { eq: "case-study/joyent/big_picture.png" }) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     form: file(
@@ -413,9 +396,7 @@ export const query = graphql`
     ) {
       publicURL
       childImageSharp {
-        fluid(maxWidth: 1100) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     contentfulNonTemplatedCaseStudyV2(
@@ -427,9 +408,7 @@ export const query = graphql`
         ...SEOMetaFields
       }
       posterImage {
-        fluid(maxWidth: 550) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         title
         file {
           url

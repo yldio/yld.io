@@ -5,7 +5,7 @@ import remcalc from 'remcalc';
 import modifiers from './modifiers';
 
 const CalendarDay = styled.p`
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   text-align: center;
   font-weight: 500;
   font-size: ${remcalc(36)};

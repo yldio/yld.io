@@ -1,4 +1,4 @@
-module.exports = ct =>
+module.exports = (ct) =>
   ct.fields.reduce(
     ({ allFields = [], requiredFields = [] }, { required, id }) => ({
       allFields: allFields.concat(id),

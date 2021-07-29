@@ -143,9 +143,7 @@ export const query = graphql`
             file {
               url
             }
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           authorId
           authorName

@@ -57,11 +57,11 @@ const BlogSection = ({ blogPosts }) => (
       <TitleCol width={[1]}>
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
-      <Col width={[1]} key={generate()}>
+      <Col key={generate()} width={[1]}>
         <BlogPostPreview {...blogPosts[0].node} context="homepage" />
       </Col>
       <Col width={[1]}>
-        <BlogLink to={'/blog/'}>Read our blog</BlogLink>
+        <BlogLink to="/blog/">Read our blog</BlogLink>
       </Col>
     </MobileBlogRow>
     <NonMobileBlogRow>
@@ -69,13 +69,13 @@ const BlogSection = ({ blogPosts }) => (
         <SectionTitle>From the blog</SectionTitle>
       </TitleCol>
       {blogPosts.map((post, idx, arr) => (
-        <Col width={[1]} key={generate()}>
+        <Col key={generate()} width={[1]}>
           <BlogPostPreview {...post.node} context="homepage" />
           {idx < arr.length - 1 && <Hr />}
         </Col>
       ))}
       <Col width={[1]}>
-        <BlogLink to={'/blog/'}>Read our blog</BlogLink>
+        <BlogLink to="/blog/">Read our blog</BlogLink>
       </Col>
     </NonMobileBlogRow>
   </Grid>

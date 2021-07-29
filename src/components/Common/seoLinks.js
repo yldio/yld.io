@@ -19,12 +19,12 @@ const ListItem = styled.li`
   }
 `;
 
-export default function SeoLinks({ items, ...props }) {
+const SeoLinks = ({ items, ...props }) => {
   return (
     <PagePaths
-      render={pathsById => (
+      render={(pathsById) => (
         <List as="ul" {...props}>
-          {(items || []).map(item => {
+          {(items || []).map((item) => {
             const path = pathsById[item.id];
 
             return (
@@ -47,4 +47,6 @@ export default function SeoLinks({ items, ...props }) {
       )}
     />
   );
-}
+};
+
+export default SeoLinks;

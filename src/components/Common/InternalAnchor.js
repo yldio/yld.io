@@ -8,6 +8,7 @@ const InternalAnchor = ({ to, ...props }) => {
   if (!pathname.endsWith('/')) {
     url.set('pathname', pathname + '/');
   }
+
   return <Link to={url.toString()} {...props} />;
 };
 

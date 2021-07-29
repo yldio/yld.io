@@ -1,4 +1,4 @@
-const _ = require(`lodash`);
+const forEach = require(`lodash.foreach`);
 const path = require(`path`);
 const slash = require(`slash`);
 const { getTagsForTitle } = require('./src/utils/getTagsForTitle');
@@ -110,9 +110,9 @@ exports.createPages = async ({ graphql, actions }) => {
     `./src/templates/career-discipline.js`,
   );
 
-  _.each(result.data.allContentfulTrainingCourseCategory.edges, edge => {
+  forEach(result.data.allContentfulTrainingCourseCategory.edges, (edge) => {
     if (edge.node.slug && edge.node.courses) {
-      _.each(edge.node.courses, course => {
+      forEach(edge.node.courses, (course) => {
         if (course.slug && course.id) {
           createPage({
             path: `/training/${edge.node.slug}/${course.slug}/`,
@@ -127,7 +127,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  _.each(result.data.allContentfulTemplatedCaseStudy.edges, edge => {
+  forEach(result.data.allContentfulTemplatedCaseStudy.edges, (edge) => {
     if (edge.node.slug) {
       createPage({
         path: `/case-study/${edge.node.slug}/`,
@@ -139,7 +139,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  _.each(result.data.allContentfulService.edges, edge => {
+  forEach(result.data.allContentfulService.edges, (edge) => {
     if (edge.node.slug) {
       createPage({
         path: `/${edge.node.slug}/`,
@@ -149,20 +149,20 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       });
 
-      _.each(edge.node.speciality, speciality => {
+      forEach(edge.node.speciality, (speciality) => {
         const { id, slug, title, generate, blogpostTags } = speciality;
 
         if (slug && generate) {
           const titleTags = getTagsForTitle(title);
           const contentfulTags = blogpostTags
-            ? blogpostTags.map(el => el.toLowerCase().trim())
+            ? blogpostTags.map((el) => el.toLowerCase().trim())
             : [];
 
           createPage({
             path: `/${edge.node.slug}/${slug}/`,
             component: slash(specialityTemplate),
             context: {
-              id: id,
+              id,
               postsLimit: 3,
               postsTags: [...titleTags, ...contentfulTags],
             },
@@ -172,7 +172,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  _.each(result.data.allContentfulPolicy.edges, edge => {
+  forEach(result.data.allContentfulPolicy.edges, (edge) => {
     if (edge.node.slug) {
       createPage({
         path: `/${edge.node.slug}/`,
@@ -185,7 +185,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   if (result.data.contentfulCareerFramework.publish) {
-    _.each(result.data.allContentfulCareerDiscipline.edges, edge => {
+    forEach(result.data.allContentfulCareerDiscipline.edges, (edge) => {
       if (edge.node.slug) {
         createPage({
           path: `/career-framework/${edge.node.slug}/`,
@@ -224,7 +224,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  _.each(allBlogPosts, post => {
+  forEach(allBlogPosts, (post) => {
     if (post.node.slug && post.node.content) {
       createPage({
         path: `/blog/${post.node.slug}/`,
@@ -234,7 +234,7 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       });
 
-      _.each(post.node.aliases, alias =>
+      forEach(post.node.aliases, (alias) =>
         createRedirect({
           fromPath: alias,
           toPath: `/blog/${post.node.slug}/`,
@@ -256,7 +256,9 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
 
-    let slug, title, date;
+    let slug;
+    let title;
+    let date;
     if (parent.internal.type === 'contentfulBlogPostContentTextNode') {
       const contentfulNode = getNode(parent.parent);
 

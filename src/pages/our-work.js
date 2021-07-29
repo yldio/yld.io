@@ -35,14 +35,14 @@ const WorkGrid = styled(Grid)`
   `}
 `;
 
-const formatCaseStudies = caseStudies =>
-  caseStudies.edges.map(caseStudyObject => {
+const formatCaseStudies = (caseStudies) =>
+  caseStudies.edges.map((caseStudyObject) => {
     const caseStudy = caseStudyObject.node;
     return {
       ...caseStudy,
       services: caseStudy.services
-        .filter(service => service.title)
-        .map(service => service.title),
+        .filter((service) => service.title)
+        .map((service) => service.title),
     };
   });
 
@@ -70,11 +70,11 @@ const OurWork = ({ data, location }) => {
     .filter(({ publish }) => publish)
     .map(({ id }) => id);
 
-  const mappedFromContentfulOrder = displayOrderByIDs.map(orderedId =>
-    allCaseStudies.find(cs => cs.id === orderedId),
+  const mappedFromContentfulOrder = displayOrderByIDs.map((orderedId) =>
+    allCaseStudies.find((cs) => cs.id === orderedId),
   );
   const missingFromContentfulOrder = allCaseStudies.filter(
-    cs => !displayOrderByIDs.includes(cs.id),
+    (cs) => !displayOrderByIDs.includes(cs.id),
   );
   const orderedCaseStudies = [
     ...mappedFromContentfulOrder,
@@ -116,7 +116,7 @@ const OurWork = ({ data, location }) => {
   );
 };
 
-const OurWorkPage = props => (
+const OurWorkPage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -172,15 +172,11 @@ const OurWorkPage = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               previewImage {
                 title
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
                 file {
                   url
                 }
@@ -210,15 +206,11 @@ const OurWorkPage = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               previewImage {
                 title
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
                 file {
                   url
                 }
@@ -228,7 +220,7 @@ const OurWorkPage = props => (
         }
       }
     `}
-    render={data => <OurWork data={data} {...props} />}
+    render={(data) => <OurWork data={data} {...props} />}
   />
 );
 
