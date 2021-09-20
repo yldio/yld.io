@@ -77,10 +77,8 @@ const Events = ({ featuredEvent, eventTypes }) => (
         <DisplayTitle>Our event types</DisplayTitle>
         <BodyPrimary muted>
           We&apos;re proud to offer a variety of different YLD-run events, so
-          whether you We&apos;re proud to offer a variety of different YLD-run
-          events, so re taking your first steps in tech or are a seasoned
-          veteran, there We&apos;re proud to offer a variety of different
-          YLD-run events, so s something for everyone.
+          whether you&apos;re taking your first steps in tech or are a seasoned
+          veteran, there&apos;s something for everyone.
         </BodyPrimary>
       </Col>
     </IntroRow>

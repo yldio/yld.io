@@ -32,14 +32,17 @@ const FixedWidthDisplayTitle = styled(DisplayTitle)`
 `;
 
 const PageDescriptionCol = styled(Col)`
+  padding-top: ${({ theme }) => theme.space[4]};
+  padding-bottom: ${({ theme }) => theme.space[5]};
+
   ${breakpoint('smallPhone')`
-    padding-top: ${({ theme }) => theme.space[5]}
-    padding-bottom: ${({ theme }) => theme.space[5]}
+    padding-top: ${({ theme }) => theme.space[5]};
+    padding-bottom: ${({ theme }) => theme.space[5]};
   `}
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[6]}
-    padding-bottom: ${({ theme }) => theme.space[7]}
+    padding-top: ${({ theme }) => theme.space[6]};
+    padding-bottom: ${({ theme }) => theme.space[7]};
   `}
 `;
 
@@ -47,7 +50,7 @@ const DisplayTitleCol = styled(Col)`
   padding-top: ${({ theme }) => theme.space[4]};
 
   ${breakpoint('tablet')`
-    padding-top: ${({ theme }) => theme.space[5]}
+    padding-top: ${({ theme }) => theme.space[5]};
   `}
 `;
 
@@ -143,7 +146,10 @@ export const query = graphql`
             file {
               url
             }
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              aspectRatio: 1
+            )
           }
           authorId
           authorName

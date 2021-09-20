@@ -141,7 +141,6 @@ const MediumPostPreview = ({
         <Anchor to={postUrl}>
           {headerImage && (
             <Image
-              sizes={{ ...headerImage.fluid, aspectRatio: 1 / 1 }}
               image={headerImage}
             />
           )}
