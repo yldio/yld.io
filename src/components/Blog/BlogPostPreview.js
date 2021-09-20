@@ -139,11 +139,7 @@ const MediumPostPreview = ({
           postUrl={postUrl}
         />
         <Anchor to={postUrl}>
-          {headerImage && (
-            <Image
-              image={headerImage}
-            />
-          )}
+          {headerImage && <Image image={headerImage} />}
         </Anchor>
       </Col>
       <InfoCol

@@ -146,10 +146,7 @@ export const query = graphql`
             file {
               url
             }
-            gatsbyImageData(
-              layout: FULL_WIDTH
-              aspectRatio: 1
-            )
+            gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
           }
           authorId
           authorName
