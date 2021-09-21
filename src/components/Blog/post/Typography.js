@@ -246,6 +246,12 @@ const Blockquote = styled.blockquote`
 `;
 
 const PostWrapper = styled.div`
+  width: 100%;
+
+  strong {
+    font-weight: 600;
+  }
+
   h1 + h3 {
     margin-top: ${remcalc(12)};
   }
