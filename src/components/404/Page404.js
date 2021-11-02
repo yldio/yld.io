@@ -59,6 +59,8 @@ const Page404 = ({ siteTitle, footerId, titleHeadline, copy, children }) => {
               </TextCol>
               <IllustrationCol>
                 <img
+                  width="480px"
+                  height="524px"
                   src={illustration}
                   alt="There's nothing to see here - ilustration"
                 />
