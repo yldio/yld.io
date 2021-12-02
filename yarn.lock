@@ -11797,6 +11797,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:^4.0.0-beta.3":
+  version: 4.0.0-beta.3
+  resolution: "fast-xml-parser@npm:4.0.0-beta.3"
+  dependencies:
+    strnum: ^1.0.4
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: 1989bf5d90908631d9728ab0b95d216ca76c01c9b5dec112cbafc26c35a573c2ffc8b53db8a7d4b70ae5c1eb9778575c803942044b1db8b727bac651d0768ba7
+  languageName: node
+  linkType: hard
+
 "fastest-levenshtein@npm:^1.0.12":
   version: 1.0.12
   resolution: "fastest-levenshtein@npm:1.0.12"
@@ -14328,27 +14339,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"hoek@npm:5.x.x":
-  version: 5.0.4
-  resolution: "hoek@npm:5.0.4"
-  checksum: d1de21cc2a84034a85422c90ca1ba8166a60135ef963a694160e21120e0c8825ec6878a27364dcab2ebad817c767794a2102d1dddb023f9a274380d26ac79cb8
-  languageName: node
-  linkType: hard
-
-"hoek@npm:6.x.x":
-  version: 6.1.3
-  resolution: "hoek@npm:6.1.3"
-  checksum: d0af183df1b710290de440142d3650268ab2402c0f6cc28de044fc806a78ea5b91ed763ccffc2306204c1191724e80610c11dc4d7c259af55ad87ff9613abfec
-  languageName: node
-  linkType: hard
-
-"hoek@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "hoek@npm:4.2.1"
-  checksum: 3f28857c9d4c29e0d4c0bfb0d73973529fdd700266e963f9964c59ad92a4bc08943b94c4ada97c105a20c78d4dec98e4fc2c08025660743722558e6da793fd0f
-  languageName: node
-  linkType: hard
-
 "hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
@@ -16025,15 +16015,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"isemail@npm:3.x.x":
-  version: 3.2.0
-  resolution: "isemail@npm:3.2.0"
-  dependencies:
-    punycode: 2.x.x
-  checksum: 77adfbe8d6b3f9970c37516e008fd1c2e33be186f4cd09b31daf37a9fa8f82adc0dd8ce4bd12818f0c0e63018f9ec0c22490793d704ed635770c98a9d48b21c4
-  languageName: node
-  linkType: hard
-
 "isexe@npm:^2.0.0":
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
@@ -16896,17 +16877,6 @@ fsevents@^1.2.7:
     "@jimp/types": ^0.14.0
     regenerator-runtime: ^0.13.3
   checksum: acf19b5e56e9b218907c975b0e9f9f4b940f2d908460df8e0b5766558f0ee038630aed4cb6526f43e182ccff0dc1ac3302e5a2c18a75e4a4d75020824ea340db
-  languageName: node
-  linkType: hard
-
-"joi@npm:^13.1.2":
-  version: 13.7.0
-  resolution: "joi@npm:13.7.0"
-  dependencies:
-    hoek: 5.x.x
-    isemail: 3.x.x
-    topo: 3.x.x
-  checksum: 720b9d52781593117fe578423d0c62b6469c6a8b10f7033582081f23dcbb32dcec2fa850fcbd357d3c95ab40f51be1ca7d3355cdf83a5d79082792c2fb31f869
   languageName: node
   linkType: hard
 
@@ -19209,7 +19179,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1, nan@npm:^2.13.2, nan@npm:^2.14.0":
+"nan@npm:^2.12.1, nan@npm:^2.14.0":
   version: 2.15.0
   resolution: "nan@npm:2.15.0"
   dependencies:
@@ -19449,17 +19419,6 @@ fsevents@^1.2.7:
   version: 0.9.0
   resolution: "node-eta@npm:0.9.0"
   checksum: aea7831697c056286dca46908d74cca1c8c55471d4bd73b9a917401a624d4aa61adf63c47f37fc2eaad3579b0ed7b91c18e8f85990c565b62014ece7b93c3ed9
-  languageName: node
-  linkType: hard
-
-"node-expat@npm:^2.3.18":
-  version: 2.4.0
-  resolution: "node-expat@npm:2.4.0"
-  dependencies:
-    bindings: ^1.5.0
-    nan: ^2.13.2
-    node-gyp: latest
-  checksum: c65aba3d721dd1e42c4092577c2f93914d820aa3d7e0d15601c3976241ba41a9d4a6396ed0b7e2b5ae7dff0e3773c3f661c426e0c055dbfacc114e067209bc7f
   languageName: node
   linkType: hard
 
@@ -21970,17 +21929,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"punycode@npm:2.x.x, punycode@npm:^2.1.0, punycode@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "punycode@npm:2.1.1"
-  checksum: 823bf443c6dd14f669984dea25757b37993f67e8d94698996064035edd43bed8a5a17a9f12e439c2b35df1078c6bec05a6c86e336209eb1061e8025c481168e8
-  languageName: node
-  linkType: hard
-
 "punycode@npm:^1.4.1":
   version: 1.4.1
   resolution: "punycode@npm:1.4.1"
   checksum: fa6e698cb53db45e4628559e557ddaf554103d2a96a1d62892c8f4032cd3bc8871796cae9eabc1bc700e2b6677611521ce5bb1d9a27700086039965d0cf34518
+  languageName: node
+  linkType: hard
+
+"punycode@npm:^2.1.0, punycode@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "punycode@npm:2.1.1"
+  checksum: 823bf443c6dd14f669984dea25757b37993f67e8d94698996064035edd43bed8a5a17a9f12e439c2b35df1078c6bec05a6c86e336209eb1061e8025c481168e8
   languageName: node
   linkType: hard
 
@@ -25326,6 +25285,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"strnum@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "strnum@npm:1.0.4"
+  checksum: 91432c37fef1c4df4eb32e5ff9ae7962a4627f81001fee3f86c3f279226a54157b2a14d074d85265c6c36e5e93bdb45f4339e46bdba0f1325c5c27fae78007b1
+  languageName: node
+  linkType: hard
+
 "strtok3@npm:^6.2.4":
   version: 6.2.4
   resolution: "strtok3@npm:6.2.4"
@@ -26331,15 +26297,6 @@ resolve@^2.0.0-next.3:
   version: 3.0.0
   resolution: "toml@npm:3.0.0"
   checksum: 5d7f1d8413ad7780e9bdecce8ea4c3f5130dd53b0a4f2e90b93340979a137739879d7b9ce2ce05c938b8cc828897fe9e95085197342a1377dd8850bf5125f15f
-  languageName: node
-  linkType: hard
-
-"topo@npm:3.x.x":
-  version: 3.0.3
-  resolution: "topo@npm:3.0.3"
-  dependencies:
-    hoek: 6.x.x
-  checksum: 13e874d5dfa16ad94d1a714830dfa34e8cd1a3769ecdf7c0b2b10ec42d636f1d910dd37df546ee2f1990cd4b0083611a4dad59596a5a7ddc20960a9b95839d8d
   languageName: node
   linkType: hard
 
@@ -28294,19 +28251,6 @@ typescript@^3.3.3:
   languageName: node
   linkType: hard
 
-"xml2json@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "xml2json@npm:0.12.0"
-  dependencies:
-    hoek: ^4.2.1
-    joi: ^13.1.2
-    node-expat: ^2.3.18
-  bin:
-    xml2json: bin/xml2json
-  checksum: e9184bde4384a61ca27cf6d0012ffbc3123bca9e09a4f5b2a420bace276d38b542eef7aef4fd72d105e64633f3c22185e4b81a521f907921315815c675882029
-  languageName: node
-  linkType: hard
-
 "xmlbuilder@npm:~11.0.0":
   version: 11.0.1
   resolution: "xmlbuilder@npm:11.0.1"
@@ -28546,6 +28490,7 @@ typescript@^3.3.3:
     eslint-plugin-react-hooks: ^4.2.0
     eslint-plugin-testcafe: ^0.2.1
     faker: ^5.5.3
+    fast-xml-parser: ^4.0.0-beta.3
     finalhandler: ^1.1.2
     gatsby: ^3.12.0
     gatsby-plugin-google-gtag: ^3.12.0
@@ -28625,7 +28570,6 @@ typescript@^3.3.3:
     tween: ^0.9.0
     url-parse: ^1.5.3
     wait-on: ^6.0.0
-    xml2json: ^0.12.0
     yaml: ^1.10.2
   languageName: unknown
   linkType: soft
