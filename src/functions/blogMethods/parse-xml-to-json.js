@@ -1,4 +1,4 @@
-const Xml2Js = require('xml2json');
+const { XMLParser } = require('fast-xml-parser');
 const { URL } = require('url');
 const { basename } = require('path');
 const { default: Map } = require('apr-map');
@@ -10,8 +10,9 @@ const Get = require('lodash.get');
  */
 const slugWithoutHexRegex = /^(.+)-[0-9a-f]{8,}$/;
 
+const Xml2Js = new XMLParser();
 const parseXmlToJson = async (data) => {
-  const parsed = await Xml2Js.toJson(data, { object: true });
+  const parsed = Xml2Js.parse(data);
 
   return Map(Get(parsed, 'rss.channel.item', []), (res) => {
     const {
