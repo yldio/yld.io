@@ -2,14 +2,12 @@ jest.setTimeout(120000);
 
 jest.mock('../utils/auth');
 jest.mock('../utils/is-prod', () => true);
-
-// const mockEnvironmentName = 'e2e-2021-08-07T005757.316Z';
 const mockEnvironmentName = `e2e-${new Date().toISOString().replace(/:/g, '')}`;
 jest.mock('../utils/contentful-environment-name', () => mockEnvironmentName);
 
 const { series: ForEach } = require('apr-for-each');
-const { setTimeout } = require('timers/promises');
 const { createClient } = require('contentful-management');
+const testUtils = require('@contentful/integration-test-utils');
 const { readFileSync } = require('fs');
 const nock = require('nock');
 const { resolve } = require('path');
@@ -60,23 +58,16 @@ let environment;
 // * manually set the environmentName at the top
 // beforeAll(async () => {
 //   const space = await client.getSpace(CONTENTFUL_SPACE);
-
 //   environment = await space.getEnvironment(mockEnvironmentName);
 // });
 
 beforeAll(async () => {
   const space = await client.getSpace(CONTENTFUL_SPACE);
-
   environment = await space.createEnvironmentWithId(mockEnvironmentName, {
     name: mockEnvironmentName,
   });
 
-  while (environment.sys.status.sys.id !== 'ready') {
-    // eslint-disable-next-line no-await-in-loop
-    environment = await space.getEnvironment(environment.sys.id);
-    // eslint-disable-next-line no-await-in-loop
-    await setTimeout(160);
-  }
+  await testUtils.waitForEnvironmentToBeReady(space, environment);
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
@@ -123,7 +114,7 @@ beforeAll(async () => {
       await asset?.delete();
     });
   }
-}, 1200000);
+}, 2400000);
 
 afterAll(async () => {
   await environment.delete();
