@@ -86,7 +86,7 @@ const EventSection = ({ events, title, description, bgColor }) => {
                           </ExternalAnchor>
                         </Subtitle>
                         <BodyPrimary noPaddingTop>
-                          {format(date, 'PPP')}
+                          {format(parseISO(date), 'PPP')}
                         </BodyPrimary>
                         <Hr />
                       </li>
