@@ -101,9 +101,7 @@ export const query = graphql`
         slug
         name
         logo {
-          fluid(maxWidth: 680) {
-            ...GatsbyContentfulFluid_withWebp
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
           title
           file {
             url
@@ -140,9 +138,7 @@ export const query = graphql`
             posterColor
             previewImage {
               title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
               file {
                 url
               }
@@ -159,9 +155,7 @@ export const query = graphql`
             posterColor
             previewImage {
               title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
               file {
                 url
               }

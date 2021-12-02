@@ -1,6 +1,6 @@
 const UploadImageToContentful = require('../upload-image-to-contentful');
 
-const mockPublish = jest.fn(function publish() {
+const mockPublish = jest.fn(function () {
   return {
     ...this,
     fields: {
@@ -15,7 +15,7 @@ const mockPublish = jest.fn(function publish() {
     },
   };
 });
-const mockProcessForAllLocales = jest.fn(function processForAllLocales() {
+const mockProcessForAllLocales = jest.fn(function () {
   return {
     ...this,
     publish: mockPublish,

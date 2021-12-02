@@ -19,7 +19,7 @@ const StyledSubtitle = styled(Subtitle)`
 `;
 
 const WhyOpenSource = ({ title, list, subtitle, companies }) => (
-  <Fragment>
+  <>
     <TitleAndList title={title} list={list} />
     <StyledGrid>
       <Row>
@@ -31,7 +31,7 @@ const WhyOpenSource = ({ title, list, subtitle, companies }) => (
         </Col>
       </Row>
     </StyledGrid>
-  </Fragment>
+  </>
 );
 
 export default WhyOpenSource;

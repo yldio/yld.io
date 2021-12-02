@@ -55,8 +55,8 @@ const Formats = ({ formats }) => (
         </Col>
       </TitleRow>
       <FormatsRow>
-        {formats.map(format => (
-          <FormatCol width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]} key={format.id}>
+        {formats.map((format) => (
+          <FormatCol key={format.id} width={[1, 1, 1, 1, 1 / 2, 1 / 2, 1 / 3]}>
             <ImageWrapper>
               <img
                 src={`https://${format.icon.file.url}`}

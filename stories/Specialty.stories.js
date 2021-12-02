@@ -46,19 +46,19 @@ const ToggleForm = ({ handleToggle, renderOptions }) => (
     <Row>
       {renderOptions &&
         Object.keys(renderOptions).length &&
-        Object.keys(renderOptions).map(option => (
+        Object.keys(renderOptions).map((option) => (
           <Col
-            width={[1]}
             key={option}
+            width={[1]}
             block={false}
             style={{ paddingBottom: '1rem' }}
           >
             <Checkbox
               type="checkbox"
               checked={renderOptions[option]}
-              onChange={() => handleToggle(option)}
               name={option}
               id={option}
+              onChange={() => handleToggle(option)}
             />
             <label style={{ cursor: 'pointer' }} htmlFor={option}>
               {capitalize(option)}
@@ -97,8 +97,8 @@ class StorySpecialityWrapper extends Component {
     this.setState({ hasError: true, error: { info, message } });
   }
 
-  handleToggle = option => {
-    this.setState(prevState => ({
+  handleToggle = (option) => {
+    this.setState((prevState) => ({
       ...prevState,
       renderOptions: {
         ...prevState.renderOptions,
@@ -110,15 +110,8 @@ class StorySpecialityWrapper extends Component {
   generateProps = () => {
     const { renderOptions } = this.state;
 
-    const {
-      talks,
-      books,
-      tutorials,
-      events,
-      community,
-      caseStudies,
-      clients,
-    } = renderOptions;
+    const { talks, books, tutorials, events, community, caseStudies, clients } =
+      renderOptions;
 
     const externalResources = [
       [talks, talkData],
@@ -150,7 +143,7 @@ class StorySpecialityWrapper extends Component {
     const data = this.generateProps();
 
     return (
-      <Fragment>
+      <>
         <ToggleForm
           renderOptions={renderOptions}
           handleToggle={this.handleToggle}
@@ -169,7 +162,7 @@ class StorySpecialityWrapper extends Component {
             React.cloneElement(children, { data })
           )}
         </div>
-      </Fragment>
+      </>
     );
   }
 }

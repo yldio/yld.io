@@ -7,13 +7,13 @@ const FontsStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Roboto+Mono:400');
 `;
 
-const Theme = storyFn => (
+const Theme = (storyFn) => (
   <ThemeProvider theme={theme}>
-    <Fragment>
+    <>
       {storyFn()}
       <GlobalStyle />
       <FontsStyle />
-    </Fragment>
+    </>
   </ThemeProvider>
 );
 

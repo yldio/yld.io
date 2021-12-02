@@ -8,7 +8,7 @@ addDecorator(Theme);
 storiesOf('Spaces', module).add('Spaces', () => (
   <div>
     {theme.space.map((space, idx) =>
-      space !== '0' ? (
+      space === '0' ? null : (
         <div
           key={idx}
           style={{
@@ -41,7 +41,7 @@ storiesOf('Spaces', module).add('Spaces', () => (
             }}
           />
         </div>
-      ) : null,
+      ),
     )}
   </div>
 ));

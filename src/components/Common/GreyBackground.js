@@ -4,7 +4,7 @@ import { isNot } from 'styled-is';
 import breakpoint from 'styled-components-breakpoint';
 
 export default styled.section`
-  background: ${props => props.theme.colors.greyBg};
+  background: ${(props) => props.theme.colors.greyBg};
 `;
 
 const afterStyles = css`
@@ -20,7 +20,7 @@ const afterStyles = css`
 const PADDING = 50;
 
 export const GreyBackgroundOffset = styled.section`
-  background: ${props => props.theme.colors.greyBg};
+  background: ${(props) => props.theme.colors.greyBg};
 
   z-index: 1;
   position: relative;

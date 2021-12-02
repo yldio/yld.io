@@ -10,7 +10,7 @@ import LogoGrid from '../Common/LogoGrid';
 import Image from '../Common/Image';
 
 const Emphasis = styled.em`
-  color: ${props => props.theme.colors.secondaryText};
+  color: ${(props) => props.theme.colors.secondaryText};
 `;
 
 const PosterLinks = ({ project }) => {
@@ -35,7 +35,7 @@ const PosterLinks = ({ project }) => {
         }}
       >
         <CardHeader>
-          <CardTitle reverse={isDarkPosterColor} noPadding bigger>
+          <CardTitle noPadding bigger reverse={isDarkPosterColor}>
             {project.title}
           </CardTitle>
           <BodyPrimary reverse={isDarkPosterColor}>
@@ -61,14 +61,14 @@ const CompainesHelpedCol = styled(Col)`
 `;
 
 const CompaniesHelped = ({ clients }) => (
-  <Fragment>
+  <>
     <Row>
       <CompainesHelpedCol width={[1, 1, 1, 1, 1 / 2]}>
         <Subtitle>Other clients we helped</Subtitle>
       </CompainesHelpedCol>
     </Row>
     <LogoGrid companies={clients} />
-  </Fragment>
+  </>
 );
 
 const SectionWrap = styled.div`

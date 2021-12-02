@@ -40,9 +40,7 @@ const QUERY = graphql`
           }
           image {
             title
-            fluid(maxWidth: 500) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             file {
               url
             }
@@ -52,9 +50,7 @@ const QUERY = graphql`
             url
             image {
               title
-              fluid(maxWidth: 30) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
               file {
                 url
               }
@@ -89,7 +85,7 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
 
       return (
         <>
-          {!!footerContactUsId && !is404 && (
+          {Boolean(footerContactUsId) && !is404 && (
             <Wrapper bgColor={footerContactUsData.backgroundColor}>
               <GetInTouch {...footerContactUsData} />
             </Wrapper>

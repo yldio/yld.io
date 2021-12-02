@@ -6,7 +6,7 @@ const DESKTOP_BREAKPOINT = 'smallTablet';
 
 const H1 = styled.h1`
   font-weight: 500;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   padding: ${remcalc(14)} 0;
 
   font-size: ${remcalc(28)};
@@ -25,7 +25,7 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
   font-weight: 500;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   padding: ${remcalc(11)} 0 ${remcalc(7)};
 
   font-size: ${remcalc(21)};
@@ -71,7 +71,7 @@ const Body = styled.p`
   `}
 
   font-weight: 400;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   padding: ${remcalc(37)} 0;
 
   *::selection,
@@ -98,7 +98,7 @@ const Body = styled.p`
     `}
 
     font-weight: 400;
-    color: ${props => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.text};
     font-family: 'Roboto Mono', sans-serif;
     padding: ${remcalc(4)};
     background-color: #e9e9e9;
@@ -151,7 +151,7 @@ const Code = styled.code`
 
   overflow: scroll;
   font-weight: 400;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   background-color: #e9e9e9;
   padding: ${remcalc(20)};
   font-family: 'Roboto Mono', sans-serif;
@@ -229,7 +229,7 @@ const Blockquote = styled.blockquote`
 
   font-style: italic;
   font-weight: 500;
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   padding-left: ${remcalc(35)};
   margin: ${remcalc(37)} 0;
   display: block;
@@ -246,6 +246,12 @@ const Blockquote = styled.blockquote`
 `;
 
 const PostWrapper = styled.div`
+  width: 100%;
+
+  strong {
+    font-weight: 600;
+  }
+
   h1 + h3 {
     margin-top: ${remcalc(12)};
   }

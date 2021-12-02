@@ -11,7 +11,6 @@ import Anchor from '../Common/Anchor';
 
 const Author = styled.p`
   display: inline-block;
-
   ${({ href }) => (href ? `text-decoration: underline;` : ``)}
 `;
 
@@ -27,10 +26,10 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   padding-bottom: ${({ theme, context }) =>
     context === 'homepage' ? theme.space[2] : theme.space[3]};
   padding-top: ${({ theme }) => theme.space[3]};
-  ${props =>
+  ${(props) =>
     props.show === 'smallTablet' ? `display: block;` : `display: none;`}
   ${breakpoint('smallTablet')`
-    ${props =>
+    ${(props) =>
       props.show === 'smallTablet' ? `display: none;` : `display: block;`}
   `};
 
@@ -41,10 +40,10 @@ const StyledBodyPrimary = styled(BodyPrimary)`
   `}
 `;
 
-const AuthorAndDate = styled(BodyPrimary).attrs({
+const AuthorAndDate = styled(BodyPrimary).attrs(() => ({
   muted: true,
   noPadding: true,
-})`
+}))`
   padding-bottom: ${({ theme }) => theme.space[3]};
 
   ${breakpoint('smallTablet')`
@@ -115,7 +114,7 @@ const MediumPostPreview = ({
   content = {},
   headerImage,
 }) => {
-  const formattedDate = format(firstPublishedAt, 'MMMM DD');
+  const formattedDate = format(new Date(firstPublishedAt), 'MMMM dd');
 
   const { childMdx: { excerpt } = {} } = content || {};
 
@@ -140,12 +139,7 @@ const MediumPostPreview = ({
           postUrl={postUrl}
         />
         <Anchor to={postUrl}>
-          {headerImage && (
-            <Image
-              sizes={{ ...headerImage.fluid, aspectRatio: 1 / 1 }}
-              image={headerImage}
-            />
-          )}
+          {headerImage && <Image image={headerImage} />}
         </Anchor>
       </Col>
       <InfoCol

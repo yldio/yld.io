@@ -8,7 +8,7 @@ const transformImageData = async (post, environment) => {
   let transformedContent = content;
 
   // Upload images to Contentful from medium url
-  const uploadedImageData = await Map(images, async image => {
+  const uploadedImageData = await Map(images, async (image) => {
     let url;
     let id;
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const PublishToContentful = require('../publish-to-contentful');
-const until = require('async-wait-until');
+const { default: until } = require('async-wait-until');
 
 const originalConsoleInfo = console.info;
 beforeEach(() => {
@@ -18,7 +18,9 @@ const environment = {
   getEntry: getEntryMock,
 };
 
-const publishMock = jest.fn().mockImplementation(async asset => ({ ...asset }));
+const publishMock = jest
+  .fn()
+  .mockImplementation(async (asset) => ({ ...asset }));
 
 beforeEach(() => {
   createEntryMock.mockReset();
@@ -65,7 +67,8 @@ describe('given a post that exists in the CMS', () => {
     let resolveUpdate;
     const updateMock = jest
       .fn()
-      .mockReturnValue(new Promise(resolve => (resolveUpdate = resolve)));
+      // eslint-disable-next-line no-return-assign
+      .mockReturnValue(new Promise((resolve) => (resolveUpdate = resolve)));
 
     const asset = {
       fields: {

@@ -63,10 +63,10 @@ const BooksSection = ({ books, title }) =>
           </CenteredCol>
         </Row>
         <Row>
-          {books.slice(0, 3).map(externalResource => (
+          {books.slice(0, 3).map((externalResource) => (
             <BookCol
-              width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
               key={`${externalResource.id}`}
+              width={[1, 1, 1, 1 / 2, 1 / 2, 4 / 12]}
             >
               <Padding top={4}>
                 <BooksBox
@@ -84,9 +84,7 @@ const BooksSection = ({ books, title }) =>
                     >
                       {externalResource.title}
                     </CardTitle>
-                    <BottomBodyPrimary>{`By ${
-                      externalResource.additionalInfo
-                    }`}</BottomBodyPrimary>
+                    <BottomBodyPrimary>{`By ${externalResource.additionalInfo}`}</BottomBodyPrimary>
                   </Padding>
                 </BooksBox>
               </Padding>
@@ -98,7 +96,7 @@ const BooksSection = ({ books, title }) =>
             <Padding top={4}>
               <Flex justifyCenter alignCenter>
                 <FlexItem>
-                  <StyledLink href={moreBooksLink} external>
+                  <StyledLink external href={moreBooksLink}>
                     More Books
                   </StyledLink>
                 </FlexItem>

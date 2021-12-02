@@ -29,7 +29,7 @@ const SpecialitiesAndServices = ({ specialities, services }) => (
 );
 
 const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
-  <Fragment>
+  <>
     <Padding bottom={0.5}>
       <SectionTitle as={as}>{title}</SectionTitle>
     </Padding>
@@ -41,7 +41,7 @@ const RightHandText = ({ title, specialities, services, as = 'h2' }) => (
         />
       </Padding>
     </FlexCol>
-  </Fragment>
+  </>
 );
 
 const CaseStudyHero = ({ caseStudy, as }) => {

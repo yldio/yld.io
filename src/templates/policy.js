@@ -43,10 +43,20 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
             <Col>
               {body && body.body && (
                 <ReactMarkdown
-                  renderers={{
+                  components={{
                     paragraph: BodyPrimary,
-                    heading: SectionTitle,
-                    list: List,
+                    ...Object.fromEntries(
+                      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                        heading,
+                        (props) => <SectionTitle {...props} />,
+                      ]),
+                    ),
+                    ...Object.fromEntries(
+                      ['ol', 'ul'].map((list) => [
+                        list,
+                        (props) => <List {...props} />,
+                      ]),
+                    ),
                   }}
                 >
                   {body.body}
@@ -63,7 +73,7 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
 export default Policy;
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query ($id: String) {
     contentfulPolicy(id: { eq: $id }) {
       slug
       title

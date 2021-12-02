@@ -28,8 +28,8 @@ const JOBS_BY_LOCATION = graphql`
  */
 const sortJobs = (jobsByLocation, limit) => {
   const sortedJobs = [];
-  jobsByLocation.forEach(group => {
-    const location = group.edges[0].node.categories.location;
+  jobsByLocation.forEach((group) => {
+    const { location } = group.edges[0].node.categories;
     const limitedJobs = group.edges.slice(0, limit);
 
     if (location === 'London') {

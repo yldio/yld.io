@@ -5,7 +5,7 @@ import { Tag } from './Typography';
 const TagGroup = ({ tags }) => {
   return (
     <ul>
-      {tags.map(tag => (
+      {tags.map((tag) => (
         <Tag key={tag}>{TitleCase(tag)}</Tag>
       ))}
     </ul>

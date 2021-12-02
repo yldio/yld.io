@@ -19,14 +19,14 @@ const FlexCol = styled(Col)`
 
 const RowLayout = styled(Row)`
   ${breakpoint('smallPhone')`
-    padding-top: ${props => (props.isTop ? 0 : props.theme.spacing[3.5])};
-    padding-bottom: ${props =>
+    padding-top: ${(props) => (props.isTop ? 0 : props.theme.spacing[3.5])};
+    padding-bottom: ${(props) =>
       props.isTop ? props.theme.spacing[3] : props.theme.spacing[3.5]};
   `}
 
   ${breakpoint('tablet')`
-    padding-top: ${props => (props.isTop ? 0 : props.theme.spacing[5])};
-    padding-bottom: ${props =>
+    padding-top: ${(props) => (props.isTop ? 0 : props.theme.spacing[5])};
+    padding-bottom: ${(props) =>
       props.isTop ? remcalc(86) : props.theme.spacing[5]};
   `}
 

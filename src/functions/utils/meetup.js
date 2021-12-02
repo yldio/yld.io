@@ -2,8 +2,8 @@ const moment = require('moment');
 
 const { LOCALE } = require('./constants');
 
-const transformGroups = groups =>
-  groups.map(group => ({
+const transformGroups = (groups) =>
+  groups.map((group) => ({
     meetupId: group.id,
     name: group.name,
     url: group.link,
@@ -51,6 +51,7 @@ const generateContentfulEvent = ({
       },
       address: {
         [LOCALE]:
+          // eslint-disable-next-line no-negated-condition
           venue !== 'Venue To Be Confirmed'
             ? `${venue.name}&&${venue.address1}&&${
                 venue.adress2 ? venue.adress2 : ''

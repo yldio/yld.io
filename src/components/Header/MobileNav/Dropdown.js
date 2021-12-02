@@ -19,11 +19,11 @@ const DropdownNameWrapper = styled.span.attrs(() => ({
   ${mobileNavItemStyles}
   ${outlineStyles}
 
-  ${props => props.states.default}
+  ${(props) => props.states.default}
 
   &:hover,
   &:focus {
-    ${props => props.states.hoverActive}
+    ${(props) => props.states.hoverActive}
   }
 `;
 
@@ -35,8 +35,8 @@ const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: ${props => props.theme.colors.greyBg};
-  padding: ${props => props.theme.spacing[1]} 0;
+  background: ${(props) => props.theme.colors.greyBg};
+  padding: ${(props) => props.theme.spacing[1]} 0;
 `;
 
 export default class Dropdown extends PureComponent {
@@ -50,9 +50,9 @@ export default class Dropdown extends PureComponent {
     };
   }
 
-  toggle = e => {
+  toggle = (e) => {
     e.preventDefault();
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isExpanded: !prevState.isExpanded,
     }));
   };
@@ -70,9 +70,9 @@ export default class Dropdown extends PureComponent {
         <DropdownNameWrapper
           tabIndex="0"
           expanded={isExpanded}
+          data-event={dataEvent}
           onMouseDown={this.toggle}
           onFocus={this.handleFocus}
-          data-event={dataEvent}
         >
           <DropdownName>{children}</DropdownName>
           <Chevron direction={isExpanded ? 'up' : 'down'} />

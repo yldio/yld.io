@@ -36,7 +36,7 @@ const IntroRow = styled(Row)`
   `}
 `;
 
-const StyledCardTitle = styled(CardTitle).attrs({ as: 'ul' })`
+const StyledCardTitle = styled(CardTitle).attrs(() => ({ as: 'ul' }))`
   > li {
     list-style: none;
     padding-bottom: ${remcalc(8)};
@@ -79,7 +79,7 @@ const IntroImageWrapper = styled.div`
   ${breakpoint('desktop')`
     width: 1500px;
   `}
-  `;
+`;
 
 const IntroImageDesktop = styled.div`
   display: none;
@@ -138,18 +138,25 @@ const IntroSection = ({ introHeader, introContent: { introContent } }) => {
               </StyledSectionTitle>
             </IntroSectionTitleWrapper>
             <ReactMarkdown
-              renderers={{
-                // eslint-disable-next-line
-                heading: props => (
-                  <Subtitle noPadding reverse muted {...props} />
+              components={{
+                ...Object.fromEntries(
+                  ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+                    heading,
+                    (props) => <Subtitle noPadding reverse muted {...props} />,
+                  ]),
                 ),
-                // eslint-disable-next-line
-                list: props => (
-                  <StyledCardTitle regular="true" reverse {...props} />
+                ...Object.fromEntries(
+                  ['ol', 'ul'].map((list) => [
+                    list,
+                    (props) => (
+                      <StyledCardTitle reverse regular="true" {...props} />
+                    ),
+                  ]),
                 ),
               }}
-              source={introContent}
-            />
+            >
+              {introContent}
+            </ReactMarkdown>
           </Col>
         </IntroRow>
       </Grid>

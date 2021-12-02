@@ -20,7 +20,7 @@ const Auth = require('./utils/auth');
  *
  */
 
-exports.handler = async evt =>
+exports.handler = async (evt) =>
   Auth(evt, async () => {
     const {
       URL: NETLIFY_URL,
@@ -51,13 +51,12 @@ exports.handler = async evt =>
           statusCode: 200,
           body,
         };
-      } else {
-        return {
-          statusCode: 200,
-          body:
-            'Difference in jobs found but this is not production so no deployment for you',
-        };
       }
+
+      return {
+        statusCode: 200,
+        body: 'Difference in jobs found but this is not production so no deployment for you',
+      };
     }
 
     return {

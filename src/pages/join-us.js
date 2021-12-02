@@ -91,10 +91,10 @@ class JoinUs extends React.Component {
           }}
         />
         <OpenPositionsWithRef
+          ref={this.vacanciesRef}
           data={{
             title: content.openPositionsTitle,
           }}
-          ref={this.vacanciesRef}
           limit={40}
         />
       </Layout>
@@ -102,7 +102,7 @@ class JoinUs extends React.Component {
   }
 }
 
-const JoinUsPage = props => (
+const JoinUsPage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -141,9 +141,7 @@ const JoinUsPage = props => (
               file {
                 url
               }
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
           challengingTitle
@@ -166,9 +164,7 @@ const JoinUsPage = props => (
               }
               previewImage {
                 title
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
                 file {
                   url
                 }
@@ -185,9 +181,7 @@ const JoinUsPage = props => (
               }
               previewImage {
                 title
-                fluid(maxWidth: 600) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
                 file {
                   url
                 }
@@ -233,7 +227,7 @@ const JoinUsPage = props => (
         }
       }
     `}
-    render={data => <JoinUs data={data} {...props} />}
+    render={(data) => <JoinUs data={data} {...props} />}
   />
 );
 

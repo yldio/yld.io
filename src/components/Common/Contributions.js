@@ -103,19 +103,21 @@ const Contributions = ({
     triggerOnce: true,
   });
 
-  const countUpOpts = ({ end }) => ({
+  const countUpOpts = (opts) => ({
+    ...opts,
     start: 0,
-    end,
     delay: 1000,
     duration: 3,
   });
 
-  const { countUp: contributions, start: startContributions } = useCountUp(
-    countUpOpts({ end: contributionsCount || 0 }),
+  const contributions = React.useRef();
+  const { start: startContributions } = useCountUp(
+    countUpOpts({ end: contributionsCount || 0, ref: contributions }),
   );
 
-  const { countUp: projects, start: startProjects } = useCountUp(
-    countUpOpts({ end: reposContributedToCount || 0 }),
+  const projects = React.useRef();
+  const { start: startProjects } = useCountUp(
+    countUpOpts({ end: reposContributedToCount || 0, ref: projects }),
   );
 
   const contributionsCopy = titleBeforeContributionCount &&
@@ -126,25 +128,24 @@ const Contributions = ({
       titleAfterProjectCount,
     };
 
-  const startProjectsCallback = useCallback(startProjects, []);
-  const startContributionsCallback = useCallback(startContributions, []);
+  const startProjectsCallback = useCallback(startProjects, [startProjects]);
+  const startContributionsCallback = useCallback(startContributions, [
+    startContributions,
+  ]);
 
-  useEffect(
-    () => {
-      if (inView) {
-        startProjectsCallback();
-        startContributionsCallback();
-      }
-    },
-    [inView, startProjectsCallback, startContributionsCallback],
-  );
+  useEffect(() => {
+    if (inView) {
+      startProjectsCallback();
+      startContributionsCallback();
+    }
+  }, [inView, startProjectsCallback, startContributionsCallback]);
 
   // decide where to put GithubLink
   let leftColGithubLink = null;
   let bottomGithubLink = null;
   if (ctaLink && ctaCopy) {
     const githubLink = (
-      <StyledLink reverse="true" vibrant="true" external href={ctaLink}>
+      <StyledLink external reverse="true" vibrant="true" href={ctaLink}>
         {ctaCopy}
       </StyledLink>
     );
@@ -202,12 +203,12 @@ const Contributions = ({
               <Col>
                 <ReposWrapper>
                   <Row>
-                    {repos.map(repo => (
+                    {repos.map((repo) => (
                       <Col
                         key={generate()}
                         width={[1, 1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}
                       >
-                        <Repo theme="dark" small {...repo} />
+                        <Repo small theme="dark" {...repo} />
                       </Col>
                     ))}
                   </Row>

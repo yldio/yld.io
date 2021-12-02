@@ -9,6 +9,7 @@ import { SectionTitle, Subtitle } from '../Typography';
 import JobLink from './JobLink';
 import GreyBackground from './GreyBackground';
 
+// eslint-disable-next-line react/display-name
 export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
   <div ref={ref}>
     <OpenPositions {...props} />
@@ -29,9 +30,9 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
     <Grid>
       <SectionTitle>{title}</SectionTitle>
       <JobsByLocation limit={limit}>
-        {jobs =>
+        {(jobs) =>
           jobs.map(({ location, jobs }, idx) => (
-            <Padding top={3} key={idx}>
+            <Padding key={idx} top={3}>
               <Subtitle>{location}</Subtitle>
               <Padding top={2}>
                 <Row as="ul">

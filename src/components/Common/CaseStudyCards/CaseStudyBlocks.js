@@ -19,7 +19,7 @@ const StyledColumnImage = styled(Col)`
   `}
 `;
 
-const renderImage = data => data && <Image image={data} />;
+const renderImage = (data) => data && <Image image={data} />;
 
 /* The reason for this is to solve inconsistent CSS Styling Between gatsby develop and build.
 This solution ensures that strong is always bold and white for any environment */
@@ -48,18 +48,22 @@ const renderText = ({
 }) =>
   text && (
     <ReactMarkdown
-      disallowedTypes={disallowed}
-      renderers={{
-        // eslint-disable-next-line
-        heading: props => (
-          <SectionTitle
-            noPadding={noHeaderPadding}
-            reverse={colorReverse}
-            {...props}
-          />
+      disallowedElements={disallowed}
+      components={{
+        ...Object.fromEntries(
+          ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+            heading,
+            (props) => (
+              <SectionTitle
+                noPadding={noHeaderPadding}
+                reverse={colorReverse}
+                {...props}
+              />
+            ),
+          ]),
         ),
         // eslint-disable-next-line
-        paragraph: props => (
+        p: (props) => (
           <StyledBodyPrimary
             reverse={colorReverse}
             bpColorReverse={bpColorReverse}
@@ -69,8 +73,9 @@ const renderText = ({
           />
         ),
       }}
-      source={text}
-    />
+    >
+      {text}
+    </ReactMarkdown>
   );
 
 const MobileReverseOrderWrapper = styled.div`
@@ -99,13 +104,13 @@ const TextColumnsBlock = ({
   headerBlock = true,
   headerColCss = undefined,
 }) => (
-  <Fragment>
+  <>
     <StyledColOne width={colWidthOne} block={headerBlock} {...headerColCss}>
       {renderText({
         text,
         colorReverse,
         bpColorReverse,
-        disallowed: ['paragraph'],
+        disallowed: ['p'],
         noHeaderPadding,
       })}
     </StyledColOne>
@@ -115,10 +120,10 @@ const TextColumnsBlock = ({
         text,
         colorReverse,
         bpColorReverse,
-        disallowed: ['heading'],
+        disallowed: ['h1', 'h2', 'h3', 'h4', 'h4', 'h5', 'h6'],
       })}
     </StyledColTwo>
-  </Fragment>
+  </>
 );
 
 const FullWidthBlock = ({ data: { text, image }, StyledCol = Col }) => (
@@ -141,16 +146,16 @@ const HalfGreyBackground = styled(GreyBackground)`
 const VideoBlock = ({ data: { text } }) => <VideoSection src={text} />;
 
 const ImagesBlock = ({ data }) => (
-  <Fragment>
+  <>
     {data.map((image, index) => (
       <StyledColumnImage
-        width={[2 / 5, 2 / 5, 1 / 5, 1 / 5, 1 / 4, 1 / 4]}
         key={index}
+        width={[2 / 5, 2 / 5, 1 / 5, 1 / 5, 1 / 4, 1 / 4]}
       >
         {renderImage(image)}
       </StyledColumnImage>
     ))}
-  </Fragment>
+  </>
 );
 
 const StyledMobilePadding = styled(Col)`
@@ -170,20 +175,20 @@ const TextAndImageBlock = ({
   middleColWidth = null,
   colorReverse = false,
 }) => (
-  <Fragment>
+  <>
     <Col width={colWidthOne}>{renderText({ text, colorReverse })}</Col>
     {text && image && <StyledBreakpointMobilePadding width={[1]} />}
     {middleColWidth && <Col width={middleColWidth} />}
     <Col width={colWidthTwo}>{renderImage(image)}</Col>
-  </Fragment>
+  </>
 );
 
 const TextAndResizedImageBlock = ({ data: { text, image } }) => (
-  <Fragment>
+  <>
     <Col width={[1, 1, 1, 1, 4 / 8]}>{renderText({ text })}</Col>
     {text && image && <StyledMobilePadding width={[1, 1, 1, 1, 1 / 8]} />}
     <Col width={[1, 1, 1, 1, 3 / 8]}>{renderImage(image)}</Col>
-  </Fragment>
+  </>
 );
 
 const BlockRow = styled(Row)`
@@ -237,10 +242,10 @@ const normaliseAll = (genericBlocks = []) =>
 const normalise = (genericBlocks = [], index = 0) =>
   normaliseAll(genericBlocks, index)[index];
 
-const getImages = data =>
+const getImages = (data) =>
   data.genericBlockImages ? data.genericBlockImages : [];
 
-const shouldRender = data => data && data.length;
+const shouldRender = (data) => data && data.length;
 
 export {
   BlockRow,

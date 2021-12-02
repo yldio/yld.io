@@ -43,8 +43,8 @@ const Learning = ({
     <Separator />
     <TitleAndBody title={subtitle} body={text} />
     <Row>
-      {featuredInsights.map(el => (
-        <Insight insight={el} key={generate()} />
+      {featuredInsights.map((el) => (
+        <Insight key={generate()} insight={el} />
       ))}
     </Row>
     <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />

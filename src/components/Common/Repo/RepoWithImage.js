@@ -14,7 +14,7 @@ const borderGrey = '#DBDBDB';
 
 const Wrapper = styled.div`
   display: inline-block;
-  margin: ${props => props.theme.spacing[1.5]} 0;
+  margin: ${(props) => props.theme.spacing[1.5]} 0;
   width: 100%;
 `;
 
@@ -48,7 +48,7 @@ const RepoWrapper = styled.div`
   border: 1px solid ${borderGrey};
 `;
 
-const RepoWithImage = props => {
+const RepoWithImage = (props) => {
   const { url, nameWithOwner, clientLogo } = props;
 
   return (

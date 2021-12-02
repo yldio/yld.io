@@ -9,12 +9,12 @@ import { Row } from '../src/components/grid';
 import BlueBackground from '../src/components/Common/BlueBackground';
 import GreyBackground from '../src/components/Common/GreyBackground';
 
-const Theme = storyFn => (
+const Theme = (storyFn) => (
   <ThemeProvider theme={theme}>
-    <Fragment>
+    <>
       {storyFn()}
       <GlobalStyle />
-    </Fragment>
+    </>
   </ThemeProvider>
 );
 

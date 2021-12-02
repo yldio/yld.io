@@ -5,6 +5,7 @@ import { TwitterShareButton, LinkedinShareButton } from 'react-share';
 import { PostTitle, Body, PostInfo } from './Typography';
 import Hr from '../../Common/Hr';
 import Format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 import { TagGroup } from './Tag';
 
 import twitterIcon from '../../../images/twiter-icon.svg';
@@ -15,7 +16,7 @@ const PostIntroMetaData = ({ title, author, date, readTime }) => (
   <>
     <PostTitle>{title}</PostTitle>
     <PostInfo>
-      by {author} • {Format(date, 'MMMM Do[,] YYYY')}{' '}
+      by {author} • {Format(parseISO(date), 'PPP')}{' '}
       {readTime && `• ${readTime}min`}
     </PostInfo>
     <Hr />
@@ -39,7 +40,7 @@ const PostOutroMetaData = ({ title, author, date, tags, shareUrl }) => {
       <Hr />
       <section>
         <Body>
-          Written by {author} • {Format(date, 'MMMM Do[,] YYYY')}
+          Written by {author} • {Format(parseISO(date), 'PPP')}
         </Body>
       </section>
       <Hr />

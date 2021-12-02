@@ -15,7 +15,7 @@ const StyledGrid = styled(Grid)`
 `;
 
 const Jobs = () => (
-  <Fragment>
+  <>
     <OpenPositions
       data={{
         title: 'Join our team',
@@ -35,7 +35,7 @@ const Jobs = () => (
         </Col>
       </Row>
     </StyledGrid>
-  </Fragment>
+  </>
 );
 
 export default Jobs;

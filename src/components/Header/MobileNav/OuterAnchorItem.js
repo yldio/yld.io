@@ -14,14 +14,14 @@ const StyledAnchor = styled(Anchor).attrs(() => ({
   ${headerItemStyles}
   ${mobileNavItemStyles}
 
-  ${props => props.states.default}
+  ${(props) => props.states.default}
 
   &.current {
-    ${props => props.states.hoverActive}
+    ${(props) => props.states.hoverActive}
   }
 
   &:focus {
-    ${props => props.states.hoverActive}
+    ${(props) => props.states.hoverActive}
     ${outlineStyles}
   }
 `;
@@ -44,8 +44,8 @@ const OuterAnchorItem = ({
       href={href}
       to={to}
       currentClassName={currentClassName}
-      onClick={onClick}
       title={label}
+      onClick={onClick}
       {...attributes}
     >
       {label}

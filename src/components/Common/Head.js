@@ -21,8 +21,10 @@ const TITLE = graphql`
  * we have to prefix them here for twitter et al to pick
  * up the image properly
  */
-const initImageUrl = ({ siteUrl, image }) => ({ socialLogo }) =>
-  socialLogo ? `https://${socialLogo}` : `${siteUrl}${image}`;
+const initImageUrl =
+  ({ siteUrl, image }) =>
+  ({ socialLogo }) =>
+    socialLogo ? `https://${socialLogo}` : `${siteUrl}${image}`;
 
 /**
  *
@@ -80,11 +82,8 @@ const Head = ({ page, seoMetaData }) => {
     <StaticQuery
       query={TITLE}
       render={({ site: { siteMetadata } }) => {
-        const {
-          siteTitle,
-          siteUrl,
-          googleSiteVerificationMetaContent,
-        } = siteMetadata;
+        const { siteTitle, siteUrl, googleSiteVerificationMetaContent } =
+          siteMetadata;
 
         const { title, description, imageUrl, keywords } = getMetaData({
           page,

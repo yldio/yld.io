@@ -40,8 +40,8 @@ const Text = styled.p`
 `;
 
 const Button = styled.button`
-  color: ${props => props.theme.colors.white};
-  background-color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.text};
   font-weight: bold;
   text-align: center;
   font-size: 17px;

@@ -30,7 +30,7 @@ test('<SearchBox/>', () => {
   expect(anchors).toHaveLength(2);
 
   anchors.forEach((anchor, idx) => {
-    const title = results[idx].title;
+    const { title } = results[idx];
     const href = results[idx].slug;
     expect(anchor.getAttribute('href')).toEqual(href);
     expect(anchor).toHaveTextContent(title);

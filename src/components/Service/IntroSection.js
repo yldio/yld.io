@@ -47,13 +47,13 @@ const IntroSection = ({ introSentence, introBlocks }) => (
     </IntroTitleRow>
     <IntroBlocksRow>
       {introBlocks.map(({ subtitle, body, icon }) => (
-        <IntroBlockCol width={[1, 1, 1, 6 / 12, 6 / 12, 4 / 12]} key={subtitle}>
+        <IntroBlockCol key={subtitle} width={[1, 1, 1, 6 / 12, 6 / 12, 4 / 12]}>
           <ImageWrapper>
             {icon && <img src={icon.file.url} alt={subtitle} />}
           </ImageWrapper>
           {subtitle && <Subtitle noPaddingBottom>{subtitle}</Subtitle>}
           {body && (
-            <BodyPrimary noPaddingTop="true" muted>
+            <BodyPrimary muted noPaddingTop="true">
               {body}
             </BodyPrimary>
           )}

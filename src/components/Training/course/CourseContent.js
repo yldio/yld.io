@@ -14,24 +14,33 @@ const CourseContent = ({ content }) => (
     <Padding top={4}>
       {/* eslint-disable react/display-name */}
       <ReactMarkdown
-        renderers={{
-          paragraph: props => (
+        components={{
+          li: (props) => <CustomisedBulletpoint maxWidth="auto" {...props} />,
+          p: (props) => (
             <Padding bottom={1}>
               <ItemBody {...props} />
             </Padding>
           ),
-          heading: props => <ItemSubtitle {...props} />,
-          list: props => (
-            <Padding top={1} bottom={30}>
-              <ul {...props} />
-            </Padding>
+          ...Object.fromEntries(
+            ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
+              heading,
+              (props) => <ItemSubtitle {...props} />,
+            ]),
           ),
-          listItem: props => (
-            <CustomisedBulletpoint maxWidth="auto" {...props} />
+          ...Object.fromEntries(
+            ['ol', 'ul'].map((list) => [
+              list,
+              (props) => (
+                <Padding top={1} bottom={30}>
+                  <ul {...props} />
+                </Padding>
+              ),
+            ]),
           ),
         }}
-        source={content}
-      />
+      >
+        {content}
+      </ReactMarkdown>
       {/* eslint-enable react/display-name */}
     </Padding>
   </Col>

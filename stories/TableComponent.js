@@ -49,7 +49,7 @@ const TableHeadings = () => {
 };
 
 const TableData = ({ propData, descriptions = {} }) => {
-  return propData.map(data => {
+  return propData.map((data) => {
     const { property, propType, required, defaultValue, description } = data;
     return (
       <Tr key={generate()}>

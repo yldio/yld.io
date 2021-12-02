@@ -52,14 +52,6 @@ yarn test:snapshots
 
 This will run all the tests inside our storybook instance that covers some of our shared components.
 
-### Lighthouse
-
-```bash
-yarn test:lighthouse
-```
-
-We also have some lighthouse tests in place to make sure we don't make the website too slow or fail in accessability and you can run it like this.
-
 ### Testcafe
 
 ```bash

@@ -1,8 +1,8 @@
-const decimelToRadian = degrees => {
+const decimelToRadian = (degrees) => {
   return degrees * (Math.PI / 180);
 };
 
-const radianToDecimel = radians => {
+const radianToDecimel = (radians) => {
   return radians * (180 / Math.PI);
 };
 
@@ -10,9 +10,9 @@ const getAverage = (arr, key) => {
   return arr.reduce((acc, current) => acc + current[key], 0) / arr.length;
 };
 
-const checkLocationData = locations =>
+const checkLocationData = (locations) =>
   locations.every(
-    location =>
+    (location) =>
       location &&
       location.lat &&
       location.lng &&
@@ -21,7 +21,7 @@ const checkLocationData = locations =>
   );
 
 // http://geomidpoint.com/calculation.ht
-export default locations => {
+export default (locations) => {
   if ((locations && locations.length < 1) || !locations) {
     throw new Error(`Location data: ${locations}`);
   }
@@ -30,12 +30,12 @@ export default locations => {
     throw new Error(`Locations missing lat/lng data: ${locations}`);
   }
 
-  const latLongRadians = locations.map(location => ({
+  const latLongRadians = locations.map((location) => ({
     lat: decimelToRadian(location.lat),
     lng: decimelToRadian(location.lng),
   }));
 
-  const latLongCatesian = latLongRadians.map(radian => ({
+  const latLongCatesian = latLongRadians.map((radian) => ({
     x: Math.cos(radian.lat) * Math.cos(radian.lng),
     y: Math.cos(radian.lat) * Math.sin(radian.lng),
     z: Math.sin(radian.lat),

@@ -17,29 +17,29 @@ const DropdownContainer = styled(TopNavItem)`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   > span {
-    ${props => props.states.default}
+    ${(props) => props.states.default}
     &:hover {
-      ${props => props.states.default}
-      ${props => props.states.hover}
+      ${(props) => props.states.default}
+      ${(props) => props.states.hover}
     }
     &:active {
-      ${props => props.states.default}
-      ${props => props.states.clickTap}
+      ${(props) => props.states.default}
+      ${(props) => props.states.clickTap}
     }
 
     ${is('current')`
-      ${props => props.states.current}
+      ${(props) => props.states.current}
     `}
 
     ${is('expanded')`
       ${white}
-      background: ${props => props.theme.colors.greyBg};
+      background: ${(props) => props.theme.colors.greyBg};
       &:hover {
         ${whiteHover}
-        background: ${props => props.theme.colors.greyBg};
+        background: ${(props) => props.theme.colors.greyBg};
       }
 
-      ${props => props.states.current}
+      ${(props) => props.states.current}
     `}
   }
 `;
@@ -67,9 +67,9 @@ const DropdownList = styled.ul`
   display: flex;
   flex-direction: column;
   top: 100%;
-  transition: opacity ${props => props.theme.animations.normal} ease;
-  background: ${props => props.theme.colors.greyBg};
-  z-index: ${props => props.theme.zIndexes.header};
+  transition: opacity ${(props) => props.theme.animations.normal} ease;
+  background: ${(props) => props.theme.colors.greyBg};
+  z-index: ${(props) => props.theme.zIndexes.header};
 
   display: none;
   opacity: 0;
@@ -96,13 +96,15 @@ const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
     if (hasTouch()) {
       return;
     }
+
     toggleDropdown(true);
   };
 
-  const handleBlur = e => {
+  const handleBlur = (e) => {
     if (hasTouch()) {
       return;
     }
+
     /**
      * Here the event gives us `relatedTarget`, this value is a
      * DOM node of the new focused element, knowing this value
@@ -125,10 +127,10 @@ const Dropdown = ({ items, path, themeVariation, children, dataEvent }) => {
       expanded={isExpanded}
       aria-haspopup="true"
       aria-expanded={isExpanded}
+      themeVariation={themeVariation}
       onClick={handleClick}
       onFocus={handleFocus}
       onBlur={handleBlur}
-      themeVariation={themeVariation}
     >
       <DropdownNameWrapper tabIndex="0" themeVariation={themeVariation}>
         <span data-event={dataEvent}>{children}</span>

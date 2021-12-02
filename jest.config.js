@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   testRunner: 'jest-circus/runner',
   testURL: 'http://localhost',
 
@@ -21,7 +22,7 @@ module.exports = {
 
   setupFilesAfterEnv: [
     'jest-extended',
-    '@testing-library/react/cleanup-after-each',
+    '@testing-library/react',
     '@testing-library/jest-dom/extend-expect',
   ],
 

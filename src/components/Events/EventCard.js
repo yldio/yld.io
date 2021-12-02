@@ -34,7 +34,7 @@ const DateCardInner = styled.div`
 `;
 
 const DateCard = ({ date }) => {
-  const monthDayArray = format(new Date(date), 'MMM DD').split(' ');
+  const monthDayArray = format(new Date(date), 'MMM dd').split(' ');
   const month = monthDayArray[0];
   const day = monthDayArray[1];
 

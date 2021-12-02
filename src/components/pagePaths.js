@@ -2,11 +2,11 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 let cachedPathsById = null;
-
-export default function PagePaths(props) {
+const PagePaths = (props) => {
   if (cachedPathsById) {
     return props.render(cachedPathsById);
   }
+
   return (
     <StaticQuery
       query={graphql`
@@ -24,15 +24,20 @@ export default function PagePaths(props) {
           }
         }
       `}
-      render={data => {
+      render={(data) => {
         cachedPathsById = {};
-        data.allSitePage.edges.forEach(
-          edge =>
+        data.allSitePage.edges.forEach((edge) => {
+          // eslint-disable-next-line no-return-assign
+          return (
             edge.node.context &&
-            (cachedPathsById[edge.node.context.id] = edge.node.path),
-        );
+            (cachedPathsById[edge.node.context.id] = edge.node.path)
+          );
+        });
+
         return props.render(cachedPathsById);
       }}
     />
   );
-}
+};
+
+export default PagePaths;

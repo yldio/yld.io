@@ -55,7 +55,7 @@ const CaseStudy = ({
 export default CaseStudy;
 
 export const pageQuery = graphql`
-  query($id: String) {
+  query ($id: String) {
     contentfulTemplatedCaseStudy(id: { eq: $id }) {
       slug
       title
@@ -87,9 +87,7 @@ export const pageQuery = graphql`
         link
       }
       posterImage {
-        fluid(maxWidth: 600) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
         title
         file {
           url

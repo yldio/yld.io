@@ -16,7 +16,7 @@ const mockEntryUpdate = jest.fn().mockResolvedValue({
   },
 });
 
-const generateContentfulEventObj = fields => ({
+const generateContentfulEventObj = (fields) => ({
   ...generateContentfulEvent(fields),
   update: mockEntryUpdate,
 });
@@ -69,7 +69,7 @@ const generateMockData = (overwrites = {}) => {
   const { meetupEventOverwrites, cmsEventOverwrites } = overwrites;
 
   return groupNames.reduce((acc, curr) => {
-    const id = faker.random.number();
+    const id = faker.datatype.number();
 
     const meetupEvent = generateEvent({
       overwrite: { name: curr, id, ...meetupEventOverwrites },
@@ -89,7 +89,7 @@ const generateMockData = (overwrites = {}) => {
   }, {});
 };
 
-const getCmsEvents = events =>
+const getCmsEvents = (events) =>
   Object.keys(events).reduce((acc, groupName) => {
     return acc.concat(events[groupName].cms);
   }, []);
@@ -142,7 +142,7 @@ describe('Meetup Callback', () => {
         headers: { Authorization: `Bearer ${OAuthToken}` },
       })
       .mockReturnValue({
-        body: JSON.stringify(generateGroups(groupNames.map(name => name))),
+        body: JSON.stringify(generateGroups(groupNames.map((name) => name))),
       });
   });
 
@@ -161,7 +161,7 @@ describe('Meetup Callback', () => {
     // Get events from group
     const events = generateMockData({});
 
-    groupNames.forEach(name => {
+    groupNames.forEach((name) => {
       when(got)
         .calledWith(
           `https://api.meetup.com/${name}/events?no_earlier_than${date}`,
@@ -210,7 +210,7 @@ describe('Meetup Callback', () => {
     // Get events from group
     const events = generateMockData({});
 
-    groupNames.forEach(name => {
+    groupNames.forEach((name) => {
       when(got)
         .calledWith(
           `https://api.meetup.com/${name}/events?no_earlier_than${date}`,
@@ -248,7 +248,7 @@ describe('Meetup Callback', () => {
 
     const expected = {
       statusCode: 200,
-      body: body,
+      body,
     };
 
     expect(response).toEqual(expected);
@@ -281,7 +281,7 @@ describe('Meetup Callback', () => {
       })
       .mockReturnValue({ items: cmsEvents });
 
-    groupNames.forEach(name => {
+    groupNames.forEach((name) => {
       when(got)
         .calledWith(
           `https://api.meetup.com/${name}/events?no_earlier_than${date}`,
@@ -333,6 +333,7 @@ describe('Meetup Callback', () => {
         },
       });
     } catch (error) {
+      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
       expect(error.message).toMatch('Missing code query parameter');
     }
   });
@@ -346,6 +347,7 @@ describe('Meetup Callback', () => {
         },
       });
     } catch (error) {
+      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
       expect(error.message).toMatch('Env variables missing, check set up');
     }
   });

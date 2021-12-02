@@ -1,0 +1,251 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+jobs:
+  ###############################################################################
+  # SETUP                                                                       #
+  ###############################################################################
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+
+  ###############################################################################
+  # BUILD                                                                       #
+  ###############################################################################
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Setup Build Cache
+        id: build-cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ github.sha }}
+          path: |
+            .cache
+            public
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build app
+        run: yarn run build:app
+        env:
+          CMS_CRUD: ${{ secrets.CMS_CRUD }}
+          CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+          CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
+          NODE_ENV: test
+
+  ###############################################################################
+  # TEST                                                                        #
+  ###############################################################################
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Run tests
+        run: yarn run test
+        env:
+          NODE_ENV: test
+
+  ###############################################################################
+  # ESLINT                                                                      #
+  ###############################################################################
+  eslint:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: ESLint
+        run: yarn lint
+
+  ###############################################################################
+  # STYLELINT                                                                   #
+  ###############################################################################
+  stylelint:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Stylelint
+        uses: xt0rted/stylelint-problem-matcher@v1
+
+  ###############################################################################
+  # E2E LAMBDA                                                                  #
+  ###############################################################################
+  e2e-lambda:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: E2E Lambda
+        run: yarn run test:e2e:lambda
+        env:
+          CMS_CRUD: ${{ secrets.CMS_CRUD }}
+          CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+          CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
+          NODE_ENV: test
+
+  ###############################################################################
+  # LIGHTHOUSE                                                                  #
+  ###############################################################################
+  lighthouse:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Setup Build Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ github.sha }}
+          path: |
+            .cache
+            public
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v0.0.0
+      - name: Lighthouse CI
+        run: yarn lhci autorun
+        env:
+          LHCI_SERVER_TOKEN: ${{ secrets.LHCI_SERVER_TOKEN }}
+          LHCI_SERVER_BASE_URL: ${{ secrets.LHCI_SERVER_BASE_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  ###############################################################################
+  # TESTCAFE                                                                    #
+  ###############################################################################
+  testcafe:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Setup Build Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ github.sha }}
+          path: |
+            .cache
+            public
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v0.0.0
+      - name: Testcafe
+        run: yarn run test:e2e:ui
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: ${{ github.event.issue.number || github.event.number || github.sha }}-testcafe
+          path: artifacts
+          retention-days: 5

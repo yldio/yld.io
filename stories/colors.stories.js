@@ -5,7 +5,7 @@ import theme from '../src/utils/theme';
 
 addDecorator(Theme);
 
-const colors = Object.keys(theme.colors).map(key => {
+const colors = Object.keys(theme.colors).map((key) => {
   return {
     name: key,
     value: theme.colors[key],

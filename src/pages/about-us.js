@@ -80,7 +80,7 @@ const AboutUs = ({
   );
 };
 
-const AboutUsPage = props => (
+const AboutUsPage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -102,9 +102,7 @@ const AboutUsPage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           supportingStatement1Text
           supportingStatement2Icon {
@@ -112,9 +110,7 @@ const AboutUsPage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           supportingStatement2Text
           supportingStatement3Icon {
@@ -122,9 +118,7 @@ const AboutUsPage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           supportingStatement3Text
           teamSectionTitle
@@ -141,9 +135,7 @@ const AboutUsPage = props => (
                 file {
                   url
                 }
-                fluid(maxWidth: 500) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
               socialLinks {
                 name
@@ -153,9 +145,7 @@ const AboutUsPage = props => (
                   file {
                     url
                   }
-                  fluid(maxWidth: 30) {
-                    ...GatsbyContentfulFluid_withWebp
-                  }
+                  gatsbyImageData(layout: FULL_WIDTH)
                 }
               }
             }
@@ -171,9 +161,7 @@ const AboutUsPage = props => (
               file {
                 url
               }
-              fluid(maxWidth: 250) {
-                ...GatsbyContentfulFluid_tracedSVG
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
             linkUrl
             linkText
@@ -193,15 +181,13 @@ const AboutUsPage = props => (
               file {
                 url
               }
-              fluid(maxWidth: 250) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
       }
     `}
-    render={data => <AboutUs data={data} {...props} />}
+    render={(data) => <AboutUs data={data} {...props} />}
   />
 );
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import format from 'date-fns/format';
-import isAfter from 'date-fns/is_after';
-import isSameDay from 'date-fns/is_same_day';
+import isAfter from 'date-fns/isAfter';
+import isSameDay from 'date-fns/isSameDay';
+import parseISO from 'date-fns/parseISO';
 import styled from 'styled-components';
 
 import { Grid, Row, Col } from '../components/grid';
@@ -31,18 +32,23 @@ import { colors } from '../utils/theme';
 // eslint-disable-next-line no-unused-vars
 import { fragments } from '../fragments';
 
-const dateFormat = 'dddd[,] MMMM DD';
+const dateFormat = 'PPP';
 
-const getFeaturedEventDate = ({ node: { date, endTime } }) =>
-  !isSameDay(date, endTime) && isAfter(endTime, date)
+const getFeaturedEventDate = ({ node }) => {
+  const { date: rawDate, endTime: rawEndTime } = node;
+  const date = parseISO(rawDate);
+  const endTime = parseISO(rawEndTime);
+
+  return !isSameDay(date, endTime) && isAfter(endTime, date)
     ? `${format(date, dateFormat)} - ${format(endTime, dateFormat)}`
     : format(date, dateFormat);
+};
 
 const getHomepageConferences = (events = []) =>
   events
-    .filter(n => n.node.homepageFeatured)
+    .filter((n) => n.node.homepageFeatured)
     .slice(0, 1)
-    .map(n => ({
+    .map((n) => ({
       ...n.node,
       date: getFeaturedEventDate(n),
     }));
@@ -58,11 +64,11 @@ const getHomepageConferences = (events = []) =>
  */
 
 const StyledSubtitle = styled(Subtitle)`
-  padding-bottom: ${props => props.theme.space[4]};
+  padding-bottom: ${(props) => props.theme.space[4]};
 `;
 
 const Column = styled(Col)`
-  padding-top: ${props => props.theme.space[2]};
+  padding-top: ${(props) => props.theme.space[2]};
 `;
 
 const IndexPage = ({ data, location }) => {
@@ -75,14 +81,17 @@ const IndexPage = ({ data, location }) => {
   const sortedServices = content.services.sort((a, b) => a.order - b.order);
   const blogPosts = blogData.edges || [];
   const featuredEvent = getHomepageConferences(events.edges)[0];
+
+  const value = React.useMemo(() => {
+    return {
+      fillColorInitial: colors.white,
+      textColor: colors.blueBg,
+    };
+  }, []);
+
   return (
-    <HomePageContext.Provider value={true}>
-      <LogoStyleContext.Provider
-        value={{
-          fillColorInitial: colors.white,
-          textColor: colors.blueBg,
-        }}
-      >
+    <HomePageContext.Provider value>
+      <LogoStyleContext.Provider value={value}>
         <Layout location={location} bgColor="blueBg">
           <Head seoMetaData={content.seoMetaData} />
           <Intro {...content} />
@@ -142,19 +151,7 @@ export const query = graphql`
       introCtaText
       introCtaLink
       seoText {
-        content {
-          content {
-            data {
-              uri
-            }
-            value
-            content {
-              value
-              nodeType
-            }
-            nodeType
-          }
-        }
+        raw
       }
       serviceStatement
       services {
@@ -168,9 +165,7 @@ export const query = graphql`
             url
           }
           title
-          fluid(maxWidth: 60) {
-            ...GatsbyContentfulFluid_withWebp
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
 
         caseStudies {
@@ -184,9 +179,7 @@ export const query = graphql`
                 file {
                   url
                 }
-                fluid(maxWidth: 550) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
             ... on ContentfulTemplatedCaseStudy {
@@ -198,9 +191,7 @@ export const query = graphql`
                 file {
                   url
                 }
-                fluid(maxWidth: 550) {
-                  ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
@@ -220,9 +211,7 @@ export const query = graphql`
         file {
           url
         }
-        fluid(maxWidth: 250) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
       footerContactUs {
         id
@@ -287,9 +276,7 @@ export const query = graphql`
         title
         copy
         image {
-          fluid(maxWidth: 500) {
-            ...GatsbyContentfulFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -309,9 +296,7 @@ export const query = graphql`
             file {
               url
             }
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
           }
           content {
             childMdx {
@@ -336,27 +321,21 @@ export const query = graphql`
             file {
               url
             }
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           desktopPosterImage {
             title
             file {
               url
             }
-            fluid(maxWidth: 600) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           posterImage {
             title
             file {
               url
             }
-            fluid(maxWidth: 610) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           homepageFeatured
           id

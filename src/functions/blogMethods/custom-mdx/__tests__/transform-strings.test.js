@@ -8,7 +8,7 @@ it.each([
   'https://medium.com/yld-engineering-blog/',
 ])(
   'replaces the YLD medium blog URL %s with the yld.io blog URL',
-  mediumUrl => {
+  (mediumUrl) => {
     const content = TransformStrings(`[YLD Blog](${mediumUrl})`);
     expect(content).toBe('[YLD Blog](https://www.yld.io/blog/)');
   },

@@ -20,7 +20,7 @@ const TabContainer = styled.li`
 `;
 
 const Text = styled(Subtitle)`
-  transition: opacity ${props => props.theme.animations.normal} ease-in-out;
+  transition: opacity ${(props) => props.theme.animations.normal} ease-in-out;
   padding: ${remcalc(9)} 0 ${remcalc(34)};
 `;
 
@@ -28,12 +28,12 @@ const Underline = css`
   content: '';
   display: block;
   width: 100%;
-  background: ${props => props.theme.colors.text};
+  background: ${(props) => props.theme.colors.text};
   height: ${remcalc(2)};
   position: absolute;
   bottom: ${remcalc(22)};
   will-change: transform;
-  transition: transform ${props => props.theme.animations.long} ease-in-out;
+  transition: transform ${(props) => props.theme.animations.long} ease-in-out;
   left: 0;
   transform-origin: left;
   transform: scaleX(0);
@@ -65,7 +65,7 @@ const Button = styled(UnstyledButton)`
 const Tab = ({ current, onClick, children, as, ...props }) => (
   <TabContainer>
     <Button onClick={onClick} {...props} active={current}>
-      <Text muted={!current} noPadding as={as}>
+      <Text noPadding muted={!current} as={as}>
         {children}
       </Text>
     </Button>

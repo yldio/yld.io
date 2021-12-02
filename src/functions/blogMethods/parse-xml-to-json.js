@@ -10,10 +10,10 @@ const Get = require('lodash.get');
  */
 const slugWithoutHexRegex = /^(.+)-[0-9a-f]{8,}$/;
 
-const parseXmlToJson = async data => {
+const parseXmlToJson = async (data) => {
   const parsed = await Xml2Js.toJson(data, { object: true });
 
-  return Map(Get(parsed, 'rss.channel.item', []), res => {
+  return Map(Get(parsed, 'rss.channel.item', []), (res) => {
     const {
       title,
       link,

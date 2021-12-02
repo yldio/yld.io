@@ -4,7 +4,7 @@ import remcalc from 'remcalc';
 import modifiers from './modifiers';
 
 const BodyStylised = styled.p`
-  color: ${props => props.theme.colors.secondaryText};
+  color: ${(props) => props.theme.colors.secondaryText};
   font-family: 'PT Mono', sans-serif;
   font-weight: 400;
 

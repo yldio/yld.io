@@ -8,6 +8,7 @@ import LogoLink from '../LogoLink';
 let mockScrollTo;
 let originalScrollTo;
 beforeEach(() => {
+  // eslint-disable-next-line no-multi-assign
   window.scrollTo = mockScrollTo = jest.fn();
 });
 afterEach(() => {
@@ -41,7 +42,7 @@ describe('with a fillColorInitial', () => {
 describe('on the homepage', () => {
   it('links to the top of the page', () => {
     const { getByRole } = render(
-      <HomePageContext.Provider value={true}>
+      <HomePageContext.Provider value>
         <LogoLink />
       </HomePageContext.Provider>,
     );

@@ -50,9 +50,7 @@ const BackgroundGraphicWrapper = ({ title }) => (
     query={graphql`
       {
         image: contentfulAsset(title: { eq: "Background graphic" }) {
-          fluid(maxWidth: 680) {
-            ...GatsbyContentfulFluid_withWebp
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
           title
           file {
             url

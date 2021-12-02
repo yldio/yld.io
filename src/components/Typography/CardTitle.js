@@ -6,7 +6,7 @@ import remcalc from 'remcalc';
 import modifiers from './modifiers';
 
 const CardTitle = styled.h3`
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   font-weight: 500;
   font-size: ${remcalc(21)};
   line-height: ${remcalc(24)};

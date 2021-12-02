@@ -15,7 +15,7 @@ const path = require('path');
 const TurndownService = require('turndown');
 const turndownOptions = { codeBlockStyle: 'fenced' };
 
-const replaceTags = content =>
+const replaceTags = (content) =>
   content.replace(/<([^>]*)>/g, (_, match) => '`<' + match + '>`');
 
 /**
@@ -25,7 +25,7 @@ const replaceTags = content =>
  */
 const pRule = {
   filter: 'p',
-  replacement: content => {
+  replacement: (content) => {
     const newContent = replaceTags(content);
     return '\n\n' + newContent + '\n\n';
   },
@@ -70,8 +70,8 @@ const preRule = {
     const preElem = document.createElement('pre');
     preElem.appendChild(codeElem);
     [...codeElem.childNodes]
-      .filter(child => child.nodeName === 'BR')
-      .forEach(child => {
+      .filter((child) => child.nodeName === 'BR')
+      .forEach((child) => {
         codeElem.replaceChild(document.createTextNode('\n'), child);
       });
 
@@ -109,11 +109,12 @@ const iframeRule = {
   },
 };
 
-const getImageMeta = function(imgSrc) {
+const getImageMeta = function (imgSrc) {
   const { pathname } = new URL(imgSrc);
   const { base: name, ext = '.jpg' } = path.parse(pathname);
   return { name, ext };
 };
+
 /**
  * Medium gives us images with a caption:
  *
@@ -135,7 +136,7 @@ const getImageMeta = function(imgSrc) {
  * here we have access to most DOMNode API methods to
  * calculate the inner values of DOM nodes
  */
-const makeImgRule = images => ({
+const makeImgRule = (images) => ({
   filter: 'figure',
   replacement: (_, node) => {
     const { src, alt } = node.querySelector('img');
@@ -152,7 +153,7 @@ const makeImgRule = images => ({
   },
 });
 
-const transformHtmlToMarkdown = posts =>
+const transformHtmlToMarkdown = (posts) =>
   posts.map(({ html, ...rest }) => {
     const turndownService = new TurndownService(turndownOptions);
 

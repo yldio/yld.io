@@ -15,8 +15,8 @@ addDecorator(Theme);
 storiesOf('Form', module)
   .add('Checkbox', () => (
     <Fieldset>
-      <Checkbox type="checkbox" id={'checkbox'} name={'checkbox'} />
-      <label htmlFor={'checkbox'}>Label</label>
+      <Checkbox type="checkbox" id="checkbox" name="checkbox" />
+      <label htmlFor="checkbox">Label</label>
     </Fieldset>
   ))
   .add('Input', () => <Input type="text" placeholder="test" />)

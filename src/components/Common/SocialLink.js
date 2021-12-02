@@ -5,8 +5,8 @@ import ExternalAnchor from '../Common/ExternalAnchor';
 import Image from '../Common/Image';
 
 const TappableAnchor = styled(ExternalAnchor)`
-  width: ${props => remcalc(props.theme.elementSizes.tappableArea)};
-  height: ${props => remcalc(props.theme.elementSizes.tappableArea)};
+  width: ${(props) => remcalc(props.theme.elementSizes.tappableArea)};
+  height: ${(props) => remcalc(props.theme.elementSizes.tappableArea)};
   display: flex;
   justify-content: center;
   align-items: center;

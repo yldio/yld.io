@@ -29,7 +29,7 @@ const Join = ({ title, ctaTitle, ctaUrl, ctaReference, content, image }) => {
               {content.content}
             </BodyPrimary>
           )}
-          <StyledLink to={to} reverse="true" muted>
+          <StyledLink muted to={to} reverse="true">
             {ctaTitle}
           </StyledLink>
         </JoinContentCol>

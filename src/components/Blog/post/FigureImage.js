@@ -25,7 +25,7 @@ const FigureImage = ({ src, alt, caption }) => (
     <img className="figure-image__img" src={src} alt={alt} loading="lazy" />
     {caption && (
       <ImageCaption className="figure-image__figcaption">
-        <ReactMarkdown source={caption} />
+        <ReactMarkdown>{caption}</ReactMarkdown>
       </ImageCaption>
     )}
   </Wrapper>

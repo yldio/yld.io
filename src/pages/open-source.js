@@ -104,17 +104,19 @@ const OpenSource = ({ data, location }) => {
     },
   ]);
 
+  const value = React.useMemo(() => {
+    return {
+      fillColorInitial: colors.white,
+      textColor: colors.blueBg,
+    };
+  }, []);
+
   return (
-    <LogoStyleContext.Provider
-      value={{
-        fillColorInitial: colors.white,
-        textColor: colors.blueBg,
-      }}
-    >
+    <LogoStyleContext.Provider value={value}>
       <Layout
         location={location}
         bgColor="blueBg"
-        slug={'open-source'}
+        slug="open-source"
         footerContactUsId={footerContactId}
         breadcrumbData={breadcrumbData}
       >
@@ -183,7 +185,7 @@ const OpenSource = ({ data, location }) => {
   );
 };
 
-const OpenSourcePage = props => (
+const OpenSourcePage = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -235,9 +237,7 @@ const OpenSourcePage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           whyOsSectionReason1Title
           whyOsSectionReason1Body {
@@ -248,9 +248,7 @@ const OpenSourcePage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           whyOsSectionReason2Title
           whyOsSectionReason2Body {
@@ -261,9 +259,7 @@ const OpenSourcePage = props => (
             file {
               url
             }
-            fluid(maxWidth: 30) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           whyOsSectionReason3Title
           whyOsSectionReason3Body {
@@ -276,9 +272,7 @@ const OpenSourcePage = props => (
             file {
               url
             }
-            fluid(maxWidth: 250) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           technologyPartnersSectionTitle
           technologyPartners {
@@ -373,7 +367,7 @@ const OpenSourcePage = props => (
         }
       }
     `}
-    render={data => <OpenSource data={data} {...props} />}
+    render={(data) => <OpenSource data={data} {...props} />}
   />
 );
 

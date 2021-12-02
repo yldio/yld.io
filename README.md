@@ -62,7 +62,6 @@ All tests are run through scripts within package.json so check there for details
 ## Tests stack
 
 - [Jest](https://jestjs.io/)
-- [Lighthouse](https://www.gatsbyjs.org/docs/audit-with-lighthouse/)
 - [Testcafe](https://devexpress.github.io/testcafe/)
 
 ## Content in

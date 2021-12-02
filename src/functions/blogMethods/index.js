@@ -18,7 +18,7 @@ const client = createClient({
   accessToken: CMS_CRUD,
 });
 
-const syncMediumToContentful = async data => {
+const syncMediumToContentful = async (data) => {
   const space = await client.getSpace(CONTENTFUL_SPACE);
   const environment = await space.getEnvironment(environmentName);
   const contentType = await environment.getContentType('blogPost');
@@ -45,7 +45,7 @@ const syncMediumToContentful = async data => {
   await ValidateMdx(postsWithMetaData);
 
   if (isProd) {
-    return await PublishToContentful(
+    return PublishToContentful(
       postsWithMetaData,
       environment,
       allFields,

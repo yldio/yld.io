@@ -69,13 +69,15 @@ const Service = ({
     },
   ]);
 
+  const value = React.useMemo(() => {
+    return {
+      fillColorInitial: colors.text,
+      textColor: colors.white,
+    };
+  }, []);
+
   return (
-    <LogoStyleContext.Provider
-      value={{
-        fillColorInitial: colors.text,
-        textColor: colors.white,
-      }}
-    >
+    <LogoStyleContext.Provider value={value}>
       <Layout
         location={location}
         slug={service.slug}
@@ -124,7 +126,7 @@ export default Service;
  * more info: https://medium.com/@Zepro/contentful-reference-fields-with-gatsby-js-graphql-9f14ed90bdf9
  */
 export const pageQuery = graphql`
-  query($id: String) {
+  query ($id: String) {
     site {
       siteMetadata {
         siteUrl
@@ -175,9 +177,7 @@ export const pageQuery = graphql`
             posterColor
             previewImage {
               title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
               file {
                 url
               }
@@ -194,9 +194,7 @@ export const pageQuery = graphql`
             posterColor
             previewImage {
               title
-              fluid(maxWidth: 600) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH)
               file {
                 url
               }

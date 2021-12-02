@@ -16,21 +16,21 @@ const StyledListItem = styled(TopNavItem)`
   flex-wrap: wrap;
 
   > a {
-    ${props => props.states.default}
+    ${(props) => props.states.default}
   }
 
   > a:hover {
-    ${props => props.states.default}
-    ${props => props.states.hover}
+    ${(props) => props.states.default}
+    ${(props) => props.states.hover}
   }
 
   > a:active {
-    ${props => props.states.default}
-    ${props => props.states.clickTap}
+    ${(props) => props.states.default}
+    ${(props) => props.states.clickTap}
   }
 
   > a.current {
-    ${props => props.states.current}
+    ${(props) => props.states.current}
   }
 `;
 
@@ -50,8 +50,8 @@ const OuterAnchorItem = ({
       href={href}
       to={to}
       currentClassName={currentClassName}
-      onClick={onClick}
       title={title}
+      onClick={onClick}
       {...attributes}
     >
       {children}

@@ -12,7 +12,7 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
     id,
     title,
     to: `/blog/${slug}`,
-    body: format(new Date(firstPublishedAt), 'MMMM DD[,] dddd'),
+    body: format(new Date(firstPublishedAt), 'PPP'),
   }));
 
   return (
@@ -36,13 +36,6 @@ const BlogListing = ({ title, description, posts, bgColor }) => {
 BlogListing.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  mediaItems: PropTypes.array,
-  CTALink: PropTypes.string,
-};
-
-BlogListing.defaultProps = {
-  CTALink: '/blog/',
-  mediaItems: [],
 };
 
 export default BlogListing;

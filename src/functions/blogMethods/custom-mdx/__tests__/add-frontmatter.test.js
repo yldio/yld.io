@@ -23,7 +23,7 @@ root: /blog
 
 it('escapes strings when they include special characters', () => {
   const frontmatter = `---
-title: \"Test: 1\"
+title: "Test: 1"
 slug: blog-slug
 tags: tag1,tag2
 firstPublishedAt: 2019-01-01

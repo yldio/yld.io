@@ -76,7 +76,7 @@ const PartnershipsSection = ({ title, partners }) => (
           <SectionTitle reverse>{title}</SectionTitle>
         </Col>
       </StyledRow>
-      <Row>{partners.map(partner => PartnerCol(partner))}</Row>
+      <Row>{partners.map((partner) => PartnerCol(partner))}</Row>
     </StyledGrid>
   </BlueBackground>
 );

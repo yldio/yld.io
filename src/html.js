@@ -19,22 +19,16 @@ const HTML = ({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script
-          async
-          defer
-          type="text/javascript"
-          id="hs-script-loader"
-          src="//js-na1.hs-scripts.com/19658504.js"
-        />
         {googleFonts}
         {headComponents}
       </head>
       <body {...bodyAttributes}>
         {preBodyComponents}
         <div
-          key={`body`}
-          id="___gatsby"
+          key="body"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: body }}
+          id="___gatsby"
         />
         {postBodyComponents}
       </body>

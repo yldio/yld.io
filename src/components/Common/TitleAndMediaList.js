@@ -10,11 +10,11 @@ import Hr from './Hr';
 import Anchor from './Anchor';
 
 const PaddedSubtitle = styled(Subtitle)`
-  padding-bottom: ${props => props.theme.spacing[0.5]};
+  padding-bottom: ${(props) => props.theme.spacing[0.5]};
 `;
 
 const MediaItems = styled.ul`
-  padding-top: ${props => props.theme.spacing[0.5]};
+  padding-top: ${(props) => props.theme.spacing[0.5]};
 `;
 
 const RowLayout = styled(Row)`
@@ -67,8 +67,8 @@ const TitleAndMediaList = ({
         <MediaItems>
           {mediaItems.map(({ id, title, to, body }) => (
             <MediaItem
-              external={external}
               key={id}
+              external={external}
               id={id}
               title={title}
               to={to}

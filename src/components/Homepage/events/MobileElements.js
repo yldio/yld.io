@@ -16,7 +16,7 @@ export const MobileMeetups = ({ events }) => (
   <Col width={[1, 1, 1, 1, 0, 0, 0]}>
     <Padding top={{ smallPhone: 3, smallTablet: 42 }}>
       <ul>
-        {events.map(conf => (
+        {events.map((conf) => (
           <li key={`${conf.id}`}>
             <Subtitle noPaddingBottom>
               <ExternalAnchor href={conf.linkToEvent} title={conf.eventTitle}>

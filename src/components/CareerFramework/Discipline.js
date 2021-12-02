@@ -14,37 +14,36 @@ const StyledGrid = styled(Grid)`
     isLastGroupWithoutJoins ? theme.space[7] : null};
 `;
 
-const Discipline = ({ groups, joins = [] }) => (
-  <>
-    {groups &&
-      groups.length &&
-      groups.map((group, idx, groupArr) => {
-        const { levels = [] } = group;
-        const hasJoins = joins && joins[idx];
-        const isLastGroupWithoutJoins =
-          !hasJoins && idx + 1 === groupArr.length;
-        const orderStartFrom = idx * levels.length + 1;
+const Discipline = ({ groups, joins = [] }) => {
+  return (
+    groups &&
+    groups.length &&
+    groups.map((group, idx, groupArr) => {
+      const { levels = [] } = group;
+      const hasJoins = joins && joins[idx];
+      const isLastGroupWithoutJoins = !hasJoins && idx + 1 === groupArr.length;
+      const orderStartFrom = idx * levels.length + 1;
 
-        return (
-          <Fragment key={generate()}>
-            <GreyBackground>
-              <StyledGrid isLastGroupWithoutJoins={isLastGroupWithoutJoins}>
-                <Group
-                  {...group}
-                  isLastGroup={isLastGroupWithoutJoins}
-                  orderStartFrom={orderStartFrom}
-                />
-              </StyledGrid>
-            </GreyBackground>
-            {hasJoins && (
-              <BlueBackground>
-                <Join {...joins[idx]} />
-              </BlueBackground>
-            )}
-          </Fragment>
-        );
-      })}
-  </>
-);
+      return (
+        <Fragment key={generate()}>
+          <GreyBackground>
+            <StyledGrid isLastGroupWithoutJoins={isLastGroupWithoutJoins}>
+              <Group
+                {...group}
+                isLastGroup={isLastGroupWithoutJoins}
+                orderStartFrom={orderStartFrom}
+              />
+            </StyledGrid>
+          </GreyBackground>
+          {hasJoins && (
+            <BlueBackground>
+              <Join {...joins[idx]} />
+            </BlueBackground>
+          )}
+        </Fragment>
+      );
+    })
+  );
+};
 
 export default Discipline;

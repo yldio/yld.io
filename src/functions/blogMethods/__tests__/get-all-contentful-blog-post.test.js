@@ -1,6 +1,6 @@
 const GetAllContentfulBlogPosts = require('../get-all-contentful-blog-posts');
 
-const posts = [...Array(2 ** 16).keys()].map(i => ({ slug: `post-${i}` }));
+const posts = [...Array(2 ** 16).keys()].map((i) => ({ slug: `post-${i}` }));
 
 const mockGetEntries = jest.fn(({ skip, limit }) => ({
   skip,

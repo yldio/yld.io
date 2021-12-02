@@ -36,7 +36,7 @@ const StyledSubtitle = styled(Subtitle)`
   `}
 `;
 
-const OpenDeliverables = props => {
+const OpenDeliverables = (props) => {
   const {
     contentfulOpenSourcePage: {
       openDeliverablesSectionTitle,
@@ -59,12 +59,13 @@ const OpenDeliverables = props => {
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <ReactMarkdown
-              renderers={{
+              components={{
                 // eslint-disable-next-line react/display-name
-                paragraph: props => <BodyPrimary {...props} />,
+                p: (props) => <BodyPrimary {...props} />,
               }}
-              source={openDeliverablesSectionDescription}
-            />
+            >
+              {openDeliverablesSectionDescription}
+            </ReactMarkdown>
           </Col>
           <Col width={[1, 1, 1, 1, 6 / 12, 4 / 12]}>
             <StyledSubtitle>

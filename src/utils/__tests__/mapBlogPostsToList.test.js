@@ -50,8 +50,7 @@ test('mapBlogPostsToList should return an array of objects with a tilte and slug
         title:
           ' Play Lesser Players: correlating your teams’ input with exceptional outcomes',
         authorName: 'Nuno Job',
-        slug:
-          'play-lesser-players-correlating-your-teams-input-with-exceptional-outcomes',
+        slug: 'play-lesser-players-correlating-your-teams-input-with-exceptional-outcomes',
       },
     },
     {
@@ -94,8 +93,7 @@ test('mapBlogPostsToList should return an array of objects with a tilte and slug
         title:
           'Cloud Deep Dive: Part 3 — The Extremely Scalable Pizza Menu with Serverless SSR',
         authorName: 'Pieter Raubenheimer',
-        slug:
-          'cloud-deep-dive-part-3-the-extremely-scalable-pizza-menu-with-serverless-ssr',
+        slug: 'cloud-deep-dive-part-3-the-extremely-scalable-pizza-menu-with-serverless-ssr',
       },
     },
     {

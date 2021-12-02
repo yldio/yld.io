@@ -5,7 +5,7 @@ import remcalc from 'remcalc';
 import modifiers from './modifiers';
 
 const DisplayTitle = styled.h2`
-  color: ${props => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.text};
   font-weight: 400;
   font-size: ${remcalc(26)};
   line-height: ${remcalc(30)};

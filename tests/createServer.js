@@ -7,7 +7,7 @@ const waitOn = require('wait-on');
 
 const compressionHandler = promisify(compression());
 
-const createServer = async port => {
+const createServer = async (port) => {
   const servePublic = serveStatic('./public');
 
   const server = http.createServer(async (req, res) => {
@@ -16,7 +16,7 @@ const createServer = async port => {
     servePublic(req, res, done);
   });
 
-  await new Promise(resolve => server.listen(port, resolve));
+  await new Promise((resolve) => server.listen(port, resolve));
 
   await waitOn({ resources: [`http://localhost:${port}`] });
 
