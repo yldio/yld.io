@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Image = ({ image, alt, className, ...props }) => {
+  if (!image) {
+    return null;
+  }
+
   return image.gatsbyImageData ? (
     <GatsbyImage
       alt={alt || image.title}
