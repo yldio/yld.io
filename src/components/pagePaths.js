@@ -16,9 +16,7 @@ const PagePaths = (props) => {
               node {
                 id
                 path
-                context {
-                  id
-                }
+                pageContext
               }
             }
           }
@@ -30,7 +28,7 @@ const PagePaths = (props) => {
           // eslint-disable-next-line no-return-assign
           return (
             edge.node.context &&
-            (cachedPathsById[edge.node.context.id] = edge.node.path)
+            (cachedPathsById[edge.node.pageContext.id] = edge.node.path)
           );
         });
 

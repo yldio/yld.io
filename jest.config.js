@@ -21,7 +21,7 @@ module.exports = {
   setupFiles: ['<rootDir>/.jest/loaderShim.js'],
 
   setupFilesAfterEnv: [
-    'jest-extended',
+    'jest-extended/all',
     '@testing-library/react',
     '@testing-library/jest-dom/extend-expect',
   ],
