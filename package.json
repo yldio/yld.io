@@ -88,7 +88,7 @@
     "react-youtube": "^7.13.1",
     "remcalc": "^1.0.10",
     "shortid": "^2.2.16",
-    "slash": "3.0.0",
+    "slash": "4.0.0",
     "styled-components": "^5.3.3",
     "styled-components-breakpoint": "^2.1.1",
     "styled-components-spacing": "^3.1.1",
