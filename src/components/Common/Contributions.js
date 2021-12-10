@@ -106,7 +106,7 @@ const Contributions = ({
   const countUpOpts = (opts) => ({
     ...opts,
     start: 0,
-    delay: 1000,
+    delay: 1,
     duration: 3,
   });
 
