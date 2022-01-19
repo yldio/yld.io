@@ -333,7 +333,7 @@ describe('Meetup Callback', () => {
         },
       });
     } catch (error) {
-      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
+      // eslint-disable-next-line jest/no-conditional-expect
       expect(error.message).toMatch('Missing code query parameter');
     }
   });
@@ -347,7 +347,7 @@ describe('Meetup Callback', () => {
         },
       });
     } catch (error) {
-      // eslint-disable-next-line jest/no-conditional-expect, jest/no-try-expect
+      // eslint-disable-next-line jest/no-conditional-expect
       expect(error.message).toMatch('Env variables missing, check set up');
     }
   });

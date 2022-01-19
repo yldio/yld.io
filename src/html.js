@@ -26,7 +26,6 @@ const HTML = ({
         {preBodyComponents}
         <div
           key="body"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: body }}
           id="___gatsby"
         />

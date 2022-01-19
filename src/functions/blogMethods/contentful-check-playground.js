@@ -11,7 +11,7 @@
  * `node contentful-check.js
  *
  */
-/* eslint-disable no-console */
+
 const Main = require('apr-main');
 const { createClient } = require('contentful-management');
 const { CMS_CRUD, CONTENTFUL_SPACE } = process.env;

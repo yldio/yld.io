@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const Get = require('lodash.get');
 const { LOCALE } = require('../utils/constants');
 

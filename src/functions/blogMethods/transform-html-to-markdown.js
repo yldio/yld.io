@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 /**
  * This is a simple html to markdown converter using turndown
  * the main reason for this file is mainly so that we can use

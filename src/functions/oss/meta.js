@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const head = require('lodash.head');
 const isEqual = require('lodash.isequal');
 

@@ -77,7 +77,7 @@ const Statement = ({ richText, children, as = 'h2', dataEvents }) => (
                     ),
                   ]),
                 ),
-                // eslint-disable-next-line react/display-name
+
                 p: (props) => (
                   <StyledDisplayTitle secondary as={as} {...props} />
                 ),

@@ -115,6 +115,8 @@ jobs:
         run: yarn install --immutable
       - name: ESLint
         run: yarn lint
+        env:
+          NODE_ENV: test
 
   ###############################################################################
   # STYLELINT                                                                   #

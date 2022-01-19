@@ -62,7 +62,7 @@ const renderText = ({
             ),
           ]),
         ),
-        // eslint-disable-next-line
+
         p: (props) => (
           <StyledBodyPrimary
             reverse={colorReverse}

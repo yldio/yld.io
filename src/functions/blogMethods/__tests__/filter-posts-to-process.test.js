@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const FilterPostsToProcess = require('../filter-posts-to-process');
 
 const originalConsoleInfo = console.info;

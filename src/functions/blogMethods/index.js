@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const GetContentTypeFields = require('../utils/get-content-type-fields');
 const isProd = require('../utils/is-prod');
 const environmentName = require('../utils/contentful-environment-name');
