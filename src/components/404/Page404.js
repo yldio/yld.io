@@ -49,7 +49,6 @@ const Page404 = ({ siteTitle, footerId, titleHeadline, copy, children }) => {
                 <TitleHeadline>{titleHeadline}</TitleHeadline>
                 <ReactMarkdown
                   components={{
-                    // eslint-disable-next-line react/display-name
                     p: (props) => <CopyText {...props} />,
                   }}
                 >

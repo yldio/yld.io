@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const isEqual = require('lodash.isequal');
 
 const ossUtils = require('./utils');

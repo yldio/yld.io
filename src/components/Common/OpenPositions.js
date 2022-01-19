@@ -9,7 +9,6 @@ import { SectionTitle, Subtitle } from '../Typography';
 import JobLink from './JobLink';
 import GreyBackground from './GreyBackground';
 
-// eslint-disable-next-line react/display-name
 export const OpenPositionsWithRef = React.forwardRef((props, ref) => (
   <div ref={ref}>
     <OpenPositions {...props} />

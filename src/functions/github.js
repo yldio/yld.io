@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /**
  *
  * This lambda is to keep selected repo data up to date on Contentful

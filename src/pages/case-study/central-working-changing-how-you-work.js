@@ -166,7 +166,6 @@ const IndexPage = (props) => {
                 >
                   <ReactMarkdown
                     components={{
-                      // eslint-disable-next-line
                       p: (props) => <BodyPrimary bold {...props} />,
                       ...Object.fromEntries(
                         ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
@@ -283,7 +282,7 @@ const IndexPage = (props) => {
                       (props) => <SectionTitle reverse {...props} />,
                     ]),
                   ),
-                  // eslint-disable-next-line react/display-name
+
                   p: (props) => <BodyPrimary reverse {...props} />,
                 }}
               >
@@ -330,7 +329,6 @@ const IndexPage = (props) => {
             <Col flexEnd width={[1, 1, 1, 1, 7 / 12, 6 / 12, 5 / 12]}>
               <ReactMarkdown
                 components={{
-                  // eslint-disable-next-line react/display-name
                   p: (props) => <BodyPrimary {...props} />,
                   ...Object.fromEntries(
                     ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [

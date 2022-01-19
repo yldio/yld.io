@@ -60,7 +60,6 @@ const OpenDeliverables = (props) => {
           <Col width={[1, 1, 1, 1, 6 / 12]}>
             <ReactMarkdown
               components={{
-                // eslint-disable-next-line react/display-name
                 p: (props) => <BodyPrimary {...props} />,
               }}
             >

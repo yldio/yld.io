@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { default: Map } = require('apr-map');
 const { LOCALE } = require('../utils/constants');
 

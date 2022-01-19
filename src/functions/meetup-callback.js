@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { URLSearchParams } = require('url');
 const Got = require('got');
 const Every = require('lodash.every');

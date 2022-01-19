@@ -11,7 +11,7 @@ const MarkdownRenderer = ({ source }) => (
           (props) => <Subtitle noPaddingBottom {...props} />,
         ]),
       ),
-      // eslint-disable-next-line react/display-name
+
       p: (props) => <BodyPrimary {...props} />,
     }}
   >

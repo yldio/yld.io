@@ -87,9 +87,9 @@ const MarkDownRender = ({ source }) => (
           (props) => <Subtitle noPaddingBottom {...props} />,
         ]),
       ),
-      // eslint-disable-next-line react/display-name
+
       p: (props) => <BodyPrimary noPaddingTop {...props} />,
-      // eslint-disable-next-line react/display-name
+
       li: (props) => <CustomisedBulletpoint {...props} />,
     }}
   >

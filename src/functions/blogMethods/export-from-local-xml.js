@@ -19,7 +19,6 @@ const exportFromLocalXml = async () => {
     throw new Error(error);
   }
 
-  // eslint-disable-next-line no-console
   console.log(JSON.stringify({ result }, null, 2));
 
   return result;

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const PublishToContentful = require('../publish-to-contentful');
 const { default: until } = require('async-wait-until');
 

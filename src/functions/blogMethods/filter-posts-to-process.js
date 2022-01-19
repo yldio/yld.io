@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const EmojiStrip = require('emoji-strip');
 const { LOCALE } = require('../utils/constants');
 

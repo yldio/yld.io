@@ -57,7 +57,7 @@ const WorkStage = ({ workStage }) => {
             <Subtitle noPadding reverse>
               {title}
             </Subtitle>
-            {/* eslint-disable react/display-name */}
+            {}
             <ReactMarkdown
               components={{
                 p: (props) => (

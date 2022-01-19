@@ -84,7 +84,7 @@ const TitleAndList = ({
                     ),
                   ]),
                 ),
-                // eslint-disable-next-line
+
                 p: (props) => (
                   <Body themeVariation={themeVariation} {...props} />
                 ),

@@ -17,7 +17,6 @@ const TitleSection = ({ title }) => {
           <Col width={[1, 1, 1, 1, 7 / 12]}>
             <ReactMarkdown
               components={{
-                // eslint-disable-next-line
                 p: (props) => <SectionTitle {...props} as="h1" />,
               }}
             >
