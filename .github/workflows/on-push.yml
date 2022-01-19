@@ -176,40 +176,40 @@ jobs:
   ###############################################################################
   # LIGHTHOUSE                                                                  #
   ###############################################################################
-  lighthouse:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-      - name: Setup Yarn Cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            .yarn
-            node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: Setup Build Cache
-        uses: actions/cache@v2
-        with:
-          key: ${{ github.sha }}
-          path: |
-            .cache
-            public
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v0.0.0
-      - name: Lighthouse CI
-        run: yarn lhci autorun
-        env:
-          LHCI_SERVER_TOKEN: ${{ secrets.LHCI_SERVER_TOKEN }}
-          LHCI_SERVER_BASE_URL: ${{ secrets.LHCI_SERVER_BASE_URL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # lighthouse:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '16.x'
+  #     - name: Setup Yarn Cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: |
+  #           .yarn
+  #           node_modules
+  #         key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+  #     - name: Install dependencies
+  #       run: yarn install --immutable
+  #     - name: Setup Build Cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         key: ${{ github.sha }}
+  #         path: |
+  #           .cache
+  #           public
+  #     - name: Setup Chrome
+  #       uses: browser-actions/setup-chrome@v0.0.0
+  #     - name: Lighthouse CI
+  #       run: yarn lhci autorun
+  #       env:
+  #         LHCI_SERVER_TOKEN: ${{ secrets.LHCI_SERVER_TOKEN }}
+  #         LHCI_SERVER_BASE_URL: ${{ secrets.LHCI_SERVER_BASE_URL }}
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   ###############################################################################
   # TESTCAFE                                                                    #
