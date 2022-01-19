@@ -29,6 +29,7 @@
     "now-start": "serve storybook-static"
   },
   "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@yldio/oss-stats": "^3.0.0",
@@ -38,7 +39,6 @@
     "date-fns": "^2.28.0",
     "dotenv": "^14.2.0",
     "emoji-strip": "^1.0.1",
-    "faker": "^5.5.3",
     "gatsby": "^4.5.4",
     "gatsby-plugin-google-gtag": "^4.5.0",
     "gatsby-plugin-image": "^2.5.2",

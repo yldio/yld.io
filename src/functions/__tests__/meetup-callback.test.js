@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import MeetupCallbackLambda from '../../../src/functions/meetup-callback';
 import { generateContentfulEvent } from '../../../src/functions/utils/meetup';
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import { when } from 'jest-when';
 import { generateGroups, generateEvent } from '../__fixtures__';
 
