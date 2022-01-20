@@ -139,7 +139,7 @@
     "eslint-plugin-testcafe": "^0.2.1",
     "fast-xml-parser": "^4.0.1",
     "finalhandler": "^1.1.2",
-    "globby": "^11.1.0",
+    "globby": "^12.2.0",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
