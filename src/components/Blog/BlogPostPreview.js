@@ -126,7 +126,7 @@ const MediumPostPreview = ({
         width={
           context === 'homepage'
             ? [1, 1, 1, 1, 4 / 12, 3 / 12]
-            : [1, 1, 1, 1, 4 / 12, 4 / 12]
+            : [1, 1, 1, 1, 0.25, 0.25]
         }
       >
         <TitleAndAuthor

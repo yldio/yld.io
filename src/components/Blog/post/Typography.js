@@ -246,8 +246,6 @@ const Blockquote = styled.blockquote`
 `;
 
 const PostWrapper = styled.div`
-  width: 100%;
-
   strong {
     font-weight: 600;
   }
