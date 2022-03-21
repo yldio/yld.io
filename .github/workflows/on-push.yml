@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -52,7 +52,7 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
       - name: Setup Build Cache
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ github.sha }}
           path: |
@@ -82,7 +82,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -105,7 +105,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -132,7 +132,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -157,7 +157,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -187,7 +187,7 @@ jobs:
   #       with:
   #         node-version: '16.x'
   #     - name: Setup Yarn Cache
-  #       uses: actions/cache@v2
+  #       uses: actions/cache@v3
   #       with:
   #         path: |
   #           .yarn
@@ -196,7 +196,7 @@ jobs:
   #     - name: Install dependencies
   #       run: yarn install --immutable
   #     - name: Setup Build Cache
-  #       uses: actions/cache@v2
+  #       uses: actions/cache@v3
   #       with:
   #         key: ${{ github.sha }}
   #         path: |
@@ -225,7 +225,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Setup Yarn Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .yarn
@@ -234,7 +234,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Setup Build Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ github.sha }}
           path: |
