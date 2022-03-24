@@ -23,7 +23,7 @@ const replaceTags = (content) =>
  */
 const pRule = {
   filter: 'p',
-  replacement: (content) => {
+  replacement(content) {
     const newContent = replaceTags(content);
     return '\n\n' + newContent + '\n\n';
   },
@@ -34,7 +34,7 @@ const pRule = {
  */
 const blockquoteRule = {
   filter: 'blockquote',
-  replacement: (content, node) => {
+  replacement(content, node) {
     const { classList } = node;
 
     // Medium gives us rendered HTML <noscript> tweets
@@ -59,7 +59,7 @@ const blockquoteRule = {
  */
 const preRule = {
   filter: 'pre',
-  replacement: (content, node, options) => {
+  replacement(content, node, options) {
     const { ownerDocument: document } = node;
 
     const codeElem = document.createElement('code');
@@ -97,7 +97,7 @@ const scriptRule = {
  */
 const iframeRule = {
   filter: 'iframe',
-  replacement: (_, node) => {
+  replacement(_, node) {
     // iframes can only have text node children, so we parse the HTML in a new element
     const { ownerDocument: document } = node;
 
@@ -136,7 +136,7 @@ const getImageMeta = function (imgSrc) {
  */
 const makeImgRule = (images) => ({
   filter: 'figure',
-  replacement: (_, node) => {
+  replacement(_, node) {
     const { src, alt } = node.querySelector('img');
     const { name, ext } = getImageMeta(src);
 
