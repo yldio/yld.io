@@ -11,7 +11,7 @@ const JobLink = ({ position, hostedUrl, contractType, location }) => (
   >
     <BodyPrimary noPaddingBottom>{position}</BodyPrimary>
     <BodyPrimary noPaddingTop muted>
-      {contractType}
+      {location} - {contractType}
     </BodyPrimary>
     <Hr short />
   </ExternalAnchor>
