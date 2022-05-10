@@ -30,20 +30,20 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
       <SectionTitle>{title}</SectionTitle>
       <JobsByLocation limit={limit}>
         {(jobs) =>
-          jobs.map(({ location, jobs }, idx) => (
+          jobs.map(({ team, jobs }, idx) => (
             <Padding key={idx} top={3}>
-              <Subtitle>{location}</Subtitle>
+              <Subtitle>{team}</Subtitle>
               <Padding top={2}>
                 <Row as="ul">
                   {jobs.map((job, idx) => {
                     const {
                       text,
                       hostedUrl,
-                      categories: { commitment },
+                      categories: { commitment, location },
                     } = job.node;
                     return (
                       <Col
-                        key={`job-${location}-${idx}`}
+                        key={`job-${text}-${idx}`}
                         as="li"
                         width={[1, 1, 1, 1, 4 / 12, 3 / 12]}
                       >
