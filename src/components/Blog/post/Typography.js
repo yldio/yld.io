@@ -128,7 +128,6 @@ const OrderedList = styled.ol`
 const ListItem = styled.li`
   font-size: ${remcalc(20)};
   line-height: ${remcalc(33)};
-  font-weight: 300;
   padding: ${remcalc(8)} 0;
 
   &:first-child {
@@ -314,7 +313,6 @@ const PostWrapper = styled.div`
 
   iframe {
     width: 100%;
-    min-height: 50vh;
   }
 
   .gist {
@@ -328,6 +326,30 @@ const PostWrapper = styled.div`
     iframe {
       min-height: initial;
     }
+  }
+
+  .gatsby-highlight code {
+    padding: 0;
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding-left: 2.8em;
+  }
+
+  /**
+  * If you only want to use line numbering
+  */
+
+  .gatsby-highlight {
+    border-radius: 0.3em;
+    padding: 1em;
+    overflow: auto;
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding: 0;
+    padding-left: 2.8em;
+    overflow: initial;
   }
 `;
 
