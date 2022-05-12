@@ -35,7 +35,7 @@ const pRule = {
 const blockquoteRule = {
   filter: 'blockquote',
   replacement: (content, node) => {
-    const { classList } = node;
+    const classList = node.className.split(/\s/).filter(Boolean);
 
     // Medium gives us rendered HTML <noscript> tweets
     // Here we fish out the tweet status url and pass it
@@ -98,6 +98,10 @@ const scriptRule = {
 const iframeRule = {
   filter: 'iframe',
   replacement: (_, node) => {
+    if (node.getAttribute('src')) {
+      return `\n<iframecontent:"${node.getAttribute('src')}">\n`;
+    }
+
     // iframes can only have text node children, so we parse the HTML in a new element
     const { ownerDocument: document } = node;
 

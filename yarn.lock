@@ -8396,6 +8396,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base16-prism@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "base16-prism@npm:0.3.0"
+  checksum: aa79e425ee3ddde4c6dd4d7ec84776f8c433df8f4302c21e6be04975102681280d3c89aba32234f6fc5f75fad836cedeacf5c4ad1fd86449e2adf9e0042ccdb3
+  languageName: node
+  linkType: hard
+
 "base64-arraybuffer@npm:0.1.4":
   version: 0.1.4
   resolution: "base64-arraybuffer@npm:0.1.4"
@@ -14071,6 +14078,20 @@ __metadata:
     gatsby: ^4.0.0-next
     gatsby-plugin-sharp: ^4.0.0-next
   checksum: 661e993da01c5f32f0027af3b90cb28505595622bc5377e60a1e8b7394a7f2940e953195abd359638e66cf138fc454698b3c138c1ec6c091848a7b6ba4e9bc25
+  languageName: node
+  linkType: hard
+
+"gatsby-remark-prismjs@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "gatsby-remark-prismjs@npm:6.14.0"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    parse-numeric-range: ^1.2.0
+    unist-util-visit: ^2.0.3
+  peerDependencies:
+    gatsby: ^4.0.0-next
+    prismjs: ^1.15.0
+  checksum: a4f3dfe29f216e801d260d117d8ce0b1578d32857098d5bbad691f0399a08f895838a83c61edc9d2839f174d52624d180bccd98642e1e371141b4c3c32e18f2c
   languageName: node
   linkType: hard
 
@@ -21341,6 +21362,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"parse-numeric-range@npm:^1.2.0":
+  version: 1.3.0
+  resolution: "parse-numeric-range@npm:1.3.0"
+  checksum: 289ca126d5b8ace7325b199218de198014f58ea6895ccc88a5247491d07f0143bf047f80b4a31784f1ca8911762278d7d6ecb90a31dfae31da91cc1a2524c8ce
+  languageName: node
+  linkType: hard
+
 "parse-path@npm:^4.0.0":
   version: 4.0.3
   resolution: "parse-path@npm:4.0.3"
@@ -22405,6 +22433,13 @@ __metadata:
   version: 1.25.0
   resolution: "prismjs@npm:1.25.0"
   checksum: 04d8eae9d1b26b76c350bc65621584c8f8cab80ace7da3953f8aef2f9a8dd4b4f71c1d15bc5c67f126ddc90cd5af613919dc1340589a6c57355bed86fa3ac010
+  languageName: node
+  linkType: hard
+
+"prismjs@npm:^1.28.0":
+  version: 1.28.0
+  resolution: "prismjs@npm:1.28.0"
+  checksum: bde93fb2beb45b7243219fc53855f59ee54b3fa179f315e8f9d66244d756ef984462e10561bbdc6713d3d7e051852472d7c284f5794a8791eeaefea2fb910b16
   languageName: node
   linkType: hard
 
@@ -28920,6 +28955,7 @@ typescript@^3.3.3:
     babel-loader: ^8.2.3
     babel-plugin-styled-components: ^2.0.2
     babel-preset-gatsby: ^2.5.2
+    base16-prism: ^0.3.0
     capitalize: ^2.0.4
     color-luminance: ^2.1.0
     compression: ^1.7.4
@@ -28953,6 +28989,7 @@ typescript@^3.3.3:
     gatsby-plugin-sitemap: ^5.5.0
     gatsby-plugin-styled-components: ^5.5.0
     gatsby-remark-images: ^6.5.2
+    gatsby-remark-prismjs: ^6.14.0
     gatsby-remark-responsive-iframe: ^5.5.0
     gatsby-remark-smartypants: ^5.5.0
     gatsby-source-contentful: ^7.3.2
@@ -28987,6 +29024,7 @@ typescript@^3.3.3:
     npm-run-all: ^4.1.5
     polished: ^4.1.3
     prettier: ^2.5.1
+    prismjs: ^1.28.0
     raf: ^3.4.1
     react: ^17.0.2
     react-countup: ^6.1.1

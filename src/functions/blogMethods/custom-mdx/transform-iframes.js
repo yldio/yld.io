@@ -1,4 +1,5 @@
 const Got = require('got');
+const { parse } = require('url');
 
 const gistBuilder = (id) => `<Gist id="${id}" />`;
 const instagramPostBuilder = (url) => `<Instagram postId="${url}" />`;
@@ -51,6 +52,25 @@ const getIframeContent = async (url) => {
         id: String(forwardedUrl),
       };
 
+    case 'cdn.embedly.com':
+    case 'embedly.com':
+      // eslint-disable-next-line no-case-declarations
+      const newUrl = parse(url, true)?.query?.src;
+      if (newUrl) {
+        return getIframeContent(newUrl);
+      }
+
+      return {
+        type: 'unknown',
+        link: url,
+      };
+
+    case 'carbon.now.sh':
+      return {
+        type: 'carbon',
+        link: url,
+      };
+
     default:
       return {
         type: 'unknown',
@@ -88,6 +108,18 @@ const transformIframes = async (post) => {
             processedMarkdown = processedMarkdown.replace(
               chunk,
               youtubeVideoBuilder(id),
+            );
+            break;
+          case 'carbon':
+            // eslint-disable-next-line no-case-declarations
+            const { query = {} } = parse(link, true);
+            // eslint-disable-next-line no-case-declarations
+            const { code = '', l = '' } = query;
+            processedMarkdown = processedMarkdown.replace(
+              chunk,
+              `\`\`\`${l.replace(/^application\//, '')}\n${decodeURIComponent(
+                code,
+              )}\n\`\`\``,
             );
             break;
           default:
