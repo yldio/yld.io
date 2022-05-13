@@ -141,7 +141,7 @@
     "fast-xml-parser": "^4.0.1",
     "finalhandler": "^1.1.2",
     "gatsby-remark-prismjs": "^6.14.0",
-    "globby": "^11.1.0",
+    "globby": "^13.1.1",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
