@@ -191,6 +191,42 @@ const configs = {
       verboseOutput: false,
     },
   },
+  'gatsby-plugin-feed': {
+    resolve: 'gatsby-plugin-feed',
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title : siteTitle
+              url : siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          title: 'YLD RSS Feed',
+          output: 'rss.xml',
+          query: `
+          {
+            pages: allSitePage {
+               nodes {
+                 path
+               }
+             }
+          }
+          `,
+          serialize: ({ query: { site, pages } }) => {
+            return pages.nodes.map((node) => {
+              return { ...node, url: `${site.siteMetadata.url}${node.path}` };
+            });
+          },
+        },
+      ],
+    },
+  },
 };
 
 module.exports = {
@@ -217,5 +253,6 @@ module.exports = {
     configs['gatsby-source-lever'],
     configs['gatsby-plugin-google-gtag'],
     configs['gatsby-plugin-manifest'],
+    configs['gatsby-plugin-feed'],
   ].filter(Boolean),
 };
