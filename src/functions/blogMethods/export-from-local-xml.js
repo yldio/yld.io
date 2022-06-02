@@ -6,7 +6,7 @@ const exportFromLocalXml = async () => {
   const XmlFileNames = ['/tmp/posts_a_to_b.xml'];
 
   // TODO remove this Reduce, transform all xml posts into one XML string in the same medium schema
-  // eslint-disable-next-line default-param-last
+
   const XmlData = await Reduce(XmlFileNames, async (sum = [], acc) =>
     sum.concat(await fs.readFile(acc)),
   );

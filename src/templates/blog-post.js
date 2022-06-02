@@ -42,7 +42,7 @@ const components = {
   code: Code,
   anchor: A,
   blockquote: Blockquote,
-  img: ({ children, src, ...rest }) => {
+  img({ children, src, ...rest }) {
     if (/^https\:\/\/medium.com\/\_\/stat/.test(src)) {
       return null;
     }

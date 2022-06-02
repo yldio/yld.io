@@ -23,6 +23,8 @@ test('we are on the homepage', async (t) => {
 });
 
 test('a hamburger is present on the page', async (t) => {
+  await t.resizeWindowToFitDevice('iphone6plus');
+
   const hamburger = await Selector('[class^="Hamburger"').filterVisible();
   await t.expect(hamburger.exists).ok();
 });
