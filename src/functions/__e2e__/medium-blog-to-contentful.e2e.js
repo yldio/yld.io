@@ -2,12 +2,11 @@ jest.setTimeout(120000);
 
 jest.mock('../utils/auth');
 jest.mock('../utils/is-prod', () => true);
-const mockEnvironmentName = `e2e-${new Date().toISOString().replace(/:/g, '')}`;
-jest.mock('../utils/contentful-environment-name', () => mockEnvironmentName);
 
-const { series: ForEach } = require('apr-for-each');
 const { createClient } = require('contentful-management');
 const testUtils = require('@contentful/integration-test-utils');
+const contentfulExport = require('contentful-export');
+const contentfulImport = require('contentful-import');
 const { readFileSync } = require('fs');
 const nock = require('nock');
 const { resolve } = require('path');
@@ -51,81 +50,51 @@ const client = createClient({
   accessToken: CMS_CRUD,
 });
 
-let environment;
-// to skip the expensive environment creation and always use one environment when debugging:
-// * use the following beforeAll hook instead of the normal one
-// * comment out the afterAll hook
-// * manually set the environmentName at the top
-// beforeAll(async () => {
-//   const space = await client.getSpace(CONTENTFUL_SPACE);
-//   environment = await space.getEnvironment(mockEnvironmentName);
-// });
+let testEnvironment;
+let testSpace;
 
 beforeAll(async () => {
-  const space = await client.getSpace(CONTENTFUL_SPACE);
-  environment = await space.createEnvironmentWithId(mockEnvironmentName, {
-    name: mockEnvironmentName,
+  const content = await contentfulExport({
+    managementToken: CMS_CRUD,
+    spaceId: CONTENTFUL_SPACE,
+    includeArchived: false,
+    includeDrafts: false,
+    skipContent: true,
+    skipContentModel: false,
+    skipEditorInterfaces: true,
+    skipRoles: true,
+    skipWebhooks: true.valueOf,
+    useVerboseRenderer: true,
+    saveFile: false,
   });
 
-  await testUtils.waitForEnvironmentToBeReady(space, environment);
+  testSpace = await testUtils.createTestSpace({
+    client,
+    language: 'JS',
+    testSuiteName: 'test:e2e:lambda',
+  });
 
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
-    // eslint-disable-next-line no-await-in-loop
-    const { items: posts } = await environment.getEntries({
-      limit: 1000,
-      // eslint-disable-next-line camelcase
-      content_type: 'blogPost',
-    });
+  testEnvironment = await testSpace.getEnvironment('master');
 
-    if (!posts.length) {
-      break;
-    }
-
-    // eslint-disable-next-line no-await-in-loop
-    await ForEach(posts, async (post) => {
-      console.log(`Removing Post: "${post?.fields?.title?.['en-US']}"`);
-
-      if (post?.isPublished()) {
-        await post?.unpublish();
-      }
-
-      await post?.delete();
-    });
-  }
-
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
-    // eslint-disable-next-line no-await-in-loop
-    const { items: assets } = await environment.getAssets({ limit: 1000 });
-    if (!assets.length) {
-      break;
-    }
-
-    // eslint-disable-next-line no-await-in-loop
-    await ForEach(assets, async (asset) => {
-      console.log(`Removing Asset: "${asset?.fields?.title?.['en-US']}"`);
-
-      if (asset?.isPublished()) {
-        // might not be published
-        await asset?.unpublish();
-      }
-
-      await asset?.delete();
-    });
-  }
-}, 2400000);
+  await contentfulImport({
+    managementToken: CMS_CRUD,
+    spaceId: testSpace.sys.id,
+    environmentId: testEnvironment.sys.id,
+    content,
+    contentModelOnly: true,
+  });
+}, 120000);
 
 afterAll(async () => {
-  await environment.delete();
+  await testSpace.delete();
 });
 
 test('initial sync', async () => {
   nockFeed('2nd-3rd');
 
-  await handler({});
+  await handler({}, { spaceId: testSpace.sys.id });
 
-  const posts = await environment.getEntries({
+  const posts = await testEnvironment.getEntries({
     limit: 10,
     // eslint-disable-next-line camelcase
     content_type: 'blogPost',
@@ -174,15 +143,15 @@ test('initial sync', async () => {
   );
 
   expect(lambdaPostContent).toContain(
-    '<Gist id="d160e5da9d5f7992b9df4ee12955b1a4" />',
+    '<Gist id="249a0a34735f3320187758b77a4af309" />',
   );
 
   expect(reactGirlsPostContent).toContain(
-    '<YouTube videoId="https://www.youtube.com/watch?v=jxZoasJQl-w" />',
+    '<YouTube videoId="https://www.youtube.com/embed/jxZoasJQl-w?feature=oembed" />',
   );
 
   // images
-  const assets = await environment.getAssets();
+  const assets = await testEnvironment.getAssets();
   expect(assets.items).toHaveLength(2);
   const lambdaImage = assets.items.find((item) => {
     return (
@@ -197,9 +166,9 @@ test('initial sync', async () => {
 test('sync with partially new posts', async () => {
   nockFeed('1st-2nd');
 
-  await handler({});
+  await handler({}, { spaceId: testSpace.sys.id });
 
-  const posts = await environment.getEntries({
+  const posts = await testEnvironment.getEntries({
     limit: 10,
     // eslint-disable-next-line camelcase
     content_type: 'blogPost',
@@ -222,7 +191,7 @@ test('sync with partially new posts', async () => {
 test('sync with updates', async () => {
   let {
     items: [lambdaPost],
-  } = await environment.getEntries({
+  } = await testEnvironment.getEntries({
     limit: 1,
     // eslint-disable-next-line camelcase
     content_type: 'blogPost',
@@ -235,11 +204,11 @@ test('sync with updates', async () => {
 
   nockFeed('1st-2nd');
 
-  await handler({});
+  await handler({}, { spaceId: testSpace.sys.id });
 
   ({
     items: [lambdaPost],
-  } = await environment.getEntries({
+  } = await testEnvironment.getEntries({
     limit: 1,
     // eslint-disable-next-line camelcase
     content_type: 'blogPost',
