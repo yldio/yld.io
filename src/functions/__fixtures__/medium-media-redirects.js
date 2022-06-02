@@ -1,13 +1,17 @@
-const mediaRedirects = {
+module.exports = {
   // reduce-bloat-of-your-lambdas
+  // graphql.js
   e8c5eb9bbba33b093ff98f517cbe9be5:
-    'https://gist.github.com/d160e5da9d5f7992b9df4ee12955b1a4',
+    'https://gist.github.com/249a0a34735f3320187758b77a4af309',
+  // playground.js
   '3e20cb2864309654884dd5aea3bd199b':
-    'https://gist.github.com/38f7f6218ab38b54acf1dedbf2b269a6',
+    'https://gist.github.com/e6ce122f85808824257948451d9c7164',
+  // upload.js
   '1e6aa900da5987f690c29e783000f8ff':
-    'https://gist.github.com/266f2e7ae6cadc6ed3bcb8b9790efa44',
+    'https://gist.github.com/806dcffbfbd568d7f9fe64e1ab6cb667',
+  // serverless.js
   '6604bf9efd5adc61741bf801d89c16e2':
-    'https://gist.github.com/376a7f3fb2efc8976ba6dfae95330ef9',
+    'https://gist.github.com/3132b23ab81ed049761d0f58c229163a',
   // reactjs-girls-the-conference
   '152fa1ffe8bf2d91340855be85d0823b':
     'https://www.youtube.com/watch?v=jxZoasJQl-w',
@@ -22,4 +26,3 @@ const mediaRedirects = {
   '597992c62cf3b414f824923ce9191b9f': 'https://youtu.be/gG4ygtDtxUM',
   '9eff8970acf6e045d0ddadd46a8466b5': 'https://youtu.be/qX5zj037iVU',
 };
-module.exports = mediaRedirects;
