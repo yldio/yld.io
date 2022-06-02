@@ -66,7 +66,6 @@ jobs:
           CMS_CRUD: ${{ secrets.CMS_CRUD }}
           CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
-          NODE_ENV: test
 
   ###############################################################################
   # TEST                                                                        #

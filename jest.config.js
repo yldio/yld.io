@@ -1,7 +1,9 @@
 module.exports = {
   testEnvironment: 'jsdom',
   testRunner: 'jest-circus/runner',
-  testURL: 'http://localhost',
+  testEnvironmentOptions: {
+    url: 'http://localhost',
+  },
 
   modulePathIgnorePatterns: ['<rootDir>/.cache/'],
 
@@ -25,6 +27,8 @@ module.exports = {
     '@testing-library/react',
     '@testing-library/jest-dom/extend-expect',
   ],
+
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-script)/)`],
 
   watchPlugins: [
     'jest-watch-typeahead/filename',

@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector, ClientFunction } from 'testcafe';
 import until from 'async-wait-until';
 
 import createServer from '../createServer';
@@ -90,10 +90,8 @@ test("navigating directly to a training course's url should show the same conten
   const title = await titleEl();
 
   const titleFromTrainingPageLink = title.textContent;
-  const location = await getWindowLocation();
 
-  await t.navigateTo('/');
-  await t.navigateTo(location.pathname);
+  await ClientFunction(() => document.location.reload())();
   const titleFromUrlNavigation = await Selector('[data-testid="modal-title"]')
     .textContent;
 
