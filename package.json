@@ -42,6 +42,7 @@
     "emoji-strip": "^1.0.1",
     "gatsby": "^5.5.0",
     "gatsby-plugin-fathom": "^2.1.1",
+    "gatsby-plugin-feed": "^4.25.0",
     "gatsby-plugin-google-gtag": "^5.5.0",
     "gatsby-plugin-google-tagmanager": "^5.5.0",
     "gatsby-plugin-image": "^3.5.0",

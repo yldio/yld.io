@@ -215,6 +215,58 @@ const configs = {
       verboseOutput: false,
     },
   },
+  'gatsby-plugin-feed': {
+    resolve: 'gatsby-plugin-feed',
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title : siteTitle
+              url : siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          title: 'YLD',
+          output: 'rss.xml',
+          query: `
+          {
+            allContentfulBlogPost{
+              edges {
+                node {
+                  title
+                  slug
+                  firstPublishedAt(formatString: "ddd, DD MMM YYYY")
+                  content {
+                    childMdx {
+                      excerpt
+                    }
+                  }
+                }
+              }
+            }
+          }
+          `,
+          serialize({ query: { site, allContentfulBlogPost } }) {
+            return allContentfulBlogPost.edges.map(({ node }) => {
+              return {
+                description: node?.content?.childMdx?.excerpt,
+                date: node?.firstPublishedAt,
+                url: [site?.siteMetadata?.siteUrl, 'blog', node?.slug]
+                  .filter(Boolean)
+                  .join('/'),
+                title: node?.title,
+              };
+            });
+          },
+        },
+      ],
+    },
+  },
 };
 
 module.exports = {
@@ -244,5 +296,6 @@ module.exports = {
     configs['gatsby-plugin-google-gtag'],
     configs['gatsby-plugin-google-tagmanager'],
     configs['gatsby-plugin-manifest'],
+    configs['gatsby-plugin-feed'],
   ].filter(Boolean),
 };
