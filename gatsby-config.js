@@ -202,6 +202,7 @@ module.exports = {
       GOOGLE_SITE_VERIFICATION_META_CONTENT || '',
   },
   plugins: [
+    'gatsby-plugin-esbuild',
     'gatsby-plugin-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
