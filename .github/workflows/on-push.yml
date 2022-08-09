@@ -58,14 +58,18 @@ jobs:
           path: |
             .cache
             public
+            functions
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build app
-        run: yarn run build:app
+        run: yarn run build
         env:
           CMS_CRUD: ${{ secrets.CMS_CRUD }}
           CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
+          NODE_ENV: production
 
   ###############################################################################
   # TEST                                                                        #
@@ -201,6 +205,7 @@ jobs:
   #         path: |
   #           .cache
   #           public
+  #           functions
   #     - name: Setup Chrome
   #       uses: browser-actions/setup-chrome@v0.0.0
   #     - name: Lighthouse CI
@@ -239,6 +244,7 @@ jobs:
           path: |
             .cache
             public
+            functions
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v0.0.0
       - name: Testcafe
@@ -255,3 +261,55 @@ jobs:
         if: always()
         env:
           CONTENTFUL_INTEGRATION_TEST_CMA_TOKEN: ${{ secrets.CMS_CRUD }}
+
+  ###############################################################################
+  # DEPLOY                                                                      #
+  ###############################################################################
+  deploy:
+    needs: [testcafe, e2e-lambda, stylelint, eslint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - name: Setup Yarn Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .yarn
+            node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Setup Build Cache
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.sha }}
+          path: |
+            .cache
+            public
+            functions
+      - name: Get branch
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Deploy to Netlify
+        id: deploy
+        uses: nwtgck/actions-netlify@v1
+        with:
+          publish-dir: './public'
+          functions-dir: './functions'
+          production-branch: master
+          # production-deploy: Deploy as Netlify production deploy (default: false)
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.pull_request.title }}
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+          enable-commit-status: false
+          overwrites-pull-request-comment: true
+          github-deployment-environment: ${{ env.GITHUB_HEAD_REF_SLUG || env.GITHUB_REF_SLUG }}
+          fails-without-credentials: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
