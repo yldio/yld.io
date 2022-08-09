@@ -1,0 +1,19 @@
+name: Remove Environment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  remove-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get branch
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Remove GitHub deployment
+        uses: bobheadxi/deployments@v1.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          step: delete-env
+          env: ${{ env.GITHUB_HEAD_REF_SLUG || env.GITHUB_REF_SLUG }}
+          debug: true
