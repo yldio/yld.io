@@ -271,19 +271,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'
-      - name: Setup Yarn Cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            .yarn
-            node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-      - name: Install dependencies
-        run: yarn install --immutable
       - name: Setup Build Cache
         uses: actions/cache@v3
         with:
