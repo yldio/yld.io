@@ -105,13 +105,13 @@ test('initial sync', async () => {
     return post.fields.slug['en-US'] === 'reduce-bloat-of-your-lambdas';
   });
 
-  expect(lambdaPost.isPublished()).toBe(true);
+  expect(lambdaPost.isDraft()).toBe(true);
   // additional post to check a different embed type
   const reactGirlsPost = posts.items.find((post) => {
     return post.fields.slug['en-US'] === 'reactjs-girls-the-conference';
   });
 
-  expect(reactGirlsPost.isPublished()).toBe(true);
+  expect(reactGirlsPost.isDraft()).toBe(true);
 
   // meta
   expect(lambdaPost).toHaveProperty(
@@ -120,7 +120,6 @@ test('initial sync', async () => {
   );
 
   expect(lambdaPost).toHaveProperty('fields.authorName.en-US', 'Sérgio Ramos');
-  expect(lambdaPost).toHaveProperty('fields.publish.en-US', true);
 
   expect(lambdaPost).toHaveProperty('fields.tags.en-US', [
     'lambda',
@@ -179,13 +178,14 @@ test('sync with partially new posts', async () => {
   const lambdaPost = posts.items.find(
     (post) => post.fields.slug['en-US'] === 'reduce-bloat-of-your-lambdas',
   );
-  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 1);
+  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 0);
   // new post
   const mergerPost = posts.items.find(
     (post) =>
       post.fields.slug['en-US'] === 'yld-announces-a-merger-with-make-us-proud',
   );
-  expect(mergerPost.isPublished()).toBe(true);
+  expect(mergerPost.isDraft()).toBe(true);
+  expect(mergerPost.isPublished()).toBe(false);
 });
 
 test('sync with updates', async () => {
@@ -197,6 +197,9 @@ test('sync with updates', async () => {
     content_type: 'blogPost',
     'fields.slug': 'reduce-bloat-of-your-lambdas',
   });
+
+  expect(lambdaPost.isPublished()).toBe(false);
+  expect(lambdaPost.isDraft()).toBe(true);
 
   delete lambdaPost.fields.authorName;
   lambdaPost = await lambdaPost.update();
@@ -217,5 +220,5 @@ test('sync with updates', async () => {
 
   expect(lambdaPost).toHaveProperty('fields.authorName');
   expect(lambdaPost.isPublished()).toBe(true);
-  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 2);
+  expect(lambdaPost).toHaveProperty('sys.publishedCounter', 1);
 });

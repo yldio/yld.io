@@ -46,11 +46,9 @@ const publishToContentful = async (
 
     console.info(`Creating new post: ${post.title}`);
 
-    const newAsset = await environment.createEntry('blogPost', {
+    await environment.createEntry('blogPost', {
       fields: contentfulPostData,
     });
-
-    return newAsset.publish();
   });
 };
 

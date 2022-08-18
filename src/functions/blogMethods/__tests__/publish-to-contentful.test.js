@@ -1,5 +1,4 @@
 const PublishToContentful = require('../publish-to-contentful');
-const { default: until } = require('async-wait-until');
 
 const originalConsoleInfo = console.info;
 beforeEach(() => {
@@ -33,7 +32,7 @@ describe('given a post that is not in the CMS yet', () => {
       publish: publishMock,
     }));
 
-    const publishedAssets = await PublishToContentful(
+    await PublishToContentful(
       [
         {
           slug: 'post',
@@ -52,53 +51,10 @@ describe('given a post that is not in the CMS yet', () => {
         title: { 'en-US': 'Post' },
       },
     });
-    expect(publishMock).toHaveBeenCalled();
-    expect(publishedAssets).toEqual([await publishMock.mock.results[0].value]);
+    expect(publishMock).not.toHaveBeenCalled();
 
     expect(console.info).toHaveBeenCalledWith(
       expect.stringMatching(/Creating.+Post/),
-    );
-  });
-});
-
-describe('given a post that exists in the CMS', () => {
-  it('publishes the entry with updated fields', async () => {
-    let resolveUpdate;
-    const updateMock = jest
-      .fn()
-      // eslint-disable-next-line no-return-assign
-      .mockReturnValue(new Promise((resolve) => (resolveUpdate = resolve)));
-
-    const asset = {
-      fields: {
-        slug: { 'en-US': 'post' },
-        title: { 'en-US': 'Old Post' },
-      },
-      update: updateMock,
-    };
-    const publishedAssetsPromise = PublishToContentful(
-      [
-        {
-          slug: 'post',
-          title: 'New Post',
-        },
-      ],
-      environment,
-      ['slug', 'title'],
-      [asset],
-    );
-
-    await until(() => updateMock.mock.calls.length === 1);
-    expect(asset.fields).toHaveProperty('title', { 'en-US': 'New Post' });
-    const updatedAsset = { ...asset, publish: publishMock };
-    resolveUpdate(updatedAsset);
-
-    const publishedAssets = await publishedAssetsPromise;
-    expect(publishMock).toHaveBeenCalled();
-    expect(publishedAssets).toEqual([await publishMock.mock.results[0].value]);
-
-    expect(console.info).toHaveBeenCalledWith(
-      expect.stringMatching(/Updating.+New Post/),
     );
   });
 });
