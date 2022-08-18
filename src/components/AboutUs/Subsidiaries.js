@@ -24,7 +24,7 @@ const Subsidiary = ({ image, description, linkUrl, linkText }) => (
   </PaddedCol>
 );
 
-const Subsidiaries = ({ title, subsidiaries }) => (
+const Subsidiaries = ({ title, subsidiaries = [] }) => (
   <BlueBackground>
     <Grid>
       <Padding

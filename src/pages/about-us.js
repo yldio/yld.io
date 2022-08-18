@@ -30,7 +30,7 @@ const AboutUs = ({
     teamSectionTitle,
     teams,
     yldGroupTitle,
-    subsidiaries,
+    subsidiaries = [],
     clientTestimonialTitle,
     clientTestimonialVideo,
     partnershipsTitle,
@@ -70,7 +70,9 @@ const AboutUs = ({
         supportingStatements={supportingStatements}
       />
       <Teams title={teamSectionTitle} teams={teams} />
-      <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+      {subsidiaries.length ? (
+        <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
+      ) : null}
       <ClientTestimonial
         title={clientTestimonialTitle}
         video={clientTestimonialVideo}
@@ -151,21 +153,21 @@ const AboutUsPage = (props) => (
             }
           }
           yldGroupTitle
-          subsidiaries {
-            name
-            description {
-              description
-            }
-            image {
-              title
-              file {
-                url
-              }
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-            linkUrl
-            linkText
-          }
+          # subsidiaries {
+          #   name
+          #   description {
+          #     description
+          #   }
+          #   image {
+          #     title
+          #     file {
+          #       url
+          #     }
+          #     gatsbyImageData(layout: FULL_WIDTH)
+          #   }
+          #   linkUrl
+          #   linkText
+          # }
           clientTestimonialTitle
           clientTestimonialVideo {
             title
