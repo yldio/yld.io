@@ -29,7 +29,7 @@
     "now-start": "serve storybook-static"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.1.0",
+    "@faker-js/faker": "^7.4.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@yldio/oss-stats": "^3.0.0",
@@ -107,14 +107,14 @@
     "@babel/preset-react": "^7.17.12",
     "@contentful/integration-test-utils": "^2.0.0",
     "@lhci/cli": "^0.9.0",
-    "@storybook/addon-a11y": "^6.5.6",
-    "@storybook/addon-actions": "^6.5.6",
-    "@storybook/addon-docs": "^6.5.6",
-    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-a11y": "^6.5.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-docs": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/addon-links": "^6.5.6",
-    "@storybook/react": "^6.5.6",
-    "@testing-library/jest-dom": "^5.16.4",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "apr-for-each": "^3.0.3",
     "apr-main": "^4.0.3",
@@ -239,5 +239,6 @@
     "tabWidth": 2,
     "trailingComma": "all",
     "useTabs": false
-  }
+  },
+  "packageManager": "yarn@3.2.2"
 }
