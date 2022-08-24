@@ -171,7 +171,7 @@ const ContactUs = ({
                     }}
                     name={name}
                     contactUsRole={contactUsRole}
-                    description={contactUsDescription.contactUsDescription}
+                    description={contactUsDescription?.contactUsDescription}
                     role={footerRole}
                     image={image}
                     emailAddress={emailAddress}
