@@ -60,6 +60,13 @@ const configs = {
       siteId: FATHOM_SITE_ID,
     },
   },
+  'gatsby-plugin-plausible': {
+    resolve: 'gatsby-plugin-plausible',
+    options: {
+      domain: 'yld.io',
+      customDomain: 'p.yld.workers.dev',
+    },
+  },
   'gatsby-plugin-manifest': {
     resolve: 'gatsby-plugin-manifest',
     options: {
@@ -224,6 +231,7 @@ module.exports = {
     configs['gatsby-source-contentful'],
     configs['gatsby-source-lever'],
     configs['gatsby-plugin-fathom'],
+    configs['gatsby-plugin-plausible'],
     configs['gatsby-plugin-google-gtag'],
     configs['gatsby-plugin-manifest'],
   ].filter(Boolean),

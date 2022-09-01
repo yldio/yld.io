@@ -48,6 +48,7 @@
     "gatsby-plugin-mdx": "^3.15.1",
     "gatsby-plugin-modal-routing-3": "^3.0.0",
     "gatsby-plugin-netlify": "^5.0.0",
+    "gatsby-plugin-plausible": "^0.0.7",
     "gatsby-plugin-react-helmet": "^5.15.0",
     "gatsby-plugin-robots-txt": "1.7.1",
     "gatsby-plugin-sharp": "^4.15.1",

@@ -15851,6 +15851,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-plausible@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "gatsby-plugin-plausible@npm:0.0.7"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+    minimatch: 3.0.4
+    react: ^16.13.1
+  peerDependencies:
+    gatsby: ">=2.0.0"
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: 6fe12aed606e4790d7ed1dc47c0f0ac7911f7ea7d13f012a1a57241d9ec7e4ae9589b43912a72476d5fcd52cb37e31c135c4586dfb2e5ada48df9f821d2003b0
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-react-helmet@npm:^5.15.0":
   version: 5.15.0
   resolution: "gatsby-plugin-react-helmet@npm:5.15.0"
@@ -25844,6 +25859,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react@npm:^16.13.1":
+  version: 16.14.0
+  resolution: "react@npm:16.14.0"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+    prop-types: ^15.6.2
+  checksum: 8484f3ecb13414526f2a7412190575fc134da785c02695eb92bb6028c930bfe1c238d7be2a125088fec663cc7cda0a3623373c46807cf2c281f49c34b79881ac
+  languageName: node
+  linkType: hard
+
 "react@npm:^17.0.1":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -31810,6 +31836,7 @@ typescript@^3.3.3:
     gatsby-plugin-mdx: ^3.15.1
     gatsby-plugin-modal-routing-3: ^3.0.0
     gatsby-plugin-netlify: ^5.0.0
+    gatsby-plugin-plausible: ^0.0.7
     gatsby-plugin-react-helmet: ^5.15.0
     gatsby-plugin-robots-txt: 1.7.1
     gatsby-plugin-sharp: ^4.15.1
