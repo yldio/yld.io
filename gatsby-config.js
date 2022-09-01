@@ -10,6 +10,7 @@ const {
   URL: NETLIFY_SITE_URL = 'https://www.yld.io',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
+  FATHOM_SITE_ID,
 } = process.env;
 
 const isNetlifyProduction = NETLIFY_ENV === 'production';
@@ -50,6 +51,13 @@ const configs = {
       pluginConfig: {
         head: true,
       },
+    },
+  },
+  'gatsby-plugin-fathom': {
+    resolve: 'gatsby-plugin-fathom',
+    options: {
+      trackingUrl: 'f.yld.io',
+      siteId: FATHOM_SITE_ID,
     },
   },
   'gatsby-plugin-manifest': {
@@ -215,6 +223,7 @@ module.exports = {
     configs['gatsby-source-filesystem'],
     configs['gatsby-source-contentful'],
     configs['gatsby-source-lever'],
+    configs['gatsby-plugin-fathom'],
     configs['gatsby-plugin-google-gtag'],
     configs['gatsby-plugin-manifest'],
   ].filter(Boolean),

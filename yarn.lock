@@ -2938,6 +2938,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:7.14.5":
+  version: 7.14.5
+  resolution: "@babel/runtime@npm:7.14.5"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: f609df5ca9e26a1f0f71f92754a5f6e1a4a9c22f982627e8c2c2b751ebbf45da10376501024a68c22d7a625331f40a26f9d1830c8c869512bef813f223d18ba1
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.16.3
   resolution: "@babel/runtime@npm:7.16.3"
@@ -15667,6 +15676,18 @@ __metadata:
   peerDependencies:
     "@parcel/core": 2.5.0
   checksum: 34e61c6b6acc60d1227e656c581d85198b7d28632a8f2ea3cdea2c0fd680bc4d12823a93f9773e247df7e9cf138aec2826dc6f787ed0a46c3a9530724e679ae3
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-fathom@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "gatsby-plugin-fathom@npm:2.1.1"
+  dependencies:
+    "@babel/runtime": 7.14.5
+  peerDependencies:
+    gatsby: ">=2.0.0"
+    react: ">=16.0.0"
+  checksum: 47eb5a01a452b2a8583b8cfad9e16b5261f08143a65abbd3ded103777b2f9df3c600a13b27b018a2b42d514eb795c166cff334430bc3c437789b15f292e86410
   languageName: node
   linkType: hard
 
@@ -31782,6 +31803,7 @@ typescript@^3.3.3:
     fast-xml-parser: ^4.0.8
     finalhandler: ^1.2.0
     gatsby: ^4.15.2
+    gatsby-plugin-fathom: ^2.1.1
     gatsby-plugin-google-gtag: ^4.15.0
     gatsby-plugin-image: ^2.15.1
     gatsby-plugin-manifest: ^4.15.1
