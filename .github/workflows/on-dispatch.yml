@@ -29,6 +29,7 @@ jobs:
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           FATHOM_SITE_ID: ${{ secrets.FATHOM_SITE_ID }}
+          PLAUSIBLE_CUSTOM_DOMAIN: ${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
           GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
           NODE_ENV: production
       - name: Get branch

@@ -11,6 +11,7 @@ const {
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
   FATHOM_SITE_ID,
+  PLAUSIBLE_CUSTOM_DOMAIN,
 } = process.env;
 
 const isNetlifyProduction = NETLIFY_ENV === 'production';
@@ -64,7 +65,7 @@ const configs = {
     resolve: 'gatsby-plugin-plausible',
     options: {
       domain: 'yld.io',
-      customDomain: 'p.yld.workers.dev',
+      customDomain: PLAUSIBLE_CUSTOM_DOMAIN,
     },
   },
   'gatsby-plugin-manifest': {
