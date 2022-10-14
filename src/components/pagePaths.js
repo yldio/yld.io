@@ -27,7 +27,7 @@ const PagePaths = (props) => {
         data.allSitePage.edges.forEach((edge) => {
           // eslint-disable-next-line no-return-assign
           return (
-            edge.node.context &&
+            edge.node.pageContext &&
             (cachedPathsById[edge.node.pageContext.id] = edge.node.path)
           );
         });
