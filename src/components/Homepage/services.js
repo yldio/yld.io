@@ -3,7 +3,7 @@ import InternalAnchor from '../Common/InternalAnchor';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 
-import { Row, Col } from '../grid';
+import { Row, Col, Grid } from '../grid';
 
 import Image from '../Common/Image';
 
@@ -17,6 +17,20 @@ const ImageWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.space[3]};
 `;
 
+const ServiceGrid = styled(Grid)`
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 0;
+
+  ${breakpoint('smallPhone', 'tablet')`
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+   `};
+`;
+
 const StyledRow = styled(Row)`
   padding-top: ${({ theme }) => theme.space[4]};
   padding-bottom: ${({ theme }) => theme.space[4]};
@@ -24,18 +38,6 @@ const StyledRow = styled(Row)`
   ${breakpoint('tablet')`
     padding-top: ${({ theme }) => theme.space[6]};
     padding-bottom: ${({ theme }) => theme.space[6]};
-  `}
-`;
-
-const ServiceRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.space[4]};
-
-  ${breakpoint('smallTablet')`
-    padding-bottom: 0;
-  `}
-
-  ${breakpoint('tablet')`
-    padding-bottom: ${({ theme }) => theme.space[5]};
   `}
 `;
 
@@ -72,12 +74,12 @@ const Services = ({ statement, services }) => (
         </Col>
       )}
     </StyledRow>
-    <ServiceRow>
+    <ServiceGrid>
       {services.map(
         (service) =>
           service.introSentence && (
             <div key={service.slug}>
-              <ServiceCol width={[1, 1, 1, 1 / 2, 5 / 12]}>
+              <ServiceCol width={[1, 1, 1, 1 / 2, 9 / 12]}>
                 {service.icon && (
                   <ImageWrapper>
                     <Image title={service.icon.title} image={service.icon} />
@@ -100,7 +102,7 @@ const Services = ({ statement, services }) => (
             </div>
           ),
       )}
-    </ServiceRow>
+    </ServiceGrid>
   </>
 );
 
