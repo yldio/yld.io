@@ -28607,11 +28607,11 @@ resolve@^2.0.0-next.3:
   linkType: hard
 
 "styled-reset@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "styled-reset@npm:4.4.1"
+  version: 4.4.2
+  resolution: "styled-reset@npm:4.4.2"
   peerDependencies:
     styled-components: ">=4.0.0 || >=5.0.0"
-  checksum: 578582d42d82c81e1ce2aa576209ed2358ade6ec9817e1120f3d182be13f676bb4d292efb6e3baddac024c1f5adc237e0bcf0f4ee141aa89060cd6548b05e0cb
+  checksum: 1ee15f63911795d612548d9c77840c0b055ddb168199fb2b6147ab15a5e1a7ce67df573b224c4cabd98f303c61fd05100f9c3653ac011098f7d09b8118226183
   languageName: node
   linkType: hard
 
