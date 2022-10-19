@@ -57,6 +57,15 @@ export const Label = styled('label')`
   display: block;
 `;
 
+export const Textarea = styled('textarea')`
+  padding-bottom: ${remcalc(12)};
+  display: block;
+  width: 100%;
+  height: ${remcalc(200)};
+  padding: ${remcalc(20)};
+  margin-bottom: 36px;
+`;
+
 export const Field = styled.section`
   margin-bottom: ${remcalc(36)};
 

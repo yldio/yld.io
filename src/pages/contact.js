@@ -7,7 +7,7 @@ import breakpoint from 'styled-components-breakpoint';
 import Head from '../components/Common/Head';
 import Image from '../components/Common/Image';
 import Hr from '../components/Common/Hr';
-import StyledLink from '../components/Common/StyledLink';
+// import StyledLink from '../components/Common/StyledLink';
 import GreyBackground from '../components/Common/GreyBackground';
 import {
   SectionTitle,
@@ -22,6 +22,7 @@ import Layout from '../components/layout';
 import StaffCard from '../components/AboutUs/StaffCard';
 
 import Map from '../components/ContactUs/Map';
+import ContactForm from '../components/ContactUs/ContactForm';
 
 const MapGroup = ({ locations = [] }) => {
   const mappedLocations = locations.map(({ mapLocation }) => {
@@ -110,7 +111,7 @@ const ContactUs = ({
     },
   },
 }) => {
-  const { title, ctaUrl, ctaCopy, teamMembersTitle, teamMembers } = page;
+  const { title, teamMembersTitle, teamMembers } = page;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
     {
@@ -136,10 +137,17 @@ const ContactUs = ({
       <Grid>
         <IntroSectionRow>
           <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
+            {/* TO DO: CHANGE TITLE IN CONTENTFUL AFTER APPROVAL */}
             <SectionTitle as="h1">{title}</SectionTitle>
+            {/* TO BE INCLUDED IN NETFLIFY AFTER MIGRATION */}
+            <BodyPrimary>
+              Please provide your details below and we'll get back to you
+              shortly.
+            </BodyPrimary>
           </IntroSectionTitleCol>
           <Col width={[1]}>
-            <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink>
+            {/* <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink> */}
+            <ContactForm />
           </Col>
         </IntroSectionRow>
       </Grid>
