@@ -106,7 +106,7 @@ const ContactForm = () => {
           <Label>Phone Number</Label>
           <Input
             type="tel"
-            pattern="(\+[0-9]{1,3})?[0-9]{9}"
+            pattern="(\+[0-9]{1,3} ?)?[0-9]{9,11}"
             value={userDetails.phone}
             onChange={handleChange}
             name="phone"
