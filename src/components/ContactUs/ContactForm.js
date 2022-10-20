@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Input, Label, Textarea } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
-import { BodyPrimary, DisplayTitle } from '../../components/Typography';
+import ThankYouMessage from './ThankYouMessage';
 
 const StyledForm = styled('form')`
   display: flex;
@@ -60,14 +60,10 @@ const ContactForm = () => {
   };
 
   return sentEmail ? (
-    <>
-      <DisplayTitle>Thank you for getting in touch!</DisplayTitle>
-
-      <BodyPrimary>
-        We appreciate you contacting us at YLD. One of our colleagues will get
-        back in touch with you soon.
-      </BodyPrimary>
-    </>
+    <ThankYouMessage
+      titleMessage="Thank you for getting in touch!"
+      message="We appreciate you contacting us at YLD. One of our colleagues will get back in touch with you soon."
+    />
   ) : (
     <StyledForm onSubmit={handleSubmit}>
       <ContactRow>
