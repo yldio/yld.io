@@ -4,6 +4,7 @@ import { Input, Label, Textarea } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
+// import got from 'got';
 
 const StyledForm = styled('form')`
   display: flex;
@@ -46,10 +47,13 @@ const ContactForm = () => {
     enquiry: '',
   });
 
-  const handleSubmit = () => {
-    // TO DO: send info to YLD channel
+  const handleSubmit = async () => {
+    // POST info to slack channel - missing URL
+    // const { error } = await got.post('', { json: userDetails });
+    // if (!error) {
     setSentEmail(true);
     window.scrollTo(0, 0);
+    // }
   };
 
   const handleChange = (inputEl) => {
