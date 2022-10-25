@@ -135,10 +135,14 @@ const FeaturedEvent = ({ event }) => (
             </Col>
             <Col width={[1, 1, 1, 1, 5 / 12, 5 / 12, 7 / 12]}>
               <DesktopImageWrapper>
-                <Image image={event.desktopPosterImage} />
+                <Image
+                  image={event.desktopPosterImage || event.mobilePosterImage}
+                />
               </DesktopImageWrapper>
               <MobileImageWrapper>
-                <Image image={event.mobilePosterImage} />
+                <Image
+                  image={event.mobilePosterImage || event.desktopPosterImage}
+                />
               </MobileImageWrapper>
             </Col>
           </Row>
