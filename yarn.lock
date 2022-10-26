@@ -16024,8 +16024,8 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-prismjs@npm:^6.15.0":
-  version: 6.15.0
-  resolution: "gatsby-remark-prismjs@npm:6.15.0"
+  version: 6.24.0
+  resolution: "gatsby-remark-prismjs@npm:6.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
     parse-numeric-range: ^1.2.0
@@ -16033,7 +16033,7 @@ __metadata:
   peerDependencies:
     gatsby: ^4.0.0-next
     prismjs: ^1.15.0
-  checksum: 305f0427e550826fe6313134d4fa3edab2f6532303452e457f096c9a5a710d881802924123816abc67c7202fbfcab3f4bdafd5d44dc7a0a498d0f1e9f94132c5
+  checksum: 6f814f4dd950255fc9a3d8f53e9a2847fb42a1c07705c027e94f86df85a4567de3d359e8d216e011ec47e9762b21b2d645a34756e9bffd0be3443383bc43338f
   languageName: node
   linkType: hard
 
