@@ -5,7 +5,7 @@ import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
 import ky from 'ky';
-const isProd = require('../../utils/is-prod');
+const isProd = require('../../functions/utils/is-prod');
 
 const StyledForm = styled('form')`
   display: flex;
