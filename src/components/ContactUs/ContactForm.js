@@ -119,7 +119,7 @@ const ContactForm = () => {
         <StyledField>
           <Label>How did you hear about us? *</Label>
           <Select required onChange={handleChange} name="source">
-            <option value="" disabled defaultChecked>
+            <option value="" disabled selected>
               Choose
             </option>
             <option value="Blog post(YLD website)">
