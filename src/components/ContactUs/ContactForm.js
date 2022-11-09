@@ -4,7 +4,7 @@ import { Input, Label, Textarea } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
-// import got from 'got';
+import got from 'got';
 
 const StyledForm = styled('form')`
   display: flex;
@@ -42,18 +42,29 @@ const ContactForm = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
-    company: '',
-    enquiry: '',
+    source: '',
+    companyName: '',
+    body: '',
   });
 
   const handleSubmit = async () => {
-    // POST info to slack channel - missing URL
-    // const { error } = await got.post('', { json: userDetails });
-    // if (!error) {
-    setSentEmail(true);
-    window.scrollTo(0, 0);
-    // }
+    const userObject = {
+      fullname: userDetails.firstName + ' ' + userDetails.lastName,
+      email: userDetails.email,
+      companyName: userDetails.companyName,
+      source: userDetails.source,
+      body: userDetails.body,
+    };
+    // POST info to slack channel
+    // TO DO: change URL when we have definitive one
+    const { error } = await got.post(
+      'https://2t7ra3lvf0.execute-api.eu-west-2.amazonaws.com/contact-us',
+      { json: userObject },
+    );
+    if (!error) {
+      setSentEmail(true);
+      window.scrollTo(0, 0);
+    }
   };
 
   const handleChange = (inputEl) => {
@@ -72,7 +83,7 @@ const ContactForm = () => {
     <StyledForm onSubmit={handleSubmit}>
       <ContactRow>
         <StyledField>
-          <Label>Full Name*</Label>
+          <Label>First Name*</Label>
           <Input
             type="text"
             required
@@ -82,9 +93,10 @@ const ContactForm = () => {
           />
         </StyledField>
         <StyledField>
-          <Label>Last Name</Label>
+          <Label>Last Name*</Label>
           <Input
             type="text"
+            required
             value={userDetails.lastName}
             onChange={handleChange}
             name="lastName"
@@ -103,14 +115,29 @@ const ContactForm = () => {
           />
         </StyledField>
         <StyledField>
-          <Label>Phone Number</Label>
-          <Input
-            type="tel"
-            pattern="(\+[0-9]{1,3} ?)?[0-9]{9,11}"
-            value={userDetails.phone}
-            onChange={handleChange}
-            name="phone"
-          />
+          <Label>How did you hear about us? *</Label>
+          <select required onChange={handleChange} name="source">
+            <option value="" disabled defaultChecked>
+              Choose
+            </option>
+            <option value="Blog post(YLD website)">
+              Blog post(YLD website)
+            </option>
+            <option value="Conference/meetup/talk">
+              Conference/meetup/talk
+            </option>
+            <option value="I'm a former client">I'm a former client</option>
+            <option value="I'm a former employee">I'm a former employee</option>
+            <option value="Internet search">Internet search</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Open source work - Github">
+              Open source work - Github
+            </option>
+            <option value="Twitter">Twitter</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Medium">Medium</option>
+          </select>
         </StyledField>
       </ContactRow>
       <ContactRow>
@@ -119,9 +146,9 @@ const ContactForm = () => {
           <Input
             type="text"
             required
-            value={userDetails.company}
+            value={userDetails.companyName}
             onChange={handleChange}
-            name="company"
+            name="companyName"
           />
         </StyledField>
       </ContactRow>
@@ -132,9 +159,9 @@ const ContactForm = () => {
             type="text"
             placeholder="Tell us about ..."
             required
-            value={userDetails.enquiry}
+            value={userDetails.body}
             onChange={handleChange}
-            name="enquiry"
+            name="body"
           />
         </StyledField>
       </ContactRow>
