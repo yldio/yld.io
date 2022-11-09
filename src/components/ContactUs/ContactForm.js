@@ -5,6 +5,7 @@ import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
 import ky from 'ky';
+const isProd = require('../../utils/is-prod');
 
 const StyledForm = styled('form')`
   display: flex;
@@ -47,6 +48,10 @@ const ContactForm = () => {
     body: '',
   });
 
+  const endpointURI = isProd
+    ? 'https://rs50215nzk.execute-api.eu-west-2.amazonaws.com/contact-us'
+    : 'https://2t7ra3lvf0.execute-api.eu-west-2.amazonaws.com/contact-us';
+
   const handleSubmit = async () => {
     const userObject = {
       fullname: userDetails.firstName + ' ' + userDetails.lastName,
@@ -57,10 +62,7 @@ const ContactForm = () => {
     };
     // POST info to slack channel
     // TO DO: change URL when we have definitive one
-    const response = await ky.post(
-      'https://2t7ra3lvf0.execute-api.eu-west-2.amazonaws.com/contact-us',
-      { json: userObject },
-    );
+    const response = await ky.post(endpointURI, { json: userObject });
     if (response.ok) {
       setSentEmail(true);
       window.scrollTo(0, 0);
