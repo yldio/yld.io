@@ -5,7 +5,8 @@ import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
 import ky from 'ky';
-const isProd = require('../../functions/utils/is-prod');
+
+const endpointURI = process.env.GATSBY_CONTACT_US_ENDPOINT_URI;
 
 const StyledForm = styled('form')`
   display: flex;
@@ -48,11 +49,8 @@ const ContactForm = () => {
     body: '',
   });
 
-  const endpointURI = isProd
-    ? 'https://rs50215nzk.execute-api.eu-west-2.amazonaws.com/contact-us'
-    : 'https://2t7ra3lvf0.execute-api.eu-west-2.amazonaws.com/contact-us';
-
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const userObject = {
       fullname: userDetails.firstName + ' ' + userDetails.lastName,
       email: userDetails.email,
@@ -60,10 +58,12 @@ const ContactForm = () => {
       source: userDetails.source,
       body: userDetails.body,
     };
+
     // POST info to slack channel
-    // TO DO: change URL when we have definitive one
-    const response = await ky.post(endpointURI, { json: userObject });
-    if (response.ok) {
+    const response = await ky.post(endpointURI, {
+      json: userObject,
+    });
+    if (response.status === 200) {
       setSentEmail(true);
       window.scrollTo(0, 0);
     }
@@ -82,7 +82,7 @@ const ContactForm = () => {
       message="We appreciate you contacting us at YLD. One of our colleagues will get back in touch with you soon."
     />
   ) : (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit} method="post">
       <ContactRow>
         <StyledField>
           <Label>First Name*</Label>
@@ -118,8 +118,13 @@ const ContactForm = () => {
         </StyledField>
         <StyledField>
           <Label>How did you hear about us? *</Label>
-          <Select required onChange={handleChange} name="source">
-            <option value="" disabled selected>
+          <Select
+            required
+            onChange={handleChange}
+            name="source"
+            defaultValue=""
+          >
+            <option value="" disabled>
               Choose
             </option>
             <option value="Blog post(YLD website)">
