@@ -4,7 +4,7 @@ import { Input, Label, Textarea } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
-import got from 'got';
+import ky from 'ky';
 
 const StyledForm = styled('form')`
   display: flex;
@@ -57,11 +57,11 @@ const ContactForm = () => {
     };
     // POST info to slack channel
     // TO DO: change URL when we have definitive one
-    const { error } = await got.post(
+    const response = await ky.post(
       'https://2t7ra3lvf0.execute-api.eu-west-2.amazonaws.com/contact-us',
       { json: userObject },
     );
-    if (!error) {
+    if (response.ok) {
       setSentEmail(true);
       window.scrollTo(0, 0);
     }
