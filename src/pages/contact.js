@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import generate from 'shortid';
 import breakpoint from 'styled-components-breakpoint';
+import ky from 'ky';
 
 import Head from '../components/Common/Head';
 import Image from '../components/Common/Image';
@@ -23,6 +24,9 @@ import StaffCard from '../components/AboutUs/StaffCard';
 
 import Map from '../components/ContactUs/Map';
 import ContactForm from '../components/ContactUs/ContactForm';
+import ThankYouMessage from '../components/ContactUs/ThankYouMessage';
+
+const endpointURI = process.env.GATSBY_CONTACT_US_ENDPOINT_URI;
 
 const MapGroup = ({ locations = [] }) => {
   const mappedLocations = locations.map(({ mapLocation }) => {
@@ -111,6 +115,8 @@ const ContactUs = ({
     },
   },
 }) => {
+  const [sentEmail, setSentEmail] = React.useState(false);
+
   const { title, teamMembersTitle, teamMembers } = page;
 
   const breadcrumbData = generateBreadcrumbData(siteUrl, [
@@ -125,6 +131,28 @@ const ContactUs = ({
     nodes.some(({ primaryLocation }) => primaryLocation) ? -1 : 1,
   );
 
+  const handleSubmit = async (userDetails) => {
+    const userObject = {
+      fullname: userDetails.firstName + ' ' + userDetails.lastName,
+      email: userDetails.email,
+      companyName: userDetails.companyName,
+      source: userDetails.source,
+      body: userDetails.body,
+    };
+
+    // POST info to slack channel
+    const response = await ky.post(endpointURI, {
+      mode: 'no-cors',
+      json: userObject,
+      throwHttpErrors: false,
+    });
+
+    if ([0, 200].includes(response.status)) {
+      setSentEmail(true);
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <Layout
       location={location}
@@ -136,18 +164,27 @@ const ContactUs = ({
 
       <Grid>
         <IntroSectionRow>
-          <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
-            {/* TO DO: CHANGE TITLE IN CONTENTFUL AFTER APPROVAL */}
-            <SectionTitle as="h1">{title}</SectionTitle>
-            {/* TO BE INCLUDED IN NETFLIFY AFTER MIGRATION */}
-            <BodyPrimary>
-              Please provide your details below and we'll get back to you
-              shortly.
-            </BodyPrimary>
-          </IntroSectionTitleCol>
+          {sentEmail ? null : (
+            <IntroSectionTitleCol width={[1, 1, 1, 7 / 12]}>
+              {/* TO DO: CHANGE TITLE IN CONTENTFUL AFTER APPROVAL */}
+              <SectionTitle as="h1">{title}</SectionTitle>
+              {/* TO BE INCLUDED IN NETFLIFY AFTER MIGRATION */}
+              <BodyPrimary>
+                Please provide your details below and we'll get back to you
+                shortly.
+              </BodyPrimary>
+            </IntroSectionTitleCol>
+          )}
           <Col width={[1]}>
             {/* <StyledLink href={ctaUrl}>{ctaCopy}</StyledLink> */}
-            <ContactForm />
+            {sentEmail ? (
+              <ThankYouMessage
+                titleMessage="Thank you for getting in touch!"
+                message="We appreciate you contacting us at YLD. One of our colleagues will get back in touch with you soon."
+              />
+            ) : (
+              <ContactForm onSubmit={handleSubmit} />
+            )}
           </Col>
         </IntroSectionRow>
       </Grid>

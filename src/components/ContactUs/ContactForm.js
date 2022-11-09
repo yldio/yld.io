@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import { Input, Label, Textarea, Select } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
-import ThankYouMessage from './ThankYouMessage';
-import ky from 'ky';
-
-const endpointURI = process.env.GATSBY_CONTACT_US_ENDPOINT_URI;
 
 const StyledForm = styled('form')`
   display: flex;
@@ -21,7 +17,7 @@ const StyledField = styled.div`
   margin: 0 ${remcalc(10)};
 `;
 
-const SubmitButton = styled.input`
+const SubmitButton = styled.button`
   margin: 0 ${remcalc(10)};
   padding: ${remcalc(18)} ${remcalc(24)};
   color: ${(props) => props.theme.colors.white};
@@ -31,6 +27,7 @@ const SubmitButton = styled.input`
   line-height: ${remcalc(24)};
   width: fit-content;
   border: none;
+  cursor: pointer;
 `;
 
 const ContactRow = styled(Row)`
@@ -38,8 +35,7 @@ const ContactRow = styled(Row)`
   margin: 0;
 `;
 
-const ContactForm = () => {
-  const [sentEmail, setSentEmail] = useState(false);
+const ContactForm = ({ onSubmit }) => {
   const [userDetails, setUserDetails] = useState({
     firstName: '',
     lastName: '',
@@ -49,27 +45,9 @@ const ContactForm = () => {
     body: '',
   });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const userObject = {
-      fullname: userDetails.firstName + ' ' + userDetails.lastName,
-      email: userDetails.email,
-      companyName: userDetails.companyName,
-      source: userDetails.source,
-      body: userDetails.body,
-    };
-
-    // POST info to slack channel
-    const response = await ky.post(endpointURI, {
-      mode: 'no-cors',
-      json: userObject,
-      throwHttpErrors: false,
-    });
-
-    if ([0, 200].includes(response.status)) {
-      setSentEmail(true);
-      window.scrollTo(0, 0);
-    }
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    onSubmit(userDetails);
   };
 
   const handleChange = (inputEl) => {
@@ -79,12 +57,7 @@ const ContactForm = () => {
     });
   };
 
-  return sentEmail ? (
-    <ThankYouMessage
-      titleMessage="Thank you for getting in touch!"
-      message="We appreciate you contacting us at YLD. One of our colleagues will get back in touch with you soon."
-    />
-  ) : (
+  return (
     <StyledForm onSubmit={handleSubmit} method="post">
       <ContactRow>
         <StyledField>
@@ -175,8 +148,7 @@ const ContactForm = () => {
           />
         </StyledField>
       </ContactRow>
-
-      <SubmitButton type="submit" value="Submit" />
+      <SubmitButton type="submit">Submit</SubmitButton>
     </StyledForm>
   );
 };
