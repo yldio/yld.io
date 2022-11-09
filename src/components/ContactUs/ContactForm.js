@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Input, Label, Textarea } from '../Common/Forms';
+import { Input, Label, Textarea, Select } from '../Common/Forms';
 import remcalc from 'remcalc';
 import { Row } from '../../components/grid';
 import ThankYouMessage from './ThankYouMessage';
@@ -116,7 +116,7 @@ const ContactForm = () => {
         </StyledField>
         <StyledField>
           <Label>How did you hear about us? *</Label>
-          <select required onChange={handleChange} name="source">
+          <Select required onChange={handleChange} name="source">
             <option value="" disabled defaultChecked>
               Choose
             </option>
@@ -137,7 +137,7 @@ const ContactForm = () => {
             <option value="YouTube">YouTube</option>
             <option value="Instagram">Instagram</option>
             <option value="Medium">Medium</option>
-          </select>
+          </Select>
         </StyledField>
       </ContactRow>
       <ContactRow>
