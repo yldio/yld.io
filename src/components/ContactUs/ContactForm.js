@@ -61,9 +61,12 @@ const ContactForm = () => {
 
     // POST info to slack channel
     const response = await ky.post(endpointURI, {
+      mode: 'no-cors',
       json: userObject,
+      throwHttpErrors: false,
     });
-    if (response.status === 200) {
+
+    if ([0, 200].includes(response.status)) {
       setSentEmail(true);
       window.scrollTo(0, 0);
     }
