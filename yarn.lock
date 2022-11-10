@@ -20229,6 +20229,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ky@npm:^0.32.2":
+  version: 0.32.2
+  resolution: "ky@npm:0.32.2"
+  checksum: 0ca78c4fe7b143ad527c6f79e3f77b529a55d5efe7c4a400e5937ddce641f4b672d77fd18e59b59573c77df48ba71095823a0da4c7701515d4333376f06a62d9
+  languageName: node
+  linkType: hard
+
 "language-subtag-registry@npm:~0.3.2":
   version: 0.3.21
   resolution: "language-subtag-registry@npm:0.3.21"
@@ -31863,6 +31870,7 @@ typescript@^3.3.3:
     jest-extended: ^2.0.0
     jest-watch-typeahead: ^1.1.0
     jest-when: ^3.5.1
+    ky: ^0.32.2
     lint-staged: ^13.0.0
     lodash.capitalize: ^4.2.1
     lodash.every: ^4.6.0

@@ -71,6 +71,7 @@ jobs:
           FATHOM_SITE_ID: ${{ secrets.FATHOM_SITE_ID }}
           PLAUSIBLE_CUSTOM_DOMAIN: ${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
           GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
+          GATSBY_CONTACT_US_ENDPOINT_URI: ${{ secrets.CONTACT_US_ENDPOINT_URI }}
           NODE_ENV: production
 
   ###############################################################################

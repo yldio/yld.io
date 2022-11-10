@@ -57,6 +57,17 @@ export const Label = styled('label')`
   display: block;
 `;
 
+export const Textarea = styled('textarea')`
+  padding-bottom: ${remcalc(12)};
+  display: block;
+  width: 100%;
+  height: ${remcalc(200)};
+  padding: ${remcalc(20)};
+  margin-bottom: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-size: ${remcalc(18)};
+`;
+
 export const Field = styled.section`
   margin-bottom: ${remcalc(36)};
 
@@ -78,4 +89,17 @@ export const Fieldset = styled.section`
     align-items: center;
     margin-bottom: ${remcalc(24)};
   }
+`;
+
+export const Select = styled('select')`
+  border: solid 2px ${(props) => props.theme.colors.text};
+  padding: ${remcalc(16)} ${remcalc(20)};
+  margin-bottom: 36px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  line-height: ${remcalc(24)};
+  font-size: ${remcalc(18)};
+  background: ${(props) => props.theme.colors.greyBg};
+  box-sizing: border-box;
 `;
