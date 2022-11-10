@@ -6,6 +6,7 @@ import twitter from '../../images/twiter-icon.svg';
 import youtube from '../../images/youtube-icon.svg';
 import instagram from '../../images/instagram-icon.svg';
 import linkedin from '../../images/linkedin-icon.svg';
+import mastodon from '../../images/mastodon-icon.svg';
 
 const social = [
   {
@@ -22,6 +23,11 @@ const social = [
     label: 'Youtube',
     to: 'https://www.youtube.com/channel/UCjCCJWM2iVVhqjKzJ-Y9MvA',
     img: youtube,
+  },
+  {
+    label: 'Mastodon',
+    to: 'https://mastodon.social/@yld',
+    img: mastodon,
   },
   {
     label: 'Medium',

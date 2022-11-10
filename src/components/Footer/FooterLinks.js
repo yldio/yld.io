@@ -67,6 +67,7 @@ const FooterLinks = () => (
               {social.map((link) => (
                 <li key={link.label}>
                   <ExternalAnchor
+                    rel="me"
                     href={link.to}
                     title={`yld ${link.label} Account`}
                   >
