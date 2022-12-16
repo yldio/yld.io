@@ -151,7 +151,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.0",
     "jest-circus": "^28.1.0",
-    "jest-environment-jsdom": "^28.1.0",
+    "jest-environment-jsdom": "^29.3.1",
     "jest-environment-node": "^28.1.0",
     "jest-extended": "^2.0.0",
     "jest-watch-typeahead": "^1.1.0",
