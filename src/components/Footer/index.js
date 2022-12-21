@@ -72,13 +72,18 @@ const QUERY = graphql`
         genericCtaText
       }
     }
+    legal: allContentfulLegalFooter {
+      nodes {
+        text
+      }
+    }
   }
 `;
 
 const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
   <StaticQuery
     query={QUERY}
-    render={({ profiles }) => {
+    render={({ profiles, legal }) => {
       const footerContactUsData = profiles.nodes.find(
         ({ id }) => id === footerContactUsId,
       );
@@ -105,7 +110,7 @@ const Footer = ({ is404, footerContactUsId, displayFooterOffices = true }) => (
                 </Grid>
               </Padding>
             )}
-            <FooterLinks />
+            <FooterLinks legalCopy={legal?.nodes[0]?.text} />
           </GreyFooter>
         </>
       );

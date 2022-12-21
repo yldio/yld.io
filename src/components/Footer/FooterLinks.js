@@ -7,6 +7,7 @@ import breakpoint from 'styled-components-breakpoint';
 
 import { Grid, Row, Col } from '../../components/grid';
 import ExternalAnchor from '../Common/ExternalAnchor';
+import { BodyPrimary } from '../../components/Typography';
 
 import { social, gdpr } from './links';
 
@@ -57,9 +58,14 @@ const LinkUnderline = styled(InternalAnchor)`
   text-decoration: underline;
 `;
 
-const FooterLinks = () => (
+const Registred = styled(BodyPrimary)`
+  color: ${({ theme }) => theme.colors.white};
+  opacity: 0.2;
+`;
+
+const FooterLinks = ({ legalCopy }) => (
   <FooterBanner>
-    <Padding top={3} bottom={3}>
+    <Padding top={3} bottom={1}>
       <Grid>
         <Row>
           <Col width={[1, 1, 1, 1, 1, 1, 5 / 12]}>
@@ -85,6 +91,13 @@ const FooterLinks = () => (
                 </LinkUnderline>
               ))}
             </GDPR>
+          </Col>
+        </Row>
+      </Grid>
+      <Grid>
+        <Row>
+          <Col>
+            <Registred>{legalCopy}</Registred>
           </Col>
         </Row>
       </Grid>
