@@ -63,18 +63,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      contentfulCareerFramework {
-        publish
-      }
-      allContentfulCareerDiscipline {
-        edges {
-          node {
-            id
-            title
-            slug
-          }
-        }
-      }
       allContentfulBlogPost(
         filter: { publish: { eq: true } }
         sort: { fields: [firstPublishedAt], order: DESC }
@@ -106,9 +94,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogListTemplate = path.resolve(`./src/templates/blog.js`);
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
   const policyTemplate = path.resolve(`./src/templates/policy.js`);
-  const careerDisciplineTemplate = path.resolve(
-    `./src/templates/career-discipline.js`,
-  );
 
   forEach(result.data.allContentfulTrainingCourseCategory.edges, (edge) => {
     if (edge.node.slug && edge.node.courses) {
@@ -183,21 +168,6 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     }
   });
-
-  if (result.data.contentfulCareerFramework.publish) {
-    forEach(result.data.allContentfulCareerDiscipline.edges, (edge) => {
-      if (edge.node.slug) {
-        createPage({
-          path: `/career-framework/${edge.node.slug}/`,
-          component: slash(careerDisciplineTemplate),
-          context: {
-            id: edge.node.id,
-            slug: edge.node.slug,
-          },
-        });
-      }
-    });
-  }
 
   /**
    * Creates all pages for blog listing pages,

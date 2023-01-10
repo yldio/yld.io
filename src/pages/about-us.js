@@ -6,7 +6,6 @@ import Layout from '../components/layout';
 import Head from '../components/Common/Head';
 import AboutUsHero from '../components/AboutUs/AboutUsHero';
 import Teams from '../components/AboutUs/Teams';
-import Subsidiaries from '../components/AboutUs/Subsidiaries';
 import ClientTestimonial from '../components/AboutUs/ClientTestimonial';
 import Partners from '../components/AboutUs/Partners';
 
@@ -29,8 +28,6 @@ const AboutUs = ({
     supportingStatement3Text,
     teamSectionTitle,
     teams,
-    yldGroupTitle,
-    subsidiaries = [],
     clientTestimonialTitle,
     clientTestimonialVideo,
     partnershipsTitle,
@@ -70,9 +67,6 @@ const AboutUs = ({
         supportingStatements={supportingStatements}
       />
       <Teams title={teamSectionTitle} teams={teams} />
-      {subsidiaries.length ? (
-        <Subsidiaries title={yldGroupTitle} subsidiaries={subsidiaries} />
-      ) : null}
       <ClientTestimonial
         title={clientTestimonialTitle}
         video={clientTestimonialVideo}
@@ -153,21 +147,6 @@ const AboutUsPage = (props) => (
             }
           }
           yldGroupTitle
-          # subsidiaries {
-          #   name
-          #   description {
-          #     description
-          #   }
-          #   image {
-          #     title
-          #     file {
-          #       url
-          #     }
-          #     gatsbyImageData(layout: FULL_WIDTH)
-          #   }
-          #   linkUrl
-          #   linkText
-          # }
           clientTestimonialTitle
           clientTestimonialVideo {
             title

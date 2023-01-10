@@ -92,21 +92,4 @@ const teamMember = {
   ],
 };
 
-const subsidiaries = {
-  title: 'Subsidiary list',
-  subsidiaries: [
-    {
-      image: {
-        file: {
-          title: 'subsidiary1',
-          url: 'img1.jpg',
-        },
-      },
-      description: 'this is a subsidiary',
-      linkUrl: 'https://www.subs1.com',
-      linkText: 'Subs1',
-    },
-  ],
-};
-
-export { statements, clientTestimonial, partners, teamMember, subsidiaries };
+export { statements, clientTestimonial, partners, teamMember };
