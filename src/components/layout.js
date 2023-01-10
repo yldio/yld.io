@@ -20,7 +20,7 @@ const isDevEnvironment =
   GATSBY_ENVIRONMENT === 'development' || GATSBY_ENVIRONMENT === 'preview';
 
 const StyledMain = styled.main`
-  padding-top: ${remcalc(120)};
+  padding-top: ${({ nonFixedHeader }) => (nonFixedHeader ? 0 : remcalc(120))};
 `;
 
 class Layout extends Component {
@@ -57,6 +57,8 @@ class Layout extends Component {
       children,
       bgColor,
       displayFooterOffices = true,
+      nonFixedHeader = false,
+      headerChildren,
       footerContactUsId,
       slug,
       structuredData,
@@ -122,7 +124,10 @@ class Layout extends Component {
                         slug={slug}
                         path={location.pathname}
                         bgColor={bgColor}
-                      />
+                        nonFixed={nonFixedHeader}
+                      >
+                        {headerChildren}
+                      </Header>
                     )
                   }
                 </Location>
@@ -134,7 +139,9 @@ class Layout extends Component {
                     gutter={['24px', '36px', '36px', '42px', '48px']}
                   />
                 )}
-                <StyledMain>{children}</StyledMain>
+                <StyledMain nonFixedHeader={nonFixedHeader}>
+                  {children}
+                </StyledMain>
                 <Location>
                   {({ location }) =>
                     !(location && location.state && location.state.modal) && (

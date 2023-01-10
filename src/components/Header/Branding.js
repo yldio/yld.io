@@ -14,7 +14,7 @@ const StyledLinksContainer = styled.div`
   align-items: center;
 `;
 
-const TopNavBranding = ({ slug }) => (
+const TopNavBranding = ({ slug, children }) => (
   <StaticQuery
     query={graphql`
       {
@@ -76,6 +76,7 @@ const TopNavBranding = ({ slug }) => (
             fillColorHover={fillColorHover}
             textColor={textColor}
           />
+          {children}
           {isSpecialityPage || isServicePage ? (
             <ServiceLink
               isSpecialityPage={isSpecialityPage}

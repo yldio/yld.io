@@ -14,6 +14,14 @@ const modifiers = css`
     opacity: .7;
   `};
 
+  ${is('uppercase')`
+    text-transform: uppercase;
+  `};
+
+  ${is('align')`
+    text-align: ${({ align }) => align};
+  `};
+
   ${is('noPadding')`
     padding: 0;
   `};

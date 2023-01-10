@@ -29,6 +29,7 @@
     "now-start": "serve storybook-static"
   },
   "dependencies": {
+    "@contentful/rich-text-types": "^16.0.2",
     "@faker-js/faker": "^7.4.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -76,6 +77,7 @@
     "lodash.kebabcase": "^4.1.1",
     "mime-types": "^2.1.35",
     "mz": "^2.7.0",
+    "param-case": "^3.0.4",
     "polished": "^4.2.2",
     "raf": "^3.4.1",
     "react": "^18.1.0",

@@ -3151,6 +3151,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentful/rich-text-types@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "@contentful/rich-text-types@npm:16.0.2"
+  checksum: efa9a3e1bcd196f64c61f2ed820188d01aacbca05f5a64efa9d88390b165d9a51f1382bc7bc1305fe0e54e958556ec38f99b7164c073a6af3749dde9b0c84b42
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.5.3":
   version: 0.5.6
   resolution: "@discoveryjs/json-ext@npm:0.5.6"
@@ -31788,6 +31795,7 @@ typescript@^3.3.3:
     "@babel/preset-env": ^7.18.2
     "@babel/preset-react": ^7.17.12
     "@contentful/integration-test-utils": ^2.0.0
+    "@contentful/rich-text-types": ^16.0.2
     "@faker-js/faker": ^7.4.0
     "@lhci/cli": ^0.9.0
     "@mdx-js/mdx": ^1.6.22
@@ -31886,6 +31894,7 @@ typescript@^3.3.3:
     netlify-lambda: ^2.0.15
     nock: ^13.2.4
     npm-run-all: ^4.1.5
+    param-case: ^3.0.4
     polished: ^4.2.2
     prettier: ^2.6.2
     prismjs: ^1.28.0

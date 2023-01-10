@@ -8,11 +8,15 @@ import Branding from './Branding';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 
-const StyledContainer = styled.div`
-  position: fixed;
-  background: ${({ theme, bgColor = 'white' }) => theme.colors[bgColor]};
+const BaseContainer = styled.div`
+  background: ${({ theme, bgColor = 'white' }) =>
+    theme.colors[bgColor] || bgColor};
   width: 100%;
   max-width: unset;
+`;
+
+const FixedContainer = styled(BaseContainer)`
+  position: fixed;
   z-index: ${(props) => props.theme.zIndexes.header};
   box-shadow: ${(props) =>
     props.hasShadow ? `0 9px 9px -9px rgba(0, 0, 0, 0.175)` : null};
@@ -37,7 +41,7 @@ const StyledTopNavContainer = styled.nav`
   height: ${remcalc(84)};
 `;
 
-const Header = ({ path, bgColor, slug }) => {
+const Header = ({ slug, path, bgColor, nonFixed, children }) => {
   const [isMobileNavOpen, toggleMobileNav] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const isModalPage = Boolean(path.match(trainingModalRegExp));
@@ -47,37 +51,43 @@ const Header = ({ path, bgColor, slug }) => {
     return () => document.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleScroll = () =>
+  const handleScroll = () => {
     setIsScrolled(document.documentElement.scrollTop !== 0);
+  };
 
   const themeVariation = getThemeVariation(bgColor);
+  const Container = nonFixed ? BaseContainer : FixedContainer;
 
   return isModalPage ? null : (
-    <StyledContainer bgColor={bgColor} hasShadow={isScrolled}>
+    <Container bgColor={bgColor} hasShadow={isScrolled}>
       <Grid>
         <Row style={{ overflow: 'visible' }}>
           <Col width={[1]} style={{ overflow: 'visible' }}>
             <StyledTopNavContainer>
-              <Branding slug={slug} />
-              <DesktopNav path={path} themeVariation={themeVariation} />
-              <Hamburger
-                themeVariation={themeVariation}
-                onClick={() => toggleMobileNav(true)}
-              />
-              <Overlay
-                visible={isMobileNavOpen}
-                onClick={() => toggleMobileNav(false)}
-              />
-              <MobileNav
-                path={path}
-                isOpen={isMobileNavOpen}
-                onClose={() => toggleMobileNav(false)}
-              />
+              {children ? children : <Branding slug={slug} />}
+              {children ? null : (
+                <>
+                  <DesktopNav path={path} themeVariation={themeVariation} />
+                  <Hamburger
+                    themeVariation={themeVariation}
+                    onClick={() => toggleMobileNav(true)}
+                  />
+                  <Overlay
+                    visible={isMobileNavOpen}
+                    onClick={() => toggleMobileNav(false)}
+                  />
+                  <MobileNav
+                    path={path}
+                    isOpen={isMobileNavOpen}
+                    onClose={() => toggleMobileNav(false)}
+                  />
+                </>
+              )}
             </StyledTopNavContainer>
           </Col>
         </Row>
       </Grid>
-    </StyledContainer>
+    </Container>
   );
 };
 

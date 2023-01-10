@@ -1,8 +1,9 @@
-const forEach = require(`lodash.foreach`);
-const path = require(`path`);
-const slash = require(`slash`);
+const forEach = require('lodash.foreach');
+const path = require('path');
+const slash = require('slash');
 const { getTagsForTitle } = require('./src/utils/getTagsForTitle');
 const { writeFile } = require('mz/fs');
+const { paramCase } = require('param-case');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
@@ -78,6 +79,14 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulSummarisedCaseStudy {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
     }
   `);
 
@@ -88,12 +97,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const trainingCourseTemplate = path.resolve(
     `./src/templates/trainingCourseModal.js`,
   );
-  const caseStudyTemplate = path.resolve(`./src/templates/caseStudy.js`);
-  const specialityTemplate = path.resolve(`./src/templates/speciality.js`);
-  const serviceTemplate = path.resolve(`./src/templates/service.js`);
-  const blogListTemplate = path.resolve(`./src/templates/blog.js`);
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
-  const policyTemplate = path.resolve(`./src/templates/policy.js`);
+  const caseStudyTemplate = path.resolve('./src/templates/caseStudy.js');
+  const specialityTemplate = path.resolve('./src/templates/speciality.js');
+  const serviceTemplate = path.resolve('./src/templates/service.js');
+  const blogListTemplate = path.resolve('./src/templates/blog.js');
+  const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
+  const policyTemplate = path.resolve('./src/templates/policy.js');
+  const summarisedCaseStudy = path.resolve(
+    './src/templates/summarised-case-study.js',
+  );
 
   forEach(result.data.allContentfulTrainingCourseCategory.edges, (edge) => {
     if (edge.node.slug && edge.node.courses) {
@@ -167,6 +179,16 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       });
     }
+  });
+
+  forEach(result.data.allContentfulSummarisedCaseStudy.edges, ({ node }) => {
+    createPage({
+      path: `/${paramCase(node.title)}/`,
+      component: slash(summarisedCaseStudy),
+      context: {
+        id: node.id,
+      },
+    });
   });
 
   /**
