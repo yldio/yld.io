@@ -46,7 +46,7 @@ const initImageUrl =
  * - https://trello.com/c/f5gRVN79/636-integrate-seo-content-type-to-all-pages
  * - https://trello.com/c/q8pzabwy/573-amend-site-title-creation
  */
-const getMetaData = ({ page, seoMetaData, siteMetadata }) => {
+const getMetaData = ({ page = {}, seoMetaData, siteMetadata }) => {
   const getImageUrl = initImageUrl(siteMetadata);
 
   if (seoMetaData)
