@@ -4,18 +4,23 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import { Grid } from '../components/grid';
-import { GreyBackgroundOffset } from '../components/Common/GreyBackground';
 import Head from '../components/Common/Head';
 import CaseStudyHero from '../components/Common/CaseStudyCards/CaseStudyHero';
 import FirstTextSection from '../components/TemplatedCaseStudy/FirstTextSection';
 import SecondTextSection from '../components/TemplatedCaseStudy/SecondTextSection';
 import VideoSection from '../components/Common/VideoSection';
 import FeaturedWork from '../components/Common/case-studies/FeaturedWork';
+import GreyBackground, {
+  GreyBackgroundOffset,
+} from '../components/Common/GreyBackground';
 
 const CaseStudy = ({
   data: { contentfulTemplatedCaseStudy: caseStudy },
   location,
 }) => {
+  const { youtubeVideo } = caseStudy;
+  const Background = youtubeVideo ? GreyBackgroundOffset : GreyBackground;
+
   return (
     <Layout
       location={location}
@@ -24,25 +29,36 @@ const CaseStudy = ({
       <Head seoMetaData={caseStudy.seoMetaData} />
       <CaseStudyHero as="h1" caseStudy={caseStudy} />
       <Grid>
-        <FirstTextSection source={caseStudy.bodyFirstBlock.bodyFirstBlock} />
+        <Padding bottom={youtubeVideo ? undefined : 3}>
+          <FirstTextSection source={caseStudy.bodyFirstBlock.bodyFirstBlock} />
+        </Padding>
       </Grid>
-      <GreyBackgroundOffset topMargin topOffset={-150}>
-        <Padding bottom={{ smallPhone: 3.5, tablet: 4 }}>
+      <Background topMargin topOffset={-150}>
+        <Padding
+          bottom={youtubeVideo ? { smallPhone: 3.5, tablet: 4 } : undefined}
+        >
           <Grid>
-            <VideoSection
-              src={caseStudy.youtubeVideo.link}
-              padding={{
-                top: { smallPhone: 3, tablet: 4 },
-                bottom: { smallPhone: 3, tablet: 4 },
-              }}
-            />
-            <SecondTextSection
-              stats={caseStudy.stats}
-              source={caseStudy.bodySecondBlock.bodySecondBlock}
-            />
+            {youtubeVideo && (
+              <VideoSection
+                src={caseStudy.youtubeVideo.link}
+                padding={{
+                  top: { smallPhone: 3, tablet: 4 },
+                  bottom: { smallPhone: 3, tablet: 4 },
+                }}
+              />
+            )}
+            <Padding
+              top={youtubeVideo ? undefined : 3}
+              bottom={youtubeVideo ? undefined : 3}
+            >
+              <SecondTextSection
+                stats={caseStudy.stats}
+                source={caseStudy.bodySecondBlock.bodySecondBlock}
+              />
+            </Padding>
           </Grid>
         </Padding>
-      </GreyBackgroundOffset>
+      </Background>
       <FeaturedWork
         limited
         hideSparseRows
