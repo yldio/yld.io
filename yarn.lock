@@ -16142,8 +16142,8 @@ __metadata:
   linkType: hard
 
 "gatsby-source-lever@npm:^4.15.0":
-  version: 4.15.0
-  resolution: "gatsby-source-lever@npm:4.15.0"
+  version: 4.25.0
+  resolution: "gatsby-source-lever@npm:4.25.0"
   dependencies:
     "@babel/runtime": ^7.15.4
     axios: ^0.21.1
@@ -16154,7 +16154,7 @@ __metadata:
     lodash: ^4.17.21
   peerDependencies:
     gatsby: ^4.0.0-next
-  checksum: c8360c06bac1df83892063a5330741d2602d1db6d265fd4de5c386ba23b292a10185fcfd0bd1e9fc6228e28744dd7e57cbb1fc509a663a327e541f10ad3dfaa0
+  checksum: 933c16a8d985e01917ed42c212e23777df4fed5ef20a8daf9bac8be706e7c49de109006548b2f1d52dbe58348d80388b72b62097acf5e990412e8c98bddecb8e
   languageName: node
   linkType: hard
 
