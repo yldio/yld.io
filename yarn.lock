@@ -15935,17 +15935,17 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-styled-components@npm:^5.15.0":
-  version: 5.15.0
-  resolution: "gatsby-plugin-styled-components@npm:5.15.0"
+  version: 5.25.0
+  resolution: "gatsby-plugin-styled-components@npm:5.25.0"
   dependencies:
     "@babel/runtime": ^7.15.4
   peerDependencies:
     babel-plugin-styled-components: ">1.5.0"
     gatsby: ^4.0.0-next
-    react: ^16.9.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
+    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     styled-components: ">=2.0.0"
-  checksum: 3c994e00a4efef727dbb6f14647cf15011d865b59475a50275fe0fe92d2342ff0a2ff189a4474cde8c41e2b6dba56a1a84803f78c4128f61caa91f2c09449f72
+  checksum: ce47704b1f08d2f4d671ed95ae6dbdc94ef4804cec78277cba3cdf8d3ca1c225820f8cc42c820ad96e4e6140556820181e45e30ddcd5778ec6cf6d27a1400e67
   languageName: node
   linkType: hard
 
