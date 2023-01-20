@@ -11,7 +11,7 @@ jobs:
       - name: Get branch
         uses: rlespinasse/github-slug-action@v3.x
       - name: Remove GitHub deployment
-        uses: bobheadxi/deployments@v1.3.0
+        uses: bobheadxi/deployments@v1.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           step: delete-env
