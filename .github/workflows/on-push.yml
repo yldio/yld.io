@@ -210,7 +210,7 @@ jobs:
   #           public
   #           functions
   #     - name: Setup Chrome
-  #       uses: browser-actions/setup-chrome@v0.0.0
+  #       uses: browser-actions/setup-chrome@v1.0.0
   #     - name: Lighthouse CI
   #       run: yarn lhci autorun
   #       env:
@@ -249,7 +249,7 @@ jobs:
             public
             functions
       - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v0.0.0
+        uses: browser-actions/setup-chrome@v1.0.0
       - name: Testcafe
         run: yarn run test:e2e:ui
       - name: Upload artifacts
