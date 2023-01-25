@@ -40,7 +40,13 @@ const components = {
   li: ListItem,
   p: Body,
   code: Code,
-  anchor: A,
+  a({ children, ...rest }) {
+    return (
+      <A {...rest} target="_blank">
+        {children}
+      </A>
+    );
+  },
   blockquote: Blockquote,
   img({ children, src, ...rest }) {
     if (/^https\:\/\/medium.com\/\_\/stat/.test(src)) {
