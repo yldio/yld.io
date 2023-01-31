@@ -2974,6 +2974,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.7":
+  version: 7.20.13
+  resolution: "@babel/runtime@npm:7.20.13"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 09b7a97a05c80540db6c9e4ddf8c5d2ebb06cae5caf3a87e33c33f27f8c4d49d9c67a2d72f1570e796045288fad569f98a26ceba0c4f5fad2af84b6ad855c4fb
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.12.7, @babel/template@npm:^7.16.0, @babel/template@npm:^7.3.3":
   version: 7.16.0
   resolution: "@babel/template@npm:7.16.0"
@@ -15705,6 +15714,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-google-tagmanager@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "gatsby-plugin-google-tagmanager@npm:5.5.0"
+  dependencies:
+    "@babel/runtime": ^7.20.7
+    web-vitals: ^1.1.2
+  peerDependencies:
+    gatsby: ^5.0.0-next
+    react: ^18.0.0 || ^0.0.0
+    react-dom: ^18.0.0 || ^0.0.0
+  checksum: e9455d314fd5720a92b88fce396dbad0009097309554f8e04bc181b0f1a02e750f91710c976a56c21a0a7cf7ea9e263fbc83c087b7884672519e81edb90c792b
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-image@npm:^2.15.1":
   version: 2.15.1
   resolution: "gatsby-plugin-image@npm:2.15.1"
@@ -26139,6 +26162,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.13.3, regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
@@ -30987,6 +31017,13 @@ typescript@^3.3.3:
   languageName: node
   linkType: hard
 
+"web-vitals@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "web-vitals@npm:1.1.2"
+  checksum: 92071029089277166e11141b735831d9011e85737d32c1360034676db898ab0ca95f19041ee01904f2189ad6e711b9da6b17567e4831290a429a586c98bc573f
+  languageName: node
+  linkType: hard
+
 "webauth@npm:^1.1.0":
   version: 1.1.0
   resolution: "webauth@npm:1.1.0"
@@ -31838,6 +31875,7 @@ typescript@^3.3.3:
     gatsby: ^4.15.2
     gatsby-plugin-fathom: ^2.1.1
     gatsby-plugin-google-gtag: ^4.15.0
+    gatsby-plugin-google-tagmanager: ^5.5.0
     gatsby-plugin-image: ^2.15.1
     gatsby-plugin-manifest: ^4.15.1
     gatsby-plugin-mdx: ^3.15.1

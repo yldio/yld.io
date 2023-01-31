@@ -5,6 +5,7 @@ const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
   GA_TRACKING_ID,
+  TAG_MANAGER_ID,
   GOOGLE_SITE_VERIFICATION_META_CONTENT,
   NODE_ENV,
   URL: NETLIFY_SITE_URL = 'https://www.yld.io',
@@ -52,6 +53,13 @@ const configs = {
       pluginConfig: {
         head: true,
       },
+    },
+  },
+  'gatsby-plugin-google-tagmanager': {
+    resolve: 'gatsby-plugin-google-tagmanager',
+    options: {
+      id: TAG_MANAGER_ID,
+      includeInDevelopment: false,
     },
   },
   'gatsby-plugin-fathom': {
@@ -234,6 +242,7 @@ module.exports = {
     configs['gatsby-plugin-fathom'],
     configs['gatsby-plugin-plausible'],
     configs['gatsby-plugin-google-gtag'],
+    configs['gatsby-plugin-google-tagmanager'],
     configs['gatsby-plugin-manifest'],
   ].filter(Boolean),
 };
