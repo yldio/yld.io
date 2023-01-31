@@ -28,6 +28,7 @@ jobs:
           CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          TAG_MANAGER_ID: ${{ secrets.TAG_MANAGER_ID }}
           FATHOM_SITE_ID: ${{ secrets.FATHOM_SITE_ID }}
           PLAUSIBLE_CUSTOM_DOMAIN: ${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
           GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
