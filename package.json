@@ -45,7 +45,7 @@
     "gatsby-plugin-google-gtag": "^4.15.0",
     "gatsby-plugin-google-tagmanager": "^5.5.0",
     "gatsby-plugin-image": "^2.15.1",
-    "gatsby-plugin-manifest": "^4.15.1",
+    "gatsby-plugin-manifest": "^5.5.0",
     "gatsby-plugin-mdx": "^3.15.1",
     "gatsby-plugin-modal-routing-3": "^3.0.0",
     "gatsby-plugin-netlify": "^5.0.0",
