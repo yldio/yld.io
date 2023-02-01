@@ -169,7 +169,7 @@
     "testcafe": "^1.19.0",
     "testcafe-reporter-html": "^1.4.6",
     "turndown": "^7.1.1",
-    "wait-on": "^6.0.1"
+    "wait-on": "^7.0.1"
   },
   "resolutions": {
     "sharp": "0.27.0",

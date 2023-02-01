@@ -9194,16 +9194,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "axios@npm:0.25.0"
-  dependencies:
-    follow-redirects: ^1.14.7
-  checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.27.0, axios@npm:^0.27.1":
+"axios@npm:^0.27.0, axios@npm:^0.27.1, axios@npm:^0.27.2":
   version: 0.27.2
   resolution: "axios@npm:0.27.2"
   dependencies:
@@ -15222,7 +15213,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.9":
+"follow-redirects@npm:^1.14.9":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
@@ -19824,7 +19815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.5.0, joi@npm:^17.6.0":
+"joi@npm:^17.5.0":
   version: 17.6.0
   resolution: "joi@npm:17.6.0"
   dependencies:
@@ -19834,6 +19825,19 @@ __metadata:
     "@sideway/formula": ^3.0.0
     "@sideway/pinpoint": ^2.0.0
   checksum: eaf62f6c02f2edb1042f1ab04fc23a5918a2cb8f54bec84c6e1033624d8a462c10ae9518af55a3ba84f1793960450d58094eda308e7ef93c17edd4e3c8ef31d5
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.7.0":
+  version: 17.7.0
+  resolution: "joi@npm:17.7.0"
+  dependencies:
+    "@hapi/hoek": ^9.0.0
+    "@hapi/topo": ^5.0.0
+    "@sideway/address": ^4.1.3
+    "@sideway/formula": ^3.0.0
+    "@sideway/pinpoint": ^2.0.0
+  checksum: 767a847936cb66787256c4351ff86e1b9e8d7383cbe81a5c827064032c2a8e8b6e938baef5ad32c4035fe4c56e537bd90aa2a952be8a0658601c920cdeb4fb3c
   languageName: node
   linkType: hard
 
@@ -22238,6 +22242,13 @@ __metadata:
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
+  languageName: node
+  linkType: hard
+
+"minimist@npm:^1.2.7":
+  version: 1.2.7
+  resolution: "minimist@npm:1.2.7"
+  checksum: 7346574a1038ca23c32e02252f603801f09384dd1d78b69a943a4e8c2c28730b80e96193882d3d3b22a063445f460e48316b29b8a25addca2d7e5e8f75478bec
   languageName: node
   linkType: hard
 
@@ -26982,12 +26993,21 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.5.4, rxjs@npm:^7.5.5":
+"rxjs@npm:^7.5.5":
   version: 7.5.5
   resolution: "rxjs@npm:7.5.5"
   dependencies:
     tslib: ^2.1.0
   checksum: e034f60805210cce756dd2f49664a8108780b117cf5d0e2281506e9e6387f7b4f1532d974a8c8b09314fa7a16dd2f6cff3462072a5789672b5dcb45c4173f3c6
+  languageName: node
+  linkType: hard
+
+"rxjs@npm:^7.8.0":
+  version: 7.8.0
+  resolution: "rxjs@npm:7.8.0"
+  dependencies:
+    tslib: ^2.1.0
+  checksum: 61b4d4fd323c1043d8d6ceb91f24183b28bcf5def4f01ca111511d5c6b66755bc5578587fe714ef5d67cf4c9f2e26f4490d4e1d8cabf9bd5967687835e9866a2
   languageName: node
   linkType: hard
 
@@ -30960,18 +30980,18 @@ typescript@^3.3.3:
   languageName: node
   linkType: hard
 
-"wait-on@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "wait-on@npm:6.0.1"
+"wait-on@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "wait-on@npm:7.0.1"
   dependencies:
-    axios: ^0.25.0
-    joi: ^17.6.0
+    axios: ^0.27.2
+    joi: ^17.7.0
     lodash: ^4.17.21
-    minimist: ^1.2.5
-    rxjs: ^7.5.4
+    minimist: ^1.2.7
+    rxjs: ^7.8.0
   bin:
     wait-on: bin/wait-on
-  checksum: e4d62aa4145d99fe34747ccf7506d4b4d6e60dd677c0eb18a51e316d38116ace2d194e4b22a9eb7b767b0282f39878ddcc4ae9440dcb0c005c9150668747cf5b
+  checksum: 1e8a17d8ee6436f71d3ab82781ce31267481fcd7bbccde49b0f8124871e6e40a1acac3401f04f775ba6203853a5813352fa131620fc139914351f3b2894d573f
   languageName: node
   linkType: hard
 
@@ -31957,7 +31977,7 @@ typescript@^3.3.3:
     turndown: ^7.1.1
     tween: ^0.9.0
     url-parse: ^1.5.10
-    wait-on: ^6.0.1
+    wait-on: ^7.0.1
     yaml: ^1.10.2
   languageName: unknown
   linkType: soft
