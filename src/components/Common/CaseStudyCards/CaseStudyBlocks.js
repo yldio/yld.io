@@ -174,14 +174,24 @@ const TextAndImageBlock = ({
   colWidthTwo = [1, 1, 1, 1, 1 / 2],
   middleColWidth = null,
   colorReverse = false,
-}) => (
-  <>
-    <Col width={colWidthOne}>{renderText({ text, colorReverse })}</Col>
-    {text && image && <StyledBreakpointMobilePadding width={[1]} />}
-    {middleColWidth && <Col width={middleColWidth} />}
-    <Col width={colWidthTwo}>{renderImage(image)}</Col>
-  </>
-);
+  reverseOrder = false,
+}) => {
+  const imgEl = renderImage(image);
+  const txtEl = renderText({ text, colorReverse });
+
+  return (
+    <>
+      <Col width={reverseOrder ? colWidthTwo : colWidthOne}>
+        {reverseOrder ? imgEl : txtEl}
+      </Col>
+      {text && image && <StyledBreakpointMobilePadding width={[1]} />}
+      {middleColWidth && <Col width={middleColWidth} />}
+      <Col width={reverseOrder ? colWidthOne : colWidthTwo}>
+        {reverseOrder ? txtEl : imgEl}
+      </Col>
+    </>
+  );
+};
 
 const TextAndResizedImageBlock = ({ data: { text, image } }) => (
   <>
