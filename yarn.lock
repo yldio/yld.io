@@ -3131,13 +3131,13 @@ __metadata:
   linkType: hard
 
 "@contentful/integration-test-utils@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@contentful/integration-test-utils@npm:2.0.0"
+  version: 2.0.1
+  resolution: "@contentful/integration-test-utils@npm:2.0.1"
   dependencies:
     contentful-management: ^10.0.0
   bin:
     clean-up-test-spaces: bin/clean-up-test-spaces
-  checksum: d13748016695ab5a47c220c8774decca304cb596e18c2411fc72433d6330f6748b6bf4d2fdfc79392cdb685aa120dd1f4dc5a9d480237e9250c7ea92e168c0e3
+  checksum: 0a078406bbbaceb48afbe9f8cec074fb60a0cc1c7fdd266d687911338aa7256e684dcd65314e165caf439c31e7cd39ea2efaad84390cb752ddf3cbaafaa7dd72
   languageName: node
   linkType: hard
 
