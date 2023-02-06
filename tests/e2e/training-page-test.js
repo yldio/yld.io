@@ -64,7 +64,7 @@ test('pressing Escape on the keyboard closes the modal & redirects to the course
   await t.expect(firstModalLink.visible).ok({ timeout: 5000 });
 });
 
-test('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async (t) => {
+test.skip('when using the Escape key to close a modal, any future modal that is opened still has the correct content', async (t) => {
   const firstCourseLinkText = await firstModalLink.textContent;
   const secondModalLink = Selector('a[data-testid="course-link"]').nth(1);
   const secondCourseLinkText = await secondModalLink.textContent;

@@ -29,7 +29,7 @@ it('prepends the front matter to the content', () => {
 it('escapes strings when they include special characters', () => {
   expect(AddFrontMatter({ ...post, title: 'Test: 1' })).toMatchInlineSnapshot(`
     "---
-    title: \\"Test: 1\\"
+    title: "Test: 1"
     slug: blog-slug
     tags: tag1,tag2
     firstPublishedAt: 2019-01-01

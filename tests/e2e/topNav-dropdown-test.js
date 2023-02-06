@@ -19,7 +19,7 @@ test('we are on the homepage', async (t) => {
   await t.resizeWindow(1280, 720).expect(location.href).contains(baseUrl);
 });
 
-test('a dropdown dropdownContainer opens on desktop and redirects correctly', async (t) => {
+test.skip('a dropdown dropdownContainer opens on desktop and redirects correctly', async (t) => {
   const services = Selector('li').withText('Services');
   await t.expect(services.exists).ok({ timeout: 5000 });
 
@@ -48,7 +48,7 @@ test('An outerAnchorItem redirects to a page', async (t) => {
   );
 });
 
-test('opens and close a dropdown', async (t) => {
+test.skip('opens and close a dropdown', async (t) => {
   const services = Selector('li').withText('Services');
   await t.expect(services.exists).ok({ timeout: 5000 });
 

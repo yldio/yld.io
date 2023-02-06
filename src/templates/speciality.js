@@ -310,7 +310,7 @@ export const pageQuery = graphql`
     filteredPosts: allContentfulBlogPost(
       filter: { publish: { eq: true }, tags: { in: $postsTags } }
       limit: $postsLimit
-      sort: { fields: [firstPublishedAt], order: DESC }
+      sort: { firstPublishedAt: DESC }
     ) {
       edges {
         node {
