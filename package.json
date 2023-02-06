@@ -65,7 +65,7 @@
     "gatsby-transformer-sharp": "^4.15.1",
     "get-youtube-id": "^1.0.1",
     "google-map-react": "^2.1.10",
-    "got": "^11.8.5",
+    "got": "^12.5.3",
     "ky": "^0.32.2",
     "lodash.capitalize": "^4.2.1",
     "lodash.every": "^4.6.0",
