@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const LOCATIONS = graphql`
   query locations {
-    allContentfulLocation(sort: { fields: createdAt }) {
+    allContentfulLocation(sort: { createdAt: ASC }) {
       edges {
         node {
           id

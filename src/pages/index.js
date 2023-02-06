@@ -90,7 +90,7 @@ const IndexPage = ({ data, location }) => {
   }, []);
 
   return (
-    <HomePageContext.Provider value>
+    <HomePageContext.Provider>
       <LogoStyleContext.Provider value={value}>
         <Layout location={location} bgColor="blueBg">
           <Head seoMetaData={content.seoMetaData} />
@@ -283,7 +283,7 @@ export const query = graphql`
     allContentfulBlogPost(
       filter: { publish: { eq: true } }
       limit: 3
-      sort: { fields: [firstPublishedAt], order: DESC }
+      sort: { firstPublishedAt: DESC }
     ) {
       edges {
         node {

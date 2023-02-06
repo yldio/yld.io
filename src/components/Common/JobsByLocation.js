@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 const JOBS_BY_LOCATION = graphql`
   query JOBS_BY_CITY {
     allLever(limit: 40) {
-      group(field: categories___team) {
+      group(field: { categories: { team: SELECT } }) {
         edges {
           node {
             id

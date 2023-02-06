@@ -113,16 +113,16 @@ test('mapBlogPostsToList should return an array of objects with a tilte and slug
   ];
 
   expect(mapBlogPostsToList('jo', posts)).toMatchInlineSnapshot(`
-    Array [
-      Object {
+    [
+      {
         "slug": "/blog/load-testing-micro-services",
         "title": "Load testing micro-services",
       },
-      Object {
+      {
         "slug": "/blog/play-lesser-players-correlating-your-teams-input-with-exceptional-outcomes",
         "title": " Play Lesser Players: correlating your teams’ input with exceptional outcomes",
       },
-      Object {
+      {
         "slug": "/blog/the-yld-green-team",
         "title": "The YLD Green Team",
       },
@@ -130,15 +130,13 @@ test('mapBlogPostsToList should return an array of objects with a tilte and slug
   `);
 
   expect(mapBlogPostsToList('deep', posts)).toMatchInlineSnapshot(`
-    Array [
-      Object {
+    [
+      {
         "slug": "/blog/cloud-deep-dive-part-3-the-extremely-scalable-pizza-menu-with-serverless-ssr",
         "title": "Cloud Deep Dive: Part 3 — The Extremely Scalable Pizza Menu with Serverless SSR",
       },
     ]
   `);
 
-  expect(mapBlogPostsToList('sdkjhfsdkjhf', posts)).toMatchInlineSnapshot(
-    `Array []`,
-  );
+  expect(mapBlogPostsToList('sdkjhfsdkjhf', posts)).toMatchInlineSnapshot(`[]`);
 });

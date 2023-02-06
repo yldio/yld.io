@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allContentfulBlogPost(
         filter: { publish: { eq: true } }
-        sort: { fields: [firstPublishedAt], order: DESC }
+        sort: { firstPublishedAt: DESC }
       ) {
         edges {
           node {

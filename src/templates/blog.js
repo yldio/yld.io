@@ -126,7 +126,7 @@ export const query = graphql`
     }
     allContentfulBlogPost(
       filter: { publish: { eq: true }, content: { content: { ne: null } } }
-      sort: { fields: [firstPublishedAt], order: DESC }
+      sort: { firstPublishedAt: DESC }
       limit: $limit
       skip: $skip
     ) {

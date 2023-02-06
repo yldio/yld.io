@@ -341,8 +341,8 @@ const Contact = (props) => (
             }
           }
         }
-        allContentfulLocation(sort: { fields: createdAt }) {
-          group(field: country) {
+        allContentfulLocation(sort: { createdAt: ASC }) {
+          group(field: { country: SELECT }) {
             nodes {
               id
               name

@@ -386,7 +386,7 @@ export const query = graphql`
       }
     }
     events: allContentfulMeetupEvent(
-      sort: { fields: date, order: ASC }
+      sort: { date: ASC }
       filter: { type: { in: ["Workshop", "Meetup"] } }
     ) {
       edges {
@@ -396,7 +396,7 @@ export const query = graphql`
       }
     }
     conferences: allContentfulMeetupEvent(
-      sort: { fields: date, order: DESC }
+      sort: { date: DESC }
       filter: { type: { eq: "Conference" } }
     ) {
       edges {

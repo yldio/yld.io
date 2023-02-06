@@ -93,7 +93,7 @@ const configs = {
       // The blog currently has a FigureImage component that does not use remark-images
       gatsbyRemarkPlugins: [
         {
-          resolve: `gatsby-remark-prismjs`,
+          resolve: 'gatsby-remark-prismjs',
           options: {
             // Class prefix for <pre> tags containing syntax highlighting;
             // defaults to 'language-' (e.g. <pre class="language-js">).
@@ -235,7 +235,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     configs['gatsby-plugin-robots-txt'],
     configs['gatsby-plugin-mdx'],
-    configs['gatsby-plugin-modal-routing-3'],
+    // configs['gatsby-plugin-modal-routing-3'],
     configs['gatsby-source-filesystem'],
     configs['gatsby-source-contentful'],
     configs['gatsby-source-lever'],
