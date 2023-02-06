@@ -15701,16 +15701,16 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-google-gtag@npm:^4.15.0":
-  version: 4.15.0
-  resolution: "gatsby-plugin-google-gtag@npm:4.15.0"
+  version: 4.25.0
+  resolution: "gatsby-plugin-google-gtag@npm:4.25.0"
   dependencies:
     "@babel/runtime": ^7.15.4
     minimatch: ^3.1.2
   peerDependencies:
     gatsby: ^4.0.0-next
-    react: ^16.9.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
-  checksum: a1e3a1099dc9811964c3953b151c3ccf22c9db58a8ea7fd289a01123bfe292d0bc176683948be4f334223bf5dd8730096f929b98e3e5d1ab888843922218c84b
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
+    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
+  checksum: 61801a1c576fbf6a4a8226658154330121366c182b34c5c7eb95fcaee7d49261ea77ff5d11ae0611614a3a5518f04bc29a6f7a93c1dcc0dd171041e0fe2b1c95
   languageName: node
   linkType: hard
 
