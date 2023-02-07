@@ -12271,14 +12271,14 @@ __metadata:
   linkType: hard
 
 "contentful-import@npm:^8.5.26":
-  version: 8.5.26
-  resolution: "contentful-import@npm:8.5.26"
+  version: 8.5.27
+  resolution: "contentful-import@npm:8.5.27"
   dependencies:
     "@discoveryjs/json-ext": ^0.5.7
     bluebird: ^3.5.1
     cli-table3: ^0.6.0
     contentful-batch-libs: ^9.4.2
-    contentful-management: ^10.28.0
+    contentful-management: ^10.29.1
     date-fns: ^2.29.3
     joi: ^17.7.0
     listr: ^0.14.1
@@ -12289,7 +12289,7 @@ __metadata:
     yargs: ^17.6.2
   bin:
     contentful-import: bin/contentful-import
-  checksum: cae5773bd544bcdd11e1663c7b2e2a16995be391d90dc76582d5f7351cb48380f8e529dfe6df3f57e430f99db1be6394c5851eb0d63e8266df17ebe017aae436
+  checksum: 705f90ad36eec04db145cb0a2acd95ab0f90d645086ab5003a1b8f56f11ce5f0ed43e7cd27442a777d4cbc2dcff04e8834dc5201afdfa9efee516fa3ce17d253
   languageName: node
   linkType: hard
 
@@ -12306,7 +12306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful-management@npm:^10.28.0, contentful-management@npm:^10.29.1":
+"contentful-management@npm:^10.29.1":
   version: 10.29.1
   resolution: "contentful-management@npm:10.29.1"
   dependencies:
