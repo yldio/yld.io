@@ -270,7 +270,7 @@ exports.onPostBuild = async ({ graphql }) => {
   } = await graphql(`
     {
       allLever(limit: 500) {
-        group(field: categories___location) {
+        group(field: { categories: { location: SELECT } }) {
           edges {
             node {
               lever_id
