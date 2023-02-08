@@ -215,6 +215,12 @@ const configs = {
       verboseOutput: false,
     },
   },
+  'gatsby-source-greenhouse-job-board': {
+    resolve: 'gatsby-source-greenhouse-job-board',
+    options: {
+      boardToken: 'yld',
+    },
+  },
   'gatsby-plugin-feed': {
     resolve: 'gatsby-plugin-feed',
     options: {
@@ -291,6 +297,7 @@ module.exports = {
     configs['gatsby-source-filesystem'],
     configs['gatsby-source-contentful'],
     configs['gatsby-source-lever'],
+    configs['gatsby-source-greenhouse-job-board'],
     configs['gatsby-plugin-fathom'],
     configs['gatsby-plugin-plausible'],
     configs['gatsby-plugin-google-gtag'],

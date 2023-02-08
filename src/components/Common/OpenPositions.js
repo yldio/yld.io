@@ -24,23 +24,18 @@ const StyledOpenPositions = styled(GreyBackground)`
 `}
 `;
 
-const OpenPositions = ({ data: { title }, limit = 4 }) => (
+const OpenPositions = ({ data: { title } }) => (
   <StyledOpenPositions>
     <Grid>
       <SectionTitle>{title}</SectionTitle>
-      <JobsByLocation limit={limit}>
-        {(jobs) =>
-          jobs.map(({ team, jobs }, idx) => (
+      <JobsByLocation>
+        {(jobs) => {
+          return jobs.map(({ team, jobs }, idx) => (
             <Padding key={idx} top={3}>
               <Subtitle>{team}</Subtitle>
               <Padding top={2}>
                 <Row as="ul">
-                  {jobs.map((job, idx) => {
-                    const {
-                      text,
-                      hostedUrl,
-                      categories: { commitment, location },
-                    } = job.node;
+                  {jobs.map(({ text, hostedUrl, categories }, idx) => {
                     return (
                       <Col
                         key={`job-${text}-${idx}`}
@@ -48,10 +43,10 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
                         width={[1, 1, 1, 1, 4 / 12, 3 / 12]}
                       >
                         <JobLink
-                          location={location}
+                          location={categories.location}
                           position={text}
                           hostedUrl={hostedUrl}
-                          contractType={commitment}
+                          contractType={categories.commitment}
                         />
                       </Col>
                     );
@@ -59,8 +54,8 @@ const OpenPositions = ({ data: { title }, limit = 4 }) => (
                 </Row>
               </Padding>
             </Padding>
-          ))
-        }
+          ));
+        }}
       </JobsByLocation>
     </Grid>
   </StyledOpenPositions>

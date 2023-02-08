@@ -95,7 +95,6 @@ class JoinUs extends React.Component {
           data={{
             title: content.openPositionsTitle,
           }}
-          limit={40}
         />
       </Layout>
     );
