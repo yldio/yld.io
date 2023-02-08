@@ -205,7 +205,7 @@ const configs = {
     options: {
       spaceId: CONTENTFUL_SPACE,
       accessToken: CONTENTFUL_TOKEN,
-      environment: 'master',
+      environment: 'zego',
     },
   },
   'gatsby-source-lever': {

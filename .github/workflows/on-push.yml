@@ -221,7 +221,7 @@ jobs:
   # DEPLOY                                                                      #
   ###############################################################################
   deploy:
-    needs: [testcafe, e2e-lambda, stylelint, eslint, test]
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
