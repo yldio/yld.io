@@ -4,6 +4,8 @@ const path = require('path');
 const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
+  CONTENTFUL_ENVIRONMENT = 'master',
+  CONTENTFUL_HOST,
   GA_TRACKING_ID,
   TAG_MANAGER_ID,
   GOOGLE_SITE_VERIFICATION_META_CONTENT,
@@ -205,7 +207,8 @@ const configs = {
     options: {
       spaceId: CONTENTFUL_SPACE,
       accessToken: CONTENTFUL_TOKEN,
-      environment: 'master',
+      environment: CONTENTFUL_ENVIRONMENT,
+      host: CONTENTFUL_HOST,
     },
   },
   'gatsby-source-lever': {
