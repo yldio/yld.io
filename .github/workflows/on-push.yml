@@ -61,6 +61,7 @@ jobs:
           PLAUSIBLE_CUSTOM_DOMAIN: ${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
           GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
           GATSBY_CONTACT_US_ENDPOINT_URI: ${{ secrets.CONTACT_US_ENDPOINT_URI }}
+          CONTENTFUL_ENVIRONMENT: master
           NODE_ENV: production
 
   ###############################################################################
@@ -141,6 +142,7 @@ jobs:
           CMS_CRUD: ${{ secrets.CMS_CRUD }}
           CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
+          CONTENTFUL_ENVIRONMENT: master
           NODE_ENV: test
 
   ###############################################################################
