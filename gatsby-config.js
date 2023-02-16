@@ -4,7 +4,6 @@ const path = require('path');
 const {
   CONTENTFUL_TOKEN,
   CONTENTFUL_SPACE,
-  CONTENTFUL_ENVIRONMENT = 'master',
   CONTENTFUL_HOST,
   GA_TRACKING_ID,
   TAG_MANAGER_ID,
@@ -207,7 +206,7 @@ const configs = {
     options: {
       spaceId: CONTENTFUL_SPACE,
       accessToken: CONTENTFUL_TOKEN,
-      environment: CONTENTFUL_ENVIRONMENT,
+      environment: 'bulb-data',
       host: CONTENTFUL_HOST,
     },
   },

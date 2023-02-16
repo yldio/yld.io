@@ -122,7 +122,7 @@ const UnorderedList = styled.ul`
 const OrderedList = styled.ol`
   list-style-type: decimal;
   padding-left: ${remcalc(30)};
-  padding-bottom: ${remcalc(36)};
+  padding-bottom: 0;
 `;
 
 const ListItem = styled.li`
@@ -135,6 +135,10 @@ const ListItem = styled.li`
   }
 
   &:last-child {
+    padding-bottom: ${remcalc(36)};
+  }
+
+  &:first-child:last-child {
     padding-bottom: 0;
   }
 `;
