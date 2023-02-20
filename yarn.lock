@@ -3531,7 +3531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.20.7":
+"@babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -16789,6 +16789,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "gatsby-core-utils@npm:4.6.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.13.0
+    file-type: ^16.5.3
+    fs-extra: ^11.1.0
+    got: ^11.8.5
+    hash-wasm: ^4.9.0
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: ec3d78c7798aa35dd124e76a4806f965c9758a1d11c84c4b1e4fb38b704b6d97674383d0c5694955aac83f0dc35114575a884c1328e2f9674f3a699090776f9c
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^3.5.0":
   version: 3.5.0
   resolution: "gatsby-graphiql-explorer@npm:3.5.0"
@@ -17245,13 +17269,13 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-images@npm:^7.5.0":
-  version: 7.5.0
-  resolution: "gatsby-remark-images@npm:7.5.0"
+  version: 7.6.0
+  resolution: "gatsby-remark-images@npm:7.6.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     chalk: ^4.1.2
     cheerio: ^1.0.0-rc.10
-    gatsby-core-utils: ^4.5.0
+    gatsby-core-utils: ^4.6.0
     is-relative-url: ^3.0.0
     lodash: ^4.17.21
     mdast-util-definitions: ^4.0.0
@@ -17261,7 +17285,7 @@ __metadata:
   peerDependencies:
     gatsby: ^5.0.0-next
     gatsby-plugin-sharp: ^5.0.0-next
-  checksum: 114679a64fa6a75775b6c529c2fee412f314b0a18c540df1e297b1e3f37352b9565461cca243e7fcfd2ba44b47fb739a248fe0d537fa4edf93e960067ee924b5
+  checksum: 58881c68ffb5c99d7f496cb548a51782275623a2e7db4ab751e1c5fb12d7cf4aabd6656975de54671b12f9592d97060af6ed6f077cd57b1638635763ac00d46b
   languageName: node
   linkType: hard
 
