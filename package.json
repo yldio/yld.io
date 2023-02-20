@@ -52,7 +52,7 @@
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-plausible": "^0.0.7",
     "gatsby-plugin-react-helmet": "^6.5.0",
-    "gatsby-plugin-robots-txt": "1.7.1",
+    "gatsby-plugin-robots-txt": "1.8.0",
     "gatsby-plugin-sharp": "^5.5.0",
     "gatsby-plugin-sitemap": "^6.5.0",
     "gatsby-plugin-styled-components": "^6.5.0",

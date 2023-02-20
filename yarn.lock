@@ -3531,7 +3531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.20.7":
+"@babel/runtime@npm:^7.17.9, @babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -17108,15 +17108,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-robots-txt@npm:1.7.1":
-  version: 1.7.1
-  resolution: "gatsby-plugin-robots-txt@npm:1.7.1"
+"gatsby-plugin-robots-txt@npm:1.8.0":
+  version: 1.8.0
+  resolution: "gatsby-plugin-robots-txt@npm:1.8.0"
   dependencies:
-    "@babel/runtime": ^7.16.7
+    "@babel/runtime": ^7.17.9
     generate-robotstxt: ^8.0.3
   peerDependencies:
-    gatsby: ^4.0.0 || ^3.0.0 || ^2.0.0
-  checksum: e98c8aa1aa8b01e58657709ca97e4429e5a7c0b640449e10167d64bfbc6f0d9338908a7616ef00a051f9c78ea4a03d380b5cf7d45b3aaf44227607c6e9264cc1
+    gatsby: ^5.0.0
+  checksum: 0fe740f6cb008400a718f7e5eb1a9e86fe5fa0aee521f0014aa0c7ae27a681a220ee971dcd519c8967262d7a02e07c78e6685cba59dd187dd4b532ff37d9a1d6
   languageName: node
   linkType: hard
 
@@ -33594,7 +33594,7 @@ typescript@^3.3.3:
     gatsby-plugin-netlify: ^5.1.0
     gatsby-plugin-plausible: ^0.0.7
     gatsby-plugin-react-helmet: ^6.5.0
-    gatsby-plugin-robots-txt: 1.7.1
+    gatsby-plugin-robots-txt: 1.8.0
     gatsby-plugin-sharp: ^5.5.0
     gatsby-plugin-sitemap: ^6.5.0
     gatsby-plugin-styled-components: ^6.5.0
