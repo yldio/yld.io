@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -16916,16 +16925,16 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-google-tagmanager@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "gatsby-plugin-google-tagmanager@npm:5.5.0"
+  version: 5.7.0
+  resolution: "gatsby-plugin-google-tagmanager@npm:5.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     web-vitals: ^1.1.2
   peerDependencies:
     gatsby: ^5.0.0-next
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
-  checksum: e9455d314fd5720a92b88fce396dbad0009097309554f8e04bc181b0f1a02e750f91710c976a56c21a0a7cf7ea9e263fbc83c087b7884672519e81edb90c792b
+  checksum: cc80c33ae149154a24bc0cdc4457337803d5e3f68be8fd7ba5242653780ae2e0509de9ac481fa901c9d3b9a1926052ed9b71efe083eca26536b588f91fda9ec1
   languageName: node
   linkType: hard
 
