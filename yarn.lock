@@ -11989,13 +11989,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "commander@npm:5.1.0"
-  checksum: 0b7fec1712fbcc6230fcb161d8d73b4730fa91a21dc089515489402ad78810547683f058e2a9835929c212fead1d6a6ade70db28bbb03edbc2829a9ab7d69447
-  languageName: node
-  linkType: hard
-
 "commander@npm:^6.2.1":
   version: 6.2.1
   resolution: "commander@npm:6.2.1"
@@ -12017,7 +12010,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.4.1":
+"commander@npm:^9.0.0, commander@npm:^9.4.1":
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
   checksum: c7a3e27aa59e913b54a1bafd366b88650bc41d6651f0cbe258d4ff09d43d6a7394232a4dadd0bf518b3e696fdf595db1028a0d82c785b88bd61f8a440cecfade
@@ -23998,8 +23991,8 @@ __metadata:
   linkType: hard
 
 "netlify-lambda@npm:^2.0.15":
-  version: 2.0.15
-  resolution: "netlify-lambda@npm:2.0.15"
+  version: 2.0.16
+  resolution: "netlify-lambda@npm:2.0.16"
   dependencies:
     "@babel/core": ^7.10.4
     "@babel/plugin-proposal-class-properties": ^7.10.4
@@ -24008,7 +24001,7 @@ __metadata:
     "@babel/preset-env": ^7.10.4
     babel-loader: ^8.1.0
     body-parser: ^1.19.0
-    commander: ^5.1.0
+    commander: ^9.0.0
     express: ^4.17.1
     express-logging: ^1.1.1
     find-up: ^5.0.0
@@ -24019,7 +24012,7 @@ __metadata:
     webpack-merge: ^4.2.2
   bin:
     netlify-lambda: bin/cmd.js
-  checksum: e444616d9d9e9121dd86b8328a6b9d435476c2486e5cfc87a9b3514ad85576618e01021e9fe8635761a2fb2ac44c68402656c0fac7b609176db36ca0aa11033c
+  checksum: 124a6d153cb0810b997726a4da1cab170c176d141cf999003e1ecc71c15ee6d47691adb0c1b1b51b38a435d653802da8ccd57990f89a8f36c955f835bedd22ea
   languageName: node
   linkType: hard
 
