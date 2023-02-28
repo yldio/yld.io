@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17280,17 +17289,17 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-responsive-iframe@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "gatsby-remark-responsive-iframe@npm:6.5.0"
+  version: 6.7.0
+  resolution: "gatsby-remark-responsive-iframe@npm:6.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     cheerio: ^1.0.0-rc.10
     common-tags: ^1.8.2
     lodash: ^4.17.21
     unist-util-visit: ^2.0.3
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: f1489fc35f7ab057b8b204b0938fadfcc3ac8c2a18837525fca6f584d776f660201105a5e7616c7d466b432d34266eee6f1d3cc1c11d62ed11e616f21644bfd7
+  checksum: 2bb7efca4a325e8f5a0ee30615fc215da890788f8a03befb9b0fa4a91173ac30a1ab9233a6954f0d9cbfda0f88ef60d1252a29f9ef49a7ea3fc3486c5183a409
   languageName: node
   linkType: hard
 
