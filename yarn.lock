@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17097,14 +17106,14 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-react-helmet@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "gatsby-plugin-react-helmet@npm:6.5.0"
+  version: 6.7.0
+  resolution: "gatsby-plugin-react-helmet@npm:6.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
   peerDependencies:
     gatsby: ^5.0.0-next
     react-helmet: ^5.1.3 || ^6.0.0
-  checksum: 495365e30266e3c7d042d4452d63fc36149668c33fabbfe4ffb684d06077a9d555e995f340faffdd0da5162559729a457a256007ed80398d940c8cff4f9bb56a
+  checksum: 28877a6d01c6f94fa2c63785f2a7571dafa61a7ea5aad8086dc5c8c8a75860d4760dca45218f0687b889763dceb67aba1d953bbd94b5c6089f8a7b0ca7d48388
   languageName: node
   linkType: hard
 
