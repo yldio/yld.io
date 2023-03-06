@@ -27,7 +27,7 @@ jobs:
           PLAUSIBLE_CUSTOM_DOMAIN: ${{ secrets.PLAUSIBLE_CUSTOM_DOMAIN }}
           GOOGLE_SITE_VERIFICATION_META_CONTENT: ${{ secrets.GOOGLE_SITE_VERIFICATION_META_CONTENT }}
           GATSBY_CONTACT_US_ENDPOINT_URI: ${{ secrets.CONTACT_US_ENDPOINT_URI }}
-          CONTENTFUL_ENVIRONMENT: ${{ github.event.client_payload.environment }}
+          CONTENTFUL_ENVIRONMENT: ${{ github.event.client_payload.environment || 'master'}}
           CONTENTFUL_HOST: ${{ github.event.client_payload.host }}
           NODE_ENV: production
       - name: Deploy to Netlify
