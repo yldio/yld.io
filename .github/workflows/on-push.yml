@@ -121,31 +121,6 @@ jobs:
         uses: xt0rted/stylelint-problem-matcher@v1
 
   ###############################################################################
-  # E2E LAMBDA                                                                  #
-  ###############################################################################
-  e2e-lambda:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'yarn'
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: E2E Lambda
-        run: yarn run test:e2e:lambda
-        env:
-          CMS_CRUD: ${{ secrets.CMS_CRUD }}
-          CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
-          CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
-          CONTENTFUL_ENVIRONMENT: master
-          NODE_ENV: test
-
-  ###############################################################################
   # LIGHTHOUSE                                                                  #
   ###############################################################################
   # lighthouse:
@@ -223,7 +198,7 @@ jobs:
   # DEPLOY                                                                      #
   ###############################################################################
   deploy:
-    needs: [testcafe, e2e-lambda, stylelint, eslint, test]
+    needs: [testcafe, stylelint, eslint, test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

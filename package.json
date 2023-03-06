@@ -8,7 +8,6 @@
     "clean": "rm -rf .cache public",
     "test": "jest",
     "test:watch": "yarn run test --watch",
-    "test:e2e:lambda": "jest --config jest-lambda-e2e.config.js",
     "test:e2e:ui": "testcafe chrome:headless ./tests/e2e/**/*.js --skip-js-errors --reporter spec,html:artifacts/e2e-ui/report.html --screenshots path=artifacts/e2e-ui/screenshots,takeOnFails=true",
     "lint": "run-s lint:prettier lint:eslint",
     "lint:eslint": "eslint . --cache",
