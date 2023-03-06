@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17159,17 +17168,17 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-styled-components@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "gatsby-plugin-styled-components@npm:6.5.0"
+  version: 6.7.0
+  resolution: "gatsby-plugin-styled-components@npm:6.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
   peerDependencies:
     babel-plugin-styled-components: ">1.5.0"
     gatsby: ^5.0.0-next
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
     styled-components: ">=2.0.0"
-  checksum: 7f28ac363f83d3face9eb4e0b2d2f5c8a0ea3e6bcffa3a7ae62bee628ddfe957af15eaea69e73faf9523136580e27635e205fced4bbafc3c7d787e52babbe709
+  checksum: 7a8dd319eb36f3cfd8e73bdfbd7de0c260e4bc0f194c69f28cbb9a7ba986ff1b4bac81ac1ec0cf1eeef74b55138763385801f2dd3197787350f9d9c507af3b9b
   languageName: node
   linkType: hard
 
