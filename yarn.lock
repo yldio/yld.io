@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17266,16 +17275,16 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-prismjs@npm:^7.5.0":
-  version: 7.5.0
-  resolution: "gatsby-remark-prismjs@npm:7.5.0"
+  version: 7.7.0
+  resolution: "gatsby-remark-prismjs@npm:7.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     parse-numeric-range: ^1.2.0
     unist-util-visit: ^2.0.3
   peerDependencies:
     gatsby: ^5.0.0-next
     prismjs: ^1.15.0
-  checksum: 6ab46535a93a68b138848688f8583ca10406f778d13347568470e862f649ba103e2d0b6a288bca124dc7f3543476ddf13bd3c50f1a1535573d07686a81dcec38
+  checksum: d6edab91d0a83971f961ca589dcd53b3e8fa97c909548921f3743ba05f57ccf143aeccb225d758820a0c2333e739eeb84ca10dd25dc5da83beb27133bdcb92a1
   languageName: node
   linkType: hard
 
