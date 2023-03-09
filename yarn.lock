@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17143,10 +17152,10 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-sitemap@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "gatsby-plugin-sitemap@npm:6.5.0"
+  version: 6.7.0
+  resolution: "gatsby-plugin-sitemap@npm:6.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     common-tags: ^1.8.2
     minimatch: ^3.1.2
     sitemap: ^7.1.1
@@ -17154,7 +17163,7 @@ __metadata:
     gatsby: ^5.0.0-next
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
-  checksum: 913838aec96316d092d8b2e4522bbeaeb6da9b066db6b69090be281662bc5d10bac1eada69b1f2b09d307b642b0a5234457c3640e4cb25ca9a8e63a2524a8e40
+  checksum: 5e0ad494a32fc83d067dfa989629cb41b680a2c47b1e4ee938cda718c8711716f780e6747f16ebca8c19f9fb6a1df3d5a9db9bbc7fe880be24e4ebac4cabdcdd
   languageName: node
   linkType: hard
 
