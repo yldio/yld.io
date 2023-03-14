@@ -8,7 +8,18 @@ import ReactMarkdown from 'react-markdown';
 import { Row, Col, Grid } from '../components/grid';
 import Layout from '../components/layout';
 import Head from '../components/Common/Head';
-import BodyPrimary from '../components/Typography/BodyPrimary';
+
+import {
+  H1,
+  H2,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  Body,
+  Code,
+  A,
+  Blockquote,
+} from '../components/Blog/post/Typography';
 
 const Title = styled.h1`
   font-size: ${remcalc(42)};
@@ -16,15 +27,19 @@ const Title = styled.h1`
   font-weight: 500;
 `;
 
-const SectionTitle = styled.h2`
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 1.5;
-`;
-
-const List = styled.ul`
-  margin-left: 1rem;
-`;
+const components = {
+  h1: H1,
+  h2: H2,
+  h3: H2,
+  h4: H2,
+  ul: UnorderedList,
+  ol: OrderedList,
+  li: ListItem,
+  p: Body,
+  code: Code,
+  a: A,
+  blockquote: Blockquote,
+};
 
 const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
   const { seoMetaData, title, body } = policy;
@@ -42,23 +57,7 @@ const Policy = ({ data: { contentfulPolicy: policy }, location }) => {
             </Col>
             <Col>
               {body && body.body && (
-                <ReactMarkdown
-                  components={{
-                    paragraph: BodyPrimary,
-                    ...Object.fromEntries(
-                      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((heading) => [
-                        heading,
-                        (props) => <SectionTitle {...props} />,
-                      ]),
-                    ),
-                    ...Object.fromEntries(
-                      ['ol', 'ul'].map((list) => [
-                        list,
-                        (props) => <List {...props} />,
-                      ]),
-                    ),
-                  }}
-                >
+                <ReactMarkdown components={components}>
                   {body.body}
                 </ReactMarkdown>
               )}

@@ -74,6 +74,10 @@ const Body = styled.p`
   color: ${(props) => props.theme.colors.text};
   padding: ${remcalc(37)} 0;
 
+  & ~ p {
+    padding-top: 0;
+  }
+
   *::selection,
   ::selection {
     background-color: ${({ theme }) => theme.colors.vibrant};
@@ -136,6 +140,14 @@ const ListItem = styled.li`
 
   &:last-child {
     padding-bottom: 0;
+  }
+
+  & p:last-child {
+    padding-bottom: 0;
+  }
+
+  & p:first-child {
+    padding-top: 0;
   }
 `;
 

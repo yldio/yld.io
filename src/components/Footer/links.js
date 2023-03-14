@@ -73,6 +73,10 @@ const gdpr = [
     label: 'Data-retention policy',
     to: '/data-retention-policy/',
   },
+  {
+    label: 'Code of Conduct',
+    to: '/events-code-of-conduct/',
+  },
 ];
 
 export { social, gdpr };

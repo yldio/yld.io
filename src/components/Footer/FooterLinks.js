@@ -49,7 +49,7 @@ const GDPR = styled.div`
   ${breakpoint('desktop')`
     justify-content: flex-end;
     a {
-      padding: ${remcalc(12)} 0 ${remcalc(12)} ${remcalc(36)};
+      padding: ${remcalc(12)} 0 ${remcalc(12)} ${remcalc(22)};
     }
   `}
 `;
