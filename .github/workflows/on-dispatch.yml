@@ -21,7 +21,7 @@ jobs:
         run: yarn run build
         env:
           CMS_CRUD: ${{ secrets.CMS_CRUD }}
-          CONTENTFUL_SPACE: ${{ github.event.client_payload.spaceId }}
+          CONTENTFUL_SPACE: ${{ github.event.client_payload.spaceId || secrets.CONTENTFUL_SPACE}}
           CONTENTFUL_TOKEN: ${{ secrets.CONTENTFUL_TOKEN }}
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           TAG_MANAGER_ID: ${{ secrets.TAG_MANAGER_ID }}
