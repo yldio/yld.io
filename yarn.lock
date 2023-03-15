@@ -5569,7 +5569,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-babel@npm:^6.0.2":
+"@rollup/plugin-babel@npm:^6.0.3":
   version: 6.0.3
   resolution: "@rollup/plugin-babel@npm:6.0.3"
   dependencies:
@@ -12622,10 +12622,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"countup.js@npm:^2.4.1":
-  version: 2.4.2
-  resolution: "countup.js@npm:2.4.2"
-  checksum: 5341734ed6b6c095881f5c52fa615224bcb4741f44f5589f296ff5147d78b01f48c5be7afebf4e30117debd8013f979915cf1be6625c98eb4b9987ee9c054d23
+"countup.js@npm:^2.5.0":
+  version: 2.6.0
+  resolution: "countup.js@npm:2.6.0"
+  checksum: 990e64f03e4b730983463a751bd34eb504cb1a7b47784d2dc5dff5fba299dd5de70be80f034a254a005da2201ee6bc0f7c6305a445660724093bab328352bc72
   languageName: node
   linkType: hard
 
@@ -26974,14 +26974,14 @@ __metadata:
   linkType: hard
 
 "react-countup@npm:^6.4.1":
-  version: 6.4.1
-  resolution: "react-countup@npm:6.4.1"
+  version: 6.4.2
+  resolution: "react-countup@npm:6.4.2"
   dependencies:
-    "@rollup/plugin-babel": ^6.0.2
-    countup.js: ^2.4.1
+    "@rollup/plugin-babel": ^6.0.3
+    countup.js: ^2.5.0
   peerDependencies:
     react: ">= 16.3.0"
-  checksum: 1fcd190fa019917dadd3910bef20b418aebcb907340a59fa440a40d6794b8a4c9619cfe4839bda7df78a43c1aa7005895c968d075caae7962bb83ecdf9bfb1f3
+  checksum: 2cdfa07a89f423933e88e11b207aa4017fde0f39646a7ae977ac6607df42c200aaa6b8231ce6c9e6d597a9d52332b68c78869c4fcf245411259a7dd1dcdbf7af
   languageName: node
   linkType: hard
 
