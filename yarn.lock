@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17404,10 +17413,10 @@ __metadata:
   linkType: hard
 
 "gatsby-source-lever@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "gatsby-source-lever@npm:5.5.0"
+  version: 5.7.0
+  resolution: "gatsby-source-lever@npm:5.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     axios: ^0.21.1
     bluebird: ^3.7.2
     deep-map: ^1.5.0
@@ -17416,7 +17425,7 @@ __metadata:
     lodash: ^4.17.21
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: 323c6976416b107e0f961db34d0a593adbf8d87beb4017e80d41653371b3efc4c59e86d3044c436e2d8ffb2e91e2587a0b937aa2f25b6e38d862dcc16aa2656b
+  checksum: d52935fe2a0a8ad4fb057be8625dbdba4be5c4ab6b2cf1a3d0765e2a664fe6040a08661f5b3e24a04b7df248b1aa84f1dd70bd08bc26d9a76ea85ed17900fe9c
   languageName: node
   linkType: hard
 
