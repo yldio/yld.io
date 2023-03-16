@@ -30,7 +30,7 @@
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.3.0",
     "@yldio/oss-stats": "^3.0.0",
     "apr-reduce": "^3.0.3",
     "base16-prism": "^0.3.0",
