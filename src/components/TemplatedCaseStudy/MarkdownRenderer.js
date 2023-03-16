@@ -13,7 +13,7 @@ const UnorderedList = styled.ul`
 const OrderedList = styled.ol`
   list-style-type: decimal;
   padding-left: ${remcalc(30)};
-  padding-bottom: ${remcalc(36)};
+  padding-top: ${remcalc(36)};
 `;
 
 const ListItem = styled.li`
@@ -33,6 +33,10 @@ const A = styled.a`
   cursor: pointer;
 `;
 
+const Strong = styled.strong`
+  font-weight: 700;
+`;
+
 const MarkdownRenderer = ({ source }) => (
   <ReactMarkdown
     components={{
@@ -48,6 +52,7 @@ const MarkdownRenderer = ({ source }) => (
       ul: (props) => <UnorderedList {...props} />,
       li: (props) => <ListItem {...props} />,
       a: (props) => <A {...props} />,
+      strong: (props) => <Strong {...props} />,
     }}
   >
     {source}
