@@ -5641,6 +5641,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sideway/formula@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@sideway/formula@npm:3.0.1"
+  checksum: e4beeebc9dbe2ff4ef0def15cec0165e00d1612e3d7cea0bc9ce5175c3263fc2c818b679bd558957f49400ee7be9d4e5ac90487e1625b4932e15c4aa7919c57a
+  languageName: node
+  linkType: hard
+
 "@sideway/pinpoint@npm:^2.0.0":
   version: 2.0.0
   resolution: "@sideway/pinpoint@npm:2.0.0"
@@ -12290,25 +12297,25 @@ __metadata:
   linkType: hard
 
 "contentful-import@npm:^8.5.26":
-  version: 8.5.26
-  resolution: "contentful-import@npm:8.5.26"
+  version: 8.5.35
+  resolution: "contentful-import@npm:8.5.35"
   dependencies:
     "@discoveryjs/json-ext": ^0.5.7
     bluebird: ^3.5.1
     cli-table3: ^0.6.0
     contentful-batch-libs: ^9.4.2
-    contentful-management: ^10.28.0
+    contentful-management: ^10.30.0
     date-fns: ^2.29.3
-    joi: ^17.7.0
+    joi: ^17.8.3
     listr: ^0.14.1
     listr-update-renderer: ^0.5.0
     listr-verbose-renderer: ^0.6.0
     lodash: ^4.17.10
     p-queue: ^6.6.2
-    yargs: ^17.6.2
+    yargs: ^17.7.1
   bin:
     contentful-import: bin/contentful-import
-  checksum: cae5773bd544bcdd11e1663c7b2e2a16995be391d90dc76582d5f7351cb48380f8e529dfe6df3f57e430f99db1be6394c5851eb0d63e8266df17ebe017aae436
+  checksum: b83dff486eca7f1632cfff023eaffa5f0c7272eb491cb4c45a354ec38d02db4f1226f9ba5a02de8c0b702ba09b31620ea0594d7cde449fb1f0a91cf78b75af30
   languageName: node
   linkType: hard
 
@@ -12325,7 +12332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful-management@npm:^10.28.0, contentful-management@npm:^10.29.1":
+"contentful-management@npm:^10.29.1":
   version: 10.29.1
   resolution: "contentful-management@npm:10.29.1"
   dependencies:
@@ -12336,6 +12343,20 @@ __metadata:
     lodash.isplainobject: ^4.0.6
     type-fest: ^3.0.0
   checksum: 4f0d5974119dd2283c1dcb5723b20f6cd61f9aa9fad73ba4aaecc02e24234dfa6b06f12e22210ca4292b6713afb222161e332932b9e02cc11c259f547b0da702
+  languageName: node
+  linkType: hard
+
+"contentful-management@npm:^10.30.0":
+  version: 10.30.0
+  resolution: "contentful-management@npm:10.30.0"
+  dependencies:
+    "@types/json-patch": 0.0.30
+    axios: ^0.27.1
+    contentful-sdk-core: ^7.0.1
+    fast-copy: ^3.0.0
+    lodash.isplainobject: ^4.0.6
+    type-fest: ^3.0.0
+  checksum: efac280b42717d03f14a0835b37ec25596e3ac14fce771497d13bf7895c27ed2f5b46c6b234b5587a1ee00392748f12de57eee70111847e00f78d7f5e8f8423a
   languageName: node
   linkType: hard
 
@@ -21115,6 +21136,19 @@ __metadata:
     "@sideway/formula": ^3.0.0
     "@sideway/pinpoint": ^2.0.0
   checksum: eaf62f6c02f2edb1042f1ab04fc23a5918a2cb8f54bec84c6e1033624d8a462c10ae9518af55a3ba84f1793960450d58094eda308e7ef93c17edd4e3c8ef31d5
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.8.3":
+  version: 17.8.4
+  resolution: "joi@npm:17.8.4"
+  dependencies:
+    "@hapi/hoek": ^9.0.0
+    "@hapi/topo": ^5.0.0
+    "@sideway/address": ^4.1.3
+    "@sideway/formula": ^3.0.1
+    "@sideway/pinpoint": ^2.0.0
+  checksum: 45a71d0c7a468aa931b9c08cd712b52bb0270c47527fe2075037b09787076febe1cf538fe052e220d23e9ec72ced9bc20963bb9cc63439443149725aebc4e636
   languageName: node
   linkType: hard
 
@@ -33511,9 +33545,9 @@ typescript@^3.3.3:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.6.2":
-  version: 17.6.2
-  resolution: "yargs@npm:17.6.2"
+"yargs@npm:^17.7.1":
+  version: 17.7.1
+  resolution: "yargs@npm:17.7.1"
   dependencies:
     cliui: ^8.0.1
     escalade: ^3.1.1
@@ -33522,7 +33556,7 @@ typescript@^3.3.3:
     string-width: ^4.2.3
     y18n: ^5.0.5
     yargs-parser: ^21.1.1
-  checksum: 47da1b0d854fa16d45a3ded57b716b013b2179022352a5f7467409da5a04a1eef5b3b3d97a2dfc13e8bbe5f2ffc0afe3bc6a4a72f8254e60f5a4bd7947138643
+  checksum: 3d8a43c336a4942bc68080768664aca85c7bd406f018bad362fd255c41c8f4e650277f42fd65d543fce99e084124ddafee7bbfc1a5c6a8fda4cec78609dcf8d4
   languageName: node
   linkType: hard
 
