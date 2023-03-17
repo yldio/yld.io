@@ -3531,6 +3531,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.20.13":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.20.7":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -17295,16 +17304,16 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-smartypants@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "gatsby-remark-smartypants@npm:6.5.0"
+  version: 6.7.0
+  resolution: "gatsby-remark-smartypants@npm:6.7.0"
   dependencies:
-    "@babel/runtime": ^7.20.7
+    "@babel/runtime": ^7.20.13
     retext: ^7.0.1
     retext-smartypants: ^4.0.0
     unist-util-visit: ^2.0.3
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: bb14521d814b2d4f68d119e60ccf05679a63df23d6a090733871e0e0ff09918de124cdc84a517d52afaab390d1b6ce62a448e33c8cf389816339aea29ce4f0ba
+  checksum: 4c0ce1b5c8138cfd40b08ccf8c15a3e0efe72a346fb7ea288cdbcfd67c0f67277c3a12d952e8dc94bbabe75aa13911919eb378fe25cff4a28b51bcad2cda6a9f
   languageName: node
   linkType: hard
 
