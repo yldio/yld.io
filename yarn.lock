@@ -12264,8 +12264,8 @@ __metadata:
   linkType: hard
 
 "contentful-export@npm:^7.19.26":
-  version: 7.19.26
-  resolution: "contentful-export@npm:7.19.26"
+  version: 7.19.45
+  resolution: "contentful-export@npm:7.19.45"
   dependencies:
     bfj: ^7.0.2
     bluebird: ^3.3.3
@@ -12285,7 +12285,7 @@ __metadata:
     yargs: ^17.1.1
   bin:
     contentful-export: bin/contentful-export
-  checksum: 29ac471ebbe1a48154a2eba7c974ddc9b15c16151f918b16920fe37fa02a2897d37e6799f6b56adeca359414e3e7dc8dc9e84228091f29fb94064f32072cd887
+  checksum: 31b38d058a4d0ee98f34614cf36ae54421d671269079986e7ca2f1f6481465ad58c4fee2e2760aa46ba4348dc569f989db4b015e1ef529d9b6fa76ba083405e9
   languageName: node
   linkType: hard
 
