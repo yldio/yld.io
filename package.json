@@ -119,7 +119,7 @@
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-links": "^7.0.2",
     "@storybook/react": "^6.5.16",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
