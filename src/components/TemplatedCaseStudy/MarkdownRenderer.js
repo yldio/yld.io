@@ -2,6 +2,7 @@ import remcalc from 'remcalc';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import { BodyPrimary, Subtitle } from '../Typography';
 
 const UnorderedList = styled.ul`
@@ -37,6 +38,17 @@ const Strong = styled.strong`
   font-weight: 700;
 `;
 
+const H2 = styled(Subtitle).attrs({ as: 'h2' })`
+  font-size: ${remcalc(21)};
+  line-height: ${remcalc(26)};
+  padding-top: ${remcalc(24)};
+
+  ${breakpoint('smallTablet')`
+    font-size: ${remcalc(28)};
+    line-height: ${remcalc(42)};
+  `}
+`;
+
 const MarkdownRenderer = ({ source }) => (
   <ReactMarkdown
     components={{
@@ -46,7 +58,7 @@ const MarkdownRenderer = ({ source }) => (
           (props) => <Subtitle noPaddingBottom {...props} />,
         ]),
       ),
-
+      h1: (props) => <H2 {...props} />,
       p: (props) => <BodyPrimary {...props} />,
       ol: (props) => <OrderedList {...props} />,
       ul: (props) => <UnorderedList {...props} />,
