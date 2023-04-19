@@ -8167,15 +8167,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sharp@npm:^0.30.5":
-  version: 0.30.5
-  resolution: "@types/sharp@npm:0.30.5"
-  dependencies:
-    "@types/node": "*"
-  checksum: 8aa458d4c4187ae9a69894904832ecfe7533e0c405d1a7971a9984b0996eb6eb2ced103854b71199cf8df1350540bb4d3625c671a1946bd417b2bf4405c7292a
-  languageName: node
-  linkType: hard
-
 "@types/sharp@npm:^0.31.1":
   version: 0.31.1
   resolution: "@types/sharp@npm:0.31.1"
@@ -17173,6 +17164,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "fs-extra@npm:11.1.1"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: fb883c68245b2d777fbc1f2082c9efb084eaa2bbf9fddaa366130d196c03608eebef7fb490541276429ee1ca99f317e2d73e96f5ca0999eefedf5a624ae1edfd
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
@@ -17344,7 +17346,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-core-utils@npm:^3.20.0, gatsby-core-utils@npm:^3.25.0":
+"gatsby-core-utils@npm:^3.20.0":
   version: 3.25.0
   resolution: "gatsby-core-utils@npm:3.25.0"
   dependencies:
@@ -17412,6 +17414,30 @@ __metadata:
     tmp: ^0.2.1
     xdg-basedir: ^4.0.0
   checksum: 6147c180162037b574873c1020538500d7c2f43f1a40fea04a13eb8c7e8197f4c1c177edf64cf4c7f55840ac7b79ea3278b82a93217a1766ef0ef501358eab9d
+  languageName: node
+  linkType: hard
+
+"gatsby-core-utils@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "gatsby-core-utils@npm:4.9.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.15.0
+    file-type: ^16.5.4
+    fs-extra: ^11.1.1
+    got: ^11.8.6
+    hash-wasm: ^4.9.0
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: 2721b8f910d7b4619720f4735af3784d518cfb7850e42358f882f1e11453673e9bc4b2bcf4f8032a6f3b6a3255d4f071af31945b7f9fe8f9cff20dd4b92ae318
   languageName: node
   linkType: hard
 
@@ -17508,22 +17534,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-feed@npm:^4.25.0":
-  version: 4.25.0
-  resolution: "gatsby-plugin-feed@npm:4.25.0"
+"gatsby-plugin-feed@npm:^5.9.0":
+  version: 5.9.0
+  resolution: "gatsby-plugin-feed@npm:5.9.0"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.20.13
     "@hapi/joi": ^15.1.1
     common-tags: ^1.8.2
-    fs-extra: ^10.1.0
-    gatsby-plugin-utils: ^3.19.0
+    fs-extra: ^11.1.1
+    gatsby-plugin-utils: ^4.9.0
     lodash.merge: ^4.6.2
     rss: ^1.2.2
   peerDependencies:
-    gatsby: ^4.0.0-next
-    react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
-    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
-  checksum: 0082231dd42475241f7c51720b2002c3db9077a5d8d3e2b4a235560fa026da2a4c3f182d8214f2ed27e6d2251ff40dd3a9caef3014d12101713a97a21ec99f48
+    gatsby: ^5.0.0-next
+    react: ^18.0.0 || ^0.0.0
+    react-dom: ^18.0.0 || ^0.0.0
+  checksum: d6467cca124072465db9299ba7d95f937b9cac143042dc16adb32d5c35ebe2e70cdc6b8d7965c12759d3d0ebbd2ebc2c514d912dceea567cbf364818785d2409
   languageName: node
   linkType: hard
 
@@ -17816,26 +17842,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-utils@npm:^3.19.0":
-  version: 3.19.0
-  resolution: "gatsby-plugin-utils@npm:3.19.0"
-  dependencies:
-    "@babel/runtime": ^7.15.4
-    fastq: ^1.13.0
-    fs-extra: ^10.1.0
-    gatsby-core-utils: ^3.25.0
-    gatsby-sharp: ^0.19.0
-    graphql-compose: ^9.0.7
-    import-from: ^4.0.0
-    joi: ^17.4.2
-    mime: ^3.0.0
-  peerDependencies:
-    gatsby: ^4.0.0-next
-    graphql: ^15.0.0
-  checksum: a8dff918705b79f86ce0e48d672b7feca5cd9e0c3552e55003134a631daa22485571ed950831ef9d0532074ec8dbf1387b969ce978904d7fa55831f8fa557b08
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-utils@npm:^4.8.0":
   version: 4.8.0
   resolution: "gatsby-plugin-utils@npm:4.8.0"
@@ -17853,6 +17859,26 @@ __metadata:
     gatsby: ^5.0.0-next
     graphql: ^16.0.0
   checksum: 4abdb54380b2b76bafb5f755c9f61f0df7a9179e05f04210fee52b1c414a0dc21961031804cf0504ce9085dc7dbec44f038426eb3a0bf2a11bcc0f16add4848d
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-utils@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "gatsby-plugin-utils@npm:4.9.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    fastq: ^1.15.0
+    fs-extra: ^11.1.1
+    gatsby-core-utils: ^4.9.0
+    gatsby-sharp: ^1.9.0
+    graphql-compose: ^9.0.10
+    import-from: ^4.0.0
+    joi: ^17.9.1
+    mime: ^3.0.0
+  peerDependencies:
+    gatsby: ^5.0.0-next
+    graphql: ^16.0.0
+  checksum: 1f10c8929134467cd76aef7daea72cc1ca13199996c5bf0fe8232ddd4df7e12f9b403c90d4d44b3f559449ec5671c961d4ba5b54a4f451109b44792b31e378ee
   languageName: node
   linkType: hard
 
@@ -17945,16 +17971,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-sharp@npm:^0.19.0":
-  version: 0.19.0
-  resolution: "gatsby-sharp@npm:0.19.0"
-  dependencies:
-    "@types/sharp": ^0.30.5
-    sharp: ^0.30.7
-  checksum: 1d213c0c705504e0591352c7386e0d2bf512523b123f27edb354d94e4b1ed559a617c36882f159634573ba776f9ec4091aab4afa5722a334726c19768d0387e5
-  languageName: node
-  linkType: hard
-
 "gatsby-sharp@npm:^1.8.0":
   version: 1.8.0
   resolution: "gatsby-sharp@npm:1.8.0"
@@ -17962,6 +17978,16 @@ __metadata:
     "@types/sharp": ^0.31.1
     sharp: ^0.31.3
   checksum: 1b76120be25d6f19da66b650e1f4914a3ee27e1bea522761db4f05ab863a0719af189751d17e08f60742d1d1d1dab4d9dde5a1682c8e080b57408649580274d0
+  languageName: node
+  linkType: hard
+
+"gatsby-sharp@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "gatsby-sharp@npm:1.9.0"
+  dependencies:
+    "@types/sharp": ^0.31.1
+    sharp: ^0.31.3
+  checksum: 685321189904b2fc32e56c1a56f4b83a27252f3bf64862a5cf1f62de3338365db68d2bd0b335548491c97047a920fcfd806e5bd07cf9f1172323a07a38968bd9
   languageName: node
   linkType: hard
 
@@ -18893,7 +18919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-compose@npm:^9.0.10, graphql-compose@npm:^9.0.7":
+"graphql-compose@npm:^9.0.10":
   version: 9.0.10
   resolution: "graphql-compose@npm:9.0.10"
   dependencies:
@@ -21780,19 +21806,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.4.2, joi@npm:^17.7.0":
-  version: 17.7.0
-  resolution: "joi@npm:17.7.0"
-  dependencies:
-    "@hapi/hoek": ^9.0.0
-    "@hapi/topo": ^5.0.0
-    "@sideway/address": ^4.1.3
-    "@sideway/formula": ^3.0.0
-    "@sideway/pinpoint": ^2.0.0
-  checksum: 767a847936cb66787256c4351ff86e1b9e8d7383cbe81a5c827064032c2a8e8b6e938baef5ad32c4035fe4c56e537bd90aa2a952be8a0658601c920cdeb4fb3c
-  languageName: node
-  linkType: hard
-
 "joi@npm:^17.6.0":
   version: 17.6.0
   resolution: "joi@npm:17.6.0"
@@ -21803,6 +21816,19 @@ __metadata:
     "@sideway/formula": ^3.0.0
     "@sideway/pinpoint": ^2.0.0
   checksum: eaf62f6c02f2edb1042f1ab04fc23a5918a2cb8f54bec84c6e1033624d8a462c10ae9518af55a3ba84f1793960450d58094eda308e7ef93c17edd4e3c8ef31d5
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.7.0":
+  version: 17.7.0
+  resolution: "joi@npm:17.7.0"
+  dependencies:
+    "@hapi/hoek": ^9.0.0
+    "@hapi/topo": ^5.0.0
+    "@sideway/address": ^4.1.3
+    "@sideway/formula": ^3.0.0
+    "@sideway/pinpoint": ^2.0.0
+  checksum: 767a847936cb66787256c4351ff86e1b9e8d7383cbe81a5c827064032c2a8e8b6e938baef5ad32c4035fe4c56e537bd90aa2a952be8a0658601c920cdeb4fb3c
   languageName: node
   linkType: hard
 
@@ -29763,23 +29789,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.30.7":
-  version: 0.30.7
-  resolution: "sharp@npm:0.30.7"
-  dependencies:
-    color: ^4.2.3
-    detect-libc: ^2.0.1
-    node-addon-api: ^5.0.0
-    node-gyp: latest
-    prebuild-install: ^7.1.1
-    semver: ^7.3.7
-    simple-get: ^4.0.1
-    tar-fs: ^2.1.1
-    tunnel-agent: ^0.6.0
-  checksum: bbc63ca3c7ea8a5bff32cd77022cfea30e25a03f5bd031e935924bf6cf0e11e3388e8b0e22b3137bf8816aa73407f1e4fbeb190f3a35605c27ffca9f32b91601
-  languageName: node
-  linkType: hard
-
 "sharp@npm:^0.31.3":
   version: 0.31.3
   resolution: "sharp@npm:0.31.3"
@@ -34294,7 +34303,7 @@ typescript@^3.3.3:
     finalhandler: ^1.2.0
     gatsby: ^5.8.1
     gatsby-plugin-fathom: ^2.1.1
-    gatsby-plugin-feed: ^4.25.0
+    gatsby-plugin-feed: ^5.9.0
     gatsby-plugin-google-gtag: ^5.8.0
     gatsby-plugin-google-tagmanager: ^5.8.0
     gatsby-plugin-image: ^3.8.0
