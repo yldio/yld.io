@@ -166,7 +166,6 @@ const Code = styled.code`
   background-color: #e9e9e9;
   padding: ${remcalc(20)};
   font-family: 'Roboto Mono', sans-serif;
-  display: block;
 `;
 
 const A = styled.a`
