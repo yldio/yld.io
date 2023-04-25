@@ -34121,6 +34121,13 @@ typescript@^3.3.3:
   languageName: node
   linkType: hard
 
+"yaml@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "yaml@npm:2.2.2"
+  checksum: d90c235e099e30094dcff61ba3350437aef53325db4a6bcd04ca96e1bfe7e348b191f6a7a52b5211e2dbc4eeedb22a00b291527da030de7c189728ef3f2b4eb3
+  languageName: node
+  linkType: hard
+
 "yargs-parser@npm:^13.1.2":
   version: 13.1.2
   resolution: "yargs-parser@npm:13.1.2"
@@ -34381,7 +34388,7 @@ typescript@^3.3.3:
     tween: ^0.9.0
     url-parse: ^1.5.10
     wait-on: ^6.0.1
-    yaml: ^1.10.2
+    yaml: ^2.2.2
   languageName: unknown
   linkType: soft
 
