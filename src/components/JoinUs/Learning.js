@@ -2,6 +2,9 @@ import React from 'react';
 import { Padding } from 'styled-components-spacing';
 import styled from 'styled-components';
 import generate from 'shortid';
+import Player from 'react-youtube';
+import GetYouTubeId from 'get-youtube-id';
+
 import { Row, Col } from '../grid';
 import Image from '../Common/Image';
 import Hr from '../Common/Hr';
@@ -35,20 +38,49 @@ const Insight = ({ insight }) => (
   </Col>
 );
 
+const Spotlight = ({ youtubeVideo }) => {
+  console.log({ link: youtubeVideo.link });
+  return (
+    <Col width={[1, 1, 1, 4 / 12]}>
+      <Player
+        videoId={GetYouTubeId(youtubeVideo.link)}
+        loading="eager"
+        opts={{
+          width: '334px',
+          heigh: 'auto',
+          playerVars: {
+            controls: 0,
+            playsinline: 1,
+            showinfo: 0,
+          },
+        }}
+      />
+    </Col>
+  );
+};
+
 const Learning = ({
-  data: { title, subtitle, text, featuredInsights, list },
-}) => (
-  <Section greyBg>
-    <TitleAndList title={title} list={list} />
-    <Separator />
-    <TitleAndBody title={subtitle} body={text} />
-    <Row>
-      {featuredInsights.map((el) => (
-        <Insight key={generate()} insight={el} />
-      ))}
-    </Row>
-    <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
-  </Section>
-);
+  data: { title, subtitle, text, featuredInsights, featuredSpotlight, list },
+}) => {
+  return (
+    <Section greyBg>
+      <TitleAndList title={title} list={list} />
+      <Separator />
+      <TitleAndBody title={subtitle} body={text} />
+      <Row>
+        {featuredInsights.map((el) => (
+          <Insight key={generate()} insight={el} />
+        ))}
+      </Row>
+      <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
+      <Row>
+        {featuredSpotlight.map((el) => (
+          <Spotlight {...el} />
+        ))}
+      </Row>
+      <Padding bottom={{ smallPhone: 3.5, tablet: 5 }} />
+    </Section>
+  );
+};
 
 export default Learning;
