@@ -10597,6 +10597,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-remove-graphql-queries@npm:^5.9.0":
+  version: 5.9.0
+  resolution: "babel-plugin-remove-graphql-queries@npm:5.9.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    "@babel/types": ^7.20.7
+    gatsby-core-utils: ^4.9.0
+  peerDependencies:
+    "@babel/core": ^7.0.0
+    gatsby: ^5.0.0-next
+  checksum: b502cf3c3bd3c0e9290b81da202e0a6a6f635b0b1d1aeef676bced0575985714f2264dce6d92b6fd807211508a019b842307c961439acebca8f752eb52dfc23a
+  languageName: node
+  linkType: hard
+
 "babel-plugin-styled-components@npm:>= 1.12.0":
   version: 2.0.2
   resolution: "babel-plugin-styled-components@npm:2.0.2"
@@ -17173,6 +17187,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "fs-extra@npm:11.1.1"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: fb883c68245b2d777fbc1f2082c9efb084eaa2bbf9fddaa366130d196c03608eebef7fb490541276429ee1ca99f317e2d73e96f5ca0999eefedf5a624ae1edfd
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
@@ -17415,6 +17440,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "gatsby-core-utils@npm:4.9.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.15.0
+    file-type: ^16.5.4
+    fs-extra: ^11.1.1
+    got: ^11.8.6
+    hash-wasm: ^4.9.0
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: 2721b8f910d7b4619720f4735af3784d518cfb7850e42358f882f1e11453673e9bc4b2bcf4f8032a6f3b6a3255d4f071af31945b7f9fe8f9cff20dd4b92ae318
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^3.8.0":
   version: 3.8.0
   resolution: "gatsby-graphiql-explorer@npm:3.8.0"
@@ -17556,21 +17605,21 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-image@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "gatsby-plugin-image@npm:3.8.0"
+  version: 3.9.0
+  resolution: "gatsby-plugin-image@npm:3.9.0"
   dependencies:
     "@babel/code-frame": ^7.18.6
     "@babel/parser": ^7.20.13
     "@babel/runtime": ^7.20.13
     "@babel/traverse": ^7.20.13
     babel-jsx-utils: ^1.1.0
-    babel-plugin-remove-graphql-queries: ^5.8.0
+    babel-plugin-remove-graphql-queries: ^5.9.0
     camelcase: ^6.3.0
     chokidar: ^3.5.3
     common-tags: ^1.8.2
-    fs-extra: ^11.1.0
-    gatsby-core-utils: ^4.8.0
-    gatsby-plugin-utils: ^4.8.0
+    fs-extra: ^11.1.1
+    gatsby-core-utils: ^4.9.0
+    gatsby-plugin-utils: ^4.9.0
     objectFitPolyfill: ^2.3.5
     prop-types: ^15.8.1
   peerDependencies:
@@ -17585,7 +17634,7 @@ __metadata:
       optional: true
     gatsby-source-filesystem:
       optional: true
-  checksum: b53fba822c14e8fd3da4cd4801d315039c4ec0aabd058c4eaeec663c46ce2e2867fb0f4ed2e5042c863a28c45b8cbb6def0e9f883ba3e9b09539e5a542455aab
+  checksum: 70039a91f0c1fb5b136a47941564f2a97ef86dfc48f306f53ac4f0f040dafb4d233ea45dc5ee2f9c3acbe8975148b3ce89019be8e5a0bef1c091b62d1a8f2019
   languageName: node
   linkType: hard
 
@@ -17856,6 +17905,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-utils@npm:^4.9.0":
+  version: 4.9.0
+  resolution: "gatsby-plugin-utils@npm:4.9.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    fastq: ^1.15.0
+    fs-extra: ^11.1.1
+    gatsby-core-utils: ^4.9.0
+    gatsby-sharp: ^1.9.0
+    graphql-compose: ^9.0.10
+    import-from: ^4.0.0
+    joi: ^17.9.1
+    mime: ^3.0.0
+  peerDependencies:
+    gatsby: ^5.0.0-next
+    graphql: ^16.0.0
+  checksum: 1f10c8929134467cd76aef7daea72cc1ca13199996c5bf0fe8232ddd4df7e12f9b403c90d4d44b3f559449ec5671c961d4ba5b54a4f451109b44792b31e378ee
+  languageName: node
+  linkType: hard
+
 "gatsby-react-router-scroll@npm:^6.8.0":
   version: 6.8.0
   resolution: "gatsby-react-router-scroll@npm:6.8.0"
@@ -17962,6 +18031,16 @@ __metadata:
     "@types/sharp": ^0.31.1
     sharp: ^0.31.3
   checksum: 1b76120be25d6f19da66b650e1f4914a3ee27e1bea522761db4f05ab863a0719af189751d17e08f60742d1d1d1dab4d9dde5a1682c8e080b57408649580274d0
+  languageName: node
+  linkType: hard
+
+"gatsby-sharp@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "gatsby-sharp@npm:1.9.0"
+  dependencies:
+    "@types/sharp": ^0.31.1
+    sharp: ^0.31.3
+  checksum: 685321189904b2fc32e56c1a56f4b83a27252f3bf64862a5cf1f62de3338365db68d2bd0b335548491c97047a920fcfd806e5bd07cf9f1172323a07a38968bd9
   languageName: node
   linkType: hard
 
