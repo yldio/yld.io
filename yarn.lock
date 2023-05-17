@@ -17921,8 +17921,8 @@ __metadata:
   linkType: hard
 
 "gatsby-remark-smartypants@npm:^6.8.0":
-  version: 6.8.0
-  resolution: "gatsby-remark-smartypants@npm:6.8.0"
+  version: 6.10.0
+  resolution: "gatsby-remark-smartypants@npm:6.10.0"
   dependencies:
     "@babel/runtime": ^7.20.13
     retext: ^7.0.1
@@ -17930,7 +17930,7 @@ __metadata:
     unist-util-visit: ^2.0.3
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: f71c84a37678acd8243d58a5a3bce31a5ef7f5548931f4f92665b1d04d30c262968c55e86d633129217c3516f837b93ea99081a55343336c1c721e20e95fb9c7
+  checksum: f69175d422db1a1d3f9875dfb9369e52a6a8c289aa5437e886c6f679ebe348c24a9a5e3c7f69a5025aaa872665e5996ae9ec8781ae2a8cba3f759778515c3ef2
   languageName: node
   linkType: hard
 
