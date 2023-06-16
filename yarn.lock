@@ -17785,8 +17785,8 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-styled-components@npm:^6.8.0":
-  version: 6.8.0
-  resolution: "gatsby-plugin-styled-components@npm:6.8.0"
+  version: 6.11.0
+  resolution: "gatsby-plugin-styled-components@npm:6.11.0"
   dependencies:
     "@babel/runtime": ^7.20.13
   peerDependencies:
@@ -17795,7 +17795,7 @@ __metadata:
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
     styled-components: ">=2.0.0"
-  checksum: 9d8d72cb80e235ebbff36ef5639ba7ebef3170023f5aeef2e7acaa2a6ebee55e47972bee2185aa5e8c4aa33294e14581b97ba0c824edc2f7fb99fe04cec5dc86
+  checksum: 47de243cc4201a1d7bbea1be56084f707d4a3c744d33dd62550aff7a0ab76faa5673e0fde51af55353b0b43353cc90c126be2e1f20996b947d738c1e0be83d02
   languageName: node
   linkType: hard
 
