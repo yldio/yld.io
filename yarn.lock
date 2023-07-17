@@ -17173,6 +17173,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "fs-extra@npm:11.1.1"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: fb883c68245b2d777fbc1f2082c9efb084eaa2bbf9fddaa366130d196c03608eebef7fb490541276429ee1ca99f317e2d73e96f5ca0999eefedf5a624ae1edfd
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
@@ -17388,6 +17399,30 @@ __metadata:
     tmp: ^0.2.1
     xdg-basedir: ^4.0.0
   checksum: 8186857b34ea5280d7b76f3f1876427ccd70e327b095326fb263a65a1ccab9838bc007c1d0114aef038f7dddd992358624e8a467ca5f5555495920e14c0b1142
+  languageName: node
+  linkType: hard
+
+"gatsby-core-utils@npm:^4.11.0":
+  version: 4.11.0
+  resolution: "gatsby-core-utils@npm:4.11.0"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.15.0
+    file-type: ^16.5.4
+    fs-extra: ^11.1.1
+    got: ^11.8.6
+    hash-wasm: ^4.9.0
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: b7119119c8726af7ec2fd6a03bf6edd93d8c43fd8b4441be1e5cc356ed6d21f762d7e21a535128652b48326427d66a444544af967a9769a003c614213c07747e
   languageName: node
   linkType: hard
 
@@ -17997,21 +18032,21 @@ __metadata:
   linkType: hard
 
 "gatsby-source-filesystem@npm:^5.8.0":
-  version: 5.8.0
-  resolution: "gatsby-source-filesystem@npm:5.8.0"
+  version: 5.11.0
+  resolution: "gatsby-source-filesystem@npm:5.11.0"
   dependencies:
     "@babel/runtime": ^7.20.13
     chokidar: ^3.5.3
     file-type: ^16.5.4
-    fs-extra: ^11.1.0
-    gatsby-core-utils: ^4.8.0
+    fs-extra: ^11.1.1
+    gatsby-core-utils: ^4.11.0
     mime: ^3.0.0
     pretty-bytes: ^5.6.0
     valid-url: ^1.0.9
-    xstate: ^4.35.3
+    xstate: ^4.37.2
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: 4a8ebf29f444cfcae61074f7f8cb1c98d6bad13e5f60d57c18c5934e70c68d910d7606773f0675b9f16e5ea1190aa7285dd3a7b119ea1daa23457193439dcd68
+  checksum: f697e2012c4d56764388a62ff26a97de33bae2d0085043f43cb904b0d8f24ed0a18b5559e5b71fc8c31f6198a73c421484e6d4fdda40d41f45675bc4a1596870
   languageName: node
   linkType: hard
 
@@ -34044,6 +34079,13 @@ typescript@^3.3.3:
   version: 4.37.1
   resolution: "xstate@npm:4.37.1"
   checksum: 919fa88003b081636b4d003ab4eab6e58b582b2c2461b62ddd2eb6356d5795f183e78daa540ba70be711a8daa90db17bd6b3288851a5356e6b4775094d459e1c
+  languageName: node
+  linkType: hard
+
+"xstate@npm:^4.37.2":
+  version: 4.38.1
+  resolution: "xstate@npm:4.38.1"
+  checksum: 9dc40ebd22730f58750ad112c03d592c959425a5c5a83ccd7cdea7f6b49d745b95d45d614902888bf592980a90812ab099568867d25bab82dc2c75ebdab99a52
   languageName: node
   linkType: hard
 
