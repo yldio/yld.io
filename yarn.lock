@@ -12896,22 +12896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful-management@npm:^10.0.0":
-  version: 10.6.0
-  resolution: "contentful-management@npm:10.6.0"
-  dependencies:
-    "@types/json-patch": 0.0.30
-    axios: ^0.27.1
-    contentful-sdk-core: ^7.0.1
-    fast-copy: ^2.1.1
-    lodash.isplainobject: ^4.0.6
-  checksum: aa6ad655c3ef199b4d3ad3b253d3d7cba358cc3fa1cfafb9e3871455cf435cdaa089d532a9f4eb208670715ffedd3db5c4f3c8925f70f6177972f4e922a041a4
-  languageName: node
-  linkType: hard
-
-"contentful-management@npm:^10.31.6, contentful-management@npm:^10.32.0":
-  version: 10.32.0
-  resolution: "contentful-management@npm:10.32.0"
+"contentful-management@npm:^10.0.0, contentful-management@npm:^10.31.6, contentful-management@npm:^10.32.0":
+  version: 10.39.1
+  resolution: "contentful-management@npm:10.39.1"
   dependencies:
     "@contentful/rich-text-types": ^16.0.3
     "@types/json-patch": 0.0.30
@@ -12920,7 +12907,7 @@ __metadata:
     fast-copy: ^3.0.0
     lodash.isplainobject: ^4.0.6
     type-fest: ^3.0.0
-  checksum: 827d7fc32d46110354f08f772c7d6e110780b314f50e23e565a7dca832fdeaf46413977114790b650e090e73d82699c6b2a1fe31f42422f45e589d4a963370eb
+  checksum: 21e6a1cbef2e5c980817946a763de31a55a9ef6cf13c7f75512c45ebbc01f7a7ffe806b9cd57ce44ad62c0bc64a39a6aedf709a9c153cf27722afc1ff0f81329
   languageName: node
   linkType: hard
 
@@ -16425,7 +16412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-copy@npm:^2.1.1, fast-copy@npm:^2.1.3":
+"fast-copy@npm:^2.1.3":
   version: 2.1.3
   resolution: "fast-copy@npm:2.1.3"
   checksum: 5d1a4a218304893ed0c4593b5d21b282202f9e74ed33fee261c0c574e81003863e0c6fd0d857451dfe15f3e1919acd8084ce52c2457c9410e61e1aea9b388029
