@@ -12896,22 +12896,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful-management@npm:^10.0.0":
-  version: 10.6.0
-  resolution: "contentful-management@npm:10.6.0"
-  dependencies:
-    "@types/json-patch": 0.0.30
-    axios: ^0.27.1
-    contentful-sdk-core: ^7.0.1
-    fast-copy: ^2.1.1
-    lodash.isplainobject: ^4.0.6
-  checksum: aa6ad655c3ef199b4d3ad3b253d3d7cba358cc3fa1cfafb9e3871455cf435cdaa089d532a9f4eb208670715ffedd3db5c4f3c8925f70f6177972f4e922a041a4
-  languageName: node
-  linkType: hard
-
-"contentful-management@npm:^10.31.6, contentful-management@npm:^10.32.0":
-  version: 10.32.0
-  resolution: "contentful-management@npm:10.32.0"
+"contentful-management@npm:^10.0.0, contentful-management@npm:^10.31.6, contentful-management@npm:^10.32.0":
+  version: 10.39.2
+  resolution: "contentful-management@npm:10.39.2"
   dependencies:
     "@contentful/rich-text-types": ^16.0.3
     "@types/json-patch": 0.0.30
@@ -12919,8 +12906,8 @@ __metadata:
     contentful-sdk-core: ^7.0.1
     fast-copy: ^3.0.0
     lodash.isplainobject: ^4.0.6
-    type-fest: ^3.0.0
-  checksum: 827d7fc32d46110354f08f772c7d6e110780b314f50e23e565a7dca832fdeaf46413977114790b650e090e73d82699c6b2a1fe31f42422f45e589d4a963370eb
+    type-fest: ^4.0.0
+  checksum: 549b2d018b6fb0714db4213a29e3c20c35a4b239c3283d57636acd55029894a4efa62891d6fa6036f44c5dedaf6cba000ccf5598c7ddf47d97d69e25133cd3c1
   languageName: node
   linkType: hard
 
@@ -16425,7 +16412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-copy@npm:^2.1.1, fast-copy@npm:^2.1.3":
+"fast-copy@npm:^2.1.3":
   version: 2.1.3
   resolution: "fast-copy@npm:2.1.3"
   checksum: 5d1a4a218304893ed0c4593b5d21b282202f9e74ed33fee261c0c574e81003863e0c6fd0d857451dfe15f3e1919acd8084ce52c2457c9410e61e1aea9b388029
@@ -32296,6 +32283,13 @@ resolve@^2.0.0-next.3:
   version: 3.5.5
   resolution: "type-fest@npm:3.5.5"
   checksum: 69a046151b16e8a76bd8170b0779bf237be86705cbe6690500a950ddd92a1d8e671ad640e46b4197505bfc74a12181c950535ad2f74106c3c78dd9bb79f4a66a
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "type-fest@npm:4.0.0"
+  checksum: 716f32ac341b1cf35bf08cc5cc6a11822436333966d3f4d94758112f45829efa3efb643ebc74a53e514e68a1bddab144d0153d654e072b41ba9bd98bcf841d75
   languageName: node
   linkType: hard
 
