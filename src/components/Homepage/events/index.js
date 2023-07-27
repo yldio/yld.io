@@ -70,8 +70,12 @@ const ViewEventsLink = styled(StyledLink)`
 
 const Events = ({ featuredEvent, eventTypes }) => (
   <Grid>
-    <FeaturedEventRow event={featuredEvent} />
-    <Hr />
+    {featuredEvent ? (
+      <>
+        <FeaturedEventRow event={featuredEvent} />
+        <Hr />
+      </>
+    ) : null}
     <IntroRow>
       <Col width={[1, 1, 1, 1, 8 / 12, 8 / 12, 5 / 12]}>
         <DisplayTitle>Our event types</DisplayTitle>
