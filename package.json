@@ -114,7 +114,7 @@
     "@babel/preset-react": "^7.22.5",
     "@contentful/integration-test-utils": "^2.0.1",
     "@lhci/cli": "^0.11.1",
-    "@storybook/addon-a11y": "^6.5.16",
+    "@storybook/addon-a11y": "^7.1.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
