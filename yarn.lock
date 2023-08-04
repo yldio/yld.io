@@ -22553,9 +22553,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-extended@npm:^3.2.4":
-  version: 3.2.4
-  resolution: "jest-extended@npm:3.2.4"
+"jest-extended@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "jest-extended@npm:4.0.1"
   dependencies:
     jest-diff: ^29.0.0
     jest-get-type: ^29.0.0
@@ -22564,7 +22564,7 @@ __metadata:
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: 16e4f300d9c5bf110f7f3422e49e06c968a99a44cede2b2821ddd480c33b3d9cd4dc58035b2f022e6018247da8f887295d6c2499647675dedb6e305142604e7d
+  checksum: a5d6a9153c7b7fe48602bb3381f46bbbbb034bc2722497d0fde6b0eac81b8fbda1e69fb59ca72ec545fea7959e065a96500620a1cf0aba77a719455ff5f93da8
   languageName: node
   linkType: hard
 
@@ -35835,7 +35835,7 @@ typescript@^3.3.3:
     jest-circus: ^29.6.2
     jest-environment-jsdom: ^29.6.2
     jest-environment-node: ^29.6.2
-    jest-extended: ^3.2.4
+    jest-extended: ^4.0.1
     jest-watch-typeahead: ^2.2.2
     jest-when: ^3.5.2
     ky: ^0.33.3
