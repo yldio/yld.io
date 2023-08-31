@@ -63,7 +63,19 @@ const MarkdownRenderer = ({ source }) => (
       ol: (props) => <OrderedList {...props} />,
       ul: (props) => <UnorderedList {...props} />,
       li: (props) => <ListItem {...props} />,
-      a: (props) => <A {...props} />,
+      a({ href, ...props }) {
+        return (
+          <A
+            target={
+              new URL(href).origin === window.location.origin
+                ? 'self'
+                : '_blank'
+            }
+            href={href}
+            {...props}
+          />
+        );
+      },
       strong: (props) => <Strong {...props} />,
     }}
   >
