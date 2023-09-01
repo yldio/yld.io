@@ -159,7 +159,7 @@
     "jest-extended": "^3.2.4",
     "jest-watch-typeahead": "^2.2.2",
     "jest-when": "^3.5.2",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.1",
     "lodash.isequal": "^4.5.0",
     "netlify-lambda": "^2.0.16",
     "nock": "^13.3.2",
