@@ -19024,8 +19024,8 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-sitemap@npm:^6.11.0":
-  version: 6.11.0
-  resolution: "gatsby-plugin-sitemap@npm:6.11.0"
+  version: 6.12.0
+  resolution: "gatsby-plugin-sitemap@npm:6.12.0"
   dependencies:
     "@babel/runtime": ^7.20.13
     common-tags: ^1.8.2
@@ -19035,7 +19035,7 @@ __metadata:
     gatsby: ^5.0.0-next
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
-  checksum: 0bb1a778d35b9f951953a8fcb254db72f8825e988308cd57ba39b443a110334068164c18c4e42d81661360a02280d8ee74065d15743e7e6a3d334d5abcbeeb64
+  checksum: adc80edc20215100fdfc0d9453ae1bd63b2ab552b31466ce07ab7004d248007a53d3a35bd69d200d591661a64d5b266894f6be29deddb3099c10f2219d91240d
   languageName: node
   linkType: hard
 
