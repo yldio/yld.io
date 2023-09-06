@@ -121,7 +121,7 @@
     "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/react": "^6.5.16",
-    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^13.4.0",
     "apr-for-each": "^3.0.3",
     "apr-main": "^4.0.3",
