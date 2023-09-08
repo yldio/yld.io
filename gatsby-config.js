@@ -14,7 +14,6 @@ const {
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
   FATHOM_SITE_ID,
-  PLAUSIBLE_CUSTOM_DOMAIN,
 } = process.env;
 
 const isNetlifyProduction = NETLIFY_ENV === 'production';
@@ -69,13 +68,6 @@ const configs = {
     options: {
       trackingUrl: 'f.yld.io',
       siteId: FATHOM_SITE_ID,
-    },
-  },
-  'gatsby-plugin-plausible': {
-    resolve: 'gatsby-plugin-plausible',
-    options: {
-      domain: 'yld.io',
-      customDomain: PLAUSIBLE_CUSTOM_DOMAIN,
     },
   },
   'gatsby-plugin-manifest': {
@@ -302,7 +294,6 @@ module.exports = {
     configs['gatsby-source-lever'],
     configs['gatsby-source-greenhouse-job-board'],
     configs['gatsby-plugin-fathom'],
-    configs['gatsby-plugin-plausible'],
     configs['gatsby-plugin-google-gtag'],
     configs['gatsby-plugin-google-tagmanager'],
     configs['gatsby-plugin-manifest'],
