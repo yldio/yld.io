@@ -133,7 +133,7 @@
     "babel-preset-gatsby": "^3.11.0",
     "compression": "^1.7.4",
     "contentful-export": "^7.19.66",
-    "contentful-import": "^8.5.63",
+    "contentful-import": "^9.4.12",
     "contentful-management": "^10.39.2",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
