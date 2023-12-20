@@ -1,4 +1,3 @@
-import behance from '../../images/behance-icon.svg';
 import dribbble from '../../images/dribbble-icon.svg';
 import github from '../../images/github-icon.svg';
 import medium from '../../images/medium-icon.svg';
@@ -48,11 +47,6 @@ const social = [
     label: 'Dribbble',
     to: 'https://dribbble.com/yld',
     img: dribbble,
-  },
-  {
-    label: 'Behance',
-    to: 'https://www.behance.net/YLDio',
-    img: behance,
   },
 ];
 
