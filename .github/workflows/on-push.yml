@@ -197,7 +197,7 @@ jobs:
   # DEPLOY                                                                      #
   ###############################################################################
   deploy:
-    needs: [testcafe, stylelint, eslint, test]
+    needs: [build, stylelint, eslint, test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
