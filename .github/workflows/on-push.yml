@@ -181,7 +181,7 @@ jobs:
       - name: Testcafe
         run: yarn run test:e2e:ui
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: ${{ github.event.issue.number || github.event.number || github.sha }}-testcafe
