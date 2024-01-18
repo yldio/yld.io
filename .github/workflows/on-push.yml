@@ -40,7 +40,7 @@ jobs:
           cache: 'yarn'
       - name: Setup Build Cache
         id: build-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ github.sha }}
           path: |
@@ -136,7 +136,7 @@ jobs:
   #     - name: Install dependencies
   #       run: yarn install --immutable
   #     - name: Setup Build Cache
-  #       uses: actions/cache@v3
+  #       uses: actions/cache@v4
   #       with:
   #         key: ${{ github.sha }}
   #         path: |
@@ -169,7 +169,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Setup Build Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ github.sha }}
           path: |
@@ -203,7 +203,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Build Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ github.sha }}
           path: |
