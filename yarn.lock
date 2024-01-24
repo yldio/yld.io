@@ -18670,6 +18670,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-core-utils@npm:^4.13.1":
+  version: 4.13.1
+  resolution: "gatsby-core-utils@npm:4.13.1"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    ci-info: 2.0.0
+    configstore: ^5.0.1
+    fastq: ^1.15.0
+    file-type: ^16.5.4
+    fs-extra: ^11.1.1
+    got: ^11.8.6
+    hash-wasm: ^4.9.0
+    import-from: ^4.0.0
+    lmdb: 2.5.3
+    lock: ^1.1.0
+    node-object-hash: ^2.3.10
+    proper-lockfile: ^4.1.2
+    resolve-from: ^5.0.0
+    tmp: ^0.2.1
+    xdg-basedir: ^4.0.0
+  checksum: 18024206ae31a89ec0533b2d31c1d12f0f1cea09451e73daa49276bd1f1d84b47dc94602d97bc4d37fa203ffd66de33afaeffbe7ccc96569c8ef42251ddb1151
+  languageName: node
+  linkType: hard
+
 "gatsby-graphiql-explorer@npm:^3.11.0":
   version: 3.11.0
   resolution: "gatsby-graphiql-explorer@npm:3.11.0"
@@ -19236,21 +19260,21 @@ __metadata:
   linkType: hard
 
 "gatsby-source-filesystem@npm:^5.11.0":
-  version: 5.11.0
-  resolution: "gatsby-source-filesystem@npm:5.11.0"
+  version: 5.13.1
+  resolution: "gatsby-source-filesystem@npm:5.13.1"
   dependencies:
     "@babel/runtime": ^7.20.13
     chokidar: ^3.5.3
     file-type: ^16.5.4
     fs-extra: ^11.1.1
-    gatsby-core-utils: ^4.11.0
+    gatsby-core-utils: ^4.13.1
     mime: ^3.0.0
     pretty-bytes: ^5.6.0
     valid-url: ^1.0.9
-    xstate: ^4.37.2
+    xstate: ^4.38.0
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: f697e2012c4d56764388a62ff26a97de33bae2d0085043f43cb904b0d8f24ed0a18b5559e5b71fc8c31f6198a73c421484e6d4fdda40d41f45675bc4a1596870
+  checksum: 8c0f7e0bc6690c52e6fa55647d9fb80d8503e29b7f4a08d4621567942baefc94c29e5c5566dbc394286017052a0d84fe6bddee25aa2644d968be9a87b41e76a2
   languageName: node
   linkType: hard
 
@@ -35512,6 +35536,13 @@ typescript@^3.3.3:
   version: 4.38.1
   resolution: "xstate@npm:4.38.1"
   checksum: 9dc40ebd22730f58750ad112c03d592c959425a5c5a83ccd7cdea7f6b49d745b95d45d614902888bf592980a90812ab099568867d25bab82dc2c75ebdab99a52
+  languageName: node
+  linkType: hard
+
+"xstate@npm:^4.38.0":
+  version: 4.38.3
+  resolution: "xstate@npm:4.38.3"
+  checksum: b52e5bf349834ede65b1eadf9b160b818341739b1306e882c35dd6c4ddb92f18342f534d5080c5218f935254230721faca3d34b66cbb3b6f19d8496516f23eca
   languageName: node
   linkType: hard
 
