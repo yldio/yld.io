@@ -577,7 +577,7 @@ const IndexPage = (props) => {
 export const query = graphql`
   {
     contentfulNonTemplatedCaseStudyV2(
-      slug: { eq: "doctorlink-setting-up-a-design-system" }
+      slug: { eq: "setting-up-a-design-system-healthcaretech" }
     ) {
       slug
       title
