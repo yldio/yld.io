@@ -63,6 +63,7 @@ class JoinUs extends React.Component {
             subtitle: content.insightsTitle,
             text: content.insightsDescriptionText.insightsDescriptionText,
             featuredInsights: content.insights,
+            featuredSpotlight: content.employeeSpotlight,
           }}
         />
         <Work
@@ -141,6 +142,13 @@ const JoinUsPage = (props) => (
                 url
               }
               gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+          employeeSpotlight {
+            id
+            title
+            youtubeVideo {
+              link
             }
           }
           challengingTitle
