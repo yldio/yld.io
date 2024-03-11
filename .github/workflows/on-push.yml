@@ -214,7 +214,7 @@ jobs:
         uses: rlespinasse/github-slug-action@v3.x
       - name: Deploy to Netlify
         id: deploy
-        uses: nwtgck/actions-netlify@v2
+        uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: './public'
           functions-dir: './functions'
