@@ -33,7 +33,7 @@ jobs:
           NODE_ENV: production
       - name: Deploy to Netlify
         id: deploy
-        uses: nwtgck/actions-netlify@v2
+        uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: './public'
           functions-dir: './functions'
