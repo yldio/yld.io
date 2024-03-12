@@ -14929,6 +14929,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "date-fns@npm:3.4.0"
+  checksum: 46aea6573558f65b2a64471946b34f552e120bd4b2fdd02c2a900b9db4dc69d85b2af0838723297608d4bd723a958b0d65983a9e4e421e3090d791a8bafc99c1
+  languageName: node
+  linkType: hard
+
 "debug@npm:2, debug@npm:2.6.9, debug@npm:^2.1.3, debug@npm:^2.2.0, debug@npm:^2.3.3, debug@npm:^2.6.0, debug@npm:^2.6.6, debug@npm:^2.6.8, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -35751,7 +35758,7 @@ typescript@^3.3.3:
     contentful-export: ^7.19.66
     contentful-import: ^8.5.63
     contentful-management: ^10.39.2
-    date-fns: ^2.30.0
+    date-fns: ^3.4.0
     dotenv: ^16.3.1
     emoji-strip: ^1.0.1
     eslint: ^8.45.0

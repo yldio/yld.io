@@ -36,7 +36,7 @@
     "base16-prism": "^0.3.0",
     "capitalize": "^2.0.4",
     "color-luminance": "^2.1.0",
-    "date-fns": "^2.30.0",
+    "date-fns": "^3.4.0",
     "dotenv": "^16.3.1",
     "emoji-strip": "^1.0.1",
     "gatsby": "^5.11.0",
